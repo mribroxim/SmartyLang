@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ── Class-based dark mode (Tailwind v4) ── */
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --animate-scroll-up: scroll-up 20s linear infinite;
+
+  @keyframes scroll-up {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes pop-in {
+    0%, 20% { opacity: 0; transform: translateY(10px); }
+    25%, 80% { opacity: 1; transform: translateY(0); }
+    85%, 100% { opacity: 0; transform: translateY(-10px); }
+  }
+  
+  @keyframes pop-in-centered {
+    0%, 15% { opacity: 0; transform: translateY(10px) translateX(-50%); }
+    20%, 80% { opacity: 1; transform: translateY(0) translateX(-50%); }
+    85%, 100% { opacity: 0; transform: translateY(-10px) translateX(-50%); }
+  }
+
+  @keyframes cursor-move {
+    0% { transform: translate(100px, 100px); }
+    15% { transform: translate(0px, 0px); }
+    20% { transform: scale(0.9) translate(0px, 0px); } /* click word */
+    30% { transform: scale(1) translate(0px, -50px); } /* move to menu */
+    35% { transform: scale(0.9) translate(0px, -50px); } /* click + */
+    45% { transform: scale(1) translate(20px, 180px); } /* move away */
+    80% { transform: translate(20px, 180px); } /* hold */
+    100% { transform: translate(100px, 100px); }
+  }
+  
+  @keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+.animate-pop-in { animation: pop-in 6s infinite; }
+.animate-pop-in-centered { animation: pop-in-centered 6s infinite; }
+.animate-cursor-move { animation: cursor-move 6s infinite; }
+.animate-bounce-subtle { animation: bounce-subtle 3s ease-in-out infinite; }
+
+/* ── App-like animations ── */
+@keyframes slide-up-in {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0);    }
+}
+@keyframes fade-up-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+@keyframes sheet-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-slide-up    { animation: slide-up-in 0.28s cubic-bezier(0.32, 0.72, 0, 1) both; }
+.animate-fade-up     { animation: fade-up-in  0.18s ease-out both; }
+.animate-backdrop-in { animation: sheet-backdrop-in 0.2s ease both; }
+
+/* ── Touch / tap improvements ── */
+button, a, [role="button"] {
+  touch-action: manipulation;         /* removes 300 ms tap delay on mobile */
+  -webkit-tap-highlight-color: transparent; /* no blue flash on Android */
+}
+
+/* Space reserved so fixed MobileNav (64px + iOS home indicator) doesn't cover content */
+:root {
+  --se-mobile-nav: 0px;
+}
+@media (max-width: 1023px) {
+  :root {
+    --se-mobile-nav: calc(64px + env(safe-area-inset-bottom, 0px) + 16px);
+  }
+}
+
+/* ── Mobile: completely hide scrollbars (momentum scrolling kept) ── */
+@media (max-width: 1023px) {
+  * {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  /* Momentum scrolling for iOS */
+  .overflow-y-auto, .overflow-y-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ── Global modern scrollbars ── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 100px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Legacy .custom-scrollbar alias */
+.custom-scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 100px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+
+/* ═══════════════════════════════════════════════════════════════
+   DARK MODE GLOBAL OVERRIDES
+   Unlayered CSS beats @layer utilities — no !important needed.
+   Covers all feature components automatically.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Browser chrome */
+.dark { color-scheme: dark; }
+
+/* ── Backgrounds ── */
+.dark .bg-white        { background-color: #1c1c1f; }
+.dark .bg-slate-50     { background-color: #111113; }
+.dark .bg-slate-100    { background-color: #28282c; }
+.dark .bg-slate-200    { background-color: #37373c; }
+.dark .bg-zinc-50      { background-color: #1c1c1f; }
+.dark .bg-zinc-100     { background-color: #28282c; }
+.dark .bg-zinc-200     { background-color: #37373c; }
+.dark .bg-zinc-300     { background-color: #4b4b52; }
+
+/* Primary CTA buttons — zinc-900 becomes visible on dark bg */
+.dark .bg-zinc-900     { background-color: #4b4b52; }
+.dark .bg-black        { background-color: #5c5c64; }
+.dark .hover\:bg-black:hover { background-color: #5c5c64; }
+
+/* ── Text ── */
+.dark .text-zinc-900   { color: #fafafa; }
+.dark .text-zinc-800   { color: #f4f4f5; }
+.dark .text-zinc-700   { color: #e4e4e7; }
+.dark .text-zinc-600   { color: #d4d4d8; }
+.dark .text-slate-900  { color: #fafafa; }
+.dark .text-slate-800  { color: #f4f4f5; }
+.dark .text-slate-700  { color: #d4d4d8; }
+.dark .text-slate-600  { color: #a1a1aa; }
+.dark .text-slate-500  { color: #71717a; }
+.dark .text-slate-400  { color: #52525b; }
+
+/* ── Borders ── */
+.dark .border-slate-100  { border-color: #28282c; }
+.dark .border-slate-200  { border-color: #37373c; }
+.dark .border-slate-300  { border-color: #4b4b52; }
+.dark .border-zinc-100   { border-color: #28282c; }
+.dark .border-zinc-200   { border-color: #37373c; }
+.dark .border-zinc-300   { border-color: #4b4b52; }
+
+/* ── Hover overrides ── */
+.dark .hover\:bg-slate-50:hover   { background-color: #1c1c1f; }
+.dark .hover\:bg-slate-100:hover  { background-color: #28282c; }
+.dark .hover\:bg-slate-200:hover  { background-color: #37373c; }
+.dark .hover\:bg-zinc-50:hover    { background-color: #1c1c1f; }
+.dark .hover\:bg-zinc-100:hover   { background-color: #28282c; }
+.dark .hover\:bg-zinc-200:hover   { background-color: #37373c; }
+
+/* ── Colored accent surfaces (badges, icon containers) ── */
+/* Blue */
+.dark .bg-blue-50       { background-color: #172554; }
+.dark .bg-indigo-50     { background-color: #1e1b4b; }
+/* Emerald / green */
+.dark .bg-emerald-50    { background-color: #052e16; }
+.dark .bg-green-50      { background-color: #052e16; }
+/* Rose / red */
+.dark .bg-rose-50       { background-color: #4c0519; }
+.dark .bg-red-50        { background-color: #450a0a; }
+/* Purple / violet */
+.dark .bg-purple-50     { background-color: #2e1065; }
+.dark .bg-violet-50     { background-color: #2e1065; }
+/* Amber / yellow */
+.dark .bg-amber-50      { background-color: #451a03; }
+.dark .bg-yellow-50     { background-color: #422006; }
+/* Cyan / teal */
+.dark .bg-cyan-50       { background-color: #083344; }
+.dark .bg-teal-50       { background-color: #042f2e; }
+
+/* ── Colored text on dark accent surfaces ── */
+.dark .text-blue-700    { color: #93c5fd; }
+.dark .text-indigo-600  { color: #a5b4fc; }
+.dark .text-indigo-700  { color: #a5b4fc; }
+.dark .text-emerald-600 { color: #6ee7b7; }
+.dark .text-emerald-700 { color: #6ee7b7; }
+.dark .text-rose-600    { color: #fda4af; }
+.dark .text-rose-700    { color: #fda4af; }
+.dark .text-purple-700  { color: #d8b4fe; }
+.dark .text-violet-700  { color: #d8b4fe; }
+.dark .text-amber-700   { color: #fcd34d; }
+.dark .text-cyan-700    { color: #67e8f9; }
+.dark .text-teal-700    { color: #5eead4; }
+.dark .text-green-700   { color: #86efac; }
+.dark .text-red-700     { color: #fca5a5; }
+
+/* ── Colored borders on dark accent surfaces ── */
+.dark .border-blue-200    { border-color: #1e40af; }
+.dark .border-emerald-200 { border-color: #065f46; }
+.dark .border-rose-200    { border-color: #9f1239; }
+.dark .border-purple-200  { border-color: #6b21a8; }
+.dark .border-violet-200  { border-color: #6b21a8; }
+.dark .border-amber-200   { border-color: #92400e; }
+.dark .border-cyan-200    { border-color: #155e75; }
+.dark .border-teal-200    { border-color: #134e4a; }
+
+/* ── Inputs, textareas, selects ── */
+.dark input:not([type=checkbox]):not([type=radio]):not([type=range]),
+.dark textarea,
+.dark select {
+  background-color: #28282c;
+  border-color: #4b4b52;
+  color: #fafafa;
+}
+.dark input::placeholder,
+.dark textarea::placeholder { color: #52525b; }
+.dark input:focus:not([type=checkbox]):not([type=radio]),
+.dark textarea:focus {
+  border-color: #71717a;
+  outline-color: #71717a;
+}
+
+/* ── Dividers ── */
+.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) { border-color: #37373c; }
+.dark .divide-zinc-200  > :not([hidden]) ~ :not([hidden]) { border-color: #37373c; }
+
+/* ── Shadows (darken them) ── */
+.dark .shadow-sm  { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.6); }
+.dark .shadow     { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.6), 0 1px 2px -1px rgb(0 0 0 / 0.6); }
+.dark .shadow-md  { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.6), 0 2px 4px -2px rgb(0 0 0 / 0.6); }
+.dark .shadow-lg  { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.6); }
+.dark .shadow-xl  { box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6); }
+.dark .shadow-2xl { box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.8); }
+
+/* ── Scrollbar (dark mode) ── */
+.dark * { scrollbar-color: #4b4b52 transparent; }
+.dark *::-webkit-scrollbar-thumb { background: #4b4b52; }
+.dark *::-webkit-scrollbar-thumb:hover { background: #5c5c64; }
+.dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #4b4b52; }
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #5c5c64; }
+
+/* ── Preview Mode (Teacher / Organization) ───────────────────────────────
+   Teachers and Organizations can navigate freely and view every material —
+   we just disable practice-only controls so they can't record, answer, or
+   submit. Each opt-in element marks itself with [data-preview-block]. */
+.preview-mode [data-preview-block] {
+  opacity: 0.4;
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+  user-select: none;
+}
+.preview-mode [data-preview-block]::after {
+  content: 'Preview mode';
+  position: absolute;
+  inset: auto 0 -22px 0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(180 83 9);
+  text-align: center;
+  pointer-events: none;
+}
+.preview-mode [data-preview-hide] {
+  display: none !important;
+}

@@ -1,0 +1,238 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Helpers ──────────────────────────────────────────────────────────
+    function isSignedIn() { return request.auth != null; }
+    function uid() { return request.auth.uid; }
+    function userEmail() {
+      return request.auth.token.email != null
+        ? request.auth.token.email.lower()
+        : '';
+    }
+    function isAdmin() {
+      return isSignedIn() && userEmail() == 'abduraxmonovibroxim16@gmail.com';
+    }
+    function isContentManager() {
+      return isSignedIn() &&
+        get(/databases/$(database)/documents/userProfiles/$(request.auth.uid)).data.role == 'content-manager';
+    }
+    function isContentEditor() {
+      return isAdmin() || isContentManager();
+    }
+    function incoming() { return request.resource.data; }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidUserProgress(data) {
+      return data.keys().hasAny([
+        'xp', 'coins', 'league', 'streak', 'globalStreak', 'dailyGoal',
+        'streakFreezes', 'weeklyXp', 'weekKey', 'questId', 'questDone',
+        'badges', 'history', 'problemWords', 'improvedWords', 'habit',
+      ]);
+    }
+
+    function isValidVocabularyItem(data) {
+      return data.keys().hasAny(['definition', 'timestamp', 'favorite', 'srs', 'senseId']);
+    }
+
+    // Allow Latin + Cyrillic (and similar) word ids for EN / RU / TL vocabulary.
+    function isValidVocabWordId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128;
+    }
+
+    // ── User progress / vocabulary (private to the owning user) ──────────
+    match /users/{userId}/data/progress {
+      allow get: if isSignedIn() && (request.auth.uid == userId || isAdmin());
+      allow create, update:
+        if isSignedIn() && request.auth.uid == userId && isValidUserProgress(incoming());
+    }
+
+    // Vocabulary packs: `vocabulary` (EN) or `vocabulary_{langCode}` (other learning langs).
+    match /users/{userId}/{vocabCol}/{word} {
+      allow get, list: if isSignedIn()
+        && vocabCol.matches('^vocabulary(_[a-z]{2,5})?$')
+        && (request.auth.uid == userId || isAdmin());
+      allow create, update:
+        if isSignedIn() && request.auth.uid == userId
+        && vocabCol.matches('^vocabulary(_[a-z]{2,5})?$')
+        && isValidVocabWordId(word) && isValidVocabularyItem(incoming());
+      allow delete: if isSignedIn() && request.auth.uid == userId
+        && vocabCol.matches('^vocabulary(_[a-z]{2,5})?$');
+    }
+
+    // Practice / IELTS / lesson completion history (metadata only — no audio blobs).
+    match /users/{userId}/completions/{completionId} {
+      allow get, list: if isSignedIn() && (request.auth.uid == userId || isAdmin());
+      allow create, update: if isSignedIn() && request.auth.uid == userId
+        && incoming().keys().hasAny(['type', 'timestamp']);
+      allow delete: if isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Lesson unlock / score matrix per passage.
+    match /users/{userId}/lessonUnlocks/{unlockId} {
+      allow get, list: if isSignedIn() && (request.auth.uid == userId || isAdmin());
+      allow create, update: if isSignedIn() && request.auth.uid == userId;
+      allow delete: if isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Writing essays / drafts (text + scores).
+    match /users/{userId}/writing/{writingId} {
+      allow get, list: if isSignedIn() && (request.auth.uid == userId || isAdmin());
+      allow create, update: if isSignedIn() && request.auth.uid == userId;
+      allow delete: if isSignedIn() && request.auth.uid == userId;
+    }
+
+    // ── Account profiles (role + organization assignment) ────────────────
+    match /userProfiles/{profileUid} {
+      allow get:    if isSignedIn() && (request.auth.uid == profileUid || isAdmin());
+      allow list:   if isAdmin();
+
+      allow create: if isSignedIn() && request.auth.uid == profileUid
+        && incoming().email == request.auth.token.email
+        && (
+          (isAdmin() && incoming().role == 'admin') ||
+          (!isAdmin() && incoming().role == 'student')
+        );
+
+      allow update: if isSignedIn() && (
+        (
+          request.auth.uid == profileUid
+          && incoming().role == resource.data.role
+          && (
+            !('organizationId' in incoming().keys())
+            || incoming().organizationId == resource.data.get('organizationId', null)
+          )
+        )
+        || (
+          isAdmin()
+          && (
+            incoming().role == resource.data.role
+            || (incoming().role != 'admin')
+          )
+        )
+      );
+
+      allow delete: if isAdmin();
+    }
+
+    // ── Student summaries (public stats for teacher/org/admin to read) ────
+    match /studentSummaries/{studentUid} {
+      // Student writes their own summary; teachers/org/admin can read all
+      allow create, update: if isSignedIn() && request.auth.uid == studentUid;
+      allow get:  if isSignedIn();
+      allow list: if isSignedIn();
+    }
+
+    // ── Classes ──────────────────────────────────────────────────────────
+    match /classes/{classId} {
+      // Any signed-in user can read a class (needed for invite code join query)
+      allow get, list: if isSignedIn();
+      // Teacher creates their own class
+      allow create: if isSignedIn() && incoming().teacherUid == uid();
+      // Teacher who owns the class can update/delete; admin can do anything;
+      // students can update ONLY to add themselves to studentUids (join via invite code)
+      allow update: if isSignedIn() && (
+        resource.data.teacherUid == uid()
+        || isAdmin()
+        || (
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['studentUids'])
+          && request.resource.data.studentUids.hasAll(resource.data.studentUids)
+          && request.resource.data.studentUids.size() == resource.data.studentUids.size() + 1
+          && request.resource.data.studentUids.hasAll([uid()])
+        )
+      );
+      allow delete: if isSignedIn() && (resource.data.teacherUid == uid() || isAdmin());
+    }
+
+    // ── Assignments ──────────────────────────────────────────────────────
+    match /assignments/{assignmentId} {
+      allow get, list: if isSignedIn();
+      allow create: if isSignedIn() && incoming().teacherUid == uid();
+      allow update, delete: if isSignedIn() && (resource.data.teacherUid == uid() || isAdmin());
+
+      // Submissions sub-collection
+      match /submissions/{submissionId} {
+        // Student creates their own; teacher/admin can read any
+        allow create: if isSignedIn() && incoming().studentUid == uid();
+        allow get, list: if isSignedIn();
+        allow update, delete: if isAdmin();
+      }
+    }
+
+    // ── Student activity (fine-grained per-event log) ────────────────────
+    // Path: studentActivity/{studentUid}/events/{auto-id}
+    // Student appends their own events; teachers (and admins) can read.
+    // Reads are open to any signed-in user — UI restricts the listing to
+    // students in the requesting teacher's classes.
+    match /studentActivity/{studentUid}/events/{eventId} {
+      allow create: if isSignedIn() && request.auth.uid == studentUid
+        && incoming().studentUid == studentUid;
+      allow get, list: if isSignedIn();
+      allow update: if false;
+      allow delete: if isAdmin();
+    }
+
+    // ── Notifications (per-user inbox) ────────────────────────────────────
+    match /notifications/{notifUid}/items/{notifId} {
+      // User reads and marks their own notifications; signed-in users can write (send notifs)
+      allow get, list: if isSignedIn() && request.auth.uid == notifUid;
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && request.auth.uid == notifUid;
+      allow delete: if isSignedIn() && request.auth.uid == notifUid;
+    }
+
+    // ── Announcements ─────────────────────────────────────────────────────
+    match /announcements/{announcementId} {
+      allow get, list: if isSignedIn();
+      // Teachers and org/admin can create announcements
+      allow create: if isSignedIn();
+      allow update, delete: if isSignedIn() && (resource.data.authorUid == uid() || isAdmin());
+    }
+
+    // ── Audit log (admin reads; any signed-in user can append) ───────────
+    match /auditLog/{entryId} {
+      allow get, list: if isAdmin();
+      allow create: if isSignedIn();
+      allow update, delete: if false;
+    }
+
+    // Shared vocabulary fallback cache (written only by Cloud Functions Admin SDK).
+    match /sharedVocabCache/{cacheId} {
+      allow read: if isSignedIn();
+      allow write: if isContentEditor();
+    }
+
+    match /vocabMisses/{missId} {
+      allow read: if isSignedIn();
+      allow write: if isContentEditor();
+    }
+
+    // ── CMS content (topics, prompts, lessons, etc.) ─────────────────────
+    // Stored as single documents keyed by docId (e.g. writingTopics, grammarLessons)
+    match /cmsContent/{docId} {
+      allow read:          if isSignedIn();
+      allow write, delete: if isContentEditor();
+    }
+
+    // ── IELTS Reading tests (custom / override records) ───────────────────
+    match /ieltsTests/{testId} {
+      allow read:          if isSignedIn();
+      allow write, delete: if isContentEditor();
+    }
+
+    // ── IELTS Listening tests (custom / override records) ─────────────────
+    match /ieltsListeningTests/{testId} {
+      allow read:          if isSignedIn();
+      allow write, delete: if isContentEditor();
+    }
+
+    // Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

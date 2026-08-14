@@ -1,0 +1,105 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+    }
+  ],
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/tts",
+        "function": "tts"
+      },
+      {
+        "source": "/api/translate-fallback",
+        "function": "translateFallback"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cross-Origin-Opener-Policy",
+            "value": "same-origin-allow-popups"
+          }
+        ]
+      },
+      {
+        "source": "/assets/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/models/**",
+        "headers": [
+          { "key": "Cache-Control",                "value": "public, max-age=31536000, immutable" },
+          { "key": "Access-Control-Allow-Origin",  "value": "*" }
+        ]
+      },
+      {
+        "source": "/onnx-wasm/**",
+        "headers": [
+          { "key": "Cache-Control",                "value": "public, max-age=31536000, immutable" },
+          { "key": "Access-Control-Allow-Origin",  "value": "*" },
+          { "key": "Content-Type",                 "value": "application/wasm" }
+        ]
+      },
+      {
+        "source": "/data/**",
+        "headers": [
+          { "key": "Cache-Control",                "value": "public, max-age=0, must-revalidate" }
+        ]
+      },
+      {
+        "source": "/*.json",
+        "headers": [
+          { "key": "Cache-Control",                "value": "public, max-age=0, must-revalidate" }
+        ]
+      },
+      {
+        "source": "/level-texts.json",
+        "headers": [
+          { "key": "Cache-Control",                "value": "public, max-age=0, must-revalidate" }
+        ]
+      },
+      {
+        "source": "/index.html",
+        "headers": [
+          { "key": "Cache-Control",                "value": "public, max-age=0, must-revalidate" }
+        ]
+      },
+      {
+        "source": "/",
+        "headers": [
+          { "key": "Cache-Control",                "value": "public, max-age=0, must-revalidate" }
+        ]
+      }
+    ]
+  }
+}

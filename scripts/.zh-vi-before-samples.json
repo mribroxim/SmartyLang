@@ -1,0 +1,92 @@
+{
+  "zh": {
+    "speaking_beg": [
+      "我们来聊聊你的名字。你叫什么全名？",
+      "告诉我你的家乡。它在哪里？",
+      "描述一下你现在住的房子或公寓。"
+    ],
+    "writing_beg": [
+      "写一封简短的电子邮件，向新同学介绍你自己。",
+      "按正确的顺序列出你每天早上做的五件事。",
+      "想象你有一只叫尼科的宠物猫。写一小段话，描述它一天的生活。"
+    ],
+    "task2": [
+      "有些人认为大学教育应该对所有人免费，而另一些人则认为学生应该为高等教育付费。讨论两种观点并给出你的意见。",
+      "一些人认为学校的竞技体育非常有益，而另一些人则认为这会给孩子带来不必要的压力。讨论两种观点并给出你的意见。"
+    ],
+    "level_b1": {
+      "title": "我的早晨",
+      "text": "每天早上我起得很早。我睁开眼睛，伸展胳膊。首先，我用冷水洗脸。然后我刷牙。我做简单的早餐，有面包和茶。上学前我喜欢看书。我妈妈给我一个微笑。我感到开心，准备好迎接新的一天。",
+      "def0": {
+        "word": "早晨",
+        "definition": "(名词) 一天中的早些时候，中午之前。"
+      }
+    },
+    "level_a1": {
+      "title": "数字进步的悖论",
+      "text": "科技创新的不懈追求已将人类带到了一个关键的十字路口。虽然将自动化系统融入劳动力市场表面上是为了提高效率，但它同时威胁着加剧社会经济差距。有人认为，我们已经过度依赖算法决策，可能牺牲了批判性直觉。如果我们未能实施健全的道德框架，“数字淘金热”的意外后果可能会被证明是不可逆转的。现在是时候让利益相关者优先考虑长期可持续性而非短暂的收益，确保进步服务于集体利益，而不是少数特权人士。"
+    },
+    "cr0": {
+      "title": "我的猫",
+      "passage": "我有一只猫。我的猫是黑白的。她喜欢喝牛奶。她睡在沙发上。",
+      "q0": "猫是什么颜色的？"
+    },
+    "dict_beg": [
+      "- 我是一名学生。",
+      "- 她有一本红色的书。",
+      "- 猫在垫子上。"
+    ],
+    "task1_inst": "下面的条形图显示了 2010 年至 2022 年间在四个英语国家的大学就读的国际学生人数（以千计）。通过选择和报告主要特征来总结信息，并在相关时进行比较。写至少150字。",
+    "task1_proc_stage": {
+      "title": "Collection",
+      "description": "Used paper is collected from homes and businesses in recycling bins and transported by trucks to a recycling centre.",
+      "icon": "🚛",
+      "color": "#dbeafe"
+    }
+  },
+  "vi": {
+    "speaking_beg": [
+      "Hãy nói về tên của bạn. Tên đầy đủ của bạn là gì?",
+      "Hãy kể về quê hương của bạn. Nó nằm ở đâu?",
+      "Hãy mô tả ngôi nhà hoặc căn hộ bạn đang sống."
+    ],
+    "writing_beg": [
+      "Viết một email ngắn giới thiệu bản thân với một bạn học mới.",
+      "Liệt kê năm việc bạn làm mỗi sáng theo đúng thứ tự.",
+      "Hãy tưởng tượng bạn có một con mèo tên là Nico. Viết một đoạn văn ngắn về những gì nó làm cả ngày."
+    ],
+    "task2": [
+      "Một số người tin rằng giáo dục đại học nên miễn phí cho tất cả mọi người, trong khi những người khác cho rằng sinh viên phải trả tiền cho giáo dục đại học của họ. Thảo luận cả hai quan điểm và đưa ra ý kiến ​​của bạn.",
+      "Một số người cho rằng các môn thể thao cạnh tranh trong trường học rất có lợi, trong khi những người khác cho rằng chúng gây căng thẳng không cần thiết cho trẻ em. Thảo luận cả hai quan điểm và đưa ra ý kiến ​​của bạn."
+    ],
+    "level_b1": {
+      "title": "Buổi sáng của tôi",
+      "text": "Mỗi sáng tôi thức dậy sớm. Tôi mở mắt và vươn vai. Đầu tiên, tôi rửa mặt bằng nước lạnh. Sau đó tôi đánh răng. Tôi chuẩn bị một bữa sáng nhỏ với bánh mì và trà. Tôi thích đọc sách trước khi đến trường. Mẹ tôi mỉm cười với tôi. Tôi cảm thấy vui vẻ và sẵn sàng cho một ngày mới.",
+      "def0": {
+        "word": "Buổi sáng",
+        "definition": "(Danh từ) Phần đầu của ngày, trước buổi trưa."
+      }
+    },
+    "level_a1": {
+      "title": "Nghịch lý của Tiến bộ Kỹ thuật số",
+      "text": "Cuộc theo đuổi không ngừng nghỉ các đổi mới công nghệ đã đưa nhân loại đến một ngã rẽ quan trọng. Mặc dù việc tích hợp các hệ thống tự động vào lực lượng lao động bề ngoài được thiết kế để nâng cao hiệu quả, nó đồng thời đe dọa làm trầm trọng thêm sự bất bình đẳng kinh tế-xã hội."
+    },
+    "cr0": {
+      "title": "Con mèo của tôi",
+      "passage": "Tôi có một con mèo. Con mèo của tôi có màu đen và trắng. Cô ấy thích uống sữa. Cô ấy ngủ trên ghế sofa.",
+      "q0": "Con mèo có màu gì?"
+    },
+    "dict_beg": [
+      "- Tôi là sinh viên.",
+      "- Cô ấy có một cuốn sách màu đỏ.",
+      "- Con mèo đang ở trên tấm thảm."
+    ],
+    "task1_inst": "Biểu đồ thanh bên dưới cho thấy số lượng sinh viên quốc tế (tính bằng nghìn) theo học tại các trường đại học ở bốn quốc gia nói tiếng Anh từ năm 2010 đến năm 2022. Tóm tắt thông tin bằng cách chọn và báo cáo các đặc điểm chính, đồng thời so sánh nếu có liên quan. Viết ít nhất 150 từ.",
+    "task1_proc_stage": {
+      "title": "Collection",
+      "description": "Used paper is collected from homes and businesses in recycling bins and transported by trucks to a recycling centre.",
+      "icon": "🚛",
+      "color": "#dbeafe"
+    }
+  }
+}

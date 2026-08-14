@@ -1,0 +1,792 @@
+[
+  {
+    "type": "discussion",
+    "label": "Ensaio de discussão",
+    "description": "Discuta ambos os pontos de vista e dê a sua própria opinião.",
+    "instruction": "Discuta ambos os pontos de vista e dê a sua própria opinião. Escreva pelo menos 250 palavras.",
+    "categories": [
+      {
+        "name": "Educação",
+        "prompts": [
+          "Algumas pessoas acreditam que o ensino universitário deveria ser gratuito para todos, enquanto outros pensam que os estudantes deveriam pagar pelo seu ensino superior. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que os desportos competitivos nas escolas são altamente benéficos, enquanto outros consideram que causam stress desnecessário às crianças. Discuta os dois pontos de vista e dê sua opinião.",
+          "Muitas pessoas pensam que os estudantes deveriam estudar uma ampla gama de assuntos, enquanto outros acreditam que deveriam se concentrar estritamente em assuntos relacionados a uma carreira específica. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que os professores deveriam ser responsáveis ​​por ensinar os alunos a distinguir o certo do errado, enquanto outras acreditam que os pais deveriam ter essa responsabilidade. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns educadores argumentam que os trabalhos de casa são essenciais para o sucesso académico, enquanto outros acreditam que são um fardo desnecessário para as crianças. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns pensam que os estudantes universitários deveriam poder estudar o que quisessem, enquanto outros argumentam que só deveriam ser autorizados a estudar disciplinas que sejam úteis no futuro, como ciência e tecnologia. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que as escolas unissexo proporcionam um melhor ambiente de aprendizagem, enquanto outras argumentam que as escolas mistas preparam melhor as crianças para a vida real. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que a aprendizagem online acabará por substituir a educação presencial tradicional, enquanto outros argumentam que o ensino presencial será sempre necessário. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas argumentam que os exames são a melhor forma de avaliar a capacidade de um aluno, enquanto outras acreditam que a avaliação contínua ao longo do ano é mais eficaz. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns pensam que os uniformes escolares melhoram a disciplina e a igualdade, enquanto outros acham que restringem a individualidade dos alunos. Discuta os dois pontos de vista e dê sua opinião."
+        ]
+      },
+      {
+        "name": "Meio Ambiente e Animais",
+        "prompts": [
+          "Algumas pessoas acreditam que os problemas ambientais são demasiado grandes para serem resolvidos pelos indivíduos, enquanto outras pensam que os indivíduos podem fazer uma diferença significativa. Discuta os dois pontos de vista e dê sua opinião.",
+          "Muitas pessoas pensam que o governo deveria gastar dinheiro na busca de vida em outros planetas, enquanto outros acreditam que esse dinheiro deveria ser gasto na resolução de problemas na Terra. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas acreditam que manter animais em jardins zoológicos é cruel e desnecessário, enquanto outras argumentam que os jardins zoológicos são cruciais para a conservação e a educação. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que leis rigorosas são a única forma de reduzir a poluição industrial, enquanto outros acreditam que educar as empresas sobre práticas verdes é mais eficaz. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que a melhor forma de resolver o crescente problema do trânsito é construir mais estradas, enquanto outras argumentam que o governo deveria investir fortemente nos transportes públicos. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que as fontes de energia renováveis ​​são o único caminho a seguir para o nosso planeta, enquanto outros argumentam que os combustíveis fósseis ainda são necessários para a estabilidade económica. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que plantar árvores em áreas urbanas é a melhor forma de melhorar o ambiente das cidades, enquanto outras acreditam que é mais importante fornecer mais instalações públicas, como hospitais. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que os testes em animais são necessários para avanços médicos, enquanto outros acreditam que são moralmente errados e deveriam ser totalmente proibidos. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas acreditam que os humanos têm o direito de usar animais para alimentação e vestuário, enquanto outras argumentam que os animais têm direitos e não devem ser explorados. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns pensam que a superpopulação é a principal causa da degradação ambiental, enquanto outros culpam a industrialização e o consumismo. Discuta os dois pontos de vista e dê sua opinião."
+        ]
+      },
+      {
+        "name": "Tecnologia e Internet",
+        "prompts": [
+          "Algumas pessoas acreditam que a inteligência artificial criará uma sociedade utópica sem necessidade de trabalho humano, enquanto outras temem que isso conduza ao desemprego massivo e à desigualdade. Discuta os dois pontos de vista e dê sua opinião.",
+          "Muitas pessoas pensam que as redes sociais aproximaram as pessoas, enquanto outras argumentam que isolou os indivíduos no mundo real. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que as crianças não devem poder utilizar smartphones até serem adolescentes, enquanto outros acreditam que a exposição precoce é necessária para a literacia digital. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que os livros impressos em breve se tornarão uma coisa do passado, enquanto outras acreditam que eles sempre serão preferidos aos e-books. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que a Internet tornou mais fácil a obtenção de informações fiáveis, enquanto outros argumentam que criou uma era de notícias falsas e desinformação. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que a automatização no local de trabalho é benéfica para o crescimento económico, enquanto outras se preocupam com a perda de empregos tradicionais. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que os avanços tecnológicos tornaram a vida moderna demasiado complexa, enquanto outros acreditam que tornaram a vida significativamente mais fácil e confortável. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas acreditam que a vigilância governamental através da tecnologia é necessária para a segurança nacional, enquanto outras a veem como uma violação da privacidade pessoal. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns pensam que os videojogos são uma forma inofensiva de entretenimento, enquanto outros argumentam que promovem a violência e o sedentarismo entre os jovens. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que o turismo espacial será uma parte normal do futuro, enquanto outros consideram-no um desperdício injustificável de recursos. Discuta os dois pontos de vista e dê sua opinião."
+        ]
+      },
+      {
+        "name": "Sociedade e Vida Moderna",
+        "prompts": [
+          "Algumas pessoas preferem viver nas grandes cidades pelas oportunidades disponíveis, enquanto outras preferem a paz e tranquilidade de viver no campo. Discuta os dois pontos de vista e dê sua opinião.",
+          "Muitos pensam que é melhor que os jovens vivam com os pais até se casarem, enquanto outros acreditam que devem mudar-se assim que completarem dezoito anos. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que o fosso entre ricos e pobres está a aumentar e que o governo deveria intervir, enquanto outros acreditam que este fosso é um resultado natural de um mercado livre. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas acreditam que os idosos devem ser cuidados pelas suas famílias, enquanto outros pensam que o governo deveria fornecer lares de idosos. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns pensam que os papéis tradicionais dos homens e das mulheres são vitais para uma sociedade estável, enquanto outros argumentam que a igualdade de género em todos os papéis é essencial. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que a casa própria é o símbolo máximo de sucesso, enquanto outros argumentam que o aluguel proporciona mais liberdade e menos estresse. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que a sociedade moderna está a tornar-se demasiado orientada para o consumo, enquanto outras acreditam que o consumismo é necessário para manter as economias prósperas. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que os eventos desportivos internacionais promovem a paz entre as nações, enquanto outros acreditam que apenas criam tensões nacionalistas. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas acreditam que a história é uma das disciplinas escolares mais importantes, enquanto outras pensam que, no mundo de hoje, disciplinas como as TI são muito mais relevantes. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns pensam que ter muito dinheiro é a chave para a felicidade, enquanto outros argumentam que a felicidade depende inteiramente de outros fatores, como saúde e relacionamentos. Discuta os dois pontos de vista e dê sua opinião."
+        ]
+      },
+      {
+        "name": "Trabalho e Carreiras",
+        "prompts": [
+          "Algumas pessoas acreditam que a satisfação no trabalho é mais importante do que um salário alto, enquanto outras pensam que ganhar muito dinheiro é o fator mais importante num emprego. Discuta os dois pontos de vista e dê sua opinião.",
+          "Muitos argumentam que trabalhar em casa aumenta a produtividade e o equilíbrio entre vida pessoal e profissional, enquanto outros acreditam que o ambiente de escritório é necessário para a colaboração. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que é melhor ter uma carreira para toda a vida, enquanto outras acreditam que mudar de carreira várias vezes é mais benéfico. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que os funcionários mais velhos são mais valiosos para uma empresa devido à sua experiência, enquanto outros preferem os funcionários mais jovens pelas suas novas ideias e energia. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que a idade da reforma deveria ser alargada devido ao aumento da esperança de vida, enquanto outros defendem que as pessoas deveriam reformar-se mais cedo para desfrutarem da sua juventude e abrirem empregos. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que os estágios não remunerados são exploradores, enquanto outros argumentam que constituem trampolins cruciais para os recém-licenciados. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que, por lei, as mulheres deveriam receber quotas iguais em cargos de gestão superior, enquanto outros acreditam que as promoções deveriam basear-se puramente no mérito, independentemente do género. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que começar seu próprio negócio é a melhor maneira de obter segurança financeira, enquanto outros acham que trabalhar para uma grande empresa é mais seguro. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que uma semana de trabalho de quatro dias seria melhor para a sociedade, enquanto outras argumentam que prejudicaria a economia. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que os trabalhos manuais deveriam ser remunerados da mesma forma que os empregos profissionais, como médicos ou advogados, enquanto outros acreditam que as actuais escalas salariais são justificadas. Discuta os dois pontos de vista e dê sua opinião."
+        ]
+      },
+      {
+        "name": "Saúde e Dieta",
+        "prompts": [
+          "Algumas pessoas acreditam que o governo deveria introduzir um “imposto sobre gorduras” sobre alimentos não saudáveis ​​para combater a obesidade, enquanto outros argumentam que as pessoas deveriam ser livres para escolher o que comem. Discuta os dois pontos de vista e dê sua opinião.",
+          "Muitos pensam que todos os cuidados de saúde deveriam ser totalmente gratuitos e financiados pelo governo, enquanto outros acreditam que os cuidados de saúde privados prestam serviços de melhor qualidade. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que os medicamentos alternativos (como a acupuntura ou os remédios fitoterápicos) são altamente eficazes, enquanto outros acreditam que são perigosos e que apenas a medicina moderna deve ser confiável. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas acreditam que o desporto e a educação física deveriam ser obrigatórios para os adultos no local de trabalho, enquanto outros pensam que o exercício é uma escolha pessoal. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns pensam que as dietas veganas são a opção mais saudável para os humanos, enquanto outros argumentam que comer carne é necessário para uma dieta equilibrada. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que cuidados de saúde preventivos (como programas de educação e fitness) são melhores do que tratar doenças depois de estas ocorrerem, enquanto outros pensam que a investigação médica para a cura deve ser a prioridade. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que a publicidade em fast-food deveria ser totalmente proibida, enquanto outras argumentam que isso restringe a liberdade de expressão das empresas. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que a saúde mental é tão importante como a saúde física e deveria receber financiamento igual, enquanto outros acreditam que as doenças físicas requerem atenção financeira mais urgente. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que fumar deveria ser completamente proibido em todo o mundo, enquanto outros argumentam que os adultos têm o direito de fazer as suas próprias escolhas de estilo de vida. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que os alimentos geneticamente modificados (GM) são a chave para acabar com a fome no mundo, enquanto outros acreditam que representam graves riscos para a saúde humana. Discuta os dois pontos de vista e dê sua opinião."
+        ]
+      },
+      {
+        "name": "Governo e Economia",
+        "prompts": [
+          "Algumas pessoas pensam que o progresso económico é o objectivo mais importante de um governo, enquanto outras pensam que outros tipos de progresso (como social ou ambiental) são igualmente importantes. Discuta os dois pontos de vista e dê sua opinião.",
+          "Muitos argumentam que os países ricos deveriam dar ajuda financeira às nações mais pobres, enquanto outros acreditam que esta ajuda muitas vezes causa mais danos do que benefícios devido à corrupção. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que o governo deveria financiar artistas, músicos e escritores, enquanto outros argumentam que o dinheiro dos contribuintes só deveria ser gasto em serviços públicos como hospitais e estradas. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que o transporte público deveria ser gratuito, enquanto outras acreditam que os passageiros deveriam pagar para manter a qualidade do serviço. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que o comércio livre global é benéfico para os países em desenvolvimento, enquanto outros acreditam que apenas explora os seus recursos e mão-de-obra barata. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que os governos deveriam impor um limite ao salário máximo que uma pessoa pode ganhar, enquanto outros argumentam que as pessoas deveriam poder ganhar tanto quanto forem capazes. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que uma moeda única global melhoraria a economia mundial, enquanto outras acreditam que as moedas nacionais são essenciais para a independência económica de um país. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que pagar impostos é o dever mais importante do cidadão, enquanto outros acreditam que as pessoas deveriam tentar manter o máximo de sua renda legalmente possível. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que os governos deveriam proporcionar um rendimento básico universal a todos os cidadãos, enquanto outros argumentam que isso tornaria as pessoas preguiçosas e arruinaria a economia. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que a exploração espacial é um desperdício de dinheiro do governo, enquanto outras argumentam que é um investimento essencial para o futuro da humanidade. Discuta os dois pontos de vista e dê sua opinião."
+        ]
+      },
+      {
+        "name": "Crime e Castigo",
+        "prompts": [
+          "Algumas pessoas acreditam que o principal objectivo das prisões é punir os criminosos, enquanto outras argumentam que as prisões deveriam concentrar-se inteiramente na reabilitação. Discuta os dois pontos de vista e dê sua opinião.",
+          "Muitos pensam que a pena de morte é uma punição justificável para crimes graves, enquanto outros argumentam que é uma violação dos direitos humanos e deveria ser abolida. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que penas de prisão mais longas dissuadem efetivamente o crime, enquanto outros acreditam que não reduzem as taxas de criminalidade e apenas sobrelotam as prisões. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que os delinquentes juvenis (criminosos juvenis) deveriam receber as mesmas punições que os adultos, enquanto outros argumentam que deveriam ser tratados com mais indulgência. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que a instalação de câmeras de segurança em locais públicos reduz a criminalidade, enquanto outras acreditam que é uma grave invasão de privacidade. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que a polícia deve sempre portar armas de fogo para proteger o público, enquanto outros acreditam que a polícia armada aumenta a violência. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que o cibercrime é a maior ameaça à sociedade moderna, enquanto outros argumentam que o crime violento tradicional ainda é muito mais perigoso. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que os ex-prisioneiros deveriam ser obrigados a informar os seus empregadores sobre o seu passado criminoso, enquanto outros acreditam que têm direito à privacidade uma vez cumprida a pena. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que o serviço comunitário é uma punição melhor para crimes menores do que mandar pessoas para a prisão, enquanto outros acreditam que o serviço comunitário não é suficientemente rigoroso. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que a pobreza é a principal causa de todos os crimes, enquanto outros argumentam que o crime é resultado da natureza humana e da ganância. Discuta os dois pontos de vista e dê sua opinião."
+        ]
+      },
+      {
+        "name": "Mídia e Publicidade",
+        "prompts": [
+          "Algumas pessoas acreditam que a violência no cinema e na televisão contribui para a violência na sociedade, enquanto outras argumentam que é apenas um entretenimento inofensivo. Discuta os dois pontos de vista e dê sua opinião.",
+          "Muitos pensam que os meios de comunicação social deveriam ser estritamente regulamentados pelo governo, enquanto outros acreditam que uma imprensa completamente livre é essencial para a democracia. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que a publicidade dirigida às crianças deveria ser ilegal, enquanto outros acreditam que é responsabilidade dos pais gerir o que os seus filhos veem. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que as notícias se concentram excessivamente em acontecimentos negativos, o que causa ansiedade pública, enquanto outros argumentam que é dever da comunicação social relatar a dura verdade. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que as celebridades são péssimos modelos para os jovens, enquanto outras apontam que muitas celebridades usam sua plataforma para trabalhos de caridade positivos. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que os jornais impressos estão mortos e em breve desaparecerão completamente, enquanto outros acreditam que sempre haverá um mercado para o jornalismo físico. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que a publicidade online direcionada é altamente conveniente para os consumidores, enquanto outros a consideram manipuladora e invasiva. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que os reality shows têm um impacto negativo nos valores culturais, enquanto outros acreditam que é simplesmente um escapismo divertido e estúpido. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que a vida privada de figuras públicas (como políticos e actores) deveria estar fora dos limites da imprensa, enquanto outros acreditam que o público tem o direito de saber. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que a publicidade moderna obriga as pessoas a comprar coisas de que não precisam, enquanto outros argumentam que a publicidade simplesmente informa os consumidores sobre as suas escolhas. Discuta os dois pontos de vista e dê sua opinião."
+        ]
+      },
+      {
+        "name": "Cultura, viagens e artes",
+        "prompts": [
+          "Algumas pessoas acreditam que o turismo internacional de massas está a destruir as culturas e os ambientes locais, enquanto outros argumentam que é vital para as economias locais. Discuta os dois pontos de vista e dê sua opinião.",
+          "Muitos pensam que os imigrantes deveriam adoptar a cultura e os costumes do seu novo país, enquanto outros acreditam que deveriam manter e praticar a sua cultura original. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que a aprendizagem de uma língua estrangeira já não é necessária devido ao software de tradução, enquanto outros acreditam que a aprendizagem de línguas proporciona uma compreensão cultural crucial. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que os museus e galerias de arte deveriam ser totalmente gratuitos para o público, enquanto outros argumentam que é necessário cobrar uma taxa de entrada para manter as exposições. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que os festivais tradicionais estão a perder o seu significado e a tornar-se puramente comercializados, enquanto outros acreditam que a comercialização ajuda a manter vivas estas tradições. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que uma única língua global (como o português) une o mundo em paz, enquanto outros acreditam que destrói identidades culturais únicas. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que viajar em grupo com um guia turístico é a melhor maneira de conhecer um novo país, enquanto outros preferem viajar sozinhos e de forma independente. Discuta os dois pontos de vista e dê sua opinião.",
+          "Algumas pessoas pensam que os governos deveriam gastar dinheiro na preservação de edifícios históricos antigos, enquanto outros acreditam que é mais prático derrubá-los e construir habitações modernas. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns argumentam que a comida local e as tradições culinárias estão a ser destruídas pelas cadeias internacionais de fast-food, enquanto outros acolhem favoravelmente a conveniência e a variedade. Discuta os dois pontos de vista e dê sua opinião.",
+          "Alguns acreditam que estudar a arte e a literatura do passado é irrelevante para os estudantes modernos, enquanto outros argumentam que é essencial para uma educação completa. Discuta os dois pontos de vista e dê sua opinião."
+        ]
+      }
+    ]
+  },
+  {
+    "type": "opinion",
+    "label": "Ensaio de opinião",
+    "description": "Dê sua opinião e argumente a favor ou contra uma afirmação.",
+    "instruction": "Até que ponto você concorda ou discorda? / Qual é a sua opinião? Escreva pelo menos 250 palavras.",
+    "categories": [
+      {
+        "name": "Educação",
+        "prompts": [
+          "Algumas pessoas acreditam que o ensino universitário deveria ser gratuito para todos, independentemente da sua origem. Até que ponto você concorda ou discorda?",
+          "No futuro, os alunos poderão ter a opção de estudar em casa, utilizando a tecnologia, ou em escolas tradicionais. Argumenta-se que as escolas tradicionais irão desaparecer. Você concorda ou discorda?",
+          "Muitas pessoas pensam que o dever de casa é essencial para que as crianças aprendam adequadamente, enquanto outros acreditam que é desnecessário e causa estresse. Qual é a sua opinião?",
+          "As universidades devem aceitar números iguais de estudantes do sexo masculino e feminino em todas as disciplinas. Até que ponto você concorda ou discorda?",
+          "Algumas pessoas pensam que os pais deveriam ensinar os filhos a serem bons membros da sociedade. Outros, porém, acreditam que a escola é o lugar para aprender isso. Qual é a sua opinião?",
+          "Disciplinas como arte, música e teatro são frequentemente consideradas menos importantes do que disciplinas como matemática e ciências. Portanto, eles deveriam ser retirados do currículo escolar. Você concorda ou discorda?",
+          "Todos os alunos devem ser obrigados a aprender uma língua estrangeira desde a escola primária. Até que ponto você concorda ou discorda?",
+          "Os anos sabáticos, em que os estudantes tiram uma folga antes de irem para a universidade, estão se tornando cada vez mais populares. Tirar um ano sabático é sempre uma experiência benéfica para os jovens. Você concorda ou discorda?",
+          "O trabalho em grupo é a maneira mais eficaz de os alunos aprenderem. Até que ponto você concorda ou discorda?",
+          "Alguns educadores argumentam que os exames não são uma avaliação justa da verdadeira capacidade do aluno e devem ser substituídos por uma avaliação contínua. Qual é a sua opinião?"
+        ]
+      },
+      {
+        "name": "Tecnologia e Inovação",
+        "prompts": [
+          "O desenvolvimento da inteligência artificial acabará por levar à perda de milhões de empregos. Portanto, os governos devem restringir o seu desenvolvimento. Até que ponto você concorda ou discorda?",
+          "As redes sociais têm um impacto negativo na sociedade e nos indivíduos, aumentando o isolamento e difundindo desinformação. Você concorda ou discorda?",
+          "Algumas pessoas pensam que a Internet aproximou as pessoas, enquanto outras pensam que as pessoas e as comunidades estão a ficar mais isoladas. Qual é a sua opinião?",
+          "A utilização de telemóveis em locais públicos é tão incómoda como fumar e deveria ser igualmente proibida. Até que ponto você concorda ou discorda?",
+          "Os avanços na tecnologia tornaram nossas vidas mais complexas, em vez de mais simples. Você concorda ou discorda?",
+          "Os videogames são frequentemente responsabilizados pelo comportamento violento dos jovens. Portanto, a venda de videogames violentos deveria ser proibida. Qual é a sua opinião?",
+          "No mundo moderno, é possível fazer compras, trabalhar e comunicar com as pessoas através da Internet e viver sem qualquer contacto cara a cara com outras pessoas. Este é um desenvolvimento positivo ou negativo?",
+          "A leitura de livros físicos está se tornando uma coisa do passado à medida que mais pessoas recorrem a e-books e artigos digitais. Esta é uma tendência negativa para a alfabetização. Até que ponto você concorda ou discorda?",
+          "A exploração espacial requer grandes quantidades de financiamento governamental. Este dinheiro seria melhor gasto na resolução de problemas aqui na Terra, como a pobreza e as doenças. Você concorda ou discorda?",
+          "A automação e os robôs estão assumindo os empregos tradicionais de fabricação. Este é um desenvolvimento positivo para a sociedade em geral. Até que ponto você concorda ou discorda?"
+        ]
+      },
+      {
+        "name": "Trabalho e Emprego",
+        "prompts": [
+          "A satisfação no trabalho é muito mais importante do que um salário alto. Até que ponto você concorda ou discorda?",
+          "Muitas pessoas argumentam que, para melhorar a qualidade educacional, os alunos do ensino médio deveriam ser incentivados a avaliar e criticar seus professores. Você concorda ou discorda?",
+          "A idade da reforma deveria ser aumentada em todos os países porque as pessoas vivem vidas mais longas e saudáveis. Qual é a sua opinião?",
+          "Qualquer um pode ser um bom líder se for bem treinado. Até que ponto você concorda ou discorda?",
+          "É melhor que as pessoas estejam desempregadas do que empregadas em empregos de que não desfrutam. Você concorda ou discorda?",
+          "As empresas devem exigir que todos os seus funcionários usem uniforme, independentemente da sua função. Até que ponto você concorda ou discorda?",
+          "O trabalho autônomo é sempre preferível a trabalhar para uma empresa ou organização. Qual é a sua opinião?",
+          "Os jovens de hoje não possuem as competências básicas exigidas para o local de trabalho moderno. Você concorda ou discorda?",
+          "Para reduzir o desemprego, o governo deveria reduzir a semana de trabalho tradicional para 30 horas, permitindo que mais pessoas partilhassem o trabalho disponível. Até que ponto você concorda ou discorda?",
+          "A consideração mais importante ao escolher qualquer carreira ou emprego é ter uma renda elevada. Você concorda ou discorda?"
+        ]
+      },
+      {
+        "name": "Meio Ambiente e Conservação",
+        "prompts": [
+          "O aquecimento global é causado principalmente pela actividade humana e, portanto, os indivíduos devem mudar drasticamente os seus estilos de vida para o impedir. Até que ponto você concorda ou discorda?",
+          "A responsabilidade pela protecção do ambiente cabe exclusivamente às grandes empresas e não aos cidadãos individuais. Qual é a sua opinião?",
+          "Algumas pessoas pensam que a melhor forma de resolver os problemas ambientais globais é aumentar o custo do combustível. Você concorda ou discorda?",
+          "Os testes em animais para fins médicos e cosméticos são cruéis e devem ser completamente proibidos. Até que ponto você concorda ou discorda?",
+          "É inevitável que, à medida que os países se desenvolvam economicamente, ocorra degradação ambiental. Qual é a sua opinião?",
+          "Os zoológicos são essencialmente prisões para animais e não têm nenhum propósito educacional ou de conservação útil. Você concorda ou discorda?",
+          "Sacolas plásticas deveriam ser ilegais em todos os supermercados e lojas de varejo. Até que ponto você concorda ou discorda?",
+          "A extinção de algumas espécies vegetais e animais é um processo natural e não devemos intervir para tentar salvá-las. Você concorda ou discorda?",
+          "As pessoas só devem consumir alimentos produzidos localmente para reduzir o impacto ambiental dos transportes. Qual é a sua opinião?",
+          "Investir em fontes de energia renováveis, como a energia eólica e solar, é um desperdício de dinheiro porque não são confiáveis. Até que ponto você concorda ou discorda?"
+        ]
+      },
+      {
+        "name": "Sociedade e Vida Moderna",
+        "prompts": [
+          "Em muitos países, o fosso entre ricos e pobres está a aumentar. Este é o problema mais significativo que a sociedade moderna enfrenta. Até que ponto você concorda ou discorda?",
+          "Os jovens são altamente influenciados por celebridades. Esta é uma tendência perigosa. Você concorda ou discorda?",
+          "As festas e celebrações tradicionais estão a perder o sentido e a tornar-se apenas mais uma desculpa para o consumismo. Qual é a sua opinião?",
+          "Viver em uma cidade grande e movimentada é muito melhor para o desenvolvimento de uma pessoa do que viver em uma pacata vila rural. Até que ponto você concorda ou discorda?",
+          "No mundo de hoje, é mais importante ser adaptável e estar disposto a mudar do que ser um especialista numa área específica. Você concorda ou discorda?",
+          "Algumas pessoas acreditam que a história não tem nada a nos ensinar sobre o presente ou o futuro. Qual é a sua opinião?",
+          "Os idosos são cada vez mais marginalizados na sociedade moderna, que se concentra demasiado nos jovens. Até que ponto você concorda ou discorda?",
+          "Possuir uma casa é essencial para que uma pessoa se sinta estável e bem-sucedida na vida. Você concorda ou discorda?",
+          "As pessoas hoje são demasiado dependentes dos outros e não possuem as competências práticas para serem autossuficientes. Qual é a sua opinião?",
+          "Eventos desportivos internacionais como as Olimpíadas unem as nações e promovem a paz global. Até que ponto você concorda ou discorda?"
+        ]
+      },
+      {
+        "name": "Saúde e Dieta",
+        "prompts": [
+          "O governo deveria tributar alimentos não saudáveis, como fast food e bebidas açucaradas, para incentivar as pessoas a comerem de forma mais saudável. Até que ponto você concorda ou discorda?",
+          "Os cuidados de saúde devem ser totalmente gratuitos para todos os cidadãos, totalmente financiados pelo governo através de impostos. Você concorda ou discorda?",
+          "Os medicamentos alternativos tradicionais são tão eficazes quanto os medicamentos químicos modernos. Qual é a sua opinião?",
+          "A taxa crescente de obesidade é inteiramente culpa da indústria de fast-food. Até que ponto você concorda ou discorda?",
+          "As aulas de educação física deveriam ser obrigatórias todos os dias para todas as crianças em idade escolar. Você concorda ou discorda?",
+          "O estresse é o problema de saúde mais significativo que os adultos trabalhadores enfrentam atualmente. Qual é a sua opinião?",
+          "As pessoas que optam por participar de esportes radicais perigosos devem pagar pelo seu próprio tratamento médico caso se machuquem. Até que ponto você concorda ou discorda?",
+          "A medicina preventiva, como a educação para a saúde e a vacinação, é mais importante do que encontrar curas para doenças. Você concorda ou discorda?",
+          "A dieta moderna, que depende fortemente de alimentos processados, é a principal causa do declínio da saúde global. Qual é a sua opinião?",
+          "É impossível manter um estilo de vida saudável enquanto se trabalha em um cargo corporativo exigente e de tempo integral. Até que ponto você concorda ou discorda?"
+        ]
+      },
+      {
+        "name": "Governo e gastos públicos",
+        "prompts": [
+          "Os governos deveriam gastar mais dinheiro em serviços públicos, como educação e saúde, e não nas forças armadas. Até que ponto você concorda ou discorda?",
+          "O transporte público deve ser gratuito para reduzir o congestionamento e a poluição nas cidades. Você concorda ou discorda?",
+          "É responsabilidade do governo garantir que todos os cidadãos tenham um lugar para viver. Qual é a sua opinião?",
+          "Os governos devem fornecer apoio financeiro a artistas, músicos e escritores. Até que ponto você concorda ou discorda?",
+          "A votação nas eleições nacionais deveria ser obrigatória para todos os cidadãos elegíveis. Você concorda ou discorda?",
+          "O governo não tem o direito de interferir naquilo que os indivíduos escolhem comer, beber ou fumar. Qual é a sua opinião?",
+          "Os países ricos deveriam perdoar as dívidas internacionais das nações mais pobres para ajudá-las a desenvolver-se. Até que ponto você concorda ou discorda?",
+          "Os impostos sobre os indivíduos ricos devem ser significativamente mais elevados para distribuir a riqueza de forma mais equitativa pela sociedade. Você concorda ou discorda?",
+          "O financiamento das artes é um luxo e os governos só deveriam financiar serviços essenciais, como infra-estruturas e hospitais. Qual é a sua opinião?",
+          "Os governos municipais deveriam investir pesadamente na criação de mais parques públicos e espaços verdes, mesmo que isso signifique aumentar os impostos locais. Até que ponto você concorda ou discorda?"
+        ]
+      },
+      {
+        "name": "Crime e Lei",
+        "prompts": [
+          "A pena de morte é o único elemento dissuasor eficaz para os crimes mais graves, como o homicídio. Até que ponto você concorda ou discorda?",
+          "As prisões devem concentrar-se principalmente na reabilitação dos criminosos, em vez de simplesmente puni-los. Você concorda ou discorda?",
+          "Os infratores juvenis que cometem crimes graves devem ser julgados e punidos como adultos. Qual é a sua opinião?",
+          "A utilização de câmaras de vigilância em espaços públicos é uma invasão de privacidade e deve ser fortemente restringida. Até que ponto você concorda ou discorda?",
+          "Leis rigorosas de controle de armas são necessárias para reduzir a taxa de crimes violentos na sociedade. Você concorda ou discorda?",
+          "O serviço comunitário é uma punição muito melhor para crimes menores e não violentos do que uma pena de prisão. Qual é a sua opinião?",
+          "O cibercrime é atualmente uma ameaça maior para a sociedade do que o crime físico tradicional. Até que ponto você concorda ou discorda?",
+          "As pessoas que infringem a lei deveriam ser forçadas a encontrar-se com as suas vítimas para compreender o impacto das suas acções. Você concorda ou discorda?",
+          "Os meios de comunicação social são responsáveis ​​pelo medo que o público tem do crime, que é muitas vezes desproporcional à taxa real de criminalidade. Qual é a sua opinião?",
+          "É impossível erradicar completamente o crime da sociedade; é uma parte inevitável da natureza humana. Até que ponto você concorda ou discorda?"
+        ]
+      },
+      {
+        "name": "Mídia e Publicidade",
+        "prompts": [
+          "A publicidade dirigida a crianças é antiética e deve ser estritamente proibida. Até que ponto você concorda ou discorda?",
+          "A mídia se concentra demais em histórias negativas, o que leva à depressão e à ansiedade no público em geral. Você concorda ou discorda?",
+          "As grandes empresas multinacionais têm demasiada influência sobre os meios de comunicação e a informação globais. Qual é a sua opinião?",
+          "As celebridades têm direito à privacidade e os paparazzi não devem poder segui-las em espaços públicos. Até que ponto você concorda ou discorda?",
+          "Na era moderna, os jornais impressos estão completamente obsoletos e em breve desaparecerão completamente. Você concorda ou discorda?",
+          "A publicidade incentiva as pessoas a comprar coisas que não precisam e não podem pagar. Qual é a sua opinião?",
+          "O governo deve controlar o que é transmitido na televisão e na Internet para proteger a sociedade de conteúdos nocivos. Até que ponto você concorda ou discorda?",
+          "Liberdade de expressão significa que as pessoas devem poder dizer o que quiserem, mesmo que isso ofenda outras pessoas. Você concorda ou discorda?",
+          "Os reality shows televisivos não têm valor educativo e servem apenas para degradar os padrões culturais. Qual é a sua opinião?",
+          "A publicidade online direcionada, que monitoriza o comportamento do utilizador, é uma violação grave da privacidade pessoal. Até que ponto você concorda ou discorda?"
+        ]
+      },
+      {
+        "name": "Turismo e Globalização",
+        "prompts": [
+          "O turismo internacional causa mais danos do que benefícios às comunidades e ambientes locais. Até que ponto você concorda ou discorda?",
+          "A crescente globalização dos negócios e da cultura está a destruir as tradições locais e as identidades nacionais. Você concorda ou discorda?",
+          "As pessoas devem ser incentivadas a viajar internamente dentro do seu próprio país, em vez de viajar internacionalmente. Qual é a sua opinião?",
+          "o português está se tornando a língua global universal. Este é um desenvolvimento positivo para as relações internacionais e o comércio. Até que ponto você concorda ou discorda?",
+          "Os países devem dar prioridade ao emprego dos seus próprios cidadãos antes de permitir a entrada de trabalhadores estrangeiros no mercado de trabalho. Você concorda ou discorda?",
+          "As viagens aéreas baratas revolucionaram a forma como as pessoas vivem e trabalham, mas os custos ambientais superam os benefícios. Qual é a sua opinião?",
+          "As empresas multinacionais exploram frequentemente os trabalhadores dos países em desenvolvimento para maximizar os seus lucros. Até que ponto você concorda ou discorda?",
+          "Os turistas deveriam ser obrigados a aprender frases básicas na língua local antes de visitar um país estrangeiro. Você concorda ou discorda?",
+          "A globalização beneficiou principalmente as nações ricas, deixando para trás as nações em desenvolvimento. Qual é a sua opinião?",
+          "Preservar edifícios históricos é um gasto desnecessário para as cidades; eles deveriam ser demolidos para dar lugar a infraestruturas modernas. Até que ponto você concorda ou discorda?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "advantage-disadvantage",
+    "label": "Vantagens e desvantagens",
+    "description": "Discuta as vantagens e as desvantagens de um tópico.",
+    "instruction": "Discuta as vantagens e as desvantagens e dê sua opinião quando solicitado. Escreva pelo menos 250 palavras.",
+    "categories": [
+      {
+        "name": "Educação e Aprendizagem",
+        "prompts": [
+          "Muitas universidades agora oferecem programas de graduação completos online. Quais são as vantagens e desvantagens de estudar online em vez de assistir às aulas pessoalmente?",
+          "Alguns especialistas acreditam que é melhor que as crianças comecem a aprender uma língua estrangeira na escola primária do que na escola secundária. As vantagens disso superam as desvantagens?",
+          "Em muitos países, os estudantes tiram um “ano sabático” para viajar ou trabalhar antes de ingressar na universidade. Discuta as vantagens e as desvantagens de tirar um ano sabático e dê a sua opinião.",
+          "Algumas escolas exigem que todos os alunos usem uniforme. Quais são as vantagens e desvantagens dos uniformes escolares?",
+          "Cada vez mais estudantes estão optando por estudar no exterior para cursar o ensino superior. As vantagens de estudar num país estrangeiro superam as desvantagens?",
+          "Em alguns sistemas educativos, as crianças são agrupadas em turmas com base na sua capacidade académica e não na sua idade. Discuta as vantagens e as desvantagens desta prática e dê a sua opinião.",
+          "A memorização mecânica é um método de ensino tradicional ainda usado em muitas partes do mundo. Quais são as vantagens e desvantagens de aprender por meio da memorização?",
+          "Muitas pessoas argumentam que o ensino universitário deveria ser totalmente gratuito para todos. As vantagens do ensino superior gratuito superam as desvantagens?",
+          "Alguns pais optam por educar os filhos em casa, em vez de mandá-los para uma escola tradicional. Discuta as vantagens e as desvantagens do ensino doméstico e dê sua opinião.",
+          "A avaliação contínua (cursos e projetos) está substituindo os exames formais em muitas instituições de ensino. Quais são as vantagens e desvantagens desta mudança?"
+        ]
+      },
+      {
+        "name": "Tecnologia e Internet",
+        "prompts": [
+          "O uso da inteligência artificial no dia a dia está se tornando cada vez mais comum. As vantagens da IA ​​superam as desvantagens?",
+          "As mídias sociais revolucionaram a forma como as pessoas se comunicam e compartilham informações. Discuta as vantagens e as desvantagens das redes sociais e dê a sua opinião.",
+          "Muitas pessoas utilizam agora os seus smartphones para pagar bens e serviços, levando a um declínio na utilização de dinheiro. Quais são as vantagens e desvantagens de uma sociedade sem dinheiro?",
+          "Os avanços na tecnologia permitiram que muitas pessoas trabalhassem em casa em vez de irem para o escritório. As vantagens do trabalho remoto superam as desvantagens?",
+          "Os e-books e os dispositivos de leitura digital estão substituindo rapidamente os livros impressos tradicionais. Discuta as vantagens e as desvantagens desta tendência e dê a sua opinião.",
+          "O desenvolvimento de carros autônomos está progredindo rapidamente. Quais são as vantagens e desvantagens dos veículos autônomos na via pública?",
+          "A automação e os robôs estão substituindo cada vez mais os trabalhadores humanos na manufatura e em outras indústrias. As vantagens da automação superam as desvantagens?",
+          "As crianças de hoje passam uma quantidade significativa de tempo jogando videogame. Discuta as vantagens e as desvantagens disso e dê sua opinião.",
+          "A computação em nuvem permite que as pessoas armazenem todos os seus dados pessoais e profissionais online, em vez de em discos rígidos físicos. Quais são as vantagens e desvantagens de armazenar dados na nuvem?",
+          "A exploração espacial custa aos contribuintes uma quantia exorbitante de dinheiro todos os anos. As vantagens de gastar dinheiro na exploração espacial superam as desvantagens?"
+        ]
+      },
+      {
+        "name": "Trabalho e Carreiras",
+        "prompts": [
+          "Algumas empresas implementaram uma semana de trabalho de quatro dias sem reduzir os salários dos seus funcionários. Quais são as vantagens e desvantagens de uma semana de trabalho mais curta?",
+          "No passado, muitas vezes as pessoas permaneciam no mesmo emprego durante toda a vida profissional. Hoje, é mais comum mudar de carreira várias vezes. Discuta as vantagens e as desvantagens de mudar frequentemente de emprego e dê a sua opinião.",
+          "Muitos governos estão a aumentar a idade oficial de reforma para 68 ou 70 anos. Será que as vantagens de trabalhar até uma idade mais avançada superam as desvantagens?",
+          "Um número crescente de pessoas está optando por trabalhar por conta própria ou iniciar seu próprio negócio. Quais são as vantagens e desvantagens do trabalho autônomo em comparação com o trabalho para um empregador?",
+          "As empresas multinacionais transferem frequentemente os seus funcionários para trabalhar em filiais no exterior durante vários anos. Discuta as vantagens e as desvantagens de trabalhar no exterior e dê a sua opinião.",
+          "Algumas organizações acreditam que pagar aos funcionários com base no seu desempenho individual é a melhor forma de motivá-los. As vantagens da remuneração baseada no desempenho superam as desvantagens?",
+          "Os estágios não remunerados estão se tornando uma exigência comum para os jovens que ingressam no mercado de trabalho. Quais são as vantagens e desvantagens de trabalhar de graça para ganhar experiência?",
+          "Alguns países introduziram quotas para garantir que uma determinada percentagem de mulheres esteja representada nos conselhos de administração das empresas. Discuta as vantagens e as desvantagens desta política e dê a sua opinião.",
+          "Trabalhar em uma grande empresa oferece uma experiência diferente do que trabalhar em uma pequena empresa familiar. Quais são as vantagens e desvantagens de trabalhar para uma grande empresa?",
+          "Muitas profissões agora exigem que os funcionários estejam disponíveis por e-mail ou telefone fora do horário normal de trabalho. As vantagens desta conectividade constante superam as desvantagens?"
+        ]
+      },
+      {
+        "name": "Saúde e estilo de vida",
+        "prompts": [
+          "Os governos de alguns países introduziram um imposto sobre fast food e bebidas açucaradas para combater a obesidade. Quais são as vantagens e desvantagens de tributar alimentos não saudáveis?",
+          "A popularidade das dietas vegetarianas e veganas está crescendo globalmente. Discuta as vantagens e as desvantagens de eliminar a carne da dieta e dê a sua opinião.",
+          "Muitas pessoas usam medicamentos alternativos, como acupuntura e remédios fitoterápicos, em vez de tratamentos médicos convencionais. As vantagens da medicina alternativa superam as desvantagens?",
+          "Os sistemas de saúde em alguns países são inteiramente financiados pelo governo e gratuitos no local de utilização. Quais são as vantagens e desvantagens de um sistema de saúde público gratuito?",
+          "Cada vez mais pessoas praticam esportes radicais, como paraquedismo e escalada. Discuta as vantagens e as desvantagens destas atividades e dê a sua opinião.",
+          "Muitas cidades proibiram fumar em todos os espaços públicos, incluindo parques e restaurantes ao ar livre. As vantagens de uma proibição total de fumar em público superam as desvantagens?",
+          "As pessoas estão usando cada vez mais aplicativos móveis e dispositivos vestíveis para monitorar sua saúde e condicionamento físico. Quais são as vantagens e desvantagens de confiar na tecnologia para monitoramento da saúde?",
+          "As culturas geneticamente modificadas (GM) são cultivadas em muitas partes do mundo para aumentar a produção de alimentos. Discuta as vantagens e as desvantagens dos alimentos geneticamente modificados e dê a sua opinião.",
+          "O turismo médico, onde as pessoas viajam para o exterior para procedimentos médicos, é uma indústria em expansão. As vantagens de viajar para outro país para obter cuidados de saúde superam as desvantagens?",
+          "Muitas pessoas pagam assinaturas mensais caras para frequentar academias comerciais. Quais são as vantagens e desvantagens de usar uma academia para manter a forma em comparação com fazer exercícios ao ar livre ou em casa?"
+        ]
+      },
+      {
+        "name": "Meio Ambiente e Planejamento Urbano",
+        "prompts": [
+          "Para reduzir o congestionamento do tráfego, algumas grandes cidades introduziram “tarifas de congestionamento”, cobrando aos motoristas uma taxa para entrar no centro da cidade. Quais são as vantagens e desvantagens deste sistema?",
+          "A energia nuclear é vista por alguns como uma alternativa limpa aos combustíveis fósseis. Discuta as vantagens e as desvantagens de confiar na energia nuclear e dê a sua opinião.",
+          "À medida que a população cresce, as cidades estão construindo prédios de apartamentos mais altos para acomodar os residentes. As vantagens de morar em prédios altos superam as desvantagens?",
+          "Muitos governos locais tornaram a reciclagem obrigatória para todas as famílias. Quais são as vantagens e desvantagens dos programas de reciclagem forçada?",
+          "Um número significativo de pessoas está migrando das áreas rurais para as grandes cidades em busca de melhores oportunidades. Discuta as vantagens e as desvantagens da urbanização e dê a sua opinião.",
+          "Existem zoológicos em quase todas as grandes cidades do mundo. As vantagens de manter animais em cativeiro em zoológicos superam as desvantagens?",
+          "Algumas pessoas argumentam que só devemos comprar alimentos produzidos localmente. Quais são as vantagens e desvantagens de consumir apenas alimentos de origem local?",
+          "Para proteger o ambiente, alguns governos estão a subsidiar fortemente os veículos eléctricos (VE). Discuta as vantagens e as desvantagens desta intervenção governamental e dê a sua opinião.",
+          "O ecoturismo foi concebido para permitir que os turistas visitem ambientes frágeis, minimizando ao mesmo tempo o seu impacto. As vantagens do ecoturismo superam as desvantagens?",
+          "Muitos planejadores urbanos defendem a criação de zonas totalmente livres de carros nos centros das cidades. Quais são as vantagens e desvantagens de proibir os carros nas áreas urbanas?"
+        ]
+      },
+      {
+        "name": "Turismo e Viagens",
+        "prompts": [
+          "A ascensão das companhias aéreas de baixo custo tornou as viagens internacionais acessíveis para milhões de pessoas. Quais são as vantagens e desvantagens de viagens aéreas baratas?",
+          "O turismo internacional é uma importante fonte de rendimento para muitos países em desenvolvimento. Discuta as vantagens e as desvantagens de uma economia fortemente dependente do turismo e dê a sua opinião.",
+          "Muitos turistas optam por ficar em aluguéis de curta duração (como o Airbnb) em vez de hotéis tradicionais. As vantagens do arrendamento turístico de curta duração superam as desvantagens para as comunidades locais?",
+          "o português está se tornando cada vez mais a língua global das viagens e do turismo. Quais são as vantagens e desvantagens de ter uma única língua global dominante?",
+          "Algumas cidades históricas cobram uma “taxa turística” dos visitantes para ajudar a manter a infraestrutura. Discuta as vantagens e as desvantagens de taxar os turistas e dê a sua opinião.",
+          "O “turismo voluntário”, onde as pessoas viajam para países em desenvolvimento para fazer trabalhos de caridade, está a tornar-se muito popular. As vantagens desta tendência superam as desvantagens?",
+          "Os turistas visitam cada vez mais áreas naturais remotas e intocadas, como a Antártica ou a floresta amazônica. Quais são as vantagens e desvantagens do turismo em ambientes extremos?",
+          "Muitas pessoas argumentam que as viagens globais estão a levar a uma perda de diversidade cultural à medida que as cidades começam a ter a mesma aparência e sensação em todo o lado. Discuta as vantagens e as desvantagens da homogeneização cultural e dê a sua opinião.",
+          "Em vez de viajar para o exterior, algumas pessoas preferem passar as férias explorando o seu próprio país. As vantagens do turismo doméstico superam as desvantagens?",
+          "Os pacotes turísticos guiados são uma forma muito popular de viajar. Quais são as vantagens e desvantagens de viajar com um grupo turístico altamente estruturado em comparação com viajar de forma independente?"
+        ]
+      },
+      {
+        "name": "Governo e Sociedade",
+        "prompts": [
+          "Alguns países implementaram programas obrigatórios de serviço comunitário para jovens. Discuta as vantagens e as desvantagens e dê a sua opinião.",
+          "Um rendimento básico universal (UBI), em que o governo dá a cada cidadão uma quantia regular de dinheiro, independentemente do emprego, está a ser debatido a nível mundial. Quais são as vantagens e desvantagens do RBI?",
+          "Muitos países exigem que homens e mulheres jovens completem um período de serviço militar obrigatório. As vantagens do recrutamento superam as desvantagens?",
+          "O uso de câmeras de circuito fechado de televisão (CFTV) em locais públicos é generalizado. Discuta as vantagens e as desvantagens da vigilância pública e dê a sua opinião.",
+          "Algumas nações aboliram a pena de morte, enquanto outras ainda a utilizam para os crimes mais graves. Quais são as vantagens e desvantagens da pena capital?",
+          "As nações ricas fornecem frequentemente ajuda financeira aos países em desenvolvimento. As vantagens da ajuda internacional superam as desvantagens?",
+          "Em alguns países, o voto nas eleições nacionais é obrigatório por lei. Discuta as vantagens e as desvantagens do voto obrigatório e dê a sua opinião.",
+          "Os governos fornecem frequentemente financiamento significativo para as artes, incluindo museus, galerias e teatros. Quais são as vantagens e desvantagens de usar dinheiro público para financiar as artes?",
+          "Graças aos avanços médicos, as populações de muitos países desenvolvidos vivem muito mais tempo. As vantagens do envelhecimento da população superam as desvantagens?",
+          "Os sistemas prisionais modernos concentram-se frequentemente na reabilitação dos infratores através da educação e da terapia, em vez de simplesmente puni-los. Discuta as vantagens e as desvantagens da reabilitação em relação à punição e dê a sua opinião."
+        ]
+      },
+      {
+        "name": "Família e Crianças",
+        "prompts": [
+          "Na sociedade moderna, é comum que ambos os pais trabalhem em tempo integral enquanto criam os filhos. Quais são as vantagens e desvantagens de ter dois pais que trabalham?",
+          "Um número crescente de pessoas está optando por viver sozinhas em vez de com a família ou colegas de quarto. As vantagens de morar sozinho superam as desvantagens?",
+          "Muitos casais optam por ter filhos muito mais tarde na vida, muitas vezes por volta dos 30 ou 40 anos. Discuta as vantagens e as desvantagens de adiar a paternidade e dê a sua opinião.",
+          "A família alargada tradicional (avós, tias, tios que vivem juntos) está a tornar-se menos comum em favor da família nuclear. Quais são as vantagens e desvantagens de crescer em uma família extensa?",
+          "Alguns pais dão aos filhos uma mesada semanal ou mesada. As vantagens de dar às crianças o seu próprio dinheiro superam as desvantagens?",
+          "Muitos pais restringem fortemente a quantidade de tempo de tela permitido aos filhos todos os dias. Discuta as vantagens e as desvantagens de limites rígidos de tempo de tela e dê sua opinião.",
+          "As taxas de divórcio aumentaram significativamente em muitos países nas últimas décadas. Quais são as vantagens e desvantagens de facilitar o divórcio legal dos casais?",
+          "É cada vez mais comum que os jovens continuem a viver com os pais até aos vinte anos. As vantagens dos jovens adultos que vivem em casa superam as desvantagens?",
+          "Alguns pais matriculam os filhos em inúmeras atividades extracurriculares, deixando pouco tempo livre. Discuta as vantagens e as desvantagens de uma infância altamente estruturada e dê a sua opinião.",
+          "Crescer em uma família monoparental é uma experiência cada vez mais comum para as crianças. Quais são as vantagens e desvantagens de ser criado por pais solteiros?"
+        ]
+      },
+      {
+        "name": "Mídia e Publicidade",
+        "prompts": [
+          "Muitos países restringem ou proíbem a publicidade dirigida diretamente às crianças. As vantagens de proibir a publicidade dirigida às crianças superam as desvantagens?",
+          "O surgimento de canais de notícias 24 horas por dia e de feeds de notícias online significa que temos acesso constante à informação. Quais são as vantagens e desvantagens do ciclo de notícias de 24 horas?",
+          "As grandes corporações multinacionais controlam uma parte significativa do panorama global dos meios de comunicação social. Discuta as vantagens e as desvantagens dos monopólios mediáticos e dê a sua opinião.",
+          "As empresas online usam publicidade direcionada com base no rastreamento do histórico da web de um usuário. As vantagens da publicidade personalizada superam as desvantagens?",
+          "Os reality shows continuam a ser extremamente populares em todo o mundo. Quais são as vantagens e desvantagens da programação de reality shows?",
+          "Alguns governos censuram a Internet para restringir o conteúdo que os seus cidadãos podem visualizar. Discuta as vantagens e as desvantagens da censura na internet e dê sua opinião.",
+          "Jornais e revistas impressos estão vendo um declínio maciço no número de leitores à medida que as pessoas recorrem à mídia digital. Quais são as vantagens e desvantagens de a sociedade se afastar do jornalismo impresso?",
+          "As celebridades frequentemente endossam produtos e campanhas políticas. As vantagens do endosso de celebridades superam as desvantagens?",
+          "Serviços de streaming como Netflix e Spotify mudaram completamente a forma como as pessoas consomem entretenimento. Discuta as vantagens e as desvantagens da mudança para streaming de mídia e dê sua opinião.",
+          "Os filmes de ação e os videogames modernos geralmente contêm altos níveis de violência. Quais são as vantagens e desvantagens de expor a sociedade a meios de comunicação violentos?"
+        ]
+      },
+      {
+        "name": "Globalização e Cultura",
+        "prompts": [
+          "A ascensão das corporações multinacionais significa que as mesmas lojas e marcas são encontradas em todo o mundo. As vantagens da globalização nos negócios superam as desvantagens?",
+          "Muitas línguas minoritárias correm o risco de desaparecer à medida que as pessoas mudam para línguas dominantes como o português, o espanhol ou o mandarim. Discuta as vantagens e as desvantagens da perda de línguas minoritárias e dê a sua opinião.",
+          "A indústria da “moda rápida” permite que as pessoas comprem roupas da moda muito baratas. Quais são as vantagens e desvantagens do fast fashion?",
+          "Graças ao comércio global, as pessoas podem comprar alimentos de todo o mundo, em qualquer época do ano, no supermercado local. As vantagens desta rede alimentar global superam as desvantagens?",
+          "Os casamentos interculturais, em que os parceiros são de países ou origens culturais diferentes, estão a tornar-se mais comuns. Discuta as vantagens e as desvantagens de criar uma família num lar multicultural e dê a sua opinião.",
+          "Eventos desportivos internacionais como os Jogos Olímpicos ou o Campeonato do Mundo da FIFA exigem que os países anfitriões gastem milhares de milhões de dólares. Quais são as vantagens e desvantagens de sediar grandes eventos esportivos internacionais?",
+          "A apropriação cultural, onde elementos de uma cultura minoritária são utilizados por uma cultura dominante, é altamente debatida. As vantagens da partilha cultural superam as desvantagens da apropriação?",
+          "É muito comum que as escolas gastem uma quantidade significativa de tempo ensinando aos alunos a história antiga. Discuta as vantagens e as desvantagens de priorizar a história no currículo e dê sua opinião.",
+          "Muitas pessoas dependem inteiramente de instituições de caridade globais para resolver crises humanitárias. Quais são as vantagens e desvantagens de depender de organizações não governamentais (ONG) em vez de governos locais?",
+          "A cultura ocidental, especialmente através da música e do cinema, tem uma influência enorme no resto do mundo. As vantagens da difusão global da cultura ocidental superam as desvantagens?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "problem-solution",
+    "label": "Problema e Solução",
+    "description": "Identificar as causas de um problema e sugerir soluções.",
+    "instruction": "Explique as causas/impactos deste problema e sugira soluções. Escreva pelo menos 250 palavras.",
+    "categories": [
+      {
+        "name": "Meio Ambiente e Natureza",
+        "prompts": [
+          "A quantidade de resíduos plásticos nos oceanos do mundo está a aumentar rapidamente. Quais são as causas disso? Que soluções você pode sugerir?",
+          "A desflorestação está a ocorrer a um ritmo alarmante em muitas partes do mundo. Quais são os impactos negativos disso? Como esse problema pode ser resolvido?",
+          "Muitas cidades ao redor do mundo enfrentam grave escassez de água. Por que isso está acontecendo? Que medidas podem ser tomadas para resolver este problema?",
+          "O número de espécies ameaçadas cresce a cada ano. Quais são as principais causas deste declínio? O que pode ser feito para proteger esses animais?",
+          "A poluição atmosférica nos principais centros urbanos está a atingir níveis críticos. Quais são os impactos disso na saúde e no meio ambiente? Como podem os governos e os indivíduos reduzir a poluição atmosférica?",
+          "O aquecimento global está causando eventos climáticos extremos em todo o mundo. Quais são as principais causas deste fenômeno? Que medidas podem ser tomadas para minimizar os seus efeitos?",
+          "A quantidade de lixo doméstico produzido está aumentando significativamente. Por que isso acontece? O que pode ser feito para incentivar as pessoas a reduzir o desperdício?",
+          "A perda de biodiversidade é uma grande preocupação global. Quais são as consequências negativas desta perda? Como podemos preservar os ecossistemas naturais?",
+          "A sobrepesca está a esgotar os stocks de peixes nos oceanos do mundo. Que problemas isso causa? Que regulamentos devem ser implementados para evitar isso?",
+          "A degradação do solo está a dificultar o cultivo de alimentos em algumas regiões. Quais são as causas deste problema? Que soluções agrícolas podem ser implementadas?"
+        ]
+      },
+      {
+        "name": "Tecnologia e Internet",
+        "prompts": [
+          "As crianças de hoje passam muito tempo olhando para telas. Quais são os efeitos negativos disso? Como os pais podem gerenciar o tempo de tela dos filhos?",
+          "O cyberbullying se tornou um problema generalizado entre os adolescentes. Quais são as causas desse comportamento? O que as escolas e os pais podem fazer para evitá-lo?",
+          "Com o aumento dos serviços online, a privacidade dos dados pessoais está cada vez mais em risco. Quais são os perigos potenciais disso? Como os indivíduos podem proteger suas informações online?",
+          "Muitos adultos ficam viciados em seus smartphones. Por que isso está acontecendo? Que medidas as pessoas podem tomar para reduzir a sua dependência de dispositivos móveis?",
+          "O rápido desenvolvimento da Inteligência Artificial está a ameaçar muitos empregos tradicionais. Quais são os potenciais impactos disso na sociedade? O que os governos podem fazer para preparar a força de trabalho?",
+          "A constante atualização dos dispositivos eletrónicos levou a um aumento maciço do lixo eletrónico. Por que as pessoas substituem seus dispositivos com tanta frequência? Como o lixo eletrônico pode ser melhor gerenciado?",
+          "A disseminação de notícias falsas e desinformação nas redes sociais é um problema crescente. O que faz com que esta informação se espalhe tão rapidamente? O que pode ser feito para combatê-lo?",
+          "A comunicação face a face está diminuindo devido às mensagens digitais. Quais são os impactos negativos nas relações pessoais? Como podemos encorajar mais interações na vida real?",
+          "O cibercrime, como a pirataria informática e o roubo de identidade, está a aumentar. O que torna as pessoas vulneráveis ​​a esses crimes? Que medidas podem melhorar a segurança cibernética?",
+          "As pessoas estão se tornando excessivamente dependentes da tecnologia para adquirir habilidades básicas, como usar GPS em vez de ler um mapa. Que problemas essa confiança causa? Como essa tendência pode ser revertida?"
+        ]
+      },
+      {
+        "name": "Sociedade e vida urbana",
+        "prompts": [
+          "Muitas grandes cidades estão sofrendo de superlotação severa. Quais são as causas desta rápida urbanização? Que soluções podem ajudar a gerir as populações das cidades?",
+          "O custo de vida está a aumentar drasticamente em muitas partes do mundo. Que problemas isso causa para as famílias comuns? Como podem os governos aliviar este fardo financeiro?",
+          "A falta de moradia é um problema visível em muitas nações ricas. Por que as pessoas acabam morando nas ruas? Que programas sociais podem efetivamente reduzir os sem-abrigo?",
+          "A poluição sonora é um problema constante para as pessoas que vivem em áreas urbanas. Quais são as principais fontes deste ruído? Que medidas os planejadores urbanos podem tomar para criar ambientes mais silenciosos?",
+          "Faltam parques públicos e espaços verdes nas cidades modernas. Quais são os efeitos negativos disso sobre os moradores das cidades? Como podem as autoridades locais resolver este problema?",
+          "As zonas rurais registam um declínio populacional à medida que os jovens se afastam. Por que isso está acontecendo? O que pode ser feito para incentivar as pessoas a permanecerem ou a mudarem-se para comunidades rurais?",
+          "A população em muitos países desenvolvidos está envelhecendo rapidamente. Que problemas económicos e sociais isto causa? Como as sociedades podem se adaptar a um grupo demográfico mais envelhecido?",
+          "A disparidade de riqueza entre ricos e pobres continua a aumentar. Quais são as consequências sociais da desigualdade extrema? Que políticas económicas poderiam ajudar a distribuir a riqueza de forma mais uniforme?",
+          "Apesar de viverem em cidades populosas, muitas pessoas relatam sentir-se isoladas e solitárias. Quais são as causas do isolamento urbano moderno? O que pode ser feito para promover um senso de comunidade?",
+          "As culturas e os costumes tradicionais estão a desaparecer num mundo globalizado. Por que essa perda está ocorrendo? Como podem as comunidades preservar o seu património cultural?"
+        ]
+      },
+      {
+        "name": "Educação",
+        "prompts": [
+          "Os estudantes do ensino médio enfrentam hoje níveis sem precedentes de estresse e esgotamento. Quais são as principais causas desta pressão? Como o sistema educacional pode ser reformado para apoiar o bem-estar dos alunos?",
+          "O custo de frequentar a universidade tornou-se inacessível para muitos jovens. Quais são os impactos negativos disso? Que alternativas ou soluções podem ser oferecidas aos estudantes?",
+          "O bullying continua sendo um problema persistente nas escolas de todo o mundo. Que efeitos psicológicos o bullying tem nas crianças? Quais estratégias anti-bullying são mais eficazes?",
+          "Muitos empregadores queixam-se de que os recém-licenciados carecem de competências práticas para o local de trabalho. Por que existe uma lacuna entre educação e emprego? Como os currículos universitários podem ser melhorados?",
+          "Há uma grave escassez de professores qualificados em muitos países. Quais são as razões por trás dessa escassez? Como tornar a profissão docente mais atrativa?",
+          "Os estudantes das zonas rurais recebem frequentemente uma educação de qualidade inferior à dos estudantes das cidades. O que causa essa divisão educacional? Que medidas podem garantir a igualdade de acesso a uma escolaridade de qualidade?",
+          "A ascensão das ferramentas de IA levou a um aumento na trapaça e no plágio acadêmico. Quais são os impactos negativos na aprendizagem dos alunos? Como as escolas devem abordar o uso da IA?",
+          "O analfabetismo adulto continua elevado em certas regiões em desenvolvimento. Que problemas o analfabetismo causa à sociedade? Que iniciativas podem ensinar adultos a ler e escrever com sucesso?",
+          "Muitos alunos se sentem desinteressados ​​e entediados em ambientes de sala de aula tradicionais. Por que os métodos tradicionais de ensino não conseguem captar a atenção dos alunos? Como as aulas podem ser mais envolventes?",
+          "O tamanho das turmas nas escolas públicas é muitas vezes demasiado grande para um ensino eficaz. Quais são os impactos negativos sobre professores e alunos? Como esse problema pode ser resolvido?"
+        ]
+      },
+      {
+        "name": "Saúde e Dieta",
+        "prompts": [
+          "A obesidade tornou-se uma epidemia em muitas partes do mundo. Quais são as principais causas do ganho de peso generalizado? Que ações os governos podem tomar para promover estilos de vida mais saudáveis?",
+          "As taxas de problemas de saúde mental, como depressão e ansiedade, estão aumentando globalmente. Por que essas condições estão se tornando mais comuns? O que pode ser feito para melhorar a saúde mental?",
+          "O consumo de fast food está em alta. Quais são os impactos negativos para a saúde da ingestão de alimentos altamente processados? Como pode a sociedade encorajar as pessoas a cozinhar refeições frescas?",
+          "O estilo de vida moderno tornou-se cada vez mais sedentário. Que problemas físicos surgem da falta de movimento? O que pode ser feito para integrar mais atividade física na vida diária?",
+          "Muitas pessoas hoje sofrem de privação crônica de sono. Que fatores contribuem para a falta de sono na sociedade moderna? Como os indivíduos podem melhorar sua higiene do sono?",
+          "O custo dos tratamentos médicos e dos cuidados de saúde está a aumentar para além do alcance do cidadão comum. Que problemas isso causa? Como os cuidados de saúde podem ser tornados mais acessíveis e baratos?",
+          "Há uma escassez global de enfermeiros e profissionais de saúde. Porque é que este sector está a lutar para reter pessoal? Que incentivos poderiam resolver esta crise de pessoal?",
+          "Apesar dos avanços na medicina, muitas pessoas em todo o mundo ainda morrem de doenças facilmente evitáveis. Por que isso acontece? O que pode ser feito sobre esse problema?",
+          "O uso excessivo de antibióticos está levando ao surgimento de cepas de bactérias resistentes. Quais são os perigos da resistência aos antibióticos? Como a comunidade médica pode resolver esse problema?",
+          "O uso prolongado de telas está causando um aumento nos problemas de saúde oculares entre crianças e adultos. Quais são os problemas específicos que ocorrem? Que medidas preventivas devem ser tomadas?"
+        ]
+      },
+      {
+        "name": "Trabalho e Economia",
+        "prompts": [
+          "O estresse relacionado ao trabalho é uma das principais causas de doenças na força de trabalho moderna. Que aspectos do trabalho moderno criam esse estresse? O que os empregadores podem fazer para apoiar a saúde mental dos seus funcionários?",
+          "As taxas de desemprego juvenil são incrivelmente elevadas em muitos países. Por que os jovens estão lutando para encontrar emprego? Que iniciativas podem ajudar a integrá-los à força de trabalho?",
+          "Em muitas profissões, as mulheres ainda recebem menos do que os homens por fazerem o mesmo trabalho. Quais são as causas das disparidades salariais entre homens e mulheres? Como podem os governos e as empresas garantir a igualdade de remuneração?",
+          "Os deslocamentos diários longos e exaustivos são uma realidade para muitos trabalhadores. Quais são os impactos negativos das longas viagens para os indivíduos? Como esse problema pode ser aliviado?",
+          "Muitos funcionários lutam para manter um equilíbrio saudável entre vida pessoal e profissional. Por que se tornou tão difícil separar o trabalho da vida pessoal? Que políticas no local de trabalho podem melhorar este equilíbrio?",
+          "A ascensão da “economia gig” significa que muitas pessoas trabalham com contratos de curto prazo sem benefícios. Que problemas financeiros isso cria para os trabalhadores? Como os trabalhadores gig podem ser mais bem protegidos?",
+          "A inflação elevada está a fazer disparar o preço dos bens básicos. Como isso afeta as famílias de baixa renda? Que medidas económicas podem ser tomadas para estabilizar os preços?",
+          "Em algumas indústrias, os trabalhadores estão sujeitos a condições de trabalho inseguras. Por que essas condições persistem? O que pode ser feito para impor regulamentos de segurança mais rígidos?",
+          "Muitos países em desenvolvimento sofrem de uma “fuga de cérebros”, onde os seus profissionais mais qualificados se mudam para o estrangeiro. Que problemas isso causa para o país de origem? Como podem as nações reter o seu talento?",
+          "Os jovens adultos de hoje estão a acumular níveis sem precedentes de dívida pessoal. Quais são as principais razões deste empréstimo? Que educação financeira deve ser fornecida para resolver isso?"
+        ]
+      },
+      {
+        "name": "Crime e Lei",
+        "prompts": [
+          "A delinquência juvenil (crimes cometidos por jovens) está a aumentar em muitas cidades. Quais são as causas profundas da criminalidade juvenil? Que intervenções podem manter os jovens longe de problemas?",
+          "Os crimes tradicionais estão a diminuir, mas os crimes cibernéticos estão a aumentar acentuadamente. Por que os criminosos estão migrando para a Internet? Como a aplicação da lei pode se adaptar para combater o crime digital?",
+          "O abuso de drogas continua a arruinar vidas e comunidades. O que leva os indivíduos ao abuso de substâncias? Quais são as formas mais eficazes de reabilitar viciados?",
+          "As prisões em muitos países estão extremamente superlotadas. Quais são as consequências das prisões superlotadas? Que punições alternativas poderiam aliviar esta pressão?",
+          "Muitos criminosos reincidem logo após serem libertados da prisão. Por que os sistemas prisionais não conseguem reabilitar os presos? Que programas podem ajudar os ex-presidiários a se reintegrarem na sociedade?",
+          "Os crimes de colarinho branco, como a fraude corporativa, muitas vezes ficam impunes em comparação com os crimes de rua. Por que isso acontece? Como pode o sistema judicial combater a corrupção corporativa de forma mais eficaz?",
+          "O vandalismo e a destruição de bens públicos são comuns em muitas áreas urbanas. O que motiva as pessoas a cometer vandalismo? Como podem as autoridades locais evitá-lo?",
+          "As infrações de trânsito, como excesso de velocidade e dirigir embriagado, causam milhares de mortes anualmente. Por que as pessoas ignoram as leis de trânsito? Que medidas podem impedir com êxito a condução perigosa?",
+          "A violência doméstica é um crime oculto que afecta milhões de famílias. Por que as vítimas muitas vezes ficam em silêncio? Que sistemas de apoio precisam existir para protegê-los?",
+          "O comércio ilegal de vida selvagem está a levar muitas espécies animais à extinção. O que alimenta a procura de produtos animais ilegais? Como podem as leis internacionais impedir este comércio?"
+        ]
+      },
+      {
+        "name": "Família e Juventude",
+        "prompts": [
+          "O modelo tradicional de família alargada está a ser substituído pela família nuclear ou famílias monoparentais. Que problemas causa a perda do apoio da família alargada? Como a sociedade pode ajudar a apoiar as famílias modernas?",
+          "Há um crescente “conflito de gerações” que resulta numa falta de compreensão entre os jovens e os idosos. Por que esses mal-entendidos ocorrem? Como podemos preencher a lacuna entre as gerações?",
+          "Muitas crianças hoje são deixadas em casa sem supervisão dos pais devido aos pais que trabalham. Quais são os impactos negativos no desenvolvimento da criança? Que soluções os pais que trabalham podem implementar?",
+          "Os pais hoje exercem imensa pressão sobre seus filhos para que tenham sucesso acadêmico e em atividades extracurriculares. Quais são os efeitos psicológicos nas crianças? Como os pais podem adotar uma abordagem mais saudável?",
+          "As taxas de natalidade em muitos países desenvolvidos estão a cair rapidamente. Por que as pessoas estão optando por ter menos filhos? Que problemas isto causará à sociedade no futuro e como poderão ser resolvidos?",
+          "O custo do cuidado infantil profissional é proibitivamente caro para muitas famílias. Que problemas isso cria para as mães que trabalham em particular? Como tornar o cuidado infantil mais acessível?",
+          "O comportamento anti-social entre adolescentes em espaços públicos é uma queixa comum. O que causa esse comportamento rebelde? Como as comunidades podem envolver os adolescentes em atividades mais positivas?",
+          "Crianças e adolescentes hoje são cada vez mais alvo do marketing de consumo. Quais são os efeitos negativos do consumismo juvenil? Como podem os pais proteger os seus filhos da publicidade agressiva?",
+          "Muitos jovens idolatram celebridades que apresentam mau comportamento. Por que os adolescentes admiram esses números? Como podemos fornecer melhores modelos para os jovens?",
+          "As taxas de divórcio aumentaram significativamente nas últimas décadas. Quais são as principais pressões que levam ao fracasso dos casamentos? O que pode ser feito para preparar melhor os casais para o casamento?"
+        ]
+      },
+      {
+        "name": "Transporte e Turismo",
+        "prompts": [
+          "O congestionamento do tráfego é um pesadelo diário na maioria das grandes cidades. Quais são as principais causas do impasse? Que soluções de transporte inovadoras podem facilitar o fluxo do tráfego?",
+          "Os sistemas de transporte público em muitas áreas não são confiáveis ​​e são mal conservados. Por que o transporte público é frequentemente negligenciado? Quais etapas são necessárias para atualizar esses sistemas?",
+          "Locais históricos e monumentos famosos estão sofrendo com o “turismo excessivo”. Que danos o turismo excessivo causa? Como podem as autoridades gerir o número de turistas de forma sustentável?",
+          "A indústria da aviação contribui enormemente para as emissões globais de carbono. Por que é tão difícil tornar as viagens aéreas “verdes”? Que alternativas ou soluções podem reduzir o impacto ambiental do voo?",
+          "O número de acidentes rodoviários mortais continua inaceitavelmente elevado. Quais são as principais causas dessas falhas? Que medidas de segurança podem reduzir significativamente as mortes nas estradas?",
+          "As viagens internacionais estão se tornando muito caras para o cidadão comum devido aos custos de combustível e impostos. Quais são os impactos negativos das viagens restritas? Como o turismo pode permanecer acessível?",
+          "Os turistas frequentemente comportam-se de formas que ofendem as sensibilidades culturais locais. Por que ocorre esse atrito cultural? Como os viajantes podem ser educados para respeitar os costumes locais?",
+          "Apesar dos alertas ambientais, a dependência de automóveis particulares só está a aumentar. Por que as pessoas se recusam a desistir de seus carros? Que incentivos levariam com sucesso as pessoas para o transporte público?",
+          "Encontrar estacionamento nos centros das cidades está se tornando quase impossível. Que problemas isso cria para as empresas locais? Que soluções arquitetônicas ou de planejamento podem resolver a escassez de estacionamento?",
+          "A construção de mega-resorts está destruindo pequenos negócios locais em cidades turísticas. Por que as lojas locais lutam para competir? O que os governos locais podem fazer para proteger as pequenas empresas?"
+        ]
+      },
+      {
+        "name": "Alimentos e Agricultura",
+        "prompts": [
+          "Uma quantidade chocante de alimentos é desperdiçada globalmente pelos supermercados e consumidores. Por que tanta comida é jogada fora? Que medidas podem ser tomadas para reduzir drasticamente o desperdício alimentar?",
+          "Muitos países dependem fortemente da importação de alimentos em vez de cultivá-los localmente. Quais são os riscos de depender do fornecimento de alimentos estrangeiros? Como podem as nações impulsionar a sua agricultura interna?",
+          "O uso intenso de pesticidas químicos na agricultura é motivo de preocupação. Quais são os impactos ambientais e de saúde destes produtos químicos? Quais são as alternativas viáveis ​​à agricultura química?",
+          "As práticas agrícolas industriais priorizam o lucro em detrimento do bem-estar animal. Quais são as crueldades específicas associadas à produção em massa de carne? Como podem os consumidores e os governos impulsionar a mudança nesta indústria?",
+          "As pequenas explorações agrícolas familiares estão a desaparecer à medida que as grandes empresas agrícolas assumem o controlo. Por que as pequenas propriedades estão falhando? O que pode ser feito para apoiar e sustentar os agricultores locais?",
+          "Apesar da elevada produção mundial de alimentos, a insegurança alimentar e a fome ainda existem em muitas regiões. Quais são as causas profundas das falhas na distribuição de alimentos? Como podemos garantir que todos tenham o suficiente para comer?",
+          "As terras aráveis ​​(terras adequadas para o cultivo) estão a ser perdidas devido ao desenvolvimento habitacional e à desertificação. Quais são os perigos a longo prazo da perda de terras agrícolas? Como podemos proteger as terras agrícolas?",
+          "Os efeitos a longo prazo do consumo de alimentos geneticamente modificados (GM) para a saúde continuam a ser uma preocupação para muitos. Por que as pessoas são céticas em relação às culturas geneticamente modificadas? Que regulamentos deveriam reger a venda de alimentos geneticamente modificados?",
+          "As dietas em todo o mundo estão a mudar para alimentos altamente processados ​​e pré-embalados. O que impulsiona essa dependência de alimentos processados? Como podem os governos educar o público sobre a nutrição de alimentos integrais?",
+          "O escoamento agrícola (fertilizantes que chegam aos rios) está poluindo gravemente os cursos de água. Que danos isso causa aos ecossistemas aquáticos? Que práticas agrícolas podem prevenir esta poluição?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "double-question",
+    "label": "Pergunta Dupla",
+    "description": "Responda a duas perguntas separadas sobre o mesmo assunto.",
+    "instruction": "Responda ambas as perguntas completamente. Escreva pelo menos 250 palavras.",
+    "categories": [
+      {
+        "name": "Educação e Aprendizagem",
+        "prompts": [
+          "Muitos estudantes têm dificuldade em se concentrar na escola e na universidade. Quais são as razões para isso? Como podemos resolver este problema?",
+          "Em alguns países, uma elevada proporção de estudantes abandona a universidade antes de concluírem os seus estudos. Por que você acha que isso acontece? O que pode ser feito para incentivar os alunos a terminar os estudos?",
+          "Algumas pessoas acreditam que história é uma matéria inútil para estudar na escola. Por que algumas pessoas se sentem assim? Você acha que história é uma disciplina escolar importante?",
+          "Tirar um ano sabático antes de entrar na universidade está se tornando cada vez mais comum entre os jovens. Por que mais estudantes estão optando por fazer isso? É uma tendência positiva ou negativa?",
+          "O custo de frequentar a universidade aumentou significativamente em muitas partes do mundo. Que impacto isso tem nos estudantes e na sociedade? Que medidas poderiam tornar o ensino superior mais acessível?",
+          "Muitas crianças recebem tarefas diárias de casa de seus professores. Você acha que essa é uma prática necessária? Quais são as possíveis desvantagens de muito dever de casa?",
+          "Nos últimos anos, cresceu o número de pessoas que optam por estudar online em vez de nas salas de aula tradicionais. Quais são as vantagens do aprendizado online? Você acha que as escolas tradicionais acabarão por desaparecer?",
+          "Alguns alunos têm dificuldade em aprender línguas estrangeiras em sala de aula. Por que aprender um novo idioma é difícil para muitas pessoas? Quais são as maneiras mais eficazes de aprender uma língua estrangeira?",
+          "Habilidades práticas como culinária, gestão financeira e manutenção básica de automóveis raramente são ensinadas nas escolas. Essas habilidades deveriam ser incluídas no currículo? De quem é a responsabilidade de ensinar essas habilidades às crianças?",
+          "A música e a arte são frequentemente as primeiras disciplinas a serem retiradas dos currículos escolares quando o financiamento é reduzido. Por que isso acontece? Qual a importância das artes para o desenvolvimento de uma criança?"
+        ]
+      },
+      {
+        "name": "Tecnologia e Inovação",
+        "prompts": [
+          "As pessoas hoje passam cada vez mais tempo olhando para telas de telefones, computadores e televisões. Quais são os efeitos disso na saúde física e mental? Como as pessoas podem gerenciar melhor o tempo de tela?",
+          "A inteligência artificial está sendo cada vez mais utilizada para realizar tarefas antes realizadas por humanos. Quais são os principais benefícios da IA? Que riscos esta tecnologia representa para a sociedade?",
+          "As plataformas de mídia social mudaram a forma como as pessoas formam e mantêm relacionamentos. Como a mídia social afetou a interação humana? Você acha que este foi um desenvolvimento geral positivo ou negativo?",
+          "Um número crescente de pessoas está usando aplicativos de namoro online para encontrar parceiros românticos. Por que essas plataformas se tornaram tão populares? Quais são os perigos potenciais de conhecer pessoas online?",
+          "Muitas pessoas preferem ler notícias online em vez de comprar jornais físicos. Por que as notícias digitais são preferidas por tantos? Os jornais impressos desaparecerão completamente no futuro?",
+          "As criptomoedas e os pagamentos digitais estão se tornando mais comuns, substituindo o dinheiro físico. Quais são as vantagens de uma sociedade sem dinheiro? Que problemas poderiam surgir ao depender inteiramente do dinheiro digital?",
+          "Espera-se que o turismo espacial se torne uma realidade para indivíduos ricos num futuro próximo. Por que as pessoas estão interessadas em viajar para o espaço? Os governos deveriam regular esta nova indústria?",
+          "As crianças de hoje muitas vezes têm acesso a smartphones e tablets desde muito jovens. Como o acesso precoce à tecnologia afeta o desenvolvimento infantil? Os pais deveriam limitar o uso desses dispositivos por seus filhos?",
+          "A automação e a robótica estão substituindo o trabalho manual em muitas indústrias manufatureiras. O que acontece com os trabalhadores que perdem seus empregos para as máquinas? Como devem os governos preparar a força de trabalho para o futuro?",
+          "O cyberbullying é um problema crescente entre adolescentes e jovens adultos. Por que as pessoas intimidam outras pessoas online? Que medidas as escolas e os pais podem tomar para prevenir esse comportamento?"
+        ]
+      },
+      {
+        "name": "Trabalho e Carreiras",
+        "prompts": [
+          "A satisfação no trabalho está a diminuir entre os trabalhadores em muitos países desenvolvidos. Quais são as principais causas desta insatisfação? O que os empregadores podem fazer para melhorar a vida profissional dos seus funcionários?",
+          "Muitas pessoas optam por mudar de carreira várias vezes ao longo da vida profissional. O que motiva as pessoas a mudar de profissão? Esta é uma tendência positiva ou negativa para a economia?",
+          "O trabalho remoto se tornou uma prática padrão para muitas empresas. Quais são os benefícios de trabalhar em casa? Que desafios os trabalhadores remotos enfrentam?",
+          "Em algumas profissões, espera-se que os funcionários trabalhem muitas horas, muitas vezes sem remuneração. Por que as pessoas aceitam essas condições de trabalho? Que impacto isso tem em suas vidas pessoais?",
+          "A idade de reforma está a aumentar em muitos países devido ao aumento da esperança de vida. Por que esta política está sendo implementada? Você acha que é justo esperar que as pessoas trabalhem até os sessenta ou setenta anos?",
+          "Muitos jovens se formam na universidade, mas não conseguem encontrar emprego na área escolhida. Quais são as razões do desemprego juvenil? Como as universidades podem preparar melhor os estudantes para o mercado de trabalho?",
+          "Algumas empresas usam software de monitoramento para monitorar a produtividade de seus funcionários enquanto trabalham em computadores. Por que os empregadores usam essas ferramentas? É uma invasão de privacidade?",
+          "Começar um negócio envolve riscos financeiros significativos e longas horas de trabalho. Por que algumas pessoas optam por se tornarem empreendedores em vez de empregados regulares? Que qualidades são necessárias para administrar um negócio de sucesso?",
+          "As mulheres ainda estão sub-representadas em cargos de gestão sênior e executivos em muitos setores. Porque é que esta disparidade de género persiste? Que medidas poderiam ser tomadas para promover a igualdade de género no local de trabalho?",
+          "Alguns empregos pagam salários extremamente altos, como atletas profissionais e celebridades do entretenimento. Esses indivíduos merecem ganhar tanto dinheiro? Como deve ser determinado o salário de uma pessoa?"
+        ]
+      },
+      {
+        "name": "Meio Ambiente e Sustentabilidade",
+        "prompts": [
+          "A poluição plástica nos oceanos do mundo é uma grave crise ambiental. Quais são as principais fontes destes resíduos plásticos? Que ações os indivíduos e os governos podem tomar para limpar os oceanos?",
+          "Muitas espécies de animais e plantas estão atualmente em risco de extinção. Por que a perda de biodiversidade é um problema para a humanidade? O que pode ser feito para proteger as espécies ameaçadas?",
+          "A utilização de combustíveis fósseis é o principal motor das alterações climáticas globais. Por que é difícil para os países fazerem a transição para fontes de energia renováveis? O que acontecerá se não reduzirmos a nossa dependência do petróleo e do carvão?",
+          "O desmatamento está ocorrendo em um ritmo alarmante nas florestas tropicais. Quais são as principais razões para o desmatamento destas florestas? Como pode a comunidade internacional parar esta destruição?",
+          "Muitas cidades sofrem com a grave poluição atmosférica, o que afeta a saúde dos seus moradores. O que causa a poluição do ar urbano? Quais são as formas mais eficazes de melhorar a qualidade do ar nas cidades?",
+          "A água doce está se tornando um recurso escasso em muitas partes do mundo. Por que há escassez de água potável? Como podemos conservar a água de forma mais eficaz?",
+          "O consumismo incentiva as pessoas a comprar constantemente novos produtos e jogar fora os antigos. Como é que esta “cultura do descartável” afecta o ambiente? O que pode ser feito para incentivar as pessoas a reparar e reutilizar itens?",
+          "As culturas geneticamente modificadas (GM) são cultivadas para aumentar a produção de alimentos e resistir a pragas. Por que algumas pessoas se opõem aos alimentos geneticamente modificados? Os benefícios desta tecnologia superam os riscos?",
+          "Eventos climáticos extremos, como furacões e secas, estão se tornando mais frequentes. Como esses eventos impactam as comunidades locais? Como devem os governos preparar-se para desastres naturais?",
+          "A fast fashion permite que os consumidores comprem roupas da moda a preços muito baixos. Qual é o impacto ambiental da indústria da fast fashion? Os consumidores deveriam ser forçados a pagar mais por roupas feitas de forma sustentável?"
+        ]
+      },
+      {
+        "name": "Sociedade e Cultura",
+        "prompts": [
+          "Em muitos países, a proporção de idosos está a aumentar rapidamente. Que desafios o envelhecimento da população apresenta à sociedade? Como podem as comunidades apoiar melhor os seus cidadãos idosos?",
+          "O fosso entre as pessoas mais ricas e as mais pobres da sociedade está a aumentar. Que problemas a extrema desigualdade de riqueza causa? Que políticas poderiam ajudar a distribuir a riqueza de forma mais justa?",
+          "Os costumes e festivais tradicionais estão a perder o seu significado entre as gerações mais jovens. Por que isso está acontecendo? É importante preservar a cultura tradicional no mundo moderno?",
+          "Muitas pessoas se sentem solitárias e isoladas, apesar de viverem em cidades modernas e populosas. Por que a solidão urbana é tão comum? O que pode ser feito para construir comunidades mais fortes nas áreas urbanas?",
+          "As taxas de natalidade estão diminuindo em muitos países desenvolvidos. Por que as pessoas estão optando por ter menos filhos? Que impacto isso terá na sociedade no futuro?",
+          "A migração internacional aumentou, levando a sociedades mais multiculturais. Quais são os benefícios de viver em uma sociedade diversificada? Que desafios podem surgir quando diferentes culturas convivem?",
+          "A confiança nos políticos e nas instituições governamentais está a diminuir em muitas partes do mundo. Por que as pessoas se tornaram tão cínicas em relação à política? Como podem os governos reconstruir a confiança pública?",
+          "O voluntariado e o serviço comunitário não remunerado estão se tornando menos comuns. Por que menos pessoas oferecem seu tempo de graça? Como podemos encorajar mais pessoas a ajudar as suas comunidades locais?",
+          "Algumas pessoas acreditam que a sociedade moderna está muito focada na aparência física e na beleza. Por que há tanta pressão para ter uma determinada aparência? Como isso afeta a saúde mental das pessoas?",
+          "Monumentos históricos e estátuas são por vezes removidos ou destruídos porque representam um passado controverso. Por que as pessoas querem remover esses monumentos? As figuras históricas deveriam ser julgadas pelos padrões modernos?"
+        ]
+      },
+      {
+        "name": "Saúde e bem-estar",
+        "prompts": [
+          "As taxas de obesidade atingiram proporções epidêmicas em muitos países. Quais são as principais causas desta crise sanitária? Qual o papel que o governo deve desempenhar na regulação da indústria alimentar?",
+          "O estresse e a ansiedade são grandes problemas de saúde para os trabalhadores modernos. Que fatores contribuem para altos níveis de estresse no local de trabalho? Como os indivíduos podem alcançar um melhor equilíbrio entre vida pessoal e profissional?",
+          "Muitas pessoas usam medicamentos alternativos em vez de consultar médicos convencionais. Por que as terapias alternativas estão se tornando mais populares? Há algum perigo associado à dependência desses tratamentos?",
+          "O custo dos tratamentos médicos e dos medicamentos prescritos é muito elevado em alguns países. Como isso afeta as famílias de baixa renda? Os cuidados de saúde deveriam ser totalmente gratuitos para todos?",
+          "A privação de sono é um problema comum para muitos adultos e adolescentes. Por que as pessoas não dormem o suficiente? Como a falta de sono afeta o desempenho diário e a saúde a longo prazo?",
+          "Os esportes profissionais tornaram-se altamente comercializados, com atletas ganhando milhões. O dinheiro arruinou o verdadeiro espírito do esporte? Qual o impacto que esta comercialização tem sobre os jovens fãs?",
+          "Em alguns países, a venda de produtos do tabaco é fortemente tributada e restrita. Por que os governos tentam desencorajar o fumo? Deverá fumar ser completamente proibido no futuro?",
+          "Alimentos processados ​​e rápidos constituem grande parte da dieta moderna. Por que as pessoas optam por comer alimentos não saudáveis? O que pode ser feito para tornar a alimentação saudável mais apelativa e acessível?",
+          "Os problemas de saúde mental são frequentemente estigmatizados, dificultando a procura de ajuda. Por que as pessoas têm medo de falar sobre sua saúde mental? Como a sociedade pode se tornar mais receptiva e solidária?",
+          "Algumas pessoas optam por praticar esportes radicais e perigosos, como base jumping ou escalada livre. O que motiva as pessoas a arriscarem suas vidas pelo esporte? Os serviços de emergência deveriam ser obrigados a resgatá-los caso tenham problemas?"
+        ]
+      },
+      {
+        "name": "Governo e serviços públicos",
+        "prompts": [
+          "Os sistemas de transporte público em muitas grandes cidades estão superlotados e não são confiáveis. Por que os governos lutam para manter o transporte público? Quais são os benefícios de um sistema de trânsito altamente eficiente?",
+          "Os impostos são necessários para financiar os serviços públicos, mas muitas pessoas tentam evitar pagá-los. Por que as pessoas não gostam de pagar impostos? Como podem os governos garantir que os sistemas fiscais são justos?",
+          "Muitos governos fornecem apoio financeiro a cidadãos desempregados. Por que esse bem-estar social é necessário? Fornecer benefícios de desemprego torna as pessoas preguiçosas?",
+          "O financiamento para bibliotecas públicas e centros comunitários é frequentemente cortado durante crises económicas. Por que essas instalações são consideradas menos importantes? O que as comunidades perdem quando as bibliotecas fecham?",
+          "Alguns países impõem o serviço militar obrigatório para todos os jovens adultos. Quais são as vantagens do recrutamento? Quais são os argumentos contra forçar as pessoas a ingressar no exército?",
+          "Os preços da habitação nas grandes cidades tornaram-se inacessíveis para muitos jovens profissionais. Por que a habitação na cidade é tão cara? O que os governos podem fazer para fornecer habitação a preços acessíveis?",
+          "As nações ricas fornecem frequentemente ajuda externa aos países em desenvolvimento. Por que é importante ajudar as nações mais pobres? A ajuda externa chega sempre às pessoas que mais precisam?",
+          "Câmeras de vigilância são amplamente utilizadas em espaços públicos para prevenir crimes. Quão eficazes são as câmeras para impedir atividades ilegais? A vigilância pública viola o direito de um indivíduo à privacidade?",
+          "Os governos gastam grandes somas de dinheiro na organização de eventos internacionais como as Olimpíadas. Por que os países querem sediar esses eventos? Será esta uma boa utilização dos fundos públicos?",
+          "O sistema de justiça criminal em muitos países concentra-se em punir os infratores, enviando-os para a prisão. A prisão realmente reabilita os criminosos? Quais são algumas formas alternativas de lidar com crimes não violentos?"
+        ]
+      },
+      {
+        "name": "Mídia e Comunicação",
+        "prompts": [
+          "A publicidade está em toda parte, desde telas de televisão até outdoors públicos. Como a publicidade influencia o comportamento do consumidor? A publicidade é prejudicial às crianças?",
+          "A disseminação de “notícias falsas” e desinformação na Internet é uma grande preocupação. Por que as pessoas criam e compartilham informações falsas? Como o público pode aprender a identificar fontes de notícias confiáveis?",
+          "Celebridades e influenciadores têm um impacto enorme no comportamento dos jovens. Por que os adolescentes são tão facilmente influenciados por pessoas famosas? Essa influência é geralmente positiva ou negativa?",
+          "Muitas pessoas passam horas assistindo a reality shows na televisão. Por que esses programas são tão atraentes para o público? Os reality shows refletem com precisão a vida real?",
+          "Os paparazzi costumam seguir pessoas famosas para tirar fotos de suas vidas privadas. A mídia tem o direito de invadir a privacidade de uma celebridade? Por que o público está tão interessado na vida pessoal de pessoas famosas?",
+          "Os filmes e videogames modernos geralmente contêm cenas de violência altamente realistas. Por que o entretenimento violento é tão popular? Assistir à violência torna as pessoas mais agressivas na vida real?",
+          "O jornalismo investigativo desempenha um papel crucial na exposição da corrupção. Por que uma imprensa livre é importante para uma sociedade saudável? Que perigos os jornalistas enfrentam quando fazem reportagens sobre pessoas poderosas?",
+          "As pessoas se comunicam muito mais rápido hoje usando mensagens de texto e e-mails. Como isso mudou a maneira como escrevemos e falamos? Perdemos a capacidade de nos comunicarmos profunda e ponderadamente?",
+          "Plataformas de streaming como Netflix e Spotify mudaram a forma como as pessoas consomem entretenimento. Como isso afeta os cinemas tradicionais e as vendas físicas de música? O modelo de assinatura é justo para artistas e criadores?",
+          "Alguns governos censuram a Internet para bloquear determinados websites e plataformas de redes sociais. Por que os governos restringem o acesso à informação? Como os cidadãos contornam essas restrições?"
+        ]
+      },
+      {
+        "name": "Cidades e infraestrutura",
+        "prompts": [
+          "A expansão urbana está a fazer com que as cidades se expandam rapidamente para as áreas rurais circundantes. Quais são as consequências ambientais da expansão urbana? Como podem os urbanistas gerir este crescimento de forma mais sustentável?",
+          "O congestionamento do tráfego é um problema diário para milhões de passageiros em todo o mundo. Quais são as principais causas do tráfego intenso? Tornar o transporte público gratuito resolveria esse problema?",
+          "Muitos edifícios históricos nos centros das cidades estão a ser demolidos para dar lugar a arranha-céus modernos. Por que isso acontece? É importante preservar a arquitetura antiga?",
+          "A pedonalização dos centros das cidades – proibindo todos os carros em determinadas áreas – está a tornar-se popular na Europa. Quais são os benefícios das zonas livres de carros? Como isso afeta as empresas locais?",
+          "A poluição sonora é um problema constante para as pessoas que vivem em áreas metropolitanas movimentadas. Quais são as principais fontes de ruído urbano? Como a exposição crônica ao ruído afeta a saúde dos residentes?",
+          "Parques e espaços verdes são essenciais para uma boa qualidade de vida numa cidade. Por que as árvores e a natureza são importantes em um ambiente urbano? Por que algumas cidades não oferecem áreas verdes suficientes?",
+          "Existem favelas e assentamentos informais nas periferias de muitas megacidades. Por que as pessoas vivem nessas condições? O que podem os governos fazer para melhorar os padrões de vida nestas áreas?",
+          "As bicicletas são promovidas como uma alternativa ecológica à condução. Por que muitas pessoas ainda se recusam a ir de bicicleta para o trabalho? Que infra-estruturas são necessárias para tornar o ciclismo seguro nas cidades?",
+          "A arquitetura das cidades modernas costuma ser muito semelhante, independentemente do país. Por que as cidades estão perdendo sua identidade cultural única? O projeto de um edifício afeta o humor das pessoas que o utilizam?",
+          "A gestão e eliminação de resíduos são enormes desafios logísticos para as grandes cidades. Como as cidades lidam atualmente com milhões de toneladas de lixo? Quais são as formas mais sustentáveis ​​de gerir os resíduos urbanos?"
+        ]
+      },
+      {
+        "name": "Globalização e Economia",
+        "prompts": [
+          "A ascensão das corporações multinacionais significa que as mesmas marcas são vendidas em todo o mundo. Como isso afeta as empresas e os artesãos locais? Isso leva a uma perda de diversidade cultural?",
+          "As viagens aéreas baratas tornaram o turismo internacional acessível a milhões de pessoas. Quais são os benefícios económicos do turismo de massa? Como o turismo impacta negativamente as comunidades locais e o meio ambiente?",
+          "Muitos empregos industriais foram transferidos dos países desenvolvidos para os países em desenvolvimento. Por que as empresas realocam suas fábricas? Como é que esta globalização afecta os trabalhadores de ambos os países?",
+          "o português tornou-se a língua dominante nos negócios e na ciência internacionais. Por que o português alcançou esse status global? Quais são as desvantagens de ter um idioma global?",
+          "Alguns países dependem fortemente da importação de alimentos em vez de produzi-los internamente. Por que as nações importam produtos de primeira necessidade? Quais são os riscos de depender de outros países para o seu abastecimento alimentar?",
+          "O conceito de renda básica universal (UBI) está sendo debatido por economistas em todo o mundo. Quais são os argumentos a favor de dar a todos um rendimento garantido? Como tal sistema seria financiado?",
+          "As sanções económicas são frequentemente utilizadas por países poderosos para punir outras nações. Quais são os objetivos dessas restrições comerciais? Quem sofre mais quando um país é sancionado?",
+          "Cartões de crédito e empréstimos pessoais permitem que as pessoas comprem coisas que não podem pagar imediatamente. Por que a dívida do consumidor está aumentando globalmente? Quais são as consequências a longo prazo de viver além das nossas posses?",
+          "A economia compartilhada (por exemplo, Uber, Airbnb) perturbou as indústrias tradicionais. Por que esses serviços ponto a ponto são tão bem-sucedidos? Essas plataformas exploram seus trabalhadores?",
+          "O crescimento económico é o objectivo principal da maioria dos governos nacionais. Será possível um crescimento económico sem fim num planeta com recursos finitos? Quais são as formas alternativas de medir o sucesso de um país além do PIB?"
+        ]
+      }
+    ]
+  }
+]

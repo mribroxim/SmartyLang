@@ -1,0 +1,25 @@
+тЧЗ injected env (10) from .env // tip: тЧИ encrypted .env [www.dotenvx.com]
+Literary polish: th / р╕ар╕▓р╕йр╕▓р╣Др╕Чр╕в тАФ р╕зр╕гр╕гр╕Ур╕ир╕┤р╕ер╕Ыр╣М р╕ер╕╖р╣Ир╕Щр╣Др╕лр╕е р╣Ар╕Ыр╣Зр╕Щр╕Шр╕гр╕гр╕бр╕Кр╕▓р╕Хр╕┤
+Model: google/gemini-2.5-flash-lite concurrency=4
+  [th] speaking Beginner: 100
+  [th] speaking Elementary: 100
+  [th] speaking Pre-Intermediate: 100
+  [th] speaking Intermediate: 100
+  [th] speaking Advanced: 100
+  [th] тЬУ speaking
+  [th] writing Beginner: 100
+  [th] writing Elementary: 100
+  [th] writing Pre-Intermediate: 100
+  [th] writing Intermediate: 100
+  [th] writing Advanced: 100
+  [th] тЬУ writing
+Error: OpenRouter 402: {"error":{"message":"This request requires more credits, or fewer max_tokens. You requested up to 8192 tokens, but can only afford 2691. To increase, visit https://openrouter.ai/settings/credits and add more credits","code":402,"metadata":{"limit_source":"openrouter_credits","rem
+    at polishBatch (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:226:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:277:22
+    at async worker (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:263:18)
+    at async Promise.all (index 0)
+    at async mapPool (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:266:3)
+    at async polishChunks (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:276:19)
+    at async polishTask2 (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:433:16)
+    at async main (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:551:3)

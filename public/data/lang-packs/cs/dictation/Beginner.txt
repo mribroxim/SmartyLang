@@ -1,0 +1,300 @@
+- Jsem student.
+- Ona má červenou knihu.
+- Kočka je na rohožce.
+- On je můj přítel.
+- Rádi hrajeme s míčem.
+- Toto je velký pes.
+- Mám modré pero.
+- Jsou v parku.
+- Slunce je horké.
+- Ona umí dobře číst.
+- Chodíme do školy.
+- Tamto je malé auto.
+- On běží rychle.
+- Pták je na stromě.
+- Vidím žlutý autobus.
+- Jsou šťastní.
+- Ona má bílou kočku.
+- Obědváme v poledne.
+- Bydlím v domě.
+- Ryba je ve vodě.
+- Je to hodný chlapec.
+- Má ráda růžové květiny.
+- Hrajeme si s hračkami.
+- Ten muž je vysoký.
+- Mám dvě jablka.
+- Sedí na židli.
+- Obloha je modrá.
+- Pijí mléko.
+- Píše tužkou.
+- Auto je červené.
+- Je mi sedm let.
+- Vidíme velký strom.
+- Pes běží rychle.
+- Má zelený klobouk.
+- Je to moje sestra.
+- Míč je kulatý.
+- Mám rád zmrzlinu.
+- Plavou v bazénu.
+- Kniha je na stole.
+- Zpíváme písničku.
+- Má dlouhé vlasy.
+- Pták umí létat.
+- Je to učitel.
+- Piju vodu každý den.
+- Kočka je černá.
+- Hrají si na zahradě.
+- Jí jablko.
+- Slunce je žluté.
+- Mám novou tašku.
+- Chodí do školy.
+- Květina je hezká.
+- Bydlíme ve velkém městě.
+- Čte příběh.
+- Tužka je krátká.
+- Rád kreslí.
+- Spím ve své posteli.
+- Strom je zelený.
+- Jsou to moje rodina.
+- Má na sobě červené šaty.
+- Mléko je studené.
+- Umím skákat vysoko.
+- Má malého psa.
+- Židle je modrá.
+- Milujeme naši matku.
+- Maluje obraz.
+- Autobus je žlutý.
+- Je doktor.
+- K snídani jím chleba.
+- Dveře jsou otevřené.
+- Doma sledují televizi.
+- Hraje na klavír.
+- Klobouk je na stole.
+- Mám domácí rybičku.
+- Čte knihu.
+- Voda je teplá.
+- Jdeme do zoo.
+- Každé ráno běhá.
+- Stůl je hnědý.
+- Má rád pizzu.
+- Myju si ruce.
+- Měsíc je bílý.
+- Jsou v autě.
+- Má hezkou panenku.
+- Šťáva je sladká.
+- Vidím hvězdy.
+- Hraje si se svým bratrem.
+- Vejce je na talíři.
+- Máme šťastný domov.
+- Nosí modrou košili.
+- Tráva je zelená.
+- Jmenuji se Tom.
+- Miminko spí.
+- Vidím hnědého koně.
+- Je to moje matka.
+- Jezdí na kole.
+- Polévka je horká.
+- Mají nový dům.
+- Čistím si zuby.
+- Ptáček sladce zpívá.
+- Rádi tancujeme.
+- Má růžovou tašku.
+- Hodiny jsou na zdi.
+- Je to farmář.
+- Jím pomeranč.
+- Boty jsou černé.
+- Děti jsou šťastné.
+- Píše dopis.
+- Chléb je čerstvý.
+- Jdu brzy spát.
+- Má červené kolo.
+- Kočka pije mléko.
+- Navštěvujeme naši babičku.
+- Stříhá papír.
+- Lampa je jasná.
+- Jsou to dobří přátelé.
+- Otevírá okno.
+- Polštář je měkký.
+- Rád běhám.
+- Má žlutý balónek.
+- Krabice je prázdná.
+- Můj táta je můj táta.
+- Společně jíme večeři.
+- Podlaha je čistá.
+- Umí počítat do deseti.
+- Miluji svého psa.
+- Hrnek je plný.
+- Jdou na trh.
+- Nosí šedý kabát.
+- Květina voní hezky.
+- Mám červené jablko.
+- Zpívá si ve sprše.
+- Tužka je ostrá.
+- Hrajeme si v písku.
+- Má rád čokoládové mléko.
+- Zrcadlo je čisté.
+- Chlapec je šťastný.
+- Čte každý večer.
+- Ručník je měkký.
+- Umím napsat své jméno.
+- Má novou hračku.
+- Kámen je těžký.
+- Jsou na pláži.
+- Přeskočí lano.
+- Koláč je sladký.
+- Stavíme sněhuláka.
+- Pije pomerančový džus.
+- Klíč je malý.
+- Mám zelenou žábu.
+- Jde do obchodu.
+- Oblak je bílý.
+- Je to můj dědeček.
+- Pouštíme draka.
+- Mýdlo voní hezky.
+- Rádi chodí na túry.
+- Má teplý kabát.
+- Králík je měkký.
+- Umím nakreslit dům.
+- Sází květinu.
+- Lžíce je na stole.
+- Uklízíme pokoj.
+- Venku nosí klobouk.
+- Ten náklaďák je velký.
+- Rád rybaří.
+- Mám plyšového medvídka.
+- Déšť je studený.
+- Pečou dort.
+- Zalévá květiny.
+- Vlajka je červená a modrá.
+- Jsem v první třídě.
+- Chytá míč.
+- deka je teplá.
+- Vidíme duhu.
+- Má modrý deštník.
+- Kamna jsou horká.
+- Je to můj soused.
+- Piju mléko v noci.
+- Plot je bílý.
+- Jdou do knihovny.
+- Kreslí pastelkami.
+- Cesta je dlouhá.
+- Mám rád sýrové sendviče.
+- Má malou sestru.
+- Zvon zvoní hlasitě.
+- Pozorujeme ptáky.
+- Počítá hvězdy.
+- Koberec je měkký.
+- Umí lézt na strom.
+- Mám stříbrnou minci.
+- Žebřík je vysoký.
+- Staví hrad z písku.
+- Skládá papír.
+- Police je vysoko.
+- Miluji svou školu.
+- Sdílí svůj oběd.
+- Košík je plný.
+- Jdeme na farmu.
+- Má domácího křečka.
+- Lano je dlouhé.
+- Je to hodný chlapec.
+- Najdu hezkou mušli.
+- Kopec je strmý.
+- Jezdí autobusem.
+- Utrhne květinu.
+- Sušenka je křupavá.
+- Umím si zavázat tkaničky.
+- Krmí rybičky.
+- Ubrousek je bílý.
+- Máme rádi popcorn.
+- Má nové šaty.
+- Zahrada je krásná.
+- Myje si obličej.
+- Vidím padající hvězdu.
+- Palačinka je kulatá.
+- Spí ve stanu.
+- Objímá svou matku.
+- Svíčka je jasná.
+- Mám červený vozík.
+- Kopne do míče.
+- Led je velmi studený.
+- Sbíráme listí.
+- Maluje si nehty.
+- Lavička je dřevěná.
+- Je to statečné dítě.
+- K snídani jím ovesnou kaši.
+- V hnízdě jsou vejce.
+- Mají nové štěně.
+- Houpe s dítětem.
+- Džbán je těžký.
+- Umím skákat po jedné noze.
+- Hrabe listí.
+- Šála je teplá.
+- Navštívíme muzeum.
+- Prostírá stůl.
+- Socha je stará.
+- Má rád jahodový džem.
+- Mám nadýchaný polštář.
+- Most je dlouhý.
+- Sledují západ slunce.
+- Češe si vlasy.
+- Košík je prázdný.
+- Jsem dobrý pomocník.
+- Maluje obraz.
+- Skluzavka je kluzká.
+- Pečeme spolu sušenky.
+- Má fialový batoh.
+- Houpačka je zábavná.
+- Umí zapískat melodii.
+- Počítám do dvaceti.
+- Branka je otevřená.
+- Skočí do kaluží.
+- Opráší poličku.
+- Mince je lesklá.
+- Rád zahradničím.
+- Nese tašku.
+- Ovesná kaše je teplá.
+- Říkáme děkuji.
+- Má želvu jako mazlíčka.
+- Pravítko je rovné.
+- Skládá si oblečení.
+- Vidím berušku.
+- Rukavice je měkká.
+- Malují obrázek.
+- Míchá polévku.
+- Stan je velký.
+- Umím lusknout prsty.
+- Zalévá trávu.
+- Knoflík je kulatý.
+- Bavíme se venku.
+- Přivazuje stuhu.
+- Vůz je červený.
+- Jí banán.
+- Dávám objetí.
+- Střecha je šedá.
+- Dívají se na knihy.
+- Loupe pomeranč.
+- Rám je dřevěný.
+- Rád skáču.
+- Má sbírku mincí.
+- Sklenice je plná bonbónů.
+- Jdeme na procházku.
+- Zapálí svíčku.
+- Stín je dlouhý.
+- Je to rychlý běžec.
+- Zasazuji semínko.
+- Ručník visí na háčku.
+- Dělají piknik.
+- Uplete si cop.
+- Bublina praskne.
+- Umím pískat.
+- Peče koláč.
+- Drak létá vysoko.
+- Vidíme oceán.
+- Má náhrdelník z mušlí.
+- Vlna je velká.
+- Rád kreslí.
+- Stavím věž z kostek.
+- Pírko je lehké.
+- Milujeme se navzájem.
+- Každý den se usmívá.
+- Svět je krásný.

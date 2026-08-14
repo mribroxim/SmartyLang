@@ -1,0 +1,300 @@
+- Jestem studentem.
+- Ona ma czerwoną książkę.
+- Kot jest na macie.
+- On jest moim przyjacielem.
+- Lubimy grać w piłkę.
+- To jest duży pies.
+- Mam niebieski długopis.
+- Oni są w parku.
+- Słońce jest gorące.
+- Ona potrafi dobrze czytać.
+- Chodzimy do szkoły.
+- To jest mały samochód.
+- On biega szybko.
+- Ptak jest na drzewie.
+- Widzę żółty autobus.
+- Oni są szczęśliwi.
+- Ona ma białego kota.
+- Jemy lunch w południe.
+- Mieszkam w domu.
+- Ryba jest w wodzie.
+- On jest dobrym chłopcem.
+- Ona lubi różowe kwiaty.
+- Bawimy się zabawkami.
+- Mężczyzna jest wysoki.
+- Mam dwa jabłka.
+- On siedzi na krześle.
+- Niebo jest niebieskie.
+- Oni piją mleko.
+- Ona pisze ołówkiem.
+- Samochód jest czerwony.
+- Mam siedem lat.
+- Widzimy duże drzewo.
+- Pies biegnie szybko.
+- On ma zielony kapelusz.
+- Ona jest moją siostrą.
+- Piłka jest okrągła.
+- Lubię lody.
+- Oni pływają w basenie.
+- Książka jest na stole.
+- Śpiewamy piosenkę.
+- Ona ma długie włosy.
+- Ptak potrafi latać.
+- On jest nauczycielem.
+- Piję wodę codziennie.
+- Kot jest czarny.
+- Oni bawią się w ogrodzie.
+- Ona je jabłko.
+- Słońce jest żółte.
+- Mam nową torbę.
+- On idzie do szkoły.
+- Kwiat jest ładny.
+- Mieszkamy w dużym mieście.
+- Ona czyta opowiadanie.
+- Ołówek jest krótki.
+- On lubi rysować.
+- Śpię w moim łóżku.
+- Drzewo jest zielone.
+- Oni są moją rodziną.
+- Ona nosi czerwoną sukienkę.
+- Mleko jest zimne.
+- Potrafię wysoko skakać.
+- On ma małego psa.
+- Krzesło jest niebieskie.
+- Kochamy naszą mamę.
+- Ona maluje obraz.
+- Autobus jest żółty.
+- On jest lekarzem.
+- Jem chleb na śniadanie.
+- Drzwi są otwarte.
+- Oni oglądają telewizję w domu.
+- Ona gra na pianinie.
+- Kapelusz jest na stole.
+- Mam rybkę.
+- On czyta książkę.
+- Woda jest ciepła.
+- Idziemy do zoo.
+- Ona biega każdego ranka.
+- Biurko jest brązowe.
+- On lubi pizzę.
+- Myję ręce.
+- Księżyc jest biały.
+- Oni są w samochodzie.
+- Ona ma ładną lalkę.
+- Sok jest słodki.
+- Widzę gwiazdy.
+- On bawi się ze swoim bratem.
+- Jajko jest na talerzu.
+- Mamy szczęśliwy dom.
+- Ona nosi niebieską koszulę.
+- Trawa jest zielona.
+- Mam na imię Tom.
+- Dziecko śpi.
+- Widzę brązowego konia.
+- Ona jest moją matką.
+- On jeździ na rowerze.
+- Zupa jest gorąca.
+- Oni mają nowy dom.
+- Myję zęby.
+- Ptak śpiewa słodko.
+- Lubimy tańczyć.
+- Ona ma różową torbę.
+- Zegar wisi na ścianie.
+- On jest rolnikiem.
+- Jem pomarańczę.
+- Buty są czarne.
+- Dzieci są szczęśliwe.
+- Ona pisze list.
+- Chleb jest świeży.
+- Idę spać wcześnie.
+- On ma czerwony rower.
+- Kot pije mleko.
+- Odwiedzamy naszą babcię.
+- Ona tnie papier.
+- Lampa jest jasna.
+- Oni są dobrymi przyjaciółmi.
+- On otwiera okno.
+- Poduszka jest miękka.
+- Lubię biegać.
+- Ona ma żółty balon.
+- Pudełko jest puste.
+- On jest moim tatą.
+- Jemy razem kolację.
+- Podłoga jest czysta.
+- Ona potrafi liczyć do dziesięciu.
+- Kocham mojego psa.
+- Kubek jest pełny.
+- Oni idą na targ.
+- On nosi szary płaszcz.
+- Kwiat ładnie pachnie.
+- Mam czerwone jabłko.
+- Ona śpiewa pod prysznicem.
+- Ołówek jest ostry.
+- Bawimy się w piasku.
+- On lubi mleko czekoladowe.
+- Lustro jest czyste.
+- Chłopiec jest szczęśliwy.
+- Ona czyta każdej nocy.
+- Ręcznik jest miękki.
+- Potrafię przeliterować swoje imię.
+- On ma nową zabawkę.
+- Kamień jest ciężki.
+- Oni są na plaży.
+- Ona skacze przez linę.
+- Ciasto jest słodkie.
+- Robimy bałwana.
+- On pije sok pomarańczowy.
+- Klucz jest mały.
+- Mam zieloną żabę.
+- Ona idzie do sklepu.
+- Chmura jest biała.
+- On jest moim dziadkiem.
+- Lecimy latawcem.
+- Mydło pachnie ładnie.
+- Oni lubią wędrować.
+- Ona ma ciepły płaszcz.
+- Królik jest miękki.
+- Potrafię narysować dom.
+- On sadzi kwiatka.
+- Łyżka jest na stole.
+- Sprzątamy pokój.
+- Ona nosi kapelusz na zewnątrz.
+- Ciężarówka jest duża.
+- On lubi łowić ryby.
+- Mam pluszowego misia.
+- Deszcz jest zimny.
+- Oni pieką ciasto.
+- Ona podlewa rośliny.
+- Flaga jest czerwona i niebieska.
+- Jestem w pierwszej klasie.
+- On łapie piłkę.
+- Koc jest ciepły.
+- Widzimy tęczę.
+- Ona ma niebieski parasol.
+- Piec jest gorący.
+- On jest moim sąsiadem.
+- Piję mleko w nocy.
+- Płot jest biały.
+- Oni idą do biblioteki.
+- Ona rysuje kredkami.
+- Ścieżka jest długa.
+- Lubię kanapki z serem.
+- On ma młodszą siostrę.
+- Dzwonek dzwoni głośno.
+- Obserwujemy ptaki.
+- Ona liczy gwiazdy.
+- Dywan jest miękki.
+- On potrafi wspiąć się na drzewo.
+- Mam srebrną monetę.
+- Drabina jest wysoka.
+- Oni budują zamek z piasku.
+- Ona składa papier.
+- Półka jest wysoko.
+- Kocham moją szkołę.
+- On dzieli się swoim lunchem.
+- Kosz jest pełny.
+- Jedziemy na farmę.
+- Ona ma chomika.
+- Lina jest długa.
+- On jest miłym chłopcem.
+- Znajduję ładną muszelkę.
+- Wzgórze jest strome.
+- Oni jeżdżą autobusem.
+- Ona zbiera kwiat.
+- Ciastko jest chrupiące.
+- Umiem wiązać buty.
+- On karmi ryby.
+- Serwetka jest biała.
+- Lubimy popcorn.
+- Ona ma nową sukienkę.
+- Ogród jest piękny.
+- On myje twarz.
+- Widzę spadającą gwiazdę.
+- Naleśnik jest okrągły.
+- Oni śpią w namiocie.
+- Ona przytula swoją mamę.
+- Świeca jest jasna.
+- Mam czerwony wóz.
+- On kopie piłkę.
+- Lód jest bardzo zimny.
+- Zbieramy liście.
+- Ona maluje paznokcie.
+- Ławka jest drewniana.
+- On jest odważnym dzieckiem.
+- Jem owsiankę na śniadanie.
+- W gnieździe są jajka.
+- Oni mają nowego szczeniaka.
+- Ona kołysze dziecko.
+- Dzban jest ciężki.
+- Potrafię skakać na jednej nodze.
+- On grabi liście.
+- Szalik jest ciepły.
+- Odwiedzamy muzeum.
+- Ona nakrywa do stołu.
+- Pomnik jest stary.
+- On lubi dżem truskawkowy.
+- Mam puszyste poduszki.
+- Most jest długi.
+- Oni oglądają zachód słońca.
+- Ona czesze włosy.
+- Kosz jest pusty.
+- Jestem dobrym pomocnikiem.
+- On maluje obraz.
+- Zjeżdżalnia jest śliska.
+- Pieczemy razem ciasteczka.
+- Ona ma fioletowy plecak.
+- Huśtawka jest zabawna.
+- On potrafi zagwizdać melodię.
+- Liczyłem do dwudziestu.
+- Brama jest otwarta.
+- Oni skaczą po kałużach.
+- Ona ściera kurze z półki.
+- Moneta jest błyszcząca.
+- Lubię pracować w ogrodzie.
+- On niesie torbę.
+- Owsianka jest ciepła.
+- Mówimy dziękuję.
+- Ona ma żółwia domowego.
+- Linijka jest prosta.
+- On składa swoje ubrania.
+- Widzę biedronkę.
+- Rękawiczka jest miękka.
+- Oni kolorują obrazek.
+- Ona miesza zupę.
+- Namiot jest duży.
+- Potrafię pstrykać palcami.
+- On podlewa trawę.
+- Guzik jest okrągły.
+- Dobrze się bawimy na zewnątrz.
+- Ona wiąże wstążkę.
+- Wagon jest czerwony.
+- On je banana.
+- Przytulam.
+- Dach jest szary.
+- Oni patrzą na książki.
+- Ona obiera pomarańczę.
+- Rama jest drewniana.
+- Lubię skakać.
+- On ma kolekcję monet.
+- Słoik jest pełen cukierków.
+- Idziemy na spacer.
+- Ona zapala świecę.
+- Cień jest długi.
+- On jest szybkim biegaczem.
+- Ja sadzę nasionko.
+- Ręcznik wisi na haczyku.
+- Oni piknikują.
+- Ona zaplata włosy.
+- Bańka pęka.
+- Umiem gwizdać.
+- On piecze ciasto.
+- Latawiec leci wysoko.
+- Widzimy ocean.
+- Ona ma naszyjnik z muszelek.
+- Fala jest duża.
+- On lubi kolorować.
+- Buduję wieżę z klocków.
+- Piórko jest lekkie.
+- Kochamy się nawzajem.
+- Ona uśmiecha się każdego dnia.
+- Świat jest piękny.

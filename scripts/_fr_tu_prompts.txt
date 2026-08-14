@@ -1,0 +1,73 @@
+speaking|Beginner|15|Décris les vêtements que tu aimes porter tous les jours.
+speaking|Beginner|16|Parle-moi de ta nourriture préférée.
+speaking|Beginner|17|Aimes-tu la restauration rapide comme le chawarma ou le lavash tandir ?
+speaking|Beginner|18|Que bois-tu habituellement avec tes repas ?
+speaking|Beginner|19|Parlons des loisirs. Qu'est-ce que tu fais pour t'amuser ?
+speaking|Beginner|20|Aimes-tu écouter de la musique ?
+speaking|Beginner|21|Quel genre de musique préfères-tu ?
+speaking|Beginner|22|Parle-moi de ton film préféré.
+speaking|Beginner|23|Regardes-tu des séries télévisées sur Internet ?
+speaking|Beginner|24|Parlons de lecture. Aimes-tu lire des livres ?
+speaking|Beginner|25|Décris un endroit calme que tu aimes visiter.
+speaking|Beginner|26|Parle-moi de ta saison préférée de l'année.
+speaking|Beginner|27|Aimes-tu le temps pluvieux ou le temps ensoleillé ?
+speaking|Beginner|28|Que fais-tu habituellement quand il pleut ?
+speaking|Beginner|29|Parlons sports. Pratiques-tu un sport ?
+speaking|Elementary|15|Décris l'ambiance de ton café local préféré.
+speaking|Elementary|16|Préfères-tu boire du café ou du thé quand tu étudies ?
+speaking|Elementary|17|Parlons voyage. Décris un voyage que tu as fait et qui a duré plus de trois heures.
+speaking|Elementary|18|Parle-moi d'une ville que tu as visitée et qui est très différente de ta ville natale.
+speaking|Elementary|19|Qu'emportes-tu habituellement dans ton sac quand tu pars en court voyage ?
+speaking|Elementary|20|Parlons technologie. Combien d'heures par jour passes-tu devant un écran ?
+speaking|Elementary|21|Parle-moi d'une application qui t'aide à organiser ta vie quotidienne.
+speaking|Elementary|22|Décris un moment où ton téléphone ou ton ordinateur a cessé de fonctionner. Qu'as-tu fait ?
+speaking|Elementary|23|Parlons musique. Préfères-tu écouter de la musique avec des paroles ou de la musique instrumentale ?
+speaking|Elementary|24|Parle-moi d'un concert ou d'un événement musical auquel tu as assisté.
+speaking|Elementary|25|As-tu déjà essayé d'écrire ta propre chanson ou de faire de la musique en ligne ?
+speaking|Elementary|26|Parlons cinéma. Qui est ton acteur ou réalisateur préféré ?
+speaking|Elementary|27|Décris un film qui t'a beaucoup ému.
+speaking|Elementary|28|Préfères-tu regarder des films à la maison ou au cinéma ?
+speaking|Elementary|29|Parlons lecture. Parle-moi d'un livre éducatif ou d'un manuel que tu as lu.
+speaking|Pre-Intermediate|19|Parlons des affaires. Aimerais-tu créer ta propre entreprise un jour ?
+writing|Beginner|15|Raconte à un ami un excellent repas que tu as mangé récemment, comme un lavash tandir chaud.
+writing|Beginner|16|Choisis entre l'été et l'hiver, et donne trois raisons pour ton choix.
+writing|Beginner|17|Réponds à cette question : Qu'est-ce qui te rend heureux quand tu es triste ?
+writing|Beginner|18|Écris un petit mot à ton professeur pour le remercier d'une bonne leçon.
+writing|Beginner|19|Imagine que tu es un oiseau. Écris trois phrases sur ce que tu vois depuis le ciel.
+writing|Beginner|20|Liste quatre choses que tu aimes faire le dimanche après-midi.
+writing|Beginner|21|Nomme un pays que tu veux visiter et dis une chose que tu veux y faire.
+writing|Beginner|22|Écris une brève entrée de journal sur ce que tu as appris aujourd'hui.
+writing|Beginner|23|Explique à quelqu'un comment jouer à ton jeu simple préféré.
+writing|Beginner|24|Partage ta chanson préférée et explique comment la musique te fait sentir.
+writing|Beginner|25|Pose trois questions que tu as sur l'apprentissage de la langue française.
+writing|Beginner|26|Choisis un superpouvoir (voler ou devenir invisible) et dis ce que tu ferais en premier.
+writing|Beginner|27|Écris une liste de courses pour une fête avec dix articles.
+writing|Beginner|28|Imagine que tu as trouvé une bague magique. Écris deux phrases sur ce qu'elle fait.
+writing|Beginner|29|Réponds à cette question : À quelle heure te réveilles-tu, et aimes-tu te réveiller tôt ?
+writing|Beginner|68|Imaginez que vous partez camper. Écrivez une liste de cinq choses à emporter.
+writing|Beginner|76|Choisis un fruit que tu détestes et explique pourquoi tu ne l'aimes pas.
+writing|Beginner|77|Écris un court paragraphe sur ton professeur préféré.
+writing|Beginner|78|Imagine que tu as une nouvelle voiture. De quelle couleur est-elle et où la conduis-tu ?
+writing|Beginner|79|Réponds à ceci : Préfères-tu le matin ou la nuit ?
+writing|Beginner|80|Nomme une boisson fraîche que tu aimes en été.
+writing|Beginner|81|Écris une note de remerciement pour un cadeau que tu as reçu.
+writing|Beginner|82|Raconte une histoire sur une fois où tu as vu une belle fleur.
+writing|Beginner|83|Liste les jours de la semaine et écris une activité pour chaque jour.
+writing|Beginner|84|Partage ce que tu fais avant d'aller te coucher.
+writing|Beginner|85|Pose une question à tes parents sur leur jeunesse.
+writing|Beginner|86|Choisis un métier que tu ne voudrais jamais faire et dis pourquoi.
+writing|Beginner|87|Écris une brève présentation pour un ami que tu amènes à une fête.
+writing|Beginner|88|Imagine qu'il neige. Écris ce que tu construirais avec la neige.
+writing|Beginner|89|Réponds à ceci : Quel est ton chiffre préféré et pourquoi ?
+writing|Elementary|15|Raconte un livre que tu as lu pour l'école. L'as-tu trouvé ennuyeux ou intéressant ?
+writing|Elementary|16|Parle d'une habitude que tu veux abandonner cette année.
+writing|Elementary|17|Organise une journée de congé parfaite. Où vas-tu du matin au soir ?
+writing|Elementary|19|Interroge ton futur toi dans dix ans.
+writing|Elementary|21|Prédit où tu voyageras lors de tes prochaines grandes vacances.
+writing|Elementary|24|Écris une lettre de réclamation à un magasin concernant un article cassé que tu as acheté.
+writing|Elementary|26|Parle d'un jeu vidéo auquel tu joues souvent. Qu'est-ce qui le rend amusant ?
+writing|Elementary|27|Parle du meilleur cadeau que tu aies jamais offert à un proche.
+writing|Elementary|28|Organise un week-end à la montagne. Qu'est-ce que tu emportes ?
+writing|Pre-Intermediate|44|Créez une liste de questions d'entretien pour un célèbre entrepreneur en technologie.
+writing|Pre-Intermediate|54|Créez une liste de choses à emporter pour une randonnée par temps imprévisible.
+writing|Pre-Intermediate|94|Créez une liste de contrôle pour l'achat d'une voiture d'occasion.

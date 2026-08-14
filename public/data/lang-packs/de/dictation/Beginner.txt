@@ -1,0 +1,300 @@
+- Ich bin Student.
+- Sie hat ein rotes Buch.
+- Die Katze ist auf der Matte.
+- Er ist mein Freund.
+- Wir spielen gern Ball.
+- Das ist ein großer Hund.
+- Ich habe einen blauen Stift.
+- Sie sind im Park.
+- Die Sonne ist heiß.
+- Sie kann gut lesen.
+- Wir gehen zur Schule.
+- Das ist ein kleines Auto.
+- Er rennt schnell.
+- Der Vogel ist im Baum.
+- Ich sehe einen gelben Bus.
+- Sie sind glücklich.
+- Sie hat eine weiße Katze.
+- Wir essen zu Mittag.
+- Ich wohne in einem Haus.
+- Der Fisch ist im Wasser.
+- Er ist ein guter Junge.
+- Sie mag rosa Blumen.
+- Wir spielen mit Spielzeug.
+- Der Mann ist groß.
+- Ich habe zwei Äpfel.
+- Er sitzt auf einem Stuhl.
+- Der Himmel ist blau.
+- Sie trinken Milch.
+- Sie schreibt mit einem Bleistift.
+- Das Auto ist rot.
+- Ich bin sieben Jahre alt.
+- Wir sehen einen großen Baum.
+- Der Hund rennt schnell.
+- Er hat einen grünen Hut.
+- Sie ist meine Schwester.
+- Der Ball ist rund.
+- Ich mag Eis.
+- Sie schwimmen im Schwimmbad.
+- Das Buch liegt auf dem Tisch.
+- Wir singen ein Lied.
+- Sie hat lange Haare.
+- Der Vogel kann fliegen.
+- Er ist Lehrer.
+- Ich trinke jeden Tag Wasser.
+- Die Katze ist schwarz.
+- Sie spielen im Garten.
+- Sie isst einen Apfel.
+- Die Sonne ist gelb.
+- Ich habe eine neue Tasche.
+- Er geht zur Schule.
+- Die Blume ist hübsch.
+- Wir leben in einer großen Stadt.
+- Sie liest eine Geschichte.
+- Der Bleistift ist kurz.
+- Er malt gerne.
+- Ich schlafe in meinem Bett.
+- Der Baum ist grün.
+- Das ist meine Familie.
+- Sie trägt ein rotes Kleid.
+- Die Milch ist kalt.
+- Ich kann hoch springen.
+- Er hat einen kleinen Hund.
+- Der Stuhl ist blau.
+- Wir lieben unsere Mutter.
+- Sie malt ein Bild.
+- Der Bus ist gelb.
+- Er ist Arzt.
+- Ich esse Brot zum Frühstück.
+- Die Tür ist offen.
+- Sie sehen zu Hause fern.
+- Sie spielt Klavier.
+- Der Hut liegt auf dem Tisch.
+- Ich habe einen Zierfisch.
+- Er liest ein Buch.
+- Das Wasser ist warm.
+- Wir gehen in den Zoo.
+- Sie rennt jeden Morgen.
+- Der Schreibtisch ist braun.
+- Er mag Pizza.
+- Ich wasche meine Hände.
+- Der Mond ist weiß.
+- Sie sind im Auto.
+- Sie hat eine hübsche Puppe.
+- Der Saft ist süß.
+- Ich kann die Sterne sehen.
+- Er spielt mit seinem Bruder.
+- Das Ei ist auf dem Teller.
+- Wir haben ein glückliches Zuhause.
+- Sie trägt ein blaues Hemd.
+- Das Gras ist grün.
+- Mein Name ist Tom.
+- Das Baby schläft.
+- Ich sehe ein braunes Pferd.
+- Sie ist meine Mutter.
+- Er fährt Fahrrad.
+- Die Suppe ist heiß.
+- Sie haben ein neues Haus.
+- Ich putze meine Zähne.
+- Der Vogel singt süß.
+- Wir tanzen gern.
+- Sie hat eine pinke Tasche.
+- Die Uhr ist an der Wand.
+- Er ist Bauer.
+- Ich esse eine Orange.
+- Die Schuhe sind schwarz.
+- Die Kinder sind glücklich.
+- Sie schreibt einen Brief.
+- Das Brot ist frisch.
+- Ich gehe früh ins Bett.
+- Er hat ein rotes Fahrrad.
+- Die Katze trinkt Milch.
+- Wir besuchen unsere Oma.
+- Sie schneidet das Papier.
+- Die Lampe ist hell.
+- Sie sind gute Freunde.
+- Er öffnet das Fenster.
+- Das Kissen ist weich.
+- Ich laufe gern.
+- Sie hat einen gelben Luftballon.
+- Die Kiste ist leer.
+- Er ist mein Vater.
+- Wir essen zusammen zu Abend.
+- Der Boden ist sauber.
+- Sie kann bis zehn zählen.
+- Ich liebe meinen Hund.
+- Die Tasse ist voll.
+- Sie gehen zum Markt.
+- Er trägt einen grauen Mantel.
+- Die Blume duftet gut.
+- Ich habe einen roten Apfel.
+- Sie singt unter der Dusche.
+- Der Bleistift ist spitz.
+- Wir spielen im Sand.
+- Er mag Schokoladenmilch.
+- Der Spiegel ist sauber.
+- Der Junge ist glücklich.
+- Sie liest jeden Abend.
+- Das Handtuch ist weich.
+- Ich kann meinen Namen buchstabieren.
+- Er hat ein neues Spielzeug.
+- Der Stein ist schwer.
+- Sie sind am Strand.
+- Sie springt über das Seil.
+- Der Kuchen ist süß.
+- Wir bauen einen Schneemann.
+- Er trinkt Orangensaft.
+- Der Schlüssel ist klein.
+- Ich habe einen grünen Frosch.
+- Sie geht zum Geschäft.
+- Die Wolke ist weiß.
+- Er ist mein Opa.
+- Wir lassen eine Drachen steigen.
+- Die Seife riecht gut.
+- Sie wandern gerne.
+- Sie hat einen warmen Mantel.
+- Das Kaninchen ist weich.
+- Ich kann ein Haus malen.
+- Er pflanzt eine Blume.
+- Der Löffel ist auf dem Tisch.
+- Wir räumen das Zimmer auf.
+- Sie trägt draußen einen Hut.
+- Der Lastwagen ist groß.
+- Er angelt gern.
+- Ich habe einen Teddybären.
+- Der Regen ist kalt.
+- Sie backen einen Kuchen.
+- Sie gießt die Pflanzen.
+- Die Flagge ist rot und blau.
+- Ich bin in der ersten Klasse.
+- Er fängt den Ball.
+- Die Decke ist warm.
+- Wir sehen einen Regenbogen.
+- Sie hat einen blauen Regenschirm.
+- Der Herd ist heiß.
+- Er ist mein Nachbar.
+- Ich trinke nachts Milch.
+- Der Zaun ist weiß.
+- Sie gehen in die Bibliothek.
+- Sie malt mit Buntstiften.
+- Der Weg ist lang.
+- Ich mag Käsesandwiches.
+- Er hat eine kleine Schwester.
+- Die Glocke läutet laut.
+- Wir beobachten die Vögel.
+- Sie zählt die Sterne.
+- Der Teppich ist weich.
+- Er kann auf einen Baum klettern.
+- Ich habe eine Silbermünze.
+- Die Leiter ist hoch.
+- Sie bauen eine Sandburg.
+- Sie faltet das Papier.
+- Das Regal ist hoch.
+- Ich liebe meine Schule.
+- Er teilt sein Mittagessen.
+- Der Korb ist voll.
+- Wir gehen zum Bauernhof.
+- Sie hat ein Haustier, einen Hamster.
+- Das Seil ist lang.
+- Er ist ein freundlicher Junge.
+- Ich finde eine hübsche Muschel.
+- Der Hügel ist steil.
+- Sie fahren mit dem Bus.
+- Sie pflückt eine Blume.
+- Der Keks ist knusprig.
+- Ich kann meine Schuhe binden.
+- Er füttert die Fische.
+- Die Serviette ist weiß.
+- Wir mögen Popcorn.
+- Sie hat ein neues Kleid.
+- Der Garten ist schön.
+- Er wäscht sein Gesicht.
+- Ich sehe eine Sternschnuppe.
+- Der Pfannkuchen ist rund.
+- Sie schlafen in einem Zelt.
+- Sie umarmt ihre Mutter.
+- Die Kerze ist hell.
+- Ich habe einen roten Wagen.
+- Er tritt gegen den Ball.
+- Das Eis ist sehr kalt.
+- Wir sammeln Blätter.
+- Sie lackiert ihre Nägel.
+- Die Bank ist aus Holz.
+- Er ist ein mutiges Kind.
+- Ich esse Haferflocken zum Frühstück.
+- Das Nest hat Eier.
+- Sie haben einen neuen Welpen.
+- Sie schaukelt das Baby.
+- Der Krug ist schwer.
+- Ich kann auf einem Bein hüpfen.
+- Er harkt die Blätter.
+- Der Schal ist warm.
+- Wir besuchen das Museum.
+- Sie deckt den Tisch.
+- Die Statue ist alt.
+- Er mag Erdbeermarmelade.
+- Ich habe ein flauschiges Kissen.
+- Die Brücke ist lang.
+- Sie sehen den Sonnenuntergang an.
+- Sie kämmt ihre Haare.
+- Der Korb ist leer.
+- Ich bin eine gute Hilfe.
+- Er malt ein Bild.
+- Die Rutsche ist rutschig.
+- Wir backen zusammen Kekse.
+- Sie hat einen lila Rucksack.
+- Die Schaukel macht Spaß.
+- Er kann eine Melodie pfeifen.
+- Ich zähle bis zwanzig.
+- Das Tor ist offen.
+- Sie springen in Pfützen.
+- Sie staubt das Regal ab.
+- Die Münze glänzt.
+- Ich gärtnere gerne.
+- Er trägt eine Tasche.
+- Der Haferbrei ist warm.
+- Wir sagen Danke.
+- Sie hat ein Haustierschildkröte.
+- Das Lineal ist gerade.
+- Er faltet seine Kleidung.
+- Ich sehe einen Marienkäfer.
+- Der Handschuh ist weich.
+- Sie malen ein Bild.
+- Sie rührt die Suppe um.
+- Das Zelt ist groß.
+- Ich kann schnipsen.
+- Er gießt das Gras.
+- Der Knopf ist rund.
+- Wir haben draußen Spaß.
+- Sie bindet ein Band.
+- Der Wagen ist rot.
+- Er isst eine Banane.
+- Ich gebe eine Umarmung.
+- Das Dach ist grau.
+- Sie schauen Bücher an.
+- Sie schält eine Orange.
+- Der Rahmen ist aus Holz.
+- Ich mag es zu hüpfen.
+- Er hat eine Münzsammlung.
+- Das Glas ist voller Süßigkeiten.
+- Wir gehen spazieren.
+- Sie zündet eine Kerze an.
+- Der Schatten ist lang.
+- Er ist ein schneller Läufer.
+- Ich pflanze einen Samen.
+- Das Handtuch hängt am Haken.
+- Sie machen ein Picknick.
+- Sie flechtet ihre Haare.
+- Die Blase platzt.
+- Ich kann pfeifen.
+- Er backt einen Kuchen.
+- Der Drachen fliegt hoch.
+- Wir sehen das Meer.
+- Sie hat eine Muschelhalskette.
+- Die Welle ist groß.
+- Er malt gerne.
+- Ich baue einen Turm aus Klötzen.
+- Die Feder ist leicht.
+- Wir lieben einander.
+- Sie lächelt jeden Tag.
+- Die Welt ist schön.

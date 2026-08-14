@@ -1,0 +1,300 @@
+- Sie liest ein Buch in der Bibliothek.
+- Sie spielen jeden Samstag Fußball.
+- Mein Bruder hat ein neues Fahrrad.
+- Wir fahren morgen zum Strand.
+- Er mag keinen Kaffee.
+- Die Kinder spielen im Garten.
+- Ich habe meine Großmutter letztes Wochenende besucht.
+- Sie wacht immer um sieben Uhr auf.
+- Sie freuten sich, uns zu sehen.
+- Er ist größer als seine Schwester.
+- Wir haben auf dem Markt Äpfel gekauft.
+- Der Hund schläft unter dem Tisch.
+- Sie kann Französisch und Deutsch sprechen.
+- Sie sahen gestern Abend einen Film.
+- Mein Vater arbeitet in einem Krankenhaus.
+- Ich war noch nie in Japan.
+- Wir essen heute Abend in einem Restaurant zu Abend.
+- Die Katze versteckt sich hinter dem Sofa.
+- Er ist letzten Sommer nach London gefahren.
+- Sie isst kein Fleisch.
+- Wir lernen kochen.
+- Das Wetter ist heute kälter als gestern.
+- Sie haben ihre Hausaufgaben schon erledigt.
+- Ich dusche normalerweise morgens.
+- Sie ging nach Hause, als es anfing zu regnen.
+- Mein bester Freund wohnt nebenan.
+- Wir werden nächste Woche das Museum besuchen.
+- Er hat schon wieder seine Schlüssel verloren.
+- Die Kinder freuen sich auf die Reise.
+- Ich muss Milch und Brot kaufen.
+- Sie bauten einen Schneemann im Park.
+- Sie trägt ein wunderschönes Kleid.
+- Wir waren nach dem langen Spaziergang müde.
+- Er fährt jeden Morgen zur Arbeit.
+- Die Blumen im Garten blühen.
+- Ich habe mein Mittagessen schon gegessen.
+- Sie traf ihre Freundin im Café.
+- Wir haben heute keine Hausaufgaben.
+- Das Baby weint, weil es hungrig ist.
+- Er wird nächsten Monat ein neues Auto kaufen.
+- Sie sind gestern im See geschwommen.
+- Meine Schwester ist älter als ich.
+- Ich kochte gerade Abendessen, als du angerufen hast.
+- Sie putzt sich immer vor dem Schlafengehen die Zähne.
+- Der Film beginnt um acht Uhr.
+- Wir haben die Party sehr genossen.
+- Er muss seine Arbeit bis Freitag fertigstellen.
+- Die Katze sitzt auf der Fensterbank.
+- Sie kaufte ihrer Mutter Blumen.
+- Ich fühle mich heute viel besser.
+- Sie spielten Schach, als ich ankam.
+- Er weiß nicht, wie man schwimmt.
+- Wir treffen dich am Bahnhof.
+- Die Vögel singen in den Bäumen.
+- Ich wohne seit fünf Jahren in dieser Stadt.
+- Sie kochte Spaghetti zum Abendessen.
+- Sie gehen dreimal pro Woche ins Fitnessstudio.
+- Er fiel von seinem Fahrrad und verletzte sich am Knie.
+- Wir freuen uns auf die Ferien.
+- Die Suppe schmeckt sehr gut.
+- Sie hat viele Bücher in ihrem Zimmer.
+- Ich bin im April geboren.
+- Sie werden in ein neues Haus umziehen.
+- Er kommt immer zu spät zum Unterricht.
+- Wir sahen nach dem Sturm einen wunderschönen Regenbogen.
+- Der Kaffee ist zu heiß zum Trinken.
+- Sie hilft ihrer Mutter in der Küche.
+- Ich habe noch nie einen so großen Hund gesehen.
+- Sie lachten über den lustigen Witz.
+- Er möchte Arzt werden, wenn er erwachsen ist.
+- Wir machten einen Spaziergang am Fluss entlang.
+- Das Geschäft schließt um neun Uhr abends.
+- Sie schrieb einen Brief an ihren Cousin.
+- Ich spare Geld, um eine Gitarre zu kaufen.
+- Die Kinder malen Bilder mit Buntstiften.
+- Er hat seinen Koffer schon gepackt.
+- Wir sangen Lieder am Lagerfeuer.
+- Der Zug fährt in zehn Minuten ab.
+- Sie steht am Wochenende nicht gerne früh auf.
+- Ich kenne ihn, seit wir Kinder waren.
+- Sie bauen eine neue Schule in unserer Nachbarschaft.
+- Er hat einen Fisch im Fluss gefangen.
+- Wir werden nächsten Montag einen Test haben.
+- Der Salat braucht mehr Salz.
+- Sie trägt einen warmen Mantel, weil es kalt ist.
+- Ich habe vergessen, meinen Regenschirm mitzubringen.
+- Sie haben letzten Sonntag den Zoo besucht.
+- Er las in der Bahn eine Zeitung.
+- Wir werden das Schlafzimmer blau streichen.
+- Das Baby hat laufen gelernt.
+- Sie hat einen Kuchen für meinen Geburtstag gebacken.
+- Ich bin noch nie zuvor Pferd geritten.
+- Sie saßen im Garten.
+- Er hat keine Brüder oder Schwestern.
+- Wir werden heute Abend Pizza zum Abendessen bestellen.
+- Der Lehrer hat eine schwierige Frage gestellt.
+- Sie sucht ihre Brille.
+- Ich habe mein Projekt gestern Abend beendet.
+- Sie fahren über ihren Urlaub nach Spanien.
+- Er hörte in seinem Zimmer Musik.
+- Wir haben genug Essen für alle.
+- Das Buch, das ich lese, ist sehr interessant.
+- Sie hat heute Morgen die Pflanzen gegossen.
+- Ich verstehe diese Matheaufgabe nicht.
+- Sie haben auf der Party Spiele gespielt.
+- Er hat eine Erkältung und muss sich ausruhen.
+- Wir planen eine Überraschung für ihren Geburtstag.
+- Der Bus kam heute zu spät an.
+- Sie hat letztes Jahr in Japan Deutsch unterrichtet.
+- Ich gehe normalerweise um zehn Uhr ins Bett.
+- Sie sind im Rennen gelaufen.
+- Er hat zum Mittagessen ein Sandwich gegessen.
+- Wir waren noch nie auf einem Konzert.
+- Der Teppich muss gesaugt werden.
+- Sie sammelt Briefmarken aus verschiedenen Ländern.
+- Ich lerne Gitarre spielen.
+- Sie sind für das Wochenende in die Berge gefahren.
+- Er hat sein Lieblingsspielzeug kaputt gemacht.
+- Wir werden in einem Hotel in Strandnähe übernachten.
+- Die Tomatensuppe ist mein Favorit.
+- Sie wartete am Busstop auf den Bus.
+- Ich muss heute meine Wäsche machen.
+- Sie haben einen wunderschönen Garten voller Rosen.
+- Er hat Angst vor Spinnen.
+- Wir sind heute Morgen um den See spaziert.
+- Das Hähnchen gart im Ofen.
+- Sie hat ihre Haare blond gefärbt.
+- Ich werde meiner Oma einen Brief schreiben.
+- Sie tanzten auf der Hochzeit.
+- Er isst nie Frühstück vor der Schule.
+- Wir haben diesen Film schon zweimal gesehen.
+- Der Schnee fiel sanft.
+- Sie kann gut Klavier spielen.
+- Ich habe meine Brieftasche irgendwo im Einkaufszentrum verloren.
+- Sie werden einen Hund adoptieren.
+- Er reparierte sein Fahrrad in der Garage.
+- Wir hatten gestern ein Picknick im Park.
+- Die Limonade ist sauer, aber erfrischend.
+- Sie gab ihren Tee mit etwas Zucker.
+- Ich muss ein Geschenk für meinen Freund kaufen.
+- Sie ziehen nächstes Jahr nach Kanada.
+- Er interessiert sich für die Weltraumforschung.
+- Wir haben das Haus aufgeräumt.
+- Die Orangen werden aus Spanien importiert.
+- Sie trug eine wunderschöne Halskette.
+- Ich esse normalerweise Müsli zum Frühstück.
+- Sie sprachen über ihre Pläne für die Zukunft.
+- Er hat noch nie Sushi gegessen.
+- Wir gehen heute Abend ins Kino.
+- Die Straße ist mit Lichtern geschmückt.
+- Sie fegte den Boden und spülte das Geschirr.
+- Ich lerne seit zwei Jahren Deutsch.
+- Sie spielten Karten, als ich ging.
+- Er schlief während des Films ein.
+- Wir haben am Samstag die Kunstgalerie besucht.
+- Das Hühnchen schmeckt etwas scharf.
+- Sie packt ihre Koffer für die Reise.
+- Ich habe den Roman letzte Woche zu Ende gelesen.
+- Sie haben ein Baumhaus im Hinterhof gebaut.
+- Er malte ein Bild von einem Boot.
+- Wir haben keine Pläne für das Wochenende.
+- Das Baby lernt sprechen.
+- Sie öffnete das Fenster, um frische Luft hereinzulassen.
+- Ich muss morgen für meine Prüfung lernen.
+- Sie erwischten den Zug gerade noch rechtzeitig.
+- Er spart, um ein neues Handy zu kaufen.
+- Wir haben als Familie zusammen zu Abend gekocht.
+- Das Museum ist montags geschlossen.
+- Sie telefonierte mit ihrer Freundin.
+- Ich habe noch nie Bungee-Jumping ausprobiert.
+- Sie kletterten auf den Gipfel des Berges.
+- Er hängte seinen Mantel an den Haken an der Tür.
+- Wir machen ein Barbecue im Hinterhof.
+- Der Kuchen war köstlich und sehr süß.
+- Sie füttert ihre Katze zweimal am Tag.
+- Ich ließ mein Handy fallen und zerbrach den Bildschirm.
+- Sie lernen für die Abschlussprüfung.
+- Er ging mit seinem Hund im Park spazieren.
+- Wir kennen uns seit zehn Jahren.
+- Der Stuhl ist aus Holz.
+- Sie faltete die Wäsche und räumte sie weg.
+- Ich überlege, was ich zum Abendessen kochen soll.
+- Sie segelten in einem kleinen Boot über den See.
+- Er mag kein kaltes Wetter.
+- Wir werden um drei Uhr am Flughafen ankommen.
+- Das Brot ist frisch aus der Bäckerei.
+- Sie hat einen Teilzeitjob in einer Buchhandlung.
+- Ich höre beim Arbeiten oft Musik.
+- Sie wanderten durch den Wald.
+- Er schloss die Tür, bevor er ging.
+- Wir freuen uns auf das neue Projekt.
+- Das Wasser im Schwimmbad ist zu kalt.
+- Sie band ihre Haare zu einem Pferdeschwanz zusammen.
+- Ich muss meinen Reisepass dieses Jahr erneuern.
+- Sie spielten im Regen Fußball.
+- Er verschüttete Saft auf die Tischdecke.
+- Wir werden eine Katze aus dem Tierheim adoptieren.
+- Die Hausaufgaben waren schwierig, aber interessant.
+- Sie lernt, wie man ein Auto fährt.
+- Ich habe mir beim Kochen den Finger verbrannt.
+- Sie warteten nervös auf die Ergebnisse.
+- Er füllte das Glas mit kaltem Wasser.
+- Wir sind seit dem Kindergarten befreundet.
+- Das Flugzeug hob bei Sonnenaufgang ab.
+- Sie hängte das Bild an die Wand.
+- Ich trinke morgens lieber Tee als Kaffee.
+- Sie renovieren diesen Monat ihre Küche.
+- Er machte ein Foto von der schönen Aussicht.
+- Wir werden Silvester zu Hause feiern.
+- Die Suppe muss zwanzig Minuten köcheln.
+- Sie strickt einen Schal für ihren Vater.
+- Ich habe das Meer noch nie zuvor gesehen.
+- Sie stritten sich darüber, was sie sehen sollten.
+- Er parkte sein Auto in der Garage.
+- Wir sahen eine Dokumentation über Pinguine.
+- Die Erdbeeren sind frisch vom Bauernhof.
+- Sie riss eine Seite aus ihrem Notizbuch.
+- Ich werde nächste Woche meinen Cousin besuchen.
+- Sie beendeten das Rennen auf dem ersten Platz.
+- Er hat eine Sammlung alter Münzen.
+- Wir kauften Souvenirs im Geschenkeladen.
+- Der Himmel war voller bunter Feuerwerkskörper.
+- Sie ist allergisch gegen Erdnüsse.
+- Ich muss den Akku meines Handys aufladen.
+- Sie gingen Hand in Hand den Strand entlang.
+- Er spitzte seinen Bleistift vor der Prüfung.
+- Wir haben bereits alles Notwendige eingepackt.
+- Das Gras war nass vom Morgentau.
+- Sie wischte den Tisch mit einem Tuch ab.
+- Ich werde lernen, wie man strickt.
+- Sie feierten ihren Jahrestag.
+- Er steckte sein Hemd in die Hose.
+- Wir konnten die Vögel draußen singen hören.
+- Der Käse riecht sehr streng.
+- Sie goss die Milch in ein Glas.
+- Ich habe vergessen, mein Mittagessen mitzubringen.
+- Sie pflanzen Gemüse im Garten.
+- Er gähnte und streckte sich am Morgen.
+- Wir nahmen eine Fähre zur Insel.
+- Der Benzinpreis ist wieder gestiegen.
+- Sie passt heute Abend auf ihren kleinen Bruder auf.
+- Ich muss dieses Buch in der Bibliothek zurückgeben.
+- Sie rösteten Marshmallows über dem Feuer.
+- Er band seine Schuhe und rannte nach draußen.
+- Wir wohnen seit drei Jahren in dieser Wohnung.
+- Die Nachricht überraschte alle.
+- Sie dekorierte ihr Zimmer mit Postern.
+- Ich vergesse oft, wo ich meine Schlüssel hingelegt habe.
+- Sie schwammen über den Fluss auf die andere Seite.
+- Er wärmte sein Abendessen in der Mikrowelle auf.
+- Wir werden den Zaun weiß streichen.
+- Der Welpe kaute auf meinen Schuhen herum.
+- Sie deckte die Kinder ins Bett.
+- Ich bin noch nie in einem Hubschrauber geflogen.
+- Sie besprechen den Plan für morgen.
+- Er überprüfte seine E-Mails vor dem Frühstück.
+- Wir waren im Urlaub reiten.
+- Das Eis schmolz in der Sonne.
+- Sie spart für einen neuen Laptop.
+- Ich habe Kaffee auf mein weißes Hemd verschüttet.
+- Sie beobachteten, wie die Sonne über dem Horizont unterging.
+- Er maß das Holz, bevor er es zuschnitt.
+- Wir werden eine Überraschungsparty für sie veranstalten.
+- Der Verkehr war heute Morgen schrecklich.
+- Sie flüsterte mir ein Geheimnis ins Ohr.
+- Ich habe beschlossen, eine neue Sprache zu lernen.
+- Sie schaufelten Schnee von der Einfahrt.
+- Er wickelte das Geschenk in buntes Papier.
+- Wir haben ein Kätzchen aus dem Tierheim adoptiert.
+- Die Kirschen sind süß und saftig.
+- Sie öffnete die Vorhänge, um Sonnenlicht hereinzulassen.
+- Ich gehe normalerweise morgens joggen.
+- Sie bereiten sich auf die große Präsentation vor.
+- Er gab dem Nudelwasser etwas Salz hinzu.
+- Wir warten schon eine Stunde auf dich.
+- Die Blumen brauchen mehr Wasser.
+- Sie steckte das Ladegerät in die Steckdose.
+- Ich überlege, meinen Job zu wechseln.
+- Sie fuhren mit dem Schlitten den verschneiten Hügel hinunter.
+- Er lud die Einkäufe aus dem Auto aus.
+- Wir besuchten das Schloss, als wir in Schottland waren.
+- Die Trauben sind sauer.
+- Sie rührte die Suppe mit einem Holzlöffel um.
+- Ich muss meine Augen untersuchen lassen.
+- Sie proben für das Schultheaterstück.
+- Er faltete die Karte und legte sie weg.
+- Wir haben noch nie einen so schönen Sonnenuntergang gesehen.
+- Das Kissen ist sehr bequem.
+- Sie arrangiert Blumen in einer Vase.
+- Ich habe vergessen, das Licht auszuschalten.
+- Sie ließen Drachen steigen auf dem Feld.
+- Er ersetzte die Glühbirne im Flur.
+- Wir werden nächsten Samstag eine Hochzeit besuchen.
+- Die Soße schmeckt ein wenig bitter.
+- Sie schneidet Gemüse für den Salat.
+- Ich habe alle zugewiesenen Kapitel zu Ende gelesen.
+- Sie ruderten das Boot über den ruhigen See.
+- Er lächelte und winkte zum Abschied.
+- Wir werden diese wundervolle Reise immer in Erinnerung behalten.
+- Die Sterne leuchteten hell am Nachthimmel.

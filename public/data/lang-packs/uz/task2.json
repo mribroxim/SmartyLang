@@ -1,0 +1,792 @@
+[
+  {
+    "type": "discussion",
+    "label": "Muhokama insho",
+    "description": "Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+    "instruction": "Ikkala fikrni muhokama qiling va o'z fikringizni bildiring. Kamida 250 ta soʻz yozing.",
+    "categories": [
+      {
+        "name": "Ta'lim",
+        "prompts": [
+          "Ba'zilar universitetda ta'lim olish hamma uchun bepul bo'lishi kerak, deb hisoblasa, boshqalari esa talabalar oliy ma'lumot uchun pul to'lashlari kerak deb o'ylashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar maktablarda raqobatbardosh sport o'yinlari juda foydali ekanligini ta'kidlasa, boshqalari bu bolalar uchun keraksiz stressni keltirib chiqaradi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pchilik talabalar keng ko'lamli fanlarni o'rganishlari kerak, deb o'ylashadi, boshqalari esa aniq bir martaba bilan bog'liq fanlarga qat'iy e'tibor qaratishlari kerak deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar o'quvchilarga yaxshi va yomonni hukm qilishni o'rgatish uchun o'qituvchilar mas'ul bo'lishi kerak, deb o'ylashadi, boshqalari esa ota-onalar bu mas'uliyatga ega bo'lishi kerak, deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi o'qituvchilar uy vazifasi o'quv muvaffaqiyati uchun zarur deb ta'kidlashsa, boshqalari bu bolalar uchun keraksiz yuk deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar universitet talabalariga o'zlari yoqtirgan narsalarni o'qishlariga ruxsat berish kerak, deb hisoblasa, boshqalari ularga faqat fan va texnologiya kabi kelajakda foydali bo'lgan fanlarni o'rganishga ruxsat berish kerak deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar bir jinsli maktablar yaxshiroq ta'lim muhitini ta'minlaydi, deb o'ylashadi, boshqalari esa aralash maktablar bolalarni haqiqiy hayotga yaxshiroq tayyorlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar, onlayn ta'lim oxir-oqibat an'anaviy sinfdagi ta'lim o'rnini bosishiga ishonishadi, boshqalari esa, yuzma-yuz o'qitish har doim zarur bo'ladi, deb ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar imtihonlar talaba qobiliyatini baholashning eng yaxshi usuli deb ta'kidlashsa, boshqalari yil davomida doimiy baholash samaraliroq deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar maktab formasi intizom va tenglikni yaxshilaydi, deb o'ylaydi, boshqalari esa o'quvchilarning individualligini cheklaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring."
+        ]
+      },
+      {
+        "name": "Atrof-muhit va hayvonlar",
+        "prompts": [
+          "Ba'zi odamlar atrof-muhit muammolarini odamlar hal qilishlari uchun juda katta deb hisoblaydilar, boshqalari esa odamlar sezilarli o'zgarishlarga olib kelishi mumkin deb o'ylashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pchilik hukumat pulni boshqa sayyoralarda hayot izlash uchun sarflashi kerak, deb o'ylaydi, boshqalari esa bu pulni Yerdagi muammolarni hal qilish uchun sarflash kerak deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar hayvonlarni hayvonot bog'larida saqlash shafqatsiz va keraksiz deb hisoblasa, boshqalari hayvonot bog'lari tabiatni muhofaza qilish va ta'lim uchun juda muhim deb ta'kidlashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar qat'iy qonunlar sanoat ifloslanishini kamaytirishning yagona yo'li ekanligini ta'kidlasa, boshqalari kompaniyalarni yashil amaliyotga o'rgatish samaraliroq deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar o'sib borayotgan yo'l muammosini hal qilishning eng yaxshi yo'li ko'proq yo'llar qurishdir, deb hisoblasa, boshqalari hukumat jamoat transportiga katta sarmoya kiritishi kerakligini ta'kidlaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar qayta tiklanadigan energiya manbalari sayyoramiz uchun oldinga siljishning yagona yo'li, deb hisoblasa, boshqalari qazib olinadigan yoqilg'ilar iqtisodiy barqarorlik uchun hali ham zarur, deb ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar shaharlarda daraxt ekish shahar muhitini yaxshilashning eng yaxshi usuli deb o'ylashadi, boshqalari esa kasalxonalar kabi ko'proq jamoat ob'ektlarini taqdim etish muhimroq deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar hayvonlarni sinovdan o'tkazish tibbiy yutuqlar uchun zarur deb hisoblasa, boshqalari buni axloqiy jihatdan noto'g'ri va butunlay taqiqlash kerak deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar odamlar hayvonlardan oziq-ovqat va kiyim-kechak uchun foydalanish huquqiga ega, deb hisoblashsa, boshqalari hayvonlarning huquqlari bor va ularni ekspluatatsiya qilmaslik kerak deb ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar aholining haddan tashqari ko'payishi atrof-muhitning buzilishining asosiy sababi deb hisoblasa, boshqalari sanoatlashuv va iste'molchilikni ayblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring."
+        ]
+      },
+      {
+        "name": "Texnologiya va Internet",
+        "prompts": [
+          "Ba'zi odamlar sun'iy intellekt inson mehnatiga muhtoj bo'lmagan utopik jamiyatni yaratadi, deb hisoblasa, boshqalari bu ommaviy ishsizlik va tengsizlikka olib kelishidan qo'rqishadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pchilik ijtimoiy tarmoqlar odamlarni bir-biriga yaqinlashtirdi, deb o'ylaydi, boshqalari esa haqiqiy dunyoda odamlarni ajratib qo'ygan deb ta'kidlaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar bolalarga o'smirlik yoshiga qadar smartfonlardan foydalanishga ruxsat berilmasligi kerak, boshqalari esa raqamli savodxonlik uchun erta ta'sir qilish zarur deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar bosma kitoblar tez orada o'tmishga aylanadi, deb o'ylashadi, boshqalari esa elektron kitoblardan doimo afzalroq bo'lishiga ishonishadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar internet ishonchli ma'lumot olishni osonlashtirdi, deb hisoblasa, boshqalari esa soxta yangiliklar va noto'g'ri ma'lumotlar davrini yaratganini ta'kidlaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar ish joyidagi avtomatlashtirish iqtisodiy o'sish uchun foydali deb o'ylashadi, boshqalari esa an'anaviy ish joylarini yo'qotishdan xavotirda. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar texnologik taraqqiyot zamonaviy hayotni juda murakkablashtirganini ta'kidlasa, boshqalari hayotni sezilarli darajada oson va qulayroq qilganiga ishonishadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar texnologiyadan foydalangan holda hukumat nazorati milliy xavfsizlik uchun zarur deb hisoblasa, boshqalari buni shaxsiy daxlsizlikning buzilishi deb biladi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar video o'yinlar o'yin-kulgining zararsiz turi deb o'ylashadi, boshqalari esa yoshlar o'rtasida zo'ravonlik va harakatsiz turmush tarzini targ'ib qilishini ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar kosmik turizm kelajakning odatiy qismi bo'ladi, deb hisoblasa, boshqalari buni resurslarni asossiz isrof qilish deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring."
+        ]
+      },
+      {
+        "name": "Jamiyat va zamonaviy hayot",
+        "prompts": [
+          "Ba'zi odamlar mavjud imkoniyatlar tufayli katta shaharlarda yashashni afzal ko'rishsa, boshqalari qishloqda yashashning tinch va osoyishtaligini afzal ko'radi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pchilik yosh kattalar turmushga chiqmaguncha ota-onalari bilan yashash yaxshiroq deb o'ylashadi, boshqalari esa o'n sakkiz yoshga to'lishi bilanoq ko'chib o'tishlari kerak deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar boylar va kambag'allar o'rtasidagi tafovut kuchayib borayotgani va hukumat aralashuvi kerakligini ta'kidlasa, boshqalari bu farq erkin bozorning tabiiy natijasi deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar keksalar oilalari tomonidan g'amxo'rlik qilishlari kerak, deb hisoblasa, boshqalari hukumat qariyalar uyi bilan ta'minlashi kerak deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar erkaklar va ayollarning an'anaviy rollari barqaror jamiyat uchun juda muhim deb o'ylashadi, boshqalari esa barcha rollarda gender tengligi muhim deb ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar uy egasi bo'lish muvaffaqiyatning yakuniy ramzi, deb hisoblasa, boshqalari ijara ko'proq erkinlik va kamroq stressni ta'minlaydi, deb ta'kidlaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar zamonaviy jamiyat haddan tashqari iste'molchiga aylanib bormoqda, deb o'ylashadi, boshqalari esa, iqtisodiyotning gullab-yashnashi uchun iste'molchilik zarur deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar xalqaro sport tadbirlari xalqlar o'rtasidagi tinchlikka yordam beradi, deb ta'kidlaydi, boshqalari esa faqat millatchilik ziddiyatlarini keltirib chiqaradi, deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar tarixni maktabdagi eng muhim fanlardan biri deb hisoblasa, boshqalari bugungi dunyoda IT kabi fanlar ancha dolzarbroq deb o'ylashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar katta miqdordagi pulga ega bo'lish baxtning kaliti deb o'ylashadi, boshqalari esa baxt sog'liq va munosabatlar kabi boshqa omillarga bog'liq deb ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring."
+        ]
+      },
+      {
+        "name": "Ish va Karyera",
+        "prompts": [
+          "Ba'zilar ishdan qoniqish yuqori maoshdan muhimroq deb hisoblasa, boshqalari ko'p pul topish ishdagi eng muhim omil deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pchilik uyda ishlash unumdorlikni va ish va hayot muvozanatini oshiradi, deb ta'kidlaydi, boshqalari esa ofis muhiti hamkorlik uchun zarur deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar umr bo'yi bitta martabaga ega bo'lish yaxshiroq deb o'ylashadi, boshqalari esa kasbni bir necha bor o'zgartirish foydaliroq deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar, keksa xodimlar tajribalari tufayli kompaniya uchun qimmatroq, deb ta'kidlashsa, boshqalari yangi g'oyalar va energiya uchun yosh xodimlarni afzal ko'rishadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar umr ko'rish davomiyligi uzoqroq bo'lganligi sababli pensiya yoshini uzaytirish kerak, deb hisoblasa, boshqalari yoshlikdan zavqlanish va ish o'rinlarini ochish uchun odamlar ertaroq nafaqaga chiqishlari kerakligini ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar to'lanmagan stajirovkalarni ekspluatatsiya deb o'ylashadi, boshqalari esa yangi bitiruvchilar uchun muhim qadam bo'lishini ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar qonun bo'yicha ayollarga yuqori boshqaruv lavozimlarida teng kvotalar berilishi kerak, deb ta'kidlaydilar, boshqalari esa ko'tarilish jinsidan qat'i nazar, faqat xizmatga asoslangan bo'lishi kerak, deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar o'z biznesingizni boshlash moliyaviy xavfsizlikka erishishning eng yaxshi yo'li deb hisoblasa, boshqalari yirik korporatsiyada ishlash xavfsizroq deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar to'rt kunlik ish haftasi jamiyat uchun yaxshiroq deb o'ylashadi, boshqalari esa bu iqtisodiyotga zarar etkazishini ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar qo'l mehnati ishlari shifokorlar yoki advokatlar kabi professional ishlar bilan bir xilda to'lanishi kerakligini ta'kidlasa, boshqalari hozirgi ish haqi shkalasi asosli deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring."
+        ]
+      },
+      {
+        "name": "Salomatlik va parhez",
+        "prompts": [
+          "Ba'zilar semizlikka qarshi kurashish uchun hukumat nosog'lom oziq-ovqatlarga \"yog 'solig'i\"ni joriy etishi kerak, deb hisoblasa, boshqalari odamlar nima yeyishini tanlashda erkin bo'lishi kerak, deb ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pchilik barcha sog'liqni saqlash butunlay bepul bo'lishi va hukumat tomonidan moliyalashtirilishi kerak deb o'ylaydi, boshqalari esa xususiy tibbiyot yanada sifatli xizmatlarni taqdim etadi, deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar muqobil dorilar (akupunktur yoki o'simlik preparatlari kabi) juda samarali deb ta'kidlaydilar, boshqalari esa ular xavfli va faqat zamonaviy tibbiyotga ishonish kerak deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar ish joyida kattalar uchun sport va jismoniy tarbiya majburiy bo'lishi kerak, deb hisoblashadi, boshqalari esa jismoniy mashqlar shaxsiy tanlovdir. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar vegetarian parhezlar odamlar uchun eng sog'lom variant deb o'ylashadi, boshqalari go'sht iste'mol qilish muvozanatli ovqatlanish uchun zarur deb ta'kidlashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar sog'liqni saqlashning profilaktikasi (masalan, ta'lim va fitnes dasturlari) kasalliklar paydo bo'lgandan keyin ularni davolashdan ko'ra yaxshiroq deb hisoblashadi, boshqalari esa davolanish uchun tibbiy tadqiqotlar ustuvor bo'lishi kerak deb o'ylashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar fast-fud reklamasini butunlay taqiqlash kerak, deb o'ylaydi, boshqalari esa bu biznes uchun so'z erkinligini cheklaydi deb ta'kidlaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar ruhiy salomatlik jismoniy salomatlik kabi muhim va teng mablag' olishlari kerak, deb ta'kidlaydilar, boshqalari esa jismoniy kasalliklar shoshilinch moliyaviy e'tibor talab qiladi deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar chekish butun dunyo bo'ylab taqiqlanishi kerak, deb hisoblasa, boshqalari esa kattalar o'z turmush tarzini tanlash huquqiga ega, deb ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar genetik jihatdan o'zgartirilgan (GM) oziq-ovqatlar dunyodagi ochlikni tugatishning kalitidir, deb o'ylashadi, boshqalari esa inson salomatligi uchun jiddiy xavf tug'diradi deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring."
+        ]
+      },
+      {
+        "name": "Hukumat va Iqtisodiyot",
+        "prompts": [
+          "Ba'zi odamlar iqtisodiy taraqqiyot hukumatning eng muhim maqsadi deb o'ylashadi, boshqalari taraqqiyotning boshqa turlari (masalan, ijtimoiy yoki ekologik) bir xil darajada muhim deb o'ylashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pchilik boy davlatlar kambag'al davlatlarga moliyaviy yordam ko'rsatishi kerakligini ta'kidlasa, boshqalar bu yordam ko'pincha korruptsiya tufayli foydadan ko'ra ko'proq zarar keltiradi, deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar hukumat san'atkorlar, musiqachilar va yozuvchilarni moliyalashtirishi kerak, deb hisoblasa, boshqalari soliq to'lovchilarning pullari faqat kasalxonalar va yo'llar kabi davlat xizmatlariga sarflanishi kerak, deb ta'kidlaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Kimdir jamoat transporti bepul bo'lishi kerak, deb hisoblasa, boshqalari esa xizmat sifatini saqlab qolish uchun yo'lovchilar pul to'lashi kerak, deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar global erkin savdo rivojlanayotgan mamlakatlar uchun foydali ekanini ta'kidlasa, boshqalari bu faqat ularning resurslari va arzon ishchi kuchidan foydalanishiga ishonadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar hukumatlar inson olishi mumkin bo'lgan maksimal maoshga cheklov qo'yishi kerak, deb hisoblasa, boshqalari odamlarga o'zlari qodir bo'lgan darajada ko'proq pul ishlashlariga ruxsat berish kerak, deb ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar yagona global valyuta jahon iqtisodiyotini yaxshilaydi, deb o'ylaydi, boshqalari esa milliy valyutalar mamlakatning iqtisodiy mustaqilligi uchun zarur deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar soliq to'lash fuqarolarning eng muhim burchi ekanligini ta'kidlasa, boshqalari odamlar o'z daromadlarini iloji boricha qonuniy ravishda ushlab turishga harakat qilishlari kerak, deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar hukumatlar barcha fuqarolar uchun universal asosiy daromadni ta'minlashi kerak, deb hisoblasa, boshqalari bu odamlarni dangasa qilib, iqtisodni vayron qilishini ta'kidlaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar koinotni o'rganish hukumat pullarini behuda sarflash, deb o'ylashadi, boshqalari esa bu insoniyat kelajagiga muhim sarmoyadir. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring."
+        ]
+      },
+      {
+        "name": "Jinoyat va jazo",
+        "prompts": [
+          "Ba'zi odamlar qamoqxonalarning asosiy maqsadi jinoyatchilarni jazolash, deb hisoblasa, boshqalari qamoqxonalar butunlay reabilitatsiyaga e'tibor qaratishlari kerak, deb ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ko‘pchilik o‘lim jazosini og‘ir jinoyatlar uchun asosli jazo deb hisoblasa, boshqalar bu jazoni inson huquqlarining poymol etilishi va bekor qilinishi kerak, degan fikrda. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar uzoqroq qamoq jazolari jinoyatni samarali ravishda oldini oladi, deb ta'kidlaydi, boshqalari esa jinoyat darajasini kamaytirmaydi va faqat qamoqxonalarni haddan tashqari ko'paytiradi, deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar balog'atga etmagan jinoyatchilar (yosh jinoyatchilar) kattalar kabi jazo olishlari kerak, deb hisoblasa, boshqalari ularga nisbatan yumshoqroq munosabatda bo'lish kerakligini ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar jamoat joylarida xavfsizlik kameralarini o'rnatish jinoyatni kamaytiradi, deb o'ylashadi, boshqalari esa bu shaxsiy hayotga jiddiy tajovuz deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar politsiya xalqni himoya qilish uchun doimo o'qotar qurol olib yurishi kerakligini ta'kidlasa, boshqalari qurolli politsiya zo'ravonlikni kuchaytiradi, deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar kiberjinoyat zamonaviy jamiyat uchun eng katta tahdid, deb hisoblasa, boshqalari an'anaviy zo'ravonlik jinoyati hali ham xavfliroq, deb ta'kidlaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar sobiq mahbuslar o'zlarining jinoiy o'tmishlari haqida ish beruvchilariga ma'lumot berishlari kerak deb o'ylashadi, boshqalari esa jazo muddati o'tgandan keyin shaxsiy hayotga kirish huquqiga ega deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar jamoat ishlari odamlarni qamoqqa yuborishdan ko'ra kichik jinoyatlar uchun yaxshiroq jazo ekanligini ta'kidlasa, boshqalari jamoat ishlari etarlicha qattiq emas deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar qashshoqlik barcha jinoyatlarning asosiy sababi deb hisoblasa, boshqalar jinoyatchilik inson tabiati va ochko'zligi natijasidir, deb ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring."
+        ]
+      },
+      {
+        "name": "Media va reklama",
+        "prompts": [
+          "Ba'zi odamlar filmlar va televideniedagi zo'ravonlik jamiyatdagi zo'ravonlikka hissa qo'shadi, deb hisoblashsa, boshqalari buni shunchaki zararsiz o'yin-kulgi deb ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pchilik ommaviy axborot vositalari hukumat tomonidan qat'iy tartibga solinishi kerak, deb o'ylaydi, boshqalari esa demokratiya uchun mutlaqo erkin matbuot muhim deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar bolalarga qaratilgan reklama noqonuniy bo'lishi kerak, deb hisoblasa, boshqalari esa, farzandlari tomosha qilayotgan narsalarni boshqarish ota-onalarning zimmasida deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar yangiliklar haddan tashqari salbiy voqealarga yo'naltirilgan, bu esa jamoatchilikni tashvishga solmoqda, deb hisoblasa, boshqalari og'ir haqiqatni xabar qilish OAVning burchi, deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar mashhurlarni yoshlar uchun dahshatli namuna, deb o'ylashadi, boshqalari esa ko'plab mashhurlar o'z platformalaridan ijobiy xayriya ishlari uchun foydalanishlarini ta'kidlaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar bosma gazetalar o'lik va tez orada butunlay yo'q bo'lib ketishini ta'kidlasa, boshqalari esa har doim jismoniy jurnalistika bozori bo'ladi, deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar maqsadli onlayn reklama iste'molchilar uchun juda qulay deb hisoblasa, boshqalari uni manipulyatsiya va invaziv deb bilishadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar televidenie realiti madaniy qadriyatlarga salbiy ta'sir ko'rsatadi, deb o'ylashadi, boshqalari buni shunchaki qiziqarli, aqlsiz qochish deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar jamoat arboblarining (masalan, siyosatchilar va aktyorlarning) shaxsiy hayoti matbuot uchun taqiqlangan bo'lishi kerakligini ta'kidlasa, boshqalari jamoatchilik bilishga haqli deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar zamonaviy reklama odamlarni o'zlari kerak bo'lmagan narsalarni sotib olishga majbur qiladi, deb hisoblasa, boshqalari reklama shunchaki iste'molchilarni ularning tanlovi haqida xabardor qiladi, deb ta'kidlaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring."
+        ]
+      },
+      {
+        "name": "Madaniyat, Sayohat va San'at",
+        "prompts": [
+          "Ba'zi odamlar xalqaro ommaviy turizm mahalliy madaniyatlar va atrof-muhitni yo'q qilmoqda, deb hisoblasa, boshqalari esa bu mahalliy iqtisodiyot uchun juda muhim deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pchilik muhojirlar o'zlarining yangi mamlakatining madaniyati va urf-odatlarini qabul qilishlari kerak, deb o'ylashadi, boshqalari esa o'zlarining asl madaniyatini saqlab qolishlari va amalda qo'llashlari kerak deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar tarjima dasturlari tufayli chet tilini o'rganish endi kerak emas, deb ta'kidlashsa, boshqalari til o'rganish muhim madaniy tushunishni ta'minlaydi, deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar muzeylar va san'at galereyalari jamoatchilik uchun mutlaqo bepul bo'lishi kerak, deb hisoblasa, boshqalari eksponatlarni saqlash uchun kirish to'lovini olish kerakligini ta'kidlaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar an'anaviy festivallar o'z ma'nosini yo'qotib, sof tijoratga aylanib bormoqda, deb o'ylashadi, boshqalari esa tijoratlashtirish bu an'analarni saqlab qolishga yordam beradi, deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar yagona global til (masalan, o'zbek tili) dunyoni tinchlikda birlashtiradi, deb ta'kidlaydi, boshqalari esa noyob madaniy o'ziga xosliklarni yo'q qiladi, deb hisoblashadi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar, gid bilan guruhda sayohat qilish yangi mamlakatni boshdan kechirishning eng yaxshi usuli deb hisoblaydi, boshqalari esa yolg'iz va mustaqil sayohat qilishni afzal ko'radi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar hukumatlar eski tarixiy binolarni saqlab qolish uchun pul sarflashlari kerak, deb o'ylaydilar, boshqalari esa ularni buzib, zamonaviy uy-joy qurishni amaliyroq deb hisoblaydilar. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar mahalliy taomlar va pazandachilik an'analari xalqaro fast-fud tarmoqlari tomonidan yo'q qilinayotganini ta'kidlasa, boshqalari qulaylik va xilma-xillikni olqishlaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zilar o'tmishdagi san'at va adabiyotni o'rganish zamonaviy talabalar uchun ahamiyatsiz deb hisoblasa, boshqalari bu har tomonlama ta'lim olish uchun zarur deb hisoblaydi. Ikkala fikrni muhokama qiling va o'z fikringizni bildiring."
+        ]
+      }
+    ]
+  },
+  {
+    "type": "opinion",
+    "label": "Fikr insho",
+    "description": "O'z fikringizni bildiring va bayonotni yoqlab yoki unga qarshi bahslashing.",
+    "instruction": "Siz qay darajada rozisiz yoki rozi emassiz? / Sizning fikringiz qanday? Kamida 250 ta soʻz yozing.",
+    "categories": [
+      {
+        "name": "Ta'lim",
+        "prompts": [
+          "Ba'zi odamlar universitetda ta'lim olish hamma uchun bepul bo'lishi kerak, deb hisoblashadi, ularning kelib chiqishidan qat'i nazar. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Kelajakda talabalar texnologiyadan foydalangan holda uyda o'qish yoki an'anaviy maktablarda o'qishni tanlashlari mumkin. An’anaviy maktablar yo‘q bo‘lib ketishi ta’kidlanadi. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Ko'p odamlar uy vazifasi bolalarni to'g'ri o'rganishlari uchun zarur deb o'ylashadi, boshqalari esa bu keraksiz va stressni keltirib chiqaradi. Sizning fikringiz qanday?",
+          "Universitetlar har bir fan bo'yicha teng miqdordagi erkak va qiz talabalarni qabul qilishlari kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Ba'zi odamlar ota-onalar bolalarga jamiyatning yaxshi a'zosi bo'lishni o'rgatishlari kerak deb o'ylashadi. Boshqalar esa, maktab buni o'rganish uchun joy, deb hisoblashadi. Sizning fikringiz qanday?",
+          "San'at, musiqa va drama kabi mavzular ko'pincha matematika va fan kabi fanlardan kamroq ahamiyatga ega. Shuning uchun ularni maktab o'quv dasturidan olib tashlash kerak. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Boshlang‘ich maktabdan boshlab barcha o‘quvchilardan chet tilini o‘rganish talab qilinishi kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Talabalar universitetga borishdan oldin dam oladigan bo'sh yillar tobora ommalashib bormoqda. Bo'sh yilni olish har doim yoshlar uchun foydali tajribadir. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Guruhda ishlash o‘quvchilarning bilim olishining eng samarali usuli hisoblanadi. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Ayrim pedagoglarning fikricha, imtihonlar o‘quvchining haqiqiy qobiliyatini adolatli baholash emas va doimiy baholash bilan almashtirilishi kerak. Sizning fikringiz qanday?"
+        ]
+      },
+      {
+        "name": "Texnologiya va innovatsiyalar",
+        "prompts": [
+          "Sun'iy intellektning rivojlanishi oxir-oqibat millionlab ish o'rinlarining yo'qolishiga olib keladi. Shuning uchun hukumatlar uning rivojlanishini cheklashlari kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Ijtimoiy tarmoqlar izolyatsiyani kuchaytirish va noto'g'ri ma'lumot tarqatish orqali jamiyat va shaxslarga salbiy ta'sir ko'rsatadi. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Ba'zilar internet odamlarni bir-biriga yaqinlashtirdi, deb o'ylashadi, boshqalari esa odamlar va jamoalar tobora yakkalanib bormoqda, deb o'ylashadi. Sizning fikringiz qanday?",
+          "Jamoat joylarida mobil telefonlardan foydalanish chekish kabi zerikarli va xuddi shunday taqiqlanishi kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Texnologiyaning rivojlanishi hayotimizni oddiyroq emas, balki murakkablashtirdi. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Video o'yinlar ko'pincha yoshlardagi zo'ravonlik uchun ayblanadi. Shuning uchun zo'ravonlik video o'yinlarini sotish taqiqlanishi kerak. Sizning fikringiz qanday?",
+          "Zamonaviy dunyoda Internet orqali xarid qilish, ishlash va odamlar bilan muloqot qilish va boshqalar bilan yuzma-yuz aloqa qilmasdan yashash mumkin. Bu ijobiy yoki salbiy rivojlanishmi?",
+          "Jismoniy kitoblarni o'qish o'tmishga aylanib bormoqda, chunki ko'proq odamlar elektron kitoblar va raqamli maqolalarga murojaat qilishadi. Bu savodxonlik uchun salbiy tendentsiya. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Kosmosni tadqiq qilish katta miqdordagi davlat mablag'larini talab qiladi. Bu pulni Yerdagi qashshoqlik va kasallik kabi muammolarni hal qilish uchun sarflash yaxshiroqdir. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Avtomatlashtirish va robotlar an'anaviy ishlab chiqarish ishlarini egallab olishmoqda. Bu butun jamiyat uchun ijobiy holat. Siz qay darajada rozisiz yoki rozi emassiz?"
+        ]
+      },
+      {
+        "name": "Ish va bandlik",
+        "prompts": [
+          "Ishdan qoniqish yuqori maoshdan ko'ra muhimroqdir. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Ko'pchilik ta'lim sifatini yaxshilash uchun o'rta maktab o'quvchilarini o'qituvchilarini baholash va tanqid qilishni rag'batlantirish kerakligini ta'kidlaydilar. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Pensiya yoshini barcha mamlakatlarda oshirish kerak, chunki odamlar uzoq va sog'lom umr ko'rmoqda. Sizning fikringiz qanday?",
+          "Har bir inson yetarlicha tarbiyalangan bo‘lsa, yaxshi rahbar bo‘lishi mumkin. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Odamlar o'zlari yoqtirmaydigan ishlarda ishlagandan ko'ra, ishsiz bo'lgani afzal. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Kompaniyalar o'z vazifalaridan qat'i nazar, barcha xodimlaridan forma kiyishni talab qilishlari kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "O'z-o'zini ish bilan ta'minlash har doim kompaniya yoki tashkilotda ishlashdan afzalroqdir. Sizning fikringiz qanday?",
+          "Bugungi kunda yoshlar zamonaviy ish joyi uchun zarur bo'lgan asosiy ko'nikmalarga ega emaslar. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Ishsizlikni kamaytirish uchun hukumat an'anaviy ish haftasini 30 soatga qisqartirishi kerak, bu esa ko'proq odamlarga mavjud ishni bo'lishish imkonini beradi. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Har qanday kasb yoki ishni tanlashda eng muhim e'tibor - bu yuqori daromadga ega bo'lish. Siz rozimisiz yoki qo'shilmaysizmi?"
+        ]
+      },
+      {
+        "name": "Atrof-muhit va muhofaza",
+        "prompts": [
+          "Global isish, birinchi navbatda, inson faoliyati bilan bog'liq va shuning uchun uni to'xtatish uchun odamlar o'zlarining turmush tarzini tubdan o'zgartirishlari kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Atrof-muhitni muhofaza qilish mas'uliyati alohida fuqarolarga emas, balki faqat yirik korporatsiyalarga yuklanadi. Sizning fikringiz qanday?",
+          "Ba'zi odamlar global ekologik muammolarni hal qilishning eng yaxshi yo'li yoqilg'i narxini oshirish deb o'ylashadi. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Tibbiy va kosmetik maqsadlarda hayvonlarni tekshirish shafqatsiz va butunlay taqiqlanishi kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Mamlakatlar iqtisodiy jihatdan rivojlangan sari atrof-muhit degradatsiyasi yuzaga kelishi muqarrar. Sizning fikringiz qanday?",
+          "Hayvonot bog'lari asosan hayvonlar uchun qamoqxona bo'lib, hech qanday foydali ta'lim yoki tabiatni muhofaza qilish maqsadiga ega emas. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Plastik xarid qilish paketlari barcha supermarketlar va chakana savdo do'konlarida noqonuniy bo'lishi kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Ba'zi o'simlik va hayvon turlarining yo'q bo'lib ketishi tabiiy jarayondir va biz ularni saqlab qolish uchun aralashmasligimiz kerak. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Odamlar transportning atrof-muhitga ta'sirini kamaytirish uchun faqat mahalliy ishlab chiqarilgan oziq-ovqatlarni iste'mol qilishlari kerak. Sizning fikringiz qanday?",
+          "Shamol va quyosh energiyasi kabi qayta tiklanadigan energiya manbalariga sarmoya kiritish pulni behuda sarflashdir, chunki ular juda ishonchsizdir. Siz qay darajada rozisiz yoki rozi emassiz?"
+        ]
+      },
+      {
+        "name": "Jamiyat va zamonaviy hayot",
+        "prompts": [
+          "Ko'pgina mamlakatlarda boylar va kambag'allar o'rtasidagi tafovut kuchayib bormoqda. Bu zamonaviy jamiyat oldida turgan eng muhim muammodir. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Yoshlar mashhur kishilarning ta'siri ostida. Bu xavfli tendentsiya. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "An’anaviy bayramlar va bayramlar o‘z ma’nosini yo‘qotib, iste’molchilikning navbatdagi bahonasiga aylanib bormoqda. Sizning fikringiz qanday?",
+          "Katta, gavjum shaharda yashash odamning rivojlanishi uchun tinch qishloq qishlog'ida yashashdan ko'ra yaxshiroqdir. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Zamonaviy dunyoda ma'lum bir sohada mutaxassis bo'lishdan ko'ra, moslashuvchan va o'zgarishga tayyor bo'lish muhimroqdir. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Ba'zi odamlar tarix bizga hozirgi yoki kelajak haqida hech narsa o'rgatmaydi, deb hisoblashadi. Sizning fikringiz qanday?",
+          "Yoshlarga katta e'tibor qaratilayotgan zamonaviy jamiyatda keksalar tobora ko'proq chetlashtirilmoqda. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Uy-joyga ega bo'lish inson o'zini barqaror va muvaffaqiyatli his qilishi uchun juda muhimdir. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Bugungi kunda odamlar boshqalarga juda bog'liq va o'zini o'zi ta'minlash uchun amaliy ko'nikmalarga ega emas. Sizning fikringiz qanday?",
+          "Olimpiada kabi xalqaro sport tadbirlari xalqlarni birlashtiradi va global tinchlikka yordam beradi. Siz qay darajada rozisiz yoki rozi emassiz?"
+        ]
+      },
+      {
+        "name": "Salomatlik va parhez",
+        "prompts": [
+          "Hukumat odamlarni sog'lom ovqatlanishga undash uchun tez tayyorlanadigan oziq-ovqat va shirin ichimliklar kabi nosog'lom oziq-ovqat mahsulotlarini soliqqa tortishi kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Sog'liqni saqlash barcha fuqarolar uchun mutlaqo bepul bo'lishi va soliqqa tortish orqali hukumat tomonidan to'liq moliyalashtirilishi kerak. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "An'anaviy muqobil dorilar zamonaviy kimyoviy dorilar kabi samaralidir. Sizning fikringiz qanday?",
+          "Semirib ketish darajasining oshishi butunlay tez ovqatlanish sanoatining aybidir. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Jismoniy tarbiya darslari barcha maktab o'quvchilari uchun har kuni majburiy bo'lishi kerak. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Stress bugungi kunda ishlaydigan kattalar duch keladigan eng muhim sog'liq muammosidir. Sizning fikringiz qanday?",
+          "Xavfli ekstremal sport turlari bilan shug'ullanishni tanlagan odamlar, agar ular jarohat olgan bo'lsa, davolanish uchun o'zlari to'lashlari kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Sog'liqni saqlash bo'yicha ta'lim va emlash kabi profilaktika tibbiyoti kasalliklarga davo topishdan ko'ra muhimroqdir. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Ko'proq qayta ishlangan oziq-ovqatlarga tayanadigan zamonaviy parhez global salomatlikning pasayishining asosiy sababidir. Sizning fikringiz qanday?",
+          "To'liq vaqtli korporativ ishda ishlayotganda sog'lom turmush tarzini saqlab qolish mumkin emas. Siz qay darajada rozisiz yoki rozi emassiz?"
+        ]
+      },
+      {
+        "name": "Davlat va davlat xarajatlari",
+        "prompts": [
+          "Hukumatlar armiyaga emas, balki ta'lim va sog'liqni saqlash kabi davlat xizmatlariga ko'proq pul sarflashi kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Shaharlarda tirbandlik va ifloslanishni kamaytirish uchun jamoat transporti bepul bo'lishi kerak. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Hukumat zimmasida barcha fuqarolarning turar joy bilan ta’minlanishini ta’minlashdir. Sizning fikringiz qanday?",
+          "Hukumatlar rassomlar, musiqachilar va yozuvchilarga moliyaviy yordam ko'rsatishi kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Milliy saylovlarda ovoz berish huquqiga ega bo'lgan barcha fuqarolar uchun majburiy bo'lishi kerak. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Hukumat odamlar nima yeyish, ichish yoki chekishni tanlashiga aralashishga haqli emas. Sizning fikringiz qanday?",
+          "Rivojlanishiga yordam berish uchun boy davlatlar eng kambag'al davlatlarning xalqaro qarzlarini kechirishi kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Jamiyatda boylikni tengroq taqsimlash uchun badavlat shaxslardan olinadigan soliqlar sezilarli darajada oshishi kerak. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "San'atni moliyalashtirish hashamatdir va hukumatlar faqat infratuzilma va shifoxonalar kabi muhim xizmatlarni moliyalashtirishi kerak. Sizning fikringiz qanday?",
+          "Shahar hukumatlari, hatto mahalliy soliqlarni oshirishni nazarda tutsa ham, ko'proq jamoat bog'lari va yashil maydonlarni yaratishga katta mablag' sarflashlari kerak. Siz qay darajada rozisiz yoki rozi emassiz?"
+        ]
+      },
+      {
+        "name": "Jinoyat va qonun",
+        "prompts": [
+          "O'lim jazosi qotillik kabi eng og'ir jinoyatlar uchun yagona samarali to'xtatuvchi vositadir. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Qamoqxonalar jinoyatchilarni jazolashdan ko'ra, birinchi navbatda, reabilitatsiya qilishga e'tibor qaratishlari kerak. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Og'ir jinoyat sodir etgan voyaga etmagan jinoyatchilar kattalardek sudlanib, jazolanishi kerak. Sizning fikringiz qanday?",
+          "Jamoat joylarida kuzatuv kameralaridan foydalanish shaxsiy hayotga tajovuzdir va qattiq cheklanishi kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Jamiyatda zo'ravonlik jinoyatlarini kamaytirish uchun qurol-yarog'ni nazorat qilish bo'yicha qat'iy qonunlar zarur. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Jamoatchilik xizmati kichik, zo'ravonliksiz jinoyatlar uchun qamoq jazosidan ko'ra yaxshiroq jazodir. Sizning fikringiz qanday?",
+          "Hozirgi vaqtda kiberjinoyat jamiyat uchun an'anaviy jismoniy jinoyatlardan ko'ra ko'proq tahdiddir. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Qonunni buzgan odamlar o'z harakatlarining ta'sirini tushunish uchun qurbonlari bilan uchrashishga majbur bo'lishlari kerak. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Aholining jinoyatdan qo'rqishiga ommaviy axborot vositalari mas'uldir, bu ko'pincha jinoyatning haqiqiy darajasiga nomutanosibdir. Sizning fikringiz qanday?",
+          "Jinoyatni jamiyatdan butunlay yo‘q qilib bo‘lmaydi; bu inson tabiatining muqarrar qismidir. Siz qay darajada rozisiz yoki rozi emassiz?"
+        ]
+      },
+      {
+        "name": "Media va reklama",
+        "prompts": [
+          "Bolalarga qaratilgan reklama axloqqa to'g'ri kelmaydi va uni qat'iyan taqiqlash kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Ommaviy axborot vositalari salbiy voqealarga juda ko'p e'tibor qaratadi, bu esa keng jamoatchilikda ruhiy tushkunlik va xavotirga olib keladi. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Yirik transmilliy korporatsiyalar global ommaviy axborot vositalari va axborotga juda katta ta'sir ko'rsatadi. Sizning fikringiz qanday?",
+          "Mashhurlar shaxsiy daxlsizlik huquqiga ega va paparatsilarning jamoat joylarida ularni kuzatishiga yo'l qo'yilmasligi kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Zamonaviy davrda bosma gazetalar butunlay eskirgan va tez orada butunlay yo'q bo'lib ketadi. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Reklama odamlarni kerak bo'lmagan va sotib olishga qodir bo'lmagan narsalarni sotib olishga undaydi. Sizning fikringiz qanday?",
+          "Hukumat jamiyatni zararli kontentdan himoya qilish uchun televidenie va internetda ko'rsatilayotgan narsalarni nazorat qilishi kerak. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "So'z erkinligi degani, odamlarga o'zlari xohlagan narsani aytishga ruxsat berish kerak, hatto boshqalarni xafa qilsa ham. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Realiti-ko'rsatuvlar tarbiyaviy ahamiyatga ega emas va faqat madaniy me'yorlarni tushirishga xizmat qiladi. Sizning fikringiz qanday?",
+          "Foydalanuvchilarning xatti-harakatlarini kuzatib boradigan maqsadli onlayn reklama shaxsiy maxfiylikning jiddiy buzilishi hisoblanadi. Siz qay darajada rozisiz yoki rozi emassiz?"
+        ]
+      },
+      {
+        "name": "Turizm va globallashuv",
+        "prompts": [
+          "Xalqaro turizm mahalliy jamoalar va atrof-muhitga foydadan ko'ra ko'proq zarar keltiradi. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Ishbilarmonlik va madaniyatning tobora globallashuvi mahalliy an'analar va milliy o'ziga xoslikni yo'q qilmoqda. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Odamlarni xalqaro sayohat qilishdan ko'ra, o'z mamlakatida ichki sayohat qilishga undash kerak. Sizning fikringiz qanday?",
+          "o'zbek tili universal global tilga aylanmoqda. Bu xalqaro aloqalar va tijorat uchun ijobiy o'zgarishlar. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Mamlakatlar chet ellik ishchilarni mehnat bozoriga kirishiga ruxsat berishdan oldin o'z fuqarolarini ish bilan ta'minlashga ustuvor ahamiyat berishlari kerak. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Arzon havo qatnovi odamlarning yashash va ishlash tarzini tubdan o'zgartirdi, ammo atrof-muhitga oid xarajatlar foydadan ko'proq. Sizning fikringiz qanday?",
+          "Ko'p millatli kompaniyalar ko'pincha rivojlanayotgan mamlakatlardagi ishchilarni maksimal foyda olish uchun ekspluatatsiya qilishadi. Siz qay darajada rozisiz yoki rozi emassiz?",
+          "Turistlardan chet elga borishdan oldin mahalliy tildagi asosiy iboralarni o'rganish talab qilinishi kerak. Siz rozimisiz yoki qo'shilmaysizmi?",
+          "Globallashuv rivojlanayotgan davlatlarni ortda qoldirib, birinchi navbatda boy davlatlarga foyda keltirdi. Sizning fikringiz qanday?",
+          "Tarixiy binolarni saqlash shaharlar uchun keraksiz xarajatdir; zamonaviy infratuzilma qurish uchun ularni buzish kerak. Siz qay darajada rozisiz yoki rozi emassiz?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "advantage-disadvantage",
+    "label": "Afzalliklari & Kamchiliklari",
+    "description": "Mavzuning afzalliklari va kamchiliklarini muhokama qiling.",
+    "instruction": "Afzalliklari va kamchiliklarini muhokama qiling va so'ralgan joyda o'z fikringizni bildiring. Kamida 250 ta soʻz yozing.",
+    "categories": [
+      {
+        "name": "Ta'lim va o'rganish",
+        "prompts": [
+          "Ko'pgina universitetlar hozirda onlayn ravishda to'liq daraja dasturlarini taklif qilmoqdalar. Darslarga shaxsan qatnashishdan ko'ra, onlayn darajada o'qishning afzalliklari va kamchiliklari qanday?",
+          "Ba'zi ekspertlarning fikricha, bolalar chet tilini o'rta maktabda emas, balki boshlang'ich maktabda o'rganishni boshlash yaxshiroqdir. Buning afzalliklari kamchiliklardan ustun turadimi?",
+          "Ko'pgina mamlakatlarda talabalar universitetga kirishdan oldin sayohat qilish yoki ishlash uchun \"bo'sh yil\" oladi. Bo'sh yilni olishning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi maktablar barcha o'quvchilardan forma kiyishni talab qiladi. Maktab formasining afzalliklari va kamchiliklari qanday?",
+          "Oliy taʼlim olish uchun xorijda oʻqishni tanlagan talabalar soni ortib bormoqda. Xorijiy davlatda o‘qishning afzalliklari kamchiliklardan ko‘pmi?",
+          "Ba'zi ta'lim tizimlarida bolalar yoshiga emas, balki o'qish qobiliyatiga qarab sinflarga guruhlangan. Ushbu amaliyotning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Yodlab olish an'anaviy o'qitish usuli bo'lib, dunyoning ko'p joylarida hanuzgacha qo'llaniladi. Yodlash orqali o'rganishning afzalliklari va kamchiliklari qanday?",
+          "Ko'pchilik universitetda ta'lim hamma uchun mutlaqo bepul bo'lishi kerakligini ta'kidlaydi. Bepul oliy ta'limning afzalliklari kamchiliklardan ko'pmi?",
+          "Ba'zi ota-onalar farzandlarini an'anaviy maktabga berishdan ko'ra, uyda o'qitishni afzal ko'rishadi. Uyda o'qitishning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Uzluksiz baholash (kurs ishlari va loyihalar) ko'plab ta'lim muassasalarida rasmiy imtihonlarni almashtirmoqda. Ushbu siljishning afzalliklari va kamchiliklari qanday?"
+        ]
+      },
+      {
+        "name": "Texnologiya va Internet",
+        "prompts": [
+          "Kundalik hayotda sun'iy intellektdan foydalanish tobora keng tarqalgan. AIning afzalliklari kamchiliklardan ustun turadimi?",
+          "Ijtimoiy tarmoqlar odamlarning muloqot qilish va ma'lumot almashish usullarini inqilob qildi. Ijtimoiy tarmoqlarning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Hozirda ko‘pchilik o‘z smartfonlaridan mahsulot va xizmatlar uchun to‘lovlarni amalga oshirishda foydalanmoqda, bu esa naqd puldan foydalanishning kamayishiga olib keladi. Naqd pulsiz jamiyatning afzalliklari va kamchiliklari qanday?",
+          "Texnologiyaning rivojlanishi ko'p odamlarga ofisga borishdan ko'ra uydan ishlash imkonini berdi. Masofaviy ishning afzalliklari kamchiliklardan ustun turadimi?",
+          "Elektron kitoblar va raqamli o'qish qurilmalari an'anaviy bosma kitoblarni tezda almashtirmoqda. Ushbu tendentsiyaning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "O'z-o'zidan boshqariladigan avtomobillarning rivojlanishi jadal sur'atlar bilan rivojlanmoqda. Umumiy foydalanishdagi yo'llarda avtonom transport vositalarining afzalliklari va kamchiliklari qanday?",
+          "Avtomatlashtirish va robotlar ishlab chiqarish va boshqa sohalarda inson ishchilarini tobora ortib bormoqda. Avtomatlashtirishning afzalliklari kamchiliklardan ustun turadimi?",
+          "Bugungi kunda bolalar ko'p vaqtlarini video o'yinlarni o'ynashga sarflashadi. Buning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Bulutli hisoblash odamlarga o'zlarining barcha shaxsiy va professional ma'lumotlarini jismoniy qattiq disklarda emas, balki onlayn saqlash imkonini beradi. Bulutda ma'lumotlarni saqlashning afzalliklari va kamchiliklari qanday?",
+          "Kosmosni tadqiq qilish soliq to'lovchilarga har yili katta miqdorda pul sarflaydi. Koinotni o'rganishga pul sarflashning afzalliklari kamchiliklardan ustun turadimi?"
+        ]
+      },
+      {
+        "name": "Ish va Karyera",
+        "prompts": [
+          "Ba'zi kompaniyalar o'z xodimlarining ish haqini kamaytirmasdan to'rt kunlik ish haftasini joriy qildilar. Qisqa ish haftasining afzalliklari va kamchiliklari qanday?",
+          "Ilgari odamlar ko'pincha butun ish hayoti davomida bir ishda qolishgan. Bugungi kunda kasbni bir necha marta o'zgartirish odatiy holdir. Tez-tez o'zgarib turadigan ishlarning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pgina hukumatlar rasmiy pensiya yoshini 68 yoki 70 ga ko'tarmoqda. Keyinchalik yoshga qadar ishlashning afzalliklari kamchiliklardan ko'proqmi?",
+          "Yakka tartibdagi tadbirkorlik yoki o‘z biznesini ochishni afzal ko‘rayotganlar soni ortib bormoqda. O'z-o'zini ish bilan ta'minlashning ish beruvchida ishlashga nisbatan qanday afzalliklari va kamchiliklari bor?",
+          "Transmilliy kompaniyalar ko'pincha o'z xodimlarini chet eldagi filiallarga bir necha yilga ishlashga o'tkazadilar. Chet elda ishlashning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi tashkilotlar xodimlarga individual ish natijalariga qarab maosh to'lash ularni rag'batlantirishning eng yaxshi usuli deb hisoblashadi. Samaradorlikka asoslangan ish haqining afzalliklari kamchiliklardan ustun turadimi?",
+          "Mehnat bozoriga kirib kelayotgan yoshlar uchun to‘lovsiz stajirovkalar umumiy talabga aylanib bormoqda. Tajriba orttirish uchun bepul ishlashning qanday afzalliklari va kamchiliklari bor?",
+          "Ayrim mamlakatlar korporativ direktorlar kengashlarida ayollarning ma'lum foizini ta'minlash uchun kvotalar joriy qilgan. Ushbu siyosatning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Juda katta korporatsiyada ishlash kichik oilaviy biznesda ishlashdan ko'ra boshqacha tajriba taklif qiladi. Katta korporatsiyada ishlashning qanday afzalliklari va kamchiliklari bor?",
+          "Ko'pgina kasblar endi xodimlardan oddiy ish vaqtidan tashqarida elektron pochta yoki telefon orqali mavjud bo'lishini talab qiladi. Ushbu doimiy ulanishning afzalliklari kamchiliklardan ustun turadimi?"
+        ]
+      },
+      {
+        "name": "Salomatlik va turmush tarzi",
+        "prompts": [
+          "Ayrim mamlakatlar hukumatlari semirishga qarshi kurashish uchun tez tayyorlanadigan taomlar va shakarli ichimliklarga soliq joriy etdi. Nosog'lom oziq-ovqatga soliq solishning afzalliklari va kamchiliklari qanday?",
+          "Butun dunyoda vegetarian va vegan dietalarining mashhurligi ortib bormoqda. Go'shtni dietadan chiqarib tashlashning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'p odamlar an'anaviy davolash usullari o'rniga akupunktur va o'simlik preparatlari kabi muqobil dori vositalaridan foydalanadilar. Muqobil tibbiyotning afzalliklari kamchiliklardan ustun turadimi?",
+          "Ba'zi mamlakatlarda sog'liqni saqlash tizimlari to'liq hukumat tomonidan moliyalashtiriladi va foydalanish joyida bepul. Bepul davlat sog'liqni saqlash tizimining afzalliklari va kamchiliklari qanday?",
+          "Parashyutdan sakrash va qoyaga ko‘tarilish kabi ekstremal sport turlari bilan shug‘ullanuvchilar soni ortib bormoqda. Ushbu faoliyatning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pgina shaharlarda barcha jamoat joylarida, jumladan, parklar va ochiq restoranlarda chekish taqiqlangan. Chekishni umumiy taqiqlashning afzalliklari kamchiliklardan ustun turadimi?",
+          "Odamlar sog'lig'i va jismoniy tayyorgarligini kuzatish uchun mobil ilovalar va taqiladigan qurilmalardan tobora ko'proq foydalanmoqda. Sog'liqni saqlash monitoringi uchun texnologiyaga tayanishning afzalliklari va kamchiliklari qanday?",
+          "Oziq-ovqat ishlab chiqarishni ko'paytirish uchun dunyoning ko'plab mamlakatlarida genetik modifikatsiyalangan (GM) ekinlar etishtiriladi. GM oziq-ovqatlarining afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Odamlar tibbiy muolajalar uchun xorijga sayohat qiladigan tibbiy turizm jadal rivojlanayotgan sanoatdir. Sog'liqni saqlash uchun boshqa davlatga sayohat qilishning afzalliklari kamchiliklardan ustun turadimi?",
+          "Ko'p odamlar tijorat sport zallariga borish uchun oylik qimmat a'zolik to'laydilar. Ochiq havoda yoki uyda mashq qilish bilan solishtirganda, sog'lom qolish uchun sport zalidan foydalanishning afzalliklari va kamchiliklari qanday?"
+        ]
+      },
+      {
+        "name": "Atrof-muhit va shaharsozlik",
+        "prompts": [
+          "Yo'l tirbandligini kamaytirish uchun ba'zi yirik shaharlarda \"tirbandlik narxlari\" joriy qilingan, haydovchilardan shahar markaziga kirish uchun pul undirilgan. Ushbu tizimning afzalliklari va kamchiliklari qanday?",
+          "Ba'zilar yadroviy energiyani fotoalbom yoqilg'ilarga toza alternativ sifatida qaraydi. Yadro energiyasiga tayanishning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Aholi soni ortib borayotganligi sababli, shaharlar aholini joylashtirish uchun balandroq ko'p qavatli uylar qurmoqda. Ko'p qavatli binolarda yashashning afzalliklari kamchiliklardan ustun turadimi?",
+          "Ko'pgina mahalliy hukumatlar barcha uy xo'jaliklari uchun qayta ishlashni majburiy qilib qo'ydi. Majburiy qayta ishlash dasturlarining afzalliklari va kamchiliklari qanday?",
+          "Aholining katta qismi qishloq joylardan katta shaharlarga ko'chib o'tmoqda. Urbanizatsiyaning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Hayvonot bog'lari dunyoning deyarli barcha yirik shaharlarida mavjud. Hayvonlarni hayvonot bog'larida asirlikda saqlashning afzalliklari kamchiliklardan ustun turadimi?",
+          "Ba'zi odamlar biz faqat mahalliy ishlab chiqarilgan oziq-ovqat sotib olishimiz kerak, deb ta'kidlashadi. Faqat mahalliy oziq-ovqat mahsulotlarini iste'mol qilishning afzalliklari va kamchiliklari qanday?",
+          "Atrof-muhitni muhofaza qilish uchun ba'zi hukumatlar elektr transport vositalarini (EV) katta miqdorda subsidiya qilmoqdalar. Hukumatning ushbu aralashuvining afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Ekologik turizm sayyohlarga mo'rt muhitga tashrif buyurish va ularning ta'sirini minimallashtirish uchun mo'ljallangan. Ekoturizmning afzalliklari kamchiliklardan ustunmi?",
+          "Ko'pgina shaharsozlik mutaxassislari shahar markazlarida butunlay avtomashinalarsiz zonalar yaratish tarafdori. Shaharlarda avtomobillarni taqiqlashning afzalliklari va kamchiliklari qanday?"
+        ]
+      },
+      {
+        "name": "Turizm va sayohat",
+        "prompts": [
+          "Byudjet aviakompaniyalarining yuksalishi xalqaro sayohatlarni millionlab odamlar uchun qulay qildi. Arzon havo sayohatining afzalliklari va kamchiliklari qanday?",
+          "Xalqaro turizm ko'plab rivojlanayotgan mamlakatlar uchun asosiy daromad manbai hisoblanadi. Iqtisodiyotning ijobiy va salbiy tomonlarini ko'p turizmga bog'liqligini muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'pgina sayyohlar an'anaviy mehmonxonalarda emas, balki qisqa muddatli ijarada (masalan, Airbnb) qolishni afzal ko'rishadi. Qisqa muddatli turistik ijaraning afzalliklari mahalliy jamoalar uchun kamchiliklardan ko'proqmi?",
+          "o'zbek tili tobora global sayohat va sayyohlik tiliga aylanib bormoqda. Yagona dominant global tilga ega bo'lishning afzalliklari va kamchiliklari qanday?",
+          "Ba'zi tarixiy shaharlar infratuzilmani saqlab qolish uchun tashrif buyuruvchilardan \"turistik soliq\" undiradilar. Turistlarni soliqqa tortishning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Rivojlanayotgan mamlakatlarga xayriya ishlari bilan shug'ullanadigan \"ko'ngilli turizm\" juda mashhur bo'lib bormoqda. Ushbu tendentsiyaning afzalliklari kamchiliklardan ustun turadimi?",
+          "Sayyohlar Antarktida yoki Amazon tropik o'rmonlari kabi uzoq, tegmagan tabiiy hududlarga tobora ko'proq tashrif buyurishmoqda. Ekstremal muhitda turizmning afzalliklari va kamchiliklari qanday?",
+          "Ko'pchilik global sayohatlar madaniy xilma-xillikning yo'qolishiga olib keladi, deb ta'kidlashadi, chunki shaharlar hamma joyda bir xil ko'rinish va his qilishni boshlaydi. Madaniy gomogenlashtirishning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi odamlar chet elga sayohat qilish o'rniga, ta'tillarini o'z mamlakatlarini kashf qilishda o'tkazishni afzal ko'rishadi. Ichki turizmning afzalliklari kamchiliklardan ustunmi?",
+          "Yo'l-yo'riqli turlar - sayohat qilishning juda mashhur usuli. Mustaqil sayohat bilan solishtirganda yuqori darajada tuzilgan tur guruhi bilan sayohat qilishning afzalliklari va kamchiliklari qanday?"
+        ]
+      },
+      {
+        "name": "Hukumat va jamiyat",
+        "prompts": [
+          "Ayrim mamlakatlarda yoshlar uchun majburiy jamoat xizmati dasturlari joriy qilingan. Afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Hukumat har bir fuqaroga ish joyidan qat'iy nazar muntazam ravishda pul beradigan universal asosiy daromad (UBI) butun dunyoda muhokama qilinmoqda. UBI ning afzalliklari va kamchiliklari qanday?",
+          "Ko'pgina mamlakatlar yigit va qizlardan majburiy harbiy xizmatni o'tashni talab qiladi. Muddatli harbiy xizmatning afzalliklari kamchiliklardan ustunmi?",
+          "Jamoat joylarida yopiq elektron televizor (CCTV) kameralaridan foydalanish keng tarqalgan. Jamoatchilik nazoratining afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Ba'zi davlatlar o'lim jazosini bekor qilgan bo'lsa, boshqalari hali ham eng og'ir jinoyatlar uchun qo'llaydi. O'lim jazosining afzalliklari va kamchiliklari qanday?",
+          "Boy davlatlar tez-tez rivojlanayotgan mamlakatlarga moliyaviy yordam ko'rsatadilar. Xalqaro yordamning afzalliklari kamchiliklardan ko'proqmi?",
+          "Ayrim mamlakatlarda milliy saylovlarda ovoz berish qonun bilan majburiy hisoblanadi. Majburiy ovoz berishning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Hukumatlar ko'pincha san'at, jumladan muzeylar, galereyalar va teatrlar uchun katta mablag' ajratadilar. San'atni moliyalashtirish uchun davlat pullaridan foydalanishning afzalliklari va kamchiliklari qanday?",
+          "Tibbiyot yutuqlari tufayli ko'plab rivojlangan mamlakatlar aholisi ancha uzoq umr ko'rmoqda. Qarigan aholining afzalliklari kamchiliklardan ustun turadimi?",
+          "Zamonaviy qamoqxona tizimlari ko'pincha jinoyatchilarni jazolashdan ko'ra ta'lim va terapiya orqali reabilitatsiya qilishga qaratilgan. Reabilitatsiyaning jazoga nisbatan afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring."
+        ]
+      },
+      {
+        "name": "Oila va bolalar",
+        "prompts": [
+          "Zamonaviy jamiyatda ota-onaning ikkalasi ham bolalarni tarbiyalashda to'liq kunlik ishlashlari odatiy holdir. Ikkita ishlaydigan ota-onaga ega bo'lishning afzalliklari va kamchiliklari qanday?",
+          "Ko'proq odamlar oilasi yoki xonadoshlari bilan emas, balki yolg'iz yashashni afzal ko'rmoqda. Yolg'iz yashashning afzalliklari kamchiliklardan ko'pmi?",
+          "Ko'pgina er-xotinlar farzand ko'rishni ancha kechroq, ko'pincha 30 yoki 40 yoshdan keyin tanlashadi. Ota-onalikni kechiktirishning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "An'anaviy katta oila (bobo-buvilar, xolalar, amakilar birga yashaydigan) yadro oilasi foydasiga kamroq tarqalgan. Katta oilada o'sishning afzalliklari va kamchiliklari qanday?",
+          "Ba'zi ota-onalar farzandlariga haftalik nafaqa yoki cho'ntak pulini berishadi. Bolalarga o'z pullarini berishning afzalliklari kamchiliklardan ko'proqmi?",
+          "Ko'pgina ota-onalar farzandlariga har kuni ruxsat berilgan ekran vaqtini qattiq cheklaydilar. Qattiq ekran vaqtini cheklashning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "So'nggi bir necha o'n yillikda ko'plab mamlakatlarda ajralishlar darajasi sezilarli darajada oshdi. Er-xotinlarning qonuniy ajrashishlarini osonlashtirishning afzalliklari va kamchiliklari qanday?",
+          "Yoshlar yigirma yoshga to'lgunga qadar ota-onalari bilan yashashni davom ettirishlari odatiy holdir. Uyda yashovchi yoshlarning afzalliklari kamchiliklardan ustun turadimi?",
+          "Ba'zi ota-onalar farzandlarini bo'sh vaqtlarini kam qoldirib, ko'plab darsdan tashqari mashg'ulotlarga yozadilar. Yuqori darajada tuzilgan bolalikning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "To'liq ota-ona oilasida o'sish bolalar uchun tobora keng tarqalgan tajriba. Yagona ota-ona tomonidan tarbiyalanishning qanday afzalliklari va kamchiliklari bor?"
+        ]
+      },
+      {
+        "name": "Media va reklama",
+        "prompts": [
+          "Ko'pgina mamlakatlar bevosita bolalarga qaratilgan reklamani cheklaydi yoki taqiqlaydi. Bolalar uchun reklamani taqiqlashning afzalliklari kamchiliklardan ko'proqmi?",
+          "24 soatlik yangiliklar kanallari va onlayn yangiliklar tasmalarining paydo bo'lishi bizda doimiy ravishda ma'lumot olish imkoniyatiga ega ekanligimizni anglatadi. 24 soatlik yangiliklar siklining afzalliklari va kamchiliklari qanday?",
+          "Yirik transmilliy korporatsiyalar global media landshaftining muhim qismini nazorat qiladi. OAV monopoliyalarining afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Onlayn kompaniyalar foydalanuvchining veb-tarixini kuzatish asosida maqsadli reklamadan foydalanadilar. Shaxsiylashtirilgan reklamaning afzalliklari kamchiliklardan ustun turadimi?",
+          "Haqiqiy teleko'rsatuvlar butun dunyo bo'ylab juda mashhur bo'lib qolmoqda. Reality TV dasturlashning afzalliklari va kamchiliklari qanday?",
+          "Ba'zi hukumatlar o'z fuqarolari ko'rishi mumkin bo'lgan kontentni cheklash uchun internetni tsenzura qiladi. Internet tsenzurasining afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Odamlar raqamli ommaviy axborot vositalariga murojaat qilganda, bosma gazeta va jurnallar o'quvchilar sonining keskin kamayib borayotganini ko'rmoqda. Jamiyatning bosma jurnalistikadan uzoqlashishining qanday afzalliklari va kamchiliklari bor?",
+          "Mashhurlar ko'pincha mahsulotlar va siyosiy kampaniyalarni qo'llab-quvvatlaydi. Mashhurlarning ma'qullashining afzalliklari kamchiliklardan ustun turadimi?",
+          "Netflix va Spotify kabi striming xizmatlari odamlarning o'yin-kulgini qanday iste'mol qilishini butunlay o'zgartirdi. Oqimli mediaga o'tishning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Zamonaviy jangovar filmlar va video o'yinlar ko'pincha yuqori darajadagi zo'ravonlikni o'z ichiga oladi. Jamiyatni zo'ravon ommaviy axborot vositalariga ta'sir qilishning afzalliklari va kamchiliklari qanday?"
+        ]
+      },
+      {
+        "name": "Globallashuv va madaniyat",
+        "prompts": [
+          "Transmilliy korporatsiyalarning ko'tarilishi butun dunyoda bir xil do'konlar va brendlar mavjudligini anglatadi. Biznesda globallashuvning afzalliklari kamchiliklardan ustunmi?",
+          "Odamlar o'zbek, ispan yoki mandarin kabi dominant tillarga o'tishlari sababli ko'plab ozchilik tillari yo'q bo'lib ketish xavfi ostida. Ozchilik tillarini yo'qotishning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "\"Tez moda\" sanoati odamlarga zamonaviy kiyimlarni juda arzonga sotib olish imkonini beradi. Tez modaning afzalliklari va kamchiliklari qanday?",
+          "Global savdo tufayli odamlar yilning istalgan vaqtida mahalliy supermarketda butun dunyodan oziq-ovqat sotib olishlari mumkin. Ushbu global oziq-ovqat tarmog'ining afzalliklari kamchiliklardan ustun turadimi?",
+          "Hamkorlar turli mamlakatlardan yoki madaniy kelib chiqishi bo'lgan madaniyatlararo nikohlar keng tarqalgan. Ko'p madaniyatli oilada oila boqishning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Olimpiya o'yinlari yoki FIFA Jahon chempionati kabi xalqaro sport tadbirlari mezbon mamlakatlardan milliardlab dollar sarflashni talab qiladi. Yirik xalqaro sport tadbirlarini o‘tkazishning afzalliklari va kamchiliklari qanday?",
+          "Ozchilik madaniyatining elementlari hukmron madaniyat tomonidan qo'llaniladigan madaniy o'zlashtirish juda muhokama qilinadi. Madaniyat almashishning afzalliklari o'zlashtirishning kamchiliklaridan ustun turadimi?",
+          "Maktablarda o'quvchilarga qadimgi tarixni o'rgatish uchun ko'p vaqt sarflash odatiy holdir. O'quv rejasida tarix faniga ustuvor ahamiyat berishning afzalliklari va kamchiliklarini muhokama qiling va o'z fikringizni bildiring.",
+          "Ko'p odamlar gumanitar inqirozlarni hal qilish uchun butunlay global xayriya tashkilotlariga tayanadilar. Mahalliy hokimiyat organlariga emas, balki nodavlat tashkilotlarga (NNT) tayanishning qanday afzalliklari va kamchiliklari bor?",
+          "G'arb madaniyati, ayniqsa musiqa va kino orqali dunyoning qolgan qismiga katta ta'sir ko'rsatadi. G'arb madaniyatining global tarqalishining afzalliklari kamchiliklardan ustun turadimi?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "problem-solution",
+    "label": "Muammo va yechim",
+    "description": "Muammoning sabablarini aniqlang va echimlarni taklif qiling.",
+    "instruction": "Ushbu muammoning sabablarini/ta'sirini tushuntiring va echimlarni taklif qiling. Kamida 250 ta soʻz yozing.",
+    "categories": [
+      {
+        "name": "Atrof-muhit va tabiat",
+        "prompts": [
+          "Dunyo okeanlarida plastik chiqindilar miqdori tez sur'atlar bilan ortib bormoqda. Buning sabablari nimada? Qanday yechimlarni taklif qila olasiz?",
+          "O'rmonlarning kesilishi dunyoning ko'p joylarida dahshatli darajada sodir bo'lmoqda. Buning qanday salbiy oqibatlari bor? Bu muammoni qanday hal qilish mumkin?",
+          "Dunyoning ko‘plab shaharlari suv tanqisligiga duch kelmoqda. Nima uchun bu sodir bo'lmoqda? Ushbu muammoni hal qilish uchun qanday choralar ko'rish mumkin?",
+          "Yo'qolib ketish xavfi ostida turgan turlar soni yil sayin ortib bormoqda. Ushbu pasayishning asosiy sabablari nimada? Bu hayvonlarni himoya qilish uchun nima qilish kerak?",
+          "Yirik shahar markazlarida havoning ifloslanishi kritik darajaga yetmoqda. Buning sog'liqqa va atrof-muhitga ta'siri qanday? Hukumatlar va shaxslar havo ifloslanishini qanday kamaytirishi mumkin?",
+          "Global isish butun dunyo bo'ylab ekstremal ob-havo hodisalarini keltirib chiqarmoqda. Ushbu hodisaning asosiy sabablari nimada? Uning ta'sirini kamaytirish uchun qanday choralar ko'rish mumkin?",
+          "Maishiy chiqindilar miqdori sezilarli darajada oshmoqda. Nima uchun bu shunday? Odamlarni chiqindilarni kamaytirishga undash uchun nima qilish kerak?",
+          "Biologik xilma-xillikning yo'qolishi asosiy global muammodir. Ushbu yo'qotishning salbiy oqibatlari qanday? Tabiiy ekotizimlarni qanday saqlab qolishimiz mumkin?",
+          "Haddan tashqari baliq ovlash dunyo okeanidagi baliq zahiralarini kamaytirmoqda. Bu qanday muammolarni keltirib chiqaradi? Buning oldini olish uchun qanday qoidalarni joriy qilish kerak?",
+          "Tuproqning degradatsiyasi ayrim hududlarda oziq-ovqat yetishtirishni qiyinlashtirmoqda. Ushbu muammoning sabablari nimada? Qishloq xo'jaligida qanday echimlarni amalga oshirish mumkin?"
+        ]
+      },
+      {
+        "name": "Texnologiya va Internet",
+        "prompts": [
+          "Bugungi kunda bolalar ekranlarga ko'p vaqt sarflashadi. Buning qanday salbiy oqibatlari bor? Ota-onalar farzandlarining ekran vaqtini qanday boshqarishi mumkin?",
+          "Kiberbulling o'smirlar orasida keng tarqalgan muammoga aylandi. Bunday xatti-harakatlarning sabablari nimada? Buning oldini olish uchun maktablar va ota-onalar nima qilishlari kerak?",
+          "Onlayn xizmatlarning o'sishi bilan shaxsiy ma'lumotlarning maxfiyligi tobora ko'proq xavf ostida. Buning potentsial xavflari qanday? Qanday qilib shaxslar o'zlarining onlayn ma'lumotlarini himoya qilishlari mumkin?",
+          "Ko'pgina kattalar o'zlarining smartfonlariga qaram bo'lib qolishadi. Nima uchun bu sodir bo'lmoqda? Odamlar mobil qurilmalarga qaramligini kamaytirish uchun qanday choralar ko'rishlari mumkin?",
+          "Sun'iy intellektning jadal rivojlanishi ko'plab an'anaviy ishlarga tahdid solmoqda. Buning jamiyatga potentsial ta'siri qanday? Hukumatlar ishchi kuchini tayyorlash uchun nima qilishi mumkin?",
+          "Elektron qurilmalarning doimiy yangilanishi elektron chiqindilarning katta o'sishiga olib keldi. Nima uchun odamlar o'z qurilmalarini tez-tez almashtiradilar? Elektron chiqindilarni qanday qilib yaxshiroq boshqarish mumkin?",
+          "Ijtimoiy tarmoqlarda soxta xabarlar va dezinformatsiyalarning tarqalishi tobora kuchayib borayotgan muammodir. Ushbu ma'lumotlarning tez tarqalishiga nima sabab bo'ldi? Unga qarshi kurashish uchun nima qilish mumkin?",
+          "Raqamli xabar almashish tufayli yuzma-yuz muloqot pasaymoqda. Shaxsiy munosabatlarga qanday salbiy ta'sir ko'rsatadi? Qanday qilib biz ko'proq real hayotdagi o'zaro munosabatlarni rag'batlantirishimiz mumkin?",
+          "Buzg'unchilik va shaxsiy ma'lumotlarni o'g'irlash kabi kiberjinoyatlar ortib bormoqda. Odamlarni bu jinoyatlarga nima moyil qiladi? Qanday choralar kiberxavfsizlikni yaxshilashi mumkin?",
+          "Odamlar asosiy ko'nikmalar, masalan, xaritani o'qish o'rniga GPS-dan foydalanish uchun texnologiyaga haddan tashqari qaram bo'lishadi. Bu ishonch qanday muammolarni keltirib chiqaradi? Qanday qilib bu tendentsiyani qaytarish mumkin?"
+        ]
+      },
+      {
+        "name": "Jamiyat va shahar hayoti",
+        "prompts": [
+          "Ko'pgina yirik shaharlar haddan tashqari gavjumlikdan aziyat chekmoqda. Ushbu tez urbanizatsiyaning sabablari nimada? Qanday echimlar shahar aholisini boshqarishga yordam beradi?",
+          "Dunyoning ko'p joylarida yashash narxi keskin oshib bormoqda. Bu oddiy oilalar uchun qanday muammolarni keltirib chiqaradi? Hukumatlar bu moliyaviy yukni qanday engillashtirishi mumkin?",
+          "Uysizlik ko'plab badavlat mamlakatlarda ko'rinadigan muammodir. Nima uchun odamlar ko'chada yashashadi? Qanday ijtimoiy dasturlar uysizlikni samarali tarzda kamaytirishi mumkin?",
+          "Shovqinning ifloslanishi shaharlarda yashovchi odamlar uchun doimiy muammodir. Bu shovqinning asosiy manbalari nima? Shahar rejalashtiruvchilari tinchroq muhit yaratish uchun qanday qadamlar qo'yishi mumkin?",
+          "Zamonaviy shaharlarda jamoat bog‘lari va yashil maydonlar yetishmaydi. Buning shahar aholisiga qanday salbiy ta'siri bor? Mahalliy hokimiyat organlari bu muammoni qanday hal qilishlari mumkin?",
+          "Qishloqlarda yoshlarning ko‘chib ketishi natijasida aholi sonining qisqarishi kuzatilmoqda. Nima uchun bu sodir bo'lmoqda? Odamlarni qishloq jamoalarida qolish yoki ko'chib o'tishga undash uchun nima qilish mumkin?",
+          "Ko'pgina rivojlangan mamlakatlarda aholi tez qarib bormoqda. Bu qanday iqtisodiy va ijtimoiy muammolarni keltirib chiqaradi? Jamiyatlar eski demografik holatga qanday moslasha oladi?",
+          "Boylar va kambag'allar o'rtasidagi boylik tafovuti tobora ortib bormoqda. Haddan tashqari tengsizlikning ijtimoiy oqibatlari qanday? Qanday iqtisodiy siyosatlar boylikni tengroq taqsimlashga yordam berishi mumkin?",
+          "Olomon shaharlarda yashashiga qaramay, ko'p odamlar o'zlarini yolg'iz va yolg'iz his qilishlari haqida xabar berishadi. Zamonaviy shahar izolyatsiyasining sabablari nimada? Jamoa tuyg'usini rivojlantirish uchun nima qilish kerak?",
+          "Globallashgan dunyoda an’anaviy madaniyat va urf-odatlar yo‘q bo‘lib bormoqda. Nima uchun bu yo'qotish sodir bo'lmoqda? Qanday qilib jamoalar o'zlarining madaniy merosini saqlab qolishlari mumkin?"
+        ]
+      },
+      {
+        "name": "Ta'lim",
+        "prompts": [
+          "Bugungi kunda o'rta maktab o'quvchilari misli ko'rilmagan darajada stress va charchashga duch kelishmoqda. Ushbu bosimning asosiy sabablari nimada? Talabalar farovonligini qo'llab-quvvatlash uchun ta'lim tizimini qanday isloh qilish mumkin?",
+          "Universitetga kirish narxi ko'plab yoshlar uchun qo'llab-quvvatlanmaydigan bo'lib qoldi. Buning qanday salbiy oqibatlari bor? Talabalarga qanday muqobil yoki yechimlarni taklif qilish mumkin?",
+          "Bezorilik butun dunyo bo'ylab maktablarda doimiy muammo bo'lib qolmoqda. Bezorilik bolalarga qanday psixologik ta'sir ko'rsatadi? Bezorilikka qarshi qanday strategiyalar eng samarali?",
+          "Ko'pgina ish beruvchilar yaqinda bitiruvchilarning ish joyida amaliy ko'nikmalarga ega emasligidan shikoyat qiladilar. Nima uchun ta'lim va ish o'rtasida tafovut bor? Universitet o'quv dasturlarini qanday yaxshilash mumkin?",
+          "Ko'pgina mamlakatlarda malakali o'qituvchilarning keskin etishmasligi mavjud. Ushbu kamchilikning sabablari nimada? Qanday qilib o'qituvchilik kasbini yanada jozibador qilish mumkin?",
+          "Qishloq joylaridagi talabalar ko'pincha shaharlardagiga qaraganda past sifatli ta'lim olishadi. Ushbu ta'lim bo'linishiga nima sabab bo'ladi? Qanday choralar sifatli maktab ta'limidan teng foydalanishni ta'minlaydi?",
+          "AI vositalarining o'sishi akademik aldash va plagiatning ko'payishiga olib keldi. Talabalarning bilim olishiga qanday salbiy ta'sir ko'rsatadi? Maktablar AIdan foydalanishga qanday munosabatda bo'lishlari kerak?",
+          "Ba'zi rivojlanayotgan hududlarda kattalar savodsizligi yuqoriligicha qolmoqda. Savodsizlik jamiyat uchun qanday muammolarni keltirib chiqaradi? Qanday tashabbuslar kattalarni o'qish va yozishni muvaffaqiyatli o'rgatishi mumkin?",
+          "Ko'pgina talabalar an'anaviy sinf sharoitida o'zlarini zerikkan va zerikkan his qilishadi. Nega an'anaviy o'qitish usullari o'quvchilar e'tiborini jalb qila olmaydi? Qanday qilib darslarni yanada qiziqarli qilish mumkin?",
+          "Davlat maktablarida sinflar soni ko'pincha samarali o'qitish uchun juda katta. O'qituvchilar va talabalar uchun qanday salbiy ta'sirlar bor? Bu muammoni qanday hal qilish mumkin?"
+        ]
+      },
+      {
+        "name": "Salomatlik va parhez",
+        "prompts": [
+          "Semirib ketish dunyoning ko‘plab mamlakatlarida epidemiyaga aylangan. Keng tarqalgan vazn ortishining asosiy sabablari nima? Hukumatlar sog'lom turmush tarzini targ'ib qilish uchun qanday choralar ko'rishi mumkin?",
+          "Depressiya va tashvish kabi ruhiy salomatlik muammolari global miqyosda ortib bormoqda. Nima uchun bu sharoitlar keng tarqalgan? Ruhiy salomatlikni yaxshilash uchun nima qilish kerak?",
+          "Fast-fud iste'moli eng yuqori darajaga yetdi. Og'ir qayta ishlangan ovqatlarni iste'mol qilish salomatlikka qanday salbiy ta'sir qiladi? Qanday qilib jamiyat odamlarni yangi taom tayyorlashga undashi mumkin?",
+          "Zamonaviy turmush tarzi tobora harakatsiz bo'lib qoldi. Harakat etishmasligidan qanday jismoniy muammolar paydo bo'ladi? Kundalik hayotga ko'proq jismoniy faoliyatni kiritish uchun nima qilish mumkin?",
+          "Bugungi kunda ko'p odamlar surunkali uyqusizlikdan aziyat chekmoqda. Zamonaviy jamiyatda uyqu etishmasligiga qanday omillar yordam beradi? Qanday qilib odamlar uyqu gigienasini yaxshilashlari mumkin?",
+          "Davolanish va sog'liqni saqlash xizmatlarining narxi oddiy fuqarolarning qo'lidan kelmaydi. Bu qanday muammolarni keltirib chiqaradi? Qanday qilib sog'liqni saqlashni yanada qulayroq va arzonroq qilish mumkin?",
+          "Dunyo bo'ylab hamshiralar va tibbiyot xodimlarining etishmasligi mavjud. Nima uchun bu sektor xodimlarni saqlab qolish uchun kurashmoqda? Ushbu kadrlar inqirozini qanday rag'batlantirishlar hal qilishi mumkin?",
+          "Tibbiyotning rivojlanishiga qaramay, butun dunyo bo'ylab ko'plab odamlar hali ham osonlikcha oldini olish mumkin bo'lgan kasalliklardan vafot etadilar. Nima uchun bu shunday? Bu muammo bilan nima qilish mumkin?",
+          "Antibiotiklardan ortiqcha foydalanish bakteriyalarning chidamli shtammlariga olib keladi. Antibiotiklarga qarshilik qanday xavf tug'diradi? Tibbiyot hamjamiyati bu muammoni qanday hal qilishi mumkin?",
+          "Ekrandan uzoq vaqt foydalanish bolalar va kattalar orasida ko'z bilan bog'liq sog'liq muammolarining ko'payishiga olib keladi. Muayyan muammolar qanday yuzaga keladi? Qanday profilaktika choralarini ko'rish kerak?"
+        ]
+      },
+      {
+        "name": "Ish va Iqtisodiyot",
+        "prompts": [
+          "Ish bilan bog'liq stress zamonaviy ishchi kuchida kasallikning asosiy sababidir. Zamonaviy ishning qaysi jihatlari bu stressni keltirib chiqaradi? Ish beruvchilar o'z xodimlarining ruhiy salomatligini qo'llab-quvvatlash uchun nima qilishlari mumkin?",
+          "Ko‘pgina mamlakatlarda yoshlar o‘rtasidagi ishsizlik darajasi nihoyatda yuqori. Nega yoshlar ish topishda qiynalmoqda? Qanday tashabbuslar ularni ishchi kuchiga qo'shishga yordam beradi?",
+          "Ko'pgina kasblarda ayollar bir xil ishni bajarganliklari uchun erkaklarnikidan kamroq maosh oladilar. Jinslar orasidagi ish haqi farqining sabablari nimada? Hukumatlar va korxonalar teng ish haqini qanday ta'minlashi mumkin?",
+          "Uzoq, mashaqqatli kundalik qatnovlar ko'plab ishchilar uchun haqiqatdir. Uzoq muddatli qatnovlar odamlarga qanday salbiy ta'sir ko'rsatadi? Bu muammoni qanday engillashtirish mumkin?",
+          "Ko'pgina xodimlar sog'lom ish va hayot muvozanatini saqlash uchun kurashadilar. Nima uchun ishni shaxsiy hayotdan ajratish juda qiyin bo'ldi? Qaysi ish joyidagi siyosatlar bu muvozanatni yaxshilashi mumkin?",
+          "\"Gig iqtisod\"ning yuksalishi ko'p odamlarning imtiyozlarsiz qisqa muddatli shartnomalar bo'yicha ishlashini anglatadi. Bu ishchilar uchun qanday moliyaviy muammolarni keltirib chiqaradi? Konsert ishchilarini qanday qilib yaxshiroq himoya qilish mumkin?",
+          "Yuqori inflyatsiya asosiy tovarlar narxining oshishiga olib keladi. Bu kam ta'minlangan oilalarga qanday ta'sir qiladi? Narxlarni barqarorlashtirish uchun qanday iqtisodiy choralar ko'rish mumkin?",
+          "Ba'zi sanoat tarmoqlarida ishchilar xavfli mehnat sharoitlariga duchor bo'lishadi. Nima uchun bu shartlar saqlanib qolmoqda? Qattiqroq xavfsizlik qoidalariga rioya qilish uchun nima qilish kerak?",
+          "Rivojlanayotgan ko'plab mamlakatlar \"miya oqimi\"dan aziyat chekmoqda, bu erda ularning eng ma'lumotli mutaxassislari chet elga ko'chib ketishadi. Bu vatan uchun qanday muammolarni keltirib chiqaradi? Qanday qilib xalqlar o'z iste'dodlarini saqlab qolishlari mumkin?",
+          "Yoshlar bugungi kunda misli ko'rilmagan darajada shaxsiy qarzlarni to'plashmoqda. Ushbu qarz olishning asosiy sabablari nimada? Buni hal qilish uchun qanday moliyaviy ta'lim berish kerak?"
+        ]
+      },
+      {
+        "name": "Jinoyat va qonun",
+        "prompts": [
+          "Ko'pgina shaharlarda voyaga etmaganlar o'rtasida jinoyatlar (yoshlar tomonidan sodir etilgan jinoyatlar) ortib bormoqda. Yoshlar jinoyatchiligining asosiy sabablari nimada? Qanday choralar yoshlarni muammolardan saqlab qolishi mumkin?",
+          "An'anaviy jinoyatlar kamayib bormoqda, ammo kiberjinoyatlar keskin o'sib bormoqda. Jinoyatchilar nima uchun Internetda harakat qilishadi? Huquqni muhofaza qilish organlari raqamli jinoyatlarga qarshi kurashishga qanday moslasha oladi?",
+          "Giyohvand moddalarni suiiste'mol qilish hayotni va jamiyatni buzishda davom etmoqda. Odamlarni giyohvandlikka nima undaydi? Giyohvandlarni reabilitatsiya qilishning eng samarali usullari qanday?",
+          "Ko'pgina mamlakatlardagi qamoqxonalar haddan tashqari gavjum. Qamoqxonalarning ko'pligi qanday oqibatlarga olib keladi? Qanday muqobil jazolar bu bosimni engillashtirishi mumkin?",
+          "Ko'pgina jinoyatchilar qamoqdan chiqqanidan keyin ko'p o'tmay yana jinoyat sodir etishadi. Nima uchun qamoqxona tizimlari mahbuslarni reabilitatsiya qila olmaydi? Qanday dasturlar sobiq mahkumlarning jamiyatga qayta integratsiyalashuviga yordam beradi?",
+          "Korporativ firibgarlik kabi oq tanli jinoyatlar ko'cha jinoyatlariga qaraganda ko'pincha jazosiz qoladi. Nima uchun bu shunday? Qanday qilib adliya tizimi korporativ korruptsiyaga qarshi samaraliroq kurasha oladi?",
+          "Vandalizm va jamoat mulkini yo'q qilish ko'plab shaharlarda keng tarqalgan. Odamlarni vandalizmga nima undaydi? Mahalliy hokimiyat organlari buni qanday oldini oladi?",
+          "Tezlikni oshirish va mast holda haydash kabi yo'l harakati qoidalari har yili minglab odamlarning o'limiga sabab bo'ladi. Nima uchun odamlar yo'l harakati qoidalariga e'tibor bermaydilar? Qanday choralar xavfli haydashni muvaffaqiyatli to'xtata oladi?",
+          "Oiladagi zo'ravonlik millionlab uy xo'jaliklariga ta'sir qiladigan yashirin jinoyatdir. Nega qurbonlar ko'pincha jim turishadi? Ularni himoya qilish uchun qanday qo'llab-quvvatlash tizimlari mavjud bo'lishi kerak?",
+          "Yovvoyi tabiatning noqonuniy savdosi ko'plab hayvonlar turlarini yo'q bo'lib ketishiga olib keladi. Noqonuniy hayvonot mahsulotlariga bo'lgan talabni nima kuchaytiradi? Qanday qilib xalqaro qonunlar bu savdoni to'xtata oladi?"
+        ]
+      },
+      {
+        "name": "Oila va Yoshlar",
+        "prompts": [
+          "An'anaviy katta oila modeli o'rnini yadroli oila yoki to'liq ota-ona oilasi egallamoqda. Katta oilaning yordamini yo'qotish qanday muammolarni keltirib chiqaradi? Jamiyat zamonaviy oilalarni qo'llab-quvvatlashga qanday yordam berishi mumkin?",
+          "Yoshlar va keksalar o‘rtasida tushunmovchilik yuzaga kelgan “avlodlar tafovuti” kuchaymoqda. Nima uchun bu tushunmovchiliklar yuzaga keladi? Avlodlar orasidagi tafovutni qanday bartaraf etishimiz mumkin?",
+          "Bugungi kunda ko'plab bolalar ota-onalarning ishlayotgani sababli uyda ota-ona nazoratisiz qolmoqda. Bolaning rivojlanishiga qanday salbiy ta'sir ko'rsatadi? Ishlaydigan ota-onalar qanday echimlarni amalga oshirishi mumkin?",
+          "Bugungi kunda ota-onalar o'z farzandlariga o'qish va maktabdan tashqari mashg'ulotlarda muvaffaqiyat qozonishlari uchun katta bosim o'tkazmoqdalar. Bolalarga psixologik ta'sir qanday? Ota-onalar qanday qilib sog'lom yondashuvni qo'llashlari mumkin?",
+          "Ko'pgina rivojlangan mamlakatlarda tug'ilish tez sur'atlar bilan pasaymoqda. Nima uchun odamlar kamroq farzand ko'rishni afzal ko'rishadi? Bu kelajakda jamiyat uchun qanday muammolarni keltirib chiqaradi va ularni qanday hal qilish mumkin?",
+          "Ko'pgina oilalar uchun professional bola parvarishi narxi juda qimmat. Bu, ayniqsa, ishlaydigan onalarga qanday muammolarni keltirib chiqaradi? Qanday qilib bola parvarishini yanada qulayroq qilish mumkin?",
+          "Jamoat joylarida o'smirlar o'rtasida jamiyatga zid xatti-harakatlar odatiy shikoyatdir. Bu isyonkor xatti-harakatga nima sabab bo'ladi? Qanday qilib jamoalar o'smirlarni ijobiy faoliyatga jalb qilishlari mumkin?",
+          "Bolalar va o'smirlar bugungi kunda tobora ko'proq iste'molchi marketingiga qaratilgan. Yoshlar iste'molchiligining salbiy oqibatlari qanday? Ota-onalar farzandlarini tajovuzkor reklamadan qanday himoya qilishlari mumkin?",
+          "Ko'pgina yoshlar yomon xulq-atvorni namoyish etadigan mashhurlarni butparast qilishadi. Nima uchun o'smirlar bu raqamlarga qarashadi? Qanday qilib biz yoshlarga yaxshiroq namuna bo'la olamiz?",
+          "So'nggi bir necha o'n yilliklarda ajralishlar soni sezilarli darajada oshdi. Nikohlarning barbod bo'lishiga olib keladigan asosiy tazyiqlar nima? Er-xotinlarni nikohga yaxshiroq tayyorlash uchun nima qilish kerak?"
+        ]
+      },
+      {
+        "name": "Transport va turizm",
+        "prompts": [
+          "Ko'pgina yirik shaharlarda transport tirbandligi kundalik dahshatdir. Grid blokirovkasining asosiy sabablari nima? Qanday innovatsion transport yechimlari transport oqimini engillashtirishi mumkin?",
+          "Ko'pgina hududlarda jamoat transporti tizimlari ishonchsiz va yomon ta'mirlangan. Nima uchun jamoat transporti ko'pincha e'tibordan chetda? Ushbu tizimlarni yangilash uchun qanday qadamlar kerak?",
+          "Tarixiy joylar va mashhur diqqatga sazovor joylar “overturizm”dan aziyat chekmoqda. Haddan tashqari turizm qanday zarar keltiradi? Qanday qilib rasmiylar turistlar sonini barqaror boshqarishi mumkin?",
+          "Aviatsiya sanoati global uglerod chiqindilariga katta hissa qo'shmoqda. Nima uchun havo qatnovini \"yashil\" qilish juda qiyin? Qanday alternativalar yoki echimlar parvozning atrof-muhitga ta'sirini kamaytirishi mumkin?",
+          "O'lim bilan yakunlangan yo'l-transport hodisalari soni qabul qilib bo'lmaydigan darajada yuqoriligicha qolmoqda. Ushbu nosozliklarning asosiy sabablari nimada? Qanday xavfsizlik choralari yo'lda o'limni sezilarli darajada kamaytirishi mumkin?",
+          "Xalqaro sayohat yoqilg'i va soliqlar tufayli oddiy odam uchun juda qimmatga tushmoqda. Cheklangan sayohatning salbiy ta'siri qanday? Qanday qilib turizm ochiq bo'lib qolishi mumkin?",
+          "Sayyohlar ko'pincha mahalliy madaniy sezgirlikni buzadigan yo'l tutishadi. Nima uchun bu madaniy ishqalanish yuzaga keladi? Qanday qilib sayohatchilarni mahalliy urf-odatlarni hurmat qilishga o'rgatish mumkin?",
+          "Atrof-muhit bo'yicha ogohlantirishlarga qaramay, shaxsiy avtomobillarga bo'lgan ishonch tobora ortib bormoqda. Nima uchun odamlar o'z mashinalarini berishdan bosh tortishadi? Qanday rag'batlar odamlarni jamoat transportiga muvaffaqiyatli undaydi?",
+          "Shahar markazlarida to'xtash joyini topish deyarli imkonsiz bo'lib qoldi. Bu mahalliy korxonalar uchun qanday muammolarni keltirib chiqarmoqda? Qanday me'moriy yoki rejalashtirish echimlari mashinalar etishmasligini bartaraf etishi mumkin?",
+          "Mega-kurortlar qurilishi sayyohlik shaharlaridagi kichik, mahalliy biznesni yo'q qilmoqda. Nega mahalliy do'konlar raqobatlashayapti? Mahalliy hukumatlar kichik biznesni himoya qilish uchun nima qilishi mumkin?"
+        ]
+      },
+      {
+        "name": "Oziq-ovqat va qishloq xoʻjaligi",
+        "prompts": [
+          "Dunyo bo'ylab supermarketlar va iste'molchilar tomonidan dahshatli miqdorda oziq-ovqat isrof qilinadi. Nega shuncha ko'p oziq-ovqat tashlanadi? Oziq-ovqat chiqindilarini keskin kamaytirish uchun qanday choralar ko'rish mumkin?",
+          "Ko'pgina mamlakatlar oziq-ovqat mahsulotlarini mahalliy sharoitda etishtirishdan ko'ra, importga tayanadi. Xorijiy oziq-ovqat ta'minotiga bog'liq bo'lish xavfi qanday? Qanday qilib davlatlar o'zlarining qishloq xo'jaligini rivojlantirishlari mumkin?",
+          "Dehqonchilikda kimyoviy pestitsidlarning ko'p ishlatilishi tashvish uyg'otmoqda. Ushbu kimyoviy moddalarning atrof-muhit va inson salomatligiga ta'siri qanday? Kimyoviy dehqonchilikka qanday muqobil variantlar mavjud?",
+          "Zavod dehqonchilik amaliyoti hayvonlar farovonligidan ko'ra foydani birinchi o'ringa qo'yadi. Ommaviy go'sht ishlab chiqarish bilan bog'liq o'ziga xos shafqatsizliklar qanday? Qanday qilib iste'molchilar va hukumatlar ushbu sohada o'zgarishlarga olib kelishi mumkin?",
+          "Yirik agrofirmalarning egallab olishi natijasida kichik, oilaviy fermer xo‘jaliklari yo‘qolib bormoqda. Nima uchun kichik fermer xo'jaliklari muvaffaqiyatsizlikka uchradi? Mahalliy fermerlarni qo‘llab-quvvatlash va qo‘llab-quvvatlash uchun nima qilish mumkin?",
+          "Global oziq-ovqat ishlab chiqarish yuqori bo'lishiga qaramay, ko'plab mintaqalarda oziq-ovqat xavfsizligi va ochlik hali ham mavjud. Oziq-ovqat taqsimotidagi nosozliklarning asosiy sabablari nimada? Qanday qilib har bir kishi etarli ovqatlanishiga ishonch hosil qilishimiz mumkin?",
+          "Haydaladigan erlar (ekin yetishtirish uchun yaroqli yerlar) uy-joy qurilishi va cho'llanish natijasida yo'qolmoqda. Qishloq xo'jaligi erlarini yo'qotishning uzoq muddatli xavfi qanday? Qishloq xo'jaligi erlarini qanday himoya qilishimiz mumkin?",
+          "Genetik modifikatsiyalangan (GM) oziq-ovqatlarni iste'mol qilishning uzoq muddatli sog'liqqa ta'siri ko'pchilikni tashvishga solmoqda. Nima uchun odamlar GM ekinlariga shubha bilan qarashadi? GM oziq-ovqat mahsulotlarini sotishni qanday qoidalar tartibga solishi kerak?",
+          "Butun dunyo bo'ylab parhezlar yuqori darajada qayta ishlangan, oldindan qadoqlangan ovqatlarga o'tmoqda. Qayta ishlangan oziq-ovqatlarga bo'lgan ishonchga nima sabab bo'ladi? Qanday qilib hukumatlar aholini to'liq oziq-ovqat to'g'risida ma'lumot berishi mumkin?",
+          "Qishloq xoʻjaligi suvlari (oʻgʻitlar daryolarga yuviladi) suv yoʻllarini qattiq ifloslantirmoqda. Bu suv ekotizimlariga qanday zarar etkazadi? Qanday dehqonchilik amaliyotlari bu ifloslanishning oldini oladi?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "double-question",
+    "label": "Ikki tomonlama savol",
+    "description": "Xuddi shu mavzu bo'yicha ikkita alohida savolga javob bering.",
+    "instruction": "Ikkala savolga ham to'liq javob bering. Kamida 250 ta soʻz yozing.",
+    "categories": [
+      {
+        "name": "Ta'lim va o'rganish",
+        "prompts": [
+          "Ko'pgina talabalar maktabda va universitetda diqqatni jamlashda qiynaladi. Buning sabablari nimada? Bu muammoni qanday hal qilishimiz mumkin?",
+          "Ba'zi mamlakatlarda talabalarning katta qismi o'z darajalarini tamomlamasdan universitetni tashlab ketishadi. Nima uchun bu sodir bo'ladi deb o'ylaysiz? Talabalarni o'qishni tugatishga undash uchun nima qilish kerak?",
+          "Ba'zi odamlar tarixni maktabda o'rganish uchun foydasiz mavzu deb hisoblashadi. Nega ba'zi odamlar shunday his qilishadi? Sizningcha, tarix fani muhim maktab fanidirmi?",
+          "Universitetga kirishdan oldin bir yil bo'sh vaqt olish yoshlar orasida tobora keng tarqalgan. Nima uchun ko'proq talabalar buni tanlashadi? Bu ijobiy yoki salbiy tendentsiyami?",
+          "Dunyoning ko'p joylarida universitetga kirish narxi sezilarli darajada oshdi. Bu talabalar va jamiyatga qanday ta'sir qiladi? Qanday choralar oliy ta'limni yanada qulayroq qilishi mumkin?",
+          "Ko'pgina bolalarga o'qituvchilari tomonidan kundalik uy vazifalari beriladi. Sizningcha, bu zaruriy amaliyotmi? Haddan tashqari uy vazifasining mumkin bo'lgan kamchiliklari qanday?",
+          "So'nggi yillarda an'anaviy sinflarda emas, balki onlayn o'qishni afzal ko'rganlar soni ortib bormoqda. Onlayn ta'limning afzalliklari nimada? Sizningcha, an'anaviy maktablar oxir-oqibat yo'qoladimi?",
+          "Ba'zi talabalar sinfda chet tillarini o'rganish uchun kurashadilar. Nega ko'pchilik uchun yangi til o'rganish qiyin? Chet tilini o'rganishning eng samarali usullari qanday?",
+          "Oshpazlik, moliyaviy menejment va avtomobillarga asosiy texnik xizmat ko‘rsatish kabi amaliy ko‘nikmalar maktablarda kamdan-kam o‘rgatiladi. Ushbu ko'nikmalar o'quv dasturiga kiritilishi kerakmi? Bu ko‘nikmalarni bolalarga o‘rgatish kimning zimmasida?",
+          "Moliyaviy mablag‘lar kamaytirilganda maktab o‘quv dasturidan birinchi bo‘lib musiqa va san’at fanlari olib tashlanadi. Nima uchun bu sodir bo'ladi? Bolaning rivojlanishi uchun san'at qanchalik muhim?"
+        ]
+      },
+      {
+        "name": "Texnologiya va innovatsiyalar",
+        "prompts": [
+          "Bugungi kunda odamlar telefonlar, kompyuterlar va televizorlardagi ekranlarga ko'proq vaqt sarflamoqda. Bu jismoniy va ruhiy salomatlikka qanday ta'sir qiladi? Qanday qilib odamlar ekran vaqtini yaxshiroq boshqarishi mumkin?",
+          "Sun'iy intellekt odamlar tomonidan ilgari bajarilgan vazifalarni bajarish uchun tobora ko'proq foydalanilmoqda. AIning asosiy afzalliklari nimada? Ushbu texnologiya jamiyat uchun qanday xavflarni keltirib chiqaradi?",
+          "Ijtimoiy media platformalari odamlarning munosabatlarni shakllantirish va saqlash usullarini o'zgartirdi. Ijtimoiy tarmoqlar odamlarning o'zaro munosabatlariga qanday ta'sir qildi? Sizningcha, bu umuman ijobiy yoki salbiy rivojlanish bo'ldimi?",
+          "Ishqiy sheriklar topish uchun onlayn tanishuv ilovalaridan foydalanayotganlar soni ortib bormoqda. Nima uchun bu platformalar juda mashhur bo'ldi? Internetda odamlar bilan uchrashish qanday xavf tug'dirishi mumkin?",
+          "Ko'p odamlar jismoniy gazetalarni sotib olishdan ko'ra yangiliklarni onlayn o'qishni afzal ko'radilar. Nega ko'pchilik raqamli yangiliklarni afzal ko'radi? Kelajakda bosma gazetalar butunlay yo'q bo'lib ketadimi?",
+          "Kriptovalyutalar va raqamli to'lovlar jismoniy naqd pul o'rnini bosadigan keng tarqalgan. Naqd pulsiz jamiyatning afzalliklari nimada? To'liq raqamli pulga tayanish qanday muammolarga olib kelishi mumkin?",
+          "Koinot turizmi yaqin kelajakda badavlat odamlar uchun haqiqatga aylanishi kutilmoqda. Nima uchun odamlar kosmosga sayohat qilishni xohlashadi? Hukumatlar ushbu yangi sanoatni tartibga solishlari kerakmi?",
+          "Bugungi kunda bolalar ko'pincha juda yoshligidanoq smartfon va planshetlardan foydalanishlari mumkin. Texnologiyaga erta kirish bola rivojlanishiga qanday ta'sir qiladi? Ota-onalar farzandlarining ushbu qurilmalardan foydalanishini cheklashlari kerakmi?",
+          "Ko'pgina ishlab chiqarish tarmoqlarida qo'l mehnati o'rnini avtomatlashtirish va robototexnika egallamoqda. Ishlarini mashinalar tufayli yo'qotgan ishchilar bilan nima sodir bo'ladi? Hukumatlar ishchi kuchini kelajakka qanday tayyorlashi kerak?",
+          "Kiberbulling o'smirlar va yoshlar orasida tobora ortib borayotgan muammodir. Nima uchun odamlar internetda boshqalarni haqorat qilishadi? Maktablar va ota-onalar bu xatti-harakatning oldini olish uchun qanday choralar ko'rishlari mumkin?"
+        ]
+      },
+      {
+        "name": "Ish va Karyera",
+        "prompts": [
+          "Ko'pgina rivojlangan mamlakatlarda ishchilar o'rtasida ishdan qoniqish darajasi pasaymoqda. Bu norozilikning asosiy sabablari nimada? Ish beruvchilar o'z xodimlarining mehnat hayotini yaxshilash uchun nima qilishlari mumkin?",
+          "Ko'p odamlar ish hayoti davomida bir necha marta martaba o'zgartirishni tanlashadi. Odamlarni kasbni almashtirishga nima undaydi? Bu iqtisodiyot uchun ijobiy yoki salbiy tendentsiyami?",
+          "Masofadan ishlash ko'plab kompaniyalar uchun odatiy amaliyotga aylandi. Uydan ishlashning qanday afzalliklari bor? Masofaviy ishchilar qanday qiyinchiliklarga duch kelishadi?",
+          "Ba'zi kasblarda xodimlar juda uzoq vaqt ishlashlari kutiladi, ko'pincha haq to'lanmaydi. Nima uchun odamlar bu ish sharoitlarini qabul qilishadi? Bu ularning shaxsiy hayotiga qanday ta'sir qiladi?",
+          "Ko'pgina mamlakatlarda umr ko'rish davomiyligi uzoqroq bo'lganligi sababli pensiya yoshi oshirilmoqda. Nima uchun bu siyosat amalga oshirilmoqda? Sizningcha, odamlar oltmishinchi yoki yetmishinchi yoshida ishlashlarini kutish adolatdanmi?",
+          "Ko‘pchilik yoshlar oliy o‘quv yurtlarini tamomlagan bo‘lsa-da, tanlagan mutaxassisligi bo‘yicha ish topa olmayapti. Yoshlar ishsizligining sabablari nimada? Universitetlar talabalarni mehnat bozoriga qanday qilib yaxshiroq tayyorlashlari mumkin?",
+          "Ba'zi kompaniyalar o'z xodimlarining kompyuterda ishlash vaqtida ish samaradorligini kuzatish uchun monitoring dasturidan foydalanadilar. Nima uchun ish beruvchilar ushbu vositalardan foydalanadilar? Bu shaxsiy hayotga tajovuzmi?",
+          "Biznesni boshlash katta moliyaviy xavf va uzoq ish soatlarini o'z ichiga oladi. Nima uchun ba'zi odamlar oddiy xodimlar emas, balki tadbirkor bo'lishni afzal ko'rishadi? Muvaffaqiyatli biznes yuritish uchun qanday fazilatlar kerak?",
+          "Ayollar hali ham ko'plab sohalarda yuqori boshqaruv va ijrochi rollarda kam namoyon bo'lmoqda. Nega bu gender farqi saqlanib qolmoqda? Ish joyida gender tengligini ta'minlash uchun qanday choralar ko'rish mumkin?",
+          "Ba'zi ishlarda professional sportchilar va taniqli shaxslar kabi juda yuqori maosh to'lanadi. Bu odamlar shunchalik ko'p pul ishlashga loyiqmi? Insonning ish haqini qanday aniqlash kerak?"
+        ]
+      },
+      {
+        "name": "Atrof-muhit va barqarorlik",
+        "prompts": [
+          "Jahon okeanining plastik ifloslanishi jiddiy ekologik inqiroz hisoblanadi. Ushbu plastik chiqindilarning asosiy manbalari nima? Okeanlarni tozalash uchun shaxslar va hukumatlar qanday harakatlar qilishi mumkin?",
+          "Hozirgi vaqtda hayvonlar va o'simliklarning ko'p turlari yo'qolib ketish xavfi ostida. Nima uchun biologik xilma-xillikni yo'qotish insoniyat uchun muammo hisoblanadi? Yo'qolib borayotgan turlarni himoya qilish uchun nima qilish kerak?",
+          "Qazib olinadigan yoqilg'idan foydalanish global iqlim o'zgarishining asosiy omilidir. Nega mamlakatlar qayta tiklanadigan energiya manbalariga o‘tishda qiyin? Neft va ko‘mirga qaramlikni kamaytirmasak nima bo‘ladi?",
+          "Tropik tropik o'rmonlarda o'rmonlarning kesilishi dahshatli tezlikda sodir bo'lmoqda. Ushbu o'rmonlarni kesishning asosiy sabablari nimada? Xalqaro hamjamiyat bu halokatni qanday to'xtata oladi?",
+          "Ko'pgina shaharlar havoning kuchli ifloslanishidan aziyat chekmoqda, bu esa ularning aholisi salomatligiga ta'sir qiladi. Shahar havosining ifloslanishiga nima sabab bo'ladi? Shaharlarda havo sifatini yaxshilashning eng samarali usullari qanday?",
+          "Chuchuk suv dunyoning ko'p joylarida tanqis manbaga aylanib bormoqda. Nima uchun toza ichimlik suvi tanqisligi bor? Qanday qilib suvni samaraliroq saqlashimiz mumkin?",
+          "Iste'molchilik odamlarni doimiy ravishda yangi mahsulotlarni sotib olishga va eskilarini tashlashga undaydi. Bu \"tashlab qo'yilgan madaniyat\" atrof-muhitga qanday ta'sir qiladi? Odamlarni narsalarni ta'mirlash va qayta ishlatishga undash uchun nima qilish mumkin?",
+          "Oziq-ovqat ishlab chiqarishni ko'paytirish va zararkunandalarga qarshi turish uchun genetik modifikatsiyalangan (GM) ekinlar etishtiriladi. Nima uchun ba'zi odamlar GM ovqatlariga qarshi? Ushbu texnologiyaning foydalari xavflardan ustun turadimi?",
+          "Dovullar va qurg'oqchilik kabi ekstremal ob-havo hodisalari tez-tez uchraydi. Ushbu voqealar mahalliy jamoalarga qanday ta'sir qiladi? Hukumatlar tabiiy ofatlarga qanday tayyorgarlik ko'rishlari kerak?",
+          "Tez moda iste'molchilarga zamonaviy kiyimlarni juda arzon narxlarda sotib olish imkonini beradi. Tez moda sanoatining atrof-muhitga ta'siri qanday? Iste'molchilar barqaror tikilgan kiyimlar uchun ko'proq pul to'lashga majbur bo'lishlari kerakmi?"
+        ]
+      },
+      {
+        "name": "Jamiyat va madaniyat",
+        "prompts": [
+          "Ko'pgina mamlakatlarda qariyalar ulushi tez sur'atlar bilan o'sib bormoqda. Aholining qarishi jamiyatga qanday muammolarni keltirib chiqaradi? Qanday qilib jamoalar o'zlarining keksa fuqarolarini yaxshiroq qo'llab-quvvatlashlari mumkin?",
+          "Jamiyatning eng boy va kambag‘al odamlari o‘rtasidagi tafovut kuchayib bormoqda. Boylikning haddan tashqari tengsizligi qanday muammolarni keltirib chiqaradi? Qanday siyosatlar boylikni yanada adolatli taqsimlashga yordam berishi mumkin?",
+          "Yosh avlod o‘rtasida an’anaviy urf-odatlar, bayramlar o‘z ahamiyatini yo‘qotmoqda. Nima uchun bu sodir bo'lmoqda? Zamonaviy dunyoda an'anaviy madaniyatni saqlab qolish muhimmi?",
+          "Ko'p odamlar gavjum, zamonaviy shaharlarda yashashiga qaramay, o'zlarini yolg'iz va yolg'iz his qilishadi. Nima uchun shaharda yolg'izlik juda keng tarqalgan? Shaharlarda kuchli jamoalar qurish uchun nima qilish mumkin?",
+          "Ko'pgina rivojlangan mamlakatlarda tug'ilish darajasi pasaymoqda. Nima uchun odamlar kamroq farzand ko'rishni afzal ko'rishadi? Bu kelajakda jamiyatga qanday ta'sir qiladi?",
+          "Xalqaro migratsiya kuchayib, ko'p madaniyatli jamiyatlarga olib keldi. Turli jamiyatda yashashning qanday afzalliklari bor? Turli madaniyatlar birga yashaganda qanday qiyinchiliklar paydo bo'lishi mumkin?",
+          "Dunyoning ko‘plab mamlakatlarida siyosatchilar va hukumat institutlariga ishonch pasaymoqda. Nima uchun odamlar siyosatga nisbatan beadab bo'lib qolishdi? Hukumatlar xalq ishonchini qanday tiklashi mumkin?",
+          "Ko‘ngillilik va haq to‘lanmaydigan jamoat ishlari kamaymoqda. Nega kamroq odamlar o'z vaqtlarini bepul taklif qilishadi? Qanday qilib ko'proq odamlarni mahalliy jamoalarga yordam berishga undashimiz mumkin?",
+          "Ba'zi odamlar zamonaviy jamiyat tashqi ko'rinish va go'zallikka juda e'tibor qaratgan deb hisoblashadi. Nima uchun ma'lum bir tomonga qarash uchun shunchalik ko'p bosim bor? Bu odamlarning ruhiy salomatligiga qanday ta'sir qiladi?",
+          "Tarixiy obidalar va haykallar ba'zan olib tashlanadi yoki yo'q qilinadi, chunki ular bahsli o'tmishni ifodalaydi. Nima uchun odamlar bu yodgorliklarni olib tashlashni xohlashadi? Tarixiy shaxslarga zamonaviy standartlar asosida baho berish kerakmi?"
+        ]
+      },
+      {
+        "name": "Salomatlik va farovonlik",
+        "prompts": [
+          "Semizlik darajasi ko'plab mamlakatlarda epidemiya darajasiga yetdi. Ushbu salomatlik inqirozining asosiy sabablari nimada? Oziq-ovqat sanoatini tartibga solishda hukumat qanday rol o'ynashi kerak?",
+          "Stress va tashvish zamonaviy ishchilar uchun asosiy sog'liq muammolaridir. Ish joyidagi yuqori stress darajasiga qanday omillar yordam beradi? Qanday qilib odamlar yaxshi ish va hayot muvozanatiga erishishlari mumkin?",
+          "Ko'p odamlar an'anaviy shifokorlarga tashrif buyurish o'rniga muqobil dori vositalaridan foydalanadilar. Nima uchun muqobil davolash usullari mashhur bo'lib bormoqda? Ushbu muolajalarga tayanish bilan bog'liq xavflar bormi?",
+          "Ba'zi mamlakatlarda tibbiy muolajalar va retsept bo'yicha dori-darmonlar narxi juda yuqori. Bu kam ta'minlangan oilalarga qanday ta'sir qiladi? Sog'liqni saqlash hamma uchun mutlaqo bepul bo'lishi kerakmi?",
+          "Uyqusizlik ko'plab kattalar va o'smirlar uchun keng tarqalgan muammodir. Nima uchun odamlar etarlicha uxlamaydilar? Uyquning etishmasligi kunlik ishlashga va uzoq muddatli salomatlikka qanday ta'sir qiladi?",
+          "Professional sport juda tijoratlashgan, sportchilar millionlab daromad olishgan. Pul sportning haqiqiy ruhini buzdimi? Ushbu tijoratlashuv yosh muxlislarga qanday ta'sir qiladi?",
+          "Ba'zi mamlakatlarda tamaki mahsulotlarini sotish katta soliqqa tortiladi va cheklanadi. Nega hukumatlar chekishni rad etishga harakat qiladi? Kelajakda chekishni butunlay taqiqlash kerakmi?",
+          "Qayta ishlangan va tez ovqatlar zamonaviy dietaning katta qismini tashkil qiladi. Nima uchun odamlar nosog'lom ovqat eyishni tanlaydilar? Sog'lom oziq-ovqatni yanada jozibali va qulayroq qilish uchun nima qilish kerak?",
+          "Ruhiy salomatlik bilan bog'liq muammolar ko'pincha stigmatizatsiya qilinadi, bu odamlarning yordam so'rashini qiyinlashtiradi. Nima uchun odamlar ruhiy salomatligi haqida gapirishdan qo'rqishadi? Qanday qilib jamiyat ko'proq qabul qiluvchi va qo'llab-quvvatlovchi bo'lishi mumkin?",
+          "Ba'zi odamlar ekstremal va xavfli sport turlari bilan shug'ullanishni afzal ko'radilar, masalan, sakrash yoki erkin yakka ko'tarilish. Odamlarni sport uchun hayotlarini xavf ostiga qo'yishga nima undaydi? Agar ular muammoga duch kelsa, favqulodda xizmatlar ularni qutqarishi kerakmi?"
+        ]
+      },
+      {
+        "name": "Hukumat va davlat xizmatlari",
+        "prompts": [
+          "Ko'pgina yirik shaharlardagi jamoat transporti tizimlari gavjum va ishonchsiz. Nega hukumatlar jamoat transportini saqlash uchun kurashmoqda? Yuqori samarali tranzit tizimining afzalliklari nimada?",
+          "Soliqlar davlat xizmatlarini moliyalashtirish uchun zarur, lekin ko'p odamlar ularni to'lashdan qochishga harakat qilishadi. Nima uchun odamlar soliq to'lashni yoqtirmaydilar? Hukumatlar soliq tizimlari adolatli bo'lishini qanday ta'minlashi mumkin?",
+          "Ko'pgina hukumatlar ishsiz fuqarolarga moliyaviy yordam ko'rsatadi. Nima uchun bu ijtimoiy farovonlik kerak? Ishsizlik nafaqasini berish odamlarni dangasa qiladimi?",
+          "Iqtisodiy inqiroz davrida jamoat kutubxonalari va jamoat markazlarini moliyalashtirish ko'pincha qisqartiriladi. Nima uchun bu ob'ektlar unchalik muhim emas? Kutubxonalar yopilganda jamoalar nimani yo'qotadi?",
+          "Ba'zi mamlakatlarda barcha yoshlar uchun majburiy harbiy xizmat mavjud. Muddatli harbiy xizmatning qanday afzalliklari bor? Odamlarni harbiy xizmatga majburlashga qarshi qanday dalillar bor?",
+          "Katta shaharlardagi uy-joy narxlari ko'plab yosh mutaxassislar uchun mos bo'lmagan. Nima uchun shahar uylari juda qimmat? Hukumatlar arzon uy-joy bilan ta'minlash uchun nima qilishi mumkin?",
+          "Rivojlanayotgan mamlakatlarga badavlat davlatlar ko'pincha tashqi yordam ko'rsatadi. Nega qashshoq davlatlarga yordam berish muhim? Xorijiy yordam har doim eng muhtoj odamlarga etib boradimi?",
+          "Huquqbuzarliklarning oldini olish maqsadida jamoat joylarida kuzatuv kameralaridan keng foydalanilmoqda. Noqonuniy faoliyatni to‘xtatishda kameralar qanchalik samarali? Jamoatchilik nazorati shaxsning shaxsiy daxlsizlik huquqini buzadimi?",
+          "Hukumatlar Olimpiya o'yinlari kabi xalqaro tadbirlarni o'tkazish uchun katta mablag' sarflaydi. Nima uchun davlatlar ushbu tadbirlarni o'tkazishni xohlashadi? Bu davlat mablag'laridan unumli foydalanishmi?",
+          "Ko'pgina mamlakatlarda jinoiy adliya tizimi jinoyatchilarni qamoqqa yuborish orqali jazolashga e'tibor qaratadi. Qamoqxona haqiqatan ham jinoyatchilarni reabilitatsiya qiladimi? Zo'ravonliksiz jinoyatlarga qarshi kurashishning qanday muqobil usullari mavjud?"
+        ]
+      },
+      {
+        "name": "Ommaviy axborot vositalari va aloqa",
+        "prompts": [
+          "Reklama hamma joyda, televizor ekranlaridan tortib ommaviy reklama taxtalarigacha. Reklama iste'molchi xatti-harakatlariga qanday ta'sir qiladi? Reklama bolalar uchun zararlimi?",
+          "Internetda \"soxta yangiliklar\" va noto'g'ri ma'lumotlarning tarqalishi katta tashvish uyg'otmoqda. Nima uchun odamlar noto'g'ri ma'lumot yaratadilar va almashadilar? Qanday qilib jamoatchilik ishonchli axborot manbalarini aniqlashni o'rganishi mumkin?",
+          "Mashhurlar va ta'sir o'tkazuvchilar yoshlarning xatti-harakatlariga katta ta'sir ko'rsatadi. Nima uchun o'smirlar mashhur odamlarning ta'siriga osonlikcha tushib qolishadi? Bu ta'sir odatda ijobiymi yoki salbiymi?",
+          "Ko'p odamlar realiti-shoularni tomosha qilish uchun soatlab vaqt sarflashadi. Nega bu dasturlar tomoshabinlarga shunchalik yoqadi? Realiti-shou real hayotni to'g'ri aks ettiradimi?",
+          "Paparatsilar ko'pincha taniqli odamlarning shaxsiy hayotini suratga olish uchun kuzatib boradilar. Ommaviy axborot vositalari mashhur shaxsning shaxsiy hayotiga tajovuz qilish huquqiga egami? Nega omma mashhur kishilarning shaxsiy hayotiga qiziqadi?",
+          "Zamonaviy filmlar va video o'yinlar ko'pincha zo'ravonlikning juda real sahnalarini o'z ichiga oladi. Nega zo'ravon o'yin-kulgilar shunchalik mashhur? Zo'ravonlikni tomosha qilish odamlarni haqiqiy hayotda yanada tajovuzkor qiladimi?",
+          "Korrupsiyani fosh qilishda jurnalistik surishtiruv muhim rol o‘ynaydi. Nega sog‘lom jamiyat uchun erkin matbuot muhim? Jurnalistlar qudratli shaxslar haqida xabar berishda qanday xavf-xatarlarga duch kelishadi?",
+          "Odamlar bugungi kunda matnli xabarlar va elektron pochta xabarlari yordamida ancha tezroq muloqot qilishadi. Bu bizning yozish va gapirish uslubimizni qanday o'zgartirdi? Biz chuqur va o'ychan muloqot qilish qobiliyatini yo'qotdikmi?",
+          "Netflix va Spotify kabi striming platformalari odamlarning o'yin-kulgini qanday iste'mol qilishini o'zgartirdi. Bu an'anaviy kinoteatrlar va jismoniy musiqa savdolariga qanday ta'sir qiladi? Obuna modeli rassomlar va ijodkorlar uchun adolatlimi?",
+          "Ba'zi hukumatlar ma'lum veb-saytlar va ijtimoiy media platformalarini blokirovka qilish uchun internetni tsenzura qiladi. Nima uchun hukumatlar axborotga kirishni cheklaydi? Fuqarolar bu cheklovlarni qanday chetlab o'tadi?"
+        ]
+      },
+      {
+        "name": "Shaharlar va infratuzilma",
+        "prompts": [
+          "Shaharlarning kengayishi shaharlarning atrofdagi qishloq joylarga tez kengayishiga olib keladi. Shahar kengayishining ekologik oqibatlari qanday? Qanday qilib shaharni rejalashtiruvchilar bu o'sishni yanada barqaror boshqarishi mumkin?",
+          "Trafik tirbandligi butun dunyo bo'ylab millionlab yo'lovchilar uchun kundalik muammo hisoblanadi. Yo'l harakatining asosiy sabablari nimada? Jamoat transportini bepul qilish bu muammoni hal qiladimi?",
+          "Zamonaviy osmono‘par binolar qurish uchun shahar markazlaridagi ko‘plab tarixiy binolar buzilmoqda. Nima uchun bu sodir bo'ladi? Qadimgi arxitekturani saqlab qolish muhimmi?",
+          "Shahar markazlarini piyodalarga aylantirish - ma'lum hududlardan barcha avtomobillarni taqiqlash - Evropada mashhur bo'lib bormoqda. Avtomobillarsiz zonalarning qanday afzalliklari bor? Bu mahalliy biznesga qanday ta'sir qiladi?",
+          "Shovqinning ifloslanishi band bo'lgan metropoliyalarda yashovchi odamlar uchun doimiy muammodir. Shahar shovqinining asosiy manbalari nima? Surunkali shovqin ta'siri aholi salomatligiga qanday ta'sir qiladi?",
+          "Parklar va yashil maydonlar shaharda yaxshi hayot sifati uchun zarurdir. Nima uchun daraxtlar va tabiat shahar sharoitida muhim ahamiyatga ega? Nima uchun ba'zi shaharlar etarli darajada yashil hududlarni ta'minlay olmaydi?",
+          "Ko'pgina megapolislarning chekkasida xaroba va norasmiy aholi punktlari mavjud. Nima uchun odamlar bunday sharoitda yashaydilar? Hukumatlar bu sohalarda turmush darajasini yaxshilash uchun nima qilishi mumkin?",
+          "Velosipedlar haydashning ekologik toza alternativi sifatida targ'ib qilinadi. Nima uchun ko'p odamlar hali ham velosipedda ishlashni rad etishadi? Shaharlarda velosiped haydashni xavfsiz qilish uchun qanday infratuzilma kerak?",
+          "Zamonaviy shaharlarning me'morchiligi ko'pincha mamlakatdan qat'i nazar, juda o'xshash ko'rinadi. Nega shaharlar o'zining noyob madaniy o'ziga xosligini yo'qotmoqda? Binoning dizayni undan foydalanadigan odamlarning kayfiyatiga ta'sir qiladimi?",
+          "Chiqindilarni boshqarish va chiqindilarni yo'q qilish yirik shaharlar uchun katta logistika muammolaridir. Ayni paytda shaharlar millionlab tonna axlatlarni qanday qayta ishlashadi? Shahar chiqindilarini boshqarishning qanday barqaror usullari bor?"
+        ]
+      },
+      {
+        "name": "Globallashuv va Iqtisodiyot",
+        "prompts": [
+          "Transmilliy korporatsiyalarning yuksalishi butun dunyoda bir xil brendlar sotilishini anglatadi. Bu mahalliy biznes va hunarmandlarga qanday ta'sir qiladi? Bu madaniy xilma-xillikning yo'qolishiga olib keladimi?",
+          "Arzon havo sayohatlari xalqaro turizmni millionlab odamlar uchun ochiq qildi. Ommaviy turizmdan qanday iqtisodiy foyda bor? Turizm mahalliy jamoalar va atrof-muhitga qanday salbiy ta'sir ko'rsatadi?",
+          "Ko'pgina ishlab chiqarish ishlari rivojlangan mamlakatlardan rivojlanayotgan mamlakatlarga ko'chirildi. Nima uchun kompaniyalar o'z zavodlarini boshqa joyga ko'chirishadi? Ushbu globallashuv har ikki mamlakat ishchilariga qanday ta'sir qiladi?",
+          "o'zbek tili xalqaro biznes va fanning asosiy tiliga aylandi. Nima uchun o'zbek tili bu global maqomga erishdi? Bitta global tilga ega bo'lishning qanday kamchiliklari bor?",
+          "Ba'zi mamlakatlar oziq-ovqat mahsulotlarini o'z ichida ishlab chiqarishdan ko'ra, importga tayanadi. Nima uchun davlatlar asosiy ehtiyojlarni import qiladilar? Oziq-ovqat ta'minoti uchun boshqa mamlakatlarga tayanish qanday xavf-xatarlarga ega?",
+          "Umumjahon asosiy daromad (UBI) kontseptsiyasi butun dunyo bo'ylab iqtisodchilar tomonidan muhokama qilinmoqda. Har kimga kafolatlangan daromad berish foydasiga qanday dalillar bor? Bunday tizim qanday moliyalashtiriladi?",
+          "Iqtisodiy sanktsiyalar ko'pincha kuchli davlatlar tomonidan boshqa davlatlarni jazolash uchun qo'llaniladi. Ushbu savdo cheklovlarining maqsadlari nimadan iborat? Mamlakatga sanksiya qo‘yilganda kim ko‘proq zarar ko‘radi?",
+          "Kredit kartalari va shaxsiy kreditlar odamlarga darhol sotib ololmaydigan narsalarni sotib olish imkonini beradi. Nima uchun jahon miqyosida iste'molchi qarzi ortib bormoqda? Imkoniyatdan tashqari yashashning uzoq muddatli oqibatlari qanday?",
+          "Birgalikda ishlash iqtisodiyoti (masalan, Uber, Airbnb) an'anaviy sanoatni buzdi. Nega bu tengdoshlarga xizmat ko'rsatish shunchalik muvaffaqiyatli? Ushbu platformalar o'z ishchilarini ekspluatatsiya qiladimi?",
+          "Iqtisodiy o'sish ko'pchilik milliy hukumatlarning asosiy maqsadi hisoblanadi. Cheklangan resurslarga ega sayyorada cheksiz iqtisodiy o'sish mumkinmi? Mamlakat muvaffaqiyatini YaIMdan tashqari qanday muqobil usullar bilan o‘lchash mumkin?"
+        ]
+      }
+    ]
+  }
+]

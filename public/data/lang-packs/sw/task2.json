@@ -1,0 +1,792 @@
+[
+  {
+    "type": "discussion",
+    "label": "Insha ya Majadiliano",
+    "description": "Jadili maoni yote mawili na toa maoni yako mwenyewe.",
+    "instruction": "Jadili maoni yote mawili na toa maoni yako mwenyewe. Andika angalau maneno 250.",
+    "categories": [
+      {
+        "name": "Elimu",
+        "prompts": [
+          "Baadhi ya watu wanaamini kwamba elimu ya chuo kikuu inapaswa kuwa bure kwa kila mtu, huku wengine wakifikiri kwamba wanafunzi wanapaswa kulipia elimu yao ya juu. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine hubisha kwamba michezo yenye ushindani shuleni ina manufaa makubwa, huku wengine wakihisi inasababisha mkazo usio wa lazima kwa watoto. Jadili maoni yote mawili na toa maoni yako.",
+          "Watu wengi hufikiri kwamba wanafunzi wanapaswa kusoma masomo mbalimbali, huku wengine wakiamini kwamba wanapaswa kuzingatia zaidi masomo yanayohusiana na taaluma fulani. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu hufikiri kwamba walimu wanapaswa kuwajibika kuwafundisha wanafunzi jinsi ya kuhukumu mema na mabaya, huku wengine wakiamini kwamba wazazi wanapaswa kuwa na jukumu hilo. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya waelimishaji wanasema kwamba kazi ya nyumbani ni muhimu kwa mafanikio ya kitaaluma, wakati wengine wanaamini kuwa ni mzigo usio wa lazima kwa watoto. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanafikiri kwamba wanafunzi wa vyuo vikuu waruhusiwe kusoma chochote wapendacho, huku wengine wakibisha kwamba waruhusiwe tu kusoma masomo yatakayofaa siku za usoni, kama vile sayansi na teknolojia. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba shule za watu wa jinsia moja hutoa mazingira bora ya kujifunzia, huku wengine wakihoji kuwa shule zilizochanganywa huwatayarisha watoto vyema kwa maisha halisi. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kwamba kujifunza mtandaoni hatimaye kutachukua nafasi ya elimu ya kawaida ya darasani, huku wengine wakisema kwamba kufundisha ana kwa ana kutakuwa muhimu kila wakati. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu hubishana kuwa mitihani ndiyo njia bora ya kutathmini uwezo wa mwanafunzi, huku wengine wakiamini kuwa upimaji endelevu kwa mwaka unafaa zaidi. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanafikiri kwamba sare za shule huboresha nidhamu na usawa, huku wengine wanahisi kuwa zinazuia ubinafsi wa wanafunzi. Jadili maoni yote mawili na toa maoni yako."
+        ]
+      },
+      {
+        "name": "Mazingira na Wanyama",
+        "prompts": [
+          "Watu wengine wanaamini kwamba matatizo ya mazingira ni makubwa sana kwa watu binafsi kutatua, wakati wengine wanafikiri kwamba watu binafsi wanaweza kuleta tofauti kubwa. Jadili maoni yote mawili na toa maoni yako.",
+          "Watu wengi wanafikiri kwamba serikali inapaswa kutumia pesa katika kutafuta maisha kwenye sayari nyingine, wakati wengine wanaamini kwamba pesa hizi zinapaswa kutumika kutatua matatizo duniani. Jadili maoni yote mawili na toa maoni yako.",
+          "Watu fulani wanaamini kwamba kuwaweka wanyama katika bustani za wanyama ni ukatili na si lazima, huku wengine wakibisha kwamba mbuga za wanyama ni muhimu kwa uhifadhi na elimu. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanahoji kuwa sheria kali ndiyo njia pekee ya kupunguza uchafuzi wa mazingira viwandani, huku wengine wakiamini kuwa kuelimisha makampuni kuhusu uhifadhi wa mazingira kuna ufanisi zaidi. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba njia bora ya kutatua tatizo la trafiki linaloongezeka ni kujenga barabara nyingi zaidi, huku wengine wakihoji kuwa serikali inapaswa kuwekeza pakubwa katika usafiri wa umma. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kwamba vyanzo vya nishati mbadala ndiyo njia pekee ya kusonga mbele kwa sayari yetu, huku wengine wakisema kwamba nishati ya kisukuku bado ni muhimu kwa utulivu wa kiuchumi. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba kupanda miti katika maeneo ya mijini ndiyo njia bora ya kuboresha mazingira ya jiji, wakati wengine wanaamini kutoa vifaa vingi vya umma kama hospitali ni muhimu zaidi. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanasema kuwa upimaji wa wanyama ni muhimu kwa mafanikio ya matibabu, wakati wengine wanaamini kuwa ni makosa ya kimaadili na inapaswa kupigwa marufuku kabisa. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanaamini kwamba binadamu ana haki ya kutumia wanyama kwa ajili ya chakula na mavazi, wakati wengine wanasema kuwa wanyama wana haki na hawapaswi kunyonywa. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanafikiri kwamba ongezeko la watu ndilo chanzo kikuu cha uharibifu wa mazingira, huku wengine wakilaumu ukuaji wa viwanda na matumizi ya bidhaa. Jadili maoni yote mawili na toa maoni yako."
+        ]
+      },
+      {
+        "name": "Teknolojia na Mtandao",
+        "prompts": [
+          "Baadhi ya watu wanaamini kwamba akili bandia itaunda jamii ya watu wazima isiyo na hitaji la kazi ya kibinadamu, wakati wengine wanaogopa itasababisha ukosefu mkubwa wa ajira na usawa. Jadili maoni yote mawili na toa maoni yako.",
+          "Watu wengi wanafikiri kwamba mitandao ya kijamii imeleta watu karibu zaidi, huku wengine wakisema kuwa imetenga watu binafsi katika ulimwengu wa kweli. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanahoji kuwa watoto hawapaswi kuruhusiwa kutumia simu mahiri hadi wawe vijana, huku wengine wakiamini kuwa kufichuliwa mapema ni muhimu kwa ujuzi wa kidijitali. Jadili maoni yote mawili na toa maoni yako.",
+          "Watu wengine wanafikiri kwamba vitabu vilivyochapishwa vitasahaulika hivi karibuni, huku wengine wakiamini vitapendelewa kila wakati kuliko vitabu vya kielektroniki. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kwamba mtandao umerahisisha kupata habari zinazotegemeka, huku wengine wakisema kwamba imeunda enzi ya habari za uwongo na habari potofu. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba otomatiki mahali pa kazi ni manufaa kwa ukuaji wa uchumi, huku wengine wakiwa na wasiwasi kuhusu upotevu wa kazi za kitamaduni. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine hubisha kwamba maendeleo ya kiteknolojia yamefanya maisha ya kisasa kuwa magumu sana, huku wengine wakiamini yamerahisisha maisha na kustarehesha zaidi. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanaamini kwamba ufuatiliaji wa serikali kwa kutumia teknolojia ni muhimu kwa usalama wa taifa, wakati wengine huona kama ukiukaji wa faragha ya kibinafsi. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine hufikiri kwamba michezo ya video ni aina ya tafrija isiyo na madhara, huku wengine wakibisha kwamba inachochea jeuri na maisha ya kukaa tu kati ya vijana. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kuwa utalii wa anga za juu utakuwa sehemu ya kawaida ya siku zijazo, wakati wengine wanaona kuwa ni upotevu usio na msingi wa rasilimali. Jadili maoni yote mawili na toa maoni yako."
+        ]
+      },
+      {
+        "name": "Jamii na Maisha ya Kisasa",
+        "prompts": [
+          "Baadhi ya watu wanapendelea kuishi katika miji mikubwa kwa sababu ya fursa zilizopo, huku wengine wakipendelea amani na utulivu wa kuishi mashambani. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengi hufikiri kwamba ni afadhali kwa vijana wakubwa kuishi na wazazi wao hadi watakapofunga ndoa, huku wengine wakiamini kwamba wanapaswa kuhama mara tu wanapofikisha miaka kumi na minane. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanahoji kuwa pengo kati ya matajiri na maskini linazidi kuongezeka na serikali inapaswa kuingilia kati, huku wengine wakiamini kuwa pengo hili ni matokeo ya asili ya soko huria. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanaamini kwamba wazee wanapaswa kutunzwa na familia zao, wakati wengine wanafikiri serikali inapaswa kutoa nyumba za kustaafu. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanafikiri kwamba majukumu ya kitamaduni ya wanaume na wanawake ni muhimu kwa jamii yenye utulivu, huku wengine wakisema kuwa usawa wa kijinsia katika majukumu yote ni muhimu. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kuwa umiliki wa nyumba ndio ishara kuu ya mafanikio, wakati wengine wanasema kuwa kukodisha hutoa uhuru zaidi na mkazo mdogo. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba jamii ya kisasa inaendeshwa sana na watumiaji, wakati wengine wanaamini kwamba matumizi ya bidhaa ni muhimu ili kuweka uchumi kustawi. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanahoji kuwa michezo ya kimataifa inakuza amani kati ya mataifa, wakati wengine wanaamini kuwa inaleta tu mivutano ya kitaifa. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanaamini kwamba historia ni mojawapo ya masomo muhimu zaidi ya shule, huku wengine wakifikiri kwamba katika ulimwengu wa leo, masomo kama vile IT yanafaa zaidi. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine hufikiri kwamba kuwa na kiasi kikubwa cha pesa ndiyo ufunguo wa furaha, huku wengine wakisema kwamba furaha inategemea kabisa mambo mengine kama vile afya na mahusiano. Jadili maoni yote mawili na toa maoni yako."
+        ]
+      },
+      {
+        "name": "Kazi na Kazi",
+        "prompts": [
+          "Watu wengine wanaamini kwamba kuridhika kwa kazi ni muhimu zaidi kuliko mshahara mkubwa, wakati wengine wanafikiri kwamba kupata pesa nyingi ndilo jambo muhimu zaidi katika kazi. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengi wanasema kuwa kufanya kazi nyumbani huongeza tija na usawa wa maisha ya kazi, wakati wengine wanaamini kuwa mazingira ya ofisi ni muhimu kwa ushirikiano. Jadili maoni yote mawili na toa maoni yako.",
+          "Watu wengine wanafikiri kuwa ni bora kuwa na kazi moja kwa maisha yote, wakati wengine wanaamini kuwa kubadilisha kazi mara kadhaa kuna manufaa zaidi. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanasema kuwa wafanyikazi wakubwa wana thamani zaidi kwa kampuni kwa sababu ya uzoefu wao, wakati wengine wanapendelea wafanyikazi wachanga kwa maoni na nguvu zao mpya. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kwamba umri wa kustaafu unapaswa kuongezwa kwa sababu ya muda mrefu wa kuishi, wakati wengine wanasema watu wanapaswa kustaafu mapema ili kufurahia ujana wao na kufungua kazi. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba mafunzo yasiyolipwa ni ya kinyonyaji, wakati wengine wanasema yanatoa hatua muhimu kwa wahitimu wa hivi karibuni. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanahoji kuwa wanawake wanapaswa kupewa nafasi sawa katika majukumu ya usimamizi wa juu kwa mujibu wa sheria, wakati wengine wanaamini kuwa upandishaji vyeo unapaswa kuegemezwa tu juu ya sifa bila kujali jinsia. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kwamba kuanzisha biashara yako mwenyewe ndiyo njia bora ya kufikia usalama wa kifedha, wakati wengine wanafikiri kufanya kazi kwa shirika kubwa ni salama zaidi. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba wiki ya kazi ya siku nne itakuwa bora kwa jamii, wakati wengine wanasema ingeharibu uchumi. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanasema kuwa kazi za kazi za mikono zinapaswa kulipwa sawa na kazi za kitaaluma kama vile madaktari au wanasheria, wakati wengine wanaamini viwango vya sasa vya mishahara ni sawa. Jadili maoni yote mawili na toa maoni yako."
+        ]
+      },
+      {
+        "name": "Afya na Lishe",
+        "prompts": [
+          "Baadhi ya watu wanaamini kwamba serikali inapaswa kuanzisha \"kodi ya mafuta\" kwa vyakula visivyo na afya ili kukabiliana na unene, wakati wengine wanasema kuwa watu wanapaswa kuwa huru kuchagua kile wanachokula. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengi wanafikiri kwamba huduma zote za afya zinapaswa kuwa bure kabisa na kufadhiliwa na serikali, wakati wengine wanaamini kwamba huduma za afya za kibinafsi hutoa huduma bora zaidi. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanasema kuwa dawa mbadala (kama vile acupuncture au tiba asilia) zinafaa sana, huku wengine wakiamini kuwa ni hatari na ni dawa za kisasa pekee zinazopaswa kuaminiwa. Jadili maoni yote mawili na toa maoni yako.",
+          "Watu wengine wanaamini kwamba michezo na elimu ya kimwili inapaswa kuwa ya lazima kwa watu wazima mahali pa kazi, wakati wengine wanafikiri mazoezi ni chaguo la kibinafsi. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanafikiri kwamba chakula cha vegan ni chaguo la afya zaidi kwa wanadamu, wakati wengine wanasema kuwa kula nyama ni muhimu kwa chakula cha usawa. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanaamini kwamba huduma ya afya ya kuzuia (kama vile elimu na programu za siha) ni bora kuliko kutibu magonjwa baada ya kutokea, huku wengine wakifikiri kwamba utafiti wa matibabu kwa ajili ya tiba unapaswa kupewa kipaumbele. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba utangazaji wa vyakula vya haraka unapaswa kupigwa marufuku kabisa, huku wengine wakisema kuwa hii inazuia uhuru wa kujieleza kwa biashara. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanasema kuwa afya ya akili ni muhimu sawa na afya ya kimwili na inapaswa kupokea ufadhili sawa, wakati wengine wanaamini kuwa magonjwa ya kimwili yanahitaji uangalizi wa haraka wa kifedha. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kuwa uvutaji sigara unapaswa kuharamishwa kabisa ulimwenguni, huku wengine wakisema kuwa watu wazima wana haki ya kuchagua mtindo wao wa maisha. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba vyakula vilivyobadilishwa vinasaba (GM) ni ufunguo wa kumaliza njaa duniani, wakati wengine wanaamini kuwa vinahatarisha afya ya binadamu. Jadili maoni yote mawili na toa maoni yako."
+        ]
+      },
+      {
+        "name": "Serikali na Uchumi",
+        "prompts": [
+          "Baadhi ya watu wanafikiri kwamba maendeleo ya kiuchumi ni lengo muhimu zaidi la serikali, wakati wengine wanafikiri kwamba aina nyingine za maendeleo (kama kijamii au kimazingira) ni muhimu sawa. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengi wanahoji kuwa nchi tajiri zinapaswa kutoa misaada ya kifedha kwa mataifa maskini, wakati wengine wanaamini kuwa msaada huu mara nyingi husababisha madhara zaidi kuliko manufaa kutokana na rushwa. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanaamini kuwa serikali inapaswa kufadhili wasanii, wanamuziki, na waandishi, huku wengine wakisema kuwa pesa za walipa kodi zinapaswa kutumika tu kwa huduma za umma kama hospitali na barabara. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanadhani usafiri wa umma unapaswa kuwa bila malipo, huku wengine wakiamini kuwa abiria wanapaswa kulipa ili kudumisha ubora wa huduma. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanahoji kuwa biashara huria ya kimataifa ni ya manufaa kwa nchi zinazoendelea, wakati wengine wanaamini kwamba inatumia rasilimali zao na kazi nafuu. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanaamini kwamba serikali zinapaswa kuweka kikomo juu ya mshahara wa juu zaidi mtu anaweza kupata, wakati wengine wanabisha kuwa watu wanapaswa kuruhusiwa kulipwa kadri wawezavyo. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kuwa sarafu moja ya kimataifa ingeboresha uchumi wa dunia, huku wengine wakiamini kuwa sarafu za kitaifa ni muhimu kwa uhuru wa kiuchumi wa nchi. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanahoji kuwa kulipa kodi ni wajibu muhimu zaidi wa raia, wakati wengine wanaamini watu wanapaswa kujaribu kuweka kiasi kikubwa cha mapato yao kisheria iwezekanavyo. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kuwa serikali zinapaswa kutoa mapato ya kimsingi kwa raia wote, wakati wengine wanahoji kuwa hii ingewafanya watu kuwa wavivu na kuharibu uchumi. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba uchunguzi wa anga ni upotevu wa pesa za serikali, huku wengine wakisema kuwa ni uwekezaji muhimu katika mustakabali wa binadamu. Jadili maoni yote mawili na toa maoni yako."
+        ]
+      },
+      {
+        "name": "Uhalifu na Adhabu",
+        "prompts": [
+          "Baadhi ya watu wanaamini kuwa lengo kuu la magereza ni kuwaadhibu wahalifu, huku wengine wakisema kuwa magereza yanapaswa kuzingatia kikamilifu ukarabati. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengi wanafikiri kwamba adhabu ya kifo ni adhabu inayokubalika kwa uhalifu mkubwa, huku wengine wakisema kuwa ni ukiukaji wa haki za binadamu na inapaswa kukomeshwa. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanahoji kuwa hukumu za muda mrefu zaidi gerezani huzuia uhalifu, wakati wengine wanaamini kuwa hazipunguzi viwango vya uhalifu na magereza ya msongamano tu. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanaamini kwamba wahalifu vijana (wahalifu vijana) wanapaswa kupokea adhabu sawa na watu wazima, wakati wengine wanasema wanapaswa kutendewa kwa upole zaidi. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba kusakinisha kamera za usalama katika maeneo ya umma kunapunguza uhalifu, huku wengine wakiamini kuwa ni uvamizi mkali wa faragha. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanahoji kwamba polisi wanapaswa kubeba silaha kila wakati ili kulinda umma, wakati wengine wanaamini kuwa polisi wenye silaha wanazidisha vurugu. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kwamba uhalifu wa mtandaoni ndio tishio kubwa zaidi kwa jamii ya kisasa, huku wengine wakisema kwamba uhalifu wa jadi wa jeuri bado ni hatari zaidi. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba wafungwa wa zamani wanapaswa kutakiwa kuwafahamisha waajiri wao kuhusu uhalifu wao wa zamani, huku wengine wakiamini kuwa wana haki ya faragha mara tu kifungo chao kitakapotolewa. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanahoji kuwa huduma kwa jamii ni adhabu bora kwa makosa madogo kuliko kuwapeleka watu jela, huku wengine wakiamini kuwa huduma za jamii sio kali vya kutosha. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kwamba umaskini ndio chanzo kikuu cha uhalifu, huku wengine wakisema kwamba uhalifu ni matokeo ya asili ya kibinadamu na pupa. Jadili maoni yote mawili na toa maoni yako."
+        ]
+      },
+      {
+        "name": "Vyombo vya habari na Utangazaji",
+        "prompts": [
+          "Watu fulani wanaamini kwamba jeuri katika sinema na televisheni huchangia jeuri katika jamii, huku wengine wakibisha kwamba ni burudani isiyodhuru tu. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengi wanafikiri kwamba vyombo vya habari vinapaswa kudhibitiwa kikamilifu na serikali, wakati wengine wanaamini kuwa vyombo vya habari vilivyo huru kabisa ni muhimu kwa demokrasia. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanahoji kuwa utangazaji unaolenga watoto unapaswa kuwa kinyume cha sheria, huku wengine wakiamini kuwa ni jukumu la wazazi kusimamia kile ambacho watoto wao hutazama. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kuwa habari huzingatia sana matukio mabaya, ambayo husababisha wasiwasi wa umma, wakati wengine wanahoji kuwa ni wajibu wa vyombo vya habari kuripoti ukweli mgumu. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba watu mashuhuri ni mifano mbaya ya kuigwa kwa vijana, huku wengine wakieleza kuwa watu mashuhuri wengi hutumia jukwaa lao kwa kazi chanya ya hisani. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanasema kuwa magazeti ya kuchapishwa yamekufa na hivi karibuni yatatoweka kabisa, wakati wengine wanaamini daima kutakuwa na soko la uandishi wa habari wa kimwili. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi wanaamini kuwa utangazaji unaolengwa wa mtandaoni ni rahisi sana kwa watumiaji, ilhali wengine wanaona kuwa ni wa hila na vamizi. Jadili maoni yote mawili na toa maoni yako.",
+          "Watu wengine wanafikiri kwamba televisheni ya ukweli ina athari mbaya kwa maadili ya kitamaduni, wakati wengine wanaamini kuwa ni furaha tu, kukimbia bila akili. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanahoji kuwa maisha ya kibinafsi ya watu mashuhuri wa umma (kama wanasiasa na watendaji) yanapaswa kuwa nje ya mipaka kwa vyombo vya habari, wakati wengine wanaamini kuwa umma una haki ya kujua. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kwamba utangazaji wa kisasa huwalazimisha watu kununua vitu wasivyohitaji, huku wengine wakisema kwamba utangazaji hufahamisha tu watumiaji chaguo zao. Jadili maoni yote mawili na toa maoni yako."
+        ]
+      },
+      {
+        "name": "Utamaduni, Usafiri na Sanaa",
+        "prompts": [
+          "Baadhi ya watu wanaamini kwamba utalii mkubwa wa kimataifa unaharibu tamaduni na mazingira ya wenyeji, wakati wengine wanahoji kuwa ni muhimu kwa uchumi wa ndani. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengi wanafikiri kwamba wahamiaji wanapaswa kufuata utamaduni na desturi za nchi yao mpya, huku wengine wakiamini kwamba wanapaswa kudumisha na kufuata utamaduni wao wa asili. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine hubisha kuwa kujifunza lugha ya kigeni si lazima tena kwa sababu ya programu ya kutafsiri, huku wengine wakiamini kwamba kujifunza lugha kunatoa uelewa muhimu wa kitamaduni. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kwamba makumbusho na majumba ya sanaa yanapaswa kuwa bure kabisa kwa umma, wakati wengine wanasema kuwa kutoza ada ya kuingia ni muhimu ili kudumisha maonyesho. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kuwa sherehe za kitamaduni zinapoteza maana na kuwa za kibiashara, huku wengine wakiamini kuwa biashara husaidia kudumisha tamaduni hizi. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanahoji kuwa lugha moja ya kimataifa (kama Kiswahili) huleta ulimwengu pamoja kwa amani, huku wengine wakiamini kuwa inaharibu utambulisho wa kipekee wa kitamaduni. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kuwa kusafiri katika kikundi na mwongozo wa watalii ndio njia bora ya kupata uzoefu wa nchi mpya, wakati wengine wanapendelea kusafiri peke yao na kwa uhuru. Jadili maoni yote mawili na toa maoni yako.",
+          "Baadhi ya watu wanafikiri kwamba serikali zinapaswa kutumia pesa kuhifadhi majengo ya kale ya kihistoria, huku wengine wakiamini kuwa ni jambo la busara zaidi kuyaangusha na kujenga nyumba za kisasa. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanasema kuwa vyakula vya ndani na mila ya upishi vinaharibiwa na minyororo ya kimataifa ya chakula cha haraka, wakati wengine wanakaribisha urahisi na aina mbalimbali. Jadili maoni yote mawili na toa maoni yako.",
+          "Wengine wanaamini kuwa kusoma sanaa na fasihi ya zamani sio muhimu kwa wanafunzi wa kisasa, wakati wengine wanasema ni muhimu kwa elimu iliyokamilika. Jadili maoni yote mawili na toa maoni yako."
+        ]
+      }
+    ]
+  },
+  {
+    "type": "opinion",
+    "label": "Insha ya Maoni",
+    "description": "Toa maoni yako na ubishane kwa au kupinga kauli.",
+    "instruction": "Je, unakubali au haukubali kwa kiasi gani? / Nini maoni yako? Andika angalau maneno 250.",
+    "categories": [
+      {
+        "name": "Elimu",
+        "prompts": [
+          "Baadhi ya watu wanaamini kwamba elimu ya chuo kikuu inapaswa kuwa bure kwa kila mtu, bila kujali asili yake. Je, unakubali au haukubali kwa kiasi gani?",
+          "Katika siku zijazo, wanafunzi wanaweza kuwa na chaguo la kusomea nyumbani kwa kutumia teknolojia au kusoma katika shule za kitamaduni. Inasemekana kuwa shule za kitamaduni zitatoweka. Unakubali au unakataa?",
+          "Watu wengi hufikiri kwamba kazi za nyumbani ni muhimu ili watoto wajifunze ipasavyo, huku wengine wakiamini kwamba si za lazima na husababisha mkazo. Nini maoni yako?",
+          "Vyuo vikuu vinapaswa kukubali idadi sawa ya wanafunzi wa kiume na wa kike katika kila somo. Je, unakubali au haukubali kwa kiasi gani?",
+          "Watu fulani hufikiri kwamba wazazi wanapaswa kuwafundisha watoto jinsi ya kuwa washiriki wazuri wa jamii. Wengine, hata hivyo, wanaamini kuwa shule ndio mahali pa kujifunza hili. Nini maoni yako?",
+          "Masomo kama vile sanaa, muziki na drama mara nyingi huchukuliwa kuwa muhimu kuliko masomo kama vile hisabati na sayansi. Kwa hiyo, wanapaswa kuondolewa kwenye mtaala wa shule. Unakubali au unakataa?",
+          "Wanafunzi wote wanapaswa kuhitajika kujifunza lugha ya kigeni kutoka shule ya msingi na kuendelea. Je, unakubali au haukubali kwa kiasi gani?",
+          "Miaka ya pengo, ambapo wanafunzi huchukua likizo kabla ya kwenda chuo kikuu, inazidi kuwa maarufu. Kuchukua mwaka wa pengo daima ni uzoefu wa manufaa kwa vijana. Unakubali au unakataa?",
+          "Kazi ya kikundi ndiyo njia mwafaka zaidi kwa wanafunzi kujifunza. Je, unakubali au haukubali kwa kiasi gani?",
+          "Baadhi ya waelimishaji wanahoji kuwa mitihani si tathmini ya haki ya uwezo wa kweli wa mwanafunzi na inapaswa kubadilishwa na upimaji endelevu. Nini maoni yako?"
+        ]
+      },
+      {
+        "name": "Teknolojia na Ubunifu",
+        "prompts": [
+          "Ukuzaji wa akili ya bandia hatimaye itasababisha upotezaji wa mamilioni ya kazi. Kwa hiyo, serikali zinapaswa kuzuia maendeleo yake. Je, unakubali au haukubali kwa kiasi gani?",
+          "Mitandao ya kijamii ina athari mbaya kwa jamii na watu binafsi kwa kuongeza kutengwa na kueneza habari potofu. Unakubali au unakataa?",
+          "Baadhi ya watu wanafikiri kwamba intaneti imeleta watu karibu zaidi, huku wengine wakifikiri kwamba watu na jumuiya zinazidi kutengwa. Nini maoni yako?",
+          "Matumizi ya simu za rununu katika maeneo ya umma ni ya kuudhi kama vile kuvuta sigara na yanapaswa kupigwa marufuku vivyo hivyo. Je, unakubali au haukubali kwa kiasi gani?",
+          "Maendeleo ya teknolojia yamefanya maisha yetu kuwa magumu zaidi badala ya kuwa rahisi. Unakubali au unakataa?",
+          "Michezo ya video mara nyingi hulaumiwa kwa tabia ya jeuri kwa vijana. Kwa hivyo, uuzaji wa michezo ya video yenye vurugu inapaswa kupigwa marufuku. Nini maoni yako?",
+          "Katika ulimwengu wa kisasa, inawezekana kununua, kufanya kazi, na kuwasiliana na watu kupitia mtandao na kuishi bila mawasiliano yoyote ya ana kwa ana na wengine. Je, haya ni maendeleo chanya au hasi?",
+          "Kusoma vitabu vya kimwili kunakuwa jambo la zamani kadiri watu wengi wanavyotumia vitabu vya kielektroniki na makala za dijitali. Huu ni mwelekeo mbaya wa kusoma na kuandika. Je, unakubali au haukubali kwa kiasi gani?",
+          "Utafutaji wa anga unahitaji kiasi kikubwa cha fedha za serikali. Pesa hizi zingetumika vyema kutatua matatizo hapa Duniani, kama vile umaskini na magonjwa. Unakubali au unakataa?",
+          "Otomatiki na roboti zinachukua kazi za kitamaduni za utengenezaji. Haya ni maendeleo chanya kwa jamii kwa ujumla. Je, unakubali au haukubali kwa kiasi gani?"
+        ]
+      },
+      {
+        "name": "Kazi na Ajira",
+        "prompts": [
+          "Kuridhika kwa kazi ni muhimu zaidi kuliko mshahara mkubwa. Je, unakubali au haukubali kwa kiasi gani?",
+          "Watu wengi wanahoji kuwa ili kuboresha ubora wa elimu, wanafunzi wa shule za upili wanapaswa kuhimizwa kutathmini na kuwakosoa walimu wao. Unakubali au unakataa?",
+          "Umri wa kustaafu unapaswa kuongezwa katika nchi zote kwa sababu watu wanaishi maisha marefu na yenye afya. Nini maoni yako?",
+          "Mtu yeyote anaweza kuwa kiongozi mzuri ikiwa amefunzwa vya kutosha. Je, unakubali au haukubali kwa kiasi gani?",
+          "Ni heri watu wakose ajira kuliko kuajiriwa katika kazi wasiyoifurahia. Unakubali au unakataa?",
+          "Makampuni yanapaswa kuwahitaji wafanyakazi wao wote kuvaa sare, bila kujali wajibu wao. Je, unakubali au haukubali kwa kiasi gani?",
+          "Kujiajiri siku zote ni vyema kuliko kufanya kazi katika kampuni au shirika. Nini maoni yako?",
+          "Vijana leo hawana ujuzi wa msingi unaohitajika kwa mahali pa kazi ya kisasa. Unakubali au unakataa?",
+          "Ili kupunguza ukosefu wa ajira, serikali inapaswa kufupisha wiki ya kazi ya jadi hadi saa 30, kuruhusu watu zaidi kushiriki kazi iliyopo. Je, unakubali au haukubali kwa kiasi gani?",
+          "Jambo kuu la kuzingatia wakati wa kuchagua kazi au kazi yoyote ni kuwa na mapato ya juu. Unakubali au unakataa?"
+        ]
+      },
+      {
+        "name": "Mazingira na Uhifadhi",
+        "prompts": [
+          "Ongezeko la joto duniani kimsingi husababishwa na shughuli za binadamu, na kwa hiyo, watu binafsi lazima wabadili sana mitindo yao ya maisha ili kukomesha. Je, unakubali au haukubali kwa kiasi gani?",
+          "Jukumu la kulinda mazingira ni la mashirika makubwa pekee, sio raia mmoja mmoja. Nini maoni yako?",
+          "Baadhi ya watu wanafikiri kwamba njia bora ya kutatua matatizo ya mazingira ya kimataifa ni kuongeza gharama ya mafuta. Unakubali au unakataa?",
+          "Upimaji wa wanyama kwa madhumuni ya matibabu na vipodozi ni ukatili na unapaswa kupigwa marufuku kabisa. Je, unakubali au haukubali kwa kiasi gani?",
+          "Ni jambo lisiloepukika kuwa kadiri nchi zinavyoendelea kiuchumi, uharibifu wa mazingira utatokea. Nini maoni yako?",
+          "Zoo kimsingi ni magereza ya wanyama na hazitumiki kwa madhumuni muhimu ya elimu au uhifadhi. Unakubali au unakataa?",
+          "Mifuko ya ununuzi ya plastiki inapaswa kuwa kinyume cha sheria katika maduka makubwa yote na maduka ya rejareja. Je, unakubali au haukubali kwa kiasi gani?",
+          "Kutoweka kwa baadhi ya spishi za mimea na wanyama ni mchakato wa asili, na hatupaswi kuingilia kati kujaribu kuwaokoa. Unakubali au unakataa?",
+          "Watu wanapaswa kutumia tu chakula kinachozalishwa nchini ili kupunguza athari za mazingira za usafiri. Nini maoni yako?",
+          "Kuwekeza katika vyanzo vya nishati mbadala kama vile nishati ya upepo na jua ni kupoteza pesa kwa sababu havitegemei sana. Je, unakubali au haukubali kwa kiasi gani?"
+        ]
+      },
+      {
+        "name": "Jamii na Maisha ya Kisasa",
+        "prompts": [
+          "Katika nchi nyingi, pengo kati ya matajiri na maskini linaongezeka. Hili ndio shida kuu inayoikabili jamii ya kisasa. Je, unakubali au haukubali kwa kiasi gani?",
+          "Vijana wanaathiriwa sana na watu mashuhuri. Huu ni mwelekeo hatari. Unakubali au unakataa?",
+          "Sherehe na sherehe za kitamaduni zinapoteza maana na kuwa kisingizio kingine cha matumizi. Nini maoni yako?",
+          "Kuishi katika jiji kubwa lenye shughuli nyingi ni bora zaidi kwa maendeleo ya mtu kuliko kuishi katika kijiji tulivu cha vijijini. Je, unakubali au haukubali kwa kiasi gani?",
+          "Katika ulimwengu wa leo, ni muhimu zaidi kubadilika na kuwa tayari kubadilika kuliko kuwa mtaalamu katika nyanja moja mahususi. Unakubali au unakataa?",
+          "Watu fulani huamini kwamba historia haina kitu cha kutufundisha kuhusu wakati uliopo au ujao. Nini maoni yako?",
+          "Wazee wanazidi kutengwa katika jamii ya kisasa, ambayo inazingatia sana vijana. Je, unakubali au haukubali kwa kiasi gani?",
+          "Kumiliki nyumba ni muhimu kwa mtu kujisikia utulivu na mafanikio katika maisha. Unakubali au unakataa?",
+          "Watu leo ​​wanategemea sana wengine na hawana ujuzi wa kutosha wa kujitegemea. Nini maoni yako?",
+          "Matukio ya kimataifa ya michezo kama vile Olimpiki huleta mataifa pamoja na kukuza amani duniani. Je, unakubali au haukubali kwa kiasi gani?"
+        ]
+      },
+      {
+        "name": "Afya na Lishe",
+        "prompts": [
+          "Serikali inapaswa kutoza ushuru wa vyakula visivyo na afya, kama vile vyakula vya haraka na vinywaji vyenye sukari, ili kuhimiza watu kula kwa afya zaidi. Je, unakubali au haukubali kwa kiasi gani?",
+          "Huduma ya afya inapaswa kuwa bure kabisa kwa raia wote, ikifadhiliwa kikamilifu na serikali kupitia ushuru. Unakubali au unakataa?",
+          "Dawa mbadala za kienyeji zinafaa sawa na dawa za kisasa za kemikali. Nini maoni yako?",
+          "Kuongezeka kwa kasi ya fetma ni kosa la tasnia ya vyakula vya haraka. Je, unakubali au haukubali kwa kiasi gani?",
+          "Madarasa ya elimu ya mwili yanapaswa kuwa ya lazima kila siku kwa watoto wote wa shule. Unakubali au unakataa?",
+          "Mkazo ni suala muhimu zaidi la kiafya linalowakabili watu wazima wanaofanya kazi leo. Nini maoni yako?",
+          "Watu wanaochagua kushiriki katika michezo hatari sana wanapaswa kulipia matibabu yao wenyewe ikiwa watajeruhiwa. Je, unakubali au haukubali kwa kiasi gani?",
+          "Dawa za kinga, kama vile elimu ya afya na chanjo, ni muhimu zaidi kuliko kutafuta tiba ya magonjwa. Unakubali au unakataa?",
+          "Lishe ya kisasa, ambayo inategemea sana vyakula vilivyosindikwa, ndio sababu kuu ya kuzorota kwa afya ulimwenguni. Nini maoni yako?",
+          "Haiwezekani kudumisha maisha ya afya wakati unafanya kazi ya kampuni inayohitaji sana, ya wakati wote. Je, unakubali au haukubali kwa kiasi gani?"
+        ]
+      },
+      {
+        "name": "Matumizi ya Serikali na Umma",
+        "prompts": [
+          "Serikali zinapaswa kutumia pesa zaidi kwa huduma za umma, kama vile elimu na afya, badala ya kutumia jeshi. Je, unakubali au haukubali kwa kiasi gani?",
+          "Usafiri wa umma unapaswa kuwa bila malipo ili kupunguza msongamano wa magari na uchafuzi wa mazingira katika miji. Unakubali au unakataa?",
+          "Ni jukumu la serikali kuhakikisha wananchi wote wanapata mahali pa kuishi. Nini maoni yako?",
+          "Serikali zinapaswa kutoa msaada wa kifedha kwa wasanii, wanamuziki, na waandishi. Je, unakubali au haukubali kwa kiasi gani?",
+          "Upigaji kura katika uchaguzi wa kitaifa unapaswa kuwa wa lazima kwa raia wote wanaostahiki. Unakubali au unakataa?",
+          "Serikali haina haki ya kuingilia kile ambacho watu huchagua kula, kunywa, au kuvuta sigara. Nini maoni yako?",
+          "Nchi tajiri zinapaswa kusamehe madeni ya kimataifa ya mataifa maskini zaidi ili kuyasaidia kujiendeleza. Je, unakubali au haukubali kwa kiasi gani?",
+          "Ushuru kwa watu tajiri unapaswa kuwa juu zaidi ili kusambaza mali kwa usawa zaidi katika jamii. Unakubali au unakataa?",
+          "Ufadhili wa sanaa ni anasa, na serikali zinapaswa tu kufadhili huduma muhimu kama vile miundombinu na hospitali. Nini maoni yako?",
+          "Serikali za miji zinafaa kuwekeza kwa kiasi kikubwa katika kuunda mbuga nyingi za umma na maeneo ya kijani kibichi, hata ikiwa inamaanisha kuongeza ushuru wa ndani. Je, unakubali au haukubali kwa kiasi gani?"
+        ]
+      },
+      {
+        "name": "Uhalifu na Sheria",
+        "prompts": [
+          "Adhabu ya kifo ndiyo njia pekee ya kuzuia uhalifu mbaya zaidi, kama vile mauaji. Je, unakubali au haukubali kwa kiasi gani?",
+          "Magereza yanapaswa kuzingatia hasa kuwarekebisha wahalifu badala ya kuwaadhibu tu. Unakubali au unakataa?",
+          "Wahalifu wachanga wanaofanya uhalifu mkubwa wanapaswa kuhukumiwa na kuadhibiwa kama watu wazima. Nini maoni yako?",
+          "Matumizi ya kamera za uchunguzi katika maeneo ya umma ni uvamizi wa faragha na yanapaswa kuwekewa vikwazo vikali. Je, unakubali au haukubali kwa kiasi gani?",
+          "Sheria kali za udhibiti wa bunduki ni muhimu ili kupunguza kiwango cha uhalifu wa kutumia nguvu katika jamii. Unakubali au unakataa?",
+          "Huduma kwa jamii ni adhabu bora zaidi kwa uhalifu mdogo, usio na vurugu kuliko kifungo gerezani. Nini maoni yako?",
+          "Uhalifu wa mtandaoni kwa sasa ni tishio kubwa kwa jamii kuliko uhalifu wa kimapokeo wa kimapokeo. Je, unakubali au haukubali kwa kiasi gani?",
+          "Watu wanaovunja sheria wanapaswa kulazimishwa kukutana na wahasiriwa wao ili kuelewa athari ya matendo yao. Unakubali au unakataa?",
+          "Vyombo vya habari vinahusika na hofu ya umma ya uhalifu, ambayo mara nyingi hailingani na kiwango halisi cha uhalifu. Nini maoni yako?",
+          "Haiwezekani kutokomeza kabisa uhalifu katika jamii; ni sehemu isiyoepukika ya asili ya mwanadamu. Je, unakubali au haukubali kwa kiasi gani?"
+        ]
+      },
+      {
+        "name": "Vyombo vya habari na Utangazaji",
+        "prompts": [
+          "Utangazaji unaolenga watoto hauna maadili na unapaswa kupigwa marufuku kabisa. Je, unakubali au haukubali kwa kiasi gani?",
+          "Vyombo vya habari huzingatia sana hadithi hasi, ambayo husababisha huzuni na wasiwasi kwa umma. Unakubali au unakataa?",
+          "Mashirika makubwa ya kimataifa yana ushawishi mkubwa juu ya vyombo vya habari na habari za kimataifa. Nini maoni yako?",
+          "Watu mashuhuri wana haki ya faragha, na paparazzi hawapaswi kuruhusiwa kuwafuata katika maeneo ya umma. Je, unakubali au haukubali kwa kiasi gani?",
+          "Katika zama za kisasa, magazeti yaliyochapishwa yamepitwa na wakati na hivi karibuni yatatoweka kabisa. Unakubali au unakataa?",
+          "Utangazaji huhimiza watu kununua vitu ambavyo hawahitaji na hawawezi kumudu. Nini maoni yako?",
+          "Serikali inapaswa kudhibiti kile kinachorushwa kwenye televisheni na mtandao ili kulinda jamii dhidi ya maudhui hatari. Je, unakubali au haukubali kwa kiasi gani?",
+          "Uhuru wa kusema unamaanisha kuwa watu wanapaswa kuruhusiwa kusema chochote wanachotaka, hata ikiwa inawaudhi wengine. Unakubali au unakataa?",
+          "Vipindi vya ukweli vya televisheni havina thamani ya kielimu na vinatumika tu kudhalilisha viwango vya kitamaduni. Nini maoni yako?",
+          "Matangazo ya mtandaoni yanayolengwa, ambayo hufuatilia tabia ya mtumiaji, ni ukiukaji mkubwa wa faragha ya kibinafsi. Je, unakubali au haukubali kwa kiasi gani?"
+        ]
+      },
+      {
+        "name": "Utalii na Utandawazi",
+        "prompts": [
+          "Utalii wa kimataifa husababisha madhara zaidi kuliko manufaa kwa jamii na mazingira. Je, unakubali au haukubali kwa kiasi gani?",
+          "Kuongezeka kwa utandawazi wa biashara na utamaduni kunaharibu mila za wenyeji na utambulisho wa kitaifa. Unakubali au unakataa?",
+          "Watu wanapaswa kuhimizwa kusafiri ndani ya nchi yao badala ya kusafiri kimataifa. Nini maoni yako?",
+          "Kiswahili kinakuwa lugha ya kimataifa. Haya ni maendeleo chanya kwa mahusiano ya kimataifa na biashara. Je, unakubali au haukubali kwa kiasi gani?",
+          "Nchi zinapaswa kutanguliza uajiri wa raia wao kabla ya kuruhusu wafanyikazi wa kigeni kuingia kwenye soko la ajira. Unakubali au unakataa?",
+          "Usafiri wa anga wa bei nafuu umeleta mageuzi katika njia ya watu kuishi na kufanya kazi, lakini gharama za mazingira zinazidi faida. Nini maoni yako?",
+          "Makampuni ya kimataifa mara nyingi huwanyonya wafanyakazi katika nchi zinazoendelea ili kuongeza faida zao. Je, unakubali au haukubali kwa kiasi gani?",
+          "Watalii wanapaswa kuhitajika kujifunza misemo ya msingi katika lugha ya ndani kabla ya kutembelea nchi ya kigeni. Unakubali au unakataa?",
+          "Utandawazi kimsingi umenufaisha mataifa tajiri huku ukiyaacha nyuma mataifa yanayoendelea. Nini maoni yako?",
+          "Kuhifadhi majengo ya kihistoria ni gharama isiyo ya lazima kwa miji; zibomolewe ili kupisha miundombinu ya kisasa. Je, unakubali au haukubali kwa kiasi gani?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "advantage-disadvantage",
+    "label": "Faida na Hasara",
+    "description": "Jadili faida na hasara za mada.",
+    "instruction": "Jadili faida na hasara, na toa maoni yako unapoulizwa. Andika angalau maneno 250.",
+    "categories": [
+      {
+        "name": "Elimu na Kujifunza",
+        "prompts": [
+          "Vyuo vikuu vingi sasa vinatoa programu kamili za digrii mkondoni. Je, ni faida na hasara zipi za kusoma kwa shahada mtandaoni badala ya kuhudhuria masomo ana kwa ana?",
+          "Wataalamu wengine wanaamini kwamba ni bora kwa watoto kuanza kujifunza lugha ya kigeni katika shule ya msingi badala ya shule ya sekondari. Je, faida za hii ni kubwa kuliko hasara?",
+          "Katika nchi nyingi, wanafunzi huchukua \"mwaka wa pengo\" kusafiri au kufanya kazi kabla ya kuanza chuo kikuu. Jadili faida na hasara za kuchukua mwaka wa pengo na kutoa maoni yako mwenyewe.",
+          "Shule zingine zinahitaji wanafunzi wote kuvaa sare. Je, ni faida na hasara gani za sare za shule?",
+          "Wanafunzi zaidi na zaidi wanachagua kusoma nje ya nchi kwa elimu yao ya juu. Je, faida za kusoma katika nchi ya kigeni zinazidi hasara?",
+          "Katika baadhi ya mifumo ya elimu, watoto huwekwa katika makundi kulingana na uwezo wao wa kitaaluma badala ya umri wao. Jadili faida na hasara za mazoezi haya na toa maoni yako.",
+          "Kukariri kwa kukariri ni njia ya jadi ya kufundisha ambayo bado inatumika katika sehemu nyingi za ulimwengu. Je, ni faida na hasara gani za kujifunza kupitia kukariri?",
+          "Watu wengi hubishana kuwa elimu ya chuo kikuu inapaswa kuwa bure kabisa kwa kila mtu. Je, faida za elimu ya juu bila malipo zinazidi hasara?",
+          "Baadhi ya wazazi huchagua kusomesha watoto wao nyumbani badala ya kuwapeleka shule ya kitamaduni. Jadili faida na hasara za shule ya nyumbani na toa maoni yako.",
+          "Tathmini ya kuendelea (kazi ya kozi na miradi) inachukua nafasi ya mitihani rasmi katika taasisi nyingi za elimu. Je, ni faida na hasara gani za mabadiliko haya?"
+        ]
+      },
+      {
+        "name": "Teknolojia na Mtandao",
+        "prompts": [
+          "Matumizi ya akili ya bandia katika maisha ya kila siku yanazidi kuwa ya kawaida. Je, faida za AI zinazidi hasara?",
+          "Mitandao ya kijamii imeleta mapinduzi makubwa katika namna watu wanavyowasiliana na kushiriki habari. Jadili faida na hasara za mitandao ya kijamii na toa maoni yako.",
+          "Watu wengi sasa wanatumia simu zao mahiri kulipia bidhaa na huduma, na hivyo kusababisha kupungua kwa matumizi ya pesa taslimu. Je, ni faida na hasara gani za jamii isiyo na pesa?",
+          "Maendeleo ya teknolojia yameruhusu watu wengi kufanya kazi kutoka nyumbani badala ya kusafiri kwenda ofisini. Je, faida za kazi za mbali zinazidi hasara?",
+          "Vitabu vya kielektroniki na vifaa vya kusoma kidijitali vinachukua nafasi ya vitabu vilivyochapishwa vya jadi. Jadili faida na hasara za mwelekeo huu na utoe maoni yako.",
+          "Maendeleo ya magari yanayojiendesha yanaendelea kwa kasi. Je, ni faida na hasara gani za magari yanayojiendesha kwenye barabara za umma?",
+          "Otomatiki na roboti zinazidi kuchukua nafasi ya wafanyikazi wa kibinadamu katika utengenezaji na tasnia zingine. Je, faida za otomatiki zinazidi hasara?",
+          "Watoto leo hutumia kiasi kikubwa cha muda kucheza michezo ya video. Jadili faida na hasara za hili na toa maoni yako.",
+          "Kompyuta ya wingu huruhusu watu kuhifadhi data zao zote za kibinafsi na za kitaalamu mtandaoni badala ya kwenye diski kuu halisi. Je, ni faida na hasara gani za kuhifadhi data kwenye wingu?",
+          "Utafutaji wa anga hugharimu walipa kodi kiasi kikubwa cha pesa kila mwaka. Je, faida za kutumia pesa kwenye uchunguzi wa anga zinazidi hasara?"
+        ]
+      },
+      {
+        "name": "Kazi na Kazi",
+        "prompts": [
+          "Baadhi ya makampuni yametekeleza wiki ya kazi ya siku nne bila kupunguza mishahara ya wafanyakazi wao. Je, ni faida na hasara gani za wiki fupi ya kufanya kazi?",
+          "Hapo awali, watu mara nyingi walikaa katika kazi sawa kwa maisha yao yote ya kazi. Leo, ni kawaida zaidi kubadili kazi mara kadhaa. Jadili faida na hasara za kazi zinazobadilika mara kwa mara na toa maoni yako.",
+          "Serikali nyingi zinaongeza umri rasmi wa kustaafu hadi 68 au 70. Je, faida za kufanya kazi hadi umri wa baadaye zinazidi hasara?",
+          "Idadi inayoongezeka ya watu wanachagua kujiajiri au kuanzisha biashara zao wenyewe. Je, ni faida na hasara gani za kujiajiri ikilinganishwa na kufanya kazi kwa mwajiri?",
+          "Makampuni ya kimataifa mara nyingi huhamisha wafanyikazi wao kufanya kazi katika matawi ya ng'ambo kwa miaka kadhaa. Jadili faida na hasara za kufanya kazi nje ya nchi na toa maoni yako.",
+          "Mashirika mengine yanaamini kuwa kulipa wafanyakazi kulingana na utendaji wao binafsi ndiyo njia bora ya kuwapa motisha. Je, faida za malipo ya msingi wa utendakazi zinazidi hasara?",
+          "Mafunzo yasiyolipwa yanakuwa hitaji la kawaida kwa vijana wanaoingia kwenye soko la ajira. Je, ni faida na hasara gani za kufanya kazi bila malipo ili kupata uzoefu?",
+          "Baadhi ya nchi zimeanzisha viwango ili kuhakikisha asilimia fulani ya wanawake wanawakilishwa kwenye bodi za wakurugenzi za mashirika. Jadili faida na hasara za sera hii na toa maoni yako.",
+          "Kufanya kazi katika shirika kubwa sana kunatoa uzoefu tofauti kuliko kufanya kazi katika biashara ndogo inayoendeshwa na familia. Je, ni faida na hasara gani za kufanya kazi kwa shirika kubwa?",
+          "Taaluma nyingi sasa zinahitaji wafanyakazi kupatikana kupitia barua pepe au simu nje ya saa za kawaida za kazi. Je, faida za muunganisho huu wa mara kwa mara zinazidi hasara?"
+        ]
+      },
+      {
+        "name": "Afya na Mtindo wa Maisha",
+        "prompts": [
+          "Serikali katika baadhi ya nchi zimeanzisha ushuru wa vyakula vya haraka na vinywaji vyenye sukari ili kukabiliana na unene uliopitiliza. Je, ni faida na hasara gani za kutoza ushuru chakula kisicho na afya?",
+          "Umaarufu wa vyakula vya mboga mboga na vegan unakua ulimwenguni kote. Jadili faida na hasara za kuondoa nyama kutoka kwa lishe ya mtu na utoe maoni yako.",
+          "Watu wengi hutumia dawa mbadala, kama vile acupuncture na mitishamba, badala ya matibabu ya kawaida. Je, faida za tiba mbadala zinazidi hasara?",
+          "Mifumo ya huduma za afya katika baadhi ya nchi inafadhiliwa kikamilifu na serikali na ni bure wakati wa matumizi. Je, ni faida na hasara gani za mfumo wa bure wa huduma ya afya ya umma?",
+          "Idadi inayoongezeka ya watu wanashiriki katika michezo ya kukithiri, kama vile kuruka angani na kukwea miamba. Jadili faida na hasara za shughuli hizi na toa maoni yako.",
+          "Miji mingi imepiga marufuku uvutaji sigara katika maeneo yote ya umma, pamoja na mbuga na mikahawa ya nje. Je, manufaa ya marufuku ya jumla ya uvutaji sigara yanazidi hasara?",
+          "Watu wanazidi kutumia programu za simu na vifaa vinavyoweza kuvaliwa kufuatilia afya na siha zao. Je, ni faida na hasara gani za kutegemea teknolojia kwa ufuatiliaji wa afya?",
+          "Mazao yaliyobadilishwa vinasaba (GM) hupandwa katika sehemu nyingi za dunia ili kuongeza uzalishaji wa chakula. Jadili faida na hasara za vyakula vya GM na toa maoni yako.",
+          "Utalii wa matibabu, ambapo watu husafiri nje ya nchi kwa taratibu za matibabu, ni tasnia inayokua. Je, manufaa ya kusafiri hadi nchi nyingine kwa ajili ya huduma ya afya yanazidi hasara?",
+          "Watu wengi hulipa uanachama wa gharama kubwa wa kila mwezi ili kuhudhuria gym za kibiashara. Je, kuna faida na hasara gani za kutumia gym ili kukaa sawa ikilinganishwa na kufanya mazoezi ya nje au nyumbani?"
+        ]
+      },
+      {
+        "name": "Mazingira na Mipango Miji",
+        "prompts": [
+          "Ili kupunguza msongamano wa magari, baadhi ya majiji makubwa yameanzisha \"bei za msongamano,\" na kuwatoza madereva ada ya kuingia katikati mwa jiji. Je, ni faida na hasara gani za mfumo huu?",
+          "Nishati ya nyuklia inaonekana na wengine kama mbadala safi kwa nishati ya mafuta. Jadili faida na hasara za kutegemea nguvu za nyuklia na toa maoni yako.",
+          "Idadi ya watu inapoongezeka, miji inajenga majengo marefu ya ghorofa ili kuchukua wakazi. Je, faida za kuishi katika majengo ya juu ni kubwa kuliko hasara?",
+          "Serikali nyingi za mitaa zimelazimisha kuchakata tena kwa kaya zote. Je, ni faida na hasara gani za programu za kuchakata tena kwa kulazimishwa?",
+          "Idadi kubwa ya watu wanahama kutoka maeneo ya vijijini hadi miji mikubwa kutafuta fursa bora. Jadili faida na hasara za ukuaji wa miji na toa maoni yako.",
+          "Zoo zipo karibu kila jiji kuu ulimwenguni. Je, faida za kuwaweka wanyama katika utekwa katika mbuga za wanyama zinazidi hasara?",
+          "Baadhi ya watu wanabishana kwamba tunapaswa kununua tu chakula kinachozalishwa nchini. Je, kuna faida na hasara gani za kutumia vyakula vya asili pekee?",
+          "Ili kulinda mazingira, baadhi ya serikali zinatoa ruzuku kwa magari yanayotumia umeme (EVs). Jadili faida na hasara za kuingilia kati kwa serikali hii na toa maoni yako.",
+          "Utalii wa mazingira umeundwa kuruhusu watalii kutembelea mazingira tete huku ukipunguza athari zao. Je, faida za utalii wa mazingira zinazidi hasara?",
+          "Wapangaji wengi wa mijini wanatetea kuunda kanda zisizo na gari kabisa katika vituo vya jiji. Je, ni faida na hasara gani za kupiga marufuku magari kutoka maeneo ya mijini?"
+        ]
+      },
+      {
+        "name": "Utalii na Usafiri",
+        "prompts": [
+          "Kuongezeka kwa mashirika ya ndege ya bajeti kumefanya usafiri wa kimataifa kuwa nafuu kwa mamilioni ya watu. Je, ni faida na hasara gani za usafiri wa anga wa bei nafuu?",
+          "Utalii wa kimataifa ni chanzo kikuu cha mapato kwa nchi nyingi zinazoendelea. Jadili faida na hasara za uchumi unaotegemea sana utalii na toa maoni yako.",
+          "Watalii wengi huchagua kukaa katika kukodisha kwa muda mfupi (kama vile Airbnb) badala ya hoteli za kitamaduni. Je, faida za kukodisha kwa watalii kwa muda mfupi zinazidi hasara za jumuiya za wenyeji?",
+          "Kiswahili kinazidi kuwa lugha ya kimataifa ya usafiri na utalii. Je, kuna faida na hasara gani za kuwa na lugha moja kuu ya kimataifa?",
+          "Baadhi ya miji ya kihistoria hutoza \"kodi ya watalii\" kwa wageni ili kusaidia kudumisha miundombinu. Jadili faida na hasara za kuwatoza ushuru watalii na toa maoni yako.",
+          "\"Utalii wa kujitolea,\" ambapo watu husafiri kwenda nchi zinazoendelea kufanya kazi za hisani, unakuwa maarufu sana. Je, faida za mwelekeo huu zinazidi hasara?",
+          "Watalii wanazidi kutembelea maeneo ya asili ya mbali, ambayo hayajaguswa kama vile Antaktika au msitu wa mvua wa Amazon. Je, ni faida na hasara gani za utalii katika mazingira yaliyokithiri?",
+          "Watu wengi wanahoji kuwa usafiri wa kimataifa unasababisha kupotea kwa tofauti za kitamaduni huku miji inaanza kuonekana na kuhisi sawa kila mahali. Jadili faida na hasara za ujumuishaji wa kitamaduni na toa maoni yako.",
+          "Badala ya kusafiri nje ya nchi, watu wengine wanapendelea kutumia likizo zao kuchunguza nchi yao wenyewe. Je, faida za utalii wa ndani zinazidi hasara?",
+          "Ziara za kifurushi zinazoongozwa ni njia maarufu sana ya kusafiri. Je, ni faida na hasara gani za kusafiri na kikundi cha watalii chenye muundo wa hali ya juu ikilinganishwa na kusafiri kwa kujitegemea?"
+        ]
+      },
+      {
+        "name": "Serikali na Jamii",
+        "prompts": [
+          "Baadhi ya nchi zimetekeleza programu za lazima za huduma za jamii kwa vijana. Jadili faida na hasara na toa maoni yako.",
+          "Mapato ya msingi kwa wote (UBI), ambapo serikali humpa kila raia kiasi cha kawaida cha pesa bila kujali ajira, inajadiliwa duniani kote. Je, ni faida na hasara gani za UBI?",
+          "Nchi nyingi zinahitaji vijana wa kiume na wa kike kukamilisha kipindi cha lazima cha utumishi wa kijeshi. Je, faida za kujiunga na jeshi zinazidi hasara?",
+          "Matumizi ya kamera za televisheni (CCTV) katika maeneo ya umma yameenea sana. Jadili faida na hasara za ufuatiliaji wa umma na toa maoni yako.",
+          "Baadhi ya mataifa yamefuta hukumu ya kifo, huku mengine yakiitumia kwa makosa makubwa zaidi. Je, ni faida na hasara gani za adhabu ya kifo?",
+          "Mataifa tajiri mara nyingi hutoa msaada wa kifedha kwa nchi zinazoendelea. Je, faida za misaada ya kimataifa zinazidi hasara?",
+          "Katika baadhi ya nchi, kupiga kura katika uchaguzi wa kitaifa ni lazima kisheria. Jadili faida na hasara za upigaji kura wa lazima na toa maoni yako.",
+          "Serikali mara nyingi hutoa ufadhili mkubwa kwa sanaa, ikiwa ni pamoja na makumbusho, nyumba za sanaa, na sinema. Je, kuna faida na hasara gani za kutumia fedha za umma kufadhili sanaa?",
+          "Shukrani kwa maendeleo ya kitiba, idadi ya watu katika nchi nyingi zilizoendelea wanaishi muda mrefu zaidi. Je, faida za watu wanaozeeka zinazidi hasara?",
+          "Mifumo ya kisasa ya magereza mara nyingi huzingatia kuwarekebisha wahalifu kupitia elimu na tiba badala ya kuwaadhibu tu. Jadili faida na hasara za urekebishaji juu ya adhabu na toa maoni yako."
+        ]
+      },
+      {
+        "name": "Familia na Watoto",
+        "prompts": [
+          "Katika jamii ya kisasa, ni jambo la kawaida kwa wazazi wote wawili kufanya kazi wakati wote wanapolea watoto. Je, kuna faida na hasara gani za kuwa na wazazi wawili wanaofanya kazi?",
+          "Idadi inayoongezeka ya watu wanachagua kuishi peke yao badala ya kuishi na familia au wenzao. Je, faida za kuishi peke yako zinazidi hasara?",
+          "Wanandoa wengi wanachagua kupata watoto baadaye sana maishani, mara nyingi katika miaka yao ya mwisho ya 30 au 40. Jadili faida na hasara za kuchelewesha uzazi na toa maoni yako.",
+          "Familia kubwa ya kitamaduni (babu na babu, shangazi, wajomba wanaoishi pamoja) inazidi kuwa ya kawaida katika kupendelea familia ya nyuklia. Je, ni faida na hasara gani za kukua katika familia kubwa?",
+          "Wazazi wengine huwapa watoto wao posho ya kila juma au pesa za mfukoni. Je, faida za kuwapa watoto pesa zao wenyewe zinazidi hasara?",
+          "Wazazi wengi huwekea vikwazo vikali muda wa kutumia watoto wao kutumia kifaa kila siku. Jadili faida na hasara za vikomo vikali vya muda wa kutumia kifaa na utoe maoni yako.",
+          "Viwango vya talaka vimeongezeka sana katika nchi nyingi katika miongo michache iliyopita. Je, ni faida na hasara zipi za kurahisisha wanandoa kuachana kisheria?",
+          "Inazidi kuwa jambo la kawaida kwa vijana kuendelea kuishi na wazazi wao hadi kufikia miaka ya ishirini. Je, faida za vijana wanaoishi nyumbani ni kubwa kuliko hasara?",
+          "Wazazi wengine huwaandikisha watoto wao katika shughuli nyingi za ziada, na hivyo kuacha wakati mdogo wa kupumzika. Jadili faida na hasara za utoto wenye muundo wa hali ya juu na toa maoni yako.",
+          "Kulelewa katika familia ya mzazi mmoja ni jambo la kawaida kwa watoto. Je, kuna faida na hasara gani za kulea na mzazi asiye na mwenzi?"
+        ]
+      },
+      {
+        "name": "Vyombo vya habari na Utangazaji",
+        "prompts": [
+          "Nchi nyingi huzuia au kupiga marufuku utangazaji unaolenga watoto moja kwa moja. Je, faida za kupiga marufuku utangazaji kwa watoto ni kubwa kuliko hasara?",
+          "Kuibuka kwa vituo vya habari vya saa 24 na mipasho ya habari mtandaoni inamaanisha kuwa tunapata habari kila mara. Je, ni faida na hasara gani za mzunguko wa habari wa saa 24?",
+          "Mashirika makubwa ya kimataifa yanadhibiti sehemu kubwa ya mandhari ya vyombo vya habari duniani. Jadili faida na hasara za ukiritimba wa vyombo vya habari na toa maoni yako.",
+          "Makampuni ya mtandaoni hutumia utangazaji lengwa kulingana na kufuatilia historia ya wavuti ya mtumiaji. Je, manufaa ya utangazaji wa kibinafsi yanazidi hasara?",
+          "Vipindi vya televisheni vya ukweli vinaendelea kuwa maarufu sana duniani kote. Je, ni faida na hasara gani za utayarishaji wa vipindi vya ukweli vya TV?",
+          "Baadhi ya serikali hukagua intaneti ili kuzuia maudhui ambayo raia wao wanaweza kutazama. Jadili faida na hasara za udhibiti wa mtandao na utoe maoni yako.",
+          "Magazeti ya kuchapisha na majarida yanaona kupungua kwa kiwango kikubwa cha wasomaji huku watu wakigeukia vyombo vya habari vya kidijitali. Je, ni faida na hasara zipi za jamii kujitenga na uandishi wa habari za magazeti?",
+          "Watu mashuhuri mara nyingi huidhinisha bidhaa na kampeni za kisiasa. Je, faida za mapendekezo ya watu mashuhuri zinazidi hasara?",
+          "Huduma za utiririshaji kama vile Netflix na Spotify zimebadilisha kabisa jinsi watu wanavyotumia burudani. Jadili faida na hasara za kuhama kuelekea midia ya utiririshaji na toa maoni yako.",
+          "Filamu za kisasa za mapigano na michezo ya video mara nyingi huwa na viwango vya juu vya vurugu. Je, kuna faida na hasara gani za kuanika jamii kwa vyombo vya habari vya vurugu?"
+        ]
+      },
+      {
+        "name": "Utandawazi na Utamaduni",
+        "prompts": [
+          "Kuongezeka kwa mashirika ya kimataifa kunamaanisha kuwa maduka na chapa sawa zinapatikana kote ulimwenguni. Je, faida za utandawazi katika biashara ni kubwa kuliko hasara?",
+          "Lugha nyingi za walio wachache ziko katika hatari ya kufa kadiri watu wanavyohamia lugha zinazotawala kama vile Kiswahili, Kihispania, au Mandarin. Jadili faida na hasara za kupoteza lugha za wachache na utoe maoni yako.",
+          "Sekta ya \"mtindo wa haraka\" inaruhusu watu kununua mavazi ya kisasa kwa bei nafuu sana. Je, ni faida na hasara gani za mtindo wa haraka?",
+          "Shukrani kwa biashara ya kimataifa, watu wanaweza kununua vyakula kutoka duniani kote wakati wowote wa mwaka katika maduka makubwa yao ya ndani. Je, faida za mtandao huu wa chakula duniani zinazidi hasara?",
+          "Ndoa za tamaduni tofauti, ambapo wenzi wanatoka nchi tofauti au asili ya kitamaduni, zinazidi kuwa za kawaida. Jadili faida na hasara za kulea familia katika kaya yenye tamaduni nyingi na toa maoni yako.",
+          "Matukio ya kimataifa ya michezo kama vile Olimpiki au Kombe la Dunia la FIFA yanahitaji nchi mwenyeji kutumia mabilioni ya dola. Je, ni faida na hasara gani za kuandaa hafla kuu za kimataifa za michezo?",
+          "Uidhinishaji wa kitamaduni, ambapo vipengele vya utamaduni wa wachache hutumiwa na utamaduni unaotawala, hujadiliwa sana. Je, faida za kushiriki kitamaduni zinazidi hasara za ugawaji?",
+          "Ni jambo la kawaida sana kwa shule kutumia kiasi kikubwa cha muda kuwafundisha wanafunzi kuhusu historia ya kale. Jadili faida na hasara za kutanguliza historia katika mtaala na toa maoni yako.",
+          "Watu wengi wanategemea kabisa misaada ya kimataifa kutatua migogoro ya kibinadamu. Je, kuna faida na hasara gani za kutegemea mashirika yasiyo ya kiserikali (NGOs) badala ya serikali za mitaa?",
+          "Utamaduni wa Magharibi, haswa kupitia muziki na sinema, una ushawishi mkubwa kwa ulimwengu wote. Je, faida za kuenea kwa utamaduni wa Kimagharibi duniani kote zinazidi hasara?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "problem-solution",
+    "label": "Tatizo & Suluhisho",
+    "description": "Tambua sababu za tatizo na upendekeze masuluhisho.",
+    "instruction": "Eleza sababu/athari za tatizo hili na upendekeze masuluhisho. Andika angalau maneno 250.",
+    "categories": [
+      {
+        "name": "Mazingira na Asili",
+        "prompts": [
+          "Kiasi cha taka za plastiki katika bahari ya dunia kinaongezeka kwa kasi. Je, ni sababu gani za jambo hili? Unaweza kupendekeza masuluhisho gani?",
+          "Uharibifu wa misitu unatokea kwa kasi ya kutisha katika sehemu nyingi za dunia. Ni nini athari mbaya za hii? Tatizo hili linaweza kutatuliwaje?",
+          "Miji mingi duniani inakabiliwa na uhaba mkubwa wa maji. Kwa nini hii inatokea? Je, ni hatua gani zinaweza kuchukuliwa kukabiliana na suala hili?",
+          "Idadi ya wanyama walio katika hatari ya kutoweka inakua kila mwaka. Je, ni sababu gani kuu za kupungua huku? Nini kifanyike ili kuwalinda wanyama hawa?",
+          "Uchafuzi wa hewa katika vituo vikuu vya mijini unafikia viwango muhimu. Je, ni madhara gani kiafya na kimazingira ya hii? Je, serikali na watu binafsi wanawezaje kupunguza uchafuzi wa hewa?",
+          "Ongezeko la joto duniani husababisha hali mbaya ya hewa duniani kote. Ni sababu gani za msingi za jambo hili? Ni hatua gani zinaweza kuchukuliwa ili kupunguza athari zake?",
+          "Kiasi cha taka za kaya zinazozalishwa kinaongezeka kwa kiasi kikubwa. Kwa nini hali iko hivi? Je, nini kifanyike kuhimiza watu kupunguza ubadhirifu?",
+          "Kupotea kwa bayoanuwai ni jambo linalosumbua sana kimataifa. Je, matokeo mabaya ya hasara hii ni yapi? Je, tunawezaje kuhifadhi mifumo ya ikolojia ya asili?",
+          "Uvuvi wa kupita kiasi unapunguza akiba ya samaki katika bahari ya dunia. Je, hii inasababisha matatizo gani? Ni kanuni gani zinapaswa kuwekwa ili kuzuia hili?",
+          "Uharibifu wa udongo unafanya kuwa vigumu kupanda chakula katika baadhi ya mikoa. Je, ni sababu gani za suala hili? Ni masuluhisho gani ya kilimo yanaweza kutekelezwa?"
+        ]
+      },
+      {
+        "name": "Teknolojia na Mtandao",
+        "prompts": [
+          "Watoto leo wanatumia muda mwingi kuangalia skrini. Je, madhara yake ni yapi? Wazazi wanawezaje kudhibiti muda wa kutumia kifaa wa watoto wao?",
+          "Unyanyasaji mtandaoni limekuwa suala lililoenea miongoni mwa vijana. Ni nini sababu za tabia hii? Shule na wazazi wanaweza kufanya nini ili kulizuia?",
+          "Kwa kuongezeka kwa huduma za mtandaoni, faragha ya data ya kibinafsi inazidi kuwa hatarini. Ni hatari gani zinazowezekana za hii? Je, watu binafsi wanaweza kulinda vipi taarifa zao za mtandaoni?",
+          "Watu wazima wengi hujikuta wamezoea kutumia simu zao mahiri. Kwa nini hii inatokea? Je, watu wanaweza kuchukua hatua gani ili kupunguza utegemezi wao kwenye vifaa vya rununu?",
+          "Maendeleo ya haraka ya Akili Bandia yanatishia kazi nyingi za kitamaduni. Je, ni athari gani zinazoweza kusababishwa na hili kwa jamii? Je, serikali zinaweza kufanya nini kuandaa wafanyakazi?",
+          "Uboreshaji wa mara kwa mara wa vifaa vya elektroniki umesababisha ongezeko kubwa la taka za elektroniki. Kwa nini watu hubadilisha vifaa vyao mara kwa mara? Je, taka za elektroniki zinawezaje kudhibitiwa vyema?",
+          "Kuenea kwa habari za uwongo na habari potofu kwenye mitandao ya kijamii ni tatizo linaloongezeka. Ni nini kinachosababisha habari hii kuenea haraka sana? Nini kifanyike ili kupambana nayo?",
+          "Mawasiliano ya ana kwa ana yanapungua kutokana na ujumbe wa kidijitali. Ni nini athari mbaya kwa uhusiano wa kibinafsi? Tunawezaje kuhimiza mwingiliano zaidi wa maisha halisi?",
+          "Uhalifu wa mtandaoni, kama vile udukuzi na wizi wa utambulisho, unaongezeka. Ni nini kinachofanya watu wawe hatarini kwa uhalifu huu? Ni hatua gani zinaweza kuboresha usalama wa mtandao?",
+          "Watu wanaanza kutegemea teknolojia kupita kiasi ili kupata ujuzi wa kimsingi, kama vile kutumia GPS badala ya kusoma ramani. Je, utegemezi huu husababisha matatizo gani? Je, mwelekeo huu unawezaje kubadilishwa?"
+        ]
+      },
+      {
+        "name": "Jamii na Maisha ya Jiji",
+        "prompts": [
+          "Miji mingi mikubwa inakabiliwa na msongamano mkubwa wa watu. Je! ni sababu gani za ukuaji huu wa haraka wa miji? Ni masuluhisho gani yanaweza kusaidia kudhibiti idadi ya watu wa jiji?",
+          "Gharama ya maisha inapanda kwa kiasi kikubwa katika sehemu nyingi za dunia. Je, hii inasababisha matatizo gani kwa familia za wastani? Je, serikali zinawezaje kupunguza mzigo huu wa kifedha?",
+          "Ukosefu wa makazi ni shida inayoonekana katika mataifa mengi tajiri. Kwa nini watu wanaishia kuishi mitaani? Ni programu gani za kijamii zinaweza kupunguza ukosefu wa makazi?",
+          "Uchafuzi wa kelele ni suala la mara kwa mara kwa watu wanaoishi mijini. Ni nini vyanzo vikuu vya kelele hii? Je, ni hatua gani ambazo wapangaji wa jiji wanaweza kuchukua ili kuunda mazingira tulivu?",
+          "Kuna ukosefu wa mbuga za umma na maeneo ya kijani kibichi katika miji ya kisasa. Je, ni madhara gani haya kwa wakazi wa jiji? Je, mamlaka za mitaa zinawezaje kutatua tatizo hili?",
+          "Maeneo ya vijijini yanakabiliwa na kupungua kwa idadi ya watu huku vijana wakihama. Kwa nini hii inatokea? Je, nini kifanyike ili kuhimiza watu kubaki au kuhamia jamii za vijijini?",
+          "Idadi ya watu katika nchi nyingi zilizoendelea wanazeeka haraka. Je, hii inasababisha matatizo gani ya kiuchumi na kijamii? Je, jamii zinaweza kukabiliana vipi na idadi ya watu wakubwa?",
+          "Pengo la utajiri kati ya matajiri na maskini linaendelea kupanuka. Ni nini matokeo ya kijamii ya ukosefu wa usawa uliokithiri? Je, ni sera gani za kiuchumi zinazoweza kusaidia kusambaza mali kwa usawa zaidi?",
+          "Licha ya kuishi katika majiji yenye msongamano wa watu, watu wengi huripoti kuhisi kutengwa na upweke. Ni sababu gani za kutengwa kwa miji ya kisasa? Je, nini kifanyike ili kukuza hisia za jumuiya?",
+          "Tamaduni na desturi za jadi zinakufa katika ulimwengu wa utandawazi. Kwa nini hasara hii inatokea? Je, jamii zinawezaje kuhifadhi urithi wao wa kitamaduni?"
+        ]
+      },
+      {
+        "name": "Elimu",
+        "prompts": [
+          "Wanafunzi wa shule za upili leo wanakabiliwa na viwango vya mfadhaiko na uchovu usio na kifani. Ni nini sababu kuu za shinikizo hili? Je, mfumo wa elimu unawezaje kufanyiwa marekebisho ili kusaidia ustawi wa wanafunzi?",
+          "Gharama ya kuhudhuria chuo kikuu imekuwa ngumu kwa vijana wengi. Ni nini athari mbaya za hii? Ni njia gani mbadala au suluhisho zinaweza kutolewa kwa wanafunzi?",
+          "Uonevu bado ni tatizo linaloendelea katika shule kote ulimwenguni. Je, unyanyasaji una madhara gani ya kisaikolojia kwa watoto? Je, ni mikakati gani ya kupambana na unyanyasaji iliyo bora zaidi?",
+          "Waajiri wengi wanalalamika kwamba wahitimu wa hivi karibuni hawana ujuzi wa vitendo kwa mahali pa kazi. Kwa nini kuna pengo kati ya elimu na ajira? Je, mitaala ya chuo kikuu inaweza kuboreshwa vipi?",
+          "Kuna uhaba mkubwa wa walimu waliohitimu katika nchi nyingi. Je, ni sababu gani za uhaba huu? Je, taaluma ya ualimu inaweza kufanywa kuwa ya kuvutia zaidi?",
+          "Wanafunzi katika maeneo ya vijijini mara nyingi hupokea ubora wa chini wa elimu kuliko wale wa mijini. Ni nini husababisha mgawanyiko huu wa elimu? Ni hatua gani zinaweza kuhakikisha upatikanaji sawa wa elimu bora?",
+          "Kuongezeka kwa zana za AI kumesababisha kuongezeka kwa udanganyifu wa kitaaluma na wizi. Je, kuna athari gani mbaya katika ujifunzaji wa wanafunzi? Je, shule zinapaswa kushughulikia vipi matumizi ya AI?",
+          "Kutojua kusoma na kuandika kwa watu wazima kunasalia kuwa juu katika baadhi ya maeneo yanayoendelea. Je, kutojua kusoma na kuandika kunasababisha matatizo gani kwa jamii? Ni hatua gani zinazoweza kuwafundisha watu wazima kusoma na kuandika kwa mafanikio?",
+          "Wanafunzi wengi wanahisi kutoshirikishwa na kuchoshwa katika mazingira ya kitamaduni ya darasani. Kwa nini mbinu za kimapokeo za ufundishaji zinashindwa kuvutia umakini wa wanafunzi? Jinsi gani masomo yanaweza kufanywa kuwa ya kuvutia zaidi?",
+          "Ukubwa wa darasa katika shule za umma mara nyingi ni kubwa sana kwa ufundishaji mzuri. Ni nini athari mbaya kwa walimu na wanafunzi? Suala hili linaweza kutatuliwaje?"
+        ]
+      },
+      {
+        "name": "Afya na Lishe",
+        "prompts": [
+          "Unene umekuwa janga katika sehemu nyingi za ulimwengu. Ni nini sababu kuu za kuongezeka kwa uzito? Je, ni hatua gani ambazo serikali zinaweza kuchukua ili kuendeleza maisha bora?",
+          "Viwango vya masuala ya afya ya akili, kama vile unyogovu na wasiwasi, vinaongezeka duniani kote. Kwa nini hali hizi zinazidi kuwa za kawaida? Nini kifanyike ili kuboresha afya ya akili?",
+          "Matumizi ya chakula cha haraka ni ya juu sana. Je, kuna madhara gani kiafya ya kula vyakula vilivyosindikwa kwa wingi? Je! ni jinsi gani jamii inaweza kuhimiza watu kupika milo mibichi?",
+          "Maisha ya kisasa yamezidi kuwa ya kukaa. Ni matatizo gani ya kimwili yanayotokana na ukosefu wa harakati? Je, nini kifanyike ili kuunganisha shughuli nyingi za kimwili katika maisha ya kila siku?",
+          "Watu wengi leo wanakabiliwa na ukosefu wa usingizi wa kudumu. Ni mambo gani yanayochangia ukosefu wa usingizi katika jamii ya kisasa? Watu binafsi wanawezaje kuboresha usafi wao wa kulala?",
+          "Gharama ya matibabu na huduma za afya inapanda zaidi ya kufikiwa na wananchi wa kawaida. Je, hii inasababisha matatizo gani? Je, huduma za afya zinawezaje kupatikana zaidi na kwa bei nafuu?",
+          "Kuna uhaba wa kimataifa wa wauguzi na wataalamu wa afya. Kwa nini sekta hii inatatizika kubakisha wafanyakazi? Ni motisha gani zinazoweza kutatua mzozo huu wa wafanyikazi?",
+          "Licha ya maendeleo ya dawa, watu wengi ulimwenguni bado wanakufa kwa magonjwa ambayo yanazuilika kwa urahisi. Kwa nini hali iko hivi? Je, nini kifanyike kuhusu tatizo hili?",
+          "Matumizi ya kupita kiasi ya antibiotics husababisha aina sugu za bakteria. Ni hatari gani za upinzani wa antibiotic? Jumuiya ya matibabu inawezaje kushughulikia suala hili?",
+          "Matumizi ya muda mrefu ya skrini husababisha kuongezeka kwa masuala ya afya yanayohusiana na macho miongoni mwa watoto na watu wazima. Ni matatizo gani maalum yanayotokea? Ni hatua gani za kuzuia zinapaswa kuchukuliwa?"
+        ]
+      },
+      {
+        "name": "Kazi na Uchumi",
+        "prompts": [
+          "Mkazo unaohusiana na kazi ndio sababu kuu ya ugonjwa katika wafanyikazi wa kisasa. Ni mambo gani ya kazi ya kisasa yanaleta mkazo huu? Je, waajiri wanaweza kufanya nini ili kusaidia afya ya akili ya wafanyakazi wao?",
+          "Viwango vya ukosefu wa ajira kwa vijana ni vya juu sana katika nchi nyingi. Kwa nini vijana wanahangaika kutafuta kazi? Ni mipango gani inaweza kusaidia kuwaunganisha katika nguvu kazi?",
+          "Katika taaluma nyingi, wanawake bado wanalipwa chini ya wanaume kwa kufanya kazi sawa. Ni nini sababu za pengo la malipo ya kijinsia? Je, serikali na wafanyabiashara wanawezaje kuhakikisha malipo sawa?",
+          "Safari ndefu za kila siku zinazochosha ni ukweli kwa wafanyakazi wengi. Je, ni nini athari mbaya za safari ndefu kwa watu binafsi? Je, tatizo hili linawezaje kupunguzwa?",
+          "Wafanyakazi wengi wanajitahidi kudumisha usawa wa maisha ya kazi. Kwa nini imekuwa vigumu kutenganisha kazi na maisha ya kibinafsi? Ni sera gani za mahali pa kazi zinaweza kuboresha usawa huu?",
+          "Kupanda kwa \"uchumi wa gig\" inamaanisha watu wengi hufanya kazi kwa mikataba ya muda mfupi bila faida. Je, hii inaleta matatizo gani ya kifedha kwa wafanyakazi? Wafanyikazi wa gig wanawezaje kulindwa vyema?",
+          "Mfumuko wa bei wa juu unasababisha bei ya bidhaa za kimsingi kupanda. Je, hii inaathiri vipi familia za kipato cha chini? Ni hatua gani za kiuchumi zinaweza kuchukuliwa ili kuleta utulivu wa bei?",
+          "Katika baadhi ya viwanda, wafanyakazi wanakabiliwa na mazingira yasiyo salama ya kufanya kazi. Kwa nini hali hizi zinaendelea? Nini kifanyike ili kutekeleza kanuni kali za usalama?",
+          "Nchi nyingi zinazoendelea zinakabiliwa na \"kudhoofika kwa ubongo,\" ambapo wataalamu wao waliosoma zaidi wanahamia nje ya nchi. Je, hii inasababisha matatizo gani kwa nchi ya nyumbani? Mataifa yanawezaje kuhifadhi talanta zao?",
+          "Vijana leo wanakusanya viwango visivyo na kifani vya deni la kibinafsi. Je, sababu kuu za kukopa huku ni zipi? Je, ni elimu gani ya kifedha inapaswa kutolewa kutatua hili?"
+        ]
+      },
+      {
+        "name": "Uhalifu na Sheria",
+        "prompts": [
+          "Uhalifu wa vijana (uhalifu unaofanywa na vijana) unaongezeka katika miji mingi. Ni nini sababu kuu za uhalifu wa vijana? Ni hatua gani zinazoweza kuwaepusha vijana na matatizo?",
+          "Uhalifu wa kijadi unapungua, lakini uhalifu wa mtandao unaongezeka kwa kasi. Kwa nini wahalifu wanahamia mtandaoni? Utekelezaji wa sheria unawezaje kukabiliana na uhalifu wa kidijitali?",
+          "Dawa za kulevya zinaendelea kuharibu maisha na jamii. Ni nini kinachowasukuma watu kuelekea matumizi mabaya ya dawa za kulevya? Je, ni njia zipi zenye ufanisi zaidi za kurejesha uraibu?",
+          "Magereza katika nchi nyingi yamejaa sana. Je, matokeo ya magereza yaliyojaa watu ni yapi? Ni adhabu gani mbadala zinaweza kupunguza shinikizo hili?",
+          "Wahalifu wengi hutenda upya muda mfupi baada ya kuachiliwa kutoka gerezani. Kwa nini mifumo ya magereza inashindwa kuwarekebisha wafungwa? Ni programu gani zinaweza kusaidia wafungwa wa zamani kuunganishwa tena katika jamii?",
+          "Makosa ya uhalifu, kama vile ulaghai wa mashirika, mara nyingi hayaadhibiwi ikilinganishwa na uhalifu wa mitaani. Kwa nini hali iko hivi? Je, mfumo wa haki unawezaje kukabiliana na ufisadi wa mashirika kwa ufanisi zaidi?",
+          "Uharibifu na uharibifu wa mali ya umma ni kawaida katika maeneo mengi ya mijini. Ni nini kinachowasukuma watu kufanya uharibifu? Je, mamlaka za mitaa zinawezaje kulizuia?",
+          "Makosa ya barabarani, kama vile kuendesha gari kwa kasi na ulevi, husababisha maelfu ya vifo kila mwaka. Kwanini watu wanapuuza sheria za barabarani? Je, ni hatua gani zinaweza kuzuia uendeshaji hatari kwa mafanikio?",
+          "Ukatili wa nyumbani ni uhalifu uliofichika unaoathiri mamilioni ya kaya. Kwa nini waathirika mara nyingi hukaa kimya? Je, ni mifumo gani ya usaidizi inayohitajika kuwapo ili kuwalinda?",
+          "Biashara haramu ya wanyamapori inapelekea spishi nyingi za wanyama kutoweka. Ni nini kinachochochea mahitaji ya bidhaa haramu za wanyama? Je, sheria za kimataifa zinawezaje kukomesha biashara hii?"
+        ]
+      },
+      {
+        "name": "Familia na Vijana",
+        "prompts": [
+          "Mtindo wa jadi wa familia pana unabadilishwa na familia ya nyuklia au kaya za mzazi mmoja. Je, ni matatizo gani yanayosababishwa na upotevu wa msaada wa familia? Jamii inawezaje kusaidia familia za kisasa?",
+          "Kuna kuongezeka kwa \"pengo la kizazi\" na kusababisha kukosekana kwa maelewano kati ya vijana na wazee. Kwa nini kutoelewana huku kunatokea? Je, tunawezaje kuziba pengo kati ya vizazi?",
+          "Watoto wengi leo wanaachwa nyumbani bila uangalizi wa wazazi kutokana na wazazi wanaofanya kazi. Je, ni athari gani mbaya katika ukuaji wa mtoto? Wazazi wanaofanya kazi wanaweza kutekeleza masuluhisho gani?",
+          "Wazazi leo huweka shinikizo kubwa kwa watoto wao kufaulu kielimu na masomo ya ziada. Je, ni madhara gani ya kisaikolojia kwa watoto? Wazazi wanawezaje kufuata njia bora zaidi?",
+          "Viwango vya kuzaliwa katika nchi nyingi zilizoendelea vinashuka kwa kasi. Kwa nini watu wanachagua kuwa na watoto wachache? Je, hii itasababisha matatizo gani kwa jamii katika siku zijazo, na yanaweza kutatuliwaje?",
+          "Gharama ya huduma ya watoto kitaaluma ni ghali sana kwa familia nyingi. Je, hii inazua masuala gani hasa kwa akina mama wanaofanya kazi? Ulezi wa watoto unawezaje kufanywa kupatikana zaidi?",
+          "Tabia dhidi ya kijamii kati ya vijana katika maeneo ya umma ni malalamiko ya kawaida. Ni nini husababisha tabia hii ya uasi? Je! ni kwa jinsi gani jumuiya zinaweza kuwashirikisha vijana katika shughuli chanya zaidi?",
+          "Watoto na vijana leo wanazidi kulengwa na uuzaji wa watumiaji. Je, ni athari gani mbaya za matumizi ya vijana? Wazazi wanaweza kuwalindaje watoto wao dhidi ya matangazo yenye jeuri?",
+          "Vijana wengi huwaabudu watu mashuhuri wanaoonyesha tabia mbaya. Kwa nini vijana wanaangalia takwimu hizi? Je, tunawezaje kutoa mifano bora kwa vijana?",
+          "Viwango vya talaka vimeongezeka kwa kiasi kikubwa katika miongo michache iliyopita. Je, ni shinikizo gani kuu linalosababisha ndoa kuvunjika? Je, nini kifanyike ili kuwatayarisha vyema wanandoa kwa ajili ya ndoa?"
+        ]
+      },
+      {
+        "name": "Usafiri na Utalii",
+        "prompts": [
+          "Msongamano wa magari ni jinamizi la kila siku katika miji mikuu mingi. Ni sababu gani kuu za gridlock? Ni masuluhisho gani ya kiubunifu ya usafiri yanaweza kurahisisha mtiririko wa trafiki?",
+          "Mifumo ya usafiri wa umma katika maeneo mengi si ya kuaminika na inadumishwa vibaya. Kwa nini usafiri wa umma mara nyingi hupuuzwa? Ni hatua gani zinahitajika ili kuboresha mifumo hii?",
+          "Maeneo ya kihistoria na maeneo maarufu yanasumbuliwa na \"utalii kupita kiasi.\" Utalii kupita kiasi husababisha uharibifu gani? Je, mamlaka inawezaje kusimamia idadi ya watalii kwa njia endelevu?",
+          "Sekta ya usafiri wa anga ni mchangiaji mkubwa katika utoaji wa hewa chafu ya kaboni duniani. Kwa nini usafiri wa anga ni mgumu sana kutengeneza \"kijani\"? Ni njia gani mbadala au suluhisho zinaweza kupunguza athari za mazingira za kuruka?",
+          "Idadi ya ajali mbaya za barabarani imesalia kuwa kubwa isivyokubalika. Ni nini sababu za msingi za ajali hizi? Ni hatua gani za usalama zinaweza kupunguza vifo vya barabarani kwa kiasi kikubwa?",
+          "Usafiri wa kimataifa unakuwa ghali sana kwa mtu wa kawaida kutokana na gharama za mafuta na kodi. Je, ni athari gani mbaya za usafiri wenye vikwazo? Utalii unawezaje kubaki kupatikana?",
+          "Watalii mara nyingi hutenda kwa njia zinazokera hisia za kitamaduni za ndani. Kwa nini msuguano huu wa kitamaduni unatokea? Wasafiri wanawezaje kuelimishwa kuheshimu desturi za wenyeji?",
+          "Licha ya maonyo ya mazingira, utegemezi wa magari ya kibinafsi unaongezeka tu. Kwa nini watu wanakataa kutoa magari yao? Ni vivutio gani ambavyo vitasukuma watu kwa ufanisi kuelekea usafiri wa umma?",
+          "Kupata maegesho katika vituo vya jiji inakuwa karibu haiwezekani. Je, hii inaleta matatizo gani kwa biashara za ndani? Ni suluhisho gani za usanifu au za kupanga zinaweza kurekebisha uhaba wa maegesho?",
+          "Ujenzi wa maeneo ya mapumziko makubwa unaharibu biashara ndogo ndogo za ndani katika miji ya kitalii. Kwa nini maduka ya ndani yanajitahidi kushindana? Je, serikali za mitaa zinaweza kufanya nini kulinda biashara ndogo ndogo?"
+        ]
+      },
+      {
+        "name": "Chakula na Kilimo",
+        "prompts": [
+          "Kiasi cha kushangaza cha chakula kinapotezwa ulimwenguni na maduka makubwa na watumiaji. Kwa nini chakula kingi hutupwa? Ni hatua gani zinaweza kuchukuliwa ili kupunguza kwa kiasi kikubwa upotevu wa chakula?",
+          "Nchi nyingi zinategemea sana kuagiza chakula kutoka nje badala ya kukikuza nchini. Ni hatari gani ya kutegemea chakula cha kigeni? Je, mataifa yanawezaje kukuza kilimo chao cha nyumbani?",
+          "Matumizi makubwa ya viuatilifu vya kemikali katika kilimo yanaleta wasiwasi. Ni nini athari za mazingira na kiafya za kemikali hizi? Je, ni njia gani mbadala zinazofaa kwa kilimo cha kemikali?",
+          "Mbinu za kilimo kiwandani hutanguliza faida kuliko ustawi wa wanyama. Ni ukatili gani maalum unaohusishwa na uzalishaji wa nyama kwa wingi? Je, watumiaji na serikali zinawezaje kuleta mabadiliko katika tasnia hii?",
+          "Mashamba madogo yanayomilikiwa na familia yanatoweka huku wafanyabiashara wakubwa wa kilimo wakichukua nafasi. Kwa nini mashamba madogo yanashindwa? Je, nini kifanyike kusaidia na kuendeleza wakulima wa ndani?",
+          "Licha ya uzalishaji wa chakula duniani kuwa mkubwa, uhaba wa chakula na njaa bado vipo katika mikoa mingi. Ni nini sababu kuu za kushindwa kwa usambazaji wa chakula? Tunawezaje kuhakikisha kuwa kila mtu ana chakula cha kutosha?",
+          "Ardhi ya kilimo (ardhi inayofaa kwa kupanda mazao) inapotea kwa maendeleo ya makazi na hali ya jangwa. Je, ni hatari gani za muda mrefu za kupoteza mashamba? Tunawezaje kulinda ardhi ya kilimo?",
+          "Madhara ya kiafya ya muda mrefu ya ulaji wa vyakula vilivyobadilishwa vinasaba (GM) yanasalia kuwa wasiwasi kwa wengi. Kwa nini watu wana mashaka na mazao ya GM? Je! ni kanuni gani zinapaswa kudhibiti uuzaji wa vyakula vya GM?",
+          "Mlo duniani kote unaelekea kwenye vyakula vilivyochakatwa, vilivyopakiwa mapema. Ni nini kinachochochea utegemezi huu wa vyakula vilivyosindikwa? Je, serikali zinawezaje kuelimisha umma kuhusu lishe kamili ya chakula?",
+          "Mtiririko wa kilimo (mbolea zinazoosha kwenye mito) unachafua sana njia za maji. Je, hii inasababisha uharibifu gani kwa mifumo ikolojia ya majini? Ni mbinu gani za kilimo zinaweza kuzuia uchafuzi huu?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "double-question",
+    "label": "Swali mara mbili",
+    "description": "Jibu maswali mawili tofauti kuhusu mada moja.",
+    "instruction": "Jibu maswali yote mawili kikamilifu. Andika angalau maneno 250.",
+    "categories": [
+      {
+        "name": "Elimu na Kujifunza",
+        "prompts": [
+          "Wanafunzi wengi wanaona vigumu kuzingatia shuleni na chuo kikuu. Je, ni sababu gani za hili? Je, tunawezaje kutatua tatizo hili?",
+          "Katika baadhi ya nchi, idadi kubwa ya wanafunzi huacha chuo kikuu kabla ya kumaliza digrii zao. Unafikiri ni kwa nini hii hutokea? Je, nini kifanyike ili kuwatia moyo wanafunzi wamalize masomo yao?",
+          "Baadhi ya watu wanaamini kuwa historia ni somo lisilo na maana la kusoma shuleni. Kwa nini baadhi ya watu wanahisi hivyo? Je, unadhani historia ni somo muhimu la shule?",
+          "Kuchukua mwaka wa pengo kabla ya kuingia chuo kikuu kunazidi kuwa kawaida kati ya vijana. Kwa nini wanafunzi wengi wanachagua kufanya hivi? Je, ni mwelekeo chanya au hasi?",
+          "Gharama ya kuhudhuria chuo kikuu imepanda sana katika sehemu nyingi za dunia. Je, hii ina athari gani kwa wanafunzi na jamii? Ni hatua gani zinaweza kufanya elimu ya juu kufikiwa zaidi?",
+          "Watoto wengi hupewa kazi za nyumbani za kila siku na walimu wao. Je, unafikiri hii ni mazoezi ya lazima? Je, ni vikwazo gani vinavyowezekana vya kazi nyingi za nyumbani?",
+          "Katika miaka ya hivi majuzi, idadi ya watu wanaochagua kusoma mtandaoni badala ya madarasa ya kawaida imeongezeka. Je, ni faida gani za kujifunza mtandaoni? Unafikiri shule za kitamaduni hatimaye zitatoweka?",
+          "Wanafunzi wengine hujitahidi kujifunza lugha za kigeni wakiwa darasani. Kwa nini ni vigumu kwa watu wengi kujifunza lugha mpya? Je, ni njia zipi zenye ufanisi zaidi za kujifunza lugha ya kigeni?",
+          "Ujuzi wa vitendo kama vile kupika, usimamizi wa fedha, na matengenezo ya msingi ya gari ni nadra sana kufundishwa shuleni. Je, stadi hizi zijumuishwe kwenye mtaala? Je, ni jukumu la nani kuwafundisha watoto stadi hizi?",
+          "Muziki na sanaa mara nyingi ni masomo ya kwanza kuondolewa kwenye mitaala ya shule wakati ufadhili unapunguzwa. Kwa nini hili linatokea? Je, sanaa ina umuhimu gani kwa ukuaji wa mtoto?"
+        ]
+      },
+      {
+        "name": "Teknolojia na Ubunifu",
+        "prompts": [
+          "Watu leo ​​wanatumia muda unaoongezeka kutazama skrini kwenye simu, kompyuta, na televisheni. Je, ni madhara gani haya kwa afya ya kimwili na kiakili? Je, watu binafsi wanaweza kudhibiti vipi muda wao wa kutumia skrini vizuri zaidi?",
+          "Akili ya Bandia inazidi kutumiwa kufanya kazi zilizofanywa hapo awali na wanadamu. Ni faida gani kuu za AI? Je, teknolojia hii inaleta hatari gani kwa jamii?",
+          "Mitandao ya kijamii imebadilisha jinsi watu wanavyounda na kudumisha uhusiano. Je, mitandao ya kijamii imeathiri vipi mwingiliano wa watu? Je, unadhani haya yamekuwa maendeleo chanya au hasi kwa ujumla?",
+          "Idadi inayoongezeka ya watu wanatumia maombi ya uchumba mtandaoni ili kupata washirika wa kimapenzi. Kwa nini majukwaa haya yamekuwa maarufu sana? Je, ni hatari gani zinazoweza kutokea za kukutana na watu mtandaoni?",
+          "Watu wengi wanapendelea kusoma habari mtandaoni badala ya kununua magazeti halisi. Kwa nini habari za kidijitali zinapendelewa na wengi? Je, magazeti yaliyochapishwa yatatoweka kabisa katika siku zijazo?",
+          "Fedha za Crypto na malipo ya dijiti yanazidi kuwa ya kawaida, na kuchukua nafasi ya pesa taslimu. Je, ni faida gani za jamii isiyo na pesa? Ni matatizo gani yanaweza kutokea kutokana na kutegemea kabisa pesa za kidijitali?",
+          "Utalii wa anga unatarajiwa kuwa ukweli kwa watu matajiri katika siku za usoni. Kwa nini watu wanapenda kusafiri kwenda angani? Je, serikali zidhibiti tasnia hii mpya?",
+          "Watoto leo mara nyingi wanapata simu mahiri na kompyuta kibao kutoka umri mdogo sana. Je, upatikanaji wa teknolojia ya mapema unaathiri vipi ukuaji wa mtoto? Je, wazazi wanapaswa kupunguza matumizi ya watoto wao ya vifaa hivi?",
+          "Otomatiki na robotiki zinachukua nafasi ya kazi ya mikono katika tasnia nyingi za utengenezaji. Nini kinatokea kwa wafanyikazi wanaopoteza kazi zao kwa mashine? Je, serikali zinapaswa kuandaaje nguvu kazi kwa siku zijazo?",
+          "Unyanyasaji mtandaoni ni tatizo linaloongezeka miongoni mwa vijana na vijana. Kwa nini watu huwadhulumu wengine mtandaoni? Je, shule na wazazi wanaweza kuchukua hatua gani kuzuia tabia hii?"
+        ]
+      },
+      {
+        "name": "Kazi na Kazi",
+        "prompts": [
+          "Uradhi wa kazi unapungua miongoni mwa wafanyakazi katika nchi nyingi zilizoendelea. Je, ni sababu gani kuu za kutoridhika huku? Je, waajiri wanaweza kufanya nini ili kuboresha maisha ya wafanyakazi wao?",
+          "Watu wengi huchagua kubadilisha kazi mara kadhaa katika maisha yao ya kazi. Ni nini kinachochochea watu kubadili taaluma? Je, huu ni mwelekeo chanya au hasi kwa uchumi?",
+          "Kazi ya mbali imekuwa mazoezi ya kawaida kwa makampuni mengi. Ni faida gani za kufanya kazi nyumbani? Ni changamoto zipi zinazowakabili wafanyakazi wa mbali?",
+          "Katika baadhi ya taaluma, wafanyakazi wanatarajiwa kufanya kazi kwa muda mrefu sana, mara nyingi bila malipo. Kwa nini watu wanakubali mazingira haya ya kazi? Je, hii ina athari gani kwa maisha yao ya kibinafsi?",
+          "Umri wa kustaafu unaongezwa katika nchi nyingi kutokana na matarajio ya maisha marefu. Kwa nini sera hii inatekelezwa? Je, unafikiri ni haki kutarajia watu kufanya kazi hadi mwishoni mwa miaka ya sitini au sabini?",
+          "Vijana wengi huhitimu kutoka chuo kikuu lakini hawawezi kupata kazi katika taaluma waliyochagua. Je, ni sababu gani za ukosefu wa ajira kwa vijana? Vyuo vikuu vinawezaje kuwatayarisha vyema wanafunzi kwa soko la ajira?",
+          "Kampuni zingine hutumia programu ya ufuatiliaji kufuatilia tija ya wafanyikazi wao wanapofanya kazi kwenye kompyuta. Kwa nini waajiri hutumia zana hizi? Je, ni uvamizi wa faragha?",
+          "Kuanzisha biashara kunahusisha hatari kubwa ya kifedha na muda mrefu wa kufanya kazi. Kwa nini baadhi ya watu huchagua kuwa wajasiriamali badala ya kuwa wafanyakazi wa kawaida? Ni sifa gani zinazohitajika ili kuendesha biashara yenye mafanikio?",
+          "Wanawake bado hawajawakilishwa katika majukumu ya usimamizi mkuu na watendaji katika tasnia nyingi. Kwa nini pengo hili la kijinsia linaendelea? Je, ni hatua gani zinaweza kuchukuliwa ili kukuza usawa wa kijinsia mahali pa kazi?",
+          "Baadhi ya kazi hulipa mishahara ya juu sana, kama vile wanariadha wa kitaalam na watu mashuhuri wa burudani. Je, watu hawa wanastahili kupata pesa nyingi hivyo? Je, mshahara wa mtu unapaswa kuamuliwa vipi?"
+        ]
+      },
+      {
+        "name": "Mazingira na Uendelevu",
+        "prompts": [
+          "Uchafuzi wa plastiki katika bahari ya dunia ni mgogoro mkubwa wa mazingira. Je, ni vyanzo gani vikuu vya taka hizi za plastiki? Je, watu binafsi na serikali wanaweza kuchukua hatua gani ili kusafisha bahari?",
+          "Aina nyingi za wanyama na mimea kwa sasa ziko katika hatari ya kutoweka. Kwa nini kupotea kwa viumbe hai ni tatizo kwa wanadamu? Nini kifanyike ili kulinda viumbe vilivyo hatarini kutoweka?",
+          "Matumizi ya nishati ya kisukuku ndio kichocheo kikuu cha mabadiliko ya hali ya hewa duniani. Kwa nini ni vigumu kwa nchi kuhamia vyanzo vya nishati mbadala? Nini kitatokea ikiwa hatutapunguza utegemezi wetu kwa mafuta na makaa ya mawe?",
+          "Ukataji miti unatokea kwa kasi ya kutisha katika misitu ya kitropiki. Je, ni sababu gani kuu za kukata misitu hii? Je, jumuiya ya kimataifa inawezaje kukomesha uharibifu huu?",
+          "Miji mingi inakabiliwa na uchafuzi mkubwa wa hewa, ambayo huathiri afya ya wakazi wao. Ni nini husababisha uchafuzi wa hewa mijini? Je, ni njia gani za ufanisi zaidi za kuboresha ubora wa hewa katika miji?",
+          "Maji safi yanakuwa rasilimali adimu katika sehemu nyingi za dunia. Kwa nini kuna uhaba wa maji safi ya kunywa? Je, tunawezaje kuhifadhi maji kwa ufanisi zaidi?",
+          "Ulaji huwahimiza watu kununua kila mara bidhaa mpya na kutupa za zamani. Je, huu \"utamaduni wa kutupa\" unaathirije mazingira? Je, nini kifanyike ili kuhimiza watu kutengeneza na kutumia tena vitu?",
+          "Mazao yaliyobadilishwa vinasaba (GM) hupandwa ili kuongeza uzalishaji wa chakula na kupinga wadudu. Kwa nini baadhi ya watu wanapinga vyakula vya GM? Je, manufaa ya teknolojia hii yanazidi hatari?",
+          "Matukio ya hali ya hewa kali, kama vile vimbunga na ukame, yanazidi kuwa mara kwa mara. Je! matukio haya yanaathiri vipi jumuiya za wenyeji? Je, serikali zinapaswa kujitayarishaje kwa misiba ya asili?",
+          "Mtindo wa haraka huruhusu watumiaji kununua mavazi ya kisasa kwa bei ya chini sana. Je! ni athari gani ya mazingira ya tasnia ya mitindo ya haraka? Je, watumiaji wanapaswa kulazimika kulipia zaidi nguo zilizotengenezwa kwa njia endelevu?"
+        ]
+      },
+      {
+        "name": "Jamii na Utamaduni",
+        "prompts": [
+          "Katika nchi nyingi, idadi ya wazee inaongezeka kwa kasi. Je, ni changamoto zipi ambazo watu wanaozeeka huleta kwa jamii? Je! ni kwa jinsi gani jamii zinaweza kuwasaidia vyema wananchi wao wazee?",
+          "Pengo kati ya watu matajiri na maskini zaidi katika jamii linazidi kuongezeka. Je, ukosefu wa usawa wa mali uliokithiri husababisha matatizo gani? Je, ni sera gani zinaweza kusaidia kusambaza mali kwa haki zaidi?",
+          "Mila na sherehe za kitamaduni zinapoteza umuhimu wao miongoni mwa kizazi kipya. Kwa nini hii inatokea? Je, ni muhimu kuhifadhi utamaduni wa jadi katika ulimwengu wa kisasa?",
+          "Watu wengi huhisi upweke na kutengwa licha ya kuishi katika majiji ya kisasa yenye watu wengi. Kwa nini upweke wa mijini ni wa kawaida sana? Je, nini kifanyike ili kujenga jumuiya imara katika maeneo ya mijini?",
+          "Viwango vya kuzaliwa vinapungua katika mataifa mengi yaliyoendelea. Kwa nini watu wanachagua kuwa na watoto wachache? Je, hii itakuwa na athari gani kwa jamii katika siku zijazo?",
+          "Uhamiaji wa kimataifa umeongezeka, na kusababisha jamii nyingi za kitamaduni. Ni faida gani za kuishi katika jamii tofauti? Ni changamoto gani zinaweza kutokea wakati tamaduni tofauti zinaishi pamoja?",
+          "Imani kwa wanasiasa na taasisi za serikali inapungua katika sehemu nyingi za dunia. Kwa nini watu wamekuwa wabishi sana kuhusu siasa? Je, serikali zinawezaje kujenga upya imani ya umma?",
+          "Huduma za jamii za kujitolea na zisizolipwa zinazidi kuwa kawaida. Kwa nini watu wachache hutoa muda wao bila malipo? Je, tunawezaje kuwatia moyo watu wengi zaidi kusaidia jumuiya zao za ndani?",
+          "Watu wengine wanaamini kwamba jamii ya kisasa inazingatia sana sura ya kimwili na uzuri. Kwa nini kuna shinikizo nyingi sana la kuonekana kwa njia fulani? Je, hii inaathiri vipi afya ya akili ya watu?",
+          "Makaburi na sanamu za kihistoria wakati mwingine huondolewa au kuharibiwa kwa sababu zinawakilisha siku za nyuma zenye utata. Kwa nini watu wanataka kuondoa makaburi haya? Je! takwimu za kihistoria zinapaswa kuhukumiwa kwa viwango vya kisasa?"
+        ]
+      },
+      {
+        "name": "Afya na Ustawi",
+        "prompts": [
+          "Viwango vya unene wa kupindukia vimefikia kiwango cha janga katika nchi nyingi. Ni nini sababu kuu za shida hii ya kiafya? Je, serikali inapaswa kuchukua jukumu gani katika kudhibiti tasnia ya chakula?",
+          "Mkazo na wasiwasi ni matatizo makubwa ya afya kwa wafanyakazi wa kisasa. Ni mambo gani yanayochangia viwango vya juu vya msongo wa mawazo mahali pa kazi? Watu binafsi wanawezaje kufikia uwiano bora wa maisha ya kazi?",
+          "Watu wengi hutumia dawa mbadala badala ya kutembelea madaktari wa kawaida. Kwa nini matibabu mbadala yanazidi kuwa maarufu? Je, kuna hatari zozote zinazohusiana na kutegemea matibabu haya?",
+          "Gharama ya matibabu na dawa zinazotolewa na daktari ni kubwa sana katika baadhi ya nchi. Je, hii inaathiri vipi familia za kipato cha chini? Je, huduma za afya zinapaswa kuwa bure kabisa kwa kila mtu?",
+          "Kunyimwa usingizi ni suala la kawaida kwa watu wazima na vijana wengi. Kwa nini watu hawapati usingizi wa kutosha? Ukosefu wa usingizi huathiri vipi utendaji wa kila siku na afya ya muda mrefu?",
+          "Michezo ya kitaalamu imekuwa ya kibiashara, huku wanariadha wakipata mamilioni. Je, fedha zimeharibu roho ya kweli ya michezo? Biashara hii ina athari gani kwa mashabiki wachanga?",
+          "Katika baadhi ya nchi, uuzaji wa bidhaa za tumbaku hutozwa ushuru mwingi na kuwekewa vikwazo. Kwa nini serikali zinajaribu kuzuia kuvuta sigara? Uvutaji sigara unapaswa kupigwa marufuku kabisa katika siku zijazo?",
+          "Vyakula vilivyotengenezwa na vya haraka hufanya sehemu kubwa ya chakula cha kisasa. Kwa nini watu huchagua kula vyakula visivyofaa? Je, nini kifanyike ili kufanya chakula chenye afya kivutie na kupatikana zaidi?",
+          "Masuala ya afya ya akili mara nyingi hunyanyapaliwa, na kufanya iwe vigumu kwa watu kutafuta msaada. Kwa nini watu wanaogopa kuzungumza juu ya afya zao za akili? Je! ni kwa jinsi gani jamii inaweza kukubali na kuunga mkono zaidi?",
+          "Baadhi ya watu huchagua kushiriki katika michezo hatari na iliyokithiri, kama vile kuruka chini au kupanda mtu binafsi bila malipo. Ni nini kinachowachochea watu kuhatarisha maisha yao kwa ajili ya michezo? Je, huduma za dharura zinahitajika ili kuwaokoa ikiwa wanapata matatizo?"
+        ]
+      },
+      {
+        "name": "Serikali na Huduma za Umma",
+        "prompts": [
+          "Mifumo ya usafiri wa umma katika miji mingi mikubwa imejaa watu wengi na haiwezi kutegemewa. Kwa nini serikali zinatatizika kudumisha usafiri wa umma? Je, ni faida gani za mfumo bora wa usafiri wa umma?",
+          "Ushuru ni muhimu kufadhili huduma za umma, lakini watu wengi hujaribu kuzuia kuzilipa. Kwa nini watu hawapendi kulipa kodi? Je, serikali zinawezaje kuhakikisha kwamba mifumo ya kodi ni ya haki?",
+          "Serikali nyingi hutoa msaada wa kifedha kwa raia wasio na ajira. Kwa nini ustawi huu wa kijamii ni muhimu? Je, kutoa faida za ukosefu wa ajira kunawafanya watu kuwa wavivu?",
+          "Ufadhili wa maktaba za umma na vituo vya jamii mara nyingi hupunguzwa wakati wa kushuka kwa uchumi. Kwa nini vifaa hivi vinachukuliwa kuwa sio muhimu sana? Je, jamii hupoteza nini maktaba zinapofungwa?",
+          "Nchi zingine zina huduma ya kijeshi ya lazima kwa vijana wote. Je, ni faida gani za kuandikishwa? Je, kuna hoja gani za kulazimisha watu kujiunga na jeshi?",
+          "Bei ya nyumba katika miji mikubwa imekuwa ngumu kwa wataalamu wengi wachanga. Kwa nini nyumba za jiji ni ghali sana? Je, serikali zinaweza kufanya nini ili kutoa nyumba za bei nafuu?",
+          "Mataifa tajiri mara nyingi hutoa misaada ya kigeni kwa nchi zinazoendelea. Kwa nini ni muhimu kusaidia mataifa maskini zaidi? Je, misaada kutoka nje huwafikia watu wanaohitaji zaidi?",
+          "Kamera za uchunguzi hutumiwa sana katika maeneo ya umma ili kuzuia uhalifu. Je, kamera zina ufanisi gani katika kukomesha shughuli haramu? Je, ufuatiliaji wa umma unakiuka haki ya faragha ya mtu binafsi?",
+          "Serikali hutumia kiasi kikubwa cha pesa kuandaa hafla za kimataifa kama vile Olimpiki. Kwa nini nchi zinataka kuandaa matukio haya? Je, haya ni matumizi mazuri ya fedha za umma?",
+          "Mfumo wa haki ya jinai katika nchi nyingi huzingatia kuwaadhibu wakosaji kwa kuwapeleka gerezani. Je, ni kweli jela inawarekebisha wahalifu? Ni zipi baadhi ya njia mbadala za kukabiliana na uhalifu usio na ukatili?"
+        ]
+      },
+      {
+        "name": "Vyombo vya Habari na Mawasiliano",
+        "prompts": [
+          "Utangazaji ni kila mahali, kutoka skrini za televisheni hadi mabango ya umma. Utangazaji unaathiri vipi tabia ya watumiaji? Je, utangazaji unadhuru kwa watoto?",
+          "Kuenea kwa \"habari feki\" na habari potofu kwenye mtandao ni jambo linalotia wasiwasi sana. Kwa nini watu huunda na kushiriki habari za uwongo? Je, umma unawezaje kujifunza kutambua vyanzo vya habari vinavyotegemeka?",
+          "Watu mashuhuri na washawishi wana athari kubwa kwa tabia ya vijana. Kwa nini vijana huathiriwa kwa urahisi na watu maarufu? Je, ushawishi huu kwa ujumla ni chanya au hasi?",
+          "Watu wengi hutumia saa nyingi kutazama vipindi vya televisheni vya ukweli. Kwa nini vipindi hivi vinavutia hadhira? Je, maonyesho ya ukweli yanaonyesha kwa usahihi maisha halisi?",
+          "Paparazi mara nyingi huwafuata watu maarufu kuchukua picha za maisha yao ya kibinafsi. Je, vyombo vya habari vina haki ya kuvamia faragha ya mtu mashuhuri? Kwa nini umma unavutiwa sana na maisha ya kibinafsi ya watu maarufu?",
+          "Filamu za kisasa na michezo ya video mara nyingi huwa na matukio ya kweli ya jeuri. Kwa nini burudani yenye jeuri inapendwa sana? Je, kutazama jeuri huwafanya watu kuwa wakali zaidi katika maisha halisi?",
+          "Uandishi wa habari za uchunguzi una jukumu muhimu katika kufichua ufisadi. Kwa nini vyombo vya habari huru ni muhimu kwa jamii yenye afya? Je, waandishi wa habari hukabili hatari gani wanaporipoti kuhusu watu wenye nguvu?",
+          "Watu huwasiliana kwa haraka zaidi leo kwa kutumia SMS na barua pepe. Je, hii imebadilisha vipi jinsi tunavyoandika na kuongea? Je, tumepoteza uwezo wa kuwasiliana kwa kina na kwa kufikiri?",
+          "Mifumo ya utiririshaji kama vile Netflix na Spotify imebadilisha jinsi watu wanavyotumia burudani. Je, hii inaathiri vipi sinema za kitamaduni na mauzo ya muziki wa kimwili? Je, mtindo wa usajili ni sawa kwa wasanii na watayarishi?",
+          "Baadhi ya serikali hukagua intaneti ili kuzuia tovuti fulani na majukwaa ya mitandao ya kijamii. Kwa nini serikali huzuia upatikanaji wa habari? Je, wananchi wanakiuka vipi vikwazo hivi?"
+        ]
+      },
+      {
+        "name": "Miji na Miundombinu",
+        "prompts": [
+          "Ongezeko la miji linasababisha miji kupanuka kwa kasi hadi maeneo ya vijijini yanayozunguka. Je, ni madhara gani ya kimazingira ya kuenea kwa miji? Je, wapangaji wa mipango miji wanaweza kusimamia ukuaji huu kwa njia endelevu zaidi?",
+          "Msongamano wa magari ni tatizo la kila siku kwa mamilioni ya wasafiri duniani kote. Ni nini sababu kuu za trafiki kubwa? Je, kufanya usafiri wa umma kuwa huru kunaweza kutatua suala hili?",
+          "Majengo mengi ya kihistoria katikati mwa jiji yanabomolewa ili kupisha majengo marefu ya kisasa. Kwa nini hili linatokea? Je, ni muhimu kuhifadhi usanifu wa zamani?",
+          "Vituo vya jiji vinavyotembea kwa miguu—kupiga marufuku magari yote kutoka maeneo fulani—kunakuwa maarufu barani Ulaya. Je, ni faida gani za kanda zisizo na gari? Je, hii inaathiri vipi biashara za ndani?",
+          "Uchafuzi wa kelele ni suala la mara kwa mara kwa watu wanaoishi katika maeneo yenye shughuli nyingi za miji mikuu. Ni nini vyanzo vikuu vya kelele za mijini? Je, mfiduo wa kelele sugu huathiri vipi afya ya wakaazi?",
+          "Hifadhi na maeneo ya kijani ni muhimu kwa hali nzuri ya maisha katika jiji. Kwa nini miti na asili ni muhimu katika mazingira ya mijini? Kwa nini baadhi ya miji inashindwa kutoa maeneo ya kutosha ya kijani kibichi?",
+          "Vitongoji duni na makazi yasiyo rasmi vipo nje kidogo ya miji mikubwa mingi. Kwa nini watu wanaishi katika hali hizi? Serikali zinaweza kufanya nini ili kuboresha hali ya maisha katika maeneo haya?",
+          "Baiskeli zinakuzwa kama njia mbadala ya urafiki wa mazingira kwa kuendesha. Kwa nini watu wengi bado wanakataa kuendesha baiskeli kwenda kazini? Je, ni miundombinu gani inahitajika kufanya uendeshaji wa baiskeli kuwa salama katika miji?",
+          "Usanifu wa miji ya kisasa mara nyingi inaonekana sawa, bila kujali nchi. Kwa nini miji inapoteza utambulisho wao wa kipekee wa kitamaduni? Je, muundo wa jengo huathiri hali ya watu wanaoitumia?",
+          "Udhibiti wa taka na utupaji taka ni changamoto kubwa za vifaa kwa miji mikubwa. Je, kwa sasa miji inashughulikiaje mamilioni ya tani za takataka? Je, ni njia gani endelevu zaidi za kudhibiti taka mijini?"
+        ]
+      },
+      {
+        "name": "Utandawazi & Uchumi",
+        "prompts": [
+          "Kuongezeka kwa mashirika ya kimataifa kunamaanisha kuwa chapa zile zile zinauzwa kote ulimwenguni. Je, hii inaathiri vipi biashara za ndani na mafundi? Je, hii inasababisha upotevu wa tofauti za kitamaduni?",
+          "Usafiri wa anga wa bei nafuu umefanya utalii wa kimataifa kufikiwa na mamilioni ya watu. Je, ni faida gani za kiuchumi za utalii wa wingi? Je, utalii unaathiri vipi jamii za wenyeji na mazingira?",
+          "Ajira nyingi za viwanda zimehamishwa kutoka nchi zilizoendelea hadi mataifa yanayoendelea. Kwanini makampuni yanahamisha viwanda vyao? Je, utandawazi huu unaathiri vipi wafanyakazi katika nchi zote mbili?",
+          "Kiswahili imekuwa lugha kuu ya biashara ya kimataifa na sayansi. Kwa nini Kiswahili kimepata hadhi hii ya kimataifa? Je, kuna hasara gani za kuwa na lugha moja ya kimataifa?",
+          "Baadhi ya nchi zinategemea sana kuagiza chakula kutoka nje badala ya kukizalisha nchini. Kwa nini mataifa yanaagiza mahitaji ya kimsingi kutoka nje ya nchi? Je, kuna hatari gani ya kutegemea nchi nyingine kwa usambazaji wako wa chakula?",
+          "Wazo la mapato ya kimsingi kwa wote (UBI) linajadiliwa na wanauchumi ulimwenguni kote. Je, ni hoja zipi zinazounga mkono kumpa kila mtu mapato ya uhakika? Je, mfumo kama huo ungefadhiliwa vipi?",
+          "Vikwazo vya kiuchumi mara nyingi hutumiwa na nchi zenye nguvu kuadhibu mataifa mengine. Je, malengo ya vikwazo hivi vya biashara ni yapi? Nani anaumia zaidi nchi inapoidhinishwa?",
+          "Kadi za mkopo na mikopo ya kibinafsi inaruhusu watu kununua vitu ambavyo hawawezi kumudu mara moja. Kwa nini deni la watumiaji linaongezeka kimataifa? Ni nini matokeo ya muda mrefu ya kuishi zaidi ya uwezo wa mtu?",
+          "Uchumi wa kushiriki (k.m., Uber, Airbnb) umetatiza tasnia za jadi. Kwa nini huduma hizi za rika kwa rika zimefanikiwa sana? Je, majukwaa haya yanawanyonya wafanyakazi wao?",
+          "Ukuaji wa uchumi ndio lengo kuu la serikali nyingi za kitaifa. Je, ukuaji wa uchumi usio na mwisho unawezekana kwenye sayari yenye rasilimali zenye ukomo? Je, ni njia gani mbadala za kupima mafanikio ya nchi zaidi ya Pato la Taifa?"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,792 @@
+[
+  {
+    "type": "discussion",
+    "label": "Esai Diskusi",
+    "description": "Membandingkan dua pandangan dan menyampaikan pendapat Anda.",
+    "instruction": "Diskusikan kedua pandangan tersebut dan berikan pendapat Anda sendiri. Tulis setidaknya 250 kata.",
+    "categories": [
+      {
+        "name": "Pendidikan",
+        "prompts": [
+          "Beberapa orang percaya bahwa pendidikan universitas harus gratis untuk semua orang, sementara yang lain berpikir bahwa siswa harus membayar untuk pendidikan tinggi mereka. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa olahraga kompetitif di sekolah sangat bermanfaat, sementara yang lain merasa hal itu menimbulkan stres yang tidak perlu bagi anak-anak. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Banyak orang berpikir bahwa siswa harus mempelajari berbagai mata pelajaran, sementara yang lain percaya bahwa mereka harus fokus pada mata pelajaran yang berkaitan dengan karir tertentu. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa guru harus bertanggung jawab untuk mengajar siswa bagaimana menilai benar dan salah, sementara yang lain percaya bahwa orang tua harus mempunyai tanggung jawab ini. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa pendidik berpendapat bahwa pekerjaan rumah sangat penting untuk keberhasilan akademis, sementara yang lain berpendapat bahwa pekerjaan rumah merupakan beban yang tidak perlu bagi anak-anak. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang beranggapan bahwa mahasiswa harus diperbolehkan mempelajari apapun yang mereka suka, sementara ada pula yang berpendapat bahwa mereka hanya boleh mempelajari mata pelajaran yang berguna di masa depan, seperti sains dan teknologi. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa sekolah dengan satu jenis kelamin memberikan lingkungan belajar yang lebih baik, sementara yang lain berpendapat bahwa sekolah campuran mempersiapkan anak-anak dengan lebih baik untuk kehidupan nyata. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa pembelajaran online pada akhirnya akan menggantikan pendidikan kelas tradisional, sementara yang lain berpendapat bahwa pengajaran tatap muka akan selalu diperlukan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa ujian adalah cara terbaik untuk menilai kemampuan siswa, sementara yang lain berpendapat bahwa penilaian berkelanjutan sepanjang tahun lebih efektif. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa seragam sekolah meningkatkan disiplin dan kesetaraan, sementara yang lain merasa seragam tersebut membatasi individualitas siswa. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda."
+        ]
+      },
+      {
+        "name": "Lingkungan & Hewan",
+        "prompts": [
+          "Beberapa orang percaya bahwa masalah lingkungan hidup terlalu besar untuk diselesaikan oleh individu, sementara yang lain berpikir bahwa individu dapat membuat perbedaan yang signifikan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Banyak orang berpikir bahwa pemerintah harus mengeluarkan uang untuk mencari kehidupan di planet lain, sementara yang lain berpendapat bahwa uang tersebut harus digunakan untuk memecahkan masalah di Bumi. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa memelihara hewan di kebun binatang adalah tindakan yang kejam dan tidak perlu, sementara yang lain berpendapat bahwa kebun binatang sangat penting untuk konservasi dan pendidikan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa undang-undang yang ketat adalah satu-satunya cara untuk mengurangi polusi industri, sementara yang lain percaya bahwa mendidik perusahaan mengenai praktik ramah lingkungan lebih efektif. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa cara terbaik untuk mengatasi permasalahan lalu lintas yang semakin meningkat adalah dengan membangun lebih banyak jalan, sementara yang lain berpendapat bahwa pemerintah harus berinvestasi besar-besaran pada transportasi umum. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa sumber energi terbarukan adalah satu-satunya jalan ke depan bagi planet kita, sementara yang lain berpendapat bahwa bahan bakar fosil masih diperlukan untuk stabilitas ekonomi. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa menanam pohon di perkotaan adalah cara terbaik untuk memperbaiki lingkungan kota, sementara yang lain berpendapat bahwa menyediakan lebih banyak fasilitas umum seperti rumah sakit adalah hal yang lebih penting. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa pengujian pada hewan diperlukan untuk terobosan medis, sementara yang lain percaya bahwa hal itu salah secara moral dan harus dilarang sepenuhnya. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa manusia mempunyai hak untuk menggunakan hewan untuk makanan dan pakaian, sementara yang lain berpendapat bahwa hewan memiliki hak dan tidak boleh dieksploitasi. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa kelebihan populasi adalah penyebab utama degradasi lingkungan, sementara yang lain menyalahkan industrialisasi dan konsumerisme. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda."
+        ]
+      },
+      {
+        "name": "Teknologi & Internet",
+        "prompts": [
+          "Beberapa orang percaya bahwa kecerdasan buatan akan menciptakan masyarakat utopis yang tidak membutuhkan angkatan kerja manusia, sementara yang lain khawatir hal ini akan menyebabkan pengangguran besar-besaran dan kesenjangan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Banyak orang berpikir bahwa media sosial telah mendekatkan orang-orang, sementara yang lain berpendapat bahwa media sosial telah mengisolasi individu di dunia nyata. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa pihak berpendapat bahwa anak-anak tidak boleh diperbolehkan menggunakan ponsel pintar sampai mereka remaja, sementara yang lain berpendapat bahwa paparan dini diperlukan untuk literasi digital. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa buku cetak akan segera menjadi masa lalu, sementara yang lain percaya bahwa buku akan selalu lebih disukai daripada e-book. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa internet telah mempermudah memperoleh informasi yang dapat dipercaya, sementara yang lain berpendapat bahwa internet telah menciptakan era berita palsu dan misinformasi. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa otomatisasi di tempat kerja bermanfaat bagi pertumbuhan ekonomi, sementara yang lain khawatir akan hilangnya pekerjaan tradisional. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa kemajuan teknologi telah membuat kehidupan modern menjadi terlalu rumit, sementara yang lain percaya bahwa kemajuan teknologi telah membuat hidup jauh lebih mudah dan nyaman. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa pengawasan pemerintah dengan menggunakan teknologi diperlukan untuk keamanan nasional, sementara yang lain memandangnya sebagai pelanggaran privasi pribadi. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa video game adalah bentuk hiburan yang tidak berbahaya, sementara yang lain berpendapat bahwa video game mendorong kekerasan dan gaya hidup yang tidak banyak bergerak di kalangan remaja. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa wisata luar angkasa akan menjadi bagian normal di masa depan, sementara yang lain menganggapnya sebagai pemborosan sumber daya yang tidak dapat dibenarkan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda."
+        ]
+      },
+      {
+        "name": "Masyarakat & Kehidupan Modern",
+        "prompts": [
+          "Beberapa orang lebih memilih tinggal di kota besar karena peluang yang tersedia, sementara yang lain lebih memilih hidup damai dan tenang di pedesaan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Banyak orang berpikir bahwa lebih baik bagi orang dewasa muda untuk tinggal bersama orang tuanya sampai mereka menikah, sementara yang lain berpendapat bahwa mereka harus pindah segera setelah mereka berusia delapan belas tahun. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berargumentasi bahwa kesenjangan antara si kaya dan si miskin semakin lebar dan pemerintah harus turun tangan, sementara ada pula yang berpendapat bahwa kesenjangan ini adalah akibat alami dari pasar bebas. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa para lansia harus dirawat oleh keluarganya, sementara yang lain berpendapat bahwa pemerintah harus menyediakan rumah jompo. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berpendapat bahwa peran tradisional laki-laki dan perempuan sangat penting bagi masyarakat yang stabil, sementara ada pula yang berpendapat bahwa kesetaraan gender dalam semua peran itu penting. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa kepemilikan rumah adalah simbol utama kesuksesan, sementara yang lain berpendapat bahwa menyewa rumah memberikan lebih banyak kebebasan dan lebih sedikit stres. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa masyarakat modern sudah terlalu berorientasi pada konsumen, sementara yang lain percaya bahwa konsumerisme diperlukan untuk menjaga perekonomian tetap berkembang. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa acara olahraga internasional mendorong perdamaian antar negara, sementara yang lain percaya bahwa acara tersebut hanya menciptakan ketegangan nasionalis. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa sejarah adalah salah satu mata pelajaran sekolah yang paling penting, sementara yang lain berpikir bahwa di dunia sekarang ini, mata pelajaran seperti TI jauh lebih relevan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa memiliki banyak uang adalah kunci kebahagiaan, sementara yang lain berpendapat bahwa kebahagiaan bergantung sepenuhnya pada faktor-faktor lain seperti kesehatan dan hubungan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda."
+        ]
+      },
+      {
+        "name": "Pekerjaan & Karir",
+        "prompts": [
+          "Sebagian orang berpendapat bahwa kepuasan kerja lebih penting daripada gaji yang tinggi, sementara sebagian lagi berpendapat bahwa mendapatkan banyak uang adalah faktor terpenting dalam suatu pekerjaan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Banyak yang berpendapat bahwa bekerja dari rumah meningkatkan produktivitas dan keseimbangan kehidupan kerja, sementara yang lain berpendapat bahwa lingkungan kantor diperlukan untuk kolaborasi. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa lebih baik memiliki satu karir seumur hidup, sementara yang lain percaya bahwa berganti karir beberapa kali lebih bermanfaat. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa berpendapat bahwa karyawan yang lebih tua lebih berharga bagi perusahaan karena pengalaman mereka, sementara yang lain lebih memilih karyawan yang lebih muda karena ide-ide segar dan energi mereka. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa usia pensiun harus diperpanjang karena harapan hidup yang lebih panjang, sementara yang lain berpendapat bahwa masyarakat harus pensiun lebih awal untuk menikmati masa muda dan membuka lapangan kerja. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa magang yang tidak dibayar bersifat eksploitatif, sementara yang lain berpendapat bahwa magang merupakan batu loncatan penting bagi lulusan baru. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa pihak berargumentasi bahwa perempuan harus diberi kuota yang sama dalam peran manajemen yang lebih tinggi berdasarkan undang-undang, sementara yang lain berpendapat bahwa promosi jabatan harus didasarkan pada prestasi, tanpa memandang gender. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa memulai bisnis Anda sendiri adalah cara terbaik untuk mencapai keamanan finansial, sementara yang lain berpikir bekerja di perusahaan besar lebih aman. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa empat hari kerja dalam seminggu akan lebih baik bagi masyarakat, sementara yang lain berpendapat bahwa hal itu akan merugikan perekonomian. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa pekerjaan yang bersifat manual harus dibayar sama dengan pekerjaan profesional seperti dokter atau pengacara, sementara yang lain percaya bahwa skala gaji yang ada saat ini dapat dibenarkan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda."
+        ]
+      },
+      {
+        "name": "Kesehatan & Pola Makan",
+        "prompts": [
+          "Beberapa orang percaya bahwa pemerintah harus memberlakukan \"pajak lemak\" pada makanan tidak sehat untuk memerangi obesitas, sementara yang lain berpendapat bahwa masyarakat harus bebas memilih apa yang mereka makan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Banyak yang berpendapat bahwa semua layanan kesehatan harus sepenuhnya gratis dan didanai oleh pemerintah, sementara yang lain berpendapat bahwa layanan kesehatan swasta memberikan kualitas layanan yang lebih baik. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa pengobatan alternatif (seperti akupunktur atau pengobatan herbal) sangat efektif, sementara yang lain percaya bahwa obat tersebut berbahaya dan hanya pengobatan modern yang dapat dipercaya. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa olahraga dan pendidikan jasmani harus diwajibkan bagi orang dewasa di tempat kerja, sementara yang lain menganggap olahraga adalah pilihan pribadi. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa pola makan vegan adalah pilihan paling sehat bagi manusia, sementara yang lain berpendapat bahwa makan daging diperlukan untuk pola makan yang seimbang. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa layanan kesehatan preventif (seperti program pendidikan dan kebugaran) lebih baik daripada mengobati penyakit setelah penyakit itu muncul, sementara yang lain berpendapat bahwa penelitian medis untuk penyembuhan harus menjadi prioritas. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa iklan makanan cepat saji harus dilarang sepenuhnya, sementara yang lain berpendapat bahwa hal ini membatasi kebebasan berpendapat bagi dunia usaha. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa kesehatan mental sama pentingnya dengan kesehatan fisik dan harus menerima pendanaan yang sama, sementara yang lain percaya bahwa penyakit fisik memerlukan perhatian finansial yang lebih mendesak. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa merokok harus dilarang secara global, sementara yang lain berpendapat bahwa orang dewasa mempunyai hak untuk menentukan pilihan gaya hidup mereka sendiri. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa makanan hasil rekayasa genetika (GM) adalah kunci untuk mengakhiri kelaparan di dunia, sementara yang lain percaya bahwa makanan tersebut menimbulkan risiko besar terhadap kesehatan manusia. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda."
+        ]
+      },
+      {
+        "name": "Pemerintahan & Ekonomi",
+        "prompts": [
+          "Beberapa orang berpendapat bahwa kemajuan ekonomi adalah tujuan pemerintah yang paling penting, sementara yang lain berpendapat bahwa jenis kemajuan lainnya (seperti kemajuan sosial atau lingkungan hidup) juga sama pentingnya. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Banyak yang berpendapat bahwa negara-negara kaya harus memberikan bantuan keuangan kepada negara-negara miskin, sementara yang lain percaya bahwa bantuan ini sering kali lebih banyak merugikan daripada menguntungkan akibat korupsi. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa pihak berpendapat bahwa pemerintah harus mendanai seniman, musisi, dan penulis, sementara yang lain berpendapat bahwa uang pajak hanya boleh dibelanjakan untuk layanan publik seperti rumah sakit dan jalan raya. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa angkutan umum harusnya gratis, sementara yang lain berpendapat bahwa penumpang harus membayar untuk menjaga kualitas layanan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa pihak berpendapat bahwa perdagangan bebas global bermanfaat bagi negara-negara berkembang, sementara yang lain berpendapat bahwa perdagangan bebas hanya mengeksploitasi sumber daya dan angkatan kerja murah mereka. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berpendapat bahwa pemerintah harus membatasi gaji maksimum yang dapat diperoleh seseorang, sementara ada pula yang berpendapat bahwa masyarakat harus diperbolehkan memperoleh penghasilan sebanyak yang mereka mampu. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa mata uang tunggal global akan meningkatkan perekonomian dunia, sementara yang lain percaya bahwa mata uang nasional sangat penting untuk kemandirian ekonomi suatu negara. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berpendapat bahwa membayar pajak adalah kewajiban warga negara yang paling penting, ada pula yang berpendapat bahwa masyarakat harus berusaha mempertahankan pendapatannya sebanyak mungkin secara legal. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berpendapat bahwa pemerintah harus memberikan pendapatan dasar universal bagi semua warga negara, sementara ada pula yang berpendapat bahwa hal ini akan membuat masyarakat menjadi malas dan merusak perekonomian. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa eksplorasi luar angkasa hanya membuang-buang uang pemerintah, sementara yang lain berpendapat bahwa eksplorasi ruang angkasa adalah investasi penting bagi masa depan umat manusia. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda."
+        ]
+      },
+      {
+        "name": "Kejahatan & Hukuman",
+        "prompts": [
+          "Beberapa orang percaya bahwa tujuan utama penjara adalah untuk menghukum penjahat, sementara yang lain berpendapat bahwa penjara harus fokus sepenuhnya pada rehabilitasi. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Banyak orang berpendapat bahwa hukuman mati adalah hukuman yang dapat dibenarkan untuk kejahatan berat, sementara yang lain berpendapat bahwa hukuman mati merupakan pelanggaran hak asasi manusia dan harus dihapuskan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berpendapat bahwa hukuman penjara yang lebih lama secara efektif mencegah kejahatan, sementara ada pula yang berpendapat bahwa hukuman penjara yang lebih lama tidak akan mengurangi tingkat kejahatan dan hanya akan membuat penjara menjadi penuh sesak. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa pelaku kejahatan di bawah umur (penjahat remaja) harus menerima hukuman yang sama seperti orang dewasa, sementara yang lain berpendapat bahwa mereka harus diperlakukan lebih ringan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa memasang kamera keamanan di tempat umum mengurangi kejahatan, sementara yang lain percaya bahwa ini merupakan pelanggaran privasi yang parah. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa pihak berpendapat bahwa polisi harus selalu membawa senjata api untuk melindungi masyarakat, sementara yang lain berpendapat bahwa polisi bersenjata akan meningkatkan kekerasan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa kejahatan dunia maya adalah ancaman terbesar bagi masyarakat modern, sementara yang lain berpendapat bahwa kejahatan dengan kekerasan tradisional masih jauh lebih berbahaya. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa mantan narapidana harus diminta untuk memberi tahu majikan mereka tentang masa lalu kriminal mereka, sementara yang lain percaya bahwa mereka mempunyai hak atas privasi setelah hukuman mereka dijalani. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berpendapat bahwa pengabdian masyarakat merupakan hukuman yang lebih baik untuk kejahatan ringan dibandingkan dengan memenjarakan orang, sementara ada pula yang berpendapat bahwa pelayanan masyarakat tidak cukup ketat. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa kemiskinan adalah akar penyebab utama dari semua kejahatan, sementara yang lain berpendapat bahwa kejahatan adalah akibat dari sifat manusia dan keserakahan. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda."
+        ]
+      },
+      {
+        "name": "Media & Periklanan",
+        "prompts": [
+          "Beberapa orang percaya bahwa kekerasan dalam film dan televisi berkontribusi terhadap kekerasan di masyarakat, sementara yang lain berpendapat bahwa kekerasan hanyalah hiburan yang tidak berbahaya. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Banyak yang berpendapat bahwa media harus diatur secara ketat oleh pemerintah, sementara yang lain berpendapat bahwa kebebasan pers sepenuhnya penting bagi demokrasi. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berpendapat bahwa iklan yang ditujukan kepada anak-anak seharusnya ilegal, sementara ada pula yang berpendapat bahwa tanggung jawab orang tua adalah mengatur tontonan anak-anak mereka. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berpendapat bahwa pemberitaan terlalu fokus pada peristiwa negatif, sehingga menyebabkan kegelisahan masyarakat, ada pula yang berpendapat bahwa tugas media adalah melaporkan kebenaran yang sebenarnya. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa selebritas adalah panutan yang buruk bagi kaum muda, sementara yang lain berpendapat bahwa banyak selebritas menggunakan platform mereka untuk kegiatan amal yang positif. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa surat kabar cetak sudah mati dan akan segera hilang sama sekali, sementara yang lain percaya akan selalu ada pasar untuk jurnalisme fisik. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa iklan online bertarget sangat nyaman bagi konsumen, sementara yang lain melihatnya sebagai sesuatu yang manipulatif dan invasif. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa televisi realitas mempunyai dampak negatif terhadap nilai-nilai budaya, sementara yang lain percaya bahwa itu hanyalah pelarian yang menyenangkan dan tidak ada gunanya. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berpendapat bahwa kehidupan pribadi tokoh masyarakat (seperti politisi dan aktor) tidak boleh dilihat oleh pers, sementara ada pula yang berpendapat bahwa masyarakat mempunyai hak untuk mengetahuinya. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa periklanan modern memaksa orang untuk membeli barang-barang yang tidak mereka perlukan, sementara yang lain berpendapat bahwa iklan hanya memberi informasi kepada konsumen tentang pilihan mereka. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda."
+        ]
+      },
+      {
+        "name": "Budaya, Perjalanan & Seni",
+        "prompts": [
+          "Beberapa orang percaya bahwa pariwisata massal internasional menghancurkan budaya dan lingkungan lokal, sementara yang lain berpendapat bahwa hal tersebut penting bagi perekonomian lokal. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Banyak yang berpendapat bahwa para imigran harus mengadopsi budaya dan adat istiadat negara baru mereka, sementara yang lain berpendapat bahwa mereka harus mempertahankan dan mempraktikkan budaya asli mereka. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa belajar bahasa asing tidak lagi diperlukan karena adanya perangkat lunak penerjemahan, sementara yang lain percaya bahwa pembelajaran bahasa memberikan pemahaman budaya yang penting. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa museum dan galeri seni harus benar-benar gratis untuk umum, sementara yang lain berpendapat bahwa memungut biaya masuk diperlukan untuk mempertahankan pameran. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpikir bahwa festival tradisional sudah kehilangan maknanya dan menjadi sepenuhnya dikomersialkan, sementara yang lain percaya bahwa komersialisasi membantu menjaga tradisi-tradisi ini tetap hidup. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berpendapat bahwa satu bahasa global (seperti Bahasa Indonesia) dapat menyatukan dunia dalam perdamaian, sementara ada pula yang berpendapat bahwa bahasa tersebut menghancurkan identitas budaya yang unik. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa bepergian dalam kelompok dengan pemandu wisata adalah cara terbaik untuk menjelajahi negara baru, sementara yang lain lebih suka bepergian sendiri dan mandiri. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang berpendapat bahwa pemerintah harus mengeluarkan uang untuk melestarikan bangunan-bangunan tua bersejarah, sementara yang lain berpendapat bahwa akan lebih praktis jika bangunan-bangunan tersebut dirobohkan dan dibangun perumahan modern. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Ada yang berpendapat bahwa tradisi kuliner dan makanan lokal sedang dirusak oleh rantai makanan cepat saji internasional, sementara ada pula yang menyambut baik kenyamanan dan keragamannya. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda.",
+          "Beberapa orang percaya bahwa mempelajari seni dan sastra masa lalu tidak relevan bagi siswa modern, sementara yang lain berpendapat bahwa hal itu penting untuk pendidikan yang menyeluruh. Diskusikan kedua pandangan tersebut dan berikan pendapat Anda."
+        ]
+      }
+    ]
+  },
+  {
+    "type": "opinion",
+    "label": "Esai Opini",
+    "description": "Menyatakan setuju atau tidak setuju terhadap pernyataan yang diberikan, beserta alasannya.",
+    "instruction": "Sampaikan pendapat Anda dan dukung dengan alasan serta contoh. Tulis setidaknya 250 kata.",
+    "categories": [
+      {
+        "name": "Pendidikan",
+        "prompts": [
+          "Beberapa orang percaya bahwa pendidikan universitas harus gratis bagi semua orang, apapun latar belakang mereka. Sejauh mana Anda setuju atau tidak setuju?",
+          "Di masa depan, siswa dapat memilih untuk belajar di rumah dengan menggunakan teknologi atau belajar di sekolah tradisional. Ada pendapat bahwa sekolah tradisional akan hilang. Apakah Anda setuju atau tidak setuju?",
+          "Banyak orang berpikir bahwa pekerjaan rumah sangat penting agar anak-anak dapat belajar dengan baik, sementara yang lain berpendapat bahwa pekerjaan rumah tidak diperlukan dan menyebabkan stres. Bagaimana pendapat Anda?",
+          "Universitas harus menerima jumlah mahasiswa laki-laki dan perempuan yang sama di setiap mata pelajaran. Sejauh mana Anda setuju atau tidak setuju?",
+          "Beberapa orang berpendapat bahwa orang tua harus mendidik anak bagaimana menjadi anggota masyarakat yang baik. Namun, ada pula yang percaya bahwa sekolah adalah tempat untuk mempelajari hal ini. Bagaimana pendapat Anda?",
+          "Mata pelajaran seperti seni, musik, dan drama seringkali dianggap kurang penting dibandingkan mata pelajaran seperti matematika dan sains. Oleh karena itu, mereka harus dihapuskan dari kurikulum sekolah. Apakah Anda setuju atau tidak setuju?",
+          "Semua siswa harus diminta untuk belajar bahasa asing dari sekolah dasar dan seterusnya. Sejauh mana Anda setuju atau tidak setuju?",
+          "Gap year, dimana siswa mengambil cuti sebelum melanjutkan ke universitas, menjadi semakin populer. Mengambil gap year selalu menjadi pengalaman yang bermanfaat bagi generasi muda. Apakah Anda setuju atau tidak setuju?",
+          "Kerja kelompok merupakan cara paling efektif bagi siswa untuk belajar. Sejauh mana Anda setuju atau tidak setuju?",
+          "Beberapa pendidik berpendapat bahwa ujian bukanlah penilaian yang adil terhadap kemampuan siswa yang sebenarnya dan harus diganti dengan penilaian yang berkelanjutan. Bagaimana pendapat Anda?"
+        ]
+      },
+      {
+        "name": "Teknologi & Inovasi",
+        "prompts": [
+          "Perkembangan kecerdasan buatan pada akhirnya akan menyebabkan hilangnya jutaan lapangan kerja. Oleh karena itu, pemerintah harus membatasi pengembangannya. Sejauh mana Anda setuju atau tidak setuju?",
+          "Media sosial mempunyai dampak negatif terhadap masyarakat dan individu dengan meningkatkan isolasi dan menyebarkan informasi yang salah. Apakah Anda setuju atau tidak setuju?",
+          "Beberapa orang berpikir bahwa internet telah mendekatkan orang-orang, sementara yang lain berpikir bahwa orang-orang dan komunitas menjadi semakin terisolasi. Bagaimana pendapat Anda?",
+          "Penggunaan ponsel di tempat umum sama menjengkelkannya dengan merokok dan juga harus dilarang. Sejauh mana Anda setuju atau tidak setuju?",
+          "Kemajuan teknologi telah membuat hidup kita lebih kompleks daripada sederhana. Apakah Anda setuju atau tidak setuju?",
+          "Video game sering kali disalahkan atas perilaku kekerasan di kalangan anak muda. Oleh karena itu, penjualan video game kekerasan harus dilarang. Bagaimana pendapat Anda?",
+          "Di dunia modern, kita bisa berbelanja, bekerja, dan berkomunikasi dengan orang-orang melalui internet dan hidup tanpa kontak tatap muka dengan orang lain. Apakah ini perkembangan positif atau negatif?",
+          "Membaca buku fisik sudah menjadi masa lalu karena semakin banyak orang beralih ke e-book dan artikel digital. Ini adalah tren negatif terhadap literasi. Sejauh mana Anda setuju atau tidak setuju?",
+          "Eksplorasi luar angkasa membutuhkan dana pemerintah yang sangat besar. Uang ini lebih baik digunakan untuk memecahkan masalah-masalah di muka bumi ini, seperti kemiskinan dan penyakit. Apakah Anda setuju atau tidak setuju?",
+          "Otomasi dan robot mengambil alih pekerjaan manufaktur tradisional. Hal ini merupakan perkembangan positif bagi masyarakat secara keseluruhan. Sejauh mana Anda setuju atau tidak setuju?"
+        ]
+      },
+      {
+        "name": "Pekerjaan & Ketenagakerjaan",
+        "prompts": [
+          "Kepuasan kerja jauh lebih penting dibandingkan gaji yang tinggi. Sejauh mana Anda setuju atau tidak setuju?",
+          "Banyak orang berpendapat bahwa untuk meningkatkan kualitas pendidikan, siswa sekolah menengah harus didorong untuk mengevaluasi dan mengkritik gurunya. Apakah Anda setuju atau tidak setuju?",
+          "Usia pensiun harus dinaikkan di semua negara karena masyarakat dapat hidup lebih lama dan lebih sehat. Bagaimana pendapat Anda?",
+          "Siapa pun bisa menjadi pemimpin yang baik jika mereka dilatih dengan cukup baik. Sejauh mana Anda setuju atau tidak setuju?",
+          "Lebih baik orang menjadi pengangguran daripada bekerja pada pekerjaan yang tidak mereka sukai. Apakah Anda setuju atau tidak setuju?",
+          "Perusahaan harus mewajibkan semua karyawannya mengenakan seragam, apa pun perannya. Sejauh mana Anda setuju atau tidak setuju?",
+          "Wiraswasta selalu lebih disukai daripada bekerja di perusahaan atau organisasi. Bagaimana pendapat Anda?",
+          "Kaum muda saat ini tidak memiliki keterampilan dasar yang diperlukan untuk tempat kerja modern. Apakah Anda setuju atau tidak setuju?",
+          "Untuk mengurangi pengangguran, pemerintah harus mempersingkat jam kerja tradisional menjadi 30 jam, sehingga lebih banyak orang dapat berbagi pekerjaan yang tersedia. Sejauh mana Anda setuju atau tidak setuju?",
+          "Pertimbangan paling penting ketika memilih karier atau pekerjaan apa pun adalah memiliki penghasilan yang tinggi. Apakah Anda setuju atau tidak setuju?"
+        ]
+      },
+      {
+        "name": "Lingkungan & Konservasi",
+        "prompts": [
+          "Pemanasan global terutama disebabkan oleh aktivitas manusia, dan oleh karena itu, setiap orang harus mengubah gaya hidup mereka secara drastis untuk menghentikannya. Sejauh mana Anda setuju atau tidak setuju?",
+          "Tanggung jawab untuk melindungi lingkungan terletak sepenuhnya pada perusahaan besar, bukan pada individu warga negara. Bagaimana pendapat Anda?",
+          "Beberapa orang berpikir bahwa cara terbaik untuk mengatasi masalah lingkungan global adalah dengan menaikkan harga bahan bakar. Apakah Anda setuju atau tidak setuju?",
+          "Pengujian pada hewan untuk tujuan medis dan kosmetik adalah tindakan yang kejam dan harus dilarang sepenuhnya. Sejauh mana Anda setuju atau tidak setuju?",
+          "Tidak dapat dipungkiri bahwa seiring dengan berkembangnya perekonomian suatu negara, degradasi lingkungan akan terjadi. Bagaimana pendapat Anda?",
+          "Kebun binatang pada dasarnya adalah penjara bagi hewan dan tidak memiliki tujuan pendidikan atau konservasi yang berguna. Apakah Anda setuju atau tidak setuju?",
+          "Kantong belanja plastik harus ilegal di semua supermarket dan toko ritel. Sejauh mana Anda setuju atau tidak setuju?",
+          "Kepunahan beberapa spesies tumbuhan dan hewan adalah proses alami, dan kita tidak boleh melakukan intervensi untuk menyelamatkan mereka. Apakah Anda setuju atau tidak setuju?",
+          "Masyarakat sebaiknya hanya mengonsumsi makanan yang diproduksi secara lokal untuk mengurangi dampak transportasi terhadap lingkungan. Bagaimana pendapat Anda?",
+          "Berinvestasi pada sumber energi terbarukan seperti tenaga angin dan surya hanya membuang-buang uang karena tidak dapat diandalkan. Sejauh mana Anda setuju atau tidak setuju?"
+        ]
+      },
+      {
+        "name": "Masyarakat & Kehidupan Modern",
+        "prompts": [
+          "Di banyak negara, kesenjangan antara si kaya dan si miskin semakin lebar. Ini adalah masalah paling signifikan yang dihadapi masyarakat modern. Sejauh mana Anda setuju atau tidak setuju?",
+          "Kaum muda sangat dipengaruhi oleh selebriti. Ini adalah tren yang berbahaya. Apakah Anda setuju atau tidak setuju?",
+          "Festival dan perayaan tradisional kini kehilangan maknanya dan hanya menjadi alasan bagi konsumerisme. Bagaimana pendapat Anda?",
+          "Tinggal di kota yang besar dan ramai jauh lebih baik bagi perkembangan seseorang dibandingkan tinggal di pedesaan yang tenang. Sejauh mana Anda setuju atau tidak setuju?",
+          "Di dunia sekarang ini, lebih penting untuk bisa beradaptasi dan mau berubah daripada menjadi ahli dalam satu bidang tertentu. Apakah Anda setuju atau tidak setuju?",
+          "Beberapa orang percaya bahwa sejarah tidak mengajarkan apa pun kepada kita tentang masa kini atau masa depan. Bagaimana pendapat Anda?",
+          "Kaum lanjut usia semakin terpinggirkan dalam masyarakat modern, yang terlalu berfokus pada kaum muda. Sejauh mana Anda setuju atau tidak setuju?",
+          "Memiliki rumah sangat penting agar seseorang merasa stabil dan sukses dalam hidup. Apakah Anda setuju atau tidak setuju?",
+          "Masyarakat saat ini terlalu bergantung pada orang lain dan tidak memiliki keterampilan praktis untuk bisa mandiri. Bagaimana pendapat Anda?",
+          "Acara olahraga internasional seperti Olimpiade menyatukan negara-negara dan mendorong perdamaian global. Sejauh mana Anda setuju atau tidak setuju?"
+        ]
+      },
+      {
+        "name": "Kesehatan & Pola Makan",
+        "prompts": [
+          "Pemerintah harus mengenakan pajak pada jenis makanan yang tidak sehat, seperti makanan cepat saji dan minuman manis, untuk mendorong masyarakat makan lebih sehat. Sejauh mana Anda setuju atau tidak setuju?",
+          "Layanan kesehatan harus sepenuhnya gratis bagi semua warga negara, didanai sepenuhnya oleh pemerintah melalui perpajakan. Apakah Anda setuju atau tidak setuju?",
+          "Obat alternatif tradisional sama efektifnya dengan obat kimia modern. Bagaimana pendapat Anda?",
+          "Meningkatnya angka obesitas sepenuhnya merupakan kesalahan industri makanan cepat saji. Sejauh mana Anda setuju atau tidak setuju?",
+          "Kelas pendidikan jasmani harus menjadi wajib setiap hari bagi semua anak sekolah. Apakah Anda setuju atau tidak setuju?",
+          "Stres adalah masalah kesehatan paling signifikan yang dihadapi orang dewasa yang bekerja saat ini. Bagaimana pendapat Anda?",
+          "Orang yang memilih untuk berpartisipasi dalam olahraga ekstrim yang berbahaya harus membayar sendiri perawatan medis jika mereka terluka. Sejauh mana Anda setuju atau tidak setuju?",
+          "Pengobatan preventif, seperti pendidikan kesehatan dan vaksinasi, lebih penting dibandingkan menemukan obat untuk penyakit. Apakah Anda setuju atau tidak setuju?",
+          "Pola makan modern, yang sangat bergantung pada makanan olahan, merupakan penyebab utama menurunnya kesehatan global. Bagaimana pendapat Anda?",
+          "Tidak mungkin mempertahankan gaya hidup sehat sambil bekerja penuh waktu di perusahaan yang menuntut. Sejauh mana Anda setuju atau tidak setuju?"
+        ]
+      },
+      {
+        "name": "Belanja Pemerintah & Publik",
+        "prompts": [
+          "Pemerintah harus mengeluarkan lebih banyak uang untuk layanan publik, seperti pendidikan dan kesehatan, dibandingkan untuk militer. Sejauh mana Anda setuju atau tidak setuju?",
+          "Transportasi umum harus bebas biaya untuk mengurangi kemacetan lalu lintas dan polusi di perkotaan. Apakah Anda setuju atau tidak setuju?",
+          "Merupakan tanggung jawab pemerintah untuk memastikan bahwa semua warga negara mempunyai tempat tinggal. Bagaimana pendapat Anda?",
+          "Pemerintah harus memberikan dukungan keuangan kepada seniman, musisi, dan penulis. Sejauh mana Anda setuju atau tidak setuju?",
+          "Memberikan suara dalam pemilu nasional harus diwajibkan bagi semua warga negara yang memenuhi syarat. Apakah Anda setuju atau tidak setuju?",
+          "Pemerintah tidak mempunyai hak untuk ikut campur dalam menentukan pilihan makan, minum, atau merokok. Bagaimana pendapat Anda?",
+          "Negara-negara kaya harus mengampuni utang internasional negara-negara termiskin untuk membantu mereka berkembang. Sejauh mana Anda setuju atau tidak setuju?",
+          "Pajak atas individu kaya harus jauh lebih tinggi untuk mendistribusikan kekayaan secara lebih merata ke seluruh masyarakat. Apakah Anda setuju atau tidak setuju?",
+          "Pendanaan untuk seni adalah sebuah kemewahan, dan pemerintah seharusnya hanya mendanai layanan penting seperti infrastruktur dan rumah sakit. Bagaimana pendapat Anda?",
+          "Pemerintah kota harus berinvestasi besar-besaran dalam menciptakan lebih banyak taman umum dan ruang hijau, meskipun hal tersebut berarti menaikkan pajak daerah. Sejauh mana Anda setuju atau tidak setuju?"
+        ]
+      },
+      {
+        "name": "Kejahatan & Hukum",
+        "prompts": [
+          "Hukuman mati adalah satu-satunya alat pencegah yang efektif untuk kejahatan yang paling serius, seperti pembunuhan. Sejauh mana Anda setuju atau tidak setuju?",
+          "Penjara harus fokus terutama pada rehabilitasi para pelaku kejahatan dibandingkan hanya menghukum mereka. Apakah Anda setuju atau tidak setuju?",
+          "Pelaku remaja yang melakukan kejahatan berat harus diadili dan dihukum sebagaimana orang dewasa. Bagaimana pendapat Anda?",
+          "Penggunaan kamera pengintai di ruang publik merupakan pelanggaran privasi dan harus dibatasi secara ketat. Sejauh mana Anda setuju atau tidak setuju?",
+          "Undang-undang pengendalian senjata yang ketat diperlukan untuk mengurangi tingkat kejahatan dengan kekerasan di masyarakat. Apakah Anda setuju atau tidak setuju?",
+          "Pengabdian masyarakat adalah hukuman yang jauh lebih baik untuk kejahatan ringan tanpa kekerasan daripada hukuman penjara. Bagaimana pendapat Anda?",
+          "Kejahatan dunia maya saat ini merupakan ancaman yang lebih besar bagi masyarakat dibandingkan kejahatan fisik tradisional. Sejauh mana Anda setuju atau tidak setuju?",
+          "Orang yang melanggar hukum harus dipaksa menemui korbannya untuk memahami dampak tindakannya. Apakah Anda setuju atau tidak setuju?",
+          "Media bertanggung jawab atas ketakutan masyarakat terhadap kejahatan, yang seringkali tidak sebanding dengan tingkat kejahatan sebenarnya. Bagaimana pendapat Anda?",
+          "Tidak mungkin memberantas kejahatan sepenuhnya dari masyarakat; itu adalah bagian yang tak terhindarkan dari sifat manusia. Sejauh mana Anda setuju atau tidak setuju?"
+        ]
+      },
+      {
+        "name": "Media & Periklanan",
+        "prompts": [
+          "Iklan yang ditujukan kepada anak-anak adalah tindakan yang tidak etis dan harus dilarang keras. Sejauh mana Anda setuju atau tidak setuju?",
+          "Media berita terlalu banyak berfokus pada berita negatif, yang berujung pada depresi dan kecemasan di masyarakat umum. Apakah Anda setuju atau tidak setuju?",
+          "Perusahaan multinasional besar mempunyai pengaruh yang terlalu besar terhadap media dan informasi global. Bagaimana pendapat Anda?",
+          "Selebriti mempunyai hak privasi, dan paparazzi tidak boleh mengikuti mereka di ruang publik. Sejauh mana Anda setuju atau tidak setuju?",
+          "Di zaman modern, surat kabar cetak sudah ketinggalan zaman dan akan segera hilang sama sekali. Apakah Anda setuju atau tidak setuju?",
+          "Periklanan mendorong orang untuk membeli barang-barang yang tidak mereka perlukan dan tidak mampu mereka beli. Bagaimana pendapat Anda?",
+          "Pemerintah harus mengontrol apa yang disiarkan di televisi dan internet untuk melindungi masyarakat dari konten berbahaya. Sejauh mana Anda setuju atau tidak setuju?",
+          "Kebebasan berpendapat berarti bahwa setiap orang boleh mengatakan apa pun yang mereka inginkan, meskipun hal itu menyinggung perasaan orang lain. Apakah Anda setuju atau tidak setuju?",
+          "Acara reality show televisi tidak memiliki nilai pendidikan dan hanya berfungsi untuk menurunkan standar budaya. Bagaimana pendapat Anda?",
+          "Iklan online bertarget, yang melacak perilaku pengguna, merupakan pelanggaran berat terhadap privasi pribadi. Sejauh mana Anda setuju atau tidak setuju?"
+        ]
+      },
+      {
+        "name": "Pariwisata & Globalisasi",
+        "prompts": [
+          "Pariwisata internasional lebih banyak menimbulkan dampak buruk dibandingkan manfaat bagi komunitas dan lingkungan lokal. Sejauh mana Anda setuju atau tidak setuju?",
+          "Meningkatnya globalisasi bisnis dan budaya menghancurkan tradisi lokal dan identitas nasional. Apakah Anda setuju atau tidak setuju?",
+          "Masyarakat harus didorong untuk melakukan perjalanan domestik di negaranya sendiri dibandingkan bepergian ke luar negeri. Bagaimana pendapat Anda?",
+          "Bahasa Indonesia menjadi bahasa global yang universal. Ini merupakan perkembangan positif bagi hubungan internasional dan perdagangan. Sejauh mana Anda setuju atau tidak setuju?",
+          "Negara-negara harus memprioritaskan pekerjaan bagi warga negaranya sendiri sebelum mengizinkan pekerja asing memasuki pasar kerja. Apakah Anda setuju atau tidak setuju?",
+          "Perjalanan udara yang murah telah merevolusi cara orang hidup dan bekerja, namun kerugian terhadap lingkungan lebih besar daripada manfaatnya. Bagaimana pendapat Anda?",
+          "Perusahaan multinasional sering mengeksploitasi pekerja di negara-negara berkembang untuk memaksimalkan keuntungan mereka. Sejauh mana Anda setuju atau tidak setuju?",
+          "Wisatawan harus diminta mempelajari frasa dasar dalam bahasa lokal sebelum mengunjungi negara asing. Apakah Anda setuju atau tidak setuju?",
+          "Globalisasi terutama menguntungkan negara-negara kaya dan meninggalkan negara-negara berkembang. Bagaimana pendapat Anda?",
+          "Melestarikan bangunan bersejarah merupakan pengeluaran yang tidak perlu bagi kota; mereka harus dihancurkan untuk memberi jalan bagi infrastruktur modern. Sejauh mana Anda setuju atau tidak setuju?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "advantage-disadvantage",
+    "label": "Keuntungan & Kerugian",
+    "description": "Diskusikan kelebihan dan kekurangan suatu topik.",
+    "instruction": "Diskusikan kelebihan dan kekurangannya, dan berikan pendapat Anda jika diminta. Tulis setidaknya 250 kata.",
+    "categories": [
+      {
+        "name": "Pendidikan & Pembelajaran",
+        "prompts": [
+          "Banyak universitas sekarang menawarkan program gelar penuh secara online. Apa keuntungan dan kerugian belajar untuk mendapatkan gelar online dibandingkan menghadiri kelas secara langsung?",
+          "Beberapa ahli berpendapat bahwa lebih baik anak-anak mulai belajar bahasa asing di sekolah dasar daripada di sekolah menengah. Apakah keuntungannya lebih besar daripada kerugiannya?",
+          "Di banyak negara, pelajar mengambil “gap year” untuk bepergian atau bekerja sebelum mulai masuk universitas. Diskusikan keuntungan dan kerugian mengambil gap year dan berikan pendapat Anda sendiri.",
+          "Beberapa sekolah mewajibkan semua siswanya mengenakan seragam. Apa kelebihan dan kekurangan seragam sekolah?",
+          "Semakin banyak siswa memilih untuk belajar di luar negeri untuk pendidikan tinggi mereka. Apakah keuntungan belajar di luar negeri lebih besar daripada kerugiannya?",
+          "Dalam beberapa sistem pendidikan, anak-anak dikelompokkan ke dalam kelas berdasarkan kemampuan akademisnya, bukan usianya. Diskusikan kelebihan dan kekurangan praktik ini dan berikan pendapat Anda.",
+          "Menghafal adalah metode pengajaran tradisional yang masih digunakan di banyak belahan dunia. Apa kelebihan dan kekurangan belajar melalui hafalan?",
+          "Banyak orang berpendapat bahwa pendidikan di universitas harus sepenuhnya gratis bagi semua orang. Apakah keuntungan dari pendidikan tinggi gratis lebih besar daripada kerugiannya?",
+          "Beberapa orang tua memilih untuk mendidik anaknya di rumah dibandingkan menyekolahkannya di sekolah tradisional. Diskusikan kelebihan dan kekurangan homeschooling dan berikan pendapat Anda.",
+          "Penilaian berkelanjutan (kursus dan proyek) menggantikan ujian formal di banyak lembaga pendidikan. Apa keuntungan dan kerugian dari peralihan ini?"
+        ]
+      },
+      {
+        "name": "Teknologi & Internet",
+        "prompts": [
+          "Penggunaan kecerdasan buatan dalam kehidupan sehari-hari kini semakin umum. Apakah kelebihan AI lebih besar daripada kerugiannya?",
+          "Media sosial telah merevolusi cara orang berkomunikasi dan berbagi informasi. Diskusikan kelebihan dan kekurangan media sosial dan berikan pendapat Anda.",
+          "Banyak orang kini menggunakan ponsel pintarnya untuk membayar barang dan jasa, sehingga menyebabkan penurunan penggunaan uang tunai. Apa kelebihan dan kekurangan cashless society?",
+          "Kemajuan teknologi telah memungkinkan banyak orang untuk bekerja dari rumah dibandingkan harus pergi ke kantor. Apakah keuntungan dari kerja jarak jauh lebih besar daripada kerugiannya?",
+          "E-book dan perangkat membaca digital dengan cepat menggantikan buku cetak tradisional. Diskusikan kelebihan dan kekurangan tren ini dan berikan pendapat Anda.",
+          "Perkembangan mobil self-driving mengalami kemajuan pesat. Apa kelebihan dan kekurangan kendaraan otonom di jalan umum?",
+          "Otomasi dan robot semakin menggantikan pekerja manusia di bidang manufaktur dan industri lainnya. Apakah keuntungan dari otomatisasi lebih besar daripada kerugiannya?",
+          "Anak-anak saat ini menghabiskan banyak waktu untuk bermain video game. Diskusikan kelebihan dan kekurangannya dan berikan pendapat Anda.",
+          "Komputasi awan memungkinkan orang untuk menyimpan semua data pribadi dan profesional mereka secara online, bukan di hard drive fisik. Apa kelebihan dan kekurangan menyimpan data di cloud?",
+          "Eksplorasi luar angkasa menghabiskan banyak uang bagi pembayar pajak setiap tahunnya. Apakah keuntungan mengeluarkan uang untuk eksplorasi ruang angkasa lebih besar daripada kerugiannya?"
+        ]
+      },
+      {
+        "name": "Pekerjaan & Karir",
+        "prompts": [
+          "Beberapa perusahaan telah menerapkan empat hari kerja dalam seminggu tanpa mengurangi gaji karyawannya. Apa keuntungan dan kerugian dari minggu kerja yang lebih pendek?",
+          "Di masa lalu, orang sering kali tetap melakukan pekerjaan yang sama sepanjang masa kerja mereka. Saat ini, berganti karier berkali-kali lebih umum. Diskusikan kelebihan dan kekurangan sering berganti pekerjaan dan berikan pendapat Anda.",
+          "Banyak negara yang menaikkan usia pensiun resmi menjadi 68 atau 70 tahun. Apakah keuntungan bekerja sampai usia lanjut lebih besar daripada kerugiannya?",
+          "Semakin banyak orang yang memilih untuk menjadi wiraswasta atau memulai bisnis mereka sendiri. Apa kelebihan dan kekurangan wirausaha dibandingkan bekerja pada pemberi kerja?",
+          "Perusahaan multinasional seringkali memindahkan karyawannya untuk bekerja di cabang luar negeri selama beberapa tahun. Diskusikan kelebihan dan kekurangan bekerja di luar negeri dan berikan pendapat Anda.",
+          "Beberapa organisasi percaya bahwa membayar karyawan berdasarkan kinerja individu adalah cara terbaik untuk memotivasi mereka. Apakah keuntungan dari pembayaran berbasis kinerja lebih besar daripada kerugiannya?",
+          "Magang tanpa bayaran menjadi persyaratan umum bagi generasi muda yang memasuki pasar kerja. Apa kelebihan dan kekurangan bekerja gratis untuk mendapatkan pengalaman?",
+          "Beberapa negara telah menerapkan kuota untuk memastikan persentase tertentu perempuan terwakili dalam dewan direksi perusahaan. Diskusikan kelebihan dan kekurangan kebijakan ini dan berikan pendapat Anda.",
+          "Bekerja di perusahaan yang sangat besar menawarkan pengalaman yang berbeda dibandingkan bekerja di bisnis kecil yang dikelola keluarga. Apa keuntungan dan kerugian bekerja di perusahaan besar?",
+          "Banyak profesi sekarang mengharuskan karyawannya untuk bisa dihubungi melalui email atau telepon di luar jam kerja normal. Apakah keuntungan dari konektivitas yang konstan ini lebih besar daripada kerugiannya?"
+        ]
+      },
+      {
+        "name": "Kesehatan & Gaya Hidup",
+        "prompts": [
+          "Pemerintah di beberapa negara telah memberlakukan pajak terhadap makanan cepat saji dan minuman manis untuk memerangi obesitas. Apa keuntungan dan kerugian mengenakan pajak pada makanan tidak sehat?",
+          "Popularitas pola makan vegetarian dan vegan semakin meningkat secara global. Diskusikan keuntungan dan kerugian menghilangkan daging dari pola makan dan berikan pendapat Anda.",
+          "Banyak orang menggunakan pengobatan alternatif, seperti akupunktur dan pengobatan herbal, dibandingkan pengobatan medis konvensional. Apakah manfaat pengobatan alternatif lebih besar daripada kerugiannya?",
+          "Sistem layanan kesehatan di beberapa negara sepenuhnya didanai oleh pemerintah dan gratis pada saat digunakan. Apa kelebihan dan kekurangan sistem pelayanan kesehatan publik gratis?",
+          "Semakin banyak orang yang mengikuti olahraga ekstrem, seperti terjun payung dan panjat tebing. Diskusikan kelebihan dan kekurangan kegiatan tersebut dan berikan pendapat Anda.",
+          "Banyak kota yang melarang merokok di semua ruang publik, termasuk taman dan restoran luar ruangan. Apakah manfaat larangan merokok di tempat umum lebih besar daripada kerugiannya?",
+          "Semakin banyak orang yang menggunakan aplikasi seluler dan perangkat wearable untuk memantau kesehatan dan kebugaran mereka. Apa keuntungan dan kerugian mengandalkan teknologi untuk pemantauan kesehatan?",
+          "Tanaman hasil rekayasa genetika (GM) ditanam di banyak belahan dunia untuk meningkatkan produksi pangan. Diskusikan kelebihan dan kekurangan makanan GM dan berikan pendapat Anda.",
+          "Wisata medis, dimana orang bepergian ke luar negeri untuk menjalani prosedur medis, merupakan industri yang sedang berkembang pesat. Apakah keuntungan bepergian ke negara lain untuk mendapatkan layanan kesehatan lebih besar daripada kerugiannya?",
+          "Banyak orang membayar keanggotaan bulanan yang mahal untuk menghadiri pusat kebugaran komersial. Apa kelebihan dan kekurangan menggunakan gym agar tetap bugar dibandingkan berolahraga di luar ruangan atau di rumah?"
+        ]
+      },
+      {
+        "name": "Lingkungan & Perencanaan Kota",
+        "prompts": [
+          "Untuk mengurangi kemacetan lalu lintas, beberapa kota besar telah menerapkan \"tarif kemacetan\", yang mengenakan biaya kepada pengemudi untuk memasuki pusat kota. Apa kelebihan dan kekurangan sistem ini?",
+          "Energi nuklir dipandang oleh sebagian orang sebagai alternatif ramah lingkungan terhadap bahan bakar fosil. Diskusikan keuntungan dan kerugian mengandalkan tenaga nuklir dan berikan pendapat Anda.",
+          "Seiring bertambahnya populasi, kota-kota membangun gedung apartemen bertingkat tinggi untuk menampung penduduknya. Apakah keuntungan tinggal di gedung bertingkat lebih besar daripada kerugiannya?",
+          "Banyak pemerintah daerah telah mewajibkan daur ulang bagi semua rumah tangga. Apa kelebihan dan kekurangan program daur ulang paksa?",
+          "Sejumlah besar orang bermigrasi dari daerah pedesaan ke kota-kota besar untuk mencari peluang yang lebih baik. Diskusikan kelebihan dan kekurangan urbanisasi dan berikan pendapat anda.",
+          "Kebun binatang ada di hampir setiap kota besar di seluruh dunia. Apakah keuntungan memelihara hewan di penangkaran kebun binatang lebih besar daripada kerugiannya?",
+          "Beberapa orang berpendapat bahwa kita sebaiknya hanya membeli makanan yang diproduksi secara lokal. Apa keuntungan dan kerugian jika hanya mengonsumsi makanan yang bersumber secara lokal?",
+          "Untuk melindungi lingkungan, beberapa pemerintah memberikan subsidi besar pada kendaraan listrik (EV). Diskusikan kelebihan dan kekurangan intervensi pemerintah ini dan berikan pendapat Anda.",
+          "Ekowisata dirancang untuk memungkinkan wisatawan mengunjungi lingkungan yang rentan sambil meminimalkan dampaknya. Apakah manfaat ekowisata lebih besar dibandingkan kerugiannya?",
+          "Banyak perencana kota menganjurkan penciptaan zona bebas mobil sepenuhnya di pusat kota. Apa kelebihan dan kekurangan pelarangan mobil di perkotaan?"
+        ]
+      },
+      {
+        "name": "Pariwisata & Perjalanan",
+        "prompts": [
+          "Munculnya maskapai penerbangan hemat telah membuat perjalanan internasional terjangkau bagi jutaan orang. Apa kelebihan dan kekurangan perjalanan udara murah?",
+          "Pariwisata internasional merupakan sumber pendapatan utama bagi banyak negara berkembang. Diskusikan keuntungan dan kerugian perekonomian yang sangat bergantung pada pariwisata dan berikan pendapat Anda.",
+          "Banyak wisatawan memilih untuk menginap di persewaan jangka pendek (seperti Airbnb) daripada hotel tradisional. Apakah keuntungan dari penyewaan wisata jangka pendek lebih besar daripada kerugiannya bagi masyarakat lokal?",
+          "Bahasa Indonesia semakin menjadi bahasa global dalam perjalanan dan pariwisata. Apa keuntungan dan kerugian memiliki satu bahasa global yang dominan?",
+          "Beberapa kota bersejarah mengenakan “pajak turis” kepada pengunjung untuk membantu menjaga infrastruktur. Diskusikan keuntungan dan kerugian mengenakan pajak pada wisatawan dan berikan pendapat Anda.",
+          "“Wisata sukarela”, yaitu perjalanan orang ke negara-negara berkembang untuk melakukan kegiatan amal, kini menjadi sangat populer. Apakah keuntungan dari tren ini lebih besar daripada kerugiannya?",
+          "Semakin banyak wisatawan yang mengunjungi kawasan alam terpencil dan belum terjamah seperti Antartika atau hutan hujan Amazon. Apa kelebihan dan kekurangan pariwisata di lingkungan ekstrim?",
+          "Banyak orang berpendapat bahwa perjalanan global menyebabkan hilangnya keragaman budaya karena kota-kota mulai terlihat dan terasa sama di mana pun. Diskusikan kelebihan dan kekurangan homogenisasi budaya dan berikan pendapat Anda.",
+          "Ketimbang jalan-jalan ke luar negeri, sebagian orang lebih memilih menghabiskan liburannya dengan menjelajahi negaranya sendiri. Apakah kelebihan pariwisata domestik lebih besar daripada kerugiannya?",
+          "Paket tur berpemandu adalah cara bepergian yang sangat populer. Apa kelebihan dan kekurangan bepergian dengan grup wisata yang sangat terstruktur dibandingkan bepergian sendiri?"
+        ]
+      },
+      {
+        "name": "Pemerintah & Masyarakat",
+        "prompts": [
+          "Beberapa negara telah menerapkan program pengabdian masyarakat wajib bagi generasi muda. Diskusikan kelebihan dan kekurangannya serta berikan pendapat anda.",
+          "Pendapatan dasar universal (UBI), yang mana pemerintah memberikan sejumlah uang secara teratur kepada setiap warga negara, apa pun pekerjaannya, sedang diperdebatkan secara global. Apa kelebihan dan kekurangan UBI?",
+          "Banyak negara mengharuskan pemuda dan pemudi untuk menyelesaikan masa wajib militer. Apakah manfaat wajib militer lebih besar daripada kerugiannya?",
+          "Penggunaan kamera televisi sirkuit tertutup (CCTV) di tempat umum semakin meluas. Diskusikan kelebihan dan kekurangan pengawasan publik dan berikan pendapat Anda.",
+          "Beberapa negara telah menghapuskan hukuman mati, sementara negara lain masih menerapkannya untuk kejahatan yang paling serius. Apa kelebihan dan kekurangan hukuman mati?",
+          "Negara-negara kaya seringkali memberikan bantuan keuangan kepada negara-negara berkembang. Apakah manfaat bantuan internasional lebih besar dibandingkan kerugiannya?",
+          "Di beberapa negara, memberikan suara dalam pemilu nasional diwajibkan oleh hukum. Diskusikan kelebihan dan kekurangan pemungutan suara wajib dan berikan pendapat Anda.",
+          "Pemerintah sering kali menyediakan dana yang signifikan untuk seni, termasuk museum, galeri, dan teater. Apa keuntungan dan kerugian menggunakan uang rakyat untuk mendanai seni?",
+          "Berkat kemajuan medis, populasi di banyak negara maju bisa hidup lebih lama. Apakah keuntungan dari populasi yang menua lebih besar daripada kerugiannya?",
+          "Sistem penjara modern sering kali berfokus pada rehabilitasi pelanggar melalui pendidikan dan terapi dibandingkan hanya menghukum mereka. Diskusikan kelebihan dan kekurangan rehabilitasi dibandingkan hukuman dan berikan pendapat Anda."
+        ]
+      },
+      {
+        "name": "Keluarga & Anak-anak",
+        "prompts": [
+          "Dalam masyarakat modern, kedua orang tua harus bekerja penuh waktu sambil membesarkan anak. Apa keuntungan dan kerugian memiliki dua orang tua yang bekerja?",
+          "Semakin banyak orang yang memilih untuk tinggal sendiri dibandingkan dengan keluarga atau teman sekamar. Apakah keuntungan hidup sendiri lebih besar daripada kerugiannya?",
+          "Banyak pasangan memilih untuk memiliki anak jauh di kemudian hari, seringkali di akhir usia 30 atau 40an. Diskusikan keuntungan dan kerugian menunda menjadi orang tua dan berikan pendapat Anda.",
+          "Keluarga besar tradisional (kakek-nenek, bibi, paman yang tinggal bersama) semakin berkurang dan digantikan oleh keluarga inti. Apa keuntungan dan kerugian tumbuh dalam keluarga besar?",
+          "Beberapa orang tua memberi anak mereka uang saku mingguan atau uang saku. Apakah keuntungan memberikan uang kepada anak lebih besar daripada kerugiannya?",
+          "Banyak orang tua yang sangat membatasi jumlah waktu menatap layar anak-anak mereka setiap hari. Diskusikan kelebihan dan kekurangan batasan waktu pemakaian perangkat yang ketat dan berikan pendapat Anda.",
+          "Tingkat perceraian telah meningkat secara signifikan di banyak negara selama beberapa dekade terakhir. Apa kelebihan dan kekurangan yang mempermudah pasangan untuk bercerai secara sah?",
+          "Semakin umum bagi orang dewasa muda untuk terus tinggal bersama orang tua mereka hingga usia dua puluhan. Apakah keuntungan dari kaum muda yang tinggal di rumah lebih besar daripada kerugiannya?",
+          "Beberapa orang tua mendaftarkan anak mereka ke berbagai kegiatan ekstrakurikuler, sehingga hanya menyisakan sedikit waktu luang. Diskusikan kelebihan dan kekurangan masa kanak-kanak yang sangat terstruktur dan berikan pendapat Anda.",
+          "Tumbuh dalam rumah tangga dengan orang tua tunggal merupakan pengalaman yang semakin umum bagi anak-anak. Apa kelebihan dan kekurangan dibesarkan oleh orang tua tunggal?"
+        ]
+      },
+      {
+        "name": "Media & Periklanan",
+        "prompts": [
+          "Banyak negara membatasi atau melarang iklan yang ditujukan langsung kepada anak-anak. Apakah manfaat pelarangan iklan bagi anak-anak lebih besar dibandingkan kerugiannya?",
+          "Munculnya saluran berita 24 jam dan feed berita online berarti kita memiliki akses terus-menerus terhadap informasi. Apa kelebihan dan kekurangan siklus berita 24 jam?",
+          "Perusahaan multinasional besar menguasai sebagian besar lanskap media global. Diskusikan kelebihan dan kekurangan monopoli media dan berikan pendapat Anda.",
+          "Perusahaan online menggunakan iklan bertarget berdasarkan pelacakan riwayat web pengguna. Apakah keuntungan dari iklan yang dipersonalisasi lebih besar daripada kerugiannya?",
+          "Acara televisi realitas terus menjadi sangat populer di seluruh dunia. Apa kelebihan dan kekurangan program reality TV?",
+          "Beberapa pemerintah menyensor internet untuk membatasi konten yang dapat dilihat warganya. Diskusikan kelebihan dan kekurangan sensor internet dan berikan pendapat Anda.",
+          "Surat kabar dan majalah cetak mengalami penurunan jumlah pembaca secara besar-besaran seiring beralihnya masyarakat ke media digital. Apa keuntungan dan kerugian masyarakat yang beralih dari jurnalisme cetak?",
+          "Selebriti sering kali mendukung produk dan kampanye politik. Apakah keuntungan dari dukungan selebriti lebih besar daripada kerugiannya?",
+          "Layanan streaming seperti Netflix dan Spotify telah sepenuhnya mengubah cara orang mengonsumsi hiburan. Diskusikan keuntungan dan kerugian peralihan ke media streaming dan berikan pendapat Anda.",
+          "Film aksi dan video game modern sering kali mengandung tingkat kekerasan yang tinggi. Apa keuntungan dan kerugian memaparkan masyarakat pada media yang mengandung kekerasan?"
+        ]
+      },
+      {
+        "name": "Globalisasi & Budaya",
+        "prompts": [
+          "Munculnya perusahaan multinasional berarti toko dan merek yang sama dapat ditemukan di seluruh dunia. Apakah keuntungan globalisasi dalam bisnis lebih besar dibandingkan kerugiannya?",
+          "Banyak bahasa minoritas yang terancam punah karena masyarakat beralih ke bahasa dominan seperti Inggris, Spanyol, atau Mandarin. Diskusikan keuntungan dan kerugian dari hilangnya bahasa minoritas dan berikan pendapat Anda.",
+          "Industri \"fast fashion\" memungkinkan orang membeli pakaian trendi dengan harga sangat murah. Apa kelebihan dan kekurangan fast fashion?",
+          "Berkat perdagangan global, orang dapat membeli makanan dari seluruh dunia kapan saja sepanjang tahun di supermarket lokal mereka. Apakah keuntungan dari jaringan pangan global ini lebih besar daripada kerugiannya?",
+          "Pernikahan lintas budaya, dimana pasangannya berasal dari negara atau latar belakang budaya yang berbeda, menjadi lebih umum. Diskusikan kelebihan dan kekurangan membesarkan keluarga dalam rumah tangga multikultural dan berikan pendapat Anda.",
+          "Acara olahraga internasional seperti Olimpiade atau Piala Dunia FIFA mengharuskan negara tuan rumah mengeluarkan miliaran dolar. Apa keuntungan dan kerugian menjadi tuan rumah acara olahraga besar internasional?",
+          "Perampasan budaya, dimana elemen budaya minoritas digunakan oleh budaya dominan, masih banyak diperdebatkan. Apakah keuntungan dari pembagian budaya lebih besar daripada kerugian dari apropriasi?",
+          "Sangat umum bagi sekolah untuk menghabiskan banyak waktu untuk mengajar siswa tentang sejarah kuno. Diskusikan kelebihan dan kekurangan mengutamakan sejarah dalam kurikulum dan berikan pendapat Anda.",
+          "Banyak orang bergantung sepenuhnya pada badan amal global untuk menyelesaikan krisis kemanusiaan. Apa keuntungan dan kerugian mengandalkan lembaga swadaya masyarakat (LSM) dibandingkan pemerintah daerah?",
+          "Kebudayaan Barat, khususnya melalui musik dan sinema, mempunyai pengaruh besar terhadap seluruh dunia. Apakah keuntungan penyebaran budaya Barat secara global lebih besar daripada kerugiannya?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "problem-solution",
+    "label": "Masalah & Solusi",
+    "description": "Mengidentifikasi penyebab masalah dan menyarankan solusi.",
+    "instruction": "Jelaskan penyebab/dampak masalah ini dan berikan solusinya. Tulis setidaknya 250 kata.",
+    "categories": [
+      {
+        "name": "Lingkungan & Alam",
+        "prompts": [
+          "Jumlah sampah plastik di lautan dunia meningkat pesat. Apa penyebabnya? Solusi apa yang bisa Anda sarankan?",
+          "Deforestasi terjadi pada tingkat yang mengkhawatirkan di banyak belahan dunia. Apa dampak negatif dari hal ini? Bagaimana masalah ini dapat diselesaikan?",
+          "Banyak kota di dunia menghadapi kekurangan air yang parah. Mengapa ini terjadi? Tindakan apa yang dapat diambil untuk mengatasi masalah ini?",
+          "Jumlah spesies yang terancam punah terus bertambah setiap tahunnya. Apa penyebab utama penurunan ini? Apa yang bisa dilakukan untuk melindungi hewan-hewan ini?",
+          "Polusi udara di pusat-pusat kota besar mencapai tingkat kritis. Apa dampak kesehatan dan lingkungan dari hal ini? Bagaimana pemerintah dan individu dapat mengurangi polusi udara?",
+          "Pemanasan global menyebabkan kejadian cuaca ekstrem di seluruh dunia. Apa penyebab utama dari fenomena ini? Langkah-langkah apa yang dapat diambil untuk meminimalkan dampaknya?",
+          "Jumlah sampah rumah tangga yang dihasilkan meningkat secara signifikan. Mengapa hal ini terjadi? Apa yang bisa dilakukan untuk mendorong masyarakat mengurangi sampah?",
+          "Hilangnya keanekaragaman hayati merupakan masalah utama global. Apa dampak negatif dari kerugian ini? Bagaimana kita bisa melestarikan ekosistem alami?",
+          "Penangkapan ikan yang berlebihan menyebabkan berkurangnya stok ikan di lautan dunia. Masalah apa yang ditimbulkannya? Peraturan apa yang harus dibuat untuk mencegah hal ini?",
+          "Degradasi tanah mempersulit penanaman pangan di beberapa daerah. Apa penyebab masalah ini? Solusi pertanian apa yang bisa diterapkan?"
+        ]
+      },
+      {
+        "name": "Teknologi & Internet",
+        "prompts": [
+          "Anak-anak saat ini menghabiskan banyak waktu untuk melihat layar. Apa dampak negatif dari hal ini? Bagaimana cara orang tua mengatur screen time anak mereka?",
+          "Cyberbullying telah menjadi isu yang meluas di kalangan remaja. Apa penyebab perilaku ini? Apa yang dapat dilakukan sekolah dan orang tua untuk mencegahnya?",
+          "Dengan maraknya layanan online, privasi data pribadi semakin terancam. Apa saja potensi bahaya dari hal ini? Bagaimana individu dapat melindungi informasi online mereka?",
+          "Banyak orang dewasa yang kecanduan ponsel pintar. Mengapa ini terjadi? Langkah-langkah apa yang dapat diambil masyarakat untuk mengurangi ketergantungan mereka pada perangkat seluler?",
+          "Pesatnya perkembangan Kecerdasan Buatan mengancam banyak pekerjaan tradisional. Apa dampak potensial dari hal ini terhadap masyarakat? Apa yang dapat dilakukan pemerintah untuk mempersiapkan angkatan kerja?",
+          "Peningkatan perangkat elektronik yang terus-menerus telah menyebabkan peningkatan besar-besaran limbah elektronik. Mengapa orang begitu sering mengganti perangkatnya? Bagaimana sampah elektronik dapat dikelola dengan lebih baik?",
+          "Penyebaran berita palsu dan misinformasi di media sosial merupakan masalah yang semakin meningkat. Apa yang menyebabkan informasi ini menyebar begitu cepat? Apa yang bisa dilakukan untuk melawannya?",
+          "Komunikasi tatap muka menurun karena pesan digital. Apa dampak negatifnya terhadap hubungan pribadi? Bagaimana kita dapat mendorong lebih banyak interaksi dalam kehidupan nyata?",
+          "Kejahatan dunia maya, seperti peretasan dan pencurian identitas, sedang meningkat. Apa yang membuat masyarakat rentan terhadap kejahatan ini? Langkah-langkah apa yang dapat meningkatkan keamanan siber?",
+          "Masyarakat menjadi terlalu bergantung pada teknologi untuk keterampilan dasar, seperti menggunakan GPS dibandingkan membaca peta. Masalah apa yang ditimbulkan oleh ketergantungan ini? Bagaimana tren ini bisa dibalik?"
+        ]
+      },
+      {
+        "name": "Masyarakat & Kehidupan Kota",
+        "prompts": [
+          "Banyak kota besar yang mengalami kepadatan penduduk yang parah. Apa penyebab urbanisasi yang pesat ini? Solusi apa yang dapat membantu mengelola populasi kota?",
+          "Biaya hidup meningkat drastis di banyak belahan dunia. Masalah apa yang ditimbulkan hal ini pada rata-rata keluarga? Bagaimana pemerintah dapat meringankan beban keuangan ini?",
+          "Tunawisma adalah masalah yang nyata di banyak negara kaya. Mengapa orang-orang akhirnya hidup di jalanan? Program sosial apa yang dapat secara efektif mengurangi tunawisma?",
+          "Polusi suara merupakan masalah yang terus-menerus terjadi pada masyarakat yang tinggal di perkotaan. Apa sumber utama kebisingan ini? Langkah-langkah apa yang dapat diambil oleh perencana kota untuk menciptakan lingkungan yang lebih tenang?",
+          "Minimnya taman umum dan ruang hijau di kota-kota modern. Apa dampak negatif hal ini terhadap penduduk kota? Bagaimana pemerintah daerah dapat mengatasi masalah ini?",
+          "Daerah pedesaan mengalami penurunan populasi seiring dengan perpindahan generasi muda. Mengapa ini terjadi? Apa yang dapat dilakukan untuk mendorong masyarakat agar tetap tinggal atau pindah ke komunitas pedesaan?",
+          "Populasi di banyak negara maju mengalami penuaan yang cepat. Masalah ekonomi dan sosial apa yang diakibatkan oleh hal ini? Bagaimana masyarakat dapat beradaptasi dengan demografi yang lebih tua?",
+          "Kesenjangan kekayaan antara si kaya dan si miskin terus melebar. Apa dampak sosial dari kesenjangan yang ekstrim? Kebijakan ekonomi apa yang dapat membantu mendistribusikan kekayaan secara lebih merata?",
+          "Meski tinggal di kota yang padat, banyak orang melaporkan merasa terisolasi dan kesepian. Apa penyebab isolasi perkotaan modern? Apa yang bisa dilakukan untuk menumbuhkan rasa kebersamaan?",
+          "Budaya dan adat istiadat tradisional mulai punah di dunia yang terglobalisasi. Mengapa kerugian ini terjadi? Bagaimana masyarakat dapat melestarikan warisan budaya mereka?"
+        ]
+      },
+      {
+        "name": "Pendidikan",
+        "prompts": [
+          "Siswa sekolah menengah saat ini menghadapi tingkat stres dan kelelahan yang belum pernah terjadi sebelumnya. Apa penyebab utama dari tekanan ini? Bagaimana sistem pendidikan dapat direformasi untuk mendukung kesejahteraan siswa?",
+          "Biaya kuliah menjadi tidak terjangkau bagi banyak anak muda. Apa dampak negatif dari hal ini? Alternatif atau solusi apa yang dapat ditawarkan kepada siswa?",
+          "Penindasan masih menjadi masalah yang terus-menerus terjadi di sekolah-sekolah di seluruh dunia. Apa dampak psikologis yang ditimbulkan oleh bullying pada anak? Strategi anti-intimidasi apa yang paling efektif?",
+          "Banyak pengusaha mengeluh bahwa lulusan baru kurang memiliki keterampilan praktis di tempat kerja. Mengapa ada kesenjangan antara pendidikan dan pekerjaan? Bagaimana kurikulum universitas dapat ditingkatkan?",
+          "Terdapat kekurangan yang parah terhadap guru yang berkualitas di banyak negara. Apa alasan di balik kekurangan ini? Bagaimana profesi guru dapat dibuat lebih menarik?",
+          "Siswa di daerah pedesaan sering kali menerima kualitas pendidikan yang lebih rendah dibandingkan siswa di kota. Apa yang menyebabkan kesenjangan pendidikan ini? Langkah-langkah apa yang dapat menjamin akses yang setara terhadap sekolah berkualitas?",
+          "Munculnya alat AI telah menyebabkan peningkatan kecurangan akademik dan plagiarisme. Apa dampak negatifnya terhadap pembelajaran siswa? Bagaimana seharusnya sekolah mengatasi penggunaan AI?",
+          "Tingkat buta huruf di kalangan orang dewasa masih tinggi di beberapa wilayah berkembang. Masalah apa saja yang ditimbulkan oleh buta huruf di masyarakat? Inisiatif apa yang berhasil mengajarkan orang dewasa membaca dan menulis?",
+          "Banyak siswa merasa tidak terlibat dan bosan dalam lingkungan kelas tradisional. Mengapa metode pengajaran tradisional gagal menarik perhatian siswa? Bagaimana cara agar pembelajaran menjadi lebih menarik?",
+          "Ukuran kelas di sekolah umum seringkali terlalu besar untuk pengajaran yang efektif. Apa dampak negatifnya bagi guru dan siswa? Bagaimana masalah ini dapat diatasi?"
+        ]
+      },
+      {
+        "name": "Kesehatan & Pola Makan",
+        "prompts": [
+          "Obesitas telah menjadi epidemi di banyak belahan dunia. Apa penyebab utama kenaikan berat badan secara luas? Tindakan apa yang dapat diambil pemerintah untuk mendorong gaya hidup sehat?",
+          "Tingkat masalah kesehatan mental, seperti depresi dan kecemasan, meningkat secara global. Mengapa kondisi ini menjadi lebih umum terjadi? Apa yang dapat dilakukan untuk meningkatkan layanan kesehatan mental?",
+          "Konsumsi makanan cepat saji berada pada titik tertinggi sepanjang masa. Apa dampak negatif dari mengonsumsi makanan olahan secara berlebihan? Bagaimana masyarakat dapat mendorong masyarakat untuk memasak makanan segar?",
+          "Gaya hidup modern menjadi semakin tidak banyak bergerak. Masalah fisik apa yang timbul akibat kurang gerak? Apa yang dapat dilakukan untuk mengintegrasikan lebih banyak aktivitas fisik ke dalam kehidupan sehari-hari?",
+          "Banyak orang saat ini menderita kurang tidur kronis. Faktor apa saja yang menyebabkan kurang tidur pada masyarakat modern? Bagaimana seseorang dapat meningkatkan kebersihan tidurnya?",
+          "Biaya perawatan medis dan layanan kesehatan meningkat melampaui jangkauan rata-rata warga negara. Masalah apa yang ditimbulkannya? Bagaimana layanan kesehatan dapat dibuat lebih mudah diakses dan terjangkau?",
+          "Ada kekurangan perawat dan profesional kesehatan secara global. Mengapa sektor ini kesulitan mempertahankan stafnya? Insentif apa yang dapat mengatasi krisis kepegawaian ini?",
+          "Meskipun terdapat kemajuan dalam bidang kedokteran, masih banyak orang di seluruh dunia yang meninggal karena penyakit yang mudah dicegah. Mengapa hal ini terjadi? Apa yang dapat dilakukan untuk mengatasi masalah ini?",
+          "Penggunaan antibiotik yang berlebihan menyebabkan munculnya strain bakteri yang resisten. Apa bahaya resistensi antibiotik? Bagaimana komunitas medis mengatasi masalah ini?",
+          "Penggunaan layar dalam waktu lama menyebabkan peningkatan masalah kesehatan terkait mata di kalangan anak-anak dan orang dewasa. Apa saja masalah spesifik yang terjadi? Tindakan pencegahan apa yang harus diambil?"
+        ]
+      },
+      {
+        "name": "Pekerjaan & Ekonomi",
+        "prompts": [
+          "Stres yang berhubungan dengan pekerjaan adalah penyebab utama penyakit pada angkatan kerja modern. Aspek pekerjaan modern apa yang menimbulkan stres ini? Apa yang dapat dilakukan pengusaha untuk mendukung kesehatan mental stafnya?",
+          "Tingkat pengangguran kaum muda sangat tinggi di banyak negara. Mengapa generasi muda sulit mendapatkan pekerjaan? Inisiatif apa yang dapat membantu mengintegrasikan mereka ke dalam dunia kerja?",
+          "Di banyak profesi, perempuan masih dibayar lebih rendah dibandingkan laki-laki untuk melakukan pekerjaan yang sama. Apa penyebab kesenjangan upah berdasarkan gender? Bagaimana pemerintah dan dunia usaha dapat menjamin upah yang setara?",
+          "Perjalanan sehari-hari yang panjang dan melelahkan adalah kenyataan yang dialami banyak pekerja. Apa dampak negatif perjalanan jauh terhadap individu? Bagaimana masalah ini dapat diatasi?",
+          "Banyak karyawan berjuang untuk menjaga keseimbangan kehidupan kerja yang sehat. Mengapa begitu sulit memisahkan pekerjaan dari kehidupan pribadi? Kebijakan tempat kerja apa yang dapat meningkatkan keseimbangan ini?",
+          "Munculnya “gig economy” berarti banyak orang bekerja berdasarkan kontrak jangka pendek tanpa imbalan. Masalah keuangan apa yang ditimbulkan oleh hal ini bagi para pekerja? Bagaimana pekerja pertunjukan dapat terlindungi dengan lebih baik?",
+          "Inflasi yang tinggi menyebabkan harga barang-barang kebutuhan pokok melambung tinggi. Bagaimana dampaknya terhadap keluarga berpenghasilan rendah? Langkah ekonomi apa yang dapat diambil untuk menstabilkan harga?",
+          "Di beberapa industri, pekerja dihadapkan pada kondisi kerja yang tidak aman. Mengapa kondisi ini terus terjadi? Apa yang dapat dilakukan untuk menegakkan peraturan keselamatan yang lebih ketat?",
+          "Banyak negara berkembang mengalami “brain drain” (pengurasan otak), yang mana para profesional mereka yang paling berpendidikan pindah ke luar negeri. Masalah apa yang ditimbulkan hal ini bagi negara asal? Bagaimana negara-negara dapat mempertahankan bakat mereka?",
+          "Orang dewasa muda saat ini mengumpulkan utang pribadi dalam jumlah yang belum pernah terjadi sebelumnya. Apa alasan utama peminjaman ini? Edukasi keuangan apa yang harus diberikan untuk mengatasi hal ini?"
+        ]
+      },
+      {
+        "name": "Kejahatan & Hukum",
+        "prompts": [
+          "Kenakalan remaja (kejahatan yang dilakukan oleh generasi muda) semakin meningkat di banyak kota. Apa akar penyebab kejahatan remaja? Intervensi apa yang bisa menjauhkan generasi muda dari masalah?",
+          "Kejahatan tradisional menurun, namun kejahatan dunia maya meningkat tajam. Mengapa penjahat berpindah ke dunia online? Bagaimana penegakan hukum beradaptasi untuk memerangi kejahatan digital?",
+          "Penyalahgunaan narkoba terus menghancurkan kehidupan dan masyarakat. Apa yang mendorong individu melakukan penyalahgunaan narkoba? Apa cara paling efektif untuk merehabilitasi pecandu?",
+          "Penjara di banyak negara sangat penuh sesak. Apa dampak dari penjara yang kelebihan populasi? Hukuman alternatif apa yang dapat meringankan tekanan ini?",
+          "Banyak penjahat kembali melakukan pelanggaran tak lama setelah dibebaskan dari penjara. Mengapa sistem penjara gagal merehabilitasi narapidana? Program apa yang dapat membantu mantan narapidana berintegrasi kembali ke masyarakat?",
+          "Kejahatan kerah putih, seperti penipuan korporasi, sering kali tidak mendapat hukuman dibandingkan dengan kejahatan jalanan. Mengapa hal ini terjadi? Bagaimana sistem peradilan dapat menangani korupsi korporasi dengan lebih efektif?",
+          "Vandalisme dan perusakan properti umum sering terjadi di banyak wilayah perkotaan. Apa yang memotivasi orang melakukan vandalisme? Bagaimana cara pemerintah setempat mencegahnya?",
+          "Pelanggaran lalu lintas, seperti ngebut dan mengemudi dalam keadaan mabuk, menyebabkan ribuan kematian setiap tahunnya. Mengapa orang mengabaikan peraturan lalu lintas? Tindakan apa yang berhasil mencegah perilaku mengemudi yang berbahaya?",
+          "Kekerasan dalam rumah tangga adalah kejahatan tersembunyi yang mempengaruhi jutaan rumah tangga. Mengapa korban sering diam saja? Sistem pendukung apa yang perlu ada untuk melindungi mereka?",
+          "Perdagangan satwa liar ilegal menyebabkan banyak spesies hewan punah. Apa yang memicu permintaan terhadap produk hewani ilegal? Bagaimana hukum internasional dapat menghentikan perdagangan ini?"
+        ]
+      },
+      {
+        "name": "Keluarga & Remaja",
+        "prompts": [
+          "Model keluarga besar yang tradisional digantikan oleh keluarga inti atau rumah tangga dengan orang tua tunggal. Masalah apa yang disebabkan oleh hilangnya dukungan keluarga besar? Bagaimana masyarakat dapat membantu mendukung keluarga modern?",
+          "Ada “kesenjangan generasi” yang semakin besar yang mengakibatkan kurangnya pemahaman antara generasi muda dan tua. Mengapa kesalahpahaman ini bisa terjadi? Bagaimana kita bisa menjembatani kesenjangan antar generasi?",
+          "Banyak anak-anak saat ini yang ditinggal di rumah tanpa pengawasan orang tua karena orang tuanya bekerja. Apa saja dampak negatifnya terhadap tumbuh kembang anak? Solusi apa yang dapat diterapkan oleh orang tua yang bekerja?",
+          "Orang tua saat ini memberikan tekanan besar pada anak-anak mereka untuk berhasil secara akademis dan ekstrakurikuler. Apa dampak psikologisnya pada anak? Bagaimana orang tua dapat menerapkan pendekatan yang lebih sehat?",
+          "Angka kelahiran di banyak negara maju menurun dengan cepat. Mengapa orang memilih untuk memiliki lebih sedikit anak? Permasalahan apa yang akan timbul di masyarakat di masa depan, dan bagaimana cara mengatasinya?",
+          "Biaya penitipan anak profesional sangatlah mahal bagi banyak keluarga. Masalah apa yang khususnya ditimbulkan oleh hal ini bagi ibu yang bekerja? Bagaimana cara penitipan anak menjadi lebih mudah diakses?",
+          "Perilaku antisosial di kalangan remaja di ruang publik merupakan keluhan umum. Apa yang menyebabkan perilaku memberontak ini? Bagaimana komunitas dapat melibatkan remaja dalam kegiatan yang lebih positif?",
+          "Children and teenagers today are increasingly targeted by consumer marketing. Apa dampak negatif konsumerisme generasi muda? Bagaimana orang tua dapat melindungi anak-anak mereka dari iklan yang agresif?",
+          "Banyak anak muda yang mengidolakan selebriti yang berperilaku buruk. Mengapa remaja mengagumi angka-angka ini? Bagaimana kita dapat memberikan teladan yang lebih baik bagi generasi muda?",
+          "Tingkat perceraian telah meningkat secara signifikan selama beberapa dekade terakhir. Apa saja tekanan utama yang menyebabkan kegagalan pernikahan? Apa yang dapat dilakukan untuk lebih mempersiapkan pasangan menjelang pernikahan?"
+        ]
+      },
+      {
+        "name": "Transportasi & Pariwisata",
+        "prompts": [
+          "Kemacetan lalu lintas adalah mimpi buruk sehari-hari di sebagian besar kota besar. Apa penyebab utama kemacetan? Solusi transportasi inovatif apa yang dapat memperlancar arus lalu lintas?",
+          "Sistem transportasi umum di banyak daerah tidak dapat diandalkan dan tidak terpelihara dengan baik. Mengapa angkutan umum sering terabaikan? Langkah-langkah apa yang diperlukan untuk meningkatkan sistem ini?",
+          "Situs-situs bersejarah dan landmark terkenal mengalami \"overtourism\". Kerusakan apa yang diakibatkan oleh pariwisata yang berlebihan? Bagaimana pihak berwenang dapat mengelola jumlah wisatawan secara berkelanjutan?",
+          "Industri penerbangan merupakan penyumbang emisi karbon global yang sangat besar. Mengapa perjalanan udara begitu sulit untuk dijadikan \"hijau\"? Alternatif atau solusi apa yang dapat mengurangi dampak penerbangan terhadap lingkungan?",
+          "Jumlah kecelakaan lalu lintas yang fatal masih sangat tinggi. Apa penyebab utama dari crash ini? Tindakan keselamatan apa yang dapat mengurangi kematian di jalan secara signifikan?",
+          "Perjalanan internasional menjadi terlalu mahal bagi kebanyakan orang karena biaya bahan bakar dan pajak. Apa dampak negatif dari pembatasan perjalanan? Bagaimana pariwisata tetap dapat diakses?",
+          "Wisatawan sering kali berperilaku dengan cara yang menyinggung kepekaan budaya lokal. Mengapa gesekan budaya ini terjadi? Bagaimana wisatawan dapat dididik untuk menghormati adat istiadat setempat?",
+          "Meskipun ada peringatan lingkungan, ketergantungan pada mobil pribadi semakin meningkat. Mengapa orang menolak menyerahkan mobilnya? Insentif apa yang berhasil mendorong masyarakat beralih ke transportasi umum?",
+          "Menemukan tempat parkir di pusat kota menjadi hampir mustahil. Masalah apa yang timbul dari hal ini bagi bisnis lokal? Solusi arsitektur atau perencanaan apa yang dapat mengatasi kekurangan parkir?",
+          "Pembangunan resor besar menghancurkan bisnis lokal kecil di kota-kota wisata. Mengapa toko-toko lokal kesulitan bersaing? Apa yang dapat dilakukan pemerintah daerah untuk melindungi usaha kecil?"
+        ]
+      },
+      {
+        "name": "Pangan & Pertanian",
+        "prompts": [
+          "Jumlah makanan yang terbuang secara global oleh supermarket dan konsumen sangatlah mengejutkan. Mengapa begitu banyak makanan yang dibuang? Langkah-langkah apa yang dapat diambil untuk mengurangi limbah makanan secara drastis?",
+          "Banyak negara yang sangat bergantung pada impor pangan dibandingkan menanamnya secara lokal. Apa risiko bergantung pada pasokan pangan asing? Bagaimana suatu negara dapat meningkatkan pertanian dalam negerinya?",
+          "Banyaknya penggunaan pestisida kimia dalam pertanian menimbulkan kekhawatiran. Apa dampak lingkungan dan kesehatan dari bahan kimia ini? Apa alternatif yang layak untuk pertanian kimia?",
+          "Praktik peternakan di pabrik mengutamakan keuntungan dibandingkan kesejahteraan hewan. Apa saja kekejaman spesifik yang terkait dengan produksi daging massal? Bagaimana konsumen dan pemerintah dapat mendorong perubahan dalam industri ini?",
+          "Pertanian kecil yang dikelola keluarga menghilang seiring dengan diambil alihnya perusahaan agrobisnis besar. Mengapa pertanian kecil gagal? Apa yang dapat dilakukan untuk mendukung dan mempertahankan petani lokal?",
+          "Meskipun produksi pangan global tinggi, kerawanan pangan dan kelaparan masih terjadi di banyak wilayah. Apa akar penyebab kegagalan distribusi pangan? Bagaimana kita bisa memastikan setiap orang mendapat cukup makanan?",
+          "Lahan subur (lahan yang cocok untuk bercocok tanam) kini hilang karena pembangunan perumahan dan penggurunan. Apa bahaya jangka panjang dari hilangnya lahan pertanian? Bagaimana kita bisa melindungi lahan pertanian?",
+          "Dampak kesehatan jangka panjang dari konsumsi makanan hasil rekayasa genetika (GM) masih menjadi kekhawatiran banyak orang. Mengapa masyarakat skeptis terhadap tanaman hasil rekayasa genetika? Peraturan apa yang harus mengatur penjualan makanan hasil rekayasa genetika?",
+          "Pola makan secara global beralih ke makanan olahan dan kemasan. Apa yang mendorong ketergantungan pada makanan olahan? Bagaimana pemerintah dapat mengedukasi masyarakat mengenai nutrisi makanan utuh?",
+          "Limpasan pertanian (pupuk yang terbawa ke sungai) sangat mencemari saluran air. Kerusakan apa yang ditimbulkannya terhadap ekosistem perairan? Praktik pertanian apa yang dapat mencegah polusi ini?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "double-question",
+    "label": "Pertanyaan Ganda",
+    "description": "Jawab dua pertanyaan terpisah tentang topik yang sama.",
+    "instruction": "Jawablah kedua pertanyaan tersebut dengan lengkap. Tulis setidaknya 250 kata.",
+    "categories": [
+      {
+        "name": "Pendidikan & Pembelajaran",
+        "prompts": [
+          "Banyak siswa yang sulit berkonsentrasi di sekolah dan universitas. Apa alasannya? Bagaimana kita bisa mengatasi masalah ini?",
+          "Di beberapa negara, banyak siswa yang keluar dari universitas sebelum menyelesaikan gelar mereka. Menurut Anda mengapa hal ini terjadi? Apa yang dapat dilakukan untuk mendorong siswa menyelesaikan studinya?",
+          "Sebagian orang beranggapan bahwa sejarah adalah mata pelajaran yang tidak berguna untuk dipelajari di sekolah. Mengapa sebagian orang merasa seperti ini? Menurut Anda, apakah sejarah merupakan mata pelajaran sekolah yang penting?",
+          "Mengambil jeda tahun sebelum memasuki universitas menjadi hal yang lumrah di kalangan anak muda. Mengapa lebih banyak siswa memilih untuk melakukan ini? Apakah trennya positif atau negatif?",
+          "Biaya kuliah di universitas telah meningkat secara signifikan di banyak belahan dunia. Apa dampaknya terhadap pelajar dan masyarakat? Upaya apa saja yang dapat menjadikan pendidikan tinggi lebih mudah diakses?",
+          "Banyak anak yang diberi tugas pekerjaan rumah setiap hari oleh gurunya. Apakah menurut Anda ini adalah praktik yang perlu? Apa potensi kerugian dari terlalu banyak pekerjaan rumah?",
+          "Dalam beberapa tahun terakhir, jumlah orang yang memilih untuk belajar online dibandingkan di ruang kelas tradisional telah meningkat. Apa kelebihan pembelajaran online? Apakah menurut Anda sekolah tradisional pada akhirnya akan hilang?",
+          "Beberapa siswa kesulitan belajar bahasa asing di ruang kelas. Mengapa mempelajari bahasa baru sulit bagi banyak orang? Apa cara paling efektif untuk belajar bahasa asing?",
+          "Keterampilan praktis seperti memasak, pengelolaan keuangan, dan perawatan dasar mobil jarang diajarkan di sekolah. Haruskah keterampilan ini dimasukkan dalam kurikulum? Siapa yang bertanggung jawab mengajarkan keterampilan ini kepada anak-anak?",
+          "Musik dan seni seringkali menjadi mata pelajaran pertama yang dihapus dari kurikulum sekolah ketika dana berkurang. Mengapa ini terjadi? Seberapa pentingkah seni bagi tumbuh kembang anak?"
+        ]
+      },
+      {
+        "name": "Teknologi & Inovasi",
+        "prompts": [
+          "Orang-orang saat ini menghabiskan lebih banyak waktu untuk melihat layar ponsel, komputer, dan televisi. Apa dampaknya terhadap kesehatan fisik dan mental? Bagaimana seseorang dapat mengatur waktu pemakaian perangkatnya dengan lebih baik?",
+          "Kecerdasan buatan semakin banyak digunakan untuk melakukan tugas-tugas yang sebelumnya dilakukan oleh manusia. Apa manfaat utama AI? Risiko apa yang ditimbulkan oleh teknologi ini terhadap masyarakat?",
+          "Platform media sosial telah mengubah cara orang membentuk dan memelihara hubungan. Bagaimana media sosial mempengaruhi interaksi manusia? Menurut Anda, apakah perkembangan ini secara keseluruhan positif atau negatif?",
+          "Semakin banyak orang yang menggunakan aplikasi kencan online untuk mencari pasangan romantis. Mengapa platform ini menjadi begitu populer? Apa saja potensi bahaya bertemu orang secara online?",
+          "Banyak orang lebih memilih membaca berita online dibandingkan membeli koran fisik. Mengapa berita digital disukai banyak orang? Apakah surat kabar cetak akan hilang sama sekali di masa depan?",
+          "Cryptocurrency dan pembayaran digital menjadi lebih umum, menggantikan uang tunai fisik. Apa keuntungan dari masyarakat non-tunai? Masalah apa yang bisa timbul jika mengandalkan sepenuhnya pada uang digital?",
+          "Wisata luar angkasa diperkirakan akan menjadi kenyataan bagi orang-orang kaya dalam waktu dekat. Mengapa orang tertarik bepergian ke luar angkasa? Haruskah pemerintah mengatur industri baru ini?",
+          "Anak-anak saat ini sering kali memiliki akses terhadap ponsel pintar dan tablet sejak usia sangat muda. Bagaimana akses dini terhadap teknologi mempengaruhi perkembangan anak? Haruskah orang tua membatasi penggunaan perangkat ini oleh anak-anak mereka?",
+          "Otomasi dan robotika menggantikan angkatan kerja manual di banyak industri manufaktur. Apa yang terjadi pada pekerja yang kehilangan pekerjaannya karena mesin? Bagaimana seharusnya pemerintah mempersiapkan angkatan kerja untuk masa depan?",
+          "Cyberbullying adalah masalah yang berkembang di kalangan remaja dan dewasa muda. Mengapa orang menindas orang lain secara online? Langkah apa yang dapat diambil sekolah dan orang tua untuk mencegah perilaku ini?"
+        ]
+      },
+      {
+        "name": "Pekerjaan & Karir",
+        "prompts": [
+          "Kepuasan kerja menurun di kalangan pekerja di banyak negara maju. Apa penyebab utama ketidakpuasan ini? Apa yang dapat dilakukan pengusaha untuk meningkatkan kehidupan kerja stafnya?",
+          "Banyak orang memilih untuk berganti karier beberapa kali sepanjang masa kerja mereka. Apa yang memotivasi orang untuk beralih profesi? Apakah ini tren positif atau negatif bagi perekonomian?",
+          "Pekerjaan jarak jauh telah menjadi praktik standar di banyak perusahaan. Apa manfaat bekerja dari rumah? Tantangan apa saja yang dihadapi pekerja jarak jauh?",
+          "Di beberapa profesi, karyawan diharapkan bekerja dengan jam kerja yang sangat panjang, seringkali tidak dibayar. Mengapa orang menerima kondisi kerja seperti ini? Apa dampaknya terhadap kehidupan pribadi mereka?",
+          "Usia pensiun dinaikkan di banyak negara karena harapan hidup yang lebih panjang. Mengapa kebijakan ini diterapkan? Menurut Anda, apakah adil jika mengharapkan seseorang bekerja pada usia akhir enam puluhan atau tujuh puluhan?",
+          "Banyak anak muda yang lulus dari universitas tetapi tidak dapat mendapatkan pekerjaan di bidang pilihan mereka. Apa penyebab pengangguran kaum muda? Bagaimana universitas dapat mempersiapkan mahasiswanya dengan lebih baik untuk memasuki pasar kerja?",
+          "Beberapa perusahaan menggunakan perangkat lunak pemantauan untuk melacak produktivitas karyawannya saat mereka bekerja menggunakan komputer. Mengapa pengusaha menggunakan alat-alat ini? Apakah ini pelanggaran privasi?",
+          "Memulai bisnis melibatkan risiko finansial yang signifikan dan jam kerja yang panjang. Mengapa sebagian orang memilih menjadi wirausaha dibandingkan menjadi karyawan tetap? Kualitas apa yang dibutuhkan untuk menjalankan bisnis yang sukses?",
+          "Perempuan masih kurang terwakili dalam peran manajemen senior dan eksekutif di banyak industri. Mengapa kesenjangan gender ini masih terjadi? Langkah-langkah apa yang dapat diambil untuk mendorong kesetaraan gender di tempat kerja?",
+          "Beberapa pekerjaan memberikan gaji yang sangat tinggi, seperti atlet profesional dan selebriti dunia hiburan. Apakah orang-orang ini layak mendapatkan uang sebanyak itu? Bagaimana seharusnya gaji seseorang ditentukan?"
+        ]
+      },
+      {
+        "name": "Lingkungan & Keberlanjutan",
+        "prompts": [
+          "Polusi plastik di lautan dunia merupakan krisis lingkungan yang parah. Apa sumber utama sampah plastik ini? Tindakan apa yang dapat diambil oleh individu dan pemerintah untuk membersihkan lautan?",
+          "Banyak spesies hewan dan tumbuhan yang saat ini terancam punah. Mengapa hilangnya keanekaragaman hayati menjadi masalah bagi umat manusia? Apa yang bisa dilakukan untuk melindungi spesies yang terancam punah?",
+          "Penggunaan bahan bakar fosil adalah penyebab utama perubahan iklim global. Mengapa sulit bagi negara-negara untuk beralih ke sumber energi terbarukan? Apa jadinya jika kita tidak mengurangi ketergantungan pada minyak dan batubara?",
+          "Deforestasi terjadi pada tingkat yang mengkhawatirkan di hutan hujan tropis. Apa alasan utama penebangan hutan ini? Bagaimana komunitas internasional dapat menghentikan kehancuran ini?",
+          "Banyak kota yang menderita polusi udara parah, yang berdampak pada kesehatan penduduknya. Apa penyebab polusi udara perkotaan? Apa cara paling efektif untuk meningkatkan kualitas udara di perkotaan?",
+          "Air tawar menjadi sumber daya yang langka di banyak belahan dunia. Mengapa ada kekurangan air minum bersih? Bagaimana kita bisa menghemat air dengan lebih efektif?",
+          "Konsumerisme mendorong masyarakat untuk terus-menerus membeli produk baru dan membuang produk lama. Bagaimana dampak “budaya membuang” terhadap lingkungan? Apa yang dapat dilakukan untuk mendorong orang memperbaiki dan menggunakan kembali barang-barang tersebut?",
+          "Tanaman hasil rekayasa genetika (GM) ditanam untuk meningkatkan produksi pangan dan melawan hama. Mengapa sebagian orang menentang makanan hasil rekayasa genetika? Apakah manfaat teknologi ini lebih besar daripada risikonya?",
+          "Peristiwa cuaca ekstrem, seperti angin topan dan kekeringan, semakin sering terjadi. Bagaimana dampak peristiwa ini terhadap komunitas lokal? Bagaimana seharusnya pemerintah bersiap menghadapi bencana alam?",
+          "Fast fashion memungkinkan konsumen membeli pakaian trendi dengan harga yang sangat murah. Apa dampak lingkungan dari industri fast fashion? Haruskah konsumen terpaksa membayar lebih untuk pakaian yang dibuat secara ramah lingkungan?"
+        ]
+      },
+      {
+        "name": "Masyarakat & Budaya",
+        "prompts": [
+          "Di banyak negara, proporsi penduduk lanjut usia meningkat pesat. Tantangan apa saja yang dihadapi oleh populasi menua di masyarakat? Bagaimana masyarakat dapat memberikan dukungan yang lebih baik kepada warga lanjut usianya?",
+          "Kesenjangan antara masyarakat terkaya dan termiskin di masyarakat semakin melebar. Masalah apa saja yang disebabkan oleh ketimpangan kekayaan yang ekstrem? Kebijakan apa yang dapat membantu mendistribusikan kekayaan secara lebih adil?",
+          "Adat istiadat dan festival tradisional mulai kehilangan maknanya di kalangan generasi muda. Mengapa ini terjadi? Pentingkah melestarikan budaya tradisional di dunia modern?",
+          "Banyak orang merasa kesepian dan terisolasi meski tinggal di kota-kota modern yang padat. Mengapa kesepian di perkotaan begitu umum terjadi? Apa yang bisa dilakukan untuk membangun komunitas yang lebih kuat di wilayah perkotaan?",
+          "Angka kelahiran menurun di banyak negara maju. Mengapa orang memilih untuk memiliki lebih sedikit anak? Apa dampaknya terhadap masyarakat di masa depan?",
+          "Migrasi internasional meningkat, sehingga menghasilkan masyarakat yang lebih multikultural. Apa manfaat hidup dalam masyarakat yang beragam? Tantangan apa yang bisa muncul ketika budaya yang berbeda hidup bersama?",
+          "Kepercayaan terhadap politisi dan lembaga pemerintah menurun di banyak belahan dunia. Mengapa masyarakat menjadi begitu sinis terhadap politik? Bagaimana pemerintah dapat membangun kembali kepercayaan masyarakat?",
+          "Pelayanan masyarakat yang bersifat sukarela dan tidak berbayar menjadi semakin jarang dilakukan. Mengapa lebih sedikit orang yang menawarkan waktu mereka secara gratis? Bagaimana kita dapat mendorong lebih banyak orang untuk membantu komunitas lokal mereka?",
+          "Sebagian orang menilai masyarakat modern terlalu fokus pada penampilan fisik dan kecantikan. Mengapa ada begitu banyak tekanan untuk berpenampilan tertentu? Bagaimana pengaruhnya terhadap kesehatan mental masyarakat?",
+          "Monumen dan patung bersejarah terkadang disingkirkan atau dihancurkan karena mewakili masa lalu yang kontroversial. Mengapa orang ingin menghapus monumen tersebut? Haruskah tokoh sejarah dinilai berdasarkan standar modern?"
+        ]
+      },
+      {
+        "name": "Kesehatan & Kesejahteraan",
+        "prompts": [
+          "Tingkat obesitas telah mencapai proporsi epidemi di banyak negara. Apa penyebab utama krisis kesehatan ini? Peran apa yang harus dimainkan pemerintah dalam mengatur industri pangan?",
+          "Stres dan kecemasan merupakan masalah kesehatan utama bagi pekerja modern. Faktor apa saja yang berkontribusi terhadap tingginya tingkat stres di tempat kerja? Bagaimana individu dapat mencapai keseimbangan kehidupan kerja yang lebih baik?",
+          "Banyak orang menggunakan pengobatan alternatif dibandingkan mengunjungi dokter konvensional. Mengapa terapi alternatif menjadi lebih populer? Apakah ada bahaya yang terkait dengan mengandalkan perawatan ini?",
+          "Biaya perawatan medis dan obat resep sangat tinggi di beberapa negara. Bagaimana dampaknya terhadap keluarga berpenghasilan rendah? Haruskah layanan kesehatan sepenuhnya gratis untuk semua orang?",
+          "Kurang tidur adalah masalah umum yang dialami banyak orang dewasa dan remaja. Mengapa orang tidak cukup tidur? Bagaimana dampak kurang tidur terhadap kinerja sehari-hari dan kesehatan jangka panjang?",
+          "Olahraga profesional telah menjadi sangat dikomersialkan, dengan atlet menghasilkan jutaan dolar. Apakah uang telah merusak semangat olahraga yang sebenarnya? Apa dampak komersialisasi ini terhadap penggemar muda?",
+          "Di beberapa negara, penjualan produk tembakau dikenakan pajak yang besar dan dibatasi. Mengapa pemerintah berupaya untuk mencegah merokok? Haruskah merokok dilarang sepenuhnya di masa depan?",
+          "Makanan olahan dan cepat saji merupakan bagian besar dari pola makan modern. Mengapa orang memilih makan makanan yang tidak sehat? Apa yang bisa dilakukan untuk membuat makanan sehat lebih menarik dan mudah diakses?",
+          "Masalah kesehatan mental sering kali mendapat stigma, sehingga menyulitkan orang untuk mencari bantuan. Mengapa orang takut membicarakan kesehatan mentalnya? Bagaimana masyarakat bisa menjadi lebih menerima dan mendukung?",
+          "Beberapa orang memilih untuk mengikuti olahraga ekstrim dan berbahaya, seperti base jumping atau panjat tebing solo bebas. Apa yang memotivasi orang mempertaruhkan nyawanya demi olahraga? Apakah layanan darurat diperlukan untuk menyelamatkan mereka jika mereka mendapat masalah?"
+        ]
+      },
+      {
+        "name": "Pemerintahan & Pelayanan Publik",
+        "prompts": [
+          "Sistem transportasi umum di banyak kota besar penuh sesak dan tidak dapat diandalkan. Mengapa pemerintah kesulitan mempertahankan transportasi umum? Apa manfaat sistem angkutan umum yang sangat efisien?",
+          "Pajak diperlukan untuk mendanai pelayanan publik, namun banyak orang berusaha menghindari pembayarannya. Mengapa masyarakat tidak suka membayar pajak? Bagaimana pemerintah dapat memastikan bahwa sistem perpajakan adil?",
+          "Banyak pemerintah memberikan dukungan keuangan kepada warga yang menganggur. Mengapa kesejahteraan sosial ini perlu? Apakah pemberian tunjangan pengangguran membuat masyarakat menjadi malas?",
+          "Pendanaan untuk perpustakaan umum dan pusat komunitas sering kali dipotong selama krisis ekonomi. Mengapa fasilitas tersebut dianggap kurang penting? Apa kerugian masyarakat ketika perpustakaan ditutup?",
+          "Beberapa negara mewajibkan wajib militer bagi semua orang dewasa muda. Apa keuntungan wajib militer? Apa argumen yang menentang pemaksaan orang untuk bergabung dengan militer?",
+          "Harga rumah di kota-kota besar menjadi tidak terjangkau bagi banyak profesional muda. Mengapa perumahan di kota begitu mahal? Apa yang dapat dilakukan pemerintah untuk menyediakan perumahan yang terjangkau?",
+          "Negara-negara kaya seringkali memberikan bantuan luar negeri kepada negara-negara berkembang. Mengapa penting untuk membantu negara-negara miskin? Apakah bantuan luar negeri selalu menjangkau masyarakat yang paling membutuhkan?",
+          "Kamera pengintai banyak digunakan di ruang publik untuk mencegah kejahatan. Seberapa efektifkah kamera dalam menghentikan aktivitas ilegal? Apakah pengawasan publik melanggar hak privasi seseorang?",
+          "Pemerintah menghabiskan banyak uang untuk menyelenggarakan acara internasional seperti Olimpiade. Mengapa negara-negara ingin menjadi tuan rumah acara ini? Apakah ini penggunaan dana publik yang baik?",
+          "Sistem peradilan pidana di banyak negara berfokus pada hukuman pelanggar dengan memasukkan mereka ke penjara. Apakah penjara benar-benar merehabilitasi penjahat? Apa sajakah cara alternatif untuk menangani kejahatan tanpa kekerasan?"
+        ]
+      },
+      {
+        "name": "Media & Komunikasi",
+        "prompts": [
+          "Iklan ada dimana-mana, mulai dari layar televisi hingga baliho umum. Bagaimana iklan mempengaruhi perilaku konsumen? Apakah iklan berbahaya bagi anak-anak?",
+          "Penyebaran “berita palsu” dan misinformasi di internet menjadi perhatian utama. Mengapa orang membuat dan membagikan informasi palsu? Bagaimana masyarakat dapat belajar mengidentifikasi sumber berita yang dapat dipercaya?",
+          "Selebriti dan influencer mempunyai pengaruh yang sangat besar terhadap perilaku generasi muda. Mengapa remaja begitu mudah terpengaruh oleh orang-orang terkenal? Apakah pengaruh ini secara umum bersifat positif atau negatif?",
+          "Banyak orang menghabiskan waktu berjam-jam menonton acara televisi realitas. Mengapa program-program ini begitu menarik bagi pemirsa? Apakah reality show secara akurat mencerminkan kehidupan nyata?",
+          "Paparazzi kerap mengikuti orang-orang terkenal untuk mengambil foto kehidupan pribadinya. Apakah media berhak melanggar privasi selebriti? Mengapa publik begitu tertarik dengan kehidupan pribadi orang-orang terkenal?",
+          "Film dan video game modern sering kali berisi adegan kekerasan yang sangat realistis. Mengapa hiburan yang mengandung kekerasan begitu populer? Apakah menonton kekerasan membuat orang menjadi lebih agresif dalam kehidupan nyata?",
+          "Jurnalisme investigatif memainkan peran penting dalam mengungkap korupsi. Mengapa pers yang bebas penting bagi masyarakat yang sehat? Bahaya apa yang dihadapi jurnalis ketika melaporkan orang-orang berkuasa?",
+          "Orang-orang berkomunikasi lebih cepat saat ini menggunakan pesan teks dan email. Bagaimana hal ini mengubah cara kita menulis dan berbicara? Apakah kita kehilangan kemampuan untuk berkomunikasi secara mendalam dan penuh pertimbangan?",
+          "Platform streaming seperti Netflix dan Spotify telah mengubah cara orang mengonsumsi hiburan. Bagaimana pengaruhnya terhadap bioskop tradisional dan penjualan musik fisik? Apakah model berlangganan ini adil bagi artis dan kreator?",
+          "Beberapa pemerintah menyensor internet untuk memblokir situs web dan platform media sosial tertentu. Mengapa pemerintah membatasi akses terhadap informasi? Bagaimana masyarakat dapat mengabaikan pembatasan ini?"
+        ]
+      },
+      {
+        "name": "Kota & Infrastruktur",
+        "prompts": [
+          "Penyebaran perkotaan menyebabkan kota-kota berkembang pesat hingga ke wilayah pedesaan di sekitarnya. Apa dampak lingkungan dari perluasan kota? Bagaimana para perencana kota dapat mengelola pertumbuhan ini secara lebih berkelanjutan?",
+          "Kemacetan lalu lintas adalah masalah sehari-hari bagi jutaan penumpang di seluruh dunia. Apa penyebab utama lalu lintas padat? Apakah menggratiskan transportasi umum akan menyelesaikan masalah ini?",
+          "Banyak bangunan bersejarah di pusat kota dihancurkan untuk dijadikan gedung pencakar langit modern. Mengapa ini terjadi? Apakah penting untuk melestarikan arsitektur lama?",
+          "Pejalan kaki di pusat kota—yang melarang semua mobil masuk ke wilayah tertentu—menjadi populer di Eropa. Apa manfaat dari zona bebas mobil? Bagaimana pengaruhnya terhadap bisnis lokal?",
+          "Polusi suara selalu menjadi masalah bagi masyarakat yang tinggal di wilayah metropolitan yang sibuk. Apa sumber utama kebisingan perkotaan? Bagaimana paparan kebisingan kronis mempengaruhi kesehatan warga?",
+          "Taman dan ruang hijau sangat penting untuk kualitas hidup yang baik di kota. Mengapa pepohonan dan alam penting dalam lingkungan perkotaan? Mengapa beberapa kota gagal menyediakan kawasan hijau yang memadai?",
+          "Permukiman kumuh dan informal terdapat di pinggiran kota-kota besar. Mengapa orang-orang hidup dalam kondisi seperti ini? Apa yang dapat dilakukan pemerintah untuk meningkatkan standar hidup di bidang-bidang ini?",
+          "Sepeda dipromosikan sebagai alternatif berkendara yang ramah lingkungan. Mengapa masih banyak orang yang menolak bersepeda ke tempat kerja? Infrastruktur apa yang diperlukan untuk menjadikan bersepeda aman di perkotaan?",
+          "Arsitektur kota-kota modern seringkali terlihat sangat mirip, terlepas dari negaranya. Mengapa kota-kota kehilangan identitas budayanya yang unik? Apakah desain suatu bangunan mempengaruhi mood orang yang menggunakannya?",
+          "Pengelolaan sampah dan pembuangan sampah merupakan tantangan logistik besar bagi kota-kota besar. Bagaimana perkotaan saat ini menangani jutaan ton sampah? Apa cara yang lebih berkelanjutan untuk mengelola sampah perkotaan?"
+        ]
+      },
+      {
+        "name": "Globalisasi & Ekonomi",
+        "prompts": [
+          "Munculnya perusahaan multinasional berarti merek yang sama dijual di seluruh dunia. Bagaimana pengaruhnya terhadap bisnis dan pengrajin lokal? Apakah hal ini menyebabkan hilangnya keragaman budaya?",
+          "Perjalanan udara murah telah membuat pariwisata internasional dapat diakses oleh jutaan orang. Apa manfaat ekonomi dari pariwisata massal? Bagaimana dampak negatif pariwisata terhadap masyarakat lokal dan lingkungan?",
+          "Banyak pekerjaan manufaktur telah dipindahkan dari negara maju ke negara berkembang. Mengapa perusahaan merelokasi pabriknya? Bagaimana dampak globalisasi terhadap pekerja di kedua negara?",
+          "Bahasa Indonesia telah menjadi bahasa dominan dalam bisnis dan sains internasional. Mengapa Bahasa Indonesia mencapai status global ini? Apa kerugian memiliki satu bahasa global?",
+          "Beberapa negara sangat bergantung pada impor pangan dibandingkan memproduksinya di dalam negeri. Mengapa negara-negara mengimpor kebutuhan dasar? Apa risikonya bergantung pada negara lain untuk pasokan pangan Anda?",
+          "Konsep pendapatan dasar universal (UBI) sedang diperdebatkan oleh para ekonom di seluruh dunia. Apa argumen yang mendukung pemberian jaminan pendapatan kepada setiap orang? Bagaimana sistem seperti ini didanai?",
+          "Sanksi ekonomi sering kali digunakan oleh negara-negara kuat untuk menghukum negara lain. Apa tujuan dari pembatasan perdagangan ini? Siapa yang paling menderita ketika suatu negara terkena sanksi?",
+          "Kartu kredit dan pinjaman pribadi memungkinkan orang membeli barang-barang yang tidak mampu mereka beli dengan segera. Mengapa utang konsumen meningkat secara global? Apa konsekuensi jangka panjang dari hidup di luar kemampuan?",
+          "Ekonomi berbagi (misalnya Uber, Airbnb) telah mengganggu industri tradisional. Mengapa layanan peer-to-peer ini begitu sukses? Apakah platform ini mengeksploitasi pekerjanya?",
+          "Pertumbuhan ekonomi adalah tujuan utama sebagian besar pemerintahan nasional. Apakah pertumbuhan ekonomi tanpa akhir mungkin terjadi di planet yang sumber dayanya terbatas? Apa cara alternatif untuk mengukur keberhasilan suatu negara selain PDB?"
+        ]
+      }
+    ]
+  }
+]

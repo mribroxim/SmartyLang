@@ -1,0 +1,300 @@
+- Je suis étudiant.
+- Elle a un livre rouge.
+- Le chat est sur le tapis.
+- Il est mon ami.
+- Nous aimons jouer au ballon.
+- C'est un gros chien.
+- J'ai un stylo bleu.
+- Ils sont dans le parc.
+- Le soleil est chaud.
+- Elle sait bien lire.
+- Nous allons à l'école.
+- C'est une petite voiture.
+- Il court vite.
+- L'oiseau est dans l'arbre.
+- Je vois un bus jaune.
+- Ils sont heureux.
+- Elle a un chat blanc.
+- Nous déjeunons à midi.
+- J'habite dans une maison.
+- Le poisson est dans l'eau.
+- C'est un bon garçon.
+- Elle aime les fleurs roses.
+- Nous jouons avec des jouets.
+- L'homme est grand.
+- J'ai deux pommes.
+- Il est assis sur une chaise.
+- Le ciel est bleu.
+- Ils boivent du lait.
+- Elle écrit avec un crayon.
+- La voiture est rouge.
+- J'ai sept ans.
+- Nous voyons un grand arbre.
+- Le chien court vite.
+- Il a un chapeau vert.
+- Elle est ma sœur.
+- Le ballon est rond.
+- J'aime la glace.
+- Ils nagent dans la piscine.
+- Le livre est sur la table.
+- Nous chantons une chanson.
+- Elle a les cheveux longs.
+- L'oiseau peut voler.
+- Il est professeur.
+- Je bois de l'eau tous les jours.
+- Le chat est noir.
+- Ils jouent dans le jardin.
+- Elle mange une pomme.
+- Le soleil est jaune.
+- J'ai un nouveau sac.
+- Il va à l'école à pied.
+- La fleur est jolie.
+- Nous habitons dans une grande ville.
+- Elle lit une histoire.
+- Le crayon est court.
+- Il aime dessiner.
+- Je dors dans mon lit.
+- L'arbre est vert.
+- Ils sont ma famille.
+- Elle porte une robe rouge.
+- Le lait est froid.
+- Je peux sauter haut.
+- Il a un petit chien.
+- La chaise est bleue.
+- Nous aimons notre mère.
+- Elle peint un tableau.
+- Le bus est jaune.
+- Il est médecin.
+- Je mange du pain au petit-déjeuner.
+- La porte est ouverte.
+- Ils regardent la télévision à la maison.
+- Elle joue du piano.
+- Le chapeau est sur la table.
+- J'ai un poisson rouge.
+- Il lit un livre.
+- L'eau est tiède.
+- Nous allons au zoo.
+- Elle court tous les matins.
+- Le bureau est marron.
+- Il aime la pizza.
+- Je me lave les mains.
+- La lune est blanche.
+- Ils sont dans la voiture.
+- Elle a une jolie poupée.
+- Le jus est sucré.
+- Je peux voir les étoiles.
+- Il joue avec son frère.
+- L'œuf est sur l'assiette.
+- Nous avons une maison joyeuse.
+- Elle porte une chemise bleue.
+- L'herbe est verte.
+- Je m'appelle Tom.
+- Le bébé dort.
+- Je vois un cheval marron.
+- Elle est ma mère.
+- Il fait du vélo.
+- La soupe est chaude.
+- Ils ont une nouvelle maison.
+- Je me brosse les dents.
+- L'oiseau chante joliment.
+- Nous aimons danser.
+- Elle a un sac rose.
+- L'horloge est sur le mur.
+- Il est fermier.
+- Je mange une orange.
+- Les chaussures sont noires.
+- Les enfants sont heureux.
+- Elle écrit une lettre.
+- Le pain est frais.
+- Je me couche tôt.
+- Il a un vélo rouge.
+- Le chat boit du lait.
+- Nous rendons visite à notre grand-mère.
+- Elle coupe le papier.
+- La lampe est brillante.
+- Ce sont de bons amis.
+- Il ouvre la fenêtre.
+- L'oreiller est doux.
+- J'aime courir.
+- Elle a un ballon jaune.
+- La boîte est vide.
+- Il est mon papa.
+- Nous dînons ensemble.
+- Le sol est propre.
+- Elle sait compter jusqu'à dix.
+- J'aime mon chien.
+- La tasse est pleine.
+- Ils vont au marché.
+- Il porte un manteau gris.
+- La fleur sent bon.
+- J'ai une pomme rouge.
+- Elle chante sous la douche.
+- Le crayon est taillé.
+- Nous jouons dans le sable.
+- Il aime le lait au chocolat.
+- Le miroir est propre.
+- Le garçon est heureux.
+- Elle lit tous les soirs.
+- La serviette est douce.
+- Je sais épeler mon nom.
+- Il a un nouveau jouet.
+- La pierre est lourde.
+- Ils sont à la plage.
+- Elle saute par-dessus la corde.
+- Le gâteau est sucré.
+- Nous faisons un bonhomme de neige.
+- Il boit du jus d'orange.
+- La clé est petite.
+- J'ai une grenouille verte.
+- Elle marche jusqu'au magasin.
+- Le nuage est blanc.
+- C'est mon grand-père.
+- Nous faisons voler un cerf-volant.
+- Le savon sent bon.
+- Ils aiment faire de la randonnée.
+- Elle a un manteau chaud.
+- Le lapin est doux.
+- Je peux dessiner une maison.
+- Il plante une fleur.
+- La cuillère est sur la table.
+- Nous nettoyons la pièce.
+- Elle porte un chapeau dehors.
+- Le camion est grand.
+- Il aime pêcher.
+- J'ai un ours en peluche.
+- La pluie est froide.
+- Ils préparent un gâteau.
+- Elle arrose les plantes.
+- Le drapeau est rouge et bleu.
+- Je suis en première année.
+- Il attrape le ballon.
+- La couverture est chaude.
+- Nous voyons un arc-en-ciel.
+- Elle a un parapluie bleu.
+- La cuisinière est chaude.
+- Il est mon voisin.
+- Je bois du lait la nuit.
+- La clôture est blanche.
+- Ils vont à la bibliothèque.
+- Elle dessine avec des crayons de couleur.
+- Le chemin est long.
+- J'aime les sandwichs au fromage.
+- Il a une petite sœur.
+- La cloche sonne fort.
+- Nous regardons les oiseaux.
+- Elle compte les étoiles.
+- Le tapis est doux.
+- Il peut grimper à un arbre.
+- J'ai une pièce d'argent.
+- L'échelle est haute.
+- Ils font un château de sable.
+- Elle plie le papier.
+- L'étagère est haute.
+- J'aime mon école.
+- Il partage son déjeuner.
+- Le panier est plein.
+- Nous allons à la ferme.
+- Elle a un hamster de compagnie.
+- La corde est longue.
+- C'est un garçon gentil.
+- Je trouve un joli coquillage.
+- La colline est raide.
+- Ils prennent le bus.
+- Elle cueille une fleur.
+- Le biscuit est croquant.
+- Je sais faire mes lacets.
+- Il nourrit le poisson.
+- La serviette est blanche.
+- Nous aimons le pop-corn.
+- Elle a une nouvelle robe.
+- Le jardin est beau.
+- Il se lave le visage.
+- Je vois une étoile filante.
+- La crêpe est ronde.
+- Ils dorment dans une tente.
+- Elle serre sa mère dans ses bras.
+- La bougie est brillante.
+- J'ai un chariot rouge.
+- Il donne un coup de pied dans le ballon.
+- La glace est très froide.
+- Nous ramassons des feuilles.
+- Elle se peint les ongles.
+- Le banc est en bois.
+- C'est un enfant courageux.
+- Je mange des flocons d'avoine au petit-déjeuner.
+- Le nid contient des œufs.
+- Ils ont un nouveau chiot.
+- Elle berce le bébé.
+- La cruche est lourde.
+- Je peux sauter sur un pied.
+- Il ratisse les feuilles.
+- L'écharpe est chaude.
+- Nous visitons le musée.
+- Elle met la table.
+- La statue est ancienne.
+- Il aime la confiture de fraises.
+- J'ai un oreiller moelleux.
+- Le pont est long.
+- Ils regardent le coucher du soleil.
+- Elle se peigne les cheveux.
+- Le panier est vide.
+- Je suis une bonne aide.
+- Il peint un tableau.
+- Le toboggan est glissant.
+- Nous faisons des biscuits ensemble.
+- Elle a un sac à dos violet.
+- La balançoire est amusante.
+- Il sait siffler un air.
+- Je compte jusqu'à vingt.
+- Le portail est ouvert.
+- Ils sautent dans les flaques d'eau.
+- Elle époussette l'étagère.
+- La pièce de monnaie est brillante.
+- J'aime jardiner.
+- Il porte un sac.
+- La bouillie d'avoine est chaude.
+- Nous disons merci.
+- Elle a une tortue de compagnie.
+- La règle est droite.
+- Il plie ses vêtements.
+- Je vois une coccinelle.
+- La moufle est douce.
+- Ils colorient une image.
+- Elle remue la soupe.
+- La tente est grande.
+- Je peux claquer des doigts.
+- Il arrose l'herbe.
+- Le bouton est rond.
+- Nous nous amusons dehors.
+- Elle attache un ruban.
+- Le wagon est rouge.
+- Il mange une banane.
+- Je fais un câlin.
+- Le toit est gris.
+- Ils regardent des livres.
+- Elle pèle une orange.
+- Le cadre est en bois.
+- J'aime sauter à la corde.
+- Il a une collection de pièces.
+- Le bocal est plein de bonbons.
+- Nous allons nous promener.
+- Elle allume une bougie.
+- L'ombre est longue.
+- C'est un coureur rapide.
+- Je plante une graine.
+- La serviette est accrochée au crochet.
+- Ils font un pique-nique.
+- Elle se tresse les cheveux.
+- La bulle éclate.
+- Je sais siffler.
+- Il prépare une tarte.
+- Le cerf-volant vole haut.
+- Nous voyons l'océan.
+- Elle porte un collier de coquillages.
+- La vague est grosse.
+- Il aime colorier.
+- Je construis une tour avec des blocs.
+- La plume est légère.
+- Nous nous aimons.
+- Elle sourit tous les jours.
+- Le monde est beau.

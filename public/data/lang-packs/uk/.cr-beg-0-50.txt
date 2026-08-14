@@ -1,0 +1,700 @@
+###0|My Cat|Мій кіт
+EN: I have a cat. My cat is black and white. She likes to drink milk. She sleeps on the sofa.
+UK: У мене є кіт. Мій кіт чорно-білий. Вона любить пити молоко. Вона спить на дивані.
+ Q0 a=1 EN:What color is the cat? | Brown and white/Black and white/Black and gray/White and orange
+    UK:Якого кольору кіт? | Коричневий і білий/Чорно-білий/Чорний і сірий/Білий і оранжевий
+ Q1 a=2 EN:What does the cat like to drink? | Water/Juice/Milk/Tea
+    UK:Що котик любить пити? | вода/сік/молоко/чай
+ Q2 a=1 EN:Where does the cat sleep? | On the bed/On the sofa/On the floor/On the chair
+    UK:Де спить кіт? | На ліжку/На дивані/На підлозі/На стільці
+ Q3 a=2 EN:Who has a cat? | My friend/My mother/I/My father
+    UK:У кого є кіт? | Мій друг/Моя мама/я/Мій батько
+ Q4 a=3 EN:The cat is a... | Dog/Bird/Fish/Cat
+    UK:Кішка - це... | собака/птах/риба/кішка
+
+###1|The Red Ball|Червона куля
+EN: Tom has a red ball. He plays with it in the park. The ball is big and round. Tom likes his ball.
+UK: У Тома червона куля. Він грається з ним у парку. М'яч великий і круглий. Тому подобається його м'яч.
+ Q0 a=2 EN:What color is the ball? | Blue/Green/Red/Yellow
+    UK:Якого кольору м'яч? | Синій/Зелений/Червоний/Жовтий
+ Q1 a=1 EN:Where does Tom play? | At school/In the park/At home/In the garden
+    UK:Де грає Том? | В школі/В парку/Вдома/В саду
+ Q2 a=1 EN:The ball is big and... | Small/Round/Square/Long
+    UK:М'яч великий і... | Маленький/Круглий/Квадратний/довгий
+ Q3 a=2 EN:Who has the ball? | Anna/Ben/Tom/Sam
+    UK:У кого м'яч? | Анна/Бен/Том/Сем
+ Q4 a=2 EN:Does Tom like his ball? | No/Maybe/Yes/Sometimes
+    UK:Том любить свій м'яч? | немає/можливо/так/іноді
+
+###2|The Sun|Сонце
+EN: The sun is bright. It is yellow. The sun gives us light in the day. The sun is very hot.
+UK: Сонце яскраве. Він жовтий. Сонце дарує нам світло вдень. Сонце дуже припікає.
+ Q0 a=2 EN:What color is the sun? | Red/Blue/Yellow/White
+    UK:Якого кольору сонце? | Червоний/Синій/Жовтий/Білий
+ Q1 a=1 EN:When do we see the sun? | At night/In the day/In winter/At noon only
+    UK:Коли ми бачимо сонце? | Вночі/У день/Взимку/Тільки опівдні
+ Q2 a=2 EN:The sun gives us... | Rain/Snow/Light/Wind
+    UK:Сонце дарує нам... | Дощ/сніг/світло/Вітер
+ Q3 a=1 EN:The sun is very... | Cold/Hot/Small/Far
+    UK:Сонце дуже... | Холодний/Гаряче/Маленький/далеко
+ Q4 a=2 EN:The sun is... | A planet/A moon/A star/A cloud
+    UK:Сонце - це... | Планета/Місяць/Зірка/Хмара
+
+###3|My School Bag|Мій шкільний портфель
+EN: I have a blue school bag. My books are in the bag. I also have a pencil case. I take my bag to school every day.
+UK: У мене синій шкільний портфель. Мої книжки в сумці. У мене теж є пенал. Я щодня ношу свою сумку до школи.
+ Q0 a=1 EN:What color is the school bag? | Red/Blue/Green/Black
+    UK:Якого кольору шкільний портфель? | Червоний/Синій/Зелений/чорний
+ Q1 a=2 EN:What is in the bag? | Toys/Food/Books/Clothes
+    UK:Що в сумці? | Іграшки/харчування/Книги/Одяг
+ Q2 a=0 EN:What else is in the bag? | A pencil case/A phone/A wallet/A hat
+    UK:Що ще в сумці? | Пенал/телефон/Гаманець/Капелюх
+ Q3 a=1 EN:Where do I take the bag? | To the park/To school/To the store/To bed
+    UK:Де мені взяти сумку? | До парку/До школи/До магазину/До ліжка
+ Q4 a=1 EN:I take my bag every... | Week/Day/Month/Year
+    UK:Я беру свою сумку щоразу... | тиждень/День/місяць/рік
+
+###4|Apples|яблука
+EN: Apples are red or green. They are sweet and good to eat. I eat an apple every day. Apples are healthy fruit.
+UK: Яблука червоні або зелені. Вони солодкі, їх добре їсти. Я з'їдаю яблуко кожен день. Яблука - здоровий фрукт.
+ Q0 a=1 EN:What color can apples be? | Blue or yellow/Red or green/Purple or orange/Black or white
+    UK:Якого кольору можуть бути яблука? | Синій або жовтий/Червоний або зелений/Фіолетовий або оранжевий/Чорний або білий
+ Q1 a=2 EN:How do apples taste? | Sour/Bitter/Sweet/Salty
+    UK:Як на смак яблука? | кислий/гіркий/Солодкий/Солоний
+ Q2 a=1 EN:How often do I eat an apple? | Once a week/Every day/Every month/Never
+    UK:Як часто я їм яблуко? | Раз на тиждень/Кожен день/Кожен місяць/Ніколи
+ Q3 a=2 EN:Apples are... | Vegetables/Meat/Fruit/Candy
+    UK:Яблука - це... | Овочі/м'ясо/фрукти/Цукерки
+ Q4 a=1 EN:Apples are healthy or unhealthy? | Unhealthy/Healthy/Not good/Bad
+    UK:Яблука корисні чи шкідливі? | Нездоровий/Здоровий/Не добре/погано
+
+###5|The Dog|Собака
+EN: Ben has a dog. The dog is brown. Its name is Max. Max likes to run in the garden.
+UK: У Бена є собака. Собака коричнева. Його звуть Макс. Макс любить бігати в саду.
+ Q0 a=1 EN:Who has a dog? | Tom/Ben/Anna/Sam
+    UK:У кого є собака? | Том/Бен/Анна/Сем
+ Q1 a=2 EN:What color is the dog? | Black/White/Brown/Gray
+    UK:Якого кольору собака? | чорний/Білий/Коричневий/Сірий
+ Q2 a=1 EN:What is the dog's name? | Buddy/Max/Rocky/Rex
+    UK:Як звати собаку? | приятель/Макс/Рокі/Рекс
+ Q3 a=2 EN:Where does Max like to run? | In the park/In the house/In the garden/On the street
+    UK:Де Макс любить бігати? | В парку/В будинку/В саду/На вул
+ Q4 a=3 EN:Max is a... | Cat/Bird/Fish/Dog
+    UK:Макс - це... | кішка/птах/риба/собака
+
+###6|My Family|Моя сім'я
+EN: I have a small family. My mother and father are nice. I have one sister. We live in a house.
+UK: У мене маленька сім'я. Мої мама й тато добрі. У мене є одна сестра. Ми живемо в будинку.
+ Q0 a=1 EN:My family is... | Big/Small/Old/New
+    UK:Моя сім'я... | Великий/Маленький/Старий/новий
+ Q1 a=1 EN:How are my parents? | Strict/Nice/Tall/Young
+    UK:Як мої батьки? | Суворий/приємно/високий/Молодий
+ Q2 a=2 EN:How many sisters do I have? | Two/None/One/Three
+    UK:Скільки в мене сестер? | Два/Жодного/Один/три
+ Q3 a=1 EN:Where does my family live? | In an apartment/In a house/On a farm/In a hotel
+    UK:Де живе моя родина? | В квартирі/В будинку/На фермі/В готелі
+ Q4 a=2 EN:How many people are in my family? | Two/Three/Four/Five
+    UK:Скільки людей у ​​моїй родині? | Два/три/чотири/П'ять
+
+###7|The Rain|Дощ
+EN: It is raining today. The rain is cold. I use an umbrella. I wear a raincoat too.
+UK: Сьогодні йде дощ. Дощ холодний. Я користуюся парасолькою. Я теж ношу плащ.
+ Q0 a=1 EN:What is the weather today? | Sunny/Rainy/Snowy/Windy
+    UK:Яка сьогодні погода? | Сонячно/Дощова/Сніжно/Вітряно
+ Q1 a=2 EN:The rain is... | Hot/Warm/Cold/Cool
+    UK:Дощ - це... | Гаряче/Теплий/Холодний/круто
+ Q2 a=2 EN:What do I use in the rain? | A hat/A scarf/An umbrella/Sunglasses
+    UK:Що я використовую під час дощу? | Капелюх/Шарф/Парасолька/Сонцезахисні окуляри
+ Q3 a=1 EN:What else do I wear? | A jacket/A raincoat/Boots/Gloves
+    UK:Що ще я одягаю? | Піджак/Плащ/Чоботи/Рукавички
+ Q4 a=2 EN:Is it raining today? | No/Maybe/Yes/Not sure
+    UK:Сьогодні дощ? | немає/можливо/так/не впевнений
+
+###8|The Bird|Птах
+EN: I see a bird in the tree. The bird is blue and small. It sings every morning. I like to listen to it.
+UK: Я бачу пташку на дереві. Пташка синя, маленька. Щоранку співає. Я люблю це слухати.
+ Q0 a=1 EN:Where is the bird? | On the roof/In the tree/On the ground/In the nest
+    UK:Де пташка? | На даху/В дереві/На землі/У гнізді
+ Q1 a=2 EN:What color is the bird? | Red/Green/Blue/Yellow
+    UK:Якого кольору пташка? | Червоний/Зелений/Синій/Жовтий
+ Q2 a=1 EN:The bird is... | Big/Small/Tall/Fat
+    UK:Птах це... | Великий/Маленький/високий/Жир
+ Q3 a=1 EN:When does the bird sing? | Every evening/Every morning/At night/At noon
+    UK:Коли пташка співає? | Кожен вечір/Щоранку/Вночі/Опівдні
+ Q4 a=2 EN:Do I like the bird's song? | No/I hate it/Yes/Not really
+    UK:Чи подобається мені пташиний спів? | немає/Я ненавиджу це/так/Не дуже
+
+###9|My Bedroom|Моя спальня
+EN: This is my bedroom. The bed is near the window. A lamp is on the table. My room is clean and tidy.
+UK: Це моя спальня. Ліжко біля вікна. На столі лампа. Моя кімната чиста та охайна.
+ Q0 a=1 EN:What is this room? | My kitchen/My bedroom/My bathroom/My living room
+    UK:Що це за кімната? | Моя кухня/Моя спальня/Моя ванна кімната/Моя вітальня
+ Q1 a=1 EN:Where is the bed? | Near the door/Near the window/Near the desk/In the middle
+    UK:Де ліжко? | Біля дверей/Біля вікна/Біля парти/Посередині
+ Q2 a=1 EN:What is on the table? | A book/A lamp/A clock/A phone
+    UK:Що на столі? | книга/лампа/Годинник/телефон
+ Q3 a=2 EN:My room is... | Dirty/Messy/Clean and tidy/Dark
+    UK:Моя кімната... | Брудний/Безладний/Чисто і охайно/Темний
+ Q4 a=2 EN:The table is in my... | Kitchen/Bathroom/Bedroom/Garden
+    UK:Стіл у мене... | кухня/Ванна кімната/Спальня/Сад
+
+###10|Breakfast|Сніданок
+EN: I eat breakfast in the morning. I have bread and milk. Sometimes I eat an egg. Breakfast is important.
+UK: Я снідаю вранці. Я маю хліб і молоко. Іноді я їм яйце. Сніданок важливий.
+ Q0 a=1 EN:When do I eat breakfast? | At night/In the morning/In the afternoon/In the evening
+    UK:Коли я снідаю? | Вночі/Вранці/У другій половині дня/Увечері
+ Q1 a=1 EN:What do I have for breakfast? | Rice and fish/Bread and milk/Pizza and soda/Salad and water
+    UK:Що я маю на сніданок? | Рис і риба/Хліб і молоко/Піца і содова/Салат і вода
+ Q2 a=2 EN:What do I sometimes eat? | A banana/An apple/An egg/A cookie
+    UK:Що я іноді їм? | банан/Яблуко/Яйце/Печиво
+ Q3 a=1 EN:Breakfast is... | Not good/Important/Bad/Small
+    UK:Сніданок - це... | Не добре/важливо/погано/Маленький
+ Q4 a=2 EN:Do I eat breakfast? | No, never/Sometimes/Yes/Only on weekends
+    UK:Я снідаю? | Ні, ніколи/іноді/так/Тільки на вихідних
+
+###11|The Flower|Квітка
+EN: A red flower grows in the garden. It is very pretty. I water it every day. The flower makes me happy.
+UK: Росте в саду червона квітка. Це дуже красиво. Кожен день поливаю. Квітка мене радує.
+ Q0 a=1 EN:Where does the flower grow? | In a pot/In the garden/In the park/In the house
+    UK:Де росте квітка? | У горщику/В саду/В парку/В будинку
+ Q1 a=2 EN:What color is the flower? | Yellow/Pink/Red/White
+    UK:Якого кольору квітка? | Жовтий/Рожевий/Червоний/Білий
+ Q2 a=1 EN:The flower is... | Ugly/Pretty/Tall/Big
+    UK:Квітка - це... | Потворний/Гарненька/високий/Великий
+ Q3 a=2 EN:How often do I water it? | Once a week/Never/Every day/Sometimes
+    UK:Як часто я його поливаю? | Раз на тиждень/Ніколи/Кожен день/іноді
+ Q4 a=2 EN:How does the flower make me feel? | Sad/Angry/Happy/Tired
+    UK:Що викликає у мене почуття квітка? | Сумно/Злий/Щаслива/Втомилася
+
+###12|The Bus|Автобус
+EN: I take the bus to school. The bus is yellow and big. It stops near my house. I sit by the window.
+UK: Я їду автобусом до школи. Автобус жовтий і великий. Він зупиняється біля мого будинку. Сідаю біля вікна.
+ Q0 a=1 EN:How do I go to school? | By car/By bus/By bike/On foot
+    UK:Як мені ходити до школи? | На автомобілі/Автобусом/На велосипеді/Пішки
+ Q1 a=2 EN:What color is the bus? | Red/Blue/Yellow/Green
+    UK:Якого кольору автобус? | Червоний/Синій/Жовтий/Зелений
+ Q2 a=1 EN:Where does the bus stop? | Near the park/Near my house/Near the store/Near the school
+    UK:Де зупиняється автобус? | Поруч парк/Біля мого будинку/Біля магазину/Біля школи
+ Q3 a=2 EN:Where do I sit on the bus? | At the back/By the door/By the window/In the front
+    UK:Де я сідаю в автобус? | Ззаду/Біля дверей/Біля вікна/Спереду
+ Q4 a=2 EN:The bus is... | Small/Old/Big/Fast
+    UK:Автобус це... | Маленький/Старий/Великий/швидко
+
+###13|Milk|молоко
+EN: Milk is white. It comes from cows. I drink milk every day. Milk is good for my bones.
+UK: Молоко біле. Походить від корів. Молоко п'ю кожен день. Молоко корисне для моїх кісток.
+ Q0 a=1 EN:What color is milk? | Yellow/White/Brown/Cream
+    UK:Якого кольору молоко? | Жовтий/Білий/Коричневий/вершки
+ Q1 a=2 EN:Where does milk come from? | Goats/Sheep/Cows/Chickens
+    UK:Звідки береться молоко? | Кози/овець/Корови/кури
+ Q2 a=2 EN:How often do I drink milk? | Never/Sometimes/Every day/Once a month
+    UK:Як часто я п'ю молоко? | Ніколи/іноді/Кожен день/Раз на місяць
+ Q3 a=2 EN:Milk is good for my... | Hair/Eyes/Bones/Skin
+    UK:Молоко корисне для мого... | Волосся/Очі/Кістки/Шкіра
+ Q4 a=2 EN:Milk is a... | Fruit/Vegetable/Drink/Meat
+    UK:Молоко - це... | фрукти/Овочевий/пити/м'ясо
+
+###14|The Pencil|Олівець
+EN: I have a yellow pencil. I use it to write. The pencil is long and thin. I keep it in my pencil case.
+UK: У мене є жовтий олівець. Я використовую його для написання. Олівець довгий і тонкий. Зберігаю його в пеналі.
+ Q0 a=1 EN:What color is my pencil? | Blue/Yellow/Green/Red
+    UK:Якого кольору мій олівець? | Синій/Жовтий/Зелений/Червоний
+ Q1 a=1 EN:What do I use the pencil for? | To draw/To write/To color/To cut
+    UK:Для чого я використовую олівець? | Малювати/Написати/Розфарбувати/Вирізати
+ Q2 a=2 EN:The pencil is long and... | Thick/Short/Thin/Fat
+    UK:Олівець довгий і... | товстий/Короткий/Тонкий/Жир
+ Q3 a=1 EN:Where do I keep the pencil? | In my bag/In my pencil case/On my desk/In my pocket
+    UK:Де я тримаю олівець? | В моїй сумці/У моєму пеналі/На моєму столі/В моїй кишені
+ Q4 a=2 EN:A pencil is made of... | Plastic/Metal/Wood/Glass
+    UK:Олівець зроблений з... | пластик/метал/Деревина/скло
+
+###15|The Tree|Дерево
+EN: A big tree stands in the yard. It has green leaves. Birds live in the tree. The tree gives us shade.
+UK: У дворі стоїть велике дерево. Має зелене листя. На дереві живуть птахи. Дерево дає нам тінь.
+ Q0 a=1 EN:Where is the tree? | In the park/In the yard/In the forest/On the street
+    UK:Де дерево? | В парку/У дворі/В лісі/На вул
+ Q1 a=2 EN:What color are the leaves? | Yellow/Red/Green/Brown
+    UK:Якого кольору листочки? | Жовтий/Червоний/Зелений/Коричневий
+ Q2 a=2 EN:Who lives in the tree? | Cats/Dogs/Birds/Fish
+    UK:Хто живе на дереві? | Коти/Собаки/Птахи/риба
+ Q3 a=2 EN:What does the tree give us? | Fruit/Flowers/Shade/Wood
+    UK:Що дає нам дерево? | фрукти/квіти/Тінь/Деревина
+ Q4 a=2 EN:The tree is... | Small/Short/Big/Thin
+    UK:Дерево це... | Маленький/Короткий/Великий/Тонкий
+
+###16|My Friend|Мій друг
+EN: Anna is my best friend. She is seven years old. We play together every day. I like Anna very much.
+UK: Анна моя найкраща подруга. Їй сім років. Ми граємо разом кожен день. Мені дуже подобається Анна.
+ Q0 a=1 EN:Who is my best friend? | Ben/Anna/Tom/Sue
+    UK:Хто мій найкращий друг? | Бен/Анна/Том/Сью
+ Q1 a=2 EN:How old is Anna? | Five/Six/Seven/Eight
+    UK:Скільки років Анні? | П'ять/Шість/Сім/вісім
+ Q2 a=1 EN:How often do we play? | Every week/Every day/Every month/Never
+    UK:Як часто ми граємо? | Щотижня/Кожен день/Кожен місяць/Ніколи
+ Q3 a=2 EN:Do I like Anna? | No/A little/Yes, very much/Not sure
+    UK:Чи подобається мені Анна? | немає/трохи/Так, дуже/не впевнений
+ Q4 a=2 EN:Anna is my... | Sister/Cousin/Friend/Neighbor
+    UK:Анна моя... | сестра/Двоюрідна сестра/Друг/Сусідка
+
+###17|The Fish|Риба
+EN: I have a fish in a bowl. The fish is orange and gold. It swims all day. I feed it every morning.
+UK: У мене є риба в мисці. Рибка оранжево-золота. Плаває цілий день. Годую щоранку.
+ Q0 a=1 EN:Where is my fish? | In a pond/In a bowl/In the sea/In a tank
+    UK:Де моя рибка? | У ставку/У миску/У морі/В танку
+ Q1 a=1 EN:What color is the fish? | Blue and green/Orange and gold/Red and black/White and silver
+    UK:Якого кольору рибка? | Синій і зелений/Помаранчевий і золотий/Червоний і чорний/Білий і срібний
+ Q2 a=2 EN:What does the fish do all day? | Sleeps/Jumps/Swims/Eats
+    UK:Що рибка робить цілий день? | Спить/Стрибки/плаває/Їсть
+ Q3 a=1 EN:When do I feed the fish? | Every evening/Every morning/At night/At noon
+    UK:Коли годувати рибок? | Кожен вечір/Щоранку/Вночі/Опівдні
+ Q4 a=1 EN:The fish lives in... | Salt water/A bowl/The river/The ocean
+    UK:Риба живе в... | Солона вода/Чаша/Річка/океан
+
+###18|The Snow|Сніг
+EN: It is cold and snow falls. The snow is white. I make a snowman. I wear a warm coat.
+UK: Холодно і падає сніг. Сніг білий. Я ліплю сніговика. Я ношу тепле пальто.
+ Q0 a=2 EN:What is the weather? | Hot/Rainy/Cold/Warm
+    UK:Яка погода? | Гаряче/Дощова/Холодний/Теплий
+ Q1 a=1 EN:What color is the snow? | Gray/White/Blue/Clear
+    UK:Якого кольору сніг? | Сірий/Білий/Синій/ясно
+ Q2 a=1 EN:What do I make? | A snowball/A snowman/A snow angel/An igloo
+    UK:Що я роблю? | Сніжна куля/сніговик/Сніговий ангел/Іглу
+ Q3 a=1 EN:What do I wear? | A t-shirt/A warm coat/Shorts/Sandals
+    UK:Що я одягаю? | Футболка/Тепле пальто/Шорти/Босоніжки
+ Q4 a=2 EN:Snow falls when it is... | Hot/Warm/Cold/Windy
+    UK:Сніг падає, коли є... | Гаряче/Теплий/Холодний/Вітряно
+
+###19|The Chair|Стілець
+EN: This is my chair. It is brown and strong. I sit on it when I eat. The chair is comfortable.
+UK: Це моє крісло. Він коричневий і міцний. Я сиджу на ньому, коли їм. Крісло зручне.
+ Q0 a=1 EN:What is brown and strong? | The table/The chair/The bed/The door
+    UK:Що таке коричневий і сильний? | стіл/Стілець/Ліжко/Двері
+ Q1 a=1 EN:When do I sit on the chair? | When I sleep/When I eat/When I play/When I read
+    UK:Коли я сідаю на стілець? | Коли я сплю/Коли я їм/Коли я граю/Коли читаю
+ Q2 a=1 EN:The chair is... | Uncomfortable/Comfortable/Hard/Broken
+    UK:Стілець... | Незручно/Комфортно/важко/зламаний
+ Q3 a=2 EN:What color is the chair? | Black/White/Brown/Gray
+    UK:Якого кольору стілець? | чорний/Білий/Коричневий/Сірий
+ Q4 a=2 EN:The chair is in the... | Bedroom/Bathroom/Dining room/Garden
+    UK:Крісло знаходиться в... | Спальня/Ванна кімната/Їдальня/Сад
+
+###20|The Moon|Місяць
+EN: The moon shines at night. It is round and white. The moon is not as hot as the sun. I like to look at the moon.
+UK: Вночі світить місяць. Він круглий і білий. Місяць не такий гарячий, як сонце. Я люблю дивитися на місяць.
+ Q0 a=1 EN:When does the moon shine? | In the morning/At night/In the afternoon/At noon
+    UK:Коли світить місяць? | Вранці/Вночі/У другій половині дня/Опівдні
+ Q1 a=1 EN:What shape is the moon? | Square/Round/Triangle/Star-shaped
+    UK:Якої форми місяць? | Квадратний/Круглий/Трикутник/Зіркоподібна
+ Q2 a=2 EN:The moon is... | Hot/Cold/White/Red
+    UK:Місяць - це... | Гаряче/Холодний/Білий/Червоний
+ Q3 a=1 EN:The moon is not as hot as the... | Stars/Sun/Earth/Fire
+    UK:Місяць не такий гарячий, як... | Зірки/сонце/земля/Вогонь
+ Q4 a=1 EN:Do I like the moon? | No/Yes/Not sure/Maybe
+    UK:Чи подобається мені місяць? | немає/так/не впевнений/можливо
+
+###21|My Hands|Мої руки
+EN: I have two hands. I use them to hold things. I wash my hands before eating. My hands help me a lot.
+UK: У мене дві руки. Я використовую їх, щоб тримати речі. Я мию руки перед їжею. Руки мені дуже допомагають.
+ Q0 a=1 EN:How many hands do I have? | One/Two/Three/Four
+    UK:Скільки в мене рук? | Один/Два/три/чотири
+ Q1 a=1 EN:What do I use my hands for? | To walk/To hold things/To see/To hear
+    UK:Для чого я використовую свої руки? | Гуляти/Тримати речі/Щоб побачити/Щоб почути
+ Q2 a=1 EN:When do I wash my hands? | After playing/Before eating/After sleeping/Before school
+    UK:Коли мені мити руки? | Після гри/Перед їжею/Після сну/Перед школою
+ Q3 a=1 EN:My hands help me... | A little/A lot/Sometimes/Never
+    UK:Руки мені допомагають... | трохи/багато/іноді/Ніколи
+ Q4 a=2 EN:I have ten... | Hands/Arms/Fingers/Toes
+    UK:У мене десять... | руки/Зброя/пальці/Пальці ніг
+
+###22|The Ice Cream|Морозиво
+EN: I like ice cream. It is cold and sweet. I eat it in summer. My favorite flavor is chocolate.
+UK: Я люблю морозиво. Він холодний і солодкий. Я їм його влітку. Мій улюблений смак - шоколад.
+ Q0 a=1 EN:How does ice cream taste? | Sour/Sweet/Bitter/Salty
+    UK:Як на смак морозиво? | кислий/Солодкий/гіркий/Солоний
+ Q1 a=1 EN:When do I eat ice cream? | In winter/In summer/In spring/In autumn
+    UK:Коли я їм морозиво? | Взимку/Влітку/Навесні/Восени
+ Q2 a=2 EN:What is my favorite flavor? | Vanilla/Strawberry/Chocolate/Mint
+    UK:Який мій улюблений смак? | Ваніль/Полуниця/Шоколад/Монетний двір
+ Q3 a=2 EN:Ice cream is... | Hot/Warm/Cold/Cool
+    UK:Морозиво - це... | Гаряче/Теплий/Холодний/круто
+ Q4 a=1 EN:Do I like ice cream? | No/Yes/Not really/Sometimes
+    UK:Чи люблю я морозиво? | немає/так/Не дуже/іноді
+
+###23|The Car|Автомобіль
+EN: My father has a red car. The car has four wheels. We go to the store in it. The car is fast.
+UK: У мого батька червона машина. Машина має чотири колеса. У ньому йдемо в магазин. Машина швидка.
+ Q0 a=1 EN:Who has a red car? | My mother/My father/My brother/My sister
+    UK:У кого червона машина? | Моя мама/Мій батько/Мій брат/Моя сестра
+ Q1 a=2 EN:How many wheels does the car have? | Two/Three/Four/Six
+    UK:Скільки коліс у автомобіля? | Два/три/чотири/Шість
+ Q2 a=2 EN:Where do we go in the car? | To school/To the park/To the store/To the beach
+    UK:Куди ми поїдемо в машині? | До школи/До парку/До магазину/На пляж
+ Q3 a=1 EN:The car is... | Slow/Fast/Old/Broken
+    UK:Автомобіль... | Повільно/швидко/Старий/зламаний
+ Q4 a=2 EN:The car is... | Blue/Green/Red/Black
+    UK:Автомобіль... | Синій/Зелений/Червоний/чорний
+
+###24|My Teacher|Мій Учитель
+EN: My teacher is Ms. Lee. She is kind and smart. She teaches me to read and write. I like my teacher.
+UK: Моя вчителька - пані Лі. Вона добра і розумна. Вона вчить мене читати і писати. Мені подобається моя вчителька.
+ Q0 a=1 EN:What is my teacher's name? | Ms. Kim/Ms. Lee/Ms. Park/Ms. Chen
+    UK:Як звуть мого вчителя? | Пані Кім/Пані Лі/Пані Парк/Пані Чен
+ Q1 a=2 EN:My teacher is kind and... | Tall/Young/Smart/Funny
+    UK:Мій вчитель добрий і... | високий/Молодий/Розумний/Смішно
+ Q2 a=1 EN:What does she teach me? | To play/To read and write/To sing/To draw
+    UK:Чого вона мене вчить? | грати/Читати і писати/Співати/Малювати
+ Q3 a=2 EN:Do I like my teacher? | No/Sometimes/Yes/Not sure
+    UK:Чи подобається мені моя вчителька? | немає/іноді/так/не впевнений
+ Q4 a=1 EN:Ms. Lee works at a... | Hospital/School/Store/Bank
+    UK:Пані Лі працює в... | Лікарня/Школа/Магазин/банк
+
+###25|The Banana|Банан
+EN: A banana is yellow. It is long and curved. Bananas are sweet and soft. Monkeys like bananas.
+UK: Банан жовтий. Він довгий і вигнутий. Банани солодкі і м'які. Мавпи люблять банани.
+ Q0 a=1 EN:What color is a banana? | Green/Yellow/Red/Brown
+    UK:Якого кольору банан? | Зелений/Жовтий/Червоний/Коричневий
+ Q1 a=1 EN:A banana is long and... | Straight/Curved/Round/Flat
+    UK:Банан довгий і... | Прямий/Вигнутий/Круглий/Плоский
+ Q2 a=2 EN:Bananas are sweet and... | Hard/Sour/Soft/Crunchy
+    UK:Банани солодкі і... | важко/кислий/М'які/хрусткий
+ Q3 a=2 EN:Who likes bananas? | Cats/Dogs/Monkeys/Birds
+    UK:Хто любить банани? | Коти/Собаки/Мавпи/Птахи
+ Q4 a=1 EN:A banana is a... | Vegetable/Fruit/Meat/Drink
+    UK:Банан - це... | Овочевий/фрукти/м'ясо/пити
+
+###26|The Hat|Капелюх
+EN: I wear a hat on my head. The hat is blue. It protects me from the sun. I wear it when I go outside.
+UK: Я ношу шапку на голові. Шапочка синя. Він захищає мене від сонця. Я одягаю його, коли виходжу на вулицю.
+ Q0 a=0 EN:Where do I wear a hat? | On my head/On my hand/On my foot/On my arm
+    UK:Де я одягаю капелюх? | На мою голову/На моїй руці/На мою ногу/На мою руку
+ Q1 a=1 EN:What color is the hat? | Red/Blue/Green/Black
+    UK:Якого кольору шапка? | Червоний/Синій/Зелений/чорний
+ Q2 a=2 EN:What does the hat protect me from? | The rain/The snow/The sun/The wind
+    UK:Від чого мене захищає шапка? | Дощ/Сніг/Сонце/Вітер
+ Q3 a=1 EN:When do I wear the hat? | Inside/Outside/At night/In bed
+    UK:Коли я надягаю капелюх? | Всередині/Ззовні/Вночі/в ліжку
+ Q4 a=1 EN:A hat is a piece of... | Furniture/Clothing/Food/Toy
+    UK:Капелюх - це частина... | Меблі/Одяг/харчування/Іграшка
+
+###27|The Book|Книга
+EN: I read a book every night. The book has many pictures. It is about a rabbit. Reading is fun.
+UK: Я читаю книгу щовечора. У книзі багато малюнків. Йдеться про кролика. Читати - це весело.
+ Q0 a=1 EN:When do I read a book? | Every morning/Every night/Every afternoon/Every weekend
+    UK:Коли я читаю книгу? | Щоранку/Щовечора/Щодня після обіду/Кожні вихідні
+ Q1 a=1 EN:What does the book have? | Many words/Many pictures/Many songs/Many colors
+    UK:Що в книзі? | Багато слів/Багато картинок/Багато пісень/Багато кольорів
+ Q2 a=2 EN:What is the book about? | A cat/A dog/A rabbit/A bird
+    UK:Про що книжка? | кішка/Собака/Кролик/Пташка
+ Q3 a=2 EN:Reading is... | Boring/Hard/Fun/Tiring
+    UK:Читання - це... | Нудно/важко/Весело/виснажливий
+ Q4 a=1 EN:The book is made of... | Metal/Paper/Plastic/Wood
+    UK:Книга виготовлена ​​з... | метал/Папір/пластик/Деревина
+
+###28|The River|Річка
+EN: A river flows near my town. The water is clean and blue. Fish live in the river. I like to sit by the river.
+UK: Біля мого міста протікає річка. Вода чиста, блакитна. У річці живе риба. Я люблю сидіти біля річки.
+ Q0 a=1 EN:Where does the river flow? | In the city/Near my town/In the forest/In the desert
+    UK:Куди тече річка? | В місті/Біля мого міста/В лісі/У пустелі
+ Q1 a=1 EN:The water is clean and... | Green/Blue/Brown/Gray
+    UK:Вода чиста і... | Зелений/Синій/Коричневий/Сірий
+ Q2 a=1 EN:What lives in the river? | Birds/Fish/Cats/Dogs
+    UK:Що живе в річці? | Птахи/риба/Коти/Собаки
+ Q3 a=1 EN:Where do I like to sit? | By the road/By the river/By the tree/By the house
+    UK:Де я люблю сидіти? | При дорозі/Біля річки/Біля дерева/Біля будинку
+ Q4 a=1 EN:A river has... | Salt water/Fresh water/No water/Hot water
+    UK:Річка має... | Солона вода/Прісна вода/Без води/Гаряча вода
+
+###29|My Shoes|Моє взуття
+EN: I have new shoes. They are black and white. My shoes are comfortable. I wear them to school.
+UK: У мене нові туфлі. Вони чорно-білі. Моє взуття зручне. Я ношу їх до школи.
+ Q0 a=1 EN:What do I have? | New socks/New shoes/New pants/New shirts
+    UK:Що я маю? | Нові шкарпетки/Нове взуття/Нові штани/Нові сорочки
+ Q1 a=1 EN:What color are my shoes? | Blue and yellow/Black and white/Red and black/Brown and green
+    UK:Якого кольору мої туфлі? | Синій і жовтий/Чорно-білий/Червоний і чорний/Коричневий і зелений
+ Q2 a=1 EN:My shoes are... | Uncomfortable/Comfortable/Too small/Too big
+    UK:Мої черевики... | Незручно/Комфортно/Занадто малий/Занадто великий
+ Q3 a=1 EN:Where do I wear them? | To the park/To school/To bed/To the store
+    UK:Де я їх одягаю? | До парку/До школи/До ліжка/До магазину
+ Q4 a=1 EN:I wear shoes on my... | Hands/Feet/Head/Arms
+    UK:Я ношу взуття на своєму... | руки/Ноги/Голова/Зброя
+
+###30|The Ant|Мураха
+EN: An ant is very small. It is black. Ants work together. They carry food to their home.
+UK: Мурашка дуже маленька. Воно чорного кольору. Мурахи працюють разом. Носять їжу додому.
+ Q0 a=1 EN:An ant is... | Big/Small/Tall/Fat
+    UK:Мураха - це... | Великий/Маленький/високий/Жир
+ Q1 a=2 EN:What color is the ant? | Red/Brown/Black/Yellow
+    UK:Якого кольору мураха? | Червоний/Коричневий/чорний/Жовтий
+ Q2 a=1 EN:Ants work... | Alone/Together/At night/Slowly
+    UK:Мурахи працюють... | На самоті/Разом/Вночі/повільно
+ Q3 a=2 EN:What do ants carry? | Water/Leaves/Food/Sticks
+    UK:Що несуть мурахи? | вода/листя/харчування/палички
+ Q4 a=0 EN:Ants carry food to their... | Home/Tree/Hole/Nest
+    UK:Мурахи несуть їжу своїм... | додому/дерево/отвір/Гніздо
+
+###31|The Balloon|Повітряна куля
+EN: I have a red balloon. It is light and round. The balloon goes up in the air. I hold it with a string.
+UK: У мене є червона кулька. Він легкий і круглий. Повітряна куля піднімається в повітря. Я тримаю його за шнурок.
+ Q0 a=2 EN:What color is my balloon? | Blue/Green/Red/Yellow
+    UK:Якого кольору моя повітряна кулька? | Синій/Зелений/Червоний/Жовтий
+ Q1 a=1 EN:The balloon is light and... | Heavy/Round/Long/Flat
+    UK:Повітряна куля легка і... | Важка/Круглий/довгий/Плоский
+ Q2 a=1 EN:Where does the balloon go? | Down/Up in the air/Sideways/In water
+    UK:Куди летить повітряна кулька? | вниз/У повітрі/Набік/У воді
+ Q3 a=1 EN:What do I hold? | The balloon/A string/A stick/A handle
+    UK:Що я тримаю? | Повітряна куля/Рядок/Паличка/Ручка
+ Q4 a=1 EN:A balloon is filled with... | Water/Air/Sand/Rocks
+    UK:Повітряна кулька наповнена... | вода/повітря/Пісок/Скелі
+
+###32|My Grandmother|Моя бабуся
+EN: My grandmother is old. She has gray hair. She tells me stories. I love my grandmother.
+UK: Моя бабуся стара. У неї сиве волосся. Вона розповідає мені історії. Я люблю свою бабусю.
+ Q0 a=1 EN:My grandmother is... | Young/Old/Tall/Short
+    UK:Моя бабуся... | Молодий/Старий/високий/Короткий
+ Q1 a=2 EN:What color is her hair? | Black/Brown/Gray/White
+    UK:Якого кольору її волосся? | чорний/Коричневий/Сірий/Білий
+ Q2 a=1 EN:What does she tell me? | Jokes/Stories/Riddles/Songs
+    UK:Що вона мені каже? | Анекдоти/оповідання/Загадки/Пісні
+ Q3 a=1 EN:Do I love my grandmother? | No/Yes/A little/Not sure
+    UK:Чи люблю я свою бабусю? | немає/так/трохи/не впевнений
+ Q4 a=3 EN:My grandmother is my... | Mother's mother/Father's sister/Mother's sister/Father's mother
+    UK:Моя бабуся моя... | Мамина мати/Батькова сестра/Материна сестра/Батькова мати
+
+###33|The Sky|Небо
+EN: The sky is blue during the day. Clouds float in the sky. At night, stars appear. The sky is very big.
+UK: Вдень небо блакитне. По небу пливуть хмари. Вночі з'являються зірки. Небо дуже велике.
+ Q0 a=1 EN:What color is the sky during the day? | Gray/Blue/White/Black
+    UK:Якого кольору небо вдень? | Сірий/Синій/Білий/чорний
+ Q1 a=1 EN:What floats in the sky? | Birds/Clouds/Planes/Kites
+    UK:Що в небі пливе? | Птахи/Хмари/Літаки/повітряні змії
+ Q2 a=2 EN:When do stars appear? | In the morning/At noon/At night/In the afternoon
+    UK:Коли з'являються зірки? | Вранці/Опівдні/Вночі/У другій половині дня
+ Q3 a=1 EN:The sky is very... | Small/Big/Near/Dark
+    UK:Небо дуже... | Маленький/Великий/Поруч/Темний
+ Q4 a=1 EN:Clouds are made of... | Smoke/Water/Cotton/Air
+    UK:Хмари складаються з... | дим/вода/Бавовна/повітря
+
+###34|The Elephant|Слон
+EN: An elephant is big and gray. It has a long trunk. Elephants eat leaves and fruit. They live in Africa and Asia.
+UK: Слон великий і сірий. Має довгий стовбур. Слони їдять листя і фрукти. Мешкають в Африці та Азії.
+ Q0 a=1 EN:An elephant is big and... | Brown/Gray/Black/White
+    UK:Слон великий і... | Коричневий/Сірий/чорний/Білий
+ Q1 a=1 EN:What does an elephant have? | A short nose/A long trunk/Big ears/Small eyes
+    UK:Що є у слона? | Короткий ніс/Довгий стовбур/Великі вуха/Маленькі очі
+ Q2 a=1 EN:What do elephants eat? | Meat and fish/Leaves and fruit/Grass and hay/Bread and milk
+    UK:Що їдять слони? | М'ясо і риба/Листя і плоди/Трава і сіно/Хліб і молоко
+ Q3 a=2 EN:Where do elephants live? | Europe/Australia/Africa and Asia/South America
+    UK:Де живуть слони? | Європа/Австралія/Африки та Азії/Південна Америка
+ Q4 a=2 EN:An elephant is an... | Bird/Fish/Animal/Insect
+    UK:Слон - це... | птах/риба/Тварина/Комаха
+
+###35|My Cup|Моя чашка
+EN: I have a cup on the table. It is full of water. The cup is white with blue dots. I drink water from it.
+UK: У мене на столі чашка. Він повний води. Чашка біла з блакитними крапками. Я п'ю з нього воду.
+ Q0 a=1 EN:Where is my cup? | On the chair/On the table/On the bed/On the floor
+    UK:Де моя чашка? | На стільці/На столі/На ліжку/На підлозі
+ Q1 a=2 EN:What is in the cup? | Juice/Milk/Water/Tea
+    UK:Що в чашці? | сік/молоко/вода/чай
+ Q2 a=1 EN:What color is the cup? | Blue with white dots/White with blue dots/Red with white dots/White with red dots
+    UK:Якого кольору чашка? | Синій з білими крапками/Білий з блакитними крапками/Червоний з білими крапками/Білий з червоними крапками
+ Q3 a=1 EN:What do I do with the cup? | Eat from it/Drink from it/Play with it/Wash it
+    UK:Що мені робити з чашкою? | Їжте з нього/Пийте з нього/Пограйте з ним/Вимийте його
+ Q4 a=1 EN:A cup is used for... | Eating/Drinking/Cooking/Cleaning
+    UK:Чашка використовується для... | прийом їжі/пити/Кулінарія/прибирання
+
+###36|The Butterfly|Метелик
+EN: A butterfly is beautiful. It has colorful wings. It flies from flower to flower. Butterflies like sunny days.
+UK: Метелик прекрасний. Має різнокольорові крила. З квітки на квітку літає. Метелики люблять сонячні дні.
+ Q0 a=1 EN:A butterfly is... | Ugly/Beautiful/Big/Scary
+    UK:Метелик - це... | Потворний/Красива/Великий/Страшно
+ Q1 a=0 EN:What does a butterfly have? | Colorful wings/A long tail/Sharp teeth/Big eyes
+    UK:Що є у метелика? | Різнокольорові крила/Довгий хвіст/Гострі зуби/Великі очі
+ Q2 a=1 EN:Where does it fly? | From tree to tree/From flower to flower/From leaf to leaf/From house to house
+    UK:Куди воно летить? | Від дерева до дерева/Від квітки до квітки/З листка на листок/Від хати до хати
+ Q3 a=2 EN:What weather do butterflies like? | Rainy days/Snowy days/Sunny days/Windy days
+    UK:Яку погоду люблять метелики? | Дощові дні/Снігові дні/Сонячні дні/Вітряні дні
+ Q4 a=1 EN:A butterfly starts as a... | Egg/Caterpillar/Cocoon/Worm
+    UK:Метелик починається як... | яйце/Гусениця/Кокон/Черв'як
+
+###37|The Clock|Годинник
+EN: I have a clock on the wall. It tells the time. The clock has two hands. It makes a tick-tock sound.
+UK: У мене на стіні годинник. Він показує час. Годинник має дві стрілки. Видає звук тік-так.
+ Q0 a=1 EN:Where is the clock? | On the table/On the wall/On the floor/On the shelf
+    UK:Де годинник? | На столі/На стіні/На підлозі/На полиці
+ Q1 a=1 EN:What does the clock do? | Shows the date/Tells the time/Plays music/Shows the weather
+    UK:Що робить годинник? | Показує дату/Вказує час/Грає музику/Показує погоду
+ Q2 a=1 EN:How many hands does the clock have? | One/Two/Three/Four
+    UK:Скільки стрілок у годинника? | Один/Два/три/чотири
+ Q3 a=1 EN:What sound does the clock make? | Ding-dong/Tick-tock/Beep-beep/Ring-ring
+    UK:Який звук видає годинник? | Дінь-дон/Тік-так/Біп-біп/Кільце-кільце
+ Q4 a=2 EN:The clock is on the wall of my... | Kitchen/Bathroom/Living room/Garden
+    UK:Годинник на стіні моєї... | кухня/Ванна кімната/Вітальня/Сад
+
+###38|The Orange|Апельсин
+EN: An orange is round and orange. It is a fruit. Oranges have juice inside. They are sour and sweet.
+UK: Апельсин круглий і оранжевий. Це плід. Апельсини мають сік всередині. Вони кисло-солодкі.
+ Q0 a=1 EN:What shape is an orange? | Square/Round/Triangle/Oval
+    UK:Якої форми апельсин? | Квадратний/Круглий/Трикутник/Овальний
+ Q1 a=1 EN:What color is an orange? | Yellow/Orange/Red/Green
+    UK:Якого кольору апельсин? | Жовтий/Помаранчевий/Червоний/Зелений
+ Q2 a=1 EN:What is inside an orange? | Seeds/Juice/Pulp/Water
+    UK:Що всередині апельсина? | Насіння/сік/целюлоза/вода
+ Q3 a=0 EN:How does an orange taste? | Sour and sweet/Bitter and salty/Only sweet/Only sour
+    UK:Який смак апельсина? | Кислий і солодкий/Гірко-солоний/Тільки солодке/Тільки кислий
+ Q4 a=1 EN:An orange is a... | Vegetable/Fruit/Meat/Grain
+    UK:Апельсин - це... | Овочевий/фрукти/м'ясо/зерно
+
+###39|My House|Мій будинок
+EN: My house is white. It has a red roof. There is a garden in front. I live with my family.
+UK: Моя хата біла. Має червоний дах. Попереду є сад. Я живу з сім'єю.
+ Q0 a=1 EN:What color is my house? | Blue/White/Yellow/Green
+    UK:Якого кольору мій будинок? | Синій/Білий/Жовтий/Зелений
+ Q1 a=2 EN:What color is the roof? | Brown/Gray/Red/Black
+    UK:Якого кольору дах? | Коричневий/Сірий/Червоний/чорний
+ Q2 a=1 EN:What is in front of the house? | A tree/A garden/A car/A fence
+    UK:Що перед будинком? | дерево/Сад/автомобіль/Паркан
+ Q3 a=1 EN:Who do I live with? | My friends/My family/Alone/My pet
+    UK:з ким я живу | Мої друзі/Моя сім'я/На самоті/Моя тваринка
+ Q4 a=1 EN:My house has a red... | Door/Roof/Window/Fence
+    UK:У моєму будинку червоний... | двері/Дах/Вікно/Паркан
+
+###40|The Frog|Жаба
+EN: A frog is green and small. It lives near water. Frogs jump very high. They eat bugs.
+UK: Жаба зелена маленька. Живе біля води. Жаби дуже високо стрибають. Вони їдять жуків.
+ Q0 a=1 EN:What color is a frog? | Brown/Green/Gray/Yellow
+    UK:Якого кольору жаба? | Коричневий/Зелений/Сірий/Жовтий
+ Q1 a=1 EN:Where does a frog live? | In a tree/Near water/In a cave/On a mountain
+    UK:Де живе жаба? | На дереві/Біля води/В печері/На горі
+ Q2 a=0 EN:Frogs jump very... | High/Low/Fast/Slow
+    UK:Жаби дуже стрибають... | Високий/Низький/швидко/Повільно
+ Q3 a=2 EN:What do frogs eat? | Leaves/Fish/Bugs/Grass
+    UK:Що їдять жаби? | листя/риба/помилки/Трава
+ Q4 a=3 EN:A frog is an... | Insect/Bird/Fish/Amphibian
+    UK:Жаба - це... | Комаха/птах/риба/Амфібія
+
+###41|The Bed|Ліжко
+EN: I sleep in my bed every night. The bed is soft and warm. I have a pillow and a blanket. My bed is comfortable.
+UK: Я сплю в своєму ліжку щоночі. Постіль м'яка і тепла. У мене є подушка і ковдра. Моє ліжко зручне.
+ Q0 a=1 EN:When do I sleep in my bed? | Every afternoon/Every night/Every morning/Every day
+    UK:Коли я сплю в своєму ліжку? | Щодня після обіду/Щовечора/Щоранку/Кожен день
+ Q1 a=1 EN:The bed is soft and... | Hard/Warm/Cold/Flat
+    UK:Постіль м'яка і... | важко/Теплий/Холодний/Плоский
+ Q2 a=0 EN:What do I have on my bed? | A pillow and a blanket/A book and a toy/A lamp and a clock/A cup and a plate
+    UK:Що в мене на ліжку? | Подушка і ковдра/Книга та іграшка/Лампа і годинник/Чашка і тарілка
+ Q3 a=1 EN:My bed is... | Uncomfortable/Comfortable/Too small/Broken
+    UK:Моє ліжко... | Незручно/Комфортно/Занадто малий/зламаний
+ Q4 a=1 EN:I sleep on my bed with my... | Shoes on/Pajamas on/Coat on/Hat on
+    UK:Я сплю на своєму ліжку зі своїм... | Взутий/Піжама на/Пальто на/Капелюх
+
+###42|The Park|Парк
+EN: The park is big and green. Children play on the swings. There are many trees. I go to the park on weekends.
+UK: Парк великий і зелений. Діти граються на гойдалках. Там багато дерев. Я ходжу в парк на вихідних.
+ Q0 a=1 EN:The park is big and... | Small/Green/Gray/Clean
+    UK:Парк великий і... | Маленький/Зелений/Сірий/чистий
+ Q1 a=1 EN:What do children play on? | The slides/The swings/The seesaw/The sandbox
+    UK:На чому граються діти? | Слайди/Гойдалки/гойдалка/Пісочниця
+ Q2 a=1 EN:What is in the park? | Many flowers/Many trees/Many benches/Many lamps
+    UK:Що в парку? | Багато квітів/Багато дерев/Багато лавок/Багато ламп
+ Q3 a=2 EN:When do I go to the park? | Every day/On weekdays/On weekends/Every month
+    UK:Коли я піду в парк? | Кожен день/У будні дні/На вихідних/Кожен місяць
+ Q4 a=0 EN:The park has green... | Grass/Water/Sand/Rocks
+    UK:У парку зелені... | Трава/вода/Пісок/Скелі
+
+###43|The Star|Зірка
+EN: A star is bright in the night sky. Stars are very far away. They twinkle at night. I see many stars.
+UK: На нічному небі яскрава зірка. Зірки дуже далеко. Вони мерехтять вночі. Я бачу багато зірок.
+ Q0 a=1 EN:When is a star bright? | In the morning/In the night sky/In the afternoon/At noon
+    UK:Коли зірка яскрава? | Вранці/В нічному небі/У другій половині дня/Опівдні
+ Q1 a=1 EN:Stars are very... | Near/Far away/Small/Big
+    UK:Зірки дуже... | Поруч/далеко/Маленький/Великий
+ Q2 a=1 EN:What do stars do at night? | Sing/Twinkle/Dance/Sleep
+    UK:Що роблять зірки вночі? | Співай/Мерехтіння/танцювати/сон
+ Q3 a=2 EN:How many stars do I see? | One/A few/Many/None
+    UK:Скільки зірок я бачу? | Один/Кілька/багато/Жодного
+ Q4 a=1 EN:Stars give us... | Heat/Light/Sound/Wind
+    UK:Зірки дарують нам... | Тепло/світло/Звук/Вітер
+
+###44|The Cupcake|Кекс
+EN: I have a cupcake. It has pink frosting on top. The cupcake is sweet and soft. I eat it as a snack.
+UK: У мене є кекс. Зверху має рожеву глазур. Капкейк солодкий і м'який. Я їм це як закуску.
+ Q0 a=1 EN:What do I have? | A cookie/A cupcake/A donut/A cake
+    UK:Що я маю? | Печиво/Кекс/Пончик/Торт
+ Q1 a=1 EN:What color is the frosting? | White/Pink/Yellow/Brown
+    UK:Якого кольору глазур? | Білий/Рожевий/Жовтий/Коричневий
+ Q2 a=1 EN:The cupcake is sweet and... | Hard/Soft/Crunchy/Chewy
+    UK:Капкейк солодкий і... | важко/М'які/хрусткий/Жувальний
+ Q3 a=2 EN:When do I eat it? | For breakfast/For lunch/As a snack/For dinner
+    UK:Коли я це з'їм? | На сніданок/На обід/В якості закуски/На вечерю
+ Q4 a=2 EN:A cupcake is a type of... | Fruit/Vegetable/Dessert/Drink
+    UK:Капкейк - різновид... | фрукти/Овочевий/десерт/пити
+
+###45|The Wind|Вітер
+EN: The wind blows today. It moves the leaves on the trees. The wind is cool. I fly my kite in the wind.
+UK: Сьогодні дме вітер. Ворушить листя на деревах. Вітер прохолодний. Я запускаю повітряного змія на вітрі.
+ Q0 a=2 EN:What does the wind do today? | Rains/Snows/Blows/Stops
+    UK:Що сьогодні робить вітер? | Дощі/Сніги/Удари/Зупинки
+ Q1 a=1 EN:What does the wind move? | The flowers/The leaves/The grass/The clouds
+    UK:Що рухає вітер? | Квіти/Листя/Трава/Хмари
+ Q2 a=1 EN:The wind is... | Hot/Cool/Warm/Cold
+    UK:Вітер - це... | Гаряче/круто/Теплий/Холодний
+ Q3 a=0 EN:What do I fly in the wind? | A kite/A balloon/A plane/A bird
+    UK:Що я лечу за вітром? | Повітряний змій/Повітряна куля/Літак/Пташка
+ Q4 a=1 EN:We cannot see the wind, but we can... | Touch it/Feel it/Hear it/Taste it
+    UK:Ми не бачимо вітру, але можемо... | Торкніться його/Відчуй це/Почуйте це/Скуштуйте
+
+###46|The Cow|Корова
+EN: A cow is black and white. It gives us milk. Cows eat grass. They live on a farm.
+UK: Корова чорно-біла. Це дає нам молоко. Корови їдять траву. Вони живуть на фермі.
+ Q0 a=1 EN:What color is a cow? | Brown and white/Black and white/Black and brown/White only
+    UK:Якого кольору корова? | Коричневий і білий/Чорно-білий/Чорно-коричневий/Тільки білий
+ Q1 a=2 EN:What does a cow give us? | Eggs/Meat/Milk/Wool
+    UK:Що дає нам корова? | Яйця/м'ясо/молоко/шерсть
+ Q2 a=1 EN:What do cows eat? | Leaves/Grass/Hay/Grain
+    UK:Що їдять корови? | листя/Трава/сіно/зерно
+ Q3 a=1 EN:Where do cows live? | In a zoo/On a farm/In a house/In a forest
+    UK:Де живуть корови? | У зоопарку/На фермі/В будинку/В лісі
+ Q4 a=1 EN:A cow says... | Baa/Moo/Quack/Oink
+    UK:Корова каже... | Баа/Му/Квак/Хрю
+
+###47|My Toothbrush|Моя зубна щітка
+EN: I brush my teeth every morning. I use a toothbrush and toothpaste. My toothbrush is blue. Clean teeth are healthy.
+UK: Я чищу зуби щоранку. Я користуюся зубною щіткою та зубною пастою. Моя зубна щітка синя. Чисті зуби здорові.
+ Q0 a=1 EN:When do I brush my teeth? | Every night/Every morning/After lunch/Every weekend
+    UK:Коли я чищу зуби? | Щовечора/Щоранку/Після обіду/Кожні вихідні
+ Q1 a=1 EN:What do I use to brush my teeth? | A comb and soap/A toothbrush and toothpaste/A towel and water/A brush and paint
+    UK:Чим я чищу зуби? | Гребінець і мило/Зубна щітка і зубна паста/Рушник і вода/Кисть і фарба
+ Q2 a=2 EN:What color is my toothbrush? | Green/Red/Blue/Yellow
+    UK:Якого кольору моя зубна щітка? | Зелений/Червоний/Синій/Жовтий
+ Q3 a=1 EN:Clean teeth are... | White/Healthy/Strong/Shiny
+    UK:Чисті зуби - це... | Білий/Здоровий/Сильний/Блискучий
+ Q4 a=1 EN:I brush my teeth for... | One minute/Two minutes/Five minutes/Ten minutes
+    UK:Я чищу зуби для... | Одна хвилина/Дві хвилини/П'ять хвилин/Десять хвилин
+
+###48|The Rabbit|Кролик
+EN: A rabbit is soft and white. It has long ears. Rabbits eat carrots. They hop very fast.
+UK: Кролик м'який і білий. Має довгі вуха. Кролики їдять моркву. Вони дуже швидко стрибають.
+ Q0 a=1 EN:A rabbit is soft and... | Brown/White/Gray/Black
+    UK:Кролик м'який і... | Коричневий/Білий/Сірий/чорний
+ Q1 a=1 EN:What does a rabbit have? | Short ears/Long ears/Big eyes/Small feet
+    UK:Що є у кролика? | Короткі вуха/Довгі вуха/Великі очі/Маленькі стопи
+ Q2 a=1 EN:What do rabbits eat? | Apples/Carrots/Grass/Seeds
+    UK:Що їдять кролики? | яблука/Морква/Трава/Насіння
+ Q3 a=1 EN:Rabbits hop very... | Slow/Fast/High/Far
+    UK:Кролики дуже... | Повільно/швидко/Високий/далеко
+ Q4 a=2 EN:A rabbit is a... | Bird/Fish/Mammal/Insect
+    UK:Кролик - це... | птах/риба/Ссавець/Комаха
+
+###49|The Door|Двері
+EN: The door is wooden and brown. I open it to go outside. I close it to keep the room warm. There is a handle on the door.
+UK: Двері дерев'яні коричневого кольору. Відкриваю, щоб вийти на вулицю. Закриваю, щоб у кімнаті було тепло. На дверях є ручка.
+ Q0 a=1 EN:The door is wooden and... | White/Brown/Black/Gray
+    UK:Двері дерев'яні та... | Білий/Коричневий/чорний/Сірий
+ Q1 a=0 EN:Why do I open the door? | To go outside/To let air in/To see who is there/To clean the room
+    UK:Чому я відкриваю двері? | Щоб вийти на вулицю/Щоб впустити повітря/Щоб побачити, хто там/Щоб прибрати кімнату
+ Q2 a=1 EN:Why do I close the door? | To keep the room cool/To keep the room warm/To keep the room dark/To keep the room quiet
+    UK:Чому я закриваю двері? | Щоб у кімнаті було прохолодно/Щоб у кімнаті було тепло/Щоб кімната була темною/Щоб у кімнаті було тихо
+ Q3 a=1 EN:What is on the door? | A lock/A handle/A window/A bell
+    UK:Що на дверях? | замок/Ручка/Вікно/дзвіночок
+ Q4 a=2 EN:The door is made of... | Metal/Plastic/Wood/Glass
+    UK:Двері виготовлені з... | метал/пластик/Деревина/скло
+

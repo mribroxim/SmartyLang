@@ -1,0 +1,792 @@
+[
+  {
+    "type": "discussion",
+    "label": "Diskussionsaufsatz",
+    "description": "Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+    "instruction": "Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar. Schreiben Sie mindestens 250 Wörter.",
+    "categories": [
+      {
+        "name": "Ausbildung",
+        "prompts": [
+          "Manche Menschen glauben, dass die Universitätsausbildung für alle kostenlos sein sollte, während andere meinen, dass Studierende für ihre Hochschulausbildung bezahlen sollten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass Leistungssport in der Schule von großem Nutzen sei, während andere meinen, er verursache unnötigen Stress für Kinder. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Viele Menschen sind der Meinung, dass Studierende ein breites Spektrum an Fächern studieren sollten, während andere der Meinung sind, dass sie sich ausschließlich auf Fächer konzentrieren sollten, die mit einer bestimmten Karriere zusammenhängen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Leute sind der Meinung, dass Lehrer dafür verantwortlich sein sollten, den Schülern beizubringen, richtig von falsch zu unterscheiden, während andere glauben, dass Eltern diese Verantwortung tragen sollten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Pädagogen argumentieren, dass Hausaufgaben für den schulischen Erfolg unerlässlich sind, während andere glauben, dass sie eine unnötige Belastung für Kinder darstellen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige sind der Meinung, dass Universitätsstudenten studieren dürfen, was sie wollen, während andere argumentieren, dass sie nur Fächer studieren sollten, die für die Zukunft nützlich sind, wie etwa Naturwissenschaften und Technik. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche meinen, dass gleichgeschlechtliche Schulen ein besseres Lernumfeld bieten, während andere argumentieren, dass gemischte Schulen Kinder besser auf das wirkliche Leben vorbereiten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass Online-Lernen irgendwann den traditionellen Unterricht im Klassenzimmer ersetzen wird, während andere argumentieren, dass Präsenzunterricht immer notwendig sein wird. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Leute argumentieren, dass Prüfungen der beste Weg seien, die Fähigkeiten eines Schülers zu beurteilen, während andere glauben, dass eine kontinuierliche Beurteilung über das Jahr hinweg effektiver sei. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche sind der Meinung, dass Schuluniformen die Disziplin und Gleichberechtigung verbessern, während andere der Meinung sind, dass sie die Individualität der Schüler einschränken. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar."
+        ]
+      },
+      {
+        "name": "Umwelt & Tiere",
+        "prompts": [
+          "Manche Menschen glauben, dass Umweltprobleme zu groß sind, als dass Einzelpersonen sie lösen könnten, während andere glauben, dass Einzelpersonen einen erheblichen Unterschied machen können. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Viele Menschen denken, dass die Regierung Geld für die Suche nach Leben auf anderen Planeten ausgeben sollte, während andere glauben, dass dieses Geld für die Lösung von Problemen auf der Erde ausgegeben werden sollte. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche Menschen glauben, dass die Haltung von Tieren in Zoos grausam und unnötig sei, während andere argumentieren, dass Zoos für den Naturschutz und die Bildung von entscheidender Bedeutung seien. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass strenge Gesetze die einzige Möglichkeit seien, die industrielle Umweltverschmutzung zu reduzieren, während andere glauben, dass die Aufklärung von Unternehmen über umweltfreundliche Praktiken effektiver sei. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige meinen, der beste Weg, das wachsende Verkehrsproblem zu lösen, sei der Bau von mehr Straßen, während andere argumentieren, dass die Regierung stark in den öffentlichen Verkehr investieren sollte. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass erneuerbare Energiequellen der einzige Weg nach vorne für unseren Planeten sind, während andere argumentieren, dass fossile Brennstoffe für die wirtschaftliche Stabilität immer noch notwendig sind. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche Menschen glauben, dass das Pflanzen von Bäumen in städtischen Gebieten der beste Weg zur Verbesserung der Stadtumgebung sei, während andere glauben, dass die Bereitstellung von mehr öffentlichen Einrichtungen wie Krankenhäusern wichtiger sei. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass Tierversuche für medizinische Durchbrüche notwendig sind, während andere glauben, dass sie moralisch falsch sind und vollständig verboten werden sollten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche Menschen glauben, dass Menschen das Recht haben, Tiere als Nahrung und Kleidung zu verwenden, während andere argumentieren, dass Tiere Rechte haben und nicht ausgebeutet werden sollten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass Überbevölkerung die Hauptursache für die Umweltzerstörung ist, während andere die Industrialisierung und den Konsum dafür verantwortlich machen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar."
+        ]
+      },
+      {
+        "name": "Technologie und Internet",
+        "prompts": [
+          "Manche Menschen glauben, dass künstliche Intelligenz eine utopische Gesellschaft ohne menschliche Arbeitskraft schaffen wird, während andere befürchten, dass sie zu massiver Arbeitslosigkeit und Ungleichheit führen wird. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Viele Menschen glauben, dass soziale Medien die Menschen einander näher gebracht haben, während andere behaupten, dass sie einzelne Menschen in der realen Welt isoliert hätten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass es Kindern nicht gestattet sein sollte, Smartphones zu benutzen, bis sie Teenager sind, während andere glauben, dass eine früher Umgang für die digitale Kompetenz notwendig sei. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche glauben, dass gedruckte Bücher bald der Vergangenheit angehören werden, während andere glauben, dass sie immer den E-Books vorgezogen werden. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass das Internet es einfacher gemacht hat, verlässliche Informationen zu erhalten, während andere argumentieren, dass es eine Ära gefälschter Nachrichten und Fehlinformationen eingeläutet hat. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche Menschen denken, dass die Automatisierung am Arbeitsplatz dem Wirtschaftswachstum zuträglich ist, während andere sich Sorgen über den Verlust traditioneller Arbeitsplätze machen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass der technologische Fortschritt das moderne Leben zu komplex gemacht hat, während andere glauben, dass er das Leben erheblich einfacher und komfortabler gemacht hat. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Menschen glauben, dass staatliche Überwachung mithilfe von Technologie für die nationale Sicherheit notwendig ist, während andere darin eine Verletzung der Privatsphäre sehen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige halten Videospiele für eine harmlose Form der Unterhaltung, während andere argumentieren, dass sie Gewalt und Bewegungsmangel bei Jugendlichen fördern. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass Weltraumtourismus ein normaler Teil der Zukunft sein wird, während andere ihn für eine ungerechtfertigte Verschwendung von Ressourcen halten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar."
+        ]
+      },
+      {
+        "name": "Gesellschaft und modernes Leben",
+        "prompts": [
+          "Manche Menschen ziehen es aufgrund der dortigen Möglichkeiten vor, in Großstädten zu leben, während andere die Ruhe und Stille des Lebens auf dem Land bevorzugen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Viele sind der Meinung, dass es für junge Erwachsene besser sei, bis zur Heirat bei den Eltern zu leben, während andere der Meinung sind, dass sie bereits mit 18 Jahren ausziehen sollten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass die Kluft zwischen Arm und Reich größer wird und die Regierung eingreifen sollte, während andere glauben, dass diese Kluft eine natürliche Folge eines freien Marktes ist. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche Menschen sind der Meinung, dass ältere Menschen von ihren Familien betreut werden sollten, während andere der Meinung sind, dass der Staat Altersheime bereitstellen sollte. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass die traditionellen Rollen von Mann und Frau für eine stabile Gesellschaft von entscheidender Bedeutung sind, während andere argumentieren, dass die Gleichstellung der Geschlechter in allen Rollen von wesentlicher Bedeutung ist. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass Wohneigentum das wichtigste Symbol für Erfolg ist, während andere argumentieren, dass die Miete mehr Freiheit und weniger Stress bietet. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche Menschen denken, dass die moderne Gesellschaft zu sehr konsumorientiert ist, während andere glauben, dass Konsumismus notwendig ist, um die Wirtschaft am Laufen zu halten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass internationale Sportveranstaltungen den Frieden zwischen Nationen fördern, während andere glauben, dass sie nur nationalistische Spannungen hervorrufen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche glauben, dass Geschichte eines der wichtigsten Schulfächer ist, während andere glauben, dass Fächer wie Informatik in der heutigen Welt weitaus relevanter sind. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass ein großer Geldbetrag der Schlüssel zum Glück ist, während andere argumentieren, dass Glück ausschließlich von anderen Faktoren wie Gesundheit und Beziehungen abhängt. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar."
+        ]
+      },
+      {
+        "name": "Arbeit & Karriere",
+        "prompts": [
+          "Manche Menschen glauben, dass Arbeitszufriedenheit wichtiger ist als ein hohes Gehalt, während andere glauben, dass es der wichtigste Faktor bei einem Job ist, viel Geld zu verdienen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Viele argumentieren, dass die Arbeit von zu Hause aus die Produktivität und die Vereinbarkeit von Beruf und Privatleben steigert, während andere glauben, dass die Büroumgebung für die Zusammenarbeit notwendig ist. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche Menschen glauben, dass es besser ist, ein Leben lang nur einen Beruf auszuüben, während andere glauben, dass es vorteilhafter ist, den Beruf mehrmals zu wechseln. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass ältere Mitarbeiter aufgrund ihrer Erfahrung für ein Unternehmen wertvoller sind, während andere jüngere Mitarbeiter aufgrund ihrer frischen Ideen und Energie bevorzugen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige meinen, dass das Renteneintrittsalter wegen der höheren Lebenserwartung angehoben werden sollte, während andere meinen, die Menschen sollten früher in Rente gehen, um ihre Jugend zu genießen und Arbeitsplätze für Jüngere freizumachen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Leute denken, dass unbezahlte Praktika ausbeuterisch sind, während andere argumentieren, dass sie eine entscheidende Einstiegsmöglichkeit für junge Absolventen darstellen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass Frauen in höheren Führungspositionen per Gesetz gleiche Quoten erhalten sollten, während andere der Meinung sind, dass Beförderungen unabhängig vom Geschlecht ausschließlich auf der Grundlage ihrer Leistung erfolgen sollten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass die Gründung eines eigenen Unternehmens der beste Weg ist, um finanzielle Sicherheit zu erreichen, während andere denken, dass es sicherer sei, für einen großen Konzern zu arbeiten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Leute glauben, dass eine Vier-Tage-Woche besser für die Gesellschaft wäre, während andere argumentieren, dass sie der Wirtschaft schaden würde. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass handwerkliche Berufe genauso bezahlt werden sollten wie akademische Berufe wie Arzt oder Anwalt, während andere glauben, dass die aktuellen Lohntarife gerechtfertigt sind. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar."
+        ]
+      },
+      {
+        "name": "Gesundheit & Ernährung",
+        "prompts": [
+          "Einige sind der Meinung, dass die Regierung eine „Fettsteuer“ auf ungesunde Lebensmittel einführen sollte, um Fettleibigkeit zu bekämpfen, während andere argumentieren, dass die Menschen frei entscheiden sollten, was sie essen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Viele sind der Meinung, dass die gesamte Gesundheitsversorgung völlig kostenlos sein und von der Regierung finanziert werden sollte, während andere glauben, dass die private Gesundheitsversorgung qualitativ hochwertigere Dienstleistungen bietet. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass alternative Medikamente (wie Akupunktur oder pflanzliche Heilmittel) hochwirksam seien, während andere glauben, sie seien gefährlich und man sollte nur der modernen Medizin vertrauen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Menschen sind der Meinung, dass Sport und körperliche Bildung für Erwachsene am Arbeitsplatz Pflicht sein sollten, während andere meinen, Bewegung sei eine persönliche Entscheidung. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige denken, dass vegane Ernährung die gesündeste Option für den Menschen sei, während andere argumentieren, dass der Verzehr von Fleisch für eine ausgewogene Ernährung notwendig sei. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass vorbeugende Gesundheitsversorgung (wie Bildungs- und Fitnessprogramme) besser ist als die Behandlung von Krankheiten nach ihrem Auftreten, während andere der Meinung sind, dass die medizinische Forschung nach Heilmitteln Vorrang haben sollte. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige meinen, dass Fast-Food-Werbung komplett verboten werden sollte, während andere argumentieren, dass dadurch die Meinungsfreiheit von Unternehmen eingeschränkt werde. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass die psychische Gesundheit genauso wichtig ist wie die körperliche Gesundheit und die gleiche Finanzierung erhalten sollte, während andere glauben, dass körperliche Krankheiten dringender finanzieller Aufmerksamkeit bedürfen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass das Rauchen weltweit vollständig verboten werden sollte, während andere argumentieren, dass Erwachsene das Recht haben, ihre eigenen Entscheidungen über ihren Lebensstil zu treffen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Menschen glauben, dass gentechnisch veränderte (GV) Lebensmittel der Schlüssel zur Beendigung des Hungers in der Welt sind, während andere glauben, dass sie ein ernstes Risiko für die menschliche Gesundheit darstellen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar."
+        ]
+      },
+      {
+        "name": "Regierung & Wirtschaft",
+        "prompts": [
+          "Manche Menschen denken, dass wirtschaftlicher Fortschritt das wichtigste Ziel einer Regierung ist, während andere glauben, dass andere Arten von Fortschritt (z. B. sozialer oder ökologischer Fortschritt) ebenso wichtig sind. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Viele argumentieren, dass reiche Länder ärmeren Ländern finanzielle Hilfe gewähren sollten, während andere glauben, dass diese Hilfe aufgrund von Korruption oft mehr schadet als nützt. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass die Regierung Künstler, Musiker und Schriftsteller finanzieren sollte, während andere argumentieren, dass Steuergelder nur für öffentliche Dienstleistungen wie Krankenhäuser und Straßen ausgegeben werden sollten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige meinen, dass öffentliche Verkehrsmittel kostenlos sein sollten, während andere glauben, dass die Fahrgäste zahlen sollten, um die Qualität des Dienstes aufrechtzuerhalten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass der globale Freihandel für Entwicklungsländer von Vorteil sei, während andere glauben, dass er nur ihre Ressourcen und billigen Arbeitskräfte ausbeutet. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige sind der Meinung, dass Regierungen das Höchstgehalt, das eine Person verdienen kann, begrenzen sollten, während andere argumentieren, dass es den Menschen erlaubt sein sollte, so viel zu verdienen, wie sie können. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche Menschen glauben, dass eine einheitliche globale Währung die Weltwirtschaft verbessern würde, während andere glauben, dass nationale Währungen für die wirtschaftliche Unabhängigkeit eines Landes von entscheidender Bedeutung sind. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass die Zahlung von Steuern die wichtigste Pflicht eines Bürgers sei, während andere der Meinung sind, dass die Menschen versuchen sollten, so viel wie möglich von ihrem Einkommen zu behalten, wie es rechtlich möglich ist. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass Regierungen ein universelles Grundeinkommen für alle Bürger bereitstellen sollten, während andere argumentieren, dass dies die Menschen faul machen und die Wirtschaft ruinieren würde. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Leute halten die Erforschung des Weltraums für eine Verschwendung staatlicher Gelder, während andere argumentieren, dass sie eine wesentliche Investition in die Zukunft der Menschheit darstellt. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar."
+        ]
+      },
+      {
+        "name": "Verbrechen und Strafe",
+        "prompts": [
+          "Einige glauben, dass der Hauptzweck von Gefängnissen darin besteht, Kriminelle zu bestrafen, während andere argumentieren, dass Gefängnisse sich ausschließlich auf die Rehabilitation konzentrieren sollten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Viele halten die Todesstrafe für eine gerechtfertigte Strafe für schwere Verbrechen, während andere argumentieren, dass sie eine Verletzung der Menschenrechte darstellt und abgeschafft werden sollte. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass längere Haftstrafen wirksam Kriminalität abschrecken, während andere glauben, dass sie die Kriminalitätsrate nicht senken und nur die Gefängnisse überfüllen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige sind der Meinung, dass jugendliche Straftäter die gleichen Strafen wie Erwachsene erhalten sollten, während andere argumentieren, dass sie milder behandelt werden sollten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Leute glauben, dass die Installation von Überwachungskameras an öffentlichen Orten die Kriminalität verringert, während andere glauben, dass es sich um einen schwerwiegenden Eingriff in die Privatsphäre handelt. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass die Polizei immer Schusswaffen tragen sollte, um die Öffentlichkeit zu schützen, während andere glauben, dass bewaffnete Polizisten die Gewalt eskalieren lassen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass Cyberkriminalität die größte Bedrohung für die moderne Gesellschaft darstellt, während andere argumentieren, dass traditionelle Gewaltkriminalität noch weitaus gefährlicher ist. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche meinen, dass ehemalige Häftlinge verpflichtet werden sollten, ihre Arbeitgeber über ihre kriminelle Vergangenheit zu informieren, während andere glauben, dass sie nach Verbüßung ihrer Strafe ein Recht auf Privatsphäre haben. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass gemeinnützige Arbeit eine bessere Strafe für geringfügige Verbrechen sei, als Menschen ins Gefängnis zu schicken, während andere glauben, dass gemeinnützige Arbeit nicht streng genug sei. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass Armut die Hauptursache aller Kriminalität ist, während andere argumentieren, dass Kriminalität eine Folge der menschlichen Natur und der Gier ist. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar."
+        ]
+      },
+      {
+        "name": "Medien & Werbung",
+        "prompts": [
+          "Einige Leute glauben, dass Gewalt in Filmen und Fernsehen zur Gewalt in der Gesellschaft beiträgt, während andere argumentieren, dass es sich lediglich um harmlose Unterhaltung handelt. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Viele sind der Meinung, dass die Medien streng von der Regierung reguliert werden sollten, während andere glauben, dass eine völlig freie Presse für die Demokratie unerlässlich ist. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass an Kinder gerichtete Werbung illegal sein sollte, während andere glauben, dass es in der Verantwortung der Eltern liegt, darüber zu entscheiden, was ihre Kinder sehen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass sich die Nachrichten zu sehr auf negative Ereignisse konzentrieren, was die Öffentlichkeit verunsichert, während andere argumentieren, dass es die Pflicht der Medien sei, die harte Wahrheit zu berichten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Leute denken, dass Prominente schlechte Vorbilder für junge Menschen sind, während andere darauf hinweisen, dass viele Prominente ihre Plattform für positive Wohltätigkeitsarbeit nutzen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass gedruckte Zeitungen tot sind und bald ganz verschwinden werden, während andere glauben, dass es immer einen Markt für physischen Journalismus geben wird. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass gezielte Online-Werbung für Verbraucher äußerst praktisch ist, während andere sie als manipulativ und invasiv betrachten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige Leute glauben, dass Reality-TV einen negativen Einfluss auf kulturelle Werte hat, während andere glauben, es sei einfach nur lustiger, gedankenloser Eskapismus. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass das Privatleben von Persönlichkeiten des öffentlichen Lebens (wie Politikern und Schauspielern) für die Presse tabu sein sollte, während andere glauben, dass die Öffentlichkeit ein Recht darauf hat, es zu erfahren. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass moderne Werbung die Menschen dazu zwingt, Dinge zu kaufen, die sie nicht brauchen, während andere argumentieren, dass Werbung die Verbraucher lediglich über ihre Entscheidungen informiert. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar."
+        ]
+      },
+      {
+        "name": "Kultur, Reisen und Kunst",
+        "prompts": [
+          "Einige glauben, dass der internationale Massentourismus die lokale Kultur und Umwelt zerstört, während andere argumentieren, dass er für die lokale Wirtschaft von entscheidender Bedeutung ist. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Viele sind der Meinung, dass Einwanderer die Kultur und Bräuche ihres neuen Landes übernehmen sollten, während andere der Meinung sind, dass sie ihre ursprüngliche Kultur beibehalten und praktizieren sollten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass das Erlernen einer Fremdsprache dank Übersetzungssoftware nicht mehr notwendig sei, während andere glauben, dass das Erlernen einer Sprache ein entscheidendes kulturelles Verständnis vermittelt. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass Museen und Kunstgalerien für die Öffentlichkeit völlig kostenlos sein sollten, während andere argumentieren, dass die Erhebung einer Eintrittsgebühr notwendig sei, um die Ausstellungen zu unterhalten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche glauben, dass traditionelle Feste ihre Bedeutung verlieren und rein kommerzialisiert werden, während andere glauben, dass die Kommerzialisierung dazu beiträgt, diese Traditionen am Leben zu erhalten. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass eine einzige globale Sprache (wie Englisch) die Welt in Frieden zusammenbringt, während andere glauben, dass sie einzigartige kulturelle Identitäten zerstört. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass das Reisen in einer Gruppe mit einem Reiseleiter die beste Art ist, ein neues Land kennenzulernen, während andere es vorziehen, alleine und unabhängig zu reisen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Manche meinen, dass Regierungen Geld für den Erhalt alter historischer Gebäude ausgeben sollten, während andere glauben, dass es praktischer sei, sie abzureißen und moderne Wohnungen zu bauen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige argumentieren, dass lokale Lebensmittel und kulinarische Traditionen durch internationale Fast-Food-Ketten zerstört werden, während andere die Bequemlichkeit und Vielfalt begrüßen. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar.",
+          "Einige glauben, dass das Studium der Kunst und Literatur der Vergangenheit für moderne Studenten irrelevant ist, während andere argumentieren, dass es für eine umfassende Ausbildung unerlässlich ist. Erörtern Sie beide Standpunkte und legen Sie Ihre eigene Meinung dar."
+        ]
+      }
+    ]
+  },
+  {
+    "type": "opinion",
+    "label": "Meinungsaufsatz",
+    "description": "Geben Sie Ihre Meinung ab und argumentieren Sie für oder gegen eine Aussage.",
+    "instruction": "Inwieweit stimmen Sie zu oder nicht? / Was ist deine Meinung? Schreiben Sie mindestens 250 Wörter.",
+    "categories": [
+      {
+        "name": "Ausbildung",
+        "prompts": [
+          "Manche Menschen glauben, dass die Universitätsausbildung für alle kostenlos sein sollte, unabhängig von ihrer Herkunft. Inwieweit stimmen Sie zu oder nicht?",
+          "In Zukunft könnten Schüler die Wahl haben, zu Hause mithilfe von Technologie zu lernen oder an traditionellen Schulen zu lernen. Es wird argumentiert, dass traditionelle Schulen verschwinden werden. Stimmen Sie zu oder nicht?",
+          "Viele Menschen denken, dass Hausaufgaben für das richtige Lernen von Kindern unerlässlich sind, während andere glauben, dass sie unnötig sind und Stress verursachen. Was ist Ihre Meinung?",
+          "Universitäten sollten in jedem Fach die gleiche Anzahl männlicher und weiblicher Studierender aufnehmen. Inwieweit stimmen Sie zu oder nicht?",
+          "Manche Leute denken, dass Eltern ihren Kindern beibringen sollten, wie sie gute Mitglieder der Gesellschaft sein können. Andere glauben jedoch, dass die Schule der Ort sei, um dies zu lernen. Was ist Ihre Meinung?",
+          "Fächer wie Kunst, Musik und Theater werden oft als weniger wichtig angesehen als Fächer wie Mathematik und Naturwissenschaften. Daher sollten sie aus dem Lehrplan gestrichen werden. Stimmen Sie zu oder nicht?",
+          "Alle Schüler sollten dazu verpflichtet werden, ab der Grundschule eine Fremdsprache zu lernen. Inwieweit stimmen Sie zu oder nicht?",
+          "Gap Years, bei denen Studierende vor dem Studium eine Auszeit nehmen, erfreuen sich immer größerer Beliebtheit. Für junge Menschen ist es immer eine wertvolle Erfahrung, ein Gap Year zu absolvieren. Stimmen Sie zu oder nicht?",
+          "Gruppenarbeit ist für Studierende die effektivste Art zu lernen. Inwieweit stimmen Sie zu oder nicht?",
+          "Einige Pädagogen argumentieren, dass Prüfungen keine faire Beurteilung der wahren Fähigkeiten eines Schülers darstellen und durch eine kontinuierliche Beurteilung ersetzt werden sollten. Was ist Ihre Meinung?"
+        ]
+      },
+      {
+        "name": "Technologie und Innovation",
+        "prompts": [
+          "Die Entwicklung künstlicher Intelligenz wird letztendlich zum Verlust von Millionen von Arbeitsplätzen führen. Daher sollten Regierungen seine Entwicklung einschränken. Inwieweit stimmen Sie zu oder nicht?",
+          "Soziale Medien wirken sich negativ auf die Gesellschaft und den Einzelnen aus, indem sie die Isolation verstärken und Fehlinformationen verbreiten. Stimmen Sie zu oder nicht?",
+          "Manche Menschen denken, dass das Internet die Menschen einander näher gebracht hat, während andere denken, dass Menschen und Gemeinschaften immer isolierter werden. Was ist Ihre Meinung?",
+          "Die Nutzung von Mobiltelefonen an öffentlichen Orten ist ebenso lästig wie das Rauchen und sollte ebenfalls verboten werden. Inwieweit stimmen Sie zu oder nicht?",
+          "Fortschritte in der Technologie haben unser Leben eher komplexer als einfacher gemacht. Stimmen Sie zu oder nicht?",
+          "Videospiele werden oft für gewalttätiges Verhalten junger Menschen verantwortlich gemacht. Daher sollte der Verkauf von Gewaltvideospielen verboten werden. Was ist Ihre Meinung?",
+          "In der modernen Welt ist es möglich, über das Internet einzukaufen, zu arbeiten, mit Menschen zu kommunizieren und ohne persönlichen Kontakt zu anderen zu leben. Ist das eine positive oder negative Entwicklung?",
+          "Das Lesen physischer Bücher gehört bald der Vergangenheit an, da immer mehr Menschen auf E-Books und digitale Artikel zurückgreifen. Dies ist ein negativer Trend für die Alphabetisierung. Inwieweit stimmen Sie zu oder nicht?",
+          "Die Erforschung des Weltraums erfordert enorme staatliche Mittel. Dieses Geld wäre besser für die Lösung von Problemen hier auf der Erde wie Armut und Krankheit angelegt. Stimmen Sie zu oder nicht?",
+          "Automatisierung und Roboter übernehmen traditionelle Fertigungsaufgaben. Dies ist insgesamt eine positive Entwicklung für die Gesellschaft. Inwieweit stimmen Sie zu oder nicht?"
+        ]
+      },
+      {
+        "name": "Arbeit & Beschäftigung",
+        "prompts": [
+          "Arbeitszufriedenheit ist weitaus wichtiger als ein hohes Gehalt. Inwieweit stimmen Sie zu oder nicht?",
+          "Viele Menschen argumentieren, dass Oberstufenschüler zur Verbesserung der Bildungsqualität dazu ermutigt werden sollten, ihre Lehrer zu bewerten und zu kritisieren. Stimmen Sie zu oder nicht?",
+          "Das Rentenalter sollte in allen Ländern angehoben werden, weil die Menschen länger und gesünder leben. Was ist Ihre Meinung?",
+          "Jeder kann ein guter Anführer sein, wenn er gut genug ausgebildet ist. Inwieweit stimmen Sie zu oder nicht?",
+          "Für Menschen ist es besser, arbeitslos zu sein, als in Jobs zu arbeiten, die ihnen keinen Spaß machen. Stimmen Sie zu oder nicht?",
+          "Unternehmen sollten von allen Mitarbeitern das Tragen einer Uniform verlangen, unabhängig von ihrer Funktion. Inwieweit stimmen Sie zu oder nicht?",
+          "Eine selbstständige Tätigkeit ist der Arbeit in einem Unternehmen oder einer Organisation immer vorzuziehen. Was ist Ihre Meinung?",
+          "Heutzutage mangelt es jungen Menschen an den grundlegenden Fähigkeiten, die sie für den modernen Arbeitsplatz benötigen. Stimmen Sie zu oder nicht?",
+          "Um die Arbeitslosigkeit zu verringern, sollte die Regierung die traditionelle Wochenarbeitszeit auf 30 Stunden verkürzen, damit mehr Menschen die verfügbare Arbeit teilen können. Inwieweit stimmen Sie zu oder nicht?",
+          "Das wichtigste Kriterium bei der Berufswahl ist ein hohes Einkommen. Stimmen Sie zu oder nicht?"
+        ]
+      },
+      {
+        "name": "Umwelt und Naturschutz",
+        "prompts": [
+          "Die globale Erwärmung wird in erster Linie durch menschliche Aktivitäten verursacht und daher müssen Einzelpersonen ihren Lebensstil drastisch ändern, um sie zu stoppen. Inwieweit stimmen Sie zu oder nicht?",
+          "Die Verantwortung für den Umweltschutz liegt allein bei großen Konzernen, nicht beim einzelnen Bürger. Was ist Ihre Meinung?",
+          "Manche Menschen glauben, dass der beste Weg, globale Umweltprobleme zu lösen, darin besteht, die Kraftstoffkosten zu erhöhen. Stimmen Sie zu oder nicht?",
+          "Tierversuche zu medizinischen und kosmetischen Zwecken sind grausam und sollten vollständig verboten werden. Inwieweit stimmen Sie zu oder nicht?",
+          "Es ist unvermeidlich, dass es mit der wirtschaftlichen Entwicklung der Länder zu einer Verschlechterung der Umwelt kommt. Was ist Ihre Meinung?",
+          "Zoos sind im Wesentlichen Gefängnisse für Tiere und dienen weder der Bildung noch dem Naturschutz. Stimmen Sie zu oder nicht?",
+          "Plastiktüten sollten in allen Supermärkten und Einzelhandelsgeschäften verboten sein. Inwieweit stimmen Sie zu oder nicht?",
+          "Das Aussterben einiger Pflanzen- und Tierarten ist ein natürlicher Prozess, und wir sollten nicht eingreifen, um zu versuchen, sie zu retten. Stimmen Sie zu oder nicht?",
+          "Um die Umweltauswirkungen des Transports zu reduzieren, sollten die Menschen nur Lebensmittel konsumieren, die vor Ort produziert werden. Was ist Ihre Meinung?",
+          "Investitionen in erneuerbare Energiequellen wie Wind- und Solarenergie sind Geldverschwendung, weil sie zu unzuverlässig sind. Inwieweit stimmen Sie zu oder nicht?"
+        ]
+      },
+      {
+        "name": "Gesellschaft und modernes Leben",
+        "prompts": [
+          "In vielen Ländern wird die Kluft zwischen Arm und Reich immer größer. Dies ist das größte Problem, mit dem die moderne Gesellschaft konfrontiert ist. Inwieweit stimmen Sie zu oder nicht?",
+          "Junge Menschen werden stark von Prominenten beeinflusst. Das ist ein gefährlicher Trend. Stimmen Sie zu oder nicht?",
+          "Traditionelle Feste und Feiern verlieren ihre Bedeutung und werden zu einem weiteren Vorwand für den Konsumismus. Was ist Ihre Meinung?",
+          "Das Leben in einer großen, geschäftigen Stadt ist für die Entwicklung eines Menschen viel besser als das Leben in einem ruhigen ländlichen Dorf. Inwieweit stimmen Sie zu oder nicht?",
+          "In der heutigen Welt ist es wichtiger, anpassungsfähig und bereit zur Veränderung zu sein, als Experte auf einem bestimmten Gebiet zu sein. Stimmen Sie zu oder nicht?",
+          "Manche Menschen glauben, dass die Geschichte uns nichts über die Gegenwart oder die Zukunft lehren kann. Was ist Ihre Meinung?",
+          "Ältere Menschen werden in der modernen Gesellschaft, die sich zu stark auf die Jugend konzentriert, zunehmend an den Rand gedrängt. Inwieweit stimmen Sie zu oder nicht?",
+          "Der Besitz eines Eigenheims ist für einen Menschen unerlässlich, um sich im Leben stabil und erfolgreich zu fühlen. Stimmen Sie zu oder nicht?",
+          "Heutzutage sind die Menschen viel zu abhängig von anderen und verfügen nicht über die praktischen Fähigkeiten, um sich selbst zu versorgen. Was ist Ihre Meinung?",
+          "Internationale Sportveranstaltungen wie die Olympischen Spiele bringen Nationen zusammen und fördern den globalen Frieden. Inwieweit stimmen Sie zu oder nicht?"
+        ]
+      },
+      {
+        "name": "Gesundheit & Ernährung",
+        "prompts": [
+          "Die Regierung sollte ungesunde Lebensmittel wie Fast Food und zuckerhaltige Getränke besteuern, um die Menschen zu einer gesünderen Ernährung zu ermutigen. Inwieweit stimmen Sie zu oder nicht?",
+          "Die Gesundheitsversorgung sollte für alle Bürger völlig kostenlos sein und vollständig von der Regierung durch Steuern finanziert werden. Stimmen Sie zu oder nicht?",
+          "Traditionelle Alternativmedizin ist ebenso wirksam wie moderne chemische Medizin. Was ist Ihre Meinung?",
+          "Schuld an der zunehmenden Fettleibigkeit ist allein die Fast-Food-Industrie. Inwieweit stimmen Sie zu oder nicht?",
+          "Der Sportunterricht soll für alle Schulkinder täglich verpflichtend sein. Stimmen Sie zu oder nicht?",
+          "Stress ist heute das größte Gesundheitsproblem berufstätiger Erwachsener. Was ist Ihre Meinung?",
+          "Menschen, die sich für gefährliche Extremsportarten entscheiden, sollten im Falle einer Verletzung für ihre medizinische Behandlung selbst aufkommen müssen. Inwieweit stimmen Sie zu oder nicht?",
+          "Präventive Medizin wie Gesundheitserziehung und Impfungen sind wichtiger als die Suche nach Heilmitteln für Krankheiten. Stimmen Sie zu oder nicht?",
+          "Die moderne Ernährung, die stark auf verarbeiteten Lebensmitteln basiert, ist die Hauptursache für die Verschlechterung der globalen Gesundheit. Was ist Ihre Meinung?",
+          "Es ist unmöglich, einen gesunden Lebensstil aufrechtzuerhalten, während man einer anspruchsvollen Vollzeitbeschäftigung in einem Unternehmen nachgeht. Inwieweit stimmen Sie zu oder nicht?"
+        ]
+      },
+      {
+        "name": "Regierung und öffentliche Ausgaben",
+        "prompts": [
+          "Regierungen sollten mehr Geld für öffentliche Dienstleistungen wie Bildung und Gesundheitsversorgung ausgeben als für das Militär. Inwieweit stimmen Sie zu oder nicht?",
+          "Der öffentliche Nahverkehr sollte kostenlos sein, um Verkehrsstaus und Umweltverschmutzung in den Städten zu reduzieren. Stimmen Sie zu oder nicht?",
+          "Es liegt in der Verantwortung der Regierung, dafür zu sorgen, dass alle Bürger einen Wohnraum haben. Was ist Ihre Meinung?",
+          "Regierungen sollten Künstler, Musiker und Schriftsteller finanziell unterstützen. Inwieweit stimmen Sie zu oder nicht?",
+          "Die Teilnahme an nationalen Wahlen sollte für alle wahlberechtigten Bürger obligatorisch sein. Stimmen Sie zu oder nicht?",
+          "Die Regierung hat kein Recht, sich in die Ernährung, das Trinken oder das Rauchen einzelner Personen einzumischen. Was ist Ihre Meinung?",
+          "Reiche Länder sollten den ärmsten Ländern die internationalen Schulden erlassen, um ihnen bei ihrer Entwicklung zu helfen. Inwieweit stimmen Sie zu oder nicht?",
+          "Die Steuern für vermögende Privatpersonen sollten deutlich höher sein, um das Vermögen gleichmäßiger in der Gesellschaft zu verteilen. Stimmen Sie zu oder nicht?",
+          "Die Finanzierung der Künste ist ein Luxus, und Regierungen sollten nur wesentliche Dienstleistungen wie Infrastruktur und Krankenhäuser finanzieren. Was ist Ihre Meinung?",
+          "Stadtverwaltungen sollten stark in die Schaffung von mehr öffentlichen Parks und Grünflächen investieren, auch wenn dies eine Erhöhung der lokalen Steuern bedeutet. Inwieweit stimmen Sie zu oder nicht?"
+        ]
+      },
+      {
+        "name": "Kriminalität und Recht",
+        "prompts": [
+          "Die Todesstrafe ist die einzige wirksame Abschreckung für schwerste Verbrechen wie Mord. Inwieweit stimmen Sie zu oder nicht?",
+          "Gefängnisse sollten sich in erster Linie auf die Rehabilitierung von Kriminellen konzentrieren und nicht nur auf deren Bestrafung. Stimmen Sie zu oder nicht?",
+          "Jugendliche Straftäter, die schwere Straftaten begehen, sollten wie Erwachsene vor Gericht gestellt und bestraft werden. Was ist Ihre Meinung?",
+          "Der Einsatz von Überwachungskameras im öffentlichen Raum stellt einen Eingriff in die Privatsphäre dar und sollte stark eingeschränkt werden. Inwieweit stimmen Sie zu oder nicht?",
+          "Strenge Waffenkontrollgesetze sind notwendig, um die Gewaltkriminalität in der Gesellschaft zu senken. Stimmen Sie zu oder nicht?",
+          "Zivildienst ist eine viel bessere Strafe für geringfügige, gewaltlose Verbrechen als eine Gefängnisstrafe. Was ist Ihre Meinung?",
+          "Cyberkriminalität stellt derzeit eine größere Bedrohung für die Gesellschaft dar als traditionelle physische Kriminalität. Inwieweit stimmen Sie zu oder nicht?",
+          "Menschen, die gegen das Gesetz verstoßen, sollten gezwungen werden, ihre Opfer zu treffen, um die Auswirkungen ihrer Handlungen zu verstehen. Stimmen Sie zu oder nicht?",
+          "Die Medien sind für die Angst der Bevölkerung vor Kriminalität verantwortlich, die oft in keinem Verhältnis zur tatsächlichen Kriminalitätsrate steht. Was ist Ihre Meinung?",
+          "Es ist unmöglich, die Kriminalität vollständig aus der Gesellschaft auszurotten; es ist ein unvermeidlicher Teil der menschlichen Natur. Inwieweit stimmen Sie zu oder nicht?"
+        ]
+      },
+      {
+        "name": "Medien & Werbung",
+        "prompts": [
+          "An Kinder gerichtete Werbung ist unethisch und sollte strengstens verboten werden. Inwieweit stimmen Sie zu oder nicht?",
+          "Die Nachrichtenmedien konzentrieren sich zu sehr auf negative Geschichten, was zu Depressionen und Angstzuständen in der breiten Öffentlichkeit führt. Stimmen Sie zu oder nicht?",
+          "Große multinationale Konzerne haben zu viel Einfluss auf globale Medien und Informationen. Was ist Ihre Meinung?",
+          "Prominente haben ein Recht auf Privatsphäre und den Paparazzi sollte es nicht gestattet sein, ihnen im öffentlichen Raum zu folgen. Inwieweit stimmen Sie zu oder nicht?",
+          "In der modernen Zeit sind gedruckte Zeitungen völlig veraltet und werden bald ganz verschwinden. Stimmen Sie zu oder nicht?",
+          "Werbung ermutigt Menschen, Dinge zu kaufen, die sie nicht brauchen und sich nicht leisten können. Was ist Ihre Meinung?",
+          "Die Regierung sollte kontrollieren, was im Fernsehen und im Internet ausgestrahlt wird, um die Gesellschaft vor schädlichen Inhalten zu schützen. Inwieweit stimmen Sie zu oder nicht?",
+          "Meinungsfreiheit bedeutet, dass Menschen sagen dürfen, was sie wollen, auch wenn es andere beleidigt. Stimmen Sie zu oder nicht?",
+          "Reality-TV-Sendungen haben keinen pädagogischen Wert und dienen lediglich der Herabwürdigung kultureller Standards. Was ist Ihre Meinung?",
+          "Gezielte Online-Werbung, die das Nutzerverhalten verfolgt, stellt einen schwerwiegenden Eingriff in die Privatsphäre dar. Inwieweit stimmen Sie zu oder nicht?"
+        ]
+      },
+      {
+        "name": "Tourismus & Globalisierung",
+        "prompts": [
+          "Der internationale Tourismus schadet den lokalen Gemeinschaften und der Umwelt mehr als er nützt. Inwieweit stimmen Sie zu oder nicht?",
+          "Die zunehmende Globalisierung von Wirtschaft und Kultur zerstört lokale Traditionen und nationale Identitäten. Stimmen Sie zu oder nicht?",
+          "Die Menschen sollten dazu ermutigt werden, im Inland innerhalb ihres eigenen Landes zu reisen, anstatt ins Ausland zu reisen. Was ist Ihre Meinung?",
+          "Deutsch gewinnt in Wirtschaft, Wissenschaft und Diplomatie in Europa an Bedeutung. Ist das Ihrer Meinung nach eine positive Entwicklung für internationale Beziehungen und Handel? Inwieweit stimmen Sie zu oder nicht?",
+          "Länder sollten der Beschäftigung ihrer eigenen Bürger Vorrang einräumen, bevor sie ausländischen Arbeitnehmern den Zugang zum Arbeitsmarkt ermöglichen. Stimmen Sie zu oder nicht?",
+          "Billige Flugreisen haben die Art und Weise, wie Menschen leben und arbeiten, revolutioniert, aber die Umweltkosten überwiegen die Vorteile. Was ist Ihre Meinung?",
+          "Multinationale Unternehmen beuten häufig Arbeitskräfte in Entwicklungsländern aus, um ihre Gewinne zu maximieren. Inwieweit stimmen Sie zu oder nicht?",
+          "Von Touristen sollte verlangt werden, vor dem Besuch eines fremden Landes grundlegende Sätze in der Landessprache zu lernen. Stimmen Sie zu oder nicht?",
+          "Von der Globalisierung haben in erster Linie wohlhabende Nationen profitiert, während die Entwicklungsländer zurückgeblieben sind. Was ist Ihre Meinung?",
+          "Der Erhalt historischer Gebäude stellt für Städte einen unnötigen Aufwand dar; sie sollten abgerissen werden, um Platz für eine moderne Infrastruktur zu machen. Inwieweit stimmen Sie zu oder nicht?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "advantage-disadvantage",
+    "label": "Vor- und Nachteile",
+    "description": "Besprechen Sie die Vor- und Nachteile eines Themas.",
+    "instruction": "Besprechen Sie die Vor- und Nachteile und geben Sie auf Nachfrage Ihre eigene Meinung ab. Schreiben Sie mindestens 250 Wörter.",
+    "categories": [
+      {
+        "name": "Bildung und Lernen",
+        "prompts": [
+          "Viele Universitäten bieten mittlerweile vollständige Studiengänge online an. Welche Vor- und Nachteile hat ein Online-Studium gegenüber dem Präsenzunterricht?",
+          "Einige Experten glauben, dass es für Kinder besser ist, in der Grundschule mit dem Erlernen einer Fremdsprache zu beginnen als in der weiterführenden Schule. Überwiegen die Vorteile hiervon die Nachteile?",
+          "In vielen Ländern nehmen Studierende ein „Gap Year“ ein, um zu reisen oder zu arbeiten, bevor sie mit dem Studium beginnen. Besprechen Sie die Vor- und Nachteile eines Gap Year und äußern Sie Ihre eigene Meinung.",
+          "Einige Schulen verlangen von allen Schülern das Tragen einer Uniform. Welche Vor- und Nachteile haben Schuluniformen?",
+          "Immer mehr Studierende entscheiden sich für ein Studium im Ausland. Überwiegen die Vorteile eines Studiums im Ausland die Nachteile?",
+          "In manchen Bildungssystemen werden Kinder nach ihren schulischen Fähigkeiten und nicht nach ihrem Alter in Klassen eingeteilt. Besprechen Sie die Vor- und Nachteile dieser Praxis und äußern Sie Ihre Meinung.",
+          "Das Auswendiglernen des Roten ist eine traditionelle Lehrmethode, die noch immer in vielen Teilen der Welt angewendet wird. Welche Vor- und Nachteile hat das Lernen durch Auswendiglernen?",
+          "Viele Leute argumentieren, dass die Universitätsausbildung für alle völlig kostenlos sein sollte. Überwiegen die Vorteile einer kostenlosen Hochschulbildung die Nachteile?",
+          "Manche Eltern entscheiden sich dafür, ihre Kinder zu Hause zu unterrichten, anstatt sie auf eine traditionelle Schule zu schicken. Besprechen Sie die Vor- und Nachteile von Homeschooling und äußern Sie Ihre Meinung.",
+          "Kontinuierliche Beurteilungen (Kursarbeiten und Projekte) ersetzen in vielen Bildungseinrichtungen formelle Prüfungen. Welche Vor- und Nachteile hat dieser Wandel?"
+        ]
+      },
+      {
+        "name": "Technologie und Internet",
+        "prompts": [
+          "Der Einsatz künstlicher Intelligenz im täglichen Leben wird immer häufiger. Überwiegen die Vorteile der KI die Nachteile?",
+          "Soziale Medien haben die Art und Weise, wie Menschen kommunizieren und Informationen austauschen, revolutioniert. Besprechen Sie die Vor- und Nachteile von Social Media und äußern Sie Ihre Meinung.",
+          "Viele Menschen nutzen mittlerweile ihr Smartphone zum Bezahlen von Waren und Dienstleistungen, was zu einem Rückgang der Bargeldnutzung führt. Was sind die Vor- und Nachteile einer bargeldlosen Gesellschaft?",
+          "Fortschritte in der Technologie haben es vielen Menschen ermöglicht, von zu Hause aus zu arbeiten, anstatt ins Büro zu pendeln. Überwiegen die Vorteile der Fernarbeit die Nachteile?",
+          "E-Books und digitale Lesegeräte ersetzen schnell traditionelle gedruckte Bücher. Besprechen Sie die Vor- und Nachteile dieses Trends und äußern Sie Ihre Meinung.",
+          "Die Entwicklung selbstfahrender Autos schreitet rasant voran. Welche Vor- und Nachteile haben autonome Fahrzeuge auf öffentlichen Straßen?",
+          "Automatisierung und Roboter ersetzen zunehmend menschliche Arbeitskräfte in der Fertigung und anderen Branchen. Überwiegen die Vorteile der Automatisierung die Nachteile?",
+          "Heutzutage verbringen Kinder viel Zeit mit Videospielen. Besprechen Sie die Vor- und Nachteile davon und äußern Sie Ihre Meinung.",
+          "Cloud Computing ermöglicht es Menschen, alle ihre persönlichen und beruflichen Daten online statt auf physischen Festplatten zu speichern. Welche Vor- und Nachteile hat die Datenspeicherung in der Cloud?",
+          "Die Erforschung des Weltraums kostet den Steuerzahler jedes Jahr exorbitant viel Geld. Überwiegen die Vorteile, Geld für die Erforschung des Weltraums auszugeben, die Nachteile?"
+        ]
+      },
+      {
+        "name": "Arbeit & Karriere",
+        "prompts": [
+          "Einige Unternehmen haben eine Vier-Tage-Woche eingeführt, ohne die Gehälter ihrer Mitarbeiter zu kürzen. Welche Vor- und Nachteile hat eine kürzere Arbeitswoche?",
+          "In der Vergangenheit blieben Menschen oft ihr gesamtes Berufsleben lang im gleichen Job. Heutzutage ist es üblicher, den Beruf mehrmals zu wechseln. Besprechen Sie die Vor- und Nachteile eines häufig wechselnden Arbeitsplatzes und äußern Sie Ihre Meinung.",
+          "Viele Regierungen heben das offizielle Renteneintrittsalter auf 68 oder 70 Jahre an. Überwiegen die Vorteile einer Erwerbstätigkeit bis zu einem späteren Alter die Nachteile?",
+          "Immer mehr Menschen entscheiden sich für die Selbständigkeit oder die Gründung eines eigenen Unternehmens. Welche Vor- und Nachteile hat eine Selbstständigkeit im Vergleich zur Arbeit bei einem Arbeitgeber?",
+          "Multinationale Unternehmen entsenden ihre Mitarbeiter häufig für mehrere Jahre in Niederlassungen im Ausland. Besprechen Sie die Vor- und Nachteile einer Arbeit im Ausland und äußern Sie Ihre Meinung.",
+          "Einige Unternehmen glauben, dass eine Bezahlung der Mitarbeiter auf der Grundlage ihrer individuellen Leistung der beste Weg ist, sie zu motivieren. Überwiegen die Vorteile einer leistungsorientierten Vergütung die Nachteile?",
+          "Unbezahlte Praktika werden für junge Menschen, die in den Arbeitsmarkt eintreten, immer mehr zur Standardvoraussetzung. Welche Vor- und Nachteile hat es, kostenlos zu arbeiten, um Erfahrungen zu sammeln?",
+          "Einige Länder haben Quoten eingeführt, um sicherzustellen, dass ein bestimmter Prozentsatz von Frauen in den Vorständen von Unternehmen vertreten ist. Besprechen Sie die Vor- und Nachteile dieser Richtlinie und äußern Sie Ihre Meinung.",
+          "Die Arbeit in einem sehr großen Unternehmen bietet eine andere Erfahrung als die Arbeit in einem kleinen Familienunternehmen. Welche Vor- und Nachteile hat die Arbeit in einem Großkonzern?",
+          "Viele Berufe erfordern inzwischen, dass Mitarbeiter außerhalb der normalen Arbeitszeiten per E-Mail oder Telefon erreichbar sind. Überwiegen die Vorteile dieser ständigen Konnektivität die Nachteile?"
+        ]
+      },
+      {
+        "name": "Gesundheit & Lebensstil",
+        "prompts": [
+          "Um Fettleibigkeit zu bekämpfen, haben die Regierungen einiger Länder eine Steuer auf Fast Food und zuckerhaltige Getränke eingeführt. Welche Vor- und Nachteile hat die Besteuerung ungesunder Lebensmittel?",
+          "Die Popularität vegetarischer und veganer Ernährung nimmt weltweit zu. Besprechen Sie die Vor- und Nachteile des Verzichts auf Fleisch in der Ernährung und äußern Sie Ihre Meinung.",
+          "Viele Menschen nutzen alternative Medikamente wie Akupunktur und Kräuterheilmittel anstelle konventioneller medizinischer Behandlungen. Überwiegen die Vorteile der Alternativmedizin die Nachteile?",
+          "In einigen Ländern werden die Gesundheitssysteme vollständig von der Regierung finanziert und sind am Ort der Inanspruchnahme kostenlos. Was sind die Vor- und Nachteile eines kostenlosen öffentlichen Gesundheitssystems?",
+          "Immer mehr Menschen betreiben Extremsportarten wie Fallschirmspringen und Klettern. Besprechen Sie die Vor- und Nachteile dieser Aktivitäten und äußern Sie Ihre Meinung.",
+          "Viele Städte haben das Rauchen in allen öffentlichen Räumen, einschließlich Parks und Außenrestaurants, verboten. Überwiegen die Vorteile eines vollständigen Rauchverbots in der Öffentlichkeit die Nachteile?",
+          "Menschen nutzen zunehmend mobile Anwendungen und tragbare Geräte, um ihre Gesundheit und Fitness zu verfolgen. Welche Vor- und Nachteile hat es, sich bei der Gesundheitsüberwachung auf Technologie zu verlassen?",
+          "In vielen Teilen der Welt werden gentechnisch veränderte (GV) Pflanzen angebaut, um die Nahrungsmittelproduktion zu steigern. Besprechen Sie die Vor- und Nachteile gentechnisch veränderter Lebensmittel und äußern Sie Ihre Meinung.",
+          "Der Medizintourismus, bei dem Menschen für medizinische Eingriffe ins Ausland reisen, ist eine boomende Branche. Überwiegen die Vorteile einer Reise in ein anderes Land zur Gesundheitsversorgung die Nachteile?",
+          "Viele Menschen zahlen teure monatliche Mitgliedschaften, um kommerzielle Fitnessstudios zu besuchen. Welche Vor- und Nachteile hat die Nutzung eines Fitnessstudios, um sich fit zu halten, im Vergleich zum Training im Freien oder zu Hause?"
+        ]
+      },
+      {
+        "name": "Umwelt und Stadtplanung",
+        "prompts": [
+          "Um Verkehrsstaus zu reduzieren, haben einige Großstädte eine „Staubepreisung“ eingeführt, bei der Autofahrern eine Gebühr für die Einfahrt in die Innenstadt berechnet wird. Was sind die Vor- und Nachteile dieses Systems?",
+          "Manche sehen in der Kernenergie eine saubere Alternative zu fossilen Brennstoffen. Besprechen Sie die Vor- und Nachteile der Nutzung der Kernenergie und äußern Sie Ihre Meinung.",
+          "Da die Bevölkerung wächst, bauen Städte immer höhere Wohnhochhäuser, um die Bewohner unterzubringen. Überwiegen die Vorteile des Wohnens in Hochhäusern die Nachteile?",
+          "Viele Kommunalverwaltungen haben das Recycling für alle Haushalte zur Pflicht gemacht. Was sind die Vor- und Nachteile von Zwangsrecyclingprogrammen?",
+          "Auf der Suche nach besseren Chancen wandern viele Menschen aus ländlichen Gebieten in Großstädte ab. Besprechen Sie die Vor- und Nachteile der Urbanisierung und äußern Sie Ihre Meinung.",
+          "Zoos gibt es in fast jeder größeren Stadt der Welt. Überwiegen die Vorteile der Tierhaltung in Zoos die Nachteile?",
+          "Manche Leute argumentieren, dass wir nur Lebensmittel kaufen sollten, die vor Ort produziert werden. Welche Vor- und Nachteile hat es, nur Lebensmittel aus der Region zu konsumieren?",
+          "Um die Umwelt zu schützen, subventionieren einige Regierungen Elektrofahrzeuge (EVs) stark. Besprechen Sie die Vor- und Nachteile dieses staatlichen Eingriffs und äußern Sie Ihre Meinung.",
+          "Ökotourismus soll es Touristen ermöglichen, fragile Umgebungen zu besuchen und gleichzeitig deren Auswirkungen zu minimieren. Überwiegen die Vorteile des Ökotourismus die Nachteile?",
+          "Viele Stadtplaner plädieren für die Schaffung völlig autofreier Zonen in Innenstädten. Welche Vor- und Nachteile hat ein Autoverbot in städtischen Gebieten?"
+        ]
+      },
+      {
+        "name": "Tourismus & Reisen",
+        "prompts": [
+          "Der Aufstieg der Billigfluggesellschaften hat internationale Reisen für Millionen von Menschen erschwinglich gemacht. Welche Vor- und Nachteile haben günstige Flugreisen?",
+          "Der internationale Tourismus ist für viele Entwicklungsländer eine wichtige Einnahmequelle. Besprechen Sie die Vor- und Nachteile einer stark vom Tourismus abhängigen Wirtschaft und äußern Sie Ihre Meinung.",
+          "Viele Touristen übernachten lieber in Kurzzeitmieten (wie Airbnb) als in traditionellen Hotels. Überwiegen die Vorteile der kurzfristigen touristischen Vermietung die Nachteile für die lokale Gemeinschaft?",
+          "Deutsch wird zunehmend zur globalen Reise- und Tourismussprache. Was sind die Vor- und Nachteile einer einzigen dominanten globalen Sprache?",
+          "Einige historische Städte erheben von Besuchern eine „Kurtaxe“, um die Infrastruktur aufrechtzuerhalten. Besprechen Sie die Vor- und Nachteile einer Besteuerung von Touristen und äußern Sie Ihre Meinung.",
+          "Der „Freiwilligentourismus“, bei dem Menschen in Entwicklungsländer reisen, um Wohltätigkeitsarbeit zu leisten, erfreut sich immer größerer Beliebtheit. Überwiegen die Vorteile dieses Trends die Nachteile?",
+          "Touristen besuchen zunehmend abgelegene, unberührte Naturgebiete wie die Antarktis oder den Amazonas-Regenwald. Was sind die Vor- und Nachteile des Tourismus in extremen Umgebungen?",
+          "Viele Menschen argumentieren, dass weltweites Reisen zu einem Verlust an kultureller Vielfalt führt, da Städte überall gleich aussehen und sich überall gleich anfühlen. Besprechen Sie die Vor- und Nachteile der kulturellen Homogenisierung und äußern Sie Ihre Meinung.",
+          "Anstatt ins Ausland zu reisen, verbringen manche Menschen ihren Urlaub lieber damit, ihr eigenes Land zu erkunden. Überwiegen die Vorteile des Inlandstourismus die Nachteile?",
+          "Geführte Pauschalreisen sind eine sehr beliebte Art zu reisen. Welche Vor- und Nachteile hat das Reisen mit einer stark strukturierten Reisegruppe im Vergleich zum Individualreisen?"
+        ]
+      },
+      {
+        "name": "Regierung & Gesellschaft",
+        "prompts": [
+          "Einige Länder haben obligatorische gemeinnützige Programme für junge Menschen eingeführt. Besprechen Sie die Vor- und Nachteile und geben Sie Ihre Meinung ab.",
+          "Weltweit wird über ein bedingungsloses Grundeinkommen (UBI) diskutiert, bei dem die Regierung jedem Bürger unabhängig von seiner Beschäftigung einen regelmäßigen Geldbetrag gibt. Was sind die Vor- und Nachteile von UBI?",
+          "In vielen Ländern müssen junge Männer und Frauen einen Pflichtwehrdienst absolvieren. Überwiegen die Vorteile der Wehrpflicht die Nachteile?",
+          "Der Einsatz von Videoüberwachungskameras (CCTV) an öffentlichen Orten ist weit verbreitet. Besprechen Sie die Vor- und Nachteile der öffentlichen Überwachung und äußern Sie Ihre Meinung.",
+          "Einige Nationen haben die Todesstrafe abgeschafft, während andere sie immer noch für die schwersten Verbrechen anwenden. Welche Vor- und Nachteile hat die Todesstrafe?",
+          "Wohlhabende Nationen leisten Entwicklungsländern häufig finanzielle Hilfe. Überwiegen die Vorteile der internationalen Hilfe die Nachteile?",
+          "In einigen Ländern ist die Teilnahme an nationalen Wahlen gesetzlich vorgeschrieben. Besprechen Sie die Vor- und Nachteile der Wahlpflicht und äußern Sie Ihre Meinung.",
+          "Regierungen stellen häufig erhebliche Mittel für die Künste bereit, darunter Museen, Galerien und Theater. Welche Vor- und Nachteile hat die Verwendung öffentlicher Gelder zur Förderung der Künste?",
+          "Dank des medizinischen Fortschritts leben die Menschen in vielen entwickelten Ländern deutlich länger. Überwiegen die Vorteile einer alternden Bevölkerung die Nachteile?",
+          "Moderne Gefängnissysteme konzentrieren sich oft auf die Rehabilitierung von Straftätern durch Aufklärung und Therapie, anstatt sie einfach nur zu bestrafen. Besprechen Sie die Vor- und Nachteile einer Rehabilitation gegenüber einer Bestrafung und äußern Sie Ihre Meinung."
+        ]
+      },
+      {
+        "name": "Familie & Kinder",
+        "prompts": [
+          "In der modernen Gesellschaft ist es üblich, dass beide Elternteile Vollzeit arbeiten und gleichzeitig ihre Kinder großziehen. Welche Vor- und Nachteile haben zwei berufstätige Eltern?",
+          "Immer mehr Menschen entscheiden sich dafür, allein zu leben, anstatt mit der Familie oder Mitbewohnern zusammenzuleben. Überwiegen die Vorteile des Alleinlebens die Nachteile?",
+          "Viele Paare entscheiden sich erst viel später im Leben dafür, Kinder zu bekommen, oft in ihren späten 30ern oder 40ern. Besprechen Sie die Vor- und Nachteile einer Verzögerung der Elternschaft und äußern Sie Ihre Meinung.",
+          "Die traditionelle Großfamilie (Großeltern, Tanten, Onkel leben zusammen) wird immer seltener zugunsten der Kernfamilie. Welche Vor- und Nachteile hat das Aufwachsen in einer Großfamilie?",
+          "Manche Eltern geben ihren Kindern ein wöchentliches Taschengeld oder Taschengeld. Überwiegen die Vorteile, Kindern eigenes Geld zu geben, die Nachteile?",
+          "Viele Eltern schränken die tägliche Bildschirmzeit ihrer Kinder stark ein. Besprechen Sie die Vor- und Nachteile strenger Bildschirmzeitbegrenzungen und äußern Sie Ihre Meinung.",
+          "In vielen Ländern sind die Scheidungsraten in den letzten Jahrzehnten deutlich gestiegen. Welche Vor- und Nachteile hat es, Paaren die legale Scheidung zu erleichtern?",
+          "Es kommt immer häufiger vor, dass junge Erwachsene bis weit in die Zwanzig hinein bei ihren Eltern leben. Überwiegen die Vorteile, die das Leben zu Hause für junge Erwachsene mit sich bringt, die Nachteile?",
+          "Manche Eltern melden ihre Kinder für zahlreiche außerschulische Aktivitäten an, so dass nur wenig Freizeit bleibt. Besprechen Sie die Vor- und Nachteile einer stark strukturierten Kindheit und äußern Sie Ihre Meinung.",
+          "Das Aufwachsen in einem Alleinerziehenden-Haushalt ist für Kinder eine zunehmend alltägliche Erfahrung. Welche Vor- und Nachteile hat es, von einem alleinerziehenden Elternteil großgezogen zu werden?"
+        ]
+      },
+      {
+        "name": "Medien & Werbung",
+        "prompts": [
+          "Viele Länder beschränken oder verbieten Werbung, die sich direkt an Kinder richtet. Überwiegen die Vorteile eines Werbeverbots für Kinder die Nachteile?",
+          "Das Aufkommen von 24-Stunden-Nachrichtenkanälen und Online-Newsfeeds bedeutet, dass wir ständigen Zugang zu Informationen haben. Welche Vor- und Nachteile hat der 24-Stunden-Nachrichtenzyklus?",
+          "Große multinationale Konzerne kontrollieren einen erheblichen Teil der globalen Medienlandschaft. Diskutieren Sie die Vor- und Nachteile von Medienmonopolen und äußern Sie Ihre Meinung.",
+          "Online-Unternehmen nutzen gezielte Werbung, die auf der Verfolgung des Webverlaufs eines Benutzers basiert. Überwiegen die Vorteile personalisierter Werbung die Nachteile?",
+          "Reality-TV-Sendungen erfreuen sich weltweit weiterhin großer Beliebtheit. Was sind die Vor- und Nachteile von Reality-TV-Programmen?",
+          "Einige Regierungen zensieren das Internet, um den Inhalt einzuschränken, den ihre Bürger sehen können. Besprechen Sie die Vor- und Nachteile der Internetzensur und äußern Sie Ihre Meinung.",
+          "Printzeitungen und Zeitschriften verzeichnen einen massiven Rückgang der Leserschaft, da sich die Menschen digitalen Medien zuwenden. Welche Vor- und Nachteile hat die Abkehr der Gesellschaft vom Printjournalismus?",
+          "Prominente unterstützen häufig Produkte und politische Kampagnen. Überwiegen die Vorteile der Werbung durch Prominente die Nachteile?",
+          "Streaming-Dienste wie Netflix und Spotify haben die Art und Weise, wie Menschen Unterhaltung konsumieren, völlig verändert. Besprechen Sie die Vor- und Nachteile der Umstellung auf Streaming-Medien und äußern Sie Ihre Meinung.",
+          "Moderne Actionfilme und Videospiele enthalten oft ein hohes Maß an Gewalt. Welche Vor- und Nachteile hat es, die Gesellschaft gewalttätigen Medien auszusetzen?"
+        ]
+      },
+      {
+        "name": "Globalisierung & Kultur",
+        "prompts": [
+          "Der Aufstieg multinationaler Konzerne führt dazu, dass überall auf der Welt die gleichen Geschäfte und Marken zu finden sind. Überwiegen die Vorteile der Globalisierung in der Wirtschaft die Nachteile?",
+          "Viele Minderheitensprachen laufen Gefahr, auszusterben, da die Menschen auf dominante Sprachen wie Englisch, Spanisch oder Mandarin umsteigen. Erörtern Sie Vor- und Nachteile des Verlusts von Minderheitensprachen und legen Sie Ihre Meinung dar.",
+          "Die „Fast Fashion“-Branche ermöglicht es den Menschen, trendige Kleidung sehr günstig zu kaufen. Was sind die Vor- und Nachteile von Fast Fashion?",
+          "Dank des globalen Handels können Menschen zu jeder Jahreszeit im Supermarkt vor Ort Lebensmittel aus aller Welt kaufen. Überwiegen die Vorteile dieses globalen Lebensmittelnetzwerks die Nachteile?",
+          "Interkulturelle Ehen, bei denen die Partner aus unterschiedlichen Ländern oder mit unterschiedlichem kulturellen Hintergrund stammen, kommen immer häufiger vor. Besprechen Sie die Vor- und Nachteile der Familienerziehung in einem multikulturellen Haushalt und äußern Sie Ihre Meinung.",
+          "Internationale Sportveranstaltungen wie die Olympischen Spiele oder die Fußballweltmeisterschaft erfordern von den Gastgeberländern Milliardenausgaben. Welche Vor- und Nachteile hat die Ausrichtung großer internationaler Sportveranstaltungen?",
+          "Kulturelle Aneignung, bei der Elemente einer Minderheitenkultur von einer dominanten Kultur genutzt werden, wird heftig diskutiert. Überwiegen die Vorteile des kulturellen Teilens die Nachteile der Aneignung?",
+          "Es ist üblich, dass Schulen viel Zeit damit verbringen, Schülern die antike Geschichte beizubringen. Besprechen Sie die Vor- und Nachteile der Priorisierung der Geschichte im Lehrplan und äußern Sie Ihre Meinung.",
+          "Viele Menschen verlassen sich bei der Lösung humanitärer Krisen ausschließlich auf globale Wohltätigkeitsorganisationen. Welche Vor- und Nachteile hat es, sich auf Nichtregierungsorganisationen (NGOs) statt auf lokale Regierungen zu verlassen?",
+          "Die westliche Kultur, insbesondere durch Musik und Kino, hat einen enormen Einfluss auf den Rest der Welt. Überwiegen die Vorteile der weltweiten Verbreitung der westlichen Kultur die Nachteile?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "problem-solution",
+    "label": "Problem & Lösung",
+    "description": "Identifizieren Sie die Ursachen eines Problems und schlagen Sie Lösungen vor.",
+    "instruction": "Erklären Sie die Ursachen/Auswirkungen dieses Problems und schlagen Sie Lösungen vor. Schreiben Sie mindestens 250 Wörter.",
+    "categories": [
+      {
+        "name": "Umwelt & Natur",
+        "prompts": [
+          "Die Menge an Plastikmüll in den Weltmeeren nimmt rasant zu. Was sind die Ursachen hierfür? Welche Lösungen können Sie vorschlagen?",
+          "Die Abholzung der Wälder schreitet in vielen Teilen der Welt in besorgniserregendem Tempo voran. Welche negativen Auswirkungen hat dies? Wie kann dieses Problem gelöst werden?",
+          "Viele Städte auf der ganzen Welt sind mit gravierender Wasserknappheit konfrontiert. Warum passiert das? Welche Maßnahmen können ergriffen werden, um dieses Problem anzugehen?",
+          "Die Zahl der gefährdeten Arten wächst jedes Jahr. Was sind die Hauptursachen für diesen Rückgang? Was kann man tun, um diese Tiere zu schützen?",
+          "Die Luftverschmutzung in den großen Ballungszentren erreicht kritische Werte. Welche gesundheitlichen und ökologischen Auswirkungen hat dies? Wie können Regierungen und Einzelpersonen die Luftverschmutzung reduzieren?",
+          "Die globale Erwärmung führt weltweit zu extremen Wetterereignissen. Was sind die Hauptursachen für dieses Phänomen? Welche Maßnahmen können ergriffen werden, um die Auswirkungen zu minimieren?",
+          "Die Menge des produzierten Hausmülls nimmt deutlich zu. Warum ist das so? Was kann getan werden, um die Menschen zu ermutigen, Abfall zu reduzieren?",
+          "Der Verlust der Artenvielfalt ist ein großes globales Problem. Welche negativen Folgen hat dieser Verlust? Wie können wir natürliche Ökosysteme erhalten?",
+          "Durch Überfischung werden die Fischbestände in den Weltmeeren dezimiert. Welche Probleme verursacht dies? Welche Regelungen sollten getroffen werden, um dies zu verhindern?",
+          "Die Bodendegradation erschwert in manchen Regionen den Anbau von Nahrungsmitteln. Was sind die Ursachen für dieses Problem? Welche landwirtschaftlichen Lösungen können umgesetzt werden?"
+        ]
+      },
+      {
+        "name": "Technologie und Internet",
+        "prompts": [
+          "Heutzutage verbringen Kinder übermäßig viel Zeit damit, auf Bildschirme zu schauen. Welche negativen Auswirkungen hat das? Wie können Eltern die Bildschirmzeit ihrer Kinder verwalten?",
+          "Cybermobbing ist unter Teenagern zu einem weit verbreiteten Problem geworden. Was sind die Ursachen für dieses Verhalten? Was können Schulen und Eltern tun, um dies zu verhindern?",
+          "Mit der Verbreitung von Online-Diensten gerät der Schutz personenbezogener Daten zunehmend in Gefahr. Welche potenziellen Gefahren birgt dies? Wie können Einzelpersonen ihre Online-Informationen schützen?",
+          "Viele Erwachsene sind süchtig nach ihren Smartphones. Warum passiert das? Welche Schritte können Menschen unternehmen, um ihre Abhängigkeit von Mobilgeräten zu verringern?",
+          "Die rasante Entwicklung der Künstlichen Intelligenz bedroht viele traditionelle Arbeitsplätze. Welche möglichen Auswirkungen hat dies auf die Gesellschaft? Was können Regierungen tun, um die Arbeitskräfte vorzubereiten?",
+          "Die ständige Weiterentwicklung elektronischer Geräte hat zu einem massiven Anstieg des Elektroschrotts geführt. Warum tauschen Menschen ihre Geräte so häufig aus? Wie kann Elektroschrott besser entsorgt werden?",
+          "Die Verbreitung von Fake News und Fehlinformationen in sozialen Medien ist ein wachsendes Problem. Was führt dazu, dass sich diese Informationen so schnell verbreiten? Was kann man dagegen tun?",
+          "Die persönliche Kommunikation nimmt aufgrund digitaler Nachrichtenübermittlung ab. Welche negativen Auswirkungen gibt es auf persönliche Beziehungen? Wie können wir mehr reale Interaktionen fördern?",
+          "Cyberkriminalität wie Hacking und Identitätsdiebstahl nimmt zu. Was macht Menschen anfällig für diese Verbrechen? Welche Maßnahmen können die Cybersicherheit verbessern?",
+          "Die Menschen verlassen sich zunehmend auf Technologie, wenn es um grundlegende Fertigkeiten geht, etwa um GPS zu nutzen, anstatt eine Karte zu lesen. Welche Probleme verursacht diese Abhängigkeit? Wie lässt sich dieser Trend umkehren?"
+        ]
+      },
+      {
+        "name": "Gesellschaft und Stadtleben",
+        "prompts": [
+          "Viele Großstädte leiden unter starker Überfüllung. Was sind die Ursachen dieser rasanten Urbanisierung? Welche Lösungen können bei der Verwaltung der Stadtbevölkerung helfen?",
+          "Die Lebenshaltungskosten steigen in vielen Teilen der Welt drastisch. Welche Probleme entstehen dadurch für durchschnittliche Familien? Wie können Regierungen diese finanzielle Belastung lindern?",
+          "Obdachlosigkeit ist in vielen wohlhabenden Ländern ein sichtbares Problem. Warum leben Menschen auf der Straße? Welche Sozialprogramme können Obdachlosigkeit wirksam reduzieren?",
+          "Lärmbelästigung ist ein ständiges Problem für Menschen, die in städtischen Gebieten leben. Was sind die Hauptquellen dieses Lärms? Welche Schritte können Stadtplaner unternehmen, um ruhigere Umgebungen zu schaffen?",
+          "In modernen Städten mangelt es an öffentlichen Parks und Grünflächen. Welche negativen Auswirkungen hat das für Stadtbewohner? Wie können Kommunen dieses Problem lösen?",
+          "In ländlichen Gebieten kommt es aufgrund der Abwanderung junger Menschen zu einem Bevölkerungsrückgang. Warum passiert das? Was kann getan werden, um Menschen zu ermutigen, in ländlichen Gemeinden zu bleiben oder dorthin zu ziehen?",
+          "In vielen entwickelten Ländern altert die Bevölkerung rapide. Welche wirtschaftlichen und sozialen Probleme entstehen dadurch? Wie können sich Gesellschaften an eine ältere Bevölkerungsgruppe anpassen?",
+          "Die Wohlstandsschere zwischen Arm und Reich wird immer größer. Welche sozialen Folgen hat extreme Ungleichheit? Welche Wirtschaftspolitik könnte dazu beitragen, den Wohlstand gleichmäßiger zu verteilen?",
+          "Obwohl sie in überfüllten Städten leben, berichten viele Menschen, dass sie sich isoliert und einsam fühlen. Was sind die Ursachen der modernen städtischen Isolation? Was kann getan werden, um das Gemeinschaftsgefühl zu fördern?",
+          "Traditionelle Kulturen und Bräuche sterben in einer globalisierten Welt aus. Warum kommt es zu diesem Verlust? Wie können Gemeinden ihr kulturelles Erbe bewahren?"
+        ]
+      },
+      {
+        "name": "Ausbildung",
+        "prompts": [
+          "Heutzutage sind Oberstufenschüler mit einem noch nie dagewesenen Ausmaß an Stress und Burnout konfrontiert. Was sind die Hauptursachen für diesen Druck? Wie kann das Bildungssystem reformiert werden, um das Wohlergehen der Schüler zu fördern?",
+          "Für viele junge Menschen sind die Kosten für einen Universitätsbesuch unerschwinglich geworden. Welche negativen Auswirkungen hat dies? Welche Alternativen oder Lösungen können den Studierenden angeboten werden?",
+          "Mobbing ist nach wie vor ein anhaltendes Problem an Schulen auf der ganzen Welt. Welche psychologischen Auswirkungen hat Mobbing auf Kinder? Welche Anti-Mobbing-Strategien sind am effektivsten?",
+          "Viele Arbeitgeber beklagen, dass es jungen Hochschulabsolventen an praktischen Fähigkeiten für den Arbeitsplatz mangelt. Warum gibt es eine Kluft zwischen Bildung und Beschäftigung? Wie können Lehrpläne an Universitäten verbessert werden?",
+          "In vielen Ländern herrscht ein gravierender Mangel an qualifizierten Lehrkräften. Was sind die Gründe für diesen Mangel? Wie kann der Lehrerberuf attraktiver gemacht werden?",
+          "Studierende in ländlichen Gebieten erhalten oft eine schlechtere Bildungsqualität als Studierende in Städten. Was verursacht diese Bildungskluft? Welche Maßnahmen können einen gleichberechtigten Zugang zu hochwertiger Schulbildung gewährleisten?",
+          "Der Aufstieg von KI-Tools hat zu einer Zunahme von akademischem Betrug und Plagiaten geführt. Was sind die negativen Auswirkungen auf das Lernen der Schüler? Wie sollten Schulen mit dem Einsatz von KI umgehen?",
+          "In bestimmten Entwicklungsregionen ist der Analphabetismus unter Erwachsenen nach wie vor hoch. Welche Probleme verursacht Analphabetismus für die Gesellschaft? Welche Initiativen können Erwachsenen erfolgreich das Lesen und Schreiben beibringen?",
+          "Viele Schüler fühlen sich im traditionellen Klassenzimmer unmotiviert und gelangweilt. Warum gelingt es traditionellen Lehrmethoden nicht, die Aufmerksamkeit der Schüler zu fesseln? Wie kann der Unterricht spannender gestaltet werden?",
+          "Die Klassengrößen an öffentlichen Schulen sind oft zu groß für einen effektiven Unterricht. Welche negativen Auswirkungen ergeben sich sowohl für Lehrer als auch für Schüler? Wie kann dieses Problem gelöst werden?"
+        ]
+      },
+      {
+        "name": "Gesundheit & Ernährung",
+        "prompts": [
+          "Fettleibigkeit ist in vielen Teilen der Welt zu einer Epidemie geworden. Was sind die Hauptursachen für eine weit verbreitete Gewichtszunahme? Welche Maßnahmen können Regierungen ergreifen, um einen gesünderen Lebensstil zu fördern?",
+          "Die Häufigkeit psychischer Probleme wie Depressionen und Angstzustände nimmt weltweit zu. Warum treten diese Erkrankungen immer häufiger auf? Was kann getan werden, um die psychische Gesundheitsversorgung zu verbessern?",
+          "Der Konsum von Fast Food ist so hoch wie nie zuvor. Welche negativen Auswirkungen hat der Verzehr stark verarbeiteter Lebensmittel auf die Gesundheit? Wie kann die Gesellschaft Menschen dazu ermutigen, frische Mahlzeiten zu kochen?",
+          "Der moderne Lebensstil ist zunehmend sesshaft geworden. Welche körperlichen Probleme entstehen durch Bewegungsmangel? Was kann getan werden, um mehr körperliche Aktivität in den Alltag zu integrieren?",
+          "Viele Menschen leiden heute unter chronischem Schlafmangel. Welche Faktoren tragen zu Schlafmangel in der modernen Gesellschaft bei? Wie können Einzelpersonen ihre Schlafhygiene verbessern?",
+          "Die Kosten für medizinische Behandlungen und Gesundheitsfürsorge steigen über das für den Durchschnittsbürger bezahlbare Maß hinaus. Welche Probleme verursacht dies? Wie kann die Gesundheitsversorgung zugänglicher und erschwinglicher gemacht werden?",
+          "Weltweit herrscht ein Mangel an Pflegekräften und Fachkräften im Gesundheitswesen. Warum hat dieser Sektor Schwierigkeiten, Personal zu halten? Welche Anreize könnten diese Personalkrise lösen?",
+          "Trotz der Fortschritte in der Medizin sterben immer noch viele Menschen auf der ganzen Welt an leicht vermeidbaren Krankheiten. Warum ist das so? Was kann man gegen dieses Problem tun?",
+          "Der übermäßige Einsatz von Antibiotika führt zur Entstehung resistenter Bakterienstämme. Was sind die Gefahren einer Antibiotikaresistenz? Wie kann die medizinische Gemeinschaft dieses Problem angehen?",
+          "Die längere Bildschirmnutzung führt bei Kindern und Erwachsenen zu einer Zunahme augenbedingter Gesundheitsprobleme. Welche konkreten Probleme treten auf? Welche vorbeugenden Maßnahmen sollten ergriffen werden?"
+        ]
+      },
+      {
+        "name": "Arbeit & Wirtschaft",
+        "prompts": [
+          "Arbeitsbedingter Stress ist eine der häufigsten Krankheitsursachen in der modernen Arbeitswelt. Welche Aspekte der modernen Arbeit verursachen diesen Stress? Was können Arbeitgeber tun, um die psychische Gesundheit ihrer Mitarbeiter zu unterstützen?",
+          "In vielen Ländern sind die Jugendarbeitslosenquoten unglaublich hoch. Warum haben junge Menschen Schwierigkeiten, einen Job zu finden? Welche Initiativen können dabei helfen, sie in die Arbeitswelt zu integrieren?",
+          "In vielen Berufen werden Frauen für die gleiche Arbeit immer noch schlechter bezahlt als Männer. Was sind die Ursachen für den Gender Pay Gap? Wie können Regierungen und Unternehmen gleiches Entgelt gewährleisten?",
+          "Lange, anstrengende tägliche Arbeitswege sind für viele Arbeitnehmer eine Realität. Welche negativen Auswirkungen haben lange Arbeitswege auf den Einzelnen? Wie kann dieses Problem gemildert werden?",
+          "Vielen Arbeitnehmern fällt es schwer, Beruf und Privatleben unter einen Hut zu bringen. Warum ist es so schwierig geworden, Arbeit und Privatleben zu trennen? Welche Arbeitsplatzrichtlinien können dieses Gleichgewicht verbessern?",
+          "Der Aufstieg der „Gig Economy“ führt dazu, dass viele Menschen mit kurzfristigen Verträgen ohne Sozialleistungen arbeiten. Welche finanziellen Probleme entstehen dadurch für die Arbeitnehmer? Wie können Gig-Worker besser geschützt werden?",
+          "Die hohe Inflation lässt die Preise für Grundgüter in die Höhe schnellen. Welche Auswirkungen hat dies auf Familien mit niedrigem Einkommen? Welche wirtschaftlichen Maßnahmen können ergriffen werden, um die Preise zu stabilisieren?",
+          "In einigen Branchen sind Arbeitnehmer unsicheren Arbeitsbedingungen ausgesetzt. Warum bleiben diese Zustände bestehen? Was kann getan werden, um strengere Sicherheitsvorschriften durchzusetzen?",
+          "Viele Entwicklungsländer leiden unter einem „Brain Drain“, bei dem ihre am besten ausgebildeten Fachkräfte ins Ausland abwandern. Welche Probleme entstehen dadurch für das Heimatland? Wie können Nationen ihre Talente behalten?",
+          "Heutzutage häufen junge Erwachsene persönliche Schulden in beispiellosem Ausmaß an. Was sind die Hauptgründe für diese Kreditaufnahme? Welche finanzielle Bildung sollte bereitgestellt werden, um dieses Problem zu lösen?"
+        ]
+      },
+      {
+        "name": "Kriminalität und Recht",
+        "prompts": [
+          "In vielen Städten nimmt die Jugendkriminalität (von Jugendlichen begangene Straftaten) zu. Was sind die Ursachen der Jugendkriminalität? Welche Interventionen können junge Menschen vor Schwierigkeiten bewahren?",
+          "Traditionelle Kriminalität nimmt ab, Cyberkriminalität nimmt jedoch stark zu. Warum bewegen sich Kriminelle online? Wie können sich die Strafverfolgungsbehörden an die Bekämpfung digitaler Kriminalität anpassen?",
+          "Drogenmissbrauch ruiniert weiterhin Leben und Gemeinschaften. Was treibt Menschen zum Drogenmissbrauch? Was sind die effektivsten Möglichkeiten, Süchtige zu rehabilitieren?",
+          "In vielen Ländern sind Gefängnisse stark überfüllt. Welche Folgen haben überfüllte Gefängnisse? Welche alternativen Strafen könnten diesen Druck lindern?",
+          "Viele Kriminelle werden kurz nach ihrer Entlassung aus dem Gefängnis erneut straffällig. Warum gelingt es den Gefängnissystemen nicht, Insassen zu rehabilitieren? Welche Programme können ehemaligen Häftlingen bei der Wiedereingliederung in die Gesellschaft helfen?",
+          "Wirtschaftskriminalität wie Unternehmensbetrug bleibt im Vergleich zu Straßenkriminalität oft ungestraft. Warum ist das so? Wie kann die Justiz Unternehmenskorruption effektiver bekämpfen?",
+          "Vandalismus und die Zerstörung öffentlichen Eigentums sind in vielen städtischen Gebieten an der Tagesordnung. Was motiviert Menschen, Vandalismus zu begehen? Wie können lokale Behörden dies verhindern?",
+          "Verkehrsdelikte wie Geschwindigkeitsüberschreitungen und Trunkenheit am Steuer fordern jedes Jahr Tausende Todesopfer. Warum ignorieren Menschen Verkehrsregeln? Welche Maßnahmen können gefährliches Fahren erfolgreich verhindern?",
+          "Häusliche Gewalt ist ein verstecktes Verbrechen, das Millionen von Haushalten betrifft. Warum schweigen Opfer oft? Welche Unterstützungssysteme müssen vorhanden sein, um sie zu schützen?",
+          "Der illegale Wildtierhandel führt zur Ausrottung vieler Tierarten. Was treibt die Nachfrage nach illegalen Tierprodukten an? Wie können internationale Gesetze diesen Handel stoppen?"
+        ]
+      },
+      {
+        "name": "Familie & Jugend",
+        "prompts": [
+          "Das traditionelle Großfamilienmodell wird durch die Kernfamilie oder den Alleinerziehendenhaushalt ersetzt. Welche Probleme verursacht der Verlust der Unterstützung durch die Familie? Wie kann die Gesellschaft zur Unterstützung moderner Familien beitragen?",
+          "Es gibt eine wachsende „Generationenlücke“, die zu mangelndem Verständnis zwischen Jung und Alt führt. Warum kommt es zu diesen Missverständnissen? Wie können wir die Kluft zwischen den Generationen überbrücken?",
+          "Viele Kinder bleiben heutzutage aufgrund berufstätiger Eltern ohne elterliche Aufsicht zu Hause. Welche negativen Auswirkungen gibt es auf die Entwicklung des Kindes? Welche Lösungen können berufstätige Eltern umsetzen?",
+          "Heutzutage üben Eltern einen enormen Druck auf ihre Kinder aus, damit sie in der Schule und im außerschulischen Bereich erfolgreich sind. Welche psychologischen Auswirkungen haben sie auf die Kinder? Wie können Eltern gesünder vorgehen?",
+          "In vielen Industrieländern sinken die Geburtenraten rapide. Warum entscheiden sich Menschen dafür, weniger Kinder zu haben? Welche Probleme werden sich daraus in Zukunft für die Gesellschaft ergeben und wie können diese angegangen werden?",
+          "Die Kosten für eine professionelle Kinderbetreuung sind für viele Familien unerschwinglich. Welche Probleme entstehen dadurch insbesondere für berufstätige Mütter? Wie kann Kinderbetreuung zugänglicher gemacht werden?",
+          "Asoziales Verhalten von Teenagern im öffentlichen Raum ist eine häufige Beschwerde. Was verursacht dieses rebellische Verhalten? Wie können Gemeinden Jugendliche zu positiveren Aktivitäten motivieren?",
+          "Kinder und Jugendliche stehen heute zunehmend im Fokus des Verbrauchermarketings. Welche negativen Auswirkungen hat der Jugendkonsum? Wie können Eltern ihre Kinder vor aggressiver Werbung schützen?",
+          "Viele junge Menschen vergöttern Prominente, die sich schlecht benehmen. Warum schauen Teenager zu diesen Zahlen auf? Wie können wir der Jugend bessere Vorbilder bieten?",
+          "Die Scheidungsraten sind in den letzten Jahrzehnten deutlich gestiegen. Was sind die Hauptgründe für das Scheitern einer Ehe? Was kann getan werden, um Paare besser auf die Ehe vorzubereiten?"
+        ]
+      },
+      {
+        "name": "Verkehr und Tourismus",
+        "prompts": [
+          "Verkehrsstaus sind in den meisten Großstädten ein täglicher Albtraum. Was sind die Hauptursachen für einen Verkehrsinfarkt? Welche innovativen Transportlösungen können den Verkehrsfluss entlasten?",
+          "In vielen Gegenden sind die öffentlichen Verkehrssysteme unzuverlässig und schlecht gewartet. Warum wird der öffentliche Nahverkehr oft vernachlässigt? Welche Schritte sind erforderlich, um diese Systeme zu aktualisieren?",
+          "Historische Stätten und berühmte Sehenswürdigkeiten leiden unter „Overtourism“. Welchen Schaden verursacht übermäßiger Tourismus? Wie können Behörden die Touristenzahlen nachhaltig steuern?",
+          "Die Luftfahrtindustrie trägt massiv zu den weltweiten CO2-Emissionen bei. Warum ist es so schwierig, den Flugverkehr „umweltfreundlich“ zu gestalten? Welche Alternativen oder Lösungen können die Umweltauswirkungen des Fliegens verringern?",
+          "Die Zahl der tödlichen Verkehrsunfälle ist nach wie vor unannehmbar hoch. Was sind die Hauptursachen für diese Abstürze? Welche Sicherheitsmaßnahmen können die Zahl der Verkehrstoten deutlich reduzieren?",
+          "Aufgrund der Treibstoffkosten und Steuern werden internationale Reisen für den Durchschnittsbürger zu teuer. Welche negativen Auswirkungen haben Reisebeschränkungen? Wie kann der Tourismus zugänglich bleiben?",
+          "Touristen verhalten sich häufig auf eine Weise, die lokale kulturelle Empfindlichkeiten verletzt. Warum kommt es zu dieser kulturellen Reibung? Wie können Reisende dazu erzogen werden, lokale Bräuche zu respektieren?",
+          "Trotz Umweltwarnungen nimmt die Abhängigkeit von Privatautos immer weiter zu. Warum weigern sich Menschen, ihr Auto aufzugeben? Welche Anreize würden Menschen erfolgreich dazu bringen, öffentliche Verkehrsmittel zu nutzen?",
+          "Die Parkplatzsuche in Innenstädten wird nahezu unmöglich. Welche Probleme entstehen dadurch für die lokalen Unternehmen? Welche architektonischen oder planerischen Lösungen können den Parkplatzmangel beheben?",
+          "Der Bau von Mega-Resorts zerstört kleine, lokale Unternehmen in Touristenstädten. Warum haben lokale Geschäfte Schwierigkeiten, im Wettbewerb zu bestehen? Was können Kommunen tun, um kleine Unternehmen zu schützen?"
+        ]
+      },
+      {
+        "name": "Ernährung und Landwirtschaft",
+        "prompts": [
+          "Eine erschreckende Menge an Lebensmitteln wird weltweit von Supermärkten und Verbrauchern verschwendet. Warum werden so viele Lebensmittel weggeworfen? Welche Maßnahmen können ergriffen werden, um die Lebensmittelverschwendung drastisch zu reduzieren?",
+          "Viele Länder sind stark auf den Import von Lebensmitteln angewiesen, anstatt sie vor Ort anzubauen. Welche Risiken birgt die Abhängigkeit von ausländischen Nahrungsmittellieferungen? Wie können Nationen ihre heimische Landwirtschaft stärken?",
+          "Der starke Einsatz chemischer Pestizide in der Landwirtschaft gibt Anlass zur Sorge. Welche Auswirkungen haben diese Chemikalien auf die Umwelt und die Gesundheit? Welche praktikablen Alternativen zur chemischen Landwirtschaft gibt es?",
+          "In der Massentierhaltung steht der Profit über dem Tierschutz. Welche spezifischen Grausamkeiten sind mit der Massenfleischproduktion verbunden? Wie können Verbraucher und Regierungen den Wandel in dieser Branche vorantreiben?",
+          "Kleine Familienbetriebe verschwinden, während große Agrarunternehmen die Macht übernehmen. Warum scheitern kleine landwirtschaftliche Betriebe? Was kann getan werden, um die Landwirte vor Ort zu unterstützen und zu erhalten?",
+          "Trotz der hohen weltweiten Nahrungsmittelproduktion gibt es in vielen Regionen immer noch Ernährungsunsicherheit und Hunger. Was sind die Hauptursachen für Misserfolge bei der Nahrungsmittelverteilung? Wie können wir sicherstellen, dass jeder genug zu essen hat?",
+          "Ackerland (für den Anbau von Nutzpflanzen geeignetes Land) geht durch Wohnsiedlungen und Wüstenbildung verloren. Welche langfristigen Gefahren birgt der Verlust von Agrarland? Wie können wir Agrarflächen schützen?",
+          "Die langfristigen gesundheitlichen Auswirkungen des Verzehrs gentechnisch veränderter (GV) Lebensmittel sind für viele nach wie vor ein Problem. Warum stehen Menschen gentechnisch veränderten Pflanzen skeptisch gegenüber? Welche Vorschriften sollten den Verkauf von gentechnisch veränderten Lebensmitteln regeln?",
+          "Weltweit verlagert sich die Ernährung auf stark verarbeitete, vorverpackte Lebensmittel. Was treibt diese Abhängigkeit von verarbeiteten Lebensmitteln an? Wie können Regierungen die Öffentlichkeit über vollwertige Ernährung aufklären?",
+          "Abflüsse aus der Landwirtschaft (Düngemittel, die in Flüsse gelangen) verschmutzen die Wasserstraßen erheblich. Welchen Schaden verursacht dies für aquatische Ökosysteme? Welche landwirtschaftlichen Praktiken können diese Verschmutzung verhindern?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "double-question",
+    "label": "Doppelte Frage",
+    "description": "Beantworten Sie zwei separate Fragen zum gleichen Thema.",
+    "instruction": "Beantworten Sie beide Fragen vollständig. Schreiben Sie mindestens 250 Wörter.",
+    "categories": [
+      {
+        "name": "Bildung und Lernen",
+        "prompts": [
+          "Vielen Studierenden fällt es schwer, sich in Schule und Studium zu konzentrieren. Was sind die Gründe dafür? Wie können wir dieses Problem lösen?",
+          "In einigen Ländern bricht ein hoher Anteil der Studierenden die Universität vor Abschluss ihres Studiums ab. Warum passiert das Ihrer Meinung nach? Was kann getan werden, um Studierende zum Abschluss ihres Studiums zu ermutigen?",
+          "Manche Leute glauben, dass Geschichte ein nutzloses Fach für das Studium in der Schule ist. Warum geht es manchen Menschen so? Denken Sie, dass Geschichte ein wichtiges Schulfach ist?",
+          "Bei jungen Menschen wird es immer üblicher, vor dem Hochschulzugang ein Gap Year zu absolvieren. Warum entscheiden sich immer mehr Studierende dafür? Handelt es sich um einen positiven oder negativen Trend?",
+          "Die Kosten für den Besuch einer Universität sind in vielen Teilen der Welt erheblich gestiegen. Welche Auswirkungen hat das auf Studierende und Gesellschaft? Welche Maßnahmen könnten die Hochschulbildung zugänglicher machen?",
+          "Viele Kinder bekommen von ihren Lehrern täglich Hausaufgaben. Halten Sie dies für eine notwendige Praxis? Was sind die möglichen Nachteile von zu vielen Hausaufgaben?",
+          "In den letzten Jahren ist die Zahl der Menschen, die sich dafür entscheiden, online statt in traditionellen Klassenzimmern zu lernen, gestiegen. Was sind die Vorteile des Online-Lernens? Glauben Sie, dass traditionelle Schulen irgendwann verschwinden werden?",
+          "Manche Schüler haben Schwierigkeiten, Fremdsprachen im Klassenzimmer zu lernen. Warum fällt es vielen Menschen schwer, eine neue Sprache zu lernen? Was sind die effektivsten Möglichkeiten, eine Fremdsprache zu lernen?",
+          "Praktische Fähigkeiten wie Kochen, Finanzmanagement und grundlegende Autowartung werden in Schulen selten vermittelt. Sollten diese Fähigkeiten in den Lehrplan aufgenommen werden? Wessen Aufgabe ist es, Kindern diese Fähigkeiten beizubringen?",
+          "Musik und Kunst sind oft die ersten Fächer, die bei Kürzungen der Mittel aus den Lehrplänen gestrichen werden. Warum passiert das? Wie wichtig sind die Künste für die Entwicklung eines Kindes?"
+        ]
+      },
+      {
+        "name": "Technologie und Innovation",
+        "prompts": [
+          "Heutzutage verbringen die Menschen immer mehr Zeit damit, auf die Bildschirme von Telefonen, Computern und Fernsehern zu schauen. Welche Auswirkungen hat dies auf die körperliche und geistige Gesundheit? Wie können Einzelpersonen ihre Bildschirmzeit besser verwalten?",
+          "Künstliche Intelligenz wird zunehmend eingesetzt, um Aufgaben zu übernehmen, die bisher von Menschen erledigt wurden. Was sind die Hauptvorteile von KI? Welche Risiken birgt diese Technologie für die Gesellschaft?",
+          "Social-Media-Plattformen haben die Art und Weise verändert, wie Menschen Beziehungen aufbauen und pflegen. Wie haben soziale Medien die menschliche Interaktion beeinflusst? Glauben Sie, dass dies insgesamt eine positive oder negative Entwicklung war?",
+          "Immer mehr Menschen nutzen Online-Dating-Anwendungen, um romantische Partner zu finden. Warum sind diese Plattformen so beliebt geworden? Was sind die potenziellen Gefahren, wenn man Menschen online trifft?",
+          "Viele Menschen lesen Nachrichten lieber online, als physische Zeitungen zu kaufen. Warum bevorzugen so viele digitale Nachrichten? Werden gedruckte Zeitungen in Zukunft ganz verschwinden?",
+          "Kryptowährungen und digitale Zahlungen werden immer häufiger und ersetzen physisches Bargeld. Was sind die Vorteile einer bargeldlosen Gesellschaft? Welche Probleme könnten entstehen, wenn man sich vollständig auf digitales Geld verlässt?",
+          "Es wird erwartet, dass der Weltraumtourismus in naher Zukunft für wohlhabende Privatpersonen zur Realität wird. Warum sind Menschen daran interessiert, ins All zu reisen? Sollten Regierungen diese neue Branche regulieren?",
+          "Heutzutage haben Kinder oft schon in jungen Jahren Zugang zu Smartphones und Tablets. Wie wirkt sich der frühe Zugang zu Technologie auf die kindliche Entwicklung aus? Sollten Eltern die Nutzung dieser Geräte durch ihre Kinder einschränken?",
+          "Automatisierung und Robotik ersetzen in vielen Fertigungsindustrien die manuelle Arbeit. Was passiert mit den Arbeitern, die ihren Arbeitsplatz durch Maschinen verlieren? Wie sollten Regierungen die Arbeitskräfte auf die Zukunft vorbereiten?",
+          "Cybermobbing ist ein wachsendes Problem bei Teenagern und jungen Erwachsenen. Warum schikanieren Menschen andere online? Welche Maßnahmen können Schulen und Eltern ergreifen, um dieses Verhalten zu verhindern?"
+        ]
+      },
+      {
+        "name": "Arbeit & Karriere",
+        "prompts": [
+          "In vielen Industrieländern nimmt die Arbeitszufriedenheit der Arbeitnehmer ab. Was sind die Hauptursachen für diese Unzufriedenheit? Was können Arbeitgeber tun, um das Arbeitsleben ihrer Mitarbeiter zu verbessern?",
+          "Viele Menschen entscheiden sich im Laufe ihres Berufslebens mehrmals für einen Berufswechsel. Was motiviert Menschen, den Beruf zu wechseln? Ist das ein positiver oder negativer Trend für die Wirtschaft?",
+          "Remote-Arbeit ist für viele Unternehmen zur Standardpraxis geworden. Welche Vorteile bietet die Arbeit von zu Hause aus? Vor welchen Herausforderungen stehen Remote-Mitarbeiter?",
+          "In manchen Berufen wird von den Mitarbeitern sehr lange und oft unbezahlte Arbeitszeiten erwartet. Warum akzeptieren Menschen diese Arbeitsbedingungen? Welche Auswirkungen hat das auf ihr Privatleben?",
+          "Aufgrund der höheren Lebenserwartung wird in vielen Ländern das Rentenalter angehoben. Warum wird diese Richtlinie umgesetzt? Halten Sie es für fair, von Menschen zu erwarten, dass sie bis Ende sechzig oder siebzig arbeiten?",
+          "Viele junge Menschen schließen ihr Studium ab, können aber in dem von ihnen gewählten Bereich keine Anstellung finden. Was sind die Gründe für Jugendarbeitslosigkeit? Wie können Hochschulen Studierende besser auf den Arbeitsmarkt vorbereiten?",
+          "Einige Unternehmen nutzen Überwachungssoftware, um die Produktivität ihrer Mitarbeiter zu überwachen, während diese am Computer arbeiten. Warum nutzen Arbeitgeber diese Tools? Handelt es sich um einen Eingriff in die Privatsphäre?",
+          "Die Gründung eines Unternehmens ist mit einem erheblichen finanziellen Risiko und langen Arbeitszeiten verbunden. Warum entscheiden sich manche Menschen dafür, Unternehmer zu werden, anstatt normale Angestellte zu werden? Welche Eigenschaften sind erforderlich, um ein erfolgreiches Unternehmen zu führen?",
+          "In vielen Branchen sind Frauen im oberen Management und in Führungspositionen immer noch unterrepräsentiert. Warum besteht diese Kluft zwischen den Geschlechtern weiterhin? Welche Maßnahmen könnten ergriffen werden, um die Gleichstellung der Geschlechter am Arbeitsplatz zu fördern?",
+          "Einige Jobs zahlen extrem hohe Gehälter, beispielsweise Profisportler und Prominente aus der Unterhaltungsbranche. Haben diese Personen es verdient, so viel Geld zu verdienen? Wie soll das Gehalt einer Person ermittelt werden?"
+        ]
+      },
+      {
+        "name": "Umwelt & Nachhaltigkeit",
+        "prompts": [
+          "Die Plastikverschmutzung in den Weltmeeren ist eine schwere Umweltkrise. Was sind die Hauptquellen dieses Plastikmülls? Welche Maßnahmen können Einzelpersonen und Regierungen ergreifen, um die Ozeane zu säubern?",
+          "Viele Tier- und Pflanzenarten sind derzeit vom Aussterben bedroht. Warum ist der Verlust der Artenvielfalt ein Problem für die Menschheit? Was kann man tun, um gefährdete Arten zu schützen?",
+          "Die Nutzung fossiler Brennstoffe ist der Haupttreiber des globalen Klimawandels. Warum ist es für Länder schwierig, auf erneuerbare Energiequellen umzusteigen? Was passiert, wenn wir unsere Abhängigkeit von Öl und Kohle nicht verringern?",
+          "Die Abholzung der tropischen Regenwälder schreitet in besorgniserregendem Tempo voran. Was sind die Hauptgründe für die Abholzung dieser Wälder? Wie kann die internationale Gemeinschaft diese Zerstörung stoppen?",
+          "Viele Städte leiden unter starker Luftverschmutzung, die sich negativ auf die Gesundheit ihrer Bewohner auswirkt. Was verursacht städtische Luftverschmutzung? Was sind die effektivsten Möglichkeiten, die Luftqualität in Städten zu verbessern?",
+          "Süßwasser wird in vielen Teilen der Welt zu einer knappen Ressource. Warum mangelt es an sauberem Trinkwasser? Wie können wir Wasser effektiver sparen?",
+          "Der Konsumismus ermutigt die Menschen, ständig neue Produkte zu kaufen und alte wegzuwerfen. Wie wirkt sich diese „Wegwerfkultur“ auf die Umwelt aus? Was kann getan werden, um Menschen dazu zu ermutigen, Gegenstände zu reparieren und wiederzuverwenden?",
+          "Um die Nahrungsmittelproduktion zu steigern und Schädlingen vorzubeugen, werden gentechnisch veränderte (GV) Pflanzen angebaut. Warum sind manche Menschen gegen gentechnisch veränderte Lebensmittel? Überwiegen die Vorteile dieser Technologie die Risiken?",
+          "Extreme Wetterereignisse wie Hurrikane und Dürren kommen immer häufiger vor. Wie wirken sich diese Ereignisse auf die lokale Gemeinschaft aus? Wie sollten sich Regierungen auf Naturkatastrophen vorbereiten?",
+          "Fast Fashion ermöglicht es Verbrauchern, trendige Kleidung zu sehr günstigen Preisen zu kaufen. Welche Auswirkungen hat die Fast-Fashion-Branche auf die Umwelt? Sollten Verbraucher gezwungen werden, für nachhaltig hergestellte Kleidung mehr zu bezahlen?"
+        ]
+      },
+      {
+        "name": "Gesellschaft & Kultur",
+        "prompts": [
+          "In vielen Ländern nimmt der Anteil älterer Menschen rapide zu. Welche Herausforderungen stellt eine alternde Bevölkerung für die Gesellschaft dar? Wie können Gemeinden ihre älteren Bürger besser unterstützen?",
+          "Die Kluft zwischen den reichsten und ärmsten Menschen in der Gesellschaft wird immer größer. Welche Probleme verursacht extreme Vermögensungleichheit? Welche Maßnahmen könnten dazu beitragen, den Reichtum gerechter zu verteilen?",
+          "Traditionelle Bräuche und Feste verlieren bei der jüngeren Generation an Bedeutung. Warum passiert das? Ist es wichtig, die traditionelle Kultur in der modernen Welt zu bewahren?",
+          "Viele Menschen fühlen sich einsam und isoliert, obwohl sie in überfüllten, modernen Städten leben. Warum kommt städtische Einsamkeit so häufig vor? Was kann getan werden, um stärkere Gemeinschaften in städtischen Gebieten aufzubauen?",
+          "In vielen entwickelten Ländern sind die Geburtenraten rückläufig. Warum entscheiden sich Menschen dafür, weniger Kinder zu haben? Welche Auswirkungen wird dies in Zukunft auf die Gesellschaft haben?",
+          "Die internationale Migration hat zugenommen, was zu mehr multikulturellen Gesellschaften führt. Welche Vorteile hat das Leben in einer vielfältigen Gesellschaft? Welche Herausforderungen können im Zusammenleben unterschiedlicher Kulturen entstehen?",
+          "Das Vertrauen in Politiker und staatliche Institutionen nimmt in vielen Teilen der Welt ab. Warum sind die Menschen gegenüber der Politik so zynisch geworden? Wie können Regierungen das Vertrauen der Öffentlichkeit wiederherstellen?",
+          "Freiwilligenarbeit und unbezahlte gemeinnützige Arbeit werden immer seltener. Warum bieten immer weniger Menschen ihre Zeit kostenlos an? Wie können wir mehr Menschen dazu ermutigen, ihren lokalen Gemeinschaften zu helfen?",
+          "Manche Menschen glauben, dass die moderne Gesellschaft sich zu sehr auf das äußere Erscheinungsbild und die Schönheit konzentriert. Warum gibt es so viel Druck, auf eine bestimmte Art und Weise auszusehen? Wie wirkt sich das auf die psychische Gesundheit der Menschen aus?",
+          "Historische Denkmäler und Statuen werden manchmal entfernt oder zerstört, weil sie eine umstrittene Vergangenheit darstellen. Warum wollen Menschen diese Denkmäler entfernen? Sollten historische Persönlichkeiten nach modernen Maßstäben beurteilt werden?"
+        ]
+      },
+      {
+        "name": "Gesundheit und Wohlbefinden",
+        "prompts": [
+          "Die Adipositasraten haben in vielen Ländern epidemische Ausmaße angenommen. Was sind die Hauptursachen dieser Gesundheitskrise? Welche Rolle sollte die Regierung bei der Regulierung der Lebensmittelindustrie spielen?",
+          "Stress und Angst sind große Gesundheitsprobleme für moderne Arbeitnehmer. Welche Faktoren tragen zu einem hohen Stressniveau am Arbeitsplatz bei? Wie kann der Einzelne eine bessere Vereinbarkeit von Beruf und Privatleben erreichen?",
+          "Viele Menschen greifen auf alternative Medikamente zurück, anstatt einen konventionellen Arzt aufzusuchen. Warum werden alternative Therapien immer beliebter? Sind diese Behandlungen mit Risiken verbunden?",
+          "Die Kosten für medizinische Behandlungen und verschreibungspflichtige Medikamente sind in einigen Ländern sehr hoch. Welche Auswirkungen hat dies auf einkommensschwache Familien? Sollte die Gesundheitsversorgung für alle völlig kostenlos sein?",
+          "Schlafmangel ist für viele Erwachsene und Jugendliche ein häufiges Problem. Warum bekommen Menschen nicht genug Schlaf? Wie wirkt sich Schlafmangel auf die tägliche Leistungsfähigkeit und die langfristige Gesundheit aus?",
+          "Der Profisport ist stark kommerzialisiert und Sportler verdienen Millionen. Hat Geld den wahren Geist des Sports ruiniert? Welche Auswirkungen hat diese Kommerzialisierung auf junge Fans?",
+          "In einigen Ländern ist der Verkauf von Tabakprodukten stark besteuert und eingeschränkt. Warum versuchen Regierungen, das Rauchen zu unterbinden? Sollte das Rauchen in Zukunft komplett verboten werden?",
+          "Verarbeitete Lebensmittel und Fastfood machen einen großen Teil der modernen Ernährung aus. Warum entscheiden sich Menschen für ungesunde Lebensmittel? Was kann getan werden, um gesunde Lebensmittel attraktiver und zugänglicher zu machen?",
+          "Psychische Gesundheitsprobleme werden oft stigmatisiert, was es für Menschen schwierig macht, Hilfe zu suchen. Warum haben Menschen Angst, über ihre psychische Gesundheit zu sprechen? Wie kann die Gesellschaft akzeptierender und unterstützender werden?",
+          "Manche Menschen entscheiden sich für extreme und gefährliche Sportarten wie Basejumping oder Free-Solo-Klettern. Was motiviert Menschen, ihr Leben für den Sport zu riskieren? Sollten Rettungsdienste erforderlich sein, um sie zu retten, wenn sie in Schwierigkeiten geraten?"
+        ]
+      },
+      {
+        "name": "Regierung und öffentliche Dienste",
+        "prompts": [
+          "In vielen Großstädten sind die öffentlichen Verkehrsmittel überfüllt und unzuverlässig. Warum tun sich Regierungen schwer, den öffentlichen Nahverkehr aufrechtzuerhalten? Welche Vorteile bietet ein hocheffizientes Transitsystem?",
+          "Zur Finanzierung öffentlicher Dienstleistungen sind Steuern notwendig, doch viele Menschen versuchen, deren Zahlung zu vermeiden. Warum zahlen Menschen nicht gern Steuern? Wie können Regierungen sicherstellen, dass Steuersysteme fair sind?",
+          "Viele Regierungen gewähren arbeitslosen Bürgern finanzielle Unterstützung. Warum ist diese Sozialfürsorge notwendig? Macht die Gewährung von Arbeitslosenunterstützung faul?",
+          "In Zeiten des wirtschaftlichen Abschwungs werden die Mittel für öffentliche Bibliotheken und Gemeindezentren häufig gekürzt. Warum gelten diese Einrichtungen als weniger wichtig? Was verlieren Gemeinden, wenn Bibliotheken schließen?",
+          "In einigen Ländern ist der Militärdienst für alle jungen Erwachsenen obligatorisch. Welche Vorteile hat die Wehrpflicht? Welche Argumente sprechen dagegen, Menschen zum Militärdienst zu zwingen?",
+          "Die Immobilienpreise in Großstädten sind für viele junge Berufstätige unerschwinglich geworden. Warum sind Stadtwohnungen so teuer? Was können Regierungen tun, um bezahlbaren Wohnraum bereitzustellen?",
+          "Wohlhabende Nationen leisten Entwicklungsländern oft Auslandshilfe. Warum ist es wichtig, ärmeren Ländern zu helfen? Kommt die Entwicklungshilfe immer bei den Menschen an, die sie am meisten brauchen?",
+          "Überwachungskameras werden im öffentlichen Raum häufig zur Kriminalitätsprävention eingesetzt. Wie effektiv können Kameras illegale Aktivitäten stoppen? Verletzt die öffentliche Überwachung das Recht des Einzelnen auf Privatsphäre?",
+          "Regierungen geben große Summen für die Ausrichtung internationaler Veranstaltungen wie der Olympischen Spiele aus. Warum wollen Länder diese Veranstaltungen ausrichten? Ist das eine sinnvolle Verwendung öffentlicher Mittel?",
+          "Das Strafrechtssystem vieler Länder konzentriert sich auf die Bestrafung von Straftätern durch Gefängnisstrafen. Rehabilitiert das Gefängnis tatsächlich Kriminelle? Welche alternativen Möglichkeiten gibt es, mit gewaltfreien Verbrechen umzugehen?"
+        ]
+      },
+      {
+        "name": "Medien & Kommunikation",
+        "prompts": [
+          "Werbung gibt es überall, vom Fernsehbildschirm bis zur öffentlichen Werbetafel. Wie beeinflusst Werbung das Verbraucherverhalten? Ist Werbung schädlich für Kinder?",
+          "Die Verbreitung von „Fake News“ und Fehlinformationen im Internet gibt Anlass zu großer Sorge. Warum erstellen und teilen Menschen falsche Informationen? Wie kann die Öffentlichkeit lernen, zuverlässige Nachrichtenquellen zu erkennen?",
+          "Prominente und Influencer haben einen massiven Einfluss auf das Verhalten junger Menschen. Warum lassen sich Teenager so leicht von berühmten Persönlichkeiten beeinflussen? Ist dieser Einfluss generell positiv oder negativ?",
+          "Viele Menschen verbringen Stunden damit, Reality-Fernsehsendungen anzusehen. Warum sind diese Programme für das Publikum so attraktiv? Spiegeln Reality-Shows das wirkliche Leben genau wider?",
+          "Die Paparazzi folgen oft berühmten Persönlichkeiten, um ihr Privatleben zu fotografieren. Haben die Medien das Recht, in die Privatsphäre einer Berühmtheit einzudringen? Warum interessiert sich die Öffentlichkeit so sehr für das Privatleben berühmter Persönlichkeiten?",
+          "Moderne Filme und Videospiele enthalten oft sehr realistische Gewaltszenen. Warum ist Gewaltunterhaltung so beliebt? Macht das Anschauen von Gewalt die Menschen im wirklichen Leben aggressiver?",
+          "Investigativer Journalismus spielt eine entscheidende Rolle bei der Aufdeckung von Korruption. Warum ist eine freie Presse wichtig für eine gesunde Gesellschaft? Welchen Gefahren drohen Journalisten, wenn sie über mächtige Leute berichten?",
+          "Menschen kommunizieren heute viel schneller über Textnachrichten und E-Mails. Wie hat sich dadurch die Art und Weise verändert, wie wir schreiben und sprechen? Haben wir die Fähigkeit verloren, tiefgreifend und nachdenklich zu kommunizieren?",
+          "Streaming-Plattformen wie Netflix und Spotify haben die Art und Weise verändert, wie Menschen Unterhaltung konsumieren. Welche Auswirkungen hat dies auf traditionelle Kinos und den physischen Musikverkauf? Ist das Abo-Modell fair gegenüber Künstlern und Kreativen?",
+          "Einige Regierungen zensieren das Internet, um bestimmte Websites und Social-Media-Plattformen zu blockieren. Warum beschränken Regierungen den Zugang zu Informationen? Wie können Bürger diese Beschränkungen umgehen?"
+        ]
+      },
+      {
+        "name": "Städte & Infrastruktur",
+        "prompts": [
+          "Die Zersiedelung führt dazu, dass Städte rasch in die umliegenden ländlichen Gebiete expandieren. Welche Folgen hat die Zersiedelung für die Umwelt? Wie können Stadtplaner dieses Wachstum nachhaltiger bewältigen?",
+          "Verkehrsstaus sind für Millionen Pendler weltweit ein tägliches Problem. Was sind die Hauptursachen für starken Verkehr? Würde die kostenlose Einführung öffentlicher Verkehrsmittel dieses Problem lösen?",
+          "Viele historische Gebäude in den Innenstädten werden abgerissen, um Platz für moderne Wolkenkratzer zu machen. Warum passiert das? Ist es wichtig, alte Architektur zu erhalten?",
+          "Die Einführung von Fußgängerzonen in Innenstädten – ein Verbot aller Autos aus bestimmten Bereichen – erfreut sich in Europa immer größerer Beliebtheit. Welche Vorteile bieten autofreie Zonen? Welche Auswirkungen hat dies auf lokale Unternehmen?",
+          "Lärmbelästigung ist ein ständiges Problem für Menschen, die in belebten Ballungsräumen leben. Was sind die Hauptquellen für städtischen Lärm? Wie wirkt sich chronische Lärmbelastung auf die Gesundheit der Bewohner aus?",
+          "Parks und Grünflächen sind für eine gute Lebensqualität in einer Stadt unerlässlich. Warum sind Bäume und Natur in einer städtischen Umgebung wichtig? Warum bieten manche Städte nicht genügend Grünflächen?",
+          "Am Rande vieler Megastädte gibt es Slums und informelle Siedlungen. Warum leben Menschen unter diesen Bedingungen? Was können Regierungen tun, um den Lebensstandard in diesen Gebieten zu verbessern?",
+          "Fahrräder werden als umweltfreundliche Alternative zum Autofahren gefördert. Warum weigern sich immer noch viele Menschen, mit dem Fahrrad zur Arbeit zu fahren? Welche Infrastruktur ist nötig, um das Radfahren in Städten sicher zu machen?",
+          "Die Architektur moderner Städte sieht oft sehr ähnlich aus, unabhängig vom Land. Warum verlieren Städte ihre einzigartige kulturelle Identität? Beeinflusst die Gestaltung eines Gebäudes die Stimmung der Menschen, die es nutzen?",
+          "Abfallmanagement und Müllentsorgung stellen große logistische Herausforderungen für Großstädte dar. Wie gehen Städte derzeit mit Millionen Tonnen Müll um? Was sind nachhaltigere Möglichkeiten, städtische Abfälle zu entsorgen?"
+        ]
+      },
+      {
+        "name": "Globalisierung & Wirtschaft",
+        "prompts": [
+          "Der Aufstieg multinationaler Konzerne führt dazu, dass überall auf der Welt die gleichen Marken verkauft werden. Welche Auswirkungen hat dies auf lokale Unternehmen und Handwerker? Führt dies zu einem Verlust an kultureller Vielfalt?",
+          "Billige Flugreisen haben den internationalen Tourismus für Millionen von Menschen zugänglich gemacht. Welche wirtschaftlichen Vorteile bietet der Massentourismus? Welche negativen Auswirkungen hat der Tourismus auf die lokale Gemeinschaft und die Umwelt?",
+          "Viele Arbeitsplätze im verarbeitenden Gewerbe wurden von Industrieländern in Entwicklungsländer verlagert. Warum verlagern Unternehmen ihre Fabriken? Wie wirkt sich diese Globalisierung auf die Arbeitnehmer in beiden Ländern aus?",
+          "Deutsch ist zur dominierenden Sprache der internationalen Wirtschaft und Wissenschaft geworden. Warum hat Deutsch diesen globalen Status erreicht? Was sind die Nachteile einer globalen Sprache?",
+          "Einige Länder sind stark auf den Import von Lebensmitteln angewiesen, anstatt sie im Inland zu produzieren. Warum importieren Nationen Grundbedürfnisse? Welche Risiken bestehen, wenn man sich bei der Lebensmittelversorgung auf andere Länder verlässt?",
+          "Das Konzept eines universellen Grundeinkommens (UBI) wird von Ökonomen weltweit diskutiert. Welche Argumente sprechen dafür, jedem ein garantiertes Einkommen zu geben? Wie würde ein solches System finanziert werden?",
+          "Wirtschaftssanktionen werden oft von mächtigen Ländern eingesetzt, um andere Nationen zu bestrafen. Was sind die Ziele dieser Handelsbeschränkungen? Wer leidet am meisten, wenn ein Land sanktioniert wird?",
+          "Mit Kreditkarten und Privatkrediten können Menschen Dinge kaufen, die sie sich nicht sofort leisten können. Warum steigt die Verbraucherverschuldung weltweit? Welche langfristigen Folgen hat es, über seine Verhältnisse zu leben?",
+          "Die Sharing Economy (z. B. Uber, Airbnb) hat traditionelle Branchen revolutioniert. Warum sind diese Peer-to-Peer-Dienste so erfolgreich? Beuten diese Plattformen ihre Mitarbeiter aus?",
+          "Wirtschaftswachstum ist das vorrangige Ziel der meisten nationalen Regierungen. Ist endloses Wirtschaftswachstum auf einem Planeten mit endlichen Ressourcen möglich? Welche alternativen Möglichkeiten gibt es neben dem BIP, um den Erfolg eines Landes zu messen?"
+        ]
+      }
+    ]
+  }
+]

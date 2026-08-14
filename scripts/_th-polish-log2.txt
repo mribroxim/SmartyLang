@@ -1,0 +1,14 @@
+тЧЗ injected env (10) from .env // tip: тМШ multiple files { path: ['.env.local', '.env'] }
+Literary polish: th / р╕ар╕▓р╕йр╕▓р╣Др╕Чр╕в тАФ р╕зр╕гр╕гр╕Ур╕ир╕┤р╕ер╕Ыр╣М р╕ер╕╖р╣Ир╕Щр╣Др╕лр╕е р╣Ар╕Ыр╣Зр╕Щр╕Шр╕гр╕гр╕бр╕Кр╕▓р╕Хр╕┤
+Model: google/gemini-2.5-flash-lite concurrency=1
+  тЪа switching model тЖТ google/gemini-2.0-flash-exp:free
+Error: OpenRouter 404: {"error":{"message":"No endpoints found for google/gemini-2.0-flash-exp:free.","code":404},"user_id":"user_35qYes3QR3zTloCOwbHh3OggEq3"}
+    at polishBatch (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:269:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:320:22
+    at async worker (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:306:18)
+    at async Promise.all (index 0)
+    at async mapPool (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:309:3)
+    at async polishChunks (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:319:19)
+    at async polishTask2 (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:476:16)
+    at async main (file:///C:/Users/user/Desktop/Projects/Smarty%20English/scripts/polish-literary-packs.mjs:637:3)

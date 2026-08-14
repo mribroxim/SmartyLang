@@ -1,0 +1,300 @@
+- Ik ben student.
+- Zij heeft een rood boek.
+- De kat ligt op de mat.
+- Hij is mijn vriend.
+- Wij spelen graag met een bal.
+- Dit is een grote hond.
+- Ik heb een blauwe pen.
+- Zij zijn in het park.
+- De zon is heet.
+- Zij kan goed lezen.
+- Wij gaan naar school.
+- Dat is een kleine auto.
+- Hij rent snel.
+- De vogel zit in de boom.
+- Ik zie een gele bus.
+- Zij zijn blij.
+- Zij heeft een witte kat.
+- Wij lunchen.
+- Ik woon in een huis.
+- De vis is in het water.
+- Hij is een goede jongen.
+- Zij houdt van roze bloemen.
+- Wij spelen met speelgoed.
+- De man is lang.
+- Ik heb twee appels.
+- Hij zit op een stoel.
+- De lucht is blauw.
+- Zij drinken melk.
+- Zij schrijft met een potlood.
+- De auto is rood.
+- Ik ben zeven jaar oud.
+- Wij zien een grote boom.
+- De hond rent snel.
+- Hij heeft een groene hoed.
+- Zij is mijn zus.
+- De bal is rond.
+- Ik vind ijs lekker.
+- Zij zwemmen in het zwembad.
+- Het boek ligt op tafel.
+- Wij zingen een liedje.
+- Ze heeft lang haar.
+- De vogel kan vliegen.
+- Hij is een leraar.
+- Ik drink elke dag water.
+- De kat is zwart.
+- Zij spelen in de tuin.
+- Zij eet een appel.
+- De zon is geel.
+- Ik heb een nieuwe tas.
+- Hij loopt naar school.
+- De bloem is mooi.
+- Wij wonen in een grote stad.
+- Zij leest een verhaal.
+- Het potlood is kort.
+- Hij tekent graag.
+- Ik slaap in mijn bed.
+- De boom is groen.
+- Zij zijn mijn familie.
+- Zij draagt een rode jurk.
+- De melk is koud.
+- Ik kan hoog springen.
+- Hij heeft een kleine hond.
+- De stoel is blauw.
+- Wij houden van onze moeder.
+- Zij schildert een schilderij.
+- De bus is geel.
+- Hij is dokter.
+- Ik eet brood als ontbijt.
+- De deur is open.
+- Zij kijken thuis tv.
+- Zij speelt piano.
+- De hoed ligt op tafel.
+- Ik heb een goudvis.
+- Hij leest een boek.
+- Het water is warm.
+- Wij gaan naar de dierentuin.
+- Zij rent elke ochtend.
+- Het bureau is bruin.
+- Hij houdt van pizza.
+- Ik was mijn handen.
+- De maan is wit.
+- Zij zitten in de auto.
+- Zij heeft een mooie pop.
+- Het sap is zoet.
+- Ik zie de sterren.
+- Hij speelt met zijn broer.
+- Het ei ligt op het bord.
+- Wij hebben een blij thuis.
+- Zij draagt een blauwe blouse.
+- Het gras is groen.
+- Mijn naam is Tom.
+- De baby slaapt.
+- Ik zie een bruin paard.
+- Zij is mijn moeder.
+- Hij rijdt op een fiets.
+- De soep is heet.
+- Zij hebben een nieuw huis.
+- Ik poets mijn tanden.
+- De vogel zingt mooi.
+- Wij dansen graag.
+- Ze heeft een roze tas.
+- De klok hangt aan de muur.
+- Hij is boer.
+- Ik eet een sinaasappel.
+- De schoenen zijn zwart.
+- De kinderen zijn blij.
+- Ze schrijft een brief.
+- Het brood is vers.
+- Ik ga vroeg naar bed.
+- Hij heeft een rode fiets.
+- De kat drinkt melk.
+- We bezoeken onze oma.
+- Ze knipt het papier.
+- De lamp is fel.
+- Ze zijn goede vrienden.
+- Hij opent het raam.
+- Het kussen is zacht.
+- Ik hou van rennen.
+- Ze heeft een gele ballon.
+- De doos is leeg.
+- Hij is mijn vader.
+- Wij eten samen avondeten.
+- De vloer is schoon.
+- Zij kan tot tien tellen.
+- Ik hou van mijn hond.
+- De beker is vol.
+- Zij gaan naar de markt.
+- Hij draagt een grijze jas.
+- De bloem ruikt lekker.
+- Ik heb een rode appel.
+- Zij zingt onder de douche.
+- Het potlood is scherp.
+- Wij spelen in het zand.
+- Hij houdt van chocolademelk.
+- De spiegel is schoon.
+- De jongen is blij.
+- Zij leest elke avond.
+- De handdoek is zacht.
+- Ik kan mijn naam spellen.
+- Hij heeft een nieuw speeltje.
+- De steen is zwaar.
+- Ze zijn op het strand.
+- Ze springt over het touw.
+- De taart is zoet.
+- We maken een sneeuwpop.
+- Hij drinkt sinaasappelsap.
+- De sleutel is klein.
+- Ik heb een groene kikker.
+- Ze loopt naar de winkel.
+- De wolk is wit.
+- Hij is mijn opa.
+- Wij laten een vlieger op.
+- De zeep ruikt lekker.
+- Ze houden van wandelen.
+- Ze heeft een warme jas.
+- Het konijn is zacht.
+- Ik kan een huis tekenen.
+- Hij plant een bloem.
+- De lepel ligt op tafel.
+- Wij maken de kamer schoon.
+- Ze draagt buiten een hoed.
+- De vrachtwagen is groot.
+- Hij houdt van vissen.
+- Ik heb een knuffelbeer.
+- De regen is koud.
+- Zij bakken een taart.
+- Zij geeft de planten water.
+- De vlag is rood en blauw.
+- Ik zit in de eerste klas.
+- Hij vangt de bal.
+- De deken is warm.
+- Wij zien een regenboog.
+- Zij heeft een blauwe paraplu.
+- Het fornuis is heet.
+- Hij is mijn buurman.
+- Ik drink 's nachts melk.
+- Het hek is wit.
+- Zij gaan naar de bibliotheek.
+- Zij tekent met kleurpotloden.
+- Het pad is lang.
+- Ik hou van kaasbroodjes.
+- Hij heeft een kleine zus.
+- De bel rinkelt luid.
+- Wij kijken naar de vogels.
+- Zij telt de sterren.
+- Het kleed is zacht.
+- Hij kan een boom klimmen.
+- Ik heb een zilveren munt.
+- De ladder is hoog.
+- Zij maken een zandkasteel.
+- Zij vouwt het papier.
+- De plank is hoog.
+- Ik hou van mijn school.
+- Hij deelt zijn lunch.
+- De mand is vol.
+- Wij gaan naar de boerderij.
+- Zij heeft een hamster als huisdier.
+- Het touw is lang.
+- Hij is een aardige jongen.
+- Ik vind een mooie schelp.
+- De heuvel is steil.
+- Zij nemen de bus.
+- Zij plukt een bloem.
+- Het koekje is knapperig.
+- Ik kan mijn schoenen strikken.
+- Hij voert de vissen.
+- De servet is wit.
+- Wij houden van popcorn.
+- Zij heeft een nieuwe jurk.
+- De tuin is mooi.
+- Hij wast zijn gezicht.
+- Ik zie een vallende ster.
+- De pannenkoek is rond.
+- Zij slapen in een tent.
+- Zij knuffelt haar moeder.
+- De kaars is helder.
+- Ik heb een rode bolderkar.
+- Hij trapt tegen de bal.
+- Het ijs is erg koud.
+- Wij rapen bladeren op.
+- Ze lakt haar nagels.
+- Het bankje is van hout.
+- Hij is een dapper kind.
+- Ik eet havermout als ontbijt.
+- Het nest heeft eieren.
+- Ze hebben een nieuwe puppy.
+- Ze wiegt de baby.
+- De kan is zwaar.
+- Ik kan op één been hinkelen.
+- Hij harkte de bladeren.
+- De sjaal is warm.
+- We bezoeken het museum.
+- Ze dekt de tafel.
+- Het standbeeld is oud.
+- Hij houdt van aardbeienjam.
+- Ik heb een pluizig kussen.
+- De brug is lang.
+- Ze kijken naar de zonsondergang.
+- Ze kamt haar haar.
+- De mand is leeg.
+- Ik ben een goede hulp.
+- Hij schildert een schilderij.
+- De glijbaan is glad.
+- We bakken samen koekjes.
+- Zij heeft een paarse rugzak.
+- De schommel is leuk.
+- Hij kan een deuntje fluiten.
+- Ik tel tot twintig.
+- De poort is open.
+- Zij springen in plassen.
+- Zij stof de plank af.
+- De munt is glimmend.
+- Ik hou van tuinieren.
+- Hij draagt een tas.
+- Het havermout is warm.
+- We zeggen dankjewel.
+- Zij heeft een schildpad als huisdier.
+- De liniaal is recht.
+- Hij vouwt zijn kleren.
+- Ik zie een lieveheersbeestje.
+- De want is zacht.
+- Ze kleuren een plaatje.
+- Ze roert in de soep.
+- De tent is groot.
+- Ik kan in mijn vingers knippen.
+- Hij begiet het gras.
+- De knoop is rond.
+- We hebben plezier buiten.
+- Ze knoopt een lint vast.
+- De wagen is rood.
+- Hij eet een banaan.
+- Ik geef een knuffel.
+- Het dak is grijs.
+- Ze kijken naar boeken.
+- Ze pelt een sinaasappel.
+- Het frame is van hout.
+- Ik vind het leuk om te touwtjespringen.
+- Hij heeft een muntenverzameling.
+- De pot zit vol snoep.
+- We gaan een wandeling maken.
+- Ze steekt een kaars aan.
+- De schaduw is lang.
+- Hij is een snelle hardloper.
+- Ik plant een zaadje.
+- De handdoek hangt aan de haak.
+- Zij houden een picknick.
+- Ze vlecht haar haar.
+- De ballon knapt.
+- Ik kan fluiten.
+- Hij bakt een taart.
+- De vlieger vliegt hoog.
+- Wij zien de oceaan.
+- Ze heeft een schelpjesketting.
+- De golf is groot.
+- Hij houdt van kleuren.
+- Ik bouw een toren met blokken.
+- De veer is licht.
+- Wij houden van elkaar.
+- Ze lacht elke dag.
+- De wereld is mooi.

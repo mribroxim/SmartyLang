@@ -1,0 +1,292 @@
+.byType.bar[7].chartData.unit
+  % of total electricity generation
+
+.byType.bar[29].chartData.unit
+  % of adults (15+) who are literate
+
+.byType.bar[32].chartData.unit
+  % of STEM university enrollment
+
+.byType.bar[40].chartData.unit
+  % of population with internet access
+
+.byType.bar[45].chartData.unit
+  % of total freshwater withdrawals
+
+.byType.bar[48].chartData.unit
+  % of people with a mental health disorder
+
+.byType.bar[59].chartData.unit
+  % of total public education spending
+
+.byType.bar[60].chartData.unit
+  % of total municipal solid waste
+
+.byType.bar[61].chartData.unit
+  % of total electricity generation
+
+.byType.bar[67].chartData.unit
+  % of total dietary protein intake
+
+.byType.bar[68].chartData.unit
+  % of employees in each industry
+
+.byType.bar[69].chartData.unit
+  % of total public health budget
+
+.byType.bar[76].chartData.unit
+  % of total national CO₂ emissions
+
+.byType.line[2].chartData.unit
+  Price (thousands of local currency)
+
+.byType.line[48].chartData.unit
+  % of each age group in labour force
+
+.byType.line[62].chartData.unit
+  % of total electricity generation
+
+.byType.line[66].chartData.unit
+  Gross enrollment ratio (% of relevant age group)
+
+.byType.pie[2].chartData.charts[0].title
+  Reasons for Studying English (2023)
+
+.byType.pie[27].chartData.charts[0].title
+  Causes of Child Malnutrition (2022)
+
+.byType.pie[44].chartData.charts[0].title
+  Reasons for Emigration – UK Nationals (2021)
+
+.byType.pie[49].chartData.charts[0].title
+  Causes of Wildlife Decline (2022)
+
+.byType.map[86].chartData.periods[1].elements[0].label
+  Stately
+Home (open to visitors)
+
+.byType.process[0].chartData.stages[0].description
+  Used paper is collected from homes and businesses in recycling bins and transported by trucks to a recycling centre.
+
+.byType.process[0].chartData.stages[1].description
+  Paper is sorted by type (newspaper, cardboard, office paper) and non-paper items such as plastic and staples are removed.
+
+.byType.process[0].chartData.stages[2].description
+  Sorted paper is shredded and mixed with water and chemicals in large tanks to create a wet mixture called pulp.
+
+.byType.process[0].chartData.stages[3].description
+  The pulp is filtered through fine screens to remove glue, staples, and other contaminants.
+
+.byType.process[0].chartData.stages[4].description
+  Air bubbles are injected into the pulp. Ink particles rise to the surface on the bubbles and are skimmed off.
+
+.byType.process[0].chartData.stages[5].description
+  (Optional) The pulp is bleached with hydrogen peroxide to produce bright white paper.
+
+.byType.process[0].chartData.stages[6].description
+  Clean pulp is spread onto a moving mesh screen where water drains away and fibres bond together to form a paper sheet.
+
+.byType.process[0].chartData.stages[7].description
+  The sheet passes through heated rollers to remove remaining moisture and is wound into large rolls.
+
+.byType.process[0].chartData.stages[8].description
+  Finished recycled paper rolls are cut to size and shipped to manufacturers of paper products.
+
+.byType.process[1].chartData.stages[0].description
+  Adult salmon migrate upstream from the ocean to freshwater rivers. Females lay eggs in gravel beds; males fertilise them. Most adults die after spawning.
+
+.byType.process[1].chartData.stages[1].description
+  Fertilised eggs develop inside the gravel for 6–12 weeks, depending on water temperature.
+
+.byType.process[1].chartData.stages[2].description
+  Eggs hatch into tiny fish called alevin, which remain in the gravel and absorb nutrients from an attached yolk sac.
+
+.byType.process[1].chartData.stages[3].description
+  Once the yolk sac is absorbed, the young fish (fry) emerge from the gravel and begin feeding on insects and plankton in the stream.
+
+.byType.process[1].chartData.stages[4].description
+  Over 1–3 years, fry grow into parr and develop dark markings (parr marks) that camouflage them in the river.
+
+.byType.process[1].chartData.stages[5].description
+  Parr undergo physiological changes (smoltification) to adapt to saltwater and migrate downstream toward the ocean.
+
+.byType.process[1].chartData.stages[6].description
+  Salmon spend 1–4 years at sea, growing rapidly by feeding on fish and crustaceans. They may travel thousands of kilometres.
+
+.byType.process[1].chartData.stages[7].description
+  Mature adults use their sense of smell to navigate back to their birth river to spawn, completing the life cycle.
+
+.byType.process[2].chartData.stages[0].description
+  Sunlight strikes the surface of photovoltaic (PV) cells embedded in the solar panel.
+
+.byType.process[2].chartData.stages[1].description
+  PV cells convert light energy into direct current (DC) electricity. Cells are connected in series to build up voltage.
+
+.byType.process[2].chartData.stages[2].description
+  DC electricity flows into an inverter, which converts it into alternating current (AC) electricity compatible with home appliances.
+
+.byType.process[2].chartData.stages[3].description
+  AC electricity passes through the home's fuse box and is directed to lights, sockets, and appliances throughout the building.
+
+.byType.process[2].chartData.stages[4].description
+  (Optional) Surplus electricity is stored in batteries for use at night or during cloudy periods.
+
+.byType.process[2].chartData.stages[5].description
+  Any remaining surplus is fed back into the national grid via a bidirectional smart meter, and homeowners may receive income through feed-in tariffs.
+
+.byType.process[2].chartData.stages[6].description
+  The smart meter records both electricity consumed from the grid and electricity exported, enabling accurate billing and earnings.
+
+.types[0].prompts[0].chartData.note
+  Low = below national median; Middle = 75–200% of median; High = above 200%.
+
+.types[0].prompts[46].chartData.headers[3]
+  Organic Share of Food Market (%)
+
+.types[0].prompts[63].chartData.note
+  AQI > 100 is considered unhealthy for sensitive groups.
+
+.types[0].prompts[73].chartData.note
+  WHO recommends at least 9 m² of green space per person.
+
+.types[0].prompts[77].chartData.note
+  UN 30×30 target: 30% of oceans protected by 2030.
+
+.types[1].prompts[7].chartData.unit
+  % of total electricity generation
+
+.types[1].prompts[29].chartData.unit
+  % of adults (15+) who are literate
+
+.types[1].prompts[32].chartData.unit
+  % of STEM university enrollment
+
+.types[1].prompts[40].chartData.unit
+  % of population with internet access
+
+.types[1].prompts[45].chartData.unit
+  % of total freshwater withdrawals
+
+.types[1].prompts[48].chartData.unit
+  % of people with a mental health disorder
+
+.types[1].prompts[59].chartData.unit
+  % of total public education spending
+
+.types[1].prompts[60].chartData.unit
+  % of total municipal solid waste
+
+.types[1].prompts[61].chartData.unit
+  % of total electricity generation
+
+.types[1].prompts[67].chartData.unit
+  % of total dietary protein intake
+
+.types[1].prompts[68].chartData.unit
+  % of employees in each industry
+
+.types[1].prompts[69].chartData.unit
+  % of total public health budget
+
+.types[1].prompts[76].chartData.unit
+  % of total national CO₂ emissions
+
+.types[2].prompts[2].chartData.unit
+  Price (thousands of local currency)
+
+.types[2].prompts[48].chartData.unit
+  % of each age group in labour force
+
+.types[2].prompts[62].chartData.unit
+  % of total electricity generation
+
+.types[2].prompts[66].chartData.unit
+  Gross enrollment ratio (% of relevant age group)
+
+.types[3].prompts[2].chartData.charts[0].title
+  Reasons for Studying English (2023)
+
+.types[3].prompts[27].chartData.charts[0].title
+  Causes of Child Malnutrition (2022)
+
+.types[3].prompts[44].chartData.charts[0].title
+  Reasons for Emigration – UK Nationals (2021)
+
+.types[3].prompts[49].chartData.charts[0].title
+  Causes of Wildlife Decline (2022)
+
+.types[4].prompts[86].chartData.periods[1].elements[0].label
+  Stately
+Home (open to visitors)
+
+.types[5].prompts[0].chartData.stages[0].description
+  Used paper is collected from homes and businesses in recycling bins and transported by trucks to a recycling centre.
+
+.types[5].prompts[0].chartData.stages[1].description
+  Paper is sorted by type (newspaper, cardboard, office paper) and non-paper items such as plastic and staples are removed.
+
+.types[5].prompts[0].chartData.stages[2].description
+  Sorted paper is shredded and mixed with water and chemicals in large tanks to create a wet mixture called pulp.
+
+.types[5].prompts[0].chartData.stages[3].description
+  The pulp is filtered through fine screens to remove glue, staples, and other contaminants.
+
+.types[5].prompts[0].chartData.stages[4].description
+  Air bubbles are injected into the pulp. Ink particles rise to the surface on the bubbles and are skimmed off.
+
+.types[5].prompts[0].chartData.stages[5].description
+  (Optional) The pulp is bleached with hydrogen peroxide to produce bright white paper.
+
+.types[5].prompts[0].chartData.stages[6].description
+  Clean pulp is spread onto a moving mesh screen where water drains away and fibres bond together to form a paper sheet.
+
+.types[5].prompts[0].chartData.stages[7].description
+  The sheet passes through heated rollers to remove remaining moisture and is wound into large rolls.
+
+.types[5].prompts[0].chartData.stages[8].description
+  Finished recycled paper rolls are cut to size and shipped to manufacturers of paper products.
+
+.types[5].prompts[1].chartData.stages[0].description
+  Adult salmon migrate upstream from the ocean to freshwater rivers. Females lay eggs in gravel beds; males fertilise them. Most adults die after spawning.
+
+.types[5].prompts[1].chartData.stages[1].description
+  Fertilised eggs develop inside the gravel for 6–12 weeks, depending on water temperature.
+
+.types[5].prompts[1].chartData.stages[2].description
+  Eggs hatch into tiny fish called alevin, which remain in the gravel and absorb nutrients from an attached yolk sac.
+
+.types[5].prompts[1].chartData.stages[3].description
+  Once the yolk sac is absorbed, the young fish (fry) emerge from the gravel and begin feeding on insects and plankton in the stream.
+
+.types[5].prompts[1].chartData.stages[4].description
+  Over 1–3 years, fry grow into parr and develop dark markings (parr marks) that camouflage them in the river.
+
+.types[5].prompts[1].chartData.stages[5].description
+  Parr undergo physiological changes (smoltification) to adapt to saltwater and migrate downstream toward the ocean.
+
+.types[5].prompts[1].chartData.stages[6].description
+  Salmon spend 1–4 years at sea, growing rapidly by feeding on fish and crustaceans. They may travel thousands of kilometres.
+
+.types[5].prompts[1].chartData.stages[7].description
+  Mature adults use their sense of smell to navigate back to their birth river to spawn, completing the life cycle.
+
+.types[5].prompts[2].chartData.stages[0].description
+  Sunlight strikes the surface of photovoltaic (PV) cells embedded in the solar panel.
+
+.types[5].prompts[2].chartData.stages[1].description
+  PV cells convert light energy into direct current (DC) electricity. Cells are connected in series to build up voltage.
+
+.types[5].prompts[2].chartData.stages[2].description
+  DC electricity flows into an inverter, which converts it into alternating current (AC) electricity compatible with home appliances.
+
+.types[5].prompts[2].chartData.stages[3].description
+  AC electricity passes through the home's fuse box and is directed to lights, sockets, and appliances throughout the building.
+
+.types[5].prompts[2].chartData.stages[4].description
+  (Optional) Surplus electricity is stored in batteries for use at night or during cloudy periods.
+
+.types[5].prompts[2].chartData.stages[5].description
+  Any remaining surplus is fed back into the national grid via a bidirectional smart meter, and homeowners may receive income through feed-in tariffs.
+
+.types[5].prompts[2].chartData.stages[6].description
+  The smart meter records both electricity consumed from the grid and electricity exported, enabling accurate billing and earnings.

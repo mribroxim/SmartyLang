@@ -1,0 +1,300 @@
+- Soy estudiante.
+- Ella tiene un libro rojo.
+- El gato está en la alfombra.
+- Él es mi amigo.
+- Nos gusta jugar a la pelota.
+- Este es un perro grande.
+- Tengo un bolígrafo azul.
+- Ellos están en el parque.
+- Hace sol y calor.
+- Ella sabe leer bien.
+- Vamos a la escuela.
+- Ese es un coche pequeño.
+- Él corre rápido.
+- El pájaro está en el árbol.
+- Veo un autobús amarillo.
+- Ellos están felices.
+- Ella tiene un gato blanco.
+- Almorzamos al mediodía.
+- Vivo en una casa.
+- El pez está en el agua.
+- Él es un buen chico.
+- A ella le gustan las flores rosas.
+- Jugamos con juguetes.
+- El hombre es alto.
+- Tengo dos manzanas.
+- Él se sienta en una silla.
+- El cielo es azul.
+- Ellos beben leche.
+- Ella escribe con un lápiz.
+- El coche es rojo.
+- Tengo siete años.
+- Vemos un árbol grande.
+- El perro corre rápido.
+- Él tiene un sombrero verde.
+- Ella es mi hermana.
+- La pelota es redonda.
+- Me gusta el helado.
+- Ellos nadan en la piscina.
+- El libro está en la mesa.
+- Cantamos una canción.
+- Ella tiene el pelo largo.
+- El pájaro puede volar.
+- Él es un profesor.
+- Bebo agua todos los días.
+- El gato es negro.
+- Ellos juegan en el jardín.
+- Ella come una manzana.
+- El sol es amarillo.
+- Tengo una bolsa nueva.
+- Él camina a la escuela.
+- La flor es bonita.
+- Vivimos en una ciudad grande.
+- Ella lee un cuento.
+- El lápiz es corto.
+- A él le gusta dibujar.
+- Duermo en mi cama.
+- El árbol es verde.
+- Ellos son mi familia.
+- Ella lleva un vestido rojo.
+- La leche está fría.
+- Puedo saltar alto.
+- Él tiene un perro pequeño.
+- La silla es azul.
+- Amamos a nuestra madre.
+- Ella pinta un cuadro.
+- El autobús es amarillo.
+- Él es doctor.
+- Como pan para el desayuno.
+- La puerta está abierta.
+- Ellos ven la televisión en casa.
+- Ella toca el piano.
+- El sombrero está sobre la mesa.
+- Tengo un pez mascota.
+- Él lee un libro.
+- El agua está tibia.
+- Vamos al zoológico.
+- Ella corre cada mañana.
+- El escritorio es marrón.
+- A él le gusta la pizza.
+- Me lavo las manos.
+- La luna es blanca.
+- Ellos están en el coche.
+- Ella tiene una muñeca bonita.
+- El jugo es dulce.
+- Puedo ver las estrellas.
+- Él juega con su hermano.
+- El huevo está en el plato.
+- Tenemos un hogar feliz.
+- Ella lleva una camisa azul.
+- La hierba es verde.
+- Mi nombre es Tom.
+- El bebé está durmiendo.
+- Veo un caballo marrón.
+- Ella es mi madre.
+- Él monta en bicicleta.
+- La sopa está caliente.
+- Ellos tienen una casa nueva.
+- Me cepillo los dientes.
+- El pájaro canta dulcemente.
+- Nos gusta bailar.
+- Ella tiene una bolsa rosa.
+- El reloj está en la pared.
+- Él es granjero.
+- Yo como una naranja.
+- Los zapatos son negros.
+- Los niños están felices.
+- Ella escribe una carta.
+- El pan está fresco.
+- Me acuesto temprano.
+- Él tiene una bicicleta roja.
+- El gato bebe leche.
+- Visitamos a nuestra abuela.
+- Ella corta el papel.
+- La lámpara es brillante.
+- Ellos son buenos amigos.
+- Él abre la ventana.
+- La almohada es suave.
+- Me gusta correr.
+- Ella tiene un globo amarillo.
+- La caja está vacía.
+- Él es mi papá.
+- Cenamos juntos.
+- El suelo está limpio.
+- Ella puede contar hasta diez.
+- Amo a mi perro.
+- La taza está llena.
+- Ellos van al mercado.
+- Él lleva un abrigo gris.
+- La flor huele bien.
+- Tengo una manzana roja.
+- Ella canta en la ducha.
+- El lápiz está afilado.
+- Jugamos en la arena.
+- A él le gusta la leche con chocolate.
+- El espejo está limpio.
+- El niño está feliz.
+- Ella lee todas las noches.
+- La toalla es suave.
+- Puedo deletrear mi nombre.
+- Él tiene un juguete nuevo.
+- La piedra es pesada.
+- Ellos están en la playa.
+- Ella salta sobre la cuerda.
+- El pastel es dulce.
+- Hacemos un muñeco de nieve.
+- Él bebe jugo de naranja.
+- La llave es pequeña.
+- Tengo una rana verde.
+- Ella camina a la tienda.
+- La nube es blanca.
+- Él es mi abuelo.
+- Volamos una cometa.
+- El jabón huele bien.
+- A ellos les gusta hacer senderismo.
+- Ella tiene un abrigo cálido.
+- El conejo es suave.
+- Puedo dibujar una casa.
+- Él planta una flor.
+- La cuchara está en la mesa.
+- Limpiamos la habitación.
+- Ella usa un sombrero afuera.
+- El camión es grande.
+- A él le gusta pescar.
+- Tengo un oso de peluche.
+- La lluvia está fría.
+- Ellos hornean un pastel.
+- Ella riega las plantas.
+- La bandera es roja y azul.
+- Estoy en primer grado.
+- Él atrapa la pelota.
+- La manta está caliente.
+- Vemos un arcoíris.
+- Ella tiene un paraguas azul.
+- La estufa está caliente.
+- Él es mi vecino.
+- Bebo leche por la noche.
+- La valla es blanca.
+- Ellos van a la biblioteca.
+- Ella dibuja con crayones.
+- El camino es largo.
+- Me gustan los sándwiches de queso.
+- Él tiene una hermana pequeña.
+- La campana suena fuerte.
+- Vemos los pájaros.
+- Ella cuenta las estrellas.
+- La alfombra es suave.
+- Él puede trepar un árbol.
+- Tengo una moneda de plata.
+- La escalera es alta.
+- Ellos hacen un castillo de arena.
+- Ella dobla el papel.
+- El estante está alto.
+- Amo mi escuela.
+- Él comparte su almuerzo.
+- La cesta está llena.
+- Vamos a la granja.
+- Ella tiene un hámster de mascota.
+- La cuerda es larga.
+- Él es un chico amable.
+- Encuentro una concha bonita.
+- La colina es empinada.
+- Ellos toman el autobús.
+- Ella escoge una flor.
+- La galleta está crujiente.
+- Puedo atarme los zapatos.
+- Él alimenta a los peces.
+- La servilleta es blanca.
+- Nos gusta el pochoclo.
+- Ella tiene un vestido nuevo.
+- El jardín es hermoso.
+- Él se lava la cara.
+- Veo una estrella fugaz.
+- El panqueque es redondo.
+- Ellos duermen en una tienda de campaña.
+- Ella abraza a su madre.
+- La vela está encendida.
+- Tengo un carro rojo.
+- Él patea la pelota.
+- El hielo está muy frío.
+- Recogemos hojas.
+- Ella se pinta las uñas.
+- El banco es de madera.
+- Él es un niño valiente.
+- Como avena para el desayuno.
+- El nido tiene huevos.
+- Ellos tienen un cachorro nuevo.
+- Ella mece al bebé.
+- La jarra es pesada.
+- Puedo saltar en un pie.
+- Él rastrilla las hojas.
+- La bufanda es cálida.
+- Visitamos el museo.
+- Ella pone la mesa.
+- La estatua es antigua.
+- A él le gusta la mermelada de fresa.
+- Tengo una almohada esponjosa.
+- El puente es largo.
+- Ellos miran el atardecer.
+- Ella se peina el cabello.
+- La cesta está vacía.
+- Soy un buen ayudante.
+- Él pinta un cuadro.
+- El tobogán está resbaladizo.
+- Horneamos galletas juntos.
+- Ella tiene una mochila morada.
+- El columpio es divertido.
+- Él sabe silbar una melodía.
+- Cuento hasta veinte.
+- La puerta está abierta.
+- Ellos saltan en los charcos.
+- Ella quita el polvo del estante.
+- La moneda brilla.
+- Me gusta la jardinería.
+- Él lleva una bolsa.
+- La avena está caliente.
+- Decimos gracias.
+- Ella tiene una tortuga como mascota.
+- La regla es recta.
+- Él dobla su ropa.
+- Veo una mariquita.
+- La manopla es suave.
+- Ellos colorean un dibujo.
+- Ella remueve la sopa.
+- La tienda de campaña es grande.
+- Puedo chasquear los dedos.
+- Él riega el césped.
+- El botón es redondo.
+- Nos divertimos afuera.
+- Ella ata una cinta.
+- El carro es rojo.
+- Él come un plátano.
+- Doy un abrazo.
+- El tejado es gris.
+- Ellos miran libros.
+- Ella pela una naranja.
+- El marco es de madera.
+- Me gusta saltar.
+- Él tiene una colección de monedas.
+- El frasco está lleno de caramelos.
+- Vamos a dar un paseo.
+- Ella enciende una vela.
+- La sombra es larga.
+- Él es un corredor rápido.
+- Yo planto una semilla.
+- La toalla cuelga del gancho.
+- Ellos hacen un picnic.
+- Ella se trenza el pelo.
+- La burbuja explota.
+- Yo sé silbar.
+- Él hornea un pastel.
+- La cometa vuela alto.
+- Nosotros vemos el océano.
+- Ella tiene un collar de conchas.
+- La ola es grande.
+- A él le gusta colorear.
+- Yo construyo una torre con bloques.
+- La pluma es ligera.
+- Nos amamos.
+- Ella sonríe todos los días.
+- El mundo es hermoso.

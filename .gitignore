@@ -1,0 +1,44 @@
+# Dependencies & build
+node_modules/
+functions/node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+npm-debug.log*
+firebase-debug.log*
+firebase-debug.*.log
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.local
+serviceAccount*.json
+*-firebase-adminsdk-*.json
+
+# Firebase / tooling caches
+.firebase/
+.claude/
+.vscode/
+.idea/
+
+# Local polish / audit dumps (not product code)
+.polish-*.txt
+.tmp-*
+.pt-*
+_pl_*
+_task2_*
+_cr_compare.txt
+logs/
+vocab-quality-report.json
+vocab-report.json
+
+# Raw source asset folders (built copies live under public/data/)
+Shadowing_Resources/
+Audio Dictation/
+Comprehensive Listening/
+Comprehensive Reading/
+IELTS Reading/
+Interactive Reading/

@@ -1,0 +1,300 @@
+- Ela está lendo um livro na biblioteca.
+- Eles jogam futebol todo sábado.
+- Meu irmão tem uma bicicleta nova.
+- Nós vamos à praia amanhã.
+- Ele não gosta de café.
+- As crianças estão brincando no jardim.
+- Eu visitei minha avó no fim de semana passado.
+- Ela sempre acorda às sete horas.
+- Eles ficaram felizes em nos ver.
+- Ele é mais alto que a irmã dele.
+- Nós compramos algumas maçãs no mercado.
+- O cachorro está dormindo debaixo da mesa.
+- Ela sabe falar francês e português.
+- Eles estavam assistindo a um filme ontem à noite.
+- Meu pai trabalha em um hospital.
+- Eu nunca estive no Japão.
+- Nós vamos jantar em um restaurante hoje à noite.
+- O gato está se escondendo atrás do sofá.
+- Ele foi a Londres no verão passado.
+- Ela não come carne.
+- Estamos aprendendo a cozinhar.
+- O tempo está mais frio hoje do que ontem.
+- Eles já terminaram o dever de casa.
+- Eu geralmente tomo banho de manhã.
+- Ela estava voltando para casa quando começou a chover.
+- Meu melhor amigo mora na casa ao lado.
+- Nós visitaremos o museu na próxima semana.
+- Ele perdeu as chaves de novo.
+- As crianças estão animadas com a viagem.
+- Preciso comprar leite e pão.
+- Eles fizeram um boneco de neve no parque.
+- Ela está usando um vestido lindo.
+- Estávamos cansados depois da longa caminhada.
+- Ele vai de carro para o trabalho todas as manhãs.
+- As flores no jardim estão desabrochando.
+- Eu já almocei.
+- Ela encontrou a amiga no café.
+- Não temos dever de casa hoje.
+- O bebê está chorando porque está com fome.
+- Ele vai comprar um carro novo no mês que vem.
+- Eles nadaram no lago ontem.
+- Minha irmã é mais velha que eu.
+- Eu estava cozinhando o jantar quando você ligou.
+- Ela sempre escova os dentes antes de dormir.
+- O filme começa às oito horas.
+- Nós gostamos muito da festa.
+- Ele tem que terminar o trabalho até sexta-feira.
+- O gato está sentado no parapeito da janela.
+- Ela comprou algumas flores para a mãe dela.
+- Estou me sentindo muito melhor hoje.
+- Eles estavam jogando xadrez quando eu cheguei.
+- Ele não sabe nadar.
+- Nós vamos te encontrar na estação.
+- Os pássaros estão cantando nas árvores.
+- Eu moro nesta cidade há cinco anos.
+- Ela estava cozinhando espaguete para o jantar.
+- Eles vão à academia três vezes por semana.
+- Ele caiu da bicicleta e machucou o joelho.
+- Estamos ansiosos pelas férias.
+- A sopa está muito saborosa.
+- Ela tem muitos livros no quarto dela.
+- Eu nasci em abril.
+- Eles vão se mudar para uma casa nova.
+- Ele sempre chega atrasado para a aula.
+- Nós vimos um arco-íris lindo depois da tempestade.
+- O café está quente demais para beber.
+- Ela está ajudando a mãe dela na cozinha.
+- Eu nunca vi um cachorro tão grande.
+- Eles estavam rindo da piada engraçada.
+- Ele quer ser médico quando crescer.
+- Nós demos uma caminhada ao longo do rio.
+- A loja fecha às nove da noite.
+- Ela escreveu uma carta para a prima dela.
+- Estou economizando dinheiro para comprar um violão.
+- As crianças estão desenhando com giz de cera.
+- Ele já arrumou a mala dele.
+- Nós estávamos cantando músicas ao redor da fogueira.
+- O trem sai em dez minutos.
+- Ela não gosta de acordar cedo nos fins de semana.
+- Eu o conheço desde que éramos crianças.
+- Estão construindo uma nova escola no nosso bairro.
+- Ele pescou um peixe no rio.
+- Teremos uma prova na próxima segunda-feira.
+- A salada precisa de mais sal.
+- Ela está usando um casaco quente porque está frio.
+- Esqueci de trazer meu guarda-chuva.
+- Eles visitaram o zoológico no domingo passado.
+- Ele estava lendo um jornal no trem.
+- Vamos pintar o quarto de azul.
+- O bebê aprendeu a andar.
+- Ela fez um bolo para o meu aniversário.
+- Eu nunca andei a cavalo antes.
+- Eles estavam sentados no jardim.
+- Ele não tem irmãos nem irmãs.
+- Vamos pedir pizza para o jantar hoje à noite.
+- O professor fez uma pergunta difícil.
+- Ela está procurando os óculos dela.
+- Terminei meu projeto ontem à noite.
+- Eles vão para a Espanha nas férias.
+- Ele estava ouvindo música no quarto dele.
+- Temos comida suficiente para todos.
+- O livro que estou lendo é muito interessante.
+- Ela regou as plantas esta manhã.
+- Eu não entendo este problema de matemática.
+- Eles jogaram jogos na festa.
+- Ele está resfriado e precisa descansar.
+- Estamos planejando uma surpresa para o aniversário dela.
+- O ônibus chegou atrasado hoje.
+- Ela ensinou português no Japão no ano passado.
+- Eu geralmente vou para a cama às dez horas.
+- Eles estavam correndo na corrida.
+- Ele estava comendo um sanduíche no almoço.
+- Nós nunca fomos a um show.
+- O tapete precisa ser aspirado.
+- Ela coleciona selos de diferentes países.
+- Estou aprendendo a tocar violão.
+- Eles dirigiram para as montanhas para o fim de semana.
+- Ele quebrou seu brinquedo favorito.
+- Ficaremos em um hotel perto da praia.
+- A sopa de tomate é a minha favorita.
+- Ela estava esperando o ônibus no ponto.
+- Preciso lavar minhas roupas hoje.
+- Eles têm um lindo jardim cheio de rosas.
+- Ele tem medo de aranhas.
+- Nós caminhamos ao redor do lago esta manhã.
+- O frango está cozinhando no forno.
+- Ela tingiu o cabelo de loiro.
+- Vou escrever uma carta para minha avó.
+- Eles estavam dançando no casamento.
+- Ele nunca toma café da manhã antes da escola.
+- Nós já vimos esse filme duas vezes.
+- A neve caía suavemente.
+- Ela é boa em tocar piano.
+- Perdi minha carteira em algum lugar no shopping.
+- Eles vão adotar um cachorro.
+- Ele estava consertando sua bicicleta na garagem.
+- Fizemos um piquenique no parque ontem.
+- A limonada está azeda, mas refrescante.
+- Ela colocou um pouco de açúcar no chá dela.
+- Preciso comprar um presente para meu amigo.
+- Eles vão se mudar para o Canadá no ano que vem.
+- Ele se interessa por exploração espacial.
+- Nós terminamos de limpar a casa.
+- As laranjas são importadas da Espanha.
+- Ela usava um colar lindo.
+- Eu geralmente como cereal no café da manhã.
+- Eles conversaram sobre seus planos para o futuro.
+- Ele nunca comeu sushi antes.
+- Nós vamos ao cinema hoje à noite.
+- A rua está decorada com luzes.
+- Ela varreu o chão e lavou a louça.
+- Estudo português há dois anos.
+- Eles estavam jogando cartas quando eu saí.
+- Ele adormeceu durante o filme.
+- Nós visitamos a galeria de arte no sábado.
+- O frango está um pouco apimentado.
+- Ela está arrumando as malas para a viagem.
+- Eu terminei de ler aquele romance na semana passada.
+- Eles construíram uma casa na árvore no quintal.
+- Ele estava pintando um quadro de um barco.
+- Não temos planos para o fim de semana.
+- O bebê está aprendendo a falar.
+- Ela abriu a janela para deixar entrar ar fresco.
+- Tenho que estudar para o meu exame amanhã.
+- Eles pegaram o trem bem a tempo.
+- Ele está economizando para comprar um telefone novo.
+- Cozinhamos o jantar juntos em família.
+- O museu fecha às segundas-feiras.
+- Ela estava falando ao telefone com a amiga.
+- Nunca experimentei bungee jumping.
+- Eles escalaram até o topo da montanha.
+- Ele pendurou o casaco no gancho perto da porta.
+- Estamos fazendo um churrasco no quintal.
+- O bolo estava delicioso e muito doce.
+- Ela alimenta o gato dela duas vezes por dia.
+- Deixei meu telefone cair e quebrei a tela.
+- Eles estão estudando para o exame final.
+- Ele estava passeando com o cachorro dele no parque.
+- Nós nos conhecemos há dez anos.
+- A cadeira é feita de madeira.
+- Ela dobrou a roupa e guardou-a.
+- Estou pensando no que cozinhar para o jantar.
+- Eles navegaram pelo lago num pequeno barco.
+- Ele não gosta de tempo frio.
+- Chegaremos ao aeroporto às três.
+- O pão está fresco da padaria.
+- Ela tem um emprego de meio período numa livraria.
+- Eu costumo ouvir música enquanto trabalho.
+- Eles estavam a caminhar pela floresta.
+- Ele trancou a porta antes de sair.
+- Estamos entusiasmados com o novo projeto.
+- A água da piscina está muito fria.
+- Ela prendeu o cabelo num rabo de cavalo.
+- Tenho de renovar o meu passaporte este ano.
+- Eles jogaram futebol à chuva.
+- Ele derramou sumo na toalha de mesa.
+- Vamos adotar um gato do abrigo.
+- O trabalho de casa foi difícil, mas interessante.
+- Ela está a aprender a conduzir um carro.
+- Queimei o dedo enquanto cozinhava.
+- Eles esperavam pelos resultados nervosamente.
+- Ele encheu o copo com água fria.
+- Somos amigos desde o jardim de infância.
+- O avião decolou ao nascer do sol.
+- Ela pendurou o quadro na parede.
+- Prefiro chá a café pela manhã.
+- Eles estão reformando a cozinha este mês.
+- Ele tirou uma foto da bela vista.
+- Vamos celebrar a véspera de Ano Novo em casa.
+- A sopa precisa cozinhar em fogo baixo por vinte minutos.
+- Ela está tricotando um cachecol para o pai dela.
+- Eu nunca vi o oceano antes.
+- Eles estavam discutindo sobre o que assistir.
+- Ele estacionou o carro na garagem.
+- Assistimos a um documentário sobre pinguins.
+- Os morangos estão frescos da fazenda.
+- Ela arrancou uma página do caderno dela.
+- Vou visitar meu primo na próxima semana.
+- Eles terminaram a corrida em primeiro lugar.
+- Ele tem uma coleção de moedas antigas.
+- Compramos algumas lembrancinhas na loja de presentes.
+- O céu estava cheio de fogos de artifício coloridos.
+- Ela é alérgica a amendoim.
+- Preciso carregar a bateria do meu celular.
+- Eles andavam de mãos dadas pela praia.
+- Ele apontou o lápis antes da prova.
+- Já empacotamos tudo o que precisamos.
+- A grama estava molhada com o orvalho da manhã.
+- Ela limpou a mesa com um pano.
+- Vou aprender a tricotar.
+- Eles estavam comemorando o aniversário deles.
+- Ele colocou a camisa para dentro da calça.
+- Podíamos ouvir os pássaros cantando lá fora.
+- O queijo tem um cheiro muito forte.
+- Ela despejou o leite em um copo.
+- Esqueci de trazer meu almoço.
+- Eles estão plantando vegetais no jardim.
+- Ele bocejou e se espreguiçou de manhã.
+- Pegamos uma balsa para a ilha.
+- O preço da gasolina subiu novamente.
+- Ela está cuidando do irmãozinho dela hoje à noite.
+- Preciso devolver este livro para a biblioteca.
+- Eles estavam assando marshmallows na fogueira.
+- Ele amarrou os sapatos e correu para fora.
+- Moramos neste apartamento há três anos.
+- A notícia foi surpreendente para todos.
+- Ela decorou o quarto dela com pôsteres.
+- Eu costumo esquecer onde coloquei minhas chaves.
+- Eles nadaram pelo rio até o outro lado.
+- Ele aqueceu o jantar no micro-ondas.
+- Vamos pintar a cerca de branco.
+- O cachorrinho mastigou meus sapatos.
+- Ela colocou as crianças na cama.
+- Eu nunca voei de helicóptero.
+- Eles estão discutindo o plano para amanhã.
+- Ele checou o e-mail antes do café da manhã.
+- Fomos andar a cavalo durante as férias.
+- O sorvete derreteu no sol.
+- Ela está economizando para um novo laptop.
+- Derramei café na minha camisa branca.
+- Eles assistiram ao pôr do sol sobre o horizonte.
+- Ele mediu a madeira antes de cortá-la.
+- Vamos dar uma festa surpresa para ela.
+- O trânsito estava terrível esta manhã.
+- Ela sussurrou um segredo em meu ouvido.
+- Decidi aprender um novo idioma.
+- Eles estavam tirando a neve da entrada.
+- Ele embrulhou o presente em papel colorido.
+- Adotamos um gatinho do abrigo de animais.
+- As cerejas são doces e suculentas.
+- Ela abriu as cortinas para deixar entrar a luz do sol.
+- Eu geralmente corro de manhã.
+- Eles estão se preparando para a grande apresentação.
+- Ele adicionou um pouco de sal à água da massa.
+- Estamos esperando por você há uma hora.
+- As flores precisam de mais água.
+- Ela conectou o carregador na tomada.
+- Estou pensando em mudar de emprego.
+- Eles estavam descendo o morro nevado de trenó.
+- Ele descarregou as compras do carro.
+- Visitamos o castelo quando estávamos na Escócia.
+- As uvas estão azedas.
+- Ela mexeu a sopa com uma colher de pau.
+- Preciso fazer um exame de vista.
+- Eles estão ensaiando para a peça da escola.
+- Ele dobrou o mapa e guardou-o.
+- Nunca vimos um pôr do sol tão bonito.
+- A almofada é muito confortável.
+- Ela está arrumando flores num vaso.
+- Esqueci-me de apagar as luzes.
+- Eles estavam a empinar papagaios no campo.
+- Ele substituiu a lâmpada no corredor.
+- Vamos assistir a um casamento no próximo sábado.
+- O molho tem um sabor um pouco amargo.
+- Ela está a cortar legumes para a salada.
+- Terminei de ler todos os capítulos designados.
+- Eles remaram o barco através do lago calmo.
+- Ele sorriu e acenou adeus.
+- Sempre nos lembraremos desta viagem maravilhosa.
+- As estrelas brilhavam intensamente no céu noturno.

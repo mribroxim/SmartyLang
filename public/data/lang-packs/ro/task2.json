@@ -1,0 +1,792 @@
+[
+  {
+    "type": "discussion",
+    "label": "Eseu de discuție",
+    "description": "Discută ambele puncte de vedere și exprimă-ți propria părere.",
+    "instruction": "Discută ambele puncte de vedere și exprimă-ți propria părere. Scrie cel puțin 250 de cuvinte.",
+    "categories": [
+      {
+        "name": "Educație",
+        "prompts": [
+          "Unii oameni cred că învățământul universitar ar trebui să fie gratuit pentru toată lumea, în timp ce alții cred că studenții ar trebui să plătească pentru studiile lor superioare. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că sporturile competitive în școli sunt extrem de benefice, în timp ce alții consideră că provoacă stres inutil copiilor. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Mulți oameni cred că studenții ar trebui să studieze o gamă largă de materii, în timp ce alții cred că ar trebui să se concentreze strict pe subiecte legate de o anumită carieră. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că profesorii ar trebui să fie responsabili pentru a-i învăța pe elevi cum să judece bine de rău, în timp ce alții cred că părinții ar trebui să aibă această responsabilitate. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii educatori susțin că temele pentru acasă sunt esențiale pentru succesul academic, în timp ce alții consideră că este o povară inutilă pentru copii. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că studenților universitari ar trebui să li se permită să studieze orice le place, în timp ce alții susțin că ar trebui să li se permită să studieze numai materii care sunt utile în viitor, cum ar fi știința și tehnologia. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că școlile de un singur sex oferă un mediu de învățare mai bun, în timp ce alții susțin că școlile mixte pregătesc copiii mai bine pentru viața reală. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că învățarea online va înlocui în cele din urmă educația tradițională la clasă, în timp ce alții susțin că predarea față în față va fi întotdeauna necesară. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni susțin că examenele sunt cea mai bună modalitate de a evalua abilitățile unui student, în timp ce alții consideră că evaluarea continuă pe parcursul anului este mai eficientă. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că uniformele școlare îmbunătățesc disciplina și egalitatea, în timp ce alții consideră că restricționează individualitatea elevilor. Discutați ambele puncte de vedere și spuneți-vă părerea."
+        ]
+      },
+      {
+        "name": "Mediu și animale",
+        "prompts": [
+          "Unii oameni cred că problemele de mediu sunt prea mari pentru ca oamenii să le rezolve, în timp ce alții cred că indivizii pot face o diferență semnificativă. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Mulți oameni cred că guvernul ar trebui să cheltuiască bani pentru căutarea vieții pe alte planete, în timp ce alții cred că acești bani ar trebui cheltuiți pentru rezolvarea problemelor de pe Pământ. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că păstrarea animalelor în grădini zoologice este crudă și inutilă, în timp ce alții susțin că grădinile zoologice sunt cruciale pentru conservare și educație. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că legile stricte sunt singura modalitate de a reduce poluarea industrială, în timp ce alții consideră că educarea companiilor cu privire la practicile ecologice este mai eficientă. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că cel mai bun mod de a rezolva problema în creștere a traficului este construirea mai multor drumuri, în timp ce alții susțin că guvernul ar trebui să investească mult în transportul public. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că sursele de energie regenerabilă sunt singura cale de urmat pentru planeta noastră, în timp ce alții susțin că combustibilii fosili sunt încă necesari pentru stabilitatea economică. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că plantarea copacilor în zonele urbane este cea mai bună modalitate de a îmbunătăți mediul orașului, în timp ce alții cred că este mai importantă furnizarea de mai multe facilități publice, cum ar fi spitalele. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că testarea pe animale este necesară pentru progrese medicale, în timp ce alții cred că este greșită din punct de vedere moral și ar trebui interzisă în întregime. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că oamenii au dreptul de a folosi animalele pentru hrană și îmbrăcăminte, în timp ce alții susțin că animalele au drepturi și nu ar trebui exploatate. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că suprapopularea este principala cauză a degradării mediului, în timp ce alții dau vina pe industrializare și consumism. Discutați ambele puncte de vedere și spuneți-vă părerea."
+        ]
+      },
+      {
+        "name": "Tehnologie și Internet",
+        "prompts": [
+          "Unii oameni cred că inteligența artificială va crea o societate utopică fără nevoie de muncă umană, în timp ce alții se tem că va duce la șomaj masiv și inegalitate. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Mulți oameni cred că rețelele sociale i-au apropiat pe oameni, în timp ce alții susțin că au izolat persoane în lumea reală. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că copiilor nu ar trebui să li se permită să folosească smartphone-uri până când sunt adolescenți, în timp ce alții cred că expunerea timpurie este necesară pentru alfabetizarea digitală. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că cărțile tipărite vor deveni în curând un lucru din trecut, în timp ce alții cred că vor fi întotdeauna preferate cărților electronice. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că internetul a făcut mai ușor obținerea de informații de încredere, în timp ce alții susțin că a creat o eră a știrilor false și a dezinformării. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că automatizarea la locul de muncă este benefică pentru creșterea economică, în timp ce alții se îngrijorează de pierderea locurilor de muncă tradiționale. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că progresele tehnologice au făcut viața modernă prea complexă, în timp ce alții cred că au făcut viața mult mai ușoară și mai confortabilă. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că supravegherea guvernamentală folosind tehnologia este necesară pentru securitatea națională, în timp ce alții o consideră o încălcare a vieții private. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că jocurile video sunt o formă inofensivă de divertisment, în timp ce alții susțin că promovează violența și stilul de viață sedentar în rândul tinerilor. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că turismul spațial va fi o parte normală a viitorului, în timp ce alții îl consideră o risipă nejustificată de resurse. Discutați ambele puncte de vedere și spuneți-vă părerea."
+        ]
+      },
+      {
+        "name": "Societate și viață modernă",
+        "prompts": [
+          "Unii oameni preferă să locuiască în orașe mari din cauza oportunităților disponibile, în timp ce alții preferă liniștea și liniștea de a trăi în mediul rural. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Mulți cred că este mai bine ca adulții tineri să locuiască cu părinții lor până când se căsătoresc, în timp ce alții cred că ar trebui să se mute imediat ce împlinesc optsprezece ani. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că decalajul dintre bogați și săraci se lărgește și guvernul ar trebui să intervină, în timp ce alții cred că acest decalaj este un rezultat natural al unei piețe libere. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că persoanele în vârstă ar trebui să fie îngrijite de familiile lor, în timp ce alții cred că guvernul ar trebui să ofere case de bătrâni. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că rolurile tradiționale ale bărbaților și femeilor sunt vitale pentru o societate stabilă, în timp ce alții susțin că egalitatea de gen în toate rolurile este esențială. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că proprietatea în proprietate este simbolul suprem al succesului, în timp ce alții susțin că închirierea oferă mai multă libertate și mai puțin stres. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că societatea modernă devine prea condusă de consumator, în timp ce alții cred că consumerismul este necesar pentru a menține economiile prospere. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că evenimentele sportive internaționale promovează pacea între națiuni, în timp ce alții cred că creează doar tensiuni naționaliste. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că istoria este una dintre cele mai importante discipline școlare, în timp ce alții cred că în lumea de astăzi, discipline precum IT sunt mult mai relevante. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că a avea o sumă mare de bani este cheia fericirii, în timp ce alții susțin că fericirea se bazează în totalitate pe alți factori precum sănătatea și relațiile. Discutați ambele puncte de vedere și spuneți-vă părerea."
+        ]
+      },
+      {
+        "name": "Muncă și cariere",
+        "prompts": [
+          "Unii oameni cred că satisfacția în muncă este mai importantă decât un salariu mare, în timp ce alții cred că câștigul mulți bani este cel mai important factor într-un loc de muncă. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Mulți susțin că lucrul de acasă crește productivitatea și echilibrul dintre viața profesională și viața privată, în timp ce alții consideră că mediul de birou este necesar pentru colaborare. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că este mai bine să aibă o carieră pentru toată viața, în timp ce alții cred că schimbarea carierei de mai multe ori este mai benefică. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că angajații mai în vârstă sunt mai valoroși pentru o companie datorită experienței lor, în timp ce alții preferă angajații mai tineri pentru ideile proaspete și energia lor. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că vârsta de pensionare ar trebui prelungită din cauza speranței de viață mai lungi, în timp ce alții susțin că oamenii ar trebui să se pensioneze mai devreme pentru a se bucura de tinerețe și a-și deschide locuri de muncă. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că stagiile neplătite sunt exploatatoare, în timp ce alții susțin că oferă pietre de treaptă esențiale pentru proaspeții absolvenți. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că femeilor ar trebui să li se acorde cote egale în rolurile superioare de conducere prin lege, în timp ce alții cred că promovările ar trebui să se bazeze exclusiv pe merit, indiferent de sex. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că începerea propriei afaceri este cea mai bună modalitate de a obține securitatea financiară, în timp ce alții cred că este mai sigur să lucrezi pentru o corporație mare. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că o săptămână de muncă de patru zile ar fi mai bună pentru societate, în timp ce alții susțin că ar dăuna economiei. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că locurile de muncă cu muncă manuală ar trebui să fie plătite la fel ca locurile de muncă profesionale, cum ar fi doctorii sau avocații, în timp ce alții cred că grilele salariale actuale sunt justificate. Discutați ambele puncte de vedere și spuneți-vă părerea."
+        ]
+      },
+      {
+        "name": "Sănătate și dietă",
+        "prompts": [
+          "Unii oameni cred că guvernul ar trebui să introducă o „taxă pe grăsimi” pentru alimentele nesănătoase pentru a combate obezitatea, în timp ce alții susțin că oamenii ar trebui să fie liberi să aleagă ce mănâncă. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Mulți cred că întreaga asistență medicală ar trebui să fie complet gratuită și finanțată de guvern, în timp ce alții cred că asistența medicală privată oferă servicii de mai bună calitate. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că medicamentele alternative (cum ar fi acupunctura sau remediile pe bază de plante) sunt extrem de eficiente, în timp ce alții consideră că sunt periculoase și că numai medicina modernă ar trebui să fie de încredere. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că sportul și educația fizică ar trebui să fie obligatorii pentru adulți la locul de muncă, în timp ce alții cred că exercițiile fizice sunt o alegere personală. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că dietele vegane sunt cea mai sănătoasă opțiune pentru oameni, în timp ce alții susțin că consumul de carne este necesar pentru o dietă echilibrată. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că asistența medicală preventivă (cum ar fi programele de educație și fitness) este mai bună decât tratarea bolilor după ce acestea apar, în timp ce alții cred că cercetarea medicală pentru tratamente ar trebui să fie prioritatea. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că publicitatea pentru fast-food ar trebui interzisă în întregime, în timp ce alții susțin că acest lucru restricționează libertatea de exprimare a întreprinderilor. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că sănătatea mintală este la fel de importantă ca și sănătatea fizică și ar trebui să primească finanțare egală, în timp ce alții cred că bolile fizice necesită o atenție financiară mai urgentă. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că fumatul ar trebui să fie complet interzis la nivel global, în timp ce alții susțin că adulții au dreptul să facă propriile alegeri ale stilului de viață. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că alimentele modificate genetic (MG) sunt cheia pentru a pune capăt foametei în lume, în timp ce alții cred că prezintă riscuri grave pentru sănătatea umană. Discutați ambele puncte de vedere și spuneți-vă părerea."
+        ]
+      },
+      {
+        "name": "Guvern și economie",
+        "prompts": [
+          "Unii oameni cred că progresul economic este cel mai important obiectiv al unui guvern, în timp ce alții cred că alte tipuri de progres (cum ar fi social sau de mediu) sunt la fel de importante. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Mulți susțin că țările bogate ar trebui să acorde ajutor financiar națiunilor mai sărace, în timp ce alții cred că acest ajutor face adesea mai mult rău decât bine din cauza corupției. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că guvernul ar trebui să finanțeze artiști, muzicieni și scriitori, în timp ce alții susțin că banii contribuabililor ar trebui cheltuiți doar pentru servicii publice precum spitale și drumuri. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că transportul public ar trebui să fie gratuit, în timp ce alții consideră că pasagerii ar trebui să plătească pentru a menține calitatea serviciului. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că comerțul liber global este benefic pentru țările în curs de dezvoltare, în timp ce alții cred că le exploatează doar resursele și forța de muncă ieftină. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că guvernele ar trebui să pună o limită pentru salariul maxim pe care îl poate câștiga o persoană, în timp ce alții susțin că oamenilor ar trebui să li se permită să câștige atât cât sunt capabili. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că o monedă globală unică ar îmbunătăți economia mondială, în timp ce alții cred că monedele naționale sunt esențiale pentru independența economică a unei țări. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că plata impozitelor este cea mai importantă datorie a cetățeanului, în timp ce alții cred că oamenii ar trebui să încerce să-și păstreze cât mai mult venit posibil din punct de vedere legal. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că guvernele ar trebui să ofere un venit de bază universal pentru toți cetățenii, în timp ce alții susțin că acest lucru ar face oamenii leneși și ar ruina economia. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că explorarea spațiului este o risipă de bani guvernamentali, în timp ce alții susțin că este o investiție esențială în viitorul umanității. Discutați ambele puncte de vedere și spuneți-vă părerea."
+        ]
+      },
+      {
+        "name": "Crimă și pedeapsă",
+        "prompts": [
+          "Unii oameni cred că scopul principal al închisorilor este pedepsirea criminalilor, în timp ce alții susțin că închisorile ar trebui să se concentreze în întregime pe reabilitare. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Mulți cred că pedeapsa cu moartea este o pedeapsă justificată pentru infracțiuni grave, în timp ce alții susțin că este o încălcare a drepturilor omului și ar trebui abolită. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că pedepsele mai lungi cu închisoarea descurajează efectiv criminalitatea, în timp ce alții cred că nu reduc rata criminalității și doar supraaglomera închisorile. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că infractorii minori (infractorii tineri) ar trebui să primească aceleași pedepse ca și adulții, în timp ce alții susțin că ar trebui tratați cu mai multă blândețe. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că instalarea de camere de securitate în locuri publice reduce criminalitatea, în timp ce alții cred că este o invazie gravă a vieții private. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că poliția ar trebui să poarte întotdeauna arme de foc pentru a proteja publicul, în timp ce alții cred că poliția înarmată intensifică violența. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că criminalitatea cibernetică este cea mai mare amenințare pentru societatea modernă, în timp ce alții susțin că infracțiunile tradiționale violente sunt încă mult mai periculoase. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că foștilor deținuți ar trebui să li se ceară să-și informeze angajatorii despre trecutul lor criminal, în timp ce alții cred că au dreptul la intimitate odată ce le-a fost executată pedeapsa. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că munca în folosul comunității este o pedeapsă mai bună pentru infracțiunile minore decât trimiterea oamenilor la închisoare, în timp ce alții cred că munca în folosul comunității nu este suficient de strictă. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că sărăcia este cauza principală a tuturor crimelor, în timp ce alții susțin că criminalitatea este un rezultat al naturii umane și al lăcomiei. Discutați ambele puncte de vedere și spuneți-vă părerea."
+        ]
+      },
+      {
+        "name": "Media și publicitate",
+        "prompts": [
+          "Unii oameni cred că violența în filme și televiziune contribuie la violența în societate, în timp ce alții susțin că este doar un divertisment inofensiv. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Mulți cred că mass-media ar trebui să fie strict reglementată de guvern, în timp ce alții cred că o presă complet liberă este esențială pentru democrație. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că publicitatea care vizează copiii ar trebui să fie ilegală, în timp ce alții cred că este responsabilitatea părinților să gestioneze ceea ce vizionează copiii lor. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că știrile sunt prea concentrate pe evenimente negative, ceea ce provoacă anxietate publică, în timp ce alții susțin că este de datoria presei să raporteze adevărul dur. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că celebritățile sunt modele teribile pentru tineri, în timp ce alții subliniază că multe celebrități își folosesc platforma pentru activități caritabile pozitive. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că ziarele tipărite sunt moarte și în curând vor dispărea complet, în timp ce alții cred că va exista întotdeauna o piață pentru jurnalismul fizic. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că publicitatea online direcționată este foarte convenabilă pentru consumatori, în timp ce alții o consideră manipulativă și invazivă. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că televiziunea de realitate are un impact negativ asupra valorilor culturale, în timp ce alții cred că este pur și simplu distracție, evadare fără minte. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că viața privată a personalităților publice (cum ar fi politicienii și actorii) ar trebui să fie interzisă presei, în timp ce alții cred că publicul are dreptul să știe. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că publicitatea modernă îi obligă pe oameni să cumpere lucruri de care nu au nevoie, în timp ce alții susțin că publicitatea pur și simplu informează consumatorii despre alegerile lor. Discutați ambele puncte de vedere și spuneți-vă părerea."
+        ]
+      },
+      {
+        "name": "Cultură, călătorii și arte",
+        "prompts": [
+          "Unii oameni cred că turismul internațional de masă distruge culturile și mediile locale, în timp ce alții susțin că este vital pentru economiile locale. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Mulți cred că imigranții ar trebui să adopte cultura și obiceiurile noii lor țări, în timp ce alții cred că ar trebui să păstreze și să practice cultura lor originală. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că învățarea unei limbi străine nu mai este necesară din cauza software-ului de traducere, în timp ce alții cred că învățarea unei limbi străine oferă o înțelegere culturală crucială. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că muzeele și galeriile de artă ar trebui să fie complet gratuite pentru public, în timp ce alții susțin că este necesară perceperea unei taxe de intrare pentru a menține exponatele. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că festivalurile tradiționale își pierd sensul și devin pur comercializate, în timp ce alții cred că comercializarea ajută la menținerea acestor tradiții vii. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că o singură limbă globală (cum ar fi româna) aduce lumea împreună în pace, în timp ce alții cred că distruge identitățile culturale unice. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că călătoria în grup cu un ghid turistic este cea mai bună modalitate de a experimenta o nouă țară, în timp ce alții preferă să călătorească singuri și independent. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii oameni cred că guvernele ar trebui să cheltuiască bani pentru conservarea clădirilor istorice vechi, în timp ce alții cred că este mai practic să le doboare și să construiască locuințe moderne. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii susțin că mâncarea locală și tradițiile culinare sunt distruse de lanțurile internaționale de fast-food, în timp ce alții salută comoditatea și varietatea. Discutați ambele puncte de vedere și spuneți-vă părerea.",
+          "Unii cred că studiul artei și literaturii din trecut este irelevant pentru studenții moderni, în timp ce alții susțin că este esențial pentru o educație completă. Discutați ambele puncte de vedere și spuneți-vă părerea."
+        ]
+      }
+    ]
+  },
+  {
+    "type": "opinion",
+    "label": "Eseu de opinie",
+    "description": "Spune-ți părerea și argumentează pro sau contra unei declarații.",
+    "instruction": "În ce măsură ești de acord sau nu? / Ce parere aveti? Scrie cel puțin 250 de cuvinte.",
+    "categories": [
+      {
+        "name": "Educație",
+        "prompts": [
+          "Unii oameni cred că învățământul universitar ar trebui să fie gratuit pentru toată lumea, indiferent de mediul lor. În ce măsură ești de acord sau nu?",
+          "În viitor, elevii pot avea de ales să învețe acasă folosind tehnologia sau să studieze în școli tradiționale. Se susține că școlile tradiționale vor dispărea. Sunteți de acord sau dezacord?",
+          "Mulți oameni cred că temele sunt esențiale pentru ca copiii să învețe corect, în timp ce alții cred că nu sunt necesare și provoacă stres. ce parere aveti?",
+          "Universitățile ar trebui să accepte un număr egal de studenți de sex masculin și feminin la fiecare materie. În ce măsură ești de acord sau nu?",
+          "Unii oameni cred că părinții ar trebui să-i învețe pe copii cum să fie membri buni ai societății. Alții, însă, cred că școala este locul unde să învețe acest lucru. ce parere aveti?",
+          "Subiecte precum arta, muzica și drama sunt adesea considerate mai puțin importante decât discipline precum matematica și știința. Prin urmare, acestea ar trebui eliminate din programa școlară. Sunteți de acord sau dezacord?",
+          "Tuturor elevilor ar trebui să li se ceară să învețe o limbă străină începând cu școala primară. În ce măsură ești de acord sau nu?",
+          "Anii săpați, în care studenții își iau concediu înainte de a merge la universitate, devin din ce în ce mai populari. A face un an sabbatic este întotdeauna o experiență benefică pentru tineri. Sunteți de acord sau dezacord?",
+          "Munca în grup este cea mai eficientă modalitate de a învăța elevii. În ce măsură ești de acord sau nu?",
+          "Unii educatori susțin că examenele nu reprezintă o evaluare corectă a adevăratei abilități a unui elev și ar trebui înlocuite cu o evaluare continuă. ce parere aveti?"
+        ]
+      },
+      {
+        "name": "Tehnologie și inovație",
+        "prompts": [
+          "Dezvoltarea inteligenței artificiale va duce în cele din urmă la pierderea a milioane de locuri de muncă. Prin urmare, guvernele ar trebui să limiteze dezvoltarea acestuia. În ce măsură ești de acord sau nu?",
+          "Rețelele sociale au un impact negativ asupra societății și indivizilor prin creșterea izolării și răspândirea dezinformării. Sunteți de acord sau dezacord?",
+          "Unii oameni cred că internetul a apropiat oamenii, în timp ce alții cred că oamenii și comunitățile devin din ce în ce mai izolate. ce parere aveti?",
+          "Folosirea telefoanelor mobile în locuri publice este la fel de enervantă ca fumatul și ar trebui interzisă în mod similar. În ce măsură ești de acord sau nu?",
+          "Progresele în tehnologie ne-au făcut viața mai complexă decât mai simplă. Sunteți de acord sau dezacord?",
+          "Jocurile video sunt adesea învinuite pentru comportamentul violent la tineri. Prin urmare, vânzarea de jocuri video violente ar trebui interzisă. ce parere aveti?",
+          "În lumea modernă, este posibil să faci cumpărături, să lucrezi și să comunici cu oamenii prin internet și să trăiești fără niciun contact față în față cu ceilalți. Este aceasta o evoluție pozitivă sau negativă?",
+          "Citirea cărților fizice devine un lucru din trecut, deoarece tot mai mulți oameni apelează la cărți electronice și articole digitale. Aceasta este o tendință negativă pentru alfabetizare. În ce măsură ești de acord sau nu?",
+          "Explorarea spațiului necesită cantități mari de finanțare guvernamentală. Acești bani ar fi mai bine cheltuiți pentru a rezolva probleme aici pe Pământ, cum ar fi sărăcia și bolile. Sunteți de acord sau dezacord?",
+          "Automatizarea și roboții preiau locuri de muncă tradiționale de producție. Aceasta este o evoluție pozitivă pentru societate în general. În ce măsură ești de acord sau nu?"
+        ]
+      },
+      {
+        "name": "Muncă și angajare",
+        "prompts": [
+          "Satisfacția în muncă este mult mai importantă decât un salariu mare. În ce măsură ești de acord sau nu?",
+          "Mulți oameni susțin că, pentru a îmbunătăți calitatea educației, elevii de liceu ar trebui încurajați să-și evalueze și să-și critice profesorii. Sunteți de acord sau dezacord?",
+          "Vârsta de pensionare ar trebui crescută în toate țările, deoarece oamenii trăiesc o viață mai lungă și mai sănătoasă. ce parere aveti?",
+          "Oricine poate fi un lider bun dacă este suficient de bine pregătit. În ce măsură ești de acord sau nu?",
+          "Este mai bine ca oamenii să fie șomeri decât să fie angajați în locuri de muncă de care nu se bucură. Sunteți de acord sau dezacord?",
+          "Companiile ar trebui să solicite tuturor angajaților lor să poarte uniformă, indiferent de rolul lor. În ce măsură ești de acord sau nu?",
+          "Munca pe cont propriu este întotdeauna de preferat decât munca pentru o companie sau organizație. ce parere aveti?",
+          "Tinerii de azi le lipsesc abilitățile de bază necesare la locul de muncă modern. Sunteți de acord sau dezacord?",
+          "Pentru a reduce șomajul, guvernul ar trebui să scurteze săptămâna de lucru tradițională la 30 de ore, permițând mai multor persoane să împartă munca disponibilă. În ce măsură ești de acord sau nu?",
+          "Cel mai important aspect atunci când alegeți o carieră sau un loc de muncă este să aveți un venit mare. Sunteți de acord sau dezacord?"
+        ]
+      },
+      {
+        "name": "Mediu și conservare",
+        "prompts": [
+          "Încălzirea globală este cauzată în primul rând de activitatea umană și, prin urmare, indivizii trebuie să-și schimbe drastic stilul de viață pentru a o opri. În ce măsură ești de acord sau nu?",
+          "Responsabilitatea pentru protejarea mediului revine exclusiv marilor corporații, nu a cetățenilor. ce parere aveti?",
+          "Unii oameni cred că cea mai bună modalitate de a rezolva problemele globale de mediu este creșterea costului combustibilului. Sunteți de acord sau dezacord?",
+          "Testarea animalelor în scopuri medicale și cosmetice este crudă și ar trebui interzisă complet. În ce măsură ești de acord sau nu?",
+          "Este inevitabil ca, pe măsură ce țările se dezvoltă economic, să aibă loc degradarea mediului. ce parere aveti?",
+          "Grădinile zoologice sunt în esență închisori pentru animale și nu servesc niciun scop educațional sau de conservare util. Sunteți de acord sau dezacord?",
+          "Pungile de plastic ar trebui să fie ilegale în toate supermarketurile și magazinele cu amănuntul. În ce măsură ești de acord sau nu?",
+          "Dispariția unor specii de plante și animale este un proces natural și nu ar trebui să intervenim pentru a încerca să le salvăm. Sunteți de acord sau dezacord?",
+          "Oamenii ar trebui să consume doar alimente produse la nivel local pentru a reduce impactul transportului asupra mediului. ce parere aveti?",
+          "Investiția în surse de energie regenerabilă, cum ar fi energia eoliană și solară, este o risipă de bani, deoarece acestea sunt prea nesigure. În ce măsură ești de acord sau nu?"
+        ]
+      },
+      {
+        "name": "Societate și viață modernă",
+        "prompts": [
+          "În multe țări, decalajul dintre bogați și săraci se lărgește. Aceasta este cea mai importantă problemă cu care se confruntă societatea modernă. În ce măsură ești de acord sau nu?",
+          "Tinerii sunt foarte influențați de celebrități. Aceasta este o tendință periculoasă. Sunteți de acord sau dezacord?",
+          "Festivalurile și sărbătorile tradiționale își pierd sensul și devin doar o altă scuză pentru consum. ce parere aveti?",
+          "A trăi într-un oraș mare și plin de viață este mult mai bine pentru dezvoltarea unei persoane decât a trăi într-un sat rural liniștit. În ce măsură ești de acord sau nu?",
+          "În lumea de astăzi, este mai important să fii adaptabil și dispus să te schimbi decât să fii un expert într-un anumit domeniu. Sunteți de acord sau dezacord?",
+          "Unii oameni cred că istoria nu are ce să ne învețe despre prezent sau viitor. ce parere aveti?",
+          "Bătrânii sunt din ce în ce mai marginalizați în societatea modernă, care se concentrează prea mult pe tineret. În ce măsură ești de acord sau nu?",
+          "Deținerea unei locuințe este esențială pentru ca o persoană să se simtă stabilă și de succes în viață. Sunteți de acord sau dezacord?",
+          "Oamenii de astăzi sunt mult prea dependenți de ceilalți și nu au abilitățile practice necesare pentru a fi autosuficienți. ce parere aveti?",
+          "Evenimentele sportive internaționale precum Jocurile Olimpice reunesc națiunile și promovează pacea globală. În ce măsură ești de acord sau nu?"
+        ]
+      },
+      {
+        "name": "Sănătate și dietă",
+        "prompts": [
+          "Guvernul ar trebui să taxeze alimentele nesănătoase, cum ar fi fast-food-urile și băuturile dulci, pentru a încuraja oamenii să mănânce mai sănătos. În ce măsură ești de acord sau nu?",
+          "Asistența medicală ar trebui să fie complet gratuită pentru toți cetățenii, finanțată integral de guvern prin impozitare. Sunteți de acord sau dezacord?",
+          "Medicamentele alternative tradiționale sunt la fel de eficiente ca și medicamentele chimice moderne. ce parere aveti?",
+          "Rata în creștere a obezității este în totalitate vina industriei fast-food. În ce măsură ești de acord sau nu?",
+          "Cursurile de educație fizică ar trebui să fie obligatorii în fiecare zi pentru toți copiii de școală. Sunteți de acord sau dezacord?",
+          "Stresul este cea mai importantă problemă de sănătate cu care se confruntă adulții care lucrează astăzi. ce parere aveti?",
+          "Persoanele care aleg să participe la sporturi extreme periculoase ar trebui să plătească pentru propriul tratament medical dacă se rănesc. În ce măsură ești de acord sau nu?",
+          "Medicina preventivă, cum ar fi educația pentru sănătate și vaccinările, este mai importantă decât găsirea de remedii pentru boli. Sunteți de acord sau dezacord?",
+          "Dieta modernă, care se bazează în mare măsură pe alimente procesate, este cauza principală a scăderii sănătății globale. ce parere aveti?",
+          "Este imposibil să menții un stil de viață sănătos în timp ce lucrezi la un loc de muncă solicitant, cu normă întreagă. În ce măsură ești de acord sau nu?"
+        ]
+      },
+      {
+        "name": "Cheltuieli publice și guvernamentale",
+        "prompts": [
+          "Guvernele ar trebui să cheltuiască mai mulți bani pe servicii publice, cum ar fi educația și sănătatea, decât pe armată. În ce măsură ești de acord sau nu?",
+          "Transportul public ar trebui să fie gratuit pentru a reduce congestionarea traficului și poluarea în orașe. Sunteți de acord sau dezacord?",
+          "Este responsabilitatea guvernului să se asigure că toți cetățenii au un loc unde să locuiască. ce parere aveti?",
+          "Guvernele ar trebui să ofere sprijin financiar artiștilor, muzicienilor și scriitorilor. În ce măsură ești de acord sau nu?",
+          "Votul la alegerile naționale ar trebui să fie obligatoriu pentru toți cetățenii eligibili. Sunteți de acord sau dezacord?",
+          "Guvernul nu are dreptul de a interveni în ceea ce indivizii aleg să mănânce, să bea sau să fumeze. ce parere aveti?",
+          "Țările bogate ar trebui să ierte datoriile internaționale ale celor mai sărace națiuni pentru a le ajuta să se dezvolte. În ce măsură ești de acord sau nu?",
+          "Impozitele pentru persoanele bogate ar trebui să fie semnificativ mai mari pentru a distribui bogăția mai uniform în societate. Sunteți de acord sau dezacord?",
+          "Finanțarea pentru arte este un lux, iar guvernele ar trebui să finanțeze doar servicii esențiale precum infrastructura și spitalele. ce parere aveti?",
+          "Guvernele orașelor ar trebui să investească masiv în crearea mai multor parcuri publice și spații verzi, chiar dacă aceasta înseamnă creșterea taxelor locale. În ce măsură ești de acord sau nu?"
+        ]
+      },
+      {
+        "name": "Crimă și lege",
+        "prompts": [
+          "Pedeapsa cu moartea este singurul mijloc de descurajare eficient pentru cele mai grave crime, cum ar fi crima. În ce măsură ești de acord sau nu?",
+          "Închisorile ar trebui să se concentreze în primul rând pe reabilitarea criminalilor, mai degrabă decât pe pur și simplu pedepsirea lor. Sunteți de acord sau dezacord?",
+          "Infractorii minori care comit infracțiuni grave ar trebui judecați și pedepsiți ca adulți. ce parere aveti?",
+          "Utilizarea camerelor de supraveghere în spațiile publice este o invazie a vieții private și ar trebui să fie puternic restricționată. În ce măsură ești de acord sau nu?",
+          "Sunt necesare legi stricte privind controlul armelor pentru a reduce rata crimelor violente în societate. Sunteți de acord sau dezacord?",
+          "Munca în folosul comunității este o pedeapsă mult mai bună pentru infracțiuni minore, non-violente decât o pedeapsă cu închisoarea. ce parere aveti?",
+          "Criminalitatea cibernetică este în prezent o amenințare mai mare pentru societate decât criminalitatea fizică tradițională. În ce măsură ești de acord sau nu?",
+          "Oamenii care încalcă legea ar trebui să fie forțați să își întâlnească victimele pentru a înțelege impactul acțiunilor lor. Sunteți de acord sau dezacord?",
+          "Mass-media este responsabilă pentru teama publicului de criminalitate, care este adesea disproporționată cu rata reală a criminalității. ce parere aveti?",
+          "Este imposibil să eradicați complet criminalitatea din societate; este o parte inevitabilă a naturii umane. În ce măsură ești de acord sau nu?"
+        ]
+      },
+      {
+        "name": "Media și publicitate",
+        "prompts": [
+          "Publicitatea adresată copiilor este lipsită de etică și ar trebui să fie strict interzisă. În ce măsură ești de acord sau nu?",
+          "Presa de știri se concentrează prea mult pe poveștile negative, ceea ce duce la depresie și anxietate în publicul larg. Sunteți de acord sau dezacord?",
+          "Marile corporații multinaționale au prea multă influență asupra media și informației globale. ce parere aveti?",
+          "Vedetele au dreptul la intimitate, iar paparazzii nu ar trebui să aibă voie să le urmărească în spațiile publice. În ce măsură ești de acord sau nu?",
+          "În epoca modernă, ziarele tipărite sunt complet învechite și în curând vor dispărea complet. Sunteți de acord sau dezacord?",
+          "Publicitatea încurajează oamenii să cumpere lucruri de care nu au nevoie și nu și le pot permite. ce parere aveti?",
+          "Guvernul ar trebui să controleze ceea ce este difuzat la televizor și pe internet pentru a proteja societatea de conținutul dăunător. În ce măsură ești de acord sau nu?",
+          "Libertatea de exprimare înseamnă că oamenii ar trebui să aibă voie să spună orice vor, chiar dacă îi jignesc pe alții. Sunteți de acord sau dezacord?",
+          "Reality show-urile de televiziune nu au valoare educațională și servesc doar la degradarea standardelor culturale. ce parere aveti?",
+          "Publicitatea online direcționată, care urmărește comportamentul utilizatorilor, reprezintă o încălcare gravă a confidențialității personale. În ce măsură ești de acord sau nu?"
+        ]
+      },
+      {
+        "name": "Turism și globalizare",
+        "prompts": [
+          "Turismul internațional provoacă mai mult rău decât bine comunităților și mediului local. În ce măsură ești de acord sau nu?",
+          "Globalizarea crescândă a afacerilor și culturii distruge tradițiile locale și identitățile naționale. Sunteți de acord sau dezacord?",
+          "Oamenii ar trebui încurajați să călătorească pe plan intern în propria lor țară, mai degrabă decât să călătorească internațional. ce parere aveti?",
+          "româna devine limba universală. Aceasta este o evoluție pozitivă pentru relațiile internaționale și comerț. În ce măsură ești de acord sau nu?",
+          "Țările ar trebui să acorde prioritate angajării propriilor cetățeni înainte de a permite lucrătorilor străini să intre pe piața muncii. Sunteți de acord sau dezacord?",
+          "Călătoria ieftină cu avionul a revoluționat modul în care oamenii trăiesc și lucrează, dar costurile de mediu depășesc beneficiile. ce parere aveti?",
+          "Companiile multinaționale exploatează adesea lucrătorii din țările în curs de dezvoltare pentru a-și maximiza profiturile. În ce măsură ești de acord sau nu?",
+          "Turiștilor ar trebui să li se ceară să învețe expresii de bază în limba locală înainte de a vizita o țară străină. Sunteți de acord sau dezacord?",
+          "Globalizarea a beneficiat în primul rând națiunilor bogate, lăsând în urmă națiunile în curs de dezvoltare. ce parere aveti?",
+          "Conservarea clădirilor istorice este o cheltuială inutilă pentru orașe; ar trebui demolate pentru a face loc infrastructurii moderne. În ce măsură ești de acord sau nu?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "advantage-disadvantage",
+    "label": "Avantaje & Dezavantaje",
+    "description": "Discutați avantajele și dezavantajele unui subiect.",
+    "instruction": "Discutați avantajele și dezavantajele și spuneți-vă propria părere atunci când vi se cere. Scrie cel puțin 250 de cuvinte.",
+    "categories": [
+      {
+        "name": "Educație și învățare",
+        "prompts": [
+          "Multe universități oferă acum programe complete online. Care sunt avantajele și dezavantajele de a studia pentru o diplomă online, mai degrabă decât de a participa la cursuri în persoană?",
+          "Unii experți consideră că este mai bine ca copiii să înceapă să învețe o limbă străină la școala primară, mai degrabă decât la gimnaziu. Avantajele acestui lucru depășesc dezavantajele?",
+          "În multe țări, studenții au un „an paus” pentru a călători sau a lucra înainte de a începe universitatea. Discutați avantajele și dezavantajele de a face un an paus și spuneți-vă propria părere.",
+          "Unele școli solicită tuturor elevilor să poarte uniformă. Care sunt avantajele și dezavantajele uniformelor școlare?",
+          "Din ce în ce mai mulți studenți aleg să studieze în străinătate pentru studii superioare. Avantajele studiului într-o țară străină depășesc dezavantajele?",
+          "În unele sisteme educaționale, copiii sunt grupați în clase în funcție de abilitățile lor academice și nu de vârsta lor. Discutați avantajele și dezavantajele acestei practici și spuneți-vă părerea.",
+          "Memorarea prin memorare este o metodă tradițională de predare încă folosită în multe părți ale lumii. Care sunt avantajele și dezavantajele învățării prin memorare?",
+          "Mulți oameni susțin că învățământul universitar ar trebui să fie complet gratuit pentru toată lumea. Avantajele învățământului superior gratuit depășesc dezavantajele?",
+          "Unii părinți aleg să-și educe copiii acasă, mai degrabă decât să-i trimită la o școală tradițională. Discutați avantajele și dezavantajele educației la domiciliu și spuneți-vă părerea.",
+          "Evaluarea continuă (cursuri și proiecte) înlocuiește examenele formale în multe instituții de învățământ. Care sunt avantajele și dezavantajele acestei schimbări?"
+        ]
+      },
+      {
+        "name": "Tehnologie și Internet",
+        "prompts": [
+          "Utilizarea inteligenței artificiale în viața de zi cu zi devine din ce în ce mai comună. Avantajele AI depășesc dezavantajele?",
+          "Rețelele de socializare au revoluționat modul în care oamenii comunică și împărtășesc informații. Discutați avantajele și dezavantajele rețelelor sociale și spuneți-vă părerea.",
+          "Mulți oameni își folosesc acum smartphone-urile pentru a plăti pentru bunuri și servicii, ceea ce duce la o scădere a utilizării numerarului. Care sunt avantajele și dezavantajele unei societăți fără numerar?",
+          "Progresele tehnologice au permis multor oameni să lucreze de acasă, mai degrabă decât să facă naveta la birou. Avantajele lucrului de la distanță depășesc dezavantajele?",
+          "Cărțile electronice și dispozitivele digitale de lectură înlocuiesc rapid cărțile tipărite tradiționale. Discutați avantajele și dezavantajele acestei tendințe și spuneți-vă cu părerea.",
+          "Dezvoltarea mașinilor autonome progresează rapid. Care sunt avantajele și dezavantajele vehiculelor autonome pe drumurile publice?",
+          "Automatizarea și roboții înlocuiesc din ce în ce mai mult lucrătorii umani din producție și din alte industrii. Avantajele automatizării depășesc dezavantajele?",
+          "Copiii de astăzi petrec o cantitate semnificativă de timp jucând jocuri video. Discutați avantajele și dezavantajele acestui lucru și spuneți-vă părerea.",
+          "Cloud computing permite oamenilor să-și stocheze toate datele personale și profesionale online, mai degrabă decât pe hard disk-uri fizice. Care sunt avantajele și dezavantajele stocării datelor în cloud?",
+          "Explorarea spațială îi costă pe contribuabili o sumă exorbitantă de bani în fiecare an. Avantajele cheltuirii banilor pentru explorarea spațiului depășesc dezavantajele?"
+        ]
+      },
+      {
+        "name": "Muncă și cariere",
+        "prompts": [
+          "Unele companii au implementat o săptămână de lucru de patru zile fără a reduce salariile angajaților lor. Care sunt avantajele și dezavantajele unei săptămâni de lucru mai scurte?",
+          "În trecut, oamenii au rămas adesea în același loc de muncă pentru întreaga lor viață profesională. Astăzi, este mai obișnuit să schimbi cariera de mai multe ori. Discutați avantajele și dezavantajele schimbării frecvente a locului de muncă și spuneți-vă părerea.",
+          "Multe guverne ridică vârsta oficială de pensionare la 68 sau 70 de ani. Avantajele muncii până la o vârstă mai târzie depășesc dezavantajele?",
+          "Un număr tot mai mare de persoane aleg să devină liber profesioniști sau să-și înceapă propria afacere. Care sunt avantajele și dezavantajele activității independente în comparație cu munca pentru un angajator?",
+          "Companiile multinaționale își transferă adesea angajații pentru a lucra în sucursale de peste mări timp de câțiva ani. Discutați avantajele și dezavantajele muncii în străinătate și spuneți-vă părerea.",
+          "Unele organizații consideră că plata angajaților pe baza performanței lor individuale este cea mai bună modalitate de a-i motiva. Avantajele plății bazate pe performanță depășesc dezavantajele?",
+          "Stagiile neremunerate devin o cerință comună pentru tinerii care intră pe piața muncii. Care sunt avantajele și dezavantajele de a lucra gratuit pentru a câștiga experiență?",
+          "Unele țări au introdus cote pentru a se asigura că un anumit procent de femei sunt reprezentate în consiliile de administrație ale corporațiilor. Discutați avantajele și dezavantajele acestei politici și spuneți-vă părerea.",
+          "Lucrul într-o corporație foarte mare oferă o experiență diferită decât munca într-o mică afacere de familie. Care sunt avantajele și dezavantajele lucrului pentru o mare corporație?",
+          "Multe profesii necesită acum ca angajații să fie disponibili prin e-mail sau telefon în afara orelor normale de lucru. Avantajele acestei conectivitati constante depășesc dezavantajele?"
+        ]
+      },
+      {
+        "name": "Sănătate și stil de viață",
+        "prompts": [
+          "Guvernele din unele țări au introdus o taxă pe fast-food și băuturile dulci pentru a combate obezitatea. Care sunt avantajele și dezavantajele taxării alimentelor nesănătoase?",
+          "Popularitatea dietelor vegetariene și vegane este în creștere la nivel global. Discutați avantajele și dezavantajele eliminării cărnii din alimentația cuiva și spuneți-vă cu părerea.",
+          "Mulți oameni folosesc medicamente alternative, cum ar fi acupunctura și remedii pe bază de plante, în locul tratamentelor medicale convenționale. Avantajele medicinei alternative depășesc dezavantajele?",
+          "Sistemele de sănătate din unele țări sunt finanțate în întregime de guvern și gratuite la punctul de utilizare. Care sunt avantajele și dezavantajele unui sistem de sănătate public gratuit?",
+          "Un număr tot mai mare de oameni participă la sporturi extreme, cum ar fi parașutismul și alpinismul. Discutați avantajele și dezavantajele acestor activități și spuneți-vă părerea.",
+          "Multe orașe au interzis fumatul în toate spațiile publice, inclusiv în parcuri și restaurantele în aer liber. Avantajele unei interdicții publice totale de fumat depășesc dezavantajele?",
+          "Oamenii folosesc din ce în ce mai mult aplicații mobile și dispozitive portabile pentru a-și urmări sănătatea și starea de fitness. Care sunt avantajele și dezavantajele de a te baza pe tehnologie pentru monitorizarea sănătății?",
+          "Culturile modificate genetic (MG) sunt cultivate în multe părți ale lumii pentru a crește producția de alimente. Discutați despre avantajele și dezavantajele alimentelor modificate genetic și spuneți-vă cu părerea.",
+          "Turismul medical, unde oamenii călătoresc în străinătate pentru proceduri medicale, este o industrie în plină expansiune. Avantajele călătoriei în altă țară pentru asistență medicală depășesc dezavantajele?",
+          "Mulți oameni plătesc abonament lunar scump pentru a merge la sălile de sport comerciale. Care sunt avantajele și dezavantajele folosirii unei săli de sport pentru a rămâne în formă în comparație cu exercițiile în aer liber sau acasă?"
+        ]
+      },
+      {
+        "name": "Mediu și urbanism",
+        "prompts": [
+          "Pentru a reduce congestionarea traficului, unele orașe mari au introdus „prețuri de congestionare”, percepând șoferilor o taxă pentru a intra în centrul orașului. Care sunt avantajele și dezavantajele acestui sistem?",
+          "Energia nucleară este văzută de unii ca o alternativă curată la combustibilii fosili. Discutați avantajele și dezavantajele de a vă baza pe energia nucleară și spuneți-vă părerea.",
+          "Pe măsură ce populația crește, orașele construiesc blocuri de apartamente mai înalte pentru a găzdui locuitorii. Avantajele locuirii în clădiri înalte depășesc dezavantajele?",
+          "Multe guverne locale au făcut reciclarea obligatorie pentru toate gospodăriile. Care sunt avantajele și dezavantajele programelor de reciclare forțată?",
+          "Un număr semnificativ de oameni migrează din zonele rurale în orașele mari în căutarea unor oportunități mai bune. Discutați avantajele și dezavantajele urbanizării și spuneți-vă cu părerea.",
+          "Grădina zoologică există în aproape toate orașele importante din lume. Avantajele păstrării animalelor în captivitate în grădini zoologice depășesc dezavantajele?",
+          "Unii oameni susțin că ar trebui să cumpărăm doar alimente care sunt produse local. Care sunt avantajele și dezavantajele consumului numai de alimente din surse locale?",
+          "Pentru a proteja mediul înconjurător, unele guverne subvenționează în mare măsură vehiculele electrice (EV). Discutați avantajele și dezavantajele acestei intervenții guvernamentale și spuneți-vă părerea.",
+          "Ecoturismul este conceput pentru a permite turiștilor să viziteze medii fragile, minimizând în același timp impactul acestora. Avantajele turismului ecologic depășesc dezavantajele?",
+          "Mulți urbaniști pledează pentru crearea de zone complet fără mașini în centrele orașelor. Care sunt avantajele și dezavantajele interzicerii mașinilor din mediul urban?"
+        ]
+      },
+      {
+        "name": "Turism și călătorii",
+        "prompts": [
+          "Creșterea companiilor aeriene cu buget redus a făcut că călătoriile internaționale sunt accesibile pentru milioane de oameni. Care sunt avantajele și dezavantajele călătoriilor cu avionul ieftin?",
+          "Turismul internațional este o sursă majoră de venit pentru multe țări în curs de dezvoltare. Discutați avantajele și dezavantajele unei economii puternic dependente de turism și spuneți-vă părerea.",
+          "Mulți turiști aleg să se cazeze în închirieri pe termen scurt (cum ar fi Airbnb), mai degrabă decât în ​​hoteluri tradiționale. Avantajele închirierii turistice pe termen scurt depășesc dezavantajele pentru comunitățile locale?",
+          "româna devine din ce în ce mai mult limba globală a călătoriilor și a turismului. Care sunt avantajele și dezavantajele de a avea o singură limbă globală dominantă?",
+          "Unele orașe istorice percep o „taxă turistică” vizitatorilor pentru a ajuta la menținerea infrastructurii. Discutați avantajele și dezavantajele taxării turiștilor și spuneți-vă cu părerea.",
+          "„Turismul de voluntariat”, unde oamenii călătoresc în țările în curs de dezvoltare pentru a face activități de caritate, devine foarte popular. Avantajele acestei tendințe depășesc dezavantajele?",
+          "Turiștii vizitează din ce în ce mai mult zone naturale îndepărtate, neatinse, cum ar fi Antarctica sau pădurea tropicală amazoniană. Care sunt avantajele și dezavantajele turismului în medii extreme?",
+          "Mulți oameni susțin că călătoria globală duce la o pierdere a diversității culturale, deoarece orașele încep să arate și să se simtă la fel peste tot. Discutați avantajele și dezavantajele omogenizării culturale și spuneți-vă cu părerea.",
+          "În loc să călătorească în străinătate, unii oameni preferă să-și petreacă vacanțele explorând propria țară. Avantajele turismului intern depășesc dezavantajele?",
+          "Tururile cu pachete ghidate sunt o modalitate foarte populară de a călători. Care sunt avantajele și dezavantajele călătoriei cu un grup de tururi foarte structurat în comparație cu călătoria independentă?"
+        ]
+      },
+      {
+        "name": "Guvern și societate",
+        "prompts": [
+          "Unele țări au implementat programe obligatorii de servicii comunitare pentru tineri. Discutați avantajele și dezavantajele și spuneți-vă părerea.",
+          "Un venit de bază universal (UBI), în care guvernul oferă fiecărui cetățean o sumă regulată de bani, indiferent de angajare, este dezbătut la nivel global. Care sunt avantajele și dezavantajele UBI?",
+          "Multe țări solicită tinerilor bărbați și femei să efectueze o perioadă de serviciu militar obligatoriu. Avantajele recrutării depășesc dezavantajele?",
+          "Utilizarea camerelor de televiziune cu circuit închis (CCTV) în locuri publice este larg răspândită. Discutați avantajele și dezavantajele supravegherii publice și spuneți-vă părerea.",
+          "Unele națiuni au abolit pedeapsa cu moartea, în timp ce altele o folosesc în continuare pentru cele mai grave crime. Care sunt avantajele și dezavantajele pedepsei capitale?",
+          "Națiunile bogate oferă adesea ajutor financiar țărilor în curs de dezvoltare. Avantajele ajutorului internațional depășesc dezavantajele?",
+          "În unele țări, votul la alegerile naționale este obligatoriu prin lege. Discutați avantajele și dezavantajele votului obligatoriu și spuneți-vă părerea.",
+          "Guvernele oferă adesea fonduri semnificative pentru arte, inclusiv muzee, galerii și teatre. Care sunt avantajele și dezavantajele utilizării banilor publici pentru finanțarea artelor?",
+          "Datorită progreselor medicale, populațiile din multe țări dezvoltate trăiesc mult mai mult. Avantajele unei populații îmbătrânite depășesc dezavantajele?",
+          "Sistemele penitenciare moderne se concentrează adesea pe reabilitarea infractorilor prin educație și terapie, mai degrabă decât pur și simplu pedepsirea lor. Discutați avantajele și dezavantajele reabilitării față de pedeapsă și spuneți-vă părerea."
+        ]
+      },
+      {
+        "name": "Familie și copii",
+        "prompts": [
+          "În societatea modernă, este obișnuit ca ambii părinți să lucreze cu normă întreagă în timp ce cresc copiii. Care sunt avantajele și dezavantajele de a avea doi părinți care lucrează?",
+          "Un număr tot mai mare de oameni aleg să trăiască singuri, mai degrabă decât cu familia sau colegii de cameră. Avantajele de a trăi singur depășesc dezavantajele?",
+          "Multe cupluri aleg să aibă copii mult mai târziu în viață, adesea la sfârșitul anilor 30 sau 40 de ani. Discutați avantajele și dezavantajele întârzierii statutului de părinte și spuneți-vă cu părerea.",
+          "Familia extinsă tradițională (bunici, mătuși, unchi care locuiesc împreună) devine din ce în ce mai puțin frecventă în favoarea familiei nucleare. Care sunt avantajele și dezavantajele creșterii într-o familie extinsă?",
+          "Unii părinți dau copiilor lor o alocație săptămânală sau bani de buzunar. Avantajele de a oferi copiilor proprii bani depășesc dezavantajele?",
+          "Mulți părinți restricționează foarte mult timpul pe care îl au copiii lor în fiecare zi. Discutați avantajele și dezavantajele limitelor stricte de timp pe ecran și spuneți-vă părerea.",
+          "Ratele divorțurilor au crescut semnificativ în multe țări în ultimele decenii. Care sunt avantajele și dezavantajele de a facilita cuplurile divorțul legal?",
+          "Este din ce în ce mai obișnuit ca adulții tineri să continue să trăiască cu părinții până la vârsta de douăzeci de ani. Avantajele tinerilor adulți care trăiesc acasă depășesc dezavantajele?",
+          "Unii părinți își înscriu copiii în numeroase activități extrașcolare, lăsând puțin timp liber. Discutați avantajele și dezavantajele unei copilării foarte structurate și spuneți-vă cu părerea.",
+          "Creșterea într-o gospodărie monoparentală este o experiență din ce în ce mai comună pentru copii. Care sunt avantajele și dezavantajele de a fi crescut de un singur părinte?"
+        ]
+      },
+      {
+        "name": "Media și publicitate",
+        "prompts": [
+          "Multe țări restricționează sau interzic publicitatea care vizează direct copiii. Avantajele interzicerii publicității copiilor depășesc dezavantajele?",
+          "Apariția canalelor de știri de 24 de ore și a fluxurilor de știri online înseamnă că avem acces constant la informații. Care sunt avantajele și dezavantajele ciclului de știri de 24 de ore?",
+          "Marile corporații multinaționale controlează o parte semnificativă a peisajului media global. Discutați avantajele și dezavantajele monopolurilor media și spuneți-vă părerea.",
+          "Companiile online folosesc publicitate direcționată bazată pe urmărirea istoricului web al unui utilizator. Avantajele publicității personalizate depășesc dezavantajele?",
+          "Emisiunile de televiziune reality continuă să fie extrem de populare în întreaga lume. Care sunt avantajele și dezavantajele programării reality TV?",
+          "Unele guverne cenzurează internetul pentru a restricționa conținutul pe care cetățenii lor îl pot vizualiza. Discutați avantajele și dezavantajele cenzurii pe internet și spuneți-vă părerea.",
+          "Ziarele și revistele tipărite înregistrează o scădere masivă a cititorilor, pe măsură ce oamenii apelează la media digitală. Care sunt avantajele și dezavantajele societății care se îndepărtează de jurnalismul scris?",
+          "Celebritățile susțin frecvent produse și campanii politice. Avantajele aprobărilor celebrităților depășesc dezavantajele?",
+          "Serviciile de streaming precum Netflix și Spotify au schimbat complet modul în care oamenii consumă divertisment. Discutați avantajele și dezavantajele trecerii către streaming media și spuneți-vă părerea.",
+          "Filmele moderne de acțiune și jocurile video conțin adesea niveluri ridicate de violență. Care sunt avantajele și dezavantajele expunerii societății la mass-media violente?"
+        ]
+      },
+      {
+        "name": "Globalizare și cultură",
+        "prompts": [
+          "Creșterea corporațiilor multinaționale înseamnă că aceleași magazine și mărci se găsesc în toată lumea. Avantajele globalizării în afaceri depășesc dezavantajele?",
+          "Multe limbi minoritare sunt în pericol de a muri pe măsură ce oamenii trec la limbi dominante precum româna, spaniola sau mandarinul. Discutați avantajele și dezavantajele pierderii limbilor minoritare și spuneți-vă părerea.",
+          "Industria „fast fashion” permite oamenilor să cumpere haine la modă foarte ieftin. Care sunt avantajele și dezavantajele fast fashion-ului?",
+          "Datorită comerțului global, oamenii pot cumpăra alimente din toată lumea în orice moment al anului din supermarketul lor local. Avantajele acestei rețele alimentare globale depășesc dezavantajele?",
+          "Căsătoriile interculturale, în care partenerii provin din țări sau medii culturale diferite, devin din ce în ce mai frecvente. Discutați avantajele și dezavantajele creșterii unei familii într-o gospodărie multiculturală și spuneți-vă cu părerea.",
+          "Evenimentele sportive internaționale precum Jocurile Olimpice sau Cupa Mondială FIFA impun țărilor gazdă să cheltuiască miliarde de dolari. Care sunt avantajele și dezavantajele găzduirii unor evenimente sportive internaționale majore?",
+          "Aproprierea culturală, în care elementele unei culturi minoritare sunt folosite de o cultură dominantă, este foarte dezbătută. Avantajele împărtășirii culturale depășesc dezavantajele însușirii?",
+          "Este foarte obișnuit ca școlile să petreacă o cantitate semnificativă de timp predând elevilor despre istoria antică. Discutați avantajele și dezavantajele prioritizării istoriei în curriculum și spuneți-vă cu părerea.",
+          "Mulți oameni se bazează în totalitate pe organizațiile caritabile globale pentru a rezolva crizele umanitare. Care sunt avantajele și dezavantajele de a se baza pe organizațiile neguvernamentale (ONG) mai degrabă decât pe guvernele locale?",
+          "Cultura occidentală, în special prin muzică și cinema, are o influență masivă asupra restului lumii. Avantajele răspândirii globale a culturii occidentale depășesc dezavantajele?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "problem-solution",
+    "label": "Problemă și soluție",
+    "description": "Identificați cauzele unei probleme și sugerați soluții.",
+    "instruction": "Explicați cauzele/impactele acestei probleme și sugerați soluții. Scrie cel puțin 250 de cuvinte.",
+    "categories": [
+      {
+        "name": "Mediu și natură",
+        "prompts": [
+          "Cantitatea de deșeuri de plastic din oceanele lumii crește rapid. Care sunt cauzele acestui lucru? Ce soluții poți sugera?",
+          "Defrișarea are loc într-un ritm alarmant în multe părți ale lumii. Care sunt efectele negative ale acestui lucru? Cum poate fi rezolvată această problemă?",
+          "Multe orașe din întreaga lume se confruntă cu o lipsă gravă de apă. De ce se întâmplă asta? Ce măsuri pot fi luate pentru a rezolva această problemă?",
+          "Numărul speciilor pe cale de dispariție crește în fiecare an. Care sunt principalele cauze ale acestui declin? Ce se poate face pentru a proteja aceste animale?",
+          "Poluarea aerului în marile centre urbane atinge cote critice. Care sunt efectele asupra sănătății și asupra mediului înconjurător? Cum pot guvernele și indivizii să reducă poluarea aerului?",
+          "Încălzirea globală provoacă fenomene meteorologice extreme pe tot globul. Care sunt cauzele primare ale acestui fenomen? Ce măsuri pot fi luate pentru a minimiza efectele acestuia?",
+          "Cantitatea de deșeuri menajere produse este în creștere semnificativă. De ce este acesta cazul? Ce se poate face pentru a încuraja oamenii să reducă deșeurile?",
+          "Pierderea biodiversităţii este o preocupare majoră la nivel mondial. Care sunt consecințele negative ale acestei pierderi? Cum putem păstra ecosistemele naturale?",
+          "Pescuitul excesiv epuizează stocurile de pește din oceanele lumii. Ce probleme provoacă acest lucru? Ce reglementări ar trebui puse în aplicare pentru a preveni acest lucru?",
+          "Degradarea solului face dificilă cultivarea alimentelor în unele regiuni. Care sunt cauzele acestei probleme? Ce soluții agricole pot fi implementate?"
+        ]
+      },
+      {
+        "name": "Tehnologie și Internet",
+        "prompts": [
+          "Copiii de astăzi petrec o cantitate excesivă de timp uitându-se la ecrane. Care sunt efectele negative ale acestui lucru? Cum pot părinții să gestioneze timpul petrecut pe ecranul copiilor lor?",
+          "Hărțuirea cibernetică a devenit o problemă larg răspândită în rândul adolescenților. Care sunt cauzele acestui comportament? Ce pot face școlile și părinții pentru a preveni acest lucru?",
+          "Odată cu creșterea serviciilor online, confidențialitatea datelor cu caracter personal este din ce în ce mai în pericol. Care sunt potențialele pericole ale acestui lucru? Cum își pot proteja oamenii informațiile online?",
+          "Mulți adulți se trezesc dependenți de smartphone-urile lor. De ce se întâmplă asta? Ce măsuri pot lua oamenii pentru a-și reduce dependența de dispozitivele mobile?",
+          "Dezvoltarea rapidă a inteligenței artificiale amenință multe locuri de muncă tradiționale. Care sunt impacturile potențiale ale acestui lucru asupra societății? Ce pot face guvernele pentru a pregăti forța de muncă?",
+          "Actualizarea constantă a dispozitivelor electronice a dus la o creștere masivă a deșeurilor electronice. De ce oamenii își înlocuiesc dispozitivele atât de des? Cum pot fi gestionate mai bine deșeurile electronice?",
+          "Răspândirea știrilor false și a dezinformării pe rețelele sociale este o problemă în creștere. Ce face ca aceste informații să se răspândească atât de repede? Ce se poate face pentru a o combate?",
+          "Comunicarea față în față este în scădere din cauza mesageriei digitale. Care sunt efectele negative asupra relațiilor personale? Cum putem încuraja mai multe interacțiuni din viața reală?",
+          "Criminalitatea cibernetică, cum ar fi hackingul și furtul de identitate, este în creștere. Ce îi face pe oameni vulnerabili la aceste crime? Ce măsuri pot îmbunătăți securitatea cibernetică?",
+          "Oamenii devin prea dependenți de tehnologie pentru abilitățile de bază, cum ar fi utilizarea GPS-ului în loc să citească o hartă. Ce probleme provoacă această încredere? Cum poate fi inversată această tendință?"
+        ]
+      },
+      {
+        "name": "Societate și Viața Orașului",
+        "prompts": [
+          "Multe orașe mari suferă de o supraaglomerare severă. Care sunt cauzele acestei urbanizări rapide? Ce soluții pot ajuta la gestionarea populației orașului?",
+          "Costul vieții crește drastic în multe părți ale lumii. Ce probleme cauzează acest lucru familiilor obișnuite? Cum pot guvernele să ușureze această povară financiară?",
+          "Lipsa de adăpost este o problemă vizibilă în multe națiuni bogate. De ce ajung oamenii să trăiască pe străzi? Ce programe sociale pot reduce efectiv numărul de persoane fără adăpost?",
+          "Poluarea fonică este o problemă constantă pentru oamenii care locuiesc în zonele urbane. Care sunt principalele surse ale acestui zgomot? Ce pași pot face urbaniştii pentru a crea medii mai liniștite?",
+          "Există o lipsă de parcuri publice și spații verzi în orașele moderne. Care sunt efectele negative ale acestui lucru asupra locuitorilor orașului? Cum pot autoritățile locale să rezolve această problemă?",
+          "Zonele rurale se confruntă cu o scădere a populației pe măsură ce tinerii se îndepărtează. De ce se întâmplă asta? Ce se poate face pentru a încuraja oamenii să rămână sau să se mute în comunitățile rurale?",
+          "Populația din multe țări dezvoltate îmbătrânește rapid. Ce probleme economice și sociale provoacă acest lucru? Cum se pot adapta societățile la o populație mai în vârstă?",
+          "Decalajul de bogăție dintre bogați și săraci continuă să se lărgească. Care sunt consecințele sociale ale inegalității extreme? Ce politici economice ar putea ajuta la distribuirea mai uniformă a bogăției?",
+          "În ciuda faptului că trăiesc în orașe aglomerate, mulți oameni spun că se simt izolați și singuri. Care sunt cauzele izolării urbane moderne? Ce se poate face pentru a stimula un sentiment de comunitate?",
+          "Culturile și obiceiurile tradiționale se sting într-o lume globalizată. De ce are loc această pierdere? Cum își pot păstra comunitățile moștenirea culturală?"
+        ]
+      },
+      {
+        "name": "Educație",
+        "prompts": [
+          "Elevii de liceu se confruntă astăzi cu niveluri fără precedent de stres și epuizare. Care sunt principalele cauze ale acestei presiuni? Cum poate fi reformat sistemul de învățământ pentru a sprijini bunăstarea elevilor?",
+          "Costul de a merge la universitate a devenit inaccesibil pentru mulți tineri. Care sunt efectele negative ale acestui lucru? Ce alternative sau soluții pot fi oferite studenților?",
+          "Bullying-ul rămâne o problemă persistentă în școlile din întreaga lume. Ce efecte psihologice are bullying-ul asupra copiilor? Ce strategii anti-bullying sunt cele mai eficiente?",
+          "Mulți angajatori se plâng de faptul că proaspeții absolvenți nu au abilități practice pentru locul de muncă. De ce există un decalaj între educație și angajare? Cum pot fi îmbunătățite programele universitare?",
+          "Există un deficit grav de profesori calificați în multe țări. Care sunt motivele din spatele acestui deficit? Cum se poate face profesia de cadru didactic mai atractivă?",
+          "Elevii din zonele rurale primesc adesea o calitate mai scăzută a educației decât cei din orașe. Ce cauzează această decalaj educațional? Ce măsuri pot asigura accesul egal la o școală de calitate?",
+          "Creșterea instrumentelor AI a dus la o creștere a înșelăciunii academice și a plagiatului. Care sunt efectele negative asupra învățării elevilor? Cum ar trebui școlile să abordeze utilizarea IA?",
+          "Analfabetismul adulților rămâne ridicat în anumite regiuni în curs de dezvoltare. Ce probleme provoacă analfabetismul pentru societate? Ce inițiative pot învăța cu succes adulții să citească și să scrie?",
+          "Mulți studenți se simt dezactivați și plictisiți în mediile tradiționale de clasă. De ce metodele tradiționale de predare nu reușesc să capteze atenția elevilor? Cum pot fi făcute lecțiile mai captivante?",
+          "Dimensiunile claselor din școlile publice sunt adesea prea mari pentru o predare eficientă. Care sunt impacturile negative atât asupra profesorilor, cât și asupra elevilor? Cum poate fi rezolvată această problemă?"
+        ]
+      },
+      {
+        "name": "Sănătate și dietă",
+        "prompts": [
+          "Obezitatea a devenit o epidemie în multe părți ale lumii. Care sunt cauzele principale ale creșterii în greutate pe scară largă? Ce acțiuni pot întreprinde guvernele pentru a promova un stil de viață mai sănătos?",
+          "Ratele problemelor de sănătate mintală, cum ar fi depresia și anxietatea, sunt în creștere la nivel global. De ce aceste afecțiuni devin mai frecvente? Ce se poate face pentru a îmbunătăți sănătatea mintală?",
+          "Consumul de fast-food este la cote maxime. Care sunt efectele negative asupra sănătății ale consumului de alimente puternic procesate? Cum poate societatea să încurajeze oamenii să gătească mâncăruri proaspete?",
+          "Stilul de viață modern a devenit din ce în ce mai sedentar. Ce probleme fizice apar din lipsa mișcării? Ce se poate face pentru a integra mai multă activitate fizică în viața de zi cu zi?",
+          "Mulți oameni suferă astăzi de privare cronică de somn. Ce factori contribuie la lipsa somnului în societatea modernă? Cum își pot îmbunătăți oamenii igiena somnului?",
+          "Costul tratamentelor medicale și al asistenței medicale crește dincolo de îndemâna cetățenilor obișnuiți. Ce probleme provoacă acest lucru? Cum poate fi făcută asistența medicală mai accesibilă și mai accesibilă?",
+          "Există o penurie globală de asistente medicale și profesioniști din domeniul sănătății. De ce se luptă acest sector să rețină personalul? Ce stimulente ar putea rezolva această criză de personal?",
+          "În ciuda progreselor în medicină, mulți oameni din întreaga lume încă mor din cauza bolilor ușor de prevenit. De ce este acesta cazul? Ce se poate face cu această problemă?",
+          "Utilizarea excesivă a antibioticelor duce la tulpini rezistente de bacterii. Care sunt pericolele rezistenței la antibiotice? Cum poate comunitatea medicală să abordeze această problemă?",
+          "Utilizarea prelungită a ecranului provoacă o creștere a problemelor de sănătate legate de ochi în rândul copiilor și adulților. Care sunt problemele specifice care apar? Ce măsuri preventive ar trebui luate?"
+        ]
+      },
+      {
+        "name": "Muncă și economie",
+        "prompts": [
+          "Stresul legat de muncă este o cauză principală de îmbolnăvire în forța de muncă modernă. Ce aspecte ale muncii moderne creează acest stres? Ce pot face angajatorii pentru a susține sănătatea mintală a personalului lor?",
+          "Ratele șomajului în rândul tinerilor sunt incredibil de ridicate în multe țări. De ce se luptă tinerii să-și găsească un loc de muncă? Ce inițiative le pot ajuta să le integreze în forța de muncă?",
+          "În multe profesii, femeile sunt încă plătite mai puțin decât bărbații pentru aceeași muncă. Care sunt cauzele diferenței de remunerare între femei și bărbați? Cum pot guvernele și întreprinderile să asigure salariu egal?",
+          "Naveta zilnică lungă și obositoare este o realitate pentru mulți lucrători. Care sunt efectele negative ale navetei lungi asupra persoanelor? Cum poate fi atenuată această problemă?",
+          "Mulți angajați se luptă să mențină un echilibru sănătos între viața profesională și viața privată. De ce a devenit atât de dificil să separăm munca de viața personală? Ce politici la locul de muncă pot îmbunătăți acest echilibru?",
+          "Creșterea „economiei gig” înseamnă că mulți oameni lucrează cu contracte pe termen scurt, fără beneficii. Ce probleme financiare creează acest lucru lucrătorilor? Cum pot fi mai bine protejați lucrătorii din concerte?",
+          "Inflația ridicată face ca prețul bunurilor de bază să crească. Cum afectează acest lucru familiile cu venituri mici? Ce măsuri economice pot fi luate pentru a stabiliza prețurile?",
+          "În unele industrii, lucrătorii sunt supuși unor condiții de muncă nesigure. De ce persistă aceste condiții? Ce se poate face pentru a aplica reglementări mai stricte de siguranță?",
+          "Multe țări în curs de dezvoltare suferă de o „exod de creiere”, în care cei mai educați profesioniști ai lor se mută în străinătate. Ce probleme provoacă acest lucru pentru țara de origine? Cum își pot păstra națiunile talentul?",
+          "Tinerii adulți acum acumulează niveluri fără precedent de datorii personale. Care sunt principalele motive pentru acest împrumut? Ce educație financiară ar trebui oferită pentru a rezolva acest lucru?"
+        ]
+      },
+      {
+        "name": "Crimă și lege",
+        "prompts": [
+          "Delincvența juvenilă (infracțiuni comise de tineri) este în creștere în multe orașe. Care sunt cauzele fundamentale ale criminalității juvenile? Ce intervenții pot ține tinerii departe de necazuri?",
+          "Crimele tradiționale sunt în scădere, dar infracțiunile cibernetice sunt în creștere bruscă. De ce se deplasează criminalii online? Cum se pot adapta forțele de ordine pentru a lupta împotriva criminalității digitale?",
+          "Abuzul de droguri continuă să ruineze vieți și comunități. Ce îi determină pe indivizi spre abuzul de substanțe? Care sunt cele mai eficiente metode de reabilitare a dependenților?",
+          "Închisorile din multe țări sunt extrem de supraaglomerate. Care sunt consecințele închisorilor suprapopulate? Ce pedepse alternative ar putea ușura această presiune?",
+          "Mulți criminali recidivează la scurt timp după ce au fost eliberați din închisoare. De ce sistemele penitenciare nu reușesc să reabilitați deținuții? Ce programe pot ajuta foștii condamnați să se reintegreze în societate?",
+          "Infracțiunile cu guler alb, cum ar fi frauda corporativă, rămân adesea nepedepsite în comparație cu crimele stradale. De ce este acesta cazul? Cum poate sistemul de justiție să abordeze mai eficient corupția corporativă?",
+          "Vandalismul și distrugerea proprietății publice sunt frecvente în multe zone urbane. Ce motivează oamenii să comită acte de vandalism? Cum pot autoritățile locale să o prevină?",
+          "Infracțiunile rutiere, cum ar fi viteza și conducerea în stare de ebrietate, provoacă mii de decese anual. De ce oamenii ignoră legile rutiere? Ce măsuri pot descuraja cu succes conducerea periculoasă?",
+          "Violența domestică este o infracțiune ascunsă care afectează milioane de gospodării. De ce victimele tac adesea? Ce sisteme de suport trebuie să existe pentru a le proteja?",
+          "Comerțul ilegal cu animale sălbatice duce la dispariție multe specii de animale. Ce alimentează cererea de produse animale ilegale? Cum pot legile internaționale să oprească acest comerț?"
+        ]
+      },
+      {
+        "name": "Familie și tineret",
+        "prompts": [
+          "Modelul tradițional de familie extinsă este înlocuit de familia nucleară sau de gospodăriile monoparentale. Ce probleme provoacă pierderea sprijinului familiei extinse? Cum poate societatea să sprijine familiile moderne?",
+          "Există o „diferență generațională” în creștere, care are ca rezultat o lipsă de înțelegere între tineri și bătrâni. De ce apar aceste neînțelegeri? Cum putem reduce decalajul dintre generații?",
+          "Mulți copii de astăzi sunt lăsați acasă fără supravegherea părintească din cauza părinților care lucrează. Care sunt efectele negative asupra dezvoltării copilului? Ce soluții pot implementa părinții care lucrează?",
+          "Părinții de astăzi pun o presiune imensă asupra copiilor lor pentru a reuși academic și în extrașcolare. Care sunt efectele psihologice asupra copiilor? Cum pot părinții să adopte o abordare mai sănătoasă?",
+          "Rata natalității în multe țări dezvoltate scad rapid. De ce oamenii aleg să aibă mai puțini copii? Ce probleme va cauza aceasta societății în viitor și cum pot fi abordate?",
+          "Costul îngrijirii profesionale a copiilor este prohibitiv de scump pentru multe familii. Ce probleme creează acest lucru în special pentru mamele care lucrează? Cum poate fi făcută mai accesibilă îngrijirea copiilor?",
+          "Comportamentul antisocial în rândul adolescenților din spațiile publice este o plângere comună. Ce cauzează acest comportament rebel? Cum pot comunitățile să implice adolescenții în activități mai pozitive?",
+          "Copiii și adolescenții de astăzi sunt vizați din ce în ce mai mult de marketingul de consum. Care sunt efectele negative ale consumismului tinerilor? Cum își pot proteja părinții copiii de publicitatea agresivă?",
+          "Mulți tineri idolatrizează vedetele care manifestă un comportament prost. De ce adolescenții se bucură de aceste cifre? Cum putem oferi tinerilor modele mai bune?",
+          "Ratele divorțurilor au crescut semnificativ în ultimele decenii. Care sunt principalele presiuni care fac eșecul căsătoriilor? Ce se poate face pentru a pregăti mai bine cuplurile pentru căsătorie?"
+        ]
+      },
+      {
+        "name": "Transport & Turism",
+        "prompts": [
+          "Congestionarea traficului este un coșmar zilnic în majoritatea orașelor mari. Care sunt principalele cauze ale blocajului? Ce soluții inovatoare de transport pot ușura fluxul de trafic?",
+          "Sistemele de transport public din multe zone sunt nesigure și prost întreținute. De ce transportul public este adesea neglijat? Ce pași sunt necesari pentru a actualiza aceste sisteme?",
+          "Siturile istorice și reperele celebre suferă de „supraturism”. Ce daune provoacă turismul excesiv? Cum pot autoritățile să gestioneze sustenabil numărul de turiști?",
+          "Industria aviației contribuie masiv la emisiile globale de carbon. De ce călătoriile aeriene sunt atât de greu de făcut „verde”? Ce alternative sau soluții pot reduce impactul zborului asupra mediului?",
+          "Numărul accidentelor rutiere mortale rămâne inacceptabil de mare. Care sunt cauzele principale ale acestor accidente? Ce măsuri de siguranță pot reduce semnificativ decesele rutiere?",
+          "Călătoriile internaționale devin prea scumpe pentru o persoană obișnuită din cauza costurilor cu combustibilul și a taxelor. Care sunt efectele negative ale restricțiilor de călătorie? Cum poate turismul să rămână accesibil?",
+          "Turiștii se comportă frecvent în moduri care jignesc sensibilitățile culturale locale. De ce apare această fricțiune culturală? Cum pot fi educați călătorii să respecte obiceiurile locale?",
+          "În ciuda avertismentelor de mediu, dependența de mașinile private este în creștere. De ce refuză oamenii să renunțe la mașini? Ce stimulente ar împinge oamenii cu succes spre transportul public?",
+          "Găsirea locurilor de parcare în centrele orașelor devine aproape imposibilă. Ce probleme creează acest lucru pentru afacerile locale? Ce soluții arhitecturale sau de amenajare pot remedia lipsa de parcare?",
+          "Construcția de mega-stațiuni distruge micile afaceri locale din orașele turistice. De ce magazinele locale se chinuie să concureze? Ce pot face autoritățile locale pentru a proteja întreprinderile mici?"
+        ]
+      },
+      {
+        "name": "Alimentație și agricultură",
+        "prompts": [
+          "O cantitate șocantă de alimente este irosită la nivel global de către supermarketuri și consumatori. De ce se aruncă atât de multă mâncare? Ce măsuri pot fi luate pentru a reduce drastic risipa alimentară?",
+          "Multe țări se bazează mult pe importul de alimente, mai degrabă decât pe cultivarea lor local. Care sunt riscurile dependenței de aprovizionarea cu alimente străine? Cum își pot crește națiunile agricultura internă?",
+          "Utilizarea intensă a pesticidelor chimice în agricultură provoacă îngrijorare. Care sunt efectele asupra mediului și asupra sănătății acestor substanțe chimice? Care sunt alternativele viabile la agricultura chimică?",
+          "Practicile de fermă în fabrici acordă prioritate profitului față de bunăstarea animalelor. Care sunt cruzimile specifice asociate cu producția de carne în masă? Cum pot consumatorii și guvernele să conducă schimbarea în această industrie?",
+          "Fermele mici, de familie, dispar pe măsură ce marile agro-afaceri preiau controlul. De ce eșuează fermele mici? Ce se poate face pentru a sprijini și susține fermierii locali?",
+          "În ciuda faptului că producția globală de alimente este ridicată, insecuritatea alimentară și foamea încă există în multe regiuni. Care sunt cauzele principale ale eșecurilor în distribuția alimentelor? Cum ne putem asigura că toată lumea are suficient de mâncat?",
+          "Terenul arabil (terenul potrivit pentru cultivarea culturilor) este pierdut din cauza dezvoltărilor de locuințe și a deșertificării. Care sunt pericolele pe termen lung ale pierderii terenurilor agricole? Cum putem proteja terenurile agricole?",
+          "Efectele pe termen lung asupra sănătății ale consumului de alimente modificate genetic (MG) rămân o preocupare pentru mulți. De ce sunt oamenii sceptici cu privire la culturile modificate genetic? Ce reglementări ar trebui să guverneze vânzarea alimentelor modificate genetic?",
+          "Dietele la nivel global se îndreaptă către alimente prea procesate, preambalate. Ce determină această dependență de alimentele procesate? Cum pot guvernele să educe publicul cu privire la nutriția integrală?",
+          "Scurgerea agricolă (îngrășămintele care se spală în râuri) poluează grav căile navigabile. Ce daune provoacă acest lucru ecosistemelor acvatice? Ce practici agricole pot preveni această poluare?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "double-question",
+    "label": "Intrebare dubla",
+    "description": "Răspunde la două întrebări separate despre același subiect.",
+    "instruction": "Răspundeți complet la ambele întrebări. Scrie cel puțin 250 de cuvinte.",
+    "categories": [
+      {
+        "name": "Educație și învățare",
+        "prompts": [
+          "Mulți studenți le este greu să se concentreze la școală și la universitate. Care sunt motivele pentru aceasta? Cum putem rezolva această problemă?",
+          "În unele țări, o proporție mare de studenți abandonează universitatea înainte de a-și finaliza studiile. De ce crezi că se întâmplă asta? Ce se poate face pentru a încuraja studenții să-și termine studiile?",
+          "Unii oameni cred că istoria este o materie inutilă de studiat la școală. De ce unii oameni simt așa? Crezi că istoria este o materie importantă pentru școală?",
+          "A face un an paus înainte de a intra la universitate devine din ce în ce mai comun în rândul tinerilor. De ce mai mulți studenți aleg să facă asta? Este o tendință pozitivă sau negativă?",
+          "Costul de participare la universitate a crescut semnificativ în multe părți ale lumii. Ce impact are acest lucru asupra studenților și societății? Ce măsuri ar putea face învățământul superior mai accesibil?",
+          "Mulți copii primesc teme zilnice de la profesorii lor. Crezi că aceasta este o practică necesară? Care sunt potențialele dezavantaje ale prea multor teme?",
+          "În ultimii ani, numărul persoanelor care aleg să studieze online, mai degrabă decât în ​​sălile de clasă tradiționale, a crescut. Care sunt avantajele învățării online? Crezi că școlile tradiționale vor dispărea în cele din urmă?",
+          "Unii elevi se luptă să învețe limbi străine într-o clasă. De ce este dificil să învețe o nouă limbă pentru mulți oameni? Care sunt cele mai eficiente metode de a învăța o limbă străină?",
+          "Abilități practice precum gătit, management financiar și întreținere de bază a mașinii sunt rareori predate în școli. Aceste abilități ar trebui incluse în curriculum? A cui este responsabilitatea de a preda aceste abilități copiilor?",
+          "Muzica și arta sunt adesea primele materii care sunt eliminate din programa școlară atunci când finanțarea este redusă. De ce se întâmplă asta? Cât de importante sunt artele pentru dezvoltarea copilului?"
+        ]
+      },
+      {
+        "name": "Tehnologie și inovație",
+        "prompts": [
+          "Oamenii de astăzi petrec din ce în ce mai mult timp uitându-se la ecranele telefoanelor, computerelor și televizoarelor. Care sunt efectele acestui lucru asupra sănătății fizice și psihice? Cum își pot gestiona persoanele mai bine timpul petrecut pe ecran?",
+          "Inteligența artificială este din ce în ce mai folosită pentru a îndeplini sarcinile efectuate anterior de oameni. Care sunt principalele beneficii ale AI? Ce riscuri prezintă această tehnologie pentru societate?",
+          "Platformele de social media au schimbat modul în care oamenii formează și întrețin relațiile. Cum au afectat rețelele sociale interacțiunea umană? Crezi că aceasta a fost o evoluție pozitivă sau negativă în general?",
+          "Un număr tot mai mare de persoane folosesc aplicații de întâlniri online pentru a găsi parteneri romantici. De ce au devenit aceste platforme atât de populare? Care sunt pericolele potențiale de a întâlni oameni online?",
+          "Mulți oameni preferă să citească știrile online decât să cumpere ziare fizice. De ce sunt știrile digitale preferate de atât de mulți? Ziarele tipărite vor dispărea complet în viitor?",
+          "Criptomonedele și plățile digitale devin din ce în ce mai frecvente, înlocuind numerarul fizic. Care sunt avantajele unei societăți fără numerar? Ce probleme ar putea apărea din baza în totalitate pe banii digitali?",
+          "Turismul spațial este de așteptat să devină o realitate pentru persoanele bogate în viitorul apropiat. De ce sunt oamenii interesați să călătorească în spațiu? Ar trebui guvernele să reglementeze această nouă industrie?",
+          "Copiii de astăzi au adesea acces la smartphone-uri și tablete de la o vârstă foarte fragedă. Cum afectează accesul timpuriu la tehnologie dezvoltarea copilului? Ar trebui părinții să limiteze utilizarea acestor dispozitive de către copii?",
+          "Automatizarea și robotica înlocuiesc munca manuală în multe industrii de producție. Ce se întâmplă cu muncitorii care își pierd locul de muncă din cauza mașinilor? Cum ar trebui guvernele să pregătească forța de muncă pentru viitor?",
+          "Cyberbullying-ul este o problemă în creștere în rândul adolescenților și tinerilor adulți. De ce oamenii agresează pe alții online? Ce măsuri pot lua școlile și părinții pentru a preveni acest comportament?"
+        ]
+      },
+      {
+        "name": "Muncă și cariere",
+        "prompts": [
+          "Satisfacția muncii este în scădere în rândul lucrătorilor din multe țări dezvoltate. Care sunt principalele cauze ale acestei nemulțumiri? Ce pot face angajatorii pentru a îmbunătăți viața profesională a personalului lor?",
+          "Mulți oameni aleg să-și schimbe cariera de mai multe ori de-a lungul vieții lor profesionale. Ce motivează oamenii să schimbe profesiile? Este aceasta o tendință pozitivă sau negativă pentru economie?",
+          "Lucrul la distanță a devenit o practică standard pentru multe companii. Care sunt beneficiile lucrului de acasă? Cu ce ​​provocări se confruntă lucrătorii de la distanță?",
+          "În unele profesii, se așteaptă ca angajații să lucreze foarte multe ore, adesea neplătite. De ce acceptă oamenii aceste condiții de muncă? Ce impact are acest lucru asupra vieții lor personale?",
+          "Vârsta de pensionare este crescută în multe țări din cauza speranței de viață mai lungi. De ce este implementată această politică? Crezi că este corect să te aștepți ca oamenii să lucreze până la sfârșitul de șaizeci sau șaptezeci?",
+          "Mulți tineri absolvă facultatea, dar nu își pot găsi un loc de muncă în domeniul ales. Care sunt motivele șomajului în rândul tinerilor? Cum pot universitățile să pregătească mai bine studenții pentru piața muncii?",
+          "Unele companii folosesc software de monitorizare pentru a urmări productivitatea angajaților lor în timp ce lucrează la computere. De ce folosesc angajatorii aceste instrumente? Este o invazie a vieții private?",
+          "Înființarea unei afaceri implică un risc financiar semnificativ și un program lung de lucru. De ce unii oameni aleg să devină antreprenori mai degrabă decât angajați obișnuiți? Ce calități sunt necesare pentru a conduce o afacere de succes?",
+          "Femeile sunt încă subreprezentate în funcțiile de conducere și executive în multe industrii. De ce persistă această diferență de gen? Ce măsuri ar putea fi luate pentru a promova egalitatea de gen la locul de muncă?",
+          "Unele locuri de muncă plătesc salarii extrem de mari, cum ar fi sportivii profesioniști și celebritățile de divertisment. Merită acești indivizi să câștige atât de mulți bani? Cum trebuie stabilit salariul unei persoane?"
+        ]
+      },
+      {
+        "name": "Mediu și durabilitate",
+        "prompts": [
+          "Poluarea cu plastic în oceanele lumii este o criză gravă a mediului. Care sunt principalele surse ale acestor deșeuri de plastic? Ce acțiuni pot întreprinde indivizii și guvernele pentru a curăța oceanele?",
+          "Multe specii de animale și plante sunt în prezent în pericol de dispariție. De ce este pierderea biodiversităţii o problemă pentru umanitate? Ce se poate face pentru a proteja speciile pe cale de dispariție?",
+          "Utilizarea combustibililor fosili este principalul motor al schimbărilor climatice globale. De ce este dificil pentru țări să treacă la surse de energie regenerabilă? Ce se va întâmpla dacă nu ne reducem dependența de petrol și cărbune?",
+          "Defrișarea are loc într-un ritm alarmant în pădurile tropicale. Care sunt principalele motive pentru tăierea acestor păduri? Cum poate comunitatea internațională să oprească această distrugere?",
+          "Multe orașe suferă de o poluare severă a aerului, care afectează sănătatea locuitorilor lor. Ce cauzează poluarea aerului urban? Care sunt cele mai eficiente modalități de îmbunătățire a calității aerului în orașe?",
+          "Apa dulce devine o resursă rară în multe părți ale lumii. De ce există o lipsă de apă potabilă curată? Cum putem conserva apa mai eficient?",
+          "Consumismul încurajează oamenii să cumpere constant produse noi și să le arunce pe cele vechi. Cum afectează această „cultură de aruncat” mediul? Ce se poate face pentru a încuraja oamenii să repare și să refolosească articolele?",
+          "Culturile modificate genetic (MG) sunt cultivate pentru a crește producția de alimente și a rezista dăunătorilor. De ce unii oameni se opun alimentelor modificate genetic? Beneficiile acestei tehnologii depășesc riscurile?",
+          "Evenimentele meteorologice extreme, cum ar fi uraganele și secetele, devin din ce în ce mai frecvente. Cum afectează aceste evenimente comunitățile locale? Cum ar trebui guvernele să se pregătească pentru dezastrele naturale?",
+          "Moda rapidă permite consumatorilor să cumpere haine la modă la prețuri foarte mici. Care este impactul asupra mediului al industriei fast fashion? Ar trebui să fie forțați consumatorii să plătească mai mult pentru haine realizate în mod durabil?"
+        ]
+      },
+      {
+        "name": "Societate și cultură",
+        "prompts": [
+          "În multe țări, proporția persoanelor în vârstă crește rapid. Ce provocări prezintă o populație îmbătrânită pentru societate? Cum își pot sprijini comunitățile mai bine cetățenii în vârstă?",
+          "Decalajul dintre cei mai bogați și cei mai săraci oameni din societate se mărește. Ce probleme provoacă inegalitatea extremă a bogăției? Ce politici ar putea ajuta la o distribuire mai echitabilă a bogăției?",
+          "Obiceiurile și festivalurile tradiționale își pierd semnificația în rândul tinerei generații. De ce se întâmplă asta? Este important să păstrăm cultura tradițională în lumea modernă?",
+          "Mulți oameni se simt singuri și izolați, în ciuda faptului că trăiesc în orașe aglomerate și moderne. De ce este atât de comună singurătatea urbană? Ce se poate face pentru a construi comunități mai puternice în zonele urbane?",
+          "Rata natalității este în scădere în multe țări dezvoltate. De ce oamenii aleg să aibă mai puțini copii? Ce impact va avea acest lucru asupra societății în viitor?",
+          "Migrația internațională a crescut, ducând la mai multe societăți multiculturale. Care sunt beneficiile trăirii într-o societate diversă? Ce provocări pot apărea atunci când diferite culturi trăiesc împreună?",
+          "Încrederea în politicieni și instituțiile guvernamentale este în scădere în multe părți ale lumii. De ce au devenit oamenii atât de cinici în privința politicii? Cum pot guvernele să reconstruiască încrederea publicului?",
+          "Voluntariatul și munca neremunerată în folosul comunității devin din ce în ce mai puțin frecvente. De ce mai puțini oameni își oferă timpul gratuit? Cum putem încuraja mai mulți oameni să-și ajute comunitățile locale?",
+          "Unii oameni cred că societatea modernă este prea concentrată pe aspectul fizic și frumusețea. De ce există atât de multă presiune pentru a arăta într-un anumit fel? Cum afectează asta sănătatea mintală a oamenilor?",
+          "Monumentele și statuile istorice sunt uneori îndepărtate sau distruse deoarece reprezintă un trecut controversat. De ce vor oamenii să elimine aceste monumente? Ar trebui să fie judecate figurile istorice după standardele moderne?"
+        ]
+      },
+      {
+        "name": "Sănătate și bunăstare",
+        "prompts": [
+          "Ratele de obezitate au atins proporții epidemice în multe țări. Care sunt principalele cauze ale acestei crize de sănătate? Ce rol ar trebui să joace guvernul în reglementarea industriei alimentare?",
+          "Stresul și anxietatea sunt probleme majore de sănătate pentru lucrătorii moderni. Ce factori contribuie la un nivel ridicat de stres la locul de muncă? Cum pot oamenii să realizeze un echilibru mai bun între viața profesională și viața privată?",
+          "Mulți oameni folosesc medicamente alternative în loc să viziteze medicii convenționali. De ce terapiile alternative devin tot mai populare? Există pericole asociate cu bazarea pe aceste tratamente?",
+          "Costul tratamentelor medicale și al medicamentelor eliberate pe bază de rețetă este foarte mare în unele țări. Cum afectează acest lucru familiile cu venituri mici? Asistența medicală ar trebui să fie complet gratuită pentru toată lumea?",
+          "Privarea de somn este o problemă comună pentru mulți adulți și adolescenți. De ce oamenii nu dorm suficient? Cum afectează lipsa somnului performanța zilnică și sănătatea pe termen lung?",
+          "Sporturile profesionale au devenit foarte comercializate, sportivii câștigând milioane. Au distrus banii adevăratul spirit al sportului? Ce impact are această comercializare asupra fanilor tineri?",
+          "În unele țări, vânzarea produselor din tutun este puternic impozitată și restricționată. De ce încearcă guvernele să descurajeze fumatul? Ar trebui să fie complet interzis fumatul în viitor?",
+          "Alimentele procesate și cele fast-food reprezintă o mare parte a dietei moderne. De ce oamenii aleg să mănânce alimente nesănătoase? Ce se poate face pentru ca alimentele sănătoase să fie mai atractive și mai accesibile?",
+          "Problemele de sănătate mintală sunt adesea stigmatizate, ceea ce face dificil pentru oameni să caute ajutor. De ce le este frică oamenilor să vorbească despre sănătatea lor mintală? Cum poate societatea să devină mai acceptabilă și mai susținătoare?",
+          "Unii oameni aleg să participe la sporturi extreme și periculoase, cum ar fi sărituri de bază sau cățărare solo liberă. Ce îi motivează pe oameni să-și riște viața pentru sport? Ar trebui să li se solicite serviciile de urgență să-i salveze dacă au probleme?"
+        ]
+      },
+      {
+        "name": "Servicii guvernamentale și publice",
+        "prompts": [
+          "Sistemele de transport public din multe orașe mari sunt supraaglomerate și nefiabile. De ce se luptă guvernele să mențină transportul public? Care sunt beneficiile unui sistem de tranzit foarte eficient?",
+          "Taxele sunt necesare pentru finanțarea serviciilor publice, dar mulți oameni încearcă să evite să le plătească. De ce oamenilor nu le place să plătească taxe? Cum pot guvernele să se asigure că sistemele fiscale sunt echitabile?",
+          "Multe guverne oferă sprijin financiar cetățenilor șomeri. De ce este necesară această bunăstare socială? Oferirea ajutorului de șomaj îi face pe oameni leneși?",
+          "Finanțarea pentru bibliotecile publice și centrele comunitare este adesea redusă în timpul recesiunilor economice. De ce aceste facilități sunt considerate mai puțin importante? Ce pierd comunitățile când se închid bibliotecile?",
+          "Unele țări au serviciul militar obligatoriu pentru toți adulții tineri. Care sunt avantajele recrutării? Care sunt argumentele împotriva forței oamenilor să se alăture armatei?",
+          "Prețurile locuințelor din marile orașe au devenit inaccesibile pentru mulți tineri profesioniști. De ce este atât de scumpă locuința în oraș? Ce pot face guvernele pentru a oferi locuințe la prețuri accesibile?",
+          "Națiunile bogate oferă adesea ajutor străin țărilor în curs de dezvoltare. De ce este important să ajutăm națiunile mai sărace? Ajutorul extern ajunge întotdeauna la oamenii care au cea mai mare nevoie de el?",
+          "Camerele de supraveghere sunt utilizate pe scară largă în spațiile publice pentru a preveni criminalitatea. Cât de eficiente sunt camerele în oprirea activităților ilegale? Supravegherea publică încalcă dreptul la intimitate al unei persoane?",
+          "Guvernele cheltuiesc sume mari de bani pentru a găzdui evenimente internaționale precum Jocurile Olimpice. De ce doresc țările să găzduiască aceste evenimente? Este aceasta o bună utilizare a fondurilor publice?",
+          "Sistemul de justiție penală din multe țări se concentrează pe pedepsirea infractorilor prin trimiterea lor la închisoare. Închisoarea chiar reabilește criminalii? Care sunt câteva modalități alternative de a face față crimelor non-violente?"
+        ]
+      },
+      {
+        "name": "Media & Comunicare",
+        "prompts": [
+          "Publicitatea este peste tot, de la ecrane de televiziune la panouri publice. Cum influențează publicitatea comportamentul consumatorului? Este publicitatea dăunătoare copiilor?",
+          "Răspândirea „știrilor false” și a dezinformării pe internet este o preocupare majoră. De ce oamenii creează și distribuie informații false? Cum poate învăța publicul să identifice surse de știri de încredere?",
+          "Vedetele și influențatorii au un impact masiv asupra comportamentului tinerilor. De ce adolescenții sunt atât de ușor influențați de oameni celebri? Această influență este în general pozitivă sau negativă?",
+          "Mulți oameni petrec ore întregi uitându-se la reality show-uri. De ce sunt aceste programe atât de atrăgătoare pentru public? Reality-show-urile reflectă cu exactitate viața reală?",
+          "Paparazzii urmăresc adesea oameni celebri pentru a fotografia viețile lor private. Are mass-media dreptul de a invada intimitatea unei celebrități? De ce publicul este atât de interesat de viețile personale ale oamenilor celebri?",
+          "Filmele și jocurile video moderne conțin adesea scene de violență extrem de realiste. De ce este atât de popular divertismentul violent? Vizionarea violenței îi face pe oameni mai agresivi în viața reală?",
+          "Jurnalismul de investigație joacă un rol crucial în dezvăluirea corupției. De ce este importantă o presă liberă pentru o societate sănătoasă? Cu ce ​​pericole se confruntă jurnaliştii când raportează despre oameni puternici?",
+          "Oamenii comunică mult mai rapid astăzi folosind mesaje text și e-mailuri. Cum a schimbat acest lucru modul în care scriem și vorbim? Ne-am pierdut capacitatea de a comunica profund și gânditor?",
+          "Platformele de streaming precum Netflix și Spotify au schimbat modul în care oamenii consumă divertisment. Cum afectează acest lucru cinematografele tradiționale și vânzările de muzică fizică? Este modelul de abonament corect pentru artiști și creatori?",
+          "Unele guverne cenzurează internetul pentru a bloca anumite site-uri web și platforme de social media. De ce guvernele restricționează accesul la informații? Cum ocolesc cetățenii aceste restricții?"
+        ]
+      },
+      {
+        "name": "Orașe și infrastructură",
+        "prompts": [
+          "Expansiunea urbană face ca orașele să se extindă rapid în zonele rurale din jur. Care sunt consecințele asupra mediului ale extinderii urbane? Cum pot urbaniştii să gestioneze mai sustenabil această creştere?",
+          "Congestionarea traficului este o problemă zilnică pentru milioane de navetiști din întreaga lume. Care sunt cauzele principale ale traficului intens? A face transportul public gratuit ar rezolva această problemă?",
+          "Multe clădiri istorice din centrele orașelor sunt demolate pentru a face loc zgârie-norilor moderni. De ce se întâmplă asta? Este important să păstrăm arhitectura veche?",
+          "Pietonalizarea centrelor orașelor – interzicerea tuturor mașinilor din anumite zone – devine populară în Europa. Care sunt beneficiile zonelor fără mașini? Cum afectează acest lucru afacerile locale?",
+          "Poluarea fonică este o problemă constantă pentru oamenii care locuiesc în zone metropolitane aglomerate. Care sunt principalele surse de zgomot urban? Cum afectează expunerea cronică la zgomot sănătatea rezidenților?",
+          "Parcurile și spațiile verzi sunt esențiale pentru o bună calitate a vieții într-un oraș. De ce sunt copacii și natura importanți într-un mediu urban? De ce unele orașe nu reușesc să ofere suficiente zone verzi?",
+          "Mahalalele și așezările informale există la periferia multor mega-orașe. De ce trăiesc oamenii în aceste condiții? Ce pot face guvernele pentru a îmbunătăți standardele de viață în aceste zone?",
+          "Bicicletele sunt promovate ca o alternativă ecologică la conducere. De ce mulți oameni încă refuză să meargă cu bicicleta la serviciu? Ce infrastructură este necesară pentru a face ciclismul sigur în orașe?",
+          "Arhitectura orașelor moderne arată adesea foarte asemănătoare, indiferent de țară. De ce își pierd orașele identitatea culturală unică? Designul unei clădiri afectează starea de spirit a oamenilor care o folosesc?",
+          "Gestionarea deșeurilor și eliminarea gunoiului sunt provocări logistice masive pentru orașele mari. Cum gestionează orașele în prezent milioane de tone de gunoi? Care sunt modalitățile mai durabile de a gestiona deșeurile urbane?"
+        ]
+      },
+      {
+        "name": "Globalizare și economie",
+        "prompts": [
+          "Creșterea corporațiilor multinaționale înseamnă că aceleași mărci sunt vândute în toată lumea. Cum afectează acest lucru afacerile și artizanii locali? Acest lucru duce la o pierdere a diversității culturale?",
+          "Călătoriile cu avionul ieftin au făcut turismul internațional accesibil pentru milioane de oameni. Care sunt beneficiile economice ale turismului de masă? Cum are turismul un impact negativ asupra comunităților locale și asupra mediului?",
+          "Multe locuri de muncă în producție au fost mutate din țările dezvoltate în țările în curs de dezvoltare. De ce își mută companiile fabricile? Cum afectează această globalizare lucrătorii din ambele țări?",
+          "româna a devenit limba dominantă a afacerilor și științei internaționale. De ce a atins româna acest statut global? Care sunt dezavantajele de a avea o singură limbă globală?",
+          "Unele țări se bazează mult pe importul de alimente, mai degrabă decât pe producerea lor pe plan intern. De ce importă națiunile cele de bază? Care sunt riscurile de a te baza pe alte țări pentru aprovizionarea cu alimente?",
+          "Conceptul de venit de bază universal (UBI) este dezbătut de economiștii din întreaga lume. Care sunt argumentele în favoarea acordării tuturor unui venit garantat? Cum ar fi finanțat un astfel de sistem?",
+          "Sancțiunile economice sunt adesea folosite de țările puternice pentru a pedepsi alte națiuni. Care sunt obiectivele acestor restricții comerciale? Cine suferă cel mai mult când o țară este sancționată?",
+          "Cardurile de credit și împrumuturile personale permit oamenilor să cumpere lucruri pe care nu și le pot permite imediat. De ce datoria consumatorilor crește la nivel global? Care sunt consecințele pe termen lung ale trăirii peste posibilitățile proprii?",
+          "Economia de partajare (de exemplu, Uber, Airbnb) a perturbat industriile tradiționale. De ce au aceste servicii peer-to-peer atât de reușite? Aceste platforme își exploatează lucrătorii?",
+          "Creșterea economică este obiectivul principal al majorității guvernelor naționale. Este posibilă creșterea economică fără sfârșit pe o planetă cu resurse limitate? Care sunt modalitățile alternative de a măsura succesul unei țări în afară de PIB?"
+        ]
+      }
+    ]
+  }
+]

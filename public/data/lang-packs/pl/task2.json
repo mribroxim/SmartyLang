@@ -1,0 +1,792 @@
+[
+  {
+    "type": "discussion",
+    "label": "Esej dyskusyjny",
+    "description": "Omów oba poglądy i wyraź swoją opinię.",
+    "instruction": "Omów oba poglądy i wyraź swoją opinię. Napisz co najmniej 250 słów.",
+    "categories": [
+      {
+        "name": "Edukacja",
+        "prompts": [
+          "Niektórzy uważają, że studia uniwersyteckie powinny być bezpłatne dla wszystkich, inni zaś uważają, że za studia wyższe powinni płacić studenci. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że rywalizacja sportowa w szkołach jest bardzo korzystna, inni uważają, że powoduje ona niepotrzebny stres u dzieci. Omów oba poglądy i wyraź swoją opinię.",
+          "Wiele osób uważa, że ​​studenci powinni studiować szeroki zakres przedmiotów, inni zaś uważają, że powinni skupiać się wyłącznie na przedmiotach związanych z konkretną karierą zawodową. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że nauczyciele powinni być odpowiedzialni za uczenie uczniów odróżniania dobra od zła, inni zaś uważają, że ten obowiązek powinni ponosić rodzice. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy pedagodzy twierdzą, że praca domowa jest niezbędna do osiągnięcia sukcesu w nauce, inni zaś uważają, że jest to niepotrzebne obciążenie dla dzieci. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że studenci uniwersytetów powinni mieć możliwość studiowania, co im się podoba, inni zaś twierdzą, że powinni mieć możliwość studiowania jedynie przedmiotów przydatnych w przyszłości, takich jak nauki ścisłe i technologia. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że szkoły dla osób tej samej płci zapewniają lepsze warunki do nauki, inni twierdzą, że szkoły mieszane lepiej przygotowują dzieci do prawdziwego życia. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że nauka online ostatecznie zastąpi tradycyjną edukację w klasie, podczas gdy inni twierdzą, że nauczanie twarzą w twarz zawsze będzie konieczne. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że egzaminy są najlepszym sposobem oceny umiejętności ucznia, inni uważają, że ciągła ocena przez cały rok jest bardziej skuteczna. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że mundurki szkolne poprawiają dyscyplinę i równość, inni uważają, że ograniczają indywidualność uczniów. Omów oba poglądy i wyraź swoją opinię."
+        ]
+      },
+      {
+        "name": "Środowisko i zwierzęta",
+        "prompts": [
+          "Niektórzy uważają, że problemy środowiskowe są zbyt duże, aby mogły je rozwiązać jednostki, podczas gdy inni uważają, że jednostki mogą znacząco zmienić. Omów oba poglądy i wyraź swoją opinię.",
+          "Wiele osób uważa, że ​​rząd powinien wydawać pieniądze na poszukiwanie życia na innych planetach, inni natomiast uważają, że te pieniądze powinny zostać wydane na rozwiązywanie problemów na Ziemi. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że trzymanie zwierząt w ogrodach zoologicznych jest okrutne i niepotrzebne, inni zaś twierdzą, że ogrody zoologiczne odgrywają kluczową rolę w ochronie i edukacji. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że jedynym sposobem na ograniczenie zanieczyszczeń przemysłowych są rygorystyczne przepisy, inni uważają, że skuteczniejsze jest edukowanie firm w zakresie praktyk ekologicznych. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że najlepszym sposobem rozwiązania narastającego problemu ruchu drogowego jest budowa większej liczby dróg, inni natomiast uważają, że rząd powinien dużo inwestować w transport publiczny. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że odnawialne źródła energii są jedyną drogą naprzód dla naszej planety, podczas gdy inni twierdzą, że paliwa kopalne są nadal niezbędne dla stabilności gospodarczej. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że sadzenie drzew na obszarach miejskich to najlepszy sposób na poprawę środowiska miejskiego, podczas gdy inni uważają, że ważniejsze jest zapewnienie większej liczby obiektów użyteczności publicznej, takich jak szpitale. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że badania na zwierzętach są konieczne do osiągnięcia przełomu w medycynie, inni zaś uważają, że są one moralnie złe i powinny zostać całkowicie zakazane. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że ludzie mają prawo wykorzystywać zwierzęta do produkcji żywności i odzieży, podczas gdy inni twierdzą, że zwierzęta mają prawa i nie powinny być wykorzystywane. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że przeludnienie jest główną przyczyną degradacji środowiska, inni zaś obwiniają industrializację i konsumpcjonizm. Omów oba poglądy i wyraź swoją opinię."
+        ]
+      },
+      {
+        "name": "Technologia i Internet",
+        "prompts": [
+          "Niektórzy wierzą, że sztuczna inteligencja stworzy utopijne społeczeństwo, w którym nie będzie potrzeby pracy ludzkiej, inni zaś obawiają się, że doprowadzi to do masowego bezrobocia i nierówności. Omów oba poglądy i wyraź swoją opinię.",
+          "Wiele osób uważa, że ​​media społecznościowe zbliżyły ludzi, inni twierdzą, że izolują jednostki w realnym świecie. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że nie należy pozwalać dzieciom na korzystanie ze smartfonów do czasu osiągnięcia przez nich wieku nastoletniego, inni zaś uważają, że wczesny kontakt z nimi jest niezbędny do rozwijania umiejętności cyfrowych. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że książki drukowane wkrótce staną się przeszłością, inni natomiast uważają, że zawsze będą one preferowane w stosunku do e-booków. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że Internet ułatwił uzyskanie wiarygodnych informacji, inni twierdzą, że stworzył on erę fałszywych wiadomości i dezinformacji. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że automatyzacja w miejscu pracy jest korzystna dla wzrostu gospodarczego, inni martwią się utratą tradycyjnych miejsc pracy. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że postęp technologiczny uczynił współczesne życie zbyt skomplikowanym, inni uważają, że dzięki niemu życie stało się znacznie łatwiejsze i wygodniejsze. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że inwigilacja rządowa z wykorzystaniem technologii jest konieczna dla bezpieczeństwa narodowego, inni postrzegają to jako naruszenie prywatności osobistej. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że gry wideo są nieszkodliwą formą rozrywki, inni zaś twierdzą, że promują przemoc i siedzący tryb życia wśród młodzieży. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że turystyka kosmiczna będzie normalną częścią przyszłości, inni uważają ją za nieuzasadnione marnowanie zasobów. Omów oba poglądy i wyraź swoją opinię."
+        ]
+      },
+      {
+        "name": "Społeczeństwo i życie współczesne",
+        "prompts": [
+          "Niektórzy wolą mieszkać w dużych miastach ze względu na dostępne możliwości, inni wolą ciszę i spokój życia na wsi. Omów oba poglądy i wyraź swoją opinię.",
+          "Wiele osób uważa, że ​​lepiej jest, aby młodzi dorośli mieszkali z rodzicami do czasu zawarcia związku małżeńskiego, inni natomiast uważają, że powinni się wyprowadzić zaraz po ukończeniu osiemnastu lat. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że przepaść między bogatymi a biednymi pogłębia się i należy interweniować ze strony rządu, inni natomiast uważają, że przepaść ta jest naturalnym skutkiem wolnego rynku. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że osobami starszymi powinny znajdować się pod opieką rodziny, inni natomiast uważają, że rząd powinien zapewniać domy spokojnej starości. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że tradycyjne role mężczyzn i kobiet są niezbędne dla stabilnego społeczeństwa, podczas gdy inni twierdzą, że równość płci we wszystkich rolach jest niezbędna. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że posiadanie domu jest ostatecznym symbolem sukcesu, podczas gdy inni twierdzą, że wynajem zapewnia większą swobodę i mniej stresu. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że współczesne społeczeństwo staje się zbyt zorientowane na konsumenta, podczas gdy inni uważają, że konsumpcjonizm jest niezbędny do utrzymania rozwoju gospodarek. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że międzynarodowe wydarzenia sportowe promują pokój między narodami, inni uważają, że tworzą jedynie napięcia nacjonalistyczne. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że historia jest jednym z najważniejszych przedmiotów szkolnych, inni zaś uważają, że w dzisiejszym świecie przedmioty takie jak informatyka są o wiele bardziej istotne. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że posiadanie dużej ilości pieniędzy jest kluczem do szczęścia, podczas gdy inni twierdzą, że szczęście zależy wyłącznie od innych czynników, takich jak zdrowie i relacje. Omów oba poglądy i wyraź swoją opinię."
+        ]
+      },
+      {
+        "name": "Praca i kariera",
+        "prompts": [
+          "Niektórzy uważają, że satysfakcja z pracy jest ważniejsza niż wysoka pensja, inni uważają, że zarabianie dużych pieniędzy jest najważniejszym czynnikiem w pracy. Omów oba poglądy i wyraź swoją opinię.",
+          "Wielu twierdzi, że praca w domu zwiększa produktywność i równowagę między życiem zawodowym a prywatnym, inni zaś uważają, że środowisko biurowe jest niezbędne do współpracy. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że lepiej mieć jedną karierę na całe życie, inni zaś uważają, że wielokrotna zmiana kariery jest bardziej korzystna. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że starsi pracownicy są bardziej cenni dla firmy ze względu na ich doświadczenie, podczas gdy inni wolą młodszych pracowników ze względu na ich świeże pomysły i energię. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że wiek emerytalny powinien zostać wydłużony ze względu na dłuższą średnią długość życia, inni natomiast twierdzą, że należy wcześniej przechodzić na emeryturę, aby cieszyć się młodością i otwierać sobie nowe miejsca pracy. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że bezpłatne staże służą wyzyskowi, inni twierdzą, że stanowią kluczowy krok dla niedawnych absolwentów. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że kobiety powinny mieć na mocy prawa równy udział w wyższych stanowiskach kierowniczych, inne zaś uważają, że awanse powinny opierać się wyłącznie na zasługach, niezależnie od płci. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że założenie własnego biznesu to najlepszy sposób na osiągnięcie bezpieczeństwa finansowego, inni zaś uważają, że praca w dużej korporacji jest bezpieczniejsza. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że czterodniowy tydzień pracy byłby lepszy dla społeczeństwa, inni zaś twierdzą, że zaszkodziłby gospodarce. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że praca fizyczna powinna być opłacana na tym samym poziomie, co praca profesjonalna, np. lekarz czy prawnik, inni zaś uważają, że obecne siatki wynagrodzeń są uzasadnione. Omów oba poglądy i wyraź swoją opinię."
+        ]
+      },
+      {
+        "name": "Zdrowie i dieta",
+        "prompts": [
+          "Niektórzy uważają, że w celu zwalczania otyłości rząd powinien wprowadzić „podatek od tłuszczu” na niezdrową żywność, inni natomiast twierdzą, że ludzie powinni mieć swobodę wyboru tego, co jedzą. Omów oba poglądy i wyraź swoją opinię.",
+          "Wielu uważa, że ​​cała opieka zdrowotna powinna być całkowicie bezpłatna i finansowana przez rząd, inni natomiast uważają, że prywatna opieka zdrowotna zapewnia usługi lepszej jakości. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że leki alternatywne (takie jak akupunktura czy leki ziołowe) są bardzo skuteczne, inni zaś uważają, że są niebezpieczne i należy ufać jedynie nowoczesnej medycynie. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że sport i wychowanie fizyczne powinny być obowiązkowe dla dorosłych w miejscu pracy, inni natomiast uważają, że aktywność fizyczna to kwestia osobistego wyboru. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że diety wegańskie są najzdrowszą opcją dla człowieka, inni zaś twierdzą, że jedzenie mięsa jest niezbędne w zbilansowanej diecie. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że profilaktyczna opieka zdrowotna (taka jak programy edukacyjne i fitness) jest lepsza niż leczenie chorób po ich wystąpieniu, podczas gdy inni uważają, że priorytetem powinny być badania medyczne mające na celu wyleczenie choroby. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że należy całkowicie zakazać reklam fast foodów, inni zaś twierdzą, że ogranicza to wolność słowa przedsiębiorstw. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że zdrowie psychiczne jest tak samo ważne jak zdrowie fizyczne i powinno otrzymywać takie same środki finansowe, podczas gdy inni uważają, że choroby fizyczne wymagają pilniejszej pomocy finansowej. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że palenie powinno zostać całkowicie zakazane na całym świecie, inni natomiast twierdzą, że dorośli mają prawo do dokonywania własnych wyborów dotyczących stylu życia. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że żywność modyfikowana genetycznie (GM) jest kluczem do położenia kresu głodowi na świecie, podczas gdy inni uważają, że stwarza ona poważne ryzyko dla zdrowia ludzkiego. Omów oba poglądy i wyraź swoją opinię."
+        ]
+      },
+      {
+        "name": "Rząd i gospodarka",
+        "prompts": [
+          "Niektórzy uważają, że postęp gospodarczy jest najważniejszym celem rządu, podczas gdy inni uważają, że inne rodzaje postępu (takie jak społeczny lub środowiskowy) są równie ważne. Omów oba poglądy i wyraź swoją opinię.",
+          "Wielu twierdzi, że bogate kraje powinny udzielać pomocy finansowej biedniejszym krajom, podczas gdy inni uważają, że pomoc ta często przynosi więcej szkody niż pożytku z powodu korupcji. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że rząd powinien finansować artystów, muzyków i pisarzy, podczas gdy inni twierdzą, że pieniądze podatników powinny być wydawane wyłącznie na usługi publiczne, takie jak szpitale i drogi. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że transport publiczny powinien być bezpłatny, inni uważają, że pasażerowie powinni płacić, aby utrzymać jakość usług. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że światowy wolny handel jest korzystny dla krajów rozwijających się, podczas gdy inni uważają, że wykorzystuje on jedynie ich zasoby i tanią siłę roboczą. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że rządy powinny nałożyć ograniczenie na maksymalne wynagrodzenie, jakie może zarobić dana osoba, podczas gdy inni twierdzą, że ludzie powinni mieć możliwość zarabiania tyle, ile są w stanie. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że wspólna waluta światowa poprawiłaby gospodarkę światową, podczas gdy inni uważają, że waluty krajowe są niezbędne dla niezależności gospodarczej kraju. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że płacenie podatków jest najważniejszym obowiązkiem obywatela, inni zaś uważają, że ludzie powinni starać się zachować jak najwięcej swoich dochodów, na ile jest to zgodne z prawem. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że rządy powinny zapewniać wszystkim obywatelom powszechny dochód podstawowy, inni natomiast twierdzą, że spowodowałoby to lenistwo ludzi i zrujnowało gospodarkę. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że eksploracja kosmosu to strata pieniędzy rządowych, inni zaś twierdzą, że jest to niezbędna inwestycja w przyszłość ludzkości. Omów oba poglądy i wyraź swoją opinię."
+        ]
+      },
+      {
+        "name": "Zbrodnia i kara",
+        "prompts": [
+          "Niektórzy uważają, że głównym celem więzień jest karanie przestępców, inni natomiast twierdzą, że więzienia powinny skupiać się wyłącznie na resocjalizacji. Omów oba poglądy i wyraź swoją opinię.",
+          "Wielu uważa, że ​​kara śmierci jest uzasadnioną karą za poważne przestępstwa, inni natomiast uważają, że stanowi ona naruszenie praw człowieka i powinna zostać zniesiona. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że dłuższe kary pozbawienia wolności skutecznie odstraszają przestępczość, podczas gdy inni uważają, że nie zmniejszają one wskaźników przestępczości, a jedynie przeludniają więzienia. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że nieletni przestępcy (młodociani przestępcy) powinni otrzymywać takie same kary jak dorośli, inni natomiast uważają, że należy ich traktować łagodniej. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że instalowanie kamer bezpieczeństwa w miejscach publicznych ogranicza przestępczość, inni zaś uważają, że stanowi to poważne naruszenie prywatności. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że policja powinna zawsze nosić przy sobie broń palną, aby chronić społeczeństwo, inni natomiast uważają, że uzbrojona policja eskaluje przemoc. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że cyberprzestępczość stanowi największe zagrożenie dla współczesnego społeczeństwa, inni zaś twierdzą, że tradycyjna przestępczość z użyciem przemocy jest wciąż znacznie bardziej niebezpieczna. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że byli więźniowie powinni mieć obowiązek informowania pracodawców o swojej kryminalnej przeszłości, inni natomiast uważają, że po odbyciu kary mają prawo do prywatności. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że praca społeczna jest lepszą karą za drobne przestępstwa niż wysyłanie ludzi do więzienia, podczas gdy inni uważają, że prace społeczne nie są wystarczająco rygorystyczne. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że ubóstwo jest główną przyczyną wszelkiej przestępczości, podczas gdy inni twierdzą, że przestępczość jest wynikiem ludzkiej natury i chciwości. Omów oba poglądy i wyraź swoją opinię."
+        ]
+      },
+      {
+        "name": "Media i reklama",
+        "prompts": [
+          "Niektórzy uważają, że przemoc w filmach i telewizji przyczynia się do przemocy w społeczeństwie, inni zaś twierdzą, że jest to jedynie nieszkodliwa rozrywka. Omów oba poglądy i wyraź swoją opinię.",
+          "Wielu uważa, że ​​media powinny być ściśle regulowane przez rząd, inni natomiast uważają, że całkowicie wolna prasa jest niezbędna dla demokracji. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że reklamy skierowane do dzieci powinny być nielegalne, inni zaś uważają, że obowiązkiem rodziców jest kontrolowanie tego, co oglądają ich dzieci. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że wiadomości są nadmiernie skoncentrowane na negatywnych wydarzeniach, co budzi niepokój opinii publicznej, inni natomiast twierdzą, że obowiązkiem mediów jest ujawnianie twardej prawdy. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że celebryci są okropnymi wzorami do naśladowania dla młodych ludzi, inni zaś zwracają uwagę, że wiele celebrytów wykorzystuje ich platformę do pozytywnej działalności charytatywnej. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że gazety drukowane umarły i wkrótce znikną całkowicie, inni natomiast uważają, że zawsze będzie istniał rynek dla dziennikarstwa drukowanego. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że ukierunkowana reklama internetowa jest bardzo wygodna dla konsumentów, inni zaś postrzegają ją jako manipulacyjną i inwazyjną. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że reality show ma negatywny wpływ na wartości kulturowe, inni uważają, że to po prostu zabawa, bezmyślny eskapizm. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że życie prywatne osób publicznych (takich jak polityków i aktorów) powinno być niedostępne dla prasy, inni natomiast uważają, że społeczeństwo ma prawo wiedzieć. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że współczesna reklama zmusza ludzi do kupowania rzeczy, których nie potrzebują, inni natomiast twierdzą, że reklama po prostu informuje konsumentów o ich wyborach. Omów oba poglądy i wyraź swoją opinię."
+        ]
+      },
+      {
+        "name": "Kultura, podróże i sztuka",
+        "prompts": [
+          "Niektórzy uważają, że międzynarodowa turystyka masowa niszczy lokalne kultury i środowisko, inni zaś twierdzą, że jest ona niezbędna dla lokalnej gospodarki. Omów oba poglądy i wyraź swoją opinię.",
+          "Wielu uważa, że ​​imigranci powinni przyjąć kulturę i zwyczaje swojego nowego kraju, podczas gdy inni uważają, że powinni zachować i praktykować swoją pierwotną kulturę. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że nauka języka obcego nie jest już konieczna dzięki oprogramowaniu do tłumaczenia, inni zaś uważają, że nauka języków zapewnia kluczowe zrozumienie kulturowe. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że muzea i galerie sztuki powinny być całkowicie bezpłatne dla zwiedzających, inni zaś twierdzą, że pobieranie opłaty za wstęp jest konieczne do utrzymania eksponatów. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że tradycyjne festiwale tracą swoje znaczenie i stają się czysto komercjalizowane, inni natomiast uważają, że komercjalizacja pomaga utrzymać te tradycje przy życiu. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że jeden globalny język (taki jak polski) jednoczy świat w pokoju, podczas gdy inni uważają, że niszczy on unikalne tożsamości kulturowe. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że podróżowanie w grupie z przewodnikiem to najlepszy sposób na poznanie nowego kraju, inni wolą podróżować samotnie i niezależnie. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że rządy powinny wydawać pieniądze na konserwację starych historycznych budynków, podczas gdy inni uważają, że bardziej praktyczne jest ich wyburzenie i zbudowanie nowoczesnych mieszkań. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy twierdzą, że międzynarodowe sieci fast foodów niszczą lokalne tradycje kulinarne i kulinarne, inni natomiast cieszą się z wygody i różnorodności. Omów oba poglądy i wyraź swoją opinię.",
+          "Niektórzy uważają, że studiowanie sztuki i literatury przeszłości jest nieistotne dla współczesnych uczniów, inni zaś twierdzą, że jest ono niezbędne dla wszechstronnej edukacji. Omów oba poglądy i wyraź swoją opinię."
+        ]
+      }
+    ]
+  },
+  {
+    "type": "opinion",
+    "label": "Esej z opinią",
+    "description": "Wyraź swoją opinię i argumentuj za lub przeciw twierdzeniu.",
+    "instruction": "W jakim stopniu się zgadzasz lub nie zgadzasz? / Jaka jest Twoja opinia? Napisz co najmniej 250 słów.",
+    "categories": [
+      {
+        "name": "Edukacja",
+        "prompts": [
+          "Niektórzy uważają, że edukacja uniwersytecka powinna być bezpłatna dla każdego, niezależnie od pochodzenia. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "W przyszłości uczniowie będą mieli do wyboru naukę w domu, korzystając z technologii, lub naukę w tradycyjnych szkołach. Twierdzi się, że tradycyjne szkoły znikną. Czy zgadzasz się czy nie?",
+          "Wiele osób uważa, że ​​prace domowe są niezbędne do prawidłowego uczenia się dzieci, inne natomiast uważają, że są one niepotrzebne i powodują stres. Jaka jest Twoja opinia?",
+          "Uniwersytety powinny przyjmować równą liczbę studentów na każdym kierunku. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Niektórzy uważają, że rodzice powinni uczyć dzieci, jak być dobrymi członkami społeczeństwa. Inni jednak uważają, że szkoła jest miejscem, w którym można się tego nauczyć. Jaka jest Twoja opinia?",
+          "Przedmioty takie jak plastyka, muzyka i teatr są często uważane za mniej ważne niż przedmioty takie jak matematyka i przedmioty ścisłe. Dlatego należy je usunąć ze szkolnego programu nauczania. Czy zgadzasz się czy nie?",
+          "Wszyscy uczniowie powinni mieć obowiązek nauki języka obcego już od szkoły podstawowej. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Coraz popularniejsze stają się gap year, podczas których studenci biorą urlop przed pójściem na studia. Wzięcie roku przerwy jest zawsze korzystnym doświadczeniem dla młodych ludzi. Czy zgadzasz się czy nie?",
+          "Praca w grupach jest najskuteczniejszą metodą uczenia się uczniów. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Niektórzy pedagodzy twierdzą, że egzaminy nie są sprawiedliwą oceną prawdziwych umiejętności ucznia i należy je zastąpić oceną ciągłą. Jaka jest Twoja opinia?"
+        ]
+      },
+      {
+        "name": "Technologia i innowacja",
+        "prompts": [
+          "Rozwój sztucznej inteligencji ostatecznie doprowadzi do utraty milionów miejsc pracy. Dlatego rządy powinny ograniczyć jego rozwój. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Media społecznościowe mają negatywny wpływ na społeczeństwo i pojedyncze osoby, zwiększając izolację i szerząc dezinformację. Czy zgadzasz się czy nie?",
+          "Niektórzy uważają, że Internet zbliżył ludzi, inni zaś uważają, że ludzie i społeczności stają się coraz bardziej izolowane. Jaka jest Twoja opinia?",
+          "Korzystanie z telefonów komórkowych w miejscach publicznych jest tak samo irytujące jak palenie i powinno być zakazane w podobny sposób. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Postęp technologiczny sprawił, że nasze życie stało się bardziej złożone niż prostsze. Czy zgadzasz się czy nie?",
+          "Gry wideo są często obwiniane za agresywne zachowania młodych ludzi. Dlatego należy zakazać sprzedaży brutalnych gier wideo. Jaka jest Twoja opinia?",
+          "We współczesnym świecie możliwe jest robienie zakupów, praca, komunikowanie się z ludźmi za pośrednictwem Internetu i życie bez bezpośredniego kontaktu z innymi. Czy jest to zjawisko pozytywne czy negatywne?",
+          "Czytanie książek w formie fizycznej staje się przeszłością, ponieważ coraz więcej osób sięga po e-booki i artykuły cyfrowe. Jest to negatywna tendencja w zakresie umiejętności czytania i pisania. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Eksploracja kosmosu wymaga ogromnych środków rządowych. Lepiej byłoby wydać te pieniądze na rozwiązywanie problemów tu na Ziemi, takich jak bieda i choroby. Czy zgadzasz się czy nie?",
+          "Automatyzacja i roboty przejmują tradycyjne prace produkcyjne. Jest to zjawisko pozytywne dla całego społeczeństwa. W jakim stopniu się zgadzasz lub nie zgadzasz?"
+        ]
+      },
+      {
+        "name": "Praca i zatrudnienie",
+        "prompts": [
+          "Satysfakcja z pracy jest o wiele ważniejsza niż wysokie wynagrodzenie. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Wiele osób twierdzi, że w celu poprawy jakości edukacji należy zachęcać uczniów szkół średnich do oceniania i krytykowania swoich nauczycieli. Czy zgadzasz się czy nie?",
+          "We wszystkich krajach należy podnieść wiek emerytalny, ponieważ ludzie żyją dłużej i zdrowiej. Jaka jest Twoja opinia?",
+          "Każdy może być dobrym przywódcą, jeśli jest odpowiednio przeszkolony. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Lepiej jest dla ludzi być bezrobotnym, niż pracować w pracy, która nie sprawia im przyjemności. Czy zgadzasz się czy nie?",
+          "Firmy powinny wymagać od wszystkich swoich pracowników noszenia mundurów, niezależnie od zajmowanego stanowiska. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Samozatrudnienie jest zawsze lepsze niż praca w firmie lub organizacji. Jaka jest Twoja opinia?",
+          "Młodym ludziom brakuje dziś podstawowych umiejętności wymaganych w nowoczesnym miejscu pracy. Czy zgadzasz się czy nie?",
+          "Aby zmniejszyć bezrobocie, rząd powinien skrócić tradycyjny tydzień pracy do 30 godzin, umożliwiając większej liczbie osób dzielenie się dostępną pracą. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Najważniejszym czynnikiem przy wyborze jakiejkolwiek kariery lub pracy są wysokie dochody. Czy zgadzasz się czy nie?"
+        ]
+      },
+      {
+        "name": "Środowisko i ochrona",
+        "prompts": [
+          "Globalne ocieplenie jest spowodowane przede wszystkim działalnością człowieka, dlatego też ludzie muszą drastycznie zmienić swój styl życia, aby temu zapobiec. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Odpowiedzialność za ochronę środowiska spoczywa wyłącznie na dużych korporacjach, a nie na poszczególnych obywatelach. Jaka jest Twoja opinia?",
+          "Niektórzy uważają, że najlepszym sposobem rozwiązania globalnych problemów środowiskowych jest zwiększenie kosztów paliwa. Czy zgadzasz się czy nie?",
+          "Testy na zwierzętach do celów medycznych i kosmetycznych są okrutne i powinny zostać całkowicie zakazane. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Nieuniknione jest, że w miarę rozwoju gospodarczego krajów nastąpi degradacja środowiska. Jaka jest Twoja opinia?",
+          "Ogrody zoologiczne są zasadniczo więzieniami dla zwierząt i nie służą żadnym użytecznym celom edukacyjnym ani ochronnym. Czy zgadzasz się czy nie?",
+          "Plastikowe torby na zakupy powinny być nielegalne we wszystkich supermarketach i sklepach detalicznych. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Wymieranie niektórych gatunków roślin i zwierząt jest procesem naturalnym i nie powinniśmy interweniować, próbując je uratować. Czy zgadzasz się czy nie?",
+          "Aby zmniejszyć wpływ transportu na środowisko, ludzie powinni spożywać wyłącznie żywność wyprodukowaną lokalnie. Jaka jest Twoja opinia?",
+          "Inwestowanie w odnawialne źródła energii, takie jak energia wiatrowa i słoneczna, jest stratą pieniędzy, ponieważ są one zbyt zawodne. W jakim stopniu się zgadzasz lub nie zgadzasz?"
+        ]
+      },
+      {
+        "name": "Społeczeństwo i życie współczesne",
+        "prompts": [
+          "W wielu krajach przepaść między bogatymi a biednymi pogłębia się. Jest to najważniejszy problem, przed którym stoi współczesne społeczeństwo. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Młodzi ludzie są pod ogromnym wpływem gwiazd. To niebezpieczny trend. Czy zgadzasz się czy nie?",
+          "Tradycyjne święta i uroczystości tracą na znaczeniu i stają się kolejną wymówką dla konsumpcjonizmu. Jaka jest Twoja opinia?",
+          "Mieszkanie w dużym, tętniącym życiem mieście jest o wiele lepsze dla rozwoju człowieka niż mieszkanie w spokojnej wiejskiej wiosce. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "W dzisiejszym świecie ważniejsza jest zdolność adaptacji i chęć zmian niż bycie ekspertem w jednej konkretnej dziedzinie. Czy zgadzasz się czy nie?",
+          "Niektórzy uważają, że historia nie może nas nauczyć niczego na temat teraźniejszości ani przyszłości. Jaka jest Twoja opinia?",
+          "Osoby starsze są w coraz większym stopniu marginalizowane we współczesnym społeczeństwie, które w zbyt dużym stopniu koncentruje się na młodzieży. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Posiadanie domu jest niezbędne, aby człowiek czuł się stabilny i odnosił sukcesy w życiu. Czy zgadzasz się czy nie?",
+          "Współcześni ludzie są zbyt zależni od innych i brakuje im praktycznych umiejętności, aby być samowystarczalnymi. Jaka jest Twoja opinia?",
+          "Międzynarodowe wydarzenia sportowe, takie jak igrzyska olimpijskie, jednoczą narody i promują pokój na świecie. W jakim stopniu się zgadzasz lub nie zgadzasz?"
+        ]
+      },
+      {
+        "name": "Zdrowie i dieta",
+        "prompts": [
+          "Rząd powinien opodatkować niezdrowe produkty spożywcze, takie jak fast foody i słodkie napoje, aby zachęcić ludzi do zdrowszego odżywiania się. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Opieka zdrowotna powinna być całkowicie bezpłatna dla wszystkich obywateli i w całości finansowana przez rząd z podatków. Czy zgadzasz się czy nie?",
+          "Tradycyjne leki alternatywne są tak samo skuteczne, jak nowoczesne leki chemiczne. Jaka jest Twoja opinia?",
+          "Rosnący wskaźnik otyłości jest całkowicie winą branży fast food. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Zajęcia wychowania fizycznego powinny być obowiązkowe każdego dnia dla wszystkich dzieci w wieku szkolnym. Czy zgadzasz się czy nie?",
+          "Stres jest najważniejszym problemem zdrowotnym, z jakim borykają się obecnie pracujący dorośli. Jaka jest Twoja opinia?",
+          "Osoby decydujące się na uprawianie niebezpiecznych sportów ekstremalnych powinny same płacić za leczenie w przypadku odniesienia kontuzji. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Medycyna zapobiegawcza, taka jak edukacja zdrowotna i szczepienia, jest ważniejsza niż znajdowanie lekarstw na choroby. Czy zgadzasz się czy nie?",
+          "Nowoczesna dieta, która w dużym stopniu opiera się na przetworzonej żywności, jest główną przyczyną pogorszenia się stanu zdrowia na świecie. Jaka jest Twoja opinia?",
+          "Nie da się utrzymać zdrowego stylu życia, pracując w korporacji na pełen etat, wymagającą pracę. W jakim stopniu się zgadzasz lub nie zgadzasz?"
+        ]
+      },
+      {
+        "name": "Wydatki rządowe i publiczne",
+        "prompts": [
+          "Rządy powinny wydawać więcej pieniędzy na usługi publiczne, takie jak edukacja i opieka zdrowotna, a nie na wojsko. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Transport publiczny powinien być bezpłatny, aby zmniejszyć natężenie ruchu i zanieczyszczenie w miastach. Czy zgadzasz się czy nie?",
+          "Obowiązkiem rządu jest zapewnienie wszystkim obywatelom miejsca do życia. Jaka jest Twoja opinia?",
+          "Rządy powinny zapewniać wsparcie finansowe artystom, muzykom i pisarzom. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Głosowanie w wyborach krajowych powinno być obowiązkowe dla wszystkich uprawnionych obywateli. Czy zgadzasz się czy nie?",
+          "Rząd nie ma prawa ingerować w to, co ludzie jedzą, piją i palą. Jaka jest Twoja opinia?",
+          "Bogate kraje powinny umorzyć międzynarodowe długi najbiedniejszym narodom, aby pomóc im się rozwijać. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Podatki nakładane na osoby zamożne powinny być znacznie wyższe, aby zapewnić bardziej równomierną dystrybucję bogactwa w społeczeństwie. Czy zgadzasz się czy nie?",
+          "Finansowanie sztuki to luksus i rządy powinny finansować jedynie podstawowe usługi, takie jak infrastruktura i szpitale. Jaka jest Twoja opinia?",
+          "Władze miast powinny dużo inwestować w tworzenie większej liczby parków publicznych i terenów zielonych, nawet jeśli oznacza to podniesienie podatków lokalnych. W jakim stopniu się zgadzasz lub nie zgadzasz?"
+        ]
+      },
+      {
+        "name": "Przestępczość i prawo",
+        "prompts": [
+          "Kara śmierci jest jedynym skutecznym środkiem odstraszającym w przypadku najpoważniejszych przestępstw, takich jak morderstwo. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Więzienia powinny skupiać się przede wszystkim na resocjalizacji przestępców, a nie tylko na ich karaniu. Czy zgadzasz się czy nie?",
+          "Nieletni przestępcy, którzy popełniają poważne przestępstwa, powinni być sądzeni i karani jak dorośli. Jaka jest Twoja opinia?",
+          "Korzystanie z kamer monitorujących w przestrzeni publicznej stanowi naruszenie prywatności i powinno być surowo ograniczone. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Aby zmniejszyć liczbę brutalnych przestępstw w społeczeństwie, konieczne są rygorystyczne przepisy dotyczące kontroli broni. Czy zgadzasz się czy nie?",
+          "Praca społeczna jest o wiele lepszą karą za drobne przestępstwa nie związane z przemocą niż kara więzienia. Jaka jest Twoja opinia?",
+          "Cyberprzestępczość stanowi obecnie większe zagrożenie dla społeczeństwa niż tradycyjna przestępczość fizyczna. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Osoby łamiące prawo powinny być zmuszane do spotkania ze swoimi ofiarami, aby zrozumieć wpływ swoich działań. Czy zgadzasz się czy nie?",
+          "Media są odpowiedzialne za strach społeczeństwa przed przestępczością, który często jest nieproporcjonalny do rzeczywistego wskaźnika przestępczości. Jaka jest Twoja opinia?",
+          "Całkowite wyeliminowanie przestępczości ze społeczeństwa jest niemożliwe; jest to nieunikniona część ludzkiej natury. W jakim stopniu się zgadzasz lub nie zgadzasz?"
+        ]
+      },
+      {
+        "name": "Media i reklama",
+        "prompts": [
+          "Reklamy skierowane do dzieci są nieetyczne i powinny być surowo zabronione. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Media informacyjne zbytnio skupiają się na negatywnych historiach, co prowadzi do depresji i lęku wśród ogółu społeczeństwa. Czy zgadzasz się czy nie?",
+          "Duże międzynarodowe korporacje mają zbyt duży wpływ na globalne media i informacje. Jaka jest Twoja opinia?",
+          "Gwiazdy mają prawo do prywatności, a paparazzi nie powinni mieć możliwości śledzenia ich w przestrzeni publicznej. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "W dzisiejszych czasach drukowane gazety są całkowicie przestarzałe i wkrótce całkowicie znikną. Czy zgadzasz się czy nie?",
+          "Reklama zachęca ludzi do kupowania rzeczy, których nie potrzebują i na które nie stać. Jaka jest Twoja opinia?",
+          "Rząd powinien kontrolować to, co jest emitowane w telewizji i Internecie, aby chronić społeczeństwo przed szkodliwymi treściami. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Wolność słowa oznacza, że ​​ludzie powinni mieć możliwość mówienia, co chcą, nawet jeśli obraża to innych. Czy zgadzasz się czy nie?",
+          "Programy typu reality show nie mają żadnej wartości edukacyjnej i służą jedynie degradacji standardów kulturowych. Jaka jest Twoja opinia?",
+          "Ukierunkowana reklama internetowa, która śledzi zachowanie użytkownika, stanowi poważne naruszenie prywatności osobistej. W jakim stopniu się zgadzasz lub nie zgadzasz?"
+        ]
+      },
+      {
+        "name": "Turystyka i globalizacja",
+        "prompts": [
+          "Turystyka międzynarodowa powoduje więcej szkody niż pożytku dla lokalnych społeczności i środowiska. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Postępująca globalizacja biznesu i kultury niszczy lokalne tradycje i tożsamość narodową. Czy zgadzasz się czy nie?",
+          "Należy zachęcać obywateli do podróżowania krajowego w obrębie własnego kraju, a nie do podróży międzynarodowych. Jaka jest Twoja opinia?",
+          "Polski staje się uniwersalnym językiem globalnym. Jest to pozytywny rozwój stosunków międzynarodowych i handlu. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Kraje powinny priorytetowo traktować zatrudnianie własnych obywateli, zanim pozwolą zagranicznym pracownikom wejść na rynek pracy. Czy zgadzasz się czy nie?",
+          "Tanie podróże lotnicze zrewolucjonizowały sposób, w jaki ludzie żyją i pracują, ale koszty dla środowiska przewyższają korzyści. Jaka jest Twoja opinia?",
+          "Międzynarodowe firmy często wykorzystują pracowników w krajach rozwijających się, aby maksymalizować swoje zyski. W jakim stopniu się zgadzasz lub nie zgadzasz?",
+          "Przed przyjazdem do obcego kraju turyści powinni mieć obowiązek nauczenia się podstawowych zwrotów w lokalnym języku. Czy zgadzasz się czy nie?",
+          "Globalizacja przyniosła korzyści przede wszystkim krajom bogatym, pozostawiając w tyle kraje rozwijające się. Jaka jest Twoja opinia?",
+          "Konserwacja obiektów historycznych jest dla miast niepotrzebnym wydatkiem; należy je zburzyć, aby zrobić miejsce dla nowoczesnej infrastruktury. W jakim stopniu się zgadzasz lub nie zgadzasz?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "advantage-disadvantage",
+    "label": "Zalety i wady",
+    "description": "Omów zalety i wady danego tematu.",
+    "instruction": "Omów zalety i wady oraz wyraź swoją opinię, jeśli zostaniesz o to poproszony. Napisz co najmniej 250 słów.",
+    "categories": [
+      {
+        "name": "Edukacja i nauka",
+        "prompts": [
+          "Wiele uniwersytetów oferuje obecnie pełne programy studiów online. Jakie są zalety i wady studiowania online w celu uzyskania stopnia naukowego zamiast uczęszczania na zajęcia osobiście?",
+          "Niektórzy eksperci uważają, że lepiej, aby dzieci rozpoczynały naukę języka obcego już w szkole podstawowej, a nie w szkole średniej. Czy zalety tego przeważają nad wadami?",
+          "W wielu krajach studenci przed rozpoczęciem studiów korzystają z „roku przerwy”, aby podróżować lub pracować. Omów zalety i wady wzięcia roku przerwy i wyraź własną opinię.",
+          "Niektóre szkoły wymagają od wszystkich uczniów noszenia mundurków. Jakie są zalety i wady mundurków szkolnych?",
+          "Coraz więcej studentów, chcąc zdobyć wykształcenie wyższe, decyduje się na studia za granicą. Czy zalety studiowania za granicą przeważają nad wadami?",
+          "W niektórych systemach edukacyjnych dzieci są grupowane w klasy na podstawie ich zdolności akademickich, a nie wieku. Omów zalety i wady tej praktyki i wyraź swoją opinię.",
+          "Zapamiętywanie na pamięć to tradycyjna metoda nauczania nadal stosowana w wielu częściach świata. Jakie są zalety i wady uczenia się poprzez zapamiętywanie?",
+          "Wiele osób twierdzi, że edukacja uniwersytecka powinna być całkowicie bezpłatna dla każdego. Czy zalety bezpłatnego szkolnictwa wyższego przeważają nad wadami?",
+          "Niektórzy rodzice wolą uczyć swoje dzieci w domu, niż wysyłać je do tradycyjnej szkoły. Omów zalety i wady nauczania w domu i wyraź swoją opinię.",
+          "Ocena ciągła (zajęcia i projekty) zastępuje w wielu instytucjach edukacyjnych formalne egzaminy. Jakie są zalety i wady tej zmiany?"
+        ]
+      },
+      {
+        "name": "Technologia i Internet",
+        "prompts": [
+          "Wykorzystanie sztucznej inteligencji w życiu codziennym staje się coraz powszechniejsze. Czy zalety sztucznej inteligencji przeważają nad wadami?",
+          "Media społecznościowe zrewolucjonizowały sposób, w jaki ludzie komunikują się i dzielą informacjami. Omów zalety i wady mediów społecznościowych i wyraź swoją opinię.",
+          "Wiele osób używa obecnie smartfonów do płacenia za towary i usługi, co prowadzi do spadku wykorzystania gotówki. Jakie są zalety i wady społeczeństwa bezgotówkowego?",
+          "Postęp technologiczny umożliwił wielu osobom pracę w domu zamiast dojeżdżać do biura. Czy zalety pracy zdalnej przeważają nad wadami?",
+          "Książki elektroniczne i czytniki cyfrowe szybko zastępują tradycyjne książki drukowane. Omów zalety i wady tego trendu i wyraź swoją opinię.",
+          "Rozwój samochodów autonomicznych postępuje bardzo szybko. Jakie są zalety i wady pojazdów autonomicznych na drogach publicznych?",
+          "Automatyzacja i roboty w coraz większym stopniu zastępują ludzi w przemyśle wytwórczym i innych gałęziach przemysłu. Czy zalety automatyzacji przeważają nad wadami?",
+          "Współczesne dzieci spędzają znaczną ilość czasu grając w gry wideo. Omów zalety i wady tego rozwiązania oraz wyraź swoją opinię.",
+          "Przetwarzanie w chmurze umożliwia przechowywanie wszystkich danych osobistych i zawodowych w Internecie, a nie na fizycznych dyskach twardych. Jakie są zalety i wady przechowywania danych w chmurze?",
+          "Eksploracja kosmosu kosztuje podatników co roku olbrzymią sumę pieniędzy. Czy zalety wydawania pieniędzy na eksplorację kosmosu przeważają nad wadami?"
+        ]
+      },
+      {
+        "name": "Praca i kariera",
+        "prompts": [
+          "Niektóre firmy wdrożyły czterodniowy tydzień pracy bez obniżania wynagrodzeń swoich pracowników. Jakie są zalety i wady krótszego tygodnia pracy?",
+          "W przeszłości ludzie często pozostawali w tej samej pracy przez całe życie zawodowe. Obecnie częstszą praktyką jest wielokrotna zmiana zawodu. Omów zalety i wady częstej zmiany pracy i wyraź swoją opinię.",
+          "Wiele rządów podnosi oficjalny wiek emerytalny do 68 lub 70 lat. Czy zalety pracy do późnego wieku przeważają nad wadami?",
+          "Coraz więcej osób decyduje się na samozatrudnienie lub założenie własnej firmy. Jakie są zalety i wady samozatrudnienia w porównaniu z pracą u pracodawcy?",
+          "Międzynarodowe korporacje często przenoszą swoich pracowników do pracy w oddziałach zagranicznych na kilka lat. Omów zalety i wady pracy za granicą i wyraź swoją opinię.",
+          "Niektóre organizacje uważają, że najlepszym sposobem na motywowanie pracowników jest płacenie pracownikom na podstawie ich indywidualnych wyników. Czy zalety wynagrodzenia zależnego od wyników przeważają nad wadami?",
+          "Bezpłatne staże stają się coraz częstszym wymogiem dla młodych ludzi wchodzących na rynek pracy. Jakie są zalety i wady pracy za darmo w celu zdobycia doświadczenia?",
+          "Niektóre kraje wprowadziły kwoty, aby zapewnić reprezentację określonego odsetka kobiet w zarządach spółek. Omów zalety i wady tej polityki i wyraź swoją opinię.",
+          "Praca w bardzo dużej korporacji oferuje inne doświadczenia niż praca w małej, rodzinnej firmie. Jakie są zalety i wady pracy w dużej korporacji?",
+          "Wiele zawodów wymaga obecnie od pracowników dostępności za pośrednictwem poczty elektronicznej lub telefonu poza normalnymi godzinami pracy. Czy zalety tej stałej łączności przeważają nad wadami?"
+        ]
+      },
+      {
+        "name": "Zdrowie i styl życia",
+        "prompts": [
+          "Aby walczyć z otyłością, rządy niektórych krajów wprowadziły podatek od fast foodów i słodkich napojów. Jakie są zalety i wady opodatkowania niezdrowej żywności?",
+          "Na całym świecie rośnie popularność diet wegetariańskich i wegańskich. Omów zalety i wady wyeliminowania mięsa z diety i wyraź swoją opinię.",
+          "Wiele osób zamiast konwencjonalnych metod leczenia stosuje leki alternatywne, takie jak akupunktura i leki ziołowe. Czy zalety medycyny alternatywnej przeważają nad wadami?",
+          "Systemy opieki zdrowotnej w niektórych krajach są w całości finansowane przez rząd i są bezpłatne w momencie korzystania. Jakie są zalety i wady bezpłatnego publicznego systemu opieki zdrowotnej?",
+          "Coraz więcej osób uprawia sporty ekstremalne, takie jak skoki spadochronowe i wspinaczka skałkowa. Omów zalety i wady tych działań i wyraź swoją opinię.",
+          "Wiele miast wprowadziło zakaz palenia we wszystkich miejscach publicznych, w tym w parkach i restauracjach na świeżym powietrzu. Czy zalety całkowitego zakazu palenia w miejscach publicznych przeważają nad wadami?",
+          "Ludzie coraz częściej korzystają z aplikacji mobilnych i urządzeń do noszenia, aby monitorować swoje zdrowie i kondycję. Jakie są zalety i wady polegania na technologii w monitorowaniu stanu zdrowia?",
+          "W wielu częściach świata uprawia się rośliny genetycznie modyfikowane (GM), których celem jest zwiększenie produkcji żywności. Omów zalety i wady żywności GMO i wyraź swoją opinię.",
+          "Turystyka medyczna, polegająca na wyjazdach za granicę w celu przeprowadzenia zabiegów medycznych, to dynamicznie rozwijająca się branża. Czy zalety wyjazdu do innego kraju w celu uzyskania opieki zdrowotnej przeważają nad wadami?",
+          "Wiele osób płaci drogie miesięczne członkostwo, aby uczęszczać do komercyjnych siłowni. Jakie są zalety i wady korzystania z siłowni w celu utrzymania dobrej kondycji w porównaniu z ćwiczeniami na świeżym powietrzu lub w domu?"
+        ]
+      },
+      {
+        "name": "Środowisko i urbanistyka",
+        "prompts": [
+          "Aby zmniejszyć natężenie ruchu, niektóre duże miasta wprowadziły „opłaty za zatory”, pobierając od kierowców opłatę za wjazd do centrum miasta. Jakie są zalety i wady tego systemu?",
+          "Niektórzy postrzegają energię jądrową jako czystą alternatywę dla paliw kopalnych. Omów zalety i wady polegania na energii jądrowej i wyraź swoją opinię.",
+          "W miarę wzrostu populacji miasta budują wyższe, wielopiętrowe budynki mieszkalne, aby zapewnić mieszkańcom zakwaterowanie. Czy zalety mieszkania w wieżowcach przeważają nad wadami?",
+          "Wiele samorządów lokalnych wprowadziło obowiązek recyklingu we wszystkich gospodarstwach domowych. Jakie są zalety i wady programów przymusowego recyklingu?",
+          "Znaczna liczba osób migruje z obszarów wiejskich do dużych miast w poszukiwaniu lepszych możliwości. Omów zalety i wady urbanizacji i wyraź swoją opinię.",
+          "Ogrody zoologiczne istnieją w prawie każdym większym mieście na świecie. Czy zalety trzymania zwierząt w niewoli w ogrodach zoologicznych przeważają nad wadami?",
+          "Niektórzy twierdzą, że powinniśmy kupować wyłącznie żywność produkowaną lokalnie. Jakie są zalety i wady spożywania wyłącznie żywności pochodzącej z lokalnych źródeł?",
+          "Aby chronić środowisko, niektóre rządy w dużym stopniu dotują pojazdy elektryczne (EV). Omów zalety i wady tej interwencji rządu i wyraź swoją opinię.",
+          "Ekoturystyka ma na celu umożliwienie turystom odwiedzania wrażliwych środowisk przy jednoczesnym minimalizowaniu ich wpływu. Czy zalety ekoturystyki przeważają nad wadami?",
+          "Wielu urbanistów opowiada się za utworzeniem w centrach miast stref całkowicie wolnych od ruchu samochodowego. Jakie są zalety i wady zakazu wjazdu samochodów na obszary miejskie?"
+        ]
+      },
+      {
+        "name": "Turystyka i podróże",
+        "prompts": [
+          "Rozwój tanich linii lotniczych sprawił, że podróże międzynarodowe stały się dostępne dla milionów ludzi. Jakie są zalety i wady tanich podróży lotniczych?",
+          "Turystyka międzynarodowa jest głównym źródłem dochodów wielu krajów rozwijających się. Omów zalety i wady gospodarki w dużym stopniu uzależnionej od turystyki i wyraź swoją opinię.",
+          "Wielu turystów decyduje się na pobyt w wynajmowanych krótkoterminowo (takich jak Airbnb) zamiast w tradycyjnych hotelach. Czy zalety krótkoterminowego wynajmu turystycznego przeważają nad wadami dla społeczności lokalnych?",
+          "Polski staje się coraz bardziej globalnym językiem podróży i turystyki. Jakie są zalety i wady posiadania jednego dominującego języka globalnego?",
+          "Niektóre miasta historyczne pobierają od odwiedzających „podatek turystyczny”, aby pomóc w utrzymaniu infrastruktury. Omów zalety i wady opodatkowania turystów i wyraź swoją opinię.",
+          "Bardzo popularna staje się „turystyka wolontariacka”, polegająca na wyjazdach ludzi do krajów rozwijających się w celu prowadzenia działalności charytatywnej. Czy zalety tego trendu przeważają nad wadami?",
+          "Turyści coraz częściej odwiedzają odległe, dziewicze obszary naturalne, takie jak Antarktyda czy las deszczowy Amazonii. Jakie są zalety i wady turystyki w środowiskach ekstremalnych?",
+          "Wiele osób twierdzi, że globalne podróże prowadzą do utraty różnorodności kulturowej, ponieważ miasta zaczynają wszędzie wyglądać i czuć się tak samo. Omów zalety i wady homogenizacji kulturowej i wyraź swoją opinię.",
+          "Zamiast podróżować za granicę, niektórzy wolą spędzić wakacje zwiedzając własny kraj. Czy zalety turystyki krajowej przeważają nad wadami?",
+          "Wycieczki z przewodnikiem są bardzo popularną formą podróżowania. Jakie są zalety i wady podróżowania w zorganizowanej grupie wycieczkowej w porównaniu z podróżowaniem samodzielnie?"
+        ]
+      },
+      {
+        "name": "Rząd i społeczeństwo",
+        "prompts": [
+          "Niektóre kraje wdrożyły obowiązkowe programy prac społecznych dla młodych ludzi. Omów zalety i wady oraz wyraź swoją opinię.",
+          "Na całym świecie debatuje się nad uniwersalnym dochodem podstawowym (UBI), w ramach którego rząd zapewnia każdemu obywatelowi regularną sumę pieniędzy niezależnie od zatrudnienia. Jakie są zalety i wady UBI?",
+          "Wiele krajów wymaga od młodych mężczyzn i kobiet odbycia obowiązkowej służby wojskowej. Czy zalety poboru przeważają nad wadami?",
+          "Powszechne jest stosowanie kamer telewizji przemysłowej (CCTV) w miejscach publicznych. Omów zalety i wady nadzoru publicznego i wyraź swoją opinię.",
+          "Niektóre narody zniosły karę śmierci, podczas gdy inne nadal ją stosują w przypadku najpoważniejszych przestępstw. Jakie są zalety i wady kary śmierci?",
+          "Bogate kraje często zapewniają pomoc finansową krajom rozwijającym się. Czy zalety pomocy międzynarodowej przeważają nad wadami?",
+          "W niektórych krajach głosowanie w wyborach krajowych jest prawnie obowiązkowe. Omów zalety i wady obowiązkowego głosowania i wyraź swoją opinię.",
+          "Rządy często zapewniają znaczne fundusze na rzecz sztuki, w tym muzeów, galerii i teatrów. Jakie są zalety i wady wykorzystywania publicznych pieniędzy do finansowania sztuki?",
+          "Dzięki postępowi medycyny populacje w wielu krajach rozwiniętych żyją znacznie dłużej. Czy zalety starzenia się społeczeństwa przeważają nad wadami?",
+          "Nowoczesne systemy więzienne często skupiają się na resocjalizacji przestępców poprzez edukację i terapię, a nie po prostu na karaniu ich. Omów zalety i wady resocjalizacji w porównaniu z karą i wyraź swoją opinię."
+        ]
+      },
+      {
+        "name": "Rodzina i dzieci",
+        "prompts": [
+          "We współczesnym społeczeństwie oboje rodzice często pracują w pełnym wymiarze godzin, wychowując dzieci. Jakie są zalety i wady posiadania dwójki pracujących rodziców?",
+          "Coraz więcej osób woli mieszkać samotnie niż z rodziną lub współlokatorami. Czy zalety życia w pojedynkę przeważają nad wadami?",
+          "Wiele par decyduje się na posiadanie dzieci znacznie później, często po trzydziestce lub czterdziestce. Omów zalety i wady opóźniania rodzicielstwa i wyraź swoją opinię.",
+          "Tradycyjna rodzina wielopokoleniowa (dziadkowie, ciotki, wujkowie mieszkający razem) staje się coraz mniej powszechna na rzecz rodziny nuklearnej. Jakie są zalety i wady dorastania w rodzinie wielopokoleniowej?",
+          "Niektórzy rodzice dają swoim dzieciom cotygodniowe kieszonkowe lub kieszonkowe. Czy zalety dawania dzieciom własnych pieniędzy przeważają nad wadami?",
+          "Wielu rodziców mocno ogranicza dzienną ilość czasu spędzanego przed ekranem przez ich dzieci. Omów zalety i wady rygorystycznych limitów czasu wyświetlania i wyraź swoją opinię.",
+          "W ciągu ostatnich kilku dekad w wielu krajach znacznie wzrosła liczba rozwodów. Jakie są zalety i wady ułatwiania parom legalnego rozwodu?",
+          "Coraz powszechniejsze jest, że młodzi dorośli nadal mieszkają z rodzicami po dwudziestym roku życia. Czy zalety życia młodych dorosłych w domu przeważają nad wadami?",
+          "Niektórzy rodzice zapisują swoje dzieci na liczne zajęcia pozalekcyjne, pozostawiając niewiele wolnego czasu. Omów zalety i wady wysoce ustrukturyzowanego dzieciństwa i wyraź swoją opinię.",
+          "Dorastanie w gospodarstwie domowym z niepełnym rodzicem jest coraz częstszym doświadczeniem dzieci. Jakie są zalety i wady wychowywania przez samotnego rodzica?"
+        ]
+      },
+      {
+        "name": "Media i reklama",
+        "prompts": [
+          "Wiele krajów ogranicza lub zakazuje reklam skierowanych bezpośrednio do dzieci. Czy zalety zakazu reklam kierowanych do dzieci przeważają nad wadami?",
+          "Pojawienie się całodobowych kanałów informacyjnych i internetowych kanałów informacyjnych oznacza, że ​​mamy stały dostęp do informacji. Jakie są zalety i wady 24-godzinnego cyklu informacyjnego?",
+          "Duże międzynarodowe korporacje kontrolują znaczną część światowego krajobrazu medialnego. Omów zalety i wady monopoli medialnych i wyraź swoją opinię.",
+          "Firmy internetowe korzystają z reklam ukierunkowanych na podstawie śledzenia historii przeglądania Internetu użytkownika. Czy zalety reklamy spersonalizowanej przeważają nad wadami?",
+          "Programy telewizyjne typu reality show w dalszym ciągu cieszą się ogromną popularnością na całym świecie. Jakie są zalety i wady programów typu reality show?",
+          "Niektóre rządy cenzurują Internet, aby ograniczyć treści, które mogą oglądać ich obywatele. Omów zalety i wady cenzury Internetu i wyraź swoją opinię.",
+          "Gazety i czasopisma drukowane odnotowują ogromny spadek czytelnictwa, ponieważ ludzie zwracają się w stronę mediów cyfrowych. Jakie są zalety i wady odchodzenia społeczeństwa od dziennikarstwa drukowanego?",
+          "Gwiazdy często promują produkty i kampanie polityczne. Czy zalety rekomendacji gwiazd przeważają nad wadami?",
+          "Usługi przesyłania strumieniowego, takie jak Netflix i Spotify, całkowicie zmieniły sposób, w jaki ludzie korzystają z rozrywki. Omów zalety i wady przejścia na media strumieniowe i wyraź swoją opinię.",
+          "Współczesne filmy akcji i gry wideo często zawierają wysoki poziom przemocy. Jakie są zalety i wady narażania społeczeństwa na kontakt z brutalnymi mediami?"
+        ]
+      },
+      {
+        "name": "Globalizacja i kultura",
+        "prompts": [
+          "Rozwój międzynarodowych korporacji oznacza, że ​​na całym świecie można znaleźć te same sklepy i marki. Czy zalety globalizacji w biznesie przeważają nad wadami?",
+          "Wiele języków mniejszościowych jest zagrożonych wymarciem w miarę przechodzenia na języki dominujące, takie jak polski, hiszpański czy mandaryński. Omów zalety i wady utraty języków mniejszościowych i wyraź swoją opinię.",
+          "Branża „szybkiej mody” pozwala ludziom bardzo tanio kupować modną odzież. Jakie są zalety i wady szybkiej mody?",
+          "Dzięki globalnemu handlowi ludzie mogą kupować żywność z całego świata o każdej porze roku w lokalnym supermarkecie. Czy zalety tej globalnej sieci żywności przeważają nad wadami?",
+          "Małżeństwa międzykulturowe, w których partnerzy pochodzą z różnych krajów lub środowisk kulturowych, stają się coraz bardziej powszechne. Omów zalety i wady wychowywania rodziny w wielokulturowym gospodarstwie domowym i wyraź swoją opinię.",
+          "Międzynarodowe wydarzenia sportowe, takie jak igrzyska olimpijskie czy mistrzostwa świata w piłce nożnej, wymagają od krajów goszczących wydawania miliardów dolarów. Jakie są zalety i wady organizacji dużych międzynarodowych wydarzeń sportowych?",
+          "Zawłaszczanie kulturowe, w przypadku którego elementy kultury mniejszościowej są wykorzystywane przez kulturę dominującą, jest szeroko dyskutowane. Czy zalety dzielenia się kulturą przeważają nad wadami zawłaszczania?",
+          "Bardzo często szkoły poświęcają znaczną ilość czasu na nauczanie uczniów historii starożytnej. Omów zalety i wady priorytetowego traktowania historii w programie nauczania i wyraź swoją opinię.",
+          "Wiele osób w rozwiązywaniu kryzysów humanitarnych polega całkowicie na globalnych organizacjach charytatywnych. Jakie są zalety i wady polegania na organizacjach pozarządowych (NGO), a nie na samorządach lokalnych?",
+          "Kultura zachodnia, szczególnie poprzez muzykę i kino, ma ogromny wpływ na resztę świata. Czy zalety globalnego rozprzestrzeniania się kultury zachodniej przeważają nad wadami?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "problem-solution",
+    "label": "Problem i rozwiązanie",
+    "description": "Zidentyfikuj przyczyny problemu i zaproponuj rozwiązania.",
+    "instruction": "Wyjaśnij przyczyny/skutki tego problemu i zaproponuj rozwiązania. Napisz co najmniej 250 słów.",
+    "categories": [
+      {
+        "name": "Środowisko i przyroda",
+        "prompts": [
+          "Ilość odpadów z tworzyw sztucznych w oceanach świata szybko rośnie. Jakie są tego przyczyny? Jakie rozwiązania możecie zaproponować?",
+          "W wielu częściach świata wylesianie postępuje w zastraszającym tempie. Jakie są tego negatywne skutki? Jak można rozwiązać ten problem?",
+          "Wiele miast na całym świecie boryka się z poważnymi niedoborami wody. Dlaczego tak się dzieje? Jakie środki można podjąć, aby rozwiązać ten problem?",
+          "Liczba zagrożonych gatunków rośnie z roku na rok. Jakie są główne przyczyny tego spadku? Co można zrobić, aby chronić te zwierzęta?",
+          "Zanieczyszczenie powietrza w głównych ośrodkach miejskich osiąga poziom krytyczny. Jakie są tego skutki dla zdrowia i środowiska? W jaki sposób rządy i pojedyncze osoby mogą zmniejszyć zanieczyszczenie powietrza?",
+          "Globalne ocieplenie powoduje ekstremalne zjawiska pogodowe na całym świecie. Jakie są główne przyczyny tego zjawiska? Jakie kroki można podjąć, aby zminimalizować jego skutki?",
+          "Ilość wytwarzanych odpadów z gospodarstw domowych znacząco wzrasta. Dlaczego tak się dzieje? Co można zrobić, aby zachęcić ludzi do ograniczania ilości odpadów?",
+          "Utrata różnorodności biologicznej jest poważnym problemem globalnym. Jakie są negatywne skutki tej straty? Jak możemy chronić naturalne ekosystemy?",
+          "Przełowienie powoduje uszczuplenie zasobów ryb w oceanach świata. Jakie problemy to powoduje? Jakie regulacje należy wprowadzić, aby temu zapobiec?",
+          "Degradacja gleby utrudnia uprawę żywności w niektórych regionach. Jakie są przyczyny tego problemu? Jakie rozwiązania rolnicze można wdrożyć?"
+        ]
+      },
+      {
+        "name": "Technologia i Internet",
+        "prompts": [
+          "Współczesne dzieci spędzają zbyt dużo czasu, wpatrując się w ekrany. Jakie są tego negatywne skutki? Jak rodzice mogą zarządzać czasem spędzanym przed ekranem swoich dzieci?",
+          "Cyberprzemoc stała się powszechnym problemem wśród nastolatków. Jakie są przyczyny takiego zachowania? Co szkoła i rodzice mogą zrobić, aby temu zapobiec?",
+          "Wraz z rozwojem usług online prywatność danych osobowych jest coraz bardziej zagrożona. Jakie są tego potencjalne zagrożenia? W jaki sposób użytkownicy mogą chronić swoje informacje w Internecie?",
+          "Wielu dorosłych jest uzależnionych od swoich smartfonów. Dlaczego tak się dzieje? Jakie kroki mogą podjąć ludzie, aby zmniejszyć swoją zależność od urządzeń mobilnych?",
+          "Szybki rozwój sztucznej inteligencji zagraża wielu tradycyjnym zawodom. Jakie są potencjalne skutki tego dla społeczeństwa? Co rządy mogą zrobić, aby przygotować siłę roboczą?",
+          "Ciągła modernizacja urządzeń elektronicznych doprowadziła do ogromnego wzrostu ilości elektroodpadów. Dlaczego ludzie tak często wymieniają swoje urządzenia? Jak lepiej zarządzać odpadami elektronicznymi?",
+          "Rozpowszechnianie fałszywych wiadomości i dezinformacji w mediach społecznościowych stanowi coraz większy problem. Co powoduje, że ta informacja rozprzestrzenia się tak szybko? Co można zrobić, aby z tym walczyć?",
+          "Komunikacja twarzą w twarz zanika ze względu na komunikację cyfrową. Jaki jest negatywny wpływ na relacje osobiste? Jak możemy zachęcić do częstszych interakcji w prawdziwym życiu?",
+          "Rośnie liczba cyberprzestępstw, takich jak włamania i kradzieże tożsamości. Co sprawia, że ​​ludzie są podatni na tego typu przestępstwa? Jakie środki mogą poprawić cyberbezpieczeństwo?",
+          "Ludzie stają się nadmiernie uzależnieni od technologii w zakresie podstawowych umiejętności, takich jak korzystanie z GPS zamiast czytania mapy. Jakie problemy powoduje to uzależnienie? Jak można odwrócić tę tendencję?"
+        ]
+      },
+      {
+        "name": "Społeczeństwo i życie miejskie",
+        "prompts": [
+          "Wiele dużych miast cierpi z powodu poważnego przeludnienia. Jakie są przyczyny tej szybkiej urbanizacji? Jakie rozwiązania mogą pomóc w zarządzaniu populacją miast?",
+          "Koszty życia drastycznie rosną w wielu częściach świata. Jakie problemy powoduje to dla przeciętnych rodzin? W jaki sposób rządy mogą zmniejszyć to obciążenie finansowe?",
+          "Bezdomność jest widocznym problemem w wielu bogatych krajach. Dlaczego ludzie żyją na ulicach? Jakie programy społeczne mogą skutecznie ograniczać bezdomność?",
+          "Zanieczyszczenie hałasem jest stałym problemem dla mieszkańców obszarów miejskich. Jakie są główne źródła tego hałasu? Jakie kroki mogą podjąć planiści miejscy, aby stworzyć cichsze otoczenie?",
+          "We współczesnych miastach brakuje publicznych parków i terenów zielonych. Jakie są tego negatywne skutki dla mieszkańców miast? Jak władze lokalne mogą rozwiązać ten problem?",
+          "Na obszarach wiejskich liczba ludności spada wraz z odpływem młodych ludzi. Dlaczego tak się dzieje? Co można zrobić, aby zachęcić ludzi do pozostania w społecznościach wiejskich lub przeniesienia się do nich?",
+          "Populacja wielu krajów rozwiniętych szybko się starzeje. Jakie problemy gospodarcze i społeczne to powoduje? Jak społeczeństwa mogą przystosować się do starszej grupy demograficznej?",
+          "Przepaść majątkowa pomiędzy bogatymi i biednymi stale się pogłębia. Jakie są społeczne konsekwencje skrajnych nierówności? Jakie polityki gospodarcze mogłyby pomóc w bardziej równomiernej dystrybucji bogactwa?",
+          "Mimo że żyją w zatłoczonych miastach, wiele osób twierdzi, że czuje się odizolowana i samotna. Jakie są przyczyny współczesnej izolacji miast? Co można zrobić, aby wzmocnić poczucie wspólnoty?",
+          "Tradycyjne kultury i zwyczaje wymierają w zglobalizowanym świecie. Dlaczego dochodzi do tej straty? W jaki sposób społeczności mogą chronić swoje dziedzictwo kulturowe?"
+        ]
+      },
+      {
+        "name": "Edukacja",
+        "prompts": [
+          "Uczniowie szkół średnich borykają się dziś z bezprecedensowym poziomem stresu i wypalenia zawodowego. Jakie są główne przyczyny tej presji? Jak można zreformować system edukacji, aby sprzyjał dobrostanowi uczniów?",
+          "Koszty studiowania na uniwersytecie stały się dla wielu młodych ludzi nieosiągalne. Jakie są tego negatywne skutki? Jakie alternatywy lub rozwiązania można zaoferować studentom?",
+          "Znęcanie się pozostaje stałym problemem w szkołach na całym świecie. Jakie skutki psychologiczne ma znęcanie się nad dziećmi? Jakie strategie przeciwdziałania znęcaniu się są najskuteczniejsze?",
+          "Wielu pracodawców skarży się, że niedawnym absolwentom brakuje umiejętności praktycznych przydatnych w miejscu pracy. Dlaczego istnieje rozbieżność pomiędzy edukacją a zatrudnieniem? W jaki sposób można ulepszyć programy nauczania na uniwersytecie?",
+          "W wielu krajach istnieje poważny niedobór wykwalifikowanych nauczycieli. Jakie są przyczyny tego niedoboru? Jak można uatrakcyjnić zawód nauczyciela?",
+          "Uczniowie na obszarach wiejskich często otrzymują niższą jakość edukacji niż uczniowie w miastach. Co powoduje ten podział edukacyjny? Jakie środki mogą zapewnić równy dostęp do wysokiej jakości edukacji?",
+          "Rozwój narzędzi AI doprowadził do wzrostu liczby oszustw akademickich i plagiatów. Jakie są negatywne skutki dla uczenia się uczniów? W jaki sposób szkoły powinny zająć się wykorzystaniem sztucznej inteligencji?",
+          "W niektórych regionach rozwijających się poziom analfabetyzmu wśród dorosłych pozostaje wysoki. Jakie problemy stwarza analfabetyzm dla społeczeństwa? Jakie inicjatywy mogą skutecznie uczyć dorosłych czytania i pisania?",
+          "Wielu uczniów czuje się zniechęconych i znudzonych w tradycyjnych klasach. Dlaczego tradycyjne metody nauczania nie przyciągają uwagi uczniów? W jaki sposób lekcje mogą uczynić bardziej angażującymi?",
+          "Liczebność klas w szkołach publicznych jest często zbyt duża, aby nauczanie było skuteczne. Jakie są negatywne skutki zarówno dla nauczycieli, jak i uczniów? Jak można rozwiązać ten problem?"
+        ]
+      },
+      {
+        "name": "Zdrowie i dieta",
+        "prompts": [
+          "Otyłość stała się epidemią w wielu częściach świata. Jakie są główne przyczyny powszechnego przyrostu masy ciała? Jakie działania mogą podjąć rządy, aby promować zdrowszy styl życia?",
+          "Na całym świecie wzrasta liczba problemów ze zdrowiem psychicznym, takich jak depresja i stany lękowe. Dlaczego te schorzenia stają się coraz częstsze? Co można zrobić, aby poprawić opiekę psychiatryczną?",
+          "Konsumpcja fast foodów jest najwyższa w historii. Jakie są negatywne skutki zdrowotne spożywania mocno przetworzonej żywności? W jaki sposób społeczeństwo może zachęcać ludzi do gotowania świeżych posiłków?",
+          "Współczesny tryb życia staje się coraz bardziej siedzący. Jakie problemy fizyczne wynikają z braku ruchu? Co można zrobić, aby włączyć więcej aktywności fizycznej do codziennego życia?",
+          "Wiele osób cierpi obecnie na chroniczny brak snu. Jakie czynniki przyczyniają się do braku snu we współczesnym społeczeństwie? W jaki sposób poszczególne osoby mogą poprawić higienę snu?",
+          "Koszty leczenia i opieki zdrowotnej rosną poza zasięgiem przeciętnego obywatela. Jakie problemy to powoduje? W jaki sposób opieka zdrowotna może stać się bardziej dostępna i przystępna cenowo?",
+          "Na całym świecie brakuje pielęgniarek i pracowników służby zdrowia. Dlaczego sektor ten ma trudności z utrzymaniem personelu? Jakie zachęty mogłyby rozwiązać ten kryzys kadrowy?",
+          "Pomimo postępu medycyny na całym świecie wciąż wiele osób umiera z powodu chorób, którym łatwo można zapobiec. Dlaczego tak się dzieje? Co można zrobić z tym problemem?",
+          "Nadużywanie antybiotyków prowadzi do powstania opornych szczepów bakterii. Jakie są zagrożenia związane z opornością na antybiotyki? Jak środowisko medyczne może rozwiązać ten problem?",
+          "Długotrwałe korzystanie z ekranu powoduje wzrost problemów zdrowotnych związanych z oczami wśród dzieci i dorosłych. Jakie konkretnie problemy występują? Jakie środki zapobiegawcze należy podjąć?"
+        ]
+      },
+      {
+        "name": "Praca i ekonomia",
+        "prompts": [
+          "Stres związany z pracą jest główną przyczyną chorób współczesnej siły roboczej. Jakie aspekty współczesnej pracy powodują ten stres? Co pracodawcy mogą zrobić, aby wspierać zdrowie psychiczne swoich pracowników?",
+          "W wielu krajach stopa bezrobocia wśród młodych osób jest niewiarygodnie wysoka. Dlaczego młodzi ludzie mają trudności ze znalezieniem pracy? Jakie inicjatywy mogą pomóc w integracji ich na rynku pracy?",
+          "W wielu zawodach kobiety nadal zarabiają mniej niż mężczyźni za wykonywanie tej samej pracy. Jakie są przyczyny zróżnicowania wynagrodzeń ze względu na płeć? W jaki sposób rządy i przedsiębiorstwa mogą zapewnić równą płacę?",
+          "Długie, wyczerpujące codzienne dojazdy do pracy są rzeczywistością dla wielu pracowników. Jakie są negatywne skutki długich dojazdów do pracy dla poszczególnych osób? Jak można złagodzić ten problem?",
+          "Wielu pracowników ma trudności z utrzymaniem zdrowej równowagi między życiem zawodowym a prywatnym. Dlaczego oddzielenie pracy od życia osobistego stało się tak trudne? Jakie zasady dotyczące miejsca pracy mogą poprawić tę równowagę?",
+          "Rozwój „gospodarki koncertowej” oznacza, że ​​wiele osób pracuje na podstawie umów krótkoterminowych bez świadczeń. Jakie problemy finansowe powoduje to dla pracowników? W jaki sposób pracownicy gigów mogą być lepiej chronieni?",
+          "Wysoka inflacja powoduje gwałtowny wzrost cen podstawowych towarów. Jaki wpływ ma to na rodziny o niskich dochodach? Jakie kroki ekonomiczne można podjąć, aby ustabilizować ceny?",
+          "W niektórych branżach pracownicy pracują w niebezpiecznych warunkach. Dlaczego te warunki się utrzymują? Co można zrobić, aby egzekwować bardziej rygorystyczne przepisy bezpieczeństwa?",
+          "Wiele krajów rozwijających się cierpi na „drenaż mózgów”, w wyniku którego ich najlepiej wykształceni specjaliści przeprowadzają się za granicę. Jakie problemy to powoduje dla ojczyzny? Jak narody mogą zachować swój talent?",
+          "Młodzi dorośli gromadzą dziś bezprecedensowy poziom zadłużenia osobistego. Jakie są główne powody zaciągnięcia tego kredytu? Jaką edukację finansową należy zapewnić, aby rozwiązać ten problem?"
+        ]
+      },
+      {
+        "name": "Przestępczość i prawo",
+        "prompts": [
+          "W wielu miastach wzrasta przestępczość nieletnich (przestępstwa popełniane przez młodych ludzi). Jakie są główne przyczyny przestępczości wśród młodych ludzi? Jakie interwencje mogą uchronić młodych ludzi od kłopotów?",
+          "Liczba tradycyjnych przestępstw maleje, ale liczba cyberprzestępstw gwałtownie rośnie. Dlaczego przestępcy poruszają się w Internecie? W jaki sposób organy ścigania mogą dostosować się do walki z przestępczością cyfrową?",
+          "Nadużywanie narkotyków w dalszym ciągu rujnuje życie i społeczności. Co skłania ludzi do nadużywania substancji psychoaktywnych? Jakie są najskuteczniejsze sposoby rehabilitacji osób uzależnionych?",
+          "Więzienia w wielu krajach są poważnie przepełnione. Jakie są konsekwencje przeludnienia więzień? Jakie alternatywne kary mogłyby złagodzić tę presję?",
+          "Wielu przestępców wkrótce po wyjściu z więzienia popełnia ponownie przestępstwo. Dlaczego systemy więzienne nie resocjalizują więźniów? Jakie programy mogą pomóc byłym skazanym w ponownej integracji ze społeczeństwem?",
+          "Przestępstwa umysłowe, takie jak oszustwa korporacyjne, często pozostają bezkarne w porównaniu do przestępstw ulicznych. Dlaczego tak się dzieje? W jaki sposób wymiar sprawiedliwości może skuteczniej walczyć z korupcją w przedsiębiorstwach?",
+          "Wandalizm i niszczenie mienia publicznego są powszechne w wielu obszarach miejskich. Co motywuje ludzi do popełniania wandalizmu? Jak władze lokalne mogą temu zapobiec?",
+          "Wykroczenia drogowe, takie jak przekroczenie prędkości i jazda pod wpływem alkoholu, są przyczyną tysięcy zgonów rocznie. Dlaczego ludzie ignorują przepisy ruchu drogowego? Jakie środki mogą skutecznie zniechęcić do niebezpiecznej jazdy?",
+          "Przemoc domowa to ukryte przestępstwo, które dotyka miliony gospodarstw domowych. Dlaczego ofiary często milczą? Jakie systemy wsparcia należy wdrożyć, aby je chronić?",
+          "Nielegalny handel dziką fauną i florą prowadzi do wyginięcia wielu gatunków zwierząt. Co napędza popyt na nielegalne produkty pochodzenia zwierzęcego? W jaki sposób prawo międzynarodowe może powstrzymać ten handel?"
+        ]
+      },
+      {
+        "name": "Rodzina i młodzież",
+        "prompts": [
+          "Tradycyjny model rodziny wielopokoleniowej wypierany jest przez rodzinę nuklearną lub gospodarstwa domowe niepełne. Jakie problemy powoduje utrata wsparcia dalszej rodziny? W jaki sposób społeczeństwo może pomóc we wspieraniu współczesnych rodzin?",
+          "Istnieje rosnąca „luka pokoleniowa”, skutkująca brakiem zrozumienia między młodymi i starszymi. Dlaczego dochodzi do takich nieporozumień? Jak możemy wypełnić lukę między pokoleniami?",
+          "Wiele dzieci jest dziś pozostawionych w domu bez nadzoru rodziców ze względu na pracę rodziców. Jakie są negatywne skutki dla rozwoju dziecka? Jakie rozwiązania mogą wdrożyć pracujący rodzice?",
+          "Obecnie rodzice wywierają ogromną presję na swoje dzieci, aby odnosiły sukcesy w nauce i na zajęciach pozalekcyjnych. Jakie skutki psychiczne wywierają na dzieci? W jaki sposób rodzice mogą przyjąć zdrowsze podejście?",
+          "Wskaźniki urodzeń w wielu krajach rozwiniętych gwałtownie spadają. Dlaczego ludzie decydują się na posiadanie mniejszej liczby dzieci? Jakie problemy spowoduje to dla społeczeństwa w przyszłości i jak można im zaradzić?",
+          "Koszty profesjonalnej opieki nad dziećmi są dla wielu rodzin zbyt wysokie. Jakie problemy stwarza to zwłaszcza dla pracujących matek? W jaki sposób opieka nad dziećmi może być bardziej dostępna?",
+          "Częstą skargą są zachowania antyspołeczne wśród nastolatków w przestrzeni publicznej. Co powoduje to buntownicze zachowanie? W jaki sposób społeczności mogą angażować nastolatków w bardziej pozytywne działania?",
+          "Obecnie dzieci i nastolatki są coraz częściej celem marketingu konsumenckiego. Jakie są negatywne skutki konsumpcjonizmu wśród młodych ludzi? Jak rodzice mogą chronić swoje dzieci przed agresywną reklamą?",
+          "Wielu młodych ludzi jest idolem gwiazd, które zachowują się niewłaściwie. Dlaczego nastolatki podziwiają te liczby? Jak możemy zapewnić młodym ludziom lepsze wzorce do naśladowania?",
+          "W ciągu ostatnich kilku dekad znacznie wzrosła liczba rozwodów. Jakie są główne naciski powodujące rozpad małżeństw? Co można zrobić, aby lepiej przygotować pary do małżeństwa?"
+        ]
+      },
+      {
+        "name": "Transport i turystyka",
+        "prompts": [
+          "Korki w ruchu drogowym to codzienność w większości dużych miast. Jakie są główne przyczyny zatorów? Jakie innowacyjne rozwiązania transportowe mogą ułatwić płynność ruchu?",
+          "Systemy transportu publicznego na wielu obszarach są zawodne i źle utrzymane. Dlaczego transport publiczny jest często zaniedbywany? Jakie kroki są potrzebne, aby zaktualizować te systemy?",
+          "Miejsca historyczne i słynne zabytki cierpią z powodu „nadmiernej turystyki”. Jakie szkody powoduje nadmierna turystyka? W jaki sposób władze mogą w sposób zrównoważony zarządzać liczbą turystów?",
+          "Przemysł lotniczy w ogromnym stopniu przyczynia się do globalnej emisji dwutlenku węgla. Dlaczego podróże lotnicze tak trudno uczynić „ekologicznymi”? Jakie alternatywy lub rozwiązania mogą zmniejszyć wpływ latania na środowisko?",
+          "Liczba śmiertelnych wypadków drogowych pozostaje niedopuszczalnie wysoka. Jakie są główne przyczyny tych awarii? Jakie środki bezpieczeństwa mogą znacząco zmniejszyć liczbę ofiar śmiertelnych na drogach?",
+          "Podróże międzynarodowe stają się zbyt drogie dla przeciętnego człowieka ze względu na koszty paliwa i podatki. Jakie są negatywne skutki ograniczeń w podróżowaniu? W jaki sposób turystyka może pozostać dostępna?",
+          "Turyści często zachowują się w sposób obrażający lokalną wrażliwość kulturową. Dlaczego dochodzi do tarć kulturowych? W jaki sposób można edukować podróżnych, aby szanowali lokalne zwyczaje?",
+          "Pomimo ostrzeżeń środowiskowych, zależność od samochodów prywatnych stale rośnie. Dlaczego ludzie nie chcą rezygnować z samochodów? Jakie zachęty skutecznie popchnęłyby ludzi do korzystania z transportu publicznego?",
+          "Znalezienie parkingu w centrach miast staje się prawie niemożliwe. Jakie problemy stwarza to dla lokalnych przedsiębiorców? Jakie rozwiązania architektoniczne lub planistyczne mogą rozwiązać problem niedoboru miejsc parkingowych?",
+          "Budowa megaośrodków niszczy małe, lokalne firmy w miejscowościach turystycznych. Dlaczego lokalne sklepy mają trudności z konkurencją? Co samorządy mogą zrobić, żeby chronić małych przedsiębiorców?"
+        ]
+      },
+      {
+        "name": "Żywność i rolnictwo",
+        "prompts": [
+          "Supermarkety i konsumenci na całym świecie marnują szokującą ilość żywności. Dlaczego wyrzuca się tak dużo jedzenia? Jakie środki można podjąć, aby drastycznie ograniczyć marnowanie żywności?",
+          "Wiele krajów w dużym stopniu polega na imporcie żywności, zamiast na jej lokalnej uprawie. Jakie ryzyko wiąże się z uzależnieniem od zagranicznych dostaw żywności? W jaki sposób narody mogą pobudzić swoje krajowe rolnictwo?",
+          "Niepokój budzi intensywne stosowanie pestycydów chemicznych w rolnictwie. Jaki wpływ mają te chemikalia na środowisko i zdrowie? Jakie są realne alternatywy dla rolnictwa chemicznego?",
+          "Praktyki hodowli przemysłowej przedkładają zysk nad dobrostan zwierząt. Jakie są szczególne okrucieństwa związane z masową produkcją mięsa? W jaki sposób konsumenci i rządy mogą wpływać na zmiany w tej branży?",
+          "Małe, rodzinne gospodarstwa rolne zanikają, a ich miejsce zajmują duże przedsiębiorstwa agrobiznesowe. Dlaczego małe gospodarstwa upadają? Co można zrobić, aby wesprzeć i utrzymać lokalnych rolników?",
+          "Mimo że światowa produkcja żywności jest wysoka, w wielu regionach nadal występuje brak bezpieczeństwa żywnościowego i głód. Jakie są główne przyczyny niepowodzeń w dystrybucji żywności? Jak zapewnić każdemu wystarczającą ilość pożywienia?",
+          "Grunty orne (grunty nadające się do uprawy roślin) są tracone w wyniku zabudowy mieszkaniowej i pustynnienia. Jakie są długoterminowe zagrożenia związane z utratą gruntów rolnych? Jak chronić grunty rolne?",
+          "Długoterminowe skutki zdrowotne spożywania żywności modyfikowanej genetycznie (GM) nadal budzą obawy wielu osób. Dlaczego ludzie są sceptyczni wobec upraw GMO? Jakie przepisy powinny obowiązywać w sprzedaży żywności GMO?",
+          "Diety na całym świecie przesuwają się w stronę wysoko przetworzonej, opakowanej żywności. Co powoduje to uzależnienie od przetworzonej żywności? W jaki sposób rządy mogą edukować społeczeństwo w zakresie żywienia pełnowartościowego?",
+          "Spływy rolnicze (nawozy spływające do rzek) poważnie zanieczyszczają drogi wodne. Jakie szkody powoduje to w ekosystemach wodnych? Jakie praktyki rolnicze mogą zapobiec temu zanieczyszczeniu?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "double-question",
+    "label": "Podwójne pytanie",
+    "description": "Odpowiedz na dwa osobne pytania na ten sam temat.",
+    "instruction": "Odpowiedz wyczerpująco na oba pytania. Napisz co najmniej 250 słów.",
+    "categories": [
+      {
+        "name": "Edukacja i nauka",
+        "prompts": [
+          "Wielu uczniom trudno jest skoncentrować się w szkole i na uniwersytecie. Jakie są tego przyczyny? Jak możemy rozwiązać ten problem?",
+          "W niektórych krajach wysoki odsetek studentów porzuca studia przed ukończeniem studiów. Jak myślisz, dlaczego tak się dzieje? Co można zrobić, aby zachęcić studentów do kończenia studiów?",
+          "Niektórzy uważają, że historia to bezużyteczny przedmiot do nauki w szkole. Dlaczego niektórzy ludzie tak się czują? Czy uważasz, że historia jest ważnym przedmiotem w szkole?",
+          "Roczna przerwa przed rozpoczęciem studiów staje się coraz bardziej powszechna wśród młodych ludzi. Dlaczego coraz więcej uczniów decyduje się na tę opcję? Czy jest to tendencja pozytywna czy negatywna?",
+          "Koszty studiowania na uniwersytetach znacznie wzrosły w wielu częściach świata. Jaki wpływ ma to na uczniów i społeczeństwo? Jakie środki mogłyby zwiększyć dostępność szkolnictwa wyższego?",
+          "Wiele dzieci codziennie otrzymuje od nauczycieli zadania domowe. Czy uważasz, że jest to konieczna praktyka? Jakie są potencjalne wady zbyt dużej ilości zadań domowych?",
+          "W ostatnich latach wzrosła liczba osób decydujących się na naukę online zamiast w tradycyjnych salach lekcyjnych. Jakie są zalety nauki online? Czy uważasz, że tradycyjne szkoły w końcu znikną?",
+          "Niektórzy uczniowie mają trudności z nauką języków obcych w klasie. Dlaczego nauka nowego języka jest dla wielu osób trudna? Jakie są najskuteczniejsze sposoby na naukę języka obcego?",
+          "W szkołach rzadko uczy się umiejętności praktycznych, takich jak gotowanie, zarządzanie finansami i podstawowa konserwacja samochodu. Czy te umiejętności powinny znaleźć się w programie nauczania? Czyim obowiązkiem jest nauczanie dzieci tych umiejętności?",
+          "Muzyka i plastyka są często pierwszymi przedmiotami usuwanymi z programów szkolnych w przypadku ograniczenia środków finansowych. Dlaczego tak się dzieje? Jak ważna jest sztuka dla rozwoju dziecka?"
+        ]
+      },
+      {
+        "name": "Technologia i innowacja",
+        "prompts": [
+          "Obecnie ludzie spędzają coraz więcej czasu, wpatrując się w ekrany telefonów, komputerów i telewizorów. Jakie to ma skutki dla zdrowia fizycznego i psychicznego? W jaki sposób użytkownicy mogą lepiej zarządzać czasem spędzonym przed ekranem?",
+          "Sztuczna inteligencja jest coraz częściej wykorzystywana do wykonywania zadań, które wcześniej wykonywał człowiek. Jakie są główne zalety sztucznej inteligencji? Jakie ryzyko stwarza ta technologia dla społeczeństwa?",
+          "Platformy mediów społecznościowych zmieniły sposób, w jaki ludzie tworzą i utrzymują relacje. Jak media społecznościowe wpływają na interakcje międzyludzkie? Czy uważa Pan, że jest to ogólnie rzecz biorąc zmiana pozytywna czy negatywna?",
+          "Coraz większa liczba osób korzysta z internetowych aplikacji randkowych w celu znalezienia romantycznych partnerów. Dlaczego te platformy stały się tak popularne? Jakie są potencjalne niebezpieczeństwa związane z poznawaniem ludzi w Internecie?",
+          "Wiele osób woli czytać wiadomości w Internecie niż kupować gazety w formie fizycznej. Dlaczego tak wiele osób preferuje wiadomości cyfrowe? Czy drukowane gazety w przyszłości całkowicie znikną?",
+          "Kryptowaluty i płatności cyfrowe stają się coraz bardziej powszechne, zastępując fizyczną gotówkę. Jakie są zalety społeczeństwa bezgotówkowego? Jakie problemy mogą wyniknąć z całkowitego polegania na pieniądzach cyfrowych?",
+          "Oczekuje się, że turystyka kosmiczna stanie się w najbliższej przyszłości rzeczywistością dla zamożnych osób. Dlaczego ludzie interesują się podróżami w kosmos? Czy rządy powinny regulować tę nową branżę?",
+          "Współczesne dzieci już od najmłodszych lat często mają dostęp do smartfonów i tabletów. Jak wczesny dostęp do technologii wpływa na rozwój dziecka? Czy rodzice powinni ograniczać korzystanie przez swoje dzieci z tych urządzeń?",
+          "Automatyka i robotyka zastępują pracę fizyczną w wielu gałęziach przemysłu produkcyjnego. Co stanie się z pracownikami, którzy stracą pracę z powodu maszyn? Jak rządy powinny przygotować siłę roboczą na przyszłość?",
+          "Cyberprzemoc staje się coraz większym problemem wśród nastolatków i młodych dorosłych. Dlaczego ludzie znęcają się nad innymi w Internecie? Jakie kroki mogą podjąć szkoły i rodzice, aby zapobiec takim zachowaniom?"
+        ]
+      },
+      {
+        "name": "Praca i kariera",
+        "prompts": [
+          "Zadowolenie z pracy spada wśród pracowników w wielu krajach rozwiniętych. Jakie są główne przyczyny tego niezadowolenia? Co pracodawcy mogą zrobić, aby poprawić jakość życia zawodowego swoich pracowników?",
+          "Wiele osób decyduje się na zmianę zawodu kilka razy w ciągu swojego życia zawodowego. Co motywuje ludzi do zmiany zawodu? Czy jest to pozytywny czy negatywny trend dla gospodarki?",
+          "Praca zdalna stała się standardową praktyką w wielu firmach. Jakie są korzyści z pracy w domu? Jakie wyzwania stoją przed pracownikami zdalnymi?",
+          "W niektórych zawodach oczekuje się od pracowników bardzo długich godzin pracy, często bez wynagrodzenia. Dlaczego ludzie akceptują takie warunki pracy? Jaki wpływ ma to na ich życie osobiste?",
+          "W wielu krajach wiek emerytalny jest podnoszony ze względu na dłuższą średnią długość życia. Dlaczego ta polityka jest wdrażana? Czy uważasz, że sprawiedliwe jest oczekiwanie od ludzi pracy do późnych lat sześćdziesiątych lub siedemdziesiątych?",
+          "Wielu młodych ludzi kończy studia, ale nie może znaleźć pracy w wybranej przez siebie dziedzinie. Jakie są przyczyny bezrobocia wśród młodych? W jaki sposób uczelnie mogą lepiej przygotować studentów do wejścia na rynek pracy?",
+          "Niektóre firmy korzystają z oprogramowania monitorującego, aby śledzić produktywność swoich pracowników podczas pracy przy komputerach. Dlaczego pracodawcy korzystają z tych narzędzi? Czy jest to naruszenie prywatności?",
+          "Rozpoczęcie działalności gospodarczej wiąże się ze znacznym ryzykiem finansowym i długim czasem pracy. Dlaczego niektórzy ludzie wolą zostać przedsiębiorcami, a nie zwykłymi pracownikami? Jakie cechy są potrzebne, aby prowadzić odnoszący sukcesy biznes?",
+          "W wielu branżach kobiety są nadal niedostatecznie reprezentowane na stanowiskach kierowniczych wyższego szczebla i na stanowiskach kierowniczych. Dlaczego ta różnica między płciami utrzymuje się? Jakie środki można podjąć, aby promować równość płci w miejscu pracy?",
+          "Na niektórych stanowiskach, na przykład zawodowi sportowcy i gwiazdy rozrywki, płace są niezwykle wysokie. Czy ci ludzie zasługują na to, aby zarabiać tak dużo pieniędzy? Jak należy ustalać wynagrodzenie danej osoby?"
+        ]
+      },
+      {
+        "name": "Środowisko i zrównoważony rozwój",
+        "prompts": [
+          "Zanieczyszczenie tworzywami sztucznymi w oceanach świata to poważny kryzys środowiskowy. Jakie są główne źródła tych odpadów z tworzyw sztucznych? Jakie działania mogą podjąć pojedyncze osoby i rządy, aby oczyścić oceany?",
+          "Wiele gatunków zwierząt i roślin jest obecnie zagrożonych wyginięciem. Dlaczego utrata różnorodności biologicznej jest problemem dla ludzkości? Co można zrobić, aby chronić zagrożone gatunki?",
+          "Wykorzystywanie paliw kopalnych jest główną przyczyną globalnej zmiany klimatu. Dlaczego krajom trudno jest przejść na odnawialne źródła energii? Co się stanie, jeśli nie zmniejszymy naszej zależności od ropy i węgla?",
+          "Wylesianie postępuje w zastraszającym tempie w tropikalnych lasach deszczowych. Jakie są główne powody wycinania tych lasów? Jak społeczność międzynarodowa może powstrzymać tę destrukcję?",
+          "Wiele miast cierpi z powodu poważnego zanieczyszczenia powietrza, które odbija się na zdrowiu ich mieszkańców. Co powoduje zanieczyszczenie powietrza w miastach? Jakie są najskuteczniejsze sposoby poprawy jakości powietrza w miastach?",
+          "W wielu częściach świata słodka woda staje się zasobem deficytowym. Dlaczego brakuje czystej wody pitnej? Jak możemy efektywniej oszczędzać wodę?",
+          "Konsumpcjonizm zachęca ludzi do ciągłego kupowania nowych produktów i wyrzucania starych. Jak ta „kultura wyrzucania” wpływa na środowisko? Co można zrobić, aby zachęcić ludzi do naprawy i ponownego użycia przedmiotów?",
+          "Uprawy genetycznie modyfikowane (GM) uprawia się w celu zwiększenia produkcji żywności i zapewnienia odporności na szkodniki. Dlaczego niektórzy ludzie są przeciwni żywności GMO? Czy korzyści płynące z tej technologii przewyższają ryzyko?",
+          "Ekstremalne zjawiska pogodowe, takie jak huragany i susze, stają się coraz częstsze. Jak te wydarzenia wpływają na społeczności lokalne? Jak rządy powinny przygotować się na klęski żywiołowe?",
+          "Szybka moda pozwala konsumentom kupować modną odzież po bardzo niskich cenach. Jaki jest wpływ branży szybkiej mody na środowisko? Czy konsumenci powinni być zmuszani do płacenia więcej za ubrania produkowane w sposób zrównoważony?"
+        ]
+      },
+      {
+        "name": "Społeczeństwo i kultura",
+        "prompts": [
+          "W wielu krajach odsetek osób starszych szybko rośnie. Jakie wyzwania stawia przed społeczeństwem starzejące się społeczeństwo? W jaki sposób społeczności mogą lepiej wspierać swoich starszych obywateli?",
+          "Pogłębia się przepaść pomiędzy najbogatszymi i najbiedniejszymi ludźmi w społeczeństwie. Jakie problemy powodują skrajne nierówności majątkowe? Jakie zasady mogłyby pomóc w bardziej sprawiedliwej dystrybucji bogactwa?",
+          "Tradycyjne zwyczaje i święta tracą na znaczeniu wśród młodszego pokolenia. Dlaczego tak się dzieje? Czy we współczesnym świecie ważne jest zachowanie tradycyjnej kultury?",
+          "Wiele osób czuje się samotnych i odizolowanych pomimo życia w zatłoczonych, nowoczesnych miastach. Dlaczego samotność w miastach jest tak powszechna? Co można zrobić, aby zbudować silniejsze społeczności na obszarach miejskich?",
+          "W wielu krajach rozwiniętych spada liczba urodzeń. Dlaczego ludzie decydują się na posiadanie mniejszej liczby dzieci? Jaki wpływ będzie to miało na społeczeństwo w przyszłości?",
+          "Wzrosła migracja międzynarodowa, co doprowadziło do powstania większej liczby społeczeństw wielokulturowych. Jakie są korzyści z życia w zróżnicowanym społeczeństwie? Jakie wyzwania mogą się pojawić, gdy różne kultury żyją razem?",
+          "W wielu częściach świata spada zaufanie do polityków i instytucji rządowych. Dlaczego ludzie stali się tak cyniczni w stosunku do polityki? Jak rządy mogą odbudować zaufanie publiczne?",
+          "Wolontariat i nieodpłatna praca społeczna stają się coraz mniej powszechne. Dlaczego mniej osób oferuje swój czas za darmo? Jak możemy zachęcić więcej osób do pomagania swoim lokalnym społecznościom?",
+          "Niektórzy uważają, że współczesne społeczeństwo jest zbyt skupione na wyglądzie fizycznym i pięknie. Dlaczego istnieje taka presja, aby wyglądać w określony sposób? Jak to wpływa na zdrowie psychiczne ludzi?",
+          "Pomniki i posągi historyczne są czasami usuwane lub niszczone, ponieważ reprezentują kontrowersyjną przeszłość. Dlaczego ludzie chcą usunąć te pomniki? Czy postacie historyczne należy oceniać według współczesnych standardów?"
+        ]
+      },
+      {
+        "name": "Zdrowie i dobre samopoczucie",
+        "prompts": [
+          "W wielu krajach wskaźniki otyłości osiągnęły rozmiary epidemii. Jakie są główne przyczyny tego kryzysu zdrowotnego? Jaką rolę powinien odgrywać rząd w regulacji przemysłu spożywczego?",
+          "Stres i lęk to główne problemy zdrowotne współczesnych pracowników. Jakie czynniki wpływają na wysoki poziom stresu w miejscu pracy? W jaki sposób poszczególne osoby mogą osiągnąć lepszą równowagę między życiem zawodowym a prywatnym?",
+          "Wiele osób zamiast odwiedzać konwencjonalnych lekarzy, korzysta z leków alternatywnych. Dlaczego terapie alternatywne stają się coraz bardziej popularne? Czy istnieją jakieś zagrożenia związane z poleganiem na tych metodach leczenia?",
+          "Koszty leczenia i leków na receptę są w niektórych krajach bardzo wysokie. Jak to wpływa na rodziny o niskich dochodach? Czy opieka zdrowotna powinna być całkowicie bezpłatna dla wszystkich?",
+          "Brak snu to częsty problem wielu dorosłych i nastolatków. Dlaczego ludzie nie śpią wystarczająco dużo? Jak brak snu wpływa na codzienną wydajność i długoterminowe zdrowie?",
+          "Sport zawodowy stał się wysoce skomercjalizowany, a sportowcy zarabiają miliony. Czy pieniądze zrujnowały prawdziwego ducha sportu? Jaki wpływ ma ta komercjalizacja na młodych fanów?",
+          "W niektórych krajach sprzedaż wyrobów tytoniowych jest objęta wysokimi podatkami i ograniczeniami. Dlaczego rządy starają się zniechęcać do palenia? Czy w przyszłości palenie powinno zostać całkowicie zakazane?",
+          "Przetworzona i szybka żywność stanowi dużą część współczesnej diety. Dlaczego ludzie decydują się na niezdrową żywność? Co można zrobić, aby zdrowa żywność była bardziej atrakcyjna i dostępna?",
+          "Problemy ze zdrowiem psychicznym są często napiętnowane, co utrudnia ludziom szukanie pomocy. Dlaczego ludzie boją się rozmawiać o swoim zdrowiu psychicznym? W jaki sposób społeczeństwo może stać się bardziej tolerancyjne i wspierające?",
+          "Niektórzy ludzie decydują się na uprawianie ekstremalnych i niebezpiecznych sportów, takich jak base jumping lub wspinaczka w pojedynkę. Co motywuje ludzi do ryzykowania życia dla sportu? Czy służby ratownicze powinny być zobowiązane do ratowania ich, jeśli wpadną w kłopoty?"
+        ]
+      },
+      {
+        "name": "Rząd i usługi publiczne",
+        "prompts": [
+          "Systemy transportu publicznego w wielu dużych miastach są przepełnione i zawodne. Dlaczego rządy walczą o utrzymanie transportu publicznego? Jakie są zalety wysoce wydajnego systemu tranzytowego?",
+          "Podatki są niezbędne do finansowania usług publicznych, ale wiele osób stara się ich unikać. Dlaczego ludzie nie lubią płacić podatków? W jaki sposób rządy mogą zapewnić sprawiedliwość systemów podatkowych?",
+          "Wiele rządów zapewnia wsparcie finansowe bezrobotnym obywatelom. Dlaczego ta pomoc społeczna jest konieczna? Czy zapewnianie zasiłków dla bezrobotnych powoduje lenistwo?",
+          "W okresie pogorszenia koniunktury gospodarczej często zmniejsza się finansowanie bibliotek publicznych i domów kultury. Dlaczego te obiekty są uważane za mniej ważne? Co tracą społeczności po zamknięciu bibliotek?",
+          "W niektórych krajach wszyscy młodzi dorośli mają obowiązkową służbę wojskową. Jakie są zalety poboru? Jakie są argumenty przeciwko zmuszaniu ludzi do wstąpienia do wojska?",
+          "Ceny mieszkań w dużych miastach stały się nieosiągalne dla wielu młodych profesjonalistów. Dlaczego mieszkania w miastach są takie drogie? Co rządy mogą zrobić, aby zapewnić niedrogie mieszkania?",
+          "Bogate kraje często zapewniają pomoc zagraniczną krajom rozwijającym się. Dlaczego pomoc biedniejszym narodom jest ważna? Czy pomoc zagraniczna zawsze dociera do osób, które jej najbardziej potrzebują?",
+          "Kamery monitorujące są szeroko stosowane w przestrzeni publicznej w celu zapobiegania przestępczości. Jak skuteczne są kamery w powstrzymywaniu nielegalnych działań? Czy nadzór publiczny narusza prawo jednostki do prywatności?",
+          "Rządy wydają duże sumy pieniędzy na organizację międzynarodowych wydarzeń, takich jak igrzyska olimpijskie. Dlaczego kraje chcą być gospodarzami tych wydarzeń? Czy to dobre wykorzystanie środków publicznych?",
+          "System sądownictwa karnego w wielu krajach koncentruje się na karaniu przestępców poprzez wysyłanie ich do więzienia. Czy więzienie faktycznie resocjalizuje przestępców? Jakie są alternatywne sposoby radzenia sobie z przestępstwami bez użycia przemocy?"
+        ]
+      },
+      {
+        "name": "Media i komunikacja",
+        "prompts": [
+          "Reklamy są wszędzie, od ekranów telewizyjnych po publiczne billboardy. Jak reklama wpływa na zachowania konsumentów? Czy reklama jest szkodliwa dla dzieci?",
+          "Poważnym problemem jest rozpowszechnianie „fałszywych wiadomości” i dezinformacji w Internecie. Dlaczego ludzie tworzą i udostępniają fałszywe informacje? W jaki sposób społeczeństwo może nauczyć się identyfikować wiarygodne źródła wiadomości?",
+          "Gwiazdy i influencerzy mają ogromny wpływ na zachowania młodych ludzi. Dlaczego nastolatki tak łatwo ulegają wpływom znanych osób? Czy wpływ ten jest ogólnie pozytywny czy negatywny?",
+          "Wiele osób spędza godziny na oglądaniu programów typu reality show. Dlaczego te programy są tak atrakcyjne dla widzów? Czy reality show wiernie odzwierciedlają prawdziwe życie?",
+          "Paparazzi często śledzą znane osoby, aby fotografować ich życie prywatne. Czy media mają prawo ingerować w prywatność celebryty? Dlaczego społeczeństwo tak bardzo interesuje się życiem osobistym sławnych ludzi?",
+          "Współczesne filmy i gry wideo często zawierają bardzo realistyczne sceny przemocy. Dlaczego brutalna rozrywka jest tak popularna? Czy oglądanie przemocy sprawia, że ​​ludzie stają się bardziej agresywni w prawdziwym życiu?",
+          "Dziennikarstwo śledcze odgrywa kluczową rolę w ujawnianiu korupcji. Dlaczego wolna prasa jest ważna dla zdrowego społeczeństwa? Na jakie niebezpieczeństwa czyhają dziennikarze, donosząc o wpływowych osobach?",
+          "Ludzie komunikują się dziś znacznie szybciej za pomocą wiadomości tekstowych i e-maili. Jak zmieniło to sposób, w jaki piszemy i mówimy? Czy straciliśmy zdolność głębokiej i przemyślanej komunikacji?",
+          "Platformy streamingowe, takie jak Netflix i Spotify, zmieniły sposób, w jaki ludzie korzystają z rozrywki. Jak to wpływa na tradycyjne kina i sprzedaż muzyki fizycznej? Czy model subskrypcji jest sprawiedliwy wobec artystów i twórców?",
+          "Niektóre rządy cenzurują Internet, blokując niektóre strony internetowe i platformy mediów społecznościowych. Dlaczego rządy ograniczają dostęp do informacji? Jak obywatele omijają te ograniczenia?"
+        ]
+      },
+      {
+        "name": "Miasta i infrastruktura",
+        "prompts": [
+          "Niekontrolowany rozwój miast powoduje szybką ekspansję miast na otaczające je obszary wiejskie. Jakie są skutki środowiskowe niekontrolowanego rozrostu miast? W jaki sposób urbaniści mogą zarządzać tym wzrostem w bardziej zrównoważony sposób?",
+          "Zatory w ruchu drogowym to codzienny problem milionów osób dojeżdżających do pracy na całym świecie. Jakie są główne przyczyny dużego natężenia ruchu? Czy wprowadzenie bezpłatnej komunikacji miejskiej rozwiązałoby ten problem?",
+          "Wiele historycznych budynków w centrach miast jest wyburzanych, aby zrobić miejsce dla nowoczesnych drapaczy chmur. Dlaczego tak się dzieje? Czy konserwacja starej architektury jest istotna?",
+          "W Europie coraz popularniejsze staje się wprowadzanie ruchu pieszego do centrów miast – zakaz wjazdu wszystkich samochodów na określone obszary. Jakie są zalety stref wolnych od samochodów? Jak to wpływa na lokalne firmy?",
+          "Zanieczyszczenie hałasem jest stałym problemem dla mieszkańców ruchliwych obszarów metropolitalnych. Jakie są główne źródła hałasu miejskiego? Jak chroniczne narażenie na hałas wpływa na zdrowie mieszkańców?",
+          "Parki i tereny zielone są niezbędne dla dobrej jakości życia w mieście. Dlaczego drzewa i przyroda są ważne w środowisku miejskim? Dlaczego niektóre miasta nie zapewniają wystarczającej ilości terenów zielonych?",
+          "Na obrzeżach wielu megamiast istnieją slumsy i nieformalne osady. Dlaczego ludzie żyją w takich warunkach? Co rządy mogą zrobić, aby poprawić standard życia na tych obszarach?",
+          "Rowery są promowane jako przyjazna dla środowiska alternatywa dla jazdy samochodem. Dlaczego wiele osób nadal nie chce jeździć rowerem do pracy? Jaka infrastruktura jest potrzebna, aby jazda na rowerze w miastach była bezpieczna?",
+          "Architektura współczesnych miast często wygląda bardzo podobnie, niezależnie od kraju. Dlaczego miasta tracą swoją wyjątkową tożsamość kulturową? Czy projekt budynku wpływa na nastrój osób, które z niego korzystają?",
+          "Gospodarka odpadami i wywóz śmieci to ogromne wyzwania logistyczne dla dużych miast. Jak miasta radzą sobie obecnie z milionami ton śmieci? Jakie są bardziej zrównoważone sposoby gospodarowania odpadami miejskimi?"
+        ]
+      },
+      {
+        "name": "Globalizacja i gospodarka",
+        "prompts": [
+          "Rozwój międzynarodowych korporacji oznacza, że ​​te same marki są sprzedawane na całym świecie. Jaki wpływ ma to na lokalne firmy i rzemieślników? Czy prowadzi to do utraty różnorodności kulturowej?",
+          "Tanie podróże lotnicze uczyniły turystykę międzynarodową dostępną dla milionów ludzi. Jakie są korzyści ekonomiczne płynące z turystyki masowej? Jak turystyka negatywnie wpływa na społeczności lokalne i środowisko?",
+          "Wiele stanowisk pracy w sektorze produkcyjnym zostało przeniesionych z krajów rozwiniętych do krajów rozwijających się. Dlaczego firmy przenoszą swoje fabryki? Jak globalizacja wpływa na pracowników w obu krajach?",
+          "Polski stał się dominującym językiem międzynarodowego biznesu i nauki. Dlaczego język polski osiągnął ten globalny status? Jakie są wady posiadania jednego globalnego języka?",
+          "Niektóre kraje w dużym stopniu polegają na imporcie żywności, zamiast na jej produkcji krajowej. Why do nations import basic necessities? Jakie ryzyko wiąże się z poleganiem na innych krajach w zakresie dostaw żywności?",
+          "Koncepcja uniwersalnego dochodu podstawowego (UBI) jest przedmiotem debaty ekonomistów na całym świecie. Jakie argumenty przemawiają za zapewnieniem każdemu dochodu gwarantowanego? Jak taki system byłby finansowany?",
+          "Sankcje gospodarcze są często stosowane przez potężne kraje, aby ukarać inne narody. Jakie są cele tych ograniczeń handlu? Kto najbardziej cierpi, gdy na kraj nakładane są sankcje?",
+          "Karty kredytowe i pożyczki osobiste pozwalają ludziom kupować rzeczy, na które nie mogą sobie od razu pozwolić. Dlaczego zadłużenie konsumentów rośnie na całym świecie? Jakie są długoterminowe konsekwencje życia ponad stan?",
+          "Gospodarka współdzielenia (np. Uber, Airbnb) zakłóciła tradycyjne gałęzie przemysłu. Dlaczego te usługi peer-to-peer są tak skuteczne? Czy te platformy wykorzystują swoich pracowników?",
+          "Wzrost gospodarczy jest głównym celem większości rządów krajowych. Is endless economic growth possible on a planet with finite resources? Jakie są alternatywne sposoby pomiaru sukcesu kraju poza PKB?"
+        ]
+      }
+    ]
+  }
+]

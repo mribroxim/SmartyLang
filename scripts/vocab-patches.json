@@ -1,0 +1,50 @@
+{
+  "senses": {
+    "s00028": { "langs": { "tl": { "d": "Trabaho o hanapbuhay." } } },
+    "s00323": { "langs": { "tl": { "d": "Unti-unting alisin o tapusin." } } },
+    "s00345": { "langs": { "cs": { "d": "Potřebující jídlo; hladový." } } },
+    "s00456": { "langs": { "tl": { "d": "Misil mula sa lupa papunta sa himpapawid." } } },
+    "s00514": {
+      "langs": {
+        "tl": { "d": "Itlog na prinito nang nakaharap ang pula." },
+        "ko": { "d": "노른자가 위로 향한 프라이드에그." },
+        "ms": { "d": "Telur goreng dengan kuning di atas." },
+        "uk": { "d": "Яєчня з жовтком зверху." },
+        "el": { "d": "Τηγανητό αυγό με τον κρόκο προς τα πάνω." },
+        "cs": { "d": "Smažené vejce se žloutkem nahoru." }
+      }
+    },
+    "s00571": {
+      "langs": {
+        "tl": { "d": "Mga kagamitang yari sa salamin." },
+        "cs": { "d": "Skleněné nádobí." }
+      }
+    },
+    "s00577": { "langs": { "sw": { "d": "Keki ndogo tamu; mkate mdogo." } } },
+    "s01206": { "langs": { "tl": { "d": "Enerhiyang init." } } },
+    "s02011": { "langs": { "uk": { "d": "Не влучити; промахнутися." } } },
+    "s02082": { "langs": { "sw": { "d": "Umejaa tumaini, furaha na nguvu." } } },
+    "s02083": { "langs": { "sw": { "d": "Mfuatano wa noti za muziki unaounda wimbo." } } },
+    "s02084": { "langs": { "sw": { "d": "Kushughulikia vizuri hali ngumu." } } },
+    "s02090": { "langs": { "sw": { "d": "Uwezekano wa shida au hatari." } } },
+    "s02091": { "langs": { "sw": { "d": "Kinachokufanya uhisi kitu kibaya au kinyume cha sheria." } } },
+    "s02093": { "langs": { "sw": { "d": "Kuchukua tahadhari kuepuka hatari au makosa." } } },
+    "s02094": { "langs": { "sw": { "d": "Taarifa kuhusu mtu zilizopo mtandaoni." } } },
+    "s02103": { "langs": { "sw": { "d": "Sehemu moja ya hali au tatizo." } } },
+    "s02109": { "langs": { "sw": { "d": "Kufikiri kwa makini kuhusu tabia na imani zako." } } },
+    "s02110": { "langs": { "sw": { "d": "Kampuni na shughuli za aina fulani ya biashara." } } },
+    "s02111": { "langs": { "sw": { "d": "Mchakato wa kukutana na kuzungumza na watu wa fani yako." } } },
+    "s02257": { "langs": { "tl": { "d": "Banggitin o simulan ang usapan." } } },
+    "s02536": { "langs": { "tl": { "d": "Sanhi ng hirap o pagkabalisa." } } },
+    "s02567": { "langs": { "tl": { "d": "Dumating o magpunta sa isang lugar." } } },
+    "s02600": { "langs": { "tl": { "d": "Enerhiyang nuklear." } } },
+    "s02610": { "langs": { "uk": { "d": "Нагородити когось або за щось." } } },
+    "s02891": { "langs": { "el": { "w": "Κατάκτηση", "d": "Να γίνεις κύριος σε κάτι· να το κατακτήσεις." } } },
+    "s03394": { "langs": { "el": { "d": "Να σηκώσεις, να ανυψώσεις." } } },
+    "s03572": { "langs": { "sv": { "d": "Skatt; något mycket värdefullt." } } },
+    "s03618": { "langs": { "uk": { "d": "Той, хто грає." } } },
+    "s03885": { "langs": { "tl": { "d": "Ehersisyong hyperextension." } } },
+    "s04105": { "langs": { "tl": { "d": "Sirkitong integrated; microprocessor." } } }
+  },
+  "newSenses": []
+}

@@ -1,0 +1,300 @@
+- Ona čte knihu v knihovně.
+- Každou sobotu hrají fotbal.
+- Můj bratr má nové kolo.
+- Zítra jedeme na pláž.
+- Nemá rád kávu.
+- Děti si hrají na zahradě.
+- Minulý víkend jsem navštívil babičku.
+- Vždycky vstává v sedm hodin.
+- Měli z nás radost.
+- Je vyšší než jeho sestra.
+- Koupili jsme na trhu jablka.
+- Pes spí pod stolem.
+- Umí mluvit francouzsky a česky.
+- Včera večer sledovali film.
+- Můj otec pracuje v nemocnici.
+- Nikdy jsem nebyl v Japonsku.
+- Dnes večer večeříme v restauraci.
+- Kočka se schovává za pohovkou.
+- Minulé léto jel do Londýna.
+- Nejí maso.
+- Učíme se vařit.
+- Dnes je chladněji než včera.
+- Už dokončili svůj domácí úkol.
+- Obvykle se ráno sprchuji.
+- Šla domů, když začalo pršet.
+- Můj nejlepší přítel bydlí hned vedle.
+- Příští týden navštívíme muzeum.
+- Zase ztratil klíče.
+- Děti jsou nadšené z výletu.
+- Potřebuji koupit mléko a chleba.
+- V parku postavili sněhuláka.
+- Má na sobě krásné šaty.
+- Po dlouhé procházce jsme byli unavení.
+- Každé ráno jezdí do práce autem.
+- Květiny v zahradě kvetou.
+- Už jsem snědl oběd.
+- Potkala svou kamarádku v kavárně.
+- Dnes nemáme žádný domácí úkol.
+- Miminko pláče, protože má hlad.
+- Příští měsíc si koupí nové auto.
+- Včera plavali v jezeře.
+- Moje sestra je starší než já.
+- Vařila jsem večeři, když jsi volal.
+- Vždycky si čistí zuby před spaním.
+- Film začíná v osm hodin.
+- Večírek se nám moc líbil.
+- Musí dokončit svou práci do pátku.
+- Kočka sedí na parapetu.
+- Koupila květiny pro svou matku.
+- Dnes se cítím mnohem lépe.
+- Hráli šachy, když jsem přišel.
+- Neumí plavat.
+- Setkáme se s tebou na nádraží.
+- Ptáci zpívají na stromech.
+- Žiji v tomto městě pět let.
+- Vařila špagety k večeři.
+- Chodí do posilovny třikrát týdně.
+- Spadl z kola a zranil si koleno.
+- Těšíme se na prázdniny.
+- Polévka chutná velmi dobře.
+- Má ve svém pokoji hodně knih.
+- Narodil jsem se v dubnu.
+- Stěhují se do nového domu.
+- Do třídy vždy přijde pozdě.
+- Po bouři jsme viděli krásnou duhu.
+- Káva je příliš horká na pití.
+- Pomáhá své matce v kuchyni.
+- Nikdy jsem neviděl tak velkého psa.
+- Smáli se vtipnému vtipu.
+- Chce se stát doktorem, až vyroste.
+- Prošli jsme se podél řeky.
+- Obchod zavírá ve devět večer.
+- Napsala dopis svému bratranci.
+- Šetřím peníze na koupi kytary.
+- Děti kreslí obrázky pastelkami.
+- Už si sbalil kufr.
+- Zpívali jsme písně u táboráku.
+- Vlak odjíždí za deset minut.
+- Nemá ráda vstávání brzy o víkendech.
+- Znám ho od dětství.
+- V naší čtvrti staví novou školu.
+- Chytil rybu v řece.
+- Příští pondělí budeme mít test.
+- Salát potřebuje více soli.
+- Má na sobě teplý kabát, protože je zima.
+- Zapomněl jsem si vzít deštník.
+- Minulou neděli navštívili zoo.
+- Vlakem četl noviny.
+- Ložnici vymalujeme na modro.
+- Miminko se naučilo chodit.
+- Upekla dort k mým narozeninám.
+- Nikdy jsem předtím nejel na koni.
+- Seděli na zahradě.
+- Nemá žádné bratry ani sestry.
+- Dnes večer si objednáme pizzu k večeři.
+- Učitel položil těžkou otázku.
+- Hledá své brýle.
+- Včera večer jsem dokončil svůj projekt.
+- Na dovolenou jedou do Španělska.
+- Poslouchal hudbu ve svém pokoji.
+- Máme dost jídla pro všechny.
+- Kniha, kterou čtu, je velmi zajímavá.
+- Dnes ráno zalévala květiny.
+- Nerozumím tomuto matematickému příkladu.
+- Na večírku hráli hry.
+- Má rýmu a potřebuje odpočívat.
+- Plánujeme překvapení k jejím narozeninám.
+- Autobus dnes přijel pozdě.
+- Loni učila češtinu v Japonsku.
+- Obvykle chodím spát v deset hodin.
+- Běželi v závodě.
+- K obědu jedl sendvič.
+- Nikdy jsme nebyli na koncertě.
+- Koberec je potřeba vysát.
+- Sbírá známky z různých zemí.
+- Učím se hrát na kytaru.
+- O víkendu jeli do hor autem.
+- Rozbil svou oblíbenou hračku.
+- Zůstaneme v hotelu blízko pláže.
+- Rajčatová polévka je moje nejoblíbenější.
+- Čekala na autobus na zastávce.
+- Dnes si musím vyprat prádlo.
+- Mají krásnou zahradu plnou růží.
+- Bojí se pavouků.
+- Dnes ráno jsme se procházeli kolem jezera.
+- Kuře se peče v troubě.
+- Obarvila si vlasy na blond.
+- Napíšu dopis své babičce.
+- Tancovali na svatbě.
+- Nikdy nejedl snídani před školou.
+- Tento film jsme už viděli dvakrát.
+- Sníh jemně padal.
+- Umí dobře hrát na klavír.
+- Někde v obchodním centru jsem ztratil peněženku.
+- Chystají se adoptovat psa.
+- Opravoval si kolo v garáži.
+- Včera jsme měli piknik v parku.
+- Limonáda je kyselá, ale osvěžující.
+- Do čaje si dala trochu cukru.
+- Potřebuji koupit dárek pro svého přítele.
+- Příští rok se stěhují do Kanady.
+- Zajímá se o průzkum vesmíru.
+- Dokončili jsme úklid domu.
+- Pomeranče se dovážejí ze Španělska.
+- Měla na sobě krásný náhrdelník.
+- K snídani obvykle jím cereálie.
+- Mluvili o svých plánech do budoucna.
+- Nikdy předtím nejedl sushi.
+- Dnes večer jdeme do kina.
+- Ulice je ozdobená světly.
+- Zametla podlahu a umyla nádobí.
+- Učím se česky už dva roky.
+- Hrát karty, když jsem odešel.
+- Usnul během filmu.
+- V sobotu jsme navštívili galerii umění.
+- Kuře chutná trochu pálivě.
+- Balí si tašky na výlet.
+- Ten román jsem dočetl minulý týden.
+- Na zahradě postavili domeček na stromě.
+- Maloval obraz lodi.
+- Nemáme žádné plány na víkend.
+- Dítě se učí mluvit.
+- Otevřela okno, aby pustila dovnitř čerstvý vzduch.
+- Musím se učit na zítřejší zkoušku.
+- Stihli vlak na poslední chvíli.
+- Šetří si, aby si koupil nový telefon.
+- Společně jsme jako rodina vařili večeři.
+- Muzeum je v pondělí zavřené.
+- Mluvila po telefonu se svou kamarádkou.
+- Nikdy jsem nezkusil bungee jumping.
+- Vylezli na vrchol hory.
+- Pověsil si kabát na hák u dveří.
+- Na zahradě grilujeme.
+- Dort byl vynikající a velmi sladký.
+- Své kočce dává jíst dvakrát denně.
+- Upustil jsem telefon a rozbil jsem displej.
+- Učí se na závěrečnou zkoušku.
+- Venčil svého psa v parku.
+- Známe se deset let.
+- Židle je vyrobena ze dřeva.
+- Složila prádlo a dala ho do skříně.
+- Přemýšlím, co uvařit k večeři.
+- Přepluli jezero na malé lodi.
+- Nemá rád chladné počasí.
+- Na letiště dorazíme ve tři.
+- Chleba je čerstvý z pekárny.
+- Pracuje na částečný úvazek v knihkupectví.
+- Často poslouchám hudbu při práci.
+- Šli na túru lesem.
+- Před odchodem zamkl dveře.
+- Jsme nadšeni novým projektem.
+- Voda v bazénu je příliš studená.
+- Scedila si vlasy do culíku.
+- Musím si letos obnovit pas.
+- Hrát fotbal v dešti.
+- Rozlil džus na ubrus.
+- Jdeme si z útulku adoptovat kočku.
+- Domácí úkol byl těžký, ale zajímavý.
+- Učí se řídit auto.
+- Spálil jsem si prst při vaření.
+- S nervozitou čekali na výsledky.
+- Naplnil sklenici studenou vodou.
+- Jsme kamarádi od školky.
+- Letadlo vzlétlo za úsvitu.
+- Přivěsila obrázek na zeď.
+- Ráno preferuji čaj před kávou.
+- Tento měsíc renovují svou kuchyň.
+- Vyfotil krásný výhled.
+- Silvestra oslavíme doma.
+- Polévka musí dvacet minut probublávat.
+- Plete šálu pro svého otce.
+- Nikdy jsem neviděl oceán.
+- Hádali se, na co se dívat.
+- Zaparkoval auto v garáži.
+- Sledovali jsme dokument o tučňácích.
+- Jahody jsou čerstvé z farmy.
+- Vytrhla stránku ze svého sešitu.
+- Příští týden navštívím svého bratrance.
+- Závod dokončili na prvním místě.
+- Má sbírku starých mincí.
+- Koupili jsme si nějaké suvenýry v obchodě se suvenýry.
+- Obloha byla plná barevných ohňostrojů.
+- Je alergická na arašídy.
+- Potřebuji nabít baterii telefonu.
+- Šli ruku v ruce po pláži.
+- Před testem si ořezal tužku.
+- Už jsme sbalili všechno, co potřebujeme.
+- Tráva byla mokrá od ranní rosy.
+- Ubrusila stůl hadříkem.
+- Naučím se plést.
+- Oslavovali své výročí.
+- Zastrčil si košili do kalhot.
+- Slyšeli jsme venku zpívat ptáky.
+- Sýr velmi silně páchne.
+- Nalila mléko do sklenice.
+- Zapomněl jsem si přinést oběd.
+- Sázejí zeleninu na zahradě.
+- Zívl a protáhl se ráno.
+- Trajektem jsme se dostali na ostrov.
+- Cena benzínu opět vzrostla.
+- Dnes večer hlídá svého malého bratra.
+- Tuto knihu musím vrátit do knihovny.
+- Opékali si marshmallows nad ohněm.
+- Zavázal si boty a vyběhl ven.
+- V tomto bytě žijeme už tři roky.
+- Ta zpráva byla pro všechny překvapivá.
+- Vyzdobila si pokoj plakáty.
+- Často zapomínám, kam jsem si dal klíče.
+- Přeplavali řeku na druhý břeh.
+- Ohřál si večeři v mikrovlnce.
+- Tento plot natřeme na bílo.
+- Štěně mi okousalo boty.
+- Uložila děti do postele.
+- Nikdy jsem neletěl v helikoptéře.
+- Probírají plán na zítra.
+- Před snídaní si zkontroloval e-mail.
+- Během dovolené jsme jezdili na koni.
+- Zmrzlina se na slunci rozpustila.
+- Šetří si na nový notebook.
+- Rozlil jsem si kávu na bílou košili.
+- Pozorovali západ slunce nad obzorem.
+- Před řezáním změřil dřevo.
+- Uspořádáme jí překvapivou oslavu.
+- Doprava byla dnes ráno hrozná.
+- Zašeptala mi do ucha tajemství.
+- Rozhodl jsem se naučit nový jazyk.
+- Odhazovali sníh z příjezdové cesty.
+- Zabalil dárek do barevného papíru.
+- Adoptovali jsme kotě z útulku pro zvířata.
+- Třešně jsou sladké a šťavnaté.
+- Otevřela závěsy, aby pustila sluneční světlo.
+- Obvykle chodím běhat ráno.
+- Připravují se na velkou prezentaci.
+- Přidal trochu soli do vody na těstoviny.
+- Čekáme na tebe už hodinu.
+- Květiny potřebují více vody.
+- Zapojila nabíječku do zdi.
+- Přemýšlím o změně práce.
+- Sáňkovali z zasněženého kopce.
+- Vyložil nákup z auta.
+- Navštívili jsme hrad, když jsme byli ve Skotsku.
+- Hrozny jsou kyselé.
+- Míchala polévku dřevěnou lžící.
+- Potřebuji si nechat zkontrolovat zrak.
+- Zkoušejí na školní divadelní hru.
+- Složil mapu a uklidil ji.
+- Nikdy jsme neviděli tak krásný západ slunce.
+- Polštář je velmi pohodlný.
+- Aranžuje květiny do vázy.
+- Zapomněl jsem zhasnout světla.
+- Pouštěli draka na poli.
+- Vyměnil žárovku na chodbě.
+- Příští sobotu se zúčastníme svatby.
+- Omáčka chutná trochu hořce.
+- Krájí zeleninu na salát.
+- Dočetl jsem všechny zadané kapitoly.
+- Převáželi loď přes klidné jezero.
+- Usmál se a zamával na rozloučenou.
+- Na tento nádherný výlet budeme vždy vzpomínat.
+- Hvězdy jasně zářily na noční obloze.

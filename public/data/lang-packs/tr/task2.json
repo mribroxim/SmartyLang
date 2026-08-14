@@ -1,0 +1,792 @@
+[
+  {
+    "type": "discussion",
+    "label": "Tartışma Denemesi",
+    "description": "Her iki görüşü de tartışın ve kendi fikrinizi belirtin.",
+    "instruction": "Her iki görüşü de tartışın ve kendi fikrinizi belirtin. En az 250 kelime yazın.",
+    "categories": [
+      {
+        "name": "Eğitim",
+        "prompts": [
+          "Bazıları üniversite eğitiminin herkes için ücretsiz olması gerektiğine inanırken, bazıları da öğrencilerin yüksek öğrenim masraflarını karşılaması gerektiğini düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları okullarda rekabetçi sporların son derece faydalı olduğunu savunurken, diğerleri bunun çocuklarda gereksiz strese yol açtığını düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Pek çok kişi öğrencilerin çok çeşitli konularda çalışmaları gerektiğini düşünürken, bazıları da belirli bir kariyerle ilgili konulara sıkı bir şekilde odaklanmaları gerektiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları öğretmenlerin öğrencilere doğruyu yanlıştan ayırmayı öğretme sorumluluğuna sahip olması gerektiğini düşünürken, bazıları da ebeveynlerin bu sorumluluğu taşıması gerektiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazı eğitimciler ödevlerin akademik başarı için gerekli olduğunu savunurken, bazıları da ödevin çocuklar üzerinde gereksiz bir yük olduğunu düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları üniversite öğrencilerinin istedikleri her konuda eğitim görmelerine izin verilmesi gerektiğini düşünürken, bazıları da yalnızca bilim ve teknoloji gibi gelecekte yararlı olacak konuları okumalarına izin verilmesi gerektiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları tek cinsiyetli okulların daha iyi bir öğrenme ortamı sağladığını düşünürken, diğerleri karma okulların çocukları gerçek hayata daha iyi hazırladığını savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları çevrimiçi öğrenmenin eninde sonunda geleneksel sınıf eğitiminin yerini alacağına inanırken, diğerleri yüz yüze öğretimin her zaman gerekli olacağını savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları sınavların bir öğrencinin yeteneğini değerlendirmenin en iyi yolu olduğunu savunurken, diğerleri yıl boyunca sürekli değerlendirmenin daha etkili olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları okul üniformalarının disiplini ve eşitliği artırdığını düşünürken, diğerleri öğrencilerin bireyselliğini kısıtladığını düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin."
+        ]
+      },
+      {
+        "name": "Çevre ve Hayvanlar",
+        "prompts": [
+          "Bazıları çevre sorunlarının bireylerin çözemeyeceği kadar büyük olduğuna inanırken, bazıları da bireylerin önemli bir fark yaratabileceğini düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Pek çok kişi hükümetin parayı diğer gezegenlerde yaşam aramak için harcaması gerektiğini düşünürken, bazıları da bu paranın Dünya'daki sorunları çözmeye harcanması gerektiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazı insanlar hayvanları hayvanat bahçelerinde tutmanın zalimce ve gereksiz olduğuna inanırken, diğerleri hayvanat bahçelerinin koruma ve eğitim açısından hayati önem taşıdığını savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları katı yasaların endüstriyel kirliliği azaltmanın tek yolu olduğunu savunurken, diğerleri şirketleri yeşil uygulamalar konusunda eğitmenin daha etkili olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları büyüyen trafik sorununu çözmenin en iyi yolunun daha fazla yol inşa etmek olduğunu düşünürken, bazıları da hükümetin toplu taşımaya yoğun yatırım yapması gerektiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları yenilenebilir enerji kaynaklarının gezegenimiz için ilerlemenin tek yolu olduğuna inanırken, diğerleri fosil yakıtların ekonomik istikrar için hâlâ gerekli olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları kentsel alanlara ağaç dikmenin şehir çevresini iyileştirmenin en iyi yolu olduğunu düşünürken, diğerleri hastane gibi daha fazla kamu tesisi sağlamanın daha önemli olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları tıbbi gelişmeler için hayvan testlerinin gerekli olduğunu savunurken, diğerleri bunun ahlaki açıdan yanlış olduğunu ve tamamen yasaklanması gerektiğini düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazı insanlar insanların hayvanları yiyecek ve giyecek olarak kullanma hakkına sahip olduğuna inanırken, bazıları da hayvanların hakları olduğunu ve sömürülmemesi gerektiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları aşırı nüfusun çevresel bozulmanın ana nedeni olduğunu düşünürken, diğerleri sanayileşmeyi ve tüketiciliği suçluyor. Her iki görüşü de tartışın ve fikrinizi belirtin."
+        ]
+      },
+      {
+        "name": "Teknoloji ve İnternet",
+        "prompts": [
+          "Bazıları yapay zekanın insan emeğine ihtiyaç duymayan ütopik bir toplum yaratacağına inanırken, bazıları da bunun kitlesel işsizliğe ve eşitsizliğe yol açacağından korkuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Birçok kişi sosyal medyanın insanları birbirine yaklaştırdığını düşünürken, diğerleri sosyal medyanın bireyleri gerçek dünyada izole ettiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları çocukların ergenlik çağına gelene kadar akıllı telefon kullanmalarına izin verilmemesi gerektiğini savunurken, diğerleri dijital okuryazarlık için erken yaşta maruz kalmanın gerekli olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları basılı kitapların yakın gelecekte tarihe karışacağını düşünürken, bazıları da e-kitapların her zaman tercih edileceğini düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları internetin güvenilir bilgiye ulaşmayı kolaylaştırdığına inanıyor, bazıları ise sahte haber ve yanlış bilgi çağı yarattığını savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazı insanlar işyerinde otomasyonun ekonomik büyüme için faydalı olduğunu düşünürken, diğerleri geleneksel işlerin kaybından endişe ediyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları teknolojik gelişmelerin modern yaşamı çok karmaşık hale getirdiğini iddia ederken, diğerleri yaşamı önemli ölçüde kolaylaştırdığına ve daha konforlu hale getirdiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazı insanlar, teknolojiyi kullanan hükümet gözetiminin ulusal güvenlik için gerekli olduğuna inanırken, diğerleri bunu kişisel mahremiyetin ihlali olarak görüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları video oyunlarının zararsız bir eğlence biçimi olduğunu düşünürken, bazıları da gençler arasında şiddeti ve hareketsiz yaşam tarzını teşvik ettiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları uzay turizminin geleceğin normal bir parçası olacağına inanırken, diğerleri bunun haksız bir kaynak israfı olduğunu düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin."
+        ]
+      },
+      {
+        "name": "Toplum ve Modern Yaşam",
+        "prompts": [
+          "Kimisi imkanlar nedeniyle büyük şehirlerde yaşamayı tercih ederken, kimisi kırsal kesimde yaşamanın huzur ve sükunetini tercih ediyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Birçoğu genç yetişkinlerin evlenene kadar ebeveynleriyle birlikte yaşamasının daha iyi olduğunu düşünürken, diğerleri on sekiz yaşına gelir gelmez taşınmaları gerektiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları zengin ile fakir arasındaki uçurumun giderek açıldığını ve devletin müdahale etmesi gerektiğini savunurken, bazıları da bu uçurumun serbest piyasanın doğal bir sonucu olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları yaşlıların aileleri tarafından bakılması gerektiğine inanırken, bazıları da devletin huzurevleri sağlaması gerektiğini düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları, kadın ve erkeğin geleneksel rollerinin istikrarlı bir toplum için hayati önem taşıdığını düşünürken, diğerleri tüm rollerde cinsiyet eşitliğinin esas olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları ev sahibi olmanın başarının nihai sembolü olduğuna inanırken, diğerleri kiralamanın daha fazla özgürlük ve daha az stres sağladığını savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları modern toplumun fazlasıyla tüketici odaklı hale geldiğini düşünürken, diğerleri ekonomilerin gelişmesi için tüketimin gerekli olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları uluslararası spor etkinliklerinin uluslar arasında barışı teşvik ettiğini öne sürerken, diğerleri bunların yalnızca milliyetçi gerilimler yarattığına inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları tarihin okuldaki en önemli derslerden biri olduğuna inanırken, diğerleri günümüz dünyasında bilişim teknolojileri gibi konuların çok daha önemli olduğunu düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları çok miktarda paraya sahip olmanın mutluluğun anahtarı olduğunu düşünürken, diğerleri mutluluğun tamamen sağlık ve ilişkiler gibi diğer faktörlere bağlı olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin."
+        ]
+      },
+      {
+        "name": "İş ve Kariyer",
+        "prompts": [
+          "Bazıları iş tatmininin yüksek maaştan daha önemli olduğunu düşünürken bazıları da bir işte en önemli unsurun çok para kazanmak olduğunu düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Birçoğu evden çalışmanın üretkenliği ve iş-yaşam dengesini artırdığını savunurken, diğerleri ofis ortamının işbirliği için gerekli olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları ömür boyu tek bir kariyere sahip olmanın daha iyi olduğunu düşünürken, bazıları da birkaç kez kariyer değiştirmenin daha faydalı olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları yaşlı çalışanların deneyimleri nedeniyle şirket için daha değerli olduğunu savunurken, bazıları da taze fikirleri ve enerjileri nedeniyle genç çalışanları tercih ediyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları, daha uzun yaşam beklentisi nedeniyle emeklilik yaşının uzatılması gerektiğine inanırken, diğerleri insanların gençliklerinin tadını çıkarmak ve iş açmak için daha erken emekli olmaları gerektiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazı insanlar ücretsiz stajyerliğin sömürücü olduğunu düşünürken, diğerleri yeni mezunlar için çok önemli basamaklar sağladığını iddia ediyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları yasa gereği kadınlara üst yönetim rollerinde eşit kota verilmesi gerektiğini savunurken, diğerleri terfilerin cinsiyete bakılmaksızın tamamen liyakate dayalı olması gerektiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları kendi işini kurmanın finansal güvenliği sağlamanın en iyi yolu olduğuna inanırken, diğerleri büyük bir şirkette çalışmanın daha güvenli olduğunu düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları haftanın dört günlük çalışmasının toplum için daha iyi olacağını düşünürken, bazıları da bunun ekonomiye zarar vereceğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları el emeği gerektiren işlerin doktor veya avukat gibi profesyonel işlerle aynı şekilde ödenmesi gerektiğini savunurken, diğerleri mevcut ücret tarifelerinin haklı olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin."
+        ]
+      },
+      {
+        "name": "Sağlık ve Diyet",
+        "prompts": [
+          "Bazıları hükümetin obeziteyle mücadele için sağlıksız gıdalara \"yağ vergisi\" getirmesi gerektiğine inanırken, diğerleri insanların ne yiyeceğini seçmekte özgür olması gerektiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Birçoğu tüm sağlık hizmetlerinin tamamen ücretsiz olması ve devlet tarafından finanse edilmesi gerektiğini düşünürken, diğerleri özel sağlık hizmetlerinin daha kaliteli hizmet sunduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları alternatif ilaçların (akupunktur veya bitkisel ilaçlar gibi) oldukça etkili olduğunu savunurken, diğerleri bunların tehlikeli olduğuna ve yalnızca modern tıbba güvenilmesi gerektiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazı insanlar işyerinde yetişkinler için spor ve beden eğitiminin zorunlu olması gerektiğine inanırken, diğerleri egzersizin kişisel bir tercih olduğunu düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları vegan beslenmenin insanlar için en sağlıklı seçenek olduğunu düşünürken, bazıları da dengeli beslenme için et yemenin gerekli olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları önleyici sağlık hizmetlerinin (eğitim ve fitness programları gibi) hastalıkları ortaya çıktıktan sonra tedavi etmekten daha iyi olduğuna inanırken, diğerleri tedavi için tıbbi araştırmaların öncelik olması gerektiğini düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları fast food reklamlarının tamamen yasaklanması gerektiğini düşünürken bazıları da bunun işletmelerin ifade özgürlüğünü kısıtladığını savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları zihinsel sağlığın fiziksel sağlık kadar önemli olduğunu ve eşit finansman alması gerektiğini savunurken, diğerleri fiziksel hastalıkların daha acil mali müdahale gerektirdiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları sigara içmenin dünya çapında tamamen yasaklanması gerektiğine inanırken, diğerleri yetişkinlerin kendi yaşam tarzı seçimlerini yapma hakkına sahip olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları genetiği değiştirilmiş (GM) gıdaların dünyadaki açlığı sona erdirmenin anahtarı olduğunu düşünürken, diğerleri bunların insan sağlığına ciddi riskler oluşturduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin."
+        ]
+      },
+      {
+        "name": "Devlet ve Ekonomi",
+        "prompts": [
+          "Bazıları ekonomik ilerlemenin bir hükümetin en önemli hedefi olduğunu düşünürken, diğerleri diğer ilerleme türlerinin (sosyal veya çevresel gibi) eşit derecede önemli olduğunu düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Birçoğu zengin ülkelerin fakir ülkelere mali yardım yapması gerektiğini savunurken, diğerleri bu yardımın yolsuzluk nedeniyle yarardan çok zarar getirdiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları hükümetin sanatçıları, müzisyenleri ve yazarları finanse etmesi gerektiğine inanırken, diğerleri vergi mükelleflerinin parasının yalnızca hastane ve yol gibi kamu hizmetlerine harcanması gerektiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları toplu taşımanın ücretsiz olması gerektiğini düşünürken, bazıları da hizmetin kalitesini korumak için yolcuların para ödemesi gerektiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları küresel serbest ticaretin gelişmekte olan ülkeler için faydalı olduğunu savunurken, diğerleri bunun yalnızca onların kaynaklarını ve ucuz işgücünü kullandığına inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları hükümetlerin bir kişinin kazanabileceği maksimum maaşa bir sınır koyması gerektiğine inanırken, diğerleri insanların kazanabilecekleri kadar kazanmalarına izin verilmesi gerektiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları tek bir küresel para biriminin dünya ekonomisini iyileştireceğini düşünürken, diğerleri ulusal para birimlerinin bir ülkenin ekonomik bağımsızlığı için gerekli olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları vergi ödemenin bir vatandaşın en önemli görevi olduğunu savunurken, diğerleri insanların gelirlerini yasal olarak mümkün olduğu kadar korumaya çalışmaları gerektiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları hükümetlerin tüm vatandaşlar için evrensel bir temel gelir sağlaması gerektiğine inanırken, diğerleri bunun insanları tembelleştireceğini ve ekonomiyi mahvedeceğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları uzay araştırmalarının hükümet parasının israfı olduğunu düşünürken, diğerleri bunun insanlığın geleceğine önemli bir yatırım olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin."
+        ]
+      },
+      {
+        "name": "Suç ve Ceza",
+        "prompts": [
+          "Bazıları cezaevlerinin asıl amacının suçluları cezalandırmak olduğuna inanırken, bazıları da cezaevlerinin tamamen rehabilitasyona odaklanması gerektiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Birçoğu ölüm cezasının ağır suçlar için haklı bir ceza olduğunu düşünürken, diğerleri bunun insan hakları ihlali olduğunu ve kaldırılması gerektiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları daha uzun hapis cezalarının suçu etkili bir şekilde caydırdığını öne sürerken, diğerleri bunun suç oranlarını azaltmadığına ve yalnızca cezaevlerinin aşırı kalabalıklaştığına inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları çocuk suçluların (genç suçlular) yetişkinlerle aynı cezaları alması gerektiğine inanırken, diğerleri onlara daha yumuşak davranılması gerektiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları halka açık yerlere güvenlik kameraları yerleştirmenin suçu azalttığını düşünürken, bazıları bunun ciddi bir mahremiyet ihlali olduğunu düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları polisin halkı korumak için her zaman ateşli silah taşıması gerektiğini savunurken, diğerleri silahlı polisin şiddeti tırmandırdığına inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları siber suçların modern toplum için en büyük tehdit olduğuna inanırken, diğerleri geleneksel şiddet suçlarının hala çok daha tehlikeli olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazı insanlar eski mahkûmların suç geçmişlerini işverenlerine bildirmeleri gerektiğini düşünürken, diğerleri cezaları çekildikten sonra mahremiyet haklarına sahip olduklarına inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları kamu hizmetinin küçük suçlar için insanları hapse göndermekten daha iyi bir ceza olduğunu savunurken, diğerleri kamu hizmetinin yeterince katı olmadığına inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları yoksulluğun tüm suçların temel nedeni olduğuna inanırken, diğerleri suçun insan doğası ve açgözlülüğün bir sonucu olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin."
+        ]
+      },
+      {
+        "name": "Medya ve Reklamcılık",
+        "prompts": [
+          "Bazı insanlar film ve televizyondaki şiddetin toplumdaki şiddete katkıda bulunduğunu düşünürken, diğerleri bunun yalnızca zararsız bir eğlence olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Birçoğu medyanın hükümet tarafından sıkı bir şekilde düzenlenmesi gerektiğini düşünürken, diğerleri tamamen özgür bir basının demokrasi için gerekli olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları çocukları hedef alan reklamların yasa dışı olması gerektiğini savunurken, diğerleri çocuklarının ne izleyeceğini yönetmenin ebeveynlerin sorumluluğunda olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları haberlerin aşırı derecede olumsuz olaylara odaklandığını ve bunun kamuoyunda endişe yarattığını düşünürken, diğerleri acı gerçeği bildirmenin medyanın görevi olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları ünlülerin gençler için berbat bir rol model olduğunu düşünürken, diğerleri birçok ünlünün platformlarını olumlu hayır işleri için kullandığını belirtiyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları basılı gazetelerin öldüğünü ve yakında tamamen yok olacağını iddia ederken, diğerleri fiziksel gazetecilik için her zaman bir pazar olacağına inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları hedefli çevrimiçi reklamcılığın tüketiciler için son derece uygun olduğuna inanırken, diğerleri bunu manipülatif ve istilacı olarak görüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazı insanlar realite televizyonunun kültürel değerler üzerinde olumsuz bir etkisi olduğunu düşünürken, diğerleri bunun sadece eğlenceli ve akılsız bir kaçış olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları kamuya mal olmuş kişilerin (politikacılar ve aktörler gibi) özel hayatlarının basına kapalı olması gerektiğini savunurken, diğerleri halkın bunu bilmeye hakkı olduğuna inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları modern reklamcılığın insanları ihtiyaç duymadıkları şeyleri almaya zorladığını düşünürken, diğerleri reklamın sadece tüketicileri seçimleri konusunda bilgilendirdiğini savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin."
+        ]
+      },
+      {
+        "name": "Kültür, Seyahat ve Sanat",
+        "prompts": [
+          "Bazıları uluslararası kitle turizminin yerel kültürleri ve çevreyi yok ettiğine inanırken, diğerleri bunun yerel ekonomiler için hayati önem taşıdığını savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Birçoğu, göçmenlerin yeni ülkelerinin kültür ve geleneklerini benimsemeleri gerektiğini düşünürken, diğerleri orijinal kültürlerini koruyup uygulamaları gerektiğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları çeviri yazılımı nedeniyle yabancı dil öğrenmenin artık gerekli olmadığını savunurken, diğerleri dil öğrenmenin çok önemli kültürel anlayış sağladığına inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları müzelerin ve sanat galerilerinin halka tamamen ücretsiz olması gerektiğine inanırken, diğerleri sergilerin bakımı için giriş ücreti alınmasının gerekli olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları geleneksel festivallerin anlamını yitirdiğini ve tamamen ticarileştiğini düşünürken, bazıları da ticarileşmenin bu gelenekleri yaşatmaya yardımcı olduğunu düşünüyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları tek bir küresel dilin (Türkçe gibi) dünyayı barış içinde bir araya getireceğini savunurken, diğerleri benzersiz kültürel kimlikleri yok edeceğine inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları bir tur rehberi eşliğinde grup halinde seyahat etmenin yeni bir ülkeyi deneyimlemenin en iyi yolu olduğuna inanırken, diğerleri yalnız ve bağımsız seyahat etmeyi tercih ediyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları hükümetlerin eski tarihi binaları korumak için para harcaması gerektiğini düşünürken, bazıları da bu binaları yıkıp modern konutlar inşa etmenin daha pratik olacağına inanıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları yerel yemeklerin ve mutfak geleneklerinin uluslararası fast-food zincirleri tarafından yok edildiğini öne sürerken, diğerleri kolaylık ve çeşitliliği memnuniyetle karşılıyor. Her iki görüşü de tartışın ve fikrinizi belirtin.",
+          "Bazıları geçmişin sanat ve edebiyatını çalışmanın modern öğrenciler için önemsiz olduğuna inanırken, diğerleri bunun çok yönlü bir eğitim için gerekli olduğunu savunuyor. Her iki görüşü de tartışın ve fikrinizi belirtin."
+        ]
+      }
+    ]
+  },
+  {
+    "type": "opinion",
+    "label": "Görüş Denemesi",
+    "description": "Fikrinizi belirtin ve bir ifadenin lehinde veya aleyhinde tartışın.",
+    "instruction": "Ne ölçüde katılıyorsunuz veya katılmıyorsunuz? / Sizin fikriniz nedir? En az 250 kelime yazın.",
+    "categories": [
+      {
+        "name": "Eğitim",
+        "prompts": [
+          "Bazı insanlar üniversite eğitiminin geçmişi ne olursa olsun herkes için ücretsiz olması gerektiğine inanıyor. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Gelecekte öğrenciler teknolojiyi kullanarak evde ders çalışmayı veya geleneksel okullarda ders çalışmayı tercih edebilirler. Geleneksel okulların ortadan kalkacağı iddia ediliyor. Katılıyor musun, katılmıyor musun?",
+          "Pek çok kişi ödevlerin çocukların düzgün öğrenmesi için gerekli olduğunu düşünürken bazıları da ödevin gereksiz olduğunu ve strese neden olduğunu düşünüyor. Sizin fikriniz nedir?",
+          "Üniversiteler her derste eşit sayıda erkek ve kız öğrenci kabul etmelidir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Bazıları ebeveynlerin çocuklarına toplumun iyi birer üyesi olmayı öğretmesi gerektiğini düşünüyor. Ancak diğerleri bunun öğrenileceği yerin okul olduğuna inanıyor. Sizin fikriniz nedir?",
+          "Sanat, müzik ve drama gibi konular genellikle matematik ve fen gibi konulardan daha az önemli kabul edilir. Bu nedenle okul müfredatından çıkarılmalıdırlar. Katılıyor musun, katılmıyor musun?",
+          "Tüm öğrencilerin ilkokuldan itibaren yabancı dil öğrenmesi zorunlu kılınmalıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Öğrencilerin üniversiteye gitmeden önce ara verdiği boşluk yılları giderek daha popüler hale geliyor. Boş bir yıl geçirmek gençler için her zaman faydalı bir deneyimdir. Katılıyor musun, katılmıyor musun?",
+          "Grup çalışması öğrencilerin öğrenmesinin en etkili yoludur. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Bazı eğitimciler sınavların öğrencinin gerçek yeteneğinin adil bir değerlendirmesi olmadığını ve bunun yerine sürekli değerlendirme yapılması gerektiğini savunuyorlar. Sizin fikriniz nedir?"
+        ]
+      },
+      {
+        "name": "Teknoloji ve İnovasyon",
+        "prompts": [
+          "Yapay zekanın gelişimi eninde sonunda milyonlarca iş kaybına yol açacaktır. Bu nedenle hükümetlerin gelişimini kısıtlaması gerekiyor. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Sosyal medya, izolasyonu artırarak ve yanlış bilgiyi yayarak toplum ve bireyler üzerinde olumsuz etki yaratıyor. Katılıyor musun, katılmıyor musun?",
+          "Bazıları internetin insanları birbirine yaklaştırdığını düşünürken, bazıları da insanların ve toplulukların giderek yalnızlaştığını düşünüyor. Sizin fikriniz nedir?",
+          "Halka açık yerlerde cep telefonu kullanımı sigara içmek kadar rahatsız edicidir ve aynı şekilde yasaklanmalıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Teknolojideki ilerlemeler hayatımızı kolaylaştırmak yerine daha da karmaşık hale getirdi. Katılıyor musun, katılmıyor musun?",
+          "Video oyunları genellikle gençlerdeki şiddet içeren davranışlardan sorumlu tutuluyor. Bu nedenle şiddet içeren video oyunlarının satışı yasaklanmalıdır. Sizin fikriniz nedir?",
+          "Modern dünyada internet üzerinden alışveriş yapmak, çalışmak, insanlarla iletişim kurmak ve başkalarıyla yüz yüze temas etmeden yaşamak mümkün. Bu olumlu mu yoksa olumsuz bir gelişme mi?",
+          "Daha fazla insan e-kitaplara ve dijital makalelere yöneldikçe, fiziksel kitap okumak geçmişte kaldı. Bu okuryazarlık açısından olumsuz bir eğilimdir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Uzay araştırmaları büyük miktarlarda hükümet fonu gerektirir. Bu paranın, Dünya'daki yoksulluk ve hastalık gibi sorunların çözümüne harcanması daha iyi olur. Katılıyor musun, katılmıyor musun?",
+          "Otomasyon ve robotlar geleneksel üretim işlerini devralıyor. Bu, toplumun geneli açısından olumlu bir gelişmedir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?"
+        ]
+      },
+      {
+        "name": "Çalışma ve İstihdam",
+        "prompts": [
+          "İş tatmini yüksek maaştan çok daha önemlidir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Pek çok kişi, eğitim kalitesinin artırılması için lise öğrencilerinin öğretmenlerini değerlendirme ve eleştirmeye teşvik edilmesi gerektiğini savunuyor. Katılıyor musun, katılmıyor musun?",
+          "İnsanların daha uzun ve sağlıklı yaşaması için emeklilik yaşının tüm ülkelerde yükseltilmesi gerekiyor. Sizin fikriniz nedir?",
+          "Yeterince iyi eğitilmiş herkes iyi bir lider olabilir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "İnsanların hoşlanmadıkları işlerde çalışmalarındansa işsiz kalmaları daha iyidir. Katılıyor musun, katılmıyor musun?",
+          "Şirketler, rolleri ne olursa olsun tüm çalışanlarının üniforma giymesini zorunlu kılmalıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Serbest meslek her zaman bir şirket veya kuruluş için çalışmaya tercih edilir. Sizin fikriniz nedir?",
+          "Günümüzün gençleri modern işyerlerinin gerektirdiği temel becerilerden yoksundur. Katılıyor musun, katılmıyor musun?",
+          "İşsizliği azaltmak için hükümetin geleneksel çalışma haftasını 30 saate indirmesi ve daha fazla insanın mevcut işi paylaşmasına olanak tanıması gerekiyor. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Herhangi bir kariyer veya iş seçerken en önemli husus yüksek gelire sahip olmaktır. Katılıyor musun, katılmıyor musun?"
+        ]
+      },
+      {
+        "name": "Çevre ve Koruma",
+        "prompts": [
+          "Küresel ısınma öncelikle insan faaliyetlerinden kaynaklanmaktadır ve bu nedenle bireylerin bunu durdurmak için yaşam tarzlarını büyük ölçüde değiştirmeleri gerekmektedir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Çevreyi koruma sorumluluğu bireysel vatandaşlara değil, yalnızca büyük şirketlere aittir. Sizin fikriniz nedir?",
+          "Bazıları küresel çevre sorunlarını çözmenin en iyi yolunun yakıt maliyetlerini artırmak olduğunu düşünüyor. Katılıyor musun, katılmıyor musun?",
+          "Tıbbi ve kozmetik amaçlı hayvan deneyleri zalimcedir ve tamamen yasaklanmalıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Ülkeler ekonomik olarak geliştikçe çevresel bozulmaların yaşanması kaçınılmazdır. Sizin fikriniz nedir?",
+          "Hayvanat bahçeleri aslında hayvanlar için hapishanelerdir ve hiçbir yararlı eğitim veya koruma amacına hizmet etmezler. Katılıyor musun, katılmıyor musun?",
+          "Plastik alışveriş poşetleri tüm süpermarketlerde ve perakende mağazalarda yasa dışı olmalıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Bazı bitki ve hayvan türlerinin yok olması doğal bir süreçtir ve onları kurtarmak için müdahale etmemeliyiz. Katılıyor musun, katılmıyor musun?",
+          "Taşımacılığın çevresel etkilerini azaltmak için insanlar yalnızca yerel olarak üretilen gıdaları tüketmelidir. Sizin fikriniz nedir?",
+          "Rüzgar ve güneş enerjisi gibi yenilenebilir enerji kaynaklarına yatırım yapmak para israfıdır çünkü bunlar çok güvenilmezdir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?"
+        ]
+      },
+      {
+        "name": "Toplum ve Modern Yaşam",
+        "prompts": [
+          "Pek çok ülkede zenginlerle yoksullar arasındaki uçurum giderek açılıyor. Bu, modern toplumun karşılaştığı en önemli sorundur. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Gençler ünlülerden oldukça etkileniyor. Bu tehlikeli bir trend. Katılıyor musun, katılmıyor musun?",
+          "Geleneksel festivaller ve kutlamalar anlamını yitiriyor ve tüketim çılgınlığının yeni bir bahanesi haline geliyor. Sizin fikriniz nedir?",
+          "Büyük ve hareketli bir şehirde yaşamak, kişinin gelişimi açısından sakin bir kırsal köyde yaşamaktan çok daha iyidir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Günümüz dünyasında belirli bir alanda uzman olmaktan ziyade, uyum sağlayabilmek ve değişime istekli olmak daha önemlidir. Katılıyor musun, katılmıyor musun?",
+          "Bazı insanlar tarihin bize bugün veya gelecek hakkında öğretecek hiçbir şeyi olmadığına inanıyor. Sizin fikriniz nedir?",
+          "Gençlere fazlasıyla odaklanan modern toplumda yaşlılar giderek daha fazla dışlanıyor. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Bir kişinin hayatta istikrarlı ve başarılı hissetmesi için ev sahibi olmak şarttır. Katılıyor musun, katılmıyor musun?",
+          "Günümüzde insanlar başkalarına fazlasıyla bağımlıdır ve kendi kendine yetmek için gereken pratik becerilerden yoksundur. Sizin fikriniz nedir?",
+          "Olimpiyatlar gibi uluslararası spor etkinlikleri ulusları bir araya getirir ve küresel barışı teşvik eder. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?"
+        ]
+      },
+      {
+        "name": "Sağlık ve Diyet",
+        "prompts": [
+          "Hükümet, insanları daha sağlıklı beslenmeye teşvik etmek için fast food ve şekerli içecekler gibi sağlıksız gıda maddelerine vergi uygulamalıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Sağlık hizmetleri tüm vatandaşlar için tamamen ücretsiz olmalı ve vergiler yoluyla tamamen hükümet tarafından finanse edilmelidir. Katılıyor musun, katılmıyor musun?",
+          "Geleneksel alternatif ilaçlar, modern kimyasal ilaçlar kadar etkilidir. Sizin fikriniz nedir?",
+          "Artan obezite oranı tamamen fast food endüstrisinin hatasıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Beden eğitimi dersleri tüm okul çocukları için her gün zorunlu olmalıdır. Katılıyor musun, katılmıyor musun?",
+          "Stres günümüzde çalışan yetişkinlerin karşılaştığı en önemli sağlık sorunudur. Sizin fikriniz nedir?",
+          "Tehlikeli ekstrem sporlara katılmayı seçen kişiler, yaralanmaları halinde kendi tıbbi tedavi masraflarını ödemek zorunda kalacaklar. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Sağlık eğitimi ve aşı gibi koruyucu hekimlik, hastalıklara çare bulmaktan daha önemlidir. Katılıyor musun, katılmıyor musun?",
+          "Büyük ölçüde işlenmiş gıdalara dayanan modern beslenme, küresel sağlığın azalmasının başlıca nedenidir. Sizin fikriniz nedir?",
+          "Zorlu, tam zamanlı bir kurumsal işte çalışırken sağlıklı bir yaşam tarzı sürdürmek imkansızdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?"
+        ]
+      },
+      {
+        "name": "Hükümet ve Kamu Harcamaları",
+        "prompts": [
+          "Hükümetler askeriye yerine eğitim ve sağlık gibi kamu hizmetlerine daha fazla para harcamalı. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Şehirlerdeki trafik sıkışıklığının ve kirliliğin azaltılması için toplu taşımanın ücretsiz olması gerekiyor. Katılıyor musun, katılmıyor musun?",
+          "Tüm vatandaşların yaşayacak bir yere sahip olmasını sağlamak hükümetin sorumluluğundadır. Sizin fikriniz nedir?",
+          "Hükümetler sanatçılara, müzisyenlere ve yazarlara mali destek sağlamalıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Ulusal seçimlerde oy kullanma hakkı bulunan tüm vatandaşlar için zorunlu olmalıdır. Katılıyor musun, katılmıyor musun?",
+          "Hükümetin bireylerin yeme, içme veya sigara içme tercihlerine müdahale etme hakkı yoktur. Sizin fikriniz nedir?",
+          "Zengin ülkeler, kalkınmalarına yardımcı olmak için en fakir ülkelerin uluslararası borçlarını affetmeli. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Zenginliğin toplum genelinde daha eşit bir şekilde dağıtılması için zengin bireylere uygulanan vergilerin önemli ölçüde daha yüksek olması gerekir. Katılıyor musun, katılmıyor musun?",
+          "Sanata fon sağlamak bir lüks ve hükümetler yalnızca altyapı ve hastaneler gibi temel hizmetleri finanse etmeli. Sizin fikriniz nedir?",
+          "Şehir yönetimleri, yerel vergilerin artırılması anlamına gelse bile, daha fazla halka açık park ve yeşil alan oluşturmaya yoğun yatırım yapmalıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?"
+        ]
+      },
+      {
+        "name": "Suç ve Hukuk",
+        "prompts": [
+          "Ölüm cezası, cinayet gibi en ciddi suçlar için tek etkili caydırıcıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Cezaevleri öncelikle suçluları cezalandırmak yerine rehabilite etmeye odaklanmalıdır. Katılıyor musun, katılmıyor musun?",
+          "Ciddi suçlar işleyen çocuk suçlular yetişkinler gibi yargılanmalı ve cezalandırılmalıdır. Sizin fikriniz nedir?",
+          "Kamusal alanlarda güvenlik kameralarının kullanılması mahremiyetin ihlalidir ve ciddi şekilde kısıtlanmalıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Toplumdaki şiddet içeren suç oranını azaltmak için sıkı silah kontrolü yasaları gereklidir. Katılıyor musun, katılmıyor musun?",
+          "Kamu hizmeti, hafif ve şiddet içermeyen suçlar için hapis cezasından çok daha iyi bir cezadır. Sizin fikriniz nedir?",
+          "Siber suçlar şu anda toplum için geleneksel fiziksel suçlardan daha büyük bir tehdittir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Yasayı çiğneyen insanlar, eylemlerinin etkisini anlamak için mağdurlarıyla buluşmaya zorlanmalıdır. Katılıyor musun, katılmıyor musun?",
+          "Medya, halkın suç korkusundan sorumludur ve bu korku çoğu zaman gerçek suç oranıyla orantısızdır. Sizin fikriniz nedir?",
+          "Suçu toplumdan tamamen yok etmek mümkün değildir; insan doğasının kaçınılmaz bir parçasıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?"
+        ]
+      },
+      {
+        "name": "Medya ve Reklamcılık",
+        "prompts": [
+          "Çocukları hedef alan reklamlar etik değildir ve kesinlikle yasaklanmalıdır. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Haber medyası olumsuz hikayelere çok fazla odaklanıyor ve bu da kamuoyunda depresyona ve kaygıya yol açıyor. Katılıyor musun, katılmıyor musun?",
+          "Büyük çok uluslu şirketlerin küresel medya ve bilgi üzerinde çok fazla etkisi var. Sizin fikriniz nedir?",
+          "Ünlülerin mahremiyet hakkı vardır ve paparazzilerin kamusal alanlarda onları takip etmesine izin verilmemelidir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Modern çağda basılı gazeteler tamamen geçerliliğini yitirmiştir ve yakında tamamen yok olacaktır. Katılıyor musun, katılmıyor musun?",
+          "Reklam, insanları ihtiyaç duymadıkları ve karşılayamayacakları şeyleri satın almaya teşvik eder. Sizin fikriniz nedir?",
+          "Hükümet, toplumu zararlı içerikten korumak için televizyonda ve internette yayınlananları kontrol etmelidir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "İfade özgürlüğü, başkalarını rahatsız etse bile insanların istediklerini söylemelerine izin verilmesi gerektiği anlamına gelir. Katılıyor musun, katılmıyor musun?",
+          "Realite televizyon programlarının hiçbir eğitim değeri yoktur ve yalnızca kültürel standartları düşürmeye hizmet eder. Sizin fikriniz nedir?",
+          "Kullanıcı davranışını izleyen hedefli çevrimiçi reklamcılık, kişisel gizliliğin ciddi bir ihlalidir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?"
+        ]
+      },
+      {
+        "name": "Turizm ve Küreselleşme",
+        "prompts": [
+          "Uluslararası turizm yerel topluluklara ve çevreye yarardan çok zarar vermektedir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "İş dünyasının ve kültürün giderek küreselleşmesi, yerel gelenekleri ve ulusal kimlikleri yok ediyor. Katılıyor musun, katılmıyor musun?",
+          "İnsanların uluslararası seyahat etmek yerine kendi ülkeleri içinde yurt içinde seyahat etmeleri teşvik edilmelidir. Sizin fikriniz nedir?",
+          "Türkçe evrensel küresel dil haline geliyor. Bu, uluslararası ilişkiler ve ticaret açısından olumlu bir gelişmedir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Ülkeler, yabancı işçilerin iş piyasasına girmesine izin vermeden önce kendi vatandaşlarının istihdamına öncelik vermelidir. Katılıyor musun, katılmıyor musun?",
+          "Ucuz hava yolculuğu insanların yaşama ve çalışma biçiminde devrim yarattı, ancak çevresel maliyetler faydalardan daha ağır basıyor. Sizin fikriniz nedir?",
+          "Çokuluslu şirketler, karlarını en üst düzeye çıkarmak için sıklıkla gelişmekte olan ülkelerdeki işçileri sömürmektedir. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?",
+          "Turistlerin yabancı bir ülkeyi ziyaret etmeden önce yerel dildeki temel ifadeleri öğrenmeleri istenmelidir. Katılıyor musun, katılmıyor musun?",
+          "Küreselleşme, gelişmekte olan ülkeleri geride bırakırken öncelikle zengin uluslara fayda sağladı. Sizin fikriniz nedir?",
+          "Tarihi yapıların korunması şehirler için gereksiz bir masraftır; modern altyapıya yer açmak için yıkılmaları gerekiyor. Ne ölçüde katılıyorsunuz veya katılmıyorsunuz?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "advantage-disadvantage",
+    "label": "Avantajları ve Dezavantajları",
+    "description": "Bir konunun avantajlarını ve dezavantajlarını tartışın.",
+    "instruction": "Avantajlarını ve dezavantajlarını tartışın ve sorulduğunda kendi fikrinizi belirtin. En az 250 kelime yazın.",
+    "categories": [
+      {
+        "name": "Eğitim ve Öğrenme",
+        "prompts": [
+          "Artık birçok üniversite tam lisans programlarını çevrimiçi olarak sunmaktadır. Bir derece için derslere şahsen katılmak yerine çevrimiçi çalışmanın avantajları ve dezavantajları nelerdir?",
+          "Bazı uzmanlar, çocukların yabancı dil öğrenmeye ortaokuldan ziyade ilkokulda başlamalarının daha iyi olduğuna inanıyor. Bunun avantajları dezavantajlarından ağır basıyor mu?",
+          "Birçok ülkede öğrenciler üniversiteye başlamadan önce seyahat etmek veya çalışmak için bir \"boş yıl\" geçirirler. Bir yıl ara vermenin avantajlarını ve dezavantajlarını tartışın ve kendi fikrinizi belirtin.",
+          "Bazı okullar tüm öğrencilerin üniforma giymesini zorunlu kılar. Okul üniformalarının avantajları ve dezavantajları nelerdir?",
+          "Giderek daha fazla öğrenci yüksek öğrenim için yurt dışında eğitim almayı tercih ediyor. Yabancı bir ülkede okumanın avantajları dezavantajlarından ağır basıyor mu?",
+          "Bazı eğitim sistemlerinde çocuklar yaşlarına göre değil, akademik yeteneklerine göre sınıflara ayrılır. Bu uygulamanın avantajlarını ve dezavantajlarını tartışın ve görüşlerinizi bildirin.",
+          "Ezberleme dünyanın birçok yerinde hala kullanılan geleneksel bir öğretim yöntemidir. Ezberleme yoluyla öğrenmenin avantajları ve dezavantajları nelerdir?",
+          "Pek çok kişi üniversite eğitiminin herkes için tamamen ücretsiz olması gerektiğini savunuyor. Ücretsiz yüksek öğrenimin avantajları dezavantajlarından daha mı ağır basıyor?",
+          "Bazı ebeveynler çocuklarını geleneksel bir okula göndermek yerine evde eğitmeyi tercih ediyor. Evde eğitimin avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Sürekli değerlendirme (kurs çalışmaları ve projeler), birçok eğitim kurumunda resmi sınavların yerini almaktadır. Bu değişimin avantajları ve dezavantajları nelerdir?"
+        ]
+      },
+      {
+        "name": "Teknoloji ve İnternet",
+        "prompts": [
+          "Yapay zekanın günlük hayatta kullanımı giderek yaygınlaşıyor. Yapay zekanın avantajları dezavantajlarından ağır basıyor mu?",
+          "Sosyal medya, insanların iletişim kurma ve bilgi paylaşma biçiminde devrim yarattı. Sosyal medyanın avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Artık pek çok kişi akıllı telefonlarını mal ve hizmet ödemeleri için kullanıyor ve bu da nakit kullanımının azalmasına neden oluyor. Nakitsiz bir toplumun avantajları ve dezavantajları nelerdir?",
+          "Teknolojideki ilerlemeler birçok insanın ofise gitmek yerine evden çalışmasına olanak tanıdı. Uzaktan çalışmanın avantajları dezavantajlarından ağır basıyor mu?",
+          "E-kitaplar ve dijital okuma cihazları hızla geleneksel basılı kitapların yerini alıyor. Bu eğilimin avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Sürücüsüz otomobillerin gelişimi hızla ilerliyor. Kamuya açık yollarda otonom araçların avantajları ve dezavantajları nelerdir?",
+          "Otomasyon ve robotlar, imalat ve diğer endüstrilerdeki insan işçilerin yerini giderek daha fazla alıyor. Otomasyonun avantajları dezavantajlarından ağır basıyor mu?",
+          "Günümüzde çocuklar zamanlarının önemli bir kısmını video oyunları oynayarak geçiriyorlar. Bunun avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Bulut bilişim, insanların tüm kişisel ve profesyonel verilerini fiziksel sabit diskler yerine çevrimiçi olarak saklamasına olanak tanır. Verileri bulutta saklamanın avantajları ve dezavantajları nelerdir?",
+          "Uzay araştırmaları vergi mükelleflerine her yıl fahiş miktarda paraya mal oluyor. Uzay araştırmalarına para harcamanın avantajları dezavantajlarından daha mı ağır basıyor?"
+        ]
+      },
+      {
+        "name": "İş ve Kariyer",
+        "prompts": [
+          "Bazı şirketler çalışanlarının maaşlarında kesinti yapmadan dört günlük çalışma haftasını uygulamaya koydu. Daha kısa bir çalışma haftasının avantajları ve dezavantajları nelerdir?",
+          "Geçmişte insanlar genellikle tüm çalışma hayatları boyunca aynı işte kalıyorlardı. Günümüzde kariyerleri birden çok kez değiştirmek daha yaygındır. Sık sık iş değiştirmenin avantaj ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Pek çok hükümet resmi emeklilik yaşını 68 ya da 70'e çıkarıyor. İleri bir yaşa kadar çalışmanın avantajları dezavantajlarından ağır basıyor mu?",
+          "Giderek artan sayıda insan serbest meslek sahibi olmayı veya kendi işini kurmayı seçiyor. Serbest mesleğin bir işveren için çalışmaya göre avantajları ve dezavantajları nelerdir?",
+          "Çok uluslu şirketler genellikle çalışanlarını birkaç yıllığına yurt dışındaki şubelere transfer ederler. Yurtdışında çalışmanın avantajlarını ve dezavantajlarını tartışın ve görüşlerinizi bildirin.",
+          "Bazı kuruluşlar, çalışanlara bireysel performanslarına göre ödeme yapmanın onları motive etmenin en iyi yolu olduğuna inanıyor. Performansa dayalı ücretlendirmenin avantajları dezavantajlarından ağır basıyor mu?",
+          "Ücretsiz stajlar, iş piyasasına giren gençler için ortak bir gereklilik haline geliyor. Deneyim kazanmak için ücretsiz çalışmanın avantajları ve dezavantajları nelerdir?",
+          "Bazı ülkeler, kadınların belirli bir yüzdesinin şirketlerin yönetim kurullarında temsil edilmesini sağlamak için kotalar getirmiştir. Bu politikanın avantajlarını ve dezavantajlarını tartışın ve görüşünüzü bildirin.",
+          "Çok büyük bir şirkette çalışmak, küçük bir aile şirketinde çalışmaktan farklı bir deneyim sunar. Büyük bir şirkette çalışmanın avantajları ve dezavantajları nelerdir?",
+          "Artık pek çok meslek, çalışanların normal çalışma saatleri dışında e-posta veya telefon yoluyla ulaşılabilir olmasını gerektiriyor. Bu sürekli bağlantının avantajları dezavantajlarından ağır basıyor mu?"
+        ]
+      },
+      {
+        "name": "Sağlık ve Yaşam Tarzı",
+        "prompts": [
+          "Bazı ülkelerdeki hükümetler obeziteyle mücadele amacıyla fast food ve şekerli içeceklere vergi getirdi. Sağlıksız gıdayı vergilendirmenin avantajları ve dezavantajları nelerdir?",
+          "Vejetaryen ve vegan beslenmenin popülaritesi dünya çapında artıyor. Eti diyetten çıkarmanın avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Birçok kişi geleneksel tıbbi tedaviler yerine akupunktur ve bitkisel ilaçlar gibi alternatif ilaçları kullanıyor. Alternatif tıbbın avantajları dezavantajlarından ağır basıyor mu?",
+          "Bazı ülkelerdeki sağlık sistemleri tamamen hükümet tarafından finanse edilmektedir ve kullanım noktasında ücretsizdir. Ücretsiz bir kamu sağlık sisteminin avantajları ve dezavantajları nelerdir?",
+          "Paraşütle atlama ve kaya tırmanışı gibi ekstrem sporlara katılanların sayısı giderek artıyor. Bu etkinliklerin avantaj ve dezavantajlarını tartışın ve görüşlerinizi bildirin.",
+          "Birçok şehir, parklar ve açık hava restoranları da dahil olmak üzere tüm kamusal alanlarda sigara içmeyi yasakladı. Halka açık alanda sigara içme yasağının avantajları dezavantajlarından ağır basıyor mu?",
+          "İnsanlar sağlıklarını ve form durumlarını takip etmek için mobil uygulamaları ve giyilebilir cihazları giderek daha fazla kullanıyor. Sağlık takibinde teknolojiye güvenmenin avantajları ve dezavantajları nelerdir?",
+          "Gıda üretimini artırmak için dünyanın birçok yerinde genetiği değiştirilmiş (GM) ürünler yetiştiriliyor. GDO'lu gıdaların avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "İnsanların tıbbi prosedürler için yurt dışına seyahat ettiği medikal turizm, gelişen bir sektördür. Sağlık hizmeti için başka bir ülkeye seyahat etmenin avantajları dezavantajlarından ağır basıyor mu?",
+          "Birçok kişi ticari spor salonlarına katılmak için pahalı aylık üyelikler ödüyor. Formda kalmak için spor salonunu kullanmanın açık havada veya evde egzersiz yapmaya kıyasla avantajları ve dezavantajları nelerdir?"
+        ]
+      },
+      {
+        "name": "Çevre ve Şehir Planlama",
+        "prompts": [
+          "Trafik sıkışıklığını azaltmak için bazı büyük şehirler, sürücülerden şehir merkezine girişte ücret talep eden \"tıkanıklık fiyatlandırması\" uygulamasına geçti. Bu sistemin avantajları ve dezavantajları nelerdir?",
+          "Nükleer enerji bazıları tarafından fosil yakıtlara temiz bir alternatif olarak görülüyor. Nükleer enerjiye güvenmenin avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Nüfus arttıkça şehirler, sakinlerin barınması için daha yüksek apartmanlar inşa ediyor. Yüksek binalarda yaşamanın avantajları dezavantajlarından ağır basıyor mu?",
+          "Birçok yerel yönetim tüm haneler için geri dönüşümü zorunlu hale getirmiştir. Zorunlu geri dönüşüm programlarının avantajları ve dezavantajları nelerdir?",
+          "Önemli sayıda insan daha iyi fırsatlar arayışıyla kırsal alanlardan büyük şehirlere göç ediyor. Kentleşmenin avantaj ve dezavantajlarını tartışıp görüşlerinizi bildirin.",
+          "Hayvanat bahçeleri dünyadaki hemen hemen her büyük şehirde bulunmaktadır. Hayvanları hayvanat bahçelerinde esaret altında tutmanın avantajları dezavantajlarından daha mı ağır basıyor?",
+          "Bazı insanlar yalnızca yerel olarak üretilen gıdaları satın almamız gerektiğini savunuyor. Yalnızca yerel kaynaklı gıda tüketmenin avantajları ve dezavantajları nelerdir?",
+          "Çevreyi korumak için bazı hükümetler elektrikli araçlara (EV'ler) büyük miktarda sübvansiyon sağlıyor. Bu hükümet müdahalesinin avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Eko-turizm, turistlerin etkilerini en aza indirirken hassas ortamları ziyaret etmelerine olanak sağlamak için tasarlanmıştır. Eko-turizmin avantajları dezavantajlarından ağır basıyor mu?",
+          "Birçok şehir planlamacısı şehir merkezlerinde tamamen araçsız bölgeler oluşturulmasını savunuyor. Arabaların kentsel alanlarda yasaklanmasının avantajları ve dezavantajları nelerdir?"
+        ]
+      },
+      {
+        "name": "Turizm ve Seyahat",
+        "prompts": [
+          "Uygun fiyatlı havayollarının yükselişi, uluslararası seyahati milyonlarca insan için uygun fiyatlı hale getirdi. Ucuz uçak yolculuğunun avantajları ve dezavantajları nelerdir?",
+          "Uluslararası turizm birçok gelişmekte olan ülke için önemli bir gelir kaynağıdır. Büyük ölçüde turizme dayalı bir ekonominin avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Birçok turist geleneksel oteller yerine Airbnb gibi kısa süreli kiralamalarda kalmayı tercih ediyor. Kısa süreli turist kiralamanın avantajları, yerel topluluklar için dezavantajlardan daha mı ağır basıyor?",
+          "Türkçe giderek seyahat ve turizmin küresel dili haline geliyor. Tek bir baskın küresel dile sahip olmanın avantajları ve dezavantajları nelerdir?",
+          "Bazı tarihi şehirler, altyapının korunmasına yardımcı olmak için ziyaretçilerden \"turist vergisi\" almaktadır. Turistlere vergi koymanın avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "İnsanların hayır işleri yapmak için gelişmekte olan ülkelere seyahat ettiği \"gönüllü turizmi\" oldukça popüler hale geliyor. Bu eğilimin avantajları dezavantajlarından daha mı ağır basıyor?",
+          "Turistler, Antarktika veya Amazon yağmur ormanları gibi uzak, el değmemiş doğal alanları giderek daha fazla ziyaret ediyor. Aşırı ortamlarda turizmin avantajları ve dezavantajları nelerdir?",
+          "Pek çok kişi, şehirler her yerde aynı görünmeye ve aynı hissi vermeye başladıkça, küresel seyahatin kültürel çeşitliliğin kaybına yol açtığını savunuyor. Kültürel homojenleşmenin avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Bazı insanlar yurt dışına seyahat etmek yerine tatillerini kendi ülkelerini keşfederek geçirmeyi tercih ediyor. İç turizmin avantajları dezavantajlarından ağır basıyor mu?",
+          "Rehberli paket turlar seyahat etmenin çok popüler bir yoludur. Oldukça yapılandırılmış bir tur grubuyla seyahat etmenin, bağımsız seyahat etmeye kıyasla avantajları ve dezavantajları nelerdir?"
+        ]
+      },
+      {
+        "name": "Devlet ve Toplum",
+        "prompts": [
+          "Bazı ülkeler gençlere yönelik zorunlu toplum hizmeti programlarını uygulamaya koymuştur. Avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Hükümetin istihdamdan bağımsız olarak her vatandaşa düzenli miktarda para verdiği evrensel temel gelir (UBI) küresel olarak tartışılıyor. UBI'nin avantajları ve dezavantajları nelerdir?",
+          "Birçok ülke genç erkek ve kadınların zorunlu askerlik hizmetini tamamlamasını şart koşuyor. Zorunlu askerliğin avantajları dezavantajlarından ağır basıyor mu?",
+          "Halka açık yerlerde kapalı devre televizyon (CCTV) kameralarının kullanımı yaygındır. Kamu gözetiminin avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Bazı ülkeler ölüm cezasını kaldırmışken, diğerleri hala en ciddi suçlar için bu cezayı kullanıyor. İdam cezasının avantajları ve dezavantajları nelerdir?",
+          "Zengin ülkeler genellikle gelişmekte olan ülkelere mali yardım sağlar. Uluslararası yardımın avantajları dezavantajlarından daha mı ağır basıyor?",
+          "Bazı ülkelerde ulusal seçimlerde oy kullanmak kanunen zorunludur. Zorunlu oy vermenin avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Hükümetler genellikle müzeler, galeriler ve tiyatrolar da dahil olmak üzere sanata önemli miktarda fon sağlar. Kamunun parasını sanatı finanse etmek için kullanmanın avantajları ve dezavantajları nelerdir?",
+          "Tıbbi gelişmeler sayesinde birçok gelişmiş ülkede nüfus çok daha uzun yaşıyor. Yaşlanan bir nüfusun avantajları dezavantajlarından ağır basıyor mu?",
+          "Modern hapishane sistemleri genellikle suçluları cezalandırmak yerine eğitim ve terapi yoluyla rehabilite etmeye odaklanır. Rehabilitasyonun cezaya göre avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin."
+        ]
+      },
+      {
+        "name": "Aile ve Çocuklar",
+        "prompts": [
+          "Modern toplumda, çocuk yetiştirirken her iki ebeveynin de tam zamanlı çalışması yaygındır. Çalışan iki ebeveyne sahip olmanın avantajları ve dezavantajları nelerdir?",
+          "Artan sayıda insan, ailesi veya oda arkadaşlarıyla birlikte yaşamak yerine yalnız yaşamayı tercih ediyor. Yalnız yaşamanın avantajları dezavantajlarından ağır basıyor mu?",
+          "Pek çok çift, çocuk sahibi olmayı çok daha geç yaşlarda, genellikle 30'lu veya 40'lı yaşların sonlarında yapmayı tercih ediyor. Ebeveynliği ertelemenin avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Geleneksel geniş aile (büyükanne, büyükbaba, teyzeler, amcaların birlikte yaşaması) çekirdek aile lehine giderek azalıyor. Geniş ailede büyümenin avantajları ve dezavantajları neler?",
+          "Bazı ebeveynler çocuklarına haftalık harçlık veya harçlık verir. Çocuklara kendi paralarını vermenin avantajları dezavantajlarından daha mı ağır basıyor?",
+          "Birçok ebeveyn, çocuklarına her gün izin verilen ekran başında kalma süresini büyük ölçüde kısıtlıyor. Ekran başında kalma süresinin katı sınırlarının avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Son birkaç on yılda birçok ülkede boşanma oranları önemli ölçüde arttı. Çiftlerin yasal olarak boşanmasını kolaylaştırmanın avantajları ve dezavantajları nelerdir?",
+          "Genç yetişkinlerin yirmili yaşlarına kadar ebeveynleriyle birlikte yaşamaya devam etmesi giderek daha yaygın hale geliyor. Evde yaşayan genç yetişkinlerin avantajları dezavantajlarından daha mı ağır basıyor?",
+          "Bazı ebeveynler çocuklarını çok sayıda ders dışı etkinliğe kaydettirerek çok az boş zaman bırakıyor. Oldukça yapılandırılmış bir çocukluğun avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Tek ebeveynli bir evde büyümek çocuklar için giderek yaygınlaşan bir deneyimdir. Tek ebeveyn tarafından yetiştirilmenin avantajları ve dezavantajları nelerdir?"
+        ]
+      },
+      {
+        "name": "Medya ve Reklamcılık",
+        "prompts": [
+          "Birçok ülke doğrudan çocuklara yönelik reklamları kısıtlıyor veya yasaklıyor. Çocuklara yönelik reklamların yasaklanmasının avantajları dezavantajlarından ağır basıyor mu?",
+          "24 saat haber kanallarının ve çevrimiçi haber akışlarının ortaya çıkması, bilgiye sürekli erişebildiğimiz anlamına geliyor. 24 saatlik haber döngüsünün avantajları ve dezavantajları nelerdir?",
+          "Büyük çokuluslu şirketler küresel medya ortamının önemli bir bölümünü kontrol ediyor. Medya tekellerinin avantajlarını ve dezavantajlarını tartışın ve görüşlerinizi bildirin.",
+          "Çevrimiçi şirketler, kullanıcının web geçmişini izlemeye dayalı hedefli reklamcılık kullanır. Kişiselleştirilmiş reklamcılığın avantajları dezavantajlarından daha mı ağır basıyor?",
+          "Realite televizyon programları dünya çapında son derece popüler olmaya devam ediyor. Realite TV programcılığının avantajları ve dezavantajları nelerdir?",
+          "Bazı hükümetler vatandaşlarının görüntüleyebileceği içeriği kısıtlamak için interneti sansürlüyor. İnternet sansürünün avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "İnsanlar dijital medyaya yöneldikçe basılı gazete ve dergilerin okuyucu sayısında büyük bir düşüş görülüyor. Toplumun yazılı gazetecilikten uzaklaşmasının avantajları ve dezavantajları nelerdir?",
+          "Ünlüler sıklıkla ürünleri ve siyasi kampanyaları destekliyor. Ünlülerin onaylanmasının avantajları dezavantajlarından daha mı ağır basıyor?",
+          "Netflix ve Spotify gibi yayın hizmetleri, insanların eğlenceyi tüketme biçimini tamamen değiştirdi. Medya akışına geçişin avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Modern aksiyon filmleri ve video oyunları genellikle yüksek düzeyde şiddet içerir. Toplumu şiddet içeren medyaya maruz bırakmanın avantajları ve dezavantajları nelerdir?"
+        ]
+      },
+      {
+        "name": "Küreselleşme ve Kültür",
+        "prompts": [
+          "Çok uluslu şirketlerin yükselişi, dünyanın her yerinde aynı mağaza ve markaların bulunması anlamına geliyor. İş dünyasında küreselleşmenin avantajları dezavantajlarından daha mı ağır basıyor?",
+          "İnsanlar Türkçe, İspanyolca veya Mandarin gibi baskın dillere geçtikçe pek çok azınlık dili yok olma tehlikesiyle karşı karşıya. Azınlık dillerinin kaybının avantaj ve dezavantajlarını tartışın ve görüşlerinizi bildirin.",
+          "\"Hızlı moda\" endüstrisi, insanların modaya uygun kıyafetleri çok ucuza satın almasına olanak tanıyor. Hızlı modanın avantajları ve dezavantajları nelerdir?",
+          "Küresel ticaret sayesinde insanlar dünyanın her yerinden yılın herhangi bir zamanında yerel süpermarketlerden yiyecek satın alabiliyor. Bu küresel gıda ağının avantajları dezavantajlarından daha mı ağır basıyor?",
+          "Eşlerin farklı ülkelerden veya kültürel geçmişlerden olduğu kültürler arası evlilikler daha yaygın hale geliyor. Çok kültürlü bir evde aile yetiştirmenin avantajlarını ve dezavantajlarını tartışın ve fikrinizi belirtin.",
+          "Olimpiyatlar veya FIFA Dünya Kupası gibi uluslararası spor etkinlikleri, ev sahibi ülkelerin milyarlarca dolar harcamasını gerektiriyor. Büyük uluslararası spor etkinliklerine ev sahipliği yapmanın avantajları ve dezavantajları nelerdir?",
+          "Azınlık kültürüne ait unsurların baskın bir kültür tarafından kullanıldığı kültürel tahsis oldukça tartışılmaktadır. Kültürel paylaşımın avantajları, sahiplenmenin dezavantajlarından daha mı ağır basıyor?",
+          "Okulların öğrencilere antik tarihi öğretmeye önemli miktarda zaman ayırması çok yaygındır. Müfredatta tarihe öncelik vermenin avantajlarını ve dezavantajlarını tartışın ve görüşlerinizi bildirin.",
+          "Pek çok insan, insani krizleri çözmek için tamamen küresel hayır kurumlarına güveniyor. Yerel yönetimler yerine sivil toplum kuruluşlarına (STK) güvenmenin avantajları ve dezavantajları nelerdir?",
+          "Batı kültürü, özellikle müzik ve sinema aracılığıyla dünyanın geri kalanı üzerinde büyük bir etkiye sahiptir. Batı kültürünün küresel yayılmasının avantajları dezavantajlarından daha mı ağır basıyor?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "problem-solution",
+    "label": "Sorun ve Çözüm",
+    "description": "Sorunun nedenlerini belirleyin ve çözüm önerilerinde bulunun.",
+    "instruction": "Bu sorunun nedenlerini/etkilerini açıklayın ve çözüm önerin. En az 250 kelime yazın.",
+    "categories": [
+      {
+        "name": "Çevre ve Doğa",
+        "prompts": [
+          "Dünya okyanuslarındaki plastik atık miktarı hızla artıyor. Bunun nedenleri nelerdir? Hangi çözümleri önerebilirsiniz?",
+          "Dünyanın birçok yerinde ormansızlaşma endişe verici bir oranda yaşanıyor. Bunun olumsuz etkileri nelerdir? Bu sorun nasıl çözülebilir?",
+          "Dünyanın birçok şehrinde ciddi su sıkıntısı yaşanıyor. Bu neden oluyor? Bu sorunu çözmek için ne gibi önlemler alınabilir?",
+          "Nesli tükenmekte olan türlerin sayısı her geçen yıl artıyor. Bu düşüşün temel nedenleri nelerdir? Bu hayvanları korumak için neler yapılabilir?",
+          "Büyük kent merkezlerinde hava kirliliği kritik seviyelere ulaşıyor. Bunun sağlık ve çevresel etkileri nelerdir? Hükümetler ve bireyler hava kirliliğini nasıl azaltabilir?",
+          "Küresel ısınma dünya çapında aşırı hava olaylarına neden oluyor. Bu olgunun başlıca nedenleri nelerdir? Etkilerini en aza indirmek için hangi adımlar atılabilir?",
+          "Üretilen evsel atık miktarı önemli ölçüde artıyor. Durum neden böyle? İnsanları israfı azaltmaya teşvik etmek için neler yapılabilir?",
+          "Biyolojik çeşitliliğin kaybı büyük bir küresel endişe kaynağıdır. Bu kaybın olumsuz sonuçları nelerdir? Doğal ekosistemleri nasıl koruyabiliriz?",
+          "Aşırı avlanma dünya okyanuslarındaki balık stoklarını tüketiyor. Bu ne gibi sorunlara yol açar? Bunu önlemek için ne gibi düzenlemeler yapılmalıdır?",
+          "Toprak bozulması bazı bölgelerde gıda yetiştirilmesini zorlaştırıyor. Bu sorunun nedenleri nelerdir? Hangi tarımsal çözümler uygulanabilir?"
+        ]
+      },
+      {
+        "name": "Teknoloji ve İnternet",
+        "prompts": [
+          "Günümüzde çocuklar ekranlara bakarak çok fazla zaman harcıyorlar. Bunun olumsuz etkileri nelerdir? Ebeveynler çocuklarının ekran süresini nasıl yönetebilir?",
+          "Siber zorbalık gençler arasında yaygın bir sorun haline geldi. Bu davranışın nedenleri nelerdir? Okullar ve ebeveynler bunu önlemek için ne yapabilir?",
+          "Çevrimiçi hizmetlerin yükselişiyle birlikte kişisel veri gizliliği giderek daha fazla risk altında. Bunun potansiyel tehlikeleri nelerdir? Bireyler çevrimiçi bilgilerini nasıl koruyabilirler?",
+          "Pek çok yetişkin kendini akıllı telefon bağımlısı buluyor. Bu neden oluyor? İnsanlar mobil cihazlara olan bağımlılıklarını azaltmak için hangi adımları atabilirler?",
+          "Yapay Zekanın hızlı gelişimi birçok geleneksel işi tehdit ediyor. Bunun toplum üzerindeki potansiyel etkileri nelerdir? Hükümetler işgücünü hazırlamak için ne yapabilir?",
+          "Elektronik cihazların sürekli olarak iyileştirilmesi, e-atıklarda büyük bir artışa yol açmıştır. İnsanlar neden cihazlarını bu kadar sık ​​değiştiriyor? Elektronik atıklar nasıl daha iyi yönetilebilir?",
+          "Sahte haberlerin ve yanlış bilgilerin sosyal medyada yayılması giderek büyüyen bir sorundur. Bu bilginin bu kadar hızlı yayılmasının nedeni nedir? Bununla mücadele etmek için ne yapılabilir?",
+          "Dijital mesajlaşma nedeniyle yüz yüze iletişim azalıyor. Kişisel ilişkiler üzerindeki olumsuz etkiler nelerdir? Daha fazla gerçek hayat etkileşimini nasıl teşvik edebiliriz?",
+          "Bilgisayar korsanlığı ve kimlik hırsızlığı gibi siber suçlar artıyor. İnsanları bu suçlara karşı savunmasız kılan şey nedir? Siber güvenliği hangi önlemler geliştirebilir?",
+          "İnsanlar harita okumak yerine GPS kullanmak gibi temel beceriler için teknolojiye aşırı bağımlı hale geliyor. Bu güven ne gibi sorunlara yol açıyor? Bu eğilim nasıl tersine çevrilebilir?"
+        ]
+      },
+      {
+        "name": "Toplum ve Şehir Hayatı",
+        "prompts": [
+          "Birçok büyük şehir ciddi aşırı kalabalıktan muzdarip. Bu hızlı kentleşmenin nedenleri nelerdir? Şehir nüfuslarının yönetilmesine hangi çözümler yardımcı olabilir?",
+          "Dünyanın birçok yerinde yaşam pahalılığı hızla artıyor. Bu ortalama aileler için ne gibi sorunlara neden olur? Hükümetler bu mali yükü nasıl hafifletebilir?",
+          "Evsizlik birçok zengin ülkede gözle görülür bir sorundur. İnsanlar neden sokakta yaşamak zorunda kalıyor? Hangi sosyal programlar evsizliği etkili bir şekilde azaltabilir?",
+          "Gürültü kirliliği kentsel alanlarda yaşayan insanlar için sürekli bir sorundur. Bu gürültünün ana kaynakları nelerdir? Şehir planlamacıları daha sessiz ortamlar yaratmak için hangi adımları atabilir?",
+          "Modern şehirlerde halka açık parklar ve yeşil alanlar eksiktir. Bunun kent sakinleri üzerindeki olumsuz etkileri nelerdir? Yerel yönetimler bu sorunu nasıl çözebilir?",
+          "Gençler uzaklaştıkça kırsal alanlarda nüfus azalması yaşanıyor. Bu neden oluyor? İnsanları kırsal topluluklarda kalmaya veya kırsal topluluklara taşınmaya teşvik etmek için neler yapılabilir?",
+          "Gelişmiş ülkelerin çoğunda nüfus hızla yaşlanıyor. Bu durum hangi ekonomik ve sosyal sorunlara yol açıyor? Toplumlar daha eski bir demografiye nasıl uyum sağlayabilir?",
+          "Zengin ile fakir arasındaki servet farkı açılmaya devam ediyor. Aşırı eşitsizliğin sosyal sonuçları nelerdir? Hangi ekonomi politikaları zenginliğin daha eşit bir şekilde dağıtılmasına yardımcı olabilir?",
+          "Kalabalık şehirlerde yaşamalarına rağmen birçok kişi kendini izole ve yalnız hissettiğini belirtiyor. Modern kentsel izolasyonun nedenleri nelerdir? Topluluk duygusunu geliştirmek için neler yapılabilir?",
+          "Küreselleşen dünyada geleneksel kültürler ve gelenekler yok oluyor. Bu kayıp neden yaşanıyor? Toplumlar kültürel miraslarını nasıl koruyabilirler?"
+        ]
+      },
+      {
+        "name": "Eğitim",
+        "prompts": [
+          "Günümüzde lise öğrencileri benzeri görülmemiş düzeyde stres ve tükenmişlikle karşı karşıyadır. Bu baskının temel nedenleri nelerdir? Eğitim sistemi öğrencilerin refahını destekleyecek şekilde nasıl yeniden düzenlenebilir?",
+          "Üniversiteye gitmenin maliyeti birçok genç için karşılanamaz hale geldi. Bunun olumsuz etkileri nelerdir? Öğrencilere ne gibi alternatifler veya çözümler sunulabilir?",
+          "Zorbalık dünya çapında okullarda kalıcı bir sorun olmaya devam ediyor. Zorbalığın çocuklar üzerinde ne gibi psikolojik etkileri vardır? Zorbalığa karşı hangi stratejiler en etkilidir?",
+          "Birçok işveren, yeni mezunların işyeri için pratik becerilere sahip olmadıklarından şikayetçidir. Eğitim ile istihdam arasında neden uçurum var? Üniversite müfredatları nasıl geliştirilebilir?",
+          "Pek çok ülkede nitelikli öğretmen sıkıntısı yaşanıyor. Bu eksikliğin ardındaki sebepler nelerdir? Öğretmenlik mesleği nasıl daha cazip hale getirilebilir?",
+          "Kırsal kesimdeki öğrenciler genellikle şehirlerdeki öğrencilere göre daha düşük kalitede eğitim almaktadır. Bu eğitimsel ayrılığın sebebi nedir? Kaliteli eğitime eşit erişimi hangi önlemler sağlayabilir?",
+          "Yapay zeka araçlarının yükselişi akademik kopya ve intihal vakalarında artışa yol açtı. Öğrencinin öğrenmesi üzerindeki olumsuz etkiler nelerdir? Okullar yapay zeka kullanımını nasıl ele almalı?",
+          "Gelişmekte olan bazı bölgelerde yetişkin okuryazarlığı hala yüksek. Okuma yazma bilmemek toplumda ne gibi sorunlara yol açar? Hangi girişimler yetişkinlere okuma ve yazmayı başarılı bir şekilde öğretebilir?",
+          "Birçok öğrenci geleneksel sınıf ortamlarından kopmuş ve sıkılmış hissediyor. Geleneksel öğretim yöntemleri neden öğrencilerin dikkatini çekemiyor? Dersler nasıl daha ilgi çekici hale getirilebilir?",
+          "Devlet okullarındaki sınıf mevcutları genellikle etkili öğretim için çok büyüktür. Hem öğretmenler hem de öğrenciler üzerindeki olumsuz etkiler nelerdir? Bu sorun nasıl çözülebilir?"
+        ]
+      },
+      {
+        "name": "Sağlık ve Diyet",
+        "prompts": [
+          "Obezite dünyanın birçok yerinde salgın haline geldi. Yaygın kilo alımının başlıca nedenleri nelerdir? Hükümetler daha sağlıklı yaşam tarzlarını teşvik etmek için ne gibi önlemler alabilir?",
+          "Depresyon ve anksiyete gibi zihinsel sağlık sorunlarının oranları küresel olarak artıyor. Bu koşullar neden daha yaygın hale geliyor? Ruh sağlığının iyileştirilmesi için neler yapılabilir?",
+          "Fast food tüketimi tüm zamanların en yüksek seviyesinde. Ağır işlenmiş gıdaları yemenin sağlığa olumsuz etkileri nelerdir? Toplum insanları taze yemek pişirmeye nasıl teşvik edebilir?",
+          "Modern yaşam tarzları giderek daha hareketsiz hale geldi. Hareket eksikliğinden kaynaklanan fiziksel sorunlar nelerdir? Günlük hayata daha fazla fiziksel aktivite entegre etmek için neler yapılabilir?",
+          "Günümüzde birçok insan kronik uyku yoksunluğundan muzdariptir. Modern toplumda uyku eksikliğine hangi faktörler katkıda bulunuyor? Bireyler uyku hijyenini nasıl geliştirebilirler?",
+          "Tıbbi tedavi ve sağlık hizmetlerinin maliyeti ortalama vatandaşların ulaşamayacağı kadar artıyor. Bu ne gibi sorunlara yol açar? Sağlık hizmetleri nasıl daha erişilebilir ve uygun fiyatlı hale getirilebilir?",
+          "Dünyada hemşire ve sağlık personeli sıkıntısı yaşanıyor. Bu sektör neden personeli elde tutmakta zorlanıyor? Bu personel krizini hangi teşvikler çözebilir?",
+          "Tıptaki ilerlemelere rağmen dünya çapında pek çok insan hâlâ önlenebilir hastalıklardan dolayı hayatını kaybediyor. Durum neden böyle? Bu sorunla ilgili ne yapılabilir?",
+          "Antibiyotiklerin aşırı kullanımı dirençli bakteri türlerinin oluşmasına yol açmaktadır. Antibiyotik direncinin tehlikeleri nelerdir? Tıp camiası bu sorunla nasıl başa çıkabilir?",
+          "Uzun süreli ekran kullanımı, çocuklarda ve yetişkinlerde gözle ilgili sağlık sorunlarının artmasına neden oluyor. Ortaya çıkan spesifik sorunlar nelerdir? Hangi önleyici tedbirler alınmalıdır?"
+        ]
+      },
+      {
+        "name": "Çalışma ve Ekonomi",
+        "prompts": [
+          "İşe bağlı stres, modern işgücündeki hastalıkların önde gelen nedenidir. Modern çalışmanın hangi yönleri bu stresi yaratıyor? İşverenler çalışanlarının ruh sağlığını desteklemek için ne yapabilir?",
+          "Genç işsizlik oranları birçok ülkede inanılmaz derecede yüksektir. Gençler neden iş bulmakta zorlanıyor? Hangi girişimler onları işgücüne entegre etmeye yardımcı olabilir?",
+          "Birçok meslekte aynı işi yapan kadınlara hâlâ erkeklerden daha az ücret ödeniyor. Cinsiyetler arası ücret farkının nedenleri nelerdir? Hükümetler ve işletmeler eşit ücreti nasıl sağlayabilirler?",
+          "Uzun ve yorucu günlük işe gidip gelmeler birçok işçi için bir gerçektir. Uzun yolculukların bireyler üzerindeki olumsuz etkileri nelerdir? Bu sorun nasıl hafifletilebilir?",
+          "Birçok çalışan sağlıklı bir iş-yaşam dengesini korumakta zorlanıyor. İşi kişisel hayattan ayırmak neden bu kadar zorlaştı? Hangi işyeri politikaları bu dengeyi geliştirebilir?",
+          "\"Konser ekonomisinin\" yükselişi, pek çok insanın herhangi bir fayda sağlamadan kısa vadeli sözleşmelerle çalıştığı anlamına geliyor. Bu durum işçiler için ne gibi mali sorunlar yaratıyor? Konser çalışanları nasıl daha iyi korunabilir?",
+          "Yüksek enflasyon temel malların fiyatlarının yükselmesine neden oluyor. Bu durum düşük gelirli aileleri nasıl etkiliyor? Fiyatları istikrara kavuşturmak için hangi ekonomik adımlar atılabilir?",
+          "Bazı sektörlerde işçiler güvensiz çalışma koşullarına maruz kalıyor. Bu koşullar neden devam ediyor? Daha sıkı güvenlik düzenlemelerini uygulamak için ne yapılabilir?",
+          "Gelişmekte olan ülkelerin çoğu, en eğitimli profesyonellerinin yurtdışına taşınmasıyla \"beyin göçü\" sorunu yaşıyor. Bu durum memleket açısından ne gibi sorunlara yol açıyor? Milletler yeteneklerini nasıl koruyabilirler?",
+          "Günümüzde genç yetişkinler benzeri görülmemiş düzeyde kişisel borç biriktiriyor. Bu borçlanmanın temel nedenleri nelerdir? Bunu çözmek için nasıl bir finansal eğitim verilmeli?"
+        ]
+      },
+      {
+        "name": "Suç ve Hukuk",
+        "prompts": [
+          "Çocuk suçluluğu (gençlerin işlediği suçlar) birçok şehirde artıyor. Gençlik suçlarının temel nedenleri nelerdir? Hangi müdahaleler gençleri beladan uzak tutabilir?",
+          "Geleneksel suçlar azalıyor ancak siber suçlar hızla artıyor. Suçlular neden çevrimiçi hareket ediyor? Kolluk kuvvetleri dijital suçlarla mücadeleye nasıl uyum sağlayabilir?",
+          "Uyuşturucu kullanımı hayatları ve toplulukları mahvetmeye devam ediyor. İnsanları madde kullanımına yönelten şey nedir? Bağımlıları rehabilite etmenin en etkili yolları nelerdir?",
+          "Pek çok ülkede cezaevleri aşırı kalabalık. Aşırı kalabalık cezaevlerinin sonuçları nelerdir? Hangi alternatif cezalar bu baskıyı hafifletebilir?",
+          "Pek çok suçlu cezaevinden çıktıktan kısa bir süre sonra yeniden suç işliyor. Cezaevi sistemleri mahkumları rehabilite etmekte neden başarısız oluyor? Eski hükümlülerin topluma yeniden entegrasyonuna hangi programlar yardımcı olabilir?",
+          "Kurumsal dolandırıcılık gibi beyaz yakalı suçlar, sokak suçlarına kıyasla genellikle cezasız kalıyor. Durum neden böyle? Adalet sistemi kurumsal yolsuzlukla nasıl daha etkili bir şekilde mücadele edebilir?",
+          "Vandalizm ve kamu malına zarar verme birçok kentsel alanda yaygındır. İnsanları vandalizm yapmaya iten şey nedir? Yerel yönetimler bunu nasıl önleyebilir?",
+          "Aşırı hız ve alkollü araç kullanmak gibi trafik suçları her yıl binlerce ölüme neden oluyor. İnsanlar neden trafik kurallarını göz ardı ediyor? Hangi önlemler tehlikeli araç kullanmayı başarılı bir şekilde caydırabilir?",
+          "Aile içi şiddet milyonlarca haneyi etkileyen gizli bir suçtur. Kurbanlar neden çoğunlukla sessiz kalıyor? Bunları korumak için hangi destek sistemlerinin mevcut olması gerekir?",
+          "Yasadışı yaban hayatı ticareti birçok hayvan türünün neslinin tükenmesine neden oluyor. Yasadışı hayvansal ürünlere olan talebi ne körüklüyor? Uluslararası yasalar bu ticareti nasıl durdurabilir?"
+        ]
+      },
+      {
+        "name": "Aile ve Gençlik",
+        "prompts": [
+          "Geleneksel geniş aile modelinin yerini çekirdek aile veya tek ebeveynli aile modeli alıyor. Geniş aile desteğinin kaybı ne gibi sorunlara neden olur? Toplum modern ailelerin desteklenmesine nasıl yardımcı olabilir?",
+          "Gençlerle yaşlılar arasında anlayış eksikliğine yol açan büyüyen bir \"kuşak farkı\" var. Bu yanlış anlaşılmalar neden oluyor? Nesiller arasındaki uçurumu nasıl kapatabiliriz?",
+          "Günümüzde pek çok çocuk, ebeveynlerinin çalışması nedeniyle ebeveyn denetimi olmadan evde bırakılıyor. Çocuğun gelişimine olumsuz etkileri nelerdir? Çalışan ebeveynler hangi çözümleri uygulayabilir?",
+          "Günümüzde ebeveynler çocuklarına akademik ve ders dışı alanlarda başarılı olmaları için büyük bir baskı uyguluyorlar. Çocuklar üzerindeki psikolojik etkileri nelerdir? Ebeveynler nasıl daha sağlıklı bir yaklaşım benimseyebilir?",
+          "Gelişmiş birçok ülkede doğum oranları hızla düşüyor. İnsanlar neden daha az çocuk sahibi olmayı tercih ediyor? Bu durum gelecekte toplumda ne gibi sorunlara yol açacak ve bu sorunlar nasıl çözülebilir?",
+          "Profesyonel çocuk bakımının maliyeti birçok aile için aşırı derecede pahalıdır. Bu durum özellikle çalışan anneler için ne gibi sorunlar yaratıyor? Çocuk bakımı nasıl daha erişilebilir hale getirilebilir?",
+          "Gençler arasında kamusal alanlarda anti-sosyal davranışlar yaygın bir şikayettir. Bu isyankar davranışın nedeni nedir? Topluluklar gençleri daha olumlu faaliyetlere nasıl dahil edebilir?",
+          "Günümüzde çocuklar ve gençler giderek daha fazla tüketici pazarlamasının hedefi oluyor. Gençlerin tüketim çılgınlığının olumsuz etkileri nelerdir? Ebeveynler çocuklarını agresif reklamlardan nasıl koruyabilirler?",
+          "Pek çok genç, kötü davranışlar sergileyen ünlüleri putlaştırıyor. Gençler neden bu rakamlara bakıyor? Gençlere nasıl daha iyi rol modeller sağlayabiliriz?",
+          "Boşanma oranları son birkaç on yılda önemli ölçüde arttı. Evliliklerin başarısız olmasına neden olan temel baskılar nelerdir? Çiftleri evliliğe daha iyi hazırlamak için neler yapılabilir?"
+        ]
+      },
+      {
+        "name": "Ulaştırma ve Turizm",
+        "prompts": [
+          "Trafik sıkışıklığı çoğu büyük şehirde günlük bir kabustur. Kilitlenmenin ana nedenleri nelerdir? Hangi yenilikçi ulaşım çözümleri trafik akışını kolaylaştırabilir?",
+          "Birçok bölgedeki toplu taşıma sistemleri güvenilmez ve bakımsız. Toplu taşıma neden sıklıkla ihmal ediliyor? Bu sistemleri yükseltmek için hangi adımlar gereklidir?",
+          "Tarihi yerler ve ünlü simge yapılar \"aşırı turizmden\" muzdariptir. Aşırı turizm ne gibi zararlara neden olur? Yetkililer turist sayısını sürdürülebilir bir şekilde nasıl yönetebilir?",
+          "Havacılık endüstrisi küresel karbon emisyonlarına büyük katkı sağlıyor. Hava yolculuğunu \"yeşil\" kılmak neden bu kadar zor? Hangi alternatifler veya çözümler uçmanın çevresel etkisini azaltabilir?",
+          "Ölümcül trafik kazalarının sayısı kabul edilemeyecek kadar yüksek. Bu kazaların başlıca nedenleri nelerdir? Hangi güvenlik önlemleri karayolundaki ölümleri önemli ölçüde azaltabilir?",
+          "Yakıt maliyetleri ve vergiler nedeniyle uluslararası seyahat ortalama bir kişi için çok pahalı hale geliyor. Kısıtlı seyahatin olumsuz etkileri nelerdir? Turizm nasıl erişilebilir kalabilir?",
+          "Turistler sıklıkla yerel kültürel hassasiyetleri rahatsız edecek davranışlarda bulunuyor. Bu kültürel sürtüşme neden kaynaklanıyor? Gezginler yerel geleneklere saygı gösterme konusunda nasıl eğitilebilir?",
+          "Çevresel uyarılara rağmen özel arabalara olan bağımlılık giderek artıyor. İnsanlar neden arabalarından vazgeçmeyi reddediyor? Hangi teşvikler insanları başarılı bir şekilde toplu taşımaya yönlendirecektir?",
+          "Şehir merkezlerinde park yeri bulmak neredeyse imkansız hale geliyor. Bu durum yerel işletmeler için ne gibi sorunlar yaratıyor? Otopark sıkıntısını hangi mimari veya planlama çözümleri çözebilir?",
+          "Mega tatil köylerinin inşası, turistik kasabalardaki küçük yerel işletmeleri yok ediyor. Yerel mağazalar neden rekabet etmekte zorlanıyor? Küçük işletmeleri korumak için yerel yönetimler neler yapabilir?"
+        ]
+      },
+      {
+        "name": "Gıda ve Tarım",
+        "prompts": [
+          "Dünya çapında şok edici miktarda gıda süpermarketler ve tüketiciler tarafından israf ediliyor. Neden bu kadar çok yiyecek çöpe atılıyor? Gıda israfını büyük ölçüde azaltmak için ne gibi önlemler alınabilir?",
+          "Pek çok ülke gıdayı yerel olarak yetiştirmek yerine ağırlıklı olarak ithal etmeye güveniyor. Yabancı gıda kaynaklarına bağımlı olmanın riskleri nelerdir? Milletler yerli tarımı nasıl geliştirebilirler?",
+          "Tarımda kimyasal pestisitlerin yoğun kullanımı endişeye neden oluyor. Bu kimyasalların çevreye ve sağlığa etkileri nelerdir? Kimyasal tarıma uygulanabilir alternatifler nelerdir?",
+          "Fabrika çiftçiliği uygulamaları hayvan refahından ziyade karı ön planda tutuyor. Kitlesel et üretimiyle ilgili spesifik zulümler nelerdir? Tüketiciler ve hükümetler bu sektörde değişimi nasıl teşvik edebilir?",
+          "Büyük tarım işletmeleri devraldıkça, aile tarafından işletilen küçük çiftlikler ortadan kayboluyor. Küçük çiftlikler neden başarısız oluyor? Yerel çiftçileri desteklemek ve sürdürmek için neler yapılabilir?",
+          "Küresel gıda üretimi yüksek olmasına rağmen birçok bölgede gıda güvensizliği ve açlık hâlâ varlığını sürdürüyor. Gıda dağıtım başarısızlıklarının temel nedenleri nelerdir? Herkesin yeterli yiyeceğe sahip olmasını nasıl sağlayabiliriz?",
+          "Ekilebilir araziler (ürün yetiştirmeye uygun araziler) konut geliştirme ve çölleşme nedeniyle kaybediliyor. Tarım arazilerini kaybetmenin uzun vadeli tehlikeleri nelerdir? Tarım arazilerini nasıl koruyabiliriz?",
+          "Genetiği Değiştirilmiş (GM) gıdaları tüketmenin uzun vadeli sağlık etkileri birçok kişi için endişe kaynağı olmaya devam ediyor. İnsanlar neden GDO'lu ürünlere şüpheyle yaklaşıyor? GDO'lu gıdaların satışını hangi düzenlemeler yönetmelidir?",
+          "Dünya çapında diyetler yüksek oranda işlenmiş, önceden paketlenmiş gıdalara doğru kayıyor. İşlenmiş gıdalara olan bu bağımlılığın nedeni nedir? Hükümetler halkı tam gıdayla beslenme konusunda nasıl eğitebilir?",
+          "Tarımsal akış (gübrelerin nehirlere karışması) su yollarını ciddi şekilde kirletiyor. Bu durum su ekosistemlerine ne gibi zararlar verir? Hangi tarım uygulamaları bu kirliliği önleyebilir?"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "double-question",
+    "label": "Çift Soru",
+    "description": "Aynı konuyla ilgili iki ayrı soruyu yanıtlayın.",
+    "instruction": "Her iki soruyu da tam olarak cevaplayın. En az 250 kelime yazın.",
+    "categories": [
+      {
+        "name": "Eğitim ve Öğrenme",
+        "prompts": [
+          "Birçok öğrenci okula ve üniversiteye konsantre olmayı zor bulmaktadır. Bunun nedenleri nelerdir? Bu sorunu nasıl çözebiliriz?",
+          "Bazı ülkelerde öğrencilerin büyük bir kısmı diplomalarını tamamlamadan üniversiteyi bırakıyor. Sizce bu neden oluyor? Öğrencilerin eğitimlerini tamamlamalarını teşvik etmek için neler yapılabilir?",
+          "Bazı insanlar tarihin okulda çalışılacak faydasız bir konu olduğuna inanıyor. Neden bazı insanlar böyle hissediyor? Tarihin önemli bir okul dersi olduğunu düşünüyor musunuz?",
+          "Üniversiteye girmeden önce bir yıl ara vermek gençler arasında giderek daha yaygın hale geliyor. Neden daha fazla öğrenci bunu yapmayı seçiyor? Olumlu veya olumsuz bir eğilim mi?",
+          "Üniversiteye gitmenin maliyeti dünyanın birçok yerinde önemli ölçüde arttı. Bunun öğrenciler ve toplum üzerinde nasıl bir etkisi var? Hangi önlemler yüksek öğrenimi daha erişilebilir hale getirebilir?",
+          "Pek çok çocuğa öğretmenleri tarafından günlük ev ödevleri verilmektedir. Bunun gerekli bir uygulama olduğunu düşünüyor musunuz? Çok fazla ödev yapmanın potansiyel dezavantajları nelerdir?",
+          "Son yıllarda geleneksel sınıflar yerine çevrimiçi eğitim almayı tercih edenlerin sayısı arttı. Çevrimiçi öğrenmenin avantajları nelerdir? Geleneksel okulların eninde sonunda yok olacağını düşünüyor musunuz?",
+          "Bazı öğrenciler sınıf ortamında yabancı dil öğrenmekte zorluk çekerler. Yeni bir dil öğrenmek neden birçok insan için zor? Yabancı dil öğrenmenin en etkili yolları nelerdir?",
+          "Yemek pişirme, finansal yönetim ve temel araç bakımı gibi pratik beceriler okullarda nadiren öğretiliyor. Bu beceriler müfredata dahil edilmeli mi? Çocuklara bu becerileri öğretmek kimin sorumluluğundadır?",
+          "Finansman azaldığında müzik ve sanat genellikle okul müfredatından kaldırılan ilk dersler oluyor. Bu neden oluyor? Sanat çocuğun gelişiminde ne kadar önemlidir?"
+        ]
+      },
+      {
+        "name": "Teknoloji ve İnovasyon",
+        "prompts": [
+          "Günümüzde insanlar telefon, bilgisayar ve televizyon ekranlarına bakarak giderek daha fazla zaman harcıyor. Bunun fiziksel ve ruhsal sağlığa etkileri nelerdir? Bireyler ekran başında geçirdikleri süreyi nasıl daha iyi yönetebilirler?",
+          "Yapay zeka, daha önce insanlar tarafından yapılan görevlerin yerine getirilmesinde giderek daha fazla kullanılıyor. Yapay zekanın temel faydaları nelerdir? Bu teknoloji toplum için ne gibi riskler yaratıyor?",
+          "Sosyal medya platformları insanların ilişki kurma ve sürdürme biçimini değiştirdi. Sosyal medya insan etkileşimini nasıl etkiledi? Sizce bu genel anlamda olumlu mu yoksa olumsuz bir gelişme mi?",
+          "Artan sayıda insan romantik partner bulmak için çevrimiçi flört uygulamalarını kullanıyor. Bu platformlar neden bu kadar popüler oldu? İnsanlarla çevrimiçi tanışmanın potansiyel tehlikeleri nelerdir?",
+          "Pek çok kişi haberleri fiziksel gazete satın almak yerine çevrimiçi okumayı tercih ediyor. Dijital haberler neden bu kadar çok kişi tarafından tercih ediliyor? Basılı gazeteler gelecekte tamamen yok olacak mı?",
+          "Kripto para birimleri ve dijital ödemeler, fiziksel paranın yerini alarak daha yaygın hale geliyor. Nakitsiz bir toplumun avantajları nelerdir? Tamamen dijital paraya güvenmek ne gibi sorunlar doğurabilir?",
+          "Uzay turizminin yakın gelecekte varlıklı bireyler için de gerçeğe dönüşmesi bekleniyor. İnsanlar neden uzaya seyahat etmekle ilgileniyor? Hükümetler bu yeni sektörü düzenlemeli mi?",
+          "Günümüz çocukları genellikle çok küçük yaşlardan itibaren akıllı telefonlara ve tabletlere erişebilmektedir. Teknolojiye erken erişim çocuk gelişimini nasıl etkiler? Ebeveynler çocuklarının bu cihazların kullanımını sınırlamalı mı?",
+          "Otomasyon ve robotlar birçok imalat endüstrisinde manuel emeğin yerini alıyor. İşini makinelere kaptıran işçilere ne olacak? Hükümetler işgücünü geleceğe nasıl hazırlamalıdır?",
+          "Siber zorbalık gençler ve genç yetişkinler arasında büyüyen bir sorundur. İnsanlar neden çevrimiçi ortamda başkalarına zorbalık yapıyor? Bu davranışı önlemek için okullar ve ebeveynler hangi adımları atabilir?"
+        ]
+      },
+      {
+        "name": "İş ve Kariyer",
+        "prompts": [
+          "Birçok gelişmiş ülkede çalışanlar arasında iş tatmini azalmaktadır. Bu memnuniyetsizliğin temel nedenleri nelerdir? İşverenler, çalışanlarının çalışma hayatlarını iyileştirmek için neler yapabilir?",
+          "Pek çok insan çalışma hayatları boyunca birkaç kez kariyer değiştirmeyi tercih ediyor. İnsanları meslek değiştirmeye iten şey nedir? Bu ekonomi açısından olumlu mu yoksa olumsuz bir gelişme mi?",
+          "Uzaktan çalışma birçok şirket için standart bir uygulama haline geldi. Evden çalışmanın faydaları nelerdir? Uzaktan çalışanların karşılaştığı zorluklar nelerdir?",
+          "Bazı mesleklerde çalışanların çok uzun saatler boyunca, çoğunlukla da ücretsiz çalışmaları beklenir. İnsanlar neden bu çalışma koşullarını kabul ediyorlar? Bunun kişisel yaşamları üzerinde nasıl bir etkisi var?",
+          "Yaşam beklentisinin uzun olması nedeniyle birçok ülkede emeklilik yaşı yükseltiliyor. Bu politika neden uygulanıyor? İnsanların altmışlı ya da yetmişli yaşlarının sonuna kadar çalışmalarını beklemenin adil olduğunu düşünüyor musunuz?",
+          "Pek çok genç üniversiteden mezun oluyor ancak seçtikleri alanda iş bulamıyor. Genç işsizliğin nedenleri nelerdir? Üniversiteler öğrencileri iş piyasasına nasıl daha iyi hazırlayabilir?",
+          "Bazı şirketler, çalışanlarının bilgisayar başında çalışırken verimliliğini izlemek için izleme yazılımı kullanıyor. İşverenler neden bu araçları kullanıyor? Bu bir mahremiyet ihlali mi?",
+          "Bir işe başlamak önemli mali riskler ve uzun çalışma saatleri gerektirir. Neden bazı insanlar sıradan çalışanlar yerine girişimci olmayı seçiyor? Başarılı bir işi yürütmek için hangi niteliklere ihtiyaç vardır?",
+          "Kadınlar hâlâ birçok sektörde üst düzey yönetim ve yönetici rollerinde yeterince temsil edilmiyor. Bu cinsiyet farkı neden devam ediyor? İşyerinde toplumsal cinsiyet eşitliğini teşvik etmek için ne gibi önlemler alınabilir?",
+          "Profesyonel sporcular ve eğlence dünyasının ünlüleri gibi bazı işler son derece yüksek maaşlar ödüyor. Bu kişiler bu kadar parayı hak ediyor mu? Kişinin maaşı nasıl belirlenmeli?"
+        ]
+      },
+      {
+        "name": "Çevre ve Sürdürülebilirlik",
+        "prompts": [
+          "Dünya okyanuslarındaki plastik kirliliği ciddi bir çevresel krizdir. Bu plastik atıkların ana kaynakları nelerdir? Okyanusları temizlemek için bireyler ve hükümetler ne gibi önlemler alabilir?",
+          "Günümüzde pek çok hayvan ve bitki türü yok olma tehlikesiyle karşı karşıya. Biyoçeşitliliğin kaybı neden insanlık için bir sorundur? Nesli tükenmekte olan türleri korumak için neler yapılabilir?",
+          "Fosil yakıtların kullanımı küresel iklim değişikliğinin temel nedenidir. Ülkelerin yenilenebilir enerji kaynaklarına geçişi neden zor? Petrol ve kömüre olan bağımlılığımızı azaltmazsak ne olur?",
+          "Tropikal yağmur ormanlarında ormansızlaşma endişe verici bir oranda meydana geliyor. Bu ormanların kesilmesinin temel nedenleri nelerdir? Uluslararası toplum bu yıkımı nasıl durdurabilir?",
+          "Birçok şehir, sakinlerinin sağlığını etkileyen ciddi hava kirliliğinden muzdariptir. Kentsel hava kirliliğine ne sebep olur? Şehirlerdeki hava kalitesini iyileştirmenin en etkili yolları nelerdir?",
+          "Tatlı su dünyanın birçok yerinde kıt bir kaynak haline geliyor. Neden temiz içme suyu sıkıntısı var? Suyu daha etkili bir şekilde nasıl koruyabiliriz?",
+          "Tüketicilik, insanları sürekli olarak yeni ürünler almaya ve eskilerini atmaya teşvik eder. Bu \"tek kullanımlık kültür\" çevreyi nasıl etkiliyor? İnsanları eşyaları onarmaya ve yeniden kullanmaya teşvik etmek için neler yapılabilir?",
+          "Gıda üretimini artırmak ve zararlılara karşı direnmek için genetiği değiştirilmiş (GM) ürünler yetiştiriliyor. Neden bazı insanlar GDO'lu gıdalara karşı çıkıyor? Bu teknolojinin faydaları risklerinden daha mı ağır basıyor?",
+          "Kasırga ve kuraklık gibi aşırı hava olayları giderek daha sık yaşanıyor. Bu olaylar yerel toplulukları nasıl etkiliyor? Hükümetler doğal afetlere nasıl hazırlanmalı?",
+          "Hızlı moda, tüketicilerin modaya uygun kıyafetleri çok düşük fiyatlarla satın almalarına olanak tanır. Hızlı moda endüstrisinin çevresel etkisi nedir? Tüketiciler sürdürülebilir şekilde üretilen giysiler için daha fazla para ödemeye zorlanmalı mı?"
+        ]
+      },
+      {
+        "name": "Toplum ve Kültür",
+        "prompts": [
+          "Birçok ülkede yaşlıların oranı hızla artıyor. Yaşlanan bir nüfus topluma ne gibi zorluklar getiriyor? Topluluklar yaşlı vatandaşlarını nasıl daha iyi destekleyebilir?",
+          "Toplumun en zenginleri ile en fakirleri arasındaki uçurum giderek açılıyor. Aşırı servet eşitsizliği hangi sorunlara yol açıyor? Hangi politikalar servetin daha adil dağıtılmasına yardımcı olabilir?",
+          "Genç kuşaklar arasında geleneksel gelenekler ve bayramlar önemini yitiriyor. Bu neden oluyor? Modern dünyada geleneksel kültürü korumak önemli mi?",
+          "Pek çok insan kalabalık ve modern şehirlerde yaşamasına rağmen kendini yalnız ve izole hissediyor. Kentsel yalnızlık neden bu kadar yaygın? Kentsel alanlarda daha güçlü topluluklar oluşturmak için neler yapılabilir?",
+          "Birçok gelişmiş ülkede doğum oranları düşüyor. İnsanlar neden daha az çocuk sahibi olmayı tercih ediyor? Bunun gelecekte toplum üzerinde nasıl bir etkisi olacak?",
+          "Uluslararası göç arttı ve bu da daha çok kültürlü toplumların oluşmasına yol açtı. Çeşitlilik içeren bir toplumda yaşamanın faydaları nelerdir? Farklı kültürlerin bir arada yaşaması durumunda ne gibi zorluklar ortaya çıkabilir?",
+          "Dünyanın birçok yerinde politikacılara ve devlet kurumlarına olan güven azalıyor. İnsanlar siyaset konusunda neden bu kadar alaycı hale geldi? Hükümetler halkın güvenini nasıl yeniden inşa edebilir?",
+          "Gönüllülük ve ücretsiz toplum hizmeti giderek azalıyor. Neden daha az insan zamanını bedava sunuyor? Daha fazla insanı yerel topluluklarına yardım etmeye nasıl teşvik edebiliriz?",
+          "Bazı insanlar modern toplumun fiziksel görünüme ve güzelliğe fazla odaklandığına inanıyor. Neden belli bir yöne bakma konusunda bu kadar baskı var? Bu durum insanların ruh sağlığını nasıl etkiliyor?",
+          "Tarihi anıtlar ve heykeller bazen tartışmalı bir geçmişi temsil ettikleri için kaldırılıyor veya yok ediliyor. İnsanlar neden bu anıtları kaldırmak istiyor? Tarihi şahsiyetler modern standartlara göre mi değerlendirilmeli?"
+        ]
+      },
+      {
+        "name": "Sağlık ve Refah",
+        "prompts": [
+          "Obezite oranları birçok ülkede salgın boyutlarına ulaştı. Bu sağlık krizinin ana nedenleri nelerdir? Gıda endüstrisinin düzenlenmesinde hükümet nasıl bir rol oynamalıdır?",
+          "Stres ve kaygı, modern çalışanlar için önemli sağlık sorunlarıdır. İşyerinde yüksek stres seviyelerine hangi faktörler katkıda bulunur? Bireyler daha iyi bir iş-yaşam dengesine nasıl ulaşabilirler?",
+          "Birçok kişi geleneksel doktorları ziyaret etmek yerine alternatif ilaçlar kullanıyor. Alternatif tedaviler neden daha popüler hale geliyor? Are there any dangers associated with relying on these treatments?",
+          "Bazı ülkelerde tıbbi tedavilerin ve reçeteli ilaçların maliyeti çok yüksektir. How does this affect low-income families? Sağlık hizmetleri herkes için tamamen ücretsiz mi olmalı?",
+          "Uyku yoksunluğu birçok yetişkin ve genç için yaygın bir sorundur. Why are people not getting enough sleep? Uyku eksikliği günlük performansı ve uzun vadeli sağlığı nasıl etkiler?",
+          "Profesyonel sporlar büyük ölçüde ticarileşti ve sporcular milyonlar kazandı. Para sporun gerçek ruhunu mahvetti mi? Bu ticarileştirmenin genç hayranlar üzerinde nasıl bir etkisi var?",
+          "Bazı ülkelerde tütün ürünlerinin satışına ağır vergiler uygulanmakta ve kısıtlanmaktadır. Hükümetler neden sigara içmeyi caydırmaya çalışıyor? Gelecekte sigara tamamen yasaklanmalı mı?",
+          "İşlenmiş ve fast food gıdalar modern beslenmenin büyük bir bölümünü oluşturuyor. İnsanlar neden sağlıksız yiyecekler yemeyi tercih ediyor? Sağlıklı gıdayı daha çekici ve erişilebilir hale getirmek için neler yapılabilir?",
+          "Ruh sağlığı sorunları sıklıkla damgalanıyor, bu da insanların yardım aramasını zorlaştırıyor. İnsanlar neden akıl sağlıkları hakkında konuşmaktan korkuyorlar? Toplum nasıl daha kabul edici ve destekleyici hale gelebilir?",
+          "Bazı insanlar temel atlama veya serbest solo tırmanma gibi ekstrem ve tehlikeli sporlara katılmayı tercih ediyor. İnsanları spor uğruna hayatlarını riske atmaya iten şey nedir? Başları belaya girerse acil servislerin onları kurtarması gerekli mi?"
+        ]
+      },
+      {
+        "name": "Devlet ve Kamu Hizmetleri",
+        "prompts": [
+          "Birçok büyük şehirdeki toplu taşıma sistemleri aşırı kalabalık ve güvenilmez. Hükümetler neden toplu taşımayı sürdürmek için mücadele ediyor? Yüksek verimli bir toplu taşıma sisteminin faydaları nelerdir?",
+          "Kamu hizmetlerini finanse etmek için vergiler gereklidir, ancak birçok kişi vergileri ödemekten kaçınmaya çalışmaktadır. İnsanlar neden vergi ödemekten hoşlanmazlar? Hükümetler vergi sistemlerinin adil olmasını nasıl sağlayabilir?",
+          "Birçok hükümet işsiz vatandaşlara mali destek sağlıyor. Bu sosyal yardım neden gerekli? İşsizlik maaşı vermek insanları tembelleştirir mi?",
+          "Ekonomik kriz dönemlerinde halk kütüphaneleri ve toplum merkezlerine ayrılan fonlar sıklıkla kesiliyor. Bu tesisler neden daha az önemli görülüyor? Kütüphaneler kapatıldığında topluluklar ne kaybeder?",
+          "Bazı ülkelerde tüm genç yetişkinler için zorunlu askerlik hizmeti bulunmaktadır. Zorunlu askerliğin avantajları nelerdir? İnsanları askere gitmeye zorlamaya karşı argümanlar nelerdir?",
+          "Büyük şehirlerdeki konut fiyatları birçok genç profesyonel için karşılanamaz hale geldi. Şehir konutları neden bu kadar pahalı? Hükümetler uygun fiyatlı konut sağlamak için ne yapabilir?",
+          "Zengin ülkeler genellikle gelişmekte olan ülkelere dış yardım sağlar. Yoksul uluslara yardım etmek neden önemlidir? Dış yardım her zaman en çok ihtiyacı olan kişilere mi ulaşıyor?",
+          "Güvenlik kameraları kamusal alanlarda suçun önlenmesi amacıyla yaygın olarak kullanılmaktadır. Kameralar yasa dışı faaliyetleri durdurmada ne kadar etkilidir? Kamu gözetimi bireyin mahremiyet hakkını ihlal ediyor mu?",
+          "Hükümetler, Olimpiyatlar gibi uluslararası etkinliklere ev sahipliği yapmak için büyük miktarlarda para harcıyor. Ülkeler neden bu etkinliklere ev sahipliği yapmak istiyor? Bu kamu fonlarının iyi bir kullanımı mıdır?",
+          "Birçok ülkedeki ceza adaleti sistemi, suçluları cezaevine göndererek cezalandırmaya odaklanmaktadır. Hapishaneler aslında suçluları rehabilite ediyor mu? Şiddet içermeyen suçlarla baş etmenin alternatif yolları nelerdir?"
+        ]
+      },
+      {
+        "name": "Medya ve İletişim",
+        "prompts": [
+          "Reklamlar televizyon ekranlarından halka açık reklam panolarına kadar her yerdedir. Reklam tüketici davranışlarını nasıl etkiliyor? Reklamlar çocuklara zararlı mı?",
+          "İnternette \"sahte haberlerin\" ve yanlış bilgilerin yayılması büyük bir endişe kaynağıdır. İnsanlar neden yanlış bilgi oluşturup paylaşıyor? Halk güvenilir haber kaynaklarını belirlemeyi nasıl öğrenebilir?",
+          "Ünlülerin ve etkileyicilerin gençlerin davranışları üzerinde büyük etkisi var. Gençler neden ünlü insanlardan bu kadar kolay etkileniyor? Bu etki genel olarak olumlu mu yoksa olumsuz mu?",
+          "Birçok insan realite televizyon programlarını izleyerek saatler harcıyor. Bu programlar neden izleyicilerin ilgisini bu kadar çekiyor? Reality şovlar gerçek hayatı tam olarak yansıtıyor mu?",
+          "Paparazziler genellikle ünlü kişilerin özel hayatlarının fotoğraflarını çekmek için onları takip ediyor. Medyanın bir ünlünün mahremiyetini ihlal etme hakkı var mı? Halk neden ünlülerin kişisel yaşamlarıyla bu kadar ilgileniyor?",
+          "Modern filmler ve video oyunları genellikle oldukça gerçekçi şiddet sahneleri içerir. Şiddet içeren eğlence neden bu kadar popüler? Şiddeti izlemek insanları gerçek hayatta daha saldırgan yapar mı?",
+          "Araştırmacı gazetecilik yolsuzluğun ortaya çıkarılmasında çok önemli bir rol oynuyor. Sağlıklı bir toplum için özgür basın neden önemlidir? Gazeteciler güçlü kişiler hakkında haber yaparken ne gibi tehlikelerle karşı karşıya kalıyorlar?",
+          "İnsanlar bugün kısa mesaj ve e-postaları kullanarak çok daha hızlı iletişim kuruyorlar. Bu, yazma ve konuşma şeklimizi nasıl değiştirdi? Derin ve düşünceli iletişim kurma yeteneğimizi mi kaybettik?",
+          "Netflix ve Spotify gibi yayın platformları insanların eğlenceyi tüketme biçimini değiştirdi. Bu durum geleneksel sinemaları ve fiziksel müzik satışlarını nasıl etkiliyor? Abonelik modeli sanatçılar ve yaratıcılar için adil mi?",
+          "Bazı hükümetler belirli web sitelerini ve sosyal medya platformlarını engellemek için interneti sansürlüyor. Hükümetler bilgiye erişimi neden kısıtlıyor? Vatandaşlar bu kısıtlamaları nasıl aşabilir?"
+        ]
+      },
+      {
+        "name": "Şehirler ve Altyapı",
+        "prompts": [
+          "Kentsel yayılma, şehirlerin çevredeki kırsal alanlara hızla yayılmasına neden oluyor. Kentsel yayılmanın çevresel sonuçları nelerdir? Şehir planlamacıları bu büyümeyi nasıl daha sürdürülebilir bir şekilde yönetebilirler?",
+          "Trafik sıkışıklığı dünya çapında milyonlarca yolcu için günlük bir sorundur. Yoğun trafiğin başlıca nedenleri nelerdir? Toplu taşımayı ücretsiz yapmak bu sorunu çözer mi?",
+          "Şehir merkezlerindeki birçok tarihi bina, modern gökdelenlere yer açmak için yıkılıyor. Bu neden oluyor? Eski mimariyi korumak önemli mi?",
+          "Şehir merkezlerinin yayalaştırılması (belirli bölgelerde tüm araçların yasaklanması) Avrupa'da popüler hale geliyor. Araç trafiğine kapalı bölgelerin faydaları nelerdir? Bu durum yerel işletmeleri nasıl etkiliyor?",
+          "Gürültü kirliliği yoğun metropol bölgelerde yaşayan insanlar için sürekli bir sorundur. Kentsel gürültünün ana kaynakları nelerdir? Kronik gürültüye maruz kalma sakinlerin sağlığını nasıl etkiler?",
+          "Parklar ve yeşil alanlar, bir şehirde kaliteli bir yaşam için olmazsa olmazdır. Kentsel bir ortamda ağaçlar ve doğa neden önemlidir? Neden bazı şehirler yeterli yeşil alan sağlayamıyor?",
+          "Birçok mega kentin eteklerinde gecekondular ve gayri resmi yerleşim yerleri bulunmaktadır. İnsanlar neden bu koşullarda yaşıyor? Hükümetler bu alanlarda yaşam standartlarını iyileştirmek için ne yapabilir?",
+          "Bisikletler, araba kullanmaya çevre dostu bir alternatif olarak tanıtılıyor. Neden birçok insan hâlâ işe bisikletle gitmeyi reddediyor? Şehirlerde bisiklet sürmeyi güvenli hale getirmek için hangi altyapıya ihtiyaç var?",
+          "Modern şehirlerin mimarisi, ülkeden bağımsız olarak genellikle birbirine çok benzer. Şehirler neden kendilerine özgü kültürel kimliklerini kaybediyor? Bir binanın tasarımı onu kullanan insanların ruh halini etkiler mi?",
+          "Atık yönetimi ve çöp imhası büyük şehirler için büyük lojistik zorluklardır. Şehirler şu anda milyonlarca ton çöpü nasıl işliyor? Kentsel atık yönetiminin daha sürdürülebilir yolları nelerdir?"
+        ]
+      },
+      {
+        "name": "Küreselleşme ve Ekonomi",
+        "prompts": [
+          "Çok uluslu şirketlerin yükselişi, dünyanın her yerinde aynı markaların satılması anlamına geliyor. Bu durum yerel işletmeleri ve zanaatkarları nasıl etkiliyor? Bu kültürel çeşitliliğin kaybolmasına neden olur mu?",
+          "Ucuz hava yolculuğu, uluslararası turizmi milyonlarca insan için erişilebilir hale getirdi. Kitle turizminin ekonomik faydaları nelerdir? Turizm yerel toplulukları ve çevreyi nasıl olumsuz etkiler?",
+          "Pek çok imalat işi gelişmiş ülkelerden gelişmekte olan ülkelere kaydırıldı. Şirketler neden fabrikalarının yerini değiştiriyor? Bu küreselleşme her iki ülkedeki işçileri nasıl etkiliyor?",
+          "Türkçe uluslararası ticaret ve bilimin baskın dili haline geldi. Türkçe neden bu küresel statüye ulaştı? Tek bir küresel dile sahip olmanın dezavantajları nelerdir?",
+          "Bazı ülkeler gıdayı yurt içinde üretmek yerine ağırlıklı olarak ithal etmeye güveniyor. Ülkeler neden temel ihtiyaçları ithal ediyor? Gıda tedarikiniz için başka ülkelere güvenmenin riskleri nelerdir?",
+          "Evrensel temel gelir (UBI) kavramı dünya çapında ekonomistler tarafından tartışılıyor. Herkese garantili bir gelir verilmesinin lehine olan argümanlar nelerdir? Böyle bir sistem nasıl finanse edilecek?",
+          "Ekonomik yaptırımlar genellikle güçlü ülkeler tarafından diğer ulusları cezalandırmak için kullanılır. Bu ticari kısıtlamaların amacı nedir? Bir ülkeye yaptırım uygulandığında en çok kim acı çekiyor?",
+          "Kredi kartları ve bireysel krediler, insanların hemen karşılayamayacakları şeyleri satın almalarına olanak tanır. Tüketici borcu neden küresel olarak artıyor? İnsanın imkanlarının ötesinde yaşamanın uzun vadeli sonuçları nelerdir?",
+          "Paylaşım ekonomisi (örneğin Uber, Airbnb) geleneksel endüstrileri altüst etti. Bu eşler arası hizmetler neden bu kadar başarılı? Bu platformlar çalışanlarını sömürüyor mu?",
+          "Ekonomik büyüme çoğu ulusal hükümetin temel hedefidir. Sınırlı kaynaklara sahip bir gezegende sonsuz ekonomik büyüme mümkün mü? Bir ülkenin başarısını ölçmenin GSYİH dışında alternatif yolları nelerdir?"
+        ]
+      }
+    ]
+  }
+]
