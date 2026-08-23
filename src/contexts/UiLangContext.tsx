@@ -5,6 +5,7 @@ import {
   writeStoredUiLang,
   uiLangLabel,
 } from '../lib/uiLang';
+import { isRtlLang } from '../lib/pronunciationProfile';
 import {
   translateUi,
   translateLevel,
@@ -42,6 +43,7 @@ export function UiLangProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = uiLang;
+    document.documentElement.dir = isRtlLang(uiLang) ? 'rtl' : 'ltr';
   }, [uiLang]);
 
   const t = useCallback(

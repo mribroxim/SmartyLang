@@ -126,7 +126,7 @@ export function loadLessonUnlock(lang: ContentLang, passageId: string): LessonUn
       ...emptyUnlock(),
       ...parsed,
       vocabQuizScore,
-      vocabPassed: deriveVocabPassed(vocabQuizScore),
+      vocabPassed: parsed.vocabPassed === true || deriveVocabPassed(vocabQuizScore),
       readingBest,
       readingPassed: readingBest != null && readingBest >= LESSON_PASS_THRESHOLD,
       exerciseBest,
@@ -170,7 +170,10 @@ export function updateLessonUnlock(
     const score = normalizePercentScore(patch.vocabQuizScore) ?? 0;
     next.vocabQuizScore = Math.max(prev.vocabQuizScore ?? 0, score);
   }
-  next.vocabPassed = deriveVocabPassed(next.vocabQuizScore);
+  next.vocabPassed =
+    patch.vocabPassed === true ||
+    prev.vocabPassed === true ||
+    deriveVocabPassed(next.vocabQuizScore);
 
   if (typeof patch.readingBest === 'number') {
     const score = normalizePercentScore(patch.readingBest) ?? 0;

@@ -848,7 +848,7 @@ export function TeacherDashboard({ setActiveTab }: TeacherDashboardProps = {}) {
             currentPlan="teacher"
             totalSeats={teacherSeatTotal}
             title="Teacher Seats"
-            subtitle={`Your Teacher plan currently has ${teacherSeatTotal} Smarty Max seats. Buy more anytime — $12.99 per seat / month.`}
+            subtitle={`Your Teacher plan currently has ${teacherSeatTotal} SmartyLang Max seats. Buy more anytime — $8.99 per seat / month.`}
             onSeatsAdded={(n) => setTeacherSeatTotal(n)}
           />
         )}

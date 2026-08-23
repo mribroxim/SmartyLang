@@ -50,11 +50,14 @@ export async function fetchWordTranslations(
       continue;
     }
     if (vocabDbEnabled()) {
-      const card = lookupWord(w);
-      if (card) {
-        const val = card.knownWord || card.definition;
-        transMap[w] = val;
-        transMap[w.toLowerCase()] = val;
+      const card = lookupWord(w, { knownLang: targetCode });
+      const lemma = (card?.word || w).toLowerCase();
+      const known = (card?.knownWord || '').trim();
+      // Only trust vocab-db when it actually has a known-language word, not the
+      // English/learning definition (that used to leak into quizzes).
+      if (known && known.toLowerCase() !== lemma) {
+        transMap[w] = known;
+        transMap[w.toLowerCase()] = known;
         continue;
       }
     }
@@ -76,14 +79,14 @@ export async function fetchWordTranslations(
           transMap[w] = defClean;
           transMap[w.toLowerCase()] = defClean;
         } else {
-          transMap[w] = gloss;
-          transMap[w.toLowerCase()] = gloss;
+          transMap[w] = w;
+          transMap[w.toLowerCase()] = w;
         }
       } else {
         transMap[w] = w;
       }
     } catch {
-      transMap[w] = gloss || w;
+      transMap[w] = w;
     }
   }));
   return transMap;
@@ -95,17 +98,16 @@ function meaningFor(
   allVocabMap: Map<string, string> | undefined,
   meanings?: Record<string, string>,
 ): string {
-  if (data?.senseId) {
-    const card = getCard(data.senseId);
-    if (card?.definition) return card.definition;
-  }
-  const resolved = lookupWord(word);
-  if (resolved?.definition) return resolved.definition;
   if (meanings) {
     const hit = meanings[word] ?? meanings[word.toLowerCase()];
     if (hit) return hit;
   }
-  return allVocabMap?.get(word.toLowerCase()) || data?.definition || '';
+  if (data?.definition) return data.definition;
+  const resolved = data?.senseId ? getCard(data.senseId) : lookupWord(word);
+  const lemma = (resolved?.word || word).toLowerCase();
+  const known = (resolved?.knownWord || '').trim();
+  if (known && known.toLowerCase() !== lemma) return known;
+  return allVocabMap?.get(word.toLowerCase()) || resolved?.definition || '';
 }
 
 /* ─── Inline translation helper (shared across exercises) ────────── */
@@ -438,7 +440,7 @@ export function Flashcards({ savedVocab, onBack, onComplete, allVocabMap, record
 
  {/* Back — rotateY keeps the card in the viewport (rotateX pushed content off-screen on phones) */}
  <div
- className="absolute inset-0 bg-zinc-900 text-white rounded-xl p-4 md:p-8 shadow-xl border border-black flex flex-col items-center justify-center overflow-hidden"
+ className="absolute inset-0 bg-zinc-900 text-white dark-keep rounded-xl p-4 md:p-8 shadow-xl border border-black flex flex-col items-center justify-center overflow-hidden"
  style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' as any, transform: 'rotateY(180deg)' }}
  >
  <h3 className="text-lg md:text-2xl font-serif font-bold mb-3 md:mb-6 text-zinc-200 break-words max-w-full text-center px-2">{current.word}</h3>

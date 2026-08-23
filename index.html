@@ -3,10 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Smarty English — learn English with AI-powered reading, speaking, writing, and listening practice." />
-    <meta name="theme-color" content="#18181b" />
-    <title>Smarty English</title>
+    <meta name="description" content="SmartyLang — learn English with AI-powered reading, speaking, writing, and listening practice." />
+    <meta name="theme-color" content="#ffffff" />
+    <title>SmartyLang</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      try {
+        if (localStorage.getItem('smarty_dark') === 'true') {
+          document.documentElement.classList.add('dark');
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute('content', '#09090b');
+        }
+      } catch (e) {}
+    </script>
     <!-- Preconnect to Firebase services to shave TLS handshake latency -->
     <link rel="preconnect" href="https://firestore.googleapis.com" />
     <link rel="preconnect" href="https://identitytoolkit.googleapis.com" />

@@ -76,6 +76,24 @@ button, a, [role="button"] {
   -webkit-tap-highlight-color: transparent; /* no blue flash on Android */
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  button, a, [role="button"], select, input, textarea {
+    transition-property: color, background-color, border-color, box-shadow, opacity, transform, filter;
+    transition-duration: 180ms;
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Space reserved so fixed MobileNav (64px + iOS home indicator) doesn't cover content */
 :root {
   --se-mobile-nav: 0px;
@@ -133,137 +151,221 @@ button, a, [role="button"] {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
 
 /* ═══════════════════════════════════════════════════════════════
-   DARK MODE GLOBAL OVERRIDES
-   Unlayered CSS beats @layer utilities — no !important needed.
-   Covers all feature components automatically.
+   DARK MODE
+   Light-surface fallbacks live in @layer base so explicit `dark:`
+   utilities still win. Intentionally-dark colors (zinc-900/950, black)
+   are left alone — they used to get washed into muddy gray.
    ═══════════════════════════════════════════════════════════════ */
 
-/* Browser chrome */
-.dark { color-scheme: dark; }
+@layer base {
+  html.dark {
+    color-scheme: dark;
+    background-color: #09090b;
+  }
+  html.dark body,
+  html.dark #root {
+    background-color: #09090b;
+    color: #fafafa;
+  }
 
-/* ── Backgrounds ── */
-.dark .bg-white        { background-color: #1c1c1f; }
-.dark .bg-slate-50     { background-color: #111113; }
-.dark .bg-slate-100    { background-color: #28282c; }
-.dark .bg-slate-200    { background-color: #37373c; }
-.dark .bg-zinc-50      { background-color: #1c1c1f; }
-.dark .bg-zinc-100     { background-color: #28282c; }
-.dark .bg-zinc-200     { background-color: #37373c; }
-.dark .bg-zinc-300     { background-color: #4b4b52; }
+  /* Canvas */
+  .dark .bg-slate-50,
+  .dark .bg-zinc-50 { background-color: #09090b; }
 
-/* Primary CTA buttons — zinc-900 becomes visible on dark bg */
-.dark .bg-zinc-900     { background-color: #4b4b52; }
-.dark .bg-black        { background-color: #5c5c64; }
-.dark .hover\:bg-black:hover { background-color: #5c5c64; }
+  /* Elevated cards / panels */
+  .dark .bg-white { background-color: #18181b; }
+  .dark .bg-white\/90 { background-color: rgb(9 9 11 / 0.9); }
+  .dark .bg-white\/95 { background-color: rgb(9 9 11 / 0.95); }
 
-/* ── Text ── */
-.dark .text-zinc-900   { color: #fafafa; }
-.dark .text-zinc-800   { color: #f4f4f5; }
-.dark .text-zinc-700   { color: #e4e4e7; }
-.dark .text-zinc-600   { color: #d4d4d8; }
-.dark .text-slate-900  { color: #fafafa; }
-.dark .text-slate-800  { color: #f4f4f5; }
-.dark .text-slate-700  { color: #d4d4d8; }
-.dark .text-slate-600  { color: #a1a1aa; }
-.dark .text-slate-500  { color: #71717a; }
-.dark .text-slate-400  { color: #52525b; }
+  /* Soft fills */
+  .dark .bg-slate-100,
+  .dark .bg-zinc-100 { background-color: #27272a; }
+  .dark .bg-slate-200,
+  .dark .bg-zinc-200 { background-color: #3f3f46; }
+  .dark .bg-zinc-300 { background-color: #52525b; }
 
-/* ── Borders ── */
-.dark .border-slate-100  { border-color: #28282c; }
-.dark .border-slate-200  { border-color: #37373c; }
-.dark .border-slate-300  { border-color: #4b4b52; }
-.dark .border-zinc-100   { border-color: #28282c; }
-.dark .border-zinc-200   { border-color: #37373c; }
-.dark .border-zinc-300   { border-color: #4b4b52; }
+  /* Text — muted gets LIGHTER so it stays readable */
+  .dark .text-zinc-900,
+  .dark .text-slate-900 { color: #fafafa; }
+  .dark .text-zinc-800,
+  .dark .text-slate-800 { color: #f4f4f5; }
+  .dark .text-zinc-700,
+  .dark .text-slate-700 { color: #d4d4d8; }
+  .dark .text-zinc-600,
+  .dark .text-slate-600 { color: #a1a1aa; }
+  .dark .text-zinc-500,
+  .dark .text-slate-500 { color: #a1a1aa; }
+  .dark .text-zinc-400,
+  .dark .text-slate-400 { color: #a1a1aa; }
 
-/* ── Hover overrides ── */
-.dark .hover\:bg-slate-50:hover   { background-color: #1c1c1f; }
-.dark .hover\:bg-slate-100:hover  { background-color: #28282c; }
-.dark .hover\:bg-slate-200:hover  { background-color: #37373c; }
-.dark .hover\:bg-zinc-50:hover    { background-color: #1c1c1f; }
-.dark .hover\:bg-zinc-100:hover   { background-color: #28282c; }
-.dark .hover\:bg-zinc-200:hover   { background-color: #37373c; }
+  /* Borders */
+  .dark .border-slate-100,
+  .dark .border-zinc-100 { border-color: #27272a; }
+  .dark .border-slate-200,
+  .dark .border-zinc-200 { border-color: #3f3f46; }
+  .dark .border-slate-300,
+  .dark .border-zinc-300 { border-color: #52525b; }
 
-/* ── Colored accent surfaces (badges, icon containers) ── */
-/* Blue */
-.dark .bg-blue-50       { background-color: #172554; }
-.dark .bg-indigo-50     { background-color: #1e1b4b; }
-/* Emerald / green */
-.dark .bg-emerald-50    { background-color: #052e16; }
-.dark .bg-green-50      { background-color: #052e16; }
-/* Rose / red */
-.dark .bg-rose-50       { background-color: #4c0519; }
-.dark .bg-red-50        { background-color: #450a0a; }
-/* Purple / violet */
-.dark .bg-purple-50     { background-color: #2e1065; }
-.dark .bg-violet-50     { background-color: #2e1065; }
-/* Amber / yellow */
-.dark .bg-amber-50      { background-color: #451a03; }
-.dark .bg-yellow-50     { background-color: #422006; }
-/* Cyan / teal */
-.dark .bg-cyan-50       { background-color: #083344; }
-.dark .bg-teal-50       { background-color: #042f2e; }
+  .dark .hover\:bg-slate-50:hover,
+  .dark .hover\:bg-zinc-50:hover { background-color: #27272a; }
+  .dark .hover\:bg-slate-100:hover,
+  .dark .hover\:bg-zinc-100:hover { background-color: #3f3f46; }
+  .dark .hover\:bg-slate-200:hover,
+  .dark .hover\:bg-zinc-200:hover { background-color: #52525b; }
 
-/* ── Colored text on dark accent surfaces ── */
-.dark .text-blue-700    { color: #93c5fd; }
-.dark .text-indigo-600  { color: #a5b4fc; }
-.dark .text-indigo-700  { color: #a5b4fc; }
-.dark .text-emerald-600 { color: #6ee7b7; }
-.dark .text-emerald-700 { color: #6ee7b7; }
-.dark .text-rose-600    { color: #fda4af; }
-.dark .text-rose-700    { color: #fda4af; }
-.dark .text-purple-700  { color: #d8b4fe; }
-.dark .text-violet-700  { color: #d8b4fe; }
-.dark .text-amber-700   { color: #fcd34d; }
-.dark .text-cyan-700    { color: #67e8f9; }
-.dark .text-teal-700    { color: #5eead4; }
-.dark .text-green-700   { color: #86efac; }
-.dark .text-red-700     { color: #fca5a5; }
+  /* Accent chips: 50/700/200 triads */
+  .dark .bg-blue-50     { background-color: #172554; }
+  .dark .bg-indigo-50   { background-color: #1e1b4b; }
+  .dark .bg-emerald-50,
+  .dark .bg-green-50    { background-color: #052e16; }
+  .dark .bg-rose-50,
+  .dark .bg-red-50      { background-color: #4c0519; }
+  .dark .bg-purple-50,
+  .dark .bg-violet-50   { background-color: #2e1065; }
+  .dark .bg-amber-50    { background-color: #451a03; }
+  .dark .bg-yellow-50   { background-color: #422006; }
+  .dark .bg-cyan-50     { background-color: #083344; }
+  .dark .bg-teal-50     { background-color: #042f2e; }
+  .dark .bg-sky-50      { background-color: #082f49; }
+  .dark .bg-orange-50   { background-color: #431407; }
 
-/* ── Colored borders on dark accent surfaces ── */
-.dark .border-blue-200    { border-color: #1e40af; }
-.dark .border-emerald-200 { border-color: #065f46; }
-.dark .border-rose-200    { border-color: #9f1239; }
-.dark .border-purple-200  { border-color: #6b21a8; }
-.dark .border-violet-200  { border-color: #6b21a8; }
-.dark .border-amber-200   { border-color: #92400e; }
-.dark .border-cyan-200    { border-color: #155e75; }
-.dark .border-teal-200    { border-color: #134e4a; }
+  /* Accent 100 chips (dashboard type tiles, SRS, scores) */
+  .dark .bg-blue-100     { background-color: #1e3a8a; }
+  .dark .bg-indigo-100   { background-color: #312e81; }
+  .dark .bg-emerald-100,
+  .dark .bg-green-100    { background-color: #065f46; }
+  .dark .bg-rose-100,
+  .dark .bg-red-100      { background-color: #9f1239; }
+  .dark .bg-purple-100,
+  .dark .bg-violet-100   { background-color: #5b21b6; }
+  .dark .bg-amber-100    { background-color: #78350f; }
+  .dark .bg-yellow-100   { background-color: #854d0e; }
+  .dark .bg-cyan-100     { background-color: #155e75; }
+  .dark .bg-teal-100     { background-color: #115e59; }
+  .dark .bg-sky-100      { background-color: #075985; }
+  .dark .bg-orange-100   { background-color: #9a3412; }
 
-/* ── Inputs, textareas, selects ── */
-.dark input:not([type=checkbox]):not([type=radio]):not([type=range]),
-.dark textarea,
-.dark select {
-  background-color: #28282c;
-  border-color: #4b4b52;
-  color: #fafafa;
+  .dark .text-blue-600,
+  .dark .text-blue-700    { color: #93c5fd; }
+  .dark .text-indigo-600,
+  .dark .text-indigo-700  { color: #a5b4fc; }
+  .dark .text-emerald-600,
+  .dark .text-emerald-700 { color: #6ee7b7; }
+  .dark .text-rose-600,
+  .dark .text-rose-700    { color: #fda4af; }
+  .dark .text-purple-600,
+  .dark .text-purple-700,
+  .dark .text-violet-700  { color: #d8b4fe; }
+  .dark .text-amber-600,
+  .dark .text-amber-700,
+  .dark .text-amber-800   { color: #fcd34d; }
+  .dark .text-cyan-700    { color: #67e8f9; }
+  .dark .text-green-700   { color: #86efac; }
+  .dark .text-red-700     { color: #fca5a5; }
+  .dark .text-teal-600,
+  .dark .text-teal-700    { color: #5eead4; }
+  .dark .text-sky-600,
+  .dark .text-sky-700     { color: #7dd3fc; }
+  .dark .text-orange-600  { color: #fdba74; }
+
+  .dark .border-blue-200    { border-color: #1e40af; }
+  .dark .border-emerald-200 { border-color: #065f46; }
+  .dark .border-rose-200    { border-color: #9f1239; }
+  .dark .border-purple-200,
+  .dark .border-violet-200  { border-color: #6b21a8; }
+  .dark .border-amber-200,
+  .dark .border-amber-100   { border-color: #92400e; }
+  .dark .border-cyan-200    { border-color: #155e75; }
+  .dark .border-teal-200    { border-color: #134e4a; }
+
+  .dark input:not([type=checkbox]):not([type=radio]):not([type=range]),
+  .dark textarea,
+  .dark select {
+    background-color: #18181b;
+    border-color: #3f3f46;
+    color: #fafafa;
+  }
+  .dark input::placeholder,
+  .dark textarea::placeholder { color: #71717a; }
+  .dark input:focus:not([type=checkbox]):not([type=radio]),
+  .dark textarea:focus {
+    border-color: #71717a;
+    outline-color: #71717a;
+  }
+
+  .dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]),
+  .dark .divide-zinc-200  > :not([hidden]) ~ :not([hidden]) { border-color: #3f3f46; }
+
+  .dark .shadow-sm  { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.45); }
+  .dark .shadow     { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.5), 0 1px 2px -1px rgb(0 0 0 / 0.5); }
+  .dark .shadow-md  { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5); }
+  .dark .shadow-lg  { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5); }
+  .dark .shadow-xl  { box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.55), 0 8px 10px -6px rgb(0 0 0 / 0.55); }
+  .dark .shadow-2xl { box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.7); }
 }
-.dark input::placeholder,
-.dark textarea::placeholder { color: #52525b; }
-.dark input:focus:not([type=checkbox]):not([type=radio]),
-.dark textarea:focus {
-  border-color: #71717a;
-  outline-color: #71717a;
+
+.dark * { scrollbar-color: #3f3f46 transparent; }
+.dark *::-webkit-scrollbar-thumb { background: #3f3f46; }
+.dark *::-webkit-scrollbar-thumb:hover { background: #52525b; }
+.dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #3f3f46; }
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #52525b; }
+
+/* Chart / league tokens — hex fills in Recharts ignore Tailwind classes */
+:root {
+  --se-ink: #18181b;
+  --se-muted: #94a3b8;
+  --se-grid: #e2e8f0;
+  --se-tooltip-bg: #ffffff;
+  --se-tooltip-border: #e2e8f0;
+  --se-cursor: #f8fafc;
+}
+html.dark {
+  --se-ink: #f4f4f5;
+  --se-muted: #a1a1aa;
+  --se-grid: #3f3f46;
+  --se-tooltip-bg: #18181b;
+  --se-tooltip-border: #3f3f46;
+  --se-cursor: #27272a;
 }
 
-/* ── Dividers ── */
-.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) { border-color: #37373c; }
-.dark .divide-zinc-200  > :not([hidden]) ~ :not([hidden]) { border-color: #37373c; }
+/*
+  Invert ink CTAs in dark mode. Zinc-900 buttons sit on zinc-900 cards after
+  the surface remap, so they vanish unless flipped. Add `dark-keep` to bands
+  that should stay a dark inset (teachers, flashcard backs, Max promo).
+  Unlayered so this wins over @layer base remaps.
+*/
+html.dark .bg-zinc-900.text-white:not(.dark-keep) {
+  background-color: #f4f4f5;
+  color: #18181b;
+  border-color: #e4e4e7;
+}
+html.dark .bg-zinc-900.text-white:not(.dark-keep) .text-white {
+  color: #18181b;
+}
+html.dark .bg-zinc-900.text-white:not(.dark-keep) :is(.text-white\/70, .text-white\/80, .text-white\/40, .border-t-white) {
+  color: rgb(24 24 27 / 0.7);
+  border-top-color: #18181b;
+}
+html.dark .bg-zinc-900.text-white:not(.dark-keep):hover,
+html.dark .hover\:bg-black:hover:not(.dark-keep) {
+  background-color: #ffffff;
+  color: #18181b;
+}
 
-/* ── Shadows (darken them) ── */
-.dark .shadow-sm  { box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.6); }
-.dark .shadow     { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.6), 0 1px 2px -1px rgb(0 0 0 / 0.6); }
-.dark .shadow-md  { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.6), 0 2px 4px -2px rgb(0 0 0 / 0.6); }
-.dark .shadow-lg  { box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.6); }
-.dark .shadow-xl  { box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6); }
-.dark .shadow-2xl { box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.8); }
+/* Progress fills are zinc-900 without text-white */
+html.dark .bg-zinc-900.rounded-full:not(.text-white):not(.dark-keep) {
+  background-color: #f4f4f5;
+}
 
-/* ── Scrollbar (dark mode) ── */
-.dark * { scrollbar-color: #4b4b52 transparent; }
-.dark *::-webkit-scrollbar-thumb { background: #4b4b52; }
-.dark *::-webkit-scrollbar-thumb:hover { background: #5c5c64; }
-.dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #4b4b52; }
-.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #5c5c64; }
+.league-tile {
+  background-color: var(--league-soft);
+  color: var(--league-ink);
+}
+html.dark .league-tile {
+  background-color: color-mix(in srgb, var(--league-ink) 22%, #18181b);
+  color: color-mix(in srgb, var(--league-ink) 70%, #fafafa);
+  border-color: color-mix(in srgb, var(--league-ink) 32%, #27272a);
+}
 
 /* ── Preview Mode (Teacher / Organization) ───────────────────────────────
    Teachers and Organizations can navigate freely and view every material —

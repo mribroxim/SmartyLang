@@ -3,6 +3,11 @@ import type { Level } from '../lib/reading-logic';
 import { getCMSDocument } from '../firebase';
 import { type ContentLang, cmsDocId, readStoredContentLang } from '../lib/contentLang';
 import { fetchLangPackJson } from '../lib/langPacks';
+import {
+  readStoredArabicDisplayMode,
+  transformArabicContent,
+  type ArabicDisplayMode,
+} from '../lib/arabicText';
 
 interface Question {
   id: number;
@@ -133,9 +138,17 @@ async function loadLangPackPassages(lang: Exclude<ContentLang, 'en'>): Promise<R
 /**
  * Exported so the admin panel can load built-in passages for a level to display/edit.
  */
-export async function loadBuiltInReadingPassages(level: Level, lang: ContentLang = 'en'): Promise<ReadingPassage[]> {
+export async function loadBuiltInReadingPassages(
+  level: Level,
+  lang: ContentLang = 'en',
+  arabicDisplayMode: ArabicDisplayMode = readStoredArabicDisplayMode(),
+): Promise<ReadingPassage[]> {
   const all = lang === 'en' ? await loadAllPassages() : await loadLangPackPassages(lang);
-  return all.filter(p => p.level.toLowerCase() === level.toLowerCase());
+  return transformArabicContent(
+    all.filter(p => p.level.toLowerCase() === level.toLowerCase()),
+    lang,
+    arabicDisplayMode,
+  );
 }
 
 /** Call after saving customComprehensiveReading to reset the cache. */
@@ -149,6 +162,7 @@ export function invalidateCompReadingCache(): void {
 export async function getReadingPassagesForLevel(
   level: Level,
   lang: ContentLang = readStoredContentLang(),
+  arabicDisplayMode: ArabicDisplayMode = readStoredArabicDisplayMode(),
 ): Promise<ReadingPassage[]> {
   const docId = cmsDocId('customComprehensiveReading', lang);
   const builtInPromise =
@@ -158,20 +172,25 @@ export async function getReadingPassagesForLevel(
 
   // If admin has saved a full override for this level, use it exclusively.
   if (doc?.override?.[level] !== undefined) {
-    return (doc.override[level] as ReadingPassage[]).filter(p => !p.archived);
+    return transformArabicContent(
+      (doc.override[level] as ReadingPassage[]).filter(p => !p.archived),
+      lang,
+      arabicDisplayMode,
+    );
   }
 
   // Otherwise merge built-in + legacy custom additions (non-archived).
   const builtIn = all.filter(p => p.level.toLowerCase() === level.toLowerCase());
   const custom: ReadingPassage[] = (doc?.byLevel?.[level] ?? []).filter((p: any) => p && !p.archived);
-  return [...builtIn, ...custom];
+  return transformArabicContent([...builtIn, ...custom], lang, arabicDisplayMode);
 }
 
 export async function getRandomReadingPassage(
   level: Level,
   lang: ContentLang = readStoredContentLang(),
+  arabicDisplayMode: ArabicDisplayMode = readStoredArabicDisplayMode(),
 ): Promise<ReadingPassage | null> {
-  const passages = await getReadingPassagesForLevel(level, lang);
+  const passages = await getReadingPassagesForLevel(level, lang, arabicDisplayMode);
   if (passages.length === 0) return null;
   return passages[Math.floor(Math.random() * passages.length)];
 }

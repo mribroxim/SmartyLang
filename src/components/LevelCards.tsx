@@ -49,9 +49,17 @@ export const LEVEL_THEMES = [
   },
 ] as const;
 
-export function LevelCardGrid({ children }: { children: React.ReactNode }) {
+export function LevelCardGrid({
+  children,
+  cols = 3,
+}: {
+  children: React.ReactNode;
+  /** Desktop columns: 2 avoids orphan last cards for even counts (e.g. 10 units). */
+  cols?: 2 | 3;
+}) {
+  const gridCols = cols === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-3';
   return (
-    <div className="flex flex-col gap-2.5 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5">
+    <div className={`flex flex-col gap-2.5 md:grid ${gridCols} md:gap-5`}>
       {children}
     </div>
   );
@@ -67,6 +75,7 @@ type LevelCardProps = {
   forYou?: boolean;
   certAwarded?: boolean;
   onCertClick?: () => void;
+  disabled?: boolean;
 };
 
 export const LevelCard: React.FC<LevelCardProps> = ({
@@ -79,13 +88,15 @@ export const LevelCard: React.FC<LevelCardProps> = ({
   forYou,
   certAwarded,
   onCertClick,
+  disabled,
 }) => {
   const theme = LEVEL_THEMES[themeIndex % LEVEL_THEMES.length];
   return (
     <button
       type="button"
-      onClick={onClick}
-      className={`group relative overflow-hidden bg-white dark:bg-zinc-900 p-4 md:p-7 rounded-2xl md:rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm hover:shadow-md md:hover:shadow-xl transition-all duration-300 text-left flex flex-row md:flex-col items-center md:items-stretch md:justify-between gap-3.5 md:min-h-[240px] ${theme.border} md:hover:-translate-y-1 active:scale-[0.99] ${forYou ? 'ring-1 ring-zinc-900 dark:ring-zinc-100' : ''}`}
+      disabled={disabled}
+      onClick={() => { if (!disabled) onClick(); }}
+      className={`group relative overflow-hidden bg-white dark:bg-zinc-900 p-4 md:p-7 rounded-2xl md:rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm transition-all duration-300 text-left flex flex-row md:flex-col items-center md:items-stretch md:justify-between gap-3.5 md:min-h-[240px] ${disabled ? 'opacity-50 cursor-not-allowed' : `${theme.border} hover:shadow-md md:hover:shadow-xl md:hover:-translate-y-1 active:scale-[0.99]`} ${forYou && !disabled ? 'ring-1 ring-zinc-900 dark:ring-zinc-100' : ''}`}
     >
       {(pct === 100 || certAwarded) && (
         <div className="absolute top-0 right-0 bg-emerald-500 text-white p-1.5 md:p-2 rounded-bl-2xl md:rounded-bl-3xl z-10">
@@ -147,6 +158,7 @@ type LibraryCardProps = {
   badge?: React.ReactNode;
   locked?: boolean;
   done?: boolean;
+  disabled?: boolean;
   onClick: () => void;
 };
 
@@ -157,14 +169,18 @@ export const LibraryCard: React.FC<LibraryCardProps> = ({
   badge,
   locked,
   done,
+  disabled,
   onClick,
 }) => {
   return (
     <button
       type="button"
-      onClick={onClick}
-      className={`w-full h-full bg-white dark:bg-zinc-900 p-5 md:p-6 rounded-2xl border flex flex-col text-left shadow-sm hover:shadow-md hover:border-zinc-400 transition-all cursor-pointer group gap-3 ${
-        done ? 'border-emerald-200 dark:border-emerald-900' : 'border-slate-200 dark:border-zinc-800'
+      disabled={disabled}
+      onClick={() => { if (!disabled) onClick(); }}
+      className={`w-full h-full bg-white dark:bg-zinc-900 p-5 md:p-6 rounded-2xl border flex flex-col text-left shadow-sm transition-all group gap-3 ${
+        disabled
+          ? 'opacity-55 cursor-not-allowed border-slate-200 dark:border-zinc-800'
+          : `hover:shadow-md hover:border-zinc-400 cursor-pointer ${done ? 'border-emerald-200 dark:border-emerald-900' : 'border-slate-200 dark:border-zinc-800'}`
       }`}
     >
       <div className="flex items-start gap-2.5 flex-1 min-w-0">

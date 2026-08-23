@@ -21,7 +21,7 @@ interface Props {
 
 export function ComprehensionQuestions({ text, contentLang, onBack, onComplete, hideBack }: Props) {
   const questions = useMemo(
-    () => generateComprehensionQuestions(text.text, text.vocabulary || [], contentLang, text.id),
+    () => generateComprehensionQuestions(text.text, text.vocabulary || [], contentLang, text.id, 8, text.format),
     [text, contentLang],
   );
   const [index, setIndex] = useState(0);

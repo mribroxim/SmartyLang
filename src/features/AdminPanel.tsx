@@ -28,7 +28,7 @@ type AccountType = 'user' | 'smarty-max' | 'teacher' | 'organization' | 'admin' 
 
 const TYPE_LABEL: Record<AccountType, string> = {
   'user':            'User',
-  'smarty-max':      'Smarty Max',
+  'smarty-max':      'SmartyLang Max',
   'teacher':         'Teacher',
   'organization':    'Organization',
   'admin':           'Admin',
@@ -63,7 +63,7 @@ const accountTypeOf = (p: UserAccountProfile): AccountType => {
 
 /** Plan-only label (kept for the Payments table / financials breakdown). */
 const PLAN_LABEL: Record<PlanId, string> = {
-  'smarty-max':   'Smarty Max',
+  'smarty-max':   'SmartyLang Max',
   'teacher':      'Teacher',
   'organization': 'Organization',
 };
@@ -173,7 +173,7 @@ export function AdminPanel() {
 
   /**
    * Change a user's account type. This single call updates both role and plan in
-   * Firestore — User clears the plan + sets role=student, Smarty Max sets plan
+   * Firestore — User clears the plan + sets role=student, SmartyLang Max sets plan
    * but keeps the student role, Teacher/Organization swap the role accordingly.
    */
   const onAccountTypeChange = async (p: UserAccountProfile, next: AccountType) => {
@@ -349,7 +349,7 @@ export function AdminPanel() {
                                   title="Change account type"
                                 >
                                   <option value="user">User</option>
-                                  <option value="smarty-max">Smarty Max</option>
+                                  <option value="smarty-max">SmartyLang Max</option>
                                   <option value="teacher">Teacher</option>
                                   <option value="organization">Organization</option>
                                   <option value="content-manager">Content Manager</option>
@@ -399,7 +399,7 @@ export function AdminPanel() {
                 <div className="text-xs text-slate-500 mt-1">Recent subscription revenue</div>
               </div>
               <div className={`${seCard} p-5`}>
-                <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">Smarty Max</div>
+                <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">SmartyLang Max</div>
                 <div className="text-xl lg:text-3xl font-black text-amber-700">{financials.byPlan['smarty-max'].count}</div>
                 <div className="text-xs text-slate-500 mt-1">{fmtUSD(financials.byPlan['smarty-max'].revenue)} revenue</div>
               </div>

@@ -139,7 +139,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl mb-5 shadow-2xl">
             <span className="font-serif font-black text-2xl text-zinc-900">S</span>
           </div>
-          <h1 className="text-2xl sm:text-4xl font-serif font-black text-white tracking-tight mb-2">SMARTY</h1>
+          <h1 className="text-2xl sm:text-4xl font-serif font-black text-white tracking-tight mb-2">SmartyLang</h1>
           <p className="text-zinc-400 text-base">{t('auth.tagline')}</p>
         </div>
 

@@ -1,10 +1,11 @@
 /**
- * Text-to-speech: Google Cloud TTS via /api/tts, with browser speechSynthesis fallback.
- * Lyric sync: prefers Google SSML mark timepoints (accurate for every language);
+ * Text-to-speech: Azure Neural TTS via /api/tts, with browser speechSynthesis fallback.
+ * Lyric sync: Azure Speech SDK bookmark timepoints (accurate per word);
  * falls back to language-aware duration weights + rAF, or native word-boundary events.
  */
 
 import { getCachedTtsBlob, setCachedTtsBlob, enqueueTtsRetry } from './networkCache';
+import { snapSpeechRate } from './speechRates';
 
 let _audioFallback: HTMLAudioElement | null = null;
 let _objectUrl: string | null = null;
@@ -23,6 +24,8 @@ export type SpeakOpts = {
   onWordIndex?: (index: number) => void;
   /** Word list used for lyric sync (should match on-screen tokens). */
   words?: string[];
+  /** Optional Azure voice override (dialogue gender pairing). */
+  voice?: string;
 };
 
 type Timepoint = { index: number; timeSeconds: number };
@@ -331,9 +334,15 @@ function playUrlWithSync(
   });
 }
 
-async function fetchCloudMp3(text: string, lang: string, rate: number): Promise<string | null> {
-  const safeRate = Number.isFinite(Number(rate)) ? Number(rate) : 1.0;
-  const cacheKey = `${lang}|${safeRate.toFixed(2)}|${text}`;
+async function fetchCloudMp3(
+  text: string,
+  lang: string,
+  rate: number,
+  voice?: string,
+): Promise<string | null> {
+  const clamped = snapSpeechRate(rate);
+  const voiceTag = voice || '';
+  const cacheKey = `${lang}|${voiceTag}|${clamped.toFixed(2)}|${text}`;
   const cached = blobCache.get(cacheKey);
   if (cached) return cached;
 
@@ -351,10 +360,10 @@ async function fetchCloudMp3(text: string, lang: string, rate: number): Promise<
     const res = await fetch('/api/tts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text, lang, rate: safeRate }),
+      body: JSON.stringify({ text, lang, rate: clamped, ...(voice ? { voice } : {}) }),
     });
     if (!res.ok) {
-      enqueueTtsRetry(text, lang, safeRate);
+      enqueueTtsRetry(text, lang, clamped);
       return null;
     }
     const blob = await res.blob();
@@ -364,7 +373,7 @@ async function fetchCloudMp3(text: string, lang: string, rate: number): Promise<
     rememberBlobUrl(cacheKey, url);
     return url;
   } catch {
-    enqueueTtsRetry(text, lang, safeRate);
+    enqueueTtsRetry(text, lang, clamped);
     return null;
   }
 }
@@ -374,15 +383,24 @@ async function fetchCloudSynced(
   lang: string,
   rate: number,
   words: string[],
+  voice?: string,
 ): Promise<{ url: string; timepoints: Timepoint[] } | null> {
-  const safeRate = Number.isFinite(Number(rate)) ? Number(rate) : 1.0;
-  const cacheKey = `sync|${lang}|${safeRate.toFixed(2)}|${words.length}|${text}`;
+  const clamped = snapSpeechRate(rate);
+  const voiceTag = voice || '';
+  const cacheKey = `sync|${lang}|${voiceTag}|${clamped.toFixed(2)}|${words.length}|${text}`;
   // Don't reuse blob cache for sync JSON; always request (server caches)
   try {
     const res = await fetch('/api/tts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text, lang, rate: safeRate, sync: true, words }),
+      body: JSON.stringify({
+        text,
+        lang,
+        rate: clamped,
+        sync: true,
+        words,
+        ...(voice ? { voice } : {}),
+      }),
     });
     if (!res.ok) return null;
     const ct = res.headers.get('content-type') || '';
@@ -511,11 +529,12 @@ async function speakAsync(
 ): Promise<boolean> {
   const clean = text.trim();
   if (!clean) return false;
-  rate = Number.isFinite(Number(rate)) ? Number(rate) : 1.0;
+  rate = snapSpeechRate(Number.isFinite(Number(rate)) ? Number(rate) : 1.0);
 
   const gen = ++_speakGen;
   const words = (opts?.words?.length ? opts.words : clean.split(/\s+/).filter(Boolean));
   const onWordIndex = opts?.onWordIndex;
+  const voice = opts?.voice;
   const wantSync = !!(onWordIndex && words.length);
 
   let lastIdx = -1;
@@ -537,7 +556,7 @@ async function speakAsync(
       const chunkText = textSliceForWords(clean, words, start, end);
       if (!chunkText) continue;
 
-      const synced = await fetchCloudSynced(chunkText, lang, rate, chunkWords);
+      const synced = await fetchCloudSynced(chunkText, lang, rate, chunkWords, voice);
       if (synced) {
         const localCount = chunkWords.length;
         const ok = await playUrlWithSync(synced.url, gen, {
@@ -557,7 +576,7 @@ async function speakAsync(
 
       // Cloud failed for this chunk — try plain cloud then native for remainder
       if (gen !== _speakGen) return false;
-      const plainUrl = await fetchCloudMp3(chunkText, lang, rate);
+      const plainUrl = await fetchCloudMp3(chunkText, lang, rate, voice);
       if (plainUrl) {
         const ok = await playUrlWithSync(plainUrl, gen, {
           wordCount: chunkWords.length,
@@ -582,7 +601,7 @@ async function speakAsync(
   const chunks = chunkSpeechText(clean);
   for (const chunk of chunks) {
     if (gen !== _speakGen) return false;
-    const url = await fetchCloudMp3(chunk, lang, rate);
+    const url = await fetchCloudMp3(chunk, lang, rate, voice);
     if (!url) {
       if (gen !== _speakGen) return false;
       return speakNativeAsync(

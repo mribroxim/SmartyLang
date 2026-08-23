@@ -5,7 +5,7 @@
 import type { ContentLang } from './contentLang';
 
 /** Bump when lang-pack JSON content changes so browsers skip stale CDN caches. */
-const LANG_PACK_CACHE_BUST = 'v20260809';
+const LANG_PACK_CACHE_BUST = 'v20260821c';
 
 export function langPackUrl(lang: Exclude<ContentLang, 'en'>, ...parts: string[]): string {
   return `/data/lang-packs/${lang}/${parts.join('/')}?${LANG_PACK_CACHE_BUST}`;

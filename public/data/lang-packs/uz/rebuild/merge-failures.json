@@ -1,0 +1,1054 @@
+{
+  "schemaFails": [
+    {
+      "id": "e2",
+      "level": "Elementary",
+      "errors": [
+        "word count 128 < 160",
+        "much shorter than EN (128 vs 249)"
+      ]
+    },
+    {
+      "id": "e3",
+      "level": "Elementary",
+      "errors": [
+        "word count 147 < 160"
+      ]
+    },
+    {
+      "id": "e4",
+      "level": "Elementary",
+      "errors": [
+        "word count 144 < 160"
+      ]
+    },
+    {
+      "id": "e5",
+      "level": "Elementary",
+      "errors": [
+        "word count 155 < 160"
+      ]
+    },
+    {
+      "id": "e6",
+      "level": "Elementary",
+      "errors": [
+        "word count 156 < 160"
+      ]
+    },
+    {
+      "id": "e7",
+      "level": "Elementary",
+      "errors": [
+        "word count 137 < 160"
+      ]
+    },
+    {
+      "id": "e8",
+      "level": "Elementary",
+      "errors": [
+        "word count 134 < 160",
+        "much shorter than EN (134 vs 244)"
+      ]
+    },
+    {
+      "id": "e10",
+      "level": "Elementary",
+      "errors": [
+        "word count 138 < 160"
+      ]
+    },
+    {
+      "id": "e11",
+      "level": "Elementary",
+      "errors": [
+        "word count 143 < 160"
+      ]
+    },
+    {
+      "id": "e12",
+      "level": "Elementary",
+      "errors": [
+        "word count 124 < 160"
+      ]
+    },
+    {
+      "id": "e13",
+      "level": "Elementary",
+      "errors": [
+        "word count 117 < 160"
+      ]
+    },
+    {
+      "id": "e14",
+      "level": "Elementary",
+      "errors": [
+        "word count 120 < 160",
+        "much shorter than EN (120 vs 235)"
+      ]
+    },
+    {
+      "id": "e15",
+      "level": "Elementary",
+      "errors": [
+        "word count 129 < 160",
+        "much shorter than EN (129 vs 243)"
+      ]
+    },
+    {
+      "id": "e16",
+      "level": "Elementary",
+      "errors": [
+        "word count 129 < 160",
+        "much shorter than EN (129 vs 239)"
+      ]
+    },
+    {
+      "id": "e17",
+      "level": "Elementary",
+      "errors": [
+        "word count 131 < 160"
+      ]
+    },
+    {
+      "id": "e18",
+      "level": "Elementary",
+      "errors": [
+        "word count 117 < 160"
+      ]
+    },
+    {
+      "id": "e19",
+      "level": "Elementary",
+      "errors": [
+        "word count 118 < 160",
+        "much shorter than EN (118 vs 221)"
+      ]
+    },
+    {
+      "id": "e20",
+      "level": "Elementary",
+      "errors": [
+        "word count 126 < 160"
+      ]
+    },
+    {
+      "id": "e21",
+      "level": "Elementary",
+      "errors": [
+        "word count 121 < 160",
+        "much shorter than EN (121 vs 231)"
+      ]
+    },
+    {
+      "id": "e22",
+      "level": "Elementary",
+      "errors": [
+        "word count 119 < 160"
+      ]
+    },
+    {
+      "id": "e23",
+      "level": "Elementary",
+      "errors": [
+        "word count 120 < 160",
+        "much shorter than EN (120 vs 232)"
+      ]
+    },
+    {
+      "id": "e24",
+      "level": "Elementary",
+      "errors": [
+        "word count 121 < 160",
+        "much shorter than EN (121 vs 246)"
+      ]
+    },
+    {
+      "id": "e25",
+      "level": "Elementary",
+      "errors": [
+        "word count 134 < 160"
+      ]
+    },
+    {
+      "id": "e26",
+      "level": "Elementary",
+      "errors": [
+        "word count 129 < 160",
+        "much shorter than EN (129 vs 244)"
+      ]
+    },
+    {
+      "id": "e27",
+      "level": "Elementary",
+      "errors": [
+        "word count 115 < 160",
+        "much shorter than EN (115 vs 212)"
+      ]
+    },
+    {
+      "id": "e28",
+      "level": "Elementary",
+      "errors": [
+        "word count 105 < 160",
+        "much shorter than EN (105 vs 233)"
+      ]
+    },
+    {
+      "id": "e29",
+      "level": "Elementary",
+      "errors": [
+        "word count 118 < 160",
+        "much shorter than EN (118 vs 222)"
+      ]
+    },
+    {
+      "id": "e30",
+      "level": "Elementary",
+      "errors": [
+        "word count 123 < 160",
+        "much shorter than EN (123 vs 236)"
+      ]
+    },
+    {
+      "id": "e31",
+      "level": "Elementary",
+      "errors": [
+        "word count 110 < 160",
+        "much shorter than EN (110 vs 224)"
+      ]
+    },
+    {
+      "id": "e32",
+      "level": "Elementary",
+      "errors": [
+        "word count 118 < 160",
+        "much shorter than EN (118 vs 229)"
+      ]
+    },
+    {
+      "id": "e33",
+      "level": "Elementary",
+      "errors": [
+        "word count 115 < 160",
+        "much shorter than EN (115 vs 221)"
+      ]
+    },
+    {
+      "id": "e34",
+      "level": "Elementary",
+      "errors": [
+        "word count 95 < 160",
+        "much shorter than EN (95 vs 233)"
+      ]
+    },
+    {
+      "id": "e35",
+      "level": "Elementary",
+      "errors": [
+        "word count 105 < 160",
+        "much shorter than EN (105 vs 228)"
+      ]
+    },
+    {
+      "id": "e36",
+      "level": "Elementary",
+      "errors": [
+        "word count 105 < 160",
+        "much shorter than EN (105 vs 227)"
+      ]
+    },
+    {
+      "id": "e37",
+      "level": "Elementary",
+      "errors": [
+        "word count 113 < 160",
+        "much shorter than EN (113 vs 214)"
+      ]
+    },
+    {
+      "id": "e38",
+      "level": "Elementary",
+      "errors": [
+        "word count 108 < 160",
+        "much shorter than EN (108 vs 217)"
+      ]
+    },
+    {
+      "id": "e39",
+      "level": "Elementary",
+      "errors": [
+        "word count 92 < 160",
+        "much shorter than EN (92 vs 214)"
+      ]
+    },
+    {
+      "id": "e40",
+      "level": "Elementary",
+      "errors": [
+        "word count 103 < 160",
+        "much shorter than EN (103 vs 227)"
+      ]
+    },
+    {
+      "id": "e41",
+      "level": "Elementary",
+      "errors": [
+        "word count 116 < 160",
+        "much shorter than EN (116 vs 225)"
+      ]
+    },
+    {
+      "id": "e42",
+      "level": "Elementary",
+      "errors": [
+        "word count 106 < 160",
+        "much shorter than EN (106 vs 227)"
+      ]
+    },
+    {
+      "id": "e43",
+      "level": "Elementary",
+      "errors": [
+        "word count 101 < 160",
+        "much shorter than EN (101 vs 230)"
+      ]
+    },
+    {
+      "id": "e44",
+      "level": "Elementary",
+      "errors": [
+        "word count 103 < 160",
+        "much shorter than EN (103 vs 221)"
+      ]
+    },
+    {
+      "id": "e45",
+      "level": "Elementary",
+      "errors": [
+        "word count 106 < 160",
+        "much shorter than EN (106 vs 219)"
+      ]
+    },
+    {
+      "id": "e46",
+      "level": "Elementary",
+      "errors": [
+        "word count 100 < 160",
+        "much shorter than EN (100 vs 223)"
+      ]
+    },
+    {
+      "id": "e47",
+      "level": "Elementary",
+      "errors": [
+        "word count 112 < 160",
+        "much shorter than EN (112 vs 212)"
+      ]
+    },
+    {
+      "id": "e48",
+      "level": "Elementary",
+      "errors": [
+        "word count 89 < 160",
+        "much shorter than EN (89 vs 229)"
+      ]
+    },
+    {
+      "id": "e49",
+      "level": "Elementary",
+      "errors": [
+        "word count 105 < 160",
+        "much shorter than EN (105 vs 220)"
+      ]
+    },
+    {
+      "id": "e50",
+      "level": "Elementary",
+      "errors": [
+        "word count 133 < 160"
+      ]
+    },
+    {
+      "id": "e51",
+      "level": "Elementary",
+      "errors": [
+        "word count 104 < 160",
+        "much shorter than EN (104 vs 226)"
+      ]
+    },
+    {
+      "id": "e52",
+      "level": "Elementary",
+      "errors": [
+        "word count 99 < 160",
+        "much shorter than EN (99 vs 206)"
+      ]
+    },
+    {
+      "id": "e53",
+      "level": "Elementary",
+      "errors": [
+        "word count 91 < 160",
+        "much shorter than EN (91 vs 217)"
+      ]
+    },
+    {
+      "id": "e54",
+      "level": "Elementary",
+      "errors": [
+        "word count 98 < 160",
+        "much shorter than EN (98 vs 202)"
+      ]
+    },
+    {
+      "id": "e55",
+      "level": "Elementary",
+      "errors": [
+        "word count 95 < 160",
+        "much shorter than EN (95 vs 241)"
+      ]
+    },
+    {
+      "id": "e56",
+      "level": "Elementary",
+      "errors": [
+        "word count 93 < 160",
+        "much shorter than EN (93 vs 248)"
+      ]
+    },
+    {
+      "id": "e57",
+      "level": "Elementary",
+      "errors": [
+        "word count 90 < 160",
+        "much shorter than EN (90 vs 229)"
+      ]
+    },
+    {
+      "id": "e58",
+      "level": "Elementary",
+      "errors": [
+        "word count 105 < 160",
+        "much shorter than EN (105 vs 227)"
+      ]
+    },
+    {
+      "id": "e59",
+      "level": "Elementary",
+      "errors": [
+        "word count 88 < 160",
+        "much shorter than EN (88 vs 217)"
+      ]
+    },
+    {
+      "id": "e60",
+      "level": "Elementary",
+      "errors": [
+        "word count 91 < 160",
+        "much shorter than EN (91 vs 227)"
+      ]
+    },
+    {
+      "id": "e61",
+      "level": "Elementary",
+      "errors": [
+        "word count 91 < 160",
+        "much shorter than EN (91 vs 215)"
+      ]
+    },
+    {
+      "id": "e62",
+      "level": "Elementary",
+      "errors": [
+        "word count 84 < 160",
+        "much shorter than EN (84 vs 248)"
+      ]
+    },
+    {
+      "id": "e63",
+      "level": "Elementary",
+      "errors": [
+        "word count 95 < 160",
+        "much shorter than EN (95 vs 217)"
+      ]
+    },
+    {
+      "id": "e64",
+      "level": "Elementary",
+      "errors": [
+        "word count 85 < 160",
+        "much shorter than EN (85 vs 225)"
+      ]
+    },
+    {
+      "id": "e65",
+      "level": "Elementary",
+      "errors": [
+        "word count 101 < 160",
+        "much shorter than EN (101 vs 212)"
+      ]
+    },
+    {
+      "id": "e66",
+      "level": "Elementary",
+      "errors": [
+        "word count 81 < 160",
+        "much shorter than EN (81 vs 223)"
+      ]
+    },
+    {
+      "id": "e67",
+      "level": "Elementary",
+      "errors": [
+        "word count 87 < 160",
+        "much shorter than EN (87 vs 215)"
+      ]
+    },
+    {
+      "id": "e68",
+      "level": "Elementary",
+      "errors": [
+        "word count 83 < 160",
+        "much shorter than EN (83 vs 231)"
+      ]
+    },
+    {
+      "id": "e69",
+      "level": "Elementary",
+      "errors": [
+        "word count 89 < 160",
+        "much shorter than EN (89 vs 229)"
+      ]
+    },
+    {
+      "id": "e70",
+      "level": "Elementary",
+      "errors": [
+        "word count 88 < 160",
+        "much shorter than EN (88 vs 237)"
+      ]
+    },
+    {
+      "id": "e71",
+      "level": "Elementary",
+      "errors": [
+        "word count 79 < 160",
+        "much shorter than EN (79 vs 216)"
+      ]
+    },
+    {
+      "id": "e72",
+      "level": "Elementary",
+      "errors": [
+        "word count 79 < 160",
+        "much shorter than EN (79 vs 209)"
+      ]
+    },
+    {
+      "id": "e73",
+      "level": "Elementary",
+      "errors": [
+        "word count 79 < 160",
+        "much shorter than EN (79 vs 239)"
+      ]
+    },
+    {
+      "id": "e74",
+      "level": "Elementary",
+      "errors": [
+        "word count 76 < 160",
+        "much shorter than EN (76 vs 223)"
+      ]
+    },
+    {
+      "id": "e75",
+      "level": "Elementary",
+      "errors": [
+        "word count 72 < 160",
+        "much shorter than EN (72 vs 232)"
+      ]
+    },
+    {
+      "id": "e76",
+      "level": "Elementary",
+      "errors": [
+        "word count 75 < 160",
+        "much shorter than EN (75 vs 214)"
+      ]
+    },
+    {
+      "id": "e77",
+      "level": "Elementary",
+      "errors": [
+        "word count 78 < 160",
+        "much shorter than EN (78 vs 221)"
+      ]
+    },
+    {
+      "id": "e78",
+      "level": "Elementary",
+      "errors": [
+        "word count 84 < 160",
+        "much shorter than EN (84 vs 243)"
+      ]
+    },
+    {
+      "id": "e79",
+      "level": "Elementary",
+      "errors": [
+        "word count 76 < 160",
+        "much shorter than EN (76 vs 226)"
+      ]
+    },
+    {
+      "id": "e80",
+      "level": "Elementary",
+      "errors": [
+        "word count 75 < 160",
+        "much shorter than EN (75 vs 228)"
+      ]
+    },
+    {
+      "id": "e81",
+      "level": "Elementary",
+      "errors": [
+        "word count 83 < 160",
+        "much shorter than EN (83 vs 224)"
+      ]
+    },
+    {
+      "id": "e82",
+      "level": "Elementary",
+      "errors": [
+        "word count 78 < 160",
+        "much shorter than EN (78 vs 233)"
+      ]
+    },
+    {
+      "id": "e83",
+      "level": "Elementary",
+      "errors": [
+        "word count 72 < 160",
+        "much shorter than EN (72 vs 217)"
+      ]
+    },
+    {
+      "id": "e84",
+      "level": "Elementary",
+      "errors": [
+        "word count 72 < 160",
+        "much shorter than EN (72 vs 228)"
+      ]
+    },
+    {
+      "id": "e85",
+      "level": "Elementary",
+      "errors": [
+        "word count 60 < 160",
+        "much shorter than EN (60 vs 245)"
+      ]
+    },
+    {
+      "id": "e86",
+      "level": "Elementary",
+      "errors": [
+        "word count 66 < 160",
+        "much shorter than EN (66 vs 224)"
+      ]
+    },
+    {
+      "id": "e87",
+      "level": "Elementary",
+      "errors": [
+        "word count 68 < 160",
+        "much shorter than EN (68 vs 222)"
+      ]
+    },
+    {
+      "id": "e88",
+      "level": "Elementary",
+      "errors": [
+        "word count 69 < 160",
+        "much shorter than EN (69 vs 216)"
+      ]
+    },
+    {
+      "id": "e89",
+      "level": "Elementary",
+      "errors": [
+        "word count 67 < 160",
+        "much shorter than EN (67 vs 219)"
+      ]
+    },
+    {
+      "id": "e90",
+      "level": "Elementary",
+      "errors": [
+        "word count 72 < 160",
+        "much shorter than EN (72 vs 243)"
+      ]
+    },
+    {
+      "id": "e91",
+      "level": "Elementary",
+      "errors": [
+        "word count 63 < 160",
+        "much shorter than EN (63 vs 218)"
+      ]
+    },
+    {
+      "id": "e92",
+      "level": "Elementary",
+      "errors": [
+        "word count 67 < 160",
+        "much shorter than EN (67 vs 210)"
+      ]
+    },
+    {
+      "id": "e93",
+      "level": "Elementary",
+      "errors": [
+        "word count 63 < 160",
+        "much shorter than EN (63 vs 215)"
+      ]
+    },
+    {
+      "id": "e94",
+      "level": "Elementary",
+      "errors": [
+        "word count 65 < 160",
+        "much shorter than EN (65 vs 237)"
+      ]
+    },
+    {
+      "id": "e95",
+      "level": "Elementary",
+      "errors": [
+        "word count 65 < 160",
+        "much shorter than EN (65 vs 218)"
+      ]
+    },
+    {
+      "id": "e96",
+      "level": "Elementary",
+      "errors": [
+        "word count 52 < 160",
+        "much shorter than EN (52 vs 249)"
+      ]
+    },
+    {
+      "id": "e97",
+      "level": "Elementary",
+      "errors": [
+        "word count 60 < 160",
+        "much shorter than EN (60 vs 249)"
+      ]
+    },
+    {
+      "id": "e98",
+      "level": "Elementary",
+      "errors": [
+        "word count 75 < 160",
+        "much shorter than EN (75 vs 238)"
+      ]
+    },
+    {
+      "id": "e99",
+      "level": "Elementary",
+      "errors": [
+        "word count 67 < 160",
+        "much shorter than EN (67 vs 213)"
+      ]
+    },
+    {
+      "id": "e100",
+      "level": "Elementary",
+      "errors": [
+        "word count 69 < 160",
+        "much shorter than EN (69 vs 239)"
+      ]
+    },
+    {
+      "id": "a41",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a42",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a43",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a44",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a47",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a48",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a49",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a53",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a55",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a60",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a62",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a63",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a64",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a65",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a66",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a67",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a69",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a71",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a72",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a73",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a74",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a75",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a76",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a77",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a78",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a79",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (0)"
+      ]
+    },
+    {
+      "id": "a80",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a81",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (0)"
+      ]
+    },
+    {
+      "id": "a82",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a84",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a85",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (0)"
+      ]
+    },
+    {
+      "id": "a86",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (0)"
+      ]
+    },
+    {
+      "id": "a87",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a88",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (0)"
+      ]
+    },
+    {
+      "id": "a89",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a90",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a96",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a97",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (1)"
+      ]
+    },
+    {
+      "id": "a98",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    },
+    {
+      "id": "a99",
+      "level": "Advanced",
+      "errors": [
+        "vocab too small (2)"
+      ]
+    }
+  ],
+  "senseFails": []
+}

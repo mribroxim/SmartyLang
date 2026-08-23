@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { Level } from '../lib/reading-logic';
 import { useLevelTexts } from '../data/levelTexts';
 import { WordPopover, sentenceAroundWord } from '../components/WordPopover';
@@ -11,7 +11,16 @@ import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
 import { vocabStorageKey } from '../lib/contentLang';
 import { speakTextAsync, cancelSpeech } from '../lib/speech';
-import { isRtlLang, getPronunciationProfile } from '../lib/pronunciationProfile';
+import { isRtlLang, getPronunciationProfile, tokenizeForLang } from '../lib/pronunciationProfile';
+import { looksLikeDialogue, parseDialogue, getSpeakablePassageText } from '../lib/dialogueText';
+import { assignDialogueVoices } from '../lib/dialogueVoices';
+import {
+  SPEECH_RATE_PRESETS,
+  SPEECH_RATE_LABELS,
+  snapSpeechRate,
+  speechRateFromIndex,
+  speechRateToIndex,
+} from '../lib/speechRates';
 import { consumeFlag, READING_RESUME_FLAG, loadReadingSession } from '../lib/midSession';
 import { sessionsForLang, matchesContentLang } from '../lib/activityMeta';
 import { ScreenShell, HubRow } from '../components/ScreenShell';
@@ -144,6 +153,23 @@ export function ReadingView(props: ReadingViewProps) {
   } = props;
 
   const effectiveView = lessonEmbed ? 'practice' : readingView;
+
+  const dialogue = useMemo(() => {
+    const raw = typeof currentTextObj?.text === 'string' ? currentTextObj.text : '';
+    if (!looksLikeDialogue(raw, currentTextObj?.format)) {
+      return null;
+    }
+    const parsed = parseDialogue(raw);
+    if (!parsed.isDialogue) return null;
+    let offset = 0;
+    const turns = parsed.turns.map((t) => {
+      const words = tokenizeForLang(t.line, contentLang);
+      const start = offset;
+      offset += words.length;
+      return { ...t, words, startIndex: start };
+    });
+    return { turns, speakableText: parsed.speakableText };
+  }, [currentTextObj?.text, currentTextObj?.format, contentLang]);
 
   // Dashboard / flag-driven resume of mid-session reading
   useEffect(() => {
@@ -625,15 +651,18 @@ export function ReadingView(props: ReadingViewProps) {
                       <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider shrink-0">Speed</span>
                       <input
                         type="range"
-                        min="0.5"
-                        max="1.25"
-                        step="0.05"
-                        value={speechRate}
-                        onChange={(e) => setSpeechRate(parseFloat(e.target.value))}
+                        min={0}
+                        max={SPEECH_RATE_PRESETS.length - 1}
+                        step={1}
+                        value={speechRateToIndex(speechRate)}
+                        onChange={(e) => setSpeechRate(speechRateFromIndex(parseInt(e.target.value, 10)))}
                         className="flex-1 min-w-0 max-w-[7rem] h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-zinc-900"
                         aria-label="Adjust speech speed"
+                        aria-valuetext={SPEECH_RATE_LABELS[snapSpeechRate(speechRate)]}
                       />
-                      <span className="text-[10px] font-mono font-bold text-slate-600 w-8 text-right">{speechRate.toFixed(2)}×</span>
+                      <span className="text-[10px] font-mono font-bold text-slate-600 w-12 text-right">
+                        {SPEECH_RATE_LABELS[snapSpeechRate(speechRate)]}
+                      </span>
                     </div>
                   </div>
                   <button
@@ -643,17 +672,40 @@ export function ReadingView(props: ReadingViewProps) {
                         stopPassageListen();
                         return;
                       }
-                      const passage =
-                        (typeof currentTextObj?.text === 'string' && currentTextObj.text.trim())
-                          || sourceWords.join(' ');
-                      if (!passage.trim()) return;
+                      const raw =
+                        typeof currentTextObj?.text === 'string' ? currentTextObj.text : '';
                       setIsSpeakingPassage(true);
                       setListenWordIndex(0);
                       try {
-                        await speakTextAsync(passage, speechRate, speechLocale, {
-                          words: sourceWords,
-                          onWordIndex: setListenWordIndex,
-                        });
+                        if (dialogue) {
+                          const voiceMap = assignDialogueVoices(
+                            dialogue.turns.map((t) => t.speaker),
+                            (speechLocale || contentLang || 'en').split('-')[0].toLowerCase(),
+                          );
+                          for (const turn of dialogue.turns) {
+                            if (!turn.words.length) continue;
+                            const voice = turn.speaker
+                              ? voiceMap.get(turn.speaker)
+                              : undefined;
+                            const ok = await speakTextAsync(turn.line, speechRate, speechLocale, {
+                              words: turn.words,
+                              voice,
+                              onWordIndex: (localIdx) => {
+                                setListenWordIndex(turn.startIndex + localIdx);
+                              },
+                            });
+                            if (!ok) break;
+                          }
+                        } else {
+                          const passage =
+                            getSpeakablePassageText(raw, currentTextObj?.format).trim()
+                            || sourceWords.join(' ');
+                          if (!passage.trim()) return;
+                          await speakTextAsync(passage, speechRate, speechLocale, {
+                            words: sourceWords,
+                            onWordIndex: setListenWordIndex,
+                          });
+                        }
                       } finally {
                         setIsSpeakingPassage(false);
                         setListenWordIndex(-1);
@@ -684,7 +736,8 @@ export function ReadingView(props: ReadingViewProps) {
                 fontScale === 4 ? 'text-2xl md:text-4xl' :
                 'text-3xl md:text-5xl'
               }`}>
-                {sourceWords.map((word, i) => {
+                {(() => {
+                  const renderWord = (word: string, i: number) => {
                   const status = displayStatuses[i];
                   let colorClass = 'text-slate-800 transition-colors duration-300 hover:text-zinc-700 cursor-pointer';
                   let extraElements = null;
@@ -758,7 +811,29 @@ export function ReadingView(props: ReadingViewProps) {
                       {extraElements}
                     </span>
                   );
-                })}
+                  };
+
+                  if (dialogue) {
+                    return (
+                      <div className="flex flex-col gap-4 md:gap-5">
+                        {dialogue.turns.map((turn, ti) => (
+                          <div key={ti} className="block">
+                            {turn.speaker ? (
+                              <div className="font-sans text-[0.65em] md:text-[0.55em] font-bold uppercase tracking-wider text-zinc-500 mb-1 select-none pointer-events-none">
+                                {turn.speaker}
+                              </div>
+                            ) : null}
+                            <div className="block">
+                              {turn.words.map((word, wi) => renderWord(word, turn.startIndex + wi))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  }
+
+                  return sourceWords.map((word, i) => renderWord(word, i));
+                })()}
               </div>
 
               {currentTextObj.vocabulary && currentTextObj.vocabulary.length > 0 && (

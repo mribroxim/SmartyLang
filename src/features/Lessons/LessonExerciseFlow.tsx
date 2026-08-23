@@ -114,9 +114,9 @@ export function LessonExerciseFlow({
             —
           </button>
         </div>
-        <div className="h-2 bg-slate-200 rounded-full mb-4 overflow-hidden">
+        <div className="h-2 bg-slate-200 dark:bg-zinc-800 rounded-full mb-4 overflow-hidden">
           <div
-            className="h-full bg-zinc-900 rounded-full transition-all duration-300"
+            className="h-full bg-zinc-900 dark:bg-zinc-100 rounded-full transition-all duration-300"
             style={{ width: `${((index + (unlock.exerciseBest[currentType] != null ? 1 : 0)) / types.length) * 100}%` }}
           />
         </div>
@@ -157,8 +157,8 @@ export function LessonExerciseFlow({
       <p className="text-slate-500 text-sm mb-4">
         Complete each step with ≥{LESSON_PASS_THRESHOLD}% · {prog.done}/{types.length} done
       </p>
-      <div className="h-2 bg-slate-200 rounded-full mb-6 overflow-hidden">
-        <div className="h-full bg-zinc-900 rounded-full transition-all" style={{ width: `${progressPct}%` }} />
+      <div className="h-2 bg-slate-200 dark:bg-zinc-800 rounded-full mb-6 overflow-hidden">
+        <div className="h-full bg-zinc-900 dark:bg-zinc-100 rounded-full transition-all" style={{ width: `${progressPct}%` }} />
       </div>
 
       <div className="space-y-3 mb-8">
@@ -173,8 +173,8 @@ export function LessonExerciseFlow({
                 passed
                   ? 'border-emerald-300 bg-emerald-50/60'
                   : i === index
-                  ? 'border-zinc-900 bg-white shadow-md'
-                  : 'border-slate-200 bg-white hover:border-zinc-400'
+                  ? 'border-zinc-900 dark:border-zinc-100 bg-white dark:bg-zinc-900 shadow-md'
+                  : 'border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-zinc-400'
               }`}
             >
               <span className={`shrink-0 w-9 h-9 rounded-xl flex items-center justify-center text-sm font-black ${
@@ -201,7 +201,7 @@ export function LessonExerciseFlow({
         <button
           disabled={index <= 0}
           onClick={() => setIndex((i) => Math.max(0, i - 1))}
-          className="inline-flex items-center justify-center gap-1 px-3 py-3 rounded-xl font-bold border-2 border-slate-200 bg-white disabled:opacity-40"
+          className="inline-flex items-center justify-center gap-1 px-3 py-3 rounded-xl font-bold border-2 border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 disabled:opacity-40"
         >
           <ChevronLeft className="w-4 h-4" /> Previous
         </button>
@@ -323,7 +323,7 @@ function ExerciseSlot({
   if (type === 'read-back-shadowing') {
     return <ReadBackShadowing text={text} contentLang={contentLang} onBack={onBack} onComplete={onComplete} />;
   }
-  if (type === 'definition-quiz') return <DefinitionQuiz {...common} />;
+  if (type === 'definition-quiz') return <DefinitionQuiz {...common} keepAllWords />;
   if (type === 'word-match') {
     return (
       <LessonWordMatchRounds
@@ -340,7 +340,7 @@ function ExerciseSlot({
   if (type === 'spelling-practice') return <SpellingPractice {...common} />;
   if (type === 'pronunciation') return <PronunciationDrill {...common} />;
   if (type === 'sentence-reorder') {
-    return <SentenceReorder {...common} sentences={splitSentences(text.text).slice(0, 8)} />;
+    return <SentenceReorder {...common} sentences={splitSentences(text.text, text.format).slice(0, 8)} />;
   }
   return (
     <div className="text-center py-12">

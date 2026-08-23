@@ -24,7 +24,10 @@ interface Props {
 
 export function AudioDictation({ text, contentLang, onBack, onComplete, hideBack }: Props) {
   const { speechLocale } = useContentLang();
-  const sentences = useMemo(() => splitSentences(text.text).slice(0, 8), [text.text]);
+  const sentences = useMemo(
+    () => splitSentences(text.text, text.format).slice(0, 8),
+    [text.text, text.format],
+  );
   const [index, setIndex] = useState(0);
   const [input, setInput] = useState('');
   const [correctWords, setCorrectWords] = useState<string[]>([]);

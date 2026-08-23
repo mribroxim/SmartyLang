@@ -250,6 +250,7 @@ export const EN_ONLY_TABS = new Set([
   'story',
   'ielts',
   'ielts-reading',
+  'ielts-full-mock',
   'gamification',
 ]);
 

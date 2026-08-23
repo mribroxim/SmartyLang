@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "p1",
+    "title": "Why do small choices matter?",
+    "coreQuestion": "How can everyday decisions shape a whole week?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "present simple"
+    ],
+    "vocabularyDomain": "choices & consequences",
+    "languageGoal": "Explain how small decisions lead to bigger results",
+    "communicationGoal": "Discuss everyday choices with reasons",
+    "unit": 1,
+    "unitName": "Everyday Decisions"
+  },
+  {
+    "id": "p2",
+    "title": "Should you follow a routine or stay flexible?",
+    "coreQuestion": "What are the advantages and disadvantages of a fixed routine?",
+    "format": "feature",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "comparatives"
+    ],
+    "vocabularyDomain": "routines & flexibility",
+    "languageGoal": "Compare routines and flexible plans",
+    "communicationGoal": "Argue for the approach that suits you",
+    "unit": 1,
+    "unitName": "Everyday Decisions"
+  },
+  {
+    "id": "p3",
+    "title": "What happens when you change your mind?",
+    "coreQuestion": "Why do people reverse decisions, and what follows?",
+    "format": "narrative",
+    "grammarFocus": [
+      "used to",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "changing plans",
+    "languageGoal": "Describe changing your mind and the results",
+    "communicationGoal": "Talk about reversing a decision politely",
+    "unit": 1,
+    "unitName": "Everyday Decisions"
+  },
+  {
+    "id": "p4",
+    "title": "Is it better to decide quickly or slowly?",
+    "coreQuestion": "When is fast decision-making helpful, and when is it risky?",
+    "format": "opinion",
+    "grammarFocus": [
+      "conditionals",
+      "advantages/disadvantages"
+    ],
+    "vocabularyDomain": "decision speed",
+    "languageGoal": "Discuss fast vs careful decisions",
+    "communicationGoal": "Give advice about timing decisions",
+    "unit": 1,
+    "unitName": "Everyday Decisions"
+  },
+  {
+    "id": "p5",
+    "title": "How do friends influence your decisions?",
+    "coreQuestion": "In what ways do friends shape what we choose?",
+    "format": "feature",
+    "grammarFocus": [
+      "relative clauses",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "peer influence",
+    "languageGoal": "Explain influence from people around you",
+    "communicationGoal": "Discuss peer pressure without blaming",
+    "unit": 1,
+    "unitName": "Everyday Decisions"
+  },
+  {
+    "id": "p6",
+    "title": "What would you do if plans suddenly change?",
+    "coreQuestion": "How do people react when unexpected changes appear?",
+    "format": "narrative",
+    "grammarFocus": [
+      "second conditional",
+      "used to"
+    ],
+    "vocabularyDomain": "unexpected change",
+    "languageGoal": "Use conditionals to talk about sudden changes",
+    "communicationGoal": "Describe adapting when plans fall apart",
+    "unit": 1,
+    "unitName": "Everyday Decisions"
+  },
+  {
+    "id": "p7",
+    "title": "Why do people regret some choices?",
+    "coreQuestion": "What causes regret, and how can people learn from it?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "past narrative"
+    ],
+    "vocabularyDomain": "regret & reflection",
+    "languageGoal": "Explain reasons for regret and lessons learned",
+    "communicationGoal": "Talk about past mistakes constructively",
+    "unit": 1,
+    "unitName": "Everyday Decisions"
+  },
+  {
+    "id": "p8",
+    "title": "How do you choose between comfort and challenge?",
+    "coreQuestion": "When should you stay comfortable, and when should you stretch yourself?",
+    "format": "feature",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "conditionals"
+    ],
+    "vocabularyDomain": "comfort vs challenge",
+    "languageGoal": "Weigh comfort against personal growth",
+    "communicationGoal": "Discuss taking on a challenge",
+    "unit": 1,
+    "unitName": "Everyday Decisions"
+  },
+  {
+    "id": "p9",
+    "title": "What makes a decision feel fair?",
+    "coreQuestion": "How do people judge whether a choice is fair to everyone involved?",
+    "format": "opinion",
+    "grammarFocus": [
+      "relative clauses",
+      "modals"
+    ],
+    "vocabularyDomain": "fairness & compromise",
+    "languageGoal": "Describe fairness and compromise in decisions",
+    "communicationGoal": "Negotiate a fair outcome",
+    "unit": 1,
+    "unitName": "Everyday Decisions"
+  },
+  {
+    "id": "p10",
+    "title": "Can habits help you make better decisions?",
+    "coreQuestion": "How do good habits support clearer everyday choices?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "used to"
+    ],
+    "vocabularyDomain": "habits & decisions",
+    "languageGoal": "Link habits to decision quality",
+    "communicationGoal": "Recommend habits that support good choices",
+    "unit": 1,
+    "unitName": "Everyday Decisions"
+  },
+  {
+    "id": "p11",
+    "title": "Why is listening harder than talking?",
+    "coreQuestion": "What makes careful listening difficult in daily conversations?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "comparatives"
+    ],
+    "vocabularyDomain": "listening skills",
+    "languageGoal": "Explain barriers to good listening",
+    "communicationGoal": "Discuss how to listen more carefully",
+    "unit": 2,
+    "unitName": "Communication & Relationships"
+  },
+  {
+    "id": "p12",
+    "title": "How do arguments start over nothing?",
+    "coreQuestion": "Why do small misunderstandings grow into bigger conflicts?",
+    "format": "narrative",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "arguments & misunderstanding",
+    "languageGoal": "Describe how minor issues escalate",
+    "communicationGoal": "Talk through a small conflict calmly",
+    "unit": 2,
+    "unitName": "Communication & Relationships"
+  },
+  {
+    "id": "p13",
+    "title": "What does it mean to apologise well?",
+    "coreQuestion": "Which parts of an apology actually repair a relationship?",
+    "format": "feature",
+    "grammarFocus": [
+      "conditionals",
+      "modals"
+    ],
+    "vocabularyDomain": "apologies",
+    "languageGoal": "Describe the steps of a sincere apology",
+    "communicationGoal": "Apologise and respond appropriately",
+    "unit": 2,
+    "unitName": "Communication & Relationships"
+  },
+  {
+    "id": "p14",
+    "title": "Why do some messages get misunderstood?",
+    "coreQuestion": "How do tone and context change the meaning of a message?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "miscommunication",
+    "languageGoal": "Explain why messages are misread",
+    "communicationGoal": "Clarify a misunderstood message",
+    "unit": 2,
+    "unitName": "Communication & Relationships"
+  },
+  {
+    "id": "p15",
+    "title": "How do you keep friendships strong over distance?",
+    "coreQuestion": "What habits help long-distance friendships survive?",
+    "format": "feature",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "used to"
+    ],
+    "vocabularyDomain": "long-distance friendship",
+    "languageGoal": "Discuss ways to maintain distant friendships",
+    "communicationGoal": "Suggest practical ways to stay in touch",
+    "unit": 2,
+    "unitName": "Communication & Relationships"
+  },
+  {
+    "id": "p16",
+    "title": "What used to make conversations easier?",
+    "coreQuestion": "How have everyday conversations changed compared with the past?",
+    "format": "narrative",
+    "grammarFocus": [
+      "used to",
+      "comparatives"
+    ],
+    "vocabularyDomain": "conversation habits",
+    "languageGoal": "Contrast past and present conversation styles",
+    "communicationGoal": "Share memories of easier talk",
+    "unit": 2,
+    "unitName": "Communication & Relationships"
+  },
+  {
+    "id": "p17",
+    "title": "When should you stay quiet?",
+    "coreQuestion": "In which situations is silence wiser than speaking?",
+    "format": "opinion",
+    "grammarFocus": [
+      "conditionals",
+      "modals"
+    ],
+    "vocabularyDomain": "silence & timing",
+    "languageGoal": "Discuss when silence is the better choice",
+    "communicationGoal": "Give advice about speaking or waiting",
+    "unit": 2,
+    "unitName": "Communication & Relationships"
+  },
+  {
+    "id": "p18",
+    "title": "How do people rebuild trust?",
+    "coreQuestion": "What actions help restore trust after it is damaged?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "trust & repair",
+    "languageGoal": "Explain steps for rebuilding trust",
+    "communicationGoal": "Talk about repairing a relationship",
+    "unit": 2,
+    "unitName": "Communication & Relationships"
+  },
+  {
+    "id": "p19",
+    "title": "Why do compliments matter?",
+    "coreQuestion": "How can genuine praise strengthen everyday relationships?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "conditionals"
+    ],
+    "vocabularyDomain": "praise & kindness",
+    "languageGoal": "Explain the effects of sincere compliments",
+    "communicationGoal": "Give and receive compliments naturally",
+    "unit": 2,
+    "unitName": "Communication & Relationships"
+  },
+  {
+    "id": "p20",
+    "title": "What makes teamwork feel natural?",
+    "coreQuestion": "Which behaviours turn a group of people into a real team?",
+    "format": "feature",
+    "grammarFocus": [
+      "relative clauses",
+      "advantages/disadvantages"
+    ],
+    "vocabularyDomain": "teamwork",
+    "languageGoal": "Describe habits that support teamwork",
+    "communicationGoal": "Discuss working well with others",
+    "unit": 2,
+    "unitName": "Communication & Relationships"
+  },
+  {
+    "id": "p21",
+    "title": "Why do some study methods fail?",
+    "coreQuestion": "What causes popular study techniques to stop working?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "advantages/disadvantages"
+    ],
+    "vocabularyDomain": "study methods",
+    "languageGoal": "Explain why certain study habits fail",
+    "communicationGoal": "Evaluate your own study approach",
+    "unit": 3,
+    "unitName": "Learning That Works"
+  },
+  {
+    "id": "p22",
+    "title": "Is practice more important than talent?",
+    "coreQuestion": "How much do effort and practice matter compared with natural ability?",
+    "format": "feature",
+    "grammarFocus": [
+      "comparatives",
+      "conditionals"
+    ],
+    "vocabularyDomain": "practice & talent",
+    "languageGoal": "Compare practice and talent with clear reasons",
+    "communicationGoal": "Argue about what leads to real progress",
+    "unit": 3,
+    "unitName": "Learning That Works"
+  },
+  {
+    "id": "p23",
+    "title": "How does making mistakes help learning?",
+    "coreQuestion": "In what ways can errors become useful teachers?",
+    "format": "narrative",
+    "grammarFocus": [
+      "cause/effect",
+      "used to"
+    ],
+    "vocabularyDomain": "mistakes & feedback",
+    "languageGoal": "Describe learning from mistakes",
+    "communicationGoal": "Talk about errors without embarrassment",
+    "unit": 3,
+    "unitName": "Learning That Works"
+  },
+  {
+    "id": "p24",
+    "title": "What if you could learn without exams?",
+    "coreQuestion": "How would learning change if exams were not the main goal?",
+    "format": "opinion",
+    "grammarFocus": [
+      "second conditional",
+      "advantages/disadvantages"
+    ],
+    "vocabularyDomain": "assessment & motivation",
+    "languageGoal": "Discuss alternatives to exam-focused learning",
+    "communicationGoal": "Imagine and evaluate a different school system",
+    "unit": 3,
+    "unitName": "Learning That Works"
+  },
+  {
+    "id": "p25",
+    "title": "Why do people forget what they study?",
+    "coreQuestion": "What causes newly learned information to disappear so quickly?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "memory & revision",
+    "languageGoal": "Explain reasons for forgetting and better revision",
+    "communicationGoal": "Suggest ways to remember more",
+    "unit": 3,
+    "unitName": "Learning That Works"
+  },
+  {
+    "id": "p26",
+    "title": "How do teachers change the way we learn?",
+    "coreQuestion": "Which teacher behaviours make learning clearer and more motivating?",
+    "format": "narrative",
+    "grammarFocus": [
+      "relative clauses",
+      "used to"
+    ],
+    "vocabularyDomain": "teachers & motivation",
+    "languageGoal": "Describe the impact of different teachers",
+    "communicationGoal": "Talk about teachers who shaped your learning",
+    "unit": 3,
+    "unitName": "Learning That Works"
+  },
+  {
+    "id": "p27",
+    "title": "What are the advantages of learning with others?",
+    "coreQuestion": "How can studying in a group help — and when can it hurt?",
+    "format": "feature",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "conditionals"
+    ],
+    "vocabularyDomain": "collaborative learning",
+    "languageGoal": "Weigh group study against studying alone",
+    "communicationGoal": "Decide when to learn with others",
+    "unit": 3,
+    "unitName": "Learning That Works"
+  },
+  {
+    "id": "p28",
+    "title": "Why does focus disappear so easily?",
+    "coreQuestion": "What breaks concentration during study, and how can people protect it?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "modals"
+    ],
+    "vocabularyDomain": "focus & distraction",
+    "languageGoal": "Explain distractions and ways to stay focused",
+    "communicationGoal": "Share practical focus strategies",
+    "unit": 3,
+    "unitName": "Learning That Works"
+  },
+  {
+    "id": "p29",
+    "title": "How do hobbies teach useful skills?",
+    "coreQuestion": "What transferable skills can people gain from hobbies?",
+    "format": "feature",
+    "grammarFocus": [
+      "relative clauses",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "hobbies & skills",
+    "languageGoal": "Link hobbies to useful real-world skills",
+    "communicationGoal": "Explain what a hobby has taught you",
+    "unit": 3,
+    "unitName": "Learning That Works"
+  },
+  {
+    "id": "p30",
+    "title": "What would you change about school if you could?",
+    "coreQuestion": "If students could redesign school, what would they improve first?",
+    "format": "opinion",
+    "grammarFocus": [
+      "second conditional",
+      "advantages/disadvantages"
+    ],
+    "vocabularyDomain": "school improvement",
+    "languageGoal": "Propose and justify school changes",
+    "communicationGoal": "Discuss education reforms at a personal level",
+    "unit": 3,
+    "unitName": "Learning That Works"
+  },
+  {
+    "id": "p31",
+    "title": "What makes a neighbourhood feel friendly?",
+    "coreQuestion": "Which everyday details turn a street into a welcoming place?",
+    "format": "feature",
+    "grammarFocus": [
+      "relative clauses",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "neighbourhood life",
+    "languageGoal": "Describe features of a friendly neighbourhood",
+    "communicationGoal": "Talk about what makes your area feel welcoming",
+    "unit": 4,
+    "unitName": "Cities & Community Life"
+  },
+  {
+    "id": "p32",
+    "title": "Why do people prefer parks to shopping centres?",
+    "coreQuestion": "What advantages do parks offer that indoor centres often lack?",
+    "format": "opinion",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "comparatives"
+    ],
+    "vocabularyDomain": "parks & public space",
+    "languageGoal": "Compare parks and shopping centres",
+    "communicationGoal": "Explain a preference for outdoor public space",
+    "unit": 4,
+    "unitName": "Cities & Community Life"
+  },
+  {
+    "id": "p33",
+    "title": "How does public transport shape daily life?",
+    "coreQuestion": "In what ways do buses and trains change routines and opportunities?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "public transport",
+    "languageGoal": "Explain how transport affects daily choices",
+    "communicationGoal": "Discuss local transport strengths and problems",
+    "unit": 4,
+    "unitName": "Cities & Community Life"
+  },
+  {
+    "id": "p34",
+    "title": "What happens when a local shop closes?",
+    "coreQuestion": "How does losing a familiar shop affect a community?",
+    "format": "narrative",
+    "grammarFocus": [
+      "cause/effect",
+      "used to"
+    ],
+    "vocabularyDomain": "local businesses",
+    "languageGoal": "Describe the effects of a shop closing",
+    "communicationGoal": "Talk about changes on your high street",
+    "unit": 4,
+    "unitName": "Cities & Community Life"
+  },
+  {
+    "id": "p35",
+    "title": "Why do some streets feel safer than others?",
+    "coreQuestion": "What makes people feel safe or uneasy in public spaces?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "conditionals"
+    ],
+    "vocabularyDomain": "safety & streets",
+    "languageGoal": "Explain factors that affect feelings of safety",
+    "communicationGoal": "Discuss street design and safety calmly",
+    "unit": 4,
+    "unitName": "Cities & Community Life"
+  },
+  {
+    "id": "p36",
+    "title": "How do festivals bring strangers together?",
+    "coreQuestion": "Why do local festivals help people connect across differences?",
+    "format": "feature",
+    "grammarFocus": [
+      "relative clauses",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "festivals & community",
+    "languageGoal": "Describe how events create community connections",
+    "communicationGoal": "Share an experience of a local festival",
+    "unit": 4,
+    "unitName": "Cities & Community Life"
+  },
+  {
+    "id": "p37",
+    "title": "What are the advantages of living near work?",
+    "coreQuestion": "How does a short commute change time, money, and stress?",
+    "format": "opinion",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "conditionals"
+    ],
+    "vocabularyDomain": "commuting & location",
+    "languageGoal": "Weigh living close to work against other options",
+    "communicationGoal": "Discuss housing location trade-offs",
+    "unit": 4,
+    "unitName": "Cities & Community Life"
+  },
+  {
+    "id": "p38",
+    "title": "Why do people volunteer in their community?",
+    "coreQuestion": "What motivates people to give time without pay?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "volunteering",
+    "languageGoal": "Explain reasons for volunteering",
+    "communicationGoal": "Talk about helping locally",
+    "unit": 4,
+    "unitName": "Cities & Community Life"
+  },
+  {
+    "id": "p39",
+    "title": "How do noise and quiet affect city living?",
+    "coreQuestion": "In what ways does sound shape comfort in urban life?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "comparatives"
+    ],
+    "vocabularyDomain": "noise & quiet",
+    "languageGoal": "Discuss the effects of noise and quiet in cities",
+    "communicationGoal": "Describe your ideal sound environment",
+    "unit": 4,
+    "unitName": "Cities & Community Life"
+  },
+  {
+    "id": "p40",
+    "title": "What would improve your local area?",
+    "coreQuestion": "If one improvement were possible, what should come first and why?",
+    "format": "opinion",
+    "grammarFocus": [
+      "second conditional",
+      "advantages/disadvantages"
+    ],
+    "vocabularyDomain": "local improvement",
+    "languageGoal": "Propose and justify a local change",
+    "communicationGoal": "Persuade others about a community priority",
+    "unit": 4,
+    "unitName": "Cities & Community Life"
+  },
+  {
+    "id": "p41",
+    "title": "Why is sleep more important than people admit?",
+    "coreQuestion": "How does poor sleep affect mood, focus, and daily decisions?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "modals"
+    ],
+    "vocabularyDomain": "sleep & energy",
+    "languageGoal": "Explain the effects of sleep on daily life",
+    "communicationGoal": "Discuss sleep habits without lecturing",
+    "unit": 5,
+    "unitName": "Lifestyle & Wellbeing Choices"
+  },
+  {
+    "id": "p42",
+    "title": "How do small habits improve mood?",
+    "coreQuestion": "Which tiny daily actions can lift how people feel?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "habits & mood",
+    "languageGoal": "Link small habits to emotional wellbeing",
+    "communicationGoal": "Recommend simple mood-supporting habits",
+    "unit": 5,
+    "unitName": "Lifestyle & Wellbeing Choices"
+  },
+  {
+    "id": "p43",
+    "title": "What are the disadvantages of always being busy?",
+    "coreQuestion": "Why can a packed schedule harm health and relationships?",
+    "format": "feature",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "busyness & stress",
+    "languageGoal": "Discuss downsides of constant busyness",
+    "communicationGoal": "Talk about slowing down",
+    "unit": 5,
+    "unitName": "Lifestyle & Wellbeing Choices"
+  },
+  {
+    "id": "p44",
+    "title": "Why do people start exercising and then stop?",
+    "coreQuestion": "What causes fitness plans to collapse after a strong beginning?",
+    "format": "narrative",
+    "grammarFocus": [
+      "used to",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "exercise habits",
+    "languageGoal": "Explain why exercise routines fail and how to restart",
+    "communicationGoal": "Share realistic fitness experiences",
+    "unit": 5,
+    "unitName": "Lifestyle & Wellbeing Choices"
+  },
+  {
+    "id": "p45",
+    "title": "How does cooking at home change your week?",
+    "coreQuestion": "In what ways can home cooking affect time, money, and wellbeing?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "comparatives"
+    ],
+    "vocabularyDomain": "home cooking",
+    "languageGoal": "Describe effects of cooking at home",
+    "communicationGoal": "Compare eating in and eating out",
+    "unit": 5,
+    "unitName": "Lifestyle & Wellbeing Choices"
+  },
+  {
+    "id": "p46",
+    "title": "What used to help you feel calm?",
+    "coreQuestion": "Which past habits or places helped people manage stress?",
+    "format": "narrative",
+    "grammarFocus": [
+      "used to",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "calm & stress relief",
+    "languageGoal": "Describe past calming strategies with used to",
+    "communicationGoal": "Share personal ways of finding calm",
+    "unit": 5,
+    "unitName": "Lifestyle & Wellbeing Choices"
+  },
+  {
+    "id": "p47",
+    "title": "Is resting a waste of time?",
+    "coreQuestion": "Why do some people feel guilty about rest, and are they right?",
+    "format": "opinion",
+    "grammarFocus": [
+      "conditionals",
+      "advantages/disadvantages"
+    ],
+    "vocabularyDomain": "rest & recovery",
+    "languageGoal": "Argue for the value of rest",
+    "communicationGoal": "Challenge the idea that rest is laziness",
+    "unit": 5,
+    "unitName": "Lifestyle & Wellbeing Choices"
+  },
+  {
+    "id": "p48",
+    "title": "How do hobbies protect your wellbeing?",
+    "coreQuestion": "What role can enjoyable activities play in mental balance?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "hobbies & wellbeing",
+    "languageGoal": "Explain how hobbies support wellbeing",
+    "communicationGoal": "Discuss protective hobbies",
+    "unit": 5,
+    "unitName": "Lifestyle & Wellbeing Choices"
+  },
+  {
+    "id": "p49",
+    "title": "Why do comparisons make people unhappy?",
+    "coreQuestion": "How does comparing yourself with others affect confidence?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "conditionals"
+    ],
+    "vocabularyDomain": "comparison & confidence",
+    "languageGoal": "Explain the emotional effects of comparison",
+    "communicationGoal": "Talk about healthier ways to measure progress",
+    "unit": 5,
+    "unitName": "Lifestyle & Wellbeing Choices"
+  },
+  {
+    "id": "p50",
+    "title": "What would a healthier routine look like for you?",
+    "coreQuestion": "If you redesigned one week for wellbeing, what would change?",
+    "format": "opinion",
+    "grammarFocus": [
+      "second conditional",
+      "modals"
+    ],
+    "vocabularyDomain": "healthy routines",
+    "languageGoal": "Describe an ideal healthier week using conditionals",
+    "communicationGoal": "Plan a realistic wellbeing routine",
+    "unit": 5,
+    "unitName": "Lifestyle & Wellbeing Choices"
+  },
+  {
+    "id": "p51",
+    "title": "Why do first trips change people?",
+    "coreQuestion": "How can an early travel experience shift confidence and curiosity?",
+    "format": "narrative",
+    "grammarFocus": [
+      "used to",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "first travel experiences",
+    "languageGoal": "Describe how a first trip changed someone",
+    "communicationGoal": "Share a formative travel memory",
+    "unit": 6,
+    "unitName": "Travel, Culture & Perspective"
+  },
+  {
+    "id": "p52",
+    "title": "How does trying new food open your mind?",
+    "coreQuestion": "In what ways can unfamiliar meals teach more than taste?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "food & culture",
+    "languageGoal": "Link food experiences to cultural understanding",
+    "communicationGoal": "Talk about trying unfamiliar dishes",
+    "unit": 6,
+    "unitName": "Travel, Culture & Perspective"
+  },
+  {
+    "id": "p53",
+    "title": "What happens when travel plans go wrong?",
+    "coreQuestion": "How do delays and mistakes turn into stories — or stress?",
+    "format": "narrative",
+    "grammarFocus": [
+      "cause/effect",
+      "conditionals"
+    ],
+    "vocabularyDomain": "travel problems",
+    "languageGoal": "Describe problems on a trip and responses",
+    "communicationGoal": "Tell a travel mishap story with lessons",
+    "unit": 6,
+    "unitName": "Travel, Culture & Perspective"
+  },
+  {
+    "id": "p54",
+    "title": "Why do tourists and locals see places differently?",
+    "coreQuestion": "What creates different perspectives between visitors and residents?",
+    "format": "opinion",
+    "grammarFocus": [
+      "comparatives",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "tourist vs local views",
+    "languageGoal": "Compare tourist and local perspectives",
+    "communicationGoal": "Discuss respectful travel behaviour",
+    "unit": 6,
+    "unitName": "Travel, Culture & Perspective"
+  },
+  {
+    "id": "p55",
+    "title": "How do languages change when you travel?",
+    "coreQuestion": "What happens to confidence and communication in another language?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "used to"
+    ],
+    "vocabularyDomain": "language while travelling",
+    "languageGoal": "Explain language challenges and growth while travelling",
+    "communicationGoal": "Talk about using English (or another language) abroad",
+    "unit": 6,
+    "unitName": "Travel, Culture & Perspective"
+  },
+  {
+    "id": "p56",
+    "title": "What are the advantages of slow travel?",
+    "coreQuestion": "Why might staying longer in fewer places be better than rushing?",
+    "format": "opinion",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "conditionals"
+    ],
+    "vocabularyDomain": "slow travel",
+    "languageGoal": "Weigh slow travel against fast sightseeing",
+    "communicationGoal": "Argue for a preferred travel pace",
+    "unit": 6,
+    "unitName": "Travel, Culture & Perspective"
+  },
+  {
+    "id": "p57",
+    "title": "Why do souvenirs matter to some people?",
+    "coreQuestion": "What emotional job do small travel objects do after a trip ends?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "souvenirs & memory",
+    "languageGoal": "Explain the personal value of souvenirs",
+    "communicationGoal": "Discuss meaningful keepsakes",
+    "unit": 6,
+    "unitName": "Travel, Culture & Perspective"
+  },
+  {
+    "id": "p58",
+    "title": "How does staying with a host family feel different?",
+    "coreQuestion": "What do you notice when you live with local people instead of in a hotel?",
+    "format": "narrative",
+    "grammarFocus": [
+      "comparatives",
+      "used to"
+    ],
+    "vocabularyDomain": "homestays",
+    "languageGoal": "Compare host-family stays with hotels",
+    "communicationGoal": "Describe a homestay experience",
+    "unit": 6,
+    "unitName": "Travel, Culture & Perspective"
+  },
+  {
+    "id": "p59",
+    "title": "What would you notice if you lived abroad for a month?",
+    "coreQuestion": "Which everyday details become clearer after living elsewhere briefly?",
+    "format": "opinion",
+    "grammarFocus": [
+      "second conditional",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "living abroad",
+    "languageGoal": "Imagine noticing cultural details while living abroad",
+    "communicationGoal": "Discuss short-term life in another country",
+    "unit": 6,
+    "unitName": "Travel, Culture & Perspective"
+  },
+  {
+    "id": "p60",
+    "title": "Why do people return from trips with new opinions?",
+    "coreQuestion": "How can travel revise what people believe about home and elsewhere?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "conditionals"
+    ],
+    "vocabularyDomain": "perspective change",
+    "languageGoal": "Explain how travel reshapes opinions",
+    "communicationGoal": "Share an opinion that changed after travel",
+    "unit": 6,
+    "unitName": "Travel, Culture & Perspective"
+  },
+  {
+    "id": "p61",
+    "title": "Why does litter appear in the same places?",
+    "coreQuestion": "What local habits and spaces encourage repeated littering?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "litter & local spaces",
+    "languageGoal": "Explain why litter collects in familiar spots",
+    "communicationGoal": "Discuss practical local clean-up ideas",
+    "unit": 7,
+    "unitName": "Environment Close to Home"
+  },
+  {
+    "id": "p62",
+    "title": "How do small green spaces help a city?",
+    "coreQuestion": "What benefits can a tiny park or tree-lined street provide?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "advantages/disadvantages"
+    ],
+    "vocabularyDomain": "urban green space",
+    "languageGoal": "Describe benefits of small green areas",
+    "communicationGoal": "Argue for protecting local greenery",
+    "unit": 7,
+    "unitName": "Environment Close to Home"
+  },
+  {
+    "id": "p63",
+    "title": "What happens when people share community gardens?",
+    "coreQuestion": "How do shared gardens change food, friendship, and neighbourhood pride?",
+    "format": "narrative",
+    "grammarFocus": [
+      "relative clauses",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "community gardens",
+    "languageGoal": "Describe effects of sharing a garden",
+    "communicationGoal": "Talk about growing food with neighbours",
+    "unit": 7,
+    "unitName": "Environment Close to Home"
+  },
+  {
+    "id": "p64",
+    "title": "Why do neighbours care about recycling differently?",
+    "coreQuestion": "What reasons explain different recycling habits on the same street?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "modals"
+    ],
+    "vocabularyDomain": "recycling habits",
+    "languageGoal": "Explain varied attitudes to recycling",
+    "communicationGoal": "Discuss recycling without shaming neighbours",
+    "unit": 7,
+    "unitName": "Environment Close to Home"
+  },
+  {
+    "id": "p65",
+    "title": "How does weather change local habits?",
+    "coreQuestion": "In what ways do heat, rain, and cold reshape daily routines nearby?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "used to"
+    ],
+    "vocabularyDomain": "weather & habits",
+    "languageGoal": "Link weather to changes in local behaviour",
+    "communicationGoal": "Compare seasonal routines",
+    "unit": 7,
+    "unitName": "Environment Close to Home"
+  },
+  {
+    "id": "p66",
+    "title": "What are the advantages of walking more often?",
+    "coreQuestion": "How can walking benefit health, local streets, and awareness?",
+    "format": "opinion",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "conditionals"
+    ],
+    "vocabularyDomain": "walking & local life",
+    "languageGoal": "Discuss advantages of walking more",
+    "communicationGoal": "Persuade someone to walk a familiar route",
+    "unit": 7,
+    "unitName": "Environment Close to Home"
+  },
+  {
+    "id": "p67",
+    "title": "Why do people ignore a polluted local river?",
+    "coreQuestion": "What stops communities from acting on nearby water pollution?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "local water pollution",
+    "languageGoal": "Explain reasons for ignoring a local river problem",
+    "communicationGoal": "Discuss noticing and protecting local water",
+    "unit": 7,
+    "unitName": "Environment Close to Home"
+  },
+  {
+    "id": "p68",
+    "title": "How can one street become cleaner?",
+    "coreQuestion": "Which small actions and agreements can transform a single street?",
+    "format": "narrative",
+    "grammarFocus": [
+      "conditionals",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "street improvement",
+    "languageGoal": "Describe steps that make a street cleaner",
+    "communicationGoal": "Propose a practical street clean-up plan",
+    "unit": 7,
+    "unitName": "Environment Close to Home"
+  },
+  {
+    "id": "p69",
+    "title": "What used to be different about your local park?",
+    "coreQuestion": "How have familiar outdoor spaces changed over time?",
+    "format": "narrative",
+    "grammarFocus": [
+      "used to",
+      "comparatives"
+    ],
+    "vocabularyDomain": "parks over time",
+    "languageGoal": "Contrast past and present park life with used to",
+    "communicationGoal": "Share memories of a changing local park",
+    "unit": 7,
+    "unitName": "Environment Close to Home"
+  },
+  {
+    "id": "p70",
+    "title": "What would you do if your area lost its trees?",
+    "coreQuestion": "How would daily life feel without familiar local trees?",
+    "format": "opinion",
+    "grammarFocus": [
+      "second conditional",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "trees & local climate",
+    "languageGoal": "Imagine consequences of losing local trees",
+    "communicationGoal": "Argue for protecting trees nearby",
+    "unit": 7,
+    "unitName": "Environment Close to Home"
+  },
+  {
+    "id": "p71",
+    "title": "Why do people say they have no time?",
+    "coreQuestion": "What usually hides behind the feeling of having no time?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "time pressure",
+    "languageGoal": "Explain reasons behind feeling busy",
+    "communicationGoal": "Discuss time management honestly",
+    "unit": 8,
+    "unitName": "Time, Money & Priorities"
+  },
+  {
+    "id": "p72",
+    "title": "How do small purchases add up?",
+    "coreQuestion": "Why can tiny everyday spends become a large monthly cost?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "modals"
+    ],
+    "vocabularyDomain": "everyday spending",
+    "languageGoal": "Explain how small purchases accumulate",
+    "communicationGoal": "Talk about tracking small expenses",
+    "unit": 8,
+    "unitName": "Time, Money & Priorities"
+  },
+  {
+    "id": "p73",
+    "title": "What happens when you save for something important?",
+    "coreQuestion": "How does saving for a clear goal change habits and motivation?",
+    "format": "narrative",
+    "grammarFocus": [
+      "cause/effect",
+      "used to"
+    ],
+    "vocabularyDomain": "saving goals",
+    "languageGoal": "Describe the process and effects of saving",
+    "communicationGoal": "Share a saving story and lessons",
+    "unit": 8,
+    "unitName": "Time, Money & Priorities"
+  },
+  {
+    "id": "p74",
+    "title": "Why is saying no sometimes necessary?",
+    "coreQuestion": "When does refusing a request protect your priorities?",
+    "format": "opinion",
+    "grammarFocus": [
+      "conditionals",
+      "modals"
+    ],
+    "vocabularyDomain": "boundaries & priorities",
+    "languageGoal": "Explain when and how to say no politely",
+    "communicationGoal": "Practise refusing without damaging relationships",
+    "unit": 8,
+    "unitName": "Time, Money & Priorities"
+  },
+  {
+    "id": "p75",
+    "title": "How do priorities change with age?",
+    "coreQuestion": "Which values tend to shift as people grow older?",
+    "format": "feature",
+    "grammarFocus": [
+      "used to",
+      "comparatives"
+    ],
+    "vocabularyDomain": "changing priorities",
+    "languageGoal": "Compare past and present priorities",
+    "communicationGoal": "Discuss how your priorities have shifted",
+    "unit": 8,
+    "unitName": "Time, Money & Priorities"
+  },
+  {
+    "id": "p76",
+    "title": "What are the disadvantages of buying everything new?",
+    "coreQuestion": "Why might constantly buying new things create problems?",
+    "format": "opinion",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "buying new vs reusing",
+    "languageGoal": "Discuss disadvantages of always buying new",
+    "communicationGoal": "Argue for repairing or reusing",
+    "unit": 8,
+    "unitName": "Time, Money & Priorities"
+  },
+  {
+    "id": "p77",
+    "title": "Why do free activities still feel valuable?",
+    "coreQuestion": "What makes unpaid experiences feel rich and memorable?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "free leisure",
+    "languageGoal": "Explain the value of free activities",
+    "communicationGoal": "Recommend enjoyable free options",
+    "unit": 8,
+    "unitName": "Time, Money & Priorities"
+  },
+  {
+    "id": "p78",
+    "title": "How would your week change if money were tighter?",
+    "coreQuestion": "Which daily choices would shift under a smaller budget?",
+    "format": "opinion",
+    "grammarFocus": [
+      "second conditional",
+      "modals"
+    ],
+    "vocabularyDomain": "budget living",
+    "languageGoal": "Imagine lifestyle changes under a tighter budget",
+    "communicationGoal": "Discuss practical budget adjustments",
+    "unit": 8,
+    "unitName": "Time, Money & Priorities"
+  },
+  {
+    "id": "p79",
+    "title": "What used to cost less when you were younger?",
+    "coreQuestion": "How do rising prices change what people remember as normal?",
+    "format": "narrative",
+    "grammarFocus": [
+      "used to",
+      "comparatives"
+    ],
+    "vocabularyDomain": "prices over time",
+    "languageGoal": "Contrast past and present prices with used to",
+    "communicationGoal": "Talk about cost changes across generations",
+    "unit": 8,
+    "unitName": "Time, Money & Priorities"
+  },
+  {
+    "id": "p80",
+    "title": "How do people decide what is worth paying for?",
+    "coreQuestion": "Which questions help people judge value before they spend?",
+    "format": "feature",
+    "grammarFocus": [
+      "relative clauses",
+      "conditionals"
+    ],
+    "vocabularyDomain": "value & spending",
+    "languageGoal": "Describe criteria for judging value",
+    "communicationGoal": "Discuss smart spending decisions",
+    "unit": 8,
+    "unitName": "Time, Money & Priorities"
+  },
+  {
+    "id": "p81",
+    "title": "Why do headlines grab attention so easily?",
+    "coreQuestion": "What techniques make headlines hard to ignore?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "headlines & attention",
+    "languageGoal": "Explain how headlines capture attention",
+    "communicationGoal": "Discuss reading past the headline",
+    "unit": 9,
+    "unitName": "Media & Information Habits"
+  },
+  {
+    "id": "p82",
+    "title": "How do people check if a story is true?",
+    "coreQuestion": "Which practical steps help readers test information?",
+    "format": "opinion",
+    "grammarFocus": [
+      "modals",
+      "conditionals"
+    ],
+    "vocabularyDomain": "checking facts",
+    "languageGoal": "Describe steps for checking information",
+    "communicationGoal": "Advise someone how to verify a claim",
+    "unit": 9,
+    "unitName": "Media & Information Habits"
+  },
+  {
+    "id": "p83",
+    "title": "What happens when you read the same news all day?",
+    "coreQuestion": "How can constant news exposure affect mood and focus?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "advantages/disadvantages"
+    ],
+    "vocabularyDomain": "news overload",
+    "languageGoal": "Explain effects of constant news reading",
+    "communicationGoal": "Discuss healthier news routines",
+    "unit": 9,
+    "unitName": "Media & Information Habits"
+  },
+  {
+    "id": "p84",
+    "title": "Why do friends recommend different programmes?",
+    "coreQuestion": "What personal factors shape entertainment recommendations?",
+    "format": "narrative",
+    "grammarFocus": [
+      "relative clauses",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "recommendations",
+    "languageGoal": "Explain why tastes and recommendations differ",
+    "communicationGoal": "Talk about recommending shows carefully",
+    "unit": 9,
+    "unitName": "Media & Information Habits"
+  },
+  {
+    "id": "p85",
+    "title": "How does background noise affect concentration?",
+    "coreQuestion": "In what ways can sound from media help or hurt focus?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "conditionals"
+    ],
+    "vocabularyDomain": "noise & concentration",
+    "languageGoal": "Discuss media noise and concentration",
+    "communicationGoal": "Share study/work sound preferences",
+    "unit": 9,
+    "unitName": "Media & Information Habits"
+  },
+  {
+    "id": "p86",
+    "title": "What are the advantages of reading longer articles?",
+    "coreQuestion": "Why might longer reading give a clearer picture than short summaries?",
+    "format": "feature",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "comparatives"
+    ],
+    "vocabularyDomain": "long-form reading",
+    "languageGoal": "Compare short summaries and longer articles",
+    "communicationGoal": "Argue for slower, deeper reading",
+    "unit": 9,
+    "unitName": "Media & Information Habits"
+  },
+  {
+    "id": "p87",
+    "title": "Why do people trust familiar voices?",
+    "coreQuestion": "How does familiarity shape trust in presenters and writers?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "trust & familiarity",
+    "languageGoal": "Explain why familiarity increases trust",
+    "communicationGoal": "Discuss trusting sources carefully",
+    "unit": 9,
+    "unitName": "Media & Information Habits"
+  },
+  {
+    "id": "p88",
+    "title": "How would you explain a confusing report to a friend?",
+    "coreQuestion": "What makes a clear, fair summary of complicated information?",
+    "format": "feature",
+    "grammarFocus": [
+      "relative clauses",
+      "modals"
+    ],
+    "vocabularyDomain": "summarising information",
+    "languageGoal": "Practise explaining complex reports simply",
+    "communicationGoal": "Summarise news for someone else",
+    "unit": 9,
+    "unitName": "Media & Information Habits"
+  },
+  {
+    "id": "p89",
+    "title": "What used to be your favourite way to get information?",
+    "coreQuestion": "How have personal information habits changed over time?",
+    "format": "narrative",
+    "grammarFocus": [
+      "used to",
+      "comparatives"
+    ],
+    "vocabularyDomain": "information habits over time",
+    "languageGoal": "Contrast past and present information habits",
+    "communicationGoal": "Share how you used to learn the news",
+    "unit": 9,
+    "unitName": "Media & Information Habits"
+  },
+  {
+    "id": "p90",
+    "title": "When should you switch off and stop scrolling?",
+    "coreQuestion": "How can people recognise when media use has stopped helping?",
+    "format": "opinion",
+    "grammarFocus": [
+      "conditionals",
+      "modals"
+    ],
+    "vocabularyDomain": "digital habits",
+    "languageGoal": "Discuss signs it is time to switch off",
+    "communicationGoal": "Set personal boundaries with media",
+    "unit": 9,
+    "unitName": "Media & Information Habits"
+  },
+  {
+    "id": "p91",
+    "title": "Why do careful plans still fail?",
+    "coreQuestion": "What causes well-made plans to collapse anyway?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "conditionals"
+    ],
+    "vocabularyDomain": "failed plans",
+    "languageGoal": "Explain why careful plans can still fail",
+    "communicationGoal": "Talk about adapting when plans fail",
+    "unit": 10,
+    "unitName": "Plans, Risks & Possibilities"
+  },
+  {
+    "id": "p92",
+    "title": "How do people prepare for unexpected problems?",
+    "coreQuestion": "Which preparations reduce stress when surprises appear?",
+    "format": "feature",
+    "grammarFocus": [
+      "conditionals",
+      "modals"
+    ],
+    "vocabularyDomain": "preparation & contingency",
+    "languageGoal": "Describe preparing for unexpected problems",
+    "communicationGoal": "Share practical backup strategies",
+    "unit": 10,
+    "unitName": "Plans, Risks & Possibilities"
+  },
+  {
+    "id": "p93",
+    "title": "What would you do if a big opportunity appeared?",
+    "coreQuestion": "How should people respond when a sudden chance arrives?",
+    "format": "opinion",
+    "grammarFocus": [
+      "second conditional",
+      "modals"
+    ],
+    "vocabularyDomain": "opportunities",
+    "languageGoal": "Discuss responding to sudden opportunities",
+    "communicationGoal": "Imagine and evaluate a big chance",
+    "unit": 10,
+    "unitName": "Plans, Risks & Possibilities"
+  },
+  {
+    "id": "p94",
+    "title": "Why do some risks feel exciting and others scary?",
+    "coreQuestion": "What makes one risk feel thrilling while another feels threatening?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "risk perception",
+    "languageGoal": "Explain different feelings about risk",
+    "communicationGoal": "Discuss personal attitudes to risk",
+    "unit": 10,
+    "unitName": "Plans, Risks & Possibilities"
+  },
+  {
+    "id": "p95",
+    "title": "How do backup plans reduce stress?",
+    "coreQuestion": "In what ways does a Plan B make people calmer and clearer?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "conditionals"
+    ],
+    "vocabularyDomain": "backup plans",
+    "languageGoal": "Explain how backup plans reduce stress",
+    "communicationGoal": "Design a simple Plan B for a common situation",
+    "unit": 10,
+    "unitName": "Plans, Risks & Possibilities"
+  },
+  {
+    "id": "p96",
+    "title": "What are the advantages of saying yes to new chances?",
+    "coreQuestion": "When does saying yes open doors — and when should people hesitate?",
+    "format": "feature",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "conditionals"
+    ],
+    "vocabularyDomain": "saying yes",
+    "languageGoal": "Weigh advantages of accepting new chances",
+    "communicationGoal": "Discuss saying yes wisely",
+    "unit": 10,
+    "unitName": "Plans, Risks & Possibilities"
+  },
+  {
+    "id": "p97",
+    "title": "Why do people delay important decisions?",
+    "coreQuestion": "What causes delay, and what problems can waiting create?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "modals"
+    ],
+    "vocabularyDomain": "procrastination & decisions",
+    "languageGoal": "Explain reasons for delaying decisions",
+    "communicationGoal": "Talk about overcoming delay",
+    "unit": 10,
+    "unitName": "Plans, Risks & Possibilities"
+  },
+  {
+    "id": "p98",
+    "title": "How would life change if you moved cities?",
+    "coreQuestion": "Which parts of daily life would shift after a city move?",
+    "format": "narrative",
+    "grammarFocus": [
+      "second conditional",
+      "used to"
+    ],
+    "vocabularyDomain": "moving cities",
+    "languageGoal": "Imagine life changes after moving cities",
+    "communicationGoal": "Discuss the risks and possibilities of relocating",
+    "unit": 10,
+    "unitName": "Plans, Risks & Possibilities"
+  },
+  {
+    "id": "p99",
+    "title": "What used to stop you from trying new things?",
+    "coreQuestion": "Which old fears or habits used to block new experiences?",
+    "format": "narrative",
+    "grammarFocus": [
+      "used to",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "fear & trying new things",
+    "languageGoal": "Describe past barriers with used to",
+    "communicationGoal": "Share how you overcame hesitation",
+    "unit": 10,
+    "unitName": "Plans, Risks & Possibilities"
+  },
+  {
+    "id": "p100",
+    "title": "If you could restart one plan, what would you change?",
+    "coreQuestion": "Looking back, which planning choice would you redesign and why?",
+    "format": "opinion",
+    "grammarFocus": [
+      "second conditional",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "revisiting plans",
+    "languageGoal": "Reflect on redesigning a past plan",
+    "communicationGoal": "Discuss lessons from unfinished or failed plans",
+    "unit": 10,
+    "unitName": "Plans, Risks & Possibilities"
+  }
+]

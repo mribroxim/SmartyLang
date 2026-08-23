@@ -1,0 +1,1504 @@
+[
+  {
+    "id": "i1",
+    "title": "Who Are You When Nobody Is Watching?",
+    "coreQuestion": "How much of your identity depends on an audience?",
+    "format": "essay",
+    "grammarFocus": [
+      "discourse markers",
+      "hedging"
+    ],
+    "vocabularyDomain": "belonging boundaries",
+    "languageGoal": "Explore limits of group belonging",
+    "communicationGoal": "Argue nuanced positions on inclusion",
+    "unit": 1,
+    "unitName": "Identity & Belonging"
+  },
+  {
+    "id": "i2",
+    "title": "The Groups We Choose and the Groups That Choose Us",
+    "coreQuestion": "How do voluntary and involuntary groups shape who we become?",
+    "format": "feature",
+    "grammarFocus": [
+      "narrative past",
+      "passives"
+    ],
+    "vocabularyDomain": "accent & identity",
+    "languageGoal": "Analyse how accent invites assumptions",
+    "communicationGoal": "Reflect on voice as social signal",
+    "unit": 1,
+    "unitName": "Identity & Belonging"
+  },
+  {
+    "id": "i3",
+    "title": "Can You Belong in More Than One Place?",
+    "coreQuestion": "Is dual belonging enrichment or divided loyalty?",
+    "format": "opinion",
+    "grammarFocus": [
+      "conditionals",
+      "although/whereas"
+    ],
+    "vocabularyDomain": "multiple belonging",
+    "languageGoal": "Defend complex multi-place identity",
+    "communicationGoal": "Challenge either/or belonging narratives",
+    "unit": 1,
+    "unitName": "Identity & Belonging"
+  },
+  {
+    "id": "i4",
+    "title": "The Quiet Power of Names and Accents",
+    "coreQuestion": "How do names and accents shape first judgements?",
+    "format": "article",
+    "grammarFocus": [
+      "noun phrases",
+      "passives"
+    ],
+    "vocabularyDomain": "names & agency",
+    "languageGoal": "Discuss naming as identity practice",
+    "communicationGoal": "Talk about personal renaming sensitively",
+    "unit": 1,
+    "unitName": "Identity & Belonging"
+  },
+  {
+    "id": "i5",
+    "title": "When Friendship Circles Shrink and Expand",
+    "coreQuestion": "Why do adult friendships change shape over time?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "hedging",
+      "modals of advice"
+    ],
+    "vocabularyDomain": "adaptation vs authenticity",
+    "languageGoal": "Negotiate social fit and selfhood",
+    "communicationGoal": "Discuss identity pressure in groups",
+    "unit": 1,
+    "unitName": "Identity & Belonging"
+  },
+  {
+    "id": "i6",
+    "title": "Family Expectations Versus Personal Plans",
+    "coreQuestion": "How should adults balance family duty and personal direction?",
+    "format": "email",
+    "grammarFocus": [
+      "perfect aspect",
+      "contrast markers"
+    ],
+    "vocabularyDomain": "changed home",
+    "languageGoal": "Express complicated return feelings",
+    "communicationGoal": "Write reflective personal correspondence",
+    "unit": 1,
+    "unitName": "Identity & Belonging"
+  },
+  {
+    "id": "i7",
+    "title": "The Clothes We Wear as Soft Arguments",
+    "coreQuestion": "What do clothing choices communicate about belonging?",
+    "format": "feature",
+    "grammarFocus": [
+      "relative clauses",
+      "stance markers"
+    ],
+    "vocabularyDomain": "productive outsiderhood",
+    "languageGoal": "Reframe outsider experience as learning",
+    "communicationGoal": "Analyse social learning from margins",
+    "unit": 1,
+    "unitName": "Identity & Belonging"
+  },
+  {
+    "id": "i8",
+    "title": "Moving Away Without Leaving Yourself Behind",
+    "coreQuestion": "How can relocation change identity without erasing it?",
+    "format": "essay",
+    "grammarFocus": [
+      "cause/effect complex",
+      "hedging"
+    ],
+    "vocabularyDomain": "gatekeeping",
+    "languageGoal": "Analyse motives behind belonging rules",
+    "communicationGoal": "Critique exclusion with nuance",
+    "unit": 1,
+    "unitName": "Identity & Belonging"
+  },
+  {
+    "id": "i9",
+    "title": "What Does It Mean to Feel at Home?",
+    "coreQuestion": "Is “home” a place, a feeling, or a set of relationships?",
+    "format": "opinion",
+    "grammarFocus": [
+      "comparatives advanced",
+      "discourse markers"
+    ],
+    "vocabularyDomain": "online identity",
+    "languageGoal": "Compare digital and embodied self-presentation",
+    "communicationGoal": "Discuss coherence across contexts",
+    "unit": 1,
+    "unitName": "Identity & Belonging"
+  },
+  {
+    "id": "i10",
+    "title": "Outsiders, Insiders, and the Space Between",
+    "coreQuestion": "Can the outsider position be a source of insight rather than only exclusion?",
+    "format": "article",
+    "grammarFocus": [
+      "nominalisation",
+      "hedging"
+    ],
+    "vocabularyDomain": "origin stories",
+    "languageGoal": "Unpack the phrase \"I'm from…\"",
+    "communicationGoal": "Talk carefully about roots and mobility",
+    "unit": 1,
+    "unitName": "Identity & Belonging"
+  },
+  {
+    "id": "i11",
+    "title": "Is Ambition Always a Virtue?",
+    "coreQuestion": "When does ambition help a life, and when does it distort it?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect",
+      "noun phrases"
+    ],
+    "vocabularyDomain": "over-ambition",
+    "languageGoal": "Analyse ambition's opportunity costs",
+    "communicationGoal": "Discuss sustainable drive",
+    "unit": 2,
+    "unitName": "Work, Ambition & Burnout"
+  },
+  {
+    "id": "i12",
+    "title": "The Meeting That Could Have Been a Message",
+    "coreQuestion": "Why do workplaces confuse communication with congregation?",
+    "format": "short story",
+    "grammarFocus": [
+      "past perfect",
+      "passives"
+    ],
+    "vocabularyDomain": "misread burnout",
+    "languageGoal": "Narrate invisible workplace collapse",
+    "communicationGoal": "Challenge heroic overwork myths",
+    "unit": 2,
+    "unitName": "Work, Ambition & Burnout"
+  },
+  {
+    "id": "i13",
+    "title": "Burnout Does Not Arrive Overnight",
+    "coreQuestion": "What early signs show that effort is turning into exhaustion?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "argument structure"
+    ],
+    "vocabularyDomain": "busyness culture",
+    "languageGoal": "Argue about what work should reward",
+    "communicationGoal": "Critique performative productivity",
+    "unit": 2,
+    "unitName": "Work, Ambition & Burnout"
+  },
+  {
+    "id": "i14",
+    "title": "Side Projects and the Myth of Endless Energy",
+    "coreQuestion": "Can creative side work enrich a career without draining it?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "conditionals",
+      "hedging"
+    ],
+    "vocabularyDomain": "promotion trade-offs",
+    "languageGoal": "Debate status versus meaningful work",
+    "communicationGoal": "Talk about career forks honestly",
+    "unit": 2,
+    "unitName": "Work, Ambition & Burnout"
+  },
+  {
+    "id": "i15",
+    "title": "Who Gets Credit for Invisible Work?",
+    "coreQuestion": "Why is essential workplace labour so often overlooked?",
+    "format": "email",
+    "grammarFocus": [
+      "formal register",
+      "discourse markers"
+    ],
+    "vocabularyDomain": "resignation",
+    "languageGoal": "Write a professional exit message",
+    "communicationGoal": "Exit roles with composure",
+    "unit": 2,
+    "unitName": "Work, Ambition & Burnout"
+  },
+  {
+    "id": "i16",
+    "title": "Promotion Season and the Politics of Visibility",
+    "coreQuestion": "How should workers balance merit with self-advocacy?",
+    "format": "article",
+    "grammarFocus": [
+      "stance markers",
+      "passives"
+    ],
+    "vocabularyDomain": "quiet quitting debate",
+    "languageGoal": "Analyse competing frames of work withdrawal",
+    "communicationGoal": "Discuss boundaries without slogans",
+    "unit": 2,
+    "unitName": "Work, Ambition & Burnout"
+  },
+  {
+    "id": "i17",
+    "title": "The Second Shift After the Office Closes",
+    "coreQuestion": "How does unpaid home labour interact with paid ambition?",
+    "format": "feature",
+    "grammarFocus": [
+      "relative clauses",
+      "modals"
+    ],
+    "vocabularyDomain": "mentorship load",
+    "languageGoal": "Examine mutual costs in mentoring",
+    "communicationGoal": "Talk about fair developmental relationships",
+    "unit": 2,
+    "unitName": "Work, Ambition & Burnout"
+  },
+  {
+    "id": "i18",
+    "title": "Rest as Strategy, Not Reward",
+    "coreQuestion": "Should rest be earned only after productivity, or built into ambition?",
+    "format": "essay",
+    "grammarFocus": [
+      "narrative + argument",
+      "hedging"
+    ],
+    "vocabularyDomain": "post-failure ambition",
+    "languageGoal": "Integrate failure into renewed goals",
+    "communicationGoal": "Write reflective argument about resilience",
+    "unit": 2,
+    "unitName": "Work, Ambition & Burnout"
+  },
+  {
+    "id": "i19",
+    "title": "Leaving a Job Without Burning the Bridge",
+    "coreQuestion": "How can professionals exit roles with honesty and care?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "modality"
+    ],
+    "vocabularyDomain": "rest stigma",
+    "languageGoal": "Argue against rest stigma",
+    "communicationGoal": "Defend recovery as professional wisdom",
+    "unit": 2,
+    "unitName": "Work, Ambition & Burnout"
+  },
+  {
+    "id": "i20",
+    "title": "What If Success Is Quiet?",
+    "coreQuestion": "Must achievement be publicly impressive to count as success?",
+    "format": "article",
+    "grammarFocus": [
+      "noun phrases",
+      "comparatives"
+    ],
+    "vocabularyDomain": "career metrics",
+    "languageGoal": "Propose broader success measures",
+    "communicationGoal": "Redefine achievement beyond hierarchy",
+    "unit": 2,
+    "unitName": "Work, Ambition & Burnout"
+  },
+  {
+    "id": "i21",
+    "title": "Who Is the City Designed For?",
+    "coreQuestion": "Whose bodies and schedules do urban designs quietly favour?",
+    "format": "essay",
+    "grammarFocus": [
+      "passives",
+      "rhetorical questions"
+    ],
+    "vocabularyDomain": "design for whom",
+    "languageGoal": "Critique whose interests guide design",
+    "communicationGoal": "Argue for more inclusive urban planning",
+    "unit": 3,
+    "unitName": "Cities, Design & Public Life"
+  },
+  {
+    "id": "i22",
+    "title": "Parks, Benches, and the Right to Linger",
+    "coreQuestion": "Why does the freedom to stay in public space without buying anything matter?",
+    "format": "feature",
+    "grammarFocus": [
+      "descriptive noun phrases",
+      "causals"
+    ],
+    "vocabularyDomain": "successful plazas",
+    "languageGoal": "Analyse lingering as design success",
+    "communicationGoal": "Observe public space behaviour carefully",
+    "unit": 3,
+    "unitName": "Cities, Design & Public Life"
+  },
+  {
+    "id": "i23",
+    "title": "Noise, Neighbours, and Shared Walls",
+    "coreQuestion": "How should urban neighbours negotiate sound and privacy?",
+    "format": "opinion",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "should"
+    ],
+    "vocabularyDomain": "nightlife policy",
+    "languageGoal": "Argue about nightlife as civic good",
+    "communicationGoal": "Balance residents' needs and cultural life",
+    "unit": 3,
+    "unitName": "Cities, Design & Public Life"
+  },
+  {
+    "id": "i24",
+    "title": "Why Ugly Buildings Still Matter",
+    "coreQuestion": "Should we value ordinary buildings only for beauty, or also for use?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "conditionals",
+      "speculation"
+    ],
+    "vocabularyDomain": "loved transit",
+    "languageGoal": "Imagine emotionally valued public transport",
+    "communicationGoal": "Discuss culture around mobility",
+    "unit": 3,
+    "unitName": "Cities, Design & Public Life"
+  },
+  {
+    "id": "i25",
+    "title": "Transit Delays and the Politics of Waiting",
+    "coreQuestion": "What does unreliable public transport reveal about urban fairness?",
+    "format": "article",
+    "grammarFocus": [
+      "passives",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "urban shade",
+    "languageGoal": "Link heat, design, and fairness",
+    "communicationGoal": "Talk about climate comfort without doom overload",
+    "unit": 3,
+    "unitName": "Cities, Design & Public Life"
+  },
+  {
+    "id": "i26",
+    "title": "Street Food, Rules, and Urban Flavour",
+    "coreQuestion": "How should cities balance food culture with regulation?",
+    "format": "feature",
+    "grammarFocus": [
+      "relative clauses",
+      "stance"
+    ],
+    "vocabularyDomain": "public libraries",
+    "languageGoal": "Defend libraries as civic infrastructure",
+    "communicationGoal": "Describe inclusive public interior life",
+    "unit": 3,
+    "unitName": "Cities, Design & Public Life"
+  },
+  {
+    "id": "i27",
+    "title": "Libraries as Quiet Public Luxury",
+    "coreQuestion": "What unique role do libraries play in civic life?",
+    "format": "opinion",
+    "grammarFocus": [
+      "hedging",
+      "contrast markers"
+    ],
+    "vocabularyDomain": "street writing",
+    "languageGoal": "Argue nuanced views on graffiti",
+    "communicationGoal": "Avoid simplistic crime-versus-art frames",
+    "unit": 3,
+    "unitName": "Cities, Design & Public Life"
+  },
+  {
+    "id": "i28",
+    "title": "Do Pedestrian Streets Kill Commerce or Save It?",
+    "coreQuestion": "Are car-free streets good for local business and public life?",
+    "format": "email",
+    "grammarFocus": [
+      "formal persuasion",
+      "evidence markers"
+    ],
+    "vocabularyDomain": "civic pressure",
+    "languageGoal": "Write persuasive civic correspondence",
+    "communicationGoal": "Hold institutions to account politely",
+    "unit": 3,
+    "unitName": "Cities, Design & Public Life"
+  },
+  {
+    "id": "i29",
+    "title": "Graffiti, Murals, and Who Controls the Walls",
+    "coreQuestion": "When is writing on walls vandalism, and when is it public voice?",
+    "format": "article",
+    "grammarFocus": [
+      "cause/effect complex",
+      "modals of deduction"
+    ],
+    "vocabularyDomain": "perceived safety",
+    "languageGoal": "Analyse perceived danger carefully",
+    "communicationGoal": "Discuss safety without sensationalism",
+    "unit": 3,
+    "unitName": "Cities, Design & Public Life"
+  },
+  {
+    "id": "i30",
+    "title": "Can a Neighbourhood Stay Itself While Changing?",
+    "coreQuestion": "How can urban change avoid erasing local identity?",
+    "format": "essay",
+    "grammarFocus": [
+      "conditionals",
+      "noun phrases"
+    ],
+    "vocabularyDomain": "serendipity design",
+    "languageGoal": "Argue for accidental social contact by design",
+    "communicationGoal": "Explore urban friendliness as policy",
+    "unit": 3,
+    "unitName": "Cities, Design & Public Life"
+  },
+  {
+    "id": "i31",
+    "title": "How does the natural/artificial frame mislead?",
+    "coreQuestion": "What does it mean to natural-equals-safe thinking?",
+    "format": "article",
+    "grammarFocus": [
+      "hedging",
+      "contrast"
+    ],
+    "vocabularyDomain": "natural fallacy",
+    "languageGoal": "Critique natural-equals-safe thinking",
+    "communicationGoal": "Talk evidence over marketing language",
+    "unit": 4,
+    "unitName": "Science in Daily Life"
+  },
+  {
+    "id": "i32",
+    "title": "What science hides in ordinary cooking?",
+    "coreQuestion": "What does it mean to familiar processes scientifically?",
+    "format": "feature",
+    "grammarFocus": [
+      "passives",
+      "process language"
+    ],
+    "vocabularyDomain": "kitchen science",
+    "languageGoal": "Explain familiar processes scientifically",
+    "communicationGoal": "Make science feel domestic and human",
+    "unit": 4,
+    "unitName": "Science in Daily Life"
+  },
+  {
+    "id": "i33",
+    "title": "Should health claims need clearer everyday language?",
+    "coreQuestion": "How can science communication serve non-experts?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "argument structure"
+    ],
+    "vocabularyDomain": "health claim literacy",
+    "languageGoal": "Argue for clearer public science language",
+    "communicationGoal": "Defend accessible evidence talk",
+    "unit": 4,
+    "unitName": "Science in Daily Life"
+  },
+  {
+    "id": "i34",
+    "title": "If a study sounds dramatic, should you wait?",
+    "coreQuestion": "How do people respond wisely to flashy findings?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "conditionals",
+      "modals of deduction"
+    ],
+    "vocabularyDomain": "study hype",
+    "languageGoal": "Practise cautious reading of research news",
+    "communicationGoal": "Resist overreaction to single studies",
+    "unit": 4,
+    "unitName": "Science in Daily Life"
+  },
+  {
+    "id": "i35",
+    "title": "How can families talk about contested health topics?",
+    "coreQuestion": "How can learners prioritise relationship and clarity?",
+    "format": "feature",
+    "grammarFocus": [
+      "hedging",
+      "discourse markers"
+    ],
+    "vocabularyDomain": "sensitive health talk",
+    "languageGoal": "Navigate contested health dialogue carefully",
+    "communicationGoal": "Prioritise relationship and clarity",
+    "unit": 4,
+    "unitName": "Science in Daily Life"
+  },
+  {
+    "id": "i36",
+    "title": "Why does evidence lose to comfort routines?",
+    "coreQuestion": "What does it mean to gaps between knowledge and habit?",
+    "format": "essay",
+    "grammarFocus": [
+      "cause/effect",
+      "although"
+    ],
+    "vocabularyDomain": "sleep evidence gap",
+    "languageGoal": "Analyse gaps between knowledge and habit",
+    "communicationGoal": "Discuss behavioural change realistically",
+    "unit": 4,
+    "unitName": "Science in Daily Life"
+  },
+  {
+    "id": "i37",
+    "title": "How do consumers evaluate science-ish marketing?",
+    "coreQuestion": "What does it mean to a critically informed product take?",
+    "format": "email",
+    "grammarFocus": [
+      "evaluation language",
+      "hedging"
+    ],
+    "vocabularyDomain": "evidence-aware reviews",
+    "languageGoal": "Write a critically informed product take",
+    "communicationGoal": "Model sceptical but fair consumer talk",
+    "unit": 4,
+    "unitName": "Science in Daily Life"
+  },
+  {
+    "id": "i38",
+    "title": "How do scales, steps, and numbers reshape behaviour?",
+    "coreQuestion": "What does it mean to measurement's behavioural effects?",
+    "format": "article",
+    "grammarFocus": [
+      "passives",
+      "noun phrases"
+    ],
+    "vocabularyDomain": "quantified self",
+    "languageGoal": "Analyse measurement's behavioural effects",
+    "communicationGoal": "Discuss tracking without obsession",
+    "unit": 4,
+    "unitName": "Science in Daily Life"
+  },
+  {
+    "id": "i39",
+    "title": "How should people hold tradition and data together?",
+    "coreQuestion": "What does it mean to for respectful evidence weighing?",
+    "format": "opinion",
+    "grammarFocus": [
+      "concession",
+      "hedging"
+    ],
+    "vocabularyDomain": "folk vs clinical",
+    "languageGoal": "Argue for respectful evidence weighing",
+    "communicationGoal": "Avoid sneering at tradition or data",
+    "unit": 4,
+    "unitName": "Science in Daily Life"
+  },
+  {
+    "id": "i40",
+    "title": "Which small home tests build evidence habits?",
+    "coreQuestion": "What does it mean to accessible scientific thinking?",
+    "format": "feature",
+    "grammarFocus": [
+      "imperatives soft",
+      "process markers"
+    ],
+    "vocabularyDomain": "home experiments",
+    "languageGoal": "Describe accessible scientific thinking",
+    "communicationGoal": "Encourage curiosity without lab theatre",
+    "unit": 4,
+    "unitName": "Science in Daily Life"
+  },
+  {
+    "id": "i41",
+    "title": "What does a fair price feel like—and who decides?",
+    "coreQuestion": "How do people sense fairness in exchanges?",
+    "format": "essay",
+    "grammarFocus": [
+      "stance",
+      "passives"
+    ],
+    "vocabularyDomain": "price fairness",
+    "languageGoal": "Analyse subjective fairness in markets",
+    "communicationGoal": "Argue beyond simple supply-demand talk",
+    "unit": 5,
+    "unitName": "Fairness, Money & Markets"
+  },
+  {
+    "id": "i42",
+    "title": "When does tipping feel generous, expected, or coercive?",
+    "coreQuestion": "What does it mean to moral ambiguity in tipping?",
+    "format": "feature",
+    "grammarFocus": [
+      "narrative + reflection",
+      "modals"
+    ],
+    "vocabularyDomain": "tipping ethics",
+    "languageGoal": "Explore moral ambiguity in tipping",
+    "communicationGoal": "Discuss service work and dignity",
+    "unit": 5,
+    "unitName": "Fairness, Money & Markets"
+  },
+  {
+    "id": "i43",
+    "title": "Should essentials ever be luxury-priced?",
+    "coreQuestion": "How should societies treat pricing of necessities?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "conditionals"
+    ],
+    "vocabularyDomain": "essentials pricing",
+    "languageGoal": "Argue about access to necessities",
+    "communicationGoal": "Discuss markets and basic needs carefully",
+    "unit": 5,
+    "unitName": "Fairness, Money & Markets"
+  },
+  {
+    "id": "i44",
+    "title": "If everyone bargains, who loses quietly?",
+    "coreQuestion": "What hidden costs follow aggressive deal-seeking?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "conditionals",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "bargaining culture",
+    "languageGoal": "Examine winners and losers in bargaining",
+    "communicationGoal": "Talk about fairness in negotiation cultures",
+    "unit": 5,
+    "unitName": "Fairness, Money & Markets"
+  },
+  {
+    "id": "i45",
+    "title": "How can used-goods economies respect people and things?",
+    "coreQuestion": "What does it mean to for dignified second-hand cultures?",
+    "format": "article",
+    "grammarFocus": [
+      "passives",
+      "noun phrases"
+    ],
+    "vocabularyDomain": "reuse markets",
+    "languageGoal": "Argue for dignified second-hand cultures",
+    "communicationGoal": "Challenge stigma around used goods",
+    "unit": 5,
+    "unitName": "Fairness, Money & Markets"
+  },
+  {
+    "id": "i46",
+    "title": "How do soft loans turn into hard burdens?",
+    "coreQuestion": "What does it mean to emotional and practical debt paths?",
+    "format": "feature",
+    "grammarFocus": [
+      "cause/effect complex",
+      "hedging"
+    ],
+    "vocabularyDomain": "personal debt",
+    "languageGoal": "Trace emotional and practical debt paths",
+    "communicationGoal": "Discuss money pressure without shame",
+    "unit": 5,
+    "unitName": "Fairness, Money & Markets"
+  },
+  {
+    "id": "i47",
+    "title": "How do customers challenge hidden charges?",
+    "coreQuestion": "How can learners advocate consumer clarity?",
+    "format": "email",
+    "grammarFocus": [
+      "formal complaint",
+      "evidence markers"
+    ],
+    "vocabularyDomain": "fee transparency",
+    "languageGoal": "Demand clearer pricing professionally",
+    "communicationGoal": "Advocate consumer clarity",
+    "unit": 5,
+    "unitName": "Fairness, Money & Markets"
+  },
+  {
+    "id": "i48",
+    "title": "Why do long-shot tickets still sell?",
+    "coreQuestion": "What does it mean to hope versus probability?",
+    "format": "opinion",
+    "grammarFocus": [
+      "concession",
+      "statistics soft"
+    ],
+    "vocabularyDomain": "lottery psychology",
+    "languageGoal": "Analyse hope versus probability",
+    "communicationGoal": "Discuss aspiration without contempt",
+    "unit": 5,
+    "unitName": "Fairness, Money & Markets"
+  },
+  {
+    "id": "i49",
+    "title": "What social value survives only in face-to-face trade?",
+    "coreQuestion": "What does it mean to near and distant marketplaces?",
+    "format": "article",
+    "grammarFocus": [
+      "comparatives",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "local vs platform trade",
+    "languageGoal": "Compare near and distant marketplaces",
+    "communicationGoal": "Value social layers of exchange",
+    "unit": 5,
+    "unitName": "Fairness, Money & Markets"
+  },
+  {
+    "id": "i50",
+    "title": "How should families talk about uneven financial starts?",
+    "coreQuestion": "What does it mean to carefully about inherited advantage?",
+    "format": "essay",
+    "grammarFocus": [
+      "hedging",
+      "discourse markers"
+    ],
+    "vocabularyDomain": "intergenerational money",
+    "languageGoal": "Argue carefully about inherited advantage",
+    "communicationGoal": "Talk family money without blame wars",
+    "unit": 5,
+    "unitName": "Fairness, Money & Markets"
+  },
+  {
+    "id": "i51",
+    "title": "Is taste personal—or quietly trained?",
+    "coreQuestion": "How much of preference is social learning?",
+    "format": "essay",
+    "grammarFocus": [
+      "hedging",
+      "passives"
+    ],
+    "vocabularyDomain": "trained taste",
+    "languageGoal": "Analyse social construction of taste",
+    "communicationGoal": "Question pure individualism in preference",
+    "unit": 6,
+    "unitName": "Culture, Taste & Creativity"
+  },
+  {
+    "id": "i52",
+    "title": "How can one work retrain attention?",
+    "coreQuestion": "What does it mean to aesthetic re-education?",
+    "format": "feature",
+    "grammarFocus": [
+      "narrative reflection",
+      "process language"
+    ],
+    "vocabularyDomain": "listening education",
+    "languageGoal": "Describe aesthetic re-education",
+    "communicationGoal": "Talk about deep attention to art",
+    "unit": 6,
+    "unitName": "Culture, Taste & Creativity"
+  },
+  {
+    "id": "i53",
+    "title": "Should creative work be paid even when \"fun\"?",
+    "coreQuestion": "Does enjoyment justify unpaid creative labour?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "argument structure"
+    ],
+    "vocabularyDomain": "creative labour pay",
+    "languageGoal": "Argue about compensation for creative work",
+    "communicationGoal": "Challenge passion-as-payment myths",
+    "unit": 6,
+    "unitName": "Culture, Taste & Creativity"
+  },
+  {
+    "id": "i54",
+    "title": "If everyone can publish, what becomes scarce?",
+    "coreQuestion": "What rare goods remain in an abundant media age?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "conditionals",
+      "noun phrases"
+    ],
+    "vocabularyDomain": "attention scarcity",
+    "languageGoal": "Discuss scarcity of attention and trust",
+    "communicationGoal": "Analyse post-abundance cultural economies",
+    "unit": 6,
+    "unitName": "Culture, Taste & Creativity"
+  },
+  {
+    "id": "i55",
+    "title": "How can gatekeepers refuse without crushing?",
+    "coreQuestion": "What does it mean to kind professional refusal?",
+    "format": "email",
+    "grammarFocus": [
+      "softening language",
+      "hedging"
+    ],
+    "vocabularyDomain": "constructive rejection",
+    "languageGoal": "Write kind professional refusal",
+    "communicationGoal": "Practise humane critique",
+    "unit": 6,
+    "unitName": "Culture, Taste & Creativity"
+  },
+  {
+    "id": "i56",
+    "title": "How does longing distort cultural memory?",
+    "coreQuestion": "What does it mean to sentimental editing of history?",
+    "format": "article",
+    "grammarFocus": [
+      "passives",
+      "contrast markers"
+    ],
+    "vocabularyDomain": "nostalgia critique",
+    "languageGoal": "Critique sentimental editing of history",
+    "communicationGoal": "Discuss memory and cultural taste",
+    "unit": 6,
+    "unitName": "Culture, Taste & Creativity"
+  },
+  {
+    "id": "i57",
+    "title": "What space remains for unpaid making?",
+    "coreQuestion": "What does it mean to non-professional creative life?",
+    "format": "feature",
+    "grammarFocus": [
+      "concessive clauses",
+      "stance"
+    ],
+    "vocabularyDomain": "amateur making",
+    "languageGoal": "Defend non-professional creative life",
+    "communicationGoal": "Value making without career framing",
+    "unit": 6,
+    "unitName": "Culture, Taste & Creativity"
+  },
+  {
+    "id": "i58",
+    "title": "Can slow or difficult art be worth the wait?",
+    "coreQuestion": "What does it mean to for patience with challenging works?",
+    "format": "opinion",
+    "grammarFocus": [
+      "although",
+      "hedging"
+    ],
+    "vocabularyDomain": "difficult art",
+    "languageGoal": "Argue for patience with challenging works",
+    "communicationGoal": "Defend slow aesthetic rewards",
+    "unit": 6,
+    "unitName": "Culture, Taste & Creativity"
+  },
+  {
+    "id": "i59",
+    "title": "Where is the line—and who draws it?",
+    "coreQuestion": "How can learners argue with precision and humility?",
+    "format": "essay",
+    "grammarFocus": [
+      "definitions",
+      "hedging",
+      "stance"
+    ],
+    "vocabularyDomain": "appropriation debates",
+    "languageGoal": "Navigate contested cultural borrowing carefully",
+    "communicationGoal": "Argue with precision and humility",
+    "unit": 6,
+    "unitName": "Culture, Taste & Creativity"
+  },
+  {
+    "id": "i60",
+    "title": "How can shared culture map a relationship?",
+    "coreQuestion": "What does it mean to friendship through shared taste?",
+    "format": "short story",
+    "grammarFocus": [
+      "narrative",
+      "metaphor soft"
+    ],
+    "vocabularyDomain": "shared culture bonds",
+    "languageGoal": "Narrate friendship through shared taste",
+    "communicationGoal": "Show intimacy via cultural exchange",
+    "unit": 6,
+    "unitName": "Culture, Taste & Creativity"
+  },
+  {
+    "id": "i61",
+    "title": "When the system is slow, what should patients do?",
+    "coreQuestion": "How can people act without harming their care?",
+    "format": "article",
+    "grammarFocus": [
+      "should",
+      "conditionals"
+    ],
+    "vocabularyDomain": "patient agency",
+    "languageGoal": "Advise agency inside imperfect systems",
+    "communicationGoal": "Discuss navigating delays carefully",
+    "unit": 7,
+    "unitName": "Health Systems & Personal Choice"
+  },
+  {
+    "id": "i62",
+    "title": "What hidden rules shape medical conversations?",
+    "coreQuestion": "How can learners prepare for clearer patient talk?",
+    "format": "feature",
+    "grammarFocus": [
+      "reported speech soft",
+      "passives"
+    ],
+    "vocabularyDomain": "clinic discourse",
+    "languageGoal": "Decode medical interaction norms",
+    "communicationGoal": "Prepare for clearer patient talk",
+    "unit": 7,
+    "unitName": "Health Systems & Personal Choice"
+  },
+  {
+    "id": "i63",
+    "title": "Should prevention get more funding than treatment?",
+    "coreQuestion": "How should health budgets balance upstream and crisis care?",
+    "format": "opinion",
+    "grammarFocus": [
+      "argument structure",
+      "statistics soft"
+    ],
+    "vocabularyDomain": "prevention funding",
+    "languageGoal": "Argue about prevention versus treatment spend",
+    "communicationGoal": "Discuss public health priorities",
+    "unit": 7,
+    "unitName": "Health Systems & Personal Choice"
+  },
+  {
+    "id": "i64",
+    "title": "If symptoms are vague, who gets believed?",
+    "coreQuestion": "How does credibility work in early illness talk?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "modals of deduction",
+      "hedging"
+    ],
+    "vocabularyDomain": "symptom credibility",
+    "languageGoal": "Explore belief and disbelief in care",
+    "communicationGoal": "Talk about being taken seriously",
+    "unit": 7,
+    "unitName": "Health Systems & Personal Choice"
+  },
+  {
+    "id": "i65",
+    "title": "How do patients ask for more perspectives politely?",
+    "coreQuestion": "How can learners advocate for oneself respectfully?",
+    "format": "email",
+    "grammarFocus": [
+      "formal requests",
+      "softening"
+    ],
+    "vocabularyDomain": "second opinions",
+    "languageGoal": "Request further medical perspective",
+    "communicationGoal": "Advocate for oneself respectfully",
+    "unit": 7,
+    "unitName": "Health Systems & Personal Choice"
+  },
+  {
+    "id": "i66",
+    "title": "What do shared waiting spaces reveal about access?",
+    "coreQuestion": "How can learners discuss fairness of access humanely?",
+    "format": "essay",
+    "grammarFocus": [
+      "descriptive analysis",
+      "stance"
+    ],
+    "vocabularyDomain": "waiting & access",
+    "languageGoal": "Read inequality in healthcare spaces",
+    "communicationGoal": "Discuss fairness of access humanely",
+    "unit": 7,
+    "unitName": "Health Systems & Personal Choice"
+  },
+  {
+    "id": "i67",
+    "title": "Self-tracking health data: empowerment or anxiety?",
+    "coreQuestion": "Do personal metrics help or overwhelm patients?",
+    "format": "feature",
+    "grammarFocus": [
+      "advantages/disadvantages",
+      "hedging"
+    ],
+    "vocabularyDomain": "health tracking",
+    "languageGoal": "Weigh self-tracking carefully",
+    "communicationGoal": "Discuss datafication of the body",
+    "unit": 7,
+    "unitName": "Health Systems & Personal Choice"
+  },
+  {
+    "id": "i68",
+    "title": "How does forced optimism harm care relationships?",
+    "coreQuestion": "What does it mean to positivity pressure in illness?",
+    "format": "opinion",
+    "grammarFocus": [
+      "cause/effect",
+      "modality"
+    ],
+    "vocabularyDomain": "toxic positivity",
+    "languageGoal": "Critique positivity pressure in illness",
+    "communicationGoal": "Defend space for difficult feelings",
+    "unit": 7,
+    "unitName": "Health Systems & Personal Choice"
+  },
+  {
+    "id": "i69",
+    "title": "What do nearby general services provide that distant experts cannot?",
+    "coreQuestion": "What does it mean to local and specialised care roles?",
+    "format": "article",
+    "grammarFocus": [
+      "comparatives",
+      "relative clauses"
+    ],
+    "vocabularyDomain": "care proximity",
+    "languageGoal": "Compare local and specialised care roles",
+    "communicationGoal": "Value everyday healthcare infrastructure",
+    "unit": 7,
+    "unitName": "Health Systems & Personal Choice"
+  },
+  {
+    "id": "i70",
+    "title": "How should people decide among disagreeing experts?",
+    "coreQuestion": "How can learners synthesise competing recommendations?",
+    "format": "essay",
+    "grammarFocus": [
+      "hedging",
+      "decision language"
+    ],
+    "vocabularyDomain": "conflicting advice",
+    "languageGoal": "Navigate medical disagreement carefully",
+    "communicationGoal": "Synthesise competing recommendations",
+    "unit": 7,
+    "unitName": "Health Systems & Personal Choice"
+  },
+  {
+    "id": "i71",
+    "title": "What do softer words hide or protect?",
+    "coreQuestion": "What does it mean to softening language critically?",
+    "format": "article",
+    "grammarFocus": [
+      "nominalisation",
+      "passives"
+    ],
+    "vocabularyDomain": "euphemism",
+    "languageGoal": "Analyse softening language critically",
+    "communicationGoal": "Spot rhetorical cushioning",
+    "unit": 8,
+    "unitName": "Language, Persuasion & Truth"
+  },
+  {
+    "id": "i72",
+    "title": "How does persuasion age after the moment?",
+    "coreQuestion": "How can learners reflect on being persuaded over time?",
+    "format": "feature",
+    "grammarFocus": [
+      "narrative reflection",
+      "stance shift"
+    ],
+    "vocabularyDomain": "persuasion decay",
+    "languageGoal": "Track changing responses to rhetoric",
+    "communicationGoal": "Reflect on being persuaded over time",
+    "unit": 8,
+    "unitName": "Language, Persuasion & Truth"
+  },
+  {
+    "id": "i73",
+    "title": "Should public figures be fluent—or merely clear?",
+    "coreQuestion": "Is rhetorical polish necessary for trust?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "contrast"
+    ],
+    "vocabularyDomain": "fluency vs clarity",
+    "languageGoal": "Argue about style and political trust",
+    "communicationGoal": "Separate eloquence from substance",
+    "unit": 8,
+    "unitName": "Language, Persuasion & Truth"
+  },
+  {
+    "id": "i74",
+    "title": "If a claim is true but framed unfairly, is it honest?",
+    "coreQuestion": "Where does framing cross into distortion?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "conditionals",
+      "definitions"
+    ],
+    "vocabularyDomain": "framing ethics",
+    "languageGoal": "Debate truth versus fair presentation",
+    "communicationGoal": "Practise ethical communication judgment",
+    "unit": 8,
+    "unitName": "Language, Persuasion & Truth"
+  },
+  {
+    "id": "i75",
+    "title": "How should people correct public mistakes?",
+    "coreQuestion": "What does it mean to a credibility-building correction?",
+    "format": "email",
+    "grammarFocus": [
+      "concession",
+      "responsibility language"
+    ],
+    "vocabularyDomain": "retractions",
+    "languageGoal": "Write a credibility-building correction",
+    "communicationGoal": "Model accountable public speech",
+    "unit": 8,
+    "unitName": "Language, Persuasion & Truth"
+  },
+  {
+    "id": "i76",
+    "title": "Why do short phrases outcompete careful reasoning?",
+    "coreQuestion": "What does it mean to slogan effectiveness critically?",
+    "format": "essay",
+    "grammarFocus": [
+      "cause/effect",
+      "hedging"
+    ],
+    "vocabularyDomain": "slogan power",
+    "languageGoal": "Analyse slogan effectiveness critically",
+    "communicationGoal": "Defend slower argumentative speech",
+    "unit": 8,
+    "unitName": "Language, Persuasion & Truth"
+  },
+  {
+    "id": "i77",
+    "title": "How can attention itself change others?",
+    "coreQuestion": "What does it mean to persuasion as receptive skill?",
+    "format": "feature",
+    "grammarFocus": [
+      "modality",
+      "process language"
+    ],
+    "vocabularyDomain": "persuasive listening",
+    "languageGoal": "Reframe persuasion as receptive skill",
+    "communicationGoal": "Practise influence through attention",
+    "unit": 8,
+    "unitName": "Language, Persuasion & Truth"
+  },
+  {
+    "id": "i78",
+    "title": "When does humour stop protecting harmful speech?",
+    "coreQuestion": "What does it mean to joke-as-shield rhetoric?",
+    "format": "opinion",
+    "grammarFocus": [
+      "argument structure",
+      "modality"
+    ],
+    "vocabularyDomain": "joke defences",
+    "languageGoal": "Critique joke-as-shield rhetoric",
+    "communicationGoal": "Discuss responsibility in humour",
+    "unit": 8,
+    "unitName": "Language, Persuasion & Truth"
+  },
+  {
+    "id": "i79",
+    "title": "How can clarity honour audiences?",
+    "coreQuestion": "What does it mean to accessible serious writing?",
+    "format": "article",
+    "grammarFocus": [
+      "passives",
+      "stance"
+    ],
+    "vocabularyDomain": "plain language",
+    "languageGoal": "Defend accessible serious writing",
+    "communicationGoal": "Challenge pretension as intelligence",
+    "unit": 8,
+    "unitName": "Language, Persuasion & Truth"
+  },
+  {
+    "id": "i80",
+    "title": "How do people speak honestly under social pressure?",
+    "coreQuestion": "What does it mean to about courage in speech?",
+    "format": "essay",
+    "grammarFocus": [
+      "hedging",
+      "conditionals"
+    ],
+    "vocabularyDomain": "uncomfortable truth",
+    "languageGoal": "Argue about courage in speech",
+    "communicationGoal": "Balance kindness and candour",
+    "unit": 8,
+    "unitName": "Language, Persuasion & Truth"
+  },
+  {
+    "id": "i81",
+    "title": "How do communities normalise nearby hazards?",
+    "coreQuestion": "What does it mean to forgotten local hazards?",
+    "format": "feature",
+    "grammarFocus": [
+      "passives",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "normalised risk",
+    "languageGoal": "Analyse forgotten local hazards",
+    "communicationGoal": "Discuss responsibility without panic",
+    "unit": 9,
+    "unitName": "Nature, Risk & Responsibility"
+  },
+  {
+    "id": "i82",
+    "title": "How do disasters reshape local identity?",
+    "coreQuestion": "What does it mean to place after environmental shock?",
+    "format": "short story",
+    "grammarFocus": [
+      "narrative past perfect",
+      "descriptive detail"
+    ],
+    "vocabularyDomain": "disaster memory",
+    "languageGoal": "Narrate place after environmental shock",
+    "communicationGoal": "Link nature events to community story",
+    "unit": 9,
+    "unitName": "Nature, Risk & Responsibility"
+  },
+  {
+    "id": "i83",
+    "title": "Should individuals carry guilt for systemic harm?",
+    "coreQuestion": "Where does personal duty meet structural force?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "hedging",
+      "concession"
+    ],
+    "vocabularyDomain": "guilt vs systems",
+    "languageGoal": "Argue nuanced responsibility",
+    "communicationGoal": "Avoid both helplessness and self-blame traps",
+    "unit": 9,
+    "unitName": "Nature, Risk & Responsibility"
+  },
+  {
+    "id": "i84",
+    "title": "If a coastline retreats, who decides what to save?",
+    "coreQuestion": "How should communities prioritise under loss?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "conditionals",
+      "modals of obligation"
+    ],
+    "vocabularyDomain": "retreat decisions",
+    "languageGoal": "Debate hard conservation priorities",
+    "communicationGoal": "Talk about loss and planning calmly",
+    "unit": 9,
+    "unitName": "Nature, Risk & Responsibility"
+  },
+  {
+    "id": "i85",
+    "title": "How do locals organise stewardship together?",
+    "coreQuestion": "What does it mean to cooperative green projects?",
+    "format": "email",
+    "grammarFocus": [
+      "persuasive formal",
+      "so that"
+    ],
+    "vocabularyDomain": "shared gardens",
+    "languageGoal": "Propose cooperative green projects",
+    "communicationGoal": "Organise practical environmental action",
+    "unit": 9,
+    "unitName": "Nature, Risk & Responsibility"
+  },
+  {
+    "id": "i86",
+    "title": "Wild animals in cities: guests, pests, or neighbours?",
+    "coreQuestion": "How should urban people relate to wildlife?",
+    "format": "article",
+    "grammarFocus": [
+      "definitions",
+      "hedging"
+    ],
+    "vocabularyDomain": "urban wildlife ethics",
+    "languageGoal": "Frame human–wildlife coexistence carefully",
+    "communicationGoal": "Move beyond pest-only language",
+    "unit": 9,
+    "unitName": "Nature, Risk & Responsibility"
+  },
+  {
+    "id": "i87",
+    "title": "Why do people underprepare for low-probability disasters?",
+    "coreQuestion": "What does it mean to underpreparation psychology?",
+    "format": "essay",
+    "grammarFocus": [
+      "cause/effect",
+      "modality"
+    ],
+    "vocabularyDomain": "rare-event prep",
+    "languageGoal": "Analyse underpreparation psychology",
+    "communicationGoal": "Discuss prudent readiness",
+    "unit": 9,
+    "unitName": "Nature, Risk & Responsibility"
+  },
+  {
+    "id": "i88",
+    "title": "Beauty as a reason to protect—strong or weak?",
+    "coreQuestion": "Can aesthetic love justify conservation?",
+    "format": "opinion",
+    "grammarFocus": [
+      "argument evaluation",
+      "although"
+    ],
+    "vocabularyDomain": "beauty & conservation",
+    "languageGoal": "Evaluate aesthetic arguments for protection",
+    "communicationGoal": "Combine beauty with other reasons",
+    "unit": 9,
+    "unitName": "Nature, Risk & Responsibility"
+  },
+  {
+    "id": "i89",
+    "title": "How can future-facing care stay emotionally sustainable?",
+    "coreQuestion": "What does it mean to about long-term duty without burnout?",
+    "format": "feature",
+    "grammarFocus": [
+      "hedging",
+      "discourse markers"
+    ],
+    "vocabularyDomain": "future care",
+    "languageGoal": "Talk about long-term duty without burnout",
+    "communicationGoal": "Balance urgency and hope",
+    "unit": 9,
+    "unitName": "Nature, Risk & Responsibility"
+  },
+  {
+    "id": "i90",
+    "title": "How do people define sufficiency amid abundance pressure?",
+    "coreQuestion": "What does it mean to for workable enough-ness?",
+    "format": "essay",
+    "grammarFocus": [
+      "definitions",
+      "contrast"
+    ],
+    "vocabularyDomain": "sufficiency",
+    "languageGoal": "Argue for workable enough-ness",
+    "communicationGoal": "Challenge endless-upgrade norms gently",
+    "unit": 9,
+    "unitName": "Nature, Risk & Responsibility"
+  },
+  {
+    "id": "i91",
+    "title": "How do people lead from unofficial positions?",
+    "coreQuestion": "What does it mean to leadership beyond hierarchy?",
+    "format": "article",
+    "grammarFocus": [
+      "relative clauses",
+      "examples"
+    ],
+    "vocabularyDomain": "informal leadership",
+    "languageGoal": "Describe leadership beyond hierarchy",
+    "communicationGoal": "Recognise quiet influence",
+    "unit": 10,
+    "unitName": "Leadership, Habits & Growth"
+  },
+  {
+    "id": "i92",
+    "title": "What does breaking a stubborn pattern actually involve?",
+    "coreQuestion": "What does it mean to interrupting a habit loop?",
+    "format": "feature",
+    "grammarFocus": [
+      "process narrative",
+      "reflection"
+    ],
+    "vocabularyDomain": "habit interruption",
+    "languageGoal": "Narrate interrupting a habit loop",
+    "communicationGoal": "Share realistic behaviour change",
+    "unit": 10,
+    "unitName": "Leadership, Habits & Growth"
+  },
+  {
+    "id": "i93",
+    "title": "Should leaders show uncertainty in public?",
+    "coreQuestion": "Does visible doubt build or cost trust?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "advantages/disadvantages"
+    ],
+    "vocabularyDomain": "leader uncertainty",
+    "languageGoal": "Argue about transparent uncertainty",
+    "communicationGoal": "Discuss trust and vulnerability",
+    "unit": 10,
+    "unitName": "Leadership, Habits & Growth"
+  },
+  {
+    "id": "i94",
+    "title": "If feedback only arrives in crises, what is missing?",
+    "coreQuestion": "How should growth conversations be timed?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "conditionals",
+      "advice modals"
+    ],
+    "vocabularyDomain": "feedback culture",
+    "languageGoal": "Diagnose crisis-only feedback cultures",
+    "communicationGoal": "Design healthier growth talk",
+    "unit": 10,
+    "unitName": "Leadership, Habits & Growth"
+  },
+  {
+    "id": "i95",
+    "title": "How can developmental relationships stay fair?",
+    "coreQuestion": "How can learners prevent exploitation in guidance roles?",
+    "format": "email",
+    "grammarFocus": [
+      "formal clarity",
+      "boundaries language"
+    ],
+    "vocabularyDomain": "mentoring agreements",
+    "languageGoal": "Set clear mutual mentoring terms",
+    "communicationGoal": "Prevent exploitation in guidance roles",
+    "unit": 10,
+    "unitName": "Leadership, Habits & Growth"
+  },
+  {
+    "id": "i96",
+    "title": "When does self-improvement harm bonds?",
+    "coreQuestion": "What does it mean to self-development against relationships?",
+    "format": "essay",
+    "grammarFocus": [
+      "concession",
+      "hedging"
+    ],
+    "vocabularyDomain": "growth costs",
+    "languageGoal": "Weigh self-development against relationships",
+    "communicationGoal": "Argue for humane ambition",
+    "unit": 10,
+    "unitName": "Leadership, Habits & Growth"
+  },
+  {
+    "id": "i97",
+    "title": "Public praise, private critique: still wise?",
+    "coreQuestion": "Does the old management rule still hold?",
+    "format": "article",
+    "grammarFocus": [
+      "evaluation",
+      "contrast"
+    ],
+    "vocabularyDomain": "praise & critique",
+    "languageGoal": "Reassess classic leadership advice",
+    "communicationGoal": "Discuss feedback settings carefully",
+    "unit": 10,
+    "unitName": "Leadership, Habits & Growth"
+  },
+  {
+    "id": "i98",
+    "title": "Which micro-decisions shape group climate?",
+    "coreQuestion": "How can learners value everyday climate-setting?",
+    "format": "feature",
+    "grammarFocus": [
+      "examples",
+      "modality"
+    ],
+    "vocabularyDomain": "micro-leadership",
+    "languageGoal": "Notice small acts of leadership",
+    "communicationGoal": "Value everyday climate-setting",
+    "unit": 10,
+    "unitName": "Leadership, Habits & Growth"
+  },
+  {
+    "id": "i99",
+    "title": "How do different temperaments show development?",
+    "coreQuestion": "What does it mean to one-size growth narratives?",
+    "format": "opinion",
+    "grammarFocus": [
+      "comparatives",
+      "hedging"
+    ],
+    "vocabularyDomain": "growth styles",
+    "languageGoal": "Challenge one-size growth narratives",
+    "communicationGoal": "Validate quieter forms of development",
+    "unit": 10,
+    "unitName": "Leadership, Habits & Growth"
+  },
+  {
+    "id": "i100",
+    "title": "How do daily repetitions script future character?",
+    "coreQuestion": "What does it mean to habit and identity arguments?",
+    "format": "essay",
+    "grammarFocus": [
+      "synthesis",
+      "discourse markers"
+    ],
+    "vocabularyDomain": "habits & character",
+    "languageGoal": "Synthesize habit and identity arguments",
+    "communicationGoal": "Close with reflective growth philosophy",
+    "unit": 10,
+    "unitName": "Leadership, Habits & Growth"
+  }
+]

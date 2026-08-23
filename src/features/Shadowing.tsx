@@ -54,7 +54,7 @@ function getSupportedMimeType(): string {
 function toSubtitles(text: string): string[] {
   const MAX = 14;
   // Split at sentence-ending punctuation
-  const sentences = text.split(/(?<=[.!?])\s+/).filter(s => s.trim());
+  const sentences = text.split(/(?<=[.!?؟])\s+/).filter(s => s.trim());
   const chunks: string[] = [];
 
   for (const raw of sentences) {

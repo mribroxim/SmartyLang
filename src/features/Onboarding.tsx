@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { ArrowRight, BookOpen, Check, GraduationCap, Headphones, Sparkles } from 'lucide-react';
+import { ArabicDisplayModeToggle } from '../components/ArabicDisplayModeToggle';
 import { sePrimary, seSecondary } from '../components/ScreenShell';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
@@ -12,15 +13,18 @@ import {
 import type { UiLang } from '../lib/uiLang';
 import type { Level } from '../lib/reading-logic';
 import { syncPreferredTranslationFromUiLang } from '../lib/preferredTranslationLang';
+import { loadPlacementFlow } from '../lib/loadPlacementFlow';
 import {
   LEARNING_GOALS,
-  PLACEMENT_FLOW,
+  PLACEMENT_LEVELS,
   PLACEMENT_SECTION_LABELS,
   analyzePlacement,
   type LearningGoal,
   type PlacementSectionId,
   type PlacementStep,
 } from '../lib/placement';
+import type { UiStringKey } from '../lib/uiStrings';
+import { EN_UI_STRINGS } from '../lib/uiStrings';
 
 const FEATURED: ContentLang[] = ['en', 'uz', 'ru', 'tr', 'es', 'ar'];
 const NATIVE_FEATURED: UiLang[] = ['en', 'ru', 'uz', 'tr', 'es', 'ar'];
@@ -59,7 +63,7 @@ function Stage({
       <div className="mx-auto w-full max-w-[520px] lg:max-w-[900px] px-4 py-6 lg:px-10 lg:py-16">
         <div className="flex items-center justify-between gap-4 mb-8 lg:mb-12">
           <span className="font-serif font-black tracking-tighter uppercase text-[17px] lg:text-[19px] text-zinc-900 dark:text-zinc-50">
-            Smarty
+            SmartyLang
           </span>
           <div className="flex items-center gap-1.5 lg:gap-3">
             {STEPS.map((s, i) => (
@@ -207,16 +211,39 @@ function McqOptions({
   );
 }
 
-function sectionTitle(step: PlacementStep, t: (k: string) => string): string {
+function sectionLabel(
+  section: PlacementSectionId,
+  t: (key: UiStringKey, vars?: Record<string, string | number>) => string,
+): string {
+  const key = `onboard.section.${section}` as UiStringKey;
+  if (key in EN_UI_STRINGS) return t(key);
+  return PLACEMENT_SECTION_LABELS[section];
+}
+
+function goalCopy(
+  id: LearningGoal,
+  field: 'title' | 'desc',
+  fallback: string,
+  t: (key: UiStringKey, vars?: Record<string, string | number>) => string,
+): string {
+  const key = `onboard.goal.${id}.${field}` as UiStringKey;
+  if (key in EN_UI_STRINGS) return t(key);
+  return fallback;
+}
+
+function sectionTitle(step: PlacementStep, t: (k: UiStringKey) => string): string {
   if (step.type === 'passage') return t('onboard.reading.title');
   if (step.type === 'listening') return t('onboard.listening.title');
   return t('onboard.placement.title');
 }
 
-function sectionSubtitle(step: PlacementStep, t: (k: string) => string): string {
+function sectionSubtitle(
+  step: PlacementStep,
+  t: (k: UiStringKey, vars?: Record<string, string | number>) => string,
+): string {
   if (step.type === 'passage') return t('onboard.reading.subtitle');
   if (step.type === 'listening') return t('onboard.listening.subtitle');
-  return `${PLACEMENT_SECTION_LABELS[step.section]} · ${t('onboard.placement.subtitle')}`;
+  return `${sectionLabel(step.section, t)} · ${t('onboard.placement.subtitle')}`;
 }
 
 export function Onboarding({
@@ -232,7 +259,7 @@ export function Onboarding({
     startLessons: boolean;
   }) => void;
 }) {
-  const { contentLang, setContentLang } = useContentLang();
+  const { contentLang, setContentLang, arabicDisplayMode } = useContentLang();
   const { uiLang, setUiLang, t } = useUiLang();
 
   const [step, setStep] = useState<Step>('native');
@@ -241,12 +268,37 @@ export function Onboarding({
   const [goal, setGoal] = useState<LearningGoal | null>(null);
   const [answers, setAnswers] = useState<Record<string, number | boolean>>({});
   const [flowIndex, setFlowIndex] = useState(0);
+  const [flow, setFlow] = useState<PlacementStep[]>([]);
+  const [flowReady, setFlowReady] = useState(false);
+  const [overrideLevel, setOverrideLevel] = useState<Level | null>(null);
 
-  const flowItem = PLACEMENT_FLOW[flowIndex];
-  const analysis = useMemo(() => analyzePlacement(answers), [answers]);
+  const flowItem = flow[flowIndex];
+  const analysis = useMemo(() => analyzePlacement(answers, flow), [answers, flow]);
+  const startingLevel = overrideLevel ?? analysis.startingLevel;
   const answeredCount = Object.keys(answers).length;
-  const isLastFlow = flowIndex + 1 >= PLACEMENT_FLOW.length;
-  const flowPct = Math.round((flowIndex / PLACEMENT_FLOW.length) * 100);
+  const isLastFlow = flow.length > 0 && flowIndex + 1 >= flow.length;
+  const flowPct = flow.length > 0 ? Math.round((flowIndex / flow.length) * 100) : 0;
+
+  // Preload placement content when learning language changes (also covers goal → placement).
+  useEffect(() => {
+    let cancelled = false;
+    setFlowReady(false);
+    loadPlacementFlow(lang, arabicDisplayMode).then((next) => {
+      if (cancelled) return;
+      setFlow(next);
+      setFlowReady(true);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [lang, arabicDisplayMode]);
+
+  // Reset placement progress when learning language changes.
+  useEffect(() => {
+    setFlowIndex(0);
+    setAnswers({});
+    setOverrideLevel(null);
+  }, [lang]);
 
   const applyNativeLang = (code: UiLang) => {
     setNativeLang(code);
@@ -262,7 +314,7 @@ export function Onboarding({
       contentLang: lang,
       uiLang: nativeLang,
       goal: goal || 'daily',
-      startingLevel: analysis.startingLevel,
+      startingLevel,
       startLessons,
     });
   };
@@ -280,15 +332,20 @@ export function Onboarding({
     });
   };
 
+  const pickSelfLevel = (level: Level) => {
+    setOverrideLevel(level);
+    setStep('result');
+  };
+
   const advanceFlow = useCallback(() => {
     setFlowIndex((i) => {
-      if (i + 1 >= PLACEMENT_FLOW.length) {
+      if (i + 1 >= flow.length) {
         setStep('result');
         return i;
       }
       return i + 1;
     });
-  }, []);
+  }, [flow.length]);
 
   useEffect(() => {
     if (step !== 'placement' || !flowItem) return;
@@ -332,6 +389,7 @@ export function Onboarding({
   }
 
   if (step === 'learning') {
+    const tipLearnLang: ContentLang = lang === nativeLang ? (lang === 'en' ? 'es' : 'en') : lang;
     return (
       <Stage
         step="learning"
@@ -351,9 +409,11 @@ export function Onboarding({
         }
       >
         <LangGrid value={lang} onChange={setLang} featured={FEATURED} />
+        {lang === 'ar' && <ArabicDisplayModeToggle className="mt-4 lg:max-w-[420px]" />}
         {lang === nativeLang && (
           <p className="mt-4 text-[13px] text-amber-700 bg-amber-50 border border-amber-100 rounded-xl px-3.5 py-2.5">
-            Tip: most learners pick a different language here (e.g. speak {CONTENT_LANG_LABEL[nativeLang]}, learn English).
+            Tip: most learners pick a different language here (e.g. speak {CONTENT_LANG_LABEL[nativeLang]}, learn{' '}
+            {CONTENT_LANG_LABEL[tipLearnLang]}).
           </p>
         )}
       </Stage>
@@ -403,8 +463,12 @@ export function Onboarding({
                   <Icon className="w-5 h-5" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-bold text-[16px] lg:text-[18px] text-zinc-900 dark:text-zinc-50 leading-snug">{g.title}</div>
-                  <div className="text-[12px] lg:text-[14px] text-slate-400 mt-0.5 lg:mt-1.5 leading-snug">{g.desc}</div>
+                  <div className="font-bold text-[16px] lg:text-[18px] text-zinc-900 dark:text-zinc-50 leading-snug">
+                    {goalCopy(g.id, 'title', g.title, t)}
+                  </div>
+                  <div className="text-[12px] lg:text-[14px] text-slate-400 mt-0.5 lg:mt-1.5 leading-snug">
+                    {goalCopy(g.id, 'desc', g.desc, t)}
+                  </div>
                 </div>
                 {active && (
                   <span className="absolute top-4 right-4 w-5 h-5 rounded-full bg-zinc-900 dark:bg-zinc-100 flex items-center justify-center lg:top-5 lg:right-5">
@@ -419,8 +483,61 @@ export function Onboarding({
     );
   }
 
+  if (step === 'placement' && !flowReady) {
+    return (
+      <Stage
+        step="placement"
+        title={t('onboard.placement.title')}
+        subtitle={t('onboard.placement.subtitle')}
+        t={t}
+        footer={
+          <>
+            <button type="button" onClick={() => setStep('goal')} className={seSecondary}>
+              {t('onboard.back')}
+            </button>
+            <GhostButton onClick={skip}>{t('onboard.skipForNow')}</GhostButton>
+          </>
+        }
+      >
+        <p className="text-[14px] text-slate-500 dark:text-zinc-400">Loading level check…</p>
+      </Stage>
+    );
+  }
+
+  if (step === 'placement' && flowReady && flow.length === 0) {
+    return (
+      <Stage
+        step="placement"
+        title={t('onboard.selfLevel.title')}
+        subtitle={t('onboard.selfLevel.subtitle')}
+        t={t}
+        footer={
+          <>
+            <button type="button" onClick={() => setStep('goal')} className={seSecondary}>
+              {t('onboard.back')}
+            </button>
+            <GhostButton onClick={skip}>{t('onboard.skipForNow')}</GhostButton>
+          </>
+        }
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 lg:gap-3">
+          {PLACEMENT_LEVELS.map((level) => (
+            <button
+              key={level}
+              type="button"
+              onClick={() => pickSelfLevel(level)}
+              className="text-left rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 lg:p-5 font-bold text-[15px] lg:text-[16px] text-zinc-900 dark:text-zinc-50 hover:border-zinc-300 dark:hover:border-zinc-600 transition-all active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:focus-visible:ring-zinc-100 focus-visible:ring-offset-2"
+            >
+              {level}
+            </button>
+          ))}
+        </div>
+      </Stage>
+    );
+  }
+
   if (step === 'placement' && flowItem) {
-    const sectionBadge = PLACEMENT_SECTION_LABELS[flowItem.section as PlacementSectionId];
+    const sectionBadge = sectionLabel(flowItem.section as PlacementSectionId, t);
 
     return (
       <Stage
@@ -442,7 +559,7 @@ export function Onboarding({
           <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.14em] text-slate-400 mb-2">
             <span className="inline-flex items-center gap-1.5">
               {flowItem.section === 'listening' && <Headphones className="w-3.5 h-3.5" />}
-              {sectionBadge} · {t('onboard.questionOf', { n: flowIndex + 1, total: PLACEMENT_FLOW.length })}
+              {sectionBadge} · {t('onboard.questionOf', { n: flowIndex + 1, total: flow.length })}
             </span>
             <span>{t('onboard.answered', { n: answeredCount })}</span>
           </div>
@@ -545,31 +662,39 @@ export function Onboarding({
           <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-400 dark:text-zinc-500 mb-2">
             <Sparkles className="w-3.5 h-3.5" /> {t('onboard.result.starting')}
           </div>
-          <div className="font-serif font-black text-[28px] lg:text-[40px] leading-none tracking-tight">{analysis.startingLevel}</div>
+          <div className="font-serif font-black text-[28px] lg:text-[40px] leading-none tracking-tight">{startingLevel}</div>
           <p className="text-[13px] lg:text-[14px] text-zinc-400 dark:text-zinc-600 mt-2.5">
-            {t('onboard.result.correct', { correct: analysis.totalCorrect, total: analysis.totalScored })}
+            {overrideLevel
+              ? CONTENT_LANG_LABEL[lang]
+              : t('onboard.result.correct', { correct: analysis.totalCorrect, total: analysis.totalScored })}
             {goal === 'exam' ? ' · IELTS on Practice tab' : ''}
           </p>
         </div>
 
         <div className="rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 lg:p-7">
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-400 mb-3">{t('onboard.result.skills')}</p>
-          <div className="space-y-2.5">
-            {sectionRows.map((s) => {
-              const { correct, total, pct } = analysis.sections[s];
-              return (
-                <div key={s}>
-                  <div className="flex justify-between text-[13px] font-semibold mb-1">
-                    <span>{PLACEMENT_SECTION_LABELS[s]}</span>
-                    <span className="text-slate-500">{correct}/{total}</span>
+          {sectionRows.length === 0 ? (
+            <p className="text-[13px] text-slate-500 dark:text-zinc-400">
+              {overrideLevel ? t('onboard.selfLevel.subtitle') : t('onboard.placement.subtitle')}
+            </p>
+          ) : (
+            <div className="space-y-2.5">
+              {sectionRows.map((s) => {
+                const { correct, total, pct } = analysis.sections[s];
+                return (
+                  <div key={s}>
+                    <div className="flex justify-between text-[13px] font-semibold mb-1">
+                      <span>{sectionLabel(s, t)}</span>
+                      <span className="text-slate-500">{correct}/{total}</span>
+                    </div>
+                    <div className="h-1.5 rounded-full bg-slate-100 dark:bg-zinc-800 overflow-hidden">
+                      <div className="h-full rounded-full bg-zinc-900 dark:bg-zinc-100" style={{ width: `${Math.round(pct * 100)}%` }} />
+                    </div>
                   </div>
-                  <div className="h-1.5 rounded-full bg-slate-100 dark:bg-zinc-800 overflow-hidden">
-                    <div className="h-full rounded-full bg-zinc-900 dark:bg-zinc-100" style={{ width: `${Math.round(pct * 100)}%` }} />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          )}
           {(analysis.strengths.length > 0 || analysis.weaknesses.length > 0) && (
             <div className="mt-4 pt-4 border-t border-slate-100 dark:border-zinc-800 grid grid-cols-1 sm:grid-cols-2 gap-3 text-[13px]">
               {analysis.strengths.length > 0 && (
@@ -592,7 +717,7 @@ export function Onboarding({
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-slate-400 mb-3.5">{t('onboard.result.nextTitle')}</p>
           <ul className="flex flex-col gap-3">
             {[
-              `Learn opens at ${analysis.startingLevel}, marked “For you”`,
+              `Learn opens at ${startingLevel}, marked “For you”`,
               'Each lesson runs vocab → read aloud → exercises',
               'Every level stays unlocked if you want to go back',
               'Streak and XP start counting from your first lesson',

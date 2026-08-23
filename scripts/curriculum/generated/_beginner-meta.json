@@ -1,0 +1,1490 @@
+[
+  {
+    "id": "b1",
+    "title": "What's your name?",
+    "coreQuestion": "How do people introduce themselves?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "present simple",
+      "be"
+    ],
+    "vocabularyDomain": "greetings & identity",
+    "languageGoal": "Introduce yourself and ask someone's name",
+    "communicationGoal": "Start a short conversation with a new person",
+    "unit": 1,
+    "unitName": "Hello & Me"
+  },
+  {
+    "id": "b2",
+    "title": "Where are you from?",
+    "coreQuestion": "How do you talk about your country and city?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "be",
+      "from"
+    ],
+    "vocabularyDomain": "countries & cities",
+    "languageGoal": "Say where you live and come from",
+    "communicationGoal": "Exchange basic personal facts",
+    "unit": 1,
+    "unitName": "Hello & Me"
+  },
+  {
+    "id": "b3",
+    "title": "How old are you?",
+    "coreQuestion": "How do you talk about age and birthdays?",
+    "format": "short story",
+    "grammarFocus": [
+      "be",
+      "numbers"
+    ],
+    "vocabularyDomain": "age & birthdays",
+    "languageGoal": "Ask and answer about age",
+    "communicationGoal": "Share personal details politely",
+    "unit": 1,
+    "unitName": "Hello & Me"
+  },
+  {
+    "id": "b4",
+    "title": "This is my family",
+    "coreQuestion": "Who lives in your home?",
+    "format": "description",
+    "grammarFocus": [
+      "possessives",
+      "have"
+    ],
+    "vocabularyDomain": "family members",
+    "languageGoal": "Describe family members",
+    "communicationGoal": "Talk about people close to you",
+    "unit": 1,
+    "unitName": "Hello & Me"
+  },
+  {
+    "id": "b5",
+    "title": "What do you look like?",
+    "coreQuestion": "How do you describe a person's appearance?",
+    "format": "description",
+    "grammarFocus": [
+      "have/has",
+      "adjectives"
+    ],
+    "vocabularyDomain": "appearance",
+    "languageGoal": "Describe hair, eyes, height",
+    "communicationGoal": "Identify people by looks",
+    "unit": 1,
+    "unitName": "Hello & Me"
+  },
+  {
+    "id": "b6",
+    "title": "My favourite things",
+    "coreQuestion": "What do you like and dislike?",
+    "format": "short story",
+    "grammarFocus": [
+      "like/don't like",
+      "present simple"
+    ],
+    "vocabularyDomain": "preferences",
+    "languageGoal": "Express likes and dislikes",
+    "communicationGoal": "Share personal tastes",
+    "unit": 1,
+    "unitName": "Hello & Me"
+  },
+  {
+    "id": "b7",
+    "title": "Can you help me?",
+    "coreQuestion": "How do you ask for simple help?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "can",
+      "imperatives"
+    ],
+    "vocabularyDomain": "requests",
+    "languageGoal": "Make and answer simple requests",
+    "communicationGoal": "Get help in everyday situations",
+    "unit": 1,
+    "unitName": "Hello & Me"
+  },
+  {
+    "id": "b8",
+    "title": "What's in my bag?",
+    "coreQuestion": "How do you name everyday objects?",
+    "format": "description",
+    "grammarFocus": [
+      "there is/are",
+      "a/an"
+    ],
+    "vocabularyDomain": "everyday objects",
+    "languageGoal": "List common items",
+    "communicationGoal": "Talk about belongings",
+    "unit": 1,
+    "unitName": "Hello & Me"
+  },
+  {
+    "id": "b9",
+    "title": "My phone number is...",
+    "coreQuestion": "How do you share contact details?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "be",
+      "numbers"
+    ],
+    "vocabularyDomain": "contact info",
+    "languageGoal": "Give phone numbers and emails simply",
+    "communicationGoal": "Exchange contact information",
+    "unit": 1,
+    "unitName": "Hello & Me"
+  },
+  {
+    "id": "b10",
+    "title": "Nice to meet you",
+    "coreQuestion": "How do you end a first conversation politely?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "present simple",
+      "be"
+    ],
+    "vocabularyDomain": "polite phrases",
+    "languageGoal": "Use greetings and leave-takings",
+    "communicationGoal": "Close a short social interaction",
+    "unit": 1,
+    "unitName": "Hello & Me"
+  },
+  {
+    "id": "b11",
+    "title": "What time do you wake up?",
+    "coreQuestion": "What is a simple morning routine?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "time"
+    ],
+    "vocabularyDomain": "daily routine",
+    "languageGoal": "Describe morning habits",
+    "communicationGoal": "Talk about your day",
+    "unit": 2,
+    "unitName": "Home & Daily Life"
+  },
+  {
+    "id": "b12",
+    "title": "Come into my kitchen",
+    "coreQuestion": "What is in a typical kitchen?",
+    "format": "description",
+    "grammarFocus": [
+      "there is/are",
+      "prepositions"
+    ],
+    "vocabularyDomain": "kitchen & home",
+    "languageGoal": "Describe a room",
+    "communicationGoal": "Show someone around your home",
+    "unit": 2,
+    "unitName": "Home & Daily Life"
+  },
+  {
+    "id": "b13",
+    "title": "Where do you sleep?",
+    "coreQuestion": "How do you describe your bedroom?",
+    "format": "description",
+    "grammarFocus": [
+      "prepositions of place"
+    ],
+    "vocabularyDomain": "furniture",
+    "languageGoal": "Locate objects in a room",
+    "communicationGoal": "Describe living spaces",
+    "unit": 2,
+    "unitName": "Home & Daily Life"
+  },
+  {
+    "id": "b14",
+    "title": "Who does the housework?",
+    "coreQuestion": "Who helps at home?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "present simple",
+      "frequency"
+    ],
+    "vocabularyDomain": "chores",
+    "languageGoal": "Talk about household jobs",
+    "communicationGoal": "Discuss shared responsibilities",
+    "unit": 2,
+    "unitName": "Home & Daily Life"
+  },
+  {
+    "id": "b15",
+    "title": "I'm making lunch",
+    "coreQuestion": "What are people doing right now at home?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "present continuous"
+    ],
+    "vocabularyDomain": "home activities",
+    "languageGoal": "Describe actions in progress",
+    "communicationGoal": "Say what is happening now",
+    "unit": 2,
+    "unitName": "Home & Daily Life"
+  },
+  {
+    "id": "b16",
+    "title": "Do you have a pet?",
+    "coreQuestion": "What animals live with people?",
+    "format": "short story",
+    "grammarFocus": [
+      "have/has",
+      "can"
+    ],
+    "vocabularyDomain": "pets",
+    "languageGoal": "Talk about pets and care",
+    "communicationGoal": "Share pet stories",
+    "unit": 2,
+    "unitName": "Home & Daily Life"
+  },
+  {
+    "id": "b17",
+    "title": "Please close the door",
+    "coreQuestion": "How do you give simple home instructions?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "imperatives",
+      "please"
+    ],
+    "vocabularyDomain": "household instructions",
+    "languageGoal": "Give and follow short commands",
+    "communicationGoal": "Manage everyday home talk",
+    "unit": 2,
+    "unitName": "Home & Daily Life"
+  },
+  {
+    "id": "b18",
+    "title": "My evening at home",
+    "coreQuestion": "What do people do after work or school?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "time expressions"
+    ],
+    "vocabularyDomain": "evening routine",
+    "languageGoal": "Describe evening habits",
+    "communicationGoal": "Compare daily schedules",
+    "unit": 2,
+    "unitName": "Home & Daily Life"
+  },
+  {
+    "id": "b19",
+    "title": "Is anyone home?",
+    "coreQuestion": "How do you talk about who is in the house?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "there is/are",
+      "present continuous"
+    ],
+    "vocabularyDomain": "home presence",
+    "languageGoal": "Ask who is at home",
+    "communicationGoal": "Handle short phone/door talk",
+    "unit": 2,
+    "unitName": "Home & Daily Life"
+  },
+  {
+    "id": "b20",
+    "title": "A quiet Sunday",
+    "coreQuestion": "What makes a calm day at home?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "like"
+    ],
+    "vocabularyDomain": "rest & leisure at home",
+    "languageGoal": "Describe a free day",
+    "communicationGoal": "Talk about relaxing at home",
+    "unit": 2,
+    "unitName": "Home & Daily Life"
+  },
+  {
+    "id": "b21",
+    "title": "What's for breakfast?",
+    "coreQuestion": "What do people eat in the morning?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "present simple",
+      "some/any"
+    ],
+    "vocabularyDomain": "breakfast foods",
+    "languageGoal": "Talk about meals",
+    "communicationGoal": "Discuss food choices",
+    "unit": 3,
+    "unitName": "Food & Shopping"
+  },
+  {
+    "id": "b22",
+    "title": "At the supermarket",
+    "coreQuestion": "How do you buy food in a shop?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "I'd like",
+      "how much"
+    ],
+    "vocabularyDomain": "shopping",
+    "languageGoal": "Ask for items and prices",
+    "communicationGoal": "Shop for groceries",
+    "unit": 3,
+    "unitName": "Food & Shopping"
+  },
+  {
+    "id": "b23",
+    "title": "How much is this?",
+    "coreQuestion": "How do you talk about money and prices?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "how much",
+      "numbers"
+    ],
+    "vocabularyDomain": "prices & money",
+    "languageGoal": "Ask and say prices",
+    "communicationGoal": "Pay for simple purchases",
+    "unit": 3,
+    "unitName": "Food & Shopping"
+  },
+  {
+    "id": "b24",
+    "title": "I'd like a sandwich",
+    "coreQuestion": "How do you order food?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "I'd like",
+      "can I have"
+    ],
+    "vocabularyDomain": "cafés & ordering",
+    "languageGoal": "Order food and drink",
+    "communicationGoal": "Use a café or snack bar",
+    "unit": 3,
+    "unitName": "Food & Shopping"
+  },
+  {
+    "id": "b25",
+    "title": "Do you eat meat?",
+    "coreQuestion": "How do you talk about food preferences?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "do/does",
+      "like"
+    ],
+    "vocabularyDomain": "food preferences",
+    "languageGoal": "Ask about diet and taste",
+    "communicationGoal": "Share food habits politely",
+    "unit": 3,
+    "unitName": "Food & Shopping"
+  },
+  {
+    "id": "b26",
+    "title": "A shopping list",
+    "coreQuestion": "What do you need to buy this week?",
+    "format": "message",
+    "grammarFocus": [
+      "need",
+      "some/any"
+    ],
+    "vocabularyDomain": "food items",
+    "languageGoal": "Write a simple list/message",
+    "communicationGoal": "Plan shopping with someone",
+    "unit": 3,
+    "unitName": "Food & Shopping"
+  },
+  {
+    "id": "b27",
+    "title": "Too spicy for me",
+    "coreQuestion": "How do you describe food?",
+    "format": "short story",
+    "grammarFocus": [
+      "adjectives",
+      "too/very"
+    ],
+    "vocabularyDomain": "taste & texture",
+    "languageGoal": "Describe how food tastes",
+    "communicationGoal": "React to meals",
+    "unit": 3,
+    "unitName": "Food & Shopping"
+  },
+  {
+    "id": "b28",
+    "title": "We're having a picnic",
+    "coreQuestion": "What food do you take outdoors?",
+    "format": "invitation",
+    "grammarFocus": [
+      "present continuous for plans"
+    ],
+    "vocabularyDomain": "picnic & outdoor food",
+    "languageGoal": "Talk about food plans",
+    "communicationGoal": "Invite someone to eat together",
+    "unit": 3,
+    "unitName": "Food & Shopping"
+  },
+  {
+    "id": "b29",
+    "title": "Is there any milk?",
+    "coreQuestion": "How do you check what food you have?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "there is/are",
+      "some/any"
+    ],
+    "vocabularyDomain": "kitchen stock",
+    "languageGoal": "Ask about available food",
+    "communicationGoal": "Manage kitchen needs",
+    "unit": 3,
+    "unitName": "Food & Shopping"
+  },
+  {
+    "id": "b30",
+    "title": "Thank you, that was delicious",
+    "coreQuestion": "How do you thank someone for a meal?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "past simple was/were",
+      "adjectives"
+    ],
+    "vocabularyDomain": "polite meal talk",
+    "languageGoal": "Give simple compliments about food",
+    "communicationGoal": "Be polite after eating",
+    "unit": 3,
+    "unitName": "Food & Shopping"
+  },
+  {
+    "id": "b31",
+    "title": "Meet my best friend",
+    "coreQuestion": "What makes a good friend?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "adjectives"
+    ],
+    "vocabularyDomain": "friendship",
+    "languageGoal": "Describe a friend's personality",
+    "communicationGoal": "Talk about close relationships",
+    "unit": 4,
+    "unitName": "People Around Me"
+  },
+  {
+    "id": "b32",
+    "title": "My neighbour next door",
+    "coreQuestion": "Who lives near you?",
+    "format": "description",
+    "grammarFocus": [
+      "present simple",
+      "prepositions"
+    ],
+    "vocabularyDomain": "neighbours & community",
+    "languageGoal": "Describe people nearby",
+    "communicationGoal": "Talk about local people",
+    "unit": 4,
+    "unitName": "People Around Me"
+  },
+  {
+    "id": "b33",
+    "title": "Our new teacher",
+    "coreQuestion": "What do teachers do in class?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "can"
+    ],
+    "vocabularyDomain": "school people",
+    "languageGoal": "Describe a teacher",
+    "communicationGoal": "Talk about school life",
+    "unit": 4,
+    "unitName": "People Around Me"
+  },
+  {
+    "id": "b34",
+    "title": "She works in a shop",
+    "coreQuestion": "What jobs do people around you do?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "present simple jobs"
+    ],
+    "vocabularyDomain": "jobs",
+    "languageGoal": "Say what people do for work",
+    "communicationGoal": "Talk about occupations simply",
+    "unit": 4,
+    "unitName": "People Around Me"
+  },
+  {
+    "id": "b35",
+    "title": "Can I borrow your pen?",
+    "coreQuestion": "How do classmates help each other?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "can",
+      "possessives"
+    ],
+    "vocabularyDomain": "classroom requests",
+    "languageGoal": "Borrow and lend politely",
+    "communicationGoal": "Interact in class",
+    "unit": 4,
+    "unitName": "People Around Me"
+  },
+  {
+    "id": "b36",
+    "title": "We play football together",
+    "coreQuestion": "What do friends do in free time?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "together"
+    ],
+    "vocabularyDomain": "shared activities",
+    "languageGoal": "Describe shared hobbies",
+    "communicationGoal": "Talk about friends' activities",
+    "unit": 4,
+    "unitName": "People Around Me"
+  },
+  {
+    "id": "b37",
+    "title": "Happy birthday!",
+    "coreQuestion": "How do you celebrate with people?",
+    "format": "invitation",
+    "grammarFocus": [
+      "imperatives",
+      "present continuous plans"
+    ],
+    "vocabularyDomain": "celebrations",
+    "languageGoal": "Invite and congratulate",
+    "communicationGoal": "Join a small celebration",
+    "unit": 4,
+    "unitName": "People Around Me"
+  },
+  {
+    "id": "b38",
+    "title": "I'm sorry I'm late",
+    "coreQuestion": "How do you apologise simply?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "be",
+      "sorry"
+    ],
+    "vocabularyDomain": "apologies",
+    "languageGoal": "Apologise and respond",
+    "communicationGoal": "Repair a small social problem",
+    "unit": 4,
+    "unitName": "People Around Me"
+  },
+  {
+    "id": "b39",
+    "title": "Who is that man?",
+    "coreQuestion": "How do you ask about strangers politely?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "who/what",
+      "this/that"
+    ],
+    "vocabularyDomain": "identifying people",
+    "languageGoal": "Ask who someone is",
+    "communicationGoal": "Clarify identities carefully",
+    "unit": 4,
+    "unitName": "People Around Me"
+  },
+  {
+    "id": "b40",
+    "title": "People I see every day",
+    "coreQuestion": "Which people appear in your daily life?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "frequency"
+    ],
+    "vocabularyDomain": "everyday people",
+    "languageGoal": "List familiar people and roles",
+    "communicationGoal": "Describe your social circle simply",
+    "unit": 4,
+    "unitName": "People Around Me"
+  },
+  {
+    "id": "b41",
+    "title": "Where is the bank?",
+    "coreQuestion": "How do you ask for directions?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "where",
+      "imperatives",
+      "prepositions"
+    ],
+    "vocabularyDomain": "directions",
+    "languageGoal": "Ask for and give simple directions",
+    "communicationGoal": "Find a place in town",
+    "unit": 5,
+    "unitName": "Places in Town"
+  },
+  {
+    "id": "b42",
+    "title": "At the bus stop",
+    "coreQuestion": "How do you use local transport?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "present continuous",
+      "time"
+    ],
+    "vocabularyDomain": "transport",
+    "languageGoal": "Talk about buses and waiting",
+    "communicationGoal": "Use simple public transport",
+    "unit": 5,
+    "unitName": "Places in Town"
+  },
+  {
+    "id": "b43",
+    "title": "Is the museum open?",
+    "coreQuestion": "How do you ask about opening times?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "be",
+      "open/closed"
+    ],
+    "vocabularyDomain": "public places",
+    "languageGoal": "Ask if a place is open",
+    "communicationGoal": "Plan a short visit",
+    "unit": 5,
+    "unitName": "Places in Town"
+  },
+  {
+    "id": "b44",
+    "title": "There's a park near here",
+    "coreQuestion": "What places are near your home?",
+    "format": "description",
+    "grammarFocus": [
+      "there is/are",
+      "near/next to"
+    ],
+    "vocabularyDomain": "local facilities",
+    "languageGoal": "Describe the local area",
+    "communicationGoal": "Recommend nearby places",
+    "unit": 5,
+    "unitName": "Places in Town"
+  },
+  {
+    "id": "b45",
+    "title": "Let's go to the cinema",
+    "coreQuestion": "How do you suggest a place to go?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "let's",
+      "shall we"
+    ],
+    "vocabularyDomain": "leisure places",
+    "languageGoal": "Make simple suggestions",
+    "communicationGoal": "Arrange to go out",
+    "unit": 5,
+    "unitName": "Places in Town"
+  },
+  {
+    "id": "b46",
+    "title": "I'm lost!",
+    "coreQuestion": "What do you say when you can't find the way?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "can",
+      "imperatives"
+    ],
+    "vocabularyDomain": "getting help",
+    "languageGoal": "Ask for help when lost",
+    "communicationGoal": "Solve a navigation problem",
+    "unit": 5,
+    "unitName": "Places in Town"
+  },
+  {
+    "id": "b47",
+    "title": "Across from the school",
+    "coreQuestion": "How do you explain where buildings are?",
+    "format": "description",
+    "grammarFocus": [
+      "prepositions of place"
+    ],
+    "vocabularyDomain": "location phrases",
+    "languageGoal": "Use place prepositions accurately",
+    "communicationGoal": "Explain locations clearly",
+    "unit": 5,
+    "unitName": "Places in Town"
+  },
+  {
+    "id": "b48",
+    "title": "A day at the market",
+    "coreQuestion": "What happens at a local market?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "there is/are"
+    ],
+    "vocabularyDomain": "markets",
+    "languageGoal": "Describe a busy place",
+    "communicationGoal": "Talk about local shopping culture simply",
+    "unit": 5,
+    "unitName": "Places in Town"
+  },
+  {
+    "id": "b49",
+    "title": "How do I get to the station?",
+    "coreQuestion": "What is the best way to a station?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "how do I",
+      "turn left/right"
+    ],
+    "vocabularyDomain": "travel directions",
+    "languageGoal": "Follow multi-step directions",
+    "communicationGoal": "Reach a transport hub",
+    "unit": 5,
+    "unitName": "Places in Town"
+  },
+  {
+    "id": "b50",
+    "title": "My favourite place in town",
+    "coreQuestion": "Which local place do you love?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "because"
+    ],
+    "vocabularyDomain": "places & reasons",
+    "languageGoal": "Give a simple reason for a preference",
+    "communicationGoal": "Recommend a favourite place",
+    "unit": 5,
+    "unitName": "Places in Town"
+  },
+  {
+    "id": "b51",
+    "title": "What time is it?",
+    "coreQuestion": "How do you tell the time?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "be",
+      "time expressions"
+    ],
+    "vocabularyDomain": "clock time",
+    "languageGoal": "Ask and tell the time",
+    "communicationGoal": "Arrange meetings by time",
+    "unit": 6,
+    "unitName": "Time, Weather & Body"
+  },
+  {
+    "id": "b52",
+    "title": "What's the date today?",
+    "coreQuestion": "How do you talk about days and dates?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "be",
+      "ordinals"
+    ],
+    "vocabularyDomain": "calendar",
+    "languageGoal": "Say days, months, dates",
+    "communicationGoal": "Talk about the calendar",
+    "unit": 6,
+    "unitName": "Time, Weather & Body"
+  },
+  {
+    "id": "b53",
+    "title": "It's raining again",
+    "coreQuestion": "How do you describe the weather?",
+    "format": "short story",
+    "grammarFocus": [
+      "present continuous",
+      "be"
+    ],
+    "vocabularyDomain": "weather",
+    "languageGoal": "Describe today's weather",
+    "communicationGoal": "Make small talk about weather",
+    "unit": 6,
+    "unitName": "Time, Weather & Body"
+  },
+  {
+    "id": "b54",
+    "title": "Wear a warm coat",
+    "coreQuestion": "What clothes match the weather?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "imperatives",
+      "should basic"
+    ],
+    "vocabularyDomain": "clothes & weather",
+    "languageGoal": "Advise on clothing",
+    "communicationGoal": "Help someone dress for weather",
+    "unit": 6,
+    "unitName": "Time, Weather & Body"
+  },
+  {
+    "id": "b55",
+    "title": "I have a headache",
+    "coreQuestion": "How do you talk about feeling unwell?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "have",
+      "feel"
+    ],
+    "vocabularyDomain": "health symptoms",
+    "languageGoal": "Describe basic health problems",
+    "communicationGoal": "Explain why you need rest/help",
+    "unit": 6,
+    "unitName": "Time, Weather & Body"
+  },
+  {
+    "id": "b56",
+    "title": "At the pharmacy",
+    "coreQuestion": "What do you say when you buy medicine?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "I'd like",
+      "need"
+    ],
+    "vocabularyDomain": "pharmacy",
+    "languageGoal": "Ask for simple medicine",
+    "communicationGoal": "Handle a pharmacy visit",
+    "unit": 6,
+    "unitName": "Time, Weather & Body"
+  },
+  {
+    "id": "b57",
+    "title": "Wash your hands",
+    "coreQuestion": "What daily habits keep you healthy?",
+    "format": "short story",
+    "grammarFocus": [
+      "imperatives",
+      "present simple"
+    ],
+    "vocabularyDomain": "hygiene",
+    "languageGoal": "Give health advice simply",
+    "communicationGoal": "Talk about healthy habits",
+    "unit": 6,
+    "unitName": "Time, Weather & Body"
+  },
+  {
+    "id": "b58",
+    "title": "My left arm hurts",
+    "coreQuestion": "How do you name body parts and pain?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "possessives",
+      "hurt"
+    ],
+    "vocabularyDomain": "body parts",
+    "languageGoal": "Point to body problems",
+    "communicationGoal": "Explain pain to someone",
+    "unit": 6,
+    "unitName": "Time, Weather & Body"
+  },
+  {
+    "id": "b59",
+    "title": "See you next Monday",
+    "coreQuestion": "How do you talk about future days?",
+    "format": "message",
+    "grammarFocus": [
+      "going to",
+      "next"
+    ],
+    "vocabularyDomain": "future time words",
+    "languageGoal": "Make simple future arrangements",
+    "communicationGoal": "Confirm a meeting day",
+    "unit": 6,
+    "unitName": "Time, Weather & Body"
+  },
+  {
+    "id": "b60",
+    "title": "A cold winter morning",
+    "coreQuestion": "What is a winter day like?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "adjectives"
+    ],
+    "vocabularyDomain": "seasons",
+    "languageGoal": "Describe seasonal weather",
+    "communicationGoal": "Talk about seasons personally",
+    "unit": 6,
+    "unitName": "Time, Weather & Body"
+  },
+  {
+    "id": "b61",
+    "title": "What's your favourite subject?",
+    "coreQuestion": "Which school subjects do you like?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "present simple",
+      "like"
+    ],
+    "vocabularyDomain": "school subjects",
+    "languageGoal": "Talk about subjects",
+    "communicationGoal": "Compare school interests",
+    "unit": 7,
+    "unitName": "School & Learning"
+  },
+  {
+    "id": "b62",
+    "title": "I have English on Tuesday",
+    "coreQuestion": "What does a school timetable look like?",
+    "format": "description",
+    "grammarFocus": [
+      "have",
+      "on + day"
+    ],
+    "vocabularyDomain": "timetable",
+    "languageGoal": "Describe a weekly schedule",
+    "communicationGoal": "Talk about class times",
+    "unit": 7,
+    "unitName": "School & Learning"
+  },
+  {
+    "id": "b63",
+    "title": "Can you open your book?",
+    "coreQuestion": "What language do teachers use in class?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "can",
+      "imperatives"
+    ],
+    "vocabularyDomain": "classroom language",
+    "languageGoal": "Understand classroom instructions",
+    "communicationGoal": "Follow a lesson",
+    "unit": 7,
+    "unitName": "School & Learning"
+  },
+  {
+    "id": "b64",
+    "title": "I forgot my homework",
+    "coreQuestion": "What happens when homework is missing?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "past simple forgot",
+      "sorry"
+    ],
+    "vocabularyDomain": "homework",
+    "languageGoal": "Explain a school problem",
+    "communicationGoal": "Apologise and solve a homework issue",
+    "unit": 7,
+    "unitName": "School & Learning"
+  },
+  {
+    "id": "b65",
+    "title": "Let's study together",
+    "coreQuestion": "How do classmates help each other learn?",
+    "format": "message",
+    "grammarFocus": [
+      "let's",
+      "can"
+    ],
+    "vocabularyDomain": "study habits",
+    "languageGoal": "Suggest studying together",
+    "communicationGoal": "Organise peer study",
+    "unit": 7,
+    "unitName": "School & Learning"
+  },
+  {
+    "id": "b66",
+    "title": "In the school library",
+    "coreQuestion": "What can you do in a library?",
+    "format": "short story",
+    "grammarFocus": [
+      "can",
+      "there is/are"
+    ],
+    "vocabularyDomain": "library",
+    "languageGoal": "Describe a quiet study place",
+    "communicationGoal": "Talk about school facilities",
+    "unit": 7,
+    "unitName": "School & Learning"
+  },
+  {
+    "id": "b67",
+    "title": "We have a test tomorrow",
+    "coreQuestion": "How do students prepare for a test?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "going to",
+      "need to"
+    ],
+    "vocabularyDomain": "exams",
+    "languageGoal": "Talk about test preparation",
+    "communicationGoal": "Plan for assessment",
+    "unit": 7,
+    "unitName": "School & Learning"
+  },
+  {
+    "id": "b68",
+    "title": "Break time!",
+    "coreQuestion": "What do students do between classes?",
+    "format": "short story",
+    "grammarFocus": [
+      "present continuous",
+      "present simple"
+    ],
+    "vocabularyDomain": "break activities",
+    "languageGoal": "Describe short free periods",
+    "communicationGoal": "Talk about school social life",
+    "unit": 7,
+    "unitName": "School & Learning"
+  },
+  {
+    "id": "b69",
+    "title": "Please speak slowly",
+    "coreQuestion": "How do you ask someone to help your understanding?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "please",
+      "can you"
+    ],
+    "vocabularyDomain": "clarification",
+    "languageGoal": "Ask for repetition and clarity",
+    "communicationGoal": "Manage communication problems in class",
+    "unit": 7,
+    "unitName": "School & Learning"
+  },
+  {
+    "id": "b70",
+    "title": "My first day at school",
+    "coreQuestion": "What was a first school day like?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple",
+      "feelings"
+    ],
+    "vocabularyDomain": "school memories",
+    "languageGoal": "Tell a short past school story",
+    "communicationGoal": "Share a personal school memory",
+    "unit": 7,
+    "unitName": "School & Learning"
+  },
+  {
+    "id": "b71",
+    "title": "What do you do after school?",
+    "coreQuestion": "How do you spend free time?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "present simple",
+      "usually"
+    ],
+    "vocabularyDomain": "hobbies",
+    "languageGoal": "Describe free-time habits",
+    "communicationGoal": "Talk about leisure",
+    "unit": 8,
+    "unitName": "Free Time & Fun"
+  },
+  {
+    "id": "b72",
+    "title": "I love football",
+    "coreQuestion": "Which sports do people play or watch?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "like/love"
+    ],
+    "vocabularyDomain": "sport",
+    "languageGoal": "Talk about sports preferences",
+    "communicationGoal": "Discuss sport with friends",
+    "unit": 8,
+    "unitName": "Free Time & Fun"
+  },
+  {
+    "id": "b73",
+    "title": "Can you play the guitar?",
+    "coreQuestion": "What musical skills can people have?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "can/can't"
+    ],
+    "vocabularyDomain": "music & ability",
+    "languageGoal": "Talk about abilities",
+    "communicationGoal": "Ask what someone can do",
+    "unit": 8,
+    "unitName": "Free Time & Fun"
+  },
+  {
+    "id": "b74",
+    "title": "We're watching a film",
+    "coreQuestion": "How do friends choose entertainment?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "present continuous",
+      "want to"
+    ],
+    "vocabularyDomain": "films & TV",
+    "languageGoal": "Talk about watching something now/soon",
+    "communicationGoal": "Decide on entertainment",
+    "unit": 8,
+    "unitName": "Free Time & Fun"
+  },
+  {
+    "id": "b75",
+    "title": "A rainy-day hobby",
+    "coreQuestion": "What can you do indoors for fun?",
+    "format": "short story",
+    "grammarFocus": [
+      "can",
+      "like"
+    ],
+    "vocabularyDomain": "indoor hobbies",
+    "languageGoal": "Suggest indoor activities",
+    "communicationGoal": "Plan indoor free time",
+    "unit": 8,
+    "unitName": "Free Time & Fun"
+  },
+  {
+    "id": "b76",
+    "title": "Come to my party",
+    "coreQuestion": "How do you invite friends to a party?",
+    "format": "invitation",
+    "grammarFocus": [
+      "would you like",
+      "at + time"
+    ],
+    "vocabularyDomain": "parties",
+    "languageGoal": "Write/say a simple invitation",
+    "communicationGoal": "Invite and reply to invitations",
+    "unit": 8,
+    "unitName": "Free Time & Fun"
+  },
+  {
+    "id": "b77",
+    "title": "I collect stickers",
+    "coreQuestion": "What unusual hobbies do people have?",
+    "format": "short story",
+    "grammarFocus": [
+      "present simple",
+      "collect"
+    ],
+    "vocabularyDomain": "collections",
+    "languageGoal": "Describe a personal hobby in detail",
+    "communicationGoal": "Share niche interests simply",
+    "unit": 8,
+    "unitName": "Free Time & Fun"
+  },
+  {
+    "id": "b78",
+    "title": "Let's go for a walk",
+    "coreQuestion": "How do you suggest outdoor fun?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "let's",
+      "why don't we"
+    ],
+    "vocabularyDomain": "outdoor leisure",
+    "languageGoal": "Make outdoor suggestions",
+    "communicationGoal": "Organise a simple outing",
+    "unit": 8,
+    "unitName": "Free Time & Fun"
+  },
+  {
+    "id": "b79",
+    "title": "Weekend plans",
+    "coreQuestion": "What are you going to do this weekend?",
+    "format": "message",
+    "grammarFocus": [
+      "going to"
+    ],
+    "vocabularyDomain": "weekend plans",
+    "languageGoal": "Talk about near-future plans",
+    "communicationGoal": "Coordinate weekend activities",
+    "unit": 8,
+    "unitName": "Free Time & Fun"
+  },
+  {
+    "id": "b80",
+    "title": "That was so much fun!",
+    "coreQuestion": "How do you talk about a fun day afterwards?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple"
+    ],
+    "vocabularyDomain": "fun memories",
+    "languageGoal": "Retell a fun past event simply",
+    "communicationGoal": "Share enjoyment after an activity",
+    "unit": 8,
+    "unitName": "Free Time & Fun"
+  },
+  {
+    "id": "b81",
+    "title": "We're going on a trip",
+    "coreQuestion": "How do people prepare for a short trip?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "going to",
+      "need"
+    ],
+    "vocabularyDomain": "travel preparation",
+    "languageGoal": "Talk about trip plans",
+    "communicationGoal": "Prepare for travel with someone",
+    "unit": 9,
+    "unitName": "Travel Basics"
+  },
+  {
+    "id": "b82",
+    "title": "Two tickets, please",
+    "coreQuestion": "How do you buy tickets?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "I'd like",
+      "numbers"
+    ],
+    "vocabularyDomain": "tickets",
+    "languageGoal": "Buy transport tickets",
+    "communicationGoal": "Handle a ticket counter",
+    "unit": 9,
+    "unitName": "Travel Basics"
+  },
+  {
+    "id": "b83",
+    "title": "What's in your suitcase?",
+    "coreQuestion": "What do you pack for a trip?",
+    "format": "description",
+    "grammarFocus": [
+      "there is/are",
+      "need"
+    ],
+    "vocabularyDomain": "packing",
+    "languageGoal": "List packed items",
+    "communicationGoal": "Talk about packing decisions",
+    "unit": 9,
+    "unitName": "Travel Basics"
+  },
+  {
+    "id": "b84",
+    "title": "At the hotel desk",
+    "coreQuestion": "How do you check into a hotel?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "have",
+      "I'd like"
+    ],
+    "vocabularyDomain": "hotels",
+    "languageGoal": "Check in simply",
+    "communicationGoal": "Use hotel reception language",
+    "unit": 9,
+    "unitName": "Travel Basics"
+  },
+  {
+    "id": "b85",
+    "title": "The train leaves at six",
+    "coreQuestion": "How do you talk about departure times?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "present simple schedules"
+    ],
+    "vocabularyDomain": "timetables",
+    "languageGoal": "Read and say travel times",
+    "communicationGoal": "Catch transport on time",
+    "unit": 9,
+    "unitName": "Travel Basics"
+  },
+  {
+    "id": "b86",
+    "title": "Can you take a photo?",
+    "coreQuestion": "How do tourists ask for small favours?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "can you",
+      "please"
+    ],
+    "vocabularyDomain": "tourist requests",
+    "languageGoal": "Ask strangers for help politely",
+    "communicationGoal": "Handle tourist interactions",
+    "unit": 9,
+    "unitName": "Travel Basics"
+  },
+  {
+    "id": "b87",
+    "title": "I need a map",
+    "coreQuestion": "How do you find your way in a new place?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "need",
+      "where"
+    ],
+    "vocabularyDomain": "navigation tools",
+    "languageGoal": "Ask for maps/info",
+    "communicationGoal": "Orient yourself in a new town",
+    "unit": 9,
+    "unitName": "Travel Basics"
+  },
+  {
+    "id": "b88",
+    "title": "Our holiday photos",
+    "coreQuestion": "How do you talk about a trip after returning?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple"
+    ],
+    "vocabularyDomain": "holiday memories",
+    "languageGoal": "Describe a past trip simply",
+    "communicationGoal": "Share travel experiences",
+    "unit": 9,
+    "unitName": "Travel Basics"
+  },
+  {
+    "id": "b89",
+    "title": "Is breakfast included?",
+    "coreQuestion": "What questions do guests ask hotels?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "is/are",
+      "included"
+    ],
+    "vocabularyDomain": "hotel services",
+    "languageGoal": "Ask about hotel services",
+    "communicationGoal": "Clarify stay details",
+    "unit": 9,
+    "unitName": "Travel Basics"
+  },
+  {
+    "id": "b90",
+    "title": "Home again",
+    "coreQuestion": "How do you feel after a trip?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple",
+      "feelings"
+    ],
+    "vocabularyDomain": "return & feelings",
+    "languageGoal": "Talk about return feelings",
+    "communicationGoal": "Close a travel story",
+    "unit": 9,
+    "unitName": "Travel Basics"
+  },
+  {
+    "id": "b91",
+    "title": "Yesterday was busy",
+    "coreQuestion": "What did you do yesterday?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple"
+    ],
+    "vocabularyDomain": "daily past events",
+    "languageGoal": "Narrate a yesterday routine",
+    "communicationGoal": "Tell a short past-day story",
+    "unit": 10,
+    "unitName": "Stories & Special Days"
+  },
+  {
+    "id": "b92",
+    "title": "We celebrated New Year",
+    "coreQuestion": "How do families celebrate big days?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple"
+    ],
+    "vocabularyDomain": "festivals",
+    "languageGoal": "Describe a celebration",
+    "communicationGoal": "Talk about special days",
+    "unit": 10,
+    "unitName": "Stories & Special Days"
+  },
+  {
+    "id": "b93",
+    "title": "A surprise gift",
+    "coreQuestion": "What happened when someone got a gift?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple",
+      "feelings"
+    ],
+    "vocabularyDomain": "gifts",
+    "languageGoal": "Tell a short gift story",
+    "communicationGoal": "Share happy past moments",
+    "unit": 10,
+    "unitName": "Stories & Special Days"
+  },
+  {
+    "id": "b94",
+    "title": "I lost my keys",
+    "coreQuestion": "How do you narrate a small problem?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple",
+      "then"
+    ],
+    "vocabularyDomain": "problems & solutions",
+    "languageGoal": "Sequence past events",
+    "communicationGoal": "Explain a past problem",
+    "unit": 10,
+    "unitName": "Stories & Special Days"
+  },
+  {
+    "id": "b95",
+    "title": "My first bike",
+    "coreQuestion": "What special things do people remember from childhood?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple",
+      "could"
+    ],
+    "vocabularyDomain": "childhood memories",
+    "languageGoal": "Talk about a childhood object/event",
+    "communicationGoal": "Share personal history simply",
+    "unit": 10,
+    "unitName": "Stories & Special Days"
+  },
+  {
+    "id": "b96",
+    "title": "The day it snowed",
+    "coreQuestion": "What was a memorable weather day like?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple",
+      "past continuous basic"
+    ],
+    "vocabularyDomain": "weather memories",
+    "languageGoal": "Combine weather and past events",
+    "communicationGoal": "Tell a weather memory",
+    "unit": 10,
+    "unitName": "Stories & Special Days"
+  },
+  {
+    "id": "b97",
+    "title": "We won the game!",
+    "coreQuestion": "How do you talk about a sports result?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple"
+    ],
+    "vocabularyDomain": "games results",
+    "languageGoal": "Describe winning/losing simply",
+    "communicationGoal": "Celebrate a team result",
+    "unit": 10,
+    "unitName": "Stories & Special Days"
+  },
+  {
+    "id": "b98",
+    "title": "Thank-you message",
+    "coreQuestion": "How do you thank someone after a special day?",
+    "format": "email",
+    "grammarFocus": [
+      "past simple",
+      "thank you for"
+    ],
+    "vocabularyDomain": "thanks",
+    "languageGoal": "Write a short thank-you note",
+    "communicationGoal": "Express gratitude in writing",
+    "unit": 10,
+    "unitName": "Stories & Special Days"
+  },
+  {
+    "id": "b99",
+    "title": "Looking forward to next week",
+    "coreQuestion": "What are you going to do soon?",
+    "format": "message",
+    "grammarFocus": [
+      "going to",
+      "will"
+    ],
+    "vocabularyDomain": "near future",
+    "languageGoal": "Talk about upcoming plans",
+    "communicationGoal": "Express anticipation",
+    "unit": 10,
+    "unitName": "Stories & Special Days"
+  },
+  {
+    "id": "b100",
+    "title": "A story I like to tell",
+    "coreQuestion": "Which personal story do you enjoy retelling?",
+    "format": "short story",
+    "grammarFocus": [
+      "past simple",
+      "because"
+    ],
+    "vocabularyDomain": "personal narrative",
+    "languageGoal": "Tell a complete mini-story",
+    "communicationGoal": "Entertain with a personal anecdote",
+    "unit": 10,
+    "unitName": "Stories & Special Days"
+  }
+]

@@ -186,14 +186,14 @@ function LevelBreakdown({ counts }: { counts: number[] }) {
 
 function SectionCard({ title, icon, iconColor, children, onNavigate, navLabel }: any) {
   return (
-    <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden h-full">
-      <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between">
-        <h2 className="text-lg font-bold text-slate-800 flex items-center gap-3">
+    <div className="bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm overflow-hidden h-full">
+      <div className="px-6 py-5 border-b border-slate-100 dark:border-zinc-800 flex items-center justify-between">
+        <h2 className="text-lg font-bold text-slate-800 dark:text-zinc-50 flex items-center gap-3">
           <span className={`w-8 h-8 rounded-xl flex items-center justify-center ${iconColor}`}>{icon}</span>
           {title}
         </h2>
         {onNavigate && (
-          <button onClick={onNavigate} className="text-xs font-bold text-slate-400 hover:text-zinc-900 flex items-center gap-1 transition-colors">
+          <button onClick={onNavigate} className="text-xs font-bold text-slate-400 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-1 transition-colors">
             {navLabel || 'Open'} <ChevronRight className="w-3 h-3" />
           </button>
         )}
@@ -1215,20 +1215,20 @@ export default function DashboardView({
           { id: 'all', label: t('common.allTime') },
         ];
         return (
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-            <div className="px-5 py-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <h2 className="text-lg font-bold text-slate-800 flex items-center gap-3">
+          <div className="bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm overflow-hidden">
+            <div className="px-5 py-4 border-b border-slate-100 dark:border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <h2 className="text-lg font-bold text-slate-800 dark:text-zinc-50 flex items-center gap-3">
                 <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-zinc-100 text-zinc-600"><BarChart2 className="w-4 h-4" /></span>
                 {t('dash.statistics')}
               </h2>
-              <div className="flex gap-1 p-1 bg-slate-100 rounded-xl">
+              <div className="flex gap-1 p-1 bg-slate-100 dark:bg-zinc-800 rounded-xl">
                 {PERIODS.map(p => (
                   <button
                     key={p.id}
                     type="button"
                     onClick={() => setDashboardFilter(p.id)}
                     className={`px-2.5 py-1.5 rounded-lg text-xs font-bold transition-colors ${
-                      dashboardFilter === p.id ? 'bg-white text-zinc-900 shadow-sm' : 'text-slate-500 hover:text-slate-700'
+                      dashboardFilter === p.id ? 'bg-white dark:bg-zinc-100 text-zinc-900 shadow-sm' : 'text-slate-500 hover:text-slate-700 dark:text-zinc-400'
                     }`}
                   >{p.label}</button>
                 ))}
@@ -1239,20 +1239,20 @@ export default function DashboardView({
               <div className="h-44 w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={activityChartData} margin={{ top: 4, right: 4, left: -20, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+                    <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--se-grid)" />
                     <XAxis
                       dataKey="label"
-                      tick={{ fontSize: 10, fill: '#94a3b8' }}
+                      tick={{ fontSize: 10, fill: 'var(--se-muted)' }}
                       tickLine={false}
                       axisLine={false}
                       interval="preserveStartEnd"
                     />
-                    <YAxis allowDecimals={false} tick={{ fontSize: 10, fill: '#94a3b8' }} tickLine={false} axisLine={false} />
+                    <YAxis allowDecimals={false} tick={{ fontSize: 10, fill: 'var(--se-muted)' }} tickLine={false} axisLine={false} />
                     <Tooltip
-                      cursor={{ fill: '#f8fafc' }}
-                      contentStyle={{ borderRadius: 12, border: '1px solid #e2e8f0', fontSize: 12 }}
+                      cursor={{ fill: 'var(--se-cursor)' }}
+                      contentStyle={{ borderRadius: 12, border: '1px solid var(--se-tooltip-border)', background: 'var(--se-tooltip-bg)', color: 'var(--se-ink)', fontSize: 12 }}
                     />
-                    <Bar dataKey="sessions" name="Sessions" fill="#18181b" radius={[6, 6, 0, 0]} maxBarSize={28} />
+                    <Bar dataKey="sessions" name="Sessions" fill="var(--se-ink)" radius={[6, 6, 0, 0]} maxBarSize={28} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -1272,7 +1272,7 @@ export default function DashboardView({
               setActiveExercise?.('flashcards');
               setActiveTab('exercises');
             }}
-            className={`${seCard} w-full p-4 lg:p-5 flex items-center gap-3.5 text-left hover:border-zinc-300 transition-colors`}
+            className={`${seCard} w-full p-4 lg:p-5 flex items-center gap-3.5 text-left hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors`}
           >
             <div className="w-12 h-12 rounded-xl bg-violet-100 text-violet-700 flex items-center justify-center shrink-0">
               <Repeat className="w-5 h-5" />
@@ -1297,8 +1297,8 @@ export default function DashboardView({
             <button
               type="button"
               onClick={() => setActiveTab('gamification')}
-              className={`${seCard} p-4 lg:p-5 text-left hover:border-zinc-300 transition-colors`}
-              style={{ background: league.soft }}
+              className={`${seCard} league-tile p-4 lg:p-5 text-left hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors`}
+              style={{ ['--league-soft' as string]: league.soft, ['--league-ink' as string]: league.ink } as React.CSSProperties}
             >
               <div className="flex items-center gap-2 mb-2">
                 <Trophy className="w-4 h-4" style={{ color: league.ink }} />
@@ -1341,9 +1341,9 @@ export default function DashboardView({
           ...(isEnglish ? [{ id: 'story' as const, label: 'IELTS' }] : []),
         ];
         return (
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-            <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between gap-2">
-              <h2 className="text-lg font-bold text-zinc-900 flex items-center gap-3">
+          <div className="bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm overflow-hidden">
+            <div className="px-6 py-5 border-b border-slate-100 dark:border-zinc-800 flex items-center justify-between gap-2">
+              <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-50 flex items-center gap-3">
                 <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-zinc-900 text-white"><Clock className="w-4 h-4" /></span>
                 {t('dash.activityHistory')}
               </h2>
@@ -1360,11 +1360,11 @@ export default function DashboardView({
                     type="button"
                     onClick={() => setHistoryFilter(tab.id)}
                     className={`shrink-0 px-3 py-1 rounded-full text-[11px] font-semibold transition-colors ${
-                      historyFilter === tab.id ? 'bg-zinc-900 text-white' : 'bg-slate-100 text-slate-500'
+                      historyFilter === tab.id ? 'bg-zinc-900 text-white' : 'bg-slate-100 dark:bg-zinc-800 text-slate-500'
                     }`}
                   >
                     {tab.label}
-                    <span className={`ml-1.5 text-[10px] font-black ${historyFilter === tab.id ? 'text-white/70' : 'text-slate-400'}`}>{count}</span>
+                    <span className="ml-1.5 text-[10px] font-black opacity-70">{count}</span>
                   </button>
                 );
               })}
@@ -1617,7 +1617,7 @@ export default function DashboardView({
 
       case 'pronunciation':
         return (
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm overflow-hidden">
             <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between">
               <h2 className="text-lg font-bold text-slate-800 flex items-center gap-3">
                 <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-emerald-100 text-emerald-600"><Mic className="w-4 h-4" /></span>
@@ -1680,7 +1680,7 @@ export default function DashboardView({
 
       case 'mistakes':
         return Object.keys(problemWordsScoped).length === 0 ? (
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm overflow-hidden">
             <div className="px-6 py-5 border-b border-slate-100">
               <h2 className="text-lg font-bold text-slate-800 flex items-center gap-3">
                 <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-rose-100 text-rose-600"><AlertCircle className="w-4 h-4" /></span>
@@ -1690,7 +1690,7 @@ export default function DashboardView({
             <div className="p-6"><p className="text-slate-400 text-sm">No mistakes logged yet. Keep practising!</p></div>
           </div>
         ) : (
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm overflow-hidden">
             <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between">
               <h2 className="text-lg font-bold text-slate-800 flex items-center gap-3">
                 <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-rose-100 text-rose-600"><AlertCircle className="w-4 h-4" /></span>
@@ -1722,7 +1722,7 @@ export default function DashboardView({
 
       case 'exercises':
         return (
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+          <div className="bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm overflow-hidden">
             <div className="px-6 py-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <h2 className="text-lg font-bold text-slate-800 flex items-center gap-3">
                 <span className="w-8 h-8 rounded-xl flex items-center justify-center bg-zinc-100 text-zinc-600"><Brain className="w-4 h-4" /></span>
@@ -1963,7 +1963,7 @@ export default function DashboardView({
         )}
 
         {isFull && editMode && (
-          <div className="bg-zinc-900 text-white rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="bg-zinc-900 text-white dark-keep rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <p className="font-bold text-sm">Layout Edit Mode</p>
               <p className="text-zinc-400 text-xs mt-0.5">Drag widgets to reorder • Click × to hide • Add hidden widgets below</p>
@@ -1977,7 +1977,7 @@ export default function DashboardView({
 
         {/* Empty state — profile only (home always shows Continue) */}
         {isProfile && isEmpty && (
-          <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-10 text-center">
+          <div className="bg-white dark:bg-zinc-900 rounded-3xl border border-slate-200 dark:border-zinc-800 shadow-sm p-10 text-center">
             <div className="w-16 h-16 bg-zinc-50 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-zinc-100">
               <BarChart2 className="w-8 h-8 text-zinc-300" />
             </div>
@@ -2065,8 +2065,8 @@ export default function DashboardView({
 
         return (
           <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-zinc-900/60 backdrop-blur-sm" onClick={close}>
-            <div className="bg-white rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]" onClick={e => e.stopPropagation()}>
-              <div className="px-5 py-4 border-b border-slate-100 flex items-center gap-3 shrink-0 bg-white">
+            <div className="bg-white dark:bg-zinc-900 rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh]" onClick={e => e.stopPropagation()}>
+              <div className="px-5 py-4 border-b border-slate-100 dark:border-zinc-800 flex items-center gap-3 shrink-0 bg-white dark:bg-zinc-900">
                 <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${meta.bg} ${meta.text}`}>
                   {meta.icon}
                 </div>
@@ -2367,9 +2367,9 @@ export default function DashboardView({
                         <p className="text-3xl font-black text-slate-500">{d.total != null && d.correct != null ? d.total - d.correct : '—'}</p>
                         <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">Wrong</p>
                       </div>
-                      <div className="p-4 bg-zinc-900 rounded-2xl text-center">
-                        <p className="text-3xl font-black text-white">{d.total ?? '—'}</p>
-                        <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider mt-1">Total</p>
+                      <div className="p-4 bg-zinc-900 dark:bg-zinc-100 rounded-2xl text-center text-white dark:text-zinc-900">
+                        <p className="text-3xl font-black">{d.total ?? '—'}</p>
+                        <p className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider mt-1">Total</p>
                       </div>
                     </div>
                     {entry.score != null && (

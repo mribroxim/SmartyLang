@@ -1,5 +1,5 @@
 import React, { useState, lazy, Suspense, useEffect } from 'react';
-import { Mic, Headphones, Loader2 } from 'lucide-react';
+import { Mic, Headphones, Loader2, MessageCircle } from 'lucide-react';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
 import { ScreenShell, HubRow, seGrid2 } from '../components/ScreenShell';
@@ -7,8 +7,9 @@ import { ScreenShell, HubRow, seGrid2 } from '../components/ScreenShell';
 const SpeakingPractice = lazy(() => import('./SpeakingPractice').then(m => ({ default: m.SpeakingPractice })));
 const Shadowing        = lazy(() => import('./Shadowing').then(m => ({ default: m.Shadowing })));
 const IELTSSpeaking    = lazy(() => import('./IELTSSpeaking').then(m => ({ default: m.IELTSSpeaking })));
+const SpeakingBuddy    = lazy(() => import('./SpeakingBuddy').then(m => ({ default: m.SpeakingBuddy })));
 
-type SpeakingMode = 'hub' | 'general' | 'shadowing' | 'ielts';
+type SpeakingMode = 'hub' | 'general' | 'shadowing' | 'ielts' | 'buddy';
 
 function Spinner() {
   return (
@@ -19,7 +20,7 @@ function Spinner() {
 }
 
 function parseMode(raw?: string): SpeakingMode {
-  if (raw === 'general' || raw === 'shadowing' || raw === 'ielts') return raw;
+  if (raw === 'general' || raw === 'shadowing' || raw === 'ielts' || raw === 'buddy') return raw;
   return 'hub';
 }
 
@@ -31,56 +32,52 @@ export function SpeakingHub({
   navMode,
   onNavMode,
   onIeltsBack,
+  startingLevel,
 }: {
   initialTopicIndex?: number;
   onToggleVocab?: (w: string, ctx: string) => void;
   savedVocab?: Record<string, any>;
   onShowModal?: (w: string, mode: string) => void;
-  /** Controlled mode from browser URL (optional). */
   navMode?: string;
   onNavMode?: (mode: SpeakingMode) => void;
-  /** When set, IELTS Speaking back returns here (IELTS tab) instead of the Practice hub. */
   onIeltsBack?: () => void;
+  startingLevel?: string;
 }) {
   const { isEnglish } = useContentLang();
   const { t } = useUiLang();
   const controlled = typeof onNavMode === 'function';
   const [localMode, setLocalMode] = useState<SpeakingMode>(
-    initialTopicIndex !== undefined ? 'general' : (isEnglish ? 'hub' : 'general'),
+    initialTopicIndex !== undefined ? 'general' : 'hub',
   );
 
-  const mode: SpeakingMode = !isEnglish
-    ? 'general'
-    : controlled
-      ? parseMode(navMode)
-      : localMode;
+  const mode: SpeakingMode = controlled ? parseMode(navMode) : localMode;
 
   const setMode = (m: SpeakingMode) => {
     if (controlled) onNavMode!(m);
     else setLocalMode(m);
   };
 
-  // When a jump supplies a topic, open general practice once.
   useEffect(() => {
     if (initialTopicIndex !== undefined) setMode('general');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialTopicIndex]);
 
-  if (mode === 'general' || !isEnglish) {
+  if (mode === 'general') {
     return (
       <Suspense fallback={<Spinner />}>
         <SpeakingPractice
-          onBack={isEnglish ? () => setMode('hub') : undefined}
+          onBack={() => setMode('hub')}
           initialTopicIndex={initialTopicIndex}
           onToggleVocab={onToggleVocab}
           savedVocab={savedVocab}
           onShowModal={onShowModal}
+          startingLevel={startingLevel}
         />
       </Suspense>
     );
   }
 
-  if (mode === 'shadowing') {
+  if (mode === 'shadowing' && isEnglish) {
     return (
       <Suspense fallback={<Spinner />}>
         <Shadowing onBack={() => setMode('hub')} />
@@ -96,6 +93,14 @@ export function SpeakingHub({
     );
   }
 
+  if (mode === 'buddy') {
+    return (
+      <Suspense fallback={<Spinner />}>
+        <SpeakingBuddy onBack={() => setMode('hub')} startingLevel={startingLevel} />
+      </Suspense>
+    );
+  }
+
   return (
     <ScreenShell title={t('speaking.title')} subtitle={t('speaking.subtitle')}>
       <div className={seGrid2}>
@@ -106,12 +111,21 @@ export function SpeakingHub({
           desc={t('speaking.general.desc')}
           onClick={() => setMode('general')}
         />
+        {isEnglish && (
+          <HubRow
+            icon={<Headphones className="w-6 h-6" />}
+            iconClass="bg-sky-50 text-sky-700"
+            title={t('speaking.shadow.title')}
+            desc={t('speaking.shadow.desc')}
+            onClick={() => setMode('shadowing')}
+          />
+        )}
         <HubRow
-          icon={<Headphones className="w-6 h-6" />}
-          iconClass="bg-sky-50 text-sky-700"
-          title={t('speaking.shadow.title')}
-          desc={t('speaking.shadow.desc')}
-          onClick={() => setMode('shadowing')}
+          icon={<MessageCircle className="w-6 h-6" />}
+          iconClass="bg-violet-50 text-violet-700"
+          title="Speaking buddy"
+          desc="Short conversations with AI — speak, listen, get a quiet correction."
+          onClick={() => setMode('buddy')}
         />
       </div>
     </ScreenShell>

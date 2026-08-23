@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { Check, Crown, GraduationCap, CreditCard, AlertCircle, X, Loader2, Minus, Plus, Building2, Mail } from 'lucide-react';
+import { Check, Crown, GraduationCap, CreditCard, AlertCircle, X, Loader2, Minus, Plus, Building2, Mail, Languages } from 'lucide-react';
 import {
   PLANS, redirectToAtmos, isAtmosConfigured, formatUZS, formatUSD,
   computeMonthlyUSD, computeMonthlyUZSTiyin, Plan, PlanId,
@@ -10,7 +10,7 @@ import { ScreenShell, seCard, seGrid3, sePrimary } from '../components/ScreenShe
 interface PaymentPlansProps {
   user: any;
   currentPlan?: PlanId | null;
-  onPlanActivated?: (planId: PlanId, seats: number) => void;
+  onPlanActivated?: (planId: PlanId, seats: number, languages?: number) => void;
 }
 
 const PLAN_ICONS: Record<PlanId, any> = {
@@ -39,23 +39,25 @@ const PLAN_COLORS: Record<PlanId, { icon: string; accent: string; button: string
 
 export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlansProps) {
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
-  const [seats, setSeats] = useState<number>(0); // additional seats requested for selected plan
+  const [seats, setSeats] = useState<number>(0);
+  const [languages, setLanguages] = useState<number>(1);
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const openPlan = (plan: Plan) => {
     setSelectedPlan(plan);
     setSeats(plan.minSeats ?? plan.includedSeats ?? 0);
+    setLanguages(plan.includedLanguages ?? 1);
     setError(null);
   };
 
   const totalUSD = useMemo(
-    () => (selectedPlan ? computeMonthlyUSD(selectedPlan, seats) : 0),
-    [selectedPlan, seats]
+    () => (selectedPlan ? computeMonthlyUSD(selectedPlan, seats, languages) : 0),
+    [selectedPlan, seats, languages]
   );
   const totalUZS = useMemo(
-    () => (selectedPlan ? computeMonthlyUZSTiyin(selectedPlan, seats) : 0),
-    [selectedPlan, seats]
+    () => (selectedPlan ? computeMonthlyUZSTiyin(selectedPlan, seats, languages) : 0),
+    [selectedPlan, seats, languages]
   );
 
   const confirmSubscribe = async () => {
@@ -65,7 +67,6 @@ export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlan
     try {
       const accountId = user?.uid || user?.email || `guest_${Date.now()}`;
 
-      // Stash pending payment so it can be finalized on the success redirect.
       if (user?.uid) {
         try {
           sessionStorage.setItem('smarty_pending_payment', JSON.stringify({
@@ -74,16 +75,15 @@ export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlan
             displayName: user.displayName ?? user.email ?? 'User',
             planId: selectedPlan.id,
             seats,
+            languages,
             amountUSD: totalUSD,
             amountUZS: totalUZS,
             startedAt: Date.now(),
           }));
-        } catch { /* sessionStorage may be unavailable; non-fatal */ }
+        } catch { /* non-fatal */ }
       }
 
       if (!isAtmosConfigured()) {
-        // Dev/preview fallback: just activate the plan immediately so the rest
-        // of the flow can be tested without a live ATMOS merchant account.
         if (user?.uid) {
           await recordPayment({
             uid: user.uid,
@@ -96,15 +96,15 @@ export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlan
             status: 'completed',
             paidAt: Date.now(),
           });
-          await setUserPlan(user.uid, selectedPlan.id, { seats });
+          await setUserPlan(user.uid, selectedPlan.id, { seats, languages });
           sessionStorage.removeItem('smarty_pending_payment');
-          onPlanActivated?.(selectedPlan.id, seats);
+          onPlanActivated?.(selectedPlan.id, seats, languages);
         }
         setSelectedPlan(null);
         setProcessing(false);
         return;
       }
-      redirectToAtmos(selectedPlan, seats, accountId);
+      redirectToAtmos(selectedPlan, seats, accountId, languages);
     } catch (err: any) {
       setError(err.message || 'Failed to start payment.');
       setProcessing(false);
@@ -114,7 +114,7 @@ export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlan
   return (
     <ScreenShell
       title="Plans"
-      subtitle="Individual, teacher, or school access."
+      subtitle="Individual, teacher, or school access — priced by seats and learning languages."
       size="wide"
     >
       {currentPlan && (
@@ -164,7 +164,9 @@ export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlan
                         <span className="text-[22px] font-black font-mono text-zinc-900 dark:text-zinc-50 leading-none">${plan.extraSeatPriceUSD}</span>
                         <span className="text-[12px] font-bold text-slate-400">/ seat / month</span>
                       </div>
-                      <p className="text-[11px] text-slate-400 mt-1">Minimum {plan.minSeats} student seats</p>
+                      <p className="text-[11px] text-slate-400 mt-1">
+                        Min {plan.minSeats} seats · 1 language included · +${plan.extraLanguagePerSeatUSD}/seat per extra language
+                      </p>
                     </>
                   ) : (
                     <>
@@ -172,9 +174,11 @@ export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlan
                         <span className="text-[22px] font-black font-mono text-zinc-900 dark:text-zinc-50 leading-none">${plan.basePriceUSD}</span>
                         <span className="text-[12px] font-bold text-slate-400">/month</span>
                       </div>
-                      {plan.extraSeatPriceUSD ? (
-                        <p className="text-[11px] text-slate-400 mt-1">+ ${plan.extraSeatPriceUSD} per additional seat / month</p>
-                      ) : null}
+                      <p className="text-[11px] text-slate-400 mt-1">
+                        {plan.extraSeatPriceUSD
+                          ? `+ $${plan.extraSeatPriceUSD}/extra seat · +$${plan.extraLanguagePerSeatUSD ?? plan.extraLearningLanguageUSD}/extra language`
+                          : `1 language included · +$${plan.extraLearningLanguageUSD}/mo per extra language`}
+                      </p>
                     </>
                   )}
                 </div>
@@ -213,6 +217,8 @@ export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlan
           plan={selectedPlan}
           seats={seats}
           setSeats={setSeats}
+          languages={languages}
+          setLanguages={setLanguages}
           totalUSD={totalUSD}
           totalUZS={totalUZS}
           error={error}
@@ -225,13 +231,64 @@ export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlan
   );
 }
 
-/* ── Subscribe / seat config modal ── */
+function CounterRow({
+  label,
+  hint,
+  value,
+  min,
+  onChange,
+}: {
+  label: string;
+  hint: string;
+  value: number;
+  min: number;
+  onChange: (n: number) => void;
+}) {
+  return (
+    <div className="mb-4 p-4 lg:p-5 rounded-xl bg-slate-50 dark:bg-zinc-800 border border-slate-100 dark:border-zinc-700">
+      <div className="mb-3">
+        <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-zinc-400">{label}</p>
+        <p className="text-xs text-slate-500 dark:text-zinc-400 mt-1">{hint}</p>
+      </div>
+      <div className="flex items-center gap-3">
+        <button
+          type="button"
+          onClick={() => onChange(Math.max(min, value - 1))}
+          disabled={value <= min}
+          className="w-10 h-10 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
+        >
+          <Minus className="w-4 h-4" />
+        </button>
+        <input
+          type="number"
+          value={value}
+          min={min}
+          onChange={(e) => {
+            const v = parseInt(e.target.value || '0', 10);
+            onChange(Math.max(min, isNaN(v) ? min : v));
+          }}
+          className="flex-1 text-center text-2xl font-black font-mono py-2 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 rounded-xl text-zinc-900 dark:text-zinc-50 outline-none focus:ring-2 focus:ring-emerald-500"
+        />
+        <button
+          type="button"
+          onClick={() => onChange(value + 1)}
+          className="w-10 h-10 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors flex items-center justify-center"
+        >
+          <Plus className="w-4 h-4" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function SubscribeModal({
-  plan, seats, setSeats, totalUSD, totalUZS, error, processing, onClose, onConfirm,
+  plan, seats, setSeats, languages, setLanguages, totalUSD, totalUZS, error, processing, onClose, onConfirm,
 }: {
   plan: Plan;
   seats: number;
   setSeats: (s: number) => void;
+  languages: number;
+  setLanguages: (n: number) => void;
   totalUSD: number;
   totalUZS: number;
   error: string | null;
@@ -242,8 +299,14 @@ function SubscribeModal({
   const showSeatSelector = !!plan.extraSeatPriceUSD || (plan.minSeats ?? 0) > 0;
   const minSeats = plan.minSeats ?? plan.includedSeats ?? 0;
   const includedSeats = plan.includedSeats ?? 0;
-  const extraSeats = Math.max(0, seats - includedSeats);
-  const extraCost = extraSeats * (plan.extraSeatPriceUSD ?? 0);
+  const seatCount = showSeatSelector ? Math.max(minSeats, seats) : 0;
+  const extraSeats = Math.max(0, seatCount - includedSeats);
+  const extraSeatCost = extraSeats * (plan.extraSeatPriceUSD ?? 0);
+  const includedLangs = plan.includedLanguages ?? 1;
+  const extraLangs = Math.max(0, languages - includedLangs);
+  const langCost = plan.extraLanguagePerSeatUSD
+    ? extraLangs * Math.max(showSeatSelector ? seatCount : 1, 1) * plan.extraLanguagePerSeatUSD
+    : extraLangs * (plan.extraLearningLanguageUSD ?? 0);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -271,49 +334,32 @@ function SubscribeModal({
             )}
           </div>
 
-          {/* Seat selector */}
           {showSeatSelector && (
-            <div className="mb-4 p-4 lg:p-5 rounded-xl bg-slate-50 dark:bg-zinc-800 border border-slate-100 dark:border-zinc-700">
-              <div className="flex items-center justify-between mb-3">
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-zinc-400">Student seats</p>
-                  <p className="text-xs text-slate-500 dark:text-zinc-400 mt-1">
-                    {includedSeats > 0
-                      ? `${includedSeats} included, ${extraSeats} extra at $${plan.extraSeatPriceUSD}/seat`
-                      : `Minimum ${minSeats} seats at $${plan.extraSeatPriceUSD}/seat`}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => setSeats(Math.max(minSeats, seats - 1))}
-                  disabled={seats <= minSeats}
-                  className="w-10 h-10 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
-                >
-                  <Minus className="w-4 h-4" />
-                </button>
-                <input
-                  type="number"
-                  value={seats}
-                  min={minSeats}
-                  onChange={(e) => {
-                    const v = parseInt(e.target.value || '0', 10);
-                    setSeats(Math.max(minSeats, isNaN(v) ? minSeats : v));
-                  }}
-                  className="flex-1 text-center text-2xl font-black font-mono py-2 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 rounded-xl text-zinc-900 dark:text-zinc-50 outline-none focus:ring-2 focus:ring-emerald-500"
-                />
-                <button
-                  onClick={() => setSeats(seats + 1)}
-                  className="w-10 h-10 rounded-xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors flex items-center justify-center"
-                >
-                  <Plus className="w-4 h-4" />
-                </button>
-              </div>
-              <p className="text-[10px] text-slate-400 dark:text-zinc-500 text-center mt-2 font-medium">total seats</p>
-            </div>
+            <CounterRow
+              label="Student seats"
+              hint={
+                includedSeats > 0
+                  ? `${includedSeats} included, extras at $${plan.extraSeatPriceUSD}/seat`
+                  : `Minimum ${minSeats} seats at $${plan.extraSeatPriceUSD}/seat`
+              }
+              value={seats}
+              min={minSeats}
+              onChange={setSeats}
+            />
           )}
 
-          {/* Org-specific staff feature */}
+          <CounterRow
+            label="Learning languages"
+            hint={
+              plan.extraLanguagePerSeatUSD
+                ? `1 included · +$${plan.extraLanguagePerSeatUSD} × seats per extra language (UI language stays free)`
+                : `1 included · +$${plan.extraLearningLanguageUSD}/mo per extra language (UI language stays free)`
+            }
+            value={languages}
+            min={includedLangs}
+            onChange={setLanguages}
+          />
+
           {plan.allowsStaffInvites && (
             <div className="mb-4 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950 border border-emerald-100 dark:border-emerald-900 flex items-start gap-3">
               <Mail className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
@@ -323,20 +369,36 @@ function SubscribeModal({
             </div>
           )}
 
-          {/* Pricing breakdown */}
           <div className="mb-4 p-4 lg:p-5 rounded-xl border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-900">
             <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-zinc-400 mb-3">Pricing breakdown</h4>
             <div className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
               {plan.basePriceUSD > 0 && (
                 <div className="flex justify-between">
-                  <span>{plan.name} base{includedSeats > 0 ? ` (${includedSeats} seats included)` : ''}</span>
+                  <span>{plan.name} base{includedSeats > 0 ? ` (${includedSeats} seats)` : ''}</span>
                   <span className="font-mono font-bold">{formatUSD(plan.basePriceUSD)}</span>
                 </div>
               )}
-              {extraSeats > 0 && (
+              {plan.id === 'organization' && (
                 <div className="flex justify-between">
-                  <span>{extraSeats} × ${plan.extraSeatPriceUSD} {plan.basePriceUSD > 0 ? 'extra ' : ''}seat{extraSeats === 1 ? '' : 's'}</span>
-                  <span className="font-mono font-bold">{formatUSD(extraCost)}</span>
+                  <span>{seatCount} × ${plan.extraSeatPriceUSD} seats</span>
+                  <span className="font-mono font-bold">{formatUSD(seatCount * (plan.extraSeatPriceUSD ?? 0))}</span>
+                </div>
+              )}
+              {extraSeats > 0 && plan.id !== 'organization' && (
+                <div className="flex justify-between">
+                  <span>{extraSeats} × ${plan.extraSeatPriceUSD} extra seats</span>
+                  <span className="font-mono font-bold">{formatUSD(extraSeatCost)}</span>
+                </div>
+              )}
+              {extraLangs > 0 && (
+                <div className="flex justify-between gap-2">
+                  <span className="flex items-start gap-1.5">
+                    <Languages className="w-3.5 h-3.5 mt-0.5 shrink-0 text-emerald-600" />
+                    {plan.extraLanguagePerSeatUSD
+                      ? `${extraLangs} extra lang × ${seatCount || 1} seats × $${plan.extraLanguagePerSeatUSD}`
+                      : `${extraLangs} × $${plan.extraLearningLanguageUSD} extra languages`}
+                  </span>
+                  <span className="font-mono font-bold shrink-0">{formatUSD(langCost)}</span>
                 </div>
               )}
               <div className="border-t border-slate-200 dark:border-zinc-700 pt-2 mt-2 flex justify-between text-base">
@@ -351,7 +413,7 @@ function SubscribeModal({
           </div>
 
           <p className="text-xs text-slate-500 dark:text-zinc-400 mb-4 leading-relaxed">
-            Clicking <strong>Pay with ATMOS</strong> redirects you to the ATMOS secure payment page. You return to Smarty English after confirmation.
+            Clicking <strong>Pay with ATMOS</strong> redirects you to the ATMOS secure payment page. You return to SmartyLang after confirmation.
           </p>
 
           {error && (

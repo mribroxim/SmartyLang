@@ -1,10 +1,11 @@
 import { useVosk, isMobileDevice } from './hooks/useVosk';
 import { useAppRoute } from './hooks/useAppRoute';
 import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from 'react';
-import { CheckCircle2, Clock, Volume2, X, BookOpen, Home, Play, XCircle, Download, StopCircle, Loader2, Pencil } from 'lucide-react';
+import { CheckCircle2, Clock, Volume2, X, BookOpen, Home, Play, XCircle, Download, StopCircle, Loader2, Pencil, Flame, Target, Medal, Sparkles } from 'lucide-react';
 import { accountTypeOf, isFreeUser, isPreviewMode, canPractice, ACCOUNT_TYPE_LABEL } from './lib/access';
 import { Level, ReadingText, alignWords, isMatch, cleanSpeechToken } from './lib/reading-logic';
 import { tokenizeForLang, normalizeForMatch } from './lib/pronunciationProfile';
+import { tokenizePassageForSpeech } from './lib/dialogueText';
 import { loadLevelTexts, EMPTY_LEVEL_TEXTS, type LevelTexts } from './data/levelTexts';
 import { logActivity } from './lib/activity-tracker';
 import { get, set } from 'idb-keyval';
@@ -16,6 +17,7 @@ import { PaywallScreen } from './components/PaywallScreen';
 import { playSound } from './lib/audio';
 import { WordDetailsModal } from './components/WordDetailsModal';
 import { playWord as sharedPlayWord } from './lib/speech';
+import { DEFAULT_SPEECH_RATE } from './lib/speechRates';
 import { lookupDictionary } from './lib/dictionary';
 import { EN_ONLY_TABS, vocabStorageKey, type ContentLang } from './lib/contentLang';
 import { activityLangStamp, sessionsForLang } from './lib/activityMeta';
@@ -30,6 +32,7 @@ import { bumpWeeklyGoal, trackExerciseStreak } from './lib/weeklyGoals';
 import { requestExerciseResume, loadExerciseSession } from './lib/exerciseSession';
 import { readScopedJSON, writeScopedJSON } from './lib/userStorage';
 import { recordCompletion, bandFromScore40 } from './lib/completions';
+import { transformArabicContent } from './lib/arabicText';
 import {
   type HabitState,
   emptyHabit,
@@ -39,6 +42,7 @@ import {
   levelForXp,
   unlockBadge,
   DAILY_GOAL_XP,
+  BADGE_META,
 } from './lib/habitEngine';
 import Sidebar from './components/Sidebar';
 import { MobileNav } from './components/MobileNav';
@@ -72,6 +76,7 @@ const Gamification         = lazy(() => import('./features/Gamification').then(m
 const PaymentPlans         = lazy(() => import('./features/PaymentPlans').then(m => ({ default: m.PaymentPlans })));
 const InteractiveStory     = lazy(() => import('./features/InteractiveStory').then(m => ({ default: m.InteractiveStory })));
 const IELTSReading         = lazy(() => import('./features/IELTSReading').then(m => ({ default: m.IELTSReading })));
+const IELTSFullMock        = lazy(() => import('./features/IELTSFullMock').then(m => ({ default: m.IELTSFullMock })));
 const ComprehensiveReading = lazy(() => import('./features/ComprehensiveReading').then(m => ({ default: m.ComprehensiveReading })));
 const ComprehensiveListening = lazy(() => import('./features/ComprehensiveListening').then(m => ({ default: m.ComprehensiveListening })));
 const ListeningPractice    = lazy(() => import('./features/ListeningPractice').then(m => ({ default: m.ListeningPractice })));
@@ -132,7 +137,7 @@ function EditModeToggle({ activeTab }: { activeTab: string }) {
 }
 
 export default function App() {
-  const { contentLang, speechLocale, isEnglish, nativeName, dictCode } = useContentLang();
+  const { contentLang, speechLocale, isEnglish, nativeName, dictCode, arabicDisplayMode } = useContentLang();
   const { uiLang } = useUiLang();
   const [level, setLevel] = useState<Level>('Beginner');
   const appliedStartingLevel = useRef(false);
@@ -167,7 +172,23 @@ export default function App() {
     newBadges?: string[];
   } | null>(null);
 
-  const awardXP = (xpAmount: number, coinsAmount: number) => {
+  /** XP / daily-goal rewards shown inside the reading stats modal */
+  const [sessionReward, setSessionReward] = useState<{
+    xp: number;
+    coins: number;
+    goalJustCompleted?: boolean;
+    streakTicked?: boolean;
+    streak?: number;
+    newBadges?: string[];
+    dailyGoalXpEarned?: number;
+    dailyGoalCompleted?: boolean;
+  } | null>(null);
+
+  const awardXP = (
+    xpAmount: number,
+    coinsAmount: number,
+    opts?: { mergeIntoFeedback?: boolean },
+  ) => {
     setUserProfile(prev => {
       const next = {
         ...prev,
@@ -183,13 +204,23 @@ export default function App() {
     setHabit(prev => {
       const { habit: next, goalJustCompleted, streakTicked, newBadges } = applyXpToHabit(prev, xpAmount);
       writeScopedJSON('habit_v1', next);
-      if (goalJustCompleted || streakTicked || newBadges.length) {
-        setHabitCelebrate({
-          goalJustCompleted,
-          streakTicked,
-          streak: next.globalStreak.current,
-          newBadges,
+      const celebrate = {
+        goalJustCompleted,
+        streakTicked,
+        streak: next.globalStreak.current,
+        newBadges,
+      };
+      if (opts?.mergeIntoFeedback) {
+        setHabitCelebrate(null);
+        setSessionReward({
+          xp: xpAmount,
+          coins: coinsAmount,
+          ...celebrate,
+          dailyGoalXpEarned: next.dailyGoal.xpEarned,
+          dailyGoalCompleted: next.dailyGoal.completed,
         });
+      } else if (goalJustCompleted || streakTicked || newBadges.length) {
+        setHabitCelebrate(celebrate);
       }
       return next;
     });
@@ -244,16 +275,18 @@ export default function App() {
     setDarkMode(prev => {
       const next = !prev;
       localStorage.setItem('smarty_dark', String(next));
-      if (next) document.documentElement.classList.add('dark');
-      else document.documentElement.classList.remove('dark');
+      document.documentElement.classList.toggle('dark', next);
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', next ? '#09090b' : '#ffffff');
       return next;
     });
   };
 
   useEffect(() => {
-    if (darkMode) document.documentElement.classList.add('dark');
-    else document.documentElement.classList.remove('dark');
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    document.documentElement.classList.toggle('dark', darkMode);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', darkMode ? '#09090b' : '#ffffff');
+  }, [darkMode]);
 
   // Load level texts asynchronously — keeps 700+ KB out of the main bundle.
   useEffect(() => {
@@ -390,6 +423,7 @@ export default function App() {
   }, [authReady, user, activeTab, setActiveTab]);
 
   const sessionTimestampRef = useRef<number>(0);
+  const lessonFeedbackContinueRef = useRef<(() => void) | null>(null);
   // Web Speech (useVosk) for everyone — desktop continuous + mobile discrete sessions.
   const { startRecognition, stopRecognition: stopVoskRecognition, isReady: voskReady, modelLoading: voskLoading, modelError: voskError } = useVosk(speechLocale);
   const speechReady = voskReady;
@@ -528,15 +562,19 @@ export default function App() {
             status: 'completed',
             paidAt: Date.now(),
           });
-          await setUserPlan(pending.uid, pending.planId, { seats: pending.seats });
+          await setUserPlan(pending.uid, pending.planId, {
+            seats: pending.seats,
+            languages: pending.languages ?? 1,
+          });
           setAccountProfile(prev => prev ? {
             ...prev,
             plan: pending.planId,
             planSeats: pending.seats,
+            planLanguages: pending.languages ?? 1,
             planStartedAt: Date.now(),
             role: pending.planId === 'teacher' ? 'teacher' : pending.planId === 'organization' ? 'organization' : prev.role,
           } : prev);
-          setPaymentToast(`✓ ${pending.planId === 'smarty-max' ? 'Smarty Max' : pending.planId === 'teacher' ? 'Teacher' : 'Organization'} plan activated!`);
+          setPaymentToast(`✓ ${pending.planId === 'smarty-max' ? 'SmartyLang Max' : pending.planId === 'teacher' ? 'Teacher' : 'Organization'} plan activated!`);
         }
       } catch (e) {
         console.error('Failed to finalize payment:', e);
@@ -797,7 +835,7 @@ export default function App() {
   const [vocabOpen, setVocabOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [fontScale, setFontScale] = useState(3);
-  const [speechRate, setSpeechRate] = useState(0.85);
+  const [speechRate, setSpeechRate] = useState(DEFAULT_SPEECH_RATE);
   const [customText, setCustomText] = useState('');
   const [savedCustomTexts, setSavedCustomTexts] = useState<string[]>(
     () => { try { return JSON.parse(localStorage.getItem('readmaster_saved_custom_texts') || '[]'); } catch { return []; } }
@@ -1079,6 +1117,11 @@ export default function App() {
     return unread || texts[0];
   }, [level, currentTextId, history, isCustomMode, customText, LEVEL_TEXTS, contentLang]);
 
+  const displayCurrentTextObj = useMemo(
+    () => transformArabicContent(currentTextObj, contentLang, arabicDisplayMode),
+    [currentTextObj, contentLang, arabicDisplayMode],
+  );
+
   const currentIndex = useMemo(() => {
     return (LEVEL_TEXTS[level] || []).findIndex(t => t.id === currentTextObj.id);
   }, [level, currentTextObj.id, LEVEL_TEXTS]);
@@ -1107,8 +1150,16 @@ export default function App() {
   };
 
   const targetTime = currentTextObj.targetSeconds || 60;
-  const sourceText = currentTextObj.text;
-  const sourceWords = useMemo(() => tokenizeForLang(sourceText, contentLang), [sourceText, contentLang]);
+  const sourceText = displayCurrentTextObj.text;
+  const sourceWords = useMemo(
+    () =>
+      tokenizePassageForSpeech(
+        sourceText,
+        contentLang,
+        displayCurrentTextObj.format,
+      ),
+    [sourceText, contentLang, displayCurrentTextObj.format],
+  );
   const transcriptWords = useMemo(() => tokenizeForLang(transcript, contentLang), [transcript, contentLang]);
   const rawStatuses = useMemo(
     () => alignWords(sourceWords, transcriptWords, contentLang),
@@ -1267,7 +1318,7 @@ export default function App() {
         clearReadingSession();
         bumpWeeklyGoal('reading');
 
-        awardXP(finalAccuracy * 2, finalAccuracy > 80 ? 10 : 5);
+        awardXP(finalAccuracy * 2, finalAccuracy > 80 ? 10 : 5, { mergeIntoFeedback: true });
         trackActivity();
         try {
           recordCompletion('reading-pronunciation', {
@@ -1365,6 +1416,8 @@ export default function App() {
     setTranscript('');
     finalTranscriptRef.current = '';
     setIsFinished(false);
+    setShowFeedbackModal(false);
+    setSessionReward(null);
     setTranscriptionFailed(false);
     setTranscriptionUnavailable(false);
     sessionSavedRef.current = false;
@@ -1636,11 +1689,14 @@ export default function App() {
         /* Home page — always public */
         <Suspense fallback={<LazyFallback />}>
           <HomePage
+            key={uiLang}
             user={user}
             loginWithGoogle={loginWithGoogle}
             requestSubscribe={requestLoginThenPlans}
             setActiveTab={setActiveTab as any}
             setReadingView={setReadingView as any}
+            darkMode={darkMode}
+            onToggleDark={onToggleDark}
           />
         </Suspense>
       ) : !authReady ? (
@@ -1672,7 +1728,7 @@ export default function App() {
         // Practice / learning tabs that Teachers + Organizations may preview.
         const PREVIEWABLE_TABS = new Set([
           'lessons', 'practice', 'ielts', 'gamification', 'reading', 'listening', 'speaking', 'writing', 'exercises',
-          'story', 'ielts-reading', 'comprehensive', 'vocabulary',
+          'story', 'ielts-reading', 'ielts-full-mock', 'comprehensive', 'vocabulary',
         ]);
 
         // Free Users see a lock screen on every feature tab.
@@ -1805,7 +1861,7 @@ export default function App() {
           level={level}
           setLevel={setLevel}
           startingLevel={accountProfile.startingLevel}
-          currentTextObj={currentTextObj}
+          currentTextObj={displayCurrentTextObj}
           setCurrentTextId={setCurrentTextId}
           setIsCustomMode={setIsCustomMode}
           isRecording={isRecording}
@@ -1852,6 +1908,7 @@ export default function App() {
           recordExercise={recordExercise}
           srsDueWords={srsDueWords}
           studentName={user?.displayName || accountProfile?.displayName || ''}
+          feedbackContinueRef={lessonFeedbackContinueRef}
           showFeedbackModal={showFeedbackModal}
           setShowFeedbackModal={setShowFeedbackModal}
           history={history}
@@ -1942,7 +1999,7 @@ export default function App() {
           setTimeLeft={setTimeLeft as any}
           realtime={realtime}
           setRealtime={setRealtime}
-          currentTextObj={currentTextObj}
+          currentTextObj={displayCurrentTextObj}
           setCurrentTextId={setCurrentTextId}
           sourceWords={sourceWords}
           displayStatuses={displayStatuses}
@@ -2042,11 +2099,12 @@ export default function App() {
         <PaymentPlans
           user={user}
           currentPlan={(accountProfile as any)?.plan ?? null}
-          onPlanActivated={(planId, seats) => {
+          onPlanActivated={(planId, seats, languages) => {
             setAccountProfile(prev => prev ? {
               ...prev,
               plan: planId,
               planSeats: seats,
+              planLanguages: languages ?? 1,
               planStartedAt: Date.now(),
               role: planId === 'teacher' ? 'teacher' : planId === 'organization' ? 'organization' : prev.role,
             } : prev);
@@ -2055,6 +2113,9 @@ export default function App() {
       )}
       {activeTab === 'story' && <InteractiveStory onBack={() => setActiveTab('reading')} onToggleVocab={handleToggleVocab} savedVocab={savedVocab} onShowModal={(w: string, mode: 'dictionary' | 'translation') => setWordModal({word: w, mode})} />}
       {activeTab === 'ielts-reading' && <IELTSReading onBack={() => setActiveTab(isEnglish ? 'ielts' : 'practice')} recordExercise={recordExercise} />}
+      {activeTab === 'ielts-full-mock' && isEnglish && (
+        <IELTSFullMock onBack={() => setActiveTab('ielts')} recordExercise={recordExercise} />
+      )}
       {activeTab === 'comprehensive' && (
         <ComprehensiveReading
           key={compReadingJump?.key}
@@ -2077,6 +2138,7 @@ export default function App() {
           navMode={appSub || undefined}
           onNavMode={(m: string) => setSubPath(m && m !== 'hub' ? [m] : [])}
           onIeltsBack={() => setActiveTab('ielts')}
+          startingLevel={accountProfile.startingLevel}
         />
       )}
       {activeTab === 'writing' && (
@@ -2091,6 +2153,7 @@ export default function App() {
           navMode={appSub || undefined}
           onNavMode={(m: string) => setSubPath(m && m !== 'hub' ? [m] : [])}
           onIeltsBack={() => setActiveTab('ielts')}
+          startingLevel={accountProfile.startingLevel}
         />
       )}
 
@@ -2116,7 +2179,7 @@ export default function App() {
       </div>{/* end fade-transition wrapper */}
 
       {/* Feedback Modal — skipped in Lessons tab (lesson UI handles continue) */}
-      {habitCelebrate && (
+      {habitCelebrate && !showFeedbackModal && !sessionReward && (
         <HabitCelebrateModal
           open
           onClose={() => setHabitCelebrate(null)}
@@ -2127,12 +2190,13 @@ export default function App() {
         />
       )}
 
-      {showFeedbackModal && activeTab !== 'lessons' && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full shadow-2xl relative animate-in zoom-in-95 duration-300">
+      {showFeedbackModal && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full shadow-2xl relative animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => {
                 setShowFeedbackModal(false);
+                setSessionReward(null);
                 if (currentAudioRef.current) {
                   currentAudioRef.current.pause();
                   currentAudioRef.current = null;
@@ -2146,7 +2210,7 @@ export default function App() {
 
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Session Complete!</h2>
 
-            <div className="flex items-center gap-8 mb-8">
+            <div className="flex items-center gap-8 mb-6">
               <div className="flex flex-col">
                 <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Read Accuracy</span>
                 {transcriptionFailed || transcriptionUnavailable ? (
@@ -2170,6 +2234,57 @@ export default function App() {
                 <span className="text-4xl font-black text-slate-800">{transcriptWords.length}</span>
               </div>
             </div>
+
+            {sessionReward && (
+              <div className="mb-6 p-4 rounded-2xl bg-gradient-to-br from-amber-50 via-orange-50 to-emerald-50 border border-amber-100 space-y-3">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2 text-amber-900 font-bold text-sm">
+                    <Sparkles className="w-4 h-4 text-amber-500" />
+                    Rewards
+                  </div>
+                  <div className="text-sm font-bold text-amber-800">
+                    +{sessionReward.xp} XP · +{sessionReward.coins} coins
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between text-xs font-semibold text-slate-500 mb-1.5">
+                    <span className="flex items-center gap-1"><Target className="w-3.5 h-3.5" /> Daily goal</span>
+                    <span>
+                      {Math.min(sessionReward.dailyGoalXpEarned ?? 0, DAILY_GOAL_XP)}/{DAILY_GOAL_XP} XP
+                    </span>
+                  </div>
+                  <div className="h-2.5 bg-white/90 rounded-full overflow-hidden border border-amber-100">
+                    <div
+                      className={`h-full rounded-full transition-all duration-500 ${sessionReward.dailyGoalCompleted ? 'bg-emerald-500' : 'bg-zinc-900'}`}
+                      style={{ width: `${Math.min(100, ((sessionReward.dailyGoalXpEarned ?? 0) / DAILY_GOAL_XP) * 100)}%` }}
+                    />
+                  </div>
+                </div>
+                {sessionReward.goalJustCompleted && (
+                  <p className="text-sm font-semibold text-emerald-700 flex items-center gap-1.5">
+                    <Target className="w-4 h-4" /> Daily goal complete!
+                  </p>
+                )}
+                {sessionReward.streakTicked && sessionReward.streak != null && sessionReward.streak > 0 && (
+                  <p className="text-sm font-semibold text-orange-600 flex items-center gap-1.5">
+                    <Flame className="w-4 h-4" /> {sessionReward.streak}-day streak
+                  </p>
+                )}
+                {(sessionReward.newBadges?.length ?? 0) > 0 && (
+                  <div className="space-y-2 pt-1">
+                    {sessionReward.newBadges!.map(id => (
+                      <div key={id} className="flex items-center gap-2 p-2.5 rounded-xl bg-amber-100/80 border border-amber-200 text-left">
+                        <Medal className="w-4 h-4 text-amber-600 shrink-0" />
+                        <div>
+                          <div className="font-bold text-amber-900 text-xs">{BADGE_META[id]?.label || id}</div>
+                          <div className="text-[11px] text-amber-800/80">{BADGE_META[id]?.desc}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
 
             {(transcriptionFailed || transcriptionUnavailable) && (
               <div className="mb-6 bg-amber-50 border border-amber-200 rounded-xl p-4">
@@ -2247,7 +2362,10 @@ export default function App() {
               <button
                  onClick={() => {
                    setShowFeedbackModal(false);
-                   if (isCustomMode) {
+                   setSessionReward(null);
+                   if (activeTab === 'lessons') {
+                     lessonFeedbackContinueRef.current?.();
+                   } else if (isCustomMode) {
                      setReadingView('custom-entry');
                    } else {
                      setReadingView('library');
@@ -2255,7 +2373,11 @@ export default function App() {
                  }}
                  className="w-full py-3.5 px-4 bg-zinc-900 hover:bg-black active:scale-95 text-white font-semibold rounded-xl transition-all flex items-center justify-center gap-2"
               >
-                 {isCustomMode ? 'Return to Entry' : 'Return to Library'}
+                 {activeTab === 'lessons'
+                   ? 'Continue to Exercises'
+                   : isCustomMode
+                     ? 'Return to Entry'
+                     : 'Return to Library'}
               </button>
             </div>
           </div>

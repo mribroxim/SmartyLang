@@ -5,14 +5,14 @@
 //   - plan: 'smarty-max' | 'teacher' | 'organization' | undefined
 //
 // User-facing UI now treats these as a single concept ("Account Type") with
-// 5 values: User, Smarty Max, Teacher, Organization, Admin.
+// 5 values: User, SmartyLang Max, Teacher, Organization, Admin.
 //
 // Access rules:
-//   - User         → no access to any practice or learning material (locked behind paywall)
-//   - Smarty Max   → full access to everything
-//   - Teacher      → preview-only (can see materials, cannot record or submit)
-//   - Organization → preview-only (same as Teacher)
-//   - Admin        → full access (with admin tools)
+//   - User            → no access to any practice or learning material (locked behind paywall)
+//   - SmartyLang Max  → full access to everything
+//   - Teacher         → preview-only (can see materials, cannot record or submit)
+//   - Organization    → preview-only (same as Teacher)
+//   - Admin           → full access (with admin tools)
 //
 // Use these helpers everywhere instead of inspecting role/plan directly.
 
@@ -22,7 +22,7 @@ export type AccountType = 'user' | 'smarty-max' | 'teacher' | 'organization' | '
 
 export const ACCOUNT_TYPE_LABEL: Record<AccountType, string> = {
   'user':            'User',
-  'smarty-max':      'Smarty Max',
+  'smarty-max':      'SmartyLang Max',
   'teacher':         'Teacher',
   'organization':    'Organization',
   'admin':           'Admin',

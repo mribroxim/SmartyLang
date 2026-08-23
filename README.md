@@ -51,7 +51,7 @@ Open **[smartylang.com](https://smartylang.com)** (Chrome recommended for speech
 | **Practice** | Reading, listening, dictation, interactive stories, 9 exercise modes, pronunciation drills |
 | **AI examiners** | Writing & speaking scored on 4 IELTS-style criteria with actionable feedback |
 | **Levels** | 5 CEFR-aligned paths (Beginner → Advanced) |
-| **Roles** | Student, Smarty Max, Teacher (seats + class analytics), Organization (30+ seats, staff invites), Admin / Content Manager |
+| **Roles** | Student, SmartyLang Max, Teacher (seats + class analytics), Organization (30+ seats, staff invites), Admin / Content Manager |
 | **Payments** | ATMOS (Uzbekistan) — pay in so'm with local checkout |
 | **Gamification** | XP, leagues, streaks, activity history |
 
@@ -132,9 +132,9 @@ firebase deploy --only hosting,firestore:rules
 
 | Plan | Price | Who |
 |------|-------|-----|
-| **Smarty Max** | $19.99 / mo | Individual learners — unlimited AI checks, full practice |
-| **Teacher** | $99 / mo | 5 student seats included; +$12.99 / extra seat |
-| **Organization** | $12.99 / seat / mo | Schools & academies (min 30 seats), staff invites, org analytics |
+| **SmartyLang Max** | **$12.99 / mo** | 1 learning language included; +$8.99/mo per extra language (UI free in all 29) |
+| **Teacher** | **$65 / mo** | 5 seats + 1 class language; +$8.99/seat; extra languages $4.99 × seats |
+| **Organization** | **$8.99 / seat / mo** | Min 20 seats; 1 language included; extra languages $4.99 × seats |
 
 ---
 

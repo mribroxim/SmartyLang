@@ -33,7 +33,7 @@ const LEVELS: Level[] = ['Beginner', 'Elementary', 'Pre-Intermediate', 'Intermed
 const PAGE_SIZE = 8;
 
 export function ComprehensiveReading({ onBack, onAddVocab, savedVocab = {}, onShowModal, initialLevel, initialPassageTitle, accountProfile }: any) {
-  const { contentLang, nativeName, speechLocale } = useContentLang();
+  const { contentLang, nativeName, speechLocale, arabicDisplayMode } = useContentLang();
   const { t, tLevel, tLevelDesc } = useUiLang();
   const canDownloadPDF = (() => {
     const t = accountTypeOf(accountProfile as UserAccountProfile | null);
@@ -76,7 +76,7 @@ export function ComprehensiveReading({ onBack, onAddVocab, savedVocab = {}, onSh
   useEffect(() => {
     if (view === 'library') {
       setIsLoading(true);
-      getReadingPassagesForLevel(level, contentLang)
+      getReadingPassagesForLevel(level, contentLang, arabicDisplayMode)
         .then(ps => {
           // Shuffle so students don't get the same order every time
           const shuffled = shuffle(ps);
@@ -90,7 +90,7 @@ export function ComprehensiveReading({ onBack, onAddVocab, savedVocab = {}, onSh
         .catch(() => setPassages([]))
         .finally(() => setIsLoading(false));
     }
-  }, [view, level, contentLang]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [view, level, contentLang, arabicDisplayMode]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const doPrint = useCallback((includeAnswerBlanks: boolean) => {
     if (!content.passage) return;

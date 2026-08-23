@@ -7,11 +7,14 @@ import {
 import { ieltsListeningTests, type IELTSListeningTest, type ListeningSection } from '../data/ieltsListeningTests';
 import { getIELTSListeningTests } from '../firebase';
 import { useEditMode } from '../contexts/EditModeContext';
+import { listeningScoreToBand } from '../lib/ieltsBands';
 import { ScreenShell, HubRow, seGrid2 } from '../components/ScreenShell';
 
 interface Props {
   onBack: () => void;
   recordExercise?: (type: string, data: any) => void;
+  embedded?: boolean;
+  onFinish?: (result: { score: number; total: number; band: number }) => void;
 }
 
 // ── helpers ────────────────────────────────────────────────────────────────
@@ -30,10 +33,6 @@ function scoreToBand(correct: number, total: number): string {
   if (pct >= 0.5) return '5.0';
   if (pct >= 0.4) return '4.0–4.5';
   return 'Below 4.0';
-}
-
-function bandNum(band: string): number {
-  return parseFloat(band.split('–')[0]) || parseFloat(band.replace('Below ', ''));
 }
 
 function normalize(s: string) {
@@ -111,7 +110,7 @@ function Timer({ seconds, active }: { seconds: number; active: boolean }) {
 }
 
 // ── Main Component ─────────────────────────────────────────────────────────
-export function IELTSListening({ onBack, recordExercise }: Props) {
+export function IELTSListening({ onBack, recordExercise, embedded, onFinish }: Props) {
   type View = 'menu' | 'section' | 'review' | 'results';
 
   const { editMode, openEditor } = useEditMode();
@@ -149,6 +148,14 @@ export function IELTSListening({ onBack, recordExercise }: Props) {
       setAllTests([...builtIns, ...extras]);
     }).catch(() => {}); // fall back to built-ins on error
   }, [editMode]);
+
+  const startedRef = useRef(false);
+  useEffect(() => {
+    if (!embedded || startedRef.current || !allTests.length) return;
+    startedRef.current = true;
+    startTest(allTests[0]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [embedded, allTests]);
 
   const section: ListeningSection | null = test ? test.sections[sectionIdx] : null;
   const tts = useTTS(section?.transcript ?? '');
@@ -209,7 +216,7 @@ export function IELTSListening({ onBack, recordExercise }: Props) {
     isCorrect(allAnswers[q.number] ?? '', q.answer, q.type)
   ).length, [allQuestions, allAnswers]);
   const band = scoreToBand(totalCorrect, allQuestions.length);
-  const bandN = bandNum(band);
+  const bandN = listeningScoreToBand(totalCorrect);
 
   // ── MENU ──────────────────────────────────────────────────────────────────
   if (view === 'menu') {
@@ -480,6 +487,15 @@ export function IELTSListening({ onBack, recordExercise }: Props) {
             </div>
 
             <div className="flex gap-3">
+              {embedded && onFinish ? (
+                <button
+                  onClick={() => onFinish({ score: totalCorrect, total: allQuestions.length, band: bandN })}
+                  className="flex-1 py-3 bg-zinc-900 text-white rounded-2xl font-bold hover:bg-black transition-colors flex items-center justify-center gap-2"
+                >
+                  Continue <ChevronRight className="w-4 h-4" />
+                </button>
+              ) : (
+                <>
               <button
                 onClick={() => { setView('menu'); setTest(null); }}
                 className="flex-1 py-3 border border-slate-200 rounded-2xl font-bold text-slate-700 hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
@@ -492,6 +508,8 @@ export function IELTSListening({ onBack, recordExercise }: Props) {
               >
                 <ArrowLeft className="w-4 h-4" /> Back to Listening
               </button>
+                </>
+              )}
             </div>
           </div>
         </div>

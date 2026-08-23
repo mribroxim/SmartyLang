@@ -48,7 +48,7 @@ export function AppTopBar({ activeTab, title, habit, xp, user, uid, onNavigate, 
             onClick={() => onNavigate('dashboard')}
             className="font-serif font-black tracking-tighter uppercase text-[15px] text-zinc-900 dark:text-zinc-50 shrink-0"
           >
-            SMARTY
+            SmartyLang
           </button>
         ) : (
           <button

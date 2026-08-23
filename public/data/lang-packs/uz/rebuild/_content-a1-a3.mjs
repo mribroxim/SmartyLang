@@ -1,0 +1,87 @@
+/**
+ * Agent-authored Latin Uzbek Advanced a1–a10. Full essays, no kernel filler.
+ */
+export const LESSONS = {
+  a1: {
+    id: 'a1',
+    title: 'Aqlning qanchasi sirli qolishi kerak?',
+    vocab: [
+      ['noaniqlik', 'toʻliq bilib boʻlmaydigan holat'],
+      ['oʻzini kuzatish', 'oʻz fikr va hislarini doimiy tekshirish'],
+      ['taʼsirchan', 'hissiyotlarga bogʻliq'],
+      ['amaliy tushuncha', 'haqiqiy oʻzgarishga olib boradigan bilim'],
+      ['oʻzini optimallashtirish', 'oʻzini doimiy “loyiha” qilib yaxshilash'],
+      ['singib ketish', 'ishga shunchalik berilishki, oʻzini unutish'],
+      ['erta aniqlik', 'hali pishmagan narsani zoʻrlab tushuntirish'],
+      ['qochish', 'ogʻir haqiqatdan ataylab yuz oʻgirish'],
+      ['hamma narsani bilish', 'oʻz ichki dunyosini toʻliq ochish fantaziyasi'],
+      ['oʻz-oʻzini soʻroq', 'doimiy ichki tergov'],
+      ['tabiiylik', 'majburiyatsiz, erkin harakat'],
+      ['shartli', 'cheklovlar bilan chegaralangan'],
+    ],
+    paragraphs: [
+      `Tekshirilgan hayot shiori hali ham donolikdek yangraydi, lekin u sekin zolimlikka aylanishi mumkin: har bir niyatni nomlash, har bir odatni inventarizatsiya qilish, har bir soyani yorqin chiroq ostiga tortish talabi. Toʻliq oʻz-shaffofligi “katta odamlarcha” tuyuladi — endi oʻzini aldash yoʻq, sirli qoldiq yoʻq. Amalda esa vaʼda boshqa mahsulot beradi: oʻzini shunchalik qattiq kuzatadigan aqlki, u endi bemalol harakat qila olmaydi, his qila olmaydi yoki oʻzini hayratga sololmaydi. Baʼzi noaniqlik — tushunishning muvaffaqiyatsizligi emas. Bu yashash mumkin boʻlgan “men”ning sharti boʻlishi mumkin.`,
+      `Psixologiya toʻliq introspektsiya fantaziyasini murakkablashtiradi. Bizni boshqaradigan narsaning koʻpi — mashq bilan oʻrnashgan koʻnikmalar, taʼsirchan odatlar, ijtimoiy skriptlar — tildan tezroq keladi. Odamlar keyin sabab aytishda juda ravon boʻlishi mumkin, lekin oʻsha sabab tanlovni yaratganmi yoki faqat bezaganmi, bilmay qoladi. Bu boʻshliq har doim kasallik emas. Bu baʼzan mohir harakatning ishlash usuli. Har bir barmoq harakatini oʻynayotganda aytib beradigan pianinochi yaxshiroq emas, yomonroq chaladi. Axloqiy hayotda ham shunga oʻxshash xavf bor: doimiy oʻzini kuzatish hukmni ijro tashvishiga, samimiylikni esa “samimiylik haqidagi sharh”ga almashtiradi.`,
+      `Albatta, noaniqlik xavfli boʻladigan sohalar bor. Tekshirilmagan tarafkashlik, majburiy qochish, qaramlik halkalari qorongʻilikda oʻsadi. Terapiya, doʻstlik va ehtiyotkor yozuv yashirin naqshlarni oʻzgartirish uchun yetarli darajada gapirtirishi mumkin. Savol — oʻzini bilish muhimmi emas, balki qancha, qaysi maqsadda va qanday narxda. Foydali farq: amaliy tushuncha bilan toʻliq inventar oʻrtasida. Raqobatli xonalarda hasad uygʻonishini bilish — haftani qayta rejalashtirishga yordam beradi. Har bir hasadning bolalik ildizini toʻliq xarita qilish esa hayotni kechiktirishning nafis usuli boʻlishi mumkin.`,
+      `Oʻzini optimallashtirish madaniyati muammoni kuchaytiradi. Kundaliklar, trekerlar, shaxs yorliqlari va ommaviy “zaiflik” ichki hayotni topshiriqli loyihaga aylantirishi mumkin. Unda sir samarasizlikdek koʻrinadi. Holbuki aqlning eng unumli holatlari — oʻyin, singib ketish, kutilmagan mehr — darhol tushuntirishga majburlanganda qisqaradi. Sanʼatkorlar va olimlar tugallanmagan sezgilarini himoya qiladi, chunki erta aniqlik ularni oʻldiradi. Oddiy odamlarga ham shunday himoya kerak: his-tuygʻu va didlarning bir qismi hali noaniq qolishi — himoyalashga arziydigan tanlovga aylangunicha.`,
+      `Bu chalkashlikni romantizatsiya qilish emas. Oʻzing yetkazgan zararni bilmaslikka urinish — sogʻlom sir emas, qochish. Axloqiy daʼvo torroq: odam oʻzini bilishga intilishi mumkin, lekin oʻzi haqida “hamma narsani bilish”ni maqsad qilmasligi kerak. Boshqalarning tuzatishini qabul qilish, dalil kelganda hikoyani qayta yozish — shu. Lekin ongni shisha fabrikasiga aylantirish fantaziyasini rad etish ham kerak. Munosabatlarda ham oʻqilmagan xonalar kerak. Toʻliq oʻzaro shaffoflik yaqinlikdek yangraydi, toki u oʻzaro oʻz-oʻzini soʻroqqa aylanmaguncha.`,
+      `Xulosa: aqlning qanchasi sirli qolishi kerak? Tabiiylik, maxfiylik va tugallanmagan oʻsish hali havo olsin. Oʻzini tekshirish yashashga xizmat qilsin, uni almashtirmasin. Ilgʻor pozitsiya shartli: shafqatsizlikni yumshatadigan va erkinlikni kengaytiradigan bilimni izlash; asosan nazoratga ozuqa beradigan ovni rad etish. Bu qarashda sir — haqiqatga qarshi emas. U inson hayoti oʻzining muzeyiga aylanmasdan koʻtara oladigan haqiqat atrofidagi chegaradir.`,
+      `Obsessiv oʻzini kuzatish bilan ishlaydigan kliniklar paradoksni tasvirlaydi: odam oʻziga qancha koʻproq “toʻliq ochiq” boʻlishga urinsa, kuzatuv shunchalik koʻp artefakt yaratadi. Yurak urishi kuzatilgani uchun tezlashadi; niyatlar kataloglangani uchun koʻpayadi. Oddiy ambitsiyada ham shu bor. Oʻz shaxsiyati haqida yakuniy nazariya talab qilgan odam baʼzan kimga aylanayotganini oʻrgatadigan majburiyatlarni kechiktiradi. Nomukammal, ommaviy harakat — introspektsiya yolgʻiz almashtira olmaydigan laboratoriyalardan biri. Sir nafaqat bilmaganimiz; baʼzan erta majburlangan bilim buzadigan narsadir.`,
+      `Jamoalar yumshoqroq meʼyor qoʻyishi mumkin. Toʻliq iqrorni talab qilmasdan qiziqish bilan soʻraydigan doʻstlar, qaygʻu atrofida maxfiylikni saqlaydigan ish joylari, “hali ishonchim komil emas”ni qonuniy akademik gap deb biladigan sinflar — bular unumli oʻqilmaslikni himoya qiladi. Ilgʻor oʻrganuvchining vazifasi ikki mahoratni birga mashq qilish: zarar beradigan narsani tekshirish jasorati va hali shakllanayotgan narsani butun qoldirish sabri. Bu qoʻshaloq mahorat radikal halollik shioridan ham, qulay inkorlardan ham kam uchraydi — va ikkalasidan ham foydaliroq.`,
+    ],
+  },
+
+  a2: {
+    id: 'a2',
+    title: 'Onglilik tarafkashlikni bekor qila olmasa, nima boʻladi?',
+    vocab: [
+      ['tasdiqlash tarafkashligi', 'faqat oʻz fikrini qoʻllab-quvvatlovchi dalilni koʻrish'],
+      ['yorqinlik effekti', 'bir yaxshi xususiyatdan butun bahoni oshirish'],
+      ['botgan xarajat', 'allaqachon sarflangan narsa uchun davom etish'],
+      ['tarafkashlikni kamaytirish', 'xato hukmlarni sekinlashtirish usullari'],
+      ['motivlangan mulohaza', 'xohlagan xulosaga mos dalil izlash'],
+      ['qabila', 'oʻz guruhiga sodiqlik bosimi'],
+      ['kalibrlash', 'ishonchni haqiqiy aniqlikka moslashtirish'],
+      ['ishqalanish', 'shoshilinch xatoni sekinlashtiruvchi toʻsiq'],
+      ['tanlov meʼmoriyasi', 'variantlarni qanday tartibda taqdim etish'],
+      ['qisman', 'toʻliq emas, lekin foydali'],
+    ],
+    paragraphs: [
+      `Tarafkashlikni nomlash taraqqiyotdek tuyuladi — baʼzan shunday ham. Odamlar lugʻatni oʻrganadi: tasdiqlash tarafkashligi, yorqinlik effekti, botgan xarajat — va kichik “endi bilimdonman” hissini oladi. Muammo nomni jin chiqarish deb qabul qilganda boshlanadi. Onglilik xulosa chiqarish tezligini biroz oshirishi mumkin, lekin qabila sodiqligi, qoʻrquv yoki mavqeni himoya qilishni avtomatik oʻchirib tashlamaydi. Koʻpincha odam endi xatosini yanada ravon tushuntiradi.`,
+      `Tarafkashlikni kamaytirishni oʻrganuvchi tadqiqotchilar “sinfdagi moʻjiza”larga ehtiyotkor. Qisqa darslar mavhum misollardagi test natijasini yaxshilaydi; yuqori stavkali hayotdagi islohotni kamroq. Seminarlardan keyin ham odamlar oʻz jamoasini yumshoqroq, raqibni qattiqroq oʻqiydi. Motivlangan mulohaza — bilimni yutib yuboradi. Shuning uchun “biz tarafkashlikni bilamiz” degan madaniyat baʼzan xavfsizlik tuygʻusini beradi, lekin kalibrlashni bermaydi.`,
+      `Yomon tomoni: nomlangan tarafkashlik ritorik qurolga aylanishi mumkin. Boshqani “bias”da ayblash oʻz bogʻlanishlarini tekshirishdan osonroq; ayblov suhbatni ochishdan koʻra yopadi. Ish joyida “bu tasdiqlash tarafkashligi” degan gap baʼzan noqulay savolni oʻldirish uchun ishlatiladi. Unda onglilik — axloqiy yutuq emas, bahsni yutish texnikasi.`,
+      `Toʻliq tozalashning boʻlmasligi — aql haqidagi realistik qarash. Tafakkur tezlik, tegishlilik va hikoya uzluksizligi uchun shakllangan, sud zali betarafligi uchun emas. Hissiyotlar variantlarni belgilaydi; xotira oʻzini himoya qiladi; guruhlar kelishuvni mukofotlaydi. Shuning uchun yaxshi tizimlar “odam endi toza” deb emas, balki ishqalanish, rubrika va tashqi tekshiruv bilan ishlaydi. Tanlov meʼmoriyasi — shu yerda axloqiy vosita: tartib, sukutli variant, majburiy ikkinchi koʻz.`,
+      `Chidamlilikning insoniy oʻqilishi ham bor. Baʼzi tarafkashliklar tajriba chandigʻi: xiyonatdan keyingi haddan tashqari hushyorlik, muassasa hafsalasidan keyingi shubha. Ularni “xato” deb yorliqlash baʼzan shifo emas, haqorat. Foydaliroq savol: bu sezgich endi himoya qilyaptimi yoki ortiqcha jazolayaptimi? Onglilik shu farqni ochishi mumkin — lekin chandiqni bir kechada oʻchirmaydi.`,
+      `Xulosa: onglilik tarafkashlikni bekor qila olmasa, koʻpincha drama boʻlmaydi — faqat yanada bilimdon oʻz-obraz ostida qiyshiq hukmning tinch davomi. Foydali javob umidsizlik emas: qisman himoya. Qarorlarni sekinlashtirish, qarama-qarshi dalilni majburiy soʻrash, ovozni yolgʻiz qoldirmaslik. “Men endi biasdan xoliyman” degan hukmdan koʻra “men hali ham tortilaman, shuning uchun tuzilma kerak” degan gap kattaroq yetuklik.`,
+      `Ish joyidagi aniq sahna yetishmovchilikni yorqin qiladi. Tarafkashlik seminaridan keyin komissiya arizalarni rubrika bilan baholashga kelishadi. Xonada aʼzolar baribir “tanish ism”ga tortilishini his qiladi. Farq shundaki, rubrika tortilishni yozma qilib, keyinroq muhokama qilishga imkon beradi. Onglilik sezgini oʻchirmadi; u sezgini yolgʻiz hukmdor qilishni qiyinlashtirdi. Shu — realistik muvaffaqiyat.`,
+      `Taʼlim baribir muhim, agar u oʻtkazishni nishonga olsa. Tandagi taʼsirni sezishni, yuqori stavkali tanlovni sekinlashtirishni, kelishuv qotmasdan oldin eʼtirozni taklif qilishni oʻrgatish — faqat atamalarni yodlashdan ustun. Maktab va tashkilotlar “bias lugʻati”ni emas, “tekshiruv odatlari”ni baholashi kerak. Onglilik — boshlangʻich nuqta. Bekor qilish emas, boshqarish — kattalar vazifasi.`,
+    ],
+  },
+
+  a3: {
+    id: 'a3',
+    title: 'Introspektsiya yana bir spektaklga aylanishi mumkinmi?',
+    vocab: [
+      ['janr', 'ommaviy namoyishga xos uslub'],
+      ['zaiflik', 'himoyasiz holatni ochish'],
+      ['obroʻ', 'ijtimoiy hurmat kapitali'],
+      ['iqror', 'shaxsiy sirni ommaga aytish'],
+      ['kuratsiya', 'nima koʻrsatilishini tanlash'],
+      ['ichki dunyo', 'shaxsiy kechinmalar maydoni'],
+      ['ragʻbat', 'nima mukofotlanishi'],
+      ['tomoshabin', 'koʻruvchi auditoriya'],
+      ['noaniq', 'bir necha oʻqilishi mumkin'],
+      ['auditsiya', 'maʼqullanish uchun sinov'],
+    ],
+    paragraphs: [
+      `Oʻzini tekshirish bir paytlar xususiy intizom edi: daftar, uzun sayr, oʻzi bilan noqulay suhbat. Endi u tobora janrga oʻxshaydi. Odamlar oʻz oʻsishini eʼlon qiladi, “zaiflik”ni chiroyli qilib joylaydi, ichki ishni obroʻ kapitaliga aylantiradi. Introspektsiya yana bir spektaklga aylanadimi? Ha — ayniqsa eʼtibor valyuta boʻlgan joyda.`,
+      `Ijtimoiy tarmoqlar muammoni ixtiro qilmagan. Avlodlarga yozilgan kundaliklar, iqror adabiyoti, ishdagi “refleksiya” marosimlari — izlanish bilan namoyish chegarasini allaqachon xiralashtirgan. Farq shundaki, bugungi auditoriya doimiy, tez va metrikali. Layklar “chuqurlik”ni oʻlchaydi; shuning uchun ichki dunyo kuratsiya qilinadi. Eng ogʻriqli, chalkash, noaniq qismlar — koʻpincha kesib tashlanadi.`,
+      `Namoyishkor introspektsiya har doim kinoyali emas. Koʻp odamlar bir paytlar jim qolishga majbur boʻlgan kechinmalar uchun guvoh izlaydi. Tashvish, qaygʻu yoki tiklanishni ommaviy nomlash — boshqaga ruxsat berishi mumkin. Muammo niyatda emas, ragʻbatda: agar eng yaxshi “oʻzini bilish” eng yaxshi tomosha boʻlsa, odam oʻzini tushunishdan koʻra auditsiyaga tayyorlana boshlaydi.`,
+      `Ish joylari va maktablar “jadval boʻyicha refleksiya” talab qilsa, chegara yanada xiralashadi. “Asosiy xulosalar” soʻraydigan haftalik forma oʻquvchini muddat ostida tushuncha ishlab chiqarishga oʻrgatadi. Baʼzan bu foydali. Baʼzan esa yolgʻon chuqurlikni mukofotlaydi. Oʻqituvchi samimiyatni baholay olmaydi; u ravonlikni baholaydi. Ravonlik esa spektaklning xom ashyosi.`,
+      `Amaliy sinov yordam beradi. Tushuncha namoyishidan keyin, hech kim koʻrmaydigan keyingi haftada nima oʻzgaradi? Agar javob asosan yana namoyish boʻlsa, introspektsiya spektaklga aylangan. Agar odam kechqurun jimroq gapirsa, chegarani oʻzgartirsa yoki uzrni yaxshilasa — ichki ish hali tirik.`,
+      `Yechim — oʻzini bilishdan voz kechish emas. Yechim — uning bir qismini platformadan tashqariga koʻchirish. Yuborilmaydigan xatlar, quloqliksiz sayrlar, kuchaytirmaydigan bitta ishonchli odam bilan suhbat — bular eʼtibor iqtisodidan himoya. Baʼzi tushunchalar nashr qilinmasligi kerak, chunki nashr ularni darhol “kontent”ga aylantiradi.`,
+      `Xususiy anglashning kontentga aylanishi qanchalik tez ekanini tasavvur qiling. Doʻstining muvaffaqiyatidan hasad sezgan odam “hasad bilan oʻtirish” haqida jilolangan paragraf yozadi va maqtov oladi. Maqtov shifo emas; u hasad ustida ishlashni kechiktirishi mumkin. Tomoshabin bor joyda axloqiy ish baʼzan spektakl byudjetiga tushadi.`,
+      `Xulosa: introspektsiya spektaklga aylanishi mumkin — va koʻpincha aylanadi. Davolovchi yoʻl — ichki hayotni butunlay yashirish emas, balki guvohlik bilan odatni ajratish. Ommaviy iqror baʼzan kerak; lekin u yagona oʻlchov boʻlsa, “oʻzini bilish” yana bir ijro sanʼatiga aylanadi. Ilgʻor mahorat — qachon ochish va qachon jim ishlashni bilish.`,
+    ],
+  },
+};

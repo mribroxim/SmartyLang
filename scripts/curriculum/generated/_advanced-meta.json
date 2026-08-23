@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "a1",
+    "title": "How much of the mind should remain mysterious?",
+    "coreQuestion": "Is full self-transparency desirable—or corrosive?",
+    "format": "essay",
+    "grammarFocus": [
+      "advanced hedging",
+      "nominalisation"
+    ],
+    "vocabularyDomain": "self-knowledge limits",
+    "languageGoal": "Qualify claims about introspection",
+    "communicationGoal": "Argue nuanced limits of self-scrutiny",
+    "unit": 1,
+    "unitName": "Knowing the Mind"
+  },
+  {
+    "id": "a2",
+    "title": "What happens when awareness fails to cancel bias?",
+    "coreQuestion": "What does it mean to incomplete debiasing?",
+    "format": "feature",
+    "grammarFocus": [
+      "concession",
+      "stance"
+    ],
+    "vocabularyDomain": "named yet active bias",
+    "languageGoal": "Explore incomplete debiasing",
+    "communicationGoal": "Write with psychological nuance",
+    "unit": 1,
+    "unitName": "Knowing the Mind"
+  },
+  {
+    "id": "a3",
+    "title": "Can introspection become another performance?",
+    "coreQuestion": "When does self-examination turn into self-display?",
+    "format": "opinion",
+    "grammarFocus": [
+      "definitions",
+      "hedging"
+    ],
+    "vocabularyDomain": "performed introspection",
+    "languageGoal": "Critique performative self-awareness",
+    "communicationGoal": "Distinguish inquiry from branding",
+    "unit": 1,
+    "unitName": "Knowing the Mind"
+  },
+  {
+    "id": "a4",
+    "title": "How does recollection reshape what \"happened\"?",
+    "coreQuestion": "What does it mean to memory as reconstruction?",
+    "format": "article",
+    "grammarFocus": [
+      "passives",
+      "metaphor controlled"
+    ],
+    "vocabularyDomain": "reconstructive memory",
+    "languageGoal": "Explain memory as reconstruction",
+    "communicationGoal": "Challenge naive archive metaphors",
+    "unit": 1,
+    "unitName": "Knowing the Mind"
+  },
+  {
+    "id": "a5",
+    "title": "If emotions are information, how should we read them?",
+    "coreQuestion": "What careful methods interpret feeling as data?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "conditionals",
+      "epistemic modals"
+    ],
+    "vocabularyDomain": "emotions as information",
+    "languageGoal": "Discuss interpretive care with feelings",
+    "communicationGoal": "Avoid both dismissal and over-trust",
+    "unit": 1,
+    "unitName": "Knowing the Mind"
+  },
+  {
+    "id": "a6",
+    "title": "How can people describe inner life without cliché?",
+    "coreQuestion": "What does it mean to exact emotional description?",
+    "format": "email",
+    "grammarFocus": [
+      "precision vocabulary",
+      "hedging"
+    ],
+    "vocabularyDomain": "precise self-report",
+    "languageGoal": "Practise exact emotional description",
+    "communicationGoal": "Communicate inner states carefully",
+    "unit": 1,
+    "unitName": "Knowing the Mind"
+  },
+  {
+    "id": "a7",
+    "title": "What follows if focus is treated as public good?",
+    "coreQuestion": "How can learners argue beyond personal productivity frames?",
+    "format": "essay",
+    "grammarFocus": [
+      "synthesis",
+      "nominalisation"
+    ],
+    "vocabularyDomain": "attention commons",
+    "languageGoal": "Synthesise attention, ethics, and society",
+    "communicationGoal": "Argue beyond personal productivity frames",
+    "unit": 1,
+    "unitName": "Knowing the Mind"
+  },
+  {
+    "id": "a8",
+    "title": "How does self-knowledge tip into self-policing?",
+    "coreQuestion": "What does it mean to self-knowledge into control?",
+    "format": "feature",
+    "grammarFocus": [
+      "contrast",
+      "stance"
+    ],
+    "vocabularyDomain": "self-policing",
+    "languageGoal": "Trace self-knowledge into control",
+    "communicationGoal": "Warn gently against harsh interior regimes",
+    "unit": 1,
+    "unitName": "Knowing the Mind"
+  },
+  {
+    "id": "a9",
+    "title": "Why do minds over-interpret night stories?",
+    "coreQuestion": "What does it mean to for interpretive restraint?",
+    "format": "opinion",
+    "grammarFocus": [
+      "epistemic caution",
+      "although"
+    ],
+    "vocabularyDomain": "dream interpretation",
+    "languageGoal": "Argue for interpretive restraint",
+    "communicationGoal": "Discuss meaning-hunger psychologically",
+    "unit": 1,
+    "unitName": "Knowing the Mind"
+  },
+  {
+    "id": "a10",
+    "title": "What changes when we stop trusting first impressions of ourselves?",
+    "coreQuestion": "How does delayed self-judgment alter identity?",
+    "format": "article",
+    "grammarFocus": [
+      "question-led structure",
+      "hedging"
+    ],
+    "vocabularyDomain": "delayed self-judgment",
+    "languageGoal": "Explore slower self-appraisal",
+    "communicationGoal": "Model tentative self-knowledge",
+    "unit": 1,
+    "unitName": "Knowing the Mind"
+  },
+  {
+    "id": "a11",
+    "title": "Why do credibility recoveries take generations?",
+    "coreQuestion": "What does it mean to long trust timelines?",
+    "format": "essay",
+    "grammarFocus": [
+      "cause/effect complex",
+      "hedging"
+    ],
+    "vocabularyDomain": "slow trust repair",
+    "languageGoal": "Analyse long trust timelines",
+    "communicationGoal": "Argue patience and structural reform together",
+    "unit": 2,
+    "unitName": "Institutions & Trust"
+  },
+  {
+    "id": "a12",
+    "title": "How do administrative rituals create distance?",
+    "coreQuestion": "What does it mean to institutional friction humanely?",
+    "format": "feature",
+    "grammarFocus": [
+      "narrative + analysis",
+      "passives"
+    ],
+    "vocabularyDomain": "bureaucracy as distance",
+    "languageGoal": "Show institutional friction humanely",
+    "communicationGoal": "Critique process without cartoon villainy",
+    "unit": 2,
+    "unitName": "Institutions & Trust"
+  },
+  {
+    "id": "a13",
+    "title": "Should transparency always increase trust?",
+    "coreQuestion": "When does more visibility breed cynicism?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "concession"
+    ],
+    "vocabularyDomain": "transparency paradox",
+    "languageGoal": "Challenge transparency-as-panacea",
+    "communicationGoal": "Discuss conditions for useful openness",
+    "unit": 2,
+    "unitName": "Institutions & Trust"
+  },
+  {
+    "id": "a14",
+    "title": "If experts disagree in public, who should citizens follow?",
+    "coreQuestion": "How can lay judgment work amid expert conflict?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "epistemic modals",
+      "conditionals"
+    ],
+    "vocabularyDomain": "public expert conflict",
+    "languageGoal": "Navigate disagreeing authorities",
+    "communicationGoal": "Practise civic epistemic humility",
+    "unit": 2,
+    "unitName": "Institutions & Trust"
+  },
+  {
+    "id": "a15",
+    "title": "How do citizens demand answers without spectacle?",
+    "coreQuestion": "How can learners model serious civic correspondence?",
+    "format": "email",
+    "grammarFocus": [
+      "formal civic register",
+      "qualification"
+    ],
+    "vocabularyDomain": "accountable delay",
+    "languageGoal": "Press institutions for timed answers",
+    "communicationGoal": "Model serious civic correspondence",
+    "unit": 2,
+    "unitName": "Institutions & Trust"
+  },
+  {
+    "id": "a16",
+    "title": "Which ceremonies still create felt legitimacy?",
+    "coreQuestion": "What does it mean to ceremonial sources of authority?",
+    "format": "article",
+    "grammarFocus": [
+      "anthropological tone soft",
+      "nominalisation"
+    ],
+    "vocabularyDomain": "legitimacy rituals",
+    "languageGoal": "Analyse ceremonial sources of authority",
+    "communicationGoal": "Discuss felt versus formal power",
+    "unit": 2,
+    "unitName": "Institutions & Trust"
+  },
+  {
+    "id": "a17",
+    "title": "How should insiders weigh competing obligations?",
+    "coreQuestion": "What does it mean to loyalty against disclosure duties?",
+    "format": "essay",
+    "grammarFocus": [
+      "ethical framing",
+      "hedging"
+    ],
+    "vocabularyDomain": "whistleblowing ethics",
+    "languageGoal": "Weigh loyalty against disclosure duties",
+    "communicationGoal": "Argue without romanticising or condemning",
+    "unit": 2,
+    "unitName": "Institutions & Trust"
+  },
+  {
+    "id": "a18",
+    "title": "What proximity does for perceived legitimacy?",
+    "coreQuestion": "What does it mean to nearness and trust?",
+    "format": "feature",
+    "grammarFocus": [
+      "comparatives nuanced",
+      "stance"
+    ],
+    "vocabularyDomain": "local legitimacy",
+    "languageGoal": "Explain nearness and trust",
+    "communicationGoal": "Value municipal and community bodies",
+    "unit": 2,
+    "unitName": "Institutions & Trust"
+  },
+  {
+    "id": "a19",
+    "title": "How can metrics miss the relational core?",
+    "coreQuestion": "What does it mean to over-metricised accountability?",
+    "format": "opinion",
+    "grammarFocus": [
+      "critique structure",
+      "concession"
+    ],
+    "vocabularyDomain": "metric blind spots",
+    "languageGoal": "Critique over-metricised accountability",
+    "communicationGoal": "Defend relational dimensions of trust",
+    "unit": 2,
+    "unitName": "Institutions & Trust"
+  },
+  {
+    "id": "a20",
+    "title": "What repair looks like when outrage is muted?",
+    "coreQuestion": "What does it mean to non-spectacular trust rebuilding?",
+    "format": "article",
+    "grammarFocus": [
+      "process language",
+      "hedging"
+    ],
+    "vocabularyDomain": "quiet scandal repair",
+    "languageGoal": "Describe non-spectacular trust rebuilding",
+    "communicationGoal": "Discuss institutional learning after failure",
+    "unit": 2,
+    "unitName": "Institutions & Trust"
+  },
+  {
+    "id": "a21",
+    "title": "How does delegation to systems reshape agency?",
+    "coreQuestion": "What does it mean to automated decision delegation?",
+    "format": "essay",
+    "grammarFocus": [
+      "nominalisation",
+      "stance"
+    ],
+    "vocabularyDomain": "delegated choice",
+    "languageGoal": "Analyse automated decision delegation",
+    "communicationGoal": "Argue about remaining human responsibility",
+    "unit": 3,
+    "unitName": "Technology & Human Judgment"
+  },
+  {
+    "id": "a22",
+    "title": "How can helpful filters quietly shrink horizons?",
+    "coreQuestion": "What does it mean to personal effects of recommender systems?",
+    "format": "feature",
+    "grammarFocus": [
+      "narrative reflection",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "filter narrowing",
+    "languageGoal": "Show personal effects of recommender systems",
+    "communicationGoal": "Critique convenience without tech panic",
+    "unit": 3,
+    "unitName": "Technology & Human Judgment"
+  },
+  {
+    "id": "a23",
+    "title": "Should high-stakes decisions require a human veto?",
+    "coreQuestion": "Where must people remain able to overrule machines?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "conditionals"
+    ],
+    "vocabularyDomain": "human veto",
+    "languageGoal": "Argue for human override rights",
+    "communicationGoal": "Discuss domains of mandatory judgment",
+    "unit": 3,
+    "unitName": "Technology & Human Judgment"
+  },
+  {
+    "id": "a24",
+    "title": "If prediction improves, what happens to forgiveness?",
+    "coreQuestion": "Does foresight harden or soften moral response?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "philosophical conditionals",
+      "hedging"
+    ],
+    "vocabularyDomain": "prediction & morality",
+    "languageGoal": "Explore foresight's moral side effects",
+    "communicationGoal": "Talk carefully about blame and prediction",
+    "unit": 3,
+    "unitName": "Technology & Human Judgment"
+  },
+  {
+    "id": "a25",
+    "title": "How should organisations bound observational tech?",
+    "coreQuestion": "How can learners balance safety, dignity, and oversight?",
+    "format": "email",
+    "grammarFocus": [
+      "policy register",
+      "qualification"
+    ],
+    "vocabularyDomain": "monitoring limits",
+    "languageGoal": "Draft bounded monitoring principles",
+    "communicationGoal": "Balance safety, dignity, and oversight",
+    "unit": 3,
+    "unitName": "Technology & Human Judgment"
+  },
+  {
+    "id": "a26",
+    "title": "Which abilities fade when tools intervene early?",
+    "coreQuestion": "What does it mean to assistance and lost competence?",
+    "format": "article",
+    "grammarFocus": [
+      "cause/effect",
+      "examples"
+    ],
+    "vocabularyDomain": "skill atrophy",
+    "languageGoal": "Analyse assistance and lost competence",
+    "communicationGoal": "Discuss deliberate practice amid tools",
+    "unit": 3,
+    "unitName": "Technology & Human Judgment"
+  },
+  {
+    "id": "a27",
+    "title": "How does interruptive design degrade deliberation?",
+    "coreQuestion": "What does it mean to interruption design to weak judgment?",
+    "format": "feature",
+    "grammarFocus": [
+      "process analysis",
+      "modality"
+    ],
+    "vocabularyDomain": "notification load",
+    "languageGoal": "Link interruption design to weak judgment",
+    "communicationGoal": "Argue for calmer tech environments",
+    "unit": 3,
+    "unitName": "Technology & Human Judgment"
+  },
+  {
+    "id": "a28",
+    "title": "What responsibility language hides behind systems?",
+    "coreQuestion": "How can learners insist on accountable human frames?",
+    "format": "opinion",
+    "grammarFocus": [
+      "critique of agency talk",
+      "passives"
+    ],
+    "vocabularyDomain": "algorithmic excuse",
+    "languageGoal": "Refuse responsibility laundering",
+    "communicationGoal": "Insist on accountable human frames",
+    "unit": 3,
+    "unitName": "Technology & Human Judgment"
+  },
+  {
+    "id": "a29",
+    "title": "Repair cafés for software: who teaches the next fixers?",
+    "coreQuestion": "How can societies keep technical literacy alive?",
+    "format": "essay",
+    "grammarFocus": [
+      "synthesis",
+      "proposals"
+    ],
+    "vocabularyDomain": "tech literacy stewardship",
+    "languageGoal": "Propose sustaining repair know-how",
+    "communicationGoal": "Connect craft values to digital tools",
+    "unit": 3,
+    "unitName": "Technology & Human Judgment"
+  },
+  {
+    "id": "a30",
+    "title": "How is good judgment trained rather than assumed?",
+    "coreQuestion": "What does it mean to judgment as cultivated skill?",
+    "format": "article",
+    "grammarFocus": [
+      "definitions",
+      "process"
+    ],
+    "vocabularyDomain": "judgment as practice",
+    "languageGoal": "Describe judgment as cultivated skill",
+    "communicationGoal": "Close unit with craft of deciding",
+    "unit": 3,
+    "unitName": "Technology & Human Judgment"
+  },
+  {
+    "id": "a31",
+    "title": "Who gets to linger in the city without buying?",
+    "coreQuestion": "How does commercialisation ration public lingering?",
+    "format": "essay",
+    "grammarFocus": [
+      "spatial analysis soft",
+      "stance"
+    ],
+    "vocabularyDomain": "right to linger",
+    "languageGoal": "Argue for non-commercial public presence",
+    "communicationGoal": "Critique pay-to-stay urban life",
+    "unit": 4,
+    "unitName": "Cities, Space & Inequality"
+  },
+  {
+    "id": "a32",
+    "title": "What does green access reveal about inequality?",
+    "coreQuestion": "How can learners discuss spatial fairness carefully?",
+    "format": "feature",
+    "grammarFocus": [
+      "data-aware prose",
+      "hedging"
+    ],
+    "vocabularyDomain": "green access maps",
+    "languageGoal": "Read inequality through park proximity",
+    "communicationGoal": "Discuss spatial fairness carefully",
+    "unit": 4,
+    "unitName": "Cities, Space & Inequality"
+  },
+  {
+    "id": "a33",
+    "title": "Should housing be treated primarily as shelter or asset?",
+    "coreQuestion": "Which frame should guide housing policy talk?",
+    "format": "opinion",
+    "grammarFocus": [
+      "definitions",
+      "should"
+    ],
+    "vocabularyDomain": "housing frames",
+    "languageGoal": "Argue competing housing paradigms",
+    "communicationGoal": "Hold market and need in tension",
+    "unit": 4,
+    "unitName": "Cities, Space & Inequality"
+  },
+  {
+    "id": "a34",
+    "title": "If transit is slow where poverty is dense, is that design?",
+    "coreQuestion": "How intentional are uneven mobility outcomes?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "cause vs intent",
+      "modals"
+    ],
+    "vocabularyDomain": "transit inequity",
+    "languageGoal": "Debate design versus neglect in transit gaps",
+    "communicationGoal": "Talk spatial injustice without slogans only",
+    "unit": 4,
+    "unitName": "Cities, Space & Inequality"
+  },
+  {
+    "id": "a35",
+    "title": "How can residents write credible place testimony?",
+    "coreQuestion": "How can learners advocate for place without tokenism?",
+    "format": "email",
+    "grammarFocus": [
+      "civic formal",
+      "evidence + story"
+    ],
+    "vocabularyDomain": "planning objections",
+    "languageGoal": "Blend story and evidence in planning talk",
+    "communicationGoal": "Advocate for place without tokenism",
+    "unit": 4,
+    "unitName": "Cities, Space & Inequality"
+  },
+  {
+    "id": "a36",
+    "title": "What micro-publics form in stacked housing?",
+    "coreQuestion": "How can learners notice overlooked shared infrastructures?",
+    "format": "article",
+    "grammarFocus": [
+      "micro-ethnography tone",
+      "nominalisation"
+    ],
+    "vocabularyDomain": "elevator publics",
+    "languageGoal": "Observe vertical social life",
+    "communicationGoal": "Notice overlooked shared infrastructures",
+    "unit": 4,
+    "unitName": "Cities, Space & Inequality"
+  },
+  {
+    "id": "a37",
+    "title": "How does upgrading language mask loss?",
+    "coreQuestion": "What does it mean to improvement as displacement risk?",
+    "format": "feature",
+    "grammarFocus": [
+      "critique of framing",
+      "passives"
+    ],
+    "vocabularyDomain": "improvement discourse",
+    "languageGoal": "Unpack improvement as displacement risk",
+    "communicationGoal": "Write critically about urban upgrade talk",
+    "unit": 4,
+    "unitName": "Cities, Space & Inequality"
+  },
+  {
+    "id": "a38",
+    "title": "Whose safety and pleasure shape evening cities?",
+    "coreQuestion": "What does it mean to uneven night belonging?",
+    "format": "essay",
+    "grammarFocus": [
+      "intersection soft",
+      "hedging"
+    ],
+    "vocabularyDomain": "night belonging",
+    "languageGoal": "Analyse uneven night belonging",
+    "communicationGoal": "Discuss safety and pleasure together",
+    "unit": 4,
+    "unitName": "Cities, Space & Inequality"
+  },
+  {
+    "id": "a39",
+    "title": "How do street economies challenge official order?",
+    "coreQuestion": "What does it mean to nuanced views of street vending?",
+    "format": "opinion",
+    "grammarFocus": [
+      "concession",
+      "definitions"
+    ],
+    "vocabularyDomain": "informal economies",
+    "languageGoal": "Argue nuanced views of street vending",
+    "communicationGoal": "Avoid romanticising or erasing livelihoods",
+    "unit": 4,
+    "unitName": "Cities, Space & Inequality"
+  },
+  {
+    "id": "a40",
+    "title": "Can dense cities host difference without friction myths?",
+    "coreQuestion": "How can learners argue for designed coexistence?",
+    "format": "article",
+    "grammarFocus": [
+      "synthesis",
+      "proposals"
+    ],
+    "vocabularyDomain": "dense difference",
+    "languageGoal": "Imagine proximity with pluralism",
+    "communicationGoal": "Argue for designed coexistence",
+    "unit": 4,
+    "unitName": "Cities, Space & Inequality"
+  },
+  {
+    "id": "a41",
+    "title": "How should institutions narrate their own omissions?",
+    "coreQuestion": "How can learners discuss repair through exhibition?",
+    "format": "essay",
+    "grammarFocus": [
+      "institutional critique soft",
+      "hedging"
+    ],
+    "vocabularyDomain": "museum confession",
+    "languageGoal": "Evaluate self-critical museum practice",
+    "communicationGoal": "Discuss repair through exhibition",
+    "unit": 5,
+    "unitName": "Culture, Memory & Art"
+  },
+  {
+    "id": "a42",
+    "title": "How can music hold national contradiction?",
+    "coreQuestion": "How can learners write essayistic cultural criticism?",
+    "format": "feature",
+    "grammarFocus": [
+      "cultural analysis",
+      "close reading soft"
+    ],
+    "vocabularyDomain": "songs as argument",
+    "languageGoal": "Read music as social debate",
+    "communicationGoal": "Write essayistic cultural criticism",
+    "unit": 5,
+    "unitName": "Culture, Memory & Art"
+  },
+  {
+    "id": "a43",
+    "title": "Should difficult histories be made comfortable for visitors?",
+    "coreQuestion": "Where does accessibility become sanitisation?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "definitions"
+    ],
+    "vocabularyDomain": "difficult heritage",
+    "languageGoal": "Argue about comfort versus truth in heritage",
+    "communicationGoal": "Balance access and honesty",
+    "unit": 5,
+    "unitName": "Culture, Memory & Art"
+  },
+  {
+    "id": "a44",
+    "title": "If archives are incomplete, what stories fill the gaps?",
+    "coreQuestion": "How do communities narrate around silence?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "epistemic caution",
+      "conditionals"
+    ],
+    "vocabularyDomain": "archival gaps",
+    "languageGoal": "Discuss storytelling amid missing records",
+    "communicationGoal": "Respect invention and evidence differently",
+    "unit": 5,
+    "unitName": "Culture, Memory & Art"
+  },
+  {
+    "id": "a45",
+    "title": "How can exhibition text honour unresolved history?",
+    "coreQuestion": "What does it mean to anti-closure interpretive text?",
+    "format": "email",
+    "grammarFocus": [
+      "curatorial register",
+      "open endings"
+    ],
+    "vocabularyDomain": "unresolved curation",
+    "languageGoal": "Write anti-closure interpretive text",
+    "communicationGoal": "Model humble cultural mediation",
+    "unit": 5,
+    "unitName": "Culture, Memory & Art"
+  },
+  {
+    "id": "a46",
+    "title": "Monuments after the argument: what remains?",
+    "coreQuestion": "What should happen once statue debates cool?",
+    "format": "article",
+    "grammarFocus": [
+      "process after conflict",
+      "hedging"
+    ],
+    "vocabularyDomain": "post-debate monuments",
+    "languageGoal": "Think beyond binary keep/remove",
+    "communicationGoal": "Discuss afterlives of contested symbols",
+    "unit": 5,
+    "unitName": "Culture, Memory & Art"
+  },
+  {
+    "id": "a47",
+    "title": "Who decides when private holdings become public concern?",
+    "coreQuestion": "What does it mean to ownership against cultural commons?",
+    "format": "essay",
+    "grammarFocus": [
+      "ethics + aesthetics",
+      "stance"
+    ],
+    "vocabularyDomain": "private collections",
+    "languageGoal": "Weigh ownership against cultural commons",
+    "communicationGoal": "Argue access and stewardship",
+    "unit": 5,
+    "unitName": "Culture, Memory & Art"
+  },
+  {
+    "id": "a48",
+    "title": "How can translators be faithful without being literal?",
+    "coreQuestion": "What does it mean to fidelity beyond word-for-word?",
+    "format": "feature",
+    "grammarFocus": [
+      "definitions",
+      "examples"
+    ],
+    "vocabularyDomain": "translation ethics",
+    "languageGoal": "Explore fidelity beyond word-for-word",
+    "communicationGoal": "Honour translation as craft",
+    "unit": 5,
+    "unitName": "Culture, Memory & Art"
+  },
+  {
+    "id": "a49",
+    "title": "How does commerce stylise the past for sale?",
+    "coreQuestion": "What does it mean to commodified memory carefully?",
+    "format": "opinion",
+    "grammarFocus": [
+      "critique",
+      "concession"
+    ],
+    "vocabularyDomain": "sold nostalgia",
+    "languageGoal": "Critique commodified memory carefully",
+    "communicationGoal": "Distinguish longing from product",
+    "unit": 5,
+    "unitName": "Culture, Memory & Art"
+  },
+  {
+    "id": "a50",
+    "title": "Why defend slow aesthetic demands now?",
+    "coreQuestion": "What does it mean to demanding art's social value?",
+    "format": "article",
+    "grammarFocus": [
+      "advocacy tone, measured",
+      "contrast"
+    ],
+    "vocabularyDomain": "slow art advocacy",
+    "languageGoal": "Defend demanding art's social value",
+    "communicationGoal": "Argue for patience as cultural skill",
+    "unit": 5,
+    "unitName": "Culture, Memory & Art"
+  },
+  {
+    "id": "a51",
+    "title": "How does lived price and work precede theory?",
+    "coreQuestion": "How can learners write beyond headline abstractions?",
+    "format": "essay",
+    "grammarFocus": [
+      "phenomenology soft",
+      "hedging"
+    ],
+    "vocabularyDomain": "felt economy",
+    "languageGoal": "Prioritise lived economic experience",
+    "communicationGoal": "Write beyond headline abstractions",
+    "unit": 6,
+    "unitName": "Economy Beyond Headlines"
+  },
+  {
+    "id": "a52",
+    "title": "Why does essential caring labour stay undervalued?",
+    "coreQuestion": "What does it mean to pricing failures around care?",
+    "format": "feature",
+    "grammarFocus": [
+      "critique",
+      "examples"
+    ],
+    "vocabularyDomain": "undervalued care",
+    "languageGoal": "Analyse pricing failures around care",
+    "communicationGoal": "Argue for recognising caring labour",
+    "unit": 6,
+    "unitName": "Economy Beyond Headlines"
+  },
+  {
+    "id": "a53",
+    "title": "Should GDP remain the story we tell about success?",
+    "coreQuestion": "What alternative accounts deserve equal airtime?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "definitions"
+    ],
+    "vocabularyDomain": "beyond GDP",
+    "languageGoal": "Critique GDP-centrism carefully",
+    "communicationGoal": "Propose complementary success stories",
+    "unit": 6,
+    "unitName": "Economy Beyond Headlines"
+  },
+  {
+    "id": "a54",
+    "title": "If wages rise in one sector, who absorbs the cost?",
+    "coreQuestion": "How do distributional effects travel through prices?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "systems thinking soft",
+      "conditionals"
+    ],
+    "vocabularyDomain": "wage ripple effects",
+    "languageGoal": "Trace cost absorption thoughtfully",
+    "communicationGoal": "Avoid simplistic wage-debate frames",
+    "unit": 6,
+    "unitName": "Economy Beyond Headlines"
+  },
+  {
+    "id": "a55",
+    "title": "How do unofficial lending systems actually work?",
+    "coreQuestion": "What does it mean to local credit ecologies precisely?",
+    "format": "email",
+    "grammarFocus": [
+      "analytical briefing",
+      "qualification"
+    ],
+    "vocabularyDomain": "informal credit",
+    "languageGoal": "Describe local credit ecologies precisely",
+    "communicationGoal": "Report without exoticising poverty",
+    "unit": 6,
+    "unitName": "Economy Beyond Headlines"
+  },
+  {
+    "id": "a56",
+    "title": "What cooperation quietly sustains \"competitive\" markets?",
+    "coreQuestion": "How can learners complicate competition orthodoxy?",
+    "format": "article",
+    "grammarFocus": [
+      "myth-busting tone",
+      "examples"
+    ],
+    "vocabularyDomain": "cooperation in markets",
+    "languageGoal": "Reveal cooperative scaffolding of markets",
+    "communicationGoal": "Complicate competition orthodoxy",
+    "unit": 6,
+    "unitName": "Economy Beyond Headlines"
+  },
+  {
+    "id": "a57",
+    "title": "How do societies moralise unearned starts?",
+    "coreQuestion": "What does it mean to merit talk around inheritance?",
+    "format": "essay",
+    "grammarFocus": [
+      "ethical analysis",
+      "hedging"
+    ],
+    "vocabularyDomain": "inheritance & merit",
+    "languageGoal": "Unpack merit talk around inheritance",
+    "communicationGoal": "Discuss luck and desert carefully",
+    "unit": 6,
+    "unitName": "Economy Beyond Headlines"
+  },
+  {
+    "id": "a58",
+    "title": "How do families narrate rising prices morally?",
+    "coreQuestion": "How can learners humanise macro talk?",
+    "format": "feature",
+    "grammarFocus": [
+      "oral-history tone",
+      "stance"
+    ],
+    "vocabularyDomain": "household inflation talk",
+    "languageGoal": "Capture moral narratives of price rise",
+    "communicationGoal": "Humanise macro talk",
+    "unit": 6,
+    "unitName": "Economy Beyond Headlines"
+  },
+  {
+    "id": "a59",
+    "title": "What institutional choices wear market clothing?",
+    "coreQuestion": "How can learners insist on political economy clarity?",
+    "format": "opinion",
+    "grammarFocus": [
+      "agency critique",
+      "passives"
+    ],
+    "vocabularyDomain": "market as committee",
+    "languageGoal": "Unmask decision-makers behind \"the market\"",
+    "communicationGoal": "Insist on political economy clarity",
+    "unit": 6,
+    "unitName": "Economy Beyond Headlines"
+  },
+  {
+    "id": "a60",
+    "title": "How would time-affluence reframe success?",
+    "coreQuestion": "What does it mean to for time as prosperity metric?",
+    "format": "article",
+    "grammarFocus": [
+      "reframing",
+      "proposals"
+    ],
+    "vocabularyDomain": "time prosperity",
+    "languageGoal": "Argue for time as prosperity metric",
+    "communicationGoal": "Expand economic wellbeing language",
+    "unit": 6,
+    "unitName": "Economy Beyond Headlines"
+  },
+  {
+    "id": "a61",
+    "title": "How should caregivers honour no as fully as yes?",
+    "coreQuestion": "What does it mean to for robust respect for refusal?",
+    "format": "essay",
+    "grammarFocus": [
+      "ethical precision",
+      "hedging"
+    ],
+    "vocabularyDomain": "honouring refusal",
+    "languageGoal": "Argue for robust respect for refusal",
+    "communicationGoal": "Deepen consent beyond checkboxes",
+    "unit": 7,
+    "unitName": "Ethics of Care & Medicine"
+  },
+  {
+    "id": "a62",
+    "title": "How does temporal scarcity reshape care quality?",
+    "coreQuestion": "What does it mean to time as clinical resource?",
+    "format": "feature",
+    "grammarFocus": [
+      "observational prose",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "time scarcity in care",
+    "languageGoal": "Show time as clinical resource",
+    "communicationGoal": "Critique rushed care systems humanely",
+    "unit": 7,
+    "unitName": "Ethics of Care & Medicine"
+  },
+  {
+    "id": "a63",
+    "title": "Should families overrule competent patients' wishes?",
+    "coreQuestion": "Where do love and autonomy collide?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "hard cases"
+    ],
+    "vocabularyDomain": "family vs autonomy",
+    "languageGoal": "Argue hard cases in medical ethics",
+    "communicationGoal": "Hold love and rights in tension",
+    "unit": 7,
+    "unitName": "Ethics of Care & Medicine"
+  },
+  {
+    "id": "a64",
+    "title": "If prognosis is uncertain, how should hope be spoken?",
+    "coreQuestion": "What honest hope looks like under ambiguity?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "epistemic modals",
+      "careful speech"
+    ],
+    "vocabularyDomain": "hope under uncertainty",
+    "languageGoal": "Practise calibrated hope talk",
+    "communicationGoal": "Avoid false certainty and cruelty",
+    "unit": 7,
+    "unitName": "Ethics of Care & Medicine"
+  },
+  {
+    "id": "a65",
+    "title": "How do teams ask for help with moral stuckness?",
+    "coreQuestion": "How can learners frame dilemmas without premature verdicts?",
+    "format": "email",
+    "grammarFocus": [
+      "clinical formal",
+      "neutrality"
+    ],
+    "vocabularyDomain": "ethics consults",
+    "languageGoal": "Request ethics input professionally",
+    "communicationGoal": "Frame dilemmas without premature verdicts",
+    "unit": 7,
+    "unitName": "Ethics of Care & Medicine"
+  },
+  {
+    "id": "a66",
+    "title": "How can speech honour people who need help?",
+    "coreQuestion": "What does it mean to diminishing care language?",
+    "format": "article",
+    "grammarFocus": [
+      "linguistic ethics",
+      "examples"
+    ],
+    "vocabularyDomain": "dignity language",
+    "languageGoal": "Critique diminishing care language",
+    "communicationGoal": "Model dignifying description",
+    "unit": 7,
+    "unitName": "Ethics of Care & Medicine"
+  },
+  {
+    "id": "a67",
+    "title": "Who misses the benefits of advancing care?",
+    "coreQuestion": "What does it mean to unequal access to advances?",
+    "format": "essay",
+    "grammarFocus": [
+      "justice framing",
+      "hedging"
+    ],
+    "vocabularyDomain": "uneven medical progress",
+    "languageGoal": "Analyse unequal access to advances",
+    "communicationGoal": "Discuss progress with distribution in view",
+    "unit": 7,
+    "unitName": "Ethics of Care & Medicine"
+  },
+  {
+    "id": "a68",
+    "title": "When does maximal intervention avoid harder choices?",
+    "coreQuestion": "How can learners defend thoughtful limitation of treatment?",
+    "format": "feature",
+    "grammarFocus": [
+      "ethical critique",
+      "concession"
+    ],
+    "vocabularyDomain": "maximal intervention",
+    "languageGoal": "Interrogate \"do everything\" rhetoric",
+    "communicationGoal": "Defend thoughtful limitation of treatment",
+    "unit": 7,
+    "unitName": "Ethics of Care & Medicine"
+  },
+  {
+    "id": "a69",
+    "title": "How does sacrificial myth harm caregivers?",
+    "coreQuestion": "What does it mean to martyr narratives in care work?",
+    "format": "opinion",
+    "grammarFocus": [
+      "myth critique",
+      "should"
+    ],
+    "vocabularyDomain": "sacrifice romance",
+    "languageGoal": "Challenge martyr narratives in care work",
+    "communicationGoal": "Argue for sustainable care labour",
+    "unit": 7,
+    "unitName": "Ethics of Care & Medicine"
+  },
+  {
+    "id": "a70",
+    "title": "How can clinicians inform without flooding fear?",
+    "coreQuestion": "How can learners model careful risk talk?",
+    "format": "article",
+    "grammarFocus": [
+      "communication ethics",
+      "hedging"
+    ],
+    "vocabularyDomain": "risk communication",
+    "languageGoal": "Balance candour and psychological safety",
+    "communicationGoal": "Model careful risk talk",
+    "unit": 7,
+    "unitName": "Ethics of Care & Medicine"
+  },
+  {
+    "id": "a71",
+    "title": "Who gets to define the terms of a debate?",
+    "coreQuestion": "How does definitional power shape outcomes?",
+    "format": "essay",
+    "grammarFocus": [
+      "meta-argument",
+      "stance"
+    ],
+    "vocabularyDomain": "definitional power",
+    "languageGoal": "Analyse control of key terms",
+    "communicationGoal": "Argue about fair framing rights",
+    "unit": 8,
+    "unitName": "Language, Rhetoric & Power"
+  },
+  {
+    "id": "a72",
+    "title": "How does grammar hide agency in public talk?",
+    "coreQuestion": "What does it mean to grammatical hiding of actors?",
+    "format": "feature",
+    "grammarFocus": [
+      "linguistic analysis",
+      "examples"
+    ],
+    "vocabularyDomain": "agency erasure",
+    "languageGoal": "Show grammatical hiding of actors",
+    "communicationGoal": "Train critical reading of passives",
+    "unit": 8,
+    "unitName": "Language, Rhetoric & Power"
+  },
+  {
+    "id": "a73",
+    "title": "Should hate speech rules protect feelings or democratic capacity?",
+    "coreQuestion": "Which justification best grounds limits on speech?",
+    "format": "opinion",
+    "grammarFocus": [
+      "competing justifications",
+      "hedging"
+    ],
+    "vocabularyDomain": "speech limit grounds",
+    "languageGoal": "Compare rationales for speech limits",
+    "communicationGoal": "Argue carefully beyond slogans",
+    "unit": 8,
+    "unitName": "Language, Rhetoric & Power"
+  },
+  {
+    "id": "a74",
+    "title": "If metaphors go to war, what happens to policy?",
+    "coreQuestion": "How do martial frames reshape civic choices?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "metaphor critique",
+      "conditionals"
+    ],
+    "vocabularyDomain": "war metaphors",
+    "languageGoal": "Trace metaphor into policy imagination",
+    "communicationGoal": "Practise reframing civic talk",
+    "unit": 8,
+    "unitName": "Language, Rhetoric & Power"
+  },
+  {
+    "id": "a75",
+    "title": "How can institutions write inclusively without vagueness?",
+    "coreQuestion": "How can learners reject both sloppiness and tokenism?",
+    "format": "email",
+    "grammarFocus": [
+      "editorial register",
+      "precision"
+    ],
+    "vocabularyDomain": "inclusive precision",
+    "languageGoal": "Draft guidance for clear inclusive prose",
+    "communicationGoal": "Reject both sloppiness and tokenism",
+    "unit": 8,
+    "unitName": "Language, Rhetoric & Power"
+  },
+  {
+    "id": "a76",
+    "title": "When does ironic distance protect—or wound?",
+    "coreQuestion": "What does it mean to irony's ethical ambivalence?",
+    "format": "article",
+    "grammarFocus": [
+      "nuance",
+      "examples"
+    ],
+    "vocabularyDomain": "irony's double edge",
+    "languageGoal": "Analyse irony's ethical ambivalence",
+    "communicationGoal": "Judge tone by context carefully",
+    "unit": 8,
+    "unitName": "Language, Rhetoric & Power"
+  },
+  {
+    "id": "a77",
+    "title": "How should we distinguish coerced quiet from agency?",
+    "coreQuestion": "How can learners avoid collapsing all quiet into oppression or virtue?",
+    "format": "essay",
+    "grammarFocus": [
+      "distinctions",
+      "hedging"
+    ],
+    "vocabularyDomain": "kinds of silence",
+    "languageGoal": "Differentiate silence types rigorously",
+    "communicationGoal": "Avoid collapsing all quiet into oppression or virtue",
+    "unit": 8,
+    "unitName": "Language, Rhetoric & Power"
+  },
+  {
+    "id": "a78",
+    "title": "Why does sophisticated persuasion work better on the educated?",
+    "coreQuestion": "What does it mean to elite-targeted persuasion?",
+    "format": "feature",
+    "grammarFocus": [
+      "psychological rhetoric",
+      "concession"
+    ],
+    "vocabularyDomain": "flattering propaganda",
+    "languageGoal": "Explain elite-targeted persuasion",
+    "communicationGoal": "Warn without anti-intellectualism",
+    "unit": 8,
+    "unitName": "Language, Rhetoric & Power"
+  },
+  {
+    "id": "a79",
+    "title": "How do mediators reshape messages under pressure?",
+    "coreQuestion": "What does it mean to about interpreters' unavoidable influence?",
+    "format": "opinion",
+    "grammarFocus": [
+      "agency",
+      "ethics"
+    ],
+    "vocabularyDomain": "interpreter power",
+    "languageGoal": "Argue about interpreters' unavoidable influence",
+    "communicationGoal": "Discuss mediation ethics",
+    "unit": 8,
+    "unitName": "Language, Rhetoric & Power"
+  },
+  {
+    "id": "a80",
+    "title": "How do people argue if key words mean different things?",
+    "coreQuestion": "How can learners propose clarifying moves under disagreement?",
+    "format": "article",
+    "grammarFocus": [
+      "meta-linguistic care",
+      "proposals"
+    ],
+    "vocabularyDomain": "contested vocabulary",
+    "languageGoal": "Navigate semantic conflict in debate",
+    "communicationGoal": "Propose clarifying moves under disagreement",
+    "unit": 8,
+    "unitName": "Language, Rhetoric & Power"
+  },
+  {
+    "id": "a81",
+    "title": "How does systems vision change environmental judgment?",
+    "coreQuestion": "How can learners practise ecological systems talk?",
+    "format": "essay",
+    "grammarFocus": [
+      "systems language",
+      "nominalisation"
+    ],
+    "vocabularyDomain": "relational ecology",
+    "languageGoal": "Shift from objects to relations",
+    "communicationGoal": "Practise ecological systems talk",
+    "unit": 9,
+    "unitName": "Environment as System"
+  },
+  {
+    "id": "a82",
+    "title": "How do delayed feedbacks punish slow noticing?",
+    "coreQuestion": "What does it mean to late-discovered feedback harms?",
+    "format": "feature",
+    "grammarFocus": [
+      "narrative systems",
+      "cause/effect"
+    ],
+    "vocabularyDomain": "delayed feedback",
+    "languageGoal": "Narrate late-discovered feedback harms",
+    "communicationGoal": "Teach systems timing humanely",
+    "unit": 9,
+    "unitName": "Environment as System"
+  },
+  {
+    "id": "a83",
+    "title": "Should restoration aim for past ecosystems or future ones?",
+    "coreQuestion": "What target should repair projects choose under change?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "definitions under uncertainty"
+    ],
+    "vocabularyDomain": "restoration targets",
+    "languageGoal": "Argue past versus future baselines",
+    "communicationGoal": "Hold climate change without drowning the theme",
+    "unit": 9,
+    "unitName": "Environment as System"
+  },
+  {
+    "id": "a84",
+    "title": "If one species vanishes, which relationships unravel?",
+    "coreQuestion": "How should people think about cascading loss?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "conditionals",
+      "epistemic caution"
+    ],
+    "vocabularyDomain": "cascading loss",
+    "languageGoal": "Discuss interdependence without melodrama",
+    "communicationGoal": "Practise careful ecological reasoning",
+    "unit": 9,
+    "unitName": "Environment as System"
+  },
+  {
+    "id": "a85",
+    "title": "How can communities describe watershed interdependence?",
+    "coreQuestion": "What does it mean to local water systems clearly?",
+    "format": "email",
+    "grammarFocus": [
+      "technical-accessible hybrid",
+      "qualification"
+    ],
+    "vocabularyDomain": "catchment briefing",
+    "languageGoal": "Explain local water systems clearly",
+    "communicationGoal": "Support place-based ecological literacy",
+    "unit": 9,
+    "unitName": "Environment as System"
+  },
+  {
+    "id": "a86",
+    "title": "How does a useful concept become overused alarm?",
+    "coreQuestion": "What does it mean to science from rhetorical inflation?",
+    "format": "article",
+    "grammarFocus": [
+      "concept history soft",
+      "hedging"
+    ],
+    "vocabularyDomain": "tipping point talk",
+    "languageGoal": "Separate science from rhetorical inflation",
+    "communicationGoal": "Use strong concepts carefully",
+    "unit": 9,
+    "unitName": "Environment as System"
+  },
+  {
+    "id": "a87",
+    "title": "What interacting causes make cities dangerously hot?",
+    "coreQuestion": "What does it mean to heat as designed vulnerability?",
+    "format": "essay",
+    "grammarFocus": [
+      "multi-causal analysis",
+      "stance"
+    ],
+    "vocabularyDomain": "urban heat systems",
+    "languageGoal": "Analyse heat as designed vulnerability",
+    "communicationGoal": "Connect planning, equity, and climate lightly",
+    "unit": 9,
+    "unitName": "Environment as System"
+  },
+  {
+    "id": "a88",
+    "title": "Why must social systems sit inside ecological plans?",
+    "coreQuestion": "What does it mean to on people-in-nature planning?",
+    "format": "feature",
+    "grammarFocus": [
+      "synthesis",
+      "examples"
+    ],
+    "vocabularyDomain": "social-ecological plans",
+    "languageGoal": "Insist on people-in-nature planning",
+    "communicationGoal": "Critique fortress conservation gently",
+    "unit": 9,
+    "unitName": "Environment as System"
+  },
+  {
+    "id": "a89",
+    "title": "Which environmental metrics mislead decision-makers?",
+    "coreQuestion": "What does it mean to convenient but weak indicators?",
+    "format": "opinion",
+    "grammarFocus": [
+      "metric critique",
+      "concession"
+    ],
+    "vocabularyDomain": "environmental metrics",
+    "languageGoal": "Challenge convenient but weak indicators",
+    "communicationGoal": "Argue for harder, better measures",
+    "unit": 9,
+    "unitName": "Environment as System"
+  },
+  {
+    "id": "a90",
+    "title": "How can duty work under distributed causation?",
+    "coreQuestion": "What does it mean to duty under many causes?",
+    "format": "article",
+    "grammarFocus": [
+      "ethical systems",
+      "hedging"
+    ],
+    "vocabularyDomain": "distributed responsibility",
+    "languageGoal": "Theorise duty under many causes",
+    "communicationGoal": "Avoid both fatalism and lone-hero myths",
+    "unit": 9,
+    "unitName": "Environment as System"
+  },
+  {
+    "id": "a91",
+    "title": "What excellence looks like without performance culture?",
+    "coreQuestion": "What does it mean to non-spectacular excellence?",
+    "format": "essay",
+    "grammarFocus": [
+      "redefinition",
+      "examples"
+    ],
+    "vocabularyDomain": "quiet mastery",
+    "languageGoal": "Defend non-spectacular excellence",
+    "communicationGoal": "Value craft beyond display",
+    "unit": 10,
+    "unitName": "Craft, Mastery & Meaning"
+  },
+  {
+    "id": "a92",
+    "title": "How do long learnings reshape character?",
+    "coreQuestion": "What does it mean to character formation in craft learning?",
+    "format": "feature",
+    "grammarFocus": [
+      "narrative reflection",
+      "process"
+    ],
+    "vocabularyDomain": "apprenticeship patience",
+    "languageGoal": "Show character formation in craft learning",
+    "communicationGoal": "Honour slow skill paths",
+    "unit": 10,
+    "unitName": "Craft, Mastery & Meaning"
+  },
+  {
+    "id": "a93",
+    "title": "Should every passion become a profession?",
+    "coreQuestion": "When does monetising love damage the love?",
+    "format": "opinion",
+    "grammarFocus": [
+      "should",
+      "trade-offs"
+    ],
+    "vocabularyDomain": "passion careers",
+    "languageGoal": "Argue limits of professionalising passion",
+    "communicationGoal": "Protect amateur joy and paid craft differently",
+    "unit": 10,
+    "unitName": "Craft, Mastery & Meaning"
+  },
+  {
+    "id": "a94",
+    "title": "If tools get smarter, what remains for the craftsperson?",
+    "coreQuestion": "Which human judgments stay central amid assistance?",
+    "format": "dialogue",
+    "grammarFocus": [
+      "conditionals",
+      "definitions of craft"
+    ],
+    "vocabularyDomain": "craft amid tools",
+    "languageGoal": "Locate irreducible human craft judgment",
+    "communicationGoal": "Discuss tools as partners not replacements",
+    "unit": 10,
+    "unitName": "Craft, Mastery & Meaning"
+  },
+  {
+    "id": "a95",
+    "title": "How do mentors advocate for slow excellence?",
+    "coreQuestion": "What does it mean to someone for careful mastery?",
+    "format": "email",
+    "grammarFocus": [
+      "advocacy register",
+      "evidence of depth"
+    ],
+    "vocabularyDomain": "recommending depth",
+    "languageGoal": "Recommend someone for careful mastery",
+    "communicationGoal": "Counter speed-only achievement cultures",
+    "unit": 10,
+    "unitName": "Craft, Mastery & Meaning"
+  },
+  {
+    "id": "a96",
+    "title": "How can makers read failure without self-erasure?",
+    "coreQuestion": "What does it mean to failure as craft data?",
+    "format": "article",
+    "grammarFocus": [
+      "reframing",
+      "process language"
+    ],
+    "vocabularyDomain": "productive failure",
+    "languageGoal": "Treat failure as craft data",
+    "communicationGoal": "Build resilient learning identities",
+    "unit": 10,
+    "unitName": "Craft, Mastery & Meaning"
+  },
+  {
+    "id": "a97",
+    "title": "Why do purpose talks sometimes skip the hard part?",
+    "coreQuestion": "What does it mean to competence as path to meaning?",
+    "format": "essay",
+    "grammarFocus": [
+      "critique of purpose talk",
+      "synthesis"
+    ],
+    "vocabularyDomain": "meaning after skill",
+    "languageGoal": "Argue competence as path to meaning",
+    "communicationGoal": "Challenge empty vocation rhetoric",
+    "unit": 10,
+    "unitName": "Craft, Mastery & Meaning"
+  },
+  {
+    "id": "a98",
+    "title": "What keeps skill communities alive across fashions?",
+    "coreQuestion": "What does it mean to durable craft communities?",
+    "format": "feature",
+    "grammarFocus": [
+      "sociological soft",
+      "examples"
+    ],
+    "vocabularyDomain": "practice communities",
+    "languageGoal": "Analyse durable craft communities",
+    "communicationGoal": "Value transmission across generations",
+    "unit": 10,
+    "unitName": "Craft, Mastery & Meaning"
+  },
+  {
+    "id": "a99",
+    "title": "How should the highly skilled relate to unequal starts?",
+    "coreQuestion": "What does it mean to excellence and fairness together?",
+    "format": "opinion",
+    "grammarFocus": [
+      "justice + excellence",
+      "hedging"
+    ],
+    "vocabularyDomain": "excellence & access",
+    "languageGoal": "Hold excellence and fairness together",
+    "communicationGoal": "Avoid guilt paralysis and smug merit",
+    "unit": 10,
+    "unitName": "Craft, Mastery & Meaning"
+  },
+  {
+    "id": "a100",
+    "title": "What does a craft-centred life ask and give?",
+    "coreQuestion": "What does it mean to mastery, meaning, and measure?",
+    "format": "essay",
+    "grammarFocus": [
+      "synthesis",
+      "closing cadence"
+    ],
+    "vocabularyDomain": "craft-centred life",
+    "languageGoal": "Synthesize mastery, meaning, and measure",
+    "communicationGoal": "Close the curriculum with reflective vocation",
+    "unit": 10,
+    "unitName": "Craft, Mastery & Meaning"
+  }
+]

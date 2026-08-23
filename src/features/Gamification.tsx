@@ -1,6 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Trophy, Medal, Flame, Loader2, Clock, ArrowUp, ArrowDown, Minus } from 'lucide-react';
-import { getStudentClasses, getStudentSummaries, type StudentSummary } from '../firebase';
+import { Trophy, Medal, Flame, Loader2, Clock, ArrowUp, ArrowDown, Minus, Globe, Users } from 'lucide-react';
+import {
+  getStudentClasses,
+  getStudentSummaries,
+  getGlobalLeagueLeaderboard,
+  sortWeeklyLeagueRows,
+  type StudentSummary,
+} from '../firebase';
 import {
   BADGE_META,
   type HabitState,
@@ -15,6 +21,7 @@ import {
 import { ScreenShell, seCard } from '../components/ScreenShell';
 
 type Tab = 'league' | 'badges';
+type BoardScope = 'global' | 'class';
 
 function avatarHue(name: string) {
   let h = 0;
@@ -55,6 +62,7 @@ export function GamificationDash({
   displayName?: string;
 }) {
   const [tab, setTab] = useState<Tab>('league');
+  const [boardScope, setBoardScope] = useState<BoardScope>('global');
   const [rows, setRows] = useState<StudentSummary[]>([]);
   const [loading, setLoading] = useState(false);
   const [className, setClassName] = useState<string | null>(null);
@@ -80,6 +88,18 @@ export function GamificationDash({
     (async () => {
       setLoading(true);
       try {
+        if (boardScope === 'global') {
+          const ranked = await getGlobalLeagueLeaderboard(leagueId, week, {
+            max: 50,
+            includeUid: uid,
+          });
+          if (!cancelled) {
+            setRows(ranked);
+            setClassName(null);
+          }
+          return;
+        }
+
         const classes = await getStudentClasses(uid);
         const primary = classes[0];
         if (!primary?.studentUids?.length) {
@@ -91,12 +111,7 @@ export function GamificationDash({
         }
         if (!cancelled) setClassName(primary.name || 'Your class');
         const summaries = await getStudentSummaries(primary.studentUids);
-        const ranked = [...summaries].sort((a, b) => {
-          const ax = a.weekKey === week ? (a.weeklyXp || 0) : 0;
-          const bx = b.weekKey === week ? (b.weeklyXp || 0) : 0;
-          if (bx !== ax) return bx - ax;
-          return (b.xp || 0) - (a.xp || 0);
-        });
+        const ranked = sortWeeklyLeagueRows(summaries, week);
         if (!cancelled) setRows(ranked);
       } catch (e) {
         console.error(e);
@@ -105,7 +120,7 @@ export function GamificationDash({
       }
     })();
     return () => { cancelled = true; };
-  }, [uid, week]);
+  }, [uid, week, boardScope, leagueId]);
 
   const zones = useMemo(() => leagueZones(rows.length), [rows.length]);
 
@@ -132,11 +147,15 @@ export function GamificationDash({
       <span className="inline-flex items-center gap-1 text-slate-500"><Minus className="w-3.5 h-3.5" /> #{myRank} · {league.label}</span>
     ) : null;
 
+  const subtitle =
+    boardScope === 'global'
+      ? `Global ${league.label} league · weekly XP`
+      : className
+        ? `Class leaderboard · ${className}`
+        : 'Weekly XP race with your class';
+
   return (
-    <ScreenShell
-      title="League"
-      subtitle={className ? `Weekly XP race · ${className}` : 'Weekly XP race with your class'}
-    >
+    <ScreenShell title="League" subtitle={subtitle}>
       <div className="flex gap-1.5 mb-4 bg-slate-100 dark:bg-zinc-800 p-1 rounded-xl">
         {[
           { id: 'league' as const, label: 'League' },
@@ -159,10 +178,31 @@ export function GamificationDash({
 
       {tab === 'league' && (
         <div className="space-y-2.5">
+          <div className="flex gap-1.5 bg-slate-50 dark:bg-zinc-900 p-1 rounded-xl border border-slate-200 dark:border-zinc-800">
+            {([
+              { id: 'global' as const, label: 'Global', icon: Globe },
+              { id: 'class' as const, label: 'My class', icon: Users },
+            ]).map(({ id, label, icon: Icon }) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setBoardScope(id)}
+                className={`flex-1 py-2 rounded-lg text-[12px] font-bold transition-colors inline-flex items-center justify-center gap-1.5 ${
+                  boardScope === id
+                    ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-50 shadow-sm'
+                    : 'text-slate-500 hover:text-slate-700 dark:text-zinc-400'
+                }`}
+              >
+                <Icon className="w-3.5 h-3.5" />
+                {label}
+              </button>
+            ))}
+          </div>
+
           <div className={`${seCard} p-3.5 flex items-center gap-3`}>
             <div
-              className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-              style={{ background: league.soft, color: league.accent }}
+              className="league-tile w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+              style={{ ['--league-soft' as string]: league.soft, ['--league-ink' as string]: league.ink } as React.CSSProperties}
             >
               <Trophy className="w-5 h-5" />
             </div>
@@ -187,9 +227,13 @@ export function GamificationDash({
             ) : rows.length === 0 ? (
               <div className="px-4 py-10 text-center">
                 <Trophy className="w-8 h-8 mx-auto text-slate-200 mb-2" />
-                <p className="font-bold text-[14px] text-slate-700">No league mates yet</p>
+                <p className="font-bold text-[14px] text-slate-700">
+                  {boardScope === 'global' ? 'No global rankings yet' : 'No league mates yet'}
+                </p>
                 <p className="text-[12px] text-slate-400 mt-1 max-w-xs mx-auto">
-                  Join a class to enter the weekly leaderboard.
+                  {boardScope === 'global'
+                    ? 'Earn XP this week to appear on the global leaderboard.'
+                    : 'Join a class to see your class rankings, or switch to Global.'}
                 </p>
               </div>
             ) : (
@@ -227,7 +271,9 @@ export function GamificationDash({
                   );
                 })}
                 <p className="px-3.5 py-3 text-center text-[11px] text-slate-400 leading-snug">
-                  Top move up · bottom drop · XP resets Monday
+                  {boardScope === 'global'
+                    ? 'Top learners worldwide in your league · XP resets Monday'
+                    : 'Top move up · bottom drop · XP resets Monday'}
                 </p>
               </div>
             )}

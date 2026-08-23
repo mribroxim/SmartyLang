@@ -1,0 +1,22 @@
+/** Third-pass micro-expansions for remaining below-aim lessons. */
+export const EXPANSIONS3 = {
+p73: ` Share milestones with someone who cheers process, not only outcomes.`,
+p74: ` Remember that a kind no today protects a warmer yes when you truly have room.`,
+p76: ` Borrow before buying whenever libraries or neighbours can cover a rare need.`,
+p78: ` Notice which cuts hurt and which felt like relief; that map guides future budgets.`,
+p81: ` Teach yourself to feel a headline’s pull and still walk past until context arrives. That pause is media fitness worth practising every week.`,
+p83: ` Choose a single daily briefing time and defend it like an appointment with sanity. Missed updates are rarely fatal to thoughtful citizenship.`,
+p84: ` Swap recommendations with reasons written in one sentence; clarity reduces pressure and protects goodwill between friends who differ in taste and timing.`,
+p85: ` If silence feels harsh, try rain sounds or brown noise before returning to songs with words that steal focus.`,
+p86: ` Finish long pieces with a two-sentence takeaway note so effort becomes reusable knowledge next month when debates return.`,
+p87: ` Rotate in one unfamiliar but careful source each month to stretch your trust muscles beyond comfort, habit, and the easy charm of familiar voices on air or on screen.`,
+p88: ` Avoid stacking opinions on top of facts until your friend can restate the facts alone with confidence.`,
+p89: ` Keep one analogue habit — a notebook summary — to slow the digital flood on purpose each week.`,
+p91: ` Archive failed plans with a label like “tuition,” so shame does not block the next honest attempt.`,
+p92: ` Practise one problem scenario aloud yearly; spoken plans stick better than unread notes in a drawer.`,
+p93: ` Sleep before signing when excitement is high; dawn opinions are often wiser than midnight ones full of adrenaline.`,
+p94: ` Rate risks by values served, not by how dramatic the story will sound later at a party.`,
+p95: ` Update backups when life changes — new job, new city, new dependents — or they go stale and create false calm at the worst moment.`,
+p96: ` Treat each accepted chance like a plant: water it with calendar time, or watch it wilt into regret. Saying yes without scheduling is only a pleasant sentence. Real opportunity needs hours, materials, and a first awkward step before confidence arrives. If you cannot name that first step, your yes may still be a wish.`,
+p97: ` Set a decision appointment in your diary and keep it the way you keep dentist visits — non-negotiable and calm.`,
+};

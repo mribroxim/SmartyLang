@@ -1,0 +1,4802 @@
+[
+  {
+    "id": "b1",
+    "title": "Ismingiz nima?",
+    "text": "Anna: Salom! Ismingiz nima?\nBen: Salom! Mening ismim Ben. Sizning ismingizchi?\nAnna: Men Anna. Tanishganimdan xursandman, Ben.\nBen: Men ham. Siz shu yerga yangimisiz?\nAnna: Ha. Bu til maktabidagi birinchi kunim.\nBen: Xush kelibsiz! Men Grin xonim bilan B guruhidaman.\nAnna: Rostdanmi? Men ham B guruhidaman!\nBen: Zoʻr. Yonima oʻtirasizmi?\nAnna: Ha, iltimos. Rahmat.\nBen: Arzimaydi. Keling — dars toʻqqizda boshlanadi.\nAnna: Yaxshi. Sumkam ogʻir. Yordam bera olasizmi?\nBen: Albatta. Birga ketaylik.",
+    "vocabulary": [
+      {
+        "word": "Salom",
+        "definition": "Koʻrishganda aytiladigan salomlashuv."
+      },
+      {
+        "word": "ism",
+        "definition": "Odamni chaqirish uchun ishlatiladigan nom."
+      },
+      {
+        "word": "tanishganimdan xursandman",
+        "definition": "Yangi odam bilan uchrashganda aytiladigan iliq soʻz."
+      },
+      {
+        "word": "yangi",
+        "definition": "Bu yerda endigina kelgan."
+      },
+      {
+        "word": "xush kelibsiz",
+        "definition": "Yangi kelganni kutib olish soʻzi."
+      },
+      {
+        "word": "guruh",
+        "definition": "Birga dars oʻqiydigan oʻquvchilar toʻplami."
+      },
+      {
+        "word": "oʻtirmoq",
+        "definition": "Stulga joylashmoq."
+      },
+      {
+        "word": "iltimos",
+        "definition": "Iltimos qilganda aytiladigan muloyim soʻz."
+      },
+      {
+        "word": "rahmat",
+        "definition": "Yordam uchun minnatdorchilik."
+      },
+      {
+        "word": "birga",
+        "definition": "Boshqa odam bilan, yolgʻiz emas."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b2",
+    "title": "Qayerdansiz?",
+    "text": "Maya: Leo, siz qayerdansiz?\nLeo: Men Braziliyadanman. San-Pauluda yashayman.\nMaya: Voy! Uzoq ekan. Men Ispaniyadanman. Madridda yashayman.\nLeo: Madrid yoqadimi?\nMaya: Ha. Katta shahar. Hozir qayerda yashaysiz?\nLeo: Bogʻ yonida, Yashil koʻchada. Sizchi?\nMaya: Opam bilan Tepalik yoʻlida yashayman. Jimjit koʻcha.\nLeo: Oilangiz Ispaniyadami?\nMaya: Ota-onam Madridda. Akam Londonda yashaydi.\nLeo: Ota-onam Braziliyada. Har yakshanba ularga qoʻngʻiroq qilaman.\nMaya: Yaxshi. Shu yerda ekaningizdan xursandman.\nLeo: Men ham. Bir kun choy ichaylik.",
+    "vocabulary": [
+      {
+        "word": "qayerdan",
+        "definition": "Qaysi joydan kelganini soʻrash."
+      },
+      {
+        "word": "Braziliya",
+        "definition": "Janubiy Amerikadagi mamlakat."
+      },
+      {
+        "word": "shahar",
+        "definition": "Katta aholi punkti."
+      },
+      {
+        "word": "yashamoq",
+        "definition": "Uyining bir joyda boʻlishi."
+      },
+      {
+        "word": "yonida",
+        "definition": "Yaqin joyda."
+      },
+      {
+        "word": "koʻcha",
+        "definition": "Shahar ichidagi yoʻl."
+      },
+      {
+        "word": "jimjit",
+        "definition": "Shovqinsiz, tinch."
+      },
+      {
+        "word": "ota-onam",
+        "definition": "Ona va ota."
+      },
+      {
+        "word": "qoʻngʻiroq",
+        "definition": "Telefon orqali bogʻlanish."
+      },
+      {
+        "word": "choy",
+        "definition": "Issiq ichimlik."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b3",
+    "title": "Yoshingiz nechida?",
+    "text": "Sara oʻn ikki yoshda. Tugʻilgan kuni 5-mart. Har yili oilasi uyda kichik bayram qiladi. Bu yil onasi shokoladli tort pishirdi. Otasi oʻn ikkita sham oldi. Kichik ukasi qizil yurak chizilgan otkritka yasadi. Sara doʻstlari maktabdan keyin kelishadi. Ular \"Tugʻilgan kuningiz bilan!\" deb kuylashadi va kichik sovgʻalar berishadi. Sara koʻk kitob va sariq sharf ochadi. U tabassum qilib rahmat aytadi. Tortdan keyin bogʻda oʻyin oʻynashadi. Sara xursand. U: \"Bugun oʻn ikkidaman — kun ajoyib!\" deydi.",
+    "vocabulary": [
+      {
+        "word": "yosh",
+        "definition": "Odamning necha yoshdaligi."
+      },
+      {
+        "word": "tugʻilgan kun",
+        "definition": "Har yili nishonlanadigan tugʻilgan sana."
+      },
+      {
+        "word": "yoshda",
+        "definition": "Yoshni aytish uchun ishlatiladi."
+      },
+      {
+        "word": "bayram",
+        "definition": "Oziq-ovqat, doʻstlar va quvonch bilan yigʻilish."
+      },
+      {
+        "word": "tort",
+        "definition": "Bayram uchun shirin taom."
+      },
+      {
+        "word": "sham",
+        "definition": "Yonib yorugʻlik beradigan mum tayoqcha."
+      },
+      {
+        "word": "sovgʻa",
+        "definition": "Maxsus kun uchun beriladigan narsa."
+      },
+      {
+        "word": "tabassum qilmoq",
+        "definition": "Xursand yuz ifodasi qilmoq."
+      },
+      {
+        "word": "bogʻ",
+        "definition": "Uy yonidagi oʻsimlikli ochiq joy."
+      },
+      {
+        "word": "xursand",
+        "definition": "Yaxshi kayfiyatda, mamnun."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b4",
+    "title": "Bu mening oilam",
+    "text": "Bu mening oilam. Biz shaharda kichik kvartirada yashaymiz. Onamning ismi Lena. U hamshira, ertalab ishlaydi. Otamning ismi Omar. U haydovchi. Bir opam va bir ukam bor. Opam oʻn olti yoshda. Ismi Noor. U musiqani yaxshi koʻradi. Ukam sakkiz yoshda. Ismi Amir. Uning oʻyinchoq poezdi bor. Buvim ham biz bilan yashaydi. Yakshanba kuni shoʻrva pishiradi. Kechqurun mehmonxonada oʻtiramiz. Gaplashamiz va qisqa film koʻramiz. Oilamni juda yaxshi koʻraman. Oilamiz kichik, lekin bir-birimizni qoʻllab-quvvatlaymiz. Bu menga kuch beradi.",
+    "vocabulary": [
+      {
+        "word": "oila",
+        "definition": "Ota-ona, aka-uka, opa-singillar kabi yaqinlar."
+      },
+      {
+        "word": "ona",
+        "definition": "Ayol ota-ona."
+      },
+      {
+        "word": "ota",
+        "definition": "Erkak ota-ona."
+      },
+      {
+        "word": "opa",
+        "definition": "Bir ota-onadan boʻlgan qiz / ayol."
+      },
+      {
+        "word": "uka",
+        "definition": "Bir ota-onadan boʻlgan bola / yigit."
+      },
+      {
+        "word": "buvi",
+        "definition": "Ona yoki otaning onasi."
+      },
+      {
+        "word": "kvartira",
+        "definition": "Katta binodagi uy."
+      },
+      {
+        "word": "hamshira",
+        "definition": "Bemorlarga qarovchi odam."
+      },
+      {
+        "word": "pishirmoq",
+        "definition": "Ovqatni tayyorlamoq."
+      },
+      {
+        "word": "mehmonxona",
+        "definition": "Oilaning oʻtirib dam oladigan xonasi."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b5",
+    "title": "Tashqi koʻrinishingiz qanday?",
+    "text": "Doʻstim Yuki olomon ichida tez koʻrinadi. U baland boʻyli va tez yuradi. Uzun qora sochi va jigarrang koʻzlari bor. Oʻqish uchun koʻzoynak taqadi. Bugun qizil kurtka va koʻk jinsi kiygan. Oyoq kiyimi oq va toza. Yuki koʻp kuladi. Burunida mayda sepkillari bor. Akasi Ken boshqacha. U past boʻyli, jingalak sochli. Koʻzoynak taqmaydi. Yashil ryukzagi bor. Avtobus bekatida uchrashsak, \"Salom, Yuki! Kurtkang zoʻr,\" deyman. U kulib: \"Rahmat. Ken bilan birga tanladik,\" deydi.",
+    "vocabulary": [
+      {
+        "word": "baland",
+        "definition": "Boʻyi uzun."
+      },
+      {
+        "word": "past",
+        "definition": "Boʻyi qisqa."
+      },
+      {
+        "word": "soch",
+        "definition": "Boshdagi soch."
+      },
+      {
+        "word": "koʻz",
+        "definition": "Koʻrish aʻzosi."
+      },
+      {
+        "word": "koʻzoynak",
+        "definition": "Koʻrish uchun shisha."
+      },
+      {
+        "word": "kurtka",
+        "definition": "Ustki kiyim."
+      },
+      {
+        "word": "jingalak",
+        "definition": "Toʻlqinsimon soch."
+      },
+      {
+        "word": "sepkil",
+        "definition": "Teridagi mayda dogʻlar."
+      },
+      {
+        "word": "yashil",
+        "definition": "Yashil rang."
+      },
+      {
+        "word": "olomon",
+        "definition": "Koʻp odam toʻplami."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b6",
+    "title": "Sevimli narsalarim",
+    "text": "Men koʻp narsani yaxshi koʻraman, lekin hammasi emas. Pishloqli pitsa yoqadi. Baliq yoqmaydi — hidi kuchli. Televizorda futbol koʻrishni va bogʻda yurishni yaxshi koʻraman. Issiqda yugurishni yoqtirmayman. Sevimli rangim yashil. Sevimli hayvonim mushuk. Uyda mushuklar haqida ikkita kitobim bor. Shanba kuni musiqa tinglayman. Yumshoq qoʻshiqlarni yoqtiraman. Doʻstim baland ovozli musiqani afzal koʻradi. Mayli — biz turlichamiz. Kafeda doimo apelsin sharbati olaman. Qahva ichmayman. Sizchi? Nima yoqadi? Sevimli narsalarim haqida gapirish oson. Sizning sevimli narsangiz nima?",
+    "vocabulary": [
+      {
+        "word": "yoqadi",
+        "definition": "Yaxshi koʻriladi."
+      },
+      {
+        "word": "yoqmaydi",
+        "definition": "Yaxshi koʻrilmaydi."
+      },
+      {
+        "word": "sevimli",
+        "definition": "Eng yoqadigan."
+      },
+      {
+        "word": "afzal",
+        "definition": "Boshqasidan koʻra tanlangan."
+      },
+      {
+        "word": "hid",
+        "definition": "Burun orqali seziladi."
+      },
+      {
+        "word": "yumshoq",
+        "definition": "Tinch, ohista."
+      },
+      {
+        "word": "baland",
+        "definition": "Kuchli ovoz."
+      },
+      {
+        "word": "olaman",
+        "definition": "Tanlab olaman."
+      },
+      {
+        "word": "doimo",
+        "definition": "Har doim."
+      },
+      {
+        "word": "turlicha",
+        "definition": "Bir xil emas."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b7",
+    "title": "Yordam bera olasizmi?",
+    "text": "Sayyoh: Kechirasiz. Yordam bera olasizmi, iltimos?\nSotuvchi: Albatta. Nima kerak?\nSayyoh: Pochta boʻlimini topa olmayapman. Shu yerga yaqinmi?\nSotuvchi: Ha. Toʻgʻri boring, svetaforda chapga buriling.\nSayyoh: Rahmat. Yana — shu yerda suv shishasi olsam boʻladimi?\nSotuvchi: Ha. U javonda. Bitta oling.\nSayyoh: Narxi qancha?\nSotuvchi: Bir yarim funt.\nSayyoh: Mayli. Mana.\nSotuvchi: Rahmat. Paket kerakmi?\nSayyoh: Yoʻq, rahmat. Shishani ochib bera olasizmi? Qattiq yopiq.\nSotuvchi: Albatta. Mana. Kun yaxshi oʻtsin!\nSayyoh: Sizga ham. Xayr!",
+    "vocabulary": [
+      {
+        "word": "kechirasiz",
+        "definition": "Eʻtiborni tortish uchun muloyim soʻz."
+      },
+      {
+        "word": "yordam",
+        "definition": "Birologa koʻmak berish."
+      },
+      {
+        "word": "olmoq",
+        "definition": "Qila olish / imkon."
+      },
+      {
+        "word": "topmoq",
+        "definition": "Izlab topib olmoq."
+      },
+      {
+        "word": "toʻgʻri",
+        "definition": "Oldinga, burilmasdan."
+      },
+      {
+        "word": "burilmoq",
+        "definition": "Yoʻnalishni oʻzgartirmoq."
+      },
+      {
+        "word": "javon",
+        "definition": "Narsalar qoʻyiladigan tokcha."
+      },
+      {
+        "word": "qattiq",
+        "definition": "Ochiqish qiyin."
+      },
+      {
+        "word": "albatta",
+        "definition": "Rozilik bildirish."
+      },
+      {
+        "word": "kun yaxshi oʻtsin",
+        "definition": "Xayrlashuvda yaxshi tilak."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b8",
+    "title": "Sumkamda nima bor?",
+    "text": "Sumkam ichiga qarang. Ichida koʻk daftar va qora ruchka bor. Uchta qalamli kichik qalamdon ham bor. Kumush uzukdagi kalitlarim bor. Suv shishasi — yarim toʻla. Telefonim yumshoq gʻilofta. Avtobus uchun ikkita chipta bor. Tushlikka qizil olma bor. Kichik salfetka qutichasi bor. Oh, va oʻquvchi guvohnomam bor. Bugun pul yoʻq. Hamyonimni uyda qoldiribman! Ertaga sumkaga solaman. Hozir sumka yengilroq, lekin hamyon kerak. Hamyonimni ertalab sumkaga solishni eslab qolaman. Undan keyin yoʻl tinchroq boʻladi.",
+    "vocabulary": [
+      {
+        "word": "sumka",
+        "definition": "Narsalarni olib yurish uchun idish."
+      },
+      {
+        "word": "bor",
+        "definition": "Mavjud."
+      },
+      {
+        "word": "daftar",
+        "definition": "Yozish uchun varaqlar toʻplami."
+      },
+      {
+        "word": "kalit",
+        "definition": "Eshik ochadigan metall buyum."
+      },
+      {
+        "word": "hamyon",
+        "definition": "Pul va kartalar saqlanadigan joy."
+      },
+      {
+        "word": "chipta",
+        "definition": "Sayohat yoki kirish uchun qogʻoz yoki kod."
+      },
+      {
+        "word": "salfetka",
+        "definition": "Qoʻl yoki yuzni artish uchun qogʻoz."
+      },
+      {
+        "word": "yarim toʻla",
+        "definition": "Yarmi toʻldirilgan."
+      },
+      {
+        "word": "yengil",
+        "definition": "Ogʻir emas."
+      },
+      {
+        "word": "qoldirmoq",
+        "definition": "Biror joyda unutib ketmoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b9",
+    "title": "Telefon raqamim…",
+    "text": "Sam: Telefon raqamingizni bersangiz boʻladimi?\nRita: Albatta. 07 812 445 903.\nSam: Nol-yetti… sakkiz-bir-ikki… shumi?\nRita: Ha. Keyin toʻrt-toʻrt-besh, toʻqqiz-nol-uch.\nSam: Tushundim. Elektron pochtangizchi?\nRita: rita.khan@mail.com. Rita nuqta khan mail nuqta com.\nSam: Zoʻr. Bugun kechqurun dars qaydlarini yuboraman.\nRita: Ajoyib. Sizning raqamingizchi?\nSam: Meningi 07 330 219 668. Avtobus kechiksa, qoʻngʻiroq qiling.\nRita: Mayli. Pochta manzilingizni ham yozaymi?\nSam: Ha — sam.lee@school.org.\nRita: Rahmat, Sam. Ertaga koʻrishguncha!\nSam: Koʻrishguncha! Raqamimni yoʻqotmang.",
+    "vocabulary": [
+      {
+        "word": "telefon raqami",
+        "definition": "Qoʻngʻiroq qilish uchun raqamlar."
+      },
+      {
+        "word": "elektron pochta",
+        "definition": "Internet orqali xabar yuborish manzili."
+      },
+      {
+        "word": "nol",
+        "definition": "0 raqami."
+      },
+      {
+        "word": "nuqta",
+        "definition": "Manzildagi . belgisining nomi."
+      },
+      {
+        "word": "yubormoq",
+        "definition": "Xabar yoki fayl joʻnatmoq."
+      },
+      {
+        "word": "qayd",
+        "definition": "Darsda yozib olingan eslatmalar."
+      },
+      {
+        "word": "qoʻngʻiroq qilmoq",
+        "definition": "Telefon qilmoq."
+      },
+      {
+        "word": "yozmoq",
+        "definition": "Qogʻozga yoki telefonga yozmoq."
+      },
+      {
+        "word": "yoʻqotmoq",
+        "definition": "Topa olmay qolmoq."
+      },
+      {
+        "word": "koʻrishguncha",
+        "definition": "Keyinroq uchrashish umidi bilan xayrlashuv."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b10",
+    "title": "Tanishganimdan xursandman",
+    "text": "Mezbon: Bugun siz bilan tanishish juda yoqimli boʻldi, Priya.\nPriya: Men uchun ham. Choy uchun rahmat.\nMezbon: Arzimaydi. Uyga yoʻlni bilasizmi?\nPriya: Ha. Avtobus bekati burchak yonida.\nMezbon: Yaxshi. Ukangizga mendan salom ayting.\nPriya: Albatta. Farzandlaringizga ham xayr ayting, iltimos.\nMezbon: Boʻldi. Ularga kulgili hikoyalaringiz yoqdi.\nPriya: Xursandman. Endi ketishim kerak. Avtobus tez orada keladi.\nMezbon: Mayli. Oʻzingizni ehtiyot qiling — keyingi hafta koʻrishguncha.\nPriya: Keyingi hafta koʻrishguncha. Kechangiz yaxshi oʻtsin!\nMezbon: Sizga ham. Xayr!\nPriya: Xayr! Suhbat yoqimli boʻldi.",
+    "vocabulary": [
+      {
+        "word": "yoqimli",
+        "definition": "Maroqli, yaxshi tuygʻu beradigan."
+      },
+      {
+        "word": "tanishish",
+        "definition": "Yangi odam bilan uchrashib bilish."
+      },
+      {
+        "word": "arzimaydi",
+        "definition": "Rahmatga javob."
+      },
+      {
+        "word": "yoʻl",
+        "definition": "Bir joydan ikkinchisiga borish yoʻnalishi."
+      },
+      {
+        "word": "burchak",
+        "definition": "Ikki yoʻl tutashgan joy."
+      },
+      {
+        "word": "salom aytmoq",
+        "definition": "Boshqa odamga salom yetkazmoq."
+      },
+      {
+        "word": "ehtiyot qilmoq",
+        "definition": "Oʻzini saqlamoq."
+      },
+      {
+        "word": "koʻrishguncha",
+        "definition": "Keyingi uchrashuvgacha xayrlashuv."
+      },
+      {
+        "word": "kech",
+        "definition": "Kechqurun vaqti."
+      },
+      {
+        "word": "xayr",
+        "definition": "Xayrlashuv soʻzi."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b11",
+    "title": "Soat nechada turasiz?",
+    "text": "Ish kunlari soat olti yarimda turaman. Avval bir daqiqa karavotda oʻtiraman. Keyin yuzimni yuvaman va tishlarimni tozalayman. Maktab kiyimini kiyaman va karavotni yigʻishtiraman. Soat yettida dadam bilan nonushta qilaman. Non tost va sut ichamiz. Yetti yigirmada oyoq kiyimimni kiyib uyidan chiqaman. Maktab avtobusi yetti yarimda keladi. Avtobusda derazadan qarab oʻtiraman. Maktabga soat sakkizda yetaman. Ertalabim band, lekin yoqadi. Yakshanba kuni kechroq — soat toʻqqizda turaman! Har ertalab shu tartib menga tinchlik beradi. Shoshilmasam, kunim yaxshi boshlanadi.",
+    "vocabulary": [
+      {
+        "word": "turmoq",
+        "definition": "Uyqudan uygʻonmoq."
+      },
+      {
+        "word": "ish kuni",
+        "definition": "Dushanbadan jumagacha."
+      },
+      {
+        "word": "tozalamoq",
+        "definition": "Tishlarni choʻtkalamoq."
+      },
+      {
+        "word": "yigʻishtirmoq",
+        "definition": "Karavotni tartibga solmoq."
+      },
+      {
+        "word": "tost",
+        "definition": "Qovurilgan non."
+      },
+      {
+        "word": "chiqmoq",
+        "definition": "Uydan ketmoq."
+      },
+      {
+        "word": "yetmoq",
+        "definition": "Bir joyga kelib yetmoq."
+      },
+      {
+        "word": "band",
+        "definition": "Koʻp ish bilan toʻla."
+      },
+      {
+        "word": "kechroq",
+        "definition": "Oddiy vaqtdan keyin."
+      },
+      {
+        "word": "yarim",
+        "definition": "Soatning oʻttiz daqiqasi."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b12",
+    "title": "Oshxonamga kiring",
+    "text": "Oshxonamga kiring. Deraza yonida oq muzlatgich bor. Oʻrtada yogʻoch stol turadi. Atrofida toʻrtta stul bor. Devorda soat osilgan — soat oʻn. Eshik yonida yuvgich bor. Yuvgich ustida ikkita javon. Javonlarda piyola va likopchalar. Deraza tokchasida kichik gul. Stollik ustida meva idishi — olma va banan. Onam hozir choy damlayapti. Choynak issiq. Oʻtiring, iltimos. Pechenye xohlaysizmi? Oshxona tinch va yoqimli hidli. Bu yerda oilamiz ertalab birga ovqatlanadi.",
+    "vocabulary": [
+      {
+        "word": "oshxona",
+        "definition": "Ovqat pishiriladigan xona."
+      },
+      {
+        "word": "muzlatgich",
+        "definition": "Ovqatni sovuq saqlaydigan shkaf."
+      },
+      {
+        "word": "yuvgich",
+        "definition": "Idish yuviladigan joy."
+      },
+      {
+        "word": "javon",
+        "definition": "Idish qoʻyiladigan tokcha."
+      },
+      {
+        "word": "stollik",
+        "definition": "Oshxonadagi ish stoli."
+      },
+      {
+        "word": "choynak",
+        "definition": "Suv qaynatiladigan idish."
+      },
+      {
+        "word": "deraza tokchasi",
+        "definition": "Deraza ostidagi tor joy."
+      },
+      {
+        "word": "oʻrta",
+        "definition": "Xonaning markazi."
+      },
+      {
+        "word": "atrofida",
+        "definition": "Atrofda."
+      },
+      {
+        "word": "pechenye",
+        "definition": "Choy bilan yeyiladigan shirin non."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b13",
+    "title": "Qayerda uxlasiz?",
+    "text": "Yotoqxonam kichik, lekin tartibli. Karavotim deraza ostida. Ustida koʻk koʻrpa bor. Yonida kichik stol ustida chiroq. Shkaf eshik qarshisida. Ichida koʻylaklar va jinsi shimlar. Polida yumshoq gilamcha. Stol burchakda. Ustida kitoblar, oldida stul. Stol ustida futbol jamoasi plakati. Sumkam eshik orqasida. Kechasi parda yopaman. Xona qorongʻi va jimjit boʻladi — yaxshi uxlayman. Kitoblarim yozuv stolim ustida tartibli turadi. Uxlashdan oldin xonani yana bir koʻzdan kechiraman.",
+    "vocabulary": [
+      {
+        "word": "yotoqxona",
+        "definition": "Uxlash xonasi."
+      },
+      {
+        "word": "koʻrpa",
+        "definition": "Karavot yopinchiq."
+      },
+      {
+        "word": "shkaf",
+        "definition": "Kiyim joyi."
+      },
+      {
+        "word": "qarshi",
+        "definition": "Roʻparada."
+      },
+      {
+        "word": "gilamcha",
+        "definition": "Poldagi yumshoq qoplama."
+      },
+      {
+        "word": "stol",
+        "definition": "Kitob qoʻyiladigan joy."
+      },
+      {
+        "word": "plakat",
+        "definition": "Devordagi rasm."
+      },
+      {
+        "word": "orqasida",
+        "definition": "Orqa tomonda."
+      },
+      {
+        "word": "parda",
+        "definition": "Deraza matosi."
+      },
+      {
+        "word": "tartibli",
+        "definition": "Tartibda."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b14",
+    "title": "Uy ishini kim qiladi?",
+    "text": "Ona: Bu hafta uy ishini kim qiladi?\nOta: Dushanba va chorshanba idishlarni yuvaman.\nOna: Yaxshi. Nina, mehmonxonani changyutgich bilan tozalaysanmi?\nNina: Ha. Seshanba kunlari changyutaman. Tom axlatni tashlaydi.\nTom: Har kech ovqatdan keyin shunday qilaman.\nOna: Gullarni kim sugʻoradi?\nNina: Men. Shanba ertalab sugʻoraman.\nOta: Juma kuni hammomni men tozalayman.\nOna: Ajoyib. Kir-yuvishchi?\nTom: Onam yuvadi. Men kiyimlarni tashqariga osaman.\nOna: Hammaga rahmat. Koʻp qoʻl — ish oson!\nNina: Tugagach film koʻramizmi?\nOta: Ha — uy toza boʻlsa.",
+    "vocabulary": [
+      {
+        "word": "uy ishi",
+        "definition": "Uyni tozalash."
+      },
+      {
+        "word": "idish",
+        "definition": "Ovqat buyumlari."
+      },
+      {
+        "word": "changyut",
+        "definition": "Changni olish."
+      },
+      {
+        "word": "axlat",
+        "definition": "Chiqindi."
+      },
+      {
+        "word": "sugʻoradi",
+        "definition": "Gullarga suv beradi."
+      },
+      {
+        "word": "yuvadi",
+        "definition": "Kiyim yuvadi."
+      },
+      {
+        "word": "osaman",
+        "definition": "Kiyimni osib qoʻyaman."
+      },
+      {
+        "word": "tozalayman",
+        "definition": "Ifloslikni olaman."
+      },
+      {
+        "word": "tugagach",
+        "definition": "Ish tugagandan keyin."
+      },
+      {
+        "word": "har",
+        "definition": "Har bir."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b15",
+    "title": "Tushlik tayyorlayapman",
+    "text": "Ota: Hamma qani? Nima qilyapsizlar?\nOna: Oshxonada tushlik tayyorlayapman. Shoʻrva qaynayapti.\nOta: Mia yordam beryaptimi?\nOna: Yoʻq. Mia xonasida uy vazifasini qilyapti.\nOta: Samchi?\nOna: Sam bogʻda it bilan oʻynayapti. Eshit — it vovullayapti!\nOta: Ha! Buvi-chi?\nOna: Mehmonxonada yangiliklar tomosha qilyapti.\nOta: Mayli. Men chiroqni tuzatyapman. Ishlamayapti.\nOna: Ehtiyot boʻling. Tushlik oʻn daqiqadan keyin tayyor.\nOta: Zoʻr. Ochman!\nOna: Oʻtirishdan oldin qoʻlingizni yuving. Oilam bir uyda, lekin har kim oʻz ishida. Tushlik hammamizni yana bir joyga yigʻadi.",
+    "vocabulary": [
+      {
+        "word": "tayyorlamoq",
+        "definition": "Ovqatni pishirib tayyor qilmoq."
+      },
+      {
+        "word": "qaynamoq",
+        "definition": "Issiqda pishmoq."
+      },
+      {
+        "word": "uy vazifasi",
+        "definition": "Maktabdan berilgan uy ishi."
+      },
+      {
+        "word": "oʻynamoq",
+        "definition": "Oʻyin qilmoq."
+      },
+      {
+        "word": "vovullamoq",
+        "definition": "Itning ovoz chiqarishi."
+      },
+      {
+        "word": "tomosha qilmoq",
+        "definition": "Koʻrmoq."
+      },
+      {
+        "word": "tuzatmoq",
+        "definition": "Buzilgan narsani ishlatiladigan holga keltirmoq."
+      },
+      {
+        "word": "och",
+        "definition": "Yemoq xohlayotgan."
+      },
+      {
+        "word": "tayyor",
+        "definition": "Yeyishga yoki foydalanishga tayyor."
+      },
+      {
+        "word": "oldin",
+        "definition": "Biror ishdan avval."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b16",
+    "title": "Uy hayvoningiz bormi?",
+    "text": "Bizda uy hayvoni bor. Ismi Momo — kichik jigarrang it. Bogʻda tez yugura oladi. \"Oʻtir!\" desam, oʻtiradi. Muzlatgichni ocholmaydi — yaxshiyam! Har ertalab unga ovqat va toza suv beraman. Maktabdan keyin sayrga olib chiqaman. Momo toʻplarni yaxshi koʻradi. Toʻpni menga qaytarib keltiradi. Kechasi karavotim yonida uxlaydi. Unda jimjit. Opam yakshanba kuni junini taraydi. Momo oilamizning bir qismi. Doʻstlar kelganda dumini qimirlatib, itcha salom beradi. Momo oilamizni quvnoq qiladi. Uni koʻrsam, tabassum qilaman.",
+    "vocabulary": [
+      {
+        "word": "uy hayvoni",
+        "definition": "Uyda boqiladigan hayvon."
+      },
+      {
+        "word": "it",
+        "definition": "Sodiq uy hayvoni."
+      },
+      {
+        "word": "yugurmoq",
+        "definition": "Tez harakatlanmoq."
+      },
+      {
+        "word": "ovqat",
+        "definition": "Yeyiladigan narsa."
+      },
+      {
+        "word": "sayr",
+        "definition": "Yurib havo olish."
+      },
+      {
+        "word": "toʻp",
+        "definition": "Oʻyin toʻpi."
+      },
+      {
+        "word": "uxlamoq",
+        "definition": "Dam olish."
+      },
+      {
+        "word": "taramoq",
+        "definition": "Junini taroq bilan taramoq."
+      },
+      {
+        "word": "dum",
+        "definition": "Hayvonning orqa aʻzosi."
+      },
+      {
+        "word": "qism",
+        "definition": "Butunning bir boʻlagi."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b17",
+    "title": "Iltimos, eshikni yoping",
+    "text": "Ona: Iltimos, eshikni yoping. Tashqari sovuq.\nBen: Mayli. Qulf ham qoʻyaymi?\nOna: Ha, qulf qoʻying. Nam oyoq kiyimingizni yeching.\nBen: Isitgich yoniga qoʻyaman.\nOna: Yaxshi. Sumkani stolga qoʻymang. Ilgakka osing.\nBen: Boʻldi. Xonamdagi derazani ochsam boʻladimi?\nOna: Hozircha yopiq qoldiring. Qorongʻi boʻlsa, chiroqni yoqing.\nBen: Mayli. Paypoqlarim qani?\nOna: Tortmada qarang. Ovqatdan oldin kitoblaringizni tartibga soling.\nBen: Solaman. Yana nima?\nOna: Qoʻlingizni yuving, keyin stolni yozishga yordam bering.\nBen: Kelayapman!",
+    "vocabulary": [
+      {
+        "word": "yopmoq",
+        "definition": "Eshikni berkitmoq."
+      },
+      {
+        "word": "qulf",
+        "definition": "Kalit bilan berkitish."
+      },
+      {
+        "word": "yechmoq",
+        "definition": "Kiyim yoki oyoq kiyimini olmoq."
+      },
+      {
+        "word": "osmoq",
+        "definition": "Ilgakka osib qoʻymoq."
+      },
+      {
+        "word": "ilgak",
+        "definition": "Narsa osiladigan egri temir."
+      },
+      {
+        "word": "yoqmoq",
+        "definition": "Chiroqni yoqmoq."
+      },
+      {
+        "word": "tortma",
+        "definition": "Ichiga narsa solinadigan quti."
+      },
+      {
+        "word": "tartibga solmoq",
+        "definition": "Narsalarni joyiga qoʻymoq."
+      },
+      {
+        "word": "stol yozmoq",
+        "definition": "Ovqat uchun idishlarni qoʻymoq."
+      },
+      {
+        "word": "iltimos",
+        "definition": "Muloyim soʻrov."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b18",
+    "title": "Uydagi kechim",
+    "text": "Ishdan keyin soat oltida uyga kelaman. Avval kiyimimni almashtiraman va qoʻlimni yuvaman. Keyin kechki ovqatga yordam beraman. Soat olti yarimda ovqatlanamiz. Ovqatdan keyin idishlarni yuvaman yoki artaman. Soat yettida xabarlarimni tekshiraman. Baʻzan opamga qoʻngʻiroq qilaman. Sakkizdan toʻqqizgacha qisqa koʻrsatuv koʻraman yoki jurnal oʻqiyman. Dushanba gullarni sugʻoraman. Chorshanba hammomda choʻmilaman. Soat oʻnda tishlarimni tozalab, yotaman. Kechlarim tinch. Tinch kechlar yoqadi. Ular ertangi kunga tayyor his qildiradi. Kechqurun tinch odatlarim menga yoqadi. Ular ertangi ish kuniga tayyorlaydi.",
+    "vocabulary": [
+      {
+        "word": "uyga",
+        "definition": "Yashash joyiga."
+      },
+      {
+        "word": "almashtiraman",
+        "definition": "Boshqa kiyim kiyaman."
+      },
+      {
+        "word": "ovqat",
+        "definition": "Kechki ovqat."
+      },
+      {
+        "word": "artaman",
+        "definition": "Idishni quritaman."
+      },
+      {
+        "word": "xabar",
+        "definition": "Telefon yozuvlari."
+      },
+      {
+        "word": "koʻrsatuv",
+        "definition": "Televizor dasturi."
+      },
+      {
+        "word": "jurnal",
+        "definition": "Maqolali nashr."
+      },
+      {
+        "word": "choʻmilaman",
+        "definition": "Hammomda yuvinaman."
+      },
+      {
+        "word": "yotaman",
+        "definition": "Uxlamoq uchun yotaman."
+      },
+      {
+        "word": "tinch",
+        "definition": "Shovqinsiz."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b19",
+    "title": "Uyda kimdir bormi?",
+    "text": "Qoʻngʻiroq: Salom? Uyda kimdir bormi?\nLara: Salom, Syu xola. Ha, menman. Onam hali yoʻq.\nQoʻngʻiroq: Otangiz bormi?\nLara: Yoʻq. Hali ishda. Hozir mashinada kelayapti.\nQoʻngʻiroq: Ukangizchi?\nLara: Bogʻda. Gullarni sugʻorayapti. Chaqiraymi?\nQoʻngʻiroq: Yoʻq, mayli. Onamga qoʻngʻiroq qilganimni ayting.\nLara: Albatta. Juma kechki ovqatga kelasizmi?\nQoʻngʻiroq: Ha. Tort olib kelaman.\nLara: Zoʻr! Bugun shoʻrva bor, lekin juma — pitsa kechi.\nQoʻngʻiroq: Ajoyib. Unda koʻrishamiz. Xayr, Lara!\nLara: Xayr, Syu xola! Syu xola har doim mehribon. U kelganda uyimiz yanada quvnoq boʻladi.",
+    "vocabulary": [
+      {
+        "word": "kimdir",
+        "definition": "Biror odam."
+      },
+      {
+        "word": "uyda",
+        "definition": "Yashash joyida."
+      },
+      {
+        "word": "hali",
+        "definition": "Hozirgacha emas."
+      },
+      {
+        "word": "ishda",
+        "definition": "Ish joyida."
+      },
+      {
+        "word": "mashinada",
+        "definition": "Avtomobilda."
+      },
+      {
+        "word": "qoʻngʻiroq",
+        "definition": "Telefon."
+      },
+      {
+        "word": "ayting",
+        "definition": "Maʻlumot bering."
+      },
+      {
+        "word": "tort",
+        "definition": "Shirin taom."
+      },
+      {
+        "word": "pitsa",
+        "definition": "Hamirli ovqat."
+      },
+      {
+        "word": "xayr",
+        "definition": "Xayrlashuv."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b20",
+    "title": "Tinch yakshanba",
+    "text": "Yakshanba mening tinch kunim. Maktabga bormayman va shoshilmayman. Kechroq turaman va pijamada choy ichaman. Keyin divanda komiks oʻqiyman. Tushlikdan keyin yumshoq musiqa tinglayman. Baʻzan qushlar chizaman. Onam ham yakshanbani yaxshi koʻradi. U sekin ovqat pishiradi, birga yeymiz. Tushdan keyin non uchun burchak doʻkoniga piyoda boramiz. Koʻp narsa olmaymiz. Kechqurun buvimga qoʻngʻiroq qilaman. U qisqa ertak aytadi. Soat toʻqqizda tinch va uyquim keladi. Tinch yakshanba — eng sevimli kunim. Tinch yakshanba menga yangi kuch beradi. Keyingi haftaga tayyor his qilaman.",
+    "vocabulary": [
+      {
+        "word": "tinch",
+        "definition": "Osoyishta, shovqinsiz."
+      },
+      {
+        "word": "shoshilmoq",
+        "definition": "Vaqt yetmagani uchun tezlashmoq."
+      },
+      {
+        "word": "kechroq",
+        "definition": "Oddiy vaqtdan keyin."
+      },
+      {
+        "word": "pijama",
+        "definition": "Uxlash kiyimi."
+      },
+      {
+        "word": "komiks",
+        "definition": "Rasimli hikoya kitobi."
+      },
+      {
+        "word": "divan",
+        "definition": "Yumshoq uzun oʻrindiq."
+      },
+      {
+        "word": "sekin",
+        "definition": "Shoshilmasdan."
+      },
+      {
+        "word": "burchak doʻkon",
+        "definition": "Uy yaqinidagi kichik doʻkon."
+      },
+      {
+        "word": "tinch",
+        "definition": "Xotirjam."
+      },
+      {
+        "word": "uyquim kelmoq",
+        "definition": "Uxlamoq xohlamoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b21",
+    "title": "Bugun nonushtaga nima bor?",
+    "text": "Ona: Bugun nonushtaga nima bor?\nOta: Tuxum, non va murabbo bor. Sut bormi?\nOna: Ha, muzlatgichda sut bor. Choy yoki sharbat?\nOta: Choy, iltimos. Nina, sen nima xohlaysan?\nNina: Murabboli tost, iltimos. Va bir olma.\nOna: Yaxshi. Tom, yormali ovqat olasizmi?\nTom: Ha, iltimos. Yogurt bormi?\nOna: Kechirasiz, bugun yogurt yoʻq. Keyinroq olamiz.\nTom: Mayli. Menga tuxum ham boʻladi.\nOta: Nonushta besh daqiqada tayyor. Qoʻllarni yuvinglar!\nNina: Kelayapman. Allaqachon hid yoqimli.",
+    "vocabulary": [
+      {
+        "word": "nonushta",
+        "definition": "Ertalabgi ovqat."
+      },
+      {
+        "word": "tuxum",
+        "definition": "Tovuq tuxumi."
+      },
+      {
+        "word": "murabbo",
+        "definition": "Shirin meva qaylasi."
+      },
+      {
+        "word": "tost",
+        "definition": "Qovurilgan non."
+      },
+      {
+        "word": "yormali",
+        "definition": "Don ovqati."
+      },
+      {
+        "word": "yogurt",
+        "definition": "Quyuq sut mahsuloti."
+      },
+      {
+        "word": "sut",
+        "definition": "Oq ichimlik."
+      },
+      {
+        "word": "bormi",
+        "definition": "Mavjudligini soʻrash."
+      },
+      {
+        "word": "sharbat",
+        "definition": "Meva ichimligi."
+      },
+      {
+        "word": "tayyor",
+        "definition": "Yeyishga tayyor."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b22",
+    "title": "Supermarketda",
+    "text": "Xaridor: Kechirasiz. Olmalar qayerda?\nIshchi: Meva boʻlimida, bananlar yonida.\nXaridor: Rahmat. Bir kilo olma va biroz guruch olmoqchiman.\nIshchi: Guruch toʻrtinchi qatorda. Savat kerakmi?\nXaridor: Bor, rahmat. Olmalar qancha?\nIshchi: Bugun kilo ikki funt.\nXaridor: Zoʻr. Yangi non bormi?\nIshchi: Ha. Nonxona kirish yonida. Hali issiq.\nXaridor: Ajoyib. Qayerda toʻlayman?\nIshchi: Eshik yonidagi kassada. Yaxshi xarid!\nXaridor: Rahmat. Boʻladi. Savatimga olma va guruchni solib, yangi non tomon yuraman. Kassaga yetganda navbat qisqa boʻlishini umid qilaman.",
+    "vocabulary": [
+      {
+        "word": "olma",
+        "definition": "Meva."
+      },
+      {
+        "word": "banan",
+        "definition": "Sariq meva."
+      },
+      {
+        "word": "kilo",
+        "definition": "Ogʻirlik oʻlchovi."
+      },
+      {
+        "word": "guruch",
+        "definition": "Don mahsuloti."
+      },
+      {
+        "word": "qator",
+        "definition": "Javonlar orasidagi yoʻlak."
+      },
+      {
+        "word": "savat",
+        "definition": "Xarid idishi."
+      },
+      {
+        "word": "yangi",
+        "definition": "Endigina pishgan."
+      },
+      {
+        "word": "nonxona",
+        "definition": "Non boʻlimi."
+      },
+      {
+        "word": "kirish",
+        "definition": "Kiradigan joy."
+      },
+      {
+        "word": "kassa",
+        "definition": "Toʻlov joyi."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b23",
+    "title": "Bu qancha turadi?",
+    "text": "Xaridor: Bu daftar qancha turadi?\nSotuvchi: Uch funt ellik pens.\nXaridor: Bu ruchkalarchi?\nSotuvchi: Koʻk ruchkalar donasi bir funt. Qoralari sakson pens.\nXaridor: Bitta daftar va ikkita koʻk ruchka olaman. Jami qancha?\nSotuvchi: Uch ellik plus ikki funt… jami besh funt ellik.\nXaridor: Karta qabul qilasizmi?\nSotuvchi: Ha. Yoki naqd toʻlashingiz mumkin.\nXaridor: Mana, oʻn funtlik qogʻoz.\nSotuvchi: Rahmat. Qaytimingiz toʻrt funt ellik.\nXaridor: Zoʻr. Chek bersangiz boʻladimi?\nSotuvchi: Albatta. Mana. Kun yaxshi oʻtsin!",
+    "vocabulary": [
+      {
+        "word": "daftar",
+        "definition": "Yozish daftari."
+      },
+      {
+        "word": "funt",
+        "definition": "Pul birligi."
+      },
+      {
+        "word": "pens",
+        "definition": "Mayda tanga."
+      },
+      {
+        "word": "jami",
+        "definition": "Umumiy summa."
+      },
+      {
+        "word": "naqd",
+        "definition": "Qogʻoz yoki tanga."
+      },
+      {
+        "word": "karta",
+        "definition": "Toʻlov kartasi."
+      },
+      {
+        "word": "qogʻoz",
+        "definition": "Qogʻoz pul."
+      },
+      {
+        "word": "qaytim",
+        "definition": "Ortiqcha toʻlovdan qaytgan pul."
+      },
+      {
+        "word": "chek",
+        "definition": "Xarid qogʻozi."
+      },
+      {
+        "word": "dona",
+        "definition": "Har bir."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b24",
+    "title": "Pishloqli sendvich xohlayman",
+    "text": "Ofitsiant: Salom! Nima olasiz?\nMijoz: Pishloqli sendvich, iltimos.\nOfitsiant: Oq non yoki qora non?\nMijoz: Qora, iltimos. Ichiga pomidor soling.\nOfitsiant: Boʻldi. Ichishga nima?\nMijoz: Bir piyola choy boʻladimi?\nOfitsiant: Issiq choy yoki muzli choy?\nMijoz: Issiq choy, iltimos. Shakarsiz.\nOfitsiant: Mayli. Bitta qora nonda pishloqli sendvich va choy. Yana?\nMijoz: Shuncha, rahmat. Kutish qancha?\nOfitsiant: Taxminan besh daqiqa. Deraza yoniga oʻtiring.\nMijoz: Rahmat! Deraza yonida oʻtirib, sendvichni sekin yeyman. Oddiy ovqat ham yoqimli boʻlishi mumkin.",
+    "vocabulary": [
+      {
+        "word": "sendvich",
+        "definition": "Non orasidagi ovqat."
+      },
+      {
+        "word": "pishloq",
+        "definition": "Sutdan tayyorlangan taom."
+      },
+      {
+        "word": "qora non",
+        "definition": "Qoramtir unli non."
+      },
+      {
+        "word": "pomidor",
+        "definition": "Qizil yumshoq meva."
+      },
+      {
+        "word": "piyola choy",
+        "definition": "Piyolada beriladigan choy."
+      },
+      {
+        "word": "issiq",
+        "definition": "Issiqlikdagi."
+      },
+      {
+        "word": "shakar",
+        "definition": "Shirin oq kukun."
+      },
+      {
+        "word": "kutish",
+        "definition": "Tayyor boʻlishini kutish vaqti."
+      },
+      {
+        "word": "oʻtirmoq",
+        "definition": "Joyga joylashmoq."
+      },
+      {
+        "word": "deraza",
+        "definition": "Yorugʻlik kiradigan oynali joy."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b25",
+    "title": "Goʻsht yeysizmi?",
+    "text": "Laylo: Omar, goʻsht yeysizmi?\nOmar: Ha. Tovuq va baliq yoqadi. Qizil goʻshtni kam yeyman.\nLaylo: Men goʻsht yemayman. Vegetarianman.\nOmar: Tushundim. Unda nima yeysiz?\nLaylo: Sabzavot, loviya, tuxum va pishloq. Makaron juda yoqadi.\nOmar: Achchiq ovqat yoqadimi?\nLaylo: Biroz. Juda achchiq emas. Sizchi?\nOmar: Achchiq ovqatni yaxshi koʻraman! Onamning qovurmasi ajoyib.\nLaylo: Uyda pishirasizmi?\nOmar: Baʻzan. Tuxum va guruch qila olaman. Siz pishira olasizmi?\nLaylo: Ha. Yaxshi sabzavot shoʻrvasi qilaman. Keyingi hafta kechki ovqatga keling!\nOmar: Xursand boʻlaman. Rahmat.",
+    "vocabulary": [
+      {
+        "word": "goʻsht",
+        "definition": "Hayvon goʻshti."
+      },
+      {
+        "word": "tovuq",
+        "definition": "Parranda goʻshti."
+      },
+      {
+        "word": "vegetarian",
+        "definition": "Goʻsht yemaydigan odam."
+      },
+      {
+        "word": "sabzavot",
+        "definition": "Oʻsimlik ovqatlari."
+      },
+      {
+        "word": "loviya",
+        "definition": "Dukkakli oziq."
+      },
+      {
+        "word": "achchiq",
+        "definition": "Oʻtkir taʻmli."
+      },
+      {
+        "word": "pishirmoq",
+        "definition": "Ovqat tayyorlamoq."
+      },
+      {
+        "word": "shoʻrva",
+        "definition": "Suyuq issiq ovqat."
+      },
+      {
+        "word": "makaron",
+        "definition": "Xamir taomi."
+      },
+      {
+        "word": "baʻzan",
+        "definition": "Har doim emas."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b26",
+    "title": "Xarid roʻyxati",
+    "text": "Salom Dan,\nIshdan keyin doʻkonga borasanmi? Haftalik narsalar kerak. Muzlatgich boʻsh koʻrinadi!\nIltimos, olib kel:\n- sut (ikki shisha)\n- non\n- tuxum (oltita)\n- guruch\n- pomidor\n- pishloq\n- choy paketlari\n- idish yuvish suyuqligi\nYangi tovuq boʻlsa, kichik paket ol. Pechenye kerak emas — uyda hali bor. Meva qoldimi? Olma va ikkita banan kerak boʻlsa kerak.\nKatta rahmat! Roʻyxatdan biror narsa yoʻq boʻlsa, yozib qoʻy.\nMia\nP.S. Eshik yonidagi koʻk xarid sumkasini ol. Hamyoningni unutma!",
+    "vocabulary": [
+      {
+        "word": "roʻyxat",
+        "definition": "Kerakli narsalar yozuvi."
+      },
+      {
+        "word": "doʻkon",
+        "definition": "Sotib olish joyi."
+      },
+      {
+        "word": "muzlatgich",
+        "definition": "Ovqat sovutiladigan shkaf."
+      },
+      {
+        "word": "shisha",
+        "definition": "Sut uchun idish."
+      },
+      {
+        "word": "paket",
+        "definition": "Oʻralgan mahsulot."
+      },
+      {
+        "word": "kerak",
+        "definition": "Zarur."
+      },
+      {
+        "word": "unutmoq",
+        "definition": "Eslab qolmaslik."
+      },
+      {
+        "word": "hamyon",
+        "definition": "Pul saqlanadigan joy."
+      },
+      {
+        "word": "xarid sumkasi",
+        "definition": "Xarid uchun sumka."
+      },
+      {
+        "word": "yozib qoʻymoq",
+        "definition": "Xabar yubormoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b27",
+    "title": "Menga juda achchiq",
+    "text": "Kecha amakivachcham bilan yangi ovqatxonaga bordik. Shoʻrva issiq va yumshoq edi. Juda yoqdi. Keyin tovuqli guruch buyurtma qildim. Tovuq yumshoq edi, lekin sous menga juda achchiq chiqdi. Koʻzlarim yoshlandi! Amakivachcham kulib, bir stakan suv berdi. Uning lagʻmoni shoʻrroq, lekin yaxshi edi. Shirinlikka yumshoq tortni boʻlishib yedik — juda shirin emasdi. Choy suyuq edi. Keyingi safar yumshoq sous soʻrayman. Baribir quvnoq oʻtdi. Ovqat baʻzan kulgili tarzda hayratlantiradi. Keyingi safar ovqatxonaga borsam, sousni oldindan soʻrayman. Shunda koʻzlarim yoshlanmaydi.",
+    "vocabulary": [
+      {
+        "word": "achchiq",
+        "definition": "Oʻtkir taʻmli."
+      },
+      {
+        "word": "ovqatxona",
+        "definition": "Ovqat sotiladigan joy."
+      },
+      {
+        "word": "buyurtma qilmoq",
+        "definition": "Ovqat soʻramoq."
+      },
+      {
+        "word": "sous",
+        "definition": "Taom ustidagi suyuqlik."
+      },
+      {
+        "word": "stakan",
+        "definition": "Ichimlik idishi."
+      },
+      {
+        "word": "shoʻr",
+        "definition": "Tuzli."
+      },
+      {
+        "word": "shirinlik",
+        "definition": "Ovqat oxiridagi shirin taom."
+      },
+      {
+        "word": "suyuq",
+        "definition": "Kuchsiz choy."
+      },
+      {
+        "word": "yumshoq",
+        "definition": "Achchiq emas / yumshoq taʻm."
+      },
+      {
+        "word": "hayratlantirmoq",
+        "definition": "Kutilmagan tuygʻu berish."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b28",
+    "title": "Piknik qilamiz",
+    "text": "Hammaga salom!\nShu shanba Daryo bogʻida piknik qilamiz. Soat 12:30 da daryo yoʻli yonidagi katta eman daraxti oldida uchrashamiz.\nMen sendvich, sharbat va futbol toʻpini olib kelaman. Sizlar ham biror narsa olib kelasizmi?\n- Ana: meva\n- Sam: chipslar\n- Yuki: gilamcha\n- Leo: qogʻoz likopcha va stakanlar\nOb-havo quyoshli va issiq koʻrinadi. Shlyapa va quyoshdan himoya kremi oling. Qulay oyoq kiyim kiying — tushlikdan keyin yurishimiz mumkin. Yomgʻir yogʻsa, oʻsha vaqtda mening kvartiramga kelamiz. Onam mehmonxonadan foydalanishimiz mumkin dedi.\nKelishingiz mumkin boʻlsa, payshanbagacha yozing. Boʻsh ekaningizga umid qilaman!\nU yerda koʻrishamiz!\nMina Ob-havo yaxshi.",
+    "vocabulary": [
+      {
+        "word": "piknik",
+        "definition": "Ochiq havoda ovqat."
+      },
+      {
+        "word": "uchrashamiz",
+        "definition": "Bir joyda yigʻilamiz."
+      },
+      {
+        "word": "olib",
+        "definition": "Olib kelish."
+      },
+      {
+        "word": "gilamcha",
+        "definition": "Yerga yoyiladigan mato."
+      },
+      {
+        "word": "ob-havo",
+        "definition": "Havo holati."
+      },
+      {
+        "word": "qulay",
+        "definition": "Yurishga qulay."
+      },
+      {
+        "word": "yomgʻir",
+        "definition": "Osmondan suv."
+      },
+      {
+        "word": "kvartira",
+        "definition": "Uy."
+      },
+      {
+        "word": "yozing",
+        "definition": "Xabar yuboring."
+      },
+      {
+        "word": "umid",
+        "definition": "Kutish."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b29",
+    "title": "Sut bormi?",
+    "text": "Ava: Muzlatgichda sut bormi?\nJon: Qarab koʻray… Yoʻq, sut yoʻq. Sharbat bor.\nAva: Non bormi?\nJon: Ha, ikki boʻlak. Yetadimi?\nAva: Unchalik emas. Tuxum bormi?\nJon: Uchta tuxum bor. Pishloq ham bor.\nAva: Yaxshi. Omlet qilishimiz mumkin. Sariyogʻ bormi?\nJon: Ha, biroz sariyogʻ bor. Pomidorchi?\nAva: Pomidor yoʻq. Olib kelasizmi?\nJon: Albatta. Yogʻ kerakmi?\nAva: Yoʻq, yogʻ bor. Faqat sut, non va pomidor, iltimos.\nJon: Mayli. Yigirma daqiqadan keyin qaytaman!",
+    "vocabulary": [
+      {
+        "word": "bor",
+        "definition": "Mavjud."
+      },
+      {
+        "word": "yoʻq",
+        "definition": "Mavjud emas."
+      },
+      {
+        "word": "boʻlak",
+        "definition": "Nonning bir qismi."
+      },
+      {
+        "word": "yetmoq",
+        "definition": "Yetarli boʻlmoq."
+      },
+      {
+        "word": "omlet",
+        "definition": "Tuxumdan pishirilgan taom."
+      },
+      {
+        "word": "sariyogʻ",
+        "definition": "Non uchun yogʻ."
+      },
+      {
+        "word": "biroz",
+        "definition": "Oz miqdor."
+      },
+      {
+        "word": "olib kelmoq",
+        "definition": "Doʻkondan olib kelmoq."
+      },
+      {
+        "word": "yogʻ",
+        "definition": "Pishirish uchun yogʻ."
+      },
+      {
+        "word": "faqat",
+        "definition": "Shunchaki shular."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b30",
+    "title": "Rahmat, juda mazali edi",
+    "text": "Mehmon: Kechki ovqat uchun rahmat. Juda mazali edi!\nMezbon: Yoqqaniga xursandman. Shoʻrva yoqdimi?\nMehmon: Ha, ajoyib edi. Non ham yangi edi.\nMezbon: Buvi retsepti. Yana choy ichasizmi?\nMehmon: Yoʻq, rahmat. Toʻydim. Hammasi mukammal edi.\nMezbon: Juda mehribon ekansiz. Siz uchun pishirish yoqimli boʻldi.\nMehmon: Keyingi safar mening uyimga keling. Toʻgʻri minnatdorchilik bildirmoqchiman.\nMezbon: Yaxshi boʻlardi. Paltoingizni olib beray.\nMehmon: Yana rahmat. Xayrli tun!\nMezbon: Xayrli tun. Yoʻlda ehtiyot boʻling.\nMehmon: Boʻladi. Xayr!",
+    "vocabulary": [
+      {
+        "word": "mazali",
+        "definition": "Taʻmi yaxshi."
+      },
+      {
+        "word": "yoqmoq",
+        "definition": "Yoqimli tuyulmoq."
+      },
+      {
+        "word": "ajoyib",
+        "definition": "Juda yaxshi."
+      },
+      {
+        "word": "yangi",
+        "definition": "Endigina pishgan."
+      },
+      {
+        "word": "toʻymoq",
+        "definition": "Yana yeyishni xohlamaslik."
+      },
+      {
+        "word": "mehribon",
+        "definition": "Yaxshi soʻzlovchi."
+      },
+      {
+        "word": "minnatdorchilik",
+        "definition": "Rahmat bildirish."
+      },
+      {
+        "word": "palto",
+        "definition": "Ustki kiyim."
+      },
+      {
+        "word": "xayrli tun",
+        "definition": "Kechqurun xayrlashuv."
+      },
+      {
+        "word": "ehtiyot boʻlmoq",
+        "definition": "Oʻzini saqlamoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b31",
+    "title": "Eng yaqin doʻstim",
+    "text": "Eng yaqin doʻstimning ismi Mina. Beshinchi sinfda tanishganmiz, hali ham har kuni gaplashamiz. Mina mehribon va kulgili. Xafa boʻlsam, tinglaydi va xatolarimga kulmaydi. Shanba kuni velosipedda bogʻga boramiz. Gazak boʻlishamiz va maktab haqida gaplashamiz. Mina chizishni, men futbolni yaxshi koʻraman — mayli. Yaxshi doʻstlar bir xil hobbi qilishi shart emas. Oʻtgan hafta tushligimni unutibman. Mina sendvichining yarmini berdi. Tabassum qilib rahmat aytdim. Eng ishonadigan odamim — u. Uzoq doʻst boʻlib qolishimizni tilayman.",
+    "vocabulary": [
+      {
+        "word": "doʻst",
+        "definition": "Yaqin odam."
+      },
+      {
+        "word": "tanishganmiz",
+        "definition": "Bir-birini bilib olgan."
+      },
+      {
+        "word": "mehribon",
+        "definition": "Yaxshi va yumshoq."
+      },
+      {
+        "word": "tinglaydi",
+        "definition": "Diqqat bilan eshitadi."
+      },
+      {
+        "word": "xato",
+        "definition": "Notoʻgʻri ish."
+      },
+      {
+        "word": "gazak",
+        "definition": "Kichik ovqat."
+      },
+      {
+        "word": "boʻlishamiz",
+        "definition": "Birga boʻlib yeymiz."
+      },
+      {
+        "word": "ishonadigan",
+        "definition": "Ishonchli."
+      },
+      {
+        "word": "tilayman",
+        "definition": "Xohlayman."
+      },
+      {
+        "word": "sendvich",
+        "definition": "Non orasidagi ovqat."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b32",
+    "title": "Yonidagi qoʻshnim",
+    "text": "Yonidagi qoʻshnim — Patel aka. U kvartiramiz yonida yashaydi. Har ertalab balkonidagi gullarni sugʻoradi. Maktabga ketayotganimni koʻrsa, qoʻl silkitadi. Patel aka jimjit, lekin doʻstona. Baʻzan nonxonadan yangi non olib keladi. Kasalsa, onam unga shoʻrva beradi. Yakshanba nabiralari keladi. Ular pastdagi kichik bogʻda toʻp oʻynashadi. Mehribon odamlar yonida yashash yoqadi. Qoʻshnilar salomlashsa, koʻcha xavfsizroq tuyuladi. Bugun kechqurun eshigini taqillatib, oʻtgan oy bergan kitobini qaytaraman. Patel aka salom bersa, kunim yaxshi boshlanadi. Yaxshi qoʻshni — tinch mahalla demakdir.",
+    "vocabulary": [
+      {
+        "word": "qoʻshni",
+        "definition": "Yonida yashovchi odam."
+      },
+      {
+        "word": "balkon",
+        "definition": "Kvartira tashqarisidagi ochiq joy."
+      },
+      {
+        "word": "sugʻormoq",
+        "definition": "Gullarga suv bermoq."
+      },
+      {
+        "word": "silkitmoq",
+        "definition": "Qoʻl bilan salomlashmoq."
+      },
+      {
+        "word": "doʻstona",
+        "definition": "Iliq munosabatli."
+      },
+      {
+        "word": "kasal",
+        "definition": "Sogʻ emas."
+      },
+      {
+        "word": "nabira",
+        "definition": "Farzandning farzandi."
+      },
+      {
+        "word": "xavfsiz",
+        "definition": "Xavfsiz, tinch."
+      },
+      {
+        "word": "taqillatmoq",
+        "definition": "Eshikni urib chaqirmoq."
+      },
+      {
+        "word": "qaytarmoq",
+        "definition": "Olingan narsani qaytarib bermoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b33",
+    "title": "Yangi oʻqituvchimiz",
+    "text": "Yangi oʻqituvchimiz — Rivera xonim. Oʻtgan dushanba ish boshladi. Koʻp tabassum qiladi va aniq gapiradi. Darsda doskaga yangi soʻzlarni yozadi. Keyin birga aytishimizni soʻraydi. Rivera xonim biroz pianino chaladi. Juma kuni ketishdan oldin qisqa kuy chaladi. Savollarimizni tinglaydi va hech qachon baqirmaydi. Kecha qiyin mashqda yordam berdi. Endi kamroq qoʻrqaman. Boshqa oʻquvchilar ham uni yoqtiradi. Maktabdan keyin kimga yordam kerak boʻlsa, oʻn daqiqa qoladi. U ajoyib oʻqituvchi deb oʻylayman va darsida koʻproq oʻrganmoqchiman.",
+    "vocabulary": [
+      {
+        "word": "oʻqituvchi",
+        "definition": "Dars beradigan odam."
+      },
+      {
+        "word": "tabassum",
+        "definition": "Xursand yuz ifodasi."
+      },
+      {
+        "word": "aniq",
+        "definition": "Tushunarli."
+      },
+      {
+        "word": "doska",
+        "definition": "Sinfdagi yozish taxtasi."
+      },
+      {
+        "word": "soʻz",
+        "definition": "Lugʻat birligi."
+      },
+      {
+        "word": "chalmoq",
+        "definition": "Musiqa asbobida oʻynamoq."
+      },
+      {
+        "word": "baqirmoq",
+        "definition": "Baland ovozda gapirmoq."
+      },
+      {
+        "word": "mashq",
+        "definition": "Dars topshirigʻi."
+      },
+      {
+        "word": "qoʻrqmoq",
+        "definition": "Xavotirlanmoq."
+      },
+      {
+        "word": "oʻrganmoq",
+        "definition": "Bilim olmoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b34",
+    "title": "U doʻkonda ishlaydi",
+    "text": "Tom: Opangiz nima ish qiladi?\nLia: Shaharda kiyim doʻkonida ishlaydi.\nTom: Ishini yoqtiradimi?\nLia: Ha. Xaridorlarga kurtka va oyoq kiyim tanlashda yordam beradi.\nTom: Amakim avtobus haydovchisi. Erta ish boshlaydi.\nLia: Qiyin ekan. Otam kichik ovqatxonada oshpaz.\nTom: Zoʻr! Uyda ham pishiradimi?\nLia: Baʻzan. Yakshanba bizga makaron qiladi.\nTom: Onam ofisda ishlaydi. Kun boʻyi kompyuterda ishlaydi.\nLia: Senchi? Keyin nima boʻlmoqchisan?\nTom: Balki oʻqituvchi. Tushuntirish yoqadi.\nLia: Yaxshi. Atrofimizdagi odamlar juda turli ishlar qiladi.",
+    "vocabulary": [
+      {
+        "word": "ishlaydi",
+        "definition": "Kasb bilan shugʻullanadi."
+      },
+      {
+        "word": "doʻkon",
+        "definition": "Sotish joyi."
+      },
+      {
+        "word": "xaridor",
+        "definition": "Sotib oluvchi."
+      },
+      {
+        "word": "haydovchi",
+        "definition": "Transport haydaydi."
+      },
+      {
+        "word": "oshpaz",
+        "definition": "Ovqat pishiradi."
+      },
+      {
+        "word": "ofis",
+        "definition": "Ishxona."
+      },
+      {
+        "word": "kompyuter",
+        "definition": "Ish qurilmasi."
+      },
+      {
+        "word": "tushuntirish",
+        "definition": "Aniq aytish."
+      },
+      {
+        "word": "ish",
+        "definition": "Kasb."
+      },
+      {
+        "word": "turli",
+        "definition": "Har xil."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b35",
+    "title": "Ruchkangizni bersangiz boʻladimi?",
+    "text": "Nina: Kechirasiz, Dan. Ruchkangizni bersangiz boʻladimi?\nDan: Albatta. Mana. Koʻk.\nNina: Rahmat. Meningi siyohsiz qoldi.\nDan: Qogʻoz ham kerakmi?\nNina: Yoʻq, rahmat. Daftarim bor. Oh — oʻchirgʻichni ham bersangiz?\nDan: Albatta. Testdan keyin qaytarib bering.\nNina: Beraman. Yaxshi sinfdosh ekansiz.\nDan: Arzimaydi. Oʻtgan hafta siz menga zaryadlovchini bergandingiz.\nNina: Toʻgʻri! Doʻstlar bir-biriga yordam beradi.\nDan: Aynan. Uchinchi savolga omad — qiyin koʻrinadi.\nNina: Sizga ham. Keyin javoblarni birga tekshiramiz.\nDan: Kelishdik. Shoshiling — oʻqituvchi kelyapti.",
+    "vocabulary": [
+      {
+        "word": "bermoq",
+        "definition": "Vaqtincha foydalanishga bermoq."
+      },
+      {
+        "word": "ruchka",
+        "definition": "Yozish quroli."
+      },
+      {
+        "word": "siyoh",
+        "definition": "Ruchkadagi suyuqlik."
+      },
+      {
+        "word": "oʻchirgʻich",
+        "definition": "Yozuvni oʻchiradigan narsa."
+      },
+      {
+        "word": "qaytarmoq",
+        "definition": "Qaytarib bermoq."
+      },
+      {
+        "word": "sinfdosh",
+        "definition": "Bir sinfdagi oʻquvchi."
+      },
+      {
+        "word": "zaryadlovchi",
+        "definition": "Telefon quvvatlovchi."
+      },
+      {
+        "word": "yordam",
+        "definition": "Koʻmak."
+      },
+      {
+        "word": "savol",
+        "definition": "Test bandi."
+      },
+      {
+        "word": "tekshirmoq",
+        "definition": "Toʻgʻriligini koʻrmoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b36",
+    "title": "Birga futbol oʻynaymiz",
+    "text": "Maktabdan keyin doʻstlarim bilan bogʻda birga futbol oʻynaymiz. Soat toʻrtda katta daraxt yonida uchrashamiz. Ravi toʻp, Sara suv shishalarini olib keladi. Besh kishilik ikki jamoa tuzamiz. Maysa yashil, havo salqin. Baʻzan kimdir yiqilsa kulamiz, lekin doimo turishga yordam beramiz. Oʻyindan keyin skameykada oʻtirib gaplashamiz. Musiqa, maktab va dam olish rejalari haqida. Birga oʻynash xursand qiladi. Har safar yutish shart emas. Faqat doʻstlarim bilan osmon ostida, qorongʻi tushguncha birga boʻlish yoqadi.",
+    "vocabulary": [
+      {
+        "word": "birga",
+        "definition": "Boshqalar bilan."
+      },
+      {
+        "word": "uchrashmoq",
+        "definition": "Bir joyda yigʻilmoq."
+      },
+      {
+        "word": "jamoa",
+        "definition": "Birga oʻynaydigan guruh."
+      },
+      {
+        "word": "maysa",
+        "definition": "Yashil oʻt."
+      },
+      {
+        "word": "yiqilmoq",
+        "definition": "Yerga tushmoq."
+      },
+      {
+        "word": "skameyka",
+        "definition": "Oʻtirish uchun uzun oʻrindiq."
+      },
+      {
+        "word": "dam olish",
+        "definition": "Shanba-yakshanba."
+      },
+      {
+        "word": "yutmoq",
+        "definition": "Gʻalaba qozonmoq."
+      },
+      {
+        "word": "osmon",
+        "definition": "Yuqoridagi koʻk."
+      },
+      {
+        "word": "qorongʻi",
+        "definition": "Qorongʻu tushishi."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b37",
+    "title": "Tugʻilgan kuningiz bilan!",
+    "text": "Hammaga salom!\nIltimos, shanba kuni tugʻilgan kun bayramimga keling. Soat uchda kvartiramda uchrashamiz. Tabassum olib keling — xohlasangiz kichik sovgʻa ham, lekin shart emas. Pitsa va shokoladli tort pishiramiz. Ovqatdan keyin musiqa va kulgili oʻyin oʻynaymiz. Akam mehmonxonani sharlar bilan bezayapti. Kela olasizmi, ayting. Payshanbagacha yozing. U yerda koʻrishishga umid qilaman!\nSogʻlik bilan,\nElena\nP.S. Rangli kiyim kiying. Suratga tushamiz! Bayramga kelganlar kulib, musiqa tinglab, birga rasmga tushadi. Shu kunni uzoq eslab qolaman.",
+    "vocabulary": [
+      {
+        "word": "tugʻilgan kun",
+        "definition": "Tugʻilgan sana bayrami."
+      },
+      {
+        "word": "bayram",
+        "definition": "Quvonchli yigʻilish."
+      },
+      {
+        "word": "sovgʻa",
+        "definition": "Beriladigan narsa."
+      },
+      {
+        "word": "shart emas",
+        "definition": "Majburiy emas."
+      },
+      {
+        "word": "bezamoq",
+        "definition": "Chiroyli qilmoq."
+      },
+      {
+        "word": "shar",
+        "definition": "Havoli bezak."
+      },
+      {
+        "word": "yozmoq",
+        "definition": "Xabar yubormoq."
+      },
+      {
+        "word": "rangli",
+        "definition": "Yorqin rangli."
+      },
+      {
+        "word": "umid qilmoq",
+        "definition": "Kutmoq."
+      },
+      {
+        "word": "kiymoq",
+        "definition": "Kiyim kiyimoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b38",
+    "title": "Kech qolganim uchun kechirasiz",
+    "text": "Aleks: Kech qolganim uchun kechirasiz. Avtobus sekin edi.\nMaya: Mayli. Xavotir olmang. Endigina boshladik.\nAleks: Baribir — yomon his qilaman. Meni kutdingiz.\nMaya: Muammo yoʻq. Oʻtiring. Mana varaq.\nAleks: Rahmat. Oʻqituvchi jahlli edimi?\nMaya: Unchalik emas. \"Kech boʻlsa ham, kelgani yaxshi,\" dedi.\nAleks: Yaxshi. Keyingi safar uydan erta chiqaman.\nMaya: Aqlli fikr. Dastlabki besh daqiqadagi qaydlaringiz kerakmi?\nAleks: Ha, iltimos. Juda mehribonsiz.\nMaya: Doʻstlar kichik narsalarni kechiradi. Mashqni birga tugataylik.\nAleks: Mayli. Kutganingiz uchun yana rahmat.\nMaya: Arzimaydi. Endi diqqat — birinchi savol oson.",
+    "vocabulary": [
+      {
+        "word": "kechirasiz",
+        "definition": "Uzri soʻrash."
+      },
+      {
+        "word": "kech",
+        "definition": "Vaqtidan keyin."
+      },
+      {
+        "word": "xavotir olmoq",
+        "definition": "Tashvishlanmoq."
+      },
+      {
+        "word": "kutmoq",
+        "definition": "Kimnidir kutib turmoq."
+      },
+      {
+        "word": "jahlli",
+        "definition": "Gʻazablangan."
+      },
+      {
+        "word": "erta",
+        "definition": "Oldinroq."
+      },
+      {
+        "word": "qayd",
+        "definition": "Dars eslatmalari."
+      },
+      {
+        "word": "kechirmoq",
+        "definition": "Kechirim qilmoq."
+      },
+      {
+        "word": "arzimaydi",
+        "definition": "Rahmatga javob."
+      },
+      {
+        "word": "diqqat",
+        "definition": "Eʻtiborni jamlash."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b39",
+    "title": "U odam kim?",
+    "text": "Sam: Eshik yonidagi odam kim?\nRita: Qaysi odam? Kulrang paltodagi balandmi?\nSam: Ha. U Grin xonim bilan gaplashayapti.\nRita: Bu — Kosta aka. Yangi sport murabbiyi.\nSam: Rostdanmi? Ota-ona deb oʻylagandim.\nRita: Yoʻq. Chorshanba futbol oʻrgatadi.\nSam: Qizil sumkali ayolchi?\nRita: Bu — Ali xonim. Maktab idorasida ishlaydi.\nSam: Tushundim. Taxmin qilishni yoqtirmayman. Aytganingiz uchun rahmat.\nRita: Arzimaydi. Ishonchingiz komil boʻlmasa, ohista soʻrang.\nSam: Yaxshi maslahat. Keyinroq Kosta akaga salom aytaman.\nRita: Ayting. U doʻstona. U ota-ona emas, murabbiy.",
+    "vocabulary": [
+      {
+        "word": "kim",
+        "definition": "Shaxsni soʻrash."
+      },
+      {
+        "word": "odam",
+        "definition": "Inson."
+      },
+      {
+        "word": "baland",
+        "definition": "Boʻyi uzun."
+      },
+      {
+        "word": "murabbiy",
+        "definition": "Sport oʻrgatuvchi."
+      },
+      {
+        "word": "ota-ona",
+        "definition": "Bolaning ota-onasi."
+      },
+      {
+        "word": "idora",
+        "definition": "Maktab ishxonasi."
+      },
+      {
+        "word": "taxmin",
+        "definition": "Aniqlamasdan oʻylash."
+      },
+      {
+        "word": "ohista",
+        "definition": "Past ovozda."
+      },
+      {
+        "word": "maslahat",
+        "definition": "Yaxshi fikr."
+      },
+      {
+        "word": "doʻstona",
+        "definition": "Iliq munosabat."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b40",
+    "title": "Har kuni koʻradigan odamlarim",
+    "text": "Har kuni bir xil odamlarni koʻraman — bu yoqimli. Ertalab avtobus haydovchisi salom beradi. Maktabda sinfdoshlarim yoʻlakda qoʻl silkitadi. Kitob qaytarsam, kutubxonachi tabassum qiladi. Darsdan keyin burchak doʻkonidagi ayoldan meva olaman. U doimo ismimni eslaydi. Uyga ketayotib, ogʻir sumkali pochtachi yonidan oʻtaman. Kechqurun oilam stol atrofida oʻtiradi. Bu odamlarning hammasi yaqin doʻstim emas, lekin kunimning bir qismi. Kimdir yoʻqolsa, koʻcha boshqacha tuyuladi. Atrofimdagi odamlarga minnatdorman. Har kuni shu odamlarni koʻrish menga tinchlik beradi. Ular kunimni toʻldiradi.",
+    "vocabulary": [
+      {
+        "word": "har kuni",
+        "definition": "Har bir kunda."
+      },
+      {
+        "word": "haydovchi",
+        "definition": "Avtobusni haydaydigan odam."
+      },
+      {
+        "word": "yoʻlak",
+        "definition": "Maktab ichidagi yoʻl."
+      },
+      {
+        "word": "kutubxonachi",
+        "definition": "Kutubxonada ishlovchi."
+      },
+      {
+        "word": "burchak doʻkon",
+        "definition": "Yaqin kichik doʻkon."
+      },
+      {
+        "word": "eslamoq",
+        "definition": "Unutmaslik."
+      },
+      {
+        "word": "pochtachi",
+        "definition": "Xat yetkazuvchi."
+      },
+      {
+        "word": "yoʻqolmoq",
+        "definition": "Koʻrinmaslik."
+      },
+      {
+        "word": "minnatdor",
+        "definition": "Rahmat his qilish."
+      },
+      {
+        "word": "atrofida",
+        "definition": "Yon-atrofda."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b41",
+    "title": "Bank qayerda?",
+    "text": "Sayyoh: Kechirasiz. Bank qayerda, iltimos?\nMahalliy: Bankmi? Shu yoʻl boʻylab toʻgʻri boring. Svetaforda oʻngga buriling.\nSayyoh: Uzoqmi?\nMahalliy: Yoʻq. Piyoda taxminan besh daqiqa. Pochta boʻlimi yonida.\nSayyoh: Pochta yonida — tushundim. Piyoda borsam boʻladimi?\nMahalliy: Ha. Zebra chizigʻida ehtiyot boʻlib oʻting.\nSayyoh: Katta rahmat.\nMahalliy: Arzimaydi. Bugun bank soat toʻrtda yopiladi.\nSayyoh: Toʻrtami? Unda shoshilishim kerak!\nMahalliy: Ha. Omad. Kun yaxshi oʻtsin!\nSayyoh: Sizga ham. Xayr! Svetofor yonida toʻxtab, yoʻlni ehtiyot bilan kesib oʻtaman. Bankka oʻz vaqtida yetishim muhim.",
+    "vocabulary": [
+      {
+        "word": "bank",
+        "definition": "Pul joyi."
+      },
+      {
+        "word": "toʻgʻri",
+        "definition": "Oldinga."
+      },
+      {
+        "word": "oʻngga",
+        "definition": "Oʻng tomonga."
+      },
+      {
+        "word": "svetofor",
+        "definition": "Yoʻl chiroqlari."
+      },
+      {
+        "word": "piyoda",
+        "definition": "Yoyov."
+      },
+      {
+        "word": "yonida",
+        "definition": "Yaqinida."
+      },
+      {
+        "word": "oʻting",
+        "definition": "Koʻchadan oʻting."
+      },
+      {
+        "word": "zebra",
+        "definition": "Piyodalar joyi."
+      },
+      {
+        "word": "yopiladi",
+        "definition": "Ish tugaydi."
+      },
+      {
+        "word": "shoshilishim",
+        "definition": "Tezlashishim."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b42",
+    "title": "Avtobus bekatida",
+    "text": "Omar: Bu 12-sonli avtobus navbatimi?\nXodim: Ha. Vokzalga borasizmi?\nOmar: Ha. Qancha kutamiz?\nXodim: Avtobus oʻn daqiqadan keyin keladi. Qarang — ekranda 14:20 yozilgan.\nOmar: Ajoyib. Aniq pul kerakmi?\nXodim: Endi avtobusda karta bilan toʻlash mumkin.\nOmar: Zoʻr. Tushdan keyin gavjummi?\nXodim: Baʻzan. Iloji boʻlsa, old tomonga oʻtiring.\nOmar: Mayli. Yordamingiz uchun rahmat.\nXodim: Arzimaydi. Sariq chiziq orqasida turing, iltimos.\nOmar: Boʻldi. Voy — avtobus kelyapti!\nXodim: Yoʻlingiz bexatar boʻlsin. Biz avtobus bekatidamiz.",
+    "vocabulary": [
+      {
+        "word": "avtobus",
+        "definition": "Jamoat transporti."
+      },
+      {
+        "word": "bekati",
+        "definition": "Kutish joyi."
+      },
+      {
+        "word": "navbat",
+        "definition": "Kutib turganlar."
+      },
+      {
+        "word": "kutamiz",
+        "definition": "Kelishini kutamiz."
+      },
+      {
+        "word": "ekran",
+        "definition": "Vaqt paneli."
+      },
+      {
+        "word": "aniq",
+        "definition": "Aniq miqdor."
+      },
+      {
+        "word": "karta",
+        "definition": "Toʻlov kartasi."
+      },
+      {
+        "word": "gavjum",
+        "definition": "Koʻp odamli."
+      },
+      {
+        "word": "old",
+        "definition": "Old tomon."
+      },
+      {
+        "word": "chiziq",
+        "definition": "Yerdagi belgi."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b43",
+    "title": "Muzey ochiqmi?",
+    "text": "Mehmon: Salom. Bugun muzey ochiqmi?\nQorovul: Ha. Soat oʻnda ochiladi, oltida yopiladi.\nMehmon: Shu yerda chipta olsam boʻladimi?\nQorovul: Ha. Kattalar uchun sakkiz funt. Oʻquvchilar uchun besh.\nMehmon: Men oʻquvchiman. Mana guvohnomam.\nQorovul: Ajoyib. Bitta oʻquvchi chiptasi. Tashrifingiz yoqimli boʻlsin.\nMehmon: Rahmat. Yuqori qavatdagi xonalar ham ochiqmi?\nQorovul: Rasm xonalari ochiq. Yomgʻir tufayli bogʻ yopiq.\nMehmon: Mayli. Ichkarida kafe bormi?\nQorovul: Ha, chiqish yonida. Soat besh yarimda yopiladi.\nMehmon: Zoʻr. Avval rasmlarga qarab chiqaman.\nQorovul: Yoqimli vaqt oʻtkazing!",
+    "vocabulary": [
+      {
+        "word": "muzey",
+        "definition": "Sanʻat va tarix koʻrsatiladigan joy."
+      },
+      {
+        "word": "ochiq",
+        "definition": "Kirish mumkin."
+      },
+      {
+        "word": "yopiq",
+        "definition": "Kirish mumkin emas."
+      },
+      {
+        "word": "chipta",
+        "definition": "Kirish uchun toʻlov belgesi."
+      },
+      {
+        "word": "katta",
+        "definition": "Katta yoshli odam."
+      },
+      {
+        "word": "oʻquvchi",
+        "definition": "Maktab oʻquvchisi."
+      },
+      {
+        "word": "yuqori",
+        "definition": "Yuqori qavat."
+      },
+      {
+        "word": "chiqish",
+        "definition": "Tashqariga chiqadigan joy."
+      },
+      {
+        "word": "kafe",
+        "definition": "Choy-non joyi."
+      },
+      {
+        "word": "tashrif",
+        "definition": "Kelib koʻrish."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b44",
+    "title": "Shu yerda bogʻ bor",
+    "text": "Uyim yaqinida koʻp foydali joylar bor. Koʻcha oxirida bogʻ bor. Bolalar maktabdan keyin u yerda oʻynashadi. Bogʻ yonida kichik kutubxona bor. Chorshanba kitob olaman. Yoʻlning narigi tomonida supermarket bor. Onam har juma u yerda xarid qiladi. Avtobus bekati yonida dorixona ham bor. Binomiz orqasida tinch oʻyin maydonchasi bor. Ikki daqiqalik yoʻlda choyi yaxshi kafe bor. Mahallam yoqadi, chunki hamma joyga piyoda boraman. Oddiy ishlar uchun mashina kerak emas. Doʻstlar kelganda avval bogʻni koʻrsataman.",
+    "vocabulary": [
+      {
+        "word": "yonida",
+        "definition": "Yaqinida."
+      },
+      {
+        "word": "bogʻ",
+        "definition": "Daraxtli ochiq joy."
+      },
+      {
+        "word": "kutubxona",
+        "definition": "Kitob olinadigan joy."
+      },
+      {
+        "word": "narigi",
+        "definition": "Roʻpara tomonda."
+      },
+      {
+        "word": "supermarket",
+        "definition": "Katta doʻkon."
+      },
+      {
+        "word": "dorixona",
+        "definition": "Dori sotiladigan joy."
+      },
+      {
+        "word": "oʻyin maydonchasi",
+        "definition": "Bolalar oʻynaydigan joy."
+      },
+      {
+        "word": "mahalla",
+        "definition": "Yashash hududi."
+      },
+      {
+        "word": "hamma joyga",
+        "definition": "Har tomonga."
+      },
+      {
+        "word": "koʻrsatmoq",
+        "definition": "Koʻrsatib berish."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b45",
+    "title": "Kinoga boraylik",
+    "text": "Lina: Bugun kechqurun kinoga boraylik.\nBen: Yaxshi fikr! Nima bor?\nLina: Soat yettida kulgili film, sakkiz yarimda jangari film.\nBen: Kulgilisini koʻraylikmi? Kulishim kerak.\nLina: Ajoyib. Avval kafeda uchrashaylikmi?\nBen: Ha. Olti oʻttizda?\nLina: Mayli. Keyin birga kinoga piyoda boramiz.\nBen: Chipta bron qilish kerakmi?\nLina: Telefondan qarab… Ha, joylar bor. Ikkitani bron qilaman.\nBen: Rahmat. Men popkorn olaman.\nLina: Kelishdik! Kafeda koʻrishamiz.\nBen: Koʻrishamiz. Qiziqarli boʻladi. Kino chiptalarini oldindan bron qilsak, joy topish oson. Kulib chiqishni kutaman.",
+    "vocabulary": [
+      {
+        "word": "boraylik",
+        "definition": "Birga borish taklifi."
+      },
+      {
+        "word": "kino",
+        "definition": "Film koʻrsatiladigan joy."
+      },
+      {
+        "word": "nima bor",
+        "definition": "Qaysi filmlar bor."
+      },
+      {
+        "word": "koʻraylik",
+        "definition": "Birga tanlash taklifi."
+      },
+      {
+        "word": "uchrashmoq",
+        "definition": "Bir joyda uchrashmoq."
+      },
+      {
+        "word": "bron qilmoq",
+        "definition": "Oldindan joy band qilmoq."
+      },
+      {
+        "word": "joy",
+        "definition": "Oʻrindiq."
+      },
+      {
+        "word": "popkorn",
+        "definition": "Kino uchun gazak."
+      },
+      {
+        "word": "kelishdik",
+        "definition": "Rozilik."
+      },
+      {
+        "word": "qiziqarli",
+        "definition": "Yoqimli, kulgili."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b46",
+    "title": "Adashib qoldim!",
+    "text": "Sayyoh: Kechirasiz. Adashib qoldim! Yordam bera olasizmi?\nMahalliy: Albatta. Qayerga bormoqchisiz?\nSayyoh: Temiryoʻl vokzaliga. Xaritam ishlamayapti.\nMahalliy: Xavotir olmang. Uzoq emassiz. Orqaga burilib, katta soat tomon yuring.\nSayyoh: Maydondagi soatmi?\nMahalliy: Ha. Keyin chapga buriling. Nonxona yonidan oʻting. Vokzal uning orqasida.\nSayyoh: Nonxona yonidan, keyin orqasida — tushundim.\nMahalliy: Koʻk belgilarni koʻrasiz. Ularga ergashing.\nSayyoh: Juda rahmat. Xavotirlangan edim.\nMahalliy: Har kim bilan boʻladi. Yoʻlingiz bexatar boʻlsin!\nSayyoh: Yana rahmat. Xayr!",
+    "vocabulary": [
+      {
+        "word": "adashib",
+        "definition": "Yoʻlni bilmaslik."
+      },
+      {
+        "word": "xarita",
+        "definition": "Yoʻl chizmasi."
+      },
+      {
+        "word": "orqaga",
+        "definition": "Orqaga burilish."
+      },
+      {
+        "word": "maydon",
+        "definition": "Ochiq maydon."
+      },
+      {
+        "word": "yonidan",
+        "definition": "Yonidan oʻtish."
+      },
+      {
+        "word": "belgi",
+        "definition": "Yoʻnalish belgisi."
+      },
+      {
+        "word": "ergashing",
+        "definition": "Belgilarga qarang."
+      },
+      {
+        "word": "xavotir",
+        "definition": "Tashvish."
+      },
+      {
+        "word": "yoʻlingiz",
+        "definition": "Safaringiz."
+      },
+      {
+        "word": "bexatar",
+        "definition": "Xavfsiz."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b47",
+    "title": "Maktab qarshisida",
+    "text": "Maktabim ikki gavjum yoʻl orasida. Maktab qarshisida suzish havzali sport majmuasi bor. Sport majmuasi yonida kichik kitob doʻkoni bor. Maktab orqasida oʻqituvchilar uchun avtoturargoh bor. Asosiy darvozaning chapida avtobus bekati. Oʻngida gul doʻkoni. Gul doʻkoni qarshisida tashqarisida qizil stulli kafe koʻrinadi. Pochta boʻlimi burchakda — bir daqiqalik yoʻl. Yangi oʻquvchilar kelganda, shu joylarni tushuntiraman. \"Yonida\", \"orqasida\", \"qarshisida\" kabi aniq soʻzlar bilan joylashuv osonroq tushuniladi. Sport majmuasi, kitob doʻkoni va kafe — hammasi yaqin. Yangi oʻquvchilar tez yoʻlni oʻrganadi.",
+    "vocabulary": [
+      {
+        "word": "orasida",
+        "definition": "Ikki narsa oʻrtasida."
+      },
+      {
+        "word": "qarshisida",
+        "definition": "Roʻparada."
+      },
+      {
+        "word": "sport majmuasi",
+        "definition": "Sport binosi."
+      },
+      {
+        "word": "yonida",
+        "definition": "Yaqinida."
+      },
+      {
+        "word": "orqasida",
+        "definition": "Orqa tomonda."
+      },
+      {
+        "word": "avtoturargoh",
+        "definition": "Mashina toʻxtatiladigan joy."
+      },
+      {
+        "word": "darvoza",
+        "definition": "Asosiy kirish."
+      },
+      {
+        "word": "qarshi",
+        "definition": "Roʻpara."
+      },
+      {
+        "word": "burchakda",
+        "definition": "Burchakda."
+      },
+      {
+        "word": "joylashuv",
+        "definition": "Joy haqida maʻlumot."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b48",
+    "title": "Bozordagi bir kun",
+    "text": "Shanba ertalab shahrimizda bozor kuni. Maydonda koʻp doʻkonchalar bor. Baʻzilari meva-sabzavot sotadi. Boshqalari non, pishloq va gul. Odamlar gaplashadi, kuladi va ehtiyotkor tanlaydi. Choy doʻkonchasi yonida kichik radiodan musiqa eshitiladi. Buvim bilan boraman. U pomidor va olma oladi. Men issiq pishiriq olaman. Havo shirin va yangi hidli. Soat oʻnda bozor juda gavjum. Soat birdan koʻp doʻkonchalar yopila boshlaydi. Bozor kuni yoqadi, chunki shahar jonli tuyuladi. Qoʻshnilarni uchratib, katta supermarketga bormasdan yaxshi ovqat topish mumkin.",
+    "vocabulary": [
+      {
+        "word": "bozor",
+        "definition": "Ochiq savdo joyi."
+      },
+      {
+        "word": "doʻkoncha",
+        "definition": "Kichik savdo joyi."
+      },
+      {
+        "word": "sabzavot",
+        "definition": "Pomidor, sabzi kabi oziq."
+      },
+      {
+        "word": "tanlamoq",
+        "definition": "Tanlab olmoq."
+      },
+      {
+        "word": "pishiriq",
+        "definition": "Issiq non mahsuloti."
+      },
+      {
+        "word": "hid",
+        "definition": "Burun sezadigan narsa."
+      },
+      {
+        "word": "gavjum",
+        "definition": "Koʻp odamli."
+      },
+      {
+        "word": "jonli",
+        "definition": "Harakatli, quvnoq."
+      },
+      {
+        "word": "qoʻshni",
+        "definition": "Yaqin yashovchi."
+      },
+      {
+        "word": "yangi",
+        "definition": "Yangi, toza."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b49",
+    "title": "Vokzalga qanday boraman?",
+    "text": "Yoʻlovchi: Shu yerdan vokzalga qanday boraman?\nYoʻlboshchi: Oson. Avval ikki kvartal toʻgʻri boring.\nYoʻlovchi: Ikki kvartal — mayli.\nYoʻlboshchi: Keyin katta mehmonxona yonida chapga buriling. Koʻprikgacha yuring.\nYoʻlovchi: Koʻprikdan oʻtamanmi?\nYoʻlboshchi: Ha. Koʻprikdan keyin oʻngga. Vokzal soatini koʻrasiz.\nYoʻlovchi: Avtobus tezroqmi?\nYoʻlboshchi: Avtobus tezroq, lekin faqat har yigirma daqiqada keladi.\nYoʻlovchi: Piyoda boraman. Vaqtim bor.\nYoʻlboshchi: Yaxshi. Piyoda taxminan oʻn ikki daqiqa.\nYoʻlovchi: Aniq yoʻl-yoʻriq uchun rahmat!\nYoʻlboshchi: Arzimaydi. Ishonchingiz komil boʻlmasa, koʻk belgilarga ergashing.",
+    "vocabulary": [
+      {
+        "word": "vokzal",
+        "definition": "Poyezd stansiyasi."
+      },
+      {
+        "word": "kvartal",
+        "definition": "Koʻcha boʻlagi."
+      },
+      {
+        "word": "mehmonxona",
+        "definition": "Mehmonlar binosi."
+      },
+      {
+        "word": "koʻprik",
+        "definition": "Daryo ustidagi yoʻl."
+      },
+      {
+        "word": "soat",
+        "definition": "Vaqt koʻrsatgich."
+      },
+      {
+        "word": "tezroq",
+        "definition": "Tezroq."
+      },
+      {
+        "word": "avtobus",
+        "definition": "Jamoat transporti."
+      },
+      {
+        "word": "piyoda",
+        "definition": "Yoyov."
+      },
+      {
+        "word": "yoʻl-yoʻriq",
+        "definition": "Yoʻl koʻrsatmasi."
+      },
+      {
+        "word": "belgi",
+        "definition": "Yoʻnalish belgisi."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b50",
+    "title": "Shahardagi sevimli joyim",
+    "text": "Shahardagi sevimli joyim — daryo yoʻlakchasi. U yer tinch va yashil. Ertalab suv kumushdek koʻrinadi. Qushlar toshlarda oʻtiradi, odamlar itlarini sayr qildiradi. Kitob olib, yogʻoch skameykaga oʻtiraman. Baʻzan doʻstim Nora bilan uchrashaman. Sekin gaplashamiz va qayiqlarini tomosha qilamiz. Yoʻlakcha maktabga yaqin, shuning uchun darsdan keyin boraman. Bu joy tinchlantiradi. Shahar shovqinli boʻlsa, daryoga yuraman. U yerda oʻn daqiqa — telefonda bir soatdan yaxshiroq. Chunki daryo yonida shahar shovqini uzoqlashadi. Bu yerda nafasim tinchlanadi.",
+    "vocabulary": [
+      {
+        "word": "sevimli",
+        "definition": "Eng yoqadigan."
+      },
+      {
+        "word": "yoʻlakcha",
+        "definition": "Yurish yoʻli."
+      },
+      {
+        "word": "chunki",
+        "definition": "Sabab bogʻlovchisi."
+      },
+      {
+        "word": "tinch",
+        "definition": "Shovqinsiz."
+      },
+      {
+        "word": "qush",
+        "definition": "Uchadigan hayvon."
+      },
+      {
+        "word": "skameyka",
+        "definition": "Oʻtirish joyi."
+      },
+      {
+        "word": "qayiq",
+        "definition": "Suv transporti."
+      },
+      {
+        "word": "tinchlantiradi",
+        "definition": "Xotirjam qiladi."
+      },
+      {
+        "word": "shovqinli",
+        "definition": "Baland shovqinli."
+      },
+      {
+        "word": "yaxshiroq",
+        "definition": "Afzalroq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b51",
+    "title": "Soat necha?",
+    "text": "Eva: Kechirasiz. Soat necha, iltimos?\nKai: Soat uch oʻndan oʻtdi.\nEva: Uch oʻndan? Voy. Darsim uch yarimda boshlanadi.\nKai: Unda oʻn besh daqiqangiz bor. Dars qayerda?\nEva: C binosida. Uzoqmi?\nKai: Shu yerdan taxminan besh daqiqa. Ulurasiz.\nEva: Rahmat. Soatingiz devordagi soat bilan bir xilmi?\nKai: Ha — ikkalasi ham uch oʻn besh.\nEva: Ajoyib. Yana kech qolishni xohlamayman.\nKai: Hozir boring, omad!\nEva: Rahmat, Kai. Keyinroq koʻrishamiz!\nKai: Soat toʻrtda choyga koʻrishamiz.",
+    "vocabulary": [
+      {
+        "word": "soat",
+        "definition": "Vaqt."
+      },
+      {
+        "word": "oʻndan oʻtdi",
+        "definition": "Soatning oʻn beshinchi daqiqasi."
+      },
+      {
+        "word": "yarim",
+        "definition": "Oʻttiz daqiqa."
+      },
+      {
+        "word": "daqiqa",
+        "definition": "Vaqt oʻlchovi."
+      },
+      {
+        "word": "bino",
+        "definition": "Maktab binosi."
+      },
+      {
+        "word": "kech",
+        "definition": "Vaqtidan keyin."
+      },
+      {
+        "word": "omad",
+        "definition": "Yaxshi tilak."
+      },
+      {
+        "word": "bir xil",
+        "definition": "Bir xil vaqt."
+      },
+      {
+        "word": "devor",
+        "definition": "Xona devori."
+      },
+      {
+        "word": "choy",
+        "definition": "Ichimlik uchun uchrashuv."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b52",
+    "title": "Bugun qaysi sana?",
+    "text": "Emi: Bugun qaysi sana?\nJon: Seshanba, 12-mart.\nEmi: Oʻn ikkinchimi? Oʻn birinchi deb oʻylagandim.\nJon: Yoʻq. Kecha dushanba, oʻn birinchi edi.\nEmi: Voy! Unda stomatologga yozilganim ertaga — oʻn uchinchi.\nJon: Toʻgʻri. Vaqtini eslaysizmi?\nEmi: Ertalab soat oʻnda.\nJon: Taqvimga belgilang. Martda oʻttiz bir kun bor.\nEmi: Rahmat. Martdan keyin qaysi oy?\nJon: Aprel. Keyin may. Bahor oylari sevimli.\nEmi: Mening ham. Yigirmanchi kuni tushlikka uchrashaylik.\nJon: Kelishdik. Telefonga \"Emi — tushlik\" deb yozaman.",
+    "vocabulary": [
+      {
+        "word": "sana",
+        "definition": "Oy va kun."
+      },
+      {
+        "word": "seshanba",
+        "definition": "Haftaning kuni."
+      },
+      {
+        "word": "kecha",
+        "definition": "Oldingi kun."
+      },
+      {
+        "word": "ertaga",
+        "definition": "Keyingi kun."
+      },
+      {
+        "word": "stomatolog",
+        "definition": "Tish shifokori."
+      },
+      {
+        "word": "taqvim",
+        "definition": "Sanalar yozilgan jadval."
+      },
+      {
+        "word": "oy",
+        "definition": "Yilning boʻlagi."
+      },
+      {
+        "word": "bahor",
+        "definition": "Yil fasli."
+      },
+      {
+        "word": "uchrashmoq",
+        "definition": "Uchrashib koʻrishmoq."
+      },
+      {
+        "word": "belgilamoq",
+        "definition": "Eslatma qoʻymoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b53",
+    "title": "Yana yomgʻir yogʻyapti",
+    "text": "Bugun ertalab yana yomgʻir yogʻyapti. Kulrang bulutlar osmonga yopishgan, suv derazalarga uriladi. Koʻchada odamlar soyabon ochadi. Mashinalar burchakdagi kichik suv toʻplanmalaridan sekin oʻtadi. Yomgʻirpaltom va etiklarimni kiyaman. Avtobus bekatida hamma nam va sovuq koʻrinadi. Doʻstim yozadi: \"Hali yomgʻirmi?\" Men: \"Ha — kurtka oling!\" deb javob beraman. Tushdan keyin yomgʻir sekinlashadi. Biroz quyosh chiqadi, lekin yer hali nam. Baʻzan yomgʻir yoqadi — havo toza hidli. Lekin ertaga quruq boʻlishini tilayman. Bogʻda futbol oʻynamoqchimiz.",
+    "vocabulary": [
+      {
+        "word": "yomgʻir",
+        "definition": "Osmondan yogʻadigan suv."
+      },
+      {
+        "word": "bulut",
+        "definition": "Osmondagi kulrang toʻplam."
+      },
+      {
+        "word": "soyabon",
+        "definition": "Yomgʻirdan himoya."
+      },
+      {
+        "word": "yomgʻirpalto",
+        "definition": "Yomgʻir uchun ustki kiyim."
+      },
+      {
+        "word": "etik",
+        "definition": "Suv oʻtkazmaydigan oyoq kiyim."
+      },
+      {
+        "word": "nam",
+        "definition": "Suvli."
+      },
+      {
+        "word": "sekinlashmoq",
+        "definition": "Kuchini yoʻqotmoq."
+      },
+      {
+        "word": "quruq",
+        "definition": "Yomgʻirsiz."
+      },
+      {
+        "word": "hid",
+        "definition": "Havo hid."
+      },
+      {
+        "word": "tilamoq",
+        "definition": "Xohlamoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b54",
+    "title": "Issiq palto kiying",
+    "text": "Ona: Bugun issiq palto kiying. Tashqari sovuq.\nLeo: Shuymi? Yoki yupqa kurtkamni?\nOna: Qalin paltomi. Sharf va qoʻlqop ham oling.\nLeo: Shlyapa ham kerakmi?\nOna: Ha. Bugun ertalab shamol kuchli.\nLeo: Mayli. Oyoq kiyimimchi?\nOna: Etiklaringizni kiying. Yoʻlak muzli boʻlishi mumkin.\nLeo: Voy. Qor odamiga oʻxshayman!\nOna: Issiq qor odami — kasal oʻquvchidan yaxshi.\nLeo: Mayli. Soyabon olaymi?\nOna: Osmonga qarang… Hozir yomgʻir yoʻq, lekin sumkaga kichikni soling.\nLeo: Boʻldi. Rahmat, ona. Xayr!\nOna: Xayr! Yetganda yozing.",
+    "vocabulary": [
+      {
+        "word": "issiq",
+        "definition": "Isitadigan."
+      },
+      {
+        "word": "palto",
+        "definition": "Qalin ustki kiyim."
+      },
+      {
+        "word": "sovuq",
+        "definition": "Past harorat."
+      },
+      {
+        "word": "qalin",
+        "definition": "Yupqa emas."
+      },
+      {
+        "word": "sharf",
+        "definition": "Boʻyin uchun."
+      },
+      {
+        "word": "qoʻlqop",
+        "definition": "Qoʻl uchun."
+      },
+      {
+        "word": "shamol",
+        "definition": "Havo harakati."
+      },
+      {
+        "word": "etik",
+        "definition": "Qalin oyoq kiyim."
+      },
+      {
+        "word": "muzli",
+        "definition": "Muz qoplagan."
+      },
+      {
+        "word": "kasal",
+        "definition": "Sogʻ emas."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b55",
+    "title": "Boshim ogʻriyapti",
+    "text": "Ota: Ranging oqarib ketgan. Yaxshimisan?\nMia: Boshim ogʻriyapti va charchaganman.\nOta: Harorating bormi?\nMia: Balki. Boshim issiq tuyulyapti.\nOta: Oʻtir. Suv ich. Koʻngling ayniyaptimi?\nMia: Biroz. Qornim ham ogʻriyapti.\nOta: Unda dam ol. Bugun futbol yoʻq.\nMia: Keyinroq uy vazifasini qilsam boʻladimi?\nOta: Faqat yaxshiroq his qilsang. Avval bir soat uxla.\nMia: Mayli. Maktabga qoʻngʻiroq qila olasizmi?\nOta: Albatta. Bugun oʻzingizni yaxshi his qilmasligingizni aytaman.\nMia: Rahmat, dada. Oʻyin uchun kechirasiz.\nOta: Avvalo sogʻliq. Dam oling.",
+    "vocabulary": [
+      {
+        "word": "boshim",
+        "definition": "Bosh qismi."
+      },
+      {
+        "word": "ogʻriyapti",
+        "definition": "Ogʻriq his qilmoqda."
+      },
+      {
+        "word": "charchaganman",
+        "definition": "Holdan toygan."
+      },
+      {
+        "word": "harorat",
+        "definition": "Tana issiqligi."
+      },
+      {
+        "word": "koʻngling",
+        "definition": "Koʻngil."
+      },
+      {
+        "word": "qornim",
+        "definition": "Qorin."
+      },
+      {
+        "word": "dam",
+        "definition": "Hordiq."
+      },
+      {
+        "word": "vazifa",
+        "definition": "Uy vazifasi."
+      },
+      {
+        "word": "qoʻngʻiroq",
+        "definition": "Telefon."
+      },
+      {
+        "word": "sogʻliq",
+        "definition": "Salomatlik."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b56",
+    "title": "Dorixonada",
+    "text": "Xaridor: Salom. Tomogʻim ogʻrigani uchun dori kerak.\nDorixona: Qancha vaqtdan beri?\nXaridor: Ikki kun. Yutganda ogʻriydi.\nDorixona: Yoʻtal ham bormi?\nXaridor: Biroz. Harorat yoʻq, lekin.\nDorixona: Mayli. Bu pastilkalar yordam beradi. Har toʻrt soatda bitta.\nXaridor: Yana nima kerak?\nDorixona: Asalli issiq choy iching. Ovozingizni dam bering.\nXaridor: Pastilkalar qancha?\nDorixona: Uch funt ellik.\nXaridor: Mana. Yordamingiz uchun rahmat.\nDorixona: Arzimaydi. Tezroq tuzaling! Tomogʻim ogʻrisa, issiq ichimlik ham yordam beradi. Dorixonadan chiqib, sekin uyga qaytaman.",
+    "vocabulary": [
+      {
+        "word": "dorixona",
+        "definition": "Dori sotiladigan joy."
+      },
+      {
+        "word": "tomoq",
+        "definition": "Ogʻiz ichidagi yoʻl."
+      },
+      {
+        "word": "ogʻrimoq",
+        "definition": "Ogʻriq his qilmoq."
+      },
+      {
+        "word": "yutmoq",
+        "definition": "Tomogʻidan oʻtkazmoq."
+      },
+      {
+        "word": "yoʻtal",
+        "definition": "Yoʻtalish."
+      },
+      {
+        "word": "pastilka",
+        "definition": "Tomoq uchun shirin dori."
+      },
+      {
+        "word": "asal",
+        "definition": "Tabiiy shirin mahsulot."
+      },
+      {
+        "word": "ovozi",
+        "definition": "Gapirish ovozi."
+      },
+      {
+        "word": "tuzalmoq",
+        "definition": "Sogʻaymoq."
+      },
+      {
+        "word": "harorat",
+        "definition": "Isitma."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b57",
+    "title": "Qoʻllaringizni yuving",
+    "text": "Sogʻlom odatlar kichik, lekin har kuni yordam beradi. Ovqatdan oldin va hojatxonadan keyin qoʻllaringizni yuving. Ertalab va kechasi tishlaringizni tozalang. Chanqaganingizda suv iching. Iloji boʻlsa, taxminan sakkiz soat uxlang. Toza havo uchun tashqariga chiqing. Ovqatlaringizga meva-sabzavot qoʻshing. Aksirganda ogʻzingizni yoping. Sumkada salfetka saqlang. Bu ishlar oddiy koʻrinadi, lekin sizni va boshqalarni himoya qiladi. Oʻqituvchim: \"Kuchli tana toza qoʻllardan boshlanadi,\" deydi. Buni eslashga harakat qilaman. Shu odatlarga rioya qilsam, maktabda serquvvatroq boʻlaman.",
+    "vocabulary": [
+      {
+        "word": "yuvmoq",
+        "definition": "Suv bilan tozalamoq."
+      },
+      {
+        "word": "odat",
+        "definition": "Har kuni qilinadigan ish."
+      },
+      {
+        "word": "tozalamoq",
+        "definition": "Tishlarni choʻtkalamoq."
+      },
+      {
+        "word": "chanqamoq",
+        "definition": "Suv xohlamoq."
+      },
+      {
+        "word": "uxlamoq",
+        "definition": "Dam olish."
+      },
+      {
+        "word": "meva",
+        "definition": "Olma kabi oziq."
+      },
+      {
+        "word": "aksirmoq",
+        "definition": "Burundan havo chiqarmoq."
+      },
+      {
+        "word": "salfetka",
+        "definition": "Qogʻoz artgich."
+      },
+      {
+        "word": "himoya qilmoq",
+        "definition": "Saqlamoq."
+      },
+      {
+        "word": "serquvvat",
+        "definition": "Energiyali."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b58",
+    "title": "Chap qoʻlim ogʻriyapti",
+    "text": "Hamshira: Qayeringiz ogʻriyapti?\nBemor: Chap qoʻlim ogʻriyapti. Mana, tirsak yonida.\nHamshira: Barmoqlaringizni qimirlata olasizmi?\nBemor: Ha, lekin ogʻriqli.\nHamshira: Yiqildingizmi?\nBemor: Ha. Bugun ertalab velosipeddan yiqildim.\nHamshira: Mayli. Yelkangizni ham tekshiraman. Belingiz ogʻriydimi?\nBemor: Yoʻq. Faqat qoʻlim va tizzamdagi kichik jarohat.\nHamshira: Tushundim. Jarohatni tozalab, bogʻlam qoʻyamiz.\nBemor: Rentgen kerakmi?\nHamshira: Balki. Avval jim oʻtiring va sekin nafas oling.\nBemor: Rahmat. Biroz qoʻrqaman.\nHamshira: Bu tabiiy. Yaxshi turibsiz. Hamshira yumshoq gapiradi, shuning uchun biroz tinchlandim. Endi tekshiruvni kutaman.",
+    "vocabulary": [
+      {
+        "word": "ogʻrimoq",
+        "definition": "Ogʻriq his qilmoq."
+      },
+      {
+        "word": "chap",
+        "definition": "Chap tomon."
+      },
+      {
+        "word": "tirsak",
+        "definition": "Qoʻlning oʻrta boʻgʻimi."
+      },
+      {
+        "word": "barmoq",
+        "definition": "Qoʻl uchidagi aʻzo."
+      },
+      {
+        "word": "yiqilmoq",
+        "definition": "Yerga tushmoq."
+      },
+      {
+        "word": "yelka",
+        "definition": "Yelka qismi."
+      },
+      {
+        "word": "jarohat",
+        "definition": "Teri yirtilishi."
+      },
+      {
+        "word": "bogʻlam",
+        "definition": "Jarohat ustiga qoʻyiladigan mato."
+      },
+      {
+        "word": "rentgen",
+        "definition": "Suyak tekshiruvi."
+      },
+      {
+        "word": "qoʻrqmoq",
+        "definition": "Xavotirlanmoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b59",
+    "title": "Keyingi dushanba koʻrishamiz",
+    "text": "Salom Nora,\nKeyingi hafta band boʻlaman, lekin sizni koʻrishni juda xohlayman. Maktabdan keyin keyingi dushanba boʻshmisiz? Yakshanba loyihamni tugataman, shuning uchun dushanba yaxshi boʻlishi kerak. Soat toʻrtda kutubxonada uchrashishimiz mumkin, yoki ob-havo yaxshi boʻlsa, bogʻda yuramiz. Bugun kechqurun yozing. Dushanba sizga noqulay boʻlsa, keyingi chorshanbani sinab koʻramiz. Kutib qolaman!\nSam\nP.S. Til kitobingizni unutmang — avval yigirma daqiqa oʻqiymiz. Ob-havo yaxshi boʻlsa, bogʻda yurish yoqimliroq. Til kitobi bilan qisqa mashq ham foydali.",
+    "vocabulary": [
+      {
+        "word": "band",
+        "definition": "Koʻp ish."
+      },
+      {
+        "word": "boʻsh",
+        "definition": "Vaqti bor."
+      },
+      {
+        "word": "loyiha",
+        "definition": "Maktab ishi."
+      },
+      {
+        "word": "tugataman",
+        "definition": "Oxiriga yetkazaman."
+      },
+      {
+        "word": "kutubxona",
+        "definition": "Kitob joyi."
+      },
+      {
+        "word": "ob-havo",
+        "definition": "Havo holati."
+      },
+      {
+        "word": "yozing",
+        "definition": "Xabar yuboring."
+      },
+      {
+        "word": "noqulay",
+        "definition": "Mos kelmaydi."
+      },
+      {
+        "word": "kutib",
+        "definition": "Intiqorlik."
+      },
+      {
+        "word": "kitobi",
+        "definition": "Til kitobi."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b60",
+    "title": "Sovuq qish ertalabi",
+    "text": "Sovuq qish ertalabi qorongʻida boshlanadi. Mashinalarni ayoz qoplagan, nafasim havoda oq koʻrinadi. Ikki juft paypoq va qalin sviter kiyaman. Tashqarida daraxtlar bargsiz. Koʻcha jimjit — koʻpchilik uyda. Avtobus bekatida isinish uchun oyoqlarimni tepaman. Maktabga yetganda isitish ajoyib tuyuladi. Tanaffusda issiq shokolad ichib, qor haqida gaplashamiz. Oʻtgan yil yanvarda qor yogʻdi, bu yil faqat muz. Qish qiyin, lekin erta quyosh botishi va kechki issiq shoʻrva yoqadi. Fasllar oʻzgaradi — bahor yana keladi.",
+    "vocabulary": [
+      {
+        "word": "sovuq",
+        "definition": "Past harorat."
+      },
+      {
+        "word": "qish",
+        "definition": "Sovuq fasl."
+      },
+      {
+        "word": "ayoz",
+        "definition": "Yerdagi muz qatlami."
+      },
+      {
+        "word": "nafas",
+        "definition": "Ogʻizdan chiqadigan havo."
+      },
+      {
+        "word": "qalin",
+        "definition": "Issiq kiyim."
+      },
+      {
+        "word": "jimjit",
+        "definition": "Shovqinsiz."
+      },
+      {
+        "word": "isinmoq",
+        "definition": "Issiq his qilmoq."
+      },
+      {
+        "word": "qor",
+        "definition": "Oq yogʻin."
+      },
+      {
+        "word": "muz",
+        "definition": "Muzlagan suv."
+      },
+      {
+        "word": "fasl",
+        "definition": "Yilning davri."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b61",
+    "title": "Qaysi fan sizga yoqadi?",
+    "text": "Tara: Qaysi fan sizga yoqadi?\nOmar: Menga tabiiy fanlar yoqadi. Tajriba qilamiz, qiziqaman.\nTara: Zoʻr! Menga oʻzbek tili eng yoqadi. Hikoyalar qiziqarli, yozishni yaxshi koʻraman.\nOmar: Matematikachi?\nTara: Matematika yaxshi, lekin menga qiyin. Sizga yoqadimi?\nOmar: Ha. Raqamlar menga tushunarli. Tarixchi?\nTara: Haqiqiy odamlar haqida gaplashsak, tarix qiziqarli.\nOmar: Men ham. Sanʻat ikkinchi sevimlim. Yaxshi chizolmayman, lekin urinib koʻraman.\nTara: Urinish yetarli! Jismoniy tarbiya ham yoqadi — basketbol oʻynayman.\nOmar: Bir-birimizga yordam beraylik. Siz menga oʻzbekchasiga, men sizga matematikaga.\nTara: Kelishdik. Oʻqish doʻstlari eng yaxshi.",
+    "vocabulary": [
+      {
+        "word": "fan",
+        "definition": "Maktab darsi."
+      },
+      {
+        "word": "tabiiy fanlar",
+        "definition": "Tabiat haqidagi fan."
+      },
+      {
+        "word": "tajriba",
+        "definition": "Sinov ishi."
+      },
+      {
+        "word": "oʻzbek tili",
+        "definition": "Til darsi."
+      },
+      {
+        "word": "matematika",
+        "definition": "Raqamlar fani."
+      },
+      {
+        "word": "tarix",
+        "definition": "Oʻtmish haqidagi fan."
+      },
+      {
+        "word": "sanʻat",
+        "definition": "Chizish va ijod."
+      },
+      {
+        "word": "urinmoq",
+        "definition": "Harakat qilmoq."
+      },
+      {
+        "word": "yordam",
+        "definition": "Koʻmak."
+      },
+      {
+        "word": "doʻst",
+        "definition": "Yaqin odam."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b62",
+    "title": "Seshanba oʻzbek tilidan darsim bor",
+    "text": "Bu mening haftalik dars jadvalim. Dushanba soat toʻqqizda matematika, oʻn birda oʻzbek tili. Seshanba ertalab tabiiy fanlar, tushlikdan keyin sanʻat. Chorshanba band: tarix, jismoniy tarbiya va musiqa. Payshanba yana oʻzbek tili, keyin geografiya. Juma sevimli kunim — faqat uchta dars, soat birda tugaymiz. Har kuni oʻn yarimda tanaffus. Tushlik oʻn ikki oʻttizda. Unutmaslik uchun uy vazifasini rejamga yozaman. Doʻstlar: \"Oʻzbek tili qachon?\" desa, \"Seshanba va payshanba,\" deyman. Aniq jadval haftamni rejalashga yordam beradi.",
+    "vocabulary": [
+      {
+        "word": "dars jadvali",
+        "definition": "Haftalik darslar roʻyxati."
+      },
+      {
+        "word": "matematika",
+        "definition": "Raqamlar darsi."
+      },
+      {
+        "word": "oʻzbek tili",
+        "definition": "Til darsi."
+      },
+      {
+        "word": "sanʻat",
+        "definition": "Chizish darsi."
+      },
+      {
+        "word": "tanaffus",
+        "definition": "Darslar orasidagi dam."
+      },
+      {
+        "word": "tushlik",
+        "definition": "Kunduzgi ovqat vaqti."
+      },
+      {
+        "word": "uy vazifasi",
+        "definition": "Uyga berilgan ish."
+      },
+      {
+        "word": "reja",
+        "definition": "Eslatma daftari."
+      },
+      {
+        "word": "unutmoq",
+        "definition": "Eslab qolmaslik."
+      },
+      {
+        "word": "rejalash",
+        "definition": "Oldindan tuzmoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b63",
+    "title": "Kitobingizni ocha olasizmi?",
+    "text": "Oʻqituvchi: Xayrli tong, sinf. Iltimos, oʻtiringlar.\nOʻquvchilar: Xayrli tong!\nOʻqituvchi: Kitoblaringizni yigirmanchi betga oching.\nLina: Qaysi bet, iltimos?\nOʻqituvchi: Yigirmanchi bet. Birinchi mashqqa qarang.\nOʻqituvchi: Endi diqqat bilan tinglang. Meni takrorlang: \"Men oʻrgana olaman.\"\nSinf: Men oʻrgana olaman.\nOʻqituvchi: Yaxshi. Juft boʻlib ishlang. Sherigingizga uchta savol bering.\nSam: Javoblarni daftarga yozsak boʻladimi?\nOʻqituvchi: Ha. Yordam kerak boʻlsa, qoʻl koʻtaring.\nLina: Ikkinchi savolni yana tushuntira olasizmi?\nOʻqituvchi: Albatta. Avval misolni oʻqing. Keyin urinib koʻring.\nOʻqituvchi: Vaqt tugadi. Kitoblarni yoping. Bugun yaxshi ishladingiz!",
+    "vocabulary": [
+      {
+        "word": "oching",
+        "definition": "Kitobni oching."
+      },
+      {
+        "word": "bet",
+        "definition": "Sahifa."
+      },
+      {
+        "word": "mashq",
+        "definition": "Topshiriq."
+      },
+      {
+        "word": "tinglang",
+        "definition": "Eshiting."
+      },
+      {
+        "word": "takrorlang",
+        "definition": "Qayta ayting."
+      },
+      {
+        "word": "juft",
+        "definition": "Ikki kishi."
+      },
+      {
+        "word": "sherigingizga",
+        "definition": "Hamkoringizga."
+      },
+      {
+        "word": "qoʻl",
+        "definition": "Yordam soʻrash."
+      },
+      {
+        "word": "tushuntira",
+        "definition": "Aniqroq ayting."
+      },
+      {
+        "word": "yoping",
+        "definition": "Kitobni yoping."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b64",
+    "title": "Uy vazifamni unutibman",
+    "text": "Oʻquvchi: Kechirasiz, Braun xonim. Uy vazifamni unutibman.\nOʻqituvchi: Uyda qoldirdingizmi?\nOʻquvchi: Ha. Kecha kechqurun tugatgan edim, lekin daftar stol ustida qolib ketdi.\nOʻqituvchi: Tushundim. Ertaga ertalab olib kela olasizmi?\nOʻquvchi: Ha, eng avval. Rostdan kechirasiz.\nOʻqituvchi: Bu safar mayli. Telefonga eslatma qoʻying.\nOʻquvchi: Qoʻyaman. Ertaga olib kelsam, baho olamanmi?\nOʻqituvchi: Ha, lekin odatga aylantirmang.\nOʻquvchi: Tushundim. Tushunganingiz uchun rahmat.\nOʻqituvchi: Arzimaydi. Endi guruh ishiga qoʻshiling.\nOʻquvchi: Mayli. Bugun kechqurun bet suratini elektron pochta orqali yuboraman.\nOʻqituvchi: Ajoyib. Bu yordam beradi.",
+    "vocabulary": [
+      {
+        "word": "unutibman",
+        "definition": "Eslab qolmaganman."
+      },
+      {
+        "word": "vazifa",
+        "definition": "Uy vazifasi."
+      },
+      {
+        "word": "qoldirdingizmi",
+        "definition": "Uyda unutdingizmi."
+      },
+      {
+        "word": "daftar",
+        "definition": "Yozuv daftari."
+      },
+      {
+        "word": "olib",
+        "definition": "Olib kelish."
+      },
+      {
+        "word": "eslatma",
+        "definition": "Eslatma belgisi."
+      },
+      {
+        "word": "baho",
+        "definition": "Dars bahosi."
+      },
+      {
+        "word": "odatga",
+        "definition": "Takroriy ish."
+      },
+      {
+        "word": "guruh",
+        "definition": "Birga ishlash."
+      },
+      {
+        "word": "yuboraman",
+        "definition": "Joʻnataman."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b65",
+    "title": "Birga oʻqiylik",
+    "text": "Salom Farah,\nOʻzbek tili testi uchun birga oʻqiylik! Ertaga maktabdan keyin boʻshmisan? Soat toʻrtda kutubxonada uchrashishimiz mumkin. Men qaydlarim va lugʻat kartalarimni olib kelaman. Sen 40-betdagi mashq savollarini olib kelasizmi? Oʻzgaruvchan feʻllarni takrorlab, keyin bitta tinglash mashqini qilishimiz kerak. Kutubxona toʻla boʻlsa, darvoza yonidagi kafega oʻtiramiz. Reja mos kelsa, yoz. Kutib qolaman — ikki kalla bitta kalladan yaxshi!\nZayn\nP.S. Zaryadlovchingni unutma. Planshetim batareyasi tez tugaydi. Birga oʻqisak, qiyin joylarni tezroq tushunamiz. Shu uchun Farah bilan uchrashishni kutaman.",
+    "vocabulary": [
+      {
+        "word": "oʻqimoq",
+        "definition": "Birga tayyorlanmoq."
+      },
+      {
+        "word": "test",
+        "definition": "Tekshiruv ishi."
+      },
+      {
+        "word": "qayd",
+        "definition": "Dars eslatmalari."
+      },
+      {
+        "word": "lugʻat",
+        "definition": "Soʻzlar roʻyxati."
+      },
+      {
+        "word": "mashq",
+        "definition": "Topshiriq."
+      },
+      {
+        "word": "feʻl",
+        "definition": "Harakat soʻzi."
+      },
+      {
+        "word": "tinglash",
+        "definition": "Eshitib tushunish."
+      },
+      {
+        "word": "reja",
+        "definition": "Kelishilgan ish."
+      },
+      {
+        "word": "zaryadlovchi",
+        "definition": "Quvvatlovchi."
+      },
+      {
+        "word": "batareya",
+        "definition": "Quvvat manbai."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b66",
+    "title": "Maktab kutubxonasida",
+    "text": "Maktab kutubxonamiz jimjit va yorugʻ. Baland javonlarda hikoya kitoblari, fan kitoblari va lugʻatlar bor. Deraza yonida yumshoq stulli oʻqish burchagi bor. Ikki haftaga uchta kitob olish mumkin. Uy vazifasi uchun kompyuterlar ham bor. Kutubxonachi sarlavhalarni topishga yordam beradi va ohista gapirishni eslatadi. Tushlikda koʻp oʻquvchi loyiha tugatishga keladi. Kutubxona yoqadi, chunki u yerda aniq oʻylayman. Oʻtgan hafta kosmos haqidagi kitob topdim. Har kuni oʻn bet oʻqiyman. Qoʻngʻiroq chalinganda sinfga tayyor his qilib qaytaman. Yaxshi kutubxona oʻqishni osonlashtiradi.",
+    "vocabulary": [
+      {
+        "word": "kutubxona",
+        "definition": "Kitoblar joyi."
+      },
+      {
+        "word": "jimjit",
+        "definition": "Shovqinsiz."
+      },
+      {
+        "word": "javon",
+        "definition": "Kitob tokchasi."
+      },
+      {
+        "word": "lugʻat",
+        "definition": "Soʻzlar kitobi."
+      },
+      {
+        "word": "olmoq",
+        "definition": "Kitobni vaqtincha olmoq."
+      },
+      {
+        "word": "kutubxonachi",
+        "definition": "Kutubxonada ishlovchi."
+      },
+      {
+        "word": "ohista",
+        "definition": "Past ovozda."
+      },
+      {
+        "word": "loyiha",
+        "definition": "Maktab ishi."
+      },
+      {
+        "word": "kosmos",
+        "definition": "Yulduzlar olami."
+      },
+      {
+        "word": "oʻqish",
+        "definition": "Bilim olish."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b67",
+    "title": "Ertaga testimiz bor",
+    "text": "Ana: Ertaga testimiz bor. Tayyormisan?\nBen: Hali yoʻq. Bugun kechqurun takrorlayman.\nAna: Men ham. Avval nimani oʻqiysan?\nBen: Lugʻat boyligini. Keyin grammatikani. Oʻtgan zamon feʻllarini mashq qilishim kerak.\nAna: Yaxshi reja. Sakkizda onlayn bir-birimizni sinaymizmi?\nBen: Ha! Oʻnta savol tuzaman. Sen ham oʻnta tuzasanmi?\nAna: Albatta. Lekin oʻn yarimgacha uxlashimiz kerak.\nBen: Roziman. Charchagan miya hamma narsani unutadi.\nAna: Toʻgʻri. Tugatgach telefonni yigʻishtiraman.\nBen: Aqlli. Sakkizda onlayn koʻrishamiz — ertaga omad!\nAna: Omad! Biz uddalaymiz.",
+    "vocabulary": [
+      {
+        "word": "test",
+        "definition": "Tekshiruv."
+      },
+      {
+        "word": "tayyor",
+        "definition": "Tayyorlangan."
+      },
+      {
+        "word": "takrorlamoq",
+        "definition": "Qayta oʻqimoq."
+      },
+      {
+        "word": "lugʻat boyligi",
+        "definition": "Soʻzlar."
+      },
+      {
+        "word": "grammatika",
+        "definition": "Til qoidalari."
+      },
+      {
+        "word": "mashq qilmoq",
+        "definition": "Takrorlab oʻrganmoq."
+      },
+      {
+        "word": "sinamoq",
+        "definition": "Savol berib tekshirmoq."
+      },
+      {
+        "word": "charchagan",
+        "definition": "Holdan toygan."
+      },
+      {
+        "word": "unutmoq",
+        "definition": "Eslab qolmaslik."
+      },
+      {
+        "word": "omad",
+        "definition": "Yaxshi tilak."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b68",
+    "title": "Tanaffus!",
+    "text": "Tanaffus soat oʻn yarimda boshlanadi. Oʻquvchilar sinfxonalardan chiqib, yoʻlaklarni toʻldiradi. Baʻzilar gazakxonada sharbat oladi. Boshqalar hovlida toʻp tepadi. Bir nechtasi daraxt ostida oʻyin va musiqa haqida gaplashadi. Men odatda olma yeyman va xabarlarimni tekshiraman. Bugun doʻstlarim favvora yonida kulishyapti. Kimdir suratga olyapti. Oʻqituvchilar aylanib yurib tabassum qiladi. Tanaffus qisqa — atigi oʻn besh daqiqa — lekin muhim tuyuladi. Dam olamiz, keyin qoʻngʻiroq yana chalinadi. Hamma sinfga yuguradi. Tanaffusdan keyin uygʻoq boʻlib, matematikaga tayyor his qilaman.",
+    "vocabulary": [
+      {
+        "word": "tanaffus",
+        "definition": "Darslar orasidagi dam."
+      },
+      {
+        "word": "sinfxona",
+        "definition": "Dars xonasi."
+      },
+      {
+        "word": "yoʻlak",
+        "definition": "Maktab ichidagi yoʻl."
+      },
+      {
+        "word": "gazakxona",
+        "definition": "Kichik ovqat joyi."
+      },
+      {
+        "word": "hovli",
+        "definition": "Maktab ochiq maydoni."
+      },
+      {
+        "word": "favvora",
+        "definition": "Suv otiladigan joy."
+      },
+      {
+        "word": "dam olmoq",
+        "definition": "Hordiq chiqarmoq."
+      },
+      {
+        "word": "qoʻngʻiroq",
+        "definition": "Dars belgisi."
+      },
+      {
+        "word": "uygʻoq",
+        "definition": "Serhosil, serquvvat."
+      },
+      {
+        "word": "muhim",
+        "definition": "Kerakli."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b69",
+    "title": "Iltimos, sekin gapiring",
+    "text": "Oʻquvchi: Kechirasiz. Iltimos, sekin gapiring. Tushunmadim.\nOʻqituvchi: Albatta. Endi yaxshiroq eshityapsizmi?\nOʻquvchi: Biroz. Oxirgi gapni takrorlay olasizmi?\nOʻqituvchi: Ha. \"Dam olish kuningiz haqida uchta gap yozing.\"\nOʻquvchi: Rahmat. \"Dam olish kuni\" yana nima degani?\nOʻqituvchi: Shanba va yakshanba.\nOʻquvchi: Tushundim. Bu soʻzni doskaga yozib bersangiz?\nOʻqituvchi: Albatta. Mana — d-a-m o-l-i-s-h k-u-n-i.\nOʻquvchi: Ajoyib. Yana bir narsa: birinchi gapimni tekshira olasizmi?\nOʻqituvchi: Qarab… Yaxshi boshlandi! \"Boraman\"ni \"bordim\"ga oʻzgartiring.\nOʻquvchi: Aha, oʻtgan zamon. Sabringiz uchun rahmat.\nOʻqituvchi: Har doim. Savol soʻrash oʻrganishga yordam beradi.",
+    "vocabulary": [
+      {
+        "word": "sekin",
+        "definition": "Shoshilmasdan."
+      },
+      {
+        "word": "gapirmoq",
+        "definition": "Soʻzlashmoq."
+      },
+      {
+        "word": "tushunmoq",
+        "definition": "Anglamoq."
+      },
+      {
+        "word": "takrorlamoq",
+        "definition": "Qayta aytmoq."
+      },
+      {
+        "word": "dam olish kuni",
+        "definition": "Shanba va yakshanba."
+      },
+      {
+        "word": "doska",
+        "definition": "Sinf taxtasi."
+      },
+      {
+        "word": "tekshirmoq",
+        "definition": "Toʻgʻriligini koʻrmoq."
+      },
+      {
+        "word": "oʻtgan zamon",
+        "definition": "Oʻtmishdagi feʻl shakli."
+      },
+      {
+        "word": "sabr",
+        "definition": "Sabr-toqat."
+      },
+      {
+        "word": "savol",
+        "definition": "Soʻralgan narsa."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b70",
+    "title": "Maktabdagi birinchi kunim",
+    "text": "Maktabdagi birinchi kunimni hali ham eslayman. Darvozada onamning qoʻlini ushlab turdim. Bino juda katta koʻrinardi. Oʻqituvchim tabassum qilib: \"Xush kelibsiz!\" dedi. Bir vaqtning oʻzida qoʻrqdim va hayajonlandim. Sinfxonada Hana ismli qiz yoniga oʻtirdim. U rangli qalamlarini ulashdi. Tanaffusda uy sogʻinchidan biroz yigʻladim. Keyin toʻp bilan oʻynadik va yana kuldim. Tushdan keyin oilamizni chizdik. Onam kelganda chizganimni koʻrsatdim. Shu kun uzun tuyuldi, lekin koʻp yaxshi kunlarning boshi edi. Yangi joylar tanish boʻlishini oʻrgandim.",
+    "vocabulary": [
+      {
+        "word": "birinchi kun",
+        "definition": "Eng dastlabki kun."
+      },
+      {
+        "word": "darvoza",
+        "definition": "Maktab kirishi."
+      },
+      {
+        "word": "xush kelibsiz",
+        "definition": "Kutib olish soʻzi."
+      },
+      {
+        "word": "qoʻrqmoq",
+        "definition": "Xavotirlanmoq."
+      },
+      {
+        "word": "hayajonlanmoq",
+        "definition": "Quvonchli tashvish."
+      },
+      {
+        "word": "ulashmoq",
+        "definition": "Birga foydalanish."
+      },
+      {
+        "word": "sogʻinch",
+        "definition": "Uyni sogʻinish."
+      },
+      {
+        "word": "chizmoq",
+        "definition": "Rasm chizmoq."
+      },
+      {
+        "word": "boshi",
+        "definition": "Boshlanishi."
+      },
+      {
+        "word": "tanish",
+        "definition": "Maʻlum boʻlgan."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b71",
+    "title": "Maktabdan keyin nima qilasiz?",
+    "text": "Nora: Maktabdan keyin nima qilasiz?\nJamol: Odatda ukam bilan futbol oʻynayman. Keyin uy vazifasini qilaman.\nNora: Televizor koʻrasizmi?\nJamol: Baʻzan, lekin faqat oʻttiz daqiqa. Sizchi?\nNora: Odatda komiks oʻqiyman. Chorshanba gitaradan darsim bor.\nJamol: Zoʻr! Har kuni mashq qilasizmi?\nNora: Deyarli. Yakshanba ota-onamning ota-onasiga boraman.\nJamol: Yoqimli ekan. Bogʻga chiqasizmi?\nNora: Ha, dam olish kunlari. Ob-havo yaxshi boʻlsa, velosiped haydaymiz.\nJamol: Balki keyingi shanba birga borarmiz.\nNora: Xohlayman. Boʻsh vaqt doʻstlar bilan yaxshiroq.\nJamol: Roziman. Juma yozishaylik.",
+    "vocabulary": [
+      {
+        "word": "odatda",
+        "definition": "Koʻpincha."
+      },
+      {
+        "word": "futbol",
+        "definition": "Toʻp oʻyini."
+      },
+      {
+        "word": "uy vazifasi",
+        "definition": "Uyga berilgan ish."
+      },
+      {
+        "word": "televizor",
+        "definition": "Koʻrsatuv qurilmasi."
+      },
+      {
+        "word": "komiks",
+        "definition": "Rasimli hikoya."
+      },
+      {
+        "word": "gitara",
+        "definition": "Musiqa asbobi."
+      },
+      {
+        "word": "mashq qilmoq",
+        "definition": "Takrorlab oʻrganmoq."
+      },
+      {
+        "word": "dam olish",
+        "definition": "Shanba-yakshanba."
+      },
+      {
+        "word": "velosiped",
+        "definition": "Ikki gʻildirakli transport."
+      },
+      {
+        "word": "boʻsh vaqt",
+        "definition": "Erkin vaqt."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b72",
+    "title": "Futbolni yaxshi koʻraman",
+    "text": "Futbolni yaxshi koʻraman. Har payshanba maktab jamoam bilan oʻynayman, dadam bilan katta oʻyinlarni televizorda koʻramiz. Sevimli oʻrnim yarim himoya — yugurib, uzatma bera olaman. Gol ursak, baqirib, qoʻl urishamiz. Oʻtgan oy jamoamiz uchta oʻyin yutdi. Suzish ham yoqadi, lekin futbol birinchi. Opam basketbolni afzal koʻradi. Futbol juda loyli, deydi! Mayli — baribir bir-birimizni qoʻllab-quvvatlaymiz. Yomgʻirli kunlarda garajda toʻpni tepib mashq qilaman. Sport charchatadi, lekin xursand ham qiladi. Mashgʻulotdan keyin suv ichaman va choʻzilaman. Sogʻlom quvonch — eng yaxshi quvonch.",
+    "vocabulary": [
+      {
+        "word": "futbol",
+        "definition": "Toʻp oʻyini."
+      },
+      {
+        "word": "jamoa",
+        "definition": "Oʻyin guruhı."
+      },
+      {
+        "word": "yarim",
+        "definition": "Yarim himoya oʻrni."
+      },
+      {
+        "word": "uzatma",
+        "definition": "Toʻp uzatish."
+      },
+      {
+        "word": "gol",
+        "definition": "Darvozaga toʻp."
+      },
+      {
+        "word": "yutdi",
+        "definition": "Gʻalaba qozondi."
+      },
+      {
+        "word": "suzish",
+        "definition": "Suvda harakat."
+      },
+      {
+        "word": "loyli",
+        "definition": "Loy bilan iflos."
+      },
+      {
+        "word": "mashgʻulot",
+        "definition": "Sport mashqi."
+      },
+      {
+        "word": "choʻzilaman",
+        "definition": "Mushaklarni choʻzaman."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b73",
+    "title": "Gitara chala olasizmi?",
+    "text": "Mia: Gitara chala olasizmi?\nLeo: Biroz. Uchta qoʻshiq chala olaman. Sizchi?\nMia: Yoʻq, chola olmayman. Lekin kuylay olaman.\nLeo: Zoʻr! Pianino chala olasizmi?\nMia: Ha. Haftada ikki marta mashq qilaman.\nLeo: Voy. Men pianino umuman chola olmayman.\nMia: Mayli. Raqsga tusha olasizmi?\nLeo: Ha! Biroz raqsga tusha olaman, lekin zoʻr emasman.\nMia: Men ham. Nogʻorachi?\nLeo: Nogʻora chola olmayman. Kvartiram uchun juda baland!\nMia: Toʻgʻri. Balki kichik guruh tuzarmiz — gitara va pianino.\nLeo: Keyingi dam olish kunida sinab koʻramiz. Musiqa birga qiziqarliroq.",
+    "vocabulary": [
+      {
+        "word": "chalmoq",
+        "definition": "Musiqa asbobida oʻynamoq."
+      },
+      {
+        "word": "gitara",
+        "definition": "Torli asbob."
+      },
+      {
+        "word": "kuylamoq",
+        "definition": "Ovoz bilan qoʻshiq aytmoq."
+      },
+      {
+        "word": "pianino",
+        "definition": "Klavishli asbob."
+      },
+      {
+        "word": "mashq qilmoq",
+        "definition": "Takrorlab oʻrganmoq."
+      },
+      {
+        "word": "raqsga tushmoq",
+        "definition": "Raqs qilmoq."
+      },
+      {
+        "word": "nogʻora",
+        "definition": "Urmali asbob."
+      },
+      {
+        "word": "baland",
+        "definition": "Kuchli ovoz."
+      },
+      {
+        "word": "guruh",
+        "definition": "Musiqa jamoasi."
+      },
+      {
+        "word": "musiqa",
+        "definition": "Kuy va ritm."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b74",
+    "title": "Film koʻryapmiz",
+    "text": "Sara: Bugun kechqurun nima qilasiz?\nTom: Uyimizda film koʻryapmiz. Kelasizmi?\nSara: Balki. Qanday film?\nTom: Komediya. Opam hozir gazak tanlayapti.\nSara: Kulgili yaxshi. Qoʻrqinchlisini xohlamayman.\nTom: Men ham. Soat sakkizda boshlaymiz. Kelasizmi?\nSara: Ha! Biror narsa olib kelaymi?\nTom: Sharbat olib kelasizmi? Popkorn allaqachon bor.\nSara: Albatta. Uydan yetti yarimda chiqaman.\nTom: Ajoyib. Yaqinlashganda yozing.\nSara: Yozaman. Qiziqarli boʻladi!\nTom: Tez orada koʻrishamiz! Film oldidan gazak tayyorlab, chiroqlarni biroz oʻchiramiz. Kulib oʻtirish kechimizni yengillashtiradi.",
+    "vocabulary": [
+      {
+        "word": "film",
+        "definition": "Kino asari."
+      },
+      {
+        "word": "koʻrmoq",
+        "definition": "Tomosha qilmoq."
+      },
+      {
+        "word": "komediya",
+        "definition": "Kulgili film."
+      },
+      {
+        "word": "gazak",
+        "definition": "Kichik ovqat."
+      },
+      {
+        "word": "qoʻrqinchli",
+        "definition": "Qoʻrqitadigan."
+      },
+      {
+        "word": "boshlamoq",
+        "definition": "Boshlash."
+      },
+      {
+        "word": "olib kelmoq",
+        "definition": "Olib kelmoq."
+      },
+      {
+        "word": "sharbat",
+        "definition": "Meva ichimligi."
+      },
+      {
+        "word": "popkorn",
+        "definition": "Kino gazagi."
+      },
+      {
+        "word": "yaqinlashmoq",
+        "definition": "Yaqin kelmoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b75",
+    "title": "Yomgʻirli kun hobbiysi",
+    "text": "Yomgʻirli kunlarda uyda qolib, tinch hobbiylardan zavqlanaman. Eskiz daftarimga hayvonlar chizaman. Baʻzan stol ustida jumboq yigʻaman. Akam videooʻyinlarni afzal koʻradi, men esa faqat oʻttiz daqiqa oʻynayman. Keyin koʻrpa ostida sirli kitob oʻqiyman. Ijodiy kayfiyatda boʻlsam, doʻstlarimga otkritka yasayman. Onam issiq shokolad qiladi, yumshoq musiqa tinglaymiz. Derazadagi yomgʻir nogʻoradek yangraydi. Yomon ob-havo menga yoqadi, chunki uy ichidagi quvonch ham yoqimli. Yomgʻirli tushda kelsangiz, kitob yoki oʻyin olib keling. Divanni boʻlishib, tashqaridagi boʻronni unutamiz. Ob-havo yomon boʻlsa ham, uy ichida quvonch bor.",
+    "vocabulary": [
+      {
+        "word": "yomgʻirli",
+        "definition": "Yomgʻirli kun."
+      },
+      {
+        "word": "hobbiy",
+        "definition": "Sevimli mashgʻulot."
+      },
+      {
+        "word": "chizaman",
+        "definition": "Rasm chizaman."
+      },
+      {
+        "word": "jumboq",
+        "definition": "Qismli rasm."
+      },
+      {
+        "word": "sirli",
+        "definition": "Sirli hikoya."
+      },
+      {
+        "word": "otkritka",
+        "definition": "Tabrik kartasi."
+      },
+      {
+        "word": "yumshoq",
+        "definition": "Ohista."
+      },
+      {
+        "word": "ob-havo",
+        "definition": "Havo holati."
+      },
+      {
+        "word": "boʻron",
+        "definition": "Kuchli yomgʻir."
+      },
+      {
+        "word": "divan",
+        "definition": "Yumshoq oʻrindiq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b76",
+    "title": "Bayramimga keling",
+    "text": "Aziz doʻstlar,\nJuma kuni bayramimga kelasizmi? Soat oltida uyimda, Eman koʻchasi 14-uyda boshlanadi. Musiqa tinglaymiz, raqsga tushamiz va pitsa yeymiz. Soat yettida kichik tort ham boʻladi. Qulay kiyim kiying — mehmonxonada raqsga tushishimiz mumkin! Xohlasangiz, doʻst olib kelasiz. Chorshanbagacha kelishingizni ayting. U yerda koʻrishishga umid qilaman!\nSogʻlik bilan,\nYuki\n---\nDanning javobi: Rahmat, Yuki! Ha, xursand boʻlib kelaman. Limonad va chips olib kelaymi?\nYuki: Ha, iltimos! Ajoyib boʻladi. Juma soat oltida koʻrishamiz. Kech qolmang!",
+    "vocabulary": [
+      {
+        "word": "bayram",
+        "definition": "Quvonchli yigʻilish."
+      },
+      {
+        "word": "boshlanmoq",
+        "definition": "Boshlash."
+      },
+      {
+        "word": "raqsga tushmoq",
+        "definition": "Raqs qilmoq."
+      },
+      {
+        "word": "tort",
+        "definition": "Shirin taom."
+      },
+      {
+        "word": "qulay",
+        "definition": "Harakatga qulay."
+      },
+      {
+        "word": "olib kelmoq",
+        "definition": "Birga olib kelmoq."
+      },
+      {
+        "word": "aytmoq",
+        "definition": "Javob bermoq."
+      },
+      {
+        "word": "umid qilmoq",
+        "definition": "Kutmoq."
+      },
+      {
+        "word": "limonad",
+        "definition": "Shirin ichimlik."
+      },
+      {
+        "word": "kech",
+        "definition": "Vaqtidan keyin."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b77",
+    "title": "Stiker yigʻaman",
+    "text": "Men stiker yigʻaman. Sakkiz yoshimda boshlangan. Xolam boʻsh betli daftar berdi, birinchi betni hayvon stikerlari bilan toʻldirdim. Endi yuzlab stikerim bor. Baʻzilari yaltiroq. Baʻzilari kulgili. Nodirlarini maxsus qutida saqlayman. Maktabda tanaffusda doʻstlarim stiker almashadi. Kosmos va mushuk stikerlarini qidiraman. Yigʻish sabr oʻrgatadi. Hammasini bir yoʻla sotib olish shart emas. Yakshanba albomimni rang boʻyicha tartiblayman. Akam kuladi, lekin u futbol kartochkalarini yigʻadi — tushunadi. Hobbiylar boshqalarga kichik koʻrinishi mumkin, lekin meni magʻrur qiladi. Har bir stikerda kichik hikoya bor.",
+    "vocabulary": [
+      {
+        "word": "yigʻmoq",
+        "definition": "Toʻplamoq."
+      },
+      {
+        "word": "stiker",
+        "definition": "Yopishtiriladigan rasm."
+      },
+      {
+        "word": "yaltiroq",
+        "definition": "Yorqin porloq."
+      },
+      {
+        "word": "nodir",
+        "definition": "Kam uchraydigan."
+      },
+      {
+        "word": "almashadi",
+        "definition": "Bir-biriga berishadi."
+      },
+      {
+        "word": "qidirmoq",
+        "definition": "Izlamoq."
+      },
+      {
+        "word": "sabr",
+        "definition": "Kutish qobiliyati."
+      },
+      {
+        "word": "tartiblamoq",
+        "definition": "Tartibga solmoq."
+      },
+      {
+        "word": "hobbiy",
+        "definition": "Sevimli mashgʻulot."
+      },
+      {
+        "word": "magʻrur",
+        "definition": "Faxrlanish."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b78",
+    "title": "Sayrga chiqaylik",
+    "text": "Emi: Sayrga chiqaylik. Quyosh chiqdi!\nBen: Yaxshi fikr. Daryo yoʻlakchasidan bormaylikmi?\nEmi: Ajoyib. Futbol toʻpini ham olaylikmi?\nBen: Keyinroq. Avval yurib, gaplashaylik.\nEmi: Mayli. Norani chaqiramizmi?\nBen: Nima uchun yoʻq? Hozir yozaman… U ha deyapti!\nEmi: Zoʻr. Yigirma daqiqadan keyin koʻprikda uchrashamizmi?\nBen: Ha. Qulay oyoq kiyim kiying.\nEmi: Va suv oling. Kechagidan issiqroq.\nBen: Toʻgʻri. Och qolsak, bogʻ yonida kafe bor.\nEmi: Sayrdan keyin shunday qilaylik.\nBen: Kelishdik. Toza havo, keldik!",
+    "vocabulary": [
+      {
+        "word": "sayr",
+        "definition": "Yurib havo olish."
+      },
+      {
+        "word": "chiqaylik",
+        "definition": "Birga chiqish taklifi."
+      },
+      {
+        "word": "yoʻlakcha",
+        "definition": "Yurish yoʻli."
+      },
+      {
+        "word": "chaqirmoq",
+        "definition": "Taklif qilmoq."
+      },
+      {
+        "word": "uchrashmoq",
+        "definition": "Bir joyda uchrashmoq."
+      },
+      {
+        "word": "qulay",
+        "definition": "Yurishga qulay."
+      },
+      {
+        "word": "issiqroq",
+        "definition": "Issiqroq."
+      },
+      {
+        "word": "och",
+        "definition": "Yemoq xohlayotgan."
+      },
+      {
+        "word": "kafe",
+        "definition": "Choy-non joyi."
+      },
+      {
+        "word": "toza havo",
+        "definition": "Tashqaridagi havo."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b79",
+    "title": "Dam olish rejalari",
+    "text": "Salom jamoa,\nDam olish kunidagi rejalar qanday? Shanba ertalab fan muzeyiga bormoqchiman. Tushdan keyin amakivachcham bilan tennis oʻynayman. Yakshanba uyda oʻzbek tilidagi loyihamni tugataman, lekin kechqurun boʻshman. Yakshanba soat yettida film koʻrmoqchi boʻlgan bormi? Uyimda uchrashishimiz mumkin. Iloji boʻlsa, gazak olib keling. Bugun javob bering — kinoga borsak, chipta olaman. Quvnoq dam olish kuniga umid qilaman!\nMaya\nP.S. Ob-havo quyoshli koʻrinadi — ochiq havo rejalari uchun ham yaxshi. Oʻzbek tilidagi loyihani yakunlasam, dam olish kuni yanada yengil boʻladi. Doʻstlar bilan film yaxshi yakun.",
+    "vocabulary": [
+      {
+        "word": "reja",
+        "definition": "Oldindan oʻylangan ish."
+      },
+      {
+        "word": "muzey",
+        "definition": "Koʻrgazma joyi."
+      },
+      {
+        "word": "tennis",
+        "definition": "Sport turi."
+      },
+      {
+        "word": "loyiha",
+        "definition": "Maktab ishi."
+      },
+      {
+        "word": "oʻzbek tili",
+        "definition": "Til darsi."
+      },
+      {
+        "word": "film",
+        "definition": "Kino."
+      },
+      {
+        "word": "gazak",
+        "definition": "Kichik ovqat."
+      },
+      {
+        "word": "javob",
+        "definition": "Javob xabari."
+      },
+      {
+        "word": "chipta",
+        "definition": "Kirish belgesi."
+      },
+      {
+        "word": "quyoshli",
+        "definition": "Quyoshli havo."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b80",
+    "title": "Juda qiziqarli oʻtdi!",
+    "text": "Kecha juda qiziqarli oʻtdi! Ertalab velosipedda koʻlga bordik. Suv koʻk edi, oʻrdaklar qirgʻoq yonida suzardi. Gilamchada sendvich yedik. Tushdan keyin yana ikki oila bilan voleybol oʻynadik. Bir marta yiqildim, lekin kuldim. Keyinroq musiqa tinglab, maysada raqsga tushdik. Quyosh botganda guruh suratiga tushdik. Uyga ketayotib, charchagan va xursand edim. Onamga: \"Bu eng yaxshi shanba edi,\" dedim. U kulib, keyingi oy yana borishimiz mumkin dedi. Quvnoq kunlar tugagandan keyin ham xotirada qoladi. Allaqachon yana birini xohlayman.",
+    "vocabulary": [
+      {
+        "word": "qiziqarli",
+        "definition": "Yoqimli, quvnoq."
+      },
+      {
+        "word": "koʻl",
+        "definition": "Katta suv havzasi."
+      },
+      {
+        "word": "oʻrdak",
+        "definition": "Suv qushi."
+      },
+      {
+        "word": "voleybol",
+        "definition": "Toʻr orqali toʻp oʻyini."
+      },
+      {
+        "word": "yiqilmoq",
+        "definition": "Yerga tushmoq."
+      },
+      {
+        "word": "raqsga tushmoq",
+        "definition": "Raqs qilmoq."
+      },
+      {
+        "word": "guruh",
+        "definition": "Birga turgan odamlar."
+      },
+      {
+        "word": "charchagan",
+        "definition": "Holdan toygan."
+      },
+      {
+        "word": "xotira",
+        "definition": "Eslab qolingan narsa."
+      },
+      {
+        "word": "xohlamoq",
+        "definition": "Istamoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b81",
+    "title": "Safarga chiqamiz",
+    "text": "Ota: Juma kuni dengiz boʻyiga safarga chiqamiz.\nLina: Zoʻr! Nimalarni joylashimiz kerak?\nOta: Ikki kunlik kiyim, tish choʻtkasi va zaryadlovchilar.\nLina: Poyezdda boramizmi?\nOta: Ha. Bugun kechqurun chipta olaman.\nLina: Yoʻl uchun gazak kerakmi?\nOta: Yaxshi fikr. Roʻyxat tuzasanmi?\nLina: Albatta — suv, meva va sendvichlar.\nOta: Ajoyib. Yomgʻirpaltongizni unutmang. Ob-havo tez oʻzgaradi.\nLina: Mayli. Soat nechada chiqamiz?\nOta: Ertalab soat yettida. Budilnik qoʻying!\nLina: Qoʻydim. Kutolmayman! Dengiz boʻyiga safar hayajonli. Sumkamni oldindan tayyorlab qoʻyaman.",
+    "vocabulary": [
+      {
+        "word": "safar",
+        "definition": "Sayohat."
+      },
+      {
+        "word": "dengiz boʻyi",
+        "definition": "Dengiz yonidagi joy."
+      },
+      {
+        "word": "joylamoq",
+        "definition": "Sumkaga solmoq."
+      },
+      {
+        "word": "chipta",
+        "definition": "Safar belgesi."
+      },
+      {
+        "word": "gazak",
+        "definition": "Yoʻl ovqati."
+      },
+      {
+        "word": "roʻyxat",
+        "definition": "Kerakli narsalar yozuvi."
+      },
+      {
+        "word": "yomgʻirpalto",
+        "definition": "Yomgʻir kiyimi."
+      },
+      {
+        "word": "ob-havo",
+        "definition": "Havo holati."
+      },
+      {
+        "word": "chiqmoq",
+        "definition": "Yoʻlga otlanmoq."
+      },
+      {
+        "word": "budilnik",
+        "definition": "Erta turish uchun soat."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b82",
+    "title": "Ikki chipta, iltimos",
+    "text": "Yoʻlovchi: Braytongacha ikki chipta, iltimos.\nKassir: Bir tomonlama yoki borib-qaytish?\nYoʻlovchi: Borib-qaytish, iltimos. Bugungi.\nKassir: Mayli. Keyingi poyezd 11:40 da 3-platformadan joʻnaydi.\nYoʻlovchi: Narxi qancha?\nKassir: Ikkalasi uchun yigirma toʻrt funt.\nYoʻlovchi: Karta bilan toʻlasam boʻladimi?\nKassir: Ha. Shu yerga tegizing… Rahmat.\nYoʻlovchi: Biror narsa bosib chiqarishim kerakmi?\nKassir: Yoʻq. Telefondagi QR kodni koʻrsating.\nYoʻlovchi: Zoʻr. Poyezd toʻgʻridan-toʻgʻrimi?\nKassir: Ha, almashish yoʻq. Yoʻlingiz bexatar!\nYoʻlovchi: Rahmat. 3-platforma qayerda?\nKassir: Toʻgʻri boring, keyin chapga.",
+    "vocabulary": [
+      {
+        "word": "chipta",
+        "definition": "Safar belgesi."
+      },
+      {
+        "word": "Borib-qaytish",
+        "definition": "Ketish va qaytish chiptasi."
+      },
+      {
+        "word": "poyezd",
+        "definition": "Temiryoʻl transporti."
+      },
+      {
+        "word": "platforma",
+        "definition": "Poyezd kutadigan joy."
+      },
+      {
+        "word": "joʻnamoq",
+        "definition": "Yoʻlga chiqmoq."
+      },
+      {
+        "word": "karta",
+        "definition": "Toʻlov kartasi."
+      },
+      {
+        "word": "kod",
+        "definition": "Telefon dagi belgi."
+      },
+      {
+        "word": "toʻgʻridan-toʻgʻri",
+        "definition": "Almashmasdan."
+      },
+      {
+        "word": "almashish",
+        "definition": "Boshqa poyezdga oʻtish."
+      },
+      {
+        "word": "platforma",
+        "definition": "Peron."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b83",
+    "title": "Chamadonningizda nima bor?",
+    "text": "Chamadonim ichiga qarang. Ikki futbolka va bitta issiq sviter bor. Jinsi va bitta shortik bor. Tish choʻtkasi, tish pastasi va sovunli yuvinish sumkasi bor. Kichik xaltachada paypoq va ichki kiyim bor. Telefon zaryadlovchisi va poyezd uchun kitob bor. Joy kam qolgani uchun qoʻshimcha oyoq kiyim solmadim — faqat kiyib yurgan krossovkalarim. Ob-havo yomgʻirli deyapti, shuning uchun yupqa yomgʻirpalto ham bor. Onam: sayohatchilarga oʻylagandan kamroq narsa kerak, deydi. Ikki marta tekshirdim: pasport, chipta va kalitlar qoʻl sumkamda. Endi chamadon ham, men ham tayyorman.",
+    "vocabulary": [
+      {
+        "word": "chamadon",
+        "definition": "Safar sumkasi."
+      },
+      {
+        "word": "futbolka",
+        "definition": "Yengil koʻylak."
+      },
+      {
+        "word": "sviter",
+        "definition": "Issiq kiyim."
+      },
+      {
+        "word": "yuvinish sumkasi",
+        "definition": "Tozalanish buyumlari sumkasi."
+      },
+      {
+        "word": "zaryadlovchi",
+        "definition": "Quvvatlovchi."
+      },
+      {
+        "word": "joy",
+        "definition": "Boʻsh joy."
+      },
+      {
+        "word": "yomgʻirpalto",
+        "definition": "Yomgʻir kiyimi."
+      },
+      {
+        "word": "pasport",
+        "definition": "Hujjat."
+      },
+      {
+        "word": "chipta",
+        "definition": "Safar belgesi."
+      },
+      {
+        "word": "qoʻl sumka",
+        "definition": "Qoʻlda olib yuriladigan sumka."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b84",
+    "title": "Mehmonxona stolida",
+    "text": "Mehmon: Salom. Hassan ismi bilan bron qilganman.\nQabulxona: Xayrli kech. Ikki kechalik bitta juftlik xonami?\nMehmon: Ha. Iloji boʻlsa, tinch xona xohlayman.\nQabulxona: Albatta. Ikkinchi qavatdagi 214-xonasidasiz.\nMehmon: Zoʻr. Nonushta soat nechada?\nQabulxona: Ovqatxonada yettidan oʻngacha.\nMehmon: Ajoyib. Pasportim kerakmi?\nQabulxona: Ha, iltimos. Va depozit uchun karta.\nMehmon: Mana.\nQabulxona: Rahmat. Mana kalit kartangiz. Lift chapda.\nMehmon: Rahmat. Wi-Fi bormi?\nQabulxona: Ha. Parol kartada. Yaxshi dam oling! Kalit kartani qoʻlimga olib, lift tomon yuraman. Tinch xona yaxshi uyqu beradi.",
+    "vocabulary": [
+      {
+        "word": "bron",
+        "definition": "Oldindan band qilish."
+      },
+      {
+        "word": "xona",
+        "definition": "Mehmonxona xonasi."
+      },
+      {
+        "word": "tinch",
+        "definition": "Shovqinsiz."
+      },
+      {
+        "word": "nonushta",
+        "definition": "Ertalabgi ovqat."
+      },
+      {
+        "word": "ovqatxona",
+        "definition": "Ovqat yeyiladigan zal."
+      },
+      {
+        "word": "pasport",
+        "definition": "Hujjat."
+      },
+      {
+        "word": "depozit",
+        "definition": "Vaqtincha toʻlov."
+      },
+      {
+        "word": "kalit karta",
+        "definition": "Xona ochkichi."
+      },
+      {
+        "word": "lift",
+        "definition": "Koʻtaruvchi kabina."
+      },
+      {
+        "word": "parol",
+        "definition": "Kirish kodi."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b85",
+    "title": "Poyezd soat oltida joʻnaydi",
+    "text": "Yoʻlovchi: Kechirasiz. Poyezd soat nechada joʻnaydi?\nXodim: Lidsga ketadigan poyezd soat olti oʻn beshda 2-platformadan joʻnaydi.\nYoʻlovchi: Olti oʻn besh — keyingisi shumi?\nXodim: Ha. Undan keyingisi soat yettida.\nYoʻlovchi: Yoʻl qancha vaqt oladi?\nXodim: Taxminan ellik daqiqa.\nYoʻlovchi: Odatda vaqtida yetadimi?\nXodim: Bugun yaxshi koʻrinadi. Doskada kechikish yoʻq.\nYoʻlovchi: Ajoyib. Eshiklar joʻnashdan bir daqiqa oldin yopiladi.\nXodim: Toʻgʻri. Sariq chiziq orqasida turing, iltimos.\nYoʻlovchi: Rahmat. Qahva olib, darhol qaytaman.\nXodim: Kech qolmang — olti oʻn besh tez keladi!",
+    "vocabulary": [
+      {
+        "word": "joʻnamoq",
+        "definition": "Yoʻlga chiqmoq."
+      },
+      {
+        "word": "platforma",
+        "definition": "Poyezd joyi."
+      },
+      {
+        "word": "keyingi",
+        "definition": "Keyin keladigan."
+      },
+      {
+        "word": "yoʻl",
+        "definition": "Safar."
+      },
+      {
+        "word": "yetmoq",
+        "definition": "Vaqtida kelmoq."
+      },
+      {
+        "word": "kechikish",
+        "definition": "Kech qolish."
+      },
+      {
+        "word": "doska",
+        "definition": "Vaqtlar paneli."
+      },
+      {
+        "word": "yopilmoq",
+        "definition": "Eshik yopilishi."
+      },
+      {
+        "word": "chiziq",
+        "definition": "Yerdagi belgi."
+      },
+      {
+        "word": "darhol",
+        "definition": "Tez."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b86",
+    "title": "Suratga olsangiz boʻladimi?",
+    "text": "Sayyoh: Kechirasiz. Bizni suratga olsangiz boʻladimi?\nNotanish: Albatta! Gorizontal olsammi?\nSayyoh: Ha, iltimos. Orqamizdagi favvorani ham kiriting.\nNotanish: Biroz chapga siljing… Ajoyib. Tabassum!\nSayyoh: Juda rahmat. Yana bittami?\nNotanish: Albatta. Tayyor… boʻldi! Aniqligini tekshiring.\nSayyoh: Zoʻr chiqibdi. Juda mehribonsiz.\nNotanish: Arzimaydi. Dam olish kuniga kelganmisiz?\nSayyoh: Ha. Bu yerda birinchi marta.\nNotanish: Shaharni zavq bilan koʻring. Eski koʻprik ham chiroyli.\nSayyoh: Keyin u yerga boramiz. Yana rahmat!\nNotanish: Kun yaxshi oʻtsin!",
+    "vocabulary": [
+      {
+        "word": "suratga olmoq",
+        "definition": "Rasmga olmoq."
+      },
+      {
+        "word": "gorizontal",
+        "definition": "Eniga olish."
+      },
+      {
+        "word": "favvora",
+        "definition": "Suv otiladigan joy."
+      },
+      {
+        "word": "siljimoq",
+        "definition": "Biroz harakatlanmoq."
+      },
+      {
+        "word": "tabassum",
+        "definition": "Kulib turish."
+      },
+      {
+        "word": "Aniqligini",
+        "definition": "Rasm ravshanligi."
+      },
+      {
+        "word": "mehribon",
+        "definition": "Yaxshi munosabat."
+      },
+      {
+        "word": "dam olish",
+        "definition": "Dam olish kunlari."
+      },
+      {
+        "word": "koʻprik",
+        "definition": "Daryo ustidagi yoʻl."
+      },
+      {
+        "word": "zavq",
+        "definition": "Yoqimli his."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b87",
+    "title": "Menga xarita kerak",
+    "text": "Sayohatchi: Salom. Shahar markazining xaritasi kerak, iltimos.\nMaʻlumot: Mana. Bepul xaritalar shu javonda.\nSayohatchi: Rahmat. Xaritada hozir qayerdamiz?\nMaʻlumot: Sayyohlar byurosidamiz — mana, qizil yulduz yonida.\nSayohatchi: Qalʻaga qanday boraman?\nMaʻlumot: Maydongacha toʻgʻri yuring, keyin jigarrang belgilarga ergashing.\nSayohatchi: Uzoqmi?\nMaʻlumot: Taxminan oʻn besh daqiqa. Bepul shahar ilovasidan ham foydalanish mumkin.\nSayohatchi: Ilova oflayn ishlaydimi?\nMaʻlumot: Ha, avval xaritani yuklab olsangiz. Yordam kerakmi?\nSayohatchi: Udadaladim. Yordamingiz uchun rahmat!\nMaʻlumot: Sayohatingiz yoqimli boʻlsin!",
+    "vocabulary": [
+      {
+        "word": "xarita",
+        "definition": "Joy chizmasi."
+      },
+      {
+        "word": "markaz",
+        "definition": "Shahar oʻrtasi."
+      },
+      {
+        "word": "bepul",
+        "definition": "Pul toʻlamasdan."
+      },
+      {
+        "word": "yulduz",
+        "definition": "Xaritadagi belgi."
+      },
+      {
+        "word": "qalʻa",
+        "definition": "Eski qurilma."
+      },
+      {
+        "word": "belgi",
+        "definition": "Yoʻnalish belgisi."
+      },
+      {
+        "word": "ergashmoq",
+        "definition": "Belgilarga qarab yurmoq."
+      },
+      {
+        "word": "ilova",
+        "definition": "Telefon dasturi."
+      },
+      {
+        "word": "yuklab olmoq",
+        "definition": "Internetdan olmoq."
+      },
+      {
+        "word": "sayohat",
+        "definition": "Koʻrib yurish."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b88",
+    "title": "Taʻtil suratlarimiz",
+    "text": "Oʻtgan yoz dengiz boʻyidagi kichik shaharga bordik. Koʻp taʻtil suratlari oldim. Birida piersda turib qoʻl silkitamiz. Boshqasida dadam muzqaymoq oladi, onam kuladi. Kemalar muzeyiga bordik va quyosh botganda sohilda yurdik. Bir kech oʻn daqiqa adashib, keyin mehmonxonamizni topdik. Shu suratlar sayohatni eslatadi. Doʻstlar: \"Taʻtil qanday oʻtdi?\" desa, telefon albomimni koʻrsataman. Ranglar yorqin, hamma xursand. Taʻtil tugaydi, lekin rasmlar hisni saqlaydi. Keyingi yil yana borib, yanada koʻproq surat olmoqchiman. Taʻtil suratlari menga dengiz hidini eslatadi. Ularni koʻrsam, yana sayohat qilgim keladi.",
+    "vocabulary": [
+      {
+        "word": "taʻtil",
+        "definition": "Dam olish safari."
+      },
+      {
+        "word": "surat",
+        "definition": "Rasm."
+      },
+      {
+        "word": "piers",
+        "definition": "Dengizdagi uzun yoʻlak."
+      },
+      {
+        "word": "muzqaymoq",
+        "definition": "Sovuq shirinlik."
+      },
+      {
+        "word": "sohil",
+        "definition": "Dengiz boʻyi."
+      },
+      {
+        "word": "adashmoq",
+        "definition": "Yoʻlni yoʻqotmoq."
+      },
+      {
+        "word": "eslatmoq",
+        "definition": "Eslab qolishga yordam."
+      },
+      {
+        "word": "albom",
+        "definition": "Suratlar toʻplami."
+      },
+      {
+        "word": "yorqin",
+        "definition": "Yorugʻ rangli."
+      },
+      {
+        "word": "his",
+        "definition": "Tuygʻu."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b89",
+    "title": "Nonushta kiritilganmi?",
+    "text": "Mehmon: Xayrli tong. Nonushta kiritilganmi?\nQabulxona: Ha. Nonushta yettidan oʻngacha.\nMehmon: Zoʻr. Wi-Fi ham kiritilganmi?\nQabulxona: Ha. Barcha xonalarda bepul Wi-Fi.\nMehmon: Ajoyib. Sochiqlar har kuni almashtiriladimi?\nQabulxona: Ha. Toza sochiq kerak boʻlsa, polga qoʻying.\nMehmon: Sport zali bormi?\nQabulxona: Ha, birinchi qavatda. Kechasi toʻqqizgacha ochiq.\nMehmon: Yana bir narsa — ertaga kech chiqish mumkinmi?\nQabulxona: Soat oʻn ikkigacha, biroz haq evaziga. Qoʻshaymi?\nMehmon: Ha, iltimos. Yordamingiz uchun rahmat.\nQabulxona: Arzimaydi. Qolgan kunlaringiz yoqimli oʻtsin!",
+    "vocabulary": [
+      {
+        "word": "kiritilgan",
+        "definition": "Narxga qoʻshilgan."
+      },
+      {
+        "word": "nonushta",
+        "definition": "Ertalabgi ovqat."
+      },
+      {
+        "word": "bepul",
+        "definition": "Qoʻshimcha pul yoʻq."
+      },
+      {
+        "word": "sochiq",
+        "definition": "Artinadigan mato."
+      },
+      {
+        "word": "almashtirmoq",
+        "definition": "Yangi bilan almashtirish."
+      },
+      {
+        "word": "sport zali",
+        "definition": "Mashq joyi."
+      },
+      {
+        "word": "chiqish",
+        "definition": "Xonani boʻshatish."
+      },
+      {
+        "word": "haq",
+        "definition": "Qoʻshimcha toʻlov."
+      },
+      {
+        "word": "qoʻshmoq",
+        "definition": "Buyurtmaga qoʻshmoq."
+      },
+      {
+        "word": "qolgan",
+        "definition": "Qolgan vaqt."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b90",
+    "title": "Yana uyda",
+    "text": "Besh kunlik safardan keyin yana uydamiz. Chamadon polda ochiq, iflos kiyimlar yuvish mashinasini kutmoqda. Charchaganman, lekin xursandman. Safar qisqa edi, lekin yangi koʻchalar, yangi ovqatlar va yangi suratlar bilan toʻla. Onam choy damlayapti, dadam pochtani koʻryapti. Karavotim mehmonxona karavotidan yumshoqroq. Sekin yigʻishtirib, esdalik sovgʻalarini javonga qoʻyaman. Ertaga maktab boshlanadi, lekin bugun kechqurun yana suratlarga qarayman. Sayohat odamni biroz oʻzgartiradi. Uyga qaytish xavfsiz va iliq tuyuladi. Dengizni sogʻinaman ham, xonamni yaxshi koʻraman ham. Ikkala his birga toʻgʻri boʻlishi mumkin.",
+    "vocabulary": [
+      {
+        "word": "uyda",
+        "definition": "Oʻz uyida."
+      },
+      {
+        "word": "chamadon",
+        "definition": "Safar sumkasi."
+      },
+      {
+        "word": "iflos",
+        "definition": "Yuvish kerak."
+      },
+      {
+        "word": "charchagan",
+        "definition": "Holdan toygan."
+      },
+      {
+        "word": "safar",
+        "definition": "Sayohat."
+      },
+      {
+        "word": "esdalik",
+        "definition": "Eslab qolish uchun narsa."
+      },
+      {
+        "word": "yigʻishtirmoq",
+        "definition": "Narsalarni joyiga qoʻymoq."
+      },
+      {
+        "word": "sogʻinmoq",
+        "definition": "Yetishmayotganini his qilmoq."
+      },
+      {
+        "word": "xavfsiz",
+        "definition": "Tinch, ishonchli."
+      },
+      {
+        "word": "his",
+        "definition": "Tuygʻu."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b91",
+    "title": "Kecha band oʻtdi",
+    "text": "Kecha ertalabdan kechgacha band oʻtdi. Erta turib, onamga nonushtada yordam berdim. Keyin maktabga bordim va uzoq matematika testini topshirdim. Tushlikda doʻstlarim bilan oʻtirib, kulgili video haqida kulishdik. Maktabdan keyin beshgacha futbol mashgʻulotim boʻldi. Uyga ketayotib, nonxonadan non oldim. Kechqurun uy vazifasini tugatib, idishlarni yuvdim. Soat toʻqqizda buvimga qoʻngʻiroq qildim. Kunim haqida soʻradi, hammasini aytib berdim. Oxirida tishlarimni tozalab, yaxshi uxladim. Band kunlar charchatadi, lekin yaxshi hikoyalar ham beradi. Bugun kechagi uchun magʻrurman.",
+    "vocabulary": [
+      {
+        "word": "band",
+        "definition": "Koʻp ishli."
+      },
+      {
+        "word": "kecha",
+        "definition": "Oldingi kun."
+      },
+      {
+        "word": "test",
+        "definition": "Tekshiruv."
+      },
+      {
+        "word": "mashgʻulot",
+        "definition": "Sport mashqi."
+      },
+      {
+        "word": "nonxona",
+        "definition": "Non sotiladigan joy."
+      },
+      {
+        "word": "uy vazifasi",
+        "definition": "Uyga berilgan ish."
+      },
+      {
+        "word": "qoʻngʻiroq qilmoq",
+        "definition": "Telefon qilmoq."
+      },
+      {
+        "word": "hikoya",
+        "definition": "Soʻzlab beriladigan voqea."
+      },
+      {
+        "word": "magʻrur",
+        "definition": "Faxrlanish."
+      },
+      {
+        "word": "charchatmoq",
+        "definition": "Holdan toydirmoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b92",
+    "title": "Yangi yilni nishonladik",
+    "text": "Yangi yilni oilam bilan uyda nishonladik. Kechqurun birga katta ovqat pishirdik. Amakim sharbat olib keldi, xolam tort pishirdi. Issiq sviter kiyib, yarim tunni kutdik. Soat oʻnda stol oʻyini oʻynadik va eski hikoyalar aytib berdik. Keyin oʻndan sanab tushdik. Soat oʻn ikki urganda quchoqlashib: \"Yangi yilingiz bilan!\" dedik. Tashqarida musiqa va quvnoq ovozlar eshitildi. Kichik jiyanim tez orada divanda uxlab qoldi. Derazadan mushakbozlikni tomosha qildim. Ranglar qorongʻi osmonni yoritdi. Oʻsha tun maxsus edi, chunki hammamiz birga edik. Keyingi yil mehribon boʻlishini tilayman.",
+    "vocabulary": [
+      {
+        "word": "nishonlamoq",
+        "definition": "Bayram qilmoq."
+      },
+      {
+        "word": "yangi yil",
+        "definition": "Yil boshi bayrami."
+      },
+      {
+        "word": "yarim tun",
+        "definition": "Soat oʻn ikki."
+      },
+      {
+        "word": "sanamoq",
+        "definition": "Raqamlarni aytmoq."
+      },
+      {
+        "word": "quchoqlashmoq",
+        "definition": "Bir-birini quchoqlamoq."
+      },
+      {
+        "word": "mushakbozlik",
+        "definition": "Osmondagi yorugʻlik oʻyini."
+      },
+      {
+        "word": "yoritmoq",
+        "definition": "Yorugʻ qilmoq."
+      },
+      {
+        "word": "maxsus",
+        "definition": "Alohida."
+      },
+      {
+        "word": "birga",
+        "definition": "Bir joyda."
+      },
+      {
+        "word": "tilamoq",
+        "definition": "Xohlamoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b93",
+    "title": "Kutilmagan sovgʻa",
+    "text": "Oʻtgan juma opam menga kutilmagan sovgʻa berdi. Maktabdan kelib, stolim ustida kichik quti topdim. Ichida koʻk daftar va kumush ruchka bor edi. Eslatma: \"Hikoyalaring uchun — muhabbat bilan, Amira.\" Iliq va xursand his qildim. Tugʻilgan kunim emas edi, shuning uchun kutmagan edim. Amira eshik yonidan kulib, har kuni yozasan, shuning uchun chiroyli qurollaring boʻlsin, dedi. Karavotga oʻtirib, uning mehribonligi haqida birinchi betni yozdim. Keyin pechenye va choy boʻlishdik. Kichik sovgʻalar koʻp narsani anglatishi mumkin. Hali ham shu ruchkani ishlataman va har safar uning tabassumini eslayman.",
+    "vocabulary": [
+      {
+        "word": "kutilmagan",
+        "definition": "Kutilmagan."
+      },
+      {
+        "word": "sovgʻa",
+        "definition": "Berilgan narsa."
+      },
+      {
+        "word": "quti",
+        "definition": "Ichiga narsa solinadigan."
+      },
+      {
+        "word": "daftar",
+        "definition": "Yozish daftari."
+      },
+      {
+        "word": "eslatma",
+        "definition": "Qisqa yozuv."
+      },
+      {
+        "word": "kutmoq",
+        "definition": "Kutish."
+      },
+      {
+        "word": "mehribonligi",
+        "definition": "Yaxshi munosabat."
+      },
+      {
+        "word": "anglatmoq",
+        "definition": "Maʻno bildirmoq."
+      },
+      {
+        "word": "ishlatmoq",
+        "definition": "Foydalanmoq."
+      },
+      {
+        "word": "tabassum",
+        "definition": "Kulib turish."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b94",
+    "title": "Kalitlarimni yoʻqotdim",
+    "text": "Dushanba kuni kalitlarimni yoʻqotdim. Avval sumkamni qarab chiqdim. Yoʻq edi. Keyin palto choʻntaklarimni tekshirdim. Yana hech narsa. Xavotirlandim, chunki onamga uy kaliti kerak edi. Keyin maktabga qaytib, idoradan soʻradim. Mehribon oʻqituvchi ularni sport zali yonida topgan ekan. Kimdir topshiribdi. Koʻp marta rahmat aytdim. Keyin kalitlarni yorqin uzukka taqdim — endi oson koʻrinadi. Kechqurun onamga butun hikoyani aytib berdim. U xotirjam edi: \"Muammolar boʻladi. Diqqat bilan qarasang, yechim topiladi.\" Chiqishdan oldin sekinlashib, ikki marta tekshirishni oʻrgandim.",
+    "vocabulary": [
+      {
+        "word": "yoʻqotmoq",
+        "definition": "Topa olmay qolmoq."
+      },
+      {
+        "word": "kalit",
+        "definition": "Eshik ochkich."
+      },
+      {
+        "word": "choʻntak",
+        "definition": "Kiyimdagi kichik joy."
+      },
+      {
+        "word": "xavotirlanmoq",
+        "definition": "Tashvishlanmoq."
+      },
+      {
+        "word": "idora",
+        "definition": "Maktab ishxonasi."
+      },
+      {
+        "word": "topmoq",
+        "definition": "Topib olmoq."
+      },
+      {
+        "word": "topshirmoq",
+        "definition": "Berib qoʻymoq."
+      },
+      {
+        "word": "yorqin",
+        "definition": "Yaxshi koʻrinadigan."
+      },
+      {
+        "word": "muammo",
+        "definition": "Qiyinchilik."
+      },
+      {
+        "word": "yechim",
+        "definition": "Muammoni bartaraf etish."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b95",
+    "title": "Birinchi velosipedim",
+    "text": "Yetti yoshimda birinchi velosipedimni oldim. Qizil va kichik edi, oq gʻildiraklari bor edi. Dadam oʻrindiqni ushlab turardi, men haydab koʻrardim. Avval yumshoq maysaga yiqildim. Yigʻladim, keyin yana urinib koʻrdim. Koʻp tushdan keyin koʻcha oxirigacha yolgʻiz hayday oldim. Erkin va baland his qildim. Toʻxtaganimda yiqilmasam, doʻstlarim qarsak chalardi. Onam darvoza yonida surat oldi. Shu velosiped surati hali ham devorimda. Endi velosiped menga kichik, lekin xotira katta. Bolalik sovgʻalari yurakda qoladi. Har safar qizil velosiped koʻrsam, tabassum qilaman.",
+    "vocabulary": [
+      {
+        "word": "velosiped",
+        "definition": "Ikki gʻildirakli transport."
+      },
+      {
+        "word": "gʻildirak",
+        "definition": "Aylanuvchi qism."
+      },
+      {
+        "word": "haydamoq",
+        "definition": "Boshqarmoq."
+      },
+      {
+        "word": "yiqilmoq",
+        "definition": "Yerga tushmoq."
+      },
+      {
+        "word": "urinmoq",
+        "definition": "Yana harakat qilmoq."
+      },
+      {
+        "word": "erkin",
+        "definition": "Mustaqil."
+      },
+      {
+        "word": "qarsak",
+        "definition": "Qoʻl urib olqishlash."
+      },
+      {
+        "word": "surat",
+        "definition": "Rasm."
+      },
+      {
+        "word": "xotira",
+        "definition": "Eslab qolingan narsa."
+      },
+      {
+        "word": "bolalik",
+        "definition": "Bolalik davri."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b96",
+    "title": "Qor yogʻgan kun",
+    "text": "Oʻtgan qishda qor yogʻgan kunni eslayman. Ertalab derazadan qarab, oq tomlarni koʻrdim. Yumshoq qor mashina va daraxtlarga yogʻayotgan edi. Yoʻllar xavfli boʻlgani uchun tushlikdan keyin maktab yopildi. Etik va qoʻlqop kiyib, tashqariga yugurdik. Akam bilan sabzi burunli kichik qor odam yasadik. Keyin qoʻllarimiz soviguncha qor toʻpi oʻynadik. Onam issiq shoʻrva uchun chaqirdi. Ovqatlanayotganimizda qor hali ham ohista yogʻardi. Kechqurun koʻcha chiroqlari ostida shahar sehrli koʻrinardi. Shu kunni kundaligimga yozdim. Ob-havo oddiy kunlarni unutilmas qilishi mumkin.",
+    "vocabulary": [
+      {
+        "word": "qor",
+        "definition": "Oq yogʻin."
+      },
+      {
+        "word": "yogʻmoq",
+        "definition": "Osmondan tushmoq."
+      },
+      {
+        "word": "tom",
+        "definition": "Uy usti."
+      },
+      {
+        "word": "xavfli",
+        "definition": "Xavf li."
+      },
+      {
+        "word": "qor odam",
+        "definition": "Qordan yasalgan odam."
+      },
+      {
+        "word": "qor toʻpi",
+        "definition": "Qordan yasalgan toʻp."
+      },
+      {
+        "word": "ohista",
+        "definition": "Sekin."
+      },
+      {
+        "word": "sehrli",
+        "definition": "Ajoyib koʻrinishli."
+      },
+      {
+        "word": "kundaligimga",
+        "definition": "Kundalik daftar."
+      },
+      {
+        "word": "unutilmas",
+        "definition": "Eslab qolinadigan."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b97",
+    "title": "Oʻyinni yutdik!",
+    "text": "Oʻtgan shanba maktab jamoamiz oʻyinni yutdi! Hisob uch-ikki edi. Qirq daqiqa oʻynab, ikkinchi gol uchun uzatma berdim. Oxirgi hushtak chalinganda sakrab, quchoqlashdik. Murabbiymiz jamoaviy mehnat qilganimizni aytib, tabassum qildi. Ota-onalar chetdan qarsak chaldi. Eng yaqin doʻstim oxirgi daqiqada gʻalaba golini urdi. Oʻyindan keyin suv ichib, jamoa suratiga tushdik. Uyga avtobusda baland ovozda kuyladik. Magʻrur va biroz charchagan edim. Yutish yoqimli, lekin birga oʻynash yanada yoqimli edi. Oʻsha kech loyli paypoqlarim hali sumkada uxladim — xursandligimdan parvo qilmadim.",
+    "vocabulary": [
+      {
+        "word": "yutmoq",
+        "definition": "Gʻalaba qozonmoq."
+      },
+      {
+        "word": "hisob",
+        "definition": "Gollar soni."
+      },
+      {
+        "word": "uzatma",
+        "definition": "Toʻp uzatish."
+      },
+      {
+        "word": "hushtak",
+        "definition": "Oʻyin oxiri belgisi."
+      },
+      {
+        "word": "murabbiy",
+        "definition": "Jamoa oʻrgatuvchisi."
+      },
+      {
+        "word": "jamoaviy",
+        "definition": "Birgalikda."
+      },
+      {
+        "word": "gʻalaba",
+        "definition": "Yutish."
+      },
+      {
+        "word": "magʻrur",
+        "definition": "Faxrlanish."
+      },
+      {
+        "word": "loyli",
+        "definition": "Loy bilan iflos."
+      },
+      {
+        "word": "parvo qilmoq",
+        "definition": "Eʻtibor bermoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b98",
+    "title": "Rahmat xabari",
+    "text": "Aziz Laylo xola,\nUyingizdagi ajoyib dam olish kuni uchun rahmat. Bogʻdagi sayr, kulgili filmlar va limonli tortingiz menga juda yoqdi. Menga juda mehribon boʻldingiz. Bergan koʻk sharfim allaqachon sevimlim. Uyga poyezdda kiyib keldim — issiq saqladi. Onam asal idishi uchun ham rahmat aytadi. Amakiga ayting, karta nayranglari bizni juda kuldirganini. Tez orada yana kelishga umid qilaman. Oddiy shanbani maxsus qilib qoʻydingiz.\nMuhabbat bilan,\nSamir\nP.S. Bogʻdan olgan suratni qoʻshdim. Tabassum!",
+    "vocabulary": [
+      {
+        "word": "rahmat",
+        "definition": "Minnatdorchilik."
+      },
+      {
+        "word": "dam olish",
+        "definition": "Dam olish kuni."
+      },
+      {
+        "word": "sayr",
+        "definition": "Yurib havo olish."
+      },
+      {
+        "word": "sharf",
+        "definition": "Boʻyin uchun."
+      },
+      {
+        "word": "asal",
+        "definition": "Tabiiy shirin mahsulot."
+      },
+      {
+        "word": "nayrang",
+        "definition": "Kulgili hiyla."
+      },
+      {
+        "word": "umid qilmoq",
+        "definition": "Kutmoq."
+      },
+      {
+        "word": "maxsus",
+        "definition": "Alohida."
+      },
+      {
+        "word": "qoʻshmoq",
+        "definition": "Birga yubormoq."
+      },
+      {
+        "word": "muhabbat",
+        "definition": "Iliq tilak."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b99",
+    "title": "Keyingi haftani kutaman",
+    "text": "Hammaga salom,\nKeyingi haftani kutaman! Dushanba yangi sanʻat darsimni boshlayman. Chorshanba maktab bilan shahar muzeyiga boramiz. Dam olish kunida amakivachchalarimni koʻraman — yomgʻir yogʻmasa, bogʻda futbol oʻynaymiz. Sanʻat darsidan biroz qoʻrqaman, lekin bor kuchim bilan urinaman. Yakshanba kechqurun uchrashmoqchi boʻlsangiz, yozing. Gazak olib kelaman. Bu hafta allaqachon yaxshi narsalarga toʻla tuyuladi. Tez orada koʻrishamiz!\nSogʻlik bilan,\nRana\nP.S. Muzeydan suratlar yuboraman. Keyingi hafta yangi joylar va yangi odamlar bilan toʻla. Shu uchun rejamni oldindan yozib qoʻydim.",
+    "vocabulary": [
+      {
+        "word": "kutmoq",
+        "definition": "Intiqorlik bilan kutmoq."
+      },
+      {
+        "word": "sanʻat",
+        "definition": "Chizish darsi."
+      },
+      {
+        "word": "muzey",
+        "definition": "Koʻrgazma joyi."
+      },
+      {
+        "word": "amakivachcha",
+        "definition": "Qarindosh bola."
+      },
+      {
+        "word": "qoʻrqmoq",
+        "definition": "Xavotirlanmoq."
+      },
+      {
+        "word": "urinmoq",
+        "definition": "Harakat qilmoq."
+      },
+      {
+        "word": "uchrashmoq",
+        "definition": "Uchrashib koʻrishmoq."
+      },
+      {
+        "word": "gazak",
+        "definition": "Kichik ovqat."
+      },
+      {
+        "word": "toʻla",
+        "definition": "Koʻp narsali."
+      },
+      {
+        "word": "yubormoq",
+        "definition": "Joʻnatmoq."
+      }
+    ],
+    "targetSeconds": 45
+  },
+  {
+    "id": "b100",
+    "title": "Aytishni yaxshi koʻradigan hikoyam",
+    "text": "Oilaviy kechki ovqatlarda aytishni yaxshi koʻradigan hikoyam bor. Toʻqqiz yoshimda yolgʻiz non pishirib koʻrganman. Un va suvni aralashtirdim, lekin xamir turish uchun kerakli narsani unutibman. Xamir yassi va gʻamgin qoldi. Baribir pechga soldim. Yigirma daqiqadan keyin qattiq, oqish gʻishtimiz bor edi. Hamma kuldi, keyin buvim toʻgʻri qadamlarni koʻrsatdi. Ikkinchi non koʻtarilib, ajoyib hid taratdi. Uni sariyogʻ va asal bilan yedik. Bu hikoyani aytaman, chunki oddiy narsani oʻrgatadi: xatolar kulgili saboqqa aylanishi mumkin. Endi yaxshiroq non pishiraman va hali ham oʻsha birinchi gʻishtga kulaman. Yaxshi hikoyalar yaxshi ovqatdek toʻydiradi.",
+    "vocabulary": [
+      {
+        "word": "hikoya",
+        "definition": "Soʻzlab beriladigan voqea."
+      },
+      {
+        "word": "pishirmoq",
+        "definition": "Ovqat tayyorlamoq."
+      },
+      {
+        "word": "xamir",
+        "definition": "Un aralashmasi."
+      },
+      {
+        "word": "unutmoq",
+        "definition": "Eslab qolmaslik."
+      },
+      {
+        "word": "gʻisht",
+        "definition": "Qattiq, yassi narsa."
+      },
+      {
+        "word": "qadam",
+        "definition": "Bosqich."
+      },
+      {
+        "word": "koʻtarilmoq",
+        "definition": "Hajmi kattalashmoq."
+      },
+      {
+        "word": "xato",
+        "definition": "Notoʻgʻri qilingan ish."
+      },
+      {
+        "word": "saboq",
+        "definition": "Oʻrganilgan narsa."
+      },
+      {
+        "word": "toʻydirmoq",
+        "definition": "Qanoatlantirmoq."
+      }
+    ],
+    "targetSeconds": 45
+  }
+]

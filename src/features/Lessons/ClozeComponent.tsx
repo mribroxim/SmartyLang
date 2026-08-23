@@ -22,7 +22,7 @@ interface Props {
 
 export function ClozeComponent({ text, contentLang, onBack, onComplete, hideBack }: Props) {
   const items = useMemo(
-    () => generateClozeItems(text.text, text.vocabulary || [], contentLang),
+    () => generateClozeItems(text.text, text.vocabulary || [], contentLang, 14, text.format),
     [text, contentLang],
   );
   const [index, setIndex] = useState(0);

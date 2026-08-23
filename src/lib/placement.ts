@@ -3,9 +3,9 @@ import type { Level } from './reading-logic';
 export type LearningGoal = 'daily' | 'school' | 'exam';
 
 export const LEARNING_GOALS: { id: LearningGoal; title: string; desc: string }[] = [
-  { id: 'daily', title: 'Everyday English', desc: 'Speak and understand in daily life' },
+  { id: 'daily', title: 'Everyday use', desc: 'Speak and understand in daily life' },
   { id: 'school', title: 'School & study', desc: 'Keep up with class and homework' },
-  { id: 'exam', title: 'IELTS / exams', desc: 'Train for a test with a target band' },
+  { id: 'exam', title: 'Exams & certificates', desc: 'Train for a test with a target score' },
 ];
 
 export const PLACEMENT_LEVELS: Level[] = [
@@ -192,7 +192,10 @@ export function scorePlacementStep(
   return null;
 }
 
-export function analyzePlacement(answers: Record<string, number | boolean>): PlacementAnalysis {
+export function analyzePlacement(
+  answers: Record<string, number | boolean>,
+  flow: PlacementStep[] = PLACEMENT_FLOW,
+): PlacementAnalysis {
   const sections = {} as PlacementAnalysis['sections'];
   (Object.keys(PLACEMENT_SECTION_LABELS) as PlacementSectionId[]).forEach(s => {
     sections[s] = { correct: 0, total: 0, pct: 0 };
@@ -203,7 +206,7 @@ export function analyzePlacement(answers: Record<string, number | boolean>): Pla
   let totalCorrect = 0;
   let totalScored = 0;
 
-  for (const step of PLACEMENT_FLOW) {
+  for (const step of flow) {
     if (!isAnswerable(step)) continue;
     const w = SECTION_WEIGHTS[step.section];
     sections[step.section].total += 1;
@@ -258,6 +261,8 @@ export function levelFromPlacementScore(correct: number, total = 26): Level {
 }
 
 /** Answerable steps only (excludes passage intro screens). */
-export function placementQuestionSteps(): Exclude<PlacementStep, { type: 'passage' }>[] {
-  return PLACEMENT_FLOW.filter(isAnswerable);
+export function placementQuestionSteps(
+  flow: PlacementStep[] = PLACEMENT_FLOW,
+): Exclude<PlacementStep, { type: 'passage' }>[] {
+  return flow.filter(isAnswerable);
 }

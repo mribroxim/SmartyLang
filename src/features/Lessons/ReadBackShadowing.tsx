@@ -25,7 +25,10 @@ interface Props {
 /** Sentence-level reading pronunciation: Web Speech + live highlight + auto-end. */
 export function ReadBackShadowing({ text, contentLang, onBack: _onBack, onComplete }: Props) {
   const { speechLocale } = useContentLang();
-  const sentences = useMemo(() => splitSentences(text.text).slice(0, 8), [text.text]);
+  const sentences = useMemo(
+    () => splitSentences(text.text, text.format).slice(0, 8),
+    [text.text, text.format],
+  );
   const { startRecognition, stopRecognition, isReady, modelLoading } = useVosk(speechLocale);
   const [index, setIndex] = useState(0);
   const [recording, setRecording] = useState(false);

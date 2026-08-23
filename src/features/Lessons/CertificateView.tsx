@@ -32,7 +32,7 @@ export function CertificateView({ level, contentLang, studentName, onBack }: Pro
             Certificate of Completion
           </p>
           <h1 className="text-[22px] lg:text-[34px] font-serif font-black text-zinc-900 dark:text-zinc-50 mb-3 lg:mb-7 tracking-tight">
-            Smarty English
+            SmartyLang
           </h1>
 
           <div className="lg:border-y lg:border-slate-100 dark:lg:border-zinc-800 lg:py-7">

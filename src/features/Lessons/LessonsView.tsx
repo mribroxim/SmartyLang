@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import {
-  ArrowLeft, Award, BookOpen, CheckCircle2, ChevronRight, Lock, Mic, Volume2, X, Users,
+  ArrowLeft, Award, BookOpen, CheckCircle2, ChevronRight, Mic, Volume2, X, Users,
 } from 'lucide-react';
 import { useLevelTexts } from '../../data/levelTexts';
 import type { Level, ReadingText } from '../../lib/reading-logic';
@@ -16,7 +16,15 @@ import {
   levelProgressSummary,
   maybeAwardLevelCertificate,
   loadCertificateMeta,
+  isLessonExercisesComplete,
 } from '../../lib/lessonProgress';
+import {
+  buildLessonUnits,
+  findNextLesson,
+  lessonIndexInLevel,
+  unitProgress,
+  type LessonUnit,
+} from '../../lib/lessonUnits';
 import { fetchWordTranslations } from '../../Exercises';
 import { DICT_LANG_CODE } from '../../lib/contentLang';
 import { UI_TRANSLATE_CODE } from '../../lib/uiLang';
@@ -28,9 +36,8 @@ import { ScreenShell } from '../../components/ScreenShell';
 import { LevelCard, LevelCardGrid, LibraryCard, LibraryCardGrid } from '../../components/LevelCards';
 
 const LEVELS: Level[] = ['Beginner', 'Elementary', 'Pre-Intermediate', 'Intermediate', 'Advanced'];
-const PAGE_SIZE = 8;
 
-type HubView = 'levels' | 'library' | 'lesson' | 'certificate';
+type HubView = 'levels' | 'units' | 'library' | 'lesson' | 'certificate';
 
 interface LessonsViewProps {
   level: Level;
@@ -114,6 +121,8 @@ interface LessonsViewProps {
   setActiveTab: (tab: string) => void;
   setReadingView: (v: string) => void;
   startingLevel?: Level;
+  /** Optional: App uses this for “Continue to Exercises” on the reading stats modal. */
+  feedbackContinueRef?: React.MutableRefObject<(() => void) | null>;
 }
 
 export function LessonsView(props: LessonsViewProps) {
@@ -123,7 +132,7 @@ export function LessonsView(props: LessonsViewProps) {
 
   const [hubView, setHubView] = useState<HubView>('levels');
   const [phase, setPhase] = useState<LessonPhase>('pre-read');
-  const [libPage, setLibPage] = useState(1);
+  const [selectedUnitIndex, setSelectedUnitIndex] = useState(0);
   const [unlock, setUnlock] = useState<LessonUnlock>(() =>
     loadLessonUnlock(contentLang, props.currentTextObj?.id || ''),
   );
@@ -134,6 +143,17 @@ export function LessonsView(props: LessonsViewProps) {
   const passageIds = useMemo(
     () => (LEVEL_TEXTS[props.level] || []).map((x) => x.id),
     [LEVEL_TEXTS, props.level],
+  );
+
+  const levelTexts = LEVEL_TEXTS[props.level] || [];
+  const units = useMemo(
+    () => buildLessonUnits(levelTexts, props.level),
+    [levelTexts, props.level],
+  );
+  const selectedUnit: LessonUnit | undefined = units[selectedUnitIndex];
+  const nextLesson = useMemo(
+    () => findNextLesson(contentLang, levelTexts),
+    [contentLang, levelTexts, hubView, showRecModal],
   );
 
   const passageVocab = useMemo(() => {
@@ -149,21 +169,19 @@ export function LessonsView(props: LessonsViewProps) {
     setUnlock(loadLessonUnlock(contentLang, props.currentTextObj.id));
   }, [contentLang, props.currentTextObj?.id]);
 
-  // Soft-gate: only record reading scores after vocab is unlocked and user is reading.
+  // Record reading scores whenever the user finishes the read phase.
   useEffect(() => {
     if (hubView !== 'lesson' || phase !== 'read') return;
-    if (!unlock.vocabPassed) return;
     if (!props.isFinished || props.isRecording || props.transcriptionFailed) return;
     if (props.transcriptionUnavailable) return;
     if (!props.currentTextObj?.id) return;
     const pct = Math.round(props.readAccuracy || 0);
     const next = updateLessonUnlock(contentLang, props.currentTextObj.id, { readingBest: pct });
     setUnlock(next);
-    props.setShowFeedbackModal(false);
   }, [
     props.isFinished, props.isRecording, props.readAccuracy,
     props.transcriptionFailed, props.transcriptionUnavailable,
-    hubView, phase, unlock.vocabPassed, contentLang, props.currentTextObj?.id,
+    hubView, phase, contentLang, props.currentTextObj?.id,
   ]);
 
   const ensureMeanings = async () => {
@@ -192,11 +210,7 @@ export function LessonsView(props: LessonsViewProps) {
     const merged: Record<string, string> = {};
     for (const w of words) {
       const key = w.toLowerCase();
-      merged[key] =
-        map[w] ||
-        map[key] ||
-        glosses[key] ||
-        w;
+      merged[key] = map[w] || map[key] || w;
     }
     setMeanings(merged);
     return merged;
@@ -207,7 +221,7 @@ export function LessonsView(props: LessonsViewProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hubView, props.currentTextObj?.id, contentLang, uiLang]);
 
-  // After vocab quiz is passed once, never show vocabulary again.
+  // After vocab is learned once, never show the pre-read list again.
   useEffect(() => {
     if (hubView !== 'lesson') return;
     if (unlock.vocabPassed && phase === 'pre-read') setPhase('read');
@@ -228,9 +242,8 @@ export function LessonsView(props: LessonsViewProps) {
     setHubView('lesson');
   };
 
-  /** Persist current read score (if any) then open exercises — survives leave/return. */
-  const goToExercises = () => {
-    if (!unlock.vocabPassed) return;
+  /** Open exercises tab — reading score persisted if the session just finished. */
+  const goToExercises = useCallback(() => {
     if (
       props.isFinished &&
       !props.isRecording &&
@@ -243,28 +256,29 @@ export function LessonsView(props: LessonsViewProps) {
       setUnlock(next);
     }
     setPhase('exercises');
-  };
+  }, [
+    contentLang,
+    props.currentTextObj?.id,
+    props.isFinished,
+    props.isRecording,
+    props.readAccuracy,
+    props.transcriptionFailed,
+    props.transcriptionUnavailable,
+  ]);
 
-  const handleVocabQuizComplete = (result: any): boolean => {
-    const expectedTotal = Math.max(
-      1,
-      (props.currentTextObj?.vocabulary || []).length,
-      typeof result.total === 'number' ? result.total : 0,
-    );
-    const scoreCount = typeof result.score === 'number' ? result.score : (result.correctWords?.length || 0);
-    const finalPct =
-      typeof result.percent === 'number' && Number.isFinite(result.percent)
-        ? Math.min(100, Math.max(0, Math.round(result.percent)))
-        : Math.min(100, Math.max(0, Math.round((scoreCount / expectedTotal) * 100)));
-    const next = updateLessonUnlock(contentLang, props.currentTextObj.id, {
-      vocabQuizScore: finalPct,
-    });
+  useEffect(() => {
+    if (!props.feedbackContinueRef) return;
+    props.feedbackContinueRef.current = goToExercises;
+    return () => {
+      props.feedbackContinueRef!.current = null;
+    };
+  }, [props.feedbackContinueRef, goToExercises]);
+
+  const handleVocabLearned = () => {
+    if (!props.currentTextObj?.id) return;
+    const next = updateLessonUnlock(contentLang, props.currentTextObj.id, { vocabPassed: true });
     setUnlock(next);
-    if (next.vocabPassed) {
-      setPhase('read');
-      return true;
-    }
-    return false;
+    setPhase('read');
   };
 
   const handleExerciseComplete = (result: any) => {
@@ -324,7 +338,7 @@ export function LessonsView(props: LessonsViewProps) {
                   forYou={props.startingLevel === lvl}
                   certAwarded={!!cert?.awarded}
                   onCertClick={() => { setCertLevel(lvl); setHubView('certificate'); }}
-                  onClick={() => { props.setLevel(lvl); setLibPage(1); setHubView('library'); }}
+                  onClick={() => { props.setLevel(lvl); setSelectedUnitIndex(0); setHubView('units'); }}
                 />
               );
             })}
@@ -358,12 +372,94 @@ export function LessonsView(props: LessonsViewProps) {
     );
   }
 
-  if (hubView === 'library') {
-    const texts = LEVEL_TEXTS[props.level] || [];
-    const pages = Math.max(1, Math.ceil(texts.length / PAGE_SIZE));
-    const pageItems = texts.slice((libPage - 1) * PAGE_SIZE, libPage * PAGE_SIZE);
+  if (hubView === 'units') {
     const cert = loadCertificateMeta(contentLang, props.level);
-    const summary = levelProgressSummary(contentLang, texts.map((x) => x.id));
+    const summary = levelProgressSummary(contentLang, passageIds);
+
+    return (
+      <ScreenShell size="wide">
+        <header className="mb-6 md:mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 pb-4 md:pb-6 border-b border-slate-200 dark:border-zinc-800">
+          <div>
+            <button
+              type="button"
+              onClick={() => setHubView('levels')}
+              className="text-sm font-bold text-slate-500 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-2 mb-3 md:mb-4 transition-colors bg-white dark:bg-zinc-900 px-4 py-2 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm w-fit"
+            >
+              <ArrowLeft className="w-4 h-4" /> {t('action.backToLevels')}
+            </button>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-slate-900 dark:text-zinc-50 tracking-tight flex items-center gap-3 md:gap-4 flex-wrap">
+              {tLevel(props.level)} <span className="text-slate-300 font-sans font-light">|</span>{' '}
+              <span className="font-sans text-lg sm:text-xl md:text-2xl text-zinc-900 dark:text-zinc-100 tracking-normal font-medium">Units</span>
+            </h1>
+            <p className="text-slate-500 text-sm mt-1.5 md:mt-2">Pick any unit — all lessons and activities are available.</p>
+          </div>
+          <div className="flex flex-row md:flex-col items-center md:items-end gap-3 shrink-0">
+            <div className="bg-white dark:bg-zinc-900 px-5 py-3 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm flex flex-col items-center">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Level progress</span>
+              <div className="flex items-baseline gap-1.5">
+                <span className="text-2xl font-black text-zinc-900 dark:text-zinc-50">{summary.exercisesComplete}</span>
+                <span className="font-bold text-slate-400">/ {summary.total}</span>
+              </div>
+            </div>
+            {cert?.awarded && (
+              <button
+                type="button"
+                onClick={() => { setCertLevel(props.level); setHubView('certificate'); }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-50 text-amber-800 border border-amber-200 font-bold text-sm"
+              >
+                <Award className="w-4 h-4" /> Certificate
+              </button>
+            )}
+          </div>
+        </header>
+
+        {nextLesson && (
+          <button
+            type="button"
+            onClick={() => {
+              setSelectedUnitIndex(nextLesson.unitIndex);
+              openPassage(props.level, nextLesson.text);
+            }}
+            className="w-full mb-6 p-4 md:p-5 rounded-2xl bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-bold text-left flex items-center justify-between gap-3 shadow-md hover:opacity-95 transition-opacity"
+          >
+            <div>
+              <div className="text-[10px] uppercase tracking-widest opacity-70 mb-1">Continue</div>
+              <div className="text-base md:text-lg">{nextLesson.text.title}</div>
+              <div className="text-xs opacity-70 mt-0.5">
+                {units[nextLesson.unitIndex]?.title ?? `Unit ${nextLesson.unitIndex + 1}`} · Lesson {(nextLesson.index % 10) + 1}
+              </div>
+            </div>
+            <ChevronRight className="w-5 h-5 shrink-0" />
+          </button>
+        )}
+
+        <LevelCardGrid cols={2}>
+          {units.map((unit) => {
+            const prog = unitProgress(contentLang, unit);
+            const pct = prog.total ? Math.round((prog.complete / prog.total) * 100) : 0;
+            return (
+              <LevelCard
+                key={unit.id}
+                title={unit.title}
+                desc={`${unit.subtitle} · ${prog.complete}/${prog.total} lessons`}
+                pct={pct}
+                themeIndex={unit.index}
+                onClick={() => {
+                  setSelectedUnitIndex(unit.index);
+                  setHubView('library');
+                }}
+              />
+            );
+          })}
+        </LevelCardGrid>
+      </ScreenShell>
+    );
+  }
+
+  if (hubView === 'library') {
+    const texts = selectedUnit?.lessons ?? levelTexts;
+    const cert = loadCertificateMeta(contentLang, props.level);
+    const summary = levelProgressSummary(contentLang, passageIds);
 
     return (
       <ScreenShell size="wide">
@@ -371,23 +467,28 @@ export function LessonsView(props: LessonsViewProps) {
             <div>
               <button
                 type="button"
-                onClick={() => setHubView('levels')}
+                onClick={() => setHubView('units')}
                 className="text-sm font-bold text-slate-500 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-2 mb-3 md:mb-4 transition-colors bg-white dark:bg-zinc-900 px-4 py-2 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm w-fit"
               >
-                <ArrowLeft className="w-4 h-4" /> {t('action.backToLevels')}
+                <ArrowLeft className="w-4 h-4" /> Back to units
               </button>
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-slate-900 dark:text-zinc-50 tracking-tight flex items-center gap-3 md:gap-4 flex-wrap">
-                {tLevel(props.level)} <span className="text-slate-300 font-sans font-light">|</span>{' '}
+                {selectedUnit ? selectedUnit.title : tLevel(props.level)}{' '}
+                <span className="text-slate-300 font-sans font-light">|</span>{' '}
                 <span className="font-sans text-lg sm:text-xl md:text-2xl text-zinc-900 dark:text-zinc-100 tracking-normal font-medium">Lessons</span>
               </h1>
-              <p className="text-slate-500 text-sm mt-1.5 md:mt-2">Choose a lesson — vocabulary unlocks reading, then exercises.</p>
+              <p className="text-slate-500 text-sm mt-1.5 md:mt-2">
+                {selectedUnit?.subtitle ?? 'Choose a lesson — complete them in order.'}
+              </p>
             </div>
             <div className="flex flex-row md:flex-col items-center md:items-end gap-3 shrink-0">
               <div className="bg-white dark:bg-zinc-900 px-5 py-3 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm flex flex-col items-center">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Level progress</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Unit progress</span>
                 <div className="flex items-baseline gap-1.5">
-                  <span className="text-2xl font-black text-zinc-900 dark:text-zinc-50">{summary.exercisesComplete}</span>
-                  <span className="font-bold text-slate-400">/ {summary.total}</span>
+                  <span className="text-2xl font-black text-zinc-900 dark:text-zinc-50">
+                    {selectedUnit ? unitProgress(contentLang, selectedUnit).complete : summary.exercisesComplete}
+                  </span>
+                  <span className="font-bold text-slate-400">/ {selectedUnit?.lessonIds.length ?? summary.total}</span>
                 </div>
               </div>
               {cert?.awarded && (
@@ -403,16 +504,17 @@ export function LessonsView(props: LessonsViewProps) {
           </header>
 
           <LibraryCardGrid>
-            {pageItems.map((text) => {
+            {texts.map((text) => {
               const u = loadLessonUnlock(contentLang, text.id);
               const prog = lessonExerciseProgress(u);
-              const done = prog.done >= prog.total && prog.total > 0;
+              const done = isLessonExercisesComplete(u);
+              const lessonIdx = lessonIndexInLevel(levelTexts, text.id);
+              const lessonNum = (lessonIdx % 10) + 1;
               return (
                 <LibraryCard
                   key={text.id}
-                  title={text.title}
+                  title={`${lessonNum}. ${text.title}`}
                   preview={text.text}
-                  locked={!u.vocabPassed}
                   done={done}
                   badge={u.readingBest != null ? (
                     <span className={`text-xs font-bold px-2.5 py-0.5 rounded-md ${u.readingPassed ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
@@ -425,62 +527,29 @@ export function LessonsView(props: LessonsViewProps) {
               );
             })}
           </LibraryCardGrid>
-
-          {pages > 1 && (
-            <div className="mt-6 md:mt-8 flex justify-center items-center gap-4">
-              <button
-                type="button"
-                disabled={libPage <= 1}
-                onClick={() => setLibPage((p) => Math.max(1, p - 1))}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-600 disabled:opacity-30 shadow-sm"
-              >
-                <ArrowLeft className="w-4 h-4" />
-              </button>
-              <span className="text-[13px] font-semibold text-slate-500">{libPage} / {pages}</span>
-              <button
-                type="button"
-                disabled={libPage >= pages}
-                onClick={() => setLibPage((p) => Math.min(pages, p + 1))}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-slate-600 disabled:opacity-30 shadow-sm"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-          )}
       </ScreenShell>
     );
   }
 
-  // After vocab quiz is passed once, Vocabulary never shows again — only Read + Exercises.
-  const exercisesUnlocked =
-    unlock.readingBest != null ||
-    unlock.readingPassed ||
-    Object.keys(unlock.exerciseBest || {}).length > 0;
-  const phaseTabs: { id: LessonPhase; label: string; locked: boolean }[] = unlock.vocabPassed
-    ? [
-        { id: 'read', label: 'Read', locked: false },
-        { id: 'exercises', label: 'Exercises', locked: !exercisesUnlocked },
-      ]
-    : [
-        { id: 'pre-read', label: 'Vocabulary', locked: false },
-        { id: 'read', label: 'Read', locked: true },
-        { id: 'exercises', label: 'Exercises', locked: true },
-      ];
+  // All lesson resources (vocab, read, exercises) are always available.
+  const phaseTabs: { id: LessonPhase; label: string; locked: boolean }[] = [
+    { id: 'pre-read', label: 'Vocabulary', locked: false },
+    { id: 'read', label: 'Read', locked: false },
+    { id: 'exercises', label: 'Exercises', locked: false },
+  ];
 
-  // Keep Read | Exercises tabs visible after vocab unlock (including during read),
-  // so returning to the passage never hides Exercises.
-  const showPhaseChrome = unlock.vocabPassed;
+  const showPhaseChrome = true;
 
   return (
     <div className="min-h-full">
       {showPhaseChrome && (
       <div className={`sticky top-0 z-20 bg-white/90 dark:bg-zinc-950/90 backdrop-blur border-b border-slate-200 dark:border-zinc-800 px-4 py-3 ${phase === 'read' ? '' : ''}`}>
         <div className="max-w-4xl mx-auto flex items-center gap-3 flex-wrap">
-          <button
-            onClick={() => { props.reset(); setHubView('library'); setShowRecModal(false); }}
-            className="text-sm font-semibold text-slate-600 hover:text-zinc-900 flex items-center gap-2 transition-all bg-white hover:bg-slate-50 px-4 py-2 rounded-xl border border-slate-200 shadow-sm"
+            <button
+              onClick={() => { props.reset(); setShowRecModal(false); setHubView('library'); }}
+            className="text-sm font-semibold text-slate-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-50 flex items-center gap-2 transition-all bg-white dark:bg-zinc-900 hover:bg-slate-50 dark:hover:bg-zinc-800 px-4 py-2 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm"
           >
-            <ArrowLeft className="w-4 h-4" /> {t('action.backToLibrary')}
+            <ArrowLeft className="w-4 h-4" /> Back to unit
           </button>
           <span className="font-serif font-bold text-zinc-900 dark:text-zinc-50 truncate flex-1">
             {props.currentTextObj?.title}
@@ -500,11 +569,10 @@ export function LessonsView(props: LessonsViewProps) {
                 phase === tab.id
                   ? 'bg-zinc-900 text-white'
                   : tab.locked
-                  ? 'text-slate-300 cursor-not-allowed'
-                  : 'text-slate-600 hover:bg-slate-100'
+                  ? 'text-slate-300 dark:text-zinc-600 cursor-not-allowed'
+                  : 'text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800'
               }`}
             >
-              {tab.locked && <Lock className="w-3 h-3 inline mr-1" />}
               {tab.label}
             </button>
           ))}
@@ -512,18 +580,17 @@ export function LessonsView(props: LessonsViewProps) {
       </div>
       )}
 
-      {phase === 'pre-read' && !unlock.vocabPassed && (
+      {phase === 'pre-read' && (
         <VocabLearnPhase
           text={props.currentTextObj}
-          allVocabMap={props.allVocabMap}
           playWord={props.playWord}
           onBack={() => setHubView('library')}
-          onQuizComplete={handleVocabQuizComplete}
+          onLearned={handleVocabLearned}
           onMemorizeWord={(word, def) => props.handleAddVocab(word, def)}
         />
       )}
 
-      {phase === 'read' && unlock.vocabPassed && (
+      {phase === 'read' && (
         <ReadingView
           readingView="practice"
           setReadingView={props.setReadingView}
@@ -590,7 +657,7 @@ export function LessonsView(props: LessonsViewProps) {
           targetTime={props.targetTime}
           sessionAudioBlob={props.sessionAudioBlob}
           downloadAudio={props.downloadAudio}
-          showFeedbackModal={false}
+          showFeedbackModal={props.showFeedbackModal}
           setShowFeedbackModal={props.setShowFeedbackModal}
           currentAudioRef={props.currentAudioRef}
           playingAudioId={props.playingAudioId}
@@ -607,7 +674,7 @@ export function LessonsView(props: LessonsViewProps) {
         />
       )}
 
-      {phase === 'exercises' && unlock.vocabPassed && (
+      {phase === 'exercises' && (
         <LessonExerciseFlow
           text={props.currentTextObj}
           contentLang={contentLang}
@@ -625,7 +692,7 @@ export function LessonsView(props: LessonsViewProps) {
       {/* Recommendations popup */}
       {showRecModal && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full shadow-2xl relative">
+          <div className="bg-white dark:bg-zinc-900 rounded-3xl p-6 md:p-8 max-w-md w-full shadow-2xl relative">
             <button
               onClick={() => setShowRecModal(false)}
               className="absolute top-4 right-4 p-1.5 rounded-lg text-slate-400 hover:bg-slate-100"
@@ -639,7 +706,7 @@ export function LessonsView(props: LessonsViewProps) {
               {[...new Set([...(unlock.missedWords || []), ...props.srsDueWords])].slice(0, 16).map((w) => (
                 <div
                   key={w}
-                  className="flex items-center justify-between px-3 py-2.5 rounded-xl border border-slate-200"
+                  className="flex items-center justify-between px-3 py-2.5 rounded-xl border border-slate-200 dark:border-zinc-800"
                 >
                   <span className="font-medium capitalize">{w}</span>
                   <button onClick={() => props.playWord(w)} className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-500">
@@ -659,11 +726,28 @@ export function LessonsView(props: LessonsViewProps) {
                 <Award className="w-4 h-4" /> View certificate
               </button>
             )}
+            {(() => {
+              const curIdx = lessonIndexInLevel(levelTexts, props.currentTextObj?.id || '');
+              const immediateNext = curIdx >= 0 && curIdx < levelTexts.length - 1 ? levelTexts[curIdx + 1] : null;
+              if (!immediateNext) return null;
+              return (
+                <button
+                  onClick={() => {
+                    setShowRecModal(false);
+                    setSelectedUnitIndex(Math.floor((curIdx + 1) / 10));
+                    openPassage(props.level, immediateNext);
+                  }}
+                  className="w-full mb-3 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition-colors"
+                >
+                  Next lesson: {immediateNext.title}
+                </button>
+              );
+            })()}
             <button
               onClick={() => { setShowRecModal(false); setHubView('library'); }}
               className="w-full py-3 rounded-xl bg-zinc-900 text-white font-bold"
             >
-              Back to library
+              Back to unit
             </button>
           </div>
         </div>

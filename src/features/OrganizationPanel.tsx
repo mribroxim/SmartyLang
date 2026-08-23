@@ -170,7 +170,7 @@ export function OrganizationPanel({ setActiveTab }: OrganizationPanelProps = {})
             currentPlan="organization"
             totalSeats={orgPlanSeats}
             title="Organization Seats"
-            subtitle={`Your Organization plan currently has ${orgPlanSeats} Smarty Max seats. Buy more anytime — $12.99 per seat / month.`}
+            subtitle={`Your Organization plan currently has ${orgPlanSeats} SmartyLang Max seats. Buy more anytime — $8.99 per seat / month.`}
             onSeatsAdded={(n) => setOrgPlanSeats(n)}
           />
         )}

@@ -206,6 +206,11 @@ service cloud.firestore {
       allow write: if isContentEditor();
     }
 
+    // Shared TTS audio cache metadata (Admin SDK only — clients never read/write).
+    match /ttsCache/{cacheId} {
+      allow read, write: if false;
+    }
+
     match /vocabMisses/{missId} {
       allow read: if isSignedIn();
       allow write: if isContentEditor();

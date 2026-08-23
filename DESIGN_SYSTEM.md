@@ -1,4 +1,4 @@
-# Smarty English — Design System
+# SmartyLang — Design System
 
 Codified from the actual patterns in use across `src/`. There is no shared component
 library today — every screen hand-rolls Tailwind utility classes. This document is the
@@ -23,7 +23,7 @@ raw hex, so the global dark-mode overrides in `src/index.css` keep working.
 | **Neutral border** | `border-slate-200` / `border-zinc-200` | Default card/input border |
 | **Success** | `bg-emerald-50` / `text-emerald-700` / `border-emerald-200` | Correct answers, completed states, positive scores |
 | **Danger / destructive** | `bg-rose-50` / `text-rose-700` / `border-rose-200` | Errors, admin/destructive actions, logout |
-| **Warning / premium** | `bg-amber-50` / `text-amber-700` / `border-amber-200`; gradient `from-amber-400 to-amber-600` | Smarty Max / upgrade CTAs, warnings |
+| **Warning / premium** | `bg-amber-50` / `text-amber-700` / `border-amber-200`; gradient `from-amber-400 to-amber-600` | SmartyLang Max / upgrade CTAs, warnings |
 | **Info / teacher tier** | `bg-blue-50` / `text-blue-700`; gradient `from-indigo-600 to-emerald-600` | Teacher-tier badges, hero gradients |
 | **Organization tier** | `bg-violet-50` / `text-violet-700` / `border-violet-200` | Org-tier badges |
 | **Ghost hover (exception)** | `bg-[#f2f2f2]` (hover), `bg-[#ebebeb]` (active) | Sidebar nav item hover/active — the one place a raw hex is intentional; pair with `dark:bg-zinc-700` |

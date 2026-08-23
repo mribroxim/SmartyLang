@@ -10,6 +10,11 @@ import { appendHistory, WRITING_MOCK_HISTORY_KEY } from '../lib/sessionHistory';
 import { recordCompletion } from '../lib/completions';
 import { activityLangStamp } from '../lib/activityMeta';
 import { useContentLang } from '../contexts/ContentLangContext';
+import { useUiLang } from '../contexts/UiLangContext';
+import { checkWriting, AiExaminerError, type AiCheckReportData } from '../lib/aiExaminer';
+import { AiCheckReport, AiCheckError } from '../components/AiCheckReport';
+import { roundHalfBand } from '../lib/ieltsBands';
+import { logActivity } from '../lib/activity-tracker';
 
 /* ─── helpers ──────────────────────────────────────────────────── */
 function fmtTime(sec: number) {
@@ -40,9 +45,26 @@ type MockPhase = 'intro' | 'task1' | 'task2' | 'done';
 const TOTAL_SECONDS = 3600; // 60 minutes
 
 /* ─── component ─────────────────────────────────────────────────── */
-export function WritingMock({ onBack }: { onBack: () => void }) {
+export function WritingMock({
+  onBack,
+  embedded,
+  onFinish,
+}: {
+  onBack: () => void;
+  embedded?: boolean;
+  onFinish?: (result: {
+    band1?: number;
+    band2?: number;
+    band?: number;
+    aiResult1?: AiCheckReportData | null;
+    aiResult2?: AiCheckReportData | null;
+    t1Content: string;
+    t2Content: string;
+  }) => void;
+}) {
   const { contentLang } = useContentLang();
-  const [phase, setPhase]           = useState<MockPhase>('intro');
+  const { uiLang } = useUiLang();
+  const [phase, setPhase]           = useState<MockPhase>(embedded ? 'task1' : 'intro');
   const [secondsLeft, setSecondsLeft] = useState(TOTAL_SECONDS);
   const [timerActive, setTimerActive] = useState(false);
 
@@ -55,6 +77,11 @@ export function WritingMock({ onBack }: { onBack: () => void }) {
   const [t2Text, setT2Text] = useState('');
 
   const mockHistoryIdRef = useRef<string | null>(null);
+  const scoredRef = useRef(false);
+  const [ai1, setAi1] = useState<AiCheckReportData | null>(null);
+  const [ai2, setAi2] = useState<AiCheckReportData | null>(null);
+  const [scoring, setScoring] = useState(false);
+  const [scoreError, setScoreError] = useState<string | null>(null);
 
   /* timer */
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -82,6 +109,11 @@ export function WritingMock({ onBack }: { onBack: () => void }) {
   }, []);
 
   useEffect(() => () => stopTimer(), [stopTimer]);
+
+  useEffect(() => {
+    if (embedded) startTimer();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [embedded]);
 
   const persistMockAttempt = useCallback((extra: Record<string, any> = {}) => {
     const id = mockHistoryIdRef.current || `mock_${Date.now()}`;
@@ -127,9 +159,66 @@ export function WritingMock({ onBack }: { onBack: () => void }) {
 
   /* Persist when the mock reaches the done screen (submit or time-up). */
   useEffect(() => {
-    if (phase !== 'done') return;
+    if (phase !== 'done') {
+      scoredRef.current = false;
+      return;
+    }
     persistMockAttempt();
-  }, [phase, persistMockAttempt]);
+    if (scoredRef.current) return;
+    scoredRef.current = true;
+    let cancelled = false;
+    (async () => {
+      setScoring(true);
+      setScoreError(null);
+      try {
+        const [r1, r2] = await Promise.all([
+          t1Text.trim()
+            ? checkWriting({
+                essay: t1Text,
+                prompt: `${t1.prompt.title}\n${t1.prompt.instruction}`,
+                task: 't1',
+                wordCount: wc(t1Text),
+                uiLang,
+                contentLang,
+                chartType: t1.chartType,
+                visualSummary: t1.prompt.title,
+              })
+            : Promise.resolve(null),
+          t2Text.trim()
+            ? checkWriting({
+                essay: t2Text,
+                prompt: `${t2.instruction}\n${t2.promptText}`,
+                task: 't2',
+                wordCount: wc(t2Text),
+                uiLang,
+                contentLang,
+              })
+            : Promise.resolve(null),
+        ]);
+        if (cancelled) return;
+        setAi1(r1);
+        setAi2(r2);
+        const band1 = r1?.final.overallScore;
+        const band2 = r2?.final.overallScore;
+        const band = band1 != null && band2 != null
+          ? roundHalfBand((band1 + band2) / 2)
+          : band1 ?? band2;
+        persistMockAttempt({ band1, band2, band, aiResult1: r1, aiResult2: r2 });
+        if (band != null) {
+          logActivity({ type: 'ai_check_writing', title: 'IELTS Writing Mock', score: band });
+        }
+        onFinish?.({ band1, band2, band, aiResult1: r1, aiResult2: r2, t1Content: t1Text, t2Content: t2Text });
+      } catch (e: any) {
+        if (cancelled) return;
+        setScoreError(e instanceof AiExaminerError ? e.message : (e?.message || 'Scoring failed'));
+        onFinish?.({ t1Content: t1Text, t2Content: t2Text, aiResult1: null, aiResult2: null });
+      } finally {
+        if (!cancelled) setScoring(false);
+      }
+    })();
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase]);
 
   /* ── start exam ─── */
   const startMock = () => {
@@ -138,6 +227,8 @@ export function WritingMock({ onBack }: { onBack: () => void }) {
     setT1(p1); setT2(p2);
     setT1Text(''); setT2Text('');
     mockHistoryIdRef.current = null;
+    setAi1(null); setAi2(null); setScoreError(null); setScoring(false);
+    scoredRef.current = false;
     setSecondsLeft(TOTAL_SECONDS);
     setPhase('task1');
     startTimer();
@@ -394,8 +485,13 @@ export function WritingMock({ onBack }: { onBack: () => void }) {
           <p className="text-zinc-300 text-sm">
             Time used: <span className="font-bold text-white">{String(minsUsed).padStart(2,'0')}:{String(secsUsed).padStart(2,'0')}</span>
             {secondsLeft === 0 && <span className="ml-2 text-amber-400 font-semibold">· Time ran out</span>}
+            {ai1 && ai2 && (
+              <span className="ml-2">· Writing band <span className="font-bold text-white">{roundHalfBand((ai1.final.overallScore + ai2.final.overallScore) / 2)}</span></span>
+            )}
           </p>
         </div>
+        {scoreError && <div className="mb-4"><AiCheckError message={scoreError} /></div>}
+        {scoring && <p className="text-sm text-slate-500 mb-4">AI examiner is scoring both tasks…</p>}
 
         {/* Task 1 summary */}
         <div className="bg-white border border-slate-200 rounded-2xl shadow-sm mb-4 overflow-hidden">
@@ -418,8 +514,9 @@ export function WritingMock({ onBack }: { onBack: () => void }) {
               <p className="text-slate-400 text-sm italic">No response written.</p>
             )}
             {t1Text.trim() && (
-              <div className="flex items-center justify-between">
-                <span />
+              <div className="space-y-3">
+                {scoring && !ai1 && <p className="text-xs text-slate-500">Scoring Task 1…</p>}
+                {ai1 && <AiCheckReport report={ai1} compact />}
               </div>
             )}
           </div>
@@ -445,8 +542,9 @@ export function WritingMock({ onBack }: { onBack: () => void }) {
               <p className="text-slate-400 text-sm italic">No response written.</p>
             )}
             {t2Text.trim() && (
-              <div className="flex items-center justify-between">
-                <span />
+              <div className="space-y-3">
+                {scoring && !ai2 && <p className="text-xs text-slate-500">Scoring Task 2…</p>}
+                {ai2 && <AiCheckReport report={ai2} compact />}
               </div>
             )}
           </div>

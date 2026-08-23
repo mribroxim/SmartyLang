@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Level, ReadingText } from '../lib/reading-logic';
 import { getCMSDocument } from '../firebase';
 import { type ContentLang, cmsDocId, readStoredContentLang } from '../lib/contentLang';
+import { readStoredArabicDisplayMode, transformArabicContent } from '../lib/arabicText';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { fetchLangPackJson } from '../lib/langPacks';
 
@@ -44,7 +45,7 @@ export function loadLevelTexts(lang: ContentLang = readStoredContentLang()): Pro
     _promiseByLang[lang] = (async () => {
       const docId = cmsDocId('customReadingTexts', lang);
       // Bust long-lived CDN/browser caches when content JSON changes (version bump).
-      const VOCAB_CACHE_BUST = 'v20260809';
+      const VOCAB_CACHE_BUST = 'v20260820c';
       const basePromise =
         lang === 'en'
           ? fetch(`/level-texts.json?${VOCAB_CACHE_BUST}`).then(r => r.json()).catch(() => EMPTY_LEVEL_TEXTS)
@@ -74,11 +75,15 @@ export function loadLevelTexts(lang: ContentLang = readStoredContentLang()): Pro
 }
 
 export function getLevelTextsSync(lang: ContentLang = readStoredContentLang()): LevelTexts {
-  return _cachedByLang[lang] ?? EMPTY_LEVEL_TEXTS;
+  return transformArabicContent(
+    _cachedByLang[lang] ?? EMPTY_LEVEL_TEXTS,
+    lang,
+    readStoredArabicDisplayMode(),
+  );
 }
 
 export function useLevelTexts(): LevelTexts {
-  const { contentLang } = useContentLang();
+  const { contentLang, arabicDisplayMode } = useContentLang();
   const [texts, setTexts] = useState<LevelTexts>(() => _cachedByLang[contentLang] ?? EMPTY_LEVEL_TEXTS);
   useEffect(() => {
     let cancelled = false;
@@ -90,5 +95,5 @@ export function useLevelTexts(): LevelTexts {
     });
     return () => { cancelled = true; };
   }, [contentLang]);
-  return texts;
+  return transformArabicContent(texts, contentLang, arabicDisplayMode);
 }

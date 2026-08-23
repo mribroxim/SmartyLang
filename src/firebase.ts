@@ -76,11 +76,13 @@ export interface UserAccountProfile {
   plan?: PlanId | null;
   /** Number of seats purchased (teacher/organization plans). */
   planSeats?: number;
+  /** Number of learning languages purchased (UI language is always free). */
+  planLanguages?: number;
   /** Timestamp the active subscription expires (or null = no expiry tracked). */
   planExpiresAt?: number | null;
   /** Timestamp the subscription was activated. */
   planStartedAt?: number;
-  /** If this user's Smarty Max access is sponsored by a teacher/org, who? (their uid) */
+  /** If this user's SmartyLang Max access is sponsored by a teacher/org, who? (their uid) */
   sponsoredBy?: string;
   /** Pending invitations sent to this email — used to upgrade them on first sign-in. */
   pendingInviteFrom?: string;
@@ -127,7 +129,7 @@ export const ensureUserProfile = async (user: User): Promise<UserAccountProfile>
   if (user.photoURL) profile.photoURL = user.photoURL;
   await setDoc(ref, profile);
 
-  // First sign-in: auto-accept any pending Smarty Max invitations sent to this email.
+  // First sign-in: auto-accept any pending SmartyLang Max invitations sent to this email.
   const sponsored = await acceptPendingInvitations(user);
   if (sponsored) {
     const refreshed = await getDoc(ref);
@@ -185,12 +187,13 @@ export const setUserRole = async (uid: string, role: UserRole): Promise<void> =>
 export const setUserPlan = async (
   uid: string,
   plan: PlanId | null,
-  opts: { seats?: number; expiresAt?: number | null } = {}
+  opts: { seats?: number; languages?: number; expiresAt?: number | null } = {}
 ): Promise<void> => {
   const patch: any = {};
   if (plan === null) {
     patch.plan = deleteField();
     patch.planSeats = deleteField();
+    patch.planLanguages = deleteField();
     patch.planExpiresAt = deleteField();
     patch.planStartedAt = deleteField();
     patch.role = 'student';
@@ -198,8 +201,9 @@ export const setUserPlan = async (
     patch.plan = plan;
     patch.planStartedAt = Date.now();
     if (opts.seats !== undefined) patch.planSeats = opts.seats;
+    if (opts.languages !== undefined) patch.planLanguages = opts.languages;
     if (opts.expiresAt !== undefined) patch.planExpiresAt = opts.expiresAt;
-    // Smarty Max keeps the user as a regular student; Teacher/Org plans elevate the role.
+    // SmartyLang Max keeps the user as a regular student; Teacher/Org plans elevate the role.
     if (plan === 'teacher') patch.role = 'teacher';
     else if (plan === 'organization') patch.role = 'organization';
     else if (plan === 'smarty-max') patch.role = 'student';
@@ -207,7 +211,7 @@ export const setUserPlan = async (
   await setDoc(profileRef(uid), patch, { merge: true });
   await addAuditLog({
     action: 'plan_changed', actorUid: auth?.currentUser?.uid ?? '', actorEmail: auth?.currentUser?.email ?? '',
-    targetUid: uid, details: { newPlan: plan ?? 'none', seats: opts.seats ?? 0 }, timestamp: Date.now(),
+    targetUid: uid, details: { newPlan: plan ?? 'none', seats: opts.seats ?? 0, languages: opts.languages ?? 1 }, timestamp: Date.now(),
   });
 };
 
@@ -294,6 +298,61 @@ export const getStudentSummaries = async (uids: string[]): Promise<StudentSummar
   return results;
 };
 
+/** Sort by this week's XP (then lifetime XP as tiebreaker). */
+export function sortWeeklyLeagueRows(summaries: StudentSummary[], weekKey: string): StudentSummary[] {
+  return [...summaries].sort((a, b) => {
+    const ax = a.weekKey === weekKey ? (a.weeklyXp || 0) : 0;
+    const bx = b.weekKey === weekKey ? (b.weeklyXp || 0) : 0;
+    if (bx !== ax) return bx - ax;
+    return (b.xp || 0) - (a.xp || 0);
+  });
+}
+
+/**
+ * Global weekly leaderboard for one league tier (all SmartyLang learners, not just a class).
+ */
+export const getGlobalLeagueLeaderboard = async (
+  leagueId: string,
+  weekKey: string,
+  opts?: { max?: number; includeUid?: string },
+): Promise<StudentSummary[]> => {
+  const max = opts?.max ?? 50;
+  let rows: StudentSummary[] = [];
+
+  try {
+    const q = query(
+      collection(db, 'studentSummaries'),
+      where('league', '==', leagueId),
+      orderBy('weeklyXp', 'desc'),
+      limit(Math.max(max * 2, 80)),
+    );
+    const snap = await getDocs(q);
+    rows = snap.docs.map(d => ({ uid: d.id, ...(d.data() as StudentSummary) }));
+  } catch (e) {
+    console.warn('Global league indexed query failed, using scan fallback', e);
+    try {
+      const snap = await getDocs(query(collection(db, 'studentSummaries'), limit(500)));
+      rows = snap.docs
+        .map(d => ({ uid: d.id, ...(d.data() as StudentSummary) }))
+        .filter(s => s.league === leagueId);
+    } catch (scanErr) {
+      console.error(scanErr);
+      rows = [];
+    }
+  }
+
+  rows = sortWeeklyLeagueRows(rows, weekKey);
+
+  if (opts?.includeUid && !rows.some(r => r.uid === opts.includeUid)) {
+    const me = await getStudentSummary(opts.includeUid);
+    if (me && me.league === leagueId) {
+      rows = sortWeeklyLeagueRows([...rows, me], weekKey);
+    }
+  }
+
+  return rows.slice(0, max);
+};
+
 // ─── Classes ─────────────────────────────────────────────────────────────────
 export interface ClassRoom {
   id?: string;
@@ -377,10 +436,10 @@ export const regenerateInviteCode = async (classId: string): Promise<string> => 
   return code;
 };
 
-// ─── Smarty Max Seat Invitations ────────────────────────────────────────────
+// ─── SmartyLang Max Seat Invitations ────────────────────────────────────────────
 //
 // A teacher's plan comes with N invitation seats (5 for the Teacher plan,
-// 30+ for the Organization plan). Sponsoring a user grants them Smarty Max
+// 30+ for the Organization plan). Sponsoring a user grants them SmartyLang Max
 // access for as long as the teacher/org keeps them as a sponsored member.
 
 export interface SmartyMaxInvitation {
@@ -465,8 +524,8 @@ export const inviteToSmartyMax = async (
     }, { merge: true });
     await addNotification(inviteeUid, {
       type: 'announcement',
-      title: '🎉 Smarty Max activated!',
-      message: `${sponsorName} just gifted you Smarty Max access. All features are unlocked!`,
+      title: '🎉 SmartyLang Max activated!',
+      message: `${sponsorName} just gifted you SmartyLang Max access. All features are unlocked!`,
       read: false, createdAt: Date.now(),
     });
   }
@@ -477,7 +536,7 @@ export const inviteToSmartyMax = async (
   };
 };
 
-/** Revoke a previously sent invitation. Removes Smarty Max from the user if they were sponsored. */
+/** Revoke a previously sent invitation. Removes SmartyLang Max from the user if they were sponsored. */
 export const revokeSmartyMaxInvitation = async (invitationId: string): Promise<void> => {
   const ref = doc(db, 'smartyMaxInvites', invitationId);
   const snap = await getDoc(ref);
@@ -501,7 +560,7 @@ export const revokeSmartyMaxInvitation = async (invitationId: string): Promise<v
 
 /**
  * Called from ensureUserProfile on first sign-in — checks if any pending invitations
- * match this user's email, and if so accepts them and grants Smarty Max.
+ * match this user's email, and if so accepts them and grants SmartyLang Max.
  */
 const acceptPendingInvitations = async (user: User): Promise<boolean> => {
   if (!user.email) return false;
@@ -524,8 +583,8 @@ const acceptPendingInvitations = async (user: User): Promise<boolean> => {
     }, { merge: true });
     await addNotification(user.uid, {
       type: 'announcement',
-      title: '🎉 Smarty Max activated!',
-      message: `${first.sponsorName} gifted you Smarty Max access. All features are unlocked!`,
+      title: '🎉 SmartyLang Max activated!',
+      message: `${first.sponsorName} gifted you SmartyLang Max access. All features are unlocked!`,
       read: false, createdAt: Date.now(),
     });
     return true;

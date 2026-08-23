@@ -1,0 +1,122 @@
+[
+  {
+    "id": "a24",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 590
+  },
+  {
+    "id": "a25",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 572
+  },
+  {
+    "id": "a26",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 569
+  },
+  {
+    "id": "a27",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 586
+  },
+  {
+    "id": "a28",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 591
+  },
+  {
+    "id": "a29",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)",
+      "vocab \"ustaxona\" not in text"
+    ],
+    "words": 574
+  },
+  {
+    "id": "a30",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 591
+  },
+  {
+    "id": "a31",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 569
+  },
+  {
+    "id": "a32",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 599
+  },
+  {
+    "id": "a33",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 594
+  },
+  {
+    "id": "a34",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 589
+  },
+  {
+    "id": "a35",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 588
+  },
+  {
+    "id": "a36",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 601
+  },
+  {
+    "id": "a37",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 591
+  },
+  {
+    "id": "a38",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 585
+  },
+  {
+    "id": "a39",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 569
+  },
+  {
+    "id": "a40",
+    "errors": [
+      "Cyrillic detected (Latin Uzbek required)"
+    ],
+    "words": 561
+  }
+]

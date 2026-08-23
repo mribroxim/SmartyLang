@@ -11,6 +11,10 @@ import { useCustomSessions, type CustomSession } from '../hooks/useCustomSession
 import { resizeImage, dataUrlBytes } from '../lib/imageResize';
 import { ScreenShell, HubRow } from '../components/ScreenShell';
 import { LevelCard, LevelCardGrid, LEVEL_THEMES } from '../components/LevelCards';
+import { checkWriting, AiExaminerError, type AiCheckReportData } from '../lib/aiExaminer';
+import { AiCheckReport, AiCheckButton, AiCheckError } from '../components/AiCheckReport';
+import { recordCompletion } from '../lib/completions';
+import { logActivity } from '../lib/activity-tracker';
 
 type Essay = {
   topicId: string;
@@ -32,6 +36,9 @@ type SavedEssay = {
   wordCount: number;
   savedAt: string;
   createdAt: number;
+  aiCheckResult?: AiCheckReportData;
+  contentLang?: string;
+  langLabel?: string;
 };
 
 function topicTitle(prompt: string) {
@@ -45,9 +52,10 @@ export function WritingPractice({
   onToggleVocab,
   savedVocab = {},
   onShowModal,
-}: { onBack?: () => void; initialLevel?: string; initialTopicIndex?: number; onToggleVocab?: (w: string, ctx: string) => void; savedVocab?: Record<string, any>; onShowModal?: (w: string, mode: string) => void }) {
+  startingLevel,
+}: { onBack?: () => void; initialLevel?: string; initialTopicIndex?: number; onToggleVocab?: (w: string, ctx: string) => void; savedVocab?: Record<string, any>; onShowModal?: (w: string, mode: string) => void; startingLevel?: string }) {
   const { speechLocale, contentLang } = useContentLang();
-  const { t, tLevel, tLevelDesc } = useUiLang();
+  const { t, tLevel, tLevelDesc, uiLang } = useUiLang();
   const { writingTopics: TOPICS_BY_LEVEL } = useCMSContent();
   const hasInitial = initialLevel !== undefined && initialTopicIndex !== undefined;
   const [view, setView]                   = useState<'levels' | 'topics' | 'editor'>(hasInitial ? 'editor' : 'levels');
@@ -90,6 +98,9 @@ export function WritingPractice({
   const [showSavedList, setShowSavedList]   = useState(false);
   const [viewingEssay, setViewingEssay]     = useState<SavedEssay | null>(null);
   const [saveToast, setSaveToast]           = useState<string | null>(null);
+  const [checking, setChecking]             = useState(false);
+  const [checkReport, setCheckReport]       = useState<AiCheckReportData | null>(null);
+  const [checkError, setCheckError]         = useState<string | null>(null);
   const timerRef                          = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -141,6 +152,46 @@ export function WritingPractice({
     setTimeout(() => setSaveToast(null), 2000);
     return id;
   }, [content, topicIdx, selectedLevel, savedEssaysList, contentLang]);
+
+  const runWritingCheck = useCallback(async () => {
+    if (!content.trim() || checking || topicIdx === null) return;
+    setChecking(true);
+    setCheckError(null);
+    try {
+      const id = saveEssay();
+      const promptText = topicIdx === -1 ? customTopicText : (TOPICS_BY_LEVEL[selectedLevel][topicIdx] || '');
+      const levelLabel = [startingLevel, selectedLevel].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).join(' → ') || selectedLevel;
+      const report = await checkWriting({
+        essay: content,
+        prompt: promptText,
+        task: 'practice',
+        wordCount: content.trim().split(/\s+/).filter(Boolean).length,
+        level: levelLabel,
+        uiLang,
+        contentLang,
+      });
+      setCheckReport(report);
+      if (id) {
+        const key = `${selectedLevel}__${topicIdx}`;
+        setSavedEssaysList(prev => {
+          const next = { ...prev, [key]: (prev[key] || []).map(e => e.id === id ? { ...e, aiCheckResult: report } : e) };
+          localStorage.setItem('smarty_saved_essays_v1', JSON.stringify(next));
+          return next;
+        });
+      }
+      recordCompletion('writing', {
+        title: promptText.slice(0, 80),
+        band: report.final.overallScore,
+        contentLang,
+        data: { report },
+      });
+      logActivity({ type: 'ai_check_writing', title: 'Writing practice', score: report.final.overallScore, level: selectedLevel });
+    } catch (e: any) {
+      setCheckError(e instanceof AiExaminerError ? e.message : (e?.message || 'Check failed'));
+    } finally {
+      setChecking(false);
+    }
+  }, [content, checking, topicIdx, saveEssay, customTopicText, selectedLevel, startingLevel, uiLang, contentLang, TOPICS_BY_LEVEL]);
 
   const deleteSavedEssay = useCallback((key: string, id: string) => {
     setSavedEssaysList(prev => {
@@ -204,7 +255,7 @@ export function WritingPractice({
     return (
       <div className="flex flex-col h-full min-h-0 flex-1 bg-white">
         {/* Top bar */}
-        <div className="shrink-0 border-b border-slate-200 px-4 md:px-6 py-3 flex items-center justify-between gap-3 sticky top-0 z-10 bg-white shadow-sm">
+        <div className="shrink-0 border-b border-slate-200 dark:border-zinc-800 px-4 md:px-6 py-3 flex items-center justify-between gap-3 sticky top-0 z-10 bg-white dark:bg-zinc-900 shadow-sm">
           <button
             onClick={() => {
               if (timerRef.current) clearTimeout(timerRef.current);
@@ -251,6 +302,7 @@ export function WritingPractice({
             <Save className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">Save</span>
           </button>
+          <AiCheckButton onClick={runWritingCheck} loading={checking} disabled={!content.trim()} />
         </div>
 
         {/* Save toast */}
@@ -312,6 +364,12 @@ export function WritingPractice({
               placeholder="Start writing here…"
               className="w-full min-h-[520px] text-lg text-slate-800 leading-[1.9] font-serif resize-none outline-none bg-transparent placeholder-slate-300"
             />
+            {checkError && <div className="mt-6"><AiCheckError message={checkError} /></div>}
+            {checkReport && (
+              <div className="mt-8">
+                <AiCheckReport report={checkReport} />
+              </div>
+            )}
           </div>
         </div>
 
@@ -381,6 +439,11 @@ export function WritingPractice({
               </div>
               <div className="overflow-y-auto p-6">
                 <p className="font-serif text-base leading-relaxed whitespace-pre-wrap text-zinc-800 dark:text-zinc-200">{viewingEssay.content}</p>
+                {viewingEssay.aiCheckResult && (
+                  <div className="mt-6">
+                    <AiCheckReport report={viewingEssay.aiCheckResult} compact />
+                  </div>
+                )}
               </div>
               <div className="px-6 py-3 border-t border-zinc-100 dark:border-zinc-800 flex flex-col sm:flex-row gap-2 shrink-0">
                 <button

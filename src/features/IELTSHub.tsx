@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { BookOpen, Headphones, Mic, PenLine } from 'lucide-react';
+import { BookOpen, Headphones, Mic, PenLine, GraduationCap } from 'lucide-react';
 import { useUiLang } from '../contexts/UiLangContext';
 import { completionsOfType, type CompletionRecord } from '../lib/completions';
 import {
@@ -20,6 +20,7 @@ export function IELTSHub({ navigate, setActiveTab }: Props) {
   const listening = useMemo(() => completionsOfType('ielts-listening'), []);
   const speaking = useMemo(() => completionsOfType('ielts-speaking'), []);
   const writing = useMemo(() => completionsOfType(['ielts-writing', 'writing-mock']), []);
+  const fullMock = useMemo(() => completionsOfType('ielts-full-mock'), []);
 
   const trend = useMemo(() => {
     const rows: { t: number; label: string; band: number; skill: string }[] = [];
@@ -41,8 +42,9 @@ export function IELTSHub({ navigate, setActiveTab }: Props) {
     push(listening, 'L');
     push(speaking, 'S');
     push(writing, 'W');
+    push(fullMock, 'Full');
     return rows.sort((a, b) => a.t - b.t).slice(-20);
-  }, [reading, listening, speaking, writing]);
+  }, [reading, listening, speaking, writing, fullMock]);
 
   const items = [
     {
@@ -84,6 +86,16 @@ export function IELTSHub({ navigate, setActiveTab }: Props) {
       cta: 'text-rose-600',
       onClick: () => navigate({ tab: 'speaking', path: ['ielts'] }),
       last: speaking[0],
+    },
+    {
+      key: 'full',
+      label: 'Full Mock',
+      desc: 'Listening, Reading, Writing, then Speaking — one sitting.',
+      Icon: GraduationCap,
+      color: 'bg-zinc-900 text-white',
+      cta: 'text-zinc-900',
+      onClick: () => setActiveTab('ielts-full-mock'),
+      last: fullMock[0],
     },
   ];
 

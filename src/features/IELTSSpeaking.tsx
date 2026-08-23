@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   ArrowLeft, Mic, MicOff, Timer, ChevronRight, ChevronLeft,
-  CheckCircle, RotateCcw, Volume2, Clock, Trash2, History,
+  CheckCircle, RotateCcw, Volume2, Clock, Trash2, History, FileText, Loader2,
 } from 'lucide-react';
 import {
   PART1_TOPICS as _DEFAULT_PART1, PART2_CARDS as _DEFAULT_P2, PART3_TOPICS as _DEFAULT_P3,
@@ -9,9 +9,13 @@ import {
 } from '../data/ieltsSpeakingData';
 import { useCMSContent }                   from '../lib/useCMSContent';
 import { useContentLang } from '../contexts/ContentLangContext';
+import { useUiLang } from '../contexts/UiLangContext';
 import { activityLangStamp } from '../lib/activityMeta';
 import { set as idbSet } from 'idb-keyval';
 import { recordCompletion } from '../lib/completions';
+import { checkSpeaking, AiExaminerError, type AiCheckReportData } from '../lib/aiExaminer';
+import { AiCheckReport, AiCheckButton, AiCheckError } from '../components/AiCheckReport';
+import { logActivity } from '../lib/activity-tracker';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -32,6 +36,7 @@ interface IELTSSpeakingSession {
   langLabel?: string;
   transcript?: string;
   audioKey?: string;
+  aiResult?: AiCheckReportData;
 }
 
 // ─── Persistence ─────────────────────────────────────────────────────────────
@@ -186,10 +191,19 @@ function HistoryScreen({
 
 // ─── Main export ──────────────────────────────────────────────────────────────
 
-export function IELTSSpeaking({ onBack }: { onBack?: () => void }) {
+export function IELTSSpeaking({
+  onBack,
+  embedded,
+  onFinish,
+}: {
+  onBack?: () => void;
+  embedded?: boolean;
+  onFinish?: (result: { band?: number; aiResult?: AiCheckReportData | null; transcript?: string }) => void;
+}) {
   const { part1Topics: PART1_TOPICS, part2Cards: PART2_CARDS, part3Topics: PART3_TOPICS } = useCMSContent();
-  const { contentLang } = useContentLang();
-  const [view, setView] = useState<IeltsView>('parts');
+  const { contentLang, speechLocale } = useContentLang();
+  const { uiLang } = useUiLang();
+  const [view, setView] = useState<IeltsView>(embedded ? 'mock' : 'parts');
 
   // Part 1
   const [p1Topic, setP1Topic] = useState<Part1Topic | null>(null);
@@ -225,6 +239,17 @@ export function IELTSSpeaking({ onBack }: { onBack?: () => void }) {
   const analyserRef = useRef<AnalyserNode | null>(null);
   const silTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const rafRef      = useRef<number | null>(null);
+  const recognitionRef = useRef<any>(null);
+  const transcriptRef = useRef('');
+  const lastHistoryIdRef = useRef<string | null>(null);
+  const mockBagRef = useRef({ p1: [] as string[], p2: '', p3: [] as string[] });
+
+  const [liveTranscript, setLiveTranscript] = useState('');
+  const [checking, setChecking] = useState(false);
+  const [checkReport, setCheckReport] = useState<AiCheckReportData | null>(null);
+  const [checkError, setCheckError] = useState<string | null>(null);
+  const [mockReport, setMockReport] = useState<AiCheckReportData | null>(null);
+  const [mockScoring, setMockScoring] = useState(false);
 
   // History
   const [history, setHistory] = useState<IELTSSpeakingSession[]>(loadHistory);
@@ -259,9 +284,11 @@ export function IELTSSpeaking({ onBack }: { onBack?: () => void }) {
       id,
       practicedAt: Date.now(),
       audioKey,
+      transcript: entry.transcript || transcriptRef.current || undefined,
       ...activityLangStamp(contentLang),
     };
     setHistory(prev => { const next = [session, ...prev].slice(0, 100); persistHistory(next); return next; });
+    lastHistoryIdRef.current = id;
     recordCompletion('ielts-speaking', {
       title: `${session.part || 'IELTS'} · ${session.topic || 'Speaking'}`,
       band: typeof (session as any).band === 'number' ? (session as any).band : (session as any).aiResult?.band,
@@ -270,6 +297,15 @@ export function IELTSSpeaking({ onBack }: { onBack?: () => void }) {
     });
     return id;
   }, [contentLang]);
+
+  const patchHistoryAi = useCallback((id: string | null, report: AiCheckReportData, transcript?: string) => {
+    if (!id) return;
+    setHistory(prev => {
+      const next = prev.map(s => s.id === id ? { ...s, aiResult: report, transcript: transcript || s.transcript } : s);
+      persistHistory(next);
+      return next;
+    });
+  }, []);
 
   const deleteHistoryEntry = useCallback((id: string) => {
     setHistory(prev => { const next = prev.filter(s => s.id !== id); persistHistory(next); return next; });
@@ -289,6 +325,8 @@ export function IELTSSpeaking({ onBack }: { onBack?: () => void }) {
     setMockP1Topic(p1); setMockP2Card(p2); setMockP3Topic(p3);
     setMockP1QIdx(0); setMockP3QIdx(0);
     setMockPrepActive(false); setMockSpeakActive(false); setMockPrepDone(false);
+    mockBagRef.current = { p1: [], p2: '', p3: [] };
+    setMockReport(null); setCheckReport(null); setCheckError(null);
     stopRecording(); setView('mock_p1');
   };
 
@@ -305,6 +343,10 @@ export function IELTSSpeaking({ onBack }: { onBack?: () => void }) {
 
   const startRecording = useCallback(async (autoStop = true) => {
     chunksRef.current = [];
+    transcriptRef.current = '';
+    setLiveTranscript('');
+    setCheckReport(null);
+    setCheckError(null);
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const mr = new MediaRecorder(stream);
@@ -316,14 +358,45 @@ export function IELTSSpeaking({ onBack }: { onBack?: () => void }) {
           const audioKey = `ielts_speak_${Date.now()}`;
           idbSet(audioKey, blob).catch(() => {});
           (window as any).__smartyLatestIeltsAudioKey = audioKey;
-          // Save practice session
           const ctx = getPracticeContext();
-          addHistoryEntry({ part: ctx.part, topic: ctx.topic, question: ctx.question });
+          const spoken = transcriptRef.current.trim();
+          if (view.startsWith('mock')) {
+            if (view === 'mock_p1' && spoken) mockBagRef.current.p1.push(spoken);
+            if (view === 'mock_p2_speak' && spoken) mockBagRef.current.p2 = spoken;
+            if (view === 'mock_p3' && spoken) mockBagRef.current.p3.push(spoken);
+          }
+          addHistoryEntry({ part: ctx.part, topic: ctx.topic, question: ctx.question, transcript: spoken });
         }
       };
       mr.start();
       mediaRef.current = mr;
       setRecording(true);
+
+      const SR: any = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      if (SR) {
+        try {
+          const r = new SR();
+          r.continuous = true;
+          r.interimResults = true;
+          r.lang = speechLocale || 'en-GB';
+          let finalText = '';
+          r.onresult = (e: any) => {
+            let interim = '';
+            for (let i = e.resultIndex; i < e.results.length; i++) {
+              const res = e.results[i];
+              if (res.isFinal) finalText += res[0].transcript + ' ';
+              else interim += res[0].transcript;
+            }
+            const text = (finalText + interim).trim();
+            transcriptRef.current = text;
+            setLiveTranscript(text);
+          };
+          r.onerror = () => {};
+          r.onend = () => { if (mediaRef.current?.state === 'recording') { try { r.start(); } catch {} } };
+          recognitionRef.current = r;
+          r.start();
+        } catch { /* STT optional */ }
+      }
 
       if (autoStop) {
         try {
@@ -358,22 +431,110 @@ export function IELTSSpeaking({ onBack }: { onBack?: () => void }) {
         } catch { /* VAD unavailable */ }
       }
     } catch { /* mic not available */ }
-  }, [getPracticeContext, addHistoryEntry]);
+  }, [getPracticeContext, addHistoryEntry, speechLocale, view]);
 
   const stopRecording = useCallback(() => {
     clearVAD();
     mediaRef.current?.stop(); // triggers mr.onstop
     setRecording(false);
+    if (recognitionRef.current) {
+      try { recognitionRef.current.stop(); } catch {}
+      recognitionRef.current = null;
+    }
   }, [clearVAD]);
 
   const toggleRecording = (autoStop = true) =>
     recording ? stopRecording() : startRecording(autoStop);
 
+  const runPartCheck = useCallback(async () => {
+    const spoken = (liveTranscript || transcriptRef.current || '').trim();
+    if (!spoken || checking) return;
+    setChecking(true);
+    setCheckError(null);
+    try {
+      const ctx = getPracticeContext();
+      const report = await checkSpeaking({
+        transcript: spoken,
+        questions: ctx.question,
+        part: ctx.part,
+        style: 'ielts',
+        uiLang,
+        contentLang,
+      });
+      setCheckReport(report);
+      patchHistoryAi(lastHistoryIdRef.current, report, spoken);
+      recordCompletion('ielts-speaking', {
+        title: `${ctx.part} · ${ctx.topic}`,
+        band: report.final.overallScore,
+        contentLang,
+        data: { part: ctx.part, report },
+      });
+      logActivity({ type: 'ai_check_speaking', title: ctx.part, score: report.final.overallScore });
+    } catch (e: any) {
+      setCheckError(e instanceof AiExaminerError ? e.message : (e?.message || 'Check failed'));
+    } finally {
+      setChecking(false);
+    }
+  }, [liveTranscript, checking, getPracticeContext, uiLang, contentLang, patchHistoryAi]);
+
+  useEffect(() => {
+    if (embedded) startMock();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [embedded]);
+
+  useEffect(() => {
+    if (view !== 'mock_done') return;
+    const bag = mockBagRef.current;
+    const transcript = [
+      bag.p1.length ? `Part 1:\n${bag.p1.join('\n')}` : '',
+      bag.p2 ? `Part 2:\n${bag.p2}` : '',
+      bag.p3.length ? `Part 3:\n${bag.p3.join('\n')}` : '',
+    ].filter(Boolean).join('\n\n');
+    if (!transcript.trim()) {
+      onFinish?.({ transcript: '' });
+      return;
+    }
+    let cancelled = false;
+    setMockScoring(true);
+    const questions = [
+      mockP1Topic ? `Part 1 (${mockP1Topic.title}): ${mockP1Topic.questions.join(' | ')}` : '',
+      mockP2Card ? `Part 2: ${mockP2Card.prompt}` : '',
+      mockP3Topic ? `Part 3: ${mockP3Topic.questions.join(' | ')}` : '',
+    ].filter(Boolean).join('\n');
+    checkSpeaking({
+      transcript,
+      questions,
+      part: 'mock',
+      style: 'ielts',
+      uiLang,
+      contentLang,
+    }).then(report => {
+      if (cancelled) return;
+      setMockReport(report);
+      patchHistoryAi(lastHistoryIdRef.current, report, transcript);
+      recordCompletion('ielts-speaking', {
+        title: 'IELTS Speaking Mock',
+        band: report.final.overallScore,
+        contentLang,
+        data: { part: 'mock', report },
+      });
+      logActivity({ type: 'ai_check_speaking', title: 'IELTS Speaking Mock', score: report.final.overallScore });
+      onFinish?.({ band: report.final.overallScore, aiResult: report, transcript });
+    }).catch((e: any) => {
+      if (cancelled) return;
+      setCheckError(e instanceof AiExaminerError ? e.message : (e?.message || 'Scoring failed'));
+      onFinish?.({ transcript, aiResult: null });
+    }).finally(() => { if (!cancelled) setMockScoring(false); });
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [view]);
+
   // ── Common mic button ─────────────────────────────────────────────────────
 
   function RecordBtn({ autoStop = true, label }: { autoStop?: boolean; label?: string }) {
     return (
-      <div className="flex items-center gap-6">
+      <div className="flex flex-col gap-4 w-full max-w-xl">
+        <div className="flex items-center gap-6">
         <button onClick={() => toggleRecording(autoStop)}
           className={`w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition-all ${recording ? 'bg-rose-500 animate-pulse' : 'bg-zinc-900 hover:bg-black'}`}>
           {recording ? <MicOff className="w-7 h-7 text-white" /> : <Mic className="w-7 h-7 text-white" />}
@@ -383,6 +544,31 @@ export function IELTSSpeaking({ onBack }: { onBack?: () => void }) {
             ? (autoStop ? '🔴 Stops automatically when you pause.' : '🔴 Recording…')
             : (label ?? 'Tap to record — stops when you stop talking.')}
         </p>
+        </div>
+        {(liveTranscript || (!recording && transcriptRef.current)) && (
+          <div className="bg-white border border-slate-200 rounded-2xl p-4">
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-2">
+                <FileText className="w-4 h-4 text-zinc-500" />
+                <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                  {recording ? 'Live transcript' : 'Your transcript'}
+                </p>
+              </div>
+              {!recording && (liveTranscript || transcriptRef.current) && (
+                <AiCheckButton onClick={runPartCheck} loading={checking} />
+              )}
+            </div>
+            <textarea
+              value={liveTranscript}
+              onChange={e => { setLiveTranscript(e.target.value); transcriptRef.current = e.target.value; }}
+              readOnly={recording}
+              className="w-full text-sm text-slate-700 font-serif leading-relaxed bg-transparent outline-none resize-y min-h-[72px]"
+              placeholder="Speech will appear here. You can edit it before checking."
+            />
+            {checkError && <div className="mt-2"><AiCheckError message={checkError} /></div>}
+            {checkReport && <div className="mt-4"><AiCheckReport report={checkReport} compact /></div>}
+          </div>
+        )}
       </div>
     );
   }
@@ -1022,6 +1208,17 @@ export function IELTSSpeaking({ onBack }: { onBack?: () => void }) {
             <div className="text-6xl mb-6">🎉</div>
             <h1 className="text-3xl font-serif font-bold text-slate-900 mb-3">Mock Test Complete!</h1>
             <p className="text-slate-500 text-lg mb-8">You completed all three parts of the IELTS Speaking mock exam. Well done!</p>
+            {mockScoring && (
+              <p className="text-sm text-violet-600 font-bold mb-6 flex items-center justify-center gap-2">
+                <Loader2 className="w-4 h-4 animate-spin" /> Scoring your mock…
+              </p>
+            )}
+            {checkError && view === 'mock_done' && <div className="mb-6 text-left"><AiCheckError message={checkError} /></div>}
+            {mockReport && (
+              <div className="text-left mb-8">
+                <AiCheckReport report={mockReport} />
+              </div>
+            )}
             <div className="space-y-3 mb-8">
               {[
                 { label: 'Part 1 — Interview', detail: `${mockP1Topic?.questions.length} questions · ${mockP1Topic?.title}`, done: true },
@@ -1041,9 +1238,11 @@ export function IELTSSpeaking({ onBack }: { onBack?: () => void }) {
               <button onClick={() => setView('history')} className="w-full py-3 bg-white border border-violet-200 hover:bg-violet-50 text-violet-700 font-bold rounded-2xl shadow-sm transition-colors flex items-center justify-center gap-2">
                 <History className="w-4 h-4" /> View Speaking History
               </button>
+              {!embedded && (
               <button onClick={() => setView('parts')} className="w-full py-3 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold rounded-2xl shadow-sm transition-colors">
                 Back to Parts
               </button>
+              )}
             </div>
           </div>
         </div>

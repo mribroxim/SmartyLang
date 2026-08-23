@@ -5,11 +5,13 @@
 import type { VocabularyItem } from '../../lib/reading-logic';
 import { normalizeForMatch } from '../../lib/pronunciationProfile';
 import type { ContentLang } from '../../lib/contentLang';
+import { passageTextForExercises } from '../../lib/dialogueText';
 
-export function splitSentences(text: string): string[] {
-  return text
+export function splitSentences(text: string, format?: string): string[] {
+  const body = passageTextForExercises(text, format);
+  return body
     .replace(/\s+/g, ' ')
-    .split(/(?<=[.!?。！？])\s+/)
+    .split(/(?<=[.!?؟。！？])\s+/)
     .map((s) => s.trim())
     .filter((s) => s.length > 0);
 }
@@ -54,8 +56,9 @@ export function generateClozeItems(
   vocabulary: VocabularyItem[],
   lang: ContentLang,
   maxItems = 14,
+  format?: string,
 ): ClozeItem[] {
-  const sentences = splitSentences(text);
+  const sentences = splitSentences(text, format);
   const items: ClozeItem[] = [];
   const usedAnswers = new Set<string>();
 
@@ -128,13 +131,14 @@ export function generateComprehensionQuestions(
   lang: ContentLang,
   passageId: string,
   maxQuestions = 8,
+  format?: string,
 ): ComprehensionQuestion[] {
-  const sentences = splitSentences(text).filter((s) => s.split(/\s+/).length >= 4);
+  const sentences = splitSentences(text, format).filter((s) => s.split(/\s+/).length >= 4);
   const questions: ComprehensionQuestion[] = [];
   const seedBase = passageId.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
 
   // Type A: "Which word completes the sentence?" (cloze MCQ)
-  const cloze = generateClozeItems(text, vocabulary, lang, maxQuestions + 2);
+  const cloze = generateClozeItems(text, vocabulary, lang, maxQuestions + 2, format);
   for (let i = 0; i < cloze.length && questions.length < maxQuestions; i++) {
     const item = cloze[i];
     const distractors = vocabulary

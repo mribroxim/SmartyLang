@@ -11,17 +11,28 @@ export const EN_UI_STRINGS = en as Record<UiStringKey, string>;
 
 type Dict = Partial<Record<UiStringKey, string>>;
 
-const PACK = generated as Partial<Record<UiLang, Dict>>;
+function unwrapGenerated(mod: unknown): Partial<Record<UiLang, Dict>> {
+  if (!mod || typeof mod !== 'object') return {};
+  const o = mod as Record<string, unknown>;
+  if (o.ru && typeof o.ru === 'object') return o as Partial<Record<UiLang, Dict>>;
+  const nested = o.default;
+  if (nested && typeof nested === 'object' && (nested as Record<string, unknown>).ru) {
+    return nested as Partial<Record<UiLang, Dict>>;
+  }
+  return {};
+}
+
+const PACK = unwrapGenerated(generated);
 
 export function translateUi(
   lang: UiLang,
   key: UiStringKey,
   vars?: Record<string, string | number>,
 ): string {
-  const raw =
-    lang === 'en'
-      ? EN_UI_STRINGS[key] || key
-      : PACK[lang]?.[key] || EN_UI_STRINGS[key] || key;
+  if (lang === 'en') return formatUi(EN_UI_STRINGS[key] || key, vars);
+  const pack = PACK[lang];
+  const fromPack = pack ? pack[key] : undefined;
+  const raw = (fromPack && fromPack.trim()) || EN_UI_STRINGS[key] || key;
   return formatUi(raw, vars);
 }
 

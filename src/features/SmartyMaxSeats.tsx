@@ -39,7 +39,7 @@ interface SmartyMaxSeatsProps {
 export function SmartyMaxSeats({
   sponsorUid, sponsorEmail, sponsorName, sponsorRole,
   currentPlan, totalSeats, onChange, onSeatsAdded,
-  title = 'Smarty Max Seats',
+  title = 'SmartyLang Max Seats',
   subtitle,
   hideUpgradeHint,
 }: SmartyMaxSeatsProps) {
@@ -95,8 +95,8 @@ export function SmartyMaxSeats({
       setEmail('');
       setOkMsg(
         result.status === 'accepted'
-          ? `${trimmed} already had an account — Smarty Max activated for them.`
-          : `Invitation sent to ${trimmed}. Smarty Max will activate when they sign in.`,
+          ? `${trimmed} already had an account — SmartyLang Max activated for them.`
+          : `Invitation sent to ${trimmed}. SmartyLang Max will activate when they sign in.`,
       );
       await reload();
       onChange?.();
@@ -175,7 +175,7 @@ export function SmartyMaxSeats({
 
   const handleRevoke = async (inv: SmartyMaxInvitation) => {
     if (!inv.id) return;
-    if (!confirm(`Revoke Smarty Max for ${inv.inviteeEmail}? They'll lose premium access immediately.`)) return;
+    if (!confirm(`Revoke SmartyLang Max for ${inv.inviteeEmail}? They'll lose premium access immediately.`)) return;
     setBusy(true);
     try {
       await revokeSmartyMaxInvitation(inv.id);
@@ -292,7 +292,7 @@ export function SmartyMaxSeats({
           <div className="text-center py-8 text-slate-400 dark:text-zinc-500">
             <Mail className="w-10 h-10 mx-auto mb-2 opacity-50" />
             <p className="text-sm font-semibold">No one invited yet</p>
-            <p className="text-xs mt-1">Use the form above to gift Smarty Max access.</p>
+            <p className="text-xs mt-1">Use the form above to gift SmartyLang Max access.</p>
           </div>
         ) : (
           <ul className="divide-y divide-slate-100 dark:divide-zinc-800">
@@ -316,7 +316,7 @@ export function SmartyMaxSeats({
                 <button
                   onClick={() => handleRevoke(inv)}
                   disabled={busy}
-                  title="Revoke Smarty Max access"
+                  title="Revoke SmartyLang Max access"
                   className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition-colors disabled:opacity-50"
                 >
                   <X className="w-4 h-4" />

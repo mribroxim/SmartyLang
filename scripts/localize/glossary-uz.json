@@ -1,0 +1,70 @@
+{
+  "_meta": "Locked Latin-Uzbek classroom/domain terms for Learn lesson rewrites. Prefer these over Russian loans or calques.",
+  "classroom": {
+    "language school": "til maktabi",
+    "classroom": "sinfxona",
+    "lesson": "dars",
+    "homework": "uy vazifasi",
+    "teacher": "oʻqituvchi",
+    "student": "oʻquvchi",
+    "classmate": "sinfdosh",
+    "exam": "imtihon",
+    "test": "test",
+    "dictionary": "lugʻat",
+    "notebook": "daftar",
+    "whiteboard": "doska",
+    "break": "tanaffus",
+    "timetable": "dars jadvali",
+    "level": "daraja",
+    "Beginner": "Boshlangʻich",
+    "Elementary": "Elementar",
+    "Pre-Intermediate": "Oʻrta darajaga tayyorlov",
+    "Intermediate": "Oʻrta",
+    "Advanced": "Yuqori"
+  },
+  "skills": {
+    "reading": "oʻqish",
+    "writing": "yozish",
+    "listening": "tinglash",
+    "speaking": "gapirish",
+    "vocabulary": "lugʻat boyligi",
+    "grammar": "grammatika",
+    "pronunciation": "talaffuz",
+    "fluency": "ravonlik",
+    "accuracy": "aniqlik"
+  },
+  "self_reference": {
+    "English": "oʻzbek tili",
+    "in English": "oʻzbekcha",
+    "learn English": "oʻzbek tilini oʻrganmoq",
+    "English class": "til darsi",
+    "English teacher": "til oʻqituvchisi",
+    "note": "Learners study Uzbek (Oʻzbekcha), not English. Rewrite course self-references to Uzbek unless the lesson is factually about English/England."
+  },
+  "preferred_forms": {
+    "hello": "Salom",
+    "thank you": "Rahmat",
+    "please": "Iltimos",
+    "sorry": "Kechirasiz",
+    "yes": "Ha",
+    "no": "Yoʻq",
+    "because": "chunki",
+    "however": "ammo",
+    "therefore": "shuning uchun",
+    "for example": "masalan",
+    "important": "muhim",
+    "interesting": "qiziqarli",
+    "difficult": "qiyin",
+    "easy": "oson",
+    "usually": "odatda",
+    "often": "tez-tez",
+    "sometimes": "baʼzan",
+    "always": "doimo",
+    "never": "hech qachon"
+  },
+  "script": {
+    "use": "Latin Oʻzbekcha",
+    "apostrophe": "Use oʻ / gʻ with modifier letter ʻ (U+02BB) or ASCII ' when needed; never Cyrillic.",
+    "reject": "Reject Cyrillic Uzbek (ў, қ, ғ, ҳ as Cyrillic block text)."
+  }
+}

@@ -21,6 +21,7 @@ import type { Task1TypeData, Task1Prompt }       from '../data/writingTask1';
 import type { Part1Topic, Part2Card, Part3Topic } from '../data/ieltsSpeakingData';
 import type { ShadowingPassage }                 from '../data/shadowingPassages';
 import { type ContentLang, cmsDocId, readStoredContentLang } from './contentLang';
+import { readStoredArabicDisplayMode, transformArabicContent, type ArabicDisplayMode } from './arabicText';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { fetchLangPackJson } from './langPacks';
 
@@ -209,7 +210,7 @@ function loadCMS(lang: ContentLang): Promise<CMSContent> {
 }
 
 export function useCMSContent(): CMSContent {
-  const { contentLang } = useContentLang();
+  const { contentLang, arabicDisplayMode } = useContentLang();
   const fallback = contentLang === 'en' ? _defaultEn : _defaultNonEn;
   const [content, setContent] = useState<CMSContent>(_cacheByLang[contentLang] ?? fallback);
 
@@ -229,10 +230,14 @@ export function useCMSContent(): CMSContent {
     };
   }, [contentLang]);
 
-  return content;
+  return transformArabicContent(content, contentLang, arabicDisplayMode);
 }
 
 /** Imperative load (e.g. App boot) using stored or explicit lang. */
-export function loadCMSContent(lang: ContentLang = readStoredContentLang()): Promise<CMSContent> {
-  return loadCMS(lang);
+export async function loadCMSContent(
+  lang: ContentLang = readStoredContentLang(),
+  arabicDisplayMode: ArabicDisplayMode = readStoredArabicDisplayMode(),
+): Promise<CMSContent> {
+  const content = await loadCMS(lang);
+  return transformArabicContent(content, lang, arabicDisplayMode);
 }

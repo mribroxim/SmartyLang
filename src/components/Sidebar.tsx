@@ -52,7 +52,7 @@ const Sidebar: React.FC<SidebarProps> = ({
    *  navigates to the locked-feature screen — but visually we mark them). */
   const PRACTICE_TABS = new Set([
     'lessons', 'practice', 'ielts', 'gamification', 'reading', 'listening', 'speaking', 'writing', 'exercises',
-    'vocabulary', 'story', 'comprehensive', 'ielts-reading',
+    'vocabulary', 'story', 'comprehensive', 'ielts-reading', 'ielts-full-mock',
     'classes',
   ]);
 
@@ -89,7 +89,7 @@ const Sidebar: React.FC<SidebarProps> = ({
             onClick={() => setActiveTab('home')}
             className="font-serif font-black tracking-tighter uppercase text-xl text-zinc-900 dark:text-zinc-50 hover:opacity-60 transition-opacity flex-1 text-left"
           >
-            SMARTY
+            SmartyLang
           </button>
           {user && uid && (
             <NotificationBell uid={uid} onNavigate={setActiveTab} />
@@ -120,11 +120,11 @@ const Sidebar: React.FC<SidebarProps> = ({
         {isFreeUser && (
           <button
             onClick={() => setActiveTab('plans')}
-            className="w-full mb-3 rounded-xl bg-zinc-900 dark:bg-zinc-950 text-white p-3.5 text-left transition-transform hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:focus-visible:ring-zinc-100 focus-visible:ring-offset-2"
+            className="w-full mb-3 rounded-xl bg-zinc-900 dark:bg-zinc-950 text-white dark-keep p-3.5 text-left transition-transform hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:focus-visible:ring-zinc-100 focus-visible:ring-offset-2"
           >
             <div className="flex items-center gap-2 mb-1">
               <Crown className="w-4 h-4 text-amber-400" />
-              <span className="text-[11px] font-black uppercase tracking-[0.14em]">Get Smarty Max</span>
+              <span className="text-[11px] font-black uppercase tracking-[0.14em]">Get SmartyLang Max</span>
             </div>
             <p className="text-[11px] text-zinc-400 leading-relaxed">
               Unlock reading, listening, speaking, writing &amp; more.

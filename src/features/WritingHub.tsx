@@ -22,6 +22,7 @@ interface WritingHubProps {
   onNavMode?: (mode: WritingMode) => void;
   /** When set, IELTS Writing back returns here (IELTS tab) instead of the Practice hub. */
   onIeltsBack?: () => void;
+  startingLevel?: string;
 }
 
 const SPINNER = (
@@ -35,7 +36,7 @@ function parseMode(raw?: string): WritingMode {
   return 'hub';
 }
 
-export function WritingHub({ onBack, initialLevel, initialTopicIndex, onToggleVocab, savedVocab = {}, onShowModal, navMode, onNavMode, onIeltsBack }: WritingHubProps) {
+export function WritingHub({ onBack, initialLevel, initialTopicIndex, onToggleVocab, savedVocab = {}, onShowModal, navMode, onNavMode, onIeltsBack, startingLevel }: WritingHubProps) {
   const { isEnglish } = useContentLang();
   const { t } = useUiLang();
   const academicLabel = isEnglish ? t('writing.ielts.title') : t('writing.academicLabel');
@@ -65,6 +66,7 @@ export function WritingHub({ onBack, initialLevel, initialTopicIndex, onToggleVo
           onToggleVocab={onToggleVocab}
           savedVocab={savedVocab}
           onShowModal={onShowModal}
+          startingLevel={startingLevel}
         />
       </Suspense>
     );

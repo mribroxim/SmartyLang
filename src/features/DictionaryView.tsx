@@ -107,7 +107,7 @@ export default function DictionaryView({
                         </button>
                         {defPickerOpen && (
                           <div className="absolute left-0 top-full mt-1 bg-white border border-zinc-200 rounded-xl shadow-2xl z-30 max-h-72 overflow-y-auto w-64">
-                            <div className="sticky top-0 bg-white p-2 border-b border-zinc-100">
+                            <div className="sticky top-0 bg-white dark:bg-zinc-900 p-2 border-b border-zinc-100 dark:border-zinc-800">
                               <input
                                 autoFocus
                                 type="text"

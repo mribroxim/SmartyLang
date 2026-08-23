@@ -23,7 +23,8 @@ export type CompletionType =
   | 'writing-mock'
   | 'writing'
   | 'speaking'
-  | 'reading-pronunciation';
+  | 'reading-pronunciation'
+  | 'ielts-full-mock';
 
 export interface CompletionRecord {
   id: string;
@@ -119,6 +120,8 @@ function activityTypeFor(type: CompletionType): ActivityType | null {
     case 'writing-mock':
     case 'ielts-writing':
       return 'writing_practice';
+    case 'ielts-full-mock':
+      return 'exercise';
     case 'reading-pronunciation':
       return 'reading_pronunciation';
     case 'shadowing':

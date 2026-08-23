@@ -44,6 +44,7 @@ import {
 } from '../lib/exerciseSession';
 import { matchesContentLang } from '../lib/activityMeta';
 import { ScreenShell, HubRow } from '../components/ScreenShell';
+import { normalizeForMatch, tokenizeForLang } from '../lib/pronunciationProfile';
 
 const MEANING_MODE_EXERCISES = new Set([
   'flashcards',
@@ -475,7 +476,9 @@ export default function ExercisesView({
             } else if (exerciseSourceType === 'custom') {
               const text = savedCustomTexts[Number(exerciseSourceCustomTextSel)];
               if (text) {
-                const words = text.toLowerCase().match(/\b[a-z']+\b/g) || [];
+                const words = tokenizeForLang(text, contentLang)
+                  .map((word) => normalizeForMatch(word, contentLang))
+                  .filter(Boolean);
                 candidateWords = words.filter(w => allVocabMap.has(w));
               }
             }

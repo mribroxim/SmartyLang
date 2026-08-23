@@ -12,7 +12,9 @@ import { useUiLang } from '../contexts/UiLangContext';
 import { CONTENT_LANG_NATIVE } from '../lib/contentLang';
 import { activityLangStamp } from '../lib/activityMeta';
 import { speakText, cancelSpeech } from '../lib/speech';
+import { normalizeForMatch, tokenizeForLang } from '../lib/pronunciationProfile';
 import { SpeechRateControl } from '../components/SpeechRateControl';
+import { DEFAULT_SPEECH_RATE, SPEECH_RATE_LABELS, snapSpeechRate } from '../lib/speechRates';
 import { ScreenShell, HubRow } from '../components/ScreenShell';
 import { LevelCard, LevelCardGrid, LEVEL_THEMES } from '../components/LevelCards';
 
@@ -21,7 +23,7 @@ const LEVELS: Level[] = ['Beginner', 'Elementary', 'Pre-Intermediate', 'Intermed
 const PAGE_SIZE = 8;
 
 export function ListeningDictation({ onBack }: any) {
-  const { contentLang, speechLocale, nativeName } = useContentLang();
+  const { contentLang, speechLocale, nativeName, arabicDisplayMode } = useContentLang();
   const { t, tLevel, tLevelDesc } = useUiLang();
   const [view, setView] = useState<'levels' | 'library' | 'activity'>('levels');
   const [level, setLevel] = useState<Level>('Intermediate');
@@ -50,7 +52,7 @@ export function ListeningDictation({ onBack }: any) {
       return null;
     } catch { return null; }
   });
-  const [speechRate, setSpeechRate] = useState(0.85);
+  const [speechRate, setSpeechRate] = useState(DEFAULT_SPEECH_RATE);
 
   useEffect(() => {
     try {
@@ -62,7 +64,7 @@ export function ListeningDictation({ onBack }: any) {
   const startDictation = async (label: string, customSentences?: string[]) => {
     setIsGenerating(true);
     try {
-      const s = customSentences || await getRandomDictation(level, 3, contentLang);
+      const s = customSentences || await getRandomDictation(level, 3, contentLang, arabicDisplayMode);
       if (!s.length) {
         alert(`No ${nativeName} dictation materials yet. Ask a content manager to add sentences.`);
         return;
@@ -98,11 +100,9 @@ export function ListeningDictation({ onBack }: any) {
   };
 
   const checkText = (input: string, correct: string) => {
-    const cleanInput = input.replace(/[.,!?]/g, '').toLowerCase().trim();
-    const cleanCorrect = correct.replace(/[.,!?]/g, '').toLowerCase().trim();
-    const inputWords = cleanInput.split(/\s+/);
-    const correctWords = cleanCorrect.split(/\s+/);
-    if (cleanInput === cleanCorrect) return { correct: true, diff: [{ type: 'correct', val: correct }] };
+    const inputWords = tokenizeForLang(input, contentLang).map((word) => normalizeForMatch(word, contentLang));
+    const correctWords = tokenizeForLang(correct, contentLang).map((word) => normalizeForMatch(word, contentLang));
+    if (inputWords.join(' ') === correctWords.join(' ')) return { correct: true, diff: [{ type: 'correct', val: correct }] };
     const diff = [];
     for (let i = 0; i < Math.max(inputWords.length, correctWords.length); i++) {
       if (inputWords[i] === correctWords[i]) {
@@ -431,7 +431,9 @@ export function ListeningDictation({ onBack }: any) {
             >
               <Headphones className="w-8 h-8 text-emerald-600 mb-2 group-hover:scale-110 transition-transform" />
               <span className="text-sm font-bold text-emerald-900">Play Audio</span>
-              <span className="text-[10px] font-mono text-emerald-700/70 mt-1">{speechRate.toFixed(2)}×</span>
+              <span className="text-[10px] font-mono text-emerald-700/70 mt-1">
+                {SPEECH_RATE_LABELS[snapSpeechRate(speechRate)]}
+              </span>
             </button>
           </div>
         </div>

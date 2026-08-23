@@ -32,7 +32,7 @@ export function sentenceAroundWord(
   if (!words.length || wordIndex < 0 || wordIndex >= words.length) {
     return words[wordIndex] || '';
   }
-  const endsSentence = (w: string) => /[.!?…。！？]["'”’)\]\}]*$/u.test(String(w).trim());
+  const endsSentence = (w: string) => /[.!?؟…。！？]["'”’)\]\}]*$/u.test(String(w).trim());
   let start = wordIndex;
   while (start > 0 && !endsSentence(words[start - 1])) start--;
   let end = wordIndex;

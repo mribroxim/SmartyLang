@@ -5,17 +5,16 @@
  *   AZURE_SPEECH_KEY     — Azure Speech Services subscription key
  *   AZURE_SPEECH_REGION  — Speech resource region (e.g. eastus, westeurope)
  *
- * POST body:
- *   { text, lang, rate } → audio/mpeg
- *   { text, lang, rate, sync, words } → JSON { audioContent, timepoints }
+ * Persistent cache: first listener pays Azure; later listeners get Storage/Firestore hit
+ * (see functions/ttsCache.js). Response header X-TTS-Cache: memory|storage|miss.
  *
- * NOTE ON WORD SYNC: Azure's REST endpoint returns only the synthesized audio —
- * it does NOT expose word-boundary timepoints (that requires the Speech SDK over
- * a WebSocket, which is a heavier integration). Synced requests therefore return
- * the mp3 with an EMPTY timepoints array; the client's lyric-highlighting falls
- * back to duration-estimated word timing (see src/lib/speech.ts). Voice quality
- * and language coverage are the premium Azure Neural voices, including Uzbek and
- * Persian which Google Cloud TTS did not provide.
+ * POST body:
+ *   { text, lang, rate, voice? } → audio/mpeg
+ *   { text, lang, rate, sync, words, voice? } → JSON { audioContent, timepoints }
+ *
+ * NOTE ON WORD SYNC: Synced requests use the Azure Speech SDK with SSML bookmarks
+ * so each display word gets an accurate audio offset (see functions/azureTtsSync.js).
+ * Plain (non-sync) requests still use the lighter REST endpoint.
  */
 const { onRequest } = require("firebase-functions/v2/https");
 const { defineSecret } = require("firebase-functions/params");
@@ -28,43 +27,19 @@ if (!admin.apps.length) {
 
 const azureKey = defineSecret("AZURE_SPEECH_KEY");
 const azureRegion = defineSecret("AZURE_SPEECH_REGION");
+const openrouterKey = defineSecret("OPENROUTER_API_KEY");
+const { handleAiRequest, isMaxOrAdmin, bearerToken } = require("./aiExaminer");
+const { buildSsmlWithBookmarks, synthesizeSsmlWithTimepoints } = require("./azureTtsSync");
+const { AZURE_VOICES, resolveVoiceCfg } = require("./azureVoices");
+const {
+  normalizeRate,
+  buildCacheId,
+  readPersistentCache,
+  writePersistentCache,
+} = require("./ttsCache");
 
-// Premium Azure Neural voices (female by default) per app language code.
-// Coverage: all 29 content languages, incl. Uzbek (uz-UZ) and Persian (fa-IR)
-// which Google Cloud TTS did not offer.
-const AZURE_VOICES = {
-  en: { locale: "en-US", voice: "en-US-AriaNeural" },
-  ru: { locale: "ru-RU", voice: "ru-RU-SvetlanaNeural" },
-  tl: { locale: "fil-PH", voice: "fil-PH-BlessicaNeural" },
-  fil: { locale: "fil-PH", voice: "fil-PH-BlessicaNeural" },
-  es: { locale: "es-ES", voice: "es-ES-ElviraNeural" },
-  uz: { locale: "uz-UZ", voice: "uz-UZ-MadinaNeural" },
-  de: { locale: "de-DE", voice: "de-DE-KatjaNeural" },
-  fr: { locale: "fr-FR", voice: "fr-FR-DeniseNeural" },
-  it: { locale: "it-IT", voice: "it-IT-ElsaNeural" },
-  pt: { locale: "pt-BR", voice: "pt-BR-FranciscaNeural" },
-  ja: { locale: "ja-JP", voice: "ja-JP-NanamiNeural" },
-  ko: { locale: "ko-KR", voice: "ko-KR-SunHiNeural" },
-  zh: { locale: "zh-CN", voice: "zh-CN-XiaoxiaoNeural" },
-  cmn: { locale: "zh-CN", voice: "zh-CN-XiaoxiaoNeural" },
-  ar: { locale: "ar-SA", voice: "ar-SA-ZariyahNeural" },
-  tr: { locale: "tr-TR", voice: "tr-TR-EmelNeural" },
-  nl: { locale: "nl-NL", voice: "nl-NL-ColetteNeural" },
-  hi: { locale: "hi-IN", voice: "hi-IN-SwaraNeural" },
-  pl: { locale: "pl-PL", voice: "pl-PL-ZofiaNeural" },
-  sv: { locale: "sv-SE", voice: "sv-SE-SofieNeural" },
-  id: { locale: "id-ID", voice: "id-ID-GadisNeural" },
-  ms: { locale: "ms-MY", voice: "ms-MY-YasminNeural" },
-  vi: { locale: "vi-VN", voice: "vi-VN-HoaiMyNeural" },
-  th: { locale: "th-TH", voice: "th-TH-PremwadeeNeural" },
-  uk: { locale: "uk-UA", voice: "uk-UA-PolinaNeural" },
-  el: { locale: "el-GR", voice: "el-GR-AthinaNeural" },
-  cs: { locale: "cs-CZ", voice: "cs-CZ-VlastaNeural" },
-  ro: { locale: "ro-RO", voice: "ro-RO-AlinaNeural" },
-  ur: { locale: "ur-PK", voice: "ur-PK-UzmaNeural" },
-  sw: { locale: "sw-KE", voice: "sw-KE-ZuriNeural" },
-  fa: { locale: "fa-IR", voice: "fa-IR-DilaraNeural" },
-};
+// Voice map: functions/azureVoices.js (Dragon HD / MAI / neural per language)
+// Persistent cache: functions/ttsCache.js (Storage + Firestore)
 
 const CACHE_MAX = 200;
 /** @type {Map<string, { mp3: Buffer, timepoints?: {index:number,timeSeconds:number}[], at: number }>} */
@@ -95,9 +70,9 @@ function escapeXml(s) {
     .replace(/'/g, "&apos;");
 }
 
-function buildAzureSsml(text, lang, rate) {
-  const cfg = AZURE_VOICES[lang] || AZURE_VOICES.en;
-  const r = Math.min(2, Math.max(0.5, Number(rate) || 1));
+function buildAzureSsml(text, lang, rate, voiceOverride) {
+  const cfg = resolveVoiceCfg(lang, voiceOverride);
+  const r = normalizeRate(rate);
   const clean = String(text || "").trim();
   return (
     `<speak version='1.0' xml:lang='${cfg.locale}'>` +
@@ -117,7 +92,7 @@ async function callAzure(ssml, key, region) {
         "Ocp-Apim-Subscription-Key": key,
         "Content-Type": "application/ssml+xml",
         "X-Microsoft-OutputFormat": "audio-24khz-96kbitrate-mono-mp3",
-        "User-Agent": "smarty-english",
+        "User-Agent": "smartylang",
       },
       body: ssml,
     });
@@ -141,7 +116,7 @@ async function callAzure(ssml, key, region) {
   return buf;
 }
 
-async function synthesizeMp3(text, langInput, rate, key, region) {
+async function synthesizeMp3(text, langInput, rate, key, region, voiceOverride) {
   const clean = String(text || "").trim().slice(0, 4500);
   if (!clean) {
     const err = new Error("Empty text");
@@ -149,42 +124,122 @@ async function synthesizeMp3(text, langInput, rate, key, region) {
     throw err;
   }
   const lang = resolveLang(langInput);
-  const speakingRate = Math.min(2, Math.max(0.5, Number(rate) || 1));
-  const keyStr = `${lang}|${speakingRate.toFixed(2)}|${clean}`;
-  const hit = cache.get(keyStr);
+  const speakingRate = normalizeRate(rate);
+  const voiceTag = voiceOverride ? String(voiceOverride) : "";
+  const memKey = `${lang}|${voiceTag}|${speakingRate.toFixed(2)}|${clean}`;
+  const hit = cache.get(memKey);
   if (hit) {
     hit.at = Date.now();
-    return hit.mp3;
+    return { mp3: hit.mp3, cache: "memory" };
   }
 
-  const mp3 = await callAzure(buildAzureSsml(clean, lang, speakingRate), key, region);
-  cache.set(keyStr, { mp3, at: Date.now() });
+  const cacheId = buildCacheId({
+    text: clean,
+    lang,
+    rate: speakingRate,
+    voice: voiceTag,
+    sync: false,
+  });
+  const persisted = await readPersistentCache(cacheId);
+  if (persisted?.mp3?.length) {
+    cache.set(memKey, { mp3: persisted.mp3, at: Date.now() });
+    pruneCache();
+    return { mp3: persisted.mp3, cache: "storage" };
+  }
+
+  const mp3 = await callAzure(buildAzureSsml(clean, lang, speakingRate, voiceOverride), key, region);
+  cache.set(memKey, { mp3, at: Date.now() });
   pruneCache();
-  return mp3;
+  void writePersistentCache(cacheId, {
+    mp3,
+    lang,
+    rate: speakingRate,
+    voice: voiceTag,
+    sync: false,
+    textLen: clean.length,
+  });
+  return { mp3, cache: "miss" };
 }
 
-async function synthesizeMp3WithSync(text, langInput, rate, key, region) {
+async function synthesizeMp3WithSync(text, langInput, rate, key, region, words, voiceOverride) {
   const clean = String(text || "").trim().slice(0, 4500);
   if (!clean) {
     const err = new Error("Empty text");
     err.status = 400;
     throw err;
   }
-  const lang = resolveLang(langInput);
-  const speakingRate = Math.min(2, Math.max(0.5, Number(rate) || 1));
-  const keyStr = `${lang}|${speakingRate.toFixed(2)}|sync|${clean}`;
-  const hit = cache.get(keyStr);
-  if (hit) {
-    hit.at = Date.now();
-    return { mp3: hit.mp3, timepoints: hit.timepoints || [] };
+  const wordList = Array.isArray(words) ? words.filter((w) => typeof w === "string") : [];
+  if (!wordList.length) {
+    const err = new Error("Missing words for sync");
+    err.status = 400;
+    throw err;
   }
 
-  // Azure REST does not return word-boundary timepoints; the client falls back
-  // to estimated duration-based highlighting when timepoints is empty.
-  const mp3 = await callAzure(buildAzureSsml(clean, lang, speakingRate), key, region);
-  cache.set(keyStr, { mp3, timepoints: [], at: Date.now() });
-  pruneCache();
-  return { mp3, timepoints: [] };
+  const lang = resolveLang(langInput);
+  const speakingRate = normalizeRate(rate);
+  const voiceTag = voiceOverride ? String(voiceOverride) : "";
+  const memKey = `${lang}|${voiceTag}|${speakingRate.toFixed(2)}|sync|${wordList.length}|${clean}`;
+  const hit = cache.get(memKey);
+  if (hit) {
+    hit.at = Date.now();
+    return { mp3: hit.mp3, timepoints: hit.timepoints || [], cache: "memory" };
+  }
+
+  const cacheId = buildCacheId({
+    text: clean,
+    lang,
+    rate: speakingRate,
+    voice: voiceTag,
+    sync: true,
+    words: wordList,
+  });
+  const persisted = await readPersistentCache(cacheId);
+  if (persisted?.mp3?.length) {
+    cache.set(memKey, {
+      mp3: persisted.mp3,
+      timepoints: persisted.timepoints || [],
+      at: Date.now(),
+    });
+    pruneCache();
+    return {
+      mp3: persisted.mp3,
+      timepoints: persisted.timepoints || [],
+      cache: "storage",
+    };
+  }
+
+  const voiceCfg = resolveVoiceCfg(lang, voiceOverride);
+  try {
+    const ssml = buildSsmlWithBookmarks(clean, wordList, voiceCfg, speakingRate);
+    const { mp3, timepoints } = await synthesizeSsmlWithTimepoints(ssml, key, region);
+    cache.set(memKey, { mp3, timepoints, at: Date.now() });
+    pruneCache();
+    void writePersistentCache(cacheId, {
+      mp3,
+      timepoints,
+      lang,
+      rate: speakingRate,
+      voice: voiceTag,
+      sync: true,
+      textLen: clean.length,
+    });
+    return { mp3, timepoints, cache: "miss" };
+  } catch (sdkErr) {
+    console.warn("Azure SDK sync failed, falling back to REST:", sdkErr?.message || sdkErr);
+    const mp3 = await callAzure(buildAzureSsml(clean, lang, speakingRate, voiceOverride), key, region);
+    cache.set(memKey, { mp3, timepoints: [], at: Date.now() });
+    pruneCache();
+    void writePersistentCache(cacheId, {
+      mp3,
+      timepoints: [],
+      lang,
+      rate: speakingRate,
+      voice: voiceTag,
+      sync: true,
+      textLen: clean.length,
+    });
+    return { mp3, timepoints: [], cache: "miss" };
+  }
 }
 
 exports.tts = onRequest(
@@ -212,15 +267,16 @@ exports.tts = onRequest(
         res.status(503).json({ error: "TTS not configured (set AZURE_SPEECH_KEY)" });
         return;
       }
-      const { text, lang = "en-US", rate = 1, sync = false, words = [] } = req.body || {};
+      const { text, lang = "en-US", rate = 1, sync = false, words = [], voice } = req.body || {};
       if (!text || typeof text !== "string") {
         res.status(400).json({ error: "Missing text" });
         return;
       }
 
       if (sync === true && Array.isArray(words) && words.length > 0) {
-        const result = await synthesizeMp3WithSync(text, lang, rate, key, region);
-        res.set("Cache-Control", "private, max-age=86400");
+        const result = await synthesizeMp3WithSync(text, lang, rate, key, region, words, voice);
+        res.set("Cache-Control", "public, max-age=86400");
+        res.set("X-TTS-Cache", result.cache || "miss");
         res.status(200).json({
           audioContent: result.mp3.toString("base64"),
           timepoints: result.timepoints,
@@ -228,10 +284,11 @@ exports.tts = onRequest(
         return;
       }
 
-      const mp3 = await synthesizeMp3(text, lang, rate, key, region);
+      const result = await synthesizeMp3(text, lang, rate, key, region, voice);
       res.set("Content-Type", "audio/mpeg");
-      res.set("Cache-Control", "private, max-age=86400");
-      res.status(200).send(mp3);
+      res.set("Cache-Control", "public, max-age=86400");
+      res.set("X-TTS-Cache", result.cache || "miss");
+      res.status(200).send(result.mp3);
     } catch (error) {
       const status = typeof error?.status === "number" ? error.status : 500;
       console.error("TTS error:", error?.message || error);
@@ -363,5 +420,39 @@ exports.translateFallback = onRequest(
       console.error("translateFallback error:", error?.message || error);
       res.status(500).json({ error: error?.message || "Translation failed" });
     }
+  },
+);
+
+exports.ai = onRequest(
+  {
+    region: "us-central1",
+    timeoutSeconds: 120,
+    memory: "256MiB",
+    maxInstances: 10,
+    secrets: [openrouterKey],
+    cors: true,
+    invoker: "public",
+  },
+  async (req, res) => {
+    await handleAiRequest(req, res, {
+      getApiKey: () => openrouterKey.value(),
+      verifyUser: async (r) => {
+        const token = bearerToken(r);
+        if (!token) {
+          const err = new Error("Sign in required");
+          err.status = 401;
+          throw err;
+        }
+        const decoded = await admin.auth().verifyIdToken(token);
+        const snap = await admin.firestore().collection("userProfiles").doc(decoded.uid).get();
+        const profile = snap.exists ? snap.data() : {};
+        if (!isMaxOrAdmin(profile)) {
+          const err = new Error("SmartyLang Max required for AI checks");
+          err.status = 403;
+          throw err;
+        }
+        return { uid: decoded.uid, profile, strict: false };
+      },
+    });
   },
 );

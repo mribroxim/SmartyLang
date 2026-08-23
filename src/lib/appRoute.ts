@@ -1,6 +1,6 @@
 /**
  * Hash-based in-app routing so the browser / phone back button
- * navigates within Smarty English instead of leaving the site.
+ * navigates within SmartyLang instead of leaving the site.
  *
  * URL shape:  #/<tab>[/<seg>…]
  * Examples:   #/dashboard
@@ -29,6 +29,7 @@ export type AppTab =
   | 'gamification'
   | 'story'
   | 'ielts-reading'
+  | 'ielts-full-mock'
   | 'comprehensive'
   | 'classes'
   | 'profile'
@@ -43,7 +44,7 @@ export interface AppRoute {
 const VALID_TABS = new Set<string>([
   'home', 'listening', 'speaking', 'writing', 'reading', 'lessons', 'practice',
   'ielts', 'dashboard', 'vocabulary', 'exercises', 'teacher', 'organization',
-  'admin', 'content', 'gamification', 'story', 'ielts-reading',
+  'admin', 'content', 'gamification', 'story', 'ielts-reading', 'ielts-full-mock',
   'comprehensive', 'classes', 'profile', 'plans',
 ]);
 

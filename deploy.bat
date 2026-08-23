@@ -2,7 +2,7 @@
 cd /d "%~dp0"
 echo.
 echo =========================================
-echo   SMARTY ENGLISH — Firebase Deploy
+echo   SmartyLang — Firebase Deploy
 echo =========================================
 echo.
 

@@ -20,6 +20,7 @@ serviceAccount*.json
 
 # Firebase / tooling caches
 .firebase/
+.tts-cache/
 .claude/
 .vscode/
 .idea/
@@ -34,6 +35,9 @@ _cr_compare.txt
 logs/
 vocab-quality-report.json
 vocab-report.json
+scripts/localize/.localize-uz-progress.json
+scripts/localize/localize-failures.json
+scripts/localize/*.log
 
 # Raw source asset folders (built copies live under public/data/)
 Shadowing_Resources/

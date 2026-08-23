@@ -2,6 +2,11 @@ import type { Level } from '../lib/reading-logic';
 import { getCMSDocument } from '../firebase';
 import { type ContentLang, cmsDocId, readStoredContentLang } from '../lib/contentLang';
 import { fetchLangPackText } from '../lib/langPacks';
+import {
+  applyArabicDisplayMode,
+  readStoredArabicDisplayMode,
+  type ArabicDisplayMode,
+} from '../lib/arabicText';
 
 const cache = new Map<string, string[]>();
 
@@ -52,17 +57,31 @@ async function loadSentences(level: Level, lang: ContentLang = 'en'): Promise<st
   }
 }
 
+function transformSentences(
+  sentences: string[],
+  lang: ContentLang,
+  arabicDisplayMode: ArabicDisplayMode,
+): string[] {
+  if (lang !== 'ar' || arabicDisplayMode === 'with-harakat') return sentences;
+  return sentences.map((sentence) => applyArabicDisplayMode(sentence, arabicDisplayMode));
+}
+
 /**
  * Exported so the admin panel can load built-in sentences for display/editing.
  */
-export async function loadBuiltInSentences(level: Level, lang: ContentLang = 'en'): Promise<string[]> {
-  return loadSentences(level, lang);
+export async function loadBuiltInSentences(
+  level: Level,
+  lang: ContentLang = 'en',
+  arabicDisplayMode: ArabicDisplayMode = readStoredArabicDisplayMode(),
+): Promise<string[]> {
+  return transformSentences(await loadSentences(level, lang), lang, arabicDisplayMode);
 }
 
 export async function getRandomDictation(
   level: Level,
   count: number = 3,
   lang: ContentLang = readStoredContentLang(),
+  arabicDisplayMode: ArabicDisplayMode = readStoredArabicDisplayMode(),
 ): Promise<string[]> {
   const key = cacheKey(level, lang);
   if (!cache.has(key)) {
@@ -81,5 +100,9 @@ export async function getRandomDictation(
   const sentences = cache.get(key)!;
   if (sentences.length === 0) return [];
   const shuffled = [...sentences].sort(() => Math.random() - 0.5);
-  return shuffled.slice(0, Math.min(count, shuffled.length));
+  return transformSentences(
+    shuffled.slice(0, Math.min(count, shuffled.length)),
+    lang,
+    arabicDisplayMode,
+  );
 }

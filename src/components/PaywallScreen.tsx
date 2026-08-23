@@ -28,8 +28,8 @@ export function PaywallScreen({
 
   return (
     <ScreenShell
-      title="Smarty Max"
-      subtitle="This part of Smarty English is included with Smarty Max. Here’s everything it opens up."
+      title="SmartyLang Max"
+      subtitle="This part of SmartyLang is included with SmartyLang Max. Here’s everything it opens up."
     >
       <div className="lg:grid lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:gap-6 lg:items-start">
         <div className="rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 lg:p-7">
@@ -41,7 +41,7 @@ export function PaywallScreen({
               <p className="font-bold text-[16px] lg:text-[17px] text-zinc-900 dark:text-zinc-50 leading-tight">
                 Everything in one subscription
               </p>
-              <p className="text-[12px] lg:text-[13px] text-slate-400 mt-0.5">No add-ons, no per-skill upsells.</p>
+              <p className="text-[12px] lg:text-[13px] text-slate-400 mt-0.5">1 learning language included · UI free in all 29.</p>
             </div>
           </div>
 
@@ -62,7 +62,7 @@ export function PaywallScreen({
 
         <div className="mt-3 lg:mt-0 rounded-xl bg-zinc-900 dark:bg-zinc-100 p-5 lg:p-7 lg:sticky lg:top-8">
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-400 dark:text-zinc-500 mb-2">
-            Smarty Max
+            SmartyLang Max
           </p>
           {max && (
             <div className="flex items-baseline gap-1.5 mb-1">
@@ -73,7 +73,7 @@ export function PaywallScreen({
             </div>
           )}
           <p className="text-[13px] text-zinc-400 dark:text-zinc-600 leading-relaxed mb-5">
-            Cancel anytime. Your progress stays on your account either way.
+            Extra learning languages +${max?.extraLearningLanguageUSD ?? 8.99}/mo each. Cancel anytime.
           </p>
 
           <button
@@ -81,7 +81,7 @@ export function PaywallScreen({
             onClick={onUpgrade}
             className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 font-extrabold text-[15px] transition-transform active:scale-[0.99] hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white dark:focus-visible:ring-zinc-900 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 dark:focus-visible:ring-offset-zinc-100"
           >
-            Get Smarty Max <ArrowRight className="w-4 h-4" />
+            Get SmartyLang Max <ArrowRight className="w-4 h-4" />
           </button>
           <button
             type="button"

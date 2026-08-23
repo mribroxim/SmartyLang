@@ -18,6 +18,15 @@ export interface ReadingText {
   text: string;
   targetSeconds: number;
   vocabulary: VocabularyItem[];
+  /** Optional curriculum metadata (EN redesign); ignored by older UI. */
+  coreQuestion?: string;
+  languageGoal?: string;
+  communicationGoal?: string;
+  grammarFocus?: string[];
+  vocabularyDomain?: string;
+  unit?: number;
+  unitName?: string;
+  format?: string;
 }
 
 export type WordStatus = 'correct' | 'incorrect' | 'slight_mistake' | 'pending';

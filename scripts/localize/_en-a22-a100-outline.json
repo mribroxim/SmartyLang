@@ -1,0 +1,1519 @@
+{
+  "a22": {
+    "format": "feature",
+    "title": "How can helpful filters quietly shrink horizons?",
+    "paras": 14,
+    "open": "Filters feel like kindness. They hide spam, surface relevant results, recommend songs we might love, and spare us the chaos of unranked infinity. Many are helpful. Quietly, they also shrink horizons. What never appears becomes unthinkable; what always appears becomes the whole wo",
+    "mid": "How can helpful filters quietly shrink horizons? By removing friction that once forced encounter with the unfamiliar, and by rewarding the familiar until it feels like nature. The ",
+    "close": "Public broadcasters that expose audiences to views outside their usual filter perform horizon maintenance as duty. School research assignments requiring one non-personalised source",
+    "speakers": [],
+    "vocab": [
+      "Horizon",
+      "Personalisation",
+      "Confirmation",
+      "Weak ties",
+      "Fragmentation",
+      "Gatekeeping",
+      "Opacity",
+      "Proprietary"
+    ]
+  },
+  "a23": {
+    "format": "opinion",
+    "title": "Should high-stakes decisions require a human veto?",
+    "paras": 15,
+    "open": "High-stakes decisions—medical triage priorities, parole risk scores, lethal force targeting, large credit denials—tempt full automation because humans are slow, biased, and expensive. The counter-temptation is to demand a human veto whenever consequences are grave. Both impulses ",
+    "mid": "Should high-stakes decisions require a human veto? Often yes—when stakes are grave, values conflict, or local knowledge matters—and only if the veto is resourced as real judgment. ",
+    "close": "Border and migration decisions already show where veto fails in practice: automated risk flags with undertrained reviewers, appeals that exist on paper but not in time. Exporting t",
+    "speakers": [],
+    "vocab": [
+      "Veto",
+      "Triage",
+      "Rubber stamp",
+      "Interrogate",
+      "Liability",
+      "Disparate impact",
+      "Validation",
+      "Throughput"
+    ]
+  },
+  "a24": {
+    "format": "dialogue",
+    "title": "If prediction improves, what happens to forgiveness?",
+    "paras": 14,
+    "open": "A: If we can predict who will reoffend, fail a course, or default on a loan, doesn't forgiveness become irrational?\nB: Only if forgiveness was ever a bet on ignorance. Often it is a moral stance about who people may still become—and about the kind of community we refuse to be. Be",
+    "mid": "A: So what happens to forgiveness?\nB: It becomes less automatic and more deliberate—which could be healthier if we protect it. Without protection, foresight slides into preemptive ",
+    "close": "Probation that treats scores as one input preserves forgiveness architecture while enabling early support. Victim services and offender rehabilitation both need prediction bounded ",
+    "speakers": [
+      "A",
+      "B"
+    ],
+    "vocab": [
+      "Forgiveness",
+      "Restitution",
+      "Self-fulfilling",
+      "Fatalism",
+      "Verdict",
+      "Override",
+      "Irreclaimable",
+      "Metaphysics"
+    ]
+  },
+  "a25": {
+    "format": "email",
+    "title": "How should organisations bound observational tech?",
+    "paras": 17,
+    "open": "Subject: Proposed bounds for workplace observational technology",
+    "mid": "Respectfully,\nJordan Lee\nChief People Officer",
+    "close": "Annual review of observational tech should publish what was decommissioned as well as what was added. Sunset discipline prevents temporary pilots becoming permanent architecture. W",
+    "speakers": [
+      "Subject"
+    ],
+    "vocab": [
+      "Observational",
+      "Ambient",
+      "Charter",
+      "Purpose limitation",
+      "Minimisation",
+      "Aggregate",
+      "Retention",
+      "Sunset clause"
+    ]
+  },
+  "a26": {
+    "format": "article",
+    "title": "Which abilities fade when tools intervene early?",
+    "paras": 15,
+    "open": "When tools intervene early, some abilities fade the way unused muscles fade. Spelling weakens under constant autocorrect; wayfinding weakens under constant GPS; mental arithmetic weakens under constant calculators; diagnostic patience weakens when triage algorithms speak first. A",
+    "mid": "Which abilities fade when tools intervene early? Often the quiet ones: estimation, patience with ambiguity, memory for routes and faces, the tolerance for unfinished thought. Advan",
+    "close": "Generational skill loss appears in family kitchens when grandparents navigate and grandchildren only swipe. Holiday exercises—navigate to a relative's house without GPS—become low-",
+    "speakers": [],
+    "vocab": [
+      "Atrophy",
+      "Wayfinding",
+      "Drudgery",
+      "Number sense",
+      "Premature",
+      "Triage",
+      "Redundancy",
+      "Apprenticeship"
+    ]
+  },
+  "a27": {
+    "format": "feature",
+    "title": "How does interruptive design degrade deliberation?",
+    "paras": 15,
+    "open": "Deliberation needs stretches of unbroken attention: time to hold a problem, test alternatives, and notice second thoughts. Interruptive design—badges, banners, pings, autoplaying previews—chops those stretches into shards. Each shard can feel trivial. Cumulatively they degrade th",
+    "mid": "Judges and clinicians share vulnerability to interruptive design. A ping mid-sentencing or mid-diagnosis reshapes outcomes in ways no post-hoc review captures. Professions with eth",
+    "close": "Hospital protocols that batch non-urgent messages into twice-daily summaries reduce interruption harm without abandoning reachability for emergencies. Legislatures could adopt simi",
+    "speakers": [],
+    "vocab": [
+      "Deliberation",
+      "Interruptive",
+      "Cumulatively",
+      "Residual",
+      "Triage",
+      "Heuristic",
+      "Batching",
+      "Infrastructure"
+    ]
+  },
+  "a28": {
+    "format": "opinion",
+    "title": "What responsibility language hides behind systems?",
+    "paras": 16,
+    "open": "Listen to the verbs. \"The system flagged.\" \"The platform removed.\" \"Policy automatically denied.\" Responsibility language hides behind systems when passive constructions and non-human subjects erase the people who funded, trained, deployed, and overrode. Sometimes the erasure is ",
+    "mid": "Procurement contracts that name \"the vendor\" as responsible for algorithmic harm diffuse accountability upstream. Public buyers could require named accountable officers for each de",
+    "close": "City procurement officers who require \"accountable human\" fields in algorithmic RFPs shift markets toward vendors comfortable with scrutiny. Small wording changes in contract templ",
+    "speakers": [],
+    "vocab": [
+      "Passive construction",
+      "Diffuse",
+      "Socio-technical",
+      "Causation",
+      "False-negative",
+      "Accountability",
+      "Deskilling",
+      "Pre-mortem"
+    ]
+  },
+  "a29": {
+    "format": "essay",
+    "title": "Repair cafés for software: who teaches the next fixers?",
+    "paras": 16,
+    "open": "Hardware repair cafés taught a generation that broken toasters need not be destiny. Software needs an analogue: places where people learn to debug, restore, and adapt the digital tools that now structure work and citizenship. Yet software \"repair\" is often locked behind licences,",
+    "mid": "School computer labs that banned troubleshooting in favour of clicking through tutorials produced adults who fear settings menus. Reversing that requires grading repair narratives:",
+    "close": "High schools that partner with repair cafés for service hours connect youth to fixer pipelines early. Grading troubleshooting write-ups alongside essays validates maintenance cogni",
+    "speakers": [],
+    "vocab": [
+      "Stewardship",
+      "Brittle",
+      "Succession",
+      "Interoperable",
+      "Modular",
+      "Demystification",
+      "Maintainers",
+      "Disruptors"
+    ]
+  },
+  "a30": {
+    "format": "article",
+    "title": "How is good judgment trained rather than assumed?",
+    "paras": 16,
+    "open": "Organisations speak of \"good judgment\" as if it were a trait one either has or lacks—an aura that arrives with seniority. Experience helps, but judgment is trained more than assumed. It grows through feedback-rich practice: cases reviewed, mistakes dissected without humiliation, ",
+    "mid": "Military after-action culture—ranked debrief where junior voices speak first—offers a model civilian boards could adapt without uniform. The goal is distributed learning, not hiera",
+    "close": "Peer observation programmes where junior staff watch senior decisions—and vice versa—normalise uncertainty as professional material. Judgment training fails when only errors are di",
+    "speakers": [],
+    "vocab": [
+      "Discernment",
+      "Compliance",
+      "Devil’s advocacy",
+      "Homogeneous",
+      "Scaffold",
+      "Calibration",
+      "Debrief",
+      "Hierarchy"
+    ]
+  },
+  "a31": {
+    "format": "essay",
+    "title": "Who gets to linger in the city without buying?",
+    "paras": 16,
+    "open": "Cities announce themselves as open, yet many of their surfaces quietly ask for a receipt. Benches removed to deter loitering, cafés that tolerate lingering only with continuous purchases, parks locked after dusk, malls policed as private commons—these designs answer a blunt quest",
+    "mid": "Teenagers policed for gathering without spending learn that citizenship is conditional on consumption. That lesson travels into adulthood as political cynicism or as organised dema",
+    "close": "Winter markets in public squares that do not require purchase to enter preserve linger while supporting traders. The distinction is gating: commerce welcome, consumption optional. ",
+    "speakers": [],
+    "vocab": [
+      "Linger",
+      "Loitering",
+      "Hostile architecture",
+      "Commons",
+      "Criminalise",
+      "Commercialise",
+      "Contempt",
+      "Third place"
+    ]
+  },
+  "a32": {
+    "format": "feature",
+    "title": "What does green access reveal about inequality?",
+    "paras": 17,
+    "open": "Map trees, parks, allotments, and cool corridors across a city, then overlay income, race, and health data. Green access often tracks inequality with embarrassing clarity. Some neighbourhoods inherit canopy and lawns; others inherit asphalt, heat, and a single fenced pitch booked",
+    "mid": "Allotment waiting lists measured in years reveal demand formal parks understate. Immigrant communities often maintain food gardens unofficially; recognising and securing those plot",
+    "close": "Playground shade audits at primary schools reveal green access gaps before children learn heat as normal. Parent associations publishing walk-to-park times by block make abstract e",
+    "speakers": [],
+    "vocab": [
+      "Canopy",
+      "Allotment",
+      "Walkability",
+      "Launder",
+      "Redlining",
+      "Disinvestment",
+      "Gentrification",
+      "Displacement"
+    ]
+  },
+  "a33": {
+    "format": "opinion",
+    "title": "Should housing be treated primarily as shelter or asset?",
+    "paras": 16,
+    "open": "Ask what housing is for and you expose a society's nerves. Treat it primarily as shelter—and policy leans toward security of tenure, habitability, and non-market provision where markets fail. Treat it primarily as asset—and policy leans toward price growth, investor confidence, a",
+    "mid": "Co-operative housing models treat dwelling as shared infrastructure rather than individual lottery ticket. They do not eliminate asset logic but subordinate it to stay-put rights.",
+    "close": "Empty investor flats counted in census data expose asset-first housing when shelter queues grow. Vacancy taxes unpopular with portfolios may be popular with renters if revenues fun",
+    "speakers": [],
+    "vocab": [
+      "Tenure",
+      "Habitability",
+      "Intergenerational",
+      "Affordability",
+      "Speculation",
+      "Eviction",
+      "Fiscal",
+      "Density"
+    ]
+  },
+  "a34": {
+    "format": "dialogue",
+    "title": "If transit is slow where poverty is dense, is that design?",
+    "paras": 17,
+    "open": "A: Our bus takes seventy minutes to go what a train covers in twenty—and this is where rents are lower.\nB: People call that bad luck. Planners sometimes call it a network legacy. I call it a design outcome until proven otherwise. Transit that is slow where poverty is dense did no",
+    "mid": "Women's travel patterns—chained trips, off-peak caregiving runs—often fit poorly into commute-centric transit metrics. Designing for nine-to-five downtown flows underserves the pov",
+    "close": "Civil rights history reminds that transit desegregation without frequency is incomplete justice. Speed and dignity together define mobility equity; slow buses are not only inconven",
+    "speakers": [
+      "A",
+      "B"
+    ],
+    "vocab": [
+      "Deprioritised",
+      "Legacy",
+      "Frequency",
+      "Reliability",
+      "Reverse-commute",
+      "Contest",
+      "Latency",
+      "Upstream"
+    ]
+  },
+  "a35": {
+    "format": "email",
+    "title": "How can residents write credible place testimony?",
+    "paras": 19,
+    "open": "Subject: Objection to the Mill Street \"activation\" proposal — evidence from residents who live the hours",
+    "mid": "Consultants who measure noise only at pavement level miss bedroom height. Our third-floor readings differ systematically from ground-floor trials cited in the brief. Method matters",
+    "close": "Sleep studies linked to planning decisions remain rare; funding resident-collected data closes the gap. Cities that treat rest as health input upgrade policy beyond vibrancy slogan",
+    "speakers": [
+      "Subject"
+    ],
+    "vocab": [
+      "Testimony",
+      "Falsifiable",
+      "Vibrancy",
+      "Rendered",
+      "Replicate",
+      "Acoustic",
+      "Liaison",
+      "Threshold"
+    ]
+  },
+  "a36": {
+    "format": "article",
+    "title": "What micro-publics form in stacked housing?",
+    "paras": 18,
+    "open": "High-rise and stacked housing are often described as private stacked on private: sealed flats along vertical corridors. Look closer and micro-publics appear. Lifts force brief democracies of glance and murmur. Stairwells host teenagers and smokers. Laundry rooms become informatio",
+    "mid": "Elder isolation in towers is a micro-public failure measurable in mortality statistics. A bench in a lobby is not décor; it is an invitation to the repeated encounter that prevents",
+    "close": "Noticeboards in lift lobbies with rotating resident introductions—optional, anonymous if needed—humanise vertical anonymity without forcing intimacy. Small prompts beat grand commu",
+    "speakers": [],
+    "vocab": [
+      "Micro-public",
+      "Threshold",
+      "Acoustic transfer",
+      "Weak ties",
+      "Concierge",
+      "Spontaneous",
+      "Ethnography",
+      "Solidarity"
+    ]
+  },
+  "a37": {
+    "format": "feature",
+    "title": "How does upgrading language mask loss?",
+    "paras": 19,
+    "open": "\"Upgrading,\" \"improving,\" \"enhancing public realm,\" \"activating underused assets\"—the verbs shine. Sometimes they describe genuine repair: safer crossings, warmer homes, cleaner water. Sometimes they mask loss: of affordable units, of informal livelihoods, of quiet, of the right ",
+    "mid": "Independent \"before and after\" census of businesses and tenants five years post-project could puncture shine words with numbers. Few cities fund such follow-up; fewer still publish",
+    "close": "Community land assemblies with veto on demolition pace upgrading to human speed. Fast capital hates slow consent; consent is how loss stays visible.",
+    "speakers": [],
+    "vocab": [
+      "Public realm",
+      "Façade",
+      "Eviction",
+      "Beautification",
+      "Retention",
+      "Displacement",
+      "Anecdotal",
+      "Dialect"
+    ]
+  },
+  "a38": {
+    "format": "essay",
+    "title": "Whose safety and pleasure shape evening cities?",
+    "paras": 18,
+    "open": "Night changes the city's ownership. Daytime crowds dilute difference; evening reveals whose safety and pleasure the streets are built for. Lighting, transport last trains, policing styles, venue licences, and toilet provision compose a politics of after-dark belonging. A waterfro",
+    "mid": "Sex-work policy intersects night urbanism: criminalisation pushes workers into darker, less staffed streets. Harm reduction and lighting are night-safety policy whether moralists a",
+    "close": "Last-train timetables posted outside clubs in plain language reduce navigational labour for visitors unfamiliar with local night transit. Information is night safety infrastructure",
+    "speakers": [
+      "Policy levers exist"
+    ],
+    "vocab": [
+      "Curated",
+      "Navigational labour",
+      "Harassment",
+      "Underpass",
+      "Fortress",
+      "Legitimate",
+      "Precarious",
+      "Externalise"
+    ]
+  },
+  "a39": {
+    "format": "opinion",
+    "title": "How do street economies challenge official order?",
+    "paras": 19,
+    "open": "Street vendors, informal repairers, guides, porters, and unlicensed taxis compose economies that official plans often treat as either colourful heritage or pure disorder. In truth they challenge official order by revealing where formal systems underprovide: cheap food near factor",
+    "mid": "Tourism districts that romanticise street food for photos then sweep vendors before inspections perform a double life cities increasingly refuse to fund.",
+    "close": "Vendor-led waste collection cooperatives reduce city costs and street conflict simultaneously. Integration can align fiscal and humane goals when designers listen. Municipal pilots",
+    "speakers": [],
+    "vocab": [
+      "Informal",
+      "Eradication",
+      "Licensing",
+      "Predatory",
+      "Zoning",
+      "Upstream",
+      "Formalisation",
+      "Mediation"
+    ]
+  },
+  "a40": {
+    "format": "article",
+    "title": "Can dense cities host difference without friction myths?",
+    "paras": 19,
+    "open": "Dense cities gather languages, faiths, classes, and nightlife into tight grids. Myths of friction rush in to explain the result: either cosmopolitan paradise or inevitable clash. Both myths flatten. Difference can produce creativity, thin trust, mutual aid, and genuine conflict—s",
+    "mid": "Election campaigns that mobilise fear of dense difference undermine the very mediation centres that would make coexistence workable. Friction infrastructure is politically vulnerab",
+    "close": "Annual neighbourhood friction audits—reported disputes, mediations, outcomes—replace myth with numbers without denying that some conflict is normal in dense life.",
+    "speakers": [],
+    "vocab": [
+      "Mediation",
+      "Metabolise",
+      "Catastrophise",
+      "Segregation",
+      "Profile",
+      "Infrastructure",
+      "Resilience",
+      "Fidelity"
+    ]
+  },
+  "a41": {
+    "format": "essay",
+    "title": "How should institutions narrate their own omissions?",
+    "paras": 9,
+    "open": "When a hospital publishes its annual report, the glossy pages usually celebrate new wings, shorter waiting times, and grateful patient testimonials. What they rarely mention is quieter: the ward that closed without consultation, the outreach programme quietly defunded, the staff ",
+    "mid": "The difficulty lies in tone and timing. A boilerplate apology issued the day after a protest reads differently from a sustained account that names specific harms, names who benefit",
+    "close": "None of this guarantees easy answers. Narrating omissions requires judgment about which absences matter, how much detail serves truth without voyeurism, and when silence protects p",
+    "speakers": [],
+    "vocab": [
+      "Omission",
+      "Restitution",
+      "Ventriloquism",
+      "Acquisition",
+      "Neutrality",
+      "Diaspora",
+      "Amnesia",
+      "Foyer"
+    ]
+  },
+  "a42": {
+    "format": "feature",
+    "title": "How can music hold national contradiction?",
+    "paras": 11,
+    "open": "National anthems are rarely simple. They carry triumph and mourning in the same melody, celebration and grievance in the same lyric. When a country contains groups whose histories point in opposite directions, music becomes one of the few public languages that can hold contradict",
+    "mid": "Festivals and diaspora communities complicate the picture further. A musician living abroad may perform homeland songs with added verses about exile, creating repertoires that offi",
+    "close": "Sports events amplify stakes. Athletes who kneel or substitute alternate lyrics become flashpoints because stadiums compress national feeling into choreographed minutes. What gets ",
+    "speakers": [],
+    "vocab": [
+      "Contradiction",
+      "Syncopation",
+      "Cadence",
+      "Ambivalence",
+      "Repertoire",
+      "Remix",
+      "Pluralism",
+      "Both-sidesing"
+    ]
+  },
+  "a43": {
+    "format": "opinion",
+    "title": "Should difficult histories be made comfortable for visitors?",
+    "paras": 12,
+    "open": "Museums devoted to slavery, genocide, or colonial violence face an uncomfortable design problem: visitors arrive with limited time, variable preparation, and a understandable wish not to leave feeling wrecked. Curators therefore debate whether \"comfort\"—clear pathways, hopeful en",
+    "mid": "Digital extensions complicate the comfort debate. Online archives can present graphic evidence with granular user control; virtual tours may sanitise by selecting only the least up",
+    "close": "Ultimately, making difficult history comfortable is not one design problem but a continuing negotiation among survivors, educators, neighbours, and funders. The measure of success ",
+    "speakers": [],
+    "vocab": [
+      "Heritage",
+      "Anaesthetise",
+      "Pedagogy",
+      "Patronise",
+      "Caricature",
+      "Specificity",
+      "Gamify",
+      "Perpetrator"
+    ]
+  },
+  "a44": {
+    "format": "dialogue",
+    "title": "If archives are incomplete, what stories fill the gaps?",
+    "paras": 13,
+    "open": "Archives promise completeness and deliver fragments. Fire, neglect, deliberate destruction, and the simple fact that most lives leave faint paper trails mean that historians, journalists, and families constantly work with gaps. When official records fall silent, other materials r",
+    "mid": "Families experience gaps intimately. A missing relative in wartime, an adoption record sealed by law, a ancestor's name spelled differently across borders—these voids become inheri",
+    "close": "For students, learning to map gaps may matter more than memorizing filled narratives. Exercises that present incomplete document sets—redacted files, contradictory accounts—train h",
+    "speakers": [],
+    "vocab": [
+      "Archive",
+      "Invention",
+      "Corroboration",
+      "Oral history",
+      "Launder",
+      "Citation",
+      "Governance",
+      "Spectacle"
+    ]
+  },
+  "a45": {
+    "format": "email",
+    "title": "How can exhibition text honour unresolved history?",
+    "paras": 13,
+    "open": "Exhibition text is easy to overlook. Visitors remember artefacts—the uniform, the letter, the photograph—while the small printed panel beside it does much of the interpretive labour. When history is unresolved, when communities disagree about blame, legacy, and memory, those few ",
+    "mid": "Commercial and political pressures intrude. Sponsors may prefer upbeat messaging; governments may censor references to ongoing abuses. Curators under such constraints sometimes emb",
+    "close": "When exhibition writers remember they are not closing cases but opening conversations, labels become invitations. That posture—confident about evidence, modest about verdicts—may b",
+    "speakers": [],
+    "vocab": [
+      "Curation",
+      "Catharsis",
+      "Caption",
+      "Contested",
+      "Perpetrator",
+      "Passive voice",
+      "Anaesthetise",
+      "Mutual"
+    ]
+  },
+  "a46": {
+    "format": "article",
+    "title": "Monuments after the argument: what remains?",
+    "paras": 12,
+    "open": "Public arguments about monuments rarely end with agreement; they end with exhaustion, litigation, or relocation. Once the shouting subsides, something physical often remains—a statue in a warehouse, a plinth with empty feet, a renamed square that older residents still call by its",
+    "mid": "Pedagogically, post-argument landscapes are rich. Teachers can ask students to map local memorials, trace funding sources, and interview residents about what remained. Empty spaces",
+    "close": "Monuments after the argument remind citizens that public space is maintained, not discovered. Decisions require budgets, votes, and ongoing care. The conversation continues in zoni",
+    "speakers": [],
+    "vocab": [
+      "Monument",
+      "Plinth",
+      "Glorification",
+      "Context panel",
+      "Anti-monument",
+      "Temporal",
+      "Pedestal",
+      "Heritage protection"
+    ]
+  },
+  "a47": {
+    "format": "essay",
+    "title": "Who decides when private holdings become public concern?",
+    "paras": 12,
+    "open": "Private collections can hold public consequence. A manuscript that rewrites constitutional history, a painting looted during war, a ledger documenting forced labour—these may sit in a living room or climate-controlled vault, legally owned yet morally entangled with communities wh",
+    "mid": "Policy proposals vary. Mandatory registration of culturally significant objects, right-of-first-refusal for national institutions, transparency requirements for foundations receivi",
+    "close": "Negotiated solutions—revolving loans, community advisory boards with veto over display, shared conservation costs—appear in pioneering cases. They require trust rare in restitution",
+    "speakers": [],
+    "vocab": [
+      "Patrimony",
+      "Restitution",
+      "Stewardship",
+      "Expropriate",
+      "Externality",
+      "Due process",
+      "Confiscation",
+      "Loot"
+    ]
+  },
+  "a48": {
+    "format": "feature",
+    "title": "How can translators be faithful without being literal?",
+    "paras": 13,
+    "open": "Translation is often judged by fidelity, as if languages were transparent containers that either preserve or spill meaning. Literalism appeals because it seems measurable: word matched to word, structure mirrored, nothing added. Yet readers of literature, law, and scripture know ",
+    "mid": "Religious traditions institutionalized translation debates centuries ago. Scriptural authority fights over whether vernacular versions corrupt doctrine or democratize access. Comme",
+    "close": "Machine-assisted workflows will proliferate; human judgment remains essential where tone shifts liability. Translators who explain their choices in paratext—prefaces, endnotes—turn",
+    "speakers": [],
+    "vocab": [
+      "Literalism",
+      "Register",
+      "Domesticate",
+      "Exoticise",
+      "Equivalence",
+      "Glossary",
+      "Idiom",
+      "Arbitrate"
+    ]
+  },
+  "a49": {
+    "format": "opinion",
+    "title": "How does commerce stylise the past for sale?",
+    "paras": 14,
+    "open": "History sells. Boutique hotels occupy converted warehouses; cocktail menus name drinks after revolutionaries; vintage posters frame corporate lobbies. Commerce has always borrowed aura from the past, but contemporary marketing stylises history with particular efficiency—curating ",
+    "mid": "Perhaps the useful distinction is between stylisation that opens curiosity and stylisation that closes it. A well-researched museum shop book can send visitors back to archives; a ",
+    "close": "Commerce will continue stylising history because nostalgia sells. The counter-move is not puritan refusal of pleasure but insistence that pleasure not be the only access point—and ",
+    "speakers": [],
+    "vocab": [
+      "Nostalgia",
+      "Stylise",
+      "Simulacra",
+      "Erasure",
+      "Extraction",
+      "Revival",
+      "Benefit-sharing",
+      "Regeneration"
+    ]
+  },
+  "a50": {
+    "format": "article",
+    "title": "Why defend slow aesthetic demands now?",
+    "paras": 13,
+    "open": "Speed is a default setting. Streaming skips intros; news cycles compress policy into clips; readers scroll past paragraphs that demand sustained attention. In such an environment, defending slow aesthetic demands—long novels, unhurried films, music that refuses hook within thirty",
+    "mid": "Psychological research cautiously supports nuanced claims. Deep reading correlates with empathy measures in some studies; causation is debated. Meditation traditions and contemplat",
+    "close": "Slow aesthetic demands are defensible not because fast is evil but because human meaning-making requires rhythms markets undervalue. Protecting those rhythms is cultural infrastruc",
+    "speakers": [],
+    "vocab": [
+      "Durational",
+      "Elitist",
+      "Ambiguity",
+      "Motif",
+      "Subsidise",
+      "Patronage",
+      "Gatekeep",
+      "Ecosystem"
+    ]
+  },
+  "a51": {
+    "format": "essay",
+    "title": "How does lived price and work precede theory?",
+    "paras": 13,
+    "open": "Economic theory often arrives dressed in equations, speaking of utility, equilibrium, and rational choice as if people learned to price the world from textbooks. Lived experience suggests another sequence: long before formal models, households discover scarcity, trade-offs, and c",
+    "mid": "Global inequality makes precedence political. Colonial economies extracted resources while imposing metropole theories about comparative advantage. Post-independence policymakers i",
+    "close": "Recognizing that work and price precede theory invites participatory policy: citizen juries on utility rates, worker boards with voting rights, community benefit agreements tying d",
+    "speakers": [],
+    "vocab": [
+      "Elasticity",
+      "Monetarism",
+      "Precarity",
+      "Remittance",
+      "GDP",
+      "Ledger",
+      "Anecdotal",
+      "Alibi"
+    ]
+  },
+  "a52": {
+    "format": "feature",
+    "title": "Why does essential caring labour stay undervalued?",
+    "paras": 17,
+    "open": "Societies proclaim that caring for children, the elderly, and the ill is invaluable, then organise wages as if the opposite were true. Nursery workers, home health aides, and disability support staff often earn less than jobs requiring similar stamina but fewer emotional demands.",
+    "mid": "Essential caring labour stays undervalued because societies treat necessity as excuse rather than reason for reward. Until care is priced as critical infrastructure—not leftover ki",
+    "close": "Research linking adequate nurse-to-patient ratios to mortality gives advocates evidence beyond moral appeal. Legislatures ignoring such data reveal whose lives count in cost-benefi",
+    "speakers": [],
+    "vocab": [
+      "Undervalued",
+      "Meter",
+      "Respite",
+      "Portable",
+      "Deportability",
+      "Precarity",
+      "Upstream",
+      "Romanticise"
+    ]
+  },
+  "a53": {
+    "format": "opinion",
+    "title": "Should GDP remain the story we tell about success?",
+    "paras": 13,
+    "open": "Gross Domestic Product aggregates a nation's marketed output into one heroic number, and headlines treat its growth as synonymous with national success. The story is seductive: more GDP, more jobs, more stuff, better lives. Yet GDP counts pollution cleanup as activity while ignor",
+    "mid": "Critics of GDP reform warn against vague goals substituting for accountability. Measurable targets discipline governments; squishy happiness rhetoric might excuse incompetence. Pro",
+    "close": "Changing the success story requires institutional courage: central banks referencing employment quality; treasuries publishing distributional accounts; media literacy teaching scep",
+    "speakers": [],
+    "vocab": [
+      "Welfare",
+      "Distribution",
+      "Composite",
+      "Footprint",
+      "Median",
+      "Deprivation",
+      "Dismissive",
+      "Legitimately"
+    ]
+  },
+  "a54": {
+    "format": "dialogue",
+    "title": "If wages rise in one sector, who absorbs the cost?",
+    "paras": 14,
+    "open": "When wages rise in one sector—often after strikes, minimum-wage laws, or labour shortages—commentators quickly ask who pays. The question assumes a closed ledger: if hospital workers earn more, do patients face higher bills; if fast-food wages climb, do burgers cost more; if teac",
+    "mid": "Transparent accounting helps: firms reporting profit margins alongside price changes, governments publishing tax incidence analyses, unions articulating links between staffing leve",
+    "close": "Debates about wage pass-through ultimately ask whether societies treat labour as cost to minimize or capacity to invest in. Answers appear not in abstract models but in checkout li",
+    "speakers": [],
+    "vocab": [
+      "Ripple",
+      "Absorb",
+      "Bargaining power",
+      "Pass-through",
+      "Downstream",
+      "Vacancy",
+      "Antitrust",
+      "Indexation"
+    ]
+  },
+  "a55": {
+    "format": "email",
+    "title": "How do unofficial lending systems actually work?",
+    "paras": 17,
+    "open": "Official banks exclude millions—no credit history, irregular documentation, unstable addresses—yet people still borrow, save, and insure one another. Unofficial lending systems fill gaps with rules outsiders rarely see until something breaks. Rotating savings clubs, family loan n",
+    "mid": "Understanding how unofficial lending actually works reveals economic life as people live it—not only as textbooks idealize. These systems encode social capital, cultural obligation",
+    "close": "Digital identity initiatives promising financial inclusion must not merely digitize exclusion—biometric requirements excluding undocumented residents replicate old barriers in new ",
+    "speakers": [],
+    "vocab": [
+      "Susu",
+      "Mutual",
+      "Collateral",
+      "Sanction",
+      "Default",
+      "Vouching",
+      "Escrow",
+      "Predatory"
+    ]
+  },
+  "a56": {
+    "format": "article",
+    "title": "What cooperation quietly sustains \"competitive\" markets?",
+    "paras": 17,
+    "open": "Markets are narrated as arenas of ruthless competition—firms battling for customers, workers competing for jobs, nations vying for investment. The story captures something true while hiding cooperative infrastructure that makes competition possible. Standardised weights, shared p",
+    "mid": "What quietly sustains competitive markets is substantial: institutions, norms, and shared investments competitors rarely acknowledge when claiming victory alone. Narratives matter ",
+    "close": "Antitrust focusing only on consumer prices may miss cooperative harm when firms collude on wages through non-poach agreements—labour markets coordinated against workers while produ",
+    "speakers": [],
+    "vocab": [
+      "Collusion",
+      "Transaction cost",
+      "Spillover",
+      "Entrant",
+      "Cartel",
+      "Lobbying",
+      "Network effect",
+      "Cluster"
+    ]
+  },
+  "a57": {
+    "format": "essay",
+    "title": "How do societies moralise unearned starts?",
+    "paras": 17,
+    "open": "Birth lotteries shape lives long before anyone earns a wage. Citizenship, inherited wealth, neighbourhood safety, parental education, and bodily health confer advantages unearned yet morally narrated in ways that soothe the comfortable. Societies develop stories—meritocracy, dese",
+    "mid": "How societies moralise unearned starts reveals who they expect to feel gratitude versus shame. Changing policy may require changing sermons—about what no one chooses at birth, and ",
+    "close": "Corporate leadership pipelines citing \"talent wars\" obscure internal sponsorship networks reproducing class and race homogeneity. Sponsored employees work same hours as unsponsored",
+    "speakers": [],
+    "vocab": [
+      "Merit",
+      "Inheritance",
+      "Grit",
+      "Lottery",
+      "Mobility",
+      "Sticky",
+      "Progressive",
+      "Equalisation"
+    ]
+  },
+  "a58": {
+    "format": "feature",
+    "title": "How do families narrate rising prices morally?",
+    "paras": 17,
+    "open": "Inflation arrives as numbers on screens, but families often experience it as moral drama: Did we waste? Are we failing our children? Should we cancel the visit to grandparents? Price rises reorder daily virtue scripts—frugality resurrected, generosity postponed, shame attached to",
+    "mid": "Families narrate rising prices morally because numbers alone rarely exhaust meaning. The task for wider society is aligning economic analysis with those narratives without exploiti",
+    "close": "Mutual aid networks—food pantries, community fridges, tool libraries—offer counter-narratives where needing help is ordinary, not moral failure. Their visibility depends on leaders",
+    "speakers": [],
+    "vocab": [
+      "Construct",
+      "Substitution",
+      "Fatalism",
+      "Villain",
+      "Landlord",
+      "CPI",
+      "Margin",
+      "Defer"
+    ]
+  },
+  "a59": {
+    "format": "opinion",
+    "title": "What institutional choices wear market clothing?",
+    "paras": 19,
+    "open": "Markets are invoked to justify choices that institutions make—closing rural clinics, raising tuition, privatising utilities—yet many options were never market outcomes in any meaningful sense. Legislatures set reimbursement rates; regulators grant monopolies; trustees decide endo",
+    "mid": "Public-private partnerships market infrastructure as innovation while transferring risk to taxpayers and users. Toll roads, privatized water, charter schools—each narrates market e",
+    "close": "Export credit agencies subsidize domestic firms abroad under guise of competitive promotion—taxpayer-backed market clothing on industrial policy older than current slogans.",
+    "speakers": [
+      "Labour markets too"
+    ],
+    "vocab": [
+      "Euphemism",
+      "Procurement",
+      "Inevitable",
+      "Hygiene",
+      "Bankruptcy",
+      "Subsidy",
+      "Privatisation",
+      "Contractor"
+    ]
+  },
+  "a60": {
+    "format": "article",
+    "title": "How would time-affluence reframe success?",
+    "paras": 20,
+    "open": "Success stories in affluent cultures often reduce to income curves, property deeds, and titles conferring prestige. Time-affluence—having hours not fully claimed by paid work, commuting, administrative hassle, or performative busyness—rarely appears on dashboards yet correlates w",
+    "mid": "Disability communities remind that time scarcity interacts with accessibility—longer errands, medical appointments, bureaucratic fights consuming days. Success metrics ignoring acc",
+    "close": "Urban noise ordinances and quiet hours defend temporal commons against commercial encroachment—policy recognizing time as shared resource.",
+    "speakers": [],
+    "vocab": [
+      "Discretionary",
+      "Time-poor",
+      "Bounded",
+      "Turnover",
+      "Busyness",
+      "Aspiration",
+      "Scheduling",
+      "Childcare"
+    ]
+  },
+  "a61": {
+    "format": "essay",
+    "title": "How should caregivers honour no as fully as yes?",
+    "paras": 21,
+    "open": "Caregiving cultures celebrate devotion—yes spoken quickly, needs met before they are fully named. Yet sustainable care requires hearing no without treating refusal as betrayal. Patients decline treatments; relatives set boundaries on visits; professional caregivers protect sleep.",
+    "mid": "Legal frameworks evolving on supported decision-making offer models beyond yes/no binaries. Supporters assist understanding without replacing will—honouring no even when they disag",
+    "close": "Shared decision-making tools listing benefits and burdens side by side help families see no as informed rather than hostile.",
+    "speakers": [],
+    "vocab": [
+      "Autonomy",
+      "Assent",
+      "Asymmetry",
+      "Override",
+      "Compliance",
+      "Modesty",
+      "Advocate",
+      "Imposition"
+    ]
+  },
+  "a62": {
+    "format": "feature",
+    "title": "How does temporal scarcity reshape care quality?",
+    "paras": 20,
+    "open": "Care quality is often measured through clinical outcomes, satisfaction scores, and staffing ratios—metrics that matter yet omit something experiential: whether care feels unhurried enough to notice nuance. Temporal scarcity—too few minutes per visit, too many cases per shift—resh",
+    "mid": "Mental health care suffers parallel compression— fifteen-minute medication checks substituting for therapy relationships requiring months. Quality metrics counting prescriptions fi",
+    "close": "Continuity-of-care bonuses rewarding same nurse visiting home patient weekly invest in relationship time metrics often ignore.",
+    "speakers": [],
+    "vocab": [
+      "Temporal",
+      "Throughput",
+      "Truncated",
+      "Staffing ratio",
+      "Respite",
+      "Continuity",
+      "Assembly-line",
+      "Bottleneck"
+    ]
+  },
+  "a63": {
+    "format": "opinion",
+    "title": "Should families overrule competent patients' wishes?",
+    "paras": 21,
+    "open": "Medical ethics begins with respect for competent patients' autonomous choices, yet family systems often assume collective decision-making where individual wishes may be overridden \"for their own good.\" When families overrule competent patients—pressuring treatment acceptance, blo",
+    "mid": "Cross-cultural mediation services in hospitals reduce override attempts by translating not only language but decision frameworks—explaining to families why law centres individual c",
+    "close": "Community education about healthcare proxies reduces surprise when competent patient refuses family-preferred treatment.",
+    "speakers": [],
+    "vocab": [
+      "Competent",
+      "Self-determination",
+      "Advance directive",
+      "Collectivist",
+      "Sovereign",
+      "Delirium",
+      "Least-restrictive",
+      "Liaison"
+    ]
+  },
+  "a64": {
+    "format": "dialogue",
+    "title": "If prognosis is uncertain, how should hope be spoken?",
+    "paras": 22,
+    "open": "Prognosis in serious illness is rarely single-number certainty. Statistics describe populations; individuals walk paths that confound averages. Clinicians trained to communicate risk face families asking for hope in language medicine struggles to certify. How hope should be spoke",
+    "mid": "Survivorship narratives complicate hope after treatment ends; fear of recurrence persists; \"surveillance\" vocabulary induces anxiety clinicians must explain without false reassuran",
+    "close": "Hope spoken with room for revision—\"based on what we know this month\"—invites return conversations when tests change trajectory, preventing patients feeling betrayed when earlier o",
+    "speakers": [],
+    "vocab": [
+      "Inconclusive",
+      "Prognosis",
+      "Nihilism",
+      "Recalibrating",
+      "Palliative",
+      "Median",
+      "Chaplain",
+      "Legacy"
+    ]
+  },
+  "a65": {
+    "format": "email",
+    "title": "How do teams ask for help with moral stuckness?",
+    "paras": 24,
+    "open": "Healthcare teams routinely consult on clinical puzzles—abnormal labs, tricky diagnoses—but moral stuckness often hides in hallway sighs and unanswered pages. Ethical distress when right action conflicts with constraints—insufficient resources, conflicting duties, institutional pr",
+    "mid": "Academic medicine sometimes treats ethics as lecture topic rather than daily skill; residency programs embedding moral consultation normalize asking mid-rounds.",
+    "close": "Peer support groups for clinicians who declined ethically troubling orders validate refusal as professional skill—not weakness warranting isolation.",
+    "speakers": [],
+    "vocab": [
+      "Discharge",
+      "Non-abandonment",
+      "Liability",
+      "Stuckness",
+      "Geriatrician",
+      "Advocate",
+      "Threshold",
+      "Documentation"
+    ]
+  },
+  "a66": {
+    "format": "article",
+    "title": "How can speech honour people who need help?",
+    "paras": 26,
+    "open": "Language about disability and dependence often slides between pity, inspiration, and euphemism—each distorting dignity. Phrases like \"special needs,\" \"suffering from,\" or \"despite disability\" carry histories; advocacy communities propose alternatives—identity-first or person-firs",
+    "mid": "Honouring people who need help ends where slogans begin; it continues in budgets, ramps, salaries, and sentences treating interdependence as ordinary human fact.",
+    "close": "Consent forms rewritten in conversational language—\"help with bathing\" instead of \"ADL assistance\"—signal respect before care begins.",
+    "speakers": [],
+    "vocab": [
+      "Condescending",
+      "Euphemism",
+      "Agency",
+      "Broker",
+      "Honourific",
+      "Charter",
+      "Saccharine",
+      "Contempt"
+    ]
+  },
+  "a67": {
+    "format": "essay",
+    "title": "Who misses the benefits of advancing care?",
+    "paras": 27,
+    "open": "Medical advances—new drugs, refined surgeries, diagnostic tools—promise broader benefits yet distribute unevenly. Geography, insurance status, race, gender, disability, and digital literacy determine who reaches innovations first, if ever. Asking who misses benefits is equity que",
+    "mid": "Disability-adjusted metrics in global health funding prioritize certain disease burdens over others activists challenge as biased.",
+    "close": "Sunsetting patents without affordable generic availability leaves nominal access gains unrealized—policy must track pharmacy shelf not courtroom alone. Out-of-pocket caps matter as",
+    "speakers": [],
+    "vocab": [
+      "Mortality",
+      "Patent",
+      "Ableism",
+      "Rollout",
+      "Gene therapy",
+      "Telehealth",
+      "Solidarity",
+      "Intellectual property"
+    ]
+  },
+  "a68": {
+    "format": "feature",
+    "title": "When does maximal intervention avoid harder choices?",
+    "paras": 26,
+    "open": "Maximal intervention—every test, every line, every escalation—sometimes postpones rather than resolves hard choices about goals of care. When prognosis is poor or quality of life severely compromised, technology's availability can feel like obligation, steering families and clini",
+    "mid": "Bereavement follow-up for families who chose limits combats regret culture suggesting love equals maximal tubes.",
+    "close": "Clinicians documenting goals-of-care conversations in chart protect colleagues from assuming maximal treatment still desired—continuity across rotating teams.",
+    "speakers": [],
+    "vocab": [
+      "Maximal",
+      "Escalation",
+      "Defensive medicine",
+      "Palliative",
+      "ICU",
+      "Trade-off",
+      "Scarcity",
+      "Stigmatise"
+    ]
+  },
+  "a69": {
+    "format": "opinion",
+    "title": "How does sacrificial myth harm caregivers?",
+    "paras": 27,
+    "open": "Caregiving professions attract people drawn to service, then surround them with narratives of sacrifice—mothers' unpaid devotion, nurses as angels, daughters who \"should\" step back from careers. Sacrificial myth flatters societies receiving cheap care while harming caregivers thr",
+    "mid": "Academic programs teaching self-care without staffing reform perform virtue; combined they reduce turnover measurable in patient outcomes.",
+    "close": "State-funded caregiver stipends in some countries treat family labour as budget line not infinite gift—precedent sacrificial myth need not universal. Budget transparency makes invi",
+    "speakers": [],
+    "vocab": [
+      "Sacrifice",
+      "Myth",
+      "Self-erasure",
+      "Respite",
+      "Exploitation",
+      "Stigma",
+      "Internalise",
+      "Indictment"
+    ]
+  },
+  "a70": {
+    "format": "article",
+    "title": "How can clinicians inform without flooding fear?",
+    "paras": 27,
+    "open": "Clinicians occupy dual role: translators of complex risk and witnesses to fear. Inform fully and patients drown; reassure too eagerly and consent becomes shallow. Inform without flooding fear requires communication craft, temporal generosity, and institutional support rarely opti",
+    "mid": "Institutional review of portal release policies prevents midnight panic from uncontextualized labs.",
+    "close": "Scheduled teach-back at visit midpoint—not only end—catches confusion before patient exhausted by cumulative detail.",
+    "speakers": [],
+    "vocab": [
+      "Consent",
+      "Absolute risk",
+      "Relative risk",
+      "Baseline",
+      "Teach-back",
+      "Jargon",
+      "Curated",
+      "Paternalism"
+    ]
+  },
+  "a71": {
+    "format": "essay",
+    "title": "Who gets to define the terms of a debate?",
+    "paras": 10,
+    "open": "Before anyone argues about housing, policing, or climate, someone has already decided what counts as the problem. Is a rent spike a market correction, a displacement crisis, or a failure of supply? The label arrives first and shapes what evidence feels relevant afterward. Definit",
+    "mid": "What might a fairer practice look like? One modest move is to require public bodies to publish alternative framings alongside their preferred ones—not as cynical spin, but as an ad",
+    "close": "In the end, debates are not only about facts and values. They are about who gets to name the world in which facts and values appear. Recognising that does not require cynicism. It ",
+    "speakers": [],
+    "vocab": [
+      "Smuggle",
+      "Lexicon",
+      "Stigmatising",
+      "Reclaim",
+      "Backlash",
+      "Term sheet",
+      "Provisional",
+      "Imperial"
+    ]
+  },
+  "a72": {
+    "format": "feature",
+    "title": "How does grammar hide agency in public talk?",
+    "paras": 10,
+    "open": "Agency often disappears in grammar before it disappears in policy. A headline announces that \"mistakes were made.\" A report notes that \"communities were impacted.\" A spokesperson regrets that \"concerns have been raised.\" In each case, the sentence performs a small magic trick: so",
+    "mid": "Critics of linguistic analysis sometimes say that parsing sentences distracts from material harm. Fair enough: renaming a scandal does not refund a victim. Still, harm and grammar ",
+    "close": "Language will never be fully transparent. Euphemism is human, and not always wicked. Even so, public talk that routinely dissolves actors into processes deserves suspicion. If a po",
+    "speakers": [],
+    "vocab": [
+      "Passive voice",
+      "Inanimate",
+      "Threshold",
+      "Absolve",
+      "Probabilistic",
+      "Default",
+      "Contractor",
+      "Editorial"
+    ]
+  },
+  "a73": {
+    "format": "opinion",
+    "title": "Should hate speech rules protect feelings or democratic capacity?",
+    "paras": 10,
+    "open": "Hate speech rules force a choice that liberal democracies would prefer to postpone: what, exactly, are we protecting when we limit speech? One answer points inward, toward dignity and psychological safety. Slurs and targeted harassment, on this view, inflict a kind of wound that ",
+    "mid": "Opponents of hate speech rules warn of chilling effects and slippery slopes. Their caution deserves weight. Overbroad prohibitions can push ugly ideas into coded channels where the",
+    "close": "Hate speech rules, if they exist, should say clearly which harm they target: the soul, the body politic, or both. Vague virtue language invites arbitrary enforcement. Precise democ",
+    "speakers": [],
+    "vocab": [
+      "Incitement",
+      "Dehumanising",
+      "Overbreadth",
+      "Underbreadth",
+      "Absolutism",
+      "Pogrom",
+      "Moderation",
+      "Hybrid"
+    ]
+  },
+  "a74": {
+    "format": "dialogue",
+    "title": "If metaphors go to war, what happens to policy?",
+    "paras": 11,
+    "open": "Metaphors are not decorations on policy; they are levers. Call addiction a \"war\" and treatment becomes a battlefield: enemies, surges, collateral damage, surrender. Call the economy a \"household budget\" and deficits look like personal irresponsience, even when the comparison misd",
+    "mid": "Critics of metaphor policing sometimes argue that adults can hold figurative language lightly. Perhaps some can. Institutions, however, encode metaphors into budgets and metrics. A",
+    "close": "Responsible public talk might adopt a simple discipline: when a martial metaphor appears, ask what it makes visible, what it hides, and who profits from the visibility. If the answ",
+    "speakers": [],
+    "vocab": [
+      "Mobilise",
+      "Exceptional",
+      "Collateral",
+      "Stigma",
+      "Neutral",
+      "Reciprocity",
+      "Audit",
+      "Traitor"
+    ]
+  },
+  "a75": {
+    "format": "email",
+    "title": "How can institutions write inclusively without vagueness?",
+    "paras": 11,
+    "open": "Inclusive institutional writing walks a narrow ledge. On one side lies vagueness: a cloud of warm nouns—community, equity, stakeholders—that commits to nothing inspectable. On the other lies tokenism: visible diversity language pasted onto unchanged practice. Staff and citizens h",
+    "mid": "Legal risk pushes toward vagueness. Lawyers sometimes prefer flexible promises that resist litigation. Campaigners prefer binding commitments. The tension is real. One compromise i",
+    "close": "Institutions that write inclusively without vagueness signal respect for readers' intelligence. They assume people can handle specificity if it is offered honestly. That respect, o",
+    "speakers": [],
+    "vocab": [
+      "Inclusive",
+      "Precision",
+      "Stereotype",
+      "Person-first",
+      "Screen-reader",
+      "Obligate",
+      "Addendum",
+      "Audit"
+    ]
+  },
+  "a76": {
+    "format": "article",
+    "title": "When does ironic distance protect—or wound?",
+    "paras": 11,
+    "open": "Irony keeps its distance. It says one thing and means another, inviting those \"in on the joke\" to feel clever while outsiders stumble. In art, that distance can protect creators from censors and audiences from boredom. In public life, the same distance can wound—especially when p",
+    "mid": "What should speakers do? One modest rule: the closer the irony is to someone's identity, the more care it requires. Another: if you need a long explanation of why the joke was iron",
+    "close": "Irony will not disappear from public talk, nor should it. It is too useful—and too human—to banish. The ethical task is to notice when distance becomes armour for the already armou",
+    "speakers": [],
+    "vocab": [
+      "Irony",
+      "Sarcasm",
+      "Naive",
+      "Immunity",
+      "Contempt",
+      "Flippancy",
+      "Gatekeeper",
+      "Over-regulation"
+    ]
+  },
+  "a77": {
+    "format": "essay",
+    "title": "How should we distinguish coerced quiet from agency?",
+    "paras": 11,
+    "open": "Silence is not one thing. A witness who chooses not to testify may exercise agency; a witness blocked by threats does not. A student who stays quiet in class to listen may differ sharply from a student silenced by ridicule. A community that withholds cooperation from a corrupt in",
+    "mid": "Power also weaponises silence rhetorically. Accusers are told they waited too long; therefore they must be lying. Communities that pause before speaking are called complicit. The c",
+    "close": "Learning to distinguish coerced quiet from agency is slow work. It resists viral slogans. It requires context, history, and often confidential conversation. Yet democracies that ca",
+    "speakers": [],
+    "vocab": [
+      "Coerced",
+      "Strategic",
+      "Ritual",
+      "Learned helplessness",
+      "Dissent",
+      "Sanctify",
+      "Shadow ban",
+      "Retraumatise"
+    ]
+  },
+  "a78": {
+    "format": "feature",
+    "title": "Why does sophisticated persuasion work better on the educated?",
+    "paras": 11,
+    "open": "Propaganda is often imagined as crude: loud slogans, obvious lies, flattery for the masses. Yet some of the most durable persuasion targets people who believe they are immune. Educated audiences—professionals, managers, policy readers—pride themselves on evidence, nuance, and ind",
+    "mid": "Democracies underestimate this problem when they assume education alone inoculates citizens. Education shifts the theatre of persuasion; it does not end it. If anything, contests m",
+    "close": "Public life improves when educated listeners treat flattery as a warning sign. Being called the reasonable centre feels good. It may mean you are the intended audience for a compro",
+    "speakers": [],
+    "vocab": [
+      "Propaganda",
+      "Cherry-pick",
+      "Launder",
+      "Motivated reasoning",
+      "Credential",
+      "Infosphere",
+      "Cynicism",
+      "Methodological"
+    ]
+  },
+  "a79": {
+    "format": "opinion",
+    "title": "How do mediators reshape messages under pressure?",
+    "paras": 12,
+    "open": "Mediators promise neutrality: we carry messages, we do not make them. Reality is messier. Every choice—what to translate first, which idiom to preserve, which emotion to soften—reshapes the conflict parties thought they were having. Interpreters in diplomacy, family courts, hospi",
+    "mid": "Training should include ethics of partiality: when to interrupt for clarification, when to refuse a term as untranslatable, when to withdraw if pressure demands deceit. Institution",
+    "close": "Mediators reshape messages under pressure because language is never neutral cargo. Acknowledging that fact may improve mediation more than vows of invisibility. The goal is not to ",
+    "speakers": [],
+    "vocab": [
+      "Mediator",
+      "Fidelity",
+      "Register",
+      "Bridging phrase",
+      "Lay reader",
+      "False balance",
+      "Captioning",
+      "Side-by-side"
+    ]
+  },
+  "a80": {
+    "format": "article",
+    "title": "How do people argue if key words mean different things?",
+    "paras": 12,
+    "open": "Arguments stall when speakers use the same words for different worlds. \" Freedom\" may mean non-interference to one listener and material security to another. \" Merit\" may mean test scores, effort, networks, or moral desert, depending on who speaks. \" Violence\" can include speech ",
+    "mid": "Proposals under disagreement can include provisional definitions as trial balloons: \" Suppose we call ' successful' meaning graduation within four years; would you still support th",
+    "close": "Key words will remain contested in plural societies. The democratic hope is not universal dictionary harmony. It is that participants learn to ask, before the third rebuttal, wheth",
+    "speakers": [],
+    "vocab": [
+      "Stipulation",
+      "Terms of reference",
+      "Footnote",
+      "Plural",
+      "Non-negotiable",
+      "Bad faith",
+      "Steelman",
+      "Proxy war"
+    ]
+  },
+  "a81": {
+    "format": "essay",
+    "title": "How does systems vision change environmental judgment?",
+    "paras": 12,
+    "open": "Environmental judgment used to sound like counting: trees felled, parts per million, acres protected. Those measures still matter, but they describe a world as if it were a warehouse of objects. Systems vision asks a different question: what relationships are being strengthened o",
+    "mid": "Institutions reward reductionism because reductionism fits forms. A grant application asks for one outcome variable. A lawsuit asks for one proximate cause. Systems vision struggle",
+    "close": "Environmental judgment mature enough for the twenty-first century will likely blend numbers and relations: carbon per hectare and corridor connectivity; air quality and who breathe",
+    "speakers": [],
+    "vocab": [
+      "Relational",
+      "Feedback",
+      "Lag",
+      "Simplism",
+      "Migration route",
+      "Comparative",
+      "Co-management",
+      "Epistemology"
+    ]
+  },
+  "a82": {
+    "format": "feature",
+    "title": "How do delayed feedbacks punish slow noticing?",
+    "paras": 12,
+    "open": "Delayed feedback is the environment's revenge on short attention spans. Smokestacks raised living standards for decades before acid rain's full accounting. Asbestos insulated buildings handsomely before lungs filed their dissent. Carbon accumulated invisibly while winters still f",
+    "mid": "Lead poisoning in older housing demonstrates delayed feedback with brutal clarity. Exposure in childhood may affect cognition years later, long after families moved or landlords re",
+    "close": "Delayed feedback will never feel as urgent as a siren unless cultures train for it. That training is unglamorous: maintain instruments, fund long studies, protect whistleblowers wh",
+    "speakers": [],
+    "vocab": [
+      "Feedback",
+      "Aquifer",
+      "Die-off",
+      "Reversal",
+      "Intergenerational",
+      "Precautionary",
+      "Tipping point",
+      "Denial"
+    ]
+  },
+  "a83": {
+    "format": "opinion",
+    "title": "Should restoration aim for past ecosystems or future ones?",
+    "paras": 12,
+    "open": "Restoration projects begin with a seductive question: restore to what? A marsh drained for farmland in 1920 looked one way; a marsh from 1820 may have looked another, shaped by indigenous stewardship later interrupted. Going backward is not always possible—rivers moved, climates ",
+    "mid": "Seed banks complicate past-versus-future restoration. They preserve genetic material from earlier landscapes that may not thrive in tomorrow's heat. Managers must decide whether to",
+    "close": "Restoration should probably refuse the fantasy of permanent return. Ecosystems were never static; human cultures never were either. The honest aim is repair under change: rebuild r",
+    "speakers": [],
+    "vocab": [
+      "Restoration",
+      "Baseline",
+      "Novel ecosystem",
+      "Assisted migration",
+      "Managed retreat",
+      "Triage",
+      "Capture",
+      "Indigenous"
+    ]
+  },
+  "a84": {
+    "format": "dialogue",
+    "title": "If one species vanishes, which relationships unravel?",
+    "paras": 13,
+    "open": "Species do not vanish alone; they leave holes shaped like themselves. Remove a pollinator and certain flowers fail to set seed, which removes cover for a ground bird, which changes insect abundance, which alters soil chemistry. Remove a keystone predator and grazers explode, trim",
+    "mid": "Pollinator loss near orchards shows cascading economics. When wild bees decline, farmers rent hives at rising cost; margins shrink; smaller growers sell land; monoculture expands; ",
+    "close": "If one species vanishes, the first relationships to unravel may be invisible—microbial, contractual, spiritual. The last may be trust: trust that authorities noticed in time, trust",
+    "speakers": [],
+    "vocab": [
+      "Keystone",
+      "Pollinator",
+      "Decomposer",
+      "Charisma",
+      "Redundancy",
+      "Specialist",
+      "Cascade",
+      "Corridor"
+    ]
+  },
+  "a85": {
+    "format": "email",
+    "title": "How can communities describe watershed interdependence?",
+    "paras": 14,
+    "open": "Watersheds connect people who never meet. Rain that falls on a suburban lawn may later nourish a city tap, irrigate downstream farms, or carry fertiliser into a bay where fishers work. Upstream land use is downstream destiny, delayed by hours or seasons. Communities that describe",
+    "mid": "Flood insurance maps translate watershed interdependence into household budgets. A homeowner upstream of a levee may never see a river yet pay premiums shaped by dredging decisions",
+    "close": "Watershed interdependence is not a slogan for posters. It is a civic literacy: the ability to explain, to a neighbour or a legislator, why their choice and yours share a glass. Com",
+    "speakers": [],
+    "vocab": [
+      "Catchment",
+      "Watershed",
+      "Interdependence",
+      "Riparian",
+      "Runoff",
+      "Compaction",
+      "Buffer zone",
+      "Peak flow"
+    ]
+  },
+  "a86": {
+    "format": "article",
+    "title": "How does a useful concept become overused alarm?",
+    "paras": 13,
+    "open": "\"Tipping point\" entered public speech as a gift from complex systems science: a threshold where small pushes produce large shifts. It named real phenomena—ice sheets, ecosystems, opinion cascades. It also became an alarm bell rung so often that ears stopped opening. Every heatwav",
+    "mid": "Resilience underwent similar inflation after disaster policy embraced the term. Every programme became \" building resilience\" while meaning preparedness, toughness, adaptation, or ",
+    "close": "Useful concepts become overused alarms when speed beats accuracy. Reclaiming them is slow rhetorical work—less thrilling than catastrophe montages, more durable than outrage cycles",
+    "speakers": [],
+    "vocab": [
+      "Tipping point",
+      "Self-reinforcing",
+      "Reflectivity",
+      "Alarm fatigue",
+      "Uncertainty band",
+      "Apocalypse",
+      "Linear",
+      "Reversible"
+    ]
+  },
+  "a87": {
+    "format": "essay",
+    "title": "What interacting causes make cities dangerously hot?",
+    "paras": 15,
+    "open": "Urban heat is not one cause wearing a single name. It is asphalt storing daylight, buildings trapping exhaust, trees absent from redlined blocks, hospitals and buses clustering where land was cheapest, workers commuting in unairconditioned stops during hottest hours. Dangerous he",
+    "mid": "Night-shift economies carry heat risk often omitted from daytime planning. Warehouse loaders, cleaners, and delivery drivers labour when radiant surfaces still release stored warmt",
+    "close": "Dangerously hot cities are designed, not discovered. Unpacking interacting causes is the first step toward justice-shaped adaptation: interventions that cool the bodies currently p",
+    "speakers": [],
+    "vocab": [
+      "Heat island",
+      "Asphalt",
+      "Evaporation",
+      "Retrofit",
+      "Permeable",
+      "Baseline",
+      "Microclimate",
+      "Mass casualty"
+    ]
+  },
+  "a88": {
+    "format": "feature",
+    "title": "Why must social systems sit inside ecological plans?",
+    "paras": 15,
+    "open": "Ecological plans that ignore social systems tend to fail in predictable ways. A protected forest without livelihoods for neighbours becomes a poaching zone or a political backlash. A flood barrier that displaces fishing villages protects one metric while destroying trust. A refor",
+    "mid": "Disaster relocation programmes test social-ecological integration daily. Moving families uphill after floods protects lives yet severs fishing access, church networks, and grave vi",
+    "close": "Ecological plans worthy of the name already contain people—not as threats to purity, but as partners whose institutions must be redesigned alongside rivers and reefs. Social system",
+    "speakers": [],
+    "vocab": [
+      "Integrated",
+      "Land grab",
+      "Sacrifice zone",
+      "Quota",
+      "Co-governance",
+      "Silo",
+      "Co-benefit",
+      "Asthma"
+    ]
+  },
+  "a89": {
+    "format": "opinion",
+    "title": "Which environmental metrics mislead decision-makers?",
+    "paras": 15,
+    "open": "Decision-makers live by indicators because indicators fit slides. A single number—GDP, air quality index, hectares protected—promises comparability across years and regions. The promise is useful. It is also dangerous when the metric measures what is easy rather than what matters",
+    "mid": "Corporate ESG scores compress messy reality into investable letters. A firm may score well on board diversity while polluting waterways, or poorly on one metric while innovating on",
+    "close": "Environmental metrics are tools, not verdicts. Used honestly, they coordinate action across distance and time. Used lazily, they launder damage into progress reports. The democrati",
+    "speakers": [],
+    "vocab": [
+      "ESG",
+      "Monoculture",
+      "Offshoring",
+      "Goodhart’s law",
+      "Greenwashing",
+      "Embodied carbon",
+      "Lifecycle",
+      "Verification"
+    ]
+  },
+  "a90": {
+    "format": "article",
+    "title": "How can duty work under distributed causation?",
+    "paras": 15,
+    "open": "Duty feels straightforward when causation is singular: you broke it, you fix it. Distributed causation—many small acts combining into large harm—fractures that moral picture. Climate change, antibiotic resistance, and plastic in oceans emerge from countless decisions no one of wh",
+    "mid": "Consumer choice architecture distributes causation across millions of checkout decisions. No single plastic straw causes ocean gyres, yet gyres exist. Campaigns that guilt individu",
+    "close": "Distributed causation does not erase obligation. It reshapes it into shared projects with transparent accounting. Duty works when it names levers sized to the problem: not \" someon",
+    "speakers": [],
+    "vocab": [
+      "Distributed",
+      "Leverage",
+      "Lock-in",
+      "Differentiated",
+      "Producer responsibility",
+      "Performative",
+      "Solidarity",
+      "Adaptation"
+    ]
+  },
+  "a91": {
+    "format": "essay",
+    "title": "What excellence looks like without performance culture?",
+    "paras": 15,
+    "open": "Excellence without performance culture sounds like a private ideal—something monks and master carpenters might enjoy far from LinkedIn. Yet many craftspeople already live it daily. They measure work against material truth, not applause. A joint that will not see daylight still mu",
+    "mid": "Maintenance workers embody quiet excellence rarely profiled. They keep elevators safe, servers cool, and instruments calibrated so stars can perform. When maintenance is cut to fun",
+    "close": "A society that confuses the two trains citizens to chase display and neglect substrate. Recovering non-spectacular excellence is partly personal discipline, partly institutional co",
+    "speakers": [],
+    "vocab": [
+      "Spectacle",
+      "Apprenticeship",
+      "Highlight reel",
+      "Motivational",
+      "Suture",
+      "Persona",
+      "Unfinishedness",
+      "Ranking"
+    ]
+  },
+  "a92": {
+    "format": "feature",
+    "title": "How do long learnings reshape character?",
+    "paras": 15,
+    "open": "Long learning reshapes character the way rivers reshape stone—not in one dramatic flood, but through sustained contact. Apprenticeships measured in years teach more than technique. They teach how to sit with boredom, how to accept correction without collapse, how to trust a proce",
+    "mid": "Medical residency prolongs learning under supervision until judgment matures. Residents who survive the arc often report changed relationship to uncertainty: less panic, more proce",
+    "close": "Character from long learning is not guaranteed, but it is more likely when time is treated as ingredient rather than waste. Societies that honour only fast mastery get flashy begin",
+    "speakers": [],
+    "vocab": [
+      "Plateau",
+      "Reflective",
+      "Prodigy",
+      "Late bloomer",
+      "Sabbatical",
+      "Embodied",
+      "Rigidity",
+      "Formative"
+    ]
+  },
+  "a93": {
+    "format": "opinion",
+    "title": "Should every passion become a profession?",
+    "paras": 15,
+    "open": "\"Do what you love and you'll never work a day\" sells books and tuition. It also quietly asks whether love must become labour to count. Turning every passion into a profession can deepen craft—or poison the passion with market rhythms. The difference often lies in whether autonomy",
+    "mid": "Patronage historically let passions flourish without mass markets. Contemporary crowdfunding revives part of that logic: audiences subsidise work they value before it exists commer",
+    "close": "Should every passion become a profession? Probably not. Some loves survive because they answer to inner standards alone. Others thrive through professional discipline. The wise que",
+    "speakers": [],
+    "vocab": [
+      "Profession",
+      "Voluntary",
+      "Professionalise",
+      "Overcrowd",
+      "Gig market",
+      "Self-exploitation",
+      "Exposure",
+      "Avocation"
+    ]
+  },
+  "a94": {
+    "format": "dialogue",
+    "title": "If tools get smarter, what remains for the craftsperson?",
+    "paras": 16,
+    "open": "Smarter tools—CAD, diagnostic AI, CNC routers, generative assistants—change craft without ending it. They automate repetitive calculation, suggest forms, flag errors early. The fear is obsolescence: if software drafts the house, if the algorithm reads the scan, what remains for t",
+    "mid": "Open-source communities illustrate tool-smart craft politically. Contributors maintain standards—code review, documentation, security audits—that automated merge bots cannot replac",
+    "close": "If tools get smarter, craftspersons who thrive will likely be those who treat tools as partners under human responsibility—not rivals to defeat, not oracles to obey. The centre hol",
+    "speakers": [],
+    "vocab": [
+      "CNC",
+      "Tear-out",
+      "Motif",
+      "Curation",
+      "Integration",
+      "Apprentice",
+      "Accountability",
+      "Parameter"
+    ]
+  },
+  "a95": {
+    "format": "email",
+    "title": "How do mentors advocate for slow excellence?",
+    "paras": 17,
+    "open": "Mentors occupy awkward ground. They must advocate for learners in systems that reward speed, visibility, and measurable spikes. Recommending slow excellence—depth over dazzle—can sound like sabotage in committees trained for GPA curves and portfolio gloss. Yet mentors who have se",
+    "mid": "Reference letters for fellowships often punish slow excellence by demanding \" promise\" visible in youth. Mentors can reframe promise as trajectory shape rather than spike height—sh",
+    "close": "Advocating for slow excellence is not nostalgia. It is bet on reliability in a world addicted to launch. The mentor's voice matters most when it names what hurried committees canno",
+    "speakers": [],
+    "vocab": [
+      "Temperament",
+      "Ledger",
+      "Critique",
+      "Commission",
+      "Integrity",
+      "Kiln",
+      "Romanticise",
+      "Portfolio"
+    ]
+  },
+  "a96": {
+    "format": "article",
+    "title": "How can makers read failure without self-erasure?",
+    "paras": 17,
+    "open": "Failure in craft is information, not identity—easy to say, hard to absorb when the piece splits, the grant rejects, the patient complains. Makers socialised in winner-take-all cultures often read failure as self-erasure: if I am only as good as my last success, then failure delet",
+    "mid": "Aviation investigates crashes with blameless reporting systems that makers in other fields emulate. The model acknowledges that self-erasure after error prevents safety gains. Tran",
+    "close": "Craft grows where failure is small enough to survive and serious enough to teach. Designing those conditions—for students, employees, oneself—is part of the work, not a footnote to",
+    "speakers": [],
+    "vocab": [
+      "Shame spiral",
+      "Self-erasure",
+      "Weld",
+      "Melodrama",
+      "Precarious",
+      "Post-mortem",
+      "Concealment",
+      "Retraumatise"
+    ]
+  },
+  "a97": {
+    "format": "essay",
+    "title": "Why do purpose talks sometimes skip the hard part?",
+    "paras": 17,
+    "open": "Purpose talks flourish in graduation seasons and leadership retreats. They promise that meaning follows passion, that work aligned with values feeds the soul. Harder parts—boredom, compromise, skill plateaus, unfair bosses, markets that ignore virtue—rarely make the slide deck. C",
+    "mid": "Mid-career workers returning to school expose purpose-talk gaps. They often need skill upgrades more than inspiration; programmes that lead with manifestos and delay concrete instr",
+    "close": "Purpose talks that skip competence offer fireworks without heat. People deserve maps that include swamps, not only peaks. Meaning that survives contact with skill's slow forge is l",
+    "speakers": [],
+    "vocab": [
+      "Complicity",
+      "Hollow",
+      "Transmission",
+      "Keynote",
+      "Dilemma",
+      "Legacy",
+      "Prestige",
+      "Container"
+    ]
+  },
+  "a98": {
+    "format": "feature",
+    "title": "What keeps skill communities alive across fashions?",
+    "paras": 18,
+    "open": "Skill communities outlive fashions when they anchor something deeper than trend. A pottery guild during a minimalist craze, a jazz club when pop dominates, a repair café when consumption spikes—all survive because they offer continuity, standards, and belonging machines cannot ea",
+    "mid": "Historical reenactment communities preserve craft skills between fashion waves—not always academically precise yet valuable as practice archives when military or domestic technique",
+    "close": "What keeps skill communities alive is not resistance to change but differentiated identity: we do this well here, for reasons we can explain, with people you will see again next we",
+    "speakers": [
+      "Rituals stabilise groups"
+    ],
+    "vocab": [
+      "Guild",
+      "Gatekeeping",
+      "Intergenerational",
+      "Porosity",
+      "Subsidised",
+      "Pipeline",
+      "Tacit",
+      "Solidarity"
+    ]
+  },
+  "a99": {
+    "format": "opinion",
+    "title": "How should the highly skilled relate to unequal starts?",
+    "paras": 18,
+    "open": "Highly skilled people often rise through unequal starts— tutors, tools, calm homes, networks others lacked. Success narratives erase those subsidies, producing merit stories that wound those still climbing. Relating fairly means holding excellence and access together without diss",
+    "mid": "Immigration policies that recognise foreign credentials unevenly waste skilled newcomers trained elsewhere. Fair relation includes fixing recognition systems, not only asking indiv",
+    "close": "Highly skilled people relate fairly to unequal starts when they refuse two temptations: pretending they built alone, and abandoning craft standards to avoid discomfort. The middle ",
+    "speakers": [],
+    "vocab": [
+      "Leverage",
+      "Amnesia",
+      "Internship",
+      "Gatekeeping",
+      "Redistribution",
+      "Hollow",
+      "Scholarship",
+      "Hoarding"
+    ]
+  },
+  "a100": {
+    "format": "essay",
+    "title": "What does a craft-centred life ask and give?",
+    "paras": 16,
+    "open": "A craft-centred life asks much and returns much—not always in coin. It asks for attention repeated until materials teach back. It asks for tolerance of slow seasons, jealous peers, and markets indifferent to beauty. It asks that you stand behind work when praise is absent and fix",
+    "mid": "Intergenerational teaching closes the loop. Makers who train successors experience meaning beyond personal mastery—the work continues when hands change. That continuity may matter ",
+    "close": "A craft-centred life asks integrity during invisible hours and offers coherence across them. It gives fewer guaranteed prizes and more durable answer to \" what did you do with your",
+    "speakers": [],
+    "vocab": [
+      "Synthesis",
+      "Reckoning",
+      "Competence",
+      "Instrumentality",
+      "Martyrdom",
+      "Footnote",
+      "Apprentice",
+      "Seasonal"
+    ]
+  }
+}

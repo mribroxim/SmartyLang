@@ -5,11 +5,14 @@ import {
   ieltsReadingTests, getAllQuestions, scoreToBand,
   type IELTSTest, type IELTSPassage, type IELTSQuestion, type QuestionSection,
 } from '../data/ieltsReadingTests';
+import { readingScoreToBand } from '../lib/ieltsBands';
 import { getIELTSTests } from '../firebase';
 
 interface Props {
   onBack: () => void;
   recordExercise?: (type: string, data: any) => void;
+  embedded?: boolean;
+  onFinish?: (result: { score: number; total: number; band: number }) => void;
 }
 
 // ── helpers ──────────────────────────────────────────────────────────────
@@ -225,7 +228,7 @@ function QuestionInput({
 }
 
 // ── main component ────────────────────────────────────────────────────────
-export function IELTSReading({ onBack, recordExercise }: Props) {
+export function IELTSReading({ onBack, recordExercise, embedded, onFinish }: Props) {
   const { editMode, openEditor } = useEditMode();
   const [view, setView] = useState<'hub' | 'test' | 'results'>('hub');
   const [selectedTestIdx, setSelectedTestIdx] = useState(0);
@@ -303,6 +306,14 @@ export function IELTSReading({ onBack, recordExercise }: Props) {
     setSubmitted(false);
     setView('test');
   }
+
+  const startedRef = useRef(false);
+  useEffect(() => {
+    if (!embedded || startedRef.current) return;
+    startedRef.current = true;
+    startTest(0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [embedded]);
 
   function handleSubmit() {
     clearInterval(timerRef.current!);
@@ -565,6 +576,15 @@ export function IELTSReading({ onBack, recordExercise }: Props) {
 
           {/* actions */}
           <div className="flex items-center gap-3 mt-6">
+            {embedded && onFinish ? (
+              <button
+                onClick={() => onFinish({ score: correct, total: 40, band: readingScoreToBand(correct) })}
+                className="flex items-center gap-2 px-5 py-2.5 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-xl font-bold text-sm hover:bg-black transition-colors"
+              >
+                Continue <ChevronRight className="w-4 h-4" />
+              </button>
+            ) : (
+              <>
             <button
               onClick={() => startTest(selectedTestIdx)}
               className="flex items-center gap-2 px-5 py-2.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 rounded-xl font-bold text-sm hover:bg-zinc-200 dark:hover:bg-zinc-700 transition-colors"
@@ -577,6 +597,8 @@ export function IELTSReading({ onBack, recordExercise }: Props) {
             >
               All Tests <ChevronRight className="w-4 h-4" />
             </button>
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -1,0 +1,63 @@
+/**
+ * Topic-tied elaborations for kernel beats (a41–a100).
+ * Each string continues its beat with concrete examples — NOT generic filler.
+ */
+export const ELAB = {
+  a41: [
+    `Masalan, shahar arxivi sel xavfini kech eʼlon qilganini yillar davomida “muvaffaqiyatli modernizatsiya” bobida yashirishi mumkin; aholi esa nam uy va qimmat sugʻurtani eslaydi.`,
+    `Kasaba uyushmasi yoki mahalla kengashi ochiq xatonda boʻshliqni aytganda, ishonch odatda oshadi — chunki odamlar allaqachon sezgan narsani inkor qilishdan charchagan.`,
+    `Universitet “biz qabul kvotasida qishloq maktablarini eʼtiborsiz qoldirdik; endi sayyor konsultatsiya ochamiz” desa, bu zaiflik emas, boshqaruvdir.`,
+    `Kasbiy matbuotda ham shu: “tizim xatosi yuz berdi” oʻrniga “biz X filtrni yoqib, Y murojaatlarni kechiktirib qoʻydik” deb yozish apellyatsiyani haqiqiy qiladi.`,
+    `Muzey yoʻqolgan xatlar roʻyxatini vitrinaga qoʻysa, tashrif buyuruvchi manipulyatsiyani emas, cheklovni koʻradi; bu esa keyingi tadqiqotga yoʻl ochadi.`,
+    `Agar xodim “yomon xabar” uchun jarima olsа, yillik hisobotdagi chiroyli ochiqlik — teatr. Himoya qoidasi yoʻq joyda hikoya yolgʻonlashadi.`,
+    `Kasaba yoki fuqaro kengashi shu boʻlimni oʻqib, keyingi yilga muddat qoʻyishi mumkin; shunda soʻz tekshiriladigan vaʼdaga aylanadi.`,
+    `Bitiruvchilarning ishga joylashish farqini yashirish — marketing; uni ochiq jadval qilish — islohot uchun boshlanish nuqtasi.`,
+    `Sel yoki avariyadan keyin birinchi 48 soatlik aniq xronologiya mish-mishni kamaytiradi; kechikkan “tekshiryapmiz” esa boʻshliqni mish-mishga beradi.`,
+    `Shu yoʻl muassasani kichraytirmaydi; u kelgusi xatolarni arzonroq tuzatishga tayyorlaydi, chunki xotira allaqachon ochiq.`,
+  ],
+  a42: [
+    `Mustaqillik bayramidagi marsh bir oilada faxr, boshqasida yoʻqotilgan qarindosh xotirasini uygʻotishi mumkin; ikkalasi ham “notoʻgʻri” emas.`,
+    `Bitta xalq qoʻshigʻining turli til versiyalari bir sahnada yangrasa, ziddiyat yoʻqolmaydi, lekin u yoʻqotilmagan ovoz sifatida eshitiladi.`,
+    `Davlat radiosining “oltin fond”i qaysi davrga ogʻishini kuzatish — madaniy byudjetni oʻqishning oddiy usuli.`,
+    `Chetda yashovchi sanʼatkorlar aralash ohanglarni yuborsa, ichki auditoriya baʼzan noqulay boʻladi; noqulaylik — suhbatning boshlanishi boʻlishi mumkin.`,
+    `Taqiqlangan kassetalar bozor ostida yurgan davrlar shuni koʻrsatadi: taqiqlash tinglovchini yoʻqotmaydi, ishonchni yoʻqotadi.`,
+    `Maktabda faqat bitta tilning bayram qoʻshiqlari tanlansa, boshqa uy tillari “uyatchan” qoladi; tanlov — darsdagi siyosat.`,
+    `Turistik “etno” shoular ritmni sotsa-da, majburiy mehnat yoki surgun haqidagi misralarni olib tashlasa, ohang yuzaki boʻlib qoladi.`,
+    `Derazda yonma-yon turgan odamlar baʼzan matbuotdagi bahsdan koʻra yumshoqroq kelishadi — tana yaqinligi matndan oldin keladi.`,
+    `Liner notes va podkast izohlari manipulyativ “yagona maʼno”ni boʻshashtiradi; tinglovchi tanlash huquqini oladi.`,
+    `Shuning uchun musiqa tinchlik shartnomasi emas; u ziddiyatni eshitiladigan qilib, yoʻqotmasdan ushlab turadigan maydon.`,
+  ],
+  a43: [
+    `Qisqa audiogid baʼzan zoʻravonlikni “fojia” deb umumlashtirib, kim qilganini va kim foyda koʻrganini yashiradi.`,
+    `Jabrlanuvchi oilalar uchun “yoqimli zal” baʼzan xotirani yengillashtirishdek tuyuladi; shuning uchun ular matnni birga yozishi kerak.`,
+    `Boshlangʻich sinf uchun metafora va yoshga mos ogohlantirish — pedagogika; kattalar zalida oʻsha yumshoqlikni majburiy qilish — homiylik.`,
+    `“Ogʻir kontent” belgilari va tinch xona — mehmonni hurmat; jinoyatni “qahramonlik afsonasi” qilish — yolgʻon.`,
+    `Mahalla vakillari ekskursiya matnini koʻrib chiqsa, tashqi konsultantning “universal yumshoq ohang”i kamayadi.`,
+    `Chipta sotuvi asosiy KPI boʻlsa, kuratorlar noqulay vitrinalarni qisqartirishga majbur boʻladi; bu — iqtisodiy senzura.`,
+    `QR-kod orqali qoʻshimcha guvohliklar: xohlagan chuqurroq oʻqiydi, charchagan asosiy yoʻlakda qoladi — bu majburiy emas, ixtiyoriy chuqurlik.`,
+    `Tushuntirish — sabab-oqibatni ochish; tinchlantirish — aybdorni yoʻqotish. Ikkinchisi “mezbonlik” nomidan keladi.`,
+    `Gidlar uchun superviziya va fakt varaqasi boʻlmasa, ular savolga hissiyot bilan javob berib, xatoga yoʻl qoʻyadi.`,
+    `Adolatli muzey baʼzan mehmonni noqulay qoʻyadi; shu noqulaylik — oʻrganishning bahosi, yoʻqotish emas.`,
+  ],
+  a44: [
+    `A: Boʻsh sahifa qolsa, odamlar mish-mish bilan toʻldiradi. Bu tabiiy, lekin xavfli — ayniqsa saylov yoki sud oldidan.\nB: Shuning uchun arxivchi “bilmaymiz”ni ochiq yozishi kerak. Boʻshliq ham dalil: kimning ovozi yozilmaganini koʻrsatadi.`,
+    `A: Ogʻzaki tarix boʻshliqni toʻldira oladimi?\nB: Qisman. U boy, lekin xotira tanlab ishlaydi. Intervyuni yozib, boshqa manba bilan solishtirib, ehtiyot bilan qoʻyish kerak.`,
+    `A: Badiiy film boʻshliqni “yopib” yubormaydimi?\nB: Film hissiyot beradi, lekin uni hujjat deb koʻrsatmaslik kerak. Eng yaxshi filmlar oʻz toʻqimasini titrlarda tan oladi.`,
+    `A: Kimning ovozi arxivga kirmagan?\nB: Koʻpincha kambagʻal, ayol, ozchilik, magʻlub tomon. Boʻshliq — kuch xaritasi; uni “tasodif” demaslik kerak.`,
+    `A: Unda amalda nima qilamiz?\nB: Qidiramiz, soʻraymiz, ehtiyotkor faraz qilamiz, va “bu aniq” demasdan oldin tekshiramiz. Muddat bosimi yolgʻonni arzonlashtiradi.`,
+    `A: Jamoatchilik sabrsiz-ku.\nB: Sabrsizlikni tushunaman. Lekin tez yolgʻon sekin rostan qimmatroq — keyin ishonchni qayta tiklash avlodlar oladi.`,
+    `A: Maktablarda qanday oʻrgatamiz?\nB: Oʻquvchilarga manba tanqisligini koʻrsatamiz. Ular “toʻliq kitob” afsonasidan chiqib, savol berishni oʻrganadi.`,
+    `A: Raqamli arxivlar-chi?\nB: Skanning koʻpayishi yaxshi, lekin metadatasiz fayl yana boʻshliq. Kim skanerlagani, qachon, qanday ruxsat — shu ham hikoya.`,
+    `A: Xulosa?\nB: Boʻshliqni toʻldirish — ijod emas, masʼuliyat. Eng rost toʻldirish baʼzan ochiq savol bilan qolishdir.`,
+  ],
+  a45: [
+    `Subject: Hal etilmagan tarix uchun koʻrgazma matni\n\nHurmatli kuratorlar jamoasi,\nHal etilmagan voqeani “yakuniy hukm” qilib yozish — tashrif buyuruvchini aldash. Matn bahsni koʻrsatishi, lekin bitta tomonni gʻolib qilmasligi kerak.`,
+    `Taklif: har bir zalda “nima maʼlum / nima bahsli / nima hali ochiq” uchlik belgisini qoʻying. Bu pedagogik jihatdan ham, axloqiy jihatdan ham toza.`,
+    `Agar sud hali ketayotgan boʻlsa, ayblov tilini ehtiyot qiling. “Guvohlar aytishicha” bilan “sud aniqladiki”ni aralashtirmang.`,
+    `Oilalar roziligisiz shaxsiy fotosuratlarni dramatik collageda ishlatmang. Hurmat — dizayn tanlovi ham.`,
+    `Audio qoʻllanmada sukut uchun joy qoldiring: baʼzi zalda musiqa emas, nafas. Hissiyotni boshqarish — manipulyatsiya emas, mehmondoʻstlik boʻlishi mumkin.`,
+    `Xodimlar uchun qisqa brifing: qaysi savollarga “bilmaymiz” deb javob berish mumkin, qayerga murojaat qilish kerak.`,
+    `Yopilishdan oldin mahalliy tarixchilar va jamoa vakillari matnni birga oʻqisin. Ular “hal etilmagan” degan joyda biz shoshilishimiz mumkin.`,
+    `Hurmat bilan,\nNodira Aliyeva\nTaʼlim dasturlari boʻlimi`,
+  ],
+};

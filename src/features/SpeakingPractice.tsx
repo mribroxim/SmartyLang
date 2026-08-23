@@ -6,6 +6,10 @@ import { SPEAKING_TOPICS_BY_LEVEL as _DEFAULT_SPEAKING, SPEAKING_LEVELS as PRACT
 import { useCMSContent } from '../lib/useCMSContent';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
+import { checkSpeaking, AiExaminerError, type AiCheckReportData } from '../lib/aiExaminer';
+import { AiCheckReport, AiCheckButton, AiCheckError } from '../components/AiCheckReport';
+import { recordCompletion } from '../lib/completions';
+import { logActivity } from '../lib/activity-tracker';
 import { activityLangStamp, matchesContentLang, sessionsForLang } from '../lib/activityMeta';
 import { playWord as sharedPlayWord } from '../lib/speech';
 import {
@@ -37,10 +41,11 @@ export function SpeakingPractice({
   savedVocab = {},
   onShowModal,
   onBack,
-}: { initialLevel?: string; initialTopicIndex?: number; onToggleVocab?: (w: string, ctx: string) => void; savedVocab?: Record<string, any>; onShowModal?: (w: string, mode: string) => void; onBack?: () => void } = {}) {
+  startingLevel,
+}: { initialLevel?: string; initialTopicIndex?: number; onToggleVocab?: (w: string, ctx: string) => void; savedVocab?: Record<string, any>; onShowModal?: (w: string, mode: string) => void; onBack?: () => void; startingLevel?: string } = {}) {
   const { speakingTopics: TOPICS_BY_LEVEL } = useCMSContent();
   const { speechLocale, contentLang } = useContentLang();
-  const { t, tLevel, tLevelDesc } = useUiLang();
+  const { t, tLevel, tLevelDesc, uiLang } = useUiLang();
   const hasInitial = initialLevel !== undefined && initialTopicIndex !== undefined;
   const [view, setView] = useState<'levels' | 'custom' | 'topics' | 'recording'>(
     hasInitial ? 'recording' : 'levels'
@@ -77,6 +82,9 @@ export function SpeakingPractice({
   const [liveTranscript, setLiveTranscript] = useState('');
   const [transcriptDraft, setTranscriptDraft] = useState('');
   const [showTranscriptEditor, setShowTranscriptEditor] = useState(false);
+  const [checking, setChecking] = useState(false);
+  const [checkReport, setCheckReport] = useState<AiCheckReportData | null>(null);
+  const [checkError, setCheckError] = useState<string | null>(null);
   const recognitionRef = useRef<any>(null);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
@@ -318,6 +326,51 @@ export function SpeakingPractice({
 
   const fmt = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
 
+  const runSpeakingCheck = async (topicKey: string, prompt: string) => {
+    const spoken = (liveTranscript || transcriptDraft || '').trim();
+    if (!spoken || checking) return;
+    setChecking(true);
+    setCheckError(null);
+    try {
+      const levelLabel = [startingLevel, selectedLevel].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).join(' → ') || selectedLevel;
+      const report = await checkSpeaking({
+        transcript: spoken,
+        questions: prompt,
+        part: 'practice',
+        style: 'practice',
+        level: levelLabel,
+        duration: recordingTime,
+        uiLang,
+        contentLang,
+      });
+      setCheckReport(report);
+      const audioKey = (recordings[topicKey] || [])[0]?.['audioKey' as keyof Recording] as string | undefined;
+      try {
+        const raw = localStorage.getItem('speaking_graded_v1');
+        const map = raw ? JSON.parse(raw) : {};
+        const entry = {
+          transcript: spoken,
+          audioKey,
+          ...activityLangStamp(contentLang),
+          result: report,
+        };
+        map[topicKey] = [entry, ...(map[topicKey] || [])].slice(0, 30);
+        localStorage.setItem('speaking_graded_v1', JSON.stringify(map));
+      } catch { /* ignore */ }
+      recordCompletion('speaking', {
+        title: prompt.slice(0, 80),
+        band: report.final.overallScore,
+        contentLang,
+        data: { report },
+      });
+      logActivity({ type: 'ai_check_speaking', title: 'Speaking practice', score: report.final.overallScore, level: selectedLevel });
+    } catch (e: any) {
+      setCheckError(e instanceof AiExaminerError ? e.message : (e?.message || 'Check failed'));
+    } finally {
+      setChecking(false);
+    }
+  };
+
   /* ══════════════════════════════════════════════════════════════
      RECORDING SCREEN
   ══════════════════════════════════════════════════════════════ */
@@ -434,15 +487,20 @@ export function SpeakingPractice({
                   </p>
                 </div>
                 {!isRecording && liveTranscript && (
-                  <button
-                    onClick={() => { setTranscriptDraft(liveTranscript); setShowTranscriptEditor(true); }}
-                    className="text-[10px] font-bold text-zinc-500 hover:text-zinc-900 uppercase tracking-wider"
-                  >Edit</button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => { setTranscriptDraft(liveTranscript); setShowTranscriptEditor(true); }}
+                      className="text-[10px] font-bold text-zinc-500 hover:text-zinc-900 uppercase tracking-wider"
+                    >Edit</button>
+                    <AiCheckButton onClick={() => runSpeakingCheck(key, prompt)} loading={checking} />
+                  </div>
                 )}
               </div>
               <p className="text-slate-700 leading-relaxed font-serif text-base whitespace-pre-wrap">
                 {liveTranscript || transcriptDraft || <span className="text-slate-400 italic text-sm">No speech detected yet…</span>}
               </p>
+              {checkError && <div className="mt-3"><AiCheckError message={checkError} /></div>}
+              {checkReport && <div className="mt-4"><AiCheckReport report={checkReport} compact /></div>}
             </div>
           )}
 
