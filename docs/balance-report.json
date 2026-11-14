@@ -1,0 +1,150 @@
+{
+  "furniture": {
+    "total": 70,
+    "paid": 64,
+    "freeCatalogItems": 6,
+    "prices": {
+      "30": 14,
+      "40": 13,
+      "50": 13,
+      "60": 8,
+      "70": 8,
+      "80": 8
+    },
+    "totalCatalogCoinCost": 3270,
+    "coinCostAfterStarterGift": 3240,
+    "note": "One paid shelf variant is also a starter gift. Prices cycle by index; they do not increase monotonically."
+  },
+  "rewards": {
+    "ordinary": {
+      "xp": 20,
+      "coins": 0
+    },
+    "today": {
+      "xp": 15,
+      "coins": 0
+    },
+    "unitTest": {
+      "xp": 15,
+      "coins": 15
+    },
+    "perfectUnitTest": {
+      "xp": 20,
+      "coins": 20
+    },
+    "sectionJump": {
+      "xp": 25,
+      "coins": 25
+    },
+    "practice": {
+      "xp": 15,
+      "coins": 10
+    },
+    "highAccuracyPractice": {
+      "xp": 20,
+      "coins": 15
+    },
+    "meal": 10
+  },
+  "scenarios": [
+    {
+      "ordinaryBitesPerDay": 2,
+      "piecesFromBites": 2,
+      "coinsPerDayFromBitesAndFeedingLongRun": 5,
+      "daysTo30Coins": 6,
+      "daysTo80Coins": 16
+    },
+    {
+      "ordinaryBitesPerDay": 4,
+      "piecesFromBites": 4,
+      "coinsPerDayFromBitesAndFeedingLongRun": 10,
+      "daysTo30Coins": 3,
+      "daysTo80Coins": 8
+    },
+    {
+      "ordinaryBitesPerDay": 6,
+      "piecesFromBites": 6,
+      "coinsPerDayFromBitesAndFeedingLongRun": 15,
+      "daysTo30Coins": 2,
+      "daysTo80Coins": 6
+    }
+  ],
+  "assumptions": "Steady-state averages from ordinary bites only; four pieces per meal, all meals fed. No quest pieces, tests or Practice included; this is calculated, not observed retention telemetry.",
+  "quests": {
+    "pool": [
+      {
+        "id": "xp",
+        "target": 30,
+        "max": false
+      },
+      {
+        "id": "bites",
+        "target": 2,
+        "max": false
+      },
+      {
+        "id": "feed",
+        "target": 1,
+        "max": false
+      },
+      {
+        "id": "perfect",
+        "target": 1,
+        "max": false
+      },
+      {
+        "id": "words",
+        "target": 3,
+        "max": false
+      },
+      {
+        "id": "streak",
+        "target": 1,
+        "max": false
+      },
+      {
+        "id": "practice",
+        "target": 1,
+        "max": true
+      },
+      {
+        "id": "talk",
+        "target": 1,
+        "max": true
+      }
+    ],
+    "picksPerDay": 3,
+    "freeFrequencyOver28Days": {
+      "feed": 14,
+      "perfect": 6,
+      "xp": 28,
+      "words": 11,
+      "streak": 7,
+      "bites": 18
+    },
+    "maximumQuestPiecesPerDay": 3,
+    "maximumAdditionalLongRunCoinsPerDayFromQuests": 7.5
+  },
+  "jumpTest": {
+    "sampledWords": 12,
+    "sampleSource": "first 30 lessons of target section",
+    "steps": [
+      "definition: up to 12 words",
+      "listening: up to 5 words",
+      "spelling: up to 4 words"
+    ],
+    "passPercent": 80,
+    "note": "Score is the rounded unweighted average of first-attempt step percentages, rather than word-weighted accuracy. Nominally 21 graded word presentations when all 12 translations exist. Empirical level discrimination has not been measured."
+  },
+  "meows": {
+    "promptTarget": "about one reply in six; never consecutive",
+    "nominalPercent": 16.666666666666668,
+    "observedReplies": 0,
+    "note": "Prompt guidance is not a statistical rate guarantee. No live model sample was collected."
+  },
+  "balanceRisks": [
+    "No daily cap on Practice coins; coins per day have no finite upper bound.",
+    "Section-jump reward replay needs a durable one-time claim before launch.",
+    "The same three quests can be claimed on offline devices before merge; merging claims does not reverse duplicate fish already earned."
+  ]
+}

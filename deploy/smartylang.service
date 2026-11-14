@@ -9,6 +9,7 @@ User=smartylang
 Group=smartylang
 WorkingDirectory=/srv/smartylang/app
 EnvironmentFile=/etc/smartylang/app.env
+Environment=NODE_ENV=production
 ExecStart=/usr/bin/node --experimental-strip-types /srv/smartylang/app/server.ts
 Restart=always
 RestartSec=5

@@ -1,0 +1,8 @@
+[Unit]
+Description=SmartyLang readiness check
+[Service]
+Type=oneshot
+User=smartylang
+EnvironmentFile=/etc/smartylang/app.env
+WorkingDirectory=/srv/smartylang/app
+ExecStart=/usr/bin/node scripts/ops/uptime.mjs
