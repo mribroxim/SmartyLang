@@ -1,5 +1,6 @@
 import express, { type Express, type Request, type Response } from 'express';
 import { getProfile, requireUser, updateProfile } from './auth.ts';
+import { checkoutQuote } from './paymentPolicy.ts';
 import {
   createCheckoutSession,
   fulfillPayment,
@@ -8,6 +9,8 @@ import {
   pendingFromMetadata,
   retrievePayment,
   verifyWebhookSignature,
+  syncSubscription,
+  changeCancellation,
 } from './dodoPayments.ts';
 
 function errorStatus(error: any, fallback = 500): number {
@@ -28,6 +31,7 @@ export function registerPaymentsWebhook(app: Express): void {
       if (type === 'payment.succeeded' && paymentId) {
         await fulfillPaymentFromWebhook(paymentId);
       }
+      if (type.startsWith('subscription.') && event?.data?.subscription_id) await syncSubscription(String(event.data.subscription_id));
       return res.json({ received: true });
     } catch (error: any) {
       const status = errorStatus(error);
@@ -50,10 +54,9 @@ export function registerPaymentsApi(app: Express): void {
       }
 
       const body = req.body || {};
-      const kind = String(body.kind || 'plan');
-      const planId = String(body.planId || '');
-      const amountUSD = Number(body.amountUSD || 0);
-      const description = String(body.description || `SmartyLang — ${planId}`);
+      const quote = checkoutQuote(body, user.profile);
+      const { kind, planId, amountUSD } = quote;
+      const description = `SmartyLang — ${planId}`;
 
       if (!planId || !Number.isFinite(amountUSD) || amountUSD <= 0) {
         return res.status(400).json({ error: 'Invalid checkout request.' });
@@ -69,12 +72,11 @@ export function registerPaymentsApi(app: Express): void {
       };
 
       if (kind === 'seats') {
-        metadata.additionalSeats = String(body.additionalSeats || 0);
-        metadata.newSeats = String(body.newSeats || 0);
-      } else {
-        metadata.seats = String(body.seats || 0);
-        metadata.languages = String(body.languages || 1);
+        metadata.additionalSeats = String(quote.additionalSeats);
       }
+      metadata.seats = String(quote.seats);
+      metadata.languages = String(quote.languages);
+      metadata.productId = quote.productId;
 
       const session = await createCheckoutSession({
         planId,
@@ -83,6 +85,7 @@ export function registerPaymentsApi(app: Express): void {
         customerEmail: user.email || undefined,
         customerName: user.displayName || user.email || undefined,
         metadata,
+        profile: user.profile,
       });
 
       return res.json({ checkoutUrl: session.checkoutUrl, sessionId: session.sessionId });
@@ -120,6 +123,10 @@ export function registerSubscriptionApi(app: Express): void {
       }
       const reason = CANCEL_REASONS.has(String(req.body?.reason)) ? String(req.body.reason) : null;
       const now = Date.now();
+      if (profile.dodoSubscriptionId) {
+        const next = await changeCancellation(user.uid, profile.dodoSubscriptionId, true);
+        return res.json({ profile: next });
+      }
       const next = await updateProfile(user.uid, {
         planCancelAt: profile.planCancelAt && profile.planCancelAt > now ? profile.planCancelAt : paidThrough(profile, now),
         planCancelledAt: now,
@@ -143,6 +150,7 @@ export function registerSubscriptionApi(app: Express): void {
       if (profile.planCancelAt <= Date.now()) {
         return res.status(409).json({ error: 'This plan has already ended. Subscribe again to get Smarty Max back.' });
       }
+      if (profile.dodoSubscriptionId) return res.json({ profile: await changeCancellation(user.uid, profile.dodoSubscriptionId, false) });
       const next = await updateProfile(user.uid, { planCancelAt: null, planCancelledAt: null, planCancelReason: null });
       return res.json({ profile: next });
     } catch (error: any) {

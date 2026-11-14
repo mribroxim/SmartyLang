@@ -251,6 +251,8 @@ exports.tts = onRequest(
     invoker: "public",
   },
   async (req, res) => {
+    // Legacy Firebase endpoints cannot bypass the self-hosted production guards.
+    if (process.env.NODE_ENV === "production") return res.status(410).json({ error: "Use the self-hosted SmartyLang API" });
     if (req.method === "OPTIONS") {
       res.status(204).send("");
       return;
@@ -320,6 +322,8 @@ exports.translateFallback = onRequest(
     invoker: "public",
   },
   async (req, res) => {
+    // Legacy Firebase endpoints cannot bypass the self-hosted production guards.
+    if (process.env.NODE_ENV === "production") return res.status(410).json({ error: "Use the self-hosted SmartyLang API" });
     if (req.method === "OPTIONS") {
       res.status(204).send("");
       return;
@@ -444,6 +448,8 @@ exports.dictionaryLookup = onRequest(
     invoker: "public",
   },
   async (req, res) => {
+    // Legacy Firebase endpoints cannot bypass the self-hosted production guards.
+    if (process.env.NODE_ENV === "production") return res.status(410).json({ error: "Use the self-hosted SmartyLang API" });
     if (req.method === "OPTIONS") {
       res.status(204).send("");
       return;
@@ -487,6 +493,8 @@ exports.ai = onRequest(
     invoker: "public",
   },
   async (req, res) => {
+    // Legacy Firebase endpoints cannot bypass the self-hosted production guards.
+    if (process.env.NODE_ENV === "production") return res.status(410).json({ error: "Use the self-hosted SmartyLang API" });
     await handleAiRequest(req, res, {
       getApiKey: () => openrouterKey.value(),
       verifyUser: async (r) => {

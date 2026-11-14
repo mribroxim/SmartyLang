@@ -4,6 +4,8 @@ import argon2 from 'argon2';
 import type { Request, Response } from 'express';
 import { OAuth2Client } from 'google-auth-library';
 import { query, withTransaction } from './db.ts';
+import { ageProof, attachAgeConsent } from './ageSafety.ts';
+import { paidPlanEnded } from '../src/lib/entitlements.ts';
 
 export const SESSION_COOKIE = 'smarty_session';
 const SESSION_DAYS = 30;
@@ -32,13 +34,15 @@ function normalizeEmail(email: unknown): string {
 }
 
 function userFromRow(row: StoredUser): AuthUser {
+  const expired = paidPlanEnded(row.profile);
+  const role = expired && ['business', 'teacher', 'organization'].includes(row.role) ? 'student' : row.role;
   return {
     uid: row.uid,
     email: row.email,
     displayName: row.display_name || row.email.split('@')[0] || 'User',
     ...(row.photo_url ? { photoURL: row.photo_url } : {}),
-    role: row.role,
-    profile: { ...(row.profile || {}), uid: row.uid, role: row.role, email: row.email },
+    role,
+    profile: { ...(row.profile || {}), uid: row.uid, role, email: row.email },
   };
 }
 
@@ -92,6 +96,17 @@ export async function clearSession(req: Request, res: Response): Promise<void> {
   res.setHeader('Set-Cookie', `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax${cookieOptions(req).secure ? '; Secure' : ''}`);
 }
 
+export async function requireRecentAuthentication(req: Request, uid: string, password: string): Promise<void> {
+  const row = (await query('SELECT password_hash FROM app_users WHERE uid = $1', [uid])).rows[0];
+  if (row?.password_hash && await verifyPassword(row.password_hash, password)) return;
+  if (!row?.password_hash) {
+    const token = getCookie(req, SESSION_COOKIE);
+    const recent = token && await query("SELECT 1 FROM sessions WHERE token_hash = $1 AND user_uid = $2 AND created_at > NOW() - INTERVAL '10 minutes'", [tokenHash(token), uid]);
+    if (recent?.rowCount) return;
+  }
+  throw Object.assign(new Error('Sign in again to continue'), { status: 403 });
+}
+
 export async function getSessionUser(req: Request): Promise<AuthUser | null> {
   const token = getCookie(req, SESSION_COOKIE);
   if (!token) return null;
@@ -108,12 +123,23 @@ export async function getSessionUser(req: Request): Promise<AuthUser | null> {
   return userFromRow(row);
 }
 
-export async function requireUser(req: Request): Promise<AuthUser> {
+export async function requireUser(req: Request, allowAgePending = false): Promise<AuthUser> {
   const user = await getSessionUser(req);
   if (!user) {
     const error = new Error('Sign in required');
     (error as Error & { status?: number }).status = 401;
     throw error;
+  }
+  if (user.profile.sponsoredBy) {
+    const sponsor = await getProfile(String(user.profile.sponsoredBy));
+    if (!sponsor || paidPlanEnded(sponsor) || !['business', 'admin'].includes(sponsor.role)) user.profile = { ...user.profile, plan: null };
+  }
+  if (!allowAgePending && user.role !== 'admin') {
+    if (user.profile.agePolicyVersion !== 1) throw Object.assign(new Error('Age check required'), { status: 403 });
+    if (user.profile.parentalConsentId) {
+      const consent = await query('SELECT 1 FROM parental_consents WHERE id = $1 AND child_uid = $2 AND revoked_at IS NULL', [user.profile.parentalConsentId, user.uid]);
+      if (!consent.rowCount) throw Object.assign(new Error('Parent consent required'), { status: 403 });
+    }
   }
   return user;
 }
@@ -158,6 +184,7 @@ export async function registerUser(
   res: Response,
   input: { email: string; password: string; displayName?: string },
 ): Promise<AuthUser> {
+  if (!ageProof(req)) throw Object.assign(new Error('Age check required'), { status: 403 });
   const email = normalizeEmail(input.email);
   if (!email || !email.includes('@')) throw Object.assign(new Error('Please enter a valid email address.'), { status: 400 });
   if (String(input.password || '').length < 6) throw Object.assign(new Error('Password must be at least 6 characters.'), { status: 400 });
@@ -190,6 +217,8 @@ export async function registerUser(
     profile,
     disabled: false,
   });
+  try { await attachAgeConsent(req, uid); }
+  catch (error) { await query('DELETE FROM app_users WHERE uid = $1', [uid]); throw error; }
   await setSession(res, req, uid);
   return user;
 }
@@ -211,6 +240,7 @@ export async function loginUser(
     throw Object.assign(new Error('Incorrect email or password.'), { status: 401 });
   }
   const user = userFromRow(row);
+  if (user.profile.agePolicyVersion !== 1 && ageProof(req)) await attachAgeConsent(req, user.uid);
   await setSession(res, req, user.uid);
   return user;
 }
@@ -252,6 +282,7 @@ export function googleClient(): OAuth2Client | null {
 }
 
 export function googleAuthUrl(req: Request, res: Response): string {
+  if (!ageProof(req)) throw Object.assign(new Error('Age check required'), { status: 403 });
   const client = googleClient();
   if (!client) throw Object.assign(new Error('Google OAuth is not configured'), { status: 503 });
   const state = crypto.randomBytes(24).toString('base64url');
@@ -328,6 +359,7 @@ export async function loginGoogleUser(
     );
     return userFromRow(row);
   });
+  if (user.profile.agePolicyVersion !== 1) await attachAgeConsent(req, user.uid);
   await setSession(res, req, user.uid);
   return user;
 }

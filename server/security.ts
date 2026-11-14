@@ -12,6 +12,12 @@ export function installSecurity(app: Express): void {
   app.set('trust proxy', process.env.TRUST_PROXY === '1' ? 1 : false);
   const production = process.env.NODE_ENV === 'production';
   const origin = new URL(process.env.APP_URL || 'http://localhost:3000').origin;
+  const origins = new Set([origin]);
+  if (!production) for (const value of (process.env.DEV_ALLOWED_ORIGINS || '').split(',').filter(Boolean)) {
+    const extra = new URL(value).origin;
+    if (!/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(extra)) throw new Error('Extra development origins must be loopback URLs');
+    origins.add(extra);
+  }
   if (production && !origin.startsWith('https://')) throw new Error('Production APP_URL must use HTTPS');
   app.use((req, res, next) => {
     res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -28,11 +34,11 @@ export function installSecurity(app: Express): void {
     res.setHeader('Cache-Control', 'no-store');
     res.vary('Origin');
     const requestOrigin = req.get('origin');
-    if ((requestOrigin && requestOrigin !== origin) || (!requestOrigin && req.get('sec-fetch-site') === 'cross-site')) {
+    if ((requestOrigin && !origins.has(requestOrigin)) || (!requestOrigin && req.get('sec-fetch-site') === 'cross-site')) {
       return res.status(403).json({ error: 'Origin not allowed' });
     }
-    if (requestOrigin === origin) {
-      res.setHeader('Access-Control-Allow-Origin', origin);
+    if (requestOrigin && origins.has(requestOrigin)) {
+      res.setHeader('Access-Control-Allow-Origin', requestOrigin);
       res.setHeader('Access-Control-Allow-Credentials', 'true');
     }
     if (req.method === 'OPTIONS') {

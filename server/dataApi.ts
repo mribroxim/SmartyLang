@@ -11,6 +11,7 @@ import {
 } from './auth.ts';
 import { confirmDodoPayment } from './paymentsApi.ts';
 import { mergeProgressData } from './progressMerge.ts';
+import { normalizeProgressDocument } from './progressCompatibility.ts';
 
 type Json = Record<string, any>;
 
@@ -109,14 +110,21 @@ async function acceptPendingInvites(user: AuthUser): Promise<void> {
     [user.email],
   );
   if (!pending.rows.length) return;
-  const first = pending.rows[0];
+  let first = pending.rows[0];
+  const eligible = [];
+  for (const invite of pending.rows) {
+    const sponsor = await getProfile(invite.sponsor_uid);
+    if (sponsor && ['business', 'admin'].includes(sponsor.role) && !(typeof sponsor.planExpiresAt === 'number' && sponsor.planExpiresAt <= Date.now())) eligible.push(invite);
+  }
+  if (!eligible.length) return;
+  first = eligible[0];
   await withTransaction(async (tx) => {
     await tx.query(
       `UPDATE smarty_max_invites
           SET status = 'accepted', invitee_uid = $1,
               data = data || $2::jsonb
-        WHERE lower(invitee_email) = lower($3) AND status = 'pending'`,
-      [user.uid, JSON.stringify({ status: 'accepted', inviteeUid: user.uid, acceptedAt: Date.now() }), user.email],
+        WHERE id = $3 AND status = 'pending'`,
+      [user.uid, JSON.stringify({ status: 'accepted', inviteeUid: user.uid, acceptedAt: Date.now() }), first.id],
     );
     await tx.query(
       `UPDATE app_users
@@ -195,8 +203,8 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
       // An admin plan change replaces any self-serve cancellation.
       const patch: Json = { plan, planStartedAt: Date.now(), planCancelAt: null, planCancelledAt: null, planCancelReason: null };
       if (plan === null) {
-        delete patch.plan;
-        delete patch.planStartedAt;
+        patch.plan = null;
+        patch.planStartedAt = null;
         patch.planSeats = null;
         patch.planLanguages = null;
         patch.planExpiresAt = null;
@@ -231,7 +239,7 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
     case 'progress.get': {
       selfOrRole(user, String(args.uid || user.uid));
       const result = await query('SELECT data FROM user_progress WHERE user_uid = $1', [String(args.uid || user.uid)]);
-      return result.rows[0]?.data || null;
+      return result.rows[0]?.data ? normalizeProgressDocument(result.rows[0].data) : null;
     }
     case 'progress.set': {
       selfOrRole(user, String(args.uid || user.uid));
@@ -430,9 +438,16 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
     }
     case 'invite.create': {
       return withTransaction(async tx => {
+      const query: typeof import('./db.ts').query = tx.query.bind(tx);
+      const updateProfile = async (uid: string, patch: Json) => tx.query('UPDATE app_users SET profile = profile || $2::jsonb WHERE uid = $1', [uid, JSON.stringify(patch)]);
+      const addNotificationInternal = async (uid: string, notification: Json) => {
+        const id = newId('notif_');
+        await tx.query('INSERT INTO notifications (id, user_uid, created_at, data) VALUES ($1, $2, $3, $4)', [id, uid, Date.now(), JSON.stringify({ ...notification, id })]);
+      };
       if (user.uid !== String(args.sponsorUid)) requireRole(user, ['admin']);
       if (!['admin', 'business', 'teacher', 'organization'].includes(user.role)) throw errorWithStatus('Only sponsors can invite users.', 403);
       const email = String(args.inviteeEmail || '').trim().toLowerCase();
+      if (email === user.email.toLowerCase()) throw errorWithStatus('You cannot invite your own account', 400);
       const sponsor = (await tx.query('SELECT role, profile FROM app_users WHERE uid = $1 FOR UPDATE', [String(args.sponsorUid)])).rows[0];
       const quota = Number(sponsor?.profile?.planSeats || 0);
       const used = Number((await tx.query("SELECT COUNT(*)::int AS n FROM smarty_max_invites WHERE sponsor_uid = $1 AND status <> 'revoked'", [String(args.sponsorUid)])).rows[0].n);
@@ -678,7 +693,7 @@ export function registerDataApi(app: Express): void {
       return;
     }
     try {
-      const user = await requireUser(req);
+      const user = await requireUser(req, ['profile.get', 'profile.ensure'].includes(req.body?.action));
       const result = await handleAction(user, req.body || {});
       res.json({ result });
     } catch (error: any) {

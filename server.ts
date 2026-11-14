@@ -18,6 +18,9 @@ import {
 import { registerDataApi } from "./server/dataApi.ts";
 import { registerPaymentsApi, registerPaymentsWebhook, registerSubscriptionApi } from "./server/paymentsApi.ts";
 import { installSecurity, demoLoginEnabled, providerAuth, rateLimit, reserveAiRequest } from './server/security.ts';
+import { registerAgeSafety } from './server/ageSafety.ts';
+import { registerAccountData } from './server/accountData.ts';
+import { installMonitoring, errorHandler } from './server/monitoring.ts';
 
 const require = createRequire(import.meta.url);
 const { officialTranslate } = require("./functions/translateCore.js");
@@ -31,11 +34,18 @@ async function startServer() {
 
   registerPaymentsWebhook(app);
   app.use(express.json({ limit: "256kb" }));
+  installMonitoring(app);
+  registerAgeSafety(app);
+  registerAccountData(app);
   registerPaymentsApi(app);
   registerSubscriptionApi(app);
 
   app.get("/api/health", async (_req, res) => {
     res.json({ ok: true, database: databaseConfigured });
+  });
+  app.get('/api/ready', async (_req, res) => {
+    try { await query('SELECT 1'); return res.json({ ok: true }); }
+    catch { return res.status(503).json({ ok: false }); }
   });
 
   // Self-hosted database-backed authentication.
@@ -59,7 +69,7 @@ async function startServer() {
         const uid = found.rows[0]?.uid;
         if (!uid) return res.status(404).send("Demo account not found");
         await setSession(res, req, uid);
-        return res.redirect("/#/home");
+        return res.redirect("/#/dashboard");
       } catch (error: any) {
         return res.status(500).send(error?.message || "Demo sign-in failed");
       }
@@ -128,20 +138,19 @@ async function startServer() {
     await handleAiRequest(req, res, {
       getApiKey: () => process.env.OPENROUTER_API_KEY || "",
       verifyUser: async (r) => {
-        const user = await getSessionUser(r);
+        const user = await import('./server/auth.ts').then(({ requireUser }) => requireUser(r));
         if (!user) {
           const err = new Error("Sign in required");
           (err as Error & { status?: number }).status = 401;
           throw err;
         }
-        const profile = await getProfile(user.uid);
-        if (!isMaxOrAdmin(profile || user.profile)) {
+        if (!isMaxOrAdmin(user.profile)) {
           const err = new Error("SmartyLang Max required for AI checks");
           (err as Error & { status?: number }).status = 403;
           throw err;
         }
         await reserveAiRequest(user.uid, String(r.body?.action || ''));
-        return { uid: user.uid, profile: profile || user.profile, strict: false };
+        return { uid: user.uid, profile: user.profile, strict: false };
       },
     });
   });
@@ -205,7 +214,7 @@ async function startServer() {
   app.use('/api', (_req, res) => res.status(404).json({ error: 'API route not found' }));
 
   // Vite middleware for development
-  if (process.env.NODE_ENV !== "production") {
+  if (process.env.NODE_ENV !== "production" && process.env.SERVE_BUILT_APP !== '1') {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -219,8 +228,9 @@ async function startServer() {
     });
   }
 
+  app.use(errorHandler);
   await runMigrations();
-  app.listen(PORT, "0.0.0.0", () => {
+  app.listen(PORT, process.env.HOST || (process.env.NODE_ENV === 'production' ? '127.0.0.1' : '0.0.0.0'), () => {
     console.log(`Server running on http://localhost:${PORT}`);
     const cfg = getConfig();
     if ("missing" in cfg) {

@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS application_errors (
+  fingerprint TEXT PRIMARY KEY,
+  source TEXT NOT NULL,
+  code TEXT NOT NULL,
+  request_id TEXT,
+  hits INTEGER NOT NULL DEFAULT 1,
+  first_seen TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  last_seen TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);

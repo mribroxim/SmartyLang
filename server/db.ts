@@ -7,13 +7,15 @@ const { Pool } = pg;
 
 const connectionString = process.env.DATABASE_URL?.trim();
 export const databaseConfigured = Boolean(connectionString);
+if (process.env.NODE_ENV === 'production' && process.env.DATABASE_SSL !== 'true') throw new Error('Production requires DATABASE_SSL=true');
+if (process.env.NODE_ENV === 'production' && /[?&]sslmode=/.test(connectionString || '')) throw new Error('Configure TLS through DATABASE_SSL and DATABASE_CA_CERT, not sslmode in DATABASE_URL');
 
 export const pool = new Pool({
   connectionString,
   max: Number(process.env.DATABASE_POOL_SIZE || 10),
   idleTimeoutMillis: 30_000,
   connectionTimeoutMillis: 5_000,
-  ssl: process.env.DATABASE_SSL === 'true' ? { rejectUnauthorized: false } : undefined,
+  ssl: process.env.DATABASE_SSL === 'true' ? { rejectUnauthorized: true, ...(process.env.DATABASE_CA_CERT ? { ca: process.env.DATABASE_CA_CERT.replace(/\\n/g, '\n') } : {}) } : undefined,
 });
 
 export async function query<T = any>(text: string, values: unknown[] = []): Promise<pg.QueryResult<T>> {

@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS account_deletions (
+  uid_hash TEXT PRIMARY KEY,
+  deleted_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);

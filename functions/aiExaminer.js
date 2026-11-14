@@ -4,6 +4,7 @@
  */
 
 const MODEL = "google/gemini-2.5-flash";
+const { moderateOutput, moderationConfigured } = require('./outputModeration.js');
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
 
 const IELTS_WRITING_CRITERIA = [
@@ -439,10 +440,11 @@ Return JSON: { "reply": "...", "mood": "...", "tip": "..." }`,
 
 async function runAction(body, apiKey) {
   const action = String(body?.action || "");
+  if (['buddy-turn', 'smarty-talk'].includes(action) && !moderationConfigured(body.contentLang || 'en')) return moderateOutput({}, body.contentLang || 'en');
   if (action === "check-writing") return { report: await checkWriting(apiKey, body) };
   if (action === "check-speaking") return { report: await checkSpeaking(apiKey, body) };
-  if (action === "buddy-turn") return await buddyTurn(apiKey, body);
-  if (action === "smarty-talk") return await smartyTalk(apiKey, body);
+  if (action === "buddy-turn") return moderateOutput(await buddyTurn(apiKey, body), body.contentLang || 'en');
+  if (action === "smarty-talk") return moderateOutput(await smartyTalk(apiKey, body), body.contentLang || 'en');
   const err = new Error("Unknown action");
   err.status = 400;
   throw err;
@@ -452,7 +454,7 @@ function isMaxOrAdmin(profile) {
   if (!profile) return false;
   if (profile.role === "admin") return true;
   // A cancelled Max stays on until its end date (planCancelAt), then it is a free account again.
-  if (profile.plan === "smarty-max") return !(typeof profile.planCancelAt === "number" && Date.now() >= profile.planCancelAt);
+  if (profile.plan === "smarty-max") return ![profile.planCancelAt, profile.planExpiresAt].some(date => typeof date === 'number' && Date.now() >= date);
   return false;
 }
 
