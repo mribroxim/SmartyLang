@@ -68,8 +68,10 @@ export function useFirebaseSync(
 ) {
   const [user, setUser] = useState<User | null>(auth.currentUser);
   const [accountProfile, setAccountProfile] = useState<UserAccountProfile | null>(null);
+  const canSyncAccount = !!accountProfile && (accountProfile.role === 'admin' || (accountProfile as any).agePolicyVersion === 1);
   const [isSyncing, setIsSyncing] = useState(false);
   const [initialLoadDone, setInitialLoadDone] = useState(false);
+  const resolvedUid = useRef<string | null>(null);
   // Bumps when a synced store (Smarty prefs, hearts…) changes so progress re-uploads.
   const [syncedTick, setSyncedTick] = useState(0);
   useEffect(() => subscribeSyncedStores(() => setSyncedTick((n) => n + 1)), []);
@@ -160,6 +162,10 @@ export function useFirebaseSync(
         if (cancelled) return;
         setAccountProfile(profile);
 
+        // Pending accounts can see onboarding, but do not read or upload learning
+        // data until the server has accepted their age/parent consent.
+        if (profile.role !== 'admin' && (profile as any).agePolicyVersion !== 1) return;
+
         const progress = await dataRequest<any>('progress.get', { uid: nextUser.uid });
         if (progress) {
           applySyncedStores(progress);
@@ -224,6 +230,7 @@ export function useFirebaseSync(
         console.error('Self-hosted account sync failed:', error);
       } finally {
         if (!cancelled) {
+          resolvedUid.current = nextUser.uid;
           setIsSyncing(false);
           setInitialLoadDone(true);
         }
@@ -236,17 +243,17 @@ export function useFirebaseSync(
   }, [setStreak, setHistory, setProblemWords, setImprovedWords, setSavedVocab, setUserProfile, setHabit]);
 
   useEffect(() => {
-    if (!user || !initialLoadDone) return;
+    if (!user || !initialLoadDone || !canSyncAccount) return;
     let cancelled = false;
     skipNextVocabSync.current = true;
     loadVocab(user.uid, contentLang).then((remote) => {
       if (!cancelled && Object.keys(remote).length) setSavedVocab((previous: any) => ({ ...previous, ...remote }));
     }).catch((error) => console.error('Vocabulary reload failed:', error));
     return () => { cancelled = true; };
-  }, [contentLang, user, initialLoadDone, setSavedVocab]);
+  }, [contentLang, user, initialLoadDone, canSyncAccount, setSavedVocab]);
 
   useEffect(() => {
-    if (!user || !initialLoadDone || isBusinessRole(accountProfile?.role)) { criticalProgress.current = null; return; }
+    if (!user || !initialLoadDone || !canSyncAccount || isBusinessRole(accountProfile?.role)) { criticalProgress.current = null; return; }
     if (lastStoreVersion.current !== syncedTick) storeWritePending.current = true;
     lastStoreVersion.current = syncedTick;
     const currentHabit = normalizeHabit(habit);
@@ -292,14 +299,14 @@ export function useFirebaseSync(
       if (progressWriteTimer.current) clearTimeout(progressWriteTimer.current);
       progressWriteTimer.current = null;
     };
-  }, [user, initialLoadDone, accountProfile, streak, history, problemWords, improvedWords, userProfile, habit, savedVocab, syncedTick]);
+  }, [user, initialLoadDone, canSyncAccount, accountProfile, streak, history, problemWords, improvedWords, userProfile, habit, savedVocab, syncedTick]);
 
   useEffect(() => {
     if (skipNextVocabSync.current) {
       skipNextVocabSync.current = false;
       return;
     }
-    if (!user || !initialLoadDone || !prevVocab || prevVocab === savedVocab || isBusinessRole(accountProfile?.role)) return;
+    if (!user || !initialLoadDone || !canSyncAccount || !prevVocab || prevVocab === savedVocab || isBusinessRole(accountProfile?.role)) return;
     const lang = contentLangRef.current;
     const previousKeys = Object.keys(prevVocab);
     const currentKeys = Object.keys(savedVocab);
@@ -309,7 +316,10 @@ export function useFirebaseSync(
     previousKeys.filter((word) => !currentKeys.includes(word)).forEach((word) => {
       dataRequest('vocab.delete', { uid: user.uid, lang, word }).catch(console.error);
     });
-  }, [savedVocab, prevVocab, user, initialLoadDone, accountProfile, contentLang]);
+  }, [savedVocab, prevVocab, user, initialLoadDone, canSyncAccount, accountProfile, contentLang]);
 
-  return { user, accountProfile, setAccountProfile, isSyncing, authReady: initialLoadDone, loginWithGoogle, logout };
+  // Rehydrating the same account must keep onboarding mounted (and its current
+  // question intact). Data uploads still wait for initialLoadDone above.
+  const authReady = initialLoadDone || (!!user && resolvedUid.current === user.uid);
+  return { user, accountProfile, setAccountProfile, isSyncing, authReady, loginWithGoogle, logout };
 }

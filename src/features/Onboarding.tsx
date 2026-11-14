@@ -29,14 +29,15 @@ import { Sticker, type StickerId } from '../components/stickers/Sticker';
 import { getPrefs, type DailyMinutes } from '../lib/smarty/prefs';
 import { goalXpForMinutes } from '../lib/bites/xp';
 import { ChunkyButton, ChunkyProgress, Tile } from './Bites/lesson/chunky';
+import { AgeGate } from './Legal';
 
 const FEATURED: ContentLang[] = ['en', 'uz', 'ru', 'tr', 'es', 'ar'];
 const NATIVE_FEATURED: UiLang[] = ['en', 'ru', 'uz', 'tr', 'es', 'ar'];
 
-type Step = 'hello' | 'meet' | 'native' | 'learning' | 'goal' | 'start' | 'placement' | 'result';
+type Step = 'hello' | 'age' | 'meet' | 'native' | 'learning' | 'goal' | 'start' | 'placement' | 'result';
 
 /** Steps that fill the progress bar (the welcome splash sits before it). */
-const PROGRESS: Step[] = ['meet', 'native', 'learning', 'goal', 'start', 'placement', 'result'];
+const PROGRESS: Step[] = ['age', 'meet', 'native', 'learning', 'goal', 'start', 'placement', 'result'];
 
 const MINUTE_LEVEL: Record<DailyMinutes, UiStringKey> = {
   5: 'onboard.minutes.casual', 10: 'onboard.minutes.regular', 15: 'onboard.minutes.serious', 20: 'onboard.minutes.intense',
@@ -71,7 +72,7 @@ function Stage({
     heading.current?.focus({ preventScroll: true });
   }, [step, title, subtitle, focusKey]);
   const mascot = sticker ?? ({
-    hello: 'mood.hello', meet: 'flow.welcome-aboard', native: 'flow.choose-your-language', learning: 'sig.the-language-portal',
+    hello: 'mood.hello', age: 'mood.hello', meet: 'flow.welcome-aboard', native: 'flow.choose-your-language', learning: 'sig.the-language-portal',
     goal: 'pers.confident', start: 'flow.learning-path', placement: 'flow.level-check', result: 'sig.the-magic-paw',
   } satisfies Record<Step, StickerId>)[step];
   const index = PROGRESS.indexOf(step);
@@ -192,8 +193,12 @@ function sectionTitle(step: PlacementStep, t: (k: UiStringKey) => string): strin
 export function Onboarding({
   canStartLessons,
   onComplete,
+  needsAgeCheck = false,
+  onAgeVerified,
 }: {
   canStartLessons: boolean;
+  needsAgeCheck?: boolean;
+  onAgeVerified: () => Promise<void>;
   onComplete: (result: {
     contentLang: ContentLang;
     uiLang: UiLang;
@@ -208,6 +213,8 @@ export function Onboarding({
   const { uiLang, setUiLang, t } = useUiLang();
 
   const [step, setStep] = useState<Step>('hello');
+  const [ageReady, setAgeReady] = useState(!needsAgeCheck);
+  const [ageBusy, setAgeBusy] = useState(false);
   const [preferredName, setPreferredName] = useState(() => getPrefs().preferredName ?? '');
   const [dailyMinutes, setDailyMinutes] = useState<DailyMinutes>(() => getPrefs().dailyMinutes);
   const [saving, setSaving] = useState(false);
@@ -305,14 +312,14 @@ export function Onboarding({
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'Enter' || (e.target as HTMLElement)?.tagName === 'SELECT') return;
       e.preventDefault();
-      if (step === 'hello') setStep('meet');
+      if (step === 'hello') setStep(ageReady ? 'meet' : 'age');
       else if (step === 'native') setStep('learning');
       else if (step === 'learning') { setContentLang(lang); setStep('goal'); }
       else if (step === 'goal') setStep('start');
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [step, goal, lang, setContentLang]);
+  }, [step, goal, lang, setContentLang, ageReady]);
 
   useEffect(() => {
     if (step !== 'placement' || !flowItem) return;
@@ -353,11 +360,22 @@ export function Onboarding({
         </div>
         <div className="fixed inset-x-0 bottom-0 z-30 border-t-2 border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
           <div className="mx-auto flex max-w-2xl px-4 pb-[max(env(safe-area-inset-bottom),16px)] pt-4 sm:justify-end sm:py-6">
-            <ChunkyButton autoFocus onClick={() => setStep('meet')} className={primaryCls}>{t('onboard.continue')}</ChunkyButton>
+            <ChunkyButton autoFocus onClick={() => setStep(ageReady ? 'meet' : 'age')} className={primaryCls}>{t('onboard.continue')}</ChunkyButton>
           </div>
         </div>
       </main>
     );
+  }
+
+  if (step === 'age') {
+    return <Stage step="age" title={t('safety.age.title')} t={t} onBack={() => setStep('hello')}
+      primary={<ChunkyButton type="submit" form="onboarding-age" disabled={ageBusy} className={primaryCls}>{t('onboard.continue')}</ChunkyButton>}>
+      <AgeGate embedded formId="onboarding-age" onBusyChange={setAgeBusy} onReady={async () => {
+        await onAgeVerified();
+        setAgeReady(true);
+        setStep('meet');
+      }} />
+    </Stage>;
   }
 
   if (step === 'meet') {

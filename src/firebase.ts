@@ -61,9 +61,13 @@ const sessionReady = apiRequest<{ user?: any }>('/api/auth/session')
   .catch(() => { sessionResolved = true; return setCurrentUser(null); });
 
 export const loginWithGoogle = async (): Promise<void> => {
-  const age = await apiRequest<{ ready: boolean }>('/api/safety/age');
-  if (!age.ready) { window.location.hash = '#/dashboard'; return; }
   window.location.assign('/api/auth/google');
+};
+
+/** Re-run account hydration after onboarding grants age/consent access. */
+export const refreshAuthSession = async (): Promise<void> => {
+  const session = await apiRequest<{ user?: any }>('/api/auth/session');
+  setCurrentUser(session.user);
 };
 
 export const loginWithEmail = async (email: string, password: string): Promise<void> => {

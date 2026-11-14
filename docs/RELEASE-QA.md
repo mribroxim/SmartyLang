@@ -46,8 +46,8 @@ test account; complete the age/consent setup first.
 ## Privacy and child safety
 
 - [ ] All age values, including under 13 and ages 13–15, are accepted by the
-  neutral age form; children cannot reach account fields, OAuth or paid APIs
-  before verified consent. No birth date is retained.
+  neutral onboarding age form; children cannot reach learning or paid APIs
+  before verified consent. Sign-in leads to onboarding; no birth date is retained.
 - [ ] Staff verification procedure and notice are approved; a single-use code
   cannot be replayed, expired codes fail, withdrawal invalidates sessions.
 - [ ] Existing accounts with unknown age are gated. New registration cannot
@@ -82,3 +82,19 @@ test account; complete the age/consent setup first.
 - [ ] Uptime failure, 5xx, backup freshness and AI budget alerts reach the operator.
 - [ ] Dependency vulnerability review, native translation review and model
   commercial-use license decision are recorded.
+
+## Signup regression verification — 2026-11-14
+
+- Automated OAuth HTTP regression: a cross-site Google callback reaches state
+  validation; invalid state is rejected before token exchange. Foreign API
+  writes and unrelated cross-site API reads remain blocked.
+- All 139 generated mascot message/title keys resolve to copy in every one of
+  the 29 interface languages. Restored 114 pruned message keys and protected
+  the numbered message families from future pruning.
+- Isolated database: 17 HTTP checks passed for pending signup, profile access,
+  blocked learning, invalid dates, adult age completion, under-16 consent,
+  invalid parent codes, OAuth redirects and foreign origins. No live users or
+  payment/provider calls were used.
+- Browser at 390 × 844: login shows the welcome before the age question;
+  submitting a synthetic adult date proceeds to the name question without
+  restarting onboarding. This is viewport QA, not a physical-phone OAuth test.

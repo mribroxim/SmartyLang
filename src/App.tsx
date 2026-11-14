@@ -20,7 +20,7 @@ import { getPrefs, setPrefs, useSmartyPrefs, type DailyMinutes } from './lib/sma
 import { findCurrentLesson } from './lib/bites/biteProgress';
 import { useFirebaseSync } from './useFirebaseSync';
 import { AuthGate } from './features/AuthGate';
-import { AgeGate } from './features/Legal';
+import { getUserProfile, refreshAuthSession } from './firebase';
 import { Onboarding } from './features/Onboarding';
 import { PaywallScreen } from './components/PaywallScreen';
 import { playSound } from './lib/audio';
@@ -1535,12 +1535,14 @@ export default function App() {
     setActiveTab(prev => (EN_ONLY_TABS.has(prev) ? 'dashboard' : prev));
   }, []);
 
-  const needsOnboarding = !!(
+  const needsFullOnboarding = !!(
     accountProfile &&
     accountProfile.role === 'student' &&
     !accountProfile.onboardingCompletedAt &&
     Object.keys(history).length === 0
   );
+  const needsAgeCheck = !!accountProfile && accountProfile.role !== 'admin' && (accountProfile as any).agePolicyVersion !== 1;
+  const needsOnboarding = needsFullOnboarding || needsAgeCheck;
 
   // ── Smarty: keep his knowledge of the learner fresh + celebrate real progress ──
   useEffect(() => {
@@ -1718,12 +1720,17 @@ export default function App() {
           >
             {t("site.app.refresh_56e3ba")}</button>
         </div>
-      ) : accountProfile.role !== 'admin' && (accountProfile as any).agePolicyVersion !== 1 ? (
-        <AgeGate onReady={() => window.location.reload()} />
-      ) : needsOnboarding && activeTab !== 'plans' ? (
+      ) : needsOnboarding && (needsAgeCheck || activeTab !== 'plans') ? (
         <Onboarding
           canStartLessons={canUseBites(accountProfile)}
           onComplete={finishOnboarding}
+          needsAgeCheck={needsAgeCheck}
+          onAgeVerified={async () => {
+            const profile = await getUserProfile(user.uid);
+            if (!profile || (profile as any).agePolicyVersion !== 1) throw new Error('Age check incomplete');
+            setAccountProfile(profile);
+            await refreshAuthSession();
+          }}
         />
       ) : (() => {
         /* ── Access-tier gates ────────────────────────────────────────── */

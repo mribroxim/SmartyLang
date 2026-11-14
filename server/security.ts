@@ -34,7 +34,10 @@ export function installSecurity(app: Express): void {
     res.setHeader('Cache-Control', 'no-store');
     res.vary('Origin');
     const requestOrigin = req.get('origin');
-    if ((requestOrigin && !origins.has(requestOrigin)) || (!requestOrigin && req.get('sec-fetch-site') === 'cross-site')) {
+    // OAuth returns as a cross-site top-level GET. Its handler validates the
+    // unpredictable state against the HttpOnly cookie before exchanging a code.
+    const oauthReturn = req.method === 'GET' && req.path === '/api/auth/google/callback' && !requestOrigin;
+    if ((requestOrigin && !origins.has(requestOrigin)) || (!requestOrigin && req.get('sec-fetch-site') === 'cross-site' && !oauthReturn)) {
       return res.status(403).json({ error: 'Origin not allowed' });
     }
     if (requestOrigin && origins.has(requestOrigin)) {

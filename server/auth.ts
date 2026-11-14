@@ -184,7 +184,6 @@ export async function registerUser(
   res: Response,
   input: { email: string; password: string; displayName?: string },
 ): Promise<AuthUser> {
-  if (!ageProof(req)) throw Object.assign(new Error('Age check required'), { status: 403 });
   const email = normalizeEmail(input.email);
   if (!email || !email.includes('@')) throw Object.assign(new Error('Please enter a valid email address.'), { status: 400 });
   if (String(input.password || '').length < 6) throw Object.assign(new Error('Password must be at least 6 characters.'), { status: 400 });
@@ -217,7 +216,9 @@ export async function registerUser(
     profile,
     disabled: false,
   });
-  try { await attachAgeConsent(req, uid); }
+  // New accounts may enter onboarding; requireUser still blocks learning and
+  // paid/provider APIs until the onboarding age/consent step is complete.
+  try { if (ageProof(req)) await attachAgeConsent(req, uid); }
   catch (error) { await query('DELETE FROM app_users WHERE uid = $1', [uid]); throw error; }
   await setSession(res, req, uid);
   return user;
@@ -282,7 +283,6 @@ export function googleClient(): OAuth2Client | null {
 }
 
 export function googleAuthUrl(req: Request, res: Response): string {
-  if (!ageProof(req)) throw Object.assign(new Error('Age check required'), { status: 403 });
   const client = googleClient();
   if (!client) throw Object.assign(new Error('Google OAuth is not configured'), { status: 503 });
   const state = crypto.randomBytes(24).toString('base64url');
@@ -359,7 +359,7 @@ export async function loginGoogleUser(
     );
     return userFromRow(row);
   });
-  if (user.profile.agePolicyVersion !== 1) await attachAgeConsent(req, user.uid);
+  if (user.profile.agePolicyVersion !== 1 && ageProof(req)) await attachAgeConsent(req, user.uid);
   await setSession(res, req, user.uid);
   return user;
 }

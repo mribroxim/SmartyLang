@@ -1,7 +1,6 @@
 import { CatLogo } from '../components/brand/CatLogo';
-import React, { useState, useEffect } from 'react';
-import { AgeGate, LegalLinks } from './Legal';
-import { apiRequest } from '../lib/selfHostedApi';
+import React, { useState } from 'react';
+import { LegalLinks } from './Legal';
 import { loginWithEmail, registerWithEmail } from '../firebase';
 import { useUiLang } from '../contexts/UiLangContext';
 
@@ -88,8 +87,6 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
   const [error, setError]           = useState<string | null>(null);
 
   const busy = googleLoading || emailLoading;
-  const [ageReady, setAgeReady] = useState(false);
-  useEffect(() => { apiRequest<{ ready: boolean }>('/api/safety/age').then(result => setAgeReady(result.ready)).catch(() => {}); }, []);
 
   /* ── Google ───────────────────────────────────────────────────────────── */
   const handleGoogle = async () => {
@@ -135,7 +132,6 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
   };
 
   /* ── UI ───────────────────────────────────────────────────────────────── */
-  if (!ageReady) return <AgeGate onReady={() => setAgeReady(true)} />;
   return (
     <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-4 md:p-6">
       <div className="w-full max-w-md">

@@ -8,7 +8,8 @@ not an independent penetration-test certification.
 | Route/action family | Boundary |
 | --- | --- |
 | health, ready, legal, payment status | Public, limited non-sensitive state |
-| auth register / Google start | Neutral age step first; signed proof; registration always student |
+| auth register / Google start | Registration always student; pending accounts enter onboarding and require signed age/consent before protected features |
+| Google callback | Cross-site GET permitted; cookie-bound unpredictable OAuth state checked before token exchange |
 | login / session / logout | Password or verified OAuth identity, session hash/expiry; logout clears only caller cookie |
 | dev demo-login | Never registered under `NODE_ENV=production` |
 | TTS, dictionary, translation | Signed-in, age-cleared account; bounded inputs and IP limits |

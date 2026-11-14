@@ -7,7 +7,9 @@ const root = path.resolve(import.meta.dirname, '..');
 const sourcePath = path.join(root, 'src/locales/ui.en.json');
 const source = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
 const literals = new Set();
-const prefixes = new Set(['room.', 'ex.', 'practice.', 'quests.', 'ach.', 'vocab.tab.', 'history.cat.', 'legal.', 'safety.', 'account.']);
+// Numbered mascot pools build keys through seq(prefix, count), rather than
+// templates. Keep both families so pruning never removes their spoken copy.
+const prefixes = new Set(['smarty.', 'mascot.', 'room.', 'ex.', 'practice.', 'quests.', 'ach.', 'vocab.tab.', 'history.cat.', 'legal.', 'safety.', 'account.']);
 function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const file = path.join(dir, entry.name);

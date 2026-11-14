@@ -86,7 +86,9 @@ backup is considered operational until this rehearsal and offsite copy pass.
 
 ## Privacy and consent operations
 
-Under-16 learners are stopped before account fields/OAuth. Staff must deliver
+After sign-in, onboarding welcomes the learner and asks their age before
+learning, billing, or provider APIs become available. Under-16 learners need
+verified parent consent to continue beyond that step. Staff must deliver
 the parent notice, verify parental responsibility using an approved process,
 and retain an auditable verification receipt with an appropriate retention
 policy. Only then may an authenticated admin POST to
