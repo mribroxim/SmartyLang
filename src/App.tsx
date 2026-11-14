@@ -1,15 +1,22 @@
 import { useVosk, isMobileDevice } from './hooks/useVosk';
 import { useAppRoute } from './hooks/useAppRoute';
 import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from 'react';
-import { CheckCircle2, Clock, Volume2, X, BookOpen, Home, Play, XCircle, Download, StopCircle, Loader2, Pencil, Flame, Target, Medal, Sparkles } from 'lucide-react';
-import { accountTypeOf, isFreeUser, isPreviewMode, canPractice, ACCOUNT_TYPE_LABEL } from './lib/access';
-import { Level, ReadingText, alignWords, isMatch, cleanSpeechToken } from './lib/reading-logic';
-import { tokenizeForLang, normalizeForMatch } from './lib/pronunciationProfile';
+import { CheckCircle2, Volume2, X, BookOpen, Play, XCircle, Download, StopCircle, Pencil, Flame, Target, Medal, Sparkles } from 'lucide-react';
+import { accountTypeOf, isFreeUser, isPreviewMode, canPractice, canUseBites, hasUnlimitedHearts, isFreeLearningRoute, ACCOUNT_TYPE_LABEL, isBusinessRole, maxEnded } from './lib/access';
+import { initializeHearts, gainHearts } from './lib/hearts/heartsStore';
+import { completeDailySession } from './lib/bites/dailySession';
+import { Level, ReadingText, alignWords } from './lib/reading-logic';
+import { tokenizeForLang } from './lib/pronunciationProfile';
 import { tokenizePassageForSpeech } from './lib/dialogueText';
 import { loadLevelTexts, EMPTY_LEVEL_TEXTS, type LevelTexts } from './data/levelTexts';
 import { logActivity } from './lib/activity-tracker';
 import { get, set } from 'idb-keyval';
-import { calculateSM2 } from './lib/srs';
+import { applySrsFromResult } from './lib/srs';
+import { ProgressProvider } from './contexts/ProgressContext';
+import { biteXp, goalXpForMinutes } from './lib/bites/xp';
+import type { BiteResult } from './lib/bites/types';
+import { getPrefs, setPrefs, useSmartyPrefs, type DailyMinutes } from './lib/smarty/prefs';
+import { findCurrentLesson } from './lib/bites/biteProgress';
 import { useFirebaseSync } from './useFirebaseSync';
 import { AuthGate } from './features/AuthGate';
 import { Onboarding } from './features/Onboarding';
@@ -19,7 +26,8 @@ import { WordDetailsModal } from './components/WordDetailsModal';
 import { playWord as sharedPlayWord } from './lib/speech';
 import { DEFAULT_SPEECH_RATE } from './lib/speechRates';
 import { lookupDictionary } from './lib/dictionary';
-import { EN_ONLY_TABS, vocabStorageKey, type ContentLang } from './lib/contentLang';
+import { wordMatchesLearningLang } from './lib/vocabLangGuard';
+import { EN_ONLY_TABS, vocabStorageKey, CONTENT_LANG_LABEL, type ContentLang } from './lib/contentLang';
 import { activityLangStamp, sessionsForLang } from './lib/activityMeta';
 import {
   saveReadingSession,
@@ -31,67 +39,71 @@ import {
 import { bumpWeeklyGoal, trackExerciseStreak } from './lib/weeklyGoals';
 import { requestExerciseResume, loadExerciseSession } from './lib/exerciseSession';
 import { readScopedJSON, writeScopedJSON } from './lib/userStorage';
+import { earnFishPiece, MEAL_XP, MEAL_COINS } from './lib/smarty/pantry';
+import { SmartyRoom } from './features/Room/SmartyRoom';
+import { PracticeView } from './features/Practice/PracticeView';
+import { QuestsView } from './features/Quests/QuestsView';
+import { planDisplayName } from './lib/plans';
 import { recordCompletion, bandFromScore40 } from './lib/completions';
 import { transformArabicContent } from './lib/arabicText';
 import {
   type HabitState,
   emptyHabit,
   normalizeHabit,
+  visibleStreak,
   applyXpToHabit,
   leagueForXp,
+  leagueMeta,
   levelForXp,
   unlockBadge,
-  DAILY_GOAL_XP,
   BADGE_META,
+  LEAGUE_TIERS,
 } from './lib/habitEngine';
+
+const LEAGUE_ORDER: string[] = LEAGUE_TIERS.map((t) => t.id);
 import Sidebar from './components/Sidebar';
 import { MobileNav } from './components/MobileNav';
 import { EditModeProvider, useEditMode } from './contexts/EditModeContext';
 import { useContentLang } from './contexts/ContentLangContext';
 import { useUiLang } from './contexts/UiLangContext';
-import { loadVocab, lookupWord, vocabDbEnabled } from './lib/vocabDb';
+import { loadVocab, lookupAllSenses, vocabDbEnabled } from './lib/vocabDb';
 import { ContentEditorDrawer } from './components/ContentEditorDrawer';
 import { AppTopBar } from './components/AppTopBar';
 import { HabitCelebrateModal } from './components/HabitCelebrateModal';
+import { SmartyHost } from './components/feedback/SmartyHost';
+import { SmartyLoader } from './components/feedback/SmartyLoader';
+import { emitSmarty } from './lib/smarty/bus';
+import { setSmartyCtx } from './lib/smarty/context';
+import { shouldShowChrome } from './lib/chrome';
+import { ErrorBoundary } from './components/feedback/ErrorBoundary';
+import { ReminderController } from './features/Today/ReminderController';
+import { prefetchStickers } from './components/stickers/loader';
+import { Sticker } from './components/stickers/Sticker';
 const ReadingView       = lazy(() => import('./features/ReadingView').then(m => ({ default: m.ReadingView })));
 const LessonsView       = lazy(() => import('./features/Lessons').then(m => ({ default: m.LessonsView })));
-const PracticeHub       = lazy(() => import('./features/Lessons').then(m => ({ default: m.PracticeHub })));
-const IELTSHub          = lazy(() => import('./features/IELTSHub').then(m => ({ default: m.IELTSHub })));
 import type { UiLang } from './lib/uiLang';
-import { readPreferredTranslationCode } from './lib/preferredTranslationLang';
-import { auth, submitAssignment, saveOnboarding } from './firebase';
+import { uiLangLabel } from './lib/uiLang';
+import { auth, confirmPayment, submitAssignment, saveOnboarding, getStudentClasses } from './firebase';
 import type { Assignment } from './firebase';
 
 // Lazy-loaded heavy features (each becomes its own chunk)
-const PronunciationDrill   = lazy(() => import('./Exercises').then(m => ({ default: m.PronunciationDrill })));
 const HomePage             = lazy(() => import('./features/HomePage').then(m => ({ default: m.HomePage })));
-const SpeakingPractice     = lazy(() => import('./features/SpeakingPractice').then(m => ({ default: m.SpeakingPractice })));
 const SpeakingHub          = lazy(() => import('./features/SpeakingHub').then(m => ({ default: m.SpeakingHub })));
 const AdminPanel           = lazy(() => import('./features/AdminPanel').then(m => ({ default: m.AdminPanel })));
 const ContentManagerPage   = lazy(() => import('./features/ContentManager').then(m => ({ default: m.ContentManager })));
 const TeacherDashboard     = lazy(() => import('./features/TeacherDashboard').then(m => ({ default: m.TeacherDashboard })));
-const WritingPractice      = lazy(() => import('./features/WritingPractice').then(m => ({ default: m.WritingPractice })));
 const WritingHub           = lazy(() => import('./features/WritingHub').then(m => ({ default: m.WritingHub })));
 const Gamification         = lazy(() => import('./features/Gamification').then(m => ({ default: m.GamificationDash })));
 const PaymentPlans         = lazy(() => import('./features/PaymentPlans').then(m => ({ default: m.PaymentPlans })));
-const InteractiveStory     = lazy(() => import('./features/InteractiveStory').then(m => ({ default: m.InteractiveStory })));
-const IELTSReading         = lazy(() => import('./features/IELTSReading').then(m => ({ default: m.IELTSReading })));
-const IELTSFullMock        = lazy(() => import('./features/IELTSFullMock').then(m => ({ default: m.IELTSFullMock })));
 const ComprehensiveReading = lazy(() => import('./features/ComprehensiveReading').then(m => ({ default: m.ComprehensiveReading })));
-const ComprehensiveListening = lazy(() => import('./features/ComprehensiveListening').then(m => ({ default: m.ComprehensiveListening })));
 const ListeningPractice    = lazy(() => import('./features/ListeningPractice').then(m => ({ default: m.ListeningPractice })));
-const DashboardView        = lazy(() => import('./features/DashboardView'));
 const VocabularyView       = lazy(() => import('./features/VocabularyView'));
 const ExercisesView        = lazy(() => import('./features/ExercisesView'));
 const StudentClasses       = lazy(() => import('./features/StudentClasses').then(m => ({ default: m.StudentClasses })));
-const OrganizationPanel    = lazy(() => import('./features/OrganizationPanel').then(m => ({ default: m.OrganizationPanel })));
 const ProfilePage          = lazy(() => import('./features/ProfilePage').then(m => ({ default: m.ProfilePage })));
+const StickerGallery       = lazy(() => import('./components/stickers/StickerGallery').then(m => ({ default: m.StickerGallery })));
 
-const LazyFallback = () => (
-  <div className="flex-1 flex items-center justify-center min-h-[60vh]">
-    <Loader2 className="w-8 h-8 text-zinc-400 animate-spin" />
-  </div>
-);
+const LazyFallback = () => <SmartyLoader />;
 
 /** Map the current app tab to the most relevant ContentManager sub-tab. */
 const TAB_TO_CONTENT_SUBTAB: Record<string, string> = {
@@ -105,6 +117,7 @@ const TAB_TO_CONTENT_SUBTAB: Record<string, string> = {
 
 /** Floating edit-mode toggle + quick-open editor button. Visible to admin & content-manager only. */
 function EditModeToggle({ activeTab }: { activeTab: string }) {
+  const { t } = useUiLang();
   const { editMode, toggleEditMode, openEditor } = useEditMode();
   const subTab = TAB_TO_CONTENT_SUBTAB[activeTab];
 
@@ -116,14 +129,13 @@ function EditModeToggle({ activeTab }: { activeTab: string }) {
           onClick={() => openEditor(subTab)}
           className="flex items-center gap-2 px-4 py-2 bg-sky-600 text-white text-sm font-bold rounded-full shadow-xl hover:bg-sky-700 active:scale-95 transition-all"
         >
-          <Pencil className="w-3.5 h-3.5" /> Edit Content
-        </button>
+          <Pencil className="w-3.5 h-3.5" />  {t("site.app.edit_content_64e78c")}</button>
       )}
 
       {/* Main toggle button */}
       <button
         onClick={toggleEditMode}
-        title={editMode ? 'Exit Edit Mode' : 'Enter Edit Mode'}
+        title={editMode ? t("site.app.exit_edit_mode_a32023") : t("site.app.enter_edit_mode_7138a6")}
         className={`w-12 h-12 rounded-full flex items-center justify-center shadow-xl transition-all active:scale-95 ${
           editMode
             ? 'bg-sky-600 text-white ring-4 ring-sky-200 dark:ring-sky-800'
@@ -137,8 +149,10 @@ function EditModeToggle({ activeTab }: { activeTab: string }) {
 }
 
 export default function App() {
-  const { contentLang, speechLocale, isEnglish, nativeName, dictCode, arabicDisplayMode } = useContentLang();
-  const { uiLang } = useUiLang();
+  const { contentLang, setContentLang, speechLocale, isEnglish, nativeName, dictCode, arabicDisplayMode } = useContentLang();
+  const { uiLang, t, tText } = useUiLang();
+  const smartyPrefs = useSmartyPrefs();
+  const dailyGoalTarget = goalXpForMinutes(smartyPrefs.dailyMinutes);
   const [level, setLevel] = useState<Level>('Beginner');
   const appliedStartingLevel = useRef(false);
   const [LEVEL_TEXTS, setLevelTexts] = useState<LevelTexts>(EMPTY_LEVEL_TEXTS);
@@ -158,7 +172,7 @@ export default function App() {
 
   const [userProfile, setUserProfile] = useState<{xp: number, coins: number, level: number, league: string}>(() => {
     const p = readScopedJSON('readmaster_profile', { xp: 0, coins: 0, level: 1, league: 'Bronze' });
-    return { ...p, level: levelForXp(p.xp || 0), league: p.league || leagueForXp(p.xp || 0) };
+    return { ...p, level: levelForXp(p.xp || 0), league: p.league ? leagueMeta(p.league).id : leagueForXp(p.xp || 0) };
   });
 
   const [habit, setHabit] = useState<HabitState>(() =>
@@ -184,11 +198,14 @@ export default function App() {
     dailyGoalCompleted?: boolean;
   } | null>(null);
 
+  /** Set when XP is earned now (not loaded from the server) so celebrations only fire for real progress. */
+  const xpAwardedAt = useRef(0);
   const awardXP = (
     xpAmount: number,
     coinsAmount: number,
-    opts?: { mergeIntoFeedback?: boolean },
+    opts?: { mergeIntoFeedback?: boolean; bite?: boolean },
   ) => {
+    xpAwardedAt.current = Date.now();
     setUserProfile(prev => {
       const next = {
         ...prev,
@@ -202,7 +219,7 @@ export default function App() {
       return next;
     });
     setHabit(prev => {
-      const { habit: next, goalJustCompleted, streakTicked, newBadges } = applyXpToHabit(prev, xpAmount);
+      const { habit: next, goalJustCompleted, streakTicked, newBadges } = applyXpToHabit(prev, xpAmount, goalXpForMinutes(getPrefs().dailyMinutes));
       writeScopedJSON('habit_v1', next);
       const celebrate = {
         goalJustCompleted,
@@ -210,7 +227,11 @@ export default function App() {
         streak: next.globalStreak.current,
         newBadges,
       };
-      if (opts?.mergeIntoFeedback) {
+      if (opts?.bite) {
+        // BiteComplete owns its reward UI; don't stack a second modal over it.
+        setHabitCelebrate(null);
+        setSessionReward(null);
+      } else if (opts?.mergeIntoFeedback) {
         setHabitCelebrate(null);
         setSessionReward({
           xp: xpAmount,
@@ -227,7 +248,6 @@ export default function App() {
   };
 
   const [improvedWords, setImprovedWords] = useState<Record<string, { timestamp: number }>>({});
-  const [vocabFilter, setVocabFilter] = useState<'all' | 'favorites'>('all');
 
   const trackActivity = () => {
     setStreak(prev => {
@@ -290,7 +310,10 @@ export default function App() {
 
   // Load level texts asynchronously — keeps 700+ KB out of the main bundle.
   useEffect(() => {
-    loadLevelTexts(contentLang).then(setLevelTexts);
+    let cancelled = false;
+    setLevelTexts(EMPTY_LEVEL_TEXTS);
+    loadLevelTexts(contentLang).then(texts => { if (!cancelled) setLevelTexts(texts); });
+    return () => { cancelled = true; };
   }, [contentLang]);
 
   useEffect(() => {
@@ -298,11 +321,20 @@ export default function App() {
     loadVocab(contentLang, uiLang).catch(() => {});
   }, [contentLang, uiLang]);
 
-  // Reload vocabulary pack when learning language changes.
+  // Reload vocabulary pack when learning language changes (strictly scoped per language).
   useEffect(() => {
     try {
       const savedV = localStorage.getItem(vocabStorageKey(contentLang));
-      setSavedVocab(savedV ? JSON.parse(savedV) : {});
+      const parsed = savedV ? JSON.parse(savedV) : {};
+      const next: typeof savedVocab = {};
+      for (const [word, data] of Object.entries(parsed || {})) {
+        const row = data as any;
+        // Drop entries tagged for a different learning language (legacy bleed).
+        if (row?.lang && row.lang !== contentLang) continue;
+        next[word] = { ...row, lang: contentLang };
+      }
+      setSavedVocab(next);
+      try { localStorage.setItem(vocabStorageKey(contentLang), JSON.stringify(next)); } catch { /* ignore */ }
     } catch {
       setSavedVocab({});
     }
@@ -326,6 +358,14 @@ export default function App() {
     path: appPath,
     sub: appSub,
   } = useAppRoute({ tab: 'home', path: [] });
+
+  const isBiteRoute = activeTab === 'lessons' && appSub === 'bite';
+  useEffect(() => {
+    const lang = appPath[1];
+    if (isBiteRoute && Object.hasOwn(CONTENT_LANG_LABEL, lang) && lang !== contentLang) {
+      setContentLang(lang as ContentLang);
+    }
+  }, [isBiteRoute, appPath[1], contentLang, setContentLang]);
 
   const handleStartAssignment = useCallback((assignment: Assignment) => {
     if (assignment.type === 'reading') {
@@ -412,6 +452,25 @@ export default function App() {
     habit, setHabit,
   );
 
+  useEffect(() => {
+    if (authReady && user && accountProfile && !isPreviewMode(accountProfile)) {
+      initializeHearts(userProfile.xp === 0 && Object.keys(history).length === 0);
+    }
+  }, [authReady, user?.uid, !!accountProfile]);
+
+  const coinBalance = useRef(userProfile.coins);
+  coinBalance.current = userProfile.coins;
+  const spendCoins = (amount: number) => {
+    if (!Number.isInteger(amount) || amount <= 0 || isPreviewMode(accountProfile) || coinBalance.current < amount) return false;
+    coinBalance.current -= amount;
+    setUserProfile(prev => {
+      const next = { ...prev, coins: prev.coins - amount };
+      writeScopedJSON('readmaster_profile', next);
+      return next;
+    });
+    return true;
+  };
+
   // Returning signed-in users land on Stats (Continue), not the marketing homepage.
   const didRedirectHome = useRef(false);
   useEffect(() => {
@@ -439,6 +498,7 @@ export default function App() {
   /** Human-readable title shown in the mobile top bar for each section. */
   const TAB_TITLES: Record<string, string> = {
     dashboard:        'Home',
+    stickers:         'Stickers',
     lessons:          'Learn',
     practice:         'Practice',
     gamification:     'League',
@@ -450,8 +510,8 @@ export default function App() {
     exercises:        'Exercises',
     vocabulary:       'Vocabulary',
     classes:          'My Classes',
-    teacher:          'Teacher',
-    organization:     'Organization',
+    teacher:          'Business',
+    business:         'Business',
     admin:            'Admin',
     content:          'Content',
     profile:          'Profile',
@@ -496,7 +556,7 @@ export default function App() {
   }, [user, authReady, accountProfile]);
 
   // ── Post-payment redirect handler ───────────────────────────────────────
-  // When ATMOS sends the user back to /?payment=success, finalize the pending
+  // When Dodo Payments sends the user back to /?payment=success, finalize the pending
   // payment record (stashed in sessionStorage before redirect) and activate
   // the user's plan. Errors are caught so they don't block the app.
   const [paymentToast, setPaymentToast] = useState<string | null>(null);
@@ -517,9 +577,9 @@ export default function App() {
       return;
     }
 
-    const raw = sessionStorage.getItem('smarty_pending_payment');
-    if (!raw) {
-      // No stash — still clear the param so refreshes don't re-trigger.
+    const paymentId = params.get('payment_id') || params.get('paymentId') || '';
+    const status = params.get('status') || '';
+    if (!paymentId || !['succeeded', 'active'].includes(status)) {
       window.history.replaceState(
         { tab: activeTab, path: appPath },
         '',
@@ -527,54 +587,21 @@ export default function App() {
       );
       return;
     }
-    let pending: any;
-    try { pending = JSON.parse(raw); } catch { return; }
+
+    const raw = sessionStorage.getItem('smarty_pending_payment');
+    let pending: any = { uid: user.uid };
+    if (raw) {
+      try { pending = { ...JSON.parse(raw), uid: user.uid }; } catch { /* use uid-only recovery */ }
+    }
 
     (async () => {
       try {
-        const { recordPayment, setUserPlan } = await import('./firebase');
-
-        // Branch by payment type: 'seats' is a seat add-on, anything else is a plan purchase.
+        const updatedProfile = await confirmPayment(pending, paymentId);
         if (pending.type === 'seats') {
-          await recordPayment({
-            uid: pending.uid,
-            email: pending.email,
-            displayName: pending.displayName,
-            planId: pending.planId,
-            seats: pending.additionalSeats,
-            amountUSD: pending.amountUSD,
-            amountUZS: pending.amountUZS,
-            status: 'completed',
-            paidAt: Date.now(),
-          });
-          // Set the new total — keeps the existing plan, just bumps seat count.
-          await setUserPlan(pending.uid, pending.planId, { seats: pending.newSeats });
           setPaymentToast(`✓ ${pending.additionalSeats} seat${pending.additionalSeats === 1 ? '' : 's'} added — total ${pending.newSeats}.`);
         } else {
-          await recordPayment({
-            uid: pending.uid,
-            email: pending.email,
-            displayName: pending.displayName,
-            planId: pending.planId,
-            seats: pending.seats,
-            amountUSD: pending.amountUSD,
-            amountUZS: pending.amountUZS,
-            status: 'completed',
-            paidAt: Date.now(),
-          });
-          await setUserPlan(pending.uid, pending.planId, {
-            seats: pending.seats,
-            languages: pending.languages ?? 1,
-          });
-          setAccountProfile(prev => prev ? {
-            ...prev,
-            plan: pending.planId,
-            planSeats: pending.seats,
-            planLanguages: pending.languages ?? 1,
-            planStartedAt: Date.now(),
-            role: pending.planId === 'teacher' ? 'teacher' : pending.planId === 'organization' ? 'organization' : prev.role,
-          } : prev);
-          setPaymentToast(`✓ ${pending.planId === 'smarty-max' ? 'SmartyLang Max' : pending.planId === 'teacher' ? 'Teacher' : 'Organization'} plan activated!`);
+          if (updatedProfile) setAccountProfile(updatedProfile);
+          setPaymentToast(`✓ ${planDisplayName(pending.planId)} plan activated!`);
         }
       } catch (e) {
         console.error('Failed to finalize payment:', e);
@@ -582,9 +609,7 @@ export default function App() {
       } finally {
         const wasSeats = pending.type === 'seats';
         sessionStorage.removeItem('smarty_pending_payment');
-        const nextTab = wasSeats
-          ? (pending.planId === 'organization' ? 'organization' : 'teacher')
-          : 'dashboard';
+        const nextTab = wasSeats ? 'business' : 'dashboard';
         navigate({ tab: nextTab as any, path: [] }, { replace: true });
         // Strip payment query params while keeping the hash route.
         const clean = window.location.pathname + window.location.hash;
@@ -593,7 +618,6 @@ export default function App() {
     })();
   }, [user, accountProfile]);
 
-  const [dashboardFilter, setDashboardFilter] = useState<'1'|'7'|'30'|'365'|'all'>('all');
   const [activeExercise, setActiveExercise] = useState<string | null>(null);
   const [selectedVocabWords, setSelectedVocabWords] = useState<string[]>([]);
   const [showExerciseWordSelector, setShowExerciseWordSelector] = useState<'flashcards' | 'pronunciation' | 'word-match' | null>(null);
@@ -601,102 +625,18 @@ export default function App() {
   const [exerciseSourceLevel, setExerciseSourceLevel] = useState<Level>('Beginner');
   const [exerciseSourceTopic, setExerciseSourceTopic] = useState<string>('');
   const [exerciseSourceCustomTextSel, setExerciseSourceCustomTextSel] = useState<string>('');
-  const [dictionarySearchQuery, setDictionarySearchQuery] = useState('');
-  const [isSearchingDict, setIsSearchingDict] = useState(false);
-  const [dictResult, setDictResult] = useState<any>(null);
-  const [dictSearchQuery, setDictSearchQuery] = useState('');
-  const [dictError, setDictError] = useState<string | null>(null);
-  const [targetLangs, setTargetLangs] = useState<string[]>(() => {
-    try {
-      const code = readPreferredTranslationCode();
-      return code ? [code] : ['en'];
-    } catch {
-      return ['en'];
-    }
-  });
   const [defLang, setDefLangState] = useState<string>(
     () => { try { return localStorage.getItem('preferred_definition_lang') || contentLang; } catch { return contentLang; } }
   );
-  const [defPickerOpen, setDefPickerOpen] = useState(false);
 
-  const setDefLang = (code: string) => {
-    try { localStorage.setItem('preferred_definition_lang', code); } catch {}
-    setDefLangState(code);
-  };
 
-  const [translations, setTranslations] = useState<Record<string, string>>({});
-  const [isTranslating, setIsTranslating] = useState<Record<string, boolean>>({});
 
-  const translateText = async (id: string, text: string) => {
-    if (!text || isTranslating[id]) return;
-    setIsTranslating(prev => ({ ...prev, [id]: true }));
-    try {
-      const { translateWithCache } = await import('./lib/networkCache');
-      const { isGarbageTranslation } = await import('./lib/translationQuality');
-      // Prefer translating the bare word when the payload is "word: definition"
-      const bare = text.includes(':') ? text.split(':')[0].trim() : text.trim();
-      const gloss = text.includes(':') ? text.slice(text.indexOf(':') + 1).trim() : undefined;
-      for (const lang of targetLangs) {
-        if (translations[`${lang}_${id}`]) continue;
-        if (vocabDbEnabled()) {
-          await loadVocab(dictCode, lang);
-          const card = lookupWord(bare, { knownLang: lang });
-          if (card?.knownWord || card?.definition) {
-            setTranslations(prev => ({ ...prev, [`${lang}_${id}`]: card.knownWord || card.definition }));
-            continue;
-          }
-        }
-        const raw = await translateWithCache(bare, dictCode, lang, { fallback: gloss });
-        if (raw && !isGarbageTranslation(raw, bare)) {
-          setTranslations(prev => ({ ...prev, [`${lang}_${id}`]: raw }));
-        } else if (gloss) {
-          const defT = await translateWithCache(gloss, dictCode, lang);
-          if (defT && !isGarbageTranslation(defT, gloss)) {
-            setTranslations(prev => ({ ...prev, [`${lang}_${id}`]: defT }));
-          }
-        }
-      }
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setIsTranslating(prev => ({ ...prev, [id]: false }));
-    }
-  };
 
-  const handleDictSearch = async (e?: any) => {
-    e?.preventDefault();
-    if (!dictSearchQuery.trim()) return;
-    setIsSearchingDict(true);
-    setDictError(null);
-    setDictResult(null);
-    try {
-      const result = await lookupDictionary(dictSearchQuery.trim(), contentLang, defLang);
-      if (!result) throw new Error(`Word not found in ${nativeName} dictionary.`);
-      setDictResult(result);
-    } catch (err: any) {
-      setDictError(err.message || 'An error occurred.');
-    } finally {
-      setIsSearchingDict(false);
-    }
-  };
 
   const persistVocab = (next: typeof savedVocab) => {
     try { localStorage.setItem(vocabStorageKey(contentLang), JSON.stringify(next)); } catch { /* ignore */ }
   };
 
-  const toggleSavedVocab = (word: string, def?: string) => {
-    setSavedVocab(prev => {
-      const next = { ...prev };
-      const lp = word.toLowerCase();
-      if (next[lp]) {
-        delete next[lp];
-      } else {
-        next[lp] = { definition: def || 'Saved word', timestamp: Date.now() };
-      }
-      persistVocab(next);
-      return next;
-    });
-  };
 
   const [newVocabWord, setNewVocabWord] = useState('');
   const [isAddingVocab, setIsAddingVocab] = useState(false);
@@ -705,11 +645,22 @@ export default function App() {
   const handleToggleVocab = async (word: string, fallbackDef: string) => {
     const cleanWord = word.trim().toLowerCase();
     if (savedVocab[cleanWord]) {
+      const removed = savedVocab[cleanWord];
       setSavedVocab(prev => {
         const next = { ...prev };
         delete next[cleanWord];
         persistVocab(next);
         return next;
+      });
+      emitSmarty({
+        type: 'vocab.removed',
+        word: cleanWord,
+        undo: () => setSavedVocab(prev => {
+          if (prev[cleanWord]) return prev;
+          const next = { ...prev, [cleanWord]: removed };
+          persistVocab(next);
+          return next;
+        }),
       });
     } else {
       handleAddVocab(cleanWord, fallbackDef);
@@ -719,27 +670,35 @@ export default function App() {
   const handleAddVocab = async (word: string, fallbackDef: string) => {
     const cleanWord = word.trim().toLowerCase();
     if (savedVocab[cleanWord]) return;
+    const match = wordMatchesLearningLang(word.trim(), contentLang);
+    if (!match.ok) return;
     // Optimistic: show as saved immediately, then enrich definition in background
     const placeholder = fallbackDef || '…';
     setSavedVocab(prev => {
       if (prev[cleanWord]) return prev;
-      const next = { ...prev, [cleanWord]: { definition: placeholder, timestamp: Date.now() } };
+      const next = { ...prev, [cleanWord]: { definition: placeholder, timestamp: Date.now(), lang: contentLang } };
       persistVocab(next);
       return next;
     });
+    const savedCount = Object.keys(savedVocab).length + 1;
+    if (savedCount === 10 || savedCount === 50 || savedCount % 25 === 0) emitSmarty({ type: 'vocab.milestone', n: savedCount });
+    else emitSmarty({ type: 'vocab.saved', word: cleanWord });
     try {
       if (vocabDbEnabled()) {
         await loadVocab(contentLang, defLang);
-        const card = lookupWord(cleanWord, { knownLang: defLang });
-        if (card) {
+        const cards = lookupAllSenses(cleanWord, { knownLang: defLang, limit: 4 });
+        if (cards.length) {
           setSavedVocab(prev => {
             if (!prev[cleanWord]) return prev;
+            const definition = cards.length === 1
+              ? cards[0].definition
+              : cards.map((c) => `(${c.pos}) ${c.definition}`).join(' · ');
             const next = {
               ...prev,
               [cleanWord]: {
                 ...prev[cleanWord],
-                definition: card.definition,
-                senseId: card.senseId,
+                definition,
+                senseId: cards[0].senseId,
               },
             };
             persistVocab(next);
@@ -764,42 +723,70 @@ export default function App() {
 
   const handleAddNewVocab = async () => {
     if (!newVocabWord.trim()) return;
-    const cleanWord = newVocabWord.trim().toLowerCase();
+    const displayWord = newVocabWord.trim().replace(/\s+/g, ' ');
+    const cleanWord = displayWord.toLocaleLowerCase();
+    const langCheck = wordMatchesLearningLang(displayWord, contentLang);
+    if (langCheck.ok === false) {
+      setAddVocabError(langCheck.reason);
+      return;
+    }
     if (savedVocab[cleanWord]) {
-      setAddVocabError(`"${cleanWord}" is already in your vocabulary.`);
+      setAddVocabError(`"${displayWord}" is already in your ${CONTENT_LANG_LABEL[contentLang]} vocabulary.`);
       return;
     }
     setIsAddingVocab(true);
     setAddVocabError('');
     try {
+      let definition = '';
+      let senseId: string | undefined;
+      let pos: string | undefined;
       if (vocabDbEnabled()) {
         await loadVocab(contentLang, defLang);
-        const card = lookupWord(cleanWord, { knownLang: defLang });
-        if (card) {
-          setSavedVocab(prev => {
-            const next = {
-              ...prev,
-              [cleanWord]: { definition: card.definition, timestamp: Date.now(), senseId: card.senseId },
-            };
-            persistVocab(next);
-            return next;
-          });
-          setNewVocabWord('');
-          return;
+        const cards = lookupAllSenses(displayWord, { knownLang: defLang, limit: 6 });
+        if (cards.length) {
+          senseId = cards[0].senseId;
+          pos = cards[0].pos;
+          definition = cards.length === 1
+            ? cards[0].definition
+            : cards.map((c) => `(${c.pos}) ${c.definition}`).join(' · ');
         }
       }
-      const result = await lookupDictionary(cleanWord, contentLang, defLang);
-      if (!result) {
-        setAddVocabError(`"${cleanWord}" is not recognized as a ${nativeName} word.`);
-      } else {
-        const definition = result.meanings?.[0]?.definitions?.[0]?.definition || 'Definition not found.';
-        setSavedVocab(prev => {
-          const next = { ...prev, [cleanWord]: { definition, timestamp: Date.now() } };
-          persistVocab(next);
-          return next;
-        });
-        setNewVocabWord('');
+      if (!definition) {
+        const result = await lookupDictionary(displayWord, contentLang, defLang);
+        if (result?.meanings?.length) {
+          pos = pos || result.meanings[0].partOfSpeech;
+          definition = result.meanings
+            .flatMap((m) => m.definitions.map((d) => `(${m.partOfSpeech}) ${d.definition}`))
+            .slice(0, 4)
+            .join(' · ');
+        }
       }
+      if (!definition) {
+        try {
+          const { translateWithCache } = await import('./lib/networkCache');
+          // Gloss into the UI/definition language so the learner can read it.
+          const glossLang = defLang && defLang !== contentLang ? defLang : 'en';
+          const gloss = await translateWithCache(displayWord, contentLang, glossLang);
+          if (gloss) definition = gloss;
+        } catch { /* ignore */ }
+      }
+      if (!definition) definition = 'Saved word / phrase';
+      setSavedVocab(prev => {
+        const next = {
+          ...prev,
+          [cleanWord]: {
+            definition,
+            timestamp: Date.now(),
+            lang: contentLang,
+            ...(senseId ? { senseId } : {}),
+            ...(pos ? { pos } : {}),
+            displayWord,
+          },
+        };
+        persistVocab(next);
+        return next;
+      });
+      setNewVocabWord('');
     } catch {
       setAddVocabError('Network error. Please try again.');
     } finally {
@@ -807,23 +794,6 @@ export default function App() {
     }
   };
 
-  const searchDictionary = async (query = dictionarySearchQuery) => {
-    if (!query.trim()) return;
-    setIsSearchingDict(true);
-    setDictResult(null);
-    try {
-      const result = await lookupDictionary(query.trim(), contentLang, defLang);
-      if (!result) {
-        setDictResult('not_found');
-      } else {
-        setDictResult(result);
-      }
-    } catch {
-      setDictResult('error');
-    } finally {
-      setIsSearchingDict(false);
-    }
-  };
 
   const readingView = (
     ['menu', 'levels', 'library', 'practice', 'custom-entry'].includes(appSub)
@@ -841,7 +811,6 @@ export default function App() {
     () => { try { return JSON.parse(localStorage.getItem('readmaster_saved_custom_texts') || '[]'); } catch { return []; } }
   );
   const [isCustomMode, setIsCustomMode] = useState(false);
-  const [isActivityPopupOpen, setIsActivityPopupOpen] = useState(false);
   const [clickedWordInfo, setClickedWordInfo] = useState<{word: string, index: number, cleanWord: string, definition?: string} | null>(null);
   const [wordModal, setWordModal] = useState<{word: string, mode: 'dictionary' | 'translation'} | null>(null);
 
@@ -866,7 +835,22 @@ export default function App() {
     try { return JSON.parse(localStorage.getItem('readmaster_exercises_history') || '[]'); } catch { return []; }
   });
 
-  const [exerciseProgressFilter, setExerciseProgressFilter] = useState<'all' | 'flashcards' | 'pronunciation' | 'word-match' | 'definition-quiz' | 'spelling-practice' | 'word-scramble' | 'memory-match' | 'listening-match' | 'true-false-quiz'>('all');
+  // Per-account lists: reload when the signed-in account changes (startup reads ran before sign-in).
+  const storageUser = user?.uid ?? null;
+
+  // "My class" only appears once an organization has put this student in a class.
+  const [inClass, setInClass] = useState(false);
+  useEffect(() => {
+    if (!user?.uid || accountProfile?.role !== 'student') { setInClass(false); return; }
+    let cancelled = false;
+    getStudentClasses(user.uid).then((list) => { if (!cancelled) setInClass(list.length > 0); }).catch(() => {});
+    return () => { cancelled = true; };
+  }, [user?.uid, accountProfile?.role]);
+  useEffect(() => {
+    setExercisesHistory(readScopedJSON<any[]>('readmaster_exercises_history', []));
+    setSavedCustomTexts(readScopedJSON<string[]>('readmaster_saved_custom_texts', []));
+  }, [storageUser]);
+
   const [selectedExerciseSession, setSelectedExerciseSession] = useState<any | null>(null);
 
   const [isExerciseCompleteModalOpen, setIsExerciseCompleteModalOpen] = useState(false);
@@ -874,8 +858,8 @@ export default function App() {
 
   const recordExercise = (type: string, data: any = {}) => {
      const scoreXP = data.score ? Math.min(250, data.score * 10) : 50;
-     const coinsEarned = data.score ? Math.min(50, data.score * 2) : 10;
-     awardXP(scoreXP, coinsEarned);
+     // Coins come from tests and feeding Smarty, not from vocabulary games.
+     awardXP(scoreXP, 0);
      const langMeta = activityLangStamp(contentLang);
 
      const total =
@@ -918,7 +902,6 @@ export default function App() {
      setExercisesHistory(prev => {
         const next = [{ type, timestamp: Date.now(), data, ...langMeta }, ...prev];
         writeScopedJSON('readmaster_exercises_history', next);
-        try { localStorage.setItem('readmaster_exercises_history', JSON.stringify(next)); } catch { /* ignore */ }
         return next;
      });
 
@@ -940,34 +923,58 @@ export default function App() {
        setActiveAssignment(null);
      }
 
-     if (data.correctWords || data.mistakes) {
-        setSavedVocab(prev => {
-           const next = { ...prev };
-           let changed = false;
-           if (data.correctWords) {
-              data.correctWords.forEach((w: string) => {
-                 const clean = w.toLowerCase();
-                 if (next[clean]) {
-                    changed = true;
-                    next[clean] = { ...next[clean], srs: calculateSM2(4, next[clean].srs) };
-                 }
-              });
-           }
-           if (data.mistakes && Array.isArray(data.mistakes)) {
-              data.mistakes.forEach((w: string) => {
-                 const clean = w.toLowerCase();
-                 if (next[clean]) {
-                    changed = true;
-                    next[clean] = { ...next[clean], srs: calculateSM2(1, next[clean].srs) };
-                 }
-              });
-           }
-           if (changed) {
-              persistVocab(next);
-           }
-           return changed ? next : prev;
-        });
-     }
+     setSavedVocab(prev => {
+       const next = applySrsFromResult(prev, data);
+       if (next !== prev) persistVocab(next);
+       return next;
+     });
+  };
+
+  // IELTS has been removed and Exercises now live in Practice: old links go to Practice.
+  useEffect(() => {
+    // Exercises open from Practice: once you leave the word picker or finish, you're back in Practice.
+    if (activeTab === 'exercises' && !activeExercise && !showExerciseWordSelector && !isExerciseCompleteModalOpen) { setActiveTab('practice' as any); return; }
+    const ieltsView = activeTab.startsWith('ielts') || ((activeTab === 'speaking' || activeTab === 'writing' || activeTab === 'listening') && appPath[0] === 'ielts');
+    if (ieltsView) setActiveTab('practice' as any);
+  }, [activeTab, appPath, activeExercise, showExerciseWordSelector, isExerciseCompleteModalOpen]);
+
+  const awardBiteXP = (result: BiteResult, title: string) => {
+    const goal = goalXpForMinutes(getPrefs().dailyMinutes);
+    const preview = isPreviewMode(accountProfile);
+    const claim = !preview && result.def.kind === 'today'
+      ? completeDailySession(contentLang, result.def.date!, result.accuracy) : null;
+    // A unit test is any bite of a unit's last lesson (units are 10 lessons).
+    const unitLessons = (Object.values(LEVEL_TEXTS) as ReadingText[][]).find((list) => list.some((tx) => tx.id === result.def.passageId)) ?? [];
+    const at = unitLessons.findIndex((tx) => tx.id === result.def.passageId);
+    const unitTest = at >= 0 && (at % 10 === 9 || at === unitLessons.length - 1);
+    const reward = preview || (claim && !claim.xp) ? { xp: 0, coins: 0 } : biteXp(result.def.kind, result.accuracy, result.perfect, unitTest);
+    const heartGained = !preview && !hasUnlimitedHearts(accountProfile) && (claim?.heart || result.def.kind === 'heart-practice') ? gainHearts(1) : 0;
+    const next = applyXpToHabit(habit, reward.xp, goal).habit;
+    // Every bite that earns XP adds a piece of Smarty's fish (4 pieces = a meal to feed him).
+    const fish = !preview && reward.xp > 0 ? earnFishPiece() : null;
+    if (!preview) {
+      if (reward.xp > 0) awardXP(reward.xp, reward.coins, { bite: true });
+      recordCompletion('lesson-bite', {
+        title, accuracy: result.accuracy, contentLang,
+        data: { biteId: result.def.id, passageId: result.def.passageId, kind: result.def.kind, xp: reward.xp, coins: reward.coins, ms: result.ms, correctWords: result.correctWords, mistakes: result.mistakes, ...activityLangStamp(contentLang) },
+      });
+      setSavedVocab(prev => {
+        const updated = applySrsFromResult(prev, result);
+        if (updated !== prev) persistVocab(updated);
+        return updated;
+      });
+      if (result.mistakes.length) setProblemWords(prev => {
+        const updated = { ...prev };
+        for (const word of new Set(result.mistakes)) updated[word] = { count: (prev[word]?.count ?? 0) + 1, lastMissed: Date.now() };
+        writeScopedJSON('readmaster_problem_words', updated);
+        return updated;
+      });
+      trackActivity();
+      trackExerciseStreak();
+      bumpWeeklyGoal('exercises');
+    }
+    return { xp: reward.xp, xpToday: next.dailyGoal.xpEarned, goal, streak: next.globalStreak.current, goalDone: next.dailyGoal.completed, heartGained, dailyReplay: !!claim && !claim.xp,
+      fish: fish ? { part: fish.part, mealCompleted: fish.mealCompleted, pieces: fish.state.pieces, meals: fish.state.meals } : undefined };
   };
 
   const allTexts = useMemo(() => {
@@ -981,20 +988,6 @@ export default function App() {
      return Object.entries(savedVocab as any).filter(([w, d]: any) => d.srs && d.srs.nextReviewDate && d.srs.nextReviewDate <= now).map(x => x[0]);
   }, [savedVocab]);
 
-  const dailyGoals = useMemo(() => {
-     const today = new Date().setHours(0,0,0,0);
-     let readsToday = 0;
-     Object.values(history).forEach((h: any) => {
-        h.forEach((entry: any) => {
-           if (new Date(entry.timestamp).setHours(0,0,0,0) === today) readsToday++;
-        });
-     });
-     let exercisesToday = 0;
-     exercisesHistory.forEach(xh => {
-        if (new Date(xh.timestamp).setHours(0,0,0,0) === today) exercisesToday++;
-     });
-     return { readsToday, exercisesToday };
-  }, [history, exercisesHistory]);
 
   const allVocabMap = useMemo(() => {
     const map = new Map<string, string>();
@@ -1015,88 +1008,22 @@ export default function App() {
     );
   }, [searchQuery, allTexts]);
 
-  const recognitionRef = useRef<any>(null);
   const isRecordingRef = useRef(isRecording);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<BlobPart[]>([]);
-  const shouldSaveAudioRef = useRef(false);
   const [playingAudioId, setPlayingAudioId] = useState<string | null>(null);
-  const [practicingWord, setPracticingWord] = useState<string | null>(null);
-  const [wordsToPracticePage, setWordsToPracticePage] = useState(1);
-  const [myVocabPage, setMyVocabPage] = useState(1);
-  const [myVocabSearchQuery, setMyVocabSearchQuery] = useState('');
-  const [improvedWordsPage, setImprovedWordsPage] = useState(1);
 
   useEffect(() => {
     isRecordingRef.current = isRecording;
   }, [isRecording]);
 
-  const startPracticeWord = async (word: string) => {
-    if (practicingWord) return;
-    if (!voskReady) {
-        alert("Speech Recognition model is still loading...");
-        return;
-    }
-    setPracticingWord(word);
-    let hasMatched = false;
-    try {
-      await startRecognition((finalText) => {
-          if (hasMatched) return;
-          checkMatch(finalText);
-      }, (partialText) => {
-          if (hasMatched) return;
-          checkMatch(partialText);
-      });
-
-      const checkMatch = (text: string) => {
-        const cleanTarget = normalizeForMatch(word, contentLang);
-        const transcriptWords = tokenizeForLang(text, contentLang)
-          .map(w => normalizeForMatch(w, contentLang))
-          .filter(Boolean);
-
-        let matched = false;
-        for (let i = 0; i < transcriptWords.length; i++) {
-            let combined = "";
-            for(let j = 0; j < 5 && i + j < transcriptWords.length; j++) {
-               combined += transcriptWords[i+j];
-               if (isMatch(cleanTarget, combined, contentLang) || isMatch(cleanTarget, transcriptWords[i+j], contentLang)) {
-                   matched = true;
-                   break;
-               }
-            }
-            if(matched) break;
-        }
-
-        if (matched) {
-          hasMatched = true;
-          setProblemWords(prev => {
-            const next = { ...prev };
-            const key = cleanSpeechToken(word) || word.toLowerCase();
-            if (next[key]) {
-              next[key].count -= 1;
-              if (next[key].count <= 0) {
-                delete next[key];
-                setImprovedWords(prevImp => {
-                  const nextImp = { ...prevImp, [key]: { timestamp: Date.now() } };
-                  localStorage.setItem('readmaster_improved_words', JSON.stringify(nextImp));
-                  return nextImp;
-                });
-              }
-            }
-            localStorage.setItem('readmaster_problem_words', JSON.stringify(next));
-            return next;
-          });
-          setPracticingWord(null);
-          stopVoskRecognition();
-        }
-      };
-    } catch (e) {
-      alert("Failed to start speech recognition.");
-      setPracticingWord(null);
-    }
-  };
 
   const currentTextObj = useMemo(() => {
+    if (isBiteRoute) {
+      // Deep links and browser Back select the route's passage across all levels.
+      return (Object.values(LEVEL_TEXTS) as ReadingText[][]).flat().find(text => text.id === appPath[2])
+        ?? { id: '__loading__', title: 'Loading…', text: '', vocabulary: [], targetSeconds: 60 };
+    }
     if (isCustomMode && customText.trim()) {
       return {
         id: 'custom-text',
@@ -1115,7 +1042,7 @@ export default function App() {
     }
     const unread = texts.find(t => sessionsForLang(history[t.id], contentLang).length === 0);
     return unread || texts[0];
-  }, [level, currentTextId, history, isCustomMode, customText, LEVEL_TEXTS, contentLang]);
+  }, [level, currentTextId, history, isCustomMode, customText, LEVEL_TEXTS, contentLang, isBiteRoute, appPath[2]]);
 
   const displayCurrentTextObj = useMemo(
     () => transformArabicContent(currentTextObj, contentLang, arabicDisplayMode),
@@ -1318,10 +1245,10 @@ export default function App() {
         clearReadingSession();
         bumpWeeklyGoal('reading');
 
-        awardXP(finalAccuracy * 2, finalAccuracy > 80 ? 10 : 5, { mergeIntoFeedback: true });
+        if (!isBiteRoute) awardXP(finalAccuracy * 2, finalAccuracy > 80 ? 10 : 5, { mergeIntoFeedback: true });
         trackActivity();
         try {
-          recordCompletion('reading-pronunciation', {
+          if (!isBiteRoute) recordCompletion('reading-pronunciation', {
             title: currentTextObj.title || 'Reading Practice',
             accuracy: finalAccuracy,
             contentLang,
@@ -1338,7 +1265,7 @@ export default function App() {
             },
             skipActivity: true,
           });
-          logActivity({
+          if (!isBiteRoute) logActivity({
             type: 'reading_pronunciation',
             title: currentTextObj.title || 'Reading Practice',
             level: (currentTextObj as any).level || level,
@@ -1399,7 +1326,7 @@ export default function App() {
     }
     setTranscriptionUnavailable(!transcript.trim());
     setIsFinished(true);
-    setShowFeedbackModal(true);
+    setShowFeedbackModal(!isBiteRoute);
   };
 
   const toggleRecording = async () => {
@@ -1409,7 +1336,7 @@ export default function App() {
     }
 
     if (!speechReady) {
-      setRecognitionError(voskError || 'Speech Recognition model is still loading...');
+      setRecognitionError(voskError || t("site.app.speech_recognition_model_is_still_a98ff7"));
       return;
     }
 
@@ -1484,7 +1411,7 @@ export default function App() {
       setTimeout(() => { playSound('start_record'); }, 100);
     } catch (error: any) {
       console.error("Recording start failed:", error);
-      setRecognitionError("Failed to access microphone or start recognition.");
+      setRecognitionError(t("site.app.failed_to_access_microphone_or_677726"));
       isRecordingRef.current = false;
     }
   };
@@ -1496,6 +1423,17 @@ export default function App() {
     setIsFinished(false);
     if (timedMode) setTimeLeft(targetTime);
   };
+
+  // Clear stale read-aloud results on direct links, Back/Forward, and bite exit.
+  const lastBiteRoute = useRef('');
+  const biteRouteKey = isBiteRoute ? appPath.join('/') : '';
+  useEffect(() => {
+    if (lastBiteRoute.current === biteRouteKey) return;
+    lastBiteRoute.current = biteRouteKey;
+    reset();
+    setShowFeedbackModal(false);
+    setSessionReward(null);
+  }, [biteRouteKey]); // The route transition, rather than reading-state changes, resets a session.
 
   const currentAudioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -1579,6 +1517,7 @@ export default function App() {
           document.body.removeChild(a);
           URL.revokeObjectURL(url);
         }, 100);
+        emitSmarty({ type: 'download' });
       }
     } catch(e) { console.error("Error downloading audio", e); }
   };
@@ -1587,7 +1526,8 @@ export default function App() {
     sharedPlayWord(word, speechRate, speechLocale);
   };
 
-  const handleContentLangChange = useCallback((_lang: ContentLang) => {
+  const handleContentLangChange = useCallback((lang: ContentLang) => {
+    emitSmarty({ type: 'lang.switch', to: uiLangLabel(lang) });
     setReadingView('menu');
     setActiveTab(prev => (EN_ONLY_TABS.has(prev) ? 'dashboard' : prev));
   }, []);
@@ -1598,6 +1538,53 @@ export default function App() {
     !accountProfile.onboardingCompletedAt &&
     Object.keys(history).length === 0
   );
+
+  // ── Smarty: keep his knowledge of the learner fresh + celebrate real progress ──
+  useEffect(() => {
+    const weak = (Object.entries(problemWords) as [string, { count: number; lastMissed: number }][])
+      .sort((a, b) => (b[1].count - a[1].count) || (b[1].lastMissed - a[1].lastMissed))
+      .slice(0, 3).map(([w]) => w);
+    setSmartyCtx({
+      displayName: accountProfile?.displayName || user?.displayName || undefined,
+      streak: visibleStreak(normalizeHabit(habit)),
+      xpToday: habit.dailyGoal.xpEarned,
+      goalDone: habit.dailyGoal.completed,
+      weakWords: weak,
+      isMax: canPractice(accountProfile) && !isPreviewMode(accountProfile),
+      createdAt: accountProfile?.createdAt,
+    });
+  }, [accountProfile, user, habit, problemWords]);
+
+  // Welcome back after a break (once per app session, after the account has loaded).
+  const greetedReturn = useRef(false);
+  useEffect(() => {
+    if (greetedReturn.current || !authReady || !user || !accountProfile) return;
+    greetedReturn.current = true;
+    const last = habit.globalStreak.lastDate;
+    if (!last) return;
+    const days = Math.round((Date.now() - Date.parse(`${last}T12:00:00`)) / 86400000);
+    if (days >= 3) window.setTimeout(() => emitSmarty({ type: 'return', daysAway: days }), 1500);
+  }, [authReady, user, accountProfile, habit.globalStreak.lastDate]);
+
+  const celebrated = useRef<{ level: number; league: string; streak: number; badges: number } | null>(null);
+  useEffect(() => {
+    const now = { level: userProfile.level, league: userProfile.league, streak: habit.globalStreak.current, badges: habit.badges.length };
+    const prev = celebrated.current;
+    celebrated.current = now;
+    // Only celebrate changes caused by XP earned in the last few seconds (not server loads).
+    if (!prev || Date.now() - xpAwardedAt.current > 4000) return;
+    if (now.level > prev.level) emitSmarty({ type: 'xp.levelUp', level: now.level });
+    if (now.league !== prev.league && LEAGUE_ORDER.indexOf(now.league) > LEAGUE_ORDER.indexOf(prev.league)) emitSmarty({ type: 'league.promoted', to: now.league });
+    if (now.streak > prev.streak && [7, 30, 100, 365].includes(now.streak)) emitSmarty({ type: 'streak.milestone', n: now.streak });
+    if (now.badges > prev.badges) emitSmarty({ type: 'badge', id: habit.badges[habit.badges.length - 1] });
+  }, [userProfile.level, userProfile.league, habit.globalStreak.current, habit.badges]);
+
+  // Warm the hot sticker chunks (moods + answer feedback) once the learner is in.
+  useEffect(() => { if (user) prefetchStickers(); }, [user]);
+
+  const showChrome = shouldShowChrome({
+    signedIn: !!user, hasProfile: !!accountProfile, needsOnboarding, tab: activeTab, path: appPath,
+  }) && !(activeTab === 'exercises' && activeExercise); // a running exercise takes the whole screen
 
   useEffect(() => {
     appliedStartingLevel.current = false;
@@ -1617,40 +1604,48 @@ export default function App() {
     goal: 'daily' | 'school' | 'exam';
     startingLevel: Level;
     startLessons: boolean;
+    preferredName: string;
+    dailyMinutes: DailyMinutes;
   }) => {
-    if (!user) return;
-    setLevel(result.startingLevel);
-    appliedStartingLevel.current = true;
-    try {
-      await saveOnboarding(user.uid, {
-        startingLevel: result.startingLevel,
-        learningGoal: result.goal,
-      });
-    } catch (e) {
-      console.error('saveOnboarding failed:', e);
-    }
-    setAccountProfile(prev => prev ? {
-      ...prev,
+    if (!user) throw new Error('Sign in to save onboarding');
+    // Resolve content before marking setup complete, including a newly selected language.
+    const texts = result.startLessons ? await loadLevelTexts(result.contentLang) : null;
+    const first = texts ? findCurrentLesson(result.contentLang, texts[result.startingLevel]) : null;
+    const completedAt = Date.now();
+    await saveOnboarding(user.uid, {
       startingLevel: result.startingLevel,
       learningGoal: result.goal,
-      onboardingCompletedAt: Date.now(),
-    } : prev);
-    if (result.startLessons && canPractice(accountProfile)) {
-      setActiveTab('lessons');
-    } else if (!canPractice(accountProfile)) {
-      setActiveTab('plans');
+      onboardingCompletedAt: completedAt,
+      dailyMinutes: result.dailyMinutes,
+    });
+    setPrefs({ preferredName: result.preferredName, dailyMinutes: result.dailyMinutes });
+    setLevel(result.startingLevel);
+    appliedStartingLevel.current = true;
+    const nextProfile = accountProfile ? {
+      ...accountProfile,
+      startingLevel: result.startingLevel,
+      learningGoal: result.goal,
+      onboardingCompletedAt: completedAt,
+      dailyMinutes: result.dailyMinutes,
+    } : accountProfile;
+    if (nextProfile) setAccountProfile(nextProfile);
+    if (result.startLessons && canUseBites(nextProfile)) {
+      navigate({ tab: 'lessons', path: first ? ['bite', result.contentLang, first.text.id, String(first.bite)] : ['path'] });
     } else {
       setActiveTab('dashboard');
     }
   };
 
   return (
+    <ProgressProvider value={{ userProfile, habit, contentLang, previewMode: isPreviewMode(accountProfile), unlimitedHearts: hasUnlimitedHearts(accountProfile), accountProfile, savedVocab, problemWords, history, level, navigate, spendCoins, saveWord: handleAddVocab, awardBiteXP }}>
     <EditModeProvider>
+      <ReminderController enabled={!!user && authReady && !!accountProfile && !needsOnboarding} />
     <div className="h-dvh bg-white dark:bg-zinc-950 flex font-sans text-slate-900 dark:text-zinc-100 overflow-hidden">
 
       {/* Sidebar — only for fully authenticated users AND not on homepage */}
-      {user && accountProfile && !needsOnboarding && activeTab !== 'home' && activeTab !== 'plans' && (
+      {showChrome && (
         <Sidebar
+          inClass={inClass}
           activeTab={activeTab}
           setActiveTab={setActiveTab as any}
           setReadingView={setReadingView as any}
@@ -1668,11 +1663,11 @@ export default function App() {
       )}
 
       <div className="flex-1 flex flex-col h-dvh overflow-hidden bg-white dark:bg-zinc-950 relative">
-      {user && accountProfile && !needsOnboarding && activeTab !== 'home' && activeTab !== 'plans' && (
+      {showChrome && (
         <div className="lg:hidden">
           <AppTopBar
             activeTab={activeTab}
-            title={TAB_TITLES[activeTab]}
+            title={tText(TAB_TITLES[activeTab] || '')}
             habit={habit}
             xp={userProfile.xp}
             user={user}
@@ -1684,8 +1679,11 @@ export default function App() {
       )}
 
       {/* Main Content — this is the mobile scroller; padding clears the fixed bottom nav */}
-      <div className={`flex-1 flex flex-col min-h-0 overflow-y-auto overscroll-y-contain transition-opacity duration-150 ${tabTransit ? 'opacity-0' : 'opacity-100'} ${user && accountProfile && !needsOnboarding && activeTab !== 'home' && activeTab !== 'plans' ? 'pb-[var(--se-mobile-nav)]' : ''}`}>
-      {activeTab === 'home' && !(user && accountProfile && needsOnboarding) ? (
+      <div className={`flex-1 flex flex-col min-h-0 overflow-y-auto overscroll-y-contain transition-opacity duration-150 ${tabTransit ? 'opacity-0' : 'opacity-100'} ${showChrome ? 'pb-[var(--se-mobile-nav)]' : ''}`}>
+      {activeTab === 'stickers' && import.meta.env.DEV && !user ? (
+        /* Dev-only: sticker gallery without signing in */
+        <Suspense fallback={<LazyFallback />}><StickerGallery /></Suspense>
+      ) : activeTab === 'home' && !(user && accountProfile && needsOnboarding) ? (
         /* Home page — always public */
         <Suspense fallback={<LazyFallback />}>
           <HomePage
@@ -1701,20 +1699,25 @@ export default function App() {
         </Suspense>
       ) : !authReady ? (
         /* Resolving auth — brief spinner */
-        <div className="flex-1 flex items-center justify-center">
-          <div className="w-8 h-8 border-2 border-zinc-200 border-t-zinc-500 rounded-full animate-spin" />
-        </div>
+        <SmartyLoader className="" />
       ) : !user ? (
         /* Not signed in — show auth screen */
         <AuthGate loginWithGoogle={loginWithGoogle} />
       ) : !accountProfile ? (
-        /* Signed in, profile being provisioned — brief spinner */
-        <div className="flex-1 flex items-center justify-center">
-          <div className="w-8 h-8 border-2 border-zinc-200 border-t-zinc-500 rounded-full animate-spin" />
+        /* Signed in but profile missing — should be rare after fallback; show retry */
+        <div className="flex-1 flex flex-col items-center justify-center gap-3 px-6 text-center">
+          <SmartyLoader className="" delayMs={0} sticker="pers.dramatic-entrance" size={150} />
+          <p className="text-sm text-zinc-500 max-w-sm">{t('smarty.connecting')}</p>
+          <button
+            type="button"
+            className="text-sm font-semibold text-zinc-700 underline underline-offset-2"
+            onClick={() => window.location.reload()}
+          >
+            {t("site.app.refresh_56e3ba")}</button>
         </div>
       ) : needsOnboarding && activeTab !== 'plans' ? (
         <Onboarding
-          canStartLessons={canPractice(accountProfile)}
+          canStartLessons={canUseBites(accountProfile)}
           onComplete={finishOnboarding}
         />
       ) : (() => {
@@ -1732,7 +1735,7 @@ export default function App() {
         ]);
 
         // Free Users see a lock screen on every feature tab.
-        if (free && !ALWAYS_ALLOWED.has(activeTab)) {
+        if (free && !ALWAYS_ALLOWED.has(activeTab) && !(canUseBites(accountProfile) && isFreeLearningRoute(activeTab, appPath))) {
           return (
             <PaywallScreen
               email={accountProfile.email}
@@ -1747,75 +1750,40 @@ export default function App() {
         // body lets each feature gate its own practice controls (mic, submit,
         // save) without touching navigation, scrolling, or content drill-down.
         return (
+        <ErrorBoundary resetKey={activeTab} onHome={() => setActiveTab('dashboard')}>
         <Suspense fallback={<LazyFallback />}>
 
       {/* Preview-mode banner — sticky at top of practice tabs */}
       {previewing && PREVIEWABLE_TABS.has(activeTab) && (
         <div className="bg-amber-50 dark:bg-amber-950/30 border-b border-amber-200 dark:border-amber-900 px-6 py-3 flex items-center gap-3 text-sm">
-          <div className="w-7 h-7 rounded-full bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center shrink-0">
-            <span className="text-amber-700 dark:text-amber-300 text-xs font-black">i</span>
-          </div>
+          <Sticker id="premium.trial-activated" size={44} mode="once" className="shrink-0 -my-2" />
           <div className="flex-1 min-w-0">
-            <p className="font-bold text-amber-900 dark:text-amber-100">Preview mode — {ACCOUNT_TYPE_LABEL[acctType]} accounts</p>
+            <p className="font-bold text-amber-900 dark:text-amber-100">{t("site.app.preview_mode_2b0258")}{ACCOUNT_TYPE_LABEL[acctType]}  {t("site.app.accounts_10db27")}</p>
             <p className="text-xs text-amber-700 dark:text-amber-300">
-              Click through any material to evaluate it for your learners. Recording, submissions, and AI scoring are disabled — your activity isn't saved.
-            </p>
+              {t("site.app.click_through_any_material_to_2f9f57")}</p>
           </div>
         </div>
       )}
 
       <div className={previewing && PREVIEWABLE_TABS.has(activeTab) ? 'preview-mode' : ''}>
 
-      {activeTab === 'dashboard' && (
-        <DashboardView
-          variant="home"
-          startingLevel={accountProfile.startingLevel}
-          dashboardFilter={dashboardFilter}
-          setDashboardFilter={setDashboardFilter}
-          history={history}
-          problemWords={problemWords}
-          savedVocab={savedVocab}
-          savedCustomTexts={savedCustomTexts}
-          playWord={playWord}
-          practicingWord={practicingWord}
-          startPracticeWord={startPracticeWord}
-          allVocabMap={allVocabMap}
-          wordsToPracticePage={wordsToPracticePage}
-          setWordsToPracticePage={setWordsToPracticePage as any}
-          playHistoryAudio={playHistoryAudio}
-          downloadAudio={downloadAudio}
-          exercisesHistory={exercisesHistory}
-          exerciseProgressFilter={exerciseProgressFilter}
-          setExerciseProgressFilter={setExerciseProgressFilter}
-          setActiveTab={setActiveTab as any}
-          setReadingView={setReadingView as any}
-          setSelectedVocabWords={setSelectedVocabWords as any}
-          setActiveExercise={setActiveExercise as any}
-          setShowExerciseWordSelector={setShowExerciseWordSelector as any}
-          habit={habit}
-          userProfile={userProfile}
-          user={user}
-          accountProfile={accountProfile}
-          navigate={navigate as any}
+      {(activeTab === 'dashboard' || (activeTab === 'profile' && !appPath[0])) && user && accountProfile && (
+        <SmartyRoom
+          xp={userProfile?.xp ?? 0}
+          league={userProfile?.league ?? 'Bronze'}
+          canTalk={canPractice(accountProfile) && !isPreviewMode(accountProfile)}
+          showIelts={false}
+          onMealEaten={() => { if (!isPreviewMode(accountProfile)) awardXP(MEAL_XP, MEAL_COINS, { bite: true }); }}
+          onOpenSettings={() => navigate({ tab: 'profile', path: ['settings'] })}
+          onOpenPlans={() => setActiveTab('plans' as any)}
         />
       )}
+
 
       {activeTab === 'vocabulary' && (
         <VocabularyView
           savedVocab={savedVocab}
           setSavedVocab={setSavedVocab}
-          vocabFilter={vocabFilter}
-          setVocabFilter={setVocabFilter}
-          myVocabPage={myVocabPage}
-          setMyVocabPage={setMyVocabPage as any}
-          myVocabSearchQuery={myVocabSearchQuery}
-          setMyVocabSearchQuery={setMyVocabSearchQuery}
-          targetLangs={targetLangs}
-          setTargetLangs={setTargetLangs as any}
-          translations={translations}
-          setTranslations={setTranslations as any}
-          translateText={translateText}
-          isTranslating={isTranslating}
           playWord={playWord}
           srsDueWords={srsDueWords}
           setSelectedVocabWords={setSelectedVocabWords}
@@ -1827,6 +1795,7 @@ export default function App() {
           isAddingVocab={isAddingVocab}
           addVocabError={addVocabError}
           handleAddNewVocab={handleAddNewVocab}
+          onReview={() => navigate({ tab: 'practice', path: ['review'] })}
           onShowModal={(w, mode) => setWordModal({ word: w, mode })}
         />
       )}
@@ -1851,13 +1820,13 @@ export default function App() {
           setExerciseSourceCustomTextSel={setExerciseSourceCustomTextSel}
           savedCustomTexts={savedCustomTexts}
           recordExercise={recordExercise}
-          setIsExerciseCompleteModalOpen={setIsExerciseCompleteModalOpen}
-          setExerciseCompleteData={setExerciseCompleteData}
         />
       )}
 
       {activeTab === 'lessons' && (
         <LessonsView
+          path={appPath}
+          navigatePath={setSubPath}
           level={level}
           setLevel={setLevel}
           startingLevel={accountProfile.startingLevel}
@@ -1942,18 +1911,13 @@ export default function App() {
         />
       )}
 
-      {activeTab === 'practice' && (
-        <PracticeHub
-          setActiveTab={setActiveTab as any}
-          setReadingView={setReadingView as any}
-        />
+      {activeTab === 'quests' && (
+        <QuestsView xp={userProfile?.xp ?? 0} league={userProfile?.league ?? 'Bronze'} />
       )}
 
-      {activeTab === 'ielts' && isEnglish && (
-        <IELTSHub
-          navigate={navigate as any}
-          setActiveTab={setActiveTab as any}
-        />
+      {activeTab === 'practice' && (
+        <PracticeView path={appPath} navigatePath={(path) => navigate({ tab: 'practice', path })}
+          onOpenExercise={(id) => { setActiveExercise(null); setSelectedVocabWords([]); setShowExerciseWordSelector(id as any); setActiveTab('exercises' as any); }} />
       )}
 
       {activeTab === 'reading' && readingView === 'menu' && (
@@ -2049,16 +2013,18 @@ export default function App() {
         />
       )}
 
-      {activeTab === 'teacher' && (accountProfile.role === 'teacher' || accountProfile.role === 'organization' || accountProfile.role === 'admin') && <TeacherDashboard setActiveTab={setActiveTab as any} />}
+      {activeTab === 'business' && (isBusinessRole(accountProfile.role) || accountProfile.role === 'admin') && <TeacherDashboard setActiveTab={setActiveTab as any} />}
       {activeTab === 'admin' && accountProfile.role === 'admin' && <AdminPanel />}
       {activeTab === 'content' && (accountProfile.role === 'content-manager' || accountProfile.role === 'admin') && (
         <Suspense fallback={<LazyFallback />}><ContentManagerPage /></Suspense>
       )}
-      {activeTab === 'organization' && (accountProfile.role === 'organization' || accountProfile.role === 'admin') && <OrganizationPanel setActiveTab={setActiveTab as any} />}
       {activeTab === 'classes' && accountProfile.role === 'student' && (
         <StudentClasses onNavigate={setActiveTab as any} onStartAssignment={handleStartAssignment} />
       )}
-      {activeTab === 'profile' && (
+      {activeTab === 'stickers' && (accountProfile.role === 'admin' || accountProfile.role === 'content-manager' || import.meta.env.DEV) && (
+        <StickerGallery />
+      )}
+      {activeTab === 'profile' && appPath[0] === 'settings' && (
         <ProfilePage
           user={user}
           accountProfile={accountProfile}
@@ -2069,6 +2035,12 @@ export default function App() {
           onContentLangChange={handleContentLangChange}
           streak={habit?.globalStreak?.current ?? 0}
           xp={userProfile?.xp ?? 0}
+          league={userProfile?.league}
+          badges={habit?.badges?.length ?? 0}
+          path={appPath}
+          onNavigate={(path) => navigate({ tab: 'profile', path })}
+          onOpenTab={(tab) => setActiveTab(tab)}
+          onMealEaten={() => { if (!isPreviewMode(accountProfile)) awardXP(MEAL_XP, MEAL_COINS, { bite: true }); }}
         />
       )}
       {activeTab === 'listening' && (
@@ -2098,7 +2070,9 @@ export default function App() {
       {activeTab === 'plans' && (
         <PaymentPlans
           user={user}
-          currentPlan={(accountProfile as any)?.plan ?? null}
+          currentPlan={maxEnded(accountProfile) ? null : (accountProfile as any)?.plan ?? null}
+          profile={accountProfile}
+          onProfileChange={(next) => setAccountProfile(prev => prev ? { ...prev, ...next } as typeof prev : prev)}
           onPlanActivated={(planId, seats, languages) => {
             setAccountProfile(prev => prev ? {
               ...prev,
@@ -2106,15 +2080,10 @@ export default function App() {
               planSeats: seats,
               planLanguages: languages ?? 1,
               planStartedAt: Date.now(),
-              role: planId === 'teacher' ? 'teacher' : planId === 'organization' ? 'organization' : prev.role,
+              role: planId === 'business' || planId === 'teacher' || planId === 'organization' ? 'business' : prev.role,
             } : prev);
           }}
         />
-      )}
-      {activeTab === 'story' && <InteractiveStory onBack={() => setActiveTab('reading')} onToggleVocab={handleToggleVocab} savedVocab={savedVocab} onShowModal={(w: string, mode: 'dictionary' | 'translation') => setWordModal({word: w, mode})} />}
-      {activeTab === 'ielts-reading' && <IELTSReading onBack={() => setActiveTab(isEnglish ? 'ielts' : 'practice')} recordExercise={recordExercise} />}
-      {activeTab === 'ielts-full-mock' && isEnglish && (
-        <IELTSFullMock onBack={() => setActiveTab('ielts')} recordExercise={recordExercise} />
       )}
       {activeTab === 'comprehensive' && (
         <ComprehensiveReading
@@ -2158,8 +2127,9 @@ export default function App() {
       )}
 
       {/* Mobile bottom navigation — hidden on homepage */}
-      {user && accountProfile && !needsOnboarding && activeTab !== 'home' && activeTab !== 'plans' && (
+      {showChrome && (
         <MobileNav
+          inClass={inClass}
           activeTab={activeTab}
           setActiveTab={setActiveTab as any}
           setReadingView={setReadingView as any}
@@ -2174,9 +2144,16 @@ export default function App() {
       )}
         </div>
         </Suspense>
+        </ErrorBoundary>
         );
       })()}
       </div>{/* end fade-transition wrapper */}
+
+      {/* Smarty: floating reactions, toasts and big celebrations */}
+      <SmartyHost
+        signedIn={!!(user && accountProfile) || (import.meta.env.DEV && activeTab === 'stickers')}
+        stageEnabled={showChrome || (import.meta.env.DEV && activeTab === 'stickers')}
+      />
 
       {/* Feedback Modal — skipped in Lessons tab (lesson UI handles continue) */}
       {habitCelebrate && !showFeedbackModal && !sessionReward && (
@@ -2191,8 +2168,8 @@ export default function App() {
       )}
 
       {showFeedbackModal && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full shadow-2xl relative animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 animate-in fade-in duration-200 bg-zinc-900/55 backdrop-blur-[2px]">
+          <div className="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full relative animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
             <button
               onClick={() => {
                 setShowFeedbackModal(false);
@@ -2208,29 +2185,29 @@ export default function App() {
               <X className="w-5 h-5" />
             </button>
 
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">Session Complete!</h2>
+            <h2 className="font-serif text-2xl font-extrabold text-slate-900 mb-6">{t("site.app.session_complete_c001a7")}</h2>
 
             <div className="flex items-center gap-8 mb-6">
               <div className="flex flex-col">
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Read Accuracy</span>
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">{t("site.app.read_accuracy_04ba3a")}</span>
                 {transcriptionFailed || transcriptionUnavailable ? (
-                  <span className="text-2xl font-mono font-bold tracking-tight text-amber-500">N/A</span>
+                  <span className="text-2xl font-mono font-bold tracking-tight text-amber-500">{t("site.app.na_08d2e9")}</span>
                 ) : (
                   <span className={`text-4xl font-black ${readAccuracy >= 80 ? 'text-emerald-500' : readAccuracy >= 50 ? 'text-amber-500' : 'text-rose-500'}`}>{readAccuracy}%</span>
                 )}
               </div>
               <div className="w-px h-12 bg-slate-100"></div>
               <div className="flex flex-col">
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Passage Accuracy</span>
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">{t("site.app.passage_accuracy_7ea618")}</span>
                 {transcriptionFailed || transcriptionUnavailable ? (
-                  <span className="text-2xl font-mono font-bold tracking-tight text-amber-500">N/A</span>
+                  <span className="text-2xl font-mono font-bold tracking-tight text-amber-500">{t("site.app.na_08d2e9")}</span>
                 ) : (
                   <span className={`text-4xl font-black ${passageAccuracy >= 80 ? 'text-emerald-500' : passageAccuracy >= 50 ? 'text-amber-500' : 'text-rose-500'}`}>{passageAccuracy}%</span>
                 )}
               </div>
               <div className="w-px h-12 bg-slate-100 hidden sm:block"></div>
               <div className="flex flex-col">
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Words Read</span>
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">{t("site.app.words_read_bf9cd2")}</span>
                 <span className="text-4xl font-black text-slate-800">{transcriptWords.length}</span>
               </div>
             </div>
@@ -2240,35 +2217,31 @@ export default function App() {
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2 text-amber-900 font-bold text-sm">
                     <Sparkles className="w-4 h-4 text-amber-500" />
-                    Rewards
-                  </div>
+                    {t("site.app.rewards_2f4f4b")}</div>
                   <div className="text-sm font-bold text-amber-800">
-                    +{sessionReward.xp} XP · +{sessionReward.coins} coins
-                  </div>
+                    +{sessionReward.xp}  {t("site.app.xp_fa2e31")}{sessionReward.coins}  {t("site.app.coins_c2cc5f")}</div>
                 </div>
                 <div>
                   <div className="flex justify-between text-xs font-semibold text-slate-500 mb-1.5">
-                    <span className="flex items-center gap-1"><Target className="w-3.5 h-3.5" /> Daily goal</span>
+                    <span className="flex items-center gap-1"><Target className="w-3.5 h-3.5" />  {t("site.app.daily_goal_55da47")}</span>
                     <span>
-                      {Math.min(sessionReward.dailyGoalXpEarned ?? 0, DAILY_GOAL_XP)}/{DAILY_GOAL_XP} XP
+                      {Math.min(sessionReward.dailyGoalXpEarned ?? 0, dailyGoalTarget)}/{dailyGoalTarget} XP
                     </span>
                   </div>
                   <div className="h-2.5 bg-white/90 rounded-full overflow-hidden border border-amber-100">
                     <div
                       className={`h-full rounded-full transition-all duration-500 ${sessionReward.dailyGoalCompleted ? 'bg-emerald-500' : 'bg-zinc-900'}`}
-                      style={{ width: `${Math.min(100, ((sessionReward.dailyGoalXpEarned ?? 0) / DAILY_GOAL_XP) * 100)}%` }}
+                      style={{ width: `${Math.min(100, ((sessionReward.dailyGoalXpEarned ?? 0) / dailyGoalTarget) * 100)}%` }}
                     />
                   </div>
                 </div>
                 {sessionReward.goalJustCompleted && (
                   <p className="text-sm font-semibold text-emerald-700 flex items-center gap-1.5">
-                    <Target className="w-4 h-4" /> Daily goal complete!
-                  </p>
+                    <Target className="w-4 h-4" />  {t("site.app.daily_goal_complete_8cd2dd")}</p>
                 )}
                 {sessionReward.streakTicked && sessionReward.streak != null && sessionReward.streak > 0 && (
                   <p className="text-sm font-semibold text-orange-600 flex items-center gap-1.5">
-                    <Flame className="w-4 h-4" /> {sessionReward.streak}-day streak
-                  </p>
+                    <Flame className="w-4 h-4" /> {sessionReward.streak}{t("site.app.day_streak_6df0e5")}</p>
                 )}
                 {(sessionReward.newBadges?.length ?? 0) > 0 && (
                   <div className="space-y-2 pt-1">
@@ -2276,8 +2249,8 @@ export default function App() {
                       <div key={id} className="flex items-center gap-2 p-2.5 rounded-xl bg-amber-100/80 border border-amber-200 text-left">
                         <Medal className="w-4 h-4 text-amber-600 shrink-0" />
                         <div>
-                          <div className="font-bold text-amber-900 text-xs">{BADGE_META[id]?.label || id}</div>
-                          <div className="text-[11px] text-amber-800/80">{BADGE_META[id]?.desc}</div>
+                          <div className="font-bold text-amber-900 text-xs">{tText(BADGE_META[id]?.label || id)}</div>
+                          <div className="text-[11px] text-amber-800/80">{tText(BADGE_META[id]?.desc || '')}</div>
                         </div>
                       </div>
                     ))}
@@ -2288,23 +2261,21 @@ export default function App() {
 
             {(transcriptionFailed || transcriptionUnavailable) && (
               <div className="mb-6 bg-amber-50 border border-amber-200 rounded-xl p-4">
-                <p className="text-sm font-semibold text-amber-700 mb-1">Accuracy unavailable</p>
+                <p className="text-sm font-semibold text-amber-700 mb-1">{t("site.app.accuracy_unavailable_b2cbe7")}</p>
                 <p className="text-sm text-amber-600">
-                  We could not transcribe your reading, so accuracy couldn&apos;t be calculated.
-                  Your recording is saved below — you can still listen to it or download it.
-                </p>
+                  {t("site.app.we_could_not_transcribe_your_a9294b")}</p>
               </div>
             )}
 
             <div className="space-y-6">
               {rawStatuses.some(s => s === 'incorrect' || s === 'slight_mistake') && (
                 <div>
-                  <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Words to Practice</h3>
+                  <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">{t("site.app.words_to_practice_75754a")}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 max-h-64 overflow-y-auto custom-scrollbar pr-2 overflow-x-hidden">
                     {Array.from<string>(new Set(sourceWords.filter((w, i) => rawStatuses[i] === 'incorrect' || rawStatuses[i] === 'slight_mistake'))).map((word, i) => {
                       const cleanWord = word.replace(/[^\p{L}\p{N}'’-]/gu, '');
                       return (
-                        <div key={i} className="flex items-center justify-between p-3 bg-white rounded-xl border border-slate-200 shadow-sm hover:border-zinc-300 transition-colors">
+                        <div key={i} className="flex items-center justify-between p-3 bg-white rounded-2xl border-2 border-slate-200 hover:border-zinc-300 transition-colors shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
                           <div className="flex items-center gap-3 w-full min-w-0">
                             <button
                               onClick={() => playWord(word)}
@@ -2318,7 +2289,7 @@ export default function App() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-zinc-100 text-zinc-900 rounded-full hover:bg-zinc-200 transition-colors tooltip items-center gap-2"
-                              title="Pronunciation Guide"
+                              title={t("site.app.pronunciation_guide_604551")}
                             >
                               <BookOpen className="w-5 h-5" />
                             </a>
@@ -2330,14 +2301,14 @@ export default function App() {
                 </div>
               )}
 
-               <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
-                 <h3 className="text-sm font-bold text-slate-900 mb-1">Feedback</h3>
+               <div className="bg-slate-50 p-4 rounded-2xl border-2 border-slate-100">
+                 <h3 className="text-sm font-bold text-slate-900 mb-1">{t("site.app.feedback_c8d767")}</h3>
                  <p className="text-slate-600 text-sm">
                   {transcriptionFailed || transcriptionUnavailable
-                    ? "We couldn't decode a readable transcript, so accuracy is unavailable (this can happen if no speech was captured or the device's speech engine isn't supported). Your recording is saved below — listen to it to self-check."
-                    : accuracy >= 90 ? "Excellent reading! You have great fluency and pronunciation." :
-                    accuracy >= 70 ? "Good job! Focus on practicing the highlighted words." :
-                    "Keep practicing! Try reading a bit slower to improve clarity. Click on words to hear their pronunciation."}
+                    ? t("site.app.we_couldnt_decode_a_readable_85fa61")
+                    : accuracy >= 90 ? t("site.app.excellent_reading_you_have_great_1b5097") :
+                    accuracy >= 70 ? t("site.app.good_job_focus_on_practicing_e861f3") :
+                    t("site.app.keep_practicing_try_reading_a_11ed5a")}
                  </p>
               </div>
             </div>
@@ -2348,7 +2319,7 @@ export default function App() {
                  className="w-full py-3.5 px-4 bg-white border-2 border-zinc-200 text-zinc-900 hover:bg-zinc-100 active:scale-95 font-semibold rounded-xl transition-all flex items-center justify-center gap-2"
               >
                  {playingAudioId === currentTextObj.id ? <StopCircle className="w-5 h-5" /> : <Play className="w-5 h-5" />}
-                 {playingAudioId === currentTextObj.id ? 'Stop Playing' : 'Listen to my reading'}
+                 {playingAudioId === currentTextObj.id ? t("site.app.stop_playing_91dc50") : t("site.app.listen_to_my_reading_08de80")}
               </button>
 
               <button
@@ -2356,8 +2327,7 @@ export default function App() {
                  className="w-full py-3.5 px-4 bg-white border-2 border-slate-200 text-slate-700 hover:bg-slate-50 active:scale-95 font-semibold rounded-xl transition-all flex items-center justify-center gap-2"
               >
                  <Download className="w-5 h-5" />
-                 Download Audio
-              </button>
+                 {t("site.app.download_audio_9b36f9")}</button>
 
               <button
                  onClick={() => {
@@ -2371,13 +2341,13 @@ export default function App() {
                      setReadingView('library');
                    }
                  }}
-                 className="w-full py-3.5 px-4 bg-zinc-900 hover:bg-black active:scale-95 text-white font-semibold rounded-xl transition-all flex items-center justify-center gap-2"
+                 className="w-full py-3.5 px-4 bg-zinc-900 hover:bg-black text-white font-semibold rounded-2xl transition-all flex items-center justify-center gap-2 shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none"
               >
                  {activeTab === 'lessons'
-                   ? 'Continue to Exercises'
+                   ? t("site.app.continue_to_exercises_318bcb")
                    : isCustomMode
-                     ? 'Return to Entry'
-                     : 'Return to Library'}
+                     ? t("site.app.return_to_entry_9a75fa")
+                     : t("site.app.return_to_library_0b0fb0")}
               </button>
             </div>
           </div>
@@ -2386,30 +2356,30 @@ export default function App() {
 
       {/* Exercise Complete Modal */}
       {isExerciseCompleteModalOpen && exerciseCompleteData && (
-        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
-           <div className="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-xl transform transition-all animate-in zoom-in-95 duration-200 border border-slate-100">
+        <div className="fixed inset-0 flex items-center justify-center z-[100] p-4 bg-zinc-900/55 backdrop-blur-[2px]">
+           <div className="bg-white rounded-3xl p-8 max-w-sm w-full text-center transform transition-all animate-in zoom-in-95 duration-200 border-2 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
               <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle2 className="w-8 h-8 text-emerald-600" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-800 mb-2">Exercise Complete!</h2>
-              <p className="text-slate-500 mb-6 capitalize">{exerciseCompleteData.type.replace('-', ' ')} session finished.</p>
+              <h2 className="font-serif text-2xl font-extrabold text-slate-800 mb-2">{t("site.app.exercise_complete_8cdae8")}</h2>
+              <p className="text-slate-500 mb-6 capitalize">{exerciseCompleteData.type.replace('-', ' ')}  {t("site.app.session_finished_2e441e")}</p>
 
               <div className="bg-slate-50 rounded-2xl p-4 mb-6 space-y-2">
                  {exerciseCompleteData.score !== undefined && (
                    <div className="flex justify-between items-center whitespace-nowrap overflow-hidden">
-                     <span className="text-slate-500 font-medium">Score</span>
+                     <span className="text-slate-500 font-medium">{t("common.score")}</span>
                      <span className="font-bold text-slate-800">{exerciseCompleteData.score}</span>
                    </div>
                  )}
                  {exerciseCompleteData.memorized !== undefined && (
                    <div className="flex justify-between items-center whitespace-nowrap overflow-hidden">
-                     <span className="text-slate-500 font-medium">Memorized</span>
+                     <span className="text-slate-500 font-medium">{t("site.app.memorized_ab3c16")}</span>
                      <span className="font-bold text-emerald-600">{exerciseCompleteData.memorized}</span>
                    </div>
                  )}
                  {exerciseCompleteData.mistakes && (
                    <div className="flex justify-between items-center whitespace-nowrap overflow-hidden">
-                     <span className="text-slate-500 font-medium">Mistakes</span>
+                     <span className="text-slate-500 font-medium">{t("site.app.mistakes_7868f6")}</span>
                      <span className="font-bold text-rose-500">{exerciseCompleteData.mistakes.length}</span>
                    </div>
                  )}
@@ -2423,21 +2393,20 @@ export default function App() {
                      setSelectedExerciseSession(exerciseCompleteData);
                   }
                 }}
-                className="w-full py-3 bg-zinc-900 hover:bg-black text-white font-bold rounded-xl transition-colors active:scale-95"
+                className="w-full py-3 bg-zinc-900 hover:bg-black text-white font-bold rounded-2xl transition-colors shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none"
               >
-                Continue
-              </button>
+                {t("path.continueBite")}</button>
            </div>
         </div>
       )}
 
       {/* Exercise Session Details Modal */}
       {selectedExerciseSession && (
-        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center z-[100] p-4">
-           <div className="bg-white rounded-3xl max-w-lg w-full shadow-xl border border-slate-100 max-h-[80vh] flex flex-col overflow-hidden">
+        <div className="fixed inset-0 flex items-center justify-center z-[100] p-4 bg-zinc-900/55 backdrop-blur-[2px]">
+           <div className="bg-white rounded-3xl max-w-lg w-full border-2 max-h-[80vh] flex flex-col overflow-hidden shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
              <div className="p-6 border-b border-slate-100 flex items-center justify-between shrink-0">
-                <h2 className="text-xl font-bold text-slate-800 capitalize">{selectedExerciseSession.type?.replace('-', ' ') || 'Exercise'} Details</h2>
-                <button onClick={() => setSelectedExerciseSession(null)} className="p-2 bg-slate-100 text-slate-500 hover:bg-rose-100 hover:text-rose-600 rounded-full transition-colors">
+                <h2 className="font-serif text-xl font-extrabold text-slate-800 capitalize">{selectedExerciseSession.type?.replace('-', ' ') || t("site.app.exercise_20863c")}  {t("site.app.details_dc3dec")}</h2>
+                <button onClick={() => setSelectedExerciseSession(null)} className="p-2 rounded-xl border-2 border-slate-200 dark:border-zinc-700 text-slate-500 hover:bg-slate-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 transition-colors">
                   <X className="w-5 h-5" />
                 </button>
              </div>
@@ -2446,8 +2415,7 @@ export default function App() {
                   <div>
                     <h3 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
                        <XCircle className="w-5 h-5 text-rose-500" />
-                       Mistakes
-                    </h3>
+                       {t("site.app.mistakes_7868f6")}</h3>
                     <div className="space-y-2">
                        {selectedExerciseSession.data.mistakes.map((word: string, i: number) => {
                          const def = (allVocabMap.get(word.toLowerCase()) || savedVocab[word.toLowerCase()]?.definition || 'Unknown definition');
@@ -2468,7 +2436,7 @@ export default function App() {
                     <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                       <CheckCircle2 className="w-8 h-8 text-emerald-500" />
                     </div>
-                    <p className="text-emerald-600 font-bold">Perfect session!</p>
+                    <p className="text-emerald-600 font-bold">{t("site.app.perfect_session_55e16b")}</p>
                   </div>
                 )}
 
@@ -2476,8 +2444,7 @@ export default function App() {
                   <div className="mt-6 border-t border-slate-100 pt-6">
                     <h3 className="font-bold text-slate-800 mb-3 flex items-center gap-2">
                        <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-                       Correct Words
-                    </h3>
+                       {t("site.app.correct_words_cc6f83")}</h3>
                     <div className="space-y-2">
                        {selectedExerciseSession.data.correctWords.map((word: string, i: number) => {
                          const def = (allVocabMap.get(word.toLowerCase()) || savedVocab[word.toLowerCase()]?.definition || 'Unknown definition');
@@ -2525,5 +2492,6 @@ export default function App() {
       </div>
     </div>
     </EditModeProvider>
+    </ProgressProvider>
   );
 }

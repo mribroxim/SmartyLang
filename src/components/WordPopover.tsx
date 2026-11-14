@@ -1,3 +1,4 @@
+import { useUiLang } from '../contexts/UiLangContext';
 import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Volume2, Plus, CheckCircle2, BookOpen, Languages, Loader2, Search, Text } from 'lucide-react';
 import { LANGUAGES, type LanguageOption, decodeHtmlEntities } from '../lib/languages';
@@ -5,8 +6,8 @@ import { readPreferredTranslationLang } from '../lib/preferredTranslationLang';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { DICT_LANG_CODE, type ContentLang } from '../lib/contentLang';
 import { joinTokens } from '../lib/pronunciationProfile';
-import { translateWithCache } from '../lib/networkCache';
-import { loadVocab, lookupWord, vocabDbEnabled } from '../lib/vocabDb';
+import { translateWithAlternatives } from '../lib/networkCache';
+import { loadVocab, lookupAllSenses, vocabDbEnabled } from '../lib/vocabDb';
 
 interface WordPopoverProps {
   word: string;
@@ -49,6 +50,7 @@ function readSavedLang(): LanguageOption {
 export function WordPopover({
   word, cleanWord, savedVocab, onPlay, onToggleVocab, onShowModal, sentence, onClose,
 }: WordPopoverProps) {
+  const { t } = useUiLang();
   const { contentLang, speechLocale } = useContentLang();
   const sourceLang = DICT_LANG_CODE[contentLang];
   const rootRef = useRef<HTMLDivElement>(null);
@@ -58,6 +60,7 @@ export function WordPopover({
   const [langSearch, setLangSearch] = useState('');
   const [langPickerOpen, setLangPickerOpen] = useState(false);
   const [translation, setTranslation] = useState<string | null>(null);
+  const [senseList, setSenseList] = useState<{ pos: string; text: string; definition?: string }[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [transError, setTransError] = useState(false);
   /** Optimistic local flip so the + → ✓ feels instant even before parent re-renders. */
@@ -113,6 +116,7 @@ export function WordPopover({
     setIsLoading(true);
     setTransError(false);
     setTranslation(null);
+    setSenseList([]);
     const langCode = targetLang.code;
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), 15000);
@@ -120,22 +124,40 @@ export function WordPopover({
       try {
         if (transScope === 'word' && vocabDbEnabled()) {
           await loadVocab(sourceLang, langCode);
-          const card = lookupWord(cleanWord, { sentence: sentenceText, knownLang: langCode });
-          const text = card?.knownWord || card?.definition;
-          if (text && isMounted) {
-            setTranslation(text);
+          const cards = lookupAllSenses(cleanWord, {
+            sentence: sentenceText,
+            knownLang: langCode,
+            limit: 6,
+          });
+          if (cards.length && isMounted) {
+            const senses = cards.map((c) => ({
+              pos: String(c.pos || 'sense'),
+              text: c.knownWord || c.definition,
+              definition: c.definition !== (c.knownWord || c.definition) ? c.definition : undefined,
+            })).filter((s) => s.text);
+            setSenseList(senses);
+            setTranslation(senses[0]?.text || null);
             setIsLoading(false);
             return;
           }
         }
-        const t = await translateWithCache(q, sourceLang, langCode, {
+        const packed = await translateWithAlternatives(q, sourceLang, langCode, {
           signal: controller.signal,
           sentence: sentenceText,
         });
         if (isMounted) {
-          const decoded = decodeHtmlEntities((t || '').trim());
-          if (decoded && decoded.toLowerCase() !== q.toLowerCase()) setTranslation(decoded);
-          else setTransError(true);
+          const decoded = decodeHtmlEntities((packed?.text || '').trim());
+          const alts = (packed?.alternatives || [])
+            .map((a) => decodeHtmlEntities(String(a || '').trim()))
+            .filter((a) => a && a.toLowerCase() !== q.toLowerCase());
+          if (decoded && decoded.toLowerCase() !== q.toLowerCase()) {
+            setTranslation(decoded);
+            setSenseList(
+              alts.length > 1
+                ? alts.map((text, i) => ({ pos: i === 0 ? 'closest' : 'also', text }))
+                : [],
+            );
+          } else setTransError(true);
           setIsLoading(false);
         }
       } catch {
@@ -173,7 +195,7 @@ export function WordPopover({
     <div
       ref={rootRef}
       className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-slate-900 rounded-xl shadow-2xl z-50 font-sans"
-      style={{ minWidth: showTranslation ? (transScope === 'sentence' ? '260px' : '220px') : 'auto', maxWidth: 'min(90vw, 340px)' }}
+      style={{ minWidth: showTranslation ? (transScope === 'sentence' ? '260px' : senseList.length > 1 ? '240px' : '220px') : 'auto', maxWidth: 'min(90vw, 340px)' }}
       onClick={e => e.stopPropagation()}
       onPointerDown={e => e.stopPropagation()}
     >
@@ -200,7 +222,7 @@ export function WordPopover({
               ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
               : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
           }`}
-          title={isSaved ? 'Remove from Vocabulary' : 'Add to Vocabulary'}
+          title={isSaved ? t("core.wordpopover.remove_from_vocabulary_041ceb") : t("vocab.addButton")}
         >
           {isSaved ? <CheckCircle2 className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
         </button>
@@ -208,7 +230,7 @@ export function WordPopover({
           type="button"
           onClick={(e) => { e.stopPropagation(); onShowModal(cleanWord, 'dictionary'); }}
           className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white transition-colors"
-          title="See definition"
+          title={t("core.wordpopover.see_definition_e300b8")}
         >
           <BookOpen className="w-4 h-4" />
         </button>
@@ -220,7 +242,7 @@ export function WordPopover({
               ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
               : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
           }`}
-          title="Translate word"
+          title={t("core.wordpopover.translate_word_bca3f7")}
         >
           <Languages className="w-4 h-4" />
         </button>
@@ -233,7 +255,7 @@ export function WordPopover({
                 ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
                 : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
             }`}
-            title="Translate sentence"
+            title={t("core.wordpopover.translate_sentence_7d1ee1")}
           >
             <Text className="w-4 h-4" />
           </button>
@@ -244,7 +266,7 @@ export function WordPopover({
       {showTranslation && (
         <div className="px-2.5 pb-2.5 pt-1 border-t border-slate-700/60 rounded-b-xl">
           <p className="text-[9px] font-bold uppercase tracking-wider text-slate-500 mb-1.5 px-0.5">
-            {transScope === 'sentence' ? 'Sentence' : 'Word'}
+            {transScope === 'sentence' ? t("core.wordpopover.sentence_1bb1f3") : t("core.wordpopover.word_44363c")}
           </p>
           {transScope === 'sentence' && (
             <p className="text-[11px] text-slate-400 mb-2 leading-snug line-clamp-3 px-0.5">{sentenceText}</p>
@@ -272,7 +294,7 @@ export function WordPopover({
                       onChange={e => setLangSearch(e.target.value)}
                       onClick={e => e.stopPropagation()}
                       onPointerDown={e => e.stopPropagation()}
-                      placeholder="Search language…"
+                      placeholder={t("core.wordpopover.search_language_bb13e8")}
                       className="w-full pl-6 pr-2 py-1 text-xs bg-slate-900 border border-slate-700 text-slate-200 rounded outline-none focus:border-emerald-500 placeholder-slate-500"
                     />
                   </div>
@@ -285,7 +307,7 @@ export function WordPopover({
                   onTouchMove={e => e.stopPropagation()}
                 >
                   {filteredLangs.length === 0 ? (
-                    <p className="text-slate-500 text-xs p-2 text-center">No match</p>
+                    <p className="text-slate-500 text-xs p-2 text-center">{t("core.wordpopover.no_match_3518df")}</p>
                   ) : (
                     filteredLangs.map(l => (
                       <button
@@ -320,7 +342,25 @@ export function WordPopover({
                 <Loader2 className="w-4 h-4 text-slate-400 animate-spin" />
               </div>
             ) : transError ? (
-              <p className="text-rose-400 text-xs text-center py-1">Not available</p>
+              <p className="text-rose-400 text-xs text-center py-1">{t("core.wordpopover.not_available_d1a17a")}</p>
+            ) : senseList.length > 1 ? (
+              <ul className="flex flex-col gap-1.5 py-0.5 max-h-40 overflow-y-auto">
+                {senseList.map((s, i) => (
+                  <li
+                    key={`${s.pos}-${i}`}
+                    className="rounded-lg bg-slate-800/80 border border-slate-700/80 px-2 py-1.5 text-left"
+                  >
+                    <div className="flex items-baseline justify-between gap-2 mb-0.5">
+                      <span className="text-[9px] font-bold uppercase tracking-wider text-slate-500">{s.pos}</span>
+                      {i === 0 && <span className="text-[9px] text-emerald-500/90 font-semibold">{t("core.wordpopover.closest_c113bd")}</span>}
+                    </div>
+                    <p className="text-emerald-400 font-bold text-sm leading-snug">{s.text}</p>
+                    {s.definition && (
+                      <p className="text-[10px] text-slate-400 mt-0.5 leading-snug line-clamp-2">{s.definition}</p>
+                    )}
+                  </li>
+                ))}
+              </ul>
             ) : translation ? (
               <p className={`text-emerald-400 font-bold text-center py-1 leading-snug ${transScope === 'sentence' ? 'text-xs text-left' : 'text-sm'}`}>
                 {translation}

@@ -5,6 +5,9 @@ import { ContentLangProvider } from './contexts/ContentLangContext';
 import { UiLangProvider } from './contexts/UiLangContext';
 import { warmSpeechVoices } from './lib/speech';
 import './index.css';
+import { StickerDefs } from './components/stickers/StickerDefs';
+import { loadUiLocale, translateUi } from './lib/uiStrings';
+import { readStoredUiLang } from './lib/uiLang';
 
 warmSpeechVoices();
 
@@ -65,8 +68,9 @@ window.addEventListener('unhandledrejection', (e: PromiseRejectionEvent) => {
   if (isStaleChunkError(msg)) handleStaleChunk(msg!);
 });
 
-createRoot(document.getElementById('root')!).render(
+const renderApp = () => createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <StickerDefs />
     <ContentLangProvider>
       <UiLangProvider>
         <App />
@@ -74,3 +78,15 @@ createRoot(document.getElementById('root')!).render(
     </ContentLangProvider>
   </StrictMode>,
 );
+
+// Fetch one language chunk before the first screen so a saved language never
+// flashes the English interface or downloads the other 27 language packs.
+loadUiLocale(readStoredUiLang()).then(renderApp).catch((error) => {
+  console.error('Could not load saved interface language:', error);
+  createRoot(document.getElementById('root')!).render(
+    <main className="min-h-dvh flex flex-col items-center justify-center gap-4 p-6 text-center">
+      <p>{translateUi('en', 'error.crash.body')}</p>
+      <button type="button" onClick={() => window.location.reload()}>{translateUi('en', 'action.tryAgain')}</button>
+    </main>,
+  );
+});

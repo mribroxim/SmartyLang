@@ -1,3 +1,4 @@
+import { useUiLang } from '../contexts/UiLangContext';
 import React, { Suspense, lazy } from 'react';
 import { X, LayoutGrid, Loader2 } from 'lucide-react';
 import { useEditMode } from '../contexts/EditModeContext';
@@ -7,13 +8,14 @@ const ContentManager = lazy(() =>
 );
 
 export function ContentEditorDrawer() {
+  const { t } = useUiLang();
   const { editorOpen, closeEditor, editorInitialTab } = useEditMode();
 
   return (
     <>
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
+        className={`fixed inset-0 z-[60] transition-opacity duration-300 bg-zinc-900/55 backdrop-blur-[2px] ${
           editorOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={closeEditor}
@@ -32,14 +34,14 @@ export function ContentEditorDrawer() {
               <LayoutGrid className="w-4 h-4 text-sky-600 dark:text-sky-400" />
             </div>
             <div>
-              <h2 className="font-bold text-sm text-zinc-900 dark:text-zinc-50">Content Manager</h2>
-              <p className="text-xs text-slate-500 dark:text-zinc-400">Edit, add or remove content</p>
+              <h2 className="font-bold text-sm text-zinc-900 dark:text-zinc-50">{t("nav.content")}</h2>
+              <p className="text-xs text-slate-500 dark:text-zinc-400">{t("core.contenteditordrawer.edit_add_or_remove_content_af2250")}</p>
             </div>
           </div>
           <button
             onClick={closeEditor}
             className="p-2 rounded-xl text-slate-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors"
-            title="Close editor"
+            title={t("core.contenteditordrawer.close_editor_3adaf6")}
           >
             <X className="w-5 h-5" />
           </button>

@@ -20,15 +20,18 @@ export function useAppRoute(fallback: AppRoute = { tab: 'home', path: [] }) {
   /** Stash reading sub-view when set before the reading tab is active. */
   const pendingReadingViewRef = useRef<string | null>(null);
 
-  // Seed / restore on mount + listen for back/forward
+  // Seed / restore on mount + listen for back/forward.
+  // Preserve ?query (e.g. Dodo payment return params) until the app strips them.
   useEffect(() => {
+    const search = window.location.search;
+    const hashUrl = (route: AppRoute) => window.location.pathname + search + toHash(route);
     const existing = parseHash();
     if (existing) {
       setRoute(existing);
-      window.history.replaceState(existing, '', toHash(existing));
+      window.history.replaceState(existing, '', hashUrl(existing));
     } else {
       const seed = fallback;
-      window.history.replaceState(seed, '', toHash(seed));
+      window.history.replaceState(seed, '', hashUrl(seed));
       setRoute(seed);
     }
 

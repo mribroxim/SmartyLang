@@ -1,3 +1,4 @@
+import { CatLogo } from '../components/brand/CatLogo';
 import React, { useState } from 'react';
 import { loginWithEmail, registerWithEmail } from '../firebase';
 import { useUiLang } from '../contexts/UiLangContext';
@@ -15,44 +16,44 @@ const SILENT_CODES = new Set([
   'auth/user-cancelled',
 ]);
 
-function friendlyEmailError(code: string): string {
+function friendlyEmailError(code: string, t: ReturnType<typeof useUiLang>['t']): string {
   switch (code) {
     case 'auth/user-not-found':
     case 'auth/invalid-credential':
     case 'auth/wrong-password':
-      return 'Incorrect email or password.';
+      return t("core.common.incorrect_email_or_password_68893b");
     case 'auth/email-already-in-use':
-      return 'An account with this email already exists.';
+      return t("core.common.an_account_with_this_email_0cc59e");
     case 'auth/weak-password':
-      return 'Password must be at least 6 characters.';
+      return t("core.common.password_must_be_at_least_31e3a3");
     case 'auth/invalid-email':
-      return 'Please enter a valid email address.';
+      return t("core.common.please_enter_a_valid_email_d2306d");
     case 'auth/too-many-requests':
-      return 'Too many attempts. Please wait and try again.';
+      return t("core.common.too_many_attempts_please_wait_f88f3e");
     case 'auth/network-request-failed':
-      return 'Network error. Check your connection and try again.';
+      return t("core.common.network_error_check_your_connection_916c8a");
     case 'auth/operation-not-allowed':
-      return 'Email/password sign-in is not enabled. Enable it in Firebase Console → Authentication → Sign-in method.';
+      return t("core.common.emailpassword_signin_is_not_enabled_a7da28");
     case 'auth/configuration-not-found':
     case 'auth/invalid-api-key':
-      return 'Firebase is not configured correctly. Check your project settings.';
+      return t("core.common.firebase_is_not_configured_correctly_ef311a");
     default:
-      return `Sign-in failed (${code || 'unknown'}). Please try again.`;
+      return t("core.common.signin_failed_code_please_try_ef3de7", { code: code || 'unknown' });
   }
 }
 
-function friendlyGoogleError(code: string): string {
+function friendlyGoogleError(code: string, t: ReturnType<typeof useUiLang>['t']): string {
   switch (code) {
     case 'auth/operation-not-allowed':
-      return 'Google sign-in is not enabled. Enable it in Firebase Console → Authentication → Sign-in method.';
+      return t("core.common.google_signin_is_not_enabled_5b3876");
     case 'auth/unauthorized-domain':
-      return 'This domain is not authorised for sign-in. Add it in Firebase Console → Authentication → Settings → Authorised domains.';
+      return t("core.common.this_domain_is_not_authorised_f64931");
     case 'auth/network-request-failed':
-      return 'Network error. Check your connection and try again.';
+      return t("core.common.network_error_check_your_connection_916c8a");
     case 'auth/invalid-api-key':
-      return 'Firebase API key is invalid. Check your project configuration.';
+      return t("core.common.firebase_api_key_is_invalid_3b9d1a");
     default:
-      return `Google sign-in failed (${code || 'unknown'}). Please try again.`;
+      return t("core.common.google_signin_failed_code_please_3c3d80", { code: code || 'unknown' });
   }
 }
 
@@ -96,7 +97,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
       // Redirect fallback → page navigates away (loading state irrelevant).
     } catch (e: any) {
       if (!SILENT_CODES.has(e?.code)) {
-        setError(friendlyGoogleError(e?.code ?? ''));
+        setError(friendlyGoogleError(e?.code ?? '', t));
       }
       setGoogleLoading(false);
     }
@@ -106,7 +107,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (emailMode === 'register' && password !== confirm) {
-      setError('Passwords do not match.');
+      setError(t("core.common.passwords_do_not_match_f7c3cd"));
       return;
     }
     setEmailLoading(true);
@@ -119,7 +120,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
       }
       // Parent unmounts on success — do NOT reset emailLoading here.
     } catch (e: any) {
-      setError(friendlyEmailError(e?.code ?? ''));
+      setError(friendlyEmailError(e?.code ?? '', t));
       setEmailLoading(false);
     }
   };
@@ -136,8 +137,8 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
 
         {/* Brand */}
         <div className="text-center mb-6 md:mb-10">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl mb-5 shadow-2xl">
-            <span className="font-serif font-black text-2xl text-zinc-900">S</span>
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl mb-5 border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
+            <CatLogo className="h-12 w-12" />
           </div>
           <h1 className="text-2xl sm:text-4xl font-serif font-black text-white tracking-tight mb-2">SmartyLang</h1>
           <p className="text-zinc-400 text-base">{t('auth.tagline')}</p>
@@ -157,13 +158,13 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
             {googleLoading
               ? <div className="w-5 h-5 border-2 border-zinc-400 border-t-zinc-800 rounded-full animate-spin" />
               : <GoogleIcon />}
-            {googleLoading ? 'Signing in…' : 'Continue with Google'}
+            {googleLoading ? t("core.authgate.signing_in_c66b2a") : t("core.authgate.continue_with_google_ccc5b0")}
           </button>
 
           {/* Divider */}
           <div className="flex items-center gap-3 my-5">
             <div className="flex-1 h-px bg-zinc-800" />
-            <span className="text-zinc-500 text-xs font-medium">or</span>
+            <span className="text-zinc-500 text-xs font-medium">{t("core.authgate.or_175835")}</span>
             <div className="flex-1 h-px bg-zinc-800" />
           </div>
 
@@ -174,8 +175,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
               disabled={busy}
               className="w-full flex items-center justify-center gap-2 border border-zinc-700 text-zinc-300 font-semibold py-3.5 px-6 rounded-xl hover:border-zinc-500 hover:text-white active:scale-[0.98] transition-all duration-150 disabled:opacity-60"
             >
-              <MailIcon /> Continue with Email
-            </button>
+              <MailIcon />  {t("core.authgate.continue_with_email_880014")}</button>
           ) : (
             <>
               {/* Sign In / Register tabs */}
@@ -190,7 +190,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
                         : 'text-zinc-400 hover:text-zinc-200'
                     }`}
                   >
-                    {m === 'signin' ? 'Sign In' : 'Register'}
+                    {m === 'signin' ? t("home.cta.signIn") : t("core.authgate.register_d67299")}
                   </button>
                 ))}
               </div>
@@ -199,7 +199,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
                 {emailMode === 'register' && (
                   <input
                     type="text"
-                    placeholder="Full name (optional)"
+                    placeholder={t("core.authgate.full_name_optional_69e68e")}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     disabled={busy}
@@ -209,7 +209,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
 
                 <input
                   type="email"
-                  placeholder="Email address"
+                  placeholder={t("core.authgate.email_address_c94d31")}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -219,7 +219,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
 
                 <input
                   type="password"
-                  placeholder="Password"
+                  placeholder={t("core.authgate.password_8be3c9")}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -230,7 +230,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
                 {emailMode === 'register' && (
                   <input
                     type="password"
-                    placeholder="Confirm password"
+                    placeholder={t("core.authgate.confirm_password_4a7c56")}
                     value={confirm}
                     onChange={(e) => setConfirm(e.target.value)}
                     required
@@ -248,8 +248,8 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
                     <div className="w-5 h-5 border-2 border-zinc-400 border-t-zinc-900 rounded-full animate-spin" />
                   )}
                   {emailLoading
-                    ? 'Please wait…'
-                    : emailMode === 'signin' ? 'Sign In' : 'Create Account'}
+                    ? t("core.authgate.please_wait_5afeca")
+                    : emailMode === 'signin' ? t("home.cta.signIn") : t("core.authgate.create_account_eff4fd")}
                 </button>
               </form>
             </>
@@ -261,16 +261,15 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
           )}
 
           <p className="text-zinc-600 text-xs text-center mt-6">
-            By continuing, you agree to our Terms of Service and Privacy Policy.
-          </p>
+            {t("core.authgate.by_continuing_you_agree_to_312b82")}</p>
         </div>
 
         {/* Feature pills */}
         <div className="mt-8 grid grid-cols-3 gap-3">
           {[
-            { icon: '🎙️', label: 'Speaking' },
-            { icon: '📖', label: 'Reading' },
-            { icon: '✍️', label: 'Writing' },
+            { icon: '🎙️', label: t("home.preview.speaking") },
+            { icon: '📖', label: t("home.preview.reading") },
+            { icon: '✍️', label: t("nav.writing") },
           ].map(({ icon, label }) => (
             <div key={label} className="bg-zinc-900/60 rounded-2xl p-4 text-center border border-zinc-800">
               <div className="text-2xl mb-1">{icon}</div>

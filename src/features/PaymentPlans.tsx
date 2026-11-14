@@ -1,48 +1,55 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { Check, Crown, GraduationCap, CreditCard, AlertCircle, X, Loader2, Minus, Plus, Building2, Mail, Languages } from 'lucide-react';
+import { Check, CreditCard, AlertCircle, X, Loader2, Minus, Plus, Languages, Heart, Infinity as InfinityIcon, GraduationCap } from 'lucide-react';
 import {
-  PLANS, redirectToAtmos, isAtmosConfigured, formatUZS, formatUSD,
+  PLANS, formatUZS, formatUSD,
   computeMonthlyUSD, computeMonthlyUZSTiyin, Plan, PlanId,
-} from '../lib/atmos';
-import { recordPayment, setUserPlan } from '../firebase';
-import { ScreenShell, seCard, seGrid3, sePrimary } from '../components/ScreenShell';
+} from '../lib/plans';
+import { isPaymentsConfigured, startPlanCheckout, resumeMax, maxPaidThrough } from '../lib/payments';
+import { ScreenShell, seCard } from '../components/ScreenShell';
+import { Sticker } from '../components/stickers/Sticker';
+import { useUiLang } from '../contexts/UiLangContext';
+import type { UiStringKey } from '../lib/uiStrings';
+import type { UserAccountProfile } from '../firebase';
+import { maxEndsAt } from '../lib/access';
+import { ChunkyButton } from './Bites/lesson/chunky';
+import { CancelMaxFlow } from './Plans/CancelMaxFlow';
 
 interface PaymentPlansProps {
   user: any;
   currentPlan?: PlanId | null;
+  /** Full profile (for cancel state, start date, gifted plans). */
+  profile?: UserAccountProfile | null;
   onPlanActivated?: (planId: PlanId, seats: number, languages?: number) => void;
+  /** Server returned an updated profile (cancel / keep Max). */
+  onProfileChange?: (profile: Record<string, any>) => void;
 }
 
-const PLAN_ICONS: Record<PlanId, any> = {
-  'smarty-max': Crown,
-  'teacher': GraduationCap,
-  'organization': Building2,
-};
+/** Free vs Max, matching what each plan actually unlocks in the app. */
+const COMPARE: { key: UiStringKey; free: boolean | 'hearts'; max: boolean | 'hearts' }[] = [
+  { key: 'plans.row.path', free: true, max: true },
+  { key: 'plans.row.hearts', free: 'hearts', max: 'hearts' },
+  { key: 'plans.row.practice', free: false, max: true },
+  { key: 'plans.row.ai', free: false, max: true },
+  { key: 'plans.row.ielts', free: false, max: true },
+  { key: 'plans.row.vocab', free: false, max: true },
+];
 
-const PLAN_COLORS: Record<PlanId, { icon: string; accent: string; button: string }> = {
-  'smarty-max': {
-    icon: 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900',
-    accent: 'text-zinc-900 dark:text-zinc-100',
-    button: 'bg-zinc-900 hover:bg-black dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white',
-  },
-  'teacher': {
-    icon: 'bg-slate-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300',
-    accent: 'text-zinc-900 dark:text-zinc-100',
-    button: 'bg-zinc-900 hover:bg-black dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white',
-  },
-  'organization': {
-    icon: 'bg-slate-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300',
-    accent: 'text-zinc-900 dark:text-zinc-100',
-    button: 'bg-zinc-900 hover:bg-black dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white',
-  },
-};
-
-export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlansProps) {
+export function PaymentPlans({ user, currentPlan, profile, onPlanActivated: _onPlanActivated, onProfileChange }: PaymentPlansProps) {
+  const { t, uiLang } = useUiLang();
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
   const [seats, setSeats] = useState<number>(0);
   const [languages, setLanguages] = useState<number>(1);
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [cancelOpen, setCancelOpen] = useState(false);
+  const [resuming, setResuming] = useState(false);
+  const [resumeError, setResumeError] = useState<string | null>(null);
+
+  const max = PLANS.find((p) => p.id === 'smarty-max')!;
+  const business = PLANS.find((p) => p.id === 'business')!;
+  const onMax = currentPlan === 'smarty-max';
+  const endsAt = maxEndsAt(profile);
+  const fmt = (ms: number) => new Date(ms).toLocaleDateString(uiLang, { year: 'numeric', month: 'long', day: 'numeric' });
 
   const openPlan = (plan: Plan) => {
     setSelectedPlan(plan);
@@ -65,8 +72,6 @@ export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlan
     setProcessing(true);
     setError(null);
     try {
-      const accountId = user?.uid || user?.email || `guest_${Date.now()}`;
-
       if (user?.uid) {
         try {
           sessionStorage.setItem('smarty_pending_payment', JSON.stringify({
@@ -83,134 +88,142 @@ export function PaymentPlans({ user, currentPlan, onPlanActivated }: PaymentPlan
         } catch { /* non-fatal */ }
       }
 
-      if (!isAtmosConfigured()) {
-        if (user?.uid) {
-          await recordPayment({
-            uid: user.uid,
-            email: user.email ?? '',
-            displayName: user.displayName ?? user.email ?? 'User',
-            planId: selectedPlan.id,
-            seats,
-            amountUSD: totalUSD,
-            amountUZS: totalUZS,
-            status: 'completed',
-            paidAt: Date.now(),
-          });
-          await setUserPlan(user.uid, selectedPlan.id, { seats, languages });
-          sessionStorage.removeItem('smarty_pending_payment');
-          onPlanActivated?.(selectedPlan.id, seats, languages);
-        }
-        setSelectedPlan(null);
-        setProcessing(false);
-        return;
+      if (!(await isPaymentsConfigured())) {
+        throw new Error(t("core.common.payments_are_not_configured_yet_377c2a"));
       }
-      redirectToAtmos(selectedPlan, seats, accountId, languages);
+      await startPlanCheckout(selectedPlan, {
+        planId: selectedPlan.id,
+        seats,
+        languages,
+        amountUSD: totalUSD,
+      });
     } catch (err: any) {
-      setError(err.message || 'Failed to start payment.');
+      setError(err.message || t("core.common.failed_to_start_payment_34237d"));
       setProcessing(false);
     }
   };
 
+  const keepMax = async () => {
+    setResuming(true);
+    setResumeError(null);
+    try {
+      onProfileChange?.(await resumeMax());
+    } catch (e: any) {
+      setResumeError(e?.message || t('plans.cancel.error'));
+    } finally {
+      setResuming(false);
+    }
+  };
+
+  const mark = (v: boolean | 'hearts', col: 'free' | 'max') => {
+    if (v === 'hearts') {
+      return col === 'max'
+        ? <span className="inline-flex items-center gap-1 font-serif font-extrabold"><InfinityIcon className="h-5 w-5" /></span>
+        : <span className="inline-flex items-center gap-1 font-serif font-extrabold"><Heart className="h-4 w-4 fill-rose-500 text-rose-500" />5</span>;
+    }
+    return v
+      ? <span className={`inline-flex h-7 w-7 items-center justify-center rounded-full ${col === 'max' ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 dark-keep' : 'bg-emerald-500 text-white'}`}><Check className="h-4 w-4" strokeWidth={3} /></span>
+      : <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-slate-400 dark:bg-zinc-800"><Minus className="h-4 w-4" strokeWidth={3} /></span>;
+  };
+
   return (
     <ScreenShell
-      title="Plans"
-      subtitle="Individual, teacher, or school access — priced by seats and learning languages."
+      stickers={['state.bag-cat', 'premium.vip-cat']}
+      title={t('plans.title')}
+      subtitle={t('plans.subtitle')}
       size="wide"
     >
-      {currentPlan && (
-        <div className={`${seCard} mb-3 border-emerald-200 bg-emerald-50 dark:bg-emerald-950/40 dark:border-emerald-900 p-3.5 lg:flex lg:items-center lg:gap-3`}>
-          <span className="hidden lg:flex w-8 h-8 rounded-full bg-emerald-600 items-center justify-center shrink-0">
-            <Check className="w-3.5 h-3.5 text-white" />
-          </span>
-          <div>
-            <p className="font-bold text-[14px] text-emerald-900 dark:text-emerald-200">
-              You’re on {PLANS.find(p => p.id === currentPlan)?.name ?? currentPlan}
-            </p>
-            <p className="text-[12px] text-emerald-700 dark:text-emerald-400 mt-0.5">
-              Access is active. Open Learn when you’re ready for your first lesson.
-            </p>
-          </div>
-        </div>
-      )}
-
-      <div className={`${seGrid3} items-stretch`}>
-        {PLANS.map(plan => {
-          const Icon = PLAN_ICONS[plan.id];
-          const color = PLAN_COLORS[plan.id];
-          const isCurrent = currentPlan === plan.id;
-          return (
-            <div
-              key={plan.id}
-              className={`relative ${seCard} ${plan.popular ? 'border-zinc-900 dark:border-zinc-100' : ''} flex flex-col`}
-            >
-              {plan.badge && (
-                <div className="absolute -top-2.5 left-4 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-[10px] font-bold uppercase tracking-[0.14em] px-2.5 py-1 rounded-full">
-                  {plan.badge}
-                </div>
-              )}
-
-              <div className="p-4 flex-1 flex flex-col">
-                <div className={`w-9 h-9 rounded-xl ${color.icon} flex items-center justify-center mb-3`}>
-                  <Icon className="w-4 h-4" />
-                </div>
-
-                <h2 className="text-[16px] lg:text-[18px] font-serif font-black text-zinc-900 dark:text-zinc-50 mb-0.5 tracking-tight">{plan.name}</h2>
-                <p className="text-[12px] text-slate-500 dark:text-zinc-400 mb-3 leading-snug">{plan.description}</p>
-
-                <div className="mb-3 pb-3 border-b border-slate-100 dark:border-zinc-800">
-                  {plan.id === 'organization' ? (
-                    <>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-[22px] font-black font-mono text-zinc-900 dark:text-zinc-50 leading-none">${plan.extraSeatPriceUSD}</span>
-                        <span className="text-[12px] font-bold text-slate-400">/ seat / month</span>
-                      </div>
-                      <p className="text-[11px] text-slate-400 mt-1">
-                        Min {plan.minSeats} seats · 1 language included · +${plan.extraLanguagePerSeatUSD}/seat per extra language
-                      </p>
-                    </>
-                  ) : (
-                    <>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-[22px] font-black font-mono text-zinc-900 dark:text-zinc-50 leading-none">${plan.basePriceUSD}</span>
-                        <span className="text-[12px] font-bold text-slate-400">/month</span>
-                      </div>
-                      <p className="text-[11px] text-slate-400 mt-1">
-                        {plan.extraSeatPriceUSD
-                          ? `+ $${plan.extraSeatPriceUSD}/extra seat · +$${plan.extraLanguagePerSeatUSD ?? plan.extraLearningLanguageUSD}/extra language`
-                          : `1 language included · +$${plan.extraLearningLanguageUSD}/mo per extra language`}
-                      </p>
-                    </>
-                  )}
-                </div>
-
-                <ul className="space-y-2 mb-4 flex-1">
-                  {plan.features.map((f, i) => (
-                    <li key={i} className="flex items-start gap-2 text-[12px] lg:text-[13px] text-slate-600 dark:text-zinc-300 leading-snug">
-                      <div className="shrink-0 w-3.5 h-3.5 rounded-full bg-zinc-900 dark:bg-zinc-100 flex items-center justify-center mt-0.5">
-                        <Check className="w-2 h-2 text-white dark:text-zinc-900" />
-                      </div>
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {isCurrent ? (
-                  <div className="w-full py-3 text-center text-sm font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950 rounded-xl border border-emerald-200 dark:border-emerald-900">
-                    ✓ Your current plan
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => openPlan(plan)}
-                    className={`${sePrimary} lg:w-full ${color.button}`}
-                  >
-                    {plan.id === 'organization' ? 'Configure & Subscribe' : `Subscribe to ${plan.name}`}
-                  </button>
-                )}
+      <div className="mx-auto max-w-2xl">
+        {onMax ? (
+          /* Manage Smarty Max */
+          <section className="rounded-3xl bg-zinc-900 p-6 text-white shadow-[0_6px_0_0_#000] dark:bg-zinc-100 dark:text-zinc-900 dark:shadow-[0_6px_0_0_#a1a1aa] dark-keep">
+            <div className="flex items-center gap-4">
+              <span className="shrink-0 rounded-2xl bg-white p-1.5"><Sticker id={endsAt ? 'mood.teary' : 'premium.vip-cat'} size={88} priority="hero" mode="once" /></span>
+              <div className="min-w-0">
+                <p className="font-serif text-[11px] font-extrabold uppercase tracking-widest opacity-60">{t('plans.current')}</p>
+                <h2 className="font-serif text-2xl font-extrabold tracking-tight">{t("core.paymentplans.smarty_max_f71a94")}</h2>
+                <p className="mt-1 text-sm font-semibold opacity-80">
+                  {endsAt ? t('plans.endsOn', { date: fmt(endsAt) }) : profile?.sponsoredBy ? t('plans.gifted') : t('plans.active')}
+                </p>
               </div>
             </div>
-          );
-        })}
+            {endsAt ? (
+              <>
+                <ChunkyButton tone="secondary" onClick={keepMax} disabled={resuming} className="mt-5 w-full">
+                  {resuming ? t('onboard.saving') : t('plans.keep')}
+                </ChunkyButton>
+                {resumeError && <p role="alert" className="mt-2 text-sm font-semibold text-rose-300">{resumeError}</p>}
+              </>
+            ) : !profile?.sponsoredBy && (
+              <button type="button" onClick={() => setCancelOpen(true)} className="mt-5 font-serif text-xs font-extrabold uppercase tracking-wide opacity-60 hover:opacity-100">
+                {t('plans.cancel.open')}
+              </button>
+            )}
+          </section>
+        ) : (
+          /* Upgrade to Smarty Max */
+          <section className="text-center">
+            <div className="flex justify-center"><Sticker id="premium.upgrade-magic" size="clamp(150px, 40vw, 210px)" priority="hero" /></div>
+            <h2 className="mt-1 font-serif text-3xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">{t('plans.hero.title')}</h2>
+            <p className="mx-auto mt-2 max-w-md font-semibold text-slate-500 dark:text-zinc-400">{t('plans.hero.body')}</p>
+
+            <div className="mt-6 overflow-hidden rounded-3xl border-2 border-slate-200 bg-white text-left shadow-[0_4px_0_0_#e2e8f0] dark:border-zinc-700 dark:bg-zinc-900 dark:shadow-[0_4px_0_0_#3f3f46]">
+              <div className="grid grid-cols-[1fr_64px_72px] items-center gap-2 border-b-2 border-slate-100 px-4 py-3 dark:border-zinc-800">
+                <span />
+                <span className="text-center font-serif text-xs font-extrabold uppercase tracking-wide text-slate-400">{t('plans.col.free')}</span>
+                <span className="rounded-lg bg-zinc-900 py-1 text-center font-serif text-xs font-extrabold uppercase tracking-wide text-white dark:bg-zinc-100 dark:text-zinc-900 dark-keep">{t("core.paymentplans.max_a95e85")}</span>
+              </div>
+              {COMPARE.map((row) => (
+                <div key={row.key} className="grid grid-cols-[1fr_64px_72px] items-center gap-2 border-b border-slate-100 px-4 py-3 last:border-0 dark:border-zinc-800">
+                  <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-100">{t(row.key)}</span>
+                  <span className="flex justify-center">{mark(row.free, 'free')}</span>
+                  <span className="flex justify-center">{mark(row.max, 'max')}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 flex flex-col items-center gap-3">
+              <p className="text-zinc-900 dark:text-zinc-50">
+                <span className="font-serif text-3xl font-extrabold">{formatUSD(max.basePriceUSD)}</span>
+                <span className="ml-1 text-sm font-bold text-slate-400">{t('plans.perMonth')}</span>
+              </p>
+              <ChunkyButton onClick={() => openPlan(max)} className="w-full sm:w-auto sm:min-w-[280px]">{t('plans.getMax')}</ChunkyButton>
+              <p className="text-xs text-slate-400">{t('plans.secure')}</p>
+            </div>
+          </section>
+        )}
+
+        {/* Business, for teachers and schools */}
+        <section className={`${seCard} mt-10 p-5`}>
+          <div className="flex items-start gap-3">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"><GraduationCap className="h-5 w-5" /></span>
+            <div className="min-w-0 flex-1">
+              <h3 className="font-serif text-lg font-extrabold text-zinc-900 dark:text-zinc-50">{business.name}</h3>
+              <p className="text-sm text-slate-500 dark:text-zinc-400">{business.description}</p>
+              <p className="mt-1 text-sm font-bold text-zinc-900 dark:text-zinc-50">{formatUSD(business.basePriceUSD)} <span className="font-semibold text-slate-400">{t('plans.perMonth')}</span></p>
+            </div>
+          </div>
+          <ul className="mt-3 grid gap-1.5 sm:grid-cols-2">
+            {business.features.map((f) => (
+              <li key={f} className="flex items-start gap-2 text-[13px] text-slate-600 dark:text-zinc-300"><Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-600" />{f}</li>
+            ))}
+          </ul>
+          {currentPlan === 'business' ? (
+            <p className="mt-4 rounded-2xl bg-emerald-50 py-3 text-center text-sm font-bold text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">{t('plans.currentBusiness')}</p>
+          ) : (
+            <ChunkyButton tone="secondary" onClick={() => openPlan(business)} className="mt-4 w-full">{t('plans.getBusiness')}</ChunkyButton>
+          )}
+        </section>
       </div>
+
+      {cancelOpen && (
+        <CancelMaxFlow
+          endsAt={maxPaidThrough(profile)}
+          formatDate={fmt}
+          onClose={() => setCancelOpen(false)}
+          onCancelled={(p) => onProfileChange?.(p)}
+        />
+      )}
 
       {selectedPlan && (
         <SubscribeModal
@@ -296,6 +309,7 @@ function SubscribeModal({
   onClose: () => void;
   onConfirm: () => void;
 }) {
+  const { t } = useUiLang();
   const showSeatSelector = !!plan.extraSeatPriceUSD || (plan.minSeats ?? 0) > 0;
   const minSeats = plan.minSeats ?? plan.includedSeats ?? 0;
   const includedSeats = plan.includedSeats ?? 0;
@@ -315,7 +329,7 @@ function SubscribeModal({
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/50 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={onClose}>
       <div
         role="dialog"
         aria-modal="true"
@@ -325,7 +339,7 @@ function SubscribeModal({
         <div className="p-5 lg:p-7 overflow-y-auto">
           <div className="flex items-start justify-between gap-4 mb-5 lg:mb-6">
             <h2 className="font-serif font-black text-[20px] lg:text-[24px] tracking-tight text-zinc-900 dark:text-zinc-50 leading-tight">
-              Configure your {plan.name}
+              {t("core.paymentplans.configure_your_1712d3")} {plan.name}
             </h2>
             {!processing && (
               <button onClick={onClose} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
@@ -336,7 +350,7 @@ function SubscribeModal({
 
           {showSeatSelector && (
             <CounterRow
-              label="Student seats"
+              label={t("core.paymentplans.student_seats_117606")}
               hint={
                 includedSeats > 0
                   ? `${includedSeats} included, extras at $${plan.extraSeatPriceUSD}/seat`
@@ -349,7 +363,7 @@ function SubscribeModal({
           )}
 
           <CounterRow
-            label="Learning languages"
+            label={t("core.paymentplans.learning_languages_d7b7b3")}
             hint={
               plan.extraLanguagePerSeatUSD
                 ? `1 included · +$${plan.extraLanguagePerSeatUSD} × seats per extra language (UI language stays free)`
@@ -360,33 +374,18 @@ function SubscribeModal({
             onChange={setLanguages}
           />
 
-          {plan.allowsStaffInvites && (
-            <div className="mb-4 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950 border border-emerald-100 dark:border-emerald-900 flex items-start gap-3">
-              <Mail className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-              <div className="text-xs text-emerald-800 dark:text-emerald-300 leading-relaxed">
-                After payment you'll get an admin panel to <strong>invite unlimited staff as teachers</strong> and assign students to them.
-              </div>
-            </div>
-          )}
-
           <div className="mb-4 p-4 lg:p-5 rounded-xl border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-900">
-            <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-zinc-400 mb-3">Pricing breakdown</h4>
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-zinc-400 mb-3">{t("core.paymentplans.pricing_breakdown_78626b")}</h4>
             <div className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
               {plan.basePriceUSD > 0 && (
                 <div className="flex justify-between">
-                  <span>{plan.name} base{includedSeats > 0 ? ` (${includedSeats} seats)` : ''}</span>
+                  <span>{plan.name}  {t("core.paymentplans.base_1405df")}{includedSeats > 0 ? ` (${includedSeats} seats)` : ''}</span>
                   <span className="font-mono font-bold">{formatUSD(plan.basePriceUSD)}</span>
                 </div>
               )}
-              {plan.id === 'organization' && (
+              {extraSeats > 0 && (
                 <div className="flex justify-between">
-                  <span>{seatCount} × ${plan.extraSeatPriceUSD} seats</span>
-                  <span className="font-mono font-bold">{formatUSD(seatCount * (plan.extraSeatPriceUSD ?? 0))}</span>
-                </div>
-              )}
-              {extraSeats > 0 && plan.id !== 'organization' && (
-                <div className="flex justify-between">
-                  <span>{extraSeats} × ${plan.extraSeatPriceUSD} extra seats</span>
+                  <span>{extraSeats} × ${plan.extraSeatPriceUSD}  {t("core.paymentplans.extra_seats_f97ba4")}</span>
                   <span className="font-mono font-bold">{formatUSD(extraSeatCost)}</span>
                 </div>
               )}
@@ -402,19 +401,18 @@ function SubscribeModal({
                 </div>
               )}
               <div className="border-t border-slate-200 dark:border-zinc-700 pt-2 mt-2 flex justify-between text-base">
-                <span className="font-black text-zinc-900 dark:text-zinc-50">Total monthly</span>
+                <span className="font-black text-zinc-900 dark:text-zinc-50">{t("core.paymentplans.total_monthly_5da6b3")}</span>
                 <span className="font-black font-mono text-zinc-900 dark:text-zinc-50">{formatUSD(totalUSD)}</span>
               </div>
               <div className="flex justify-between text-[11px] text-slate-400 dark:text-zinc-500 font-mono">
-                <span>UZS equivalent</span>
+                <span>{t("core.paymentplans.uzs_equivalent_381a2a")}</span>
                 <span>{formatUZS(totalUZS)}</span>
               </div>
             </div>
           </div>
 
           <p className="text-xs text-slate-500 dark:text-zinc-400 mb-4 leading-relaxed">
-            Clicking <strong>Pay with ATMOS</strong> redirects you to the ATMOS secure payment page. You return to SmartyLang after confirmation.
-          </p>
+            <strong>{t("core.paymentplans.checkout_3ac8e9")}</strong>  {t("core.paymentplans.opens_the_dodo_payments_secure_4cb7aa")}</p>
 
           {error && (
             <div className="mb-4 p-3 bg-rose-50 dark:bg-rose-950 border border-rose-200 dark:border-rose-900 rounded-xl flex items-start gap-2">
@@ -424,21 +422,11 @@ function SubscribeModal({
           )}
 
           <div className="flex flex-col-reverse sm:flex-row gap-2">
-            <button
-              onClick={onClose}
-              disabled={processing}
-              className="flex-1 py-3 text-sm font-bold text-slate-600 dark:text-zinc-400 border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 hover:bg-slate-50 dark:hover:bg-zinc-800 rounded-xl disabled:opacity-50 transition-colors"
-            >
-              Cancel
-            </button>
-            <button
-              onClick={onConfirm}
-              disabled={processing}
-              className="flex-1 py-3 text-sm font-bold text-white dark:text-zinc-900 bg-zinc-900 dark:bg-zinc-100 hover:bg-black dark:hover:bg-white rounded-xl disabled:opacity-50 transition-all flex items-center justify-center gap-2"
-            >
+            <ChunkyButton tone="secondary" onClick={onClose} disabled={processing} className="flex-1 !px-3">
+              {t("onboard.back")}</ChunkyButton>
+            <ChunkyButton onClick={onConfirm} disabled={processing} className="flex-1 !px-3">
               {processing ? <Loader2 className="w-4 h-4 animate-spin" /> : <CreditCard className="w-4 h-4" />}
-              Pay with ATMOS
-            </button>
+              {t("core.paymentplans.checkout_3ac8e9")}</ChunkyButton>
           </div>
         </div>
       </div>

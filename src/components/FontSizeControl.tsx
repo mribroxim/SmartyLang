@@ -1,3 +1,4 @@
+import { useUiLang } from '../contexts/UiLangContext';
 import React from 'react';
 import { Type } from 'lucide-react';
 
@@ -24,10 +25,11 @@ interface FontSizeControlProps {
  * and bind to local state. Persists across the session via the caller.
  */
 export function FontSizeControl({ value, onChange, className = '' }: FontSizeControlProps) {
+  const { t } = useUiLang();
   return (
     <div className={`flex items-center gap-3 bg-white border border-slate-200 rounded-full px-3 py-1.5 shadow-sm ${className}`}>
       <Type className="w-4 h-4 text-slate-400 shrink-0" />
-      <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider hidden sm:inline">Size</span>
+      <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider hidden sm:inline">{t("core.fontsizecontrol.size_b71523")}</span>
       <input
         type="range"
         min={1}
@@ -36,7 +38,7 @@ export function FontSizeControl({ value, onChange, className = '' }: FontSizeCon
         value={value}
         onChange={(e) => onChange(parseInt(e.target.value, 10))}
         className="w-20 sm:w-24 h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-zinc-900"
-        aria-label="Adjust text size"
+        aria-label={t("core.fontsizecontrol.adjust_text_size_3118b6")}
       />
       <span className="text-[10px] font-mono font-bold text-slate-600 w-3 text-right">{value}</span>
     </div>

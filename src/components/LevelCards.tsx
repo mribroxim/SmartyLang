@@ -1,3 +1,4 @@
+import { useUiLang } from '../contexts/UiLangContext';
 import React from 'react';
 import { Award, BookOpen, CheckCircle2, ChevronRight, Lock } from 'lucide-react';
 
@@ -90,6 +91,7 @@ export const LevelCard: React.FC<LevelCardProps> = ({
   onCertClick,
   disabled,
 }) => {
+  const { t } = useUiLang();
   const theme = LEVEL_THEMES[themeIndex % LEVEL_THEMES.length];
   return (
     <button
@@ -111,14 +113,13 @@ export const LevelCard: React.FC<LevelCardProps> = ({
           <h2 className="text-base md:text-2xl font-bold text-slate-800 dark:text-zinc-50">{title}</h2>
           {forYou && (
             <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-700 bg-slate-100 dark:bg-zinc-800 dark:text-zinc-200 px-1.5 py-0.5 rounded-md">
-              For you
-            </span>
+              {t("core.levelcards.for_you_7e13d9")}</span>
           )}
         </div>
         {desc && <p className="text-slate-500 text-xs md:text-sm mb-2 md:mb-0">{desc}</p>}
         <div className="md:mt-8">
           <div className="flex justify-between items-center mb-1.5 md:mb-2 text-[11px] md:text-sm font-semibold">
-            <span className="text-slate-700 dark:text-zinc-300 hidden md:inline">Progress</span>
+            <span className="text-slate-700 dark:text-zinc-300 hidden md:inline">{t("common.progress")}</span>
             <span className={pct === 100 ? 'text-emerald-500' : 'text-slate-900 dark:text-zinc-100'}>{pct}%</span>
           </div>
           <div className="w-full bg-slate-100 dark:bg-zinc-800 rounded-full h-1.5 md:h-2.5 overflow-hidden">
@@ -137,8 +138,7 @@ export const LevelCard: React.FC<LevelCardProps> = ({
               }}
               className="mt-2 md:mt-3 inline-block text-xs font-bold text-amber-700 underline"
             >
-              View certificate
-            </span>
+              {t("core.levelcards.view_certificate_3fab95")}</span>
           )}
         </div>
       </div>

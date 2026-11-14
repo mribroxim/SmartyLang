@@ -22,18 +22,19 @@ export type AppTab =
   | 'dashboard'
   | 'vocabulary'
   | 'exercises'
-  | 'teacher'
-  | 'organization'
+  | 'business'
   | 'admin'
   | 'content'
   | 'gamification'
+  | 'quests'
   | 'story'
   | 'ielts-reading'
   | 'ielts-full-mock'
   | 'comprehensive'
   | 'classes'
   | 'profile'
-  | 'plans';
+  | 'plans'
+  | 'stickers';
 
 export interface AppRoute {
   tab: AppTab;
@@ -43,25 +44,30 @@ export interface AppRoute {
 
 const VALID_TABS = new Set<string>([
   'home', 'listening', 'speaking', 'writing', 'reading', 'lessons', 'practice',
-  'ielts', 'dashboard', 'vocabulary', 'exercises', 'teacher', 'organization',
-  'admin', 'content', 'gamification', 'story', 'ielts-reading', 'ielts-full-mock',
-  'comprehensive', 'classes', 'profile', 'plans',
+  'ielts', 'dashboard', 'vocabulary', 'exercises', 'business',
+  'admin', 'content', 'gamification', 'quests', 'story', 'ielts-reading', 'ielts-full-mock',
+  'comprehensive', 'classes', 'profile', 'plans', 'stickers',
 ]);
 
 /** Default nested path when landing on a tab from the sidebar / nav. */
 export function defaultPathFor(tab: string): string[] {
   if (tab === 'reading') return ['menu'];
-  if (tab === 'lessons') return ['levels'];
+  if (tab === 'lessons') return ['path'];
   return [];
 }
 
 export function parseHash(hash = typeof window !== 'undefined' ? window.location.hash : ''): AppRoute | null {
-  const raw = (hash || '').replace(/^#\/?/, '').trim();
+  // Older builds appended the page query after the hash on mount.
+  const raw = (hash || '').split('?')[0].replace(/^#\/?/, '').trim();
   if (!raw) return null;
   const parts = raw.split('/').map(decodeURIComponent).filter(Boolean);
   if (!parts.length) return null;
   // Old dictionary URLs → vocabulary
   if (parts[0] === 'dictionary') return { tab: 'vocabulary', path: [] };
+  // Legacy tabs → business dashboard
+  if (parts[0] === 'teacher' || parts[0] === 'organization') {
+    return { tab: 'business', path: parts.slice(1) };
+  }
   if (!VALID_TABS.has(parts[0])) return null;
   return { tab: parts[0] as AppTab, path: parts.slice(1) };
 }

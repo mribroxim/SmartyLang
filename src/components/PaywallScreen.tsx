@@ -1,18 +1,14 @@
 import React from 'react';
-import { ArrowRight, Check, Crown } from 'lucide-react';
-import { ScreenShell } from './ScreenShell';
-import { PLANS } from '../lib/atmos';
+import { Check } from 'lucide-react';
+import { PLANS, formatUSD } from '../lib/plans';
+import { Sticker } from './stickers/Sticker';
+import { useUiLang } from '../contexts/UiLangContext';
+import type { UiStringKey } from '../lib/uiStrings';
+import { ChunkyButton } from '../features/Bites/lesson/chunky';
 
-const INCLUDED = [
-  'Structured lesson path across five levels',
-  'Read aloud with live pronunciation scoring',
-  'Listening, dictation and shadowing practice',
-  'Speaking and writing checks with feedback',
-  'Vocabulary with spaced repetition',
-  'IELTS reading, listening, writing, speaking',
-  'Streak, XP and progress synced to your account',
-];
+const PERKS: UiStringKey[] = ['plans.lose.hearts', 'plans.row.practice', 'plans.row.ai', 'plans.row.ielts'];
 
+/** A locked tab for free learners: Smarty explains what Max opens up, one tap to plans. */
 export function PaywallScreen({
   email,
   accountLabel,
@@ -24,82 +20,47 @@ export function PaywallScreen({
   onUpgrade: () => void;
   onBack: () => void;
 }) {
+  const { t } = useUiLang();
   const max = PLANS.find((p) => p.id === 'smarty-max');
 
   return (
-    <ScreenShell
-      title="SmartyLang Max"
-      subtitle="This part of SmartyLang is included with SmartyLang Max. Here’s everything it opens up."
-    >
-      <div className="lg:grid lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:gap-6 lg:items-start">
-        <div className="rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 lg:p-7">
-          <div className="flex items-center gap-3 mb-5">
-            <div className="w-11 h-11 rounded-xl bg-zinc-900 dark:bg-zinc-100 flex items-center justify-center shrink-0">
-              <Crown className="w-5 h-5 text-amber-400 dark:text-amber-500" />
-            </div>
-            <div>
-              <p className="font-bold text-[16px] lg:text-[17px] text-zinc-900 dark:text-zinc-50 leading-tight">
-                Everything in one subscription
-              </p>
-              <p className="text-[12px] lg:text-[13px] text-slate-400 mt-0.5">1 learning language included · UI free in all 29.</p>
-            </div>
-          </div>
-
-          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-2.5">
-            {INCLUDED.map((line) => (
-              <li
-                key={line}
-                className="flex items-start gap-2.5 text-[13px] lg:text-[14px] text-slate-600 dark:text-zinc-300 leading-snug"
-              >
-                <span className="w-4 h-4 rounded-full bg-zinc-900 dark:bg-zinc-100 flex items-center justify-center shrink-0 mt-0.5">
-                  <Check className="w-2.5 h-2.5 text-white dark:text-zinc-900" />
-                </span>
-                <span>{line}</span>
-              </li>
-            ))}
-          </ul>
+    <main className="flex-1 w-full bg-white dark:bg-zinc-950">
+      <div className="mx-auto flex w-full max-w-md flex-col items-center px-5 py-10 text-center sm:py-16">
+        <Sticker id="state2.locked-feature" size="clamp(150px, 40vw, 200px)" priority="hero" mode="once" />
+        <div className="relative mt-2 rounded-2xl border-2 border-slate-200 bg-white px-5 py-4 dark:border-zinc-700 dark:bg-zinc-900">
+          <span aria-hidden className="absolute -top-[9px] left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 border-l-2 border-t-2 border-slate-200 bg-white dark:border-zinc-700 dark:bg-zinc-900" />
+          <h1 className="font-serif text-2xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50">{t('paywall.title')}</h1>
+          <p className="mt-1 text-sm font-semibold text-slate-500 dark:text-zinc-400">{t('paywall.body')}</p>
         </div>
 
-        <div className="mt-3 lg:mt-0 rounded-xl bg-zinc-900 dark:bg-zinc-100 p-5 lg:p-7 lg:sticky lg:top-8">
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-zinc-400 dark:text-zinc-500 mb-2">
-            SmartyLang Max
-          </p>
-          {max && (
-            <div className="flex items-baseline gap-1.5 mb-1">
-              <span className="text-[30px] lg:text-[36px] font-black font-mono text-white dark:text-zinc-900 leading-none">
-                ${max.basePriceUSD}
-              </span>
-              <span className="text-[13px] font-bold text-zinc-400 dark:text-zinc-500">/ month</span>
-            </div>
-          )}
-          <p className="text-[13px] text-zinc-400 dark:text-zinc-600 leading-relaxed mb-5">
-            Extra learning languages +${max?.extraLearningLanguageUSD ?? 8.99}/mo each. Cancel anytime.
-          </p>
+        <ul className="mt-6 w-full space-y-2 text-left">
+          {PERKS.map((k) => (
+            <li key={k} className="flex items-center gap-3 rounded-2xl border-2 border-slate-200 px-4 py-3 text-sm font-semibold text-zinc-800 dark:border-zinc-700 dark:text-zinc-100">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 dark-keep"><Check className="h-4 w-4" strokeWidth={3} /></span>
+              {t(k)}
+            </li>
+          ))}
+        </ul>
 
-          <button
-            type="button"
-            onClick={onUpgrade}
-            className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 font-extrabold text-[15px] transition-transform active:scale-[0.99] hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white dark:focus-visible:ring-zinc-900 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 dark:focus-visible:ring-offset-zinc-100"
-          >
-            Get SmartyLang Max <ArrowRight className="w-4 h-4" />
-          </button>
-          <button
-            type="button"
-            onClick={onBack}
-            className="mt-2 w-full py-3 rounded-xl text-[14px] font-semibold text-zinc-400 dark:text-zinc-600 hover:text-white dark:hover:text-zinc-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white dark:focus-visible:ring-zinc-900"
-          >
-            Back to Home
-          </button>
+        {max && (
+          <p className="mt-6 text-zinc-900 dark:text-zinc-50">
+            <span className="font-serif text-3xl font-extrabold">{formatUSD(max.basePriceUSD)}</span>
+            <span className="ml-1 text-sm font-bold text-slate-400">{t('plans.perMonth')}</span>
+          </p>
+        )}
+        <p className="mt-1 text-xs text-slate-400">{t('paywall.cancelAnytime')}</p>
 
-          {(email || accountLabel) && (
-            <p className="mt-5 pt-4 border-t border-white/10 dark:border-zinc-900/10 text-[11px] text-zinc-500 dark:text-zinc-600 text-center">
-              {email}
-              {email && accountLabel ? ' · ' : ''}
-              {accountLabel}
-            </p>
-          )}
-        </div>
+        <ChunkyButton autoFocus onClick={onUpgrade} className="mt-5 w-full">{t('plans.getMax')}</ChunkyButton>
+        <button type="button" onClick={onBack} className="mt-3 w-full py-2 font-serif text-sm font-extrabold uppercase tracking-wide text-slate-400 hover:text-zinc-900 dark:hover:text-zinc-100">
+          {t('paywall.back')}
+        </button>
+
+        {(email || accountLabel) && (
+          <p className="mt-6 text-[11px] text-slate-400">
+            {email}{email && accountLabel ? ' · ' : ''}{accountLabel}
+          </p>
+        )}
       </div>
-    </ScreenShell>
+    </main>
   );
 }

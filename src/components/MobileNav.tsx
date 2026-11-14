@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import {
-  Home, BookOpen, Dumbbell, Trophy, User,
-  Users, X, Trello, Building2, Shield,
-  Moon, Sun, LogOut, Crown, LayoutGrid, Award, Brain, GraduationCap,
-} from 'lucide-react';
+import { BookOpen, Dumbbell, Trophy, User, Users, X, Trello, Shield, Moon, Sun, LogOut, Crown, LayoutGrid, GraduationCap, BookA, Target, Cat, Medal } from 'lucide-react';
 import type { UserRole } from '../firebase';
+import { isBusinessRole } from '../lib/access';
 import { useUiLang } from '../contexts/UiLangContext';
 import { useContentLang } from '../contexts/ContentLangContext';
 
@@ -18,28 +15,32 @@ interface MobileNavProps {
   onToggleDark: () => void;
   logout: () => void;
   onContentLangChange?: (lang: any) => void;
+  /** Only students an organization has added to a class see "My class". */
+  inClass?: boolean;
   /** When true, open the extras sheet (driven by top-bar menu). */
   menuOpen?: boolean;
   onMenuOpenChange?: (open: boolean) => void;
 }
 
 function tabFamily(tab: string): string {
-  if (tab === 'dashboard') return 'dashboard';
-  if (tab === 'lessons' || tab === 'reading' || tab === 'classes') return 'lessons';
+  if (tab === 'lessons' || tab === 'reading' || tab === 'story') return 'lessons';
+  if (tab === 'vocabulary') return 'vocabulary';
+  if (tab === 'classes') return 'classes';
   if (
-    tab === 'practice' || tab === 'listening' || tab === 'speaking' ||
-    tab === 'writing' || tab === 'exercises' || tab === 'vocabulary' ||
-    tab === 'story' || tab === 'comprehensive' || tab === 'ielts' ||
+    tab === 'practice' || tab === 'exercises' || tab === 'listening' || tab === 'speaking' ||
+    tab === 'writing' || tab === 'comprehensive' || tab === 'ielts' ||
     tab === 'ielts-reading'
   ) return 'practice';
   if (tab === 'gamification') return 'gamification';
-  if (tab === 'profile' || tab === 'plans') return 'profile';
+  if (tab === 'quests') return 'quests';
+  if (tab === 'business' || tab === 'teacher' || tab === 'organization') return 'business';
+  if (tab === 'profile' || tab === 'plans' || tab === 'dashboard') return 'profile';
   return tab;
 }
 
 export function MobileNav({
   activeTab, setActiveTab, setReadingView, userRole, user,
-  darkMode, onToggleDark, logout, menuOpen, onMenuOpenChange,
+  darkMode, onToggleDark, logout, menuOpen, onMenuOpenChange, inClass = false,
 }: MobileNavProps) {
   const [internalOpen, setInternalOpen] = useState(false);
   const open = menuOpen ?? internalOpen;
@@ -48,8 +49,7 @@ export function MobileNav({
     onMenuOpenChange?.(v);
   };
   const isAdmin = userRole === 'admin';
-  const isOrg = userRole === 'organization';
-  const isTeacher = userRole === 'teacher' || isOrg || isAdmin;
+  const isBusiness = isBusinessRole(userRole);
   const isContentManager = userRole === 'content-manager';
   const { t } = useUiLang();
   const { isEnglish } = useContentLang();
@@ -62,40 +62,31 @@ export function MobileNav({
 
   const primary = isAdmin
     ? [
-        { tab: 'dashboard', Icon: Home, label: t('nav.home') },
         { tab: 'admin', Icon: Shield, label: t('nav.adminShort') },
-        { tab: 'teacher', Icon: Trello, label: t('nav.teacherShort') },
+        { tab: 'business', Icon: Trello, label: t('nav.businessShort') },
         { tab: 'content', Icon: LayoutGrid, label: t('nav.contentShort') },
-        { tab: 'profile', Icon: User, label: t('nav.profile') },
-      ]
-    : isOrg
-    ? [
-        { tab: 'dashboard', Icon: Home, label: t('nav.home') },
-        { tab: 'organization', Icon: Building2, label: t('nav.orgShort') },
-        { tab: 'teacher', Icon: Trello, label: t('nav.teacherShort') },
-        { tab: 'lessons', Icon: BookOpen, label: t('nav.learn') },
         { tab: 'profile', Icon: User, label: t('nav.profile') },
       ]
     : isContentManager
     ? [
-        { tab: 'dashboard', Icon: Home, label: t('nav.home') },
         { tab: 'content', Icon: LayoutGrid, label: t('nav.contentShort') },
         { tab: 'profile', Icon: User, label: t('nav.profile') },
       ]
-    : isTeacher
+    : isBusiness
     ? [
-        { tab: 'dashboard', Icon: Home, label: t('nav.home') },
-        { tab: 'teacher', Icon: Trello, label: t('nav.teacherShort') },
+        { tab: 'business', Icon: Trello, label: t('nav.businessShort') },
         { tab: 'lessons', Icon: BookOpen, label: t('nav.learn') },
         { tab: 'practice', Icon: Dumbbell, label: t('nav.practice') },
         { tab: 'profile', Icon: User, label: t('nav.profile') },
       ]
     : [
-        { tab: 'dashboard', Icon: Home, label: t('nav.home') },
-        { tab: 'lessons', Icon: BookOpen, label: t('nav.learn') },
-        { tab: 'practice', Icon: Dumbbell, label: t('nav.practice') },
+        { tab: 'lessons', Icon: GraduationCap, label: t('nav.learn') },
+        { tab: 'vocabulary', Icon: BookA, label: t('nav.vocabulary') },
+        { tab: 'practice', Icon: Target, label: t('nav.practice') },
+        ...(inClass ? [{ tab: 'classes', Icon: Users, label: t('nav.myClasses') }] : []),
         { tab: 'gamification', Icon: Trophy, label: t('nav.league') },
-        { tab: 'profile', Icon: User, label: t('nav.profile') },
+        { tab: 'quests', Icon: Medal, label: t('nav.quests') },
+        { tab: 'profile', Icon: Cat, label: t('nav.profile') },
       ];
 
   const drawerSections: { title: string; items: { tab: string; Icon: React.ElementType; label: string }[] }[] = [
@@ -103,15 +94,13 @@ export function MobileNav({
       title: t('nav.learn'),
       items: [
         { tab: 'lessons', Icon: BookOpen, label: t('nav.learn') },
-        ...(userRole === 'student' ? [{ tab: 'classes', Icon: Users, label: t('nav.myClasses') }] : []),
+        ...(inClass ? [{ tab: 'classes', Icon: Users, label: t('nav.myClasses') }] : []),
       ],
     }] : []),
     ...(!isContentManager ? [{
       title: t('nav.keepGoing'),
       items: [
         { tab: 'vocabulary', Icon: GraduationCap, label: t('nav.vocabulary') },
-        { tab: 'exercises', Icon: Brain, label: t('nav.exercises') },
-        ...(isEnglish ? [{ tab: 'ielts', Icon: Award, label: t('nav.ielts') }] : []),
         { tab: 'gamification', Icon: Trophy, label: t('nav.league') },
       ],
     }] : []),
@@ -119,13 +108,12 @@ export function MobileNav({
       title: t('nav.content'),
       items: [{ tab: 'content', Icon: LayoutGrid, label: t('nav.content') }],
     }] : []),
-    ...(isTeacher ? [{
+    ...((isBusiness || isAdmin) ? [{
       title: t('nav.management'),
       items: [
-        ...((userRole === 'teacher' || userRole === 'admin') ? [{ tab: 'teacher', Icon: Trello, label: t('nav.teacher') }] : []),
-        ...((userRole === 'organization' || userRole === 'admin') ? [{ tab: 'organization', Icon: Building2, label: t('nav.organization') }] : []),
-        ...(userRole === 'admin' ? [{ tab: 'admin', Icon: Shield, label: t('nav.admin') }] : []),
-        ...(userRole === 'admin' ? [{ tab: 'content', Icon: LayoutGrid, label: t('nav.content') }] : []),
+        ...((isBusiness || isAdmin) ? [{ tab: 'business', Icon: Trello, label: t('nav.business') }] : []),
+        ...(isAdmin ? [{ tab: 'admin', Icon: Shield, label: t('nav.admin') }] : []),
+        ...(isAdmin ? [{ tab: 'content', Icon: LayoutGrid, label: t('nav.content') }] : []),
       ],
     }] : []),
     {
@@ -134,14 +122,7 @@ export function MobileNav({
     },
   ];
 
-  const isPrimaryActive = (tab: string) => {
-    if (tab === 'dashboard') return family === 'dashboard';
-    if (tab === 'lessons') return family === 'lessons';
-    if (tab === 'practice') return family === 'practice';
-    if (tab === 'gamification') return family === 'gamification';
-    if (tab === 'profile') return family === 'profile';
-    return activeTab === tab;
-  };
+  const isPrimaryActive = (tab: string) => tabFamily(tab) === family;
 
   return (
     <>
@@ -149,7 +130,7 @@ export function MobileNav({
         className="fixed bottom-0 left-0 right-0 z-40 lg:hidden"
         style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
       >
-        <div className="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl border-t border-slate-200/80 dark:border-zinc-800/80">
+        <div className="bg-white dark:bg-zinc-950 border-t-2 border-slate-200 dark:border-zinc-800">
           <div className="grid h-[64px]" style={{ gridTemplateColumns: `repeat(${primary.length}, 1fr)` }}>
             {primary.map(({ tab, Icon, label }) => {
               const isActive = isPrimaryActive(tab);
@@ -157,24 +138,17 @@ export function MobileNav({
                 <button
                   key={tab}
                   onClick={() => go(tab)}
-                  className="flex flex-col items-center justify-center gap-0.5 min-h-[44px] active:scale-95 transition-transform duration-100"
+                  aria-label={label}
+                  aria-current={isActive ? 'page' : undefined}
+                  title={label}
+                  className="flex items-center justify-center min-h-[44px] active:scale-90 transition-transform duration-100"
                 >
-                  <Icon
-                    className={`w-[22px] h-[22px] transition-colors duration-200 ${
-                      isActive
-                        ? 'text-zinc-900 dark:text-zinc-50'
-                        : 'text-slate-400 dark:text-zinc-500'
-                    }`}
-                    strokeWidth={isActive ? 2.4 : 1.8}
-                  />
-                  <span
-                    className={`text-[10px] transition-colors duration-200 ${
-                      isActive
-                        ? 'font-bold text-zinc-900 dark:text-zinc-50'
-                        : 'font-medium text-slate-400 dark:text-zinc-500'
-                    }`}
-                  >
-                    {label}
+                  <span className={`flex h-11 w-12 items-center justify-center rounded-2xl border-2 transition-[background-color,border-color,box-shadow] duration-200 ${
+                    isActive
+                      ? 'border-zinc-900 bg-zinc-900 text-white shadow-[0_3px_0_0_#000] dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 dark:shadow-[0_3px_0_0_#a1a1aa] dark-keep'
+                      : 'border-transparent text-slate-400 dark:text-zinc-500'
+                  }`}>
+                    <Icon className="w-[26px] h-[26px]" strokeWidth={isActive ? 2.4 : 2} />
                   </span>
                 </button>
               );
@@ -213,7 +187,7 @@ export function MobileNav({
             <div className="flex-1 overflow-y-auto px-4 pb-6 space-y-5">
               <button
                 onClick={() => go('profile')}
-                className="w-full flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 dark:bg-zinc-800/80 border border-slate-100 dark:border-zinc-700 active:scale-[0.98] transition-transform"
+                className="w-full flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 dark:bg-zinc-800/80 border-2 border-slate-100 dark:border-zinc-700 active:scale-[0.98] transition-transform"
               >
                 {user?.photoURL ? (
                   <img src={user.photoURL} className="w-11 h-11 rounded-full shrink-0 object-cover" alt="" />
@@ -264,14 +238,14 @@ export function MobileNav({
                 <button
                   onClick={onToggleDark}
                   className="w-9 h-9 rounded-full bg-slate-100 dark:bg-zinc-800 flex items-center justify-center text-slate-600 dark:text-zinc-400 active:scale-95 transition-transform"
-                  title="Toggle dark mode"
+                  title={t("core.mobilenav.toggle_dark_mode_2dda3c")}
                 >
                   {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                 </button>
                 <button
                   onClick={() => { logout(); setOpen(false); }}
                   className="w-9 h-9 rounded-full bg-rose-50 dark:bg-rose-950 flex items-center justify-center text-rose-500 dark:text-rose-400 active:scale-95 transition-transform"
-                  title="Sign out"
+                  title={t("profile.logout.go")}
                 >
                   <LogOut className="w-4 h-4" />
                 </button>

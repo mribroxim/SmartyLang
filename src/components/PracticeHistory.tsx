@@ -1,3 +1,4 @@
+import { useUiLang } from '../contexts/UiLangContext';
 import React, { useMemo } from 'react';
 import { Clock, TrendingUp, Trash2 } from 'lucide-react';
 import { useContentLang } from '../contexts/ContentLangContext';
@@ -29,6 +30,7 @@ interface PracticeHistoryProps {
  * Comprehensive Listening, Interactive Story, and Audio Dictation.
  */
 export function PracticeHistory({ storageKey, label, level, initial = 5 }: PracticeHistoryProps) {
+  const { t } = useUiLang();
   const [showAll, setShowAll] = React.useState(false);
   const { contentLang } = useContentLang();
 
@@ -54,7 +56,7 @@ export function PracticeHistory({ storageKey, label, level, initial = 5 }: Pract
   const visible = showAll ? entries : entries.slice(0, initial);
 
   const clearAll = () => {
-    if (!confirm(`Clear ${entries.length} ${label.toLowerCase()} from your history?`)) return;
+    if (!confirm(t("core.common.clear_count_entries_from_your_4e8bf4", { count: entries.length, label }))) return;
     try {
       const raw = localStorage.getItem(storageKey);
       const parsed = raw ? JSON.parse(raw) : [];
@@ -72,7 +74,7 @@ export function PracticeHistory({ storageKey, label, level, initial = 5 }: Pract
   };
 
   return (
-    <div className="mt-8 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+    <div className="mt-8 bg-white rounded-2xl border-2 border-slate-200 overflow-hidden shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
       <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
         <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
           <Clock className="w-4 h-4 text-slate-400" /> {label}
@@ -81,10 +83,9 @@ export function PracticeHistory({ storageKey, label, level, initial = 5 }: Pract
         <button
           onClick={clearAll}
           className="text-xs font-bold text-slate-400 hover:text-rose-500 transition-colors flex items-center gap-1"
-          title="Clear history"
+          title={t("core.practicehistory.clear_history_53b515")}
         >
-          <Trash2 className="w-3 h-3" /> Clear
-        </button>
+          <Trash2 className="w-3 h-3" />  {t("core.practicehistory.clear_719ea3")}</button>
       </div>
       <ul className="divide-y divide-slate-100">
         {visible.map((e, i) => {
@@ -127,7 +128,7 @@ export function PracticeHistory({ storageKey, label, level, initial = 5 }: Pract
           onClick={() => setShowAll(s => !s)}
           className="w-full px-5 py-3 text-xs font-bold text-slate-500 hover:text-zinc-900 hover:bg-slate-50 border-t border-slate-100 transition-colors"
         >
-          {showAll ? 'Show less' : `Show all ${entries.length}`}
+          {showAll ? t("core.practicehistory.show_less_4c852b") : `Show all ${entries.length}`}
         </button>
       )}
     </div>

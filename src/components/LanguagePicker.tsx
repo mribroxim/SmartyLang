@@ -34,7 +34,7 @@ export function LanguagePicker({
   onChange,
 }: LanguagePickerProps) {
   const { contentLang, setContentLang } = useContentLang();
-  const { uiLang, setUiLang, t } = useUiLang();
+  const { uiLang, setUiLang, loadingLanguage, t } = useUiLang();
   const isInterface = mode === 'interface';
   const value = (isInterface ? uiLang : contentLang) as ContentLang;
   const options = (isInterface ? UI_LANGS : CONTENT_LANGS) as readonly ContentLang[];
@@ -112,11 +112,12 @@ export function LanguagePicker({
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
+        aria-busy={isInterface && loadingLanguage !== null}
         title={title}
         className={
           variant === 'pills'
-            ? 'w-full flex items-center gap-2.5 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 rounded-xl px-3.5 py-2.5 text-left hover:border-zinc-400 dark:hover:border-zinc-500'
-            : 'inline-flex items-center gap-2 max-w-[11.5rem] bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 rounded-xl pl-2.5 pr-2 py-1.5 hover:border-zinc-400 dark:hover:border-zinc-500 hover:shadow-sm'
+            ? 'w-full flex items-center gap-2.5 bg-white dark:bg-zinc-900 border-2 border-slate-200 dark:border-zinc-700 rounded-2xl px-3.5 py-2.5 text-left hover:border-zinc-400 dark:hover:border-zinc-500 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]'
+            : 'inline-flex items-center gap-2 max-w-[11.5rem] bg-white dark:bg-zinc-900 border-2 border-slate-200 dark:border-zinc-700 rounded-2xl pl-2.5 pr-2 py-1.5 hover:border-zinc-400 dark:hover:border-zinc-500 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]'
         }
       >
         <span className="w-7 h-7 rounded-lg bg-slate-50 dark:bg-zinc-800 border border-slate-100 dark:border-zinc-700 flex items-center justify-center shrink-0">
@@ -140,11 +141,11 @@ export function LanguagePicker({
               <>
                 <motion.button
                   type="button"
-                  aria-label="Close"
+                  aria-label={t("core.dashboardview.close_bbfa77")}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="fixed inset-0 z-[90] bg-zinc-950/10 dark:bg-black/50"
+                  className="fixed inset-0 z-[90] bg-zinc-950/10 dark:bg-black/50 bg-zinc-900/55 backdrop-blur-[2px]"
                   onPointerDown={() => setOpen(false)}
                 />
                 <motion.div
@@ -162,10 +163,10 @@ export function LanguagePicker({
                     width: menuPos.width,
                     zIndex: 91,
                   }}
-                  className="rounded-2xl border border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 shadow-xl overflow-hidden"
+                  className="rounded-2xl border-2 dark:border-zinc-700 bg-white dark:bg-zinc-900 overflow-hidden shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]"
                 >
                 <div className="p-2 border-b border-slate-100 dark:border-zinc-800">
-                  <div className="flex items-center gap-2 rounded-xl bg-slate-50 dark:bg-zinc-800 border border-slate-100 dark:border-zinc-700 px-2.5 py-2">
+                  <div className="flex items-center gap-2 rounded-2xl bg-slate-50 dark:bg-zinc-800 border-2 border-slate-100 dark:border-zinc-700 px-2.5 py-2">
                     <Search className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                     <input
                       ref={searchRef}
