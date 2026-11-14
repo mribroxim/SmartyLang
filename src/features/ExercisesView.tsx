@@ -1,59 +1,36 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Level } from '../lib/reading-logic';
+import { useEffect, useMemo, useState } from 'react';
+import { motion } from 'motion/react';
+import { ArrowLeft, Check, Play, RotateCcw, Volume2, X } from 'lucide-react';
+import type { Level, ReadingText } from '../lib/reading-logic';
 import { useLevelTexts } from '../data/levelTexts';
-import {
-  Flashcards,
-  PronunciationDrill,
-  WordMatch,
-  DefinitionQuiz,
-  SpellingPractice,
-  WordScramble,
-  MemoryMatch,
-  ListeningMatch,
-  TrueFalseQuiz,
-  fetchWordTranslations,
-} from '../Exercises';
-import {
-  Mic,
-  Shuffle,
-  BookOpen,
-  Type,
-  RefreshCw,
-  Layers,
-  Headphones,
-  Languages,
-  CheckCircle2,
-  Grid,
-  X,
-  AlertCircle,
-  PlayCircle,
-  Search,
-  ChevronRight,
-} from 'lucide-react';
+import { fetchWordTranslations } from '../Exercises';
 import { useUiLang } from '../contexts/UiLangContext';
 import { useContentLang } from '../contexts/ContentLangContext';
-import { LANGUAGES, type LanguageOption } from '../lib/languages';
+import { useProgress } from '../contexts/ProgressContext';
 import { readPreferredTranslationLang } from '../lib/preferredTranslationLang';
-import {
-  loadExerciseSession,
-  clearExerciseSession,
-  consumeExerciseResumeFlag,
-  exerciseTypeLabel,
-  sessionProgressLabel,
-  type ExerciseSessionSnapshot,
-} from '../lib/exerciseSession';
-import { matchesContentLang } from '../lib/activityMeta';
-import { ScreenShell, HubRow } from '../components/ScreenShell';
 import { normalizeForMatch, tokenizeForLang } from '../lib/pronunciationProfile';
+import { playWord } from '../lib/speech';
+import { todayKey } from '../lib/habitEngine';
+import type { BiteDef, StepKind } from '../lib/bites/types';
+import type { UiStringKey } from '../lib/uiStrings';
+import { Sticker, type StickerId } from '../components/stickers/Sticker';
+import { BiteRunner } from './Bites/BiteRunner';
+import { ChunkyButton, ChunkyProgress, Tile } from './Bites/lesson/chunky';
 
-const MEANING_MODE_EXERCISES = new Set([
-  'flashcards',
-  'definition-quiz',
-  'listening-match',
-  'true-false-quiz',
-  'memory-match',
-  'word-match',
-]);
+/** Smarty sticker per exercise. */
+export const EXERCISE_STICKERS: Record<string, StickerId> = {
+  flashcards: 'vocab.flashcard-flip', 'definition-quiz': 'game.quiz-show-host', 'listening-match': 'listen.ear-twitch',
+  'true-false-quiz': 'mood.hmm', 'memory-match': 'game.memory-match', 'word-match': 'vocab.word-magnet',
+  'spelling-practice': 'write.spelling-bee', pronunciation: 'speak.pronunciation-coach', 'word-scramble': 'write.letter-builder',
+};
+
+/** The exercises, in order (Practice lists them). */
+export function exerciseCatalog(t: (k: UiStringKey) => string) {
+  return (['flashcards', 'definition-quiz', 'listening-match', 'true-false-quiz', 'memory-match', 'word-match', 'spelling-practice', 'pronunciation', 'word-scramble'] as const)
+    .map((id) => ({ id, title: t(`ex.${id}.title` as UiStringKey), desc: t(`ex.${id}.desc` as UiStringKey) }));
+}
+
+type Source = 'saved' | 'level' | 'topic' | 'custom';
 
 interface ExercisesViewProps {
   savedVocab: Record<string, any>;
@@ -61,7 +38,7 @@ interface ExercisesViewProps {
   activeExercise: string | null;
   setActiveExercise: (ex: any) => void;
   selectedVocabWords: string[];
-  setSelectedVocabWords: (fn: (prev: string[]) => string[] | string[]) => void;
+  setSelectedVocabWords: (fn: any) => void;
   showExerciseWordSelector: string | null;
   setShowExerciseWordSelector: (v: any) => void;
   exerciseSourceType: string;
@@ -74,561 +51,298 @@ interface ExercisesViewProps {
   setExerciseSourceCustomTextSel: (v: string) => void;
   savedCustomTexts: string[];
   recordExercise: (type: string, data?: any) => void;
-  setIsExerciseCompleteModalOpen: (v: boolean) => void;
-  setExerciseCompleteData: (v: any) => void;
 }
 
-function readSavedLang(_preferEn: boolean): LanguageOption {
-  return readPreferredTranslationLang();
-}
+const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
 
-export default function ExercisesView({
-  savedVocab,
-  allVocabMap,
-  activeExercise,
-  setActiveExercise,
-  selectedVocabWords,
-  setSelectedVocabWords,
-  showExerciseWordSelector,
-  setShowExerciseWordSelector,
-  exerciseSourceType,
-  setExerciseSourceType,
-  exerciseSourceLevel,
-  setExerciseSourceLevel,
-  exerciseSourceTopic,
-  setExerciseSourceTopic,
-  exerciseSourceCustomTextSel,
-  setExerciseSourceCustomTextSel,
-  savedCustomTexts,
-  recordExercise,
-  setIsExerciseCompleteModalOpen,
-  setExerciseCompleteData,
-}: ExercisesViewProps) {
-  const LEVEL_TEXTS = useLevelTexts();
-  const { t } = useUiLang();
-  const { contentLang, dictCode, nativeName } = useContentLang();
+/**
+ * Exercises (opened from Practice): pick the words you want, then play one
+ * exercise in Smarty's lesson style. Every word is shown with its translation
+ * into your own language.
+ */
+export default function ExercisesView(props: ExercisesViewProps) {
+  const { savedVocab, allVocabMap, setActiveExercise, selectedVocabWords, setSelectedVocabWords, showExerciseWordSelector, setShowExerciseWordSelector } = props;
+  const { contentLang, dictCode } = useContentLang();
+  const [session, setSession] = useState<{ type: string; words: string[]; meanings: Record<string, string> } | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const [pendingExercise, setPendingExercise] = useState<string | null>(null);
-  const [meaningStep, setMeaningStep] = useState<'mode' | 'lang' | null>(null);
-  const [exerciseMeanings, setExerciseMeanings] = useState<Record<string, string> | undefined>(undefined);
-  const [loadingTranslations, setLoadingTranslations] = useState(false);
-  const [targetLang, setTargetLang] = useState<LanguageOption>(() => readSavedLang(contentLang !== 'en'));
-  const [langSearch, setLangSearch] = useState('');
-  const [resumeSnapshot, setResumeSnapshot] = useState<ExerciseSessionSnapshot | null>(null);
-  const [interrupted, setInterrupted] = useState<ExerciseSessionSnapshot | null>(() => {
-    const snap = loadExerciseSession();
-    const cl = (() => { try { return localStorage.getItem('smarty_content_lang') || 'en'; } catch { return 'en'; } })();
-    return snap && matchesContentLang(snap, cl) ? snap : null;
-  });
+  // Leaving or finishing an exercise goes back to Practice (App redirects once nothing is open).
+  const leave = () => { setSession(null); setActiveExercise(null); setShowExerciseWordSelector(null); };
 
-  const refreshInterrupted = () => {
-    const snap = loadExerciseSession();
-    setInterrupted(snap && matchesContentLang(snap, contentLang) ? snap : null);
-  };
-
-  const doResume = (snap: ExerciseSessionSnapshot) => {
-    setSelectedVocabWords(() => [...snap.words]);
-    setExerciseMeanings(snap.meanings);
-    setResumeSnapshot(snap);
-    setInterrupted(null);
-    setMeaningStep(null);
-    setPendingExercise(null);
-    setShowExerciseWordSelector(null);
-    setActiveExercise(snap.type);
-  };
-
-  useEffect(() => {
-    if (consumeExerciseResumeFlag()) {
-      const snap = loadExerciseSession();
-      if (snap && matchesContentLang(snap, contentLang)) doResume(snap);
-    }
-  }, []);
-
-  useEffect(() => {
-    refreshInterrupted();
-  }, [contentLang]);
-
-  useEffect(() => {
-    if (!activeExercise) {
-      refreshInterrupted();
-      setResumeSnapshot(null);
-    }
-  }, [activeExercise]);
-
-  const onComplete = (data: any) => {
-    const { type, ...rest } = data || {};
-    if (type) {
-      try {
-        recordExercise(type, rest);
-      } catch (e) {
-        console.error('Error recording exercise on complete:', e);
-      }
-    }
-    clearExerciseSession();
-    setResumeSnapshot(null);
-    setInterrupted(null);
-    setActiveExercise(null);
-    setExerciseMeanings(undefined);
-    setPendingExercise(null);
-    setExerciseCompleteData(data);
-    setIsExerciseCompleteModalOpen(true);
-  };
-
-  const closeExercise = () => {
-    setActiveExercise(null);
-    setExerciseMeanings(undefined);
-    setPendingExercise(null);
-    setResumeSnapshot(null);
-    refreshInterrupted();
-  };
-
-  const buildDefinitionMeanings = (words: string[]): Record<string, string> => {
-    const map: Record<string, string> = {};
+  const start = async (type: string, words: string[]) => {
+    setLoading(true);
+    const to = readPreferredTranslationLang().code;
+    let tr: Record<string, string> = {};
+    try { tr = await fetchWordTranslations(words, dictCode, to); } catch { /* fall back below */ }
+    const meanings: Record<string, string> = {};
     for (const w of words) {
-      const def = allVocabMap.get(w.toLowerCase()) || savedVocab[w]?.definition || '';
-      if (def) map[w] = def;
+      const tx = (tr[w] || '').trim();
+      // Translations only; when the "translation" is the same word (same language), use the short meaning instead.
+      const raw = allVocabMap.get(w.toLowerCase()) || savedVocab[w]?.definition || '';
+      const fallback = raw.split(' · ')[0].replace(/^\([^)]*\)\s*/, '').trim();
+      const m = tx && tx.toLowerCase() !== w.toLowerCase() ? tx : fallback;
+      if (m) meanings[w] = m;
     }
-    return map;
-  };
-
-  const launchWithMeanings = (exId: string, meanings: Record<string, string>) => {
-    clearExerciseSession();
-    setResumeSnapshot(null);
-    setInterrupted(null);
-    setExerciseMeanings(meanings);
-    setMeaningStep(null);
-    setPendingExercise(null);
+    setLoading(false);
+    const usable = words.filter((w) => meanings[w]);
+    if (usable.length < 2) return;
+    setActiveExercise(type);
     setShowExerciseWordSelector(null);
-    setActiveExercise(exId);
+    setSession({ type, words: usable, meanings });
   };
 
-  const startAfterWordSelect = (exId: string) => {
-    if (MEANING_MODE_EXERCISES.has(exId)) {
-      setPendingExercise(exId);
-      setMeaningStep('mode');
-      setShowExerciseWordSelector(null);
-      return;
+  if (session) {
+    if (session.type === 'flashcards') return <FlashcardsRun words={session.words} meanings={session.meanings} onDone={(known) => { props.recordExercise('flashcards', { score: known, total: session.words.length }); leave(); }} onExit={leave} />;
+    if (session.type === 'memory-match') return <MemoryRun words={session.words} meanings={session.meanings} onDone={(moves) => { const n = Math.min(6, session.words.length); props.recordExercise('memory-match', { score: n, total: n, moves }); leave(); }} onExit={leave} />;
+    return <LessonRun type={session.type} words={session.words} meanings={session.meanings} contentLang={contentLang} onExit={leave} />;
+  }
+  if (!showExerciseWordSelector) return null;
+  return <WordPicker {...props} type={showExerciseWordSelector} loading={loading}
+    onBack={() => setShowExerciseWordSelector(null)}
+    onStart={(words) => start(showExerciseWordSelector, words)}
+    selected={selectedVocabWords} setSelected={setSelectedVocabWords} />;
+}
+
+// ── word picker (full page) ─────────────────────────────────────────────
+function WordPicker({ type, loading, onBack, onStart, selected, setSelected, savedVocab, allVocabMap, exerciseSourceType, setExerciseSourceType, exerciseSourceLevel, setExerciseSourceLevel, exerciseSourceTopic, setExerciseSourceTopic, exerciseSourceCustomTextSel, setExerciseSourceCustomTextSel, savedCustomTexts }: ExercisesViewProps & {
+  type: string; loading: boolean; onBack: () => void; onStart: (words: string[]) => void; selected: string[]; setSelected: (fn: any) => void;
+}) {
+  const { t, tLevel } = useUiLang();
+  const { contentLang } = useContentLang();
+  const LEVEL_TEXTS = useLevelTexts();
+  const source = (exerciseSourceType as Source) || 'saved';
+
+  const candidates = useMemo(() => {
+    let list: string[] = [];
+    if (source === 'saved') list = Object.keys(savedVocab);
+    else if (source === 'level') list = (LEVEL_TEXTS[exerciseSourceLevel] || []).flatMap((tx: ReadingText) => tx.vocabulary?.map((v) => v.word.toLowerCase()) || []);
+    else if (source === 'topic') list = (LEVEL_TEXTS[exerciseSourceLevel] || []).find((tx: ReadingText) => tx.id === exerciseSourceTopic)?.vocabulary?.map((v) => v.word.toLowerCase()) || [];
+    else if (source === 'custom') {
+      const text = savedCustomTexts[Number(exerciseSourceCustomTextSel)];
+      if (text) list = tokenizeForLang(text, contentLang).map((w) => normalizeForMatch(w, contentLang)).filter((w) => w && allVocabMap.has(w));
     }
-    clearExerciseSession();
-    setResumeSnapshot(null);
-    setInterrupted(null);
-    setExerciseMeanings(undefined);
-    setActiveExercise(exId);
-    setShowExerciseWordSelector(null);
-  };
+    return Array.from(new Set(list));
+  }, [source, savedVocab, LEVEL_TEXTS, exerciseSourceLevel, exerciseSourceTopic, exerciseSourceCustomTextSel, savedCustomTexts, contentLang, allVocabMap]);
 
-  const chooseDefinition = () => {
-    if (!pendingExercise) return;
-    const words = selectedVocabWords.length > 0 ? selectedVocabWords : Object.keys(savedVocab);
-    launchWithMeanings(pendingExercise, buildDefinitionMeanings(words));
-  };
-
-  const chooseTranslation = () => {
-    setMeaningStep('lang');
-  };
-
-  const startWithTranslationLang = async (lang: LanguageOption) => {
-    if (!pendingExercise) return;
-    setTargetLang(lang);
-    try { localStorage.setItem('preferred_translation_lang', lang.code); } catch {}
-    const words = selectedVocabWords.length > 0 ? selectedVocabWords : Object.keys(savedVocab);
-    setLoadingTranslations(true);
-    try {
-      const map = await fetchWordTranslations(words, dictCode, lang.code);
-      launchWithMeanings(pendingExercise, map);
-    } catch (e) {
-      console.error(e);
-      setLoadingTranslations(false);
-    }
-    setLoadingTranslations(false);
-  };
-
-  const filteredLangs = useMemo(() => {
-    const s = langSearch.trim().toLowerCase();
-    if (!s) return LANGUAGES;
-    return LANGUAGES.filter(l =>
-      l.name.toLowerCase().includes(s) ||
-      l.code.toLowerCase().includes(s) ||
-      (l.native && l.native.toLowerCase().includes(s)),
-    );
-  }, [langSearch]);
-
-  const exerciseList = [
-    { id: 'flashcards', title: 'Flashcards', desc: 'Classic spaced repetition — definition or translation', icon: <Grid className="w-6 h-6" />, meaningChoice: true },
-    { id: 'definition-quiz', title: 'Quiz', desc: 'Multiple choice meanings — definition or translation', icon: <BookOpen className="w-6 h-6" />, meaningChoice: true },
-    { id: 'listening-match', title: 'Listening', desc: 'Hear the word, pick the meaning', icon: <Headphones className="w-6 h-6" />, meaningChoice: true },
-    { id: 'true-false-quiz', title: 'True or False', desc: 'Is this meaning correct?', icon: <CheckCircle2 className="w-6 h-6" />, meaningChoice: true },
-    { id: 'memory-match', title: 'Memory Match', desc: 'Flip and match word ↔ meaning pairs', icon: <Layers className="w-6 h-6" />, meaningChoice: true },
-    { id: 'word-match', title: 'Word Match', desc: 'Connect words to meanings', icon: <Shuffle className="w-6 h-6" />, meaningChoice: true },
-    { id: 'spelling-practice', title: 'Spelling Practice', desc: 'Type the word you hear', icon: <Type className="w-6 h-6" />, meaningChoice: false },
-    { id: 'pronunciation', title: 'Pronunciation', desc: 'Speak and get graded', icon: <Mic className="w-6 h-6" />, meaningChoice: false },
-    { id: 'word-scramble', title: 'Word Scramble', desc: 'Unscramble the letters', icon: <RefreshCw className="w-6 h-6" />, meaningChoice: false },
-  ];
+  const sel = selected.filter((w) => candidates.includes(w));
+  const toggle = (w: string) => setSelected((prev: string[]) => (prev.includes(w) ? prev.filter((x) => x !== w) : [...prev, w]));
+  const chip = (on: boolean) => `shrink-0 rounded-2xl border-2 px-3.5 py-2 font-serif text-xs font-extrabold uppercase tracking-wide transition-[transform,box-shadow] duration-75 active:translate-y-[2px] ${on ? 'border-zinc-900 bg-zinc-900 text-white shadow-[0_2px_0_0_#000] dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 dark-keep' : 'border-slate-200 bg-white text-slate-500 shadow-[0_2px_0_0_#e2e8f0] dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400'}`;
+  const select = 'rounded-xl border-2 border-slate-200 bg-white px-3 py-2 text-sm font-bold text-zinc-800 outline-none focus:border-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100';
 
   return (
-    <main className="flex-grow overflow-y-auto overflow-x-hidden w-full max-w-[100vw] bg-white relative">
-      {(() => {
-        const exerciseVocab = selectedVocabWords.length > 0
-          ? Object.fromEntries(selectedVocabWords.map(w => [w, savedVocab[w] || { definition: '' }]))
-          : savedVocab;
-        const meaningProps = { meanings: exerciseMeanings };
-        const resumeProp = (type: string) =>
-          resumeSnapshot?.type === type ? { resume: resumeSnapshot } : {};
-        return (
-          <>
-            {activeExercise === 'flashcards' && (
-              <Flashcards savedVocab={exerciseVocab} allVocabMap={allVocabMap} onBack={closeExercise} onComplete={onComplete} recordExercise={recordExercise} {...meaningProps} {...resumeProp('flashcards')} />
-            )}
-            {activeExercise === 'pronunciation' && (
-              <PronunciationDrill savedVocab={exerciseVocab} onBack={closeExercise} onComplete={onComplete} recordExercise={recordExercise} {...resumeProp('pronunciation')} />
-            )}
-            {activeExercise === 'word-match' && (
-              <WordMatch savedVocab={exerciseVocab} allVocabMap={allVocabMap} onBack={closeExercise} onComplete={onComplete} recordExercise={recordExercise} {...meaningProps} {...resumeProp('word-match')} />
-            )}
-            {activeExercise === 'definition-quiz' && (
-              <DefinitionQuiz savedVocab={exerciseVocab} allVocabMap={allVocabMap} onBack={closeExercise} onComplete={onComplete} recordExercise={recordExercise} {...meaningProps} {...resumeProp('definition-quiz')} />
-            )}
-            {activeExercise === 'spelling-practice' && (
-              <SpellingPractice savedVocab={exerciseVocab} onBack={closeExercise} onComplete={onComplete} recordExercise={recordExercise} {...resumeProp('spelling-practice')} />
-            )}
-            {activeExercise === 'word-scramble' && (
-              <WordScramble savedVocab={exerciseVocab} allVocabMap={allVocabMap} onBack={closeExercise} onComplete={onComplete} recordExercise={recordExercise} {...resumeProp('word-scramble')} />
-            )}
-            {activeExercise === 'memory-match' && (
-              <MemoryMatch savedVocab={exerciseVocab} allVocabMap={allVocabMap} onBack={closeExercise} onComplete={onComplete} recordExercise={recordExercise} {...meaningProps} {...resumeProp('memory-match')} />
-            )}
-            {activeExercise === 'listening-match' && (
-              <ListeningMatch savedVocab={exerciseVocab} allVocabMap={allVocabMap} onBack={closeExercise} onComplete={onComplete} recordExercise={recordExercise} {...meaningProps} {...resumeProp('listening-match')} />
-            )}
-            {activeExercise === 'true-false-quiz' && (
-              <TrueFalseQuiz savedVocab={exerciseVocab} allVocabMap={allVocabMap} onBack={closeExercise} onComplete={onComplete} recordExercise={recordExercise} {...meaningProps} {...resumeProp('true-false-quiz')} />
-            )}
-          </>
-        );
-      })()}
-
-      {/* Definition vs Translation picker */}
-      {meaningStep === 'mode' && pendingExercise && (
-        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden">
-            <div className="p-6 border-b border-slate-100 flex items-center justify-between">
-              <div>
-                <h2 className="text-xl font-bold text-slate-800">Practice with…</h2>
-                <p className="text-sm text-slate-500 mt-1">Choose definition or translation for this exercise.</p>
-              </div>
-              <button
-                onClick={() => { setMeaningStep(null); setPendingExercise(null); }}
-                className="p-2 bg-slate-100 text-slate-500 hover:bg-rose-100 hover:text-rose-600 rounded-full transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="p-6 grid gap-3">
-              <button
-                onClick={chooseDefinition}
-                className="flex items-start gap-4 p-5 rounded-2xl border-2 border-slate-200 hover:border-zinc-900 hover:bg-zinc-50 transition-all text-left"
-              >
-                <div className="w-11 h-11 rounded-xl bg-zinc-100 text-zinc-800 flex items-center justify-center shrink-0">
-                  <BookOpen className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="font-bold text-slate-900">Definition</div>
-                  <div className="text-sm text-slate-500 mt-0.5">Match or quiz using dictionary meanings</div>
-                </div>
-              </button>
-              <button
-                onClick={chooseTranslation}
-                className="flex items-start gap-4 p-5 rounded-2xl border-2 border-slate-200 hover:border-zinc-900 hover:bg-zinc-50 transition-all text-left"
-              >
-                <div className="w-11 h-11 rounded-xl bg-zinc-100 text-zinc-800 flex items-center justify-center shrink-0">
-                  <Languages className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="font-bold text-slate-900">Translation</div>
-                  <div className="text-sm text-slate-500 mt-0.5">Practice with another language</div>
-                </div>
-              </button>
-            </div>
+    <div className="flex min-h-full flex-1 flex-col bg-white dark:bg-zinc-950">
+      <div className="mx-auto w-full max-w-2xl flex-1 px-4 pb-32 pt-4">
+        <button type="button" onClick={onBack} className="-ml-2 mb-2 inline-flex items-center gap-1.5 rounded-xl px-2 py-1.5 font-bold text-slate-500 hover:bg-slate-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-100">
+          <ArrowLeft className="h-5 w-5" />{t('nav.practice')}
+        </button>
+        <div className="flex items-center gap-3">
+          <Sticker id={EXERCISE_STICKERS[type] ?? 'learn.word-nerd'} size={64} mode="once" className="shrink-0" />
+          <div className="min-w-0">
+            <h1 className="font-serif text-2xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50">{t(`ex.${type}.title` as UiStringKey)}</h1>
+            <p className="text-sm font-semibold text-slate-500 dark:text-zinc-400">{t('ex.pickWords')}</p>
           </div>
         </div>
-      )}
 
-      {/* Translation language picker */}
-      {meaningStep === 'lang' && pendingExercise && (
-        <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-3xl w-full max-w-lg max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
-            <div className="p-6 border-b border-slate-100 flex items-center justify-between shrink-0">
-              <div>
-                <h2 className="text-xl font-bold text-slate-800">Translation language</h2>
-                <p className="text-sm text-slate-500 mt-1">
-                  Translate your {nativeName} words into…
-                </p>
-              </div>
-              <button
-                onClick={() => setMeaningStep('mode')}
-                className="p-2 bg-slate-100 text-slate-500 hover:bg-rose-100 hover:text-rose-600 rounded-full transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            {loadingTranslations ? (
-              <div className="p-12 text-center text-slate-500 animate-pulse">Loading translations…</div>
-            ) : (
-              <>
-                <div className="p-4 border-b border-slate-100 shrink-0">
-                  <div className="relative">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                    <input
-                      autoFocus
-                      value={langSearch}
-                      onChange={e => setLangSearch(e.target.value)}
-                      placeholder="Search language…"
-                      className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-full text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-zinc-700/50 focus:border-zinc-700"
-                    />
-                  </div>
-                </div>
-                <div className="flex-1 overflow-y-auto p-4">
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    {filteredLangs.map(l => (
-                      <button
-                        key={l.code}
-                        onClick={() => startWithTranslationLang(l)}
-                        className={`text-left p-3 rounded-xl border transition-colors ${
-                          targetLang.code === l.code
-                            ? 'border-zinc-900 bg-zinc-50'
-                            : 'border-slate-200 hover:border-zinc-700 hover:bg-zinc-50'
-                        }`}
-                      >
-                        <div className="font-bold text-slate-900 text-sm truncate">{l.name}</div>
-                        {l.native && l.native !== l.name && (
-                          <div className="text-xs text-slate-500 truncate">{l.native}</div>
-                        )}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </>
+        <div className="mt-5 -mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
+          {(['saved', 'level', 'topic', 'custom'] as Source[]).map((s) => (
+            <button key={s} type="button" onClick={() => setExerciseSourceType(s)} className={chip(source === s)}>{t(`ex.source.${s}` as UiStringKey)}</button>
+          ))}
+        </div>
+        {(source === 'level' || source === 'topic') && (
+          <div className="mt-3 flex flex-wrap gap-2">
+            <select value={exerciseSourceLevel} onChange={(e) => setExerciseSourceLevel(e.target.value)} className={select}>
+              {Object.keys(LEVEL_TEXTS).map((l) => <option key={l} value={l}>{tLevel(l as Level)}</option>)}
+            </select>
+            {source === 'topic' && (
+              <select value={exerciseSourceTopic} onChange={(e) => setExerciseSourceTopic(e.target.value)} className={`${select} max-w-[220px]`}>
+                <option value="">{t('ex.pickLesson')}</option>
+                {(LEVEL_TEXTS[exerciseSourceLevel] || []).map((tx: ReadingText) => <option key={tx.id} value={tx.id}>{tx.title}</option>)}
+              </select>
             )}
           </div>
-        </div>
-      )}
+        )}
+        {source === 'custom' && (
+          <select value={exerciseSourceCustomTextSel} onChange={(e) => setExerciseSourceCustomTextSel(e.target.value)} className={`${select} mt-3 max-w-full`}>
+            <option value="">{t('ex.pickText')}</option>
+            {savedCustomTexts.map((text, i) => <option key={i} value={String(i)}>{text.slice(0, 40)}…</option>)}
+          </select>
+        )}
 
-      {!activeExercise && (
-        <ScreenShell title={t('exercises.title')} subtitle={t('exercises.subtitle')} size="wide">
-          {!showExerciseWordSelector && !meaningStep && (
-            <>
-              {interrupted && (
-                <div className="mb-4 bg-white border border-zinc-200 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-3 justify-between">
-                  <div className="min-w-0">
-                    <p className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-1">Continue where you left off</p>
-                    <h3 className="text-lg font-bold text-slate-900 capitalize truncate">
-                      {exerciseTypeLabel(interrupted.type)}
-                    </h3>
-                    <p className="text-sm text-slate-500 mt-0.5">
-                      {sessionProgressLabel(interrupted)} · {interrupted.words.length} words
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2 shrink-0">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        clearExerciseSession();
-                        setInterrupted(null);
-                      }}
-                      className="px-4 py-2.5 rounded-xl text-sm font-bold text-slate-500 hover:bg-slate-100 transition"
-                    >
-                      Discard
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => doResume(interrupted)}
-                      className="px-5 py-2.5 rounded-xl text-sm font-bold bg-zinc-900 text-white hover:bg-black transition flex items-center gap-2"
-                    >
-                      Continue <ChevronRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-3">
-                {exerciseList.map(ex => (
-                  <HubRow
-                    key={ex.id}
-                    icon={ex.icon}
-                    iconClass="bg-slate-100 text-zinc-700"
-                    title={ex.title}
-                    desc={ex.desc}
-                    meta={ex.meaningChoice ? 'Definition or translation' : undefined}
-                    onClick={() => setShowExerciseWordSelector(ex.id as any)}
-                  />
-                ))}
-              </div>
-            </>
+        <div className="mt-4 flex items-center justify-between">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-slate-400">{t('ex.available', { n: candidates.length })}</span>
+          {candidates.length > 0 && (
+            <button type="button" onClick={() => setSelected(sel.length === candidates.length ? [] : [...candidates])} className="font-serif text-xs font-extrabold uppercase tracking-wide text-zinc-700 hover:underline dark:text-zinc-200">
+              {sel.length === candidates.length ? t('ex.selectNone') : t('ex.selectAll')}
+            </button>
           )}
+        </div>
+        {candidates.length === 0 ? (
+          <div className="mt-6 flex flex-col items-center text-center">
+            <Sticker id="state2.no-results" size={120} mode="still" />
+            <p className="mt-2 max-w-xs text-sm font-semibold text-slate-500">{t('ex.noWords')}</p>
+          </div>
+        ) : (
+          <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+            {candidates.map((w) => {
+              const on = sel.includes(w);
+              return (
+                <Tile key={w} state={on ? 'selected' : 'idle'} aria-pressed={on} onClick={() => toggle(w)} className="!px-3 !py-2.5 text-sm">
+                  <span className="flex items-center gap-2">
+                    <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border-2 ${on ? 'border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900' : 'border-slate-300 dark:border-zinc-600'}`}>
+                      {on && <Check className="h-3 w-3" strokeWidth={3.5} />}
+                    </span>
+                    <span className="truncate font-bold">{w}</span>
+                  </span>
+                </Tile>
+              );
+            })}
+          </div>
+        )}
+      </div>
 
-          {showExerciseWordSelector && (() => {
-            let candidateWords: string[] = [];
-            if (exerciseSourceType === 'saved') candidateWords = Object.keys(savedVocab);
-            else if (exerciseSourceType === 'level') candidateWords = LEVEL_TEXTS[exerciseSourceLevel]?.flatMap(t => t.vocabulary?.map(v => v.word.toLowerCase()) || []) || [];
-            else if (exerciseSourceType === 'topic') {
-              const topic = LEVEL_TEXTS[exerciseSourceLevel]?.find(t => t.id === exerciseSourceTopic);
-              if (topic) candidateWords = topic.vocabulary?.map(v => v.word.toLowerCase()) || [];
-            } else if (exerciseSourceType === 'custom') {
-              const text = savedCustomTexts[Number(exerciseSourceCustomTextSel)];
-              if (text) {
-                const words = tokenizeForLang(text, contentLang)
-                  .map((word) => normalizeForMatch(word, contentLang))
-                  .filter(Boolean);
-                candidateWords = words.filter(w => allVocabMap.has(w));
-              }
-            }
-            candidateWords = Array.from(new Set(candidateWords));
+      <div className="sticky bottom-0 border-t-2 border-slate-100 bg-white/95 px-4 py-3 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95">
+        <div className="mx-auto max-w-2xl">
+          <ChunkyButton className="w-full" disabled={loading || (sel.length < 2 && candidates.length < 2)} onClick={() => onStart(sel.length >= 2 ? sel : candidates)}>
+            <span className="inline-flex items-center justify-center gap-2">
+              {loading ? <span className="h-5 w-5 animate-spin rounded-full border-[3px] border-current border-t-transparent" /> : <Play className="h-5 w-5 fill-current" />}
+              {sel.length >= 2 ? t('ex.startWith', { n: sel.length }) : t('ex.startAll')}
+            </span>
+          </ChunkyButton>
+        </div>
+      </div>
+    </div>
+  );
+}
 
+// ── lesson-style exercises (quiz, listening, true/false, match, spelling, speaking, scramble) ──
+function LessonRun({ type, words, meanings, contentLang, onExit }: { type: string; words: string[]; meanings: Record<string, string>; contentLang: any; onExit: () => void }) {
+  const { t } = useUiLang();
+  const { awardBiteXP } = useProgress();
+  const [list] = useState(() => shuffle(words).slice(0, type === 'word-match' ? 10 : 12));
+  const id = `exercise:${type}:${list.length}`;
+  const title = t(`ex.${type}.title` as UiStringKey);
+  const steps = type === 'word-match'
+    ? [{ kind: 'word-match' as StepKind, words: list.slice(0, 5) }, ...(list.length >= 7 ? [{ kind: 'word-match' as StepKind, words: list.slice(5, 10) }] : [])]
+    : [{ kind: type as StepKind, words: list }];
+  const def: BiteDef = { id, passageId: id, index: 0, kind: 'practice', date: todayKey(), estMinutes: 3, costsHearts: false, steps };
+  const text: ReadingText = { id, title, text: '', targetSeconds: 180, vocabulary: list.map((w) => ({ word: w, definition: meanings[w] })) };
+  return (
+    <BiteRunner key={id} text={text} def={def} contentLang={contentLang}
+      passageVocab={Object.fromEntries(list.map((w) => [w, { definition: meanings[w], timestamp: Date.now() }]))}
+      meanings={meanings} allVocabMap={new Map<string, string>(list.map((w) => [w, meanings[w]]))}
+      renderVocabIntro={() => null} renderRead={() => null} readResult={null} onStepScore={() => {}}
+      onComplete={(result) => awardBiteXP(result, title)} onExit={onExit} onNext={onExit} nextLabel={t('smarty.continue')} retryMisses />
+  );
+}
+
+/** Shared top bar for the two custom exercises (matches the lesson top bar). */
+function RunTop({ value, onExit }: { value: number; onExit: () => void }) {
+  const { t } = useUiLang();
+  return (
+    <div className="flex items-center gap-3 px-4 pt-4">
+      <button type="button" onClick={onExit} aria-label={t('history.close')} className="rounded-xl p-1.5 text-slate-400 hover:bg-slate-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"><X className="h-6 w-6" /></button>
+      <div className="flex-1"><ChunkyProgress value={value} /></div>
+    </div>
+  );
+}
+
+function DoneScreen({ sticker, title, body, onDone }: { sticker: StickerId; title: string; body: string; onDone: () => void }) {
+  const { t } = useUiLang();
+  return (
+    <div className="flex flex-1 flex-col items-center justify-center px-6 py-10 text-center">
+      <Sticker id={sticker} size={180} priority="hero" mode="once" />
+      <h2 className="mt-2 font-serif text-3xl font-extrabold text-zinc-900 dark:text-zinc-50">{title}</h2>
+      <p className="mt-1 font-semibold text-slate-500">{body}</p>
+      <ChunkyButton className="mt-8 w-full max-w-sm" onClick={onDone}>{t('smarty.continue')}</ChunkyButton>
+    </div>
+  );
+}
+
+// ── flashcards ──────────────────────────────────────────────────────────
+function FlashcardsRun({ words, meanings, onDone, onExit }: { words: string[]; meanings: Record<string, string>; onDone: (known: number) => void; onExit: () => void }) {
+  const { t } = useUiLang();
+  const { speechLocale } = useContentLang();
+  const [deck] = useState(() => shuffle(words).slice(0, 15));
+  const [queue, setQueue] = useState<string[]>(deck);
+  const [flipped, setFlipped] = useState(false);
+  const [known, setKnown] = useState(0);
+  const word = queue[0];
+  useEffect(() => { if (word) playWord(word, 1, speechLocale); }, [word]);
+
+  if (!word) return <div className="flex min-h-full flex-1 flex-col bg-white dark:bg-zinc-950"><DoneScreen sticker="vocab.memory-master" title={t('ex.done')} body={t('ex.flashDone', { n: known, total: deck.length })} onDone={() => onDone(known)} /></div>;
+  const answer = (gotIt: boolean) => {
+    setFlipped(false);
+    if (gotIt) { setKnown((k) => k + 1); setQueue((q) => q.slice(1)); }
+    else setQueue((q) => [...q.slice(1), q[0]]); // comes back later in the deck
+  };
+  return (
+    <div className="flex min-h-full flex-1 flex-col bg-white dark:bg-zinc-950">
+      <RunTop value={known / deck.length} onExit={onExit} />
+      <div className="mx-auto flex w-full max-w-md flex-1 flex-col px-5 pb-6 pt-8">
+        <h2 className="font-serif text-2xl font-extrabold text-zinc-900 dark:text-zinc-50">{t('ex.flashPrompt')}</h2>
+        <button type="button" onClick={() => setFlipped((f) => !f)} className="relative mt-6 min-h-[260px] flex-1 [perspective:1200px]" aria-label={t('ex.flip')}>
+          <motion.div className="absolute inset-0 [transform-style:preserve-3d]" animate={{ rotateY: flipped ? 180 : 0 }} transition={{ type: 'spring', stiffness: 260, damping: 24 }}>
+            <div className="absolute inset-0 flex flex-col items-center justify-center rounded-3xl border-2 border-zinc-900 bg-white p-6 shadow-[0_6px_0_0_#18181b] [backface-visibility:hidden] dark:border-zinc-100 dark:bg-zinc-900 dark:shadow-[0_6px_0_0_#e4e4e7]">
+              <span className="font-serif text-4xl font-extrabold text-zinc-900 dark:text-zinc-50">{word}</span>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-widest text-slate-400"><RotateCcw className="h-3.5 w-3.5" />{t('ex.tapToFlip')}</span>
+            </div>
+            <div className="dark-keep absolute inset-0 flex flex-col items-center justify-center rounded-3xl border-2 border-zinc-900 bg-zinc-900 p-6 text-center text-white shadow-[0_6px_0_0_#000] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+              <span className="text-sm font-bold uppercase tracking-widest text-zinc-400">{word}</span>
+              <span className="mt-2 font-serif text-3xl font-extrabold">{meanings[word]}</span>
+            </div>
+          </motion.div>
+        </button>
+        <button type="button" onClick={() => playWord(word, 1, speechLocale)} className="mx-auto mt-4 flex h-11 w-11 items-center justify-center rounded-2xl border-2 border-slate-200 text-zinc-700 dark:border-zinc-700 dark:text-zinc-200" aria-label={t('lesson.listen')}><Volume2 className="h-5 w-5" /></button>
+        <div className="mt-5 grid grid-cols-2 gap-3">
+          <ChunkyButton tone="secondary" onClick={() => answer(false)}>{t('ex.stillLearning')}</ChunkyButton>
+          <ChunkyButton onClick={() => answer(true)}>{t('ex.knowIt')}</ChunkyButton>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── memory match ────────────────────────────────────────────────────────
+function MemoryRun({ words, meanings, onDone, onExit }: { words: string[]; meanings: Record<string, string>; onDone: (moves: number) => void; onExit: () => void }) {
+  const { t } = useUiLang();
+  const [cards] = useState(() => shuffle(shuffle(words).slice(0, 6).flatMap((w) => [{ key: `w:${w}`, pair: w, label: w, isWord: true }, { key: `m:${w}`, pair: w, label: meanings[w], isWord: false }])));
+  const [open, setOpen] = useState<number[]>([]);
+  const [matched, setMatched] = useState<string[]>([]);
+  const [moves, setMoves] = useState(0);
+  const pairs = cards.length / 2;
+
+  const flip = (i: number) => {
+    if (open.length === 2 || open.includes(i) || matched.includes(cards[i].pair)) return;
+    const next = [...open, i];
+    setOpen(next);
+    if (next.length === 2) {
+      setMoves((m) => m + 1);
+      const [a, b] = next.map((k) => cards[k]);
+      if (a.pair === b.pair && a.isWord !== b.isWord) setTimeout(() => { setMatched((m) => [...m, a.pair]); setOpen([]); }, 450);
+      else setTimeout(() => setOpen([]), 900);
+    }
+  };
+
+  if (matched.length === pairs) return <div className="flex min-h-full flex-1 flex-col bg-white dark:bg-zinc-950"><DoneScreen sticker="vocab.memory-master" title={t('ex.done')} body={t('ex.memoryDone', { n: moves })} onDone={() => onDone(moves)} /></div>;
+  return (
+    <div className="flex min-h-full flex-1 flex-col bg-white dark:bg-zinc-950">
+      <RunTop value={matched.length / pairs} onExit={onExit} />
+      <div className="mx-auto w-full max-w-md flex-1 px-5 pb-6 pt-8">
+        <h2 className="font-serif text-2xl font-extrabold text-zinc-900 dark:text-zinc-50">{t('ex.memoryPrompt')}</h2>
+        <div className="mt-6 grid grid-cols-3 gap-2.5">
+          {cards.map((c, i) => {
+            const shown = open.includes(i) || matched.includes(c.pair);
+            const done = matched.includes(c.pair);
             return (
-              <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-                <div className="bg-white rounded-3xl w-full max-w-2xl max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
-                  <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-white shrink-0">
-                    <div>
-                      <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-3">
-                        <CheckCircle2 className="w-6 h-6 text-zinc-700" />
-                        Select Words to Practice
-                      </h2>
-                      <p className="text-sm text-slate-500 mt-1">Choose specific words, or leave all unselected to practice your full vocabulary.</p>
-                    </div>
-                    <button onClick={() => setShowExerciseWordSelector(null)} className="p-2 bg-slate-100 text-slate-500 hover:bg-rose-100 hover:text-rose-600 rounded-full transition-colors">
-                      <X className="w-6 h-6" />
-                    </button>
-                  </div>
-                  <div className="p-4 border-b border-slate-100 flex flex-col gap-3 bg-slate-50 shrink-0">
-                    <div className="flex flex-wrap gap-2 items-center">
-                      <span className="text-sm font-bold text-slate-600 mr-2">Source:</span>
-                      <select
-                        value={exerciseSourceType}
-                        onChange={(e) => setExerciseSourceType((e.target as any).value)}
-                        className="bg-white border text-sm max-w-[200px] font-bold text-slate-700 box-border border-slate-200 rounded-lg px-2 py-1.5 outline-none focus:border-zinc-700 shadow-sm transition-all"
-                      >
-                        <option value="saved">Saved Vocab</option>
-                        <option value="level">From Level Texts</option>
-                        <option value="topic">Topic Keyword</option>
-                        <option value="custom">From Custom</option>
-                      </select>
-
-                      {exerciseSourceType === 'level' && (
-                        <select
-                          value={exerciseSourceLevel}
-                          onChange={(e) => setExerciseSourceLevel((e.target as any).value)}
-                          className="bg-white border text-sm font-bold text-slate-700 box-border border-slate-200 rounded-lg px-2 py-1.5 outline-none focus:border-zinc-700 shadow-sm transition-all"
-                        >
-                          {Object.keys(LEVEL_TEXTS).map(lvl => <option key={lvl} value={lvl}>{lvl}</option>)}
-                        </select>
-                      )}
-
-                      {exerciseSourceType === 'topic' && (
-                        <>
-                          <select
-                            value={exerciseSourceLevel}
-                            onChange={(e) => setExerciseSourceLevel((e.target as any).value)}
-                            className="bg-white border text-sm font-bold text-slate-700 box-border border-slate-200 rounded-lg px-2 py-1.5 outline-none focus:border-zinc-700 shadow-sm transition-all"
-                          >
-                            {Object.keys(LEVEL_TEXTS).map(lvl => <option key={lvl} value={lvl}>{lvl}</option>)}
-                          </select>
-                          <select
-                            value={exerciseSourceTopic}
-                            onChange={(e) => setExerciseSourceTopic(e.target.value)}
-                            className="bg-white border text-sm max-w-[150px] font-bold text-slate-700 box-border border-slate-200 rounded-lg px-2 py-1.5 outline-none focus:border-zinc-700 shadow-sm transition-all truncate"
-                          >
-                            <option value="">Select Topic...</option>
-                            {LEVEL_TEXTS[exerciseSourceLevel]?.map((topic: any) => <option key={topic.id} value={topic.id}>{topic.title}</option>)}
-                          </select>
-                        </>
-                      )}
-
-                      {exerciseSourceType === 'custom' && (
-                        <select
-                          value={exerciseSourceCustomTextSel}
-                          onChange={(e) => setExerciseSourceCustomTextSel(e.target.value)}
-                          className="bg-white border text-sm max-w-[200px] font-bold text-slate-700 box-border border-slate-200 rounded-lg px-2 py-1.5 outline-none focus:border-zinc-700 shadow-sm transition-all truncate"
-                        >
-                          <option value="">Select Custom Text...</option>
-                          {savedCustomTexts.map((text, idx) => <option key={idx} value={String(idx)}>{text.slice(0, 30)}...</option>)}
-                        </select>
-                      )}
-                    </div>
-
-                    {candidateWords.length > 0 && (
-                      <div className="flex flex-wrap items-center gap-2">
-                        <button
-                          type="button"
-                          onClick={() => setSelectedVocabWords(() => [...candidateWords])}
-                          className="text-xs font-bold text-zinc-900 hover:text-black bg-zinc-100 px-3 py-1.5 rounded-lg transition-colors"
-                        >
-                          Select All
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => setSelectedVocabWords(() => [])}
-                          className="text-xs font-bold text-slate-500 hover:text-slate-700 bg-slate-100 px-3 py-1.5 rounded-lg transition-colors"
-                        >
-                          Unselect All
-                        </button>
-                        <span className="text-xs text-slate-400 font-medium ml-1">
-                          {selectedVocabWords.length} selected
-                        </span>
-                      </div>
-                    )}
-
-                    <p className="text-xs font-bold text-zinc-700 uppercase tracking-widest">
-                      {candidateWords.length} Words Available
-                    </p>
-                  </div>
-                  <div className="flex-1 overflow-y-auto p-4 custom-scrollbar bg-slate-50">
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-                      {candidateWords.map((word: string) => {
-                        const isSelected = selectedVocabWords.includes(word);
-                        return (
-                          <button
-                            key={word}
-                            onClick={() => {
-                              setSelectedVocabWords(prev => prev.includes(word) ? prev.filter(w => w !== word) : [...prev, word]);
-                            }}
-                            className={`px-3 py-2 rounded-xl text-sm font-bold text-left transition-all ${isSelected ? 'bg-zinc-900 text-white shadow-sm' : 'bg-white text-slate-700 border border-slate-200 hover:border-zinc-400 hover:shadow-sm'}`}
-                          >
-                            <div className="flex items-center gap-2">
-                              <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-white bg-zinc-700' : 'border-slate-300 bg-slate-50'}`}>
-                                {isSelected && <CheckCircle2 className="w-3 h-3 text-white" />}
-                              </div>
-                              <span className="truncate">{word}</span>
-                            </div>
-                          </button>
-                        );
-                      })}
-                    </div>
-                    {candidateWords.length === 0 && (
-                      <div className="flex flex-col items-center justify-center text-slate-500 py-10">
-                        <AlertCircle className="w-12 h-12 text-slate-300 mb-3" />
-                        <p className="font-medium text-center max-w-[250px]">No words found for the selected source.</p>
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-4 bg-white border-t border-slate-100 flex justify-end shrink-0">
-                    <button
-                      disabled={selectedVocabWords.length === 0}
-                      onClick={() => {
-                        if (selectedVocabWords.length > 0 && showExerciseWordSelector) {
-                          startAfterWordSelect(showExerciseWordSelector);
-                        }
-                      }}
-                      className="px-6 py-3 bg-zinc-900 text-white rounded-xl font-bold flex items-center gap-2 transition-all hover:bg-black hover:shadow-md disabled:opacity-50 disabled:hover:shadow-none active:scale-95"
-                    >
-                      <PlayCircle className="w-5 h-5" /> Start Exercise
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <motion.button key={c.key} type="button" onClick={() => flip(i)} initial={false} animate={{ scale: shown ? 1 : 0.98 }}
+                className={`flex aspect-[3/4] items-center justify-center rounded-2xl border-2 p-2 text-center font-bold transition-colors ${done ? 'border-emerald-500 bg-emerald-50 text-emerald-700' : shown ? 'border-zinc-900 bg-white text-zinc-900 shadow-[0_3px_0_0_#18181b] dark:border-zinc-100 dark:bg-zinc-900 dark:text-zinc-50' : 'dark-keep border-zinc-900 bg-zinc-900 shadow-[0_3px_0_0_#000]'}`}>
+                {shown ? <span className={`break-words ${c.isWord ? 'font-serif text-base font-extrabold' : 'text-sm'}`}>{c.label}</span> : <span className="font-serif text-2xl font-black text-white/30">?</span>}
+              </motion.button>
             );
-          })()}
-        </ScreenShell>
-      )}
-    </main>
+          })}
+        </div>
+        <p className="mt-4 text-center text-xs font-extrabold uppercase tracking-widest text-slate-400">{t('ex.moves', { n: moves })}</p>
+      </div>
+    </div>
   );
 }

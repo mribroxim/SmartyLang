@@ -1,4 +1,6 @@
 /** Persist mid-exercise progress so interrupted sessions can be resumed. */
+import { translateUi } from './uiStrings';
+import type { UiLang } from './uiLang';
 
 export type ExerciseSessionSnapshot = {
   type: string;
@@ -94,14 +96,14 @@ export function consumeExerciseResumeFlag(): boolean {
   return false;
 }
 
-export function sessionProgressLabel(snap: ExerciseSessionSnapshot): string {
+export function sessionProgressLabel(snap: ExerciseSessionSnapshot, lang: UiLang = 'en'): string {
   const total = snap.words.length;
   const at = Math.min((snap.index || 0) + 1, total);
   if (snap.type === 'word-match' || snap.type === 'memory-match') {
-    return `${snap.score || 0} / ${total} pairs`;
+    return translateUi(lang, 'site.session.pairs', { n: snap.score || 0, total });
   }
   if (snap.type === 'flashcards') {
-    return `Card ${at} of ${total}`;
+    return translateUi(lang, 'site.session.card', { n: at, total });
   }
-  return `${at} of ${total}`;
+  return translateUi(lang, 'site.session.progress', { n: at, total });
 }

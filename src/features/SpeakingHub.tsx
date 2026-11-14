@@ -6,10 +6,9 @@ import { ScreenShell, HubRow, seGrid2 } from '../components/ScreenShell';
 
 const SpeakingPractice = lazy(() => import('./SpeakingPractice').then(m => ({ default: m.SpeakingPractice })));
 const Shadowing        = lazy(() => import('./Shadowing').then(m => ({ default: m.Shadowing })));
-const IELTSSpeaking    = lazy(() => import('./IELTSSpeaking').then(m => ({ default: m.IELTSSpeaking })));
 const SpeakingBuddy    = lazy(() => import('./SpeakingBuddy').then(m => ({ default: m.SpeakingBuddy })));
 
-type SpeakingMode = 'hub' | 'general' | 'shadowing' | 'ielts' | 'buddy';
+type SpeakingMode = 'hub' | 'general' | 'shadowing' | 'buddy';
 
 function Spinner() {
   return (
@@ -20,7 +19,7 @@ function Spinner() {
 }
 
 function parseMode(raw?: string): SpeakingMode {
-  if (raw === 'general' || raw === 'shadowing' || raw === 'ielts' || raw === 'buddy') return raw;
+  if (raw === 'general' || raw === 'shadowing' || raw === 'buddy') return raw;
   return 'hub';
 }
 
@@ -85,14 +84,6 @@ export function SpeakingHub({
     );
   }
 
-  if (mode === 'ielts') {
-    return (
-      <Suspense fallback={<Spinner />}>
-        <IELTSSpeaking onBack={() => (onIeltsBack ? onIeltsBack() : setMode('hub'))} />
-      </Suspense>
-    );
-  }
-
   if (mode === 'buddy') {
     return (
       <Suspense fallback={<Spinner />}>
@@ -102,11 +93,12 @@ export function SpeakingHub({
   }
 
   return (
-    <ScreenShell title={t('speaking.title')} subtitle={t('speaking.subtitle')}>
+    <ScreenShell title={t('speaking.title')} subtitle={t('speaking.subtitle')} stickers={['learn.chatterbox', 'speak.conversation-partner', 'speak.tongue-twister']}>
       <div className={seGrid2}>
         <HubRow
           icon={<Mic className="w-6 h-6" />}
           iconClass="bg-slate-100 text-slate-700"
+          sticker="speak.loud-and-clear"
           title={t('speaking.general.title')}
           desc={t('speaking.general.desc')}
           onClick={() => setMode('general')}
@@ -115,6 +107,7 @@ export function SpeakingHub({
           <HubRow
             icon={<Headphones className="w-6 h-6" />}
             iconClass="bg-sky-50 text-sky-700"
+            sticker="speak.voice-waves"
             title={t('speaking.shadow.title')}
             desc={t('speaking.shadow.desc')}
             onClick={() => setMode('shadowing')}
@@ -123,8 +116,9 @@ export function SpeakingHub({
         <HubRow
           icon={<MessageCircle className="w-6 h-6" />}
           iconClass="bg-violet-50 text-violet-700"
-          title="Speaking buddy"
-          desc="Short conversations with AI — speak, listen, get a quiet correction."
+          sticker="speak.conversation-partner"
+          title={t("site.speakingbuddy.speaking_buddy_cf9c4a")}
+          desc={t("site.speakinghub.short_conversations_with_ai_speak_93a156")}
           onClick={() => setMode('buddy')}
         />
       </div>

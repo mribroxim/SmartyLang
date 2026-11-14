@@ -6,17 +6,14 @@ import { SPEAKING_TOPICS_BY_LEVEL as _DEFAULT_SPEAKING, SPEAKING_LEVELS as PRACT
 import { useCMSContent } from '../lib/useCMSContent';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
+import { Sticker } from '../components/stickers/Sticker';
 import { checkSpeaking, AiExaminerError, type AiCheckReportData } from '../lib/aiExaminer';
 import { AiCheckReport, AiCheckButton, AiCheckError } from '../components/AiCheckReport';
 import { recordCompletion } from '../lib/completions';
 import { logActivity } from '../lib/activity-tracker';
 import { activityLangStamp, matchesContentLang, sessionsForLang } from '../lib/activityMeta';
 import { playWord as sharedPlayWord } from '../lib/speech';
-import {
-  saveSpeakingSession,
-  loadSpeakingSession,
-  clearSpeakingSession,
-} from '../lib/midSession';
+import { saveSpeakingSession, loadSpeakingSession } from '../lib/midSession';
 import { bumpWeeklyGoal } from '../lib/weeklyGoals';
 import { ScreenShell, HubRow } from '../components/ScreenShell';
 import { LevelCard, LevelCardGrid, LEVEL_THEMES } from '../components/LevelCards';
@@ -145,9 +142,9 @@ export function SpeakingPractice({
     const id = `custom__${Date.now()}`;
     const session: CustomSession = {
       id,
-      title:     formTitle.trim()  || 'Untitled Session',
+      title:     formTitle.trim()  || t('learning.untitledSession'),
       prompt:    formPrompt.trim() || formTitle.trim(),
-      createdAt: new Date().toLocaleString(),
+      createdAt: new Date().toLocaleString(uiLang),
     };
     const updated = [session, ...customSessions];
     setCustomSessions(updated);
@@ -179,7 +176,7 @@ export function SpeakingPractice({
       mr.onstop = async () => {
         stream.getTracks().forEach(t => t.stop());
         const blob = new Blob(chunksRef.current, { type: 'audio/webm' });
-        const date = new Date().toLocaleString();
+        const date = new Date().toLocaleString(uiLang);
         const existing: Recording[] = (JSON.parse(localStorage.getItem('speaking_index_v2') || '{}')[key]) || [];
         const blobIdx = existing.length;
         try { await set(`speak_blob_${key}_${blobIdx}`, blob); } catch {}
@@ -263,7 +260,7 @@ export function SpeakingPractice({
         } catch {}
       }
     } catch {
-      alert('Could not access microphone. Please allow microphone access and try again.');
+      alert(t("learning.could.not.access.microphone.please.allow.microphone.access.aeb091"));
     }
   };
 
@@ -365,7 +362,7 @@ export function SpeakingPractice({
       });
       logActivity({ type: 'ai_check_speaking', title: 'Speaking practice', score: report.final.overallScore, level: selectedLevel });
     } catch (e: any) {
-      setCheckError(e instanceof AiExaminerError ? e.message : (e?.message || 'Check failed'));
+      setCheckError(e instanceof AiExaminerError ? e.message : (e?.message || t('learning.checkFailed')));
     } finally {
       setChecking(false);
     }
@@ -396,32 +393,32 @@ export function SpeakingPractice({
               if (isCustom) { setActiveCustomId(null); setView('custom'); }
               else setView('topics');
             }}
-            className="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-zinc-900 mb-8 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm w-fit transition-colors"
+            className="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-zinc-900 mb-8 bg-white px-4 py-2 rounded-2xl border-2 border-slate-200 w-fit transition-colors shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]"
           >
             <ArrowLeft className="w-4 h-4" />
-            {isCustom ? 'Back to Custom Sessions' : 'Back to Topics'}
+            {isCustom ? t("learning.back.to.custom.sessions.bdafda") : t("action.backToTopics")}
           </button>
 
           {/* Badge */}
           <div className="flex items-center gap-2 mb-6">
             {isCustom ? (
               <>
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-zinc-900 text-white">Custom</span>
+                <span className="text-xs font-bold px-3 py-1 rounded-full bg-zinc-900 text-white">{t("learning.custom.081ae3")}</span>
                 {customSession?.title && (
                   <span className="text-sm font-bold text-slate-700 truncate max-w-xs">{customSession.title}</span>
                 )}
               </>
             ) : (
               <>
-                <span className={`text-xs font-bold px-3 py-1 rounded-full ${theme.badge}`}>{selectedLevel}</span>
+                <span className={`text-xs font-bold px-3 py-1 rounded-full ${theme.badge}`}>{tLevel(selectedLevel)}</span>
                 <span className="text-xs text-slate-400 font-bold">#{topicIdx! + 1}</span>
               </>
             )}
           </div>
 
           {/* Prompt */}
-          <div className="bg-white border border-slate-200 rounded-3xl p-8 mb-6 shadow-sm">
-            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Speaking Prompt</p>
+          <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 mb-6 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
+            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">{t("learning.speaking.prompt.674c8f")}</p>
             <p className="text-slate-800 text-xl font-serif leading-relaxed">
               {prompt.split(' ').map((word, i) => {
                 const cleanWord = word.replace(/[^\p{L}\p{M}'’-]/gu, '').toLowerCase();
@@ -447,43 +444,42 @@ export function SpeakingPractice({
                 );
               })}
             </p>
-            <p className="text-[10px] text-slate-400 mt-3 italic">Click any word to translate, listen, or save.</p>
+            <p className="text-[10px] text-slate-400 mt-3 italic">{t("learning.click.any.word.to.translate.listen.or.save.eba9a3")}</p>
           </div>
 
           {/* Recorder */}
-          <div className="bg-white border border-slate-200 rounded-3xl p-10 mb-6 shadow-sm flex flex-col items-center gap-6">
+          <div className="bg-white border-2 border-slate-200 rounded-3xl p-10 mb-6 flex flex-col items-center gap-6 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
             {isRecording ? (
               <>
                 <div className="flex items-center gap-3 text-rose-600 font-bold text-lg">
-                  <span className="w-3 h-3 bg-rose-500 rounded-full animate-pulse" />
-                  Recording… {fmt(recordingTime)}
+                  <span className="w-3 h-3 bg-rose-500 rounded-full animate-pulse" />{t("learning.recording.72f9eb")}{' '}{fmt(recordingTime)}
                 </div>
                 <button onClick={stopRecording}
                   className="w-24 h-24 bg-rose-500 hover:bg-rose-600 rounded-full flex items-center justify-center shadow-xl shadow-rose-200/60 transition-colors">
                   <Square className="w-9 h-9 text-white fill-white" />
                 </button>
-                <p className="text-slate-400 text-sm">🔴 Stops automatically when you pause.</p>
+                <p className="text-slate-400 text-sm">{t("learning.stops.automatically.when.you.pause.d1339f")}</p>
               </>
             ) : (
               <>
-                <p className="text-slate-500 font-medium">Tap the mic to start recording</p>
+                <p className="text-slate-500 font-medium">{t("learning.tap.the.mic.to.start.recording.9a2de0")}</p>
                 <button onClick={startRecording}
                   className="w-24 h-24 bg-zinc-900 hover:bg-black rounded-full flex items-center justify-center shadow-xl shadow-zinc-300/50 transition-colors">
                   <Mic className="w-10 h-10 text-white" />
                 </button>
-                <p className="text-slate-400 text-sm">Tap to record — stops when you stop talking.</p>
+                <p className="text-slate-400 text-sm">{t("learning.tap.to.record.stops.when.you.stop.talking.34cefa")}</p>
               </>
             )}
           </div>
 
           {/* Live transcript + AI Check */}
           {(liveTranscript || (!isRecording && liveTranscript === '' && transcriptDraft)) && (
-            <div className="bg-white border border-slate-200 rounded-3xl p-6 mb-6 shadow-sm">
+            <div className="bg-white border-2 border-slate-200 rounded-3xl p-6 mb-6 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
                   <FileText className="w-4 h-4 text-zinc-500" />
                   <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                    {isRecording ? 'Live Transcript' : 'Your Transcript'}
+                    {isRecording ? t("learning.live.transcript.b5c2d1") : t("learning.your.transcript.3dd480")}
                   </p>
                 </div>
                 {!isRecording && liveTranscript && (
@@ -491,13 +487,13 @@ export function SpeakingPractice({
                     <button
                       onClick={() => { setTranscriptDraft(liveTranscript); setShowTranscriptEditor(true); }}
                       className="text-[10px] font-bold text-zinc-500 hover:text-zinc-900 uppercase tracking-wider"
-                    >Edit</button>
+                    >{t("learning.edit.530164")}</button>
                     <AiCheckButton onClick={() => runSpeakingCheck(key, prompt)} loading={checking} />
                   </div>
                 )}
               </div>
               <p className="text-slate-700 leading-relaxed font-serif text-base whitespace-pre-wrap">
-                {liveTranscript || transcriptDraft || <span className="text-slate-400 italic text-sm">No speech detected yet…</span>}
+                {liveTranscript || transcriptDraft || <span className="text-slate-400 italic text-sm">{t("learning.no.speech.detected.yet.c9f03d")}</span>}
               </p>
               {checkError && <div className="mt-3"><AiCheckError message={checkError} /></div>}
               {checkReport && <div className="mt-4"><AiCheckReport report={checkReport} compact /></div>}
@@ -505,32 +501,32 @@ export function SpeakingPractice({
           )}
 
           {showTranscriptEditor && (
-            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/50 backdrop-blur-sm" onClick={() => setShowTranscriptEditor(false)}>
-              <div className="bg-white dark:bg-zinc-900 rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]" onClick={e => e.stopPropagation()}>
+            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setShowTranscriptEditor(false)}>
+              <div className="bg-white dark:bg-zinc-900 rounded-3xl w-full max-w-2xl overflow-hidden flex flex-col max-h-[80vh] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]" onClick={e => e.stopPropagation()}>
                 <div className="px-6 py-5 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between shrink-0">
-                  <h2 className="font-bold text-zinc-900 dark:text-zinc-50 text-lg">Edit Transcript</h2>
+                  <h2 className="font-serif font-extrabold text-zinc-900 dark:text-zinc-50 text-lg">{t("learning.edit.transcript.f1a89a")}</h2>
                   <button onClick={() => setShowTranscriptEditor(false)} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
                     <X className="w-5 h-5" />
                   </button>
                 </div>
                 <div className="p-6 flex-1 overflow-y-auto">
-                  <p className="text-xs text-slate-500 dark:text-zinc-400 mb-3">Fix any mistakes the speech recognizer made.</p>
+                  <p className="text-xs text-slate-500 dark:text-zinc-400 mb-3">{t("learning.fix.any.mistakes.the.speech.recognizer.made.e23a01")}</p>
                   <textarea
                     autoFocus
                     value={transcriptDraft}
                     onChange={(e) => setTranscriptDraft(e.target.value)}
-                    className="w-full h-64 p-4 bg-slate-50 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 rounded-2xl text-base font-serif leading-relaxed resize-none outline-none focus:ring-2 focus:ring-zinc-700"
+                    className="w-full h-64 p-4 bg-slate-50 dark:bg-zinc-800 border-2 border-slate-200 dark:border-zinc-700 rounded-2xl text-base font-serif leading-relaxed resize-none outline-none focus:ring-2 focus:ring-zinc-700"
                   />
                 </div>
                 <div className="px-6 py-3 border-t border-zinc-100 dark:border-zinc-800 flex gap-2 shrink-0">
                   <button
                     onClick={() => setShowTranscriptEditor(false)}
                     className="flex-1 px-4 py-2 text-sm font-bold text-slate-600 bg-slate-100 dark:bg-zinc-800 dark:text-zinc-300 hover:bg-slate-200 dark:hover:bg-zinc-700 rounded-xl transition-colors"
-                  >Cancel</button>
+                  >{t("action.cancel")}</button>
                   <button
                     onClick={() => { setLiveTranscript(transcriptDraft); setShowTranscriptEditor(false); }}
                     className="flex-1 px-4 py-2 text-sm font-bold bg-zinc-900 text-white rounded-xl hover:bg-black transition-colors"
-                  >Save Transcript</button>
+                  >{t("learning.save.transcript.6fe7a4")}</button>
                 </div>
               </div>
             </div>
@@ -539,12 +535,12 @@ export function SpeakingPractice({
           {/* Saved recordings – newest first (metas[0] is newest) */}
           {metas.length > 0 && (
             <div>
-              <h2 className="text-base font-bold text-slate-900 mb-3">Your Recordings</h2>
+              <h2 className="text-base font-bold text-slate-900 mb-3">{t("learning.your.recordings.f5844b")}</h2>
               <div className="space-y-2">
                 {metas.map((rec, i) => (
-                  <div key={i} className="bg-white border border-slate-200 rounded-2xl p-4 flex items-center justify-between gap-4 shadow-sm">
+                  <div key={i} className="bg-white border-2 border-slate-200 rounded-2xl p-4 flex items-center justify-between gap-4 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
                     <div>
-                      <p className="font-semibold text-slate-800 text-sm">Recording {metas.length - i}</p>
+                      <p className="font-semibold text-slate-800 text-sm">{t("common.recording")}{' '}{metas.length - i}</p>
                       <p className="text-xs text-slate-400">{rec.date}</p>
                     </div>
                     <div className="flex items-center gap-2">
@@ -583,7 +579,7 @@ export function SpeakingPractice({
           <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200">
             <div>
               <button onClick={() => setView('levels')}
-                className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-4 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm w-fit transition-colors">
+                className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-4 bg-white px-4 py-2 rounded-2xl border-2 border-slate-200 w-fit transition-colors shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
                 <ArrowLeft className="w-4 h-4" /> {t('action.backToLevels')}
               </button>
               <h1 className="text-[22px] font-serif font-black text-slate-900 tracking-tight">
@@ -593,25 +589,18 @@ export function SpeakingPractice({
             </div>
             <button
               onClick={() => setShowNewForm(true)}
-              className="flex items-center gap-2 px-5 py-3 bg-zinc-900 text-white rounded-2xl font-bold hover:bg-black transition-colors shadow-sm shrink-0"
+              className="flex items-center gap-2 px-5 py-3 bg-zinc-900 text-white rounded-2xl font-bold hover:bg-black transition-colors shrink-0 shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none"
             >
-              <Plus className="w-4 h-4" /> New Session
-            </button>
+              <Plus className="w-4 h-4" />{' '}{t("speaking.newSession")}</button>
           </header>
 
           {customSessions.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-24 text-center">
-              <div className="w-20 h-20 bg-zinc-100 rounded-3xl flex items-center justify-center mb-6">
-                <Mic className="w-10 h-10 text-zinc-400" />
-              </div>
-              <h2 className="text-2xl font-serif font-black text-zinc-900 mb-3">No custom sessions yet</h2>
-              <p className="text-slate-500 mb-8 max-w-sm">
-                Create a speaking prompt, record yourself, and come back to practice it again any time.
-              </p>
+              <div className="mb-4"><Sticker id="state2.under-construction" size={140} /></div>
+              <h2 className="text-2xl font-serif font-black text-zinc-900 mb-3">{t("learning.no.custom.sessions.yet.e65211")}</h2>
+              <p className="text-slate-500 mb-8 max-w-sm">{t("learning.create.a.speaking.prompt.record.yourself.and.come.back.to.680390")}</p>
               <button onClick={() => setShowNewForm(true)}
-                className="px-6 py-3 bg-zinc-900 text-white font-bold rounded-xl hover:bg-black transition-colors">
-                Create First Session
-              </button>
+                className="px-6 py-3 bg-zinc-900 text-white font-bold rounded-2xl hover:bg-black transition-colors shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none">{t("speaking.createFirstSession")}</button>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -619,13 +608,13 @@ export function SpeakingPractice({
                 const recCount = recordingsForLang(recordings[session.id]).length;
                 return (
                   <div key={session.id}
-                    className="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl hover:border-zinc-400 hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+                    className="bg-white p-6 md:p-8 rounded-3xl border-2 border-slate-200 hover:shadow-xl hover:border-zinc-400 hover:-translate-y-1 transition-all duration-300 group flex flex-col shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-zinc-900 text-white">Custom</span>
+                        <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-zinc-900 text-white">{t("learning.custom.081ae3")}</span>
                         {recCount > 0 && (
                           <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-zinc-100 text-zinc-700">
-                            {recCount} recording{recCount !== 1 ? 's' : ''}
+                            {t('learning.recordingCount', { n: recCount })}
                           </span>
                         )}
                       </div>
@@ -635,15 +624,14 @@ export function SpeakingPractice({
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>
                     </div>
-                    <h3 className="font-bold text-slate-900 text-lg mb-2">{session.title}</h3>
+                    <h3 className="font-serif font-extrabold text-slate-900 text-lg mb-2">{session.title}</h3>
                     <p className="text-slate-500 text-sm line-clamp-3 flex-1 mb-4">{session.prompt}</p>
                     <div className="flex items-center justify-between pt-4 border-t border-slate-100">
                       <span className="text-xs text-slate-400">{session.createdAt}</span>
                       <button
                         onClick={() => { setActiveCustomId(session.id); setTopicIdx(null); setView('recording'); }}
                         className="flex items-center gap-2 px-4 py-2 bg-zinc-900 text-white font-bold rounded-xl text-sm hover:bg-black transition-colors">
-                        <Mic className="w-3.5 h-3.5" /> Practice
-                      </button>
+                        <Mic className="w-3.5 h-3.5" />{' '}{t("home.preview.practice")}</button>
                     </div>
                   </div>
                 );
@@ -654,41 +642,37 @@ export function SpeakingPractice({
 
         {/* New Session Modal */}
         {showNewForm && (
-          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-6">
-            <div className="bg-white rounded-3xl p-8 max-w-lg w-full shadow-2xl">
-              <h3 className="text-2xl font-bold text-slate-800 mb-6">New Custom Session</h3>
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-zinc-900/55 backdrop-blur-[2px]">
+            <div className="bg-white rounded-3xl p-8 max-w-lg w-full border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
+              <h3 className="font-serif text-2xl font-extrabold text-slate-800 mb-6">{t("learning.new.custom.session.0e9d01")}</h3>
               <div className="space-y-4">
                 <div>
-                  <label className="text-sm font-bold text-slate-600 mb-2 block">Title</label>
+                  <label className="text-sm font-bold text-slate-600 mb-2 block">{t("common.title")}</label>
                   <input
                     autoFocus
                     value={formTitle}
                     onChange={e => setFormTitle(e.target.value)}
                     onKeyDown={e => e.key === 'Enter' && createSession()}
-                    placeholder="My Custom Topic"
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-700"
+                    placeholder={t("learning.my.custom.topic.17765b")}
+                    className="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-700"
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-bold text-slate-600 mb-2 block">Speaking Prompt</label>
+                  <label className="text-sm font-bold text-slate-600 mb-2 block">{t("learning.speaking.prompt.674c8f")}</label>
                   <textarea
                     value={formPrompt}
                     onChange={e => setFormPrompt(e.target.value)}
-                    placeholder="Enter your speaking prompt here…"
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-700 min-h-[160px] resize-none"
+                    placeholder={t("learning.enter.your.speaking.prompt.here.2f6806")}
+                    className="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-700 min-h-[160px] resize-none"
                   />
                 </div>
               </div>
               <div className="flex gap-3 mt-6">
                 <button
                   onClick={() => { setShowNewForm(false); setFormTitle(''); setFormPrompt(''); }}
-                  className="flex-1 py-3 border border-slate-200 rounded-xl font-bold text-slate-600 hover:bg-slate-50">
-                  Cancel
-                </button>
+                  className="flex-1 py-3 border-2 border-slate-200 rounded-2xl font-bold text-slate-600 hover:bg-slate-50">{t("action.cancel")}</button>
                 <button onClick={createSession}
-                  className="flex-1 py-3 bg-zinc-900 text-white rounded-xl font-bold hover:bg-black">
-                  Start Practice
-                </button>
+                  className="flex-1 py-3 bg-zinc-900 text-white rounded-2xl font-bold hover:bg-black shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75">{t("learning.start.practice.ae1bea")}</button>
               </div>
             </div>
           </div>
@@ -715,7 +699,7 @@ export function SpeakingPractice({
           <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200">
             <div>
               <button onClick={() => { setSearch(''); setView('levels'); }}
-                className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-4 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm w-fit transition-colors">
+                className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-4 bg-white px-4 py-2 rounded-2xl border-2 border-slate-200 w-fit transition-colors shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
                 <ArrowLeft className="w-4 h-4" /> {t('action.backToLevels')}
               </button>
               <h1 className="text-[22px] font-serif font-black text-slate-900 tracking-tight">
@@ -723,7 +707,7 @@ export function SpeakingPractice({
                 <span className="font-sans text-2xl text-zinc-900 tracking-normal font-medium">{t('library.topics')}</span>
               </h1>
             </div>
-            <div className="bg-white px-5 py-3 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center shrink-0">
+            <div className="bg-white px-5 py-3 rounded-2xl border-2 border-slate-200 flex flex-col items-center shrink-0 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
               <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">{t('speaking.topicsRecorded')}</span>
               <div className="flex items-baseline gap-1.5">
                 <span className="text-2xl font-black text-zinc-900">{recordedCount}</span>
@@ -756,7 +740,7 @@ export function SpeakingPractice({
                 <div>
                   <p className="text-xs font-bold text-rose-600 uppercase tracking-wider mb-1">{t('library.continueBanner')}</p>
                   <p className="font-bold text-slate-800 text-sm line-clamp-1">{clip(TOPICS_BY_LEVEL[selectedLevel][resumeIdx])}</p>
-                  {snapIdx >= 0 && <p className="text-xs text-rose-600 mt-0.5">Unfinished session</p>}
+                  {snapIdx >= 0 && <p className="text-xs text-rose-600 mt-0.5">{t("learning.unfinished.session.4bad19")}</p>}
                 </div>
                 <button onClick={() => { setTopicIdx(resumeIdx); setView('recording'); }}
                   className="px-4 py-2 bg-rose-600 text-white font-bold rounded-xl text-sm hover:bg-rose-700 transition-colors shrink-0">
@@ -776,14 +760,14 @@ export function SpeakingPractice({
                 <button
                   key={realIdx}
                   onClick={() => { setTopicIdx(realIdx); setView('recording'); }}
-                  className="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-zinc-400 hover:-translate-y-1 transition-all duration-300 text-left group min-h-[220px]"
+                  className="bg-white p-6 md:p-8 rounded-3xl border-2 border-slate-200 flex flex-col justify-between hover:shadow-xl hover:border-zinc-400 hover:-translate-y-1 transition-all duration-300 text-left group min-h-[220px] shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]"
                 >
                   <div>
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-xs font-bold text-slate-300">#{realIdx + 1}</span>
                       {recCount > 0 && (
                         <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${theme.badge}`}>
-                          {recCount} recording{recCount !== 1 ? 's' : ''}
+                          {t('learning.recordingCount', { n: recCount })}
                         </span>
                       )}
                     </div>
@@ -795,7 +779,7 @@ export function SpeakingPractice({
                     <div>
                       <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-0.5">{t('library.status')}</span>
                       <span className="text-sm font-bold text-slate-400">
-                        {recCount > 0 ? `${recCount} recording${recCount !== 1 ? 's' : ''}` : 'Unrecorded'}
+                        {recCount > 0 ? t('learning.recordingCount', { n: recCount }) : t("learning.unrecorded.79af6c")}
                       </span>
                     </div>
                     <div className="flex items-center gap-2 text-zinc-900 font-bold opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all">
@@ -813,8 +797,8 @@ export function SpeakingPractice({
           {filtered.length === 0 && (
             <p className="text-center text-slate-400 py-16">
               {topics.length === 0
-                ? 'No speaking materials yet for this language. Ask a content manager to add topics.'
-                : 'No topics match your search.'}
+                ? t("learning.no.speaking.materials.yet.for.this.language.ask.a.content.f07371")
+                : t("writing.searchEmpty")}
             </p>
           )}
 
@@ -846,7 +830,7 @@ export function SpeakingPractice({
      LEVELS SCREEN
   ══════════════════════════════════════════════════════════════ */
   return (
-    <ScreenShell size="wide" title={t('speaking.general.title')} subtitle={t('speaking.levelSubtitle')}>
+    <ScreenShell size="wide" stickers={['speak.loud-and-clear', 'speak.tongue-twister']} title={t('speaking.general.title')} subtitle={t('speaking.levelSubtitle')}>
         <div className="flex flex-col gap-3">
           <HubRow
             dark

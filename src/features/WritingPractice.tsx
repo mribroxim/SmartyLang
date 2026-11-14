@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { playWord as sharedPlayWord } from '../lib/speech';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
+import { EmptyState } from '../components/feedback/EmptyState';
 import { activityLangStamp } from '../lib/activityMeta';
-import { PenLine, ArrowLeft, Hash, ChevronRight, Search, Plus, Save, Sparkles, FileText, Trash2, Eye, X, BookmarkPlus, Bookmark, Image as ImageIcon, Upload } from 'lucide-react';
+import { PenLine, ArrowLeft, Hash, ChevronRight, Search, Plus, Save, Sparkles, FileText, Trash2, Eye, X, BookmarkPlus, Image as ImageIcon, Upload } from 'lucide-react';
 import { TOPICS_BY_LEVEL as _DEFAULT_TOPICS, PRACTICE_LEVELS, PracticeLevel } from '../data/practiceTopics';
 import { useCMSContent } from '../lib/useCMSContent';
 import { WordPopover, sentenceAroundWord } from '../components/WordPopover';
-import { useCustomSessions, type CustomSession } from '../hooks/useCustomSessions';
+import { useCustomSessions } from '../hooks/useCustomSessions';
 import { resizeImage, dataUrlBytes } from '../lib/imageResize';
 import { ScreenShell, HubRow } from '../components/ScreenShell';
 import { LevelCard, LevelCardGrid, LEVEL_THEMES } from '../components/LevelCards';
@@ -129,7 +130,7 @@ export function WritingPractice({
     const key = `${selectedLevel}__${topicIdx}`;
     const id = `essay_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
     const title = customTitle?.trim() || (topicIdx === -1
-      ? `Custom essay - ${new Date().toLocaleString()}`
+      ? t('learning.customEssayDate', { date: new Date().toLocaleString(uiLang) })
       : `Essay #${(savedEssaysList[key]?.length || 0) + 1}`);
     const entry: SavedEssay = {
       id,
@@ -139,7 +140,7 @@ export function WritingPractice({
       title,
       content,
       wordCount: content.trim().split(/\s+/).filter(Boolean).length,
-      savedAt: new Date().toLocaleString(),
+      savedAt: new Date().toLocaleString(uiLang),
       createdAt: Date.now(),
       ...activityLangStamp(contentLang),
     };
@@ -151,7 +152,7 @@ export function WritingPractice({
     setSaveToast('Essay saved!');
     setTimeout(() => setSaveToast(null), 2000);
     return id;
-  }, [content, topicIdx, selectedLevel, savedEssaysList, contentLang]);
+  }, [content, topicIdx, selectedLevel, savedEssaysList, contentLang, t, uiLang]);
 
   const runWritingCheck = useCallback(async () => {
     if (!content.trim() || checking || topicIdx === null) return;
@@ -187,11 +188,11 @@ export function WritingPractice({
       });
       logActivity({ type: 'ai_check_writing', title: 'Writing practice', score: report.final.overallScore, level: selectedLevel });
     } catch (e: any) {
-      setCheckError(e instanceof AiExaminerError ? e.message : (e?.message || 'Check failed'));
+      setCheckError(e instanceof AiExaminerError ? e.message : (e?.message || t('learning.checkFailed')));
     } finally {
       setChecking(false);
     }
-  }, [content, checking, topicIdx, saveEssay, customTopicText, selectedLevel, startingLevel, uiLang, contentLang, TOPICS_BY_LEVEL]);
+  }, [content, checking, topicIdx, saveEssay, customTopicText, selectedLevel, startingLevel, uiLang, contentLang, TOPICS_BY_LEVEL, t]);
 
   const deleteSavedEssay = useCallback((key: string, id: string) => {
     setSavedEssaysList(prev => {
@@ -217,7 +218,7 @@ export function WritingPractice({
   const persist = useCallback((text: string, level: PracticeLevel, idx: number) => {
     const key       = essayKey(level, idx);
     const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
-    const savedAt   = new Date().toLocaleTimeString();
+    const savedAt   = new Date().toLocaleTimeString(uiLang);
     const entry: Essay = {
       topicId: key, level, topicIdx: idx, content: text, wordCount, savedAt,
       ...activityLangStamp(contentLang),
@@ -228,7 +229,7 @@ export function WritingPractice({
       return updated;
     });
     setLastSaved(savedAt);
-  }, [contentLang]);
+  }, [contentLang, uiLang]);
 
   const handleChange = (text: string) => {
     setContent(text);
@@ -262,28 +263,28 @@ export function WritingPractice({
               if (topicIdx !== -1) persist(content, selectedLevel, topicIdx);
               setView('topics');
             }}
-            className="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-zinc-900 transition-colors shrink-0 bg-slate-50 hover:bg-slate-100 px-3 py-2 rounded-xl border border-slate-200"
+            className="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-zinc-900 transition-colors shrink-0 bg-slate-50 hover:bg-slate-100 px-3 py-2 rounded-2xl border-2 border-slate-200"
           >
-            <ArrowLeft className="w-4 h-4" /> <span className="hidden sm:inline">Topics</span>
+            <ArrowLeft className="w-4 h-4" /> <span className="hidden sm:inline">{t("library.topics")}</span>
           </button>
           <span className={`text-xs font-bold px-2.5 py-1 rounded-full hidden lg:inline ${theme.badge}`}>
-            {topicIdx === -1 ? `${selectedLevel} · Custom` : `${selectedLevel} · #${topicIdx + 1}`}
+            {topicIdx === -1 ? t("learning.v0.custom.886f45", { v0: tLevel(selectedLevel) }) : `${tLevel(selectedLevel)} · #${topicIdx + 1}`}
           </span>
           <div className="flex-1" />
           <div className="hidden md:flex items-center gap-3 text-xs text-slate-400 shrink-0">
-            <span className="flex items-center gap-1 font-medium"><Hash className="w-3 h-3" />{wordCount} words</span>
-            {lastSaved && <span className="text-emerald-500 font-medium">Auto-saved {lastSaved}</span>}
+            <span className="flex items-center gap-1 font-medium"><Hash className="w-3 h-3" />{wordCount}{' '}{t("common.words")}</span>
+            {lastSaved && <span className="text-emerald-500 font-medium">{t("learning.auto.saved.dd45bf")}{' '}{lastSaved}</span>}
           </div>
 
           {/* My Essays */}
           {savedListForTopic.length > 0 && (
             <button
               onClick={() => setShowSavedList(true)}
-              className="flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-zinc-900 transition-colors bg-slate-50 hover:bg-slate-100 px-3 py-2 rounded-xl border border-slate-200 shrink-0"
-              title="My saved essays for this topic"
+              className="flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-zinc-900 transition-colors bg-slate-50 hover:bg-slate-100 px-3 py-2 rounded-2xl border-2 border-slate-200 shrink-0"
+              title={t("learning.my.saved.essays.for.this.topic.566460")}
             >
               <FileText className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">My Essays</span>
+              <span className="hidden sm:inline">{t("learning.my.essays.c3fe98")}</span>
               <span className="bg-zinc-900 text-white text-[10px] font-bold rounded-full px-1.5 min-w-[18px] text-center">{savedListForTopic.length}</span>
             </button>
           )}
@@ -297,10 +298,10 @@ export function WritingPractice({
             }}
             disabled={!content.trim()}
             className="flex items-center gap-1.5 text-xs font-bold text-white bg-zinc-900 hover:bg-black disabled:opacity-40 disabled:cursor-not-allowed transition-colors px-3 py-2 rounded-xl shadow-md shrink-0"
-            title="Save this essay and start a new one"
+            title={t("learning.save.this.essay.and.start.a.new.one.deac5a")}
           >
             <Save className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Save</span>
+            <span className="hidden sm:inline">{t("learning.save.efc007")}</span>
           </button>
           <AiCheckButton onClick={runWritingCheck} loading={checking} disabled={!content.trim()} />
         </div>
@@ -316,7 +317,7 @@ export function WritingPractice({
         <div className="flex-1 overflow-y-auto">
           <div className="max-w-3xl mx-auto px-4 md:px-8 py-8 md:py-12">
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-10">
-              <p className="text-[10px] font-bold text-amber-600 uppercase tracking-widest mb-2">{topicIdx === -1 ? `Custom Topic: ${customTitle || 'Untitled'}` : `Writing Prompt #${topicIdx + 1}`}</p>
+              <p className="text-[10px] font-bold text-amber-600 uppercase tracking-widest mb-2">{topicIdx === -1 ? t("learning.custom.topic.v0.2dd39b", { v0: customTitle || t('learning.untitled') }) : t("learning.writing.prompt.v0.9334e6", { v0: topicIdx + 1 })}</p>
               <p className="text-slate-700 leading-relaxed font-serif text-lg">
                 {prompt.split(' ').map((word, i) => {
                   const cleanWord = word.replace(/[^\p{L}\p{M}'’-]/gu, '').toLowerCase();
@@ -342,15 +343,14 @@ export function WritingPractice({
                   );
                 })}
               </p>
-              <p className="text-[10px] text-amber-500 mt-2 italic">Click any word to translate, listen, or save.</p>
+              <p className="text-[10px] text-amber-500 mt-2 italic">{t("learning.click.any.word.to.translate.listen.or.save.eba9a3")}</p>
               {topicIdx === -1 && customImageData && (
                 <div className="mt-5 pt-5 border-t border-amber-200">
                   <p className="text-[10px] font-bold text-amber-700 uppercase tracking-widest mb-3 flex items-center gap-2">
-                    <ImageIcon className="w-3.5 h-3.5" /> Visual Material
-                  </p>
+                    <ImageIcon className="w-3.5 h-3.5" />{' '}{t("learning.visual.material.79b811")}</p>
                   <img
                     src={customImageData}
-                    alt="Writing prompt visual"
+                    alt={t("learning.writing.prompt.visual.f64e65")}
                     className="max-w-full max-h-[420px] rounded-xl border border-amber-200 shadow-sm bg-white"
                   />
                 </div>
@@ -361,7 +361,7 @@ export function WritingPractice({
               spellCheck={true}
               value={content}
               onChange={e => handleChange(e.target.value)}
-              placeholder="Start writing here…"
+              placeholder={t("learning.start.writing.here.8404ca")}
               className="w-full min-h-[520px] text-lg text-slate-800 leading-[1.9] font-serif resize-none outline-none bg-transparent placeholder-slate-300"
             />
             {checkError && <div className="mt-6"><AiCheckError message={checkError} /></div>}
@@ -375,19 +375,19 @@ export function WritingPractice({
 
         {/* Status bar */}
         <div className="shrink-0 border-t border-slate-100 px-4 md:px-6 py-2 flex items-center gap-6 text-xs text-slate-400 bg-white">
-          <span>{wordCount} words</span>
-          <span>{content.length} characters</span>
-          {lastSaved && <span className="text-emerald-500 font-medium">● Auto-saved {lastSaved}</span>}
+          <span>{wordCount}{' '}{t("common.words")}</span>
+          <span>{content.length}{' '}{t("learning.characters.aa908a")}</span>
+          {lastSaved && <span className="text-emerald-500 font-medium">{t("learning.auto.saved.ee82ef")}{' '}{lastSaved}</span>}
         </div>
 
         {/* My saved essays list modal */}
         {showSavedList && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/50 backdrop-blur-sm" onClick={() => setShowSavedList(false)}>
-            <div className="bg-white dark:bg-zinc-900 rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]" onClick={e => e.stopPropagation()}>
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setShowSavedList(false)}>
+            <div className="bg-white dark:bg-zinc-900 rounded-3xl w-full max-w-2xl overflow-hidden flex flex-col max-h-[80vh] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]" onClick={e => e.stopPropagation()}>
               <div className="px-6 py-5 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between shrink-0">
                 <div>
-                  <h2 className="font-bold text-zinc-900 dark:text-zinc-50 text-lg">My Essays for this Topic</h2>
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400">{savedListForTopic.length} saved essay{savedListForTopic.length === 1 ? '' : 's'}</p>
+                  <h2 className="font-serif font-extrabold text-zinc-900 dark:text-zinc-50 text-lg">{t("learning.my.essays.for.this.topic.4f1aaf")}</h2>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">{t('learning.savedEssayCount', { n: savedListForTopic.length })}</p>
                 </div>
                 <button onClick={() => setShowSavedList(false)} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
                   <X className="w-5 h-5" />
@@ -395,22 +395,22 @@ export function WritingPractice({
               </div>
               <div className="overflow-y-auto p-4 space-y-2">
                 {savedListForTopic.length === 0 ? (
-                  <p className="text-sm text-zinc-500 text-center py-8">No saved essays yet.</p>
+                  <EmptyState sticker="state2.empty-library" title={t('empty.essays.title')} body={t('empty.essays.body')} compact />
                 ) : (
                   savedListForTopic.map(e => (
-                    <div key={e.id} className="p-4 bg-slate-50 dark:bg-zinc-800 border border-slate-100 dark:border-zinc-700 rounded-2xl group">
+                    <div key={e.id} className="p-4 bg-slate-50 dark:bg-zinc-800 border-2 border-slate-100 dark:border-zinc-700 rounded-2xl group">
                       <div className="flex items-start justify-between gap-3 mb-2">
                         <div className="flex-1 min-w-0">
                           <h3 className="font-bold text-sm text-zinc-900 dark:text-zinc-100 mb-1 truncate">{e.title}</h3>
                           <p className="text-[10px] text-zinc-500 dark:text-zinc-400 uppercase tracking-wider font-bold">
-                            {e.wordCount} words · {e.savedAt}
+                            {e.wordCount}{' '}{t("learning.words.4e3963")}{' '}{e.savedAt}
                           </p>
                         </div>
                         <div className="flex gap-1 shrink-0">
-                          <button onClick={() => setViewingEssay(e)} title="View" className="p-2 rounded-lg text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+                          <button onClick={() => setViewingEssay(e)} title={t("learning.view.69bd4e")} className="p-2 rounded-lg text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
                             <Eye className="w-4 h-4" />
                           </button>
-                          <button onClick={() => { if (confirm('Delete this saved essay?')) deleteSavedEssay(currentKey, e.id); }} title="Delete" className="p-2 rounded-lg text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950 transition-colors">
+                          <button onClick={() => { if (confirm(t("learning.delete.this.saved.essay.1dda81"))) deleteSavedEssay(currentKey, e.id); }} title={t("learning.delete.f6fdbe")} className="p-2 rounded-lg text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-950 transition-colors">
                             <Trash2 className="w-4 h-4" />
                           </button>
                         </div>
@@ -426,12 +426,12 @@ export function WritingPractice({
 
         {/* Single essay viewer */}
         {viewingEssay && (
-          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-zinc-900/60 backdrop-blur-sm" onClick={() => setViewingEssay(null)}>
-            <div className="bg-white dark:bg-zinc-900 rounded-3xl w-full max-w-3xl shadow-2xl overflow-hidden flex flex-col max-h-[85vh]" onClick={e => e.stopPropagation()}>
+          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setViewingEssay(null)}>
+            <div className="bg-white dark:bg-zinc-900 rounded-3xl w-full max-w-3xl overflow-hidden flex flex-col max-h-[85vh] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]" onClick={e => e.stopPropagation()}>
               <div className="px-6 py-5 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between shrink-0">
                 <div className="flex-1 min-w-0">
-                  <h2 className="font-bold text-zinc-900 dark:text-zinc-50 text-lg truncate">{viewingEssay.title}</h2>
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400">{viewingEssay.wordCount} words · saved {viewingEssay.savedAt}</p>
+                  <h2 className="font-serif font-extrabold text-zinc-900 dark:text-zinc-50 text-lg truncate">{viewingEssay.title}</h2>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">{viewingEssay.wordCount}{' '}{t("learning.words.saved.4734d7")}{' '}{viewingEssay.savedAt}</p>
                 </div>
                 <button onClick={() => setViewingEssay(null)} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
                   <X className="w-5 h-5" />
@@ -454,7 +454,7 @@ export function WritingPractice({
                     setShowSavedList(false);
                   }}
                   className="flex-1 px-4 py-2 text-sm font-bold bg-zinc-900 text-white rounded-xl hover:bg-black transition-colors"
-                >Load into Editor</button>
+                >{t("learning.load.into.editor.a500e8")}</button>
               </div>
             </div>
           </div>
@@ -480,7 +480,7 @@ export function WritingPractice({
         <div className="max-w-5xl mx-auto px-4 md:px-8 lg:px-12 py-8 md:py-12">
           <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200">
             <div>
-              <button onClick={() => { setSearch(''); setView('levels'); }} className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-4 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm w-fit transition-colors">
+              <button onClick={() => { setSearch(''); setView('levels'); }} className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-4 bg-white px-4 py-2 rounded-2xl border-2 border-slate-200 w-fit transition-colors shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
                 <ArrowLeft className="w-4 h-4" /> {t('action.backToLevels')}
               </button>
               <h1 className="text-[22px] font-serif font-black text-slate-900 tracking-tight">
@@ -488,7 +488,7 @@ export function WritingPractice({
                 <span className="font-sans text-2xl text-zinc-900 tracking-normal font-medium">{t('library.topics')}</span>
               </h1>
             </div>
-            <div className="bg-white px-5 py-3 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center shrink-0">
+            <div className="bg-white px-5 py-3 rounded-2xl border-2 border-slate-200 flex flex-col items-center shrink-0 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
               <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">{t('writing.essaysSaved')}</span>
               <div className="flex items-baseline gap-1.5">
                 <span className="text-2xl font-black text-zinc-900">{savedCount}</span>
@@ -516,7 +516,7 @@ export function WritingPractice({
                 <div>
                   <p className="text-xs font-bold text-amber-600 uppercase tracking-wider mb-1">{t('library.continueBanner')}</p>
                   <p className="font-bold text-slate-800 text-sm line-clamp-1">{topicTitle(TOPICS_BY_LEVEL[selectedLevel][lastEssay.topicIdx] || '')}</p>
-                  <p className="text-xs text-slate-400">{lastEssay.wordCount} {t('common.words')} · saved {lastEssay.savedAt}</p>
+                  <p className="text-xs text-slate-400">{t('learning.message.2d1493aca4', { v0: lastEssay.wordCount, v1: lastEssay.savedAt })}</p>
                 </div>
                 <button
                   onClick={() => openTopic(selectedLevel, lastEssay.topicIdx)}
@@ -536,15 +536,14 @@ export function WritingPractice({
                 <button
                   key={realIdx}
                   onClick={() => openTopic(selectedLevel, realIdx)}
-                  className="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-zinc-400 hover:-translate-y-1 transition-all duration-300 text-left group min-h-[220px]"
+                  className="bg-white p-6 md:p-8 rounded-3xl border-2 border-slate-200 flex flex-col justify-between hover:shadow-xl hover:border-zinc-400 hover:-translate-y-1 transition-all duration-300 text-left group min-h-[220px] shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]"
                 >
                   <div>
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-xs font-bold text-slate-300">#{realIdx + 1}</span>
                       {hasSaved && (
                         <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${theme.badge}`}>
-                          {saved.wordCount} words saved
-                        </span>
+                          {saved.wordCount}{' '}{t("learning.words.saved.71a257")}</span>
                       )}
                     </div>
                     <p className="text-slate-700 text-base leading-snug group-hover:text-slate-900 transition-colors">{topicTitle(topic)}</p>
@@ -592,7 +591,7 @@ export function WritingPractice({
 
   /* ── Levels screen ── */
   return (
-    <ScreenShell size="wide" title={t('writing.general.title')} subtitle={t('writing.levelSubtitle')}>
+    <ScreenShell size="wide" stickers={['write.signed', 'write.ink-trouble', 'learn.scribbler']} title={t('writing.general.title')} subtitle={t('writing.levelSubtitle')}>
         <div className="flex flex-col gap-3">
           <HubRow
             dark
@@ -623,21 +622,21 @@ export function WritingPractice({
 
       {/* Custom Form Modal */}
       {showCustomForm && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-6">
-          <div className="bg-white rounded-3xl p-8 max-w-2xl w-full shadow-2xl max-h-[90vh] overflow-y-auto">
-            <h3 className="text-2xl font-bold text-slate-800 mb-2">Custom Writing Practice</h3>
-            <p className="text-sm text-slate-500 mb-6">Optional: attach a chart, photo, or diagram and describe it in your essay.</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-zinc-900/55 backdrop-blur-[2px]">
+          <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
+            <h3 className="font-serif text-2xl font-extrabold text-slate-800 mb-2">{t("learning.custom.writing.practice.9b292f")}</h3>
+            <p className="text-sm text-slate-500 mb-6">{t("learning.optional.attach.a.chart.photo.or.diagram.and.describe.it.i.9fa6a1")}</p>
 
             {/* Saved prompts list */}
             {customSessions.length > 0 && (
               <div className="mb-6">
-                <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-2">Saved Prompts</p>
+                <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-2">{t("learning.saved.prompts.c3c753")}</p>
                 <div className="space-y-2 max-h-56 overflow-y-auto pr-1">
                   {customSessions.map(s => {
                     const thumb = sessionThumbnails[s.id];
                     const hasImage = !!s.imageId;
                     return (
-                    <div key={s.id} className="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                    <div key={s.id} className="flex items-center gap-3 p-3 bg-slate-50 border-2 border-slate-200 rounded-2xl">
                       {thumb ? (
                         <img src={thumb} alt="" className="w-12 h-12 rounded-lg object-cover shrink-0 border border-slate-200" />
                       ) : hasImage ? (
@@ -663,38 +662,37 @@ export function WritingPractice({
                           setView('editor');
                         }}
                         className="px-3 py-1.5 text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-lg transition-colors shrink-0"
-                      >Use</button>
+                      >{t("action.use")}</button>
                       <button
                         onClick={() => removeCustomSession(s.id)}
                         className="p-1.5 text-slate-400 hover:text-rose-500 rounded transition-colors shrink-0"
-                        title="Delete saved prompt"
+                        title={t("learning.delete.saved.prompt.af3623")}
                       ><Trash2 className="w-3.5 h-3.5" /></button>
                     </div>
                     );
                   })}
                 </div>
-                <p className="text-xs text-slate-400 text-center mt-3 mb-2">— or create a new one below —</p>
+                <p className="text-xs text-slate-400 text-center mt-3 mb-2">{t("learning.or.create.a.new.one.below.6787ea")}</p>
               </div>
             )}
 
             <div className="space-y-4">
               <div>
-                <label className="text-sm font-bold text-slate-600 mb-2 block">Title</label>
+                <label className="text-sm font-bold text-slate-600 mb-2 block">{t("common.title")}</label>
                 <input value={customTitle} onChange={e => setCustomTitle(e.target.value)}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-700"
-                  placeholder="e.g. Bar chart — energy consumption" />
+                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-700"
+                  placeholder={t("learning.e.g.bar.chart.energy.consumption.b5070a")} />
               </div>
               <div>
-                <label className="text-sm font-bold text-slate-600 mb-2 block">Content / Prompt</label>
+                <label className="text-sm font-bold text-slate-600 mb-2 block">{t("learning.content.prompt.6527fd")}</label>
                 <textarea value={customTopicText} onChange={e => setCustomTopicText(e.target.value)}
-                  className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-700 min-h-[140px] resize-none"
-                  placeholder="The chart below shows... Summarise the information by selecting and reporting the main features..." />
+                  className="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-700 min-h-[140px] resize-none"
+                  placeholder={t("learning.the.chart.below.shows.summarise.the.information.by.selecti.db1e1a")} />
               </div>
 
               {/* Image upload */}
               <div>
-                <label className="text-sm font-bold text-slate-600 mb-2 block">
-                  Image (optional) <span className="text-slate-400 font-normal">— chart, photo, or diagram to describe</span>
+                <label className="text-sm font-bold text-slate-600 mb-2 block">{t("learning.image.optional.8522c0")}{' '}<span className="text-slate-400 font-normal">{t("learning.chart.photo.or.diagram.to.describe.aba5bd")}</span>
                 </label>
                 <input
                   ref={fileInputRef}
@@ -716,7 +714,7 @@ export function WritingPractice({
                         setCustomImageData(dataUrl);
                       }
                     } catch (err) {
-                      alert('Could not process the image. Try a different file.');
+                      alert(t("learning.could.not.process.the.image.try.a.different.file.08aabb"));
                     } finally {
                       setImageProcessing(false);
                       if (fileInputRef.current) fileInputRef.current.value = '';
@@ -725,31 +723,31 @@ export function WritingPractice({
                 />
                 {customImageData ? (
                   <div className="relative inline-block group">
-                    <img src={customImageData} alt="Prompt attachment" className="max-h-48 rounded-xl border border-slate-200 shadow-sm" />
+                    <img src={customImageData} alt={t("learning.prompt.attachment.a4da0d")} className="max-h-48 rounded-2xl border-2 border-slate-200 shadow-sm" />
                     <button
                       onClick={() => setCustomImageData(null)}
                       className="absolute -top-2 -right-2 w-7 h-7 bg-rose-500 hover:bg-rose-600 text-white rounded-full shadow-lg flex items-center justify-center transition-colors"
-                      title="Remove image"
+                      title={t("learning.remove.image.5f94b0")}
                     ><X className="w-3.5 h-3.5" /></button>
-                    <p className="text-xs text-slate-500 mt-2">{Math.round(dataUrlBytes(customImageData) / 1024)} KB</p>
+                    <p className="text-xs text-slate-500 mt-2">{Math.round(dataUrlBytes(customImageData) / 1024)}{' '}{t("learning.kb.315b39")}</p>
                   </div>
                 ) : (
                   <button
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
                     disabled={imageProcessing}
-                    className="w-full px-4 py-6 border-2 border-dashed border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50 rounded-xl text-slate-500 hover:text-emerald-700 transition-colors flex flex-col items-center gap-2 disabled:opacity-50"
+                    className="w-full px-4 py-6 border-2 border-dashed border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50 rounded-2xl text-slate-500 hover:text-emerald-700 transition-colors flex flex-col items-center gap-2 disabled:opacity-50 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] active:translate-y-[3px] active:shadow-none transition-[transform,box-shadow,background-color,border-color] duration-75"
                   >
                     {imageProcessing ? (
                       <>
                         <Sparkles className="w-6 h-6 animate-pulse" />
-                        <span className="text-sm font-bold">Resizing image…</span>
+                        <span className="text-sm font-bold">{t("learning.resizing.image.18580f")}</span>
                       </>
                     ) : (
                       <>
                         <Upload className="w-6 h-6" />
-                        <span className="text-sm font-bold">Click to upload image</span>
-                        <span className="text-xs text-slate-400">JPG, PNG, WebP — resized to max 1280px</span>
+                        <span className="text-sm font-bold">{t("learning.click.to.upload.image.0ad9a7")}</span>
+                        <span className="text-xs text-slate-400">{t("learning.jpg.png.webp.resized.to.max.1280px.f98fd8")}</span>
                       </>
                     )}
                   </button>
@@ -760,7 +758,7 @@ export function WritingPractice({
               <button onClick={() => {
                 setShowCustomForm(false);
                 setCustomImageData(null);
-              }} className="flex-1 py-3 border border-slate-200 rounded-xl font-bold text-slate-600 hover:bg-slate-50">Cancel</button>
+              }} className="flex-1 py-3 border-2 border-slate-200 rounded-2xl font-bold text-slate-600 hover:bg-slate-50">{t("action.cancel")}</button>
               <button
                 onClick={async () => {
                   if (!customTopicText.trim() && !customTitle.trim() && !customImageData) return;
@@ -774,11 +772,10 @@ export function WritingPractice({
                   setTimeout(() => setSaveToast(null), 2000);
                 }}
                 disabled={!customTopicText.trim() && !customTitle.trim() && !customImageData}
-                className="px-4 py-3 border border-slate-200 bg-white rounded-xl font-bold text-slate-700 hover:bg-slate-50 flex items-center gap-2 disabled:opacity-40"
-                title="Save this prompt for later"
+                className="px-4 py-3 border-2 border-slate-200 bg-white rounded-2xl font-bold text-slate-700 hover:bg-slate-50 flex items-center gap-2 disabled:opacity-40 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]"
+                title={t("learning.save.this.prompt.for.later.f8ce75")}
               >
-                <BookmarkPlus className="w-4 h-4" /> Save
-              </button>
+                <BookmarkPlus className="w-4 h-4" />{' '}{t("learning.save.efc007")}</button>
               <button onClick={() => {
                 if (!customTopicText.trim() && !customTitle.trim() && !customImageData) return;
                 setShowCustomForm(false);
@@ -786,7 +783,7 @@ export function WritingPractice({
                 setLastSaved(null);
                 setTopicIdx(-1);
                 setView('editor');
-              }} className="flex-1 py-3 bg-zinc-900 text-white rounded-xl font-bold hover:bg-black">Start Writing</button>
+              }} className="flex-1 py-3 bg-zinc-900 text-white rounded-2xl font-bold hover:bg-black shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75">{t("writing.general.cta")}</button>
             </div>
           </div>
         </div>
