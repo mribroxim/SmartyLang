@@ -37,7 +37,7 @@ export function ComprehensiveReading({ onBack, onAddVocab, savedVocab = {}, onSh
   const { t, tLevel, tLevelDesc } = useUiLang();
   const canDownloadPDF = (() => {
     const t = accountTypeOf(accountProfile as UserAccountProfile | null);
-    return t === 'business' || t === 'teacher' || t === 'organization' || t === 'admin';
+    return t === 'business' || t === 'admin';
   })();
   const hasInitial = !!initialLevel && !!initialPassageTitle;
   const [view, setView] = useState<'levels' | 'library' | 'activity'>(hasInitial ? 'library' : 'levels');
