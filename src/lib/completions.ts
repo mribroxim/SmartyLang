@@ -3,14 +3,15 @@
  * Writes uid-scoped local cache + Firestore users/{uid}/completions/{id}.
  */
 
-import { collection, doc, setDoc, getDocs, query, orderBy, limit as fbLimit } from 'firebase/firestore';
-import { auth, db, isFirebaseConfigured } from '../firebase';
+import { auth } from '../firebase';
+import { dataRequest } from './selfHostedApi';
 import { appendHistory } from './sessionHistory';
 import { readScopedJSON, writeScopedJSON, getStorageUid } from './userStorage';
 import { logActivity, type ActivityType } from './activity-tracker';
 
 export type CompletionType =
   | 'exercise'
+  | 'lesson-bite'
   | 'ielts-reading'
   | 'ielts-listening'
   | 'ielts-speaking'
@@ -83,16 +84,8 @@ export function mergeCompletions(a: CompletionRecord[], b: CompletionRecord[]): 
 }
 
 export async function fetchCloudCompletions(uid: string, max = 200): Promise<CompletionRecord[]> {
-  if (!isFirebaseConfigured || !db) return [];
   try {
-    const q = query(collection(db, 'users', uid, 'completions'), orderBy('timestamp', 'desc'), fbLimit(max));
-    const snap = await getDocs(q);
-    const out: CompletionRecord[] = [];
-    snap.forEach(d => {
-      const data = d.data() as Omit<CompletionRecord, 'id'>;
-      out.push({ id: d.id, ...data });
-    });
-    return out;
+    return await dataRequest<CompletionRecord[]>('completions.list', { uid, limit: max });
   } catch (e) {
     console.error('fetchCloudCompletions failed:', e);
     return [];
@@ -110,6 +103,7 @@ function activityTypeFor(type: CompletionType): ActivityType | null {
     case 'dictation': return 'audio_dictation';
     case 'story': return 'interactive_story';
     case 'exercise':
+    case 'lesson-bite':
     case 'ielts-reading':
     case 'ielts-listening':
       return 'exercise';
@@ -171,9 +165,9 @@ export function recordCompletion(
   mirrorLegacy(type, record);
 
   const uid = auth?.currentUser?.uid || getStorageUid();
-  if (uid && isFirebaseConfigured && db) {
-    const ref = doc(db, 'users', uid, 'completions', id);
-    setDoc(ref, stripUndefined({ ...record })).catch(e => console.error('completion sync failed:', e));
+  if (uid) {
+    dataRequest('completions.upsert', { uid, record: stripUndefined({ ...record }) })
+      .catch(e => console.error('completion sync failed:', e));
   }
 
   if (!payload.skipActivity) {
@@ -230,7 +224,8 @@ function mirrorLegacy(type: CompletionType, record: CompletionRecord) {
 
   const key = map[type];
   if (key) {
-    appendHistory(key, entry, 200);
+    // The shared unscoped list is only for signed-out use (it would leak between accounts).
+    if (!getStorageUid()) appendHistory(key, entry, 200);
     // Also write scoped copy
     const scoped = readScopedJSON<any[]>(key, []);
     writeScopedJSON(key, [entry, ...scoped].slice(0, 200));
@@ -250,10 +245,8 @@ function mirrorLegacy(type: CompletionType, record: CompletionRecord) {
       },
       contentLang: record.contentLang,
     };
+    // writeScopedJSON keeps the unscoped mirror only while signed out.
     writeScopedJSON('readmaster_exercises_history', [row, ...hist].slice(0, 200));
-    try {
-      localStorage.setItem('readmaster_exercises_history', JSON.stringify([row, ...hist].slice(0, 200)));
-    } catch { /* ignore */ }
   }
 }
 

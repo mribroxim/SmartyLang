@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { ArrowLeft, CheckCircle2, Loader2, Volume2 } from 'lucide-react';
+import { ArrowLeft, Loader2, Volume2 } from 'lucide-react';
 import type { ReadingText } from '../../lib/reading-logic';
 import { useContentLang } from '../../contexts/ContentLangContext';
 import { useUiLang } from '../../contexts/UiLangContext';
@@ -7,22 +7,28 @@ import { DICT_LANG_CODE } from '../../lib/contentLang';
 import { UI_TRANSLATE_CODE } from '../../lib/uiLang';
 import { fetchWordTranslations } from '../../Exercises';
 import { playSound } from '../../lib/audio';
+import { Sticker } from '../../components/stickers/Sticker';
+import { ChunkyButton } from '../Bites/lesson/chunky';
 
 interface Props {
   text: ReadingText;
   playWord: (w: string) => void;
   onBack: () => void;
+  hideBack?: boolean;
+  continueLabel?: string;
   /** Unlock reading after the learner has seen the words. */
   onLearned: () => void;
   onMemorizeWord: (word: string, definition: string) => void;
+  /** Bite look: one word per screen, Smarty presents it, chunky Continue footer. */
+  variant?: 'lesson';
 }
 
 /** Pre-read: word + interface-language translation. Quiz happens after reading. */
 export function VocabLearnPhase({
-  text, playWord, onBack, onLearned, onMemorizeWord,
+  text, playWord, onBack, onLearned, onMemorizeWord, hideBack, continueLabel, variant,
 }: Props) {
   const { contentLang, dictCode } = useContentLang();
-  const { uiLang } = useUiLang();
+  const { uiLang, t } = useUiLang();
   const words = useMemo(
     () => (text.vocabulary || []).map((v) => v.word),
     [text.vocabulary],
@@ -73,75 +79,91 @@ export function VocabLearnPhase({
     return () => { cancelled = true; };
   }, [text.id, contentLang, uiLang, dictCode, words.join('|')]);
 
+  if (loading && variant === 'lesson') {
+    return <div className="flex justify-center py-24"><Sticker id="flow.lesson-loading" size={120} priority="hero" /></div>;
+  }
   if (loading) {
     return (
       <div className="flex items-center justify-center py-24 text-slate-500 gap-2">
-        <Loader2 className="w-5 h-5 animate-spin" /> Loading translations…
-      </div>
+        <Loader2 className="w-5 h-5 animate-spin" />{' '}{t("learning.loading.translations.53f24b")}</div>
     );
   }
 
   const current = text.vocabulary[index];
-  const allLearned = learned.size >= words.length && words.length > 0;
+  const allLearned = words.length === 0
+    || (index >= words.length - 1 && learned.size >= words.length - 1);
   const translation = current
     ? translations[current.word.toLowerCase()] || translations[current.word] || current.word
     : '';
 
-  const markMemorized = () => {
+  const markCurrentLearned = () => {
     if (!current) return;
     const key = current.word.toLowerCase();
+    if (learned.has(key)) return;
     const gloss = translations[key] || translations[current.word] || current.word;
-    playSound('success');
+    // Seeing a word card isn't an answer: keep it out of Smarty's combo counter.
+    playSound('success', { mascot: false });
     onMemorizeWord(current.word, gloss);
     setLearned((prev) => new Set([...prev, key]));
-    if (index < text.vocabulary.length - 1) setIndex(index + 1);
   };
+
+  const goNext = () => {
+    markCurrentLearned();
+    setIndex((i) => Math.min(text.vocabulary.length - 1, i + 1));
+  };
+
+  if (variant === 'lesson' && current) {
+    const last = index >= text.vocabulary.length - 1;
+    const next = () => {
+      markCurrentLearned();
+      if (last) onLearned();
+      else setIndex(index + 1);
+    };
+    return (
+      <div className="flex flex-1 flex-col">
+        <div className="mx-auto w-full max-w-2xl flex-1 px-4 pb-40 pt-2 sm:pt-6">
+          <div className="font-serif text-xs font-extrabold uppercase tracking-widest text-slate-400">{t('lesson.newWord')} · {index + 1}/{text.vocabulary.length}</div>
+          <h1 className="mt-1 font-serif text-2xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-[28px]">{t('bites.step.vocab-intro')}</h1>
+          <div key={current.word} className="mt-6 flex flex-col items-center text-center">
+            <Sticker id={index % 3 === 0 ? 'pers.curious' : index % 3 === 1 ? 'vocab.word-explosion' : 'learn.word-nerd'} size="clamp(110px, 30vw, 160px)" priority="hero" mode="once" />
+            <div className="mt-3 w-full rounded-3xl border-2 border-slate-200 bg-white p-6 shadow-[0_4px_0_0_#e2e8f0] dark:border-zinc-700 dark:bg-zinc-900 dark:shadow-[0_4px_0_0_#3f3f46]">
+              <button type="button" onClick={() => playWord(current.word)} className="inline-flex items-center gap-3">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-900 text-white shadow-[0_4px_0_0_#000] transition active:translate-y-[4px] active:shadow-none dark-keep"><Volume2 className="h-6 w-6" /></span>
+                <span className="font-serif text-4xl font-extrabold text-zinc-900 dark:text-zinc-50 sm:text-5xl">{current.word}</span>
+              </button>
+              <p className="mt-4 text-lg font-semibold leading-relaxed text-slate-600 dark:text-zinc-300">{translation}</p>
+            </div>
+          </div>
+        </div>
+        <div className="fixed inset-x-0 bottom-0 z-30 border-t-2 border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
+          <div className="mx-auto flex max-w-2xl gap-3 px-4 pb-[max(env(safe-area-inset-bottom),16px)] pt-4 sm:py-6">
+            {index > 0 && <ChunkyButton tone="secondary" onClick={() => setIndex(index - 1)} aria-label={t('lesson.prev')} className="!px-4">←</ChunkyButton>}
+            <div className="hidden flex-1 sm:block" />
+            <ChunkyButton autoFocus onClick={next} className="flex-1 sm:flex-none sm:min-w-[160px]">{last ? (continueLabel ?? t('smarty.continue')) : t('lesson.next')}</ChunkyButton>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-8">
-      <button onClick={onBack} className="mb-6 flex items-center gap-2 text-slate-500 font-medium">
-        <ArrowLeft className="w-5 h-5" /> Library
-      </button>
+      {!hideBack && <button onClick={onBack} className="mb-8 flex items-center gap-2 text-slate-500 font-medium">
+        <ArrowLeft className="w-5 h-5" />{' '}{t("library.title")}</button>}
 
-      <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Vocabulary</p>
-      <h2 className="text-3xl font-serif font-black text-zinc-900 mb-2">Learn these words</h2>
-      <p className="text-slate-500 mb-8">
-        Hear each word and learn its translation. Then continue to the passage — the quiz is in Exercises after you read.
-      </p>
-
-      <div className="flex flex-wrap gap-2 mb-6">
-        {text.vocabulary.map((v, i) => (
-          <button
-            key={v.word}
-            onClick={() => setIndex(i)}
-            className={`w-8 h-8 rounded-lg text-xs font-bold border transition-colors ${
-              learned.has(v.word.toLowerCase())
-                ? 'bg-emerald-500 text-white border-emerald-500'
-                : i === index
-                ? 'bg-zinc-900 text-white border-zinc-900'
-                : 'bg-white dark:bg-zinc-900 text-slate-500 border-slate-200 dark:border-zinc-700'
-            }`}
-          >
-            {i + 1}
-          </button>
-        ))}
-      </div>
+      <h2 className="text-5xl md:text-6xl font-serif font-black text-zinc-900 dark:text-zinc-50 mb-8">{t("learning.learn.the.word.be0c92")}</h2>
 
       {current && (
-        <div className="bg-white dark:bg-zinc-900 rounded-[2rem] border border-slate-200 dark:border-zinc-800 shadow-xl p-8 md:p-12 text-center mb-6">
-          <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">
-            {index + 1} / {text.vocabulary.length}
-          </p>
-          <h3 className="text-4xl md:text-5xl font-serif font-black text-zinc-900 mb-4">{current.word}</h3>
-          <p className="text-xl md:text-2xl text-slate-700 font-medium leading-relaxed mb-8">
+        <div className="bg-white dark:bg-zinc-900 rounded-[2rem] border-2 p-8 md:p-12 text-center mb-6 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]">
+          <h3 className="text-5xl md:text-7xl font-serif font-black text-zinc-900 dark:text-zinc-50 mb-5">{current.word}</h3>
+          <p className="text-2xl md:text-3xl text-slate-700 dark:text-zinc-200 font-medium leading-relaxed mb-9">
             {translation}
           </p>
           <button
             onClick={() => playWord(current.word)}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-zinc-100 hover:bg-zinc-200 font-bold text-zinc-900"
+            className="inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 font-bold text-zinc-900 dark:text-zinc-50"
           >
-            <Volume2 className="w-5 h-5" /> Hear word
-          </button>
+            <Volume2 className="w-6 h-6" />{' '}{t("learning.hear.word.e3b3fa")}</button>
         </div>
       )}
 
@@ -150,33 +172,23 @@ export function VocabLearnPhase({
           disabled={index <= 0}
           onClick={() => setIndex((i) => Math.max(0, i - 1))}
           className="px-4 py-3 rounded-xl border font-bold disabled:opacity-40"
-        >
-          Prev
-        </button>
-        <button
-          onClick={markMemorized}
-          className="flex-1 py-3 rounded-xl bg-emerald-600 text-white font-bold flex items-center justify-center gap-2"
-        >
-          <CheckCircle2 className="w-5 h-5" />
-          Memorized
-        </button>
+        >{t("learning.prev.e96fea")}</button>
         <button
           disabled={index >= text.vocabulary.length - 1}
-          onClick={() => setIndex((i) => Math.min(text.vocabulary.length - 1, i + 1))}
-          className="px-4 py-3 rounded-xl border font-bold disabled:opacity-40"
-        >
-          Next
-        </button>
+          onClick={goNext}
+          className="flex-1 py-4 rounded-2xl bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-900 font-bold disabled:opacity-40 shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75"
+        >{t("lesson.next")}</button>
       </div>
 
       <button
-        disabled={!allLearned && words.length > 0}
-        onClick={onLearned}
-        className="mt-6 w-full py-3.5 rounded-xl bg-zinc-900 text-white font-bold disabled:opacity-40"
+        disabled={!allLearned}
+        onClick={() => {
+          markCurrentLearned();
+          onLearned();
+        }}
+        className="mt-6 w-full py-3.5 rounded-2xl bg-zinc-900 text-white font-bold disabled:opacity-40 shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75"
       >
-        {allLearned || words.length === 0
-          ? 'Continue to reading'
-          : `Learn all words first (${learned.size}/${words.length})`}
+        {continueLabel ?? t("learning.continue.to.reading.9cf196")}
       </button>
     </div>
   );

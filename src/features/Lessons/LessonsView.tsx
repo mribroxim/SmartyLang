@@ -1,45 +1,34 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import {
-  ArrowLeft, Award, BookOpen, CheckCircle2, ChevronRight, Mic, Volume2, X, Users,
-} from 'lucide-react';
+import React, { lazy, useCallback, useEffect, useMemo, useState } from 'react';
+import { Sticker } from '../../components/stickers/Sticker';
 import { useLevelTexts } from '../../data/levelTexts';
 import type { Level, ReadingText } from '../../lib/reading-logic';
 import { useContentLang } from '../../contexts/ContentLangContext';
 import { useUiLang } from '../../contexts/UiLangContext';
-import {
-  type LessonPhase,
-  type LessonUnlock,
-  loadLessonUnlock,
-  updateLessonUnlock,
-  recordLessonExerciseScore,
-  lessonExerciseProgress,
-  levelProgressSummary,
-  maybeAwardLevelCertificate,
-  loadCertificateMeta,
-  isLessonExercisesComplete,
-} from '../../lib/lessonProgress';
-import {
-  buildLessonUnits,
-  findNextLesson,
-  lessonIndexInLevel,
-  unitProgress,
-  type LessonUnit,
-} from '../../lib/lessonUnits';
+import { type LessonPhase, type LessonUnlock, loadLessonUnlock, updateLessonUnlock, maybeAwardLevelCertificate, registerMasteredCheck } from '../../lib/lessonProgress';
+import { useProgress } from '../../contexts/ProgressContext';
+import { deriveBites } from '../../lib/bites/deriveBites';
+import { lessonBiteState, recordBiteCompletion, recordBiteStep } from '../../lib/bites/biteProgress';
+import { SmartyLoader } from '../../components/feedback/SmartyLoader';
+const PathView = lazy(() => import('../Path/PathView').then(m => ({ default: m.PathView })));
+const SectionTest = lazy(() => import('../Path/SectionTest').then(m => ({ default: m.SectionTest })));
+const BiteRunner = lazy(() => import('../Bites/BiteRunner').then(m => ({ default: m.BiteRunner })));
+const ReviewSession = lazy(() => import('../Today/ReviewSession').then(m => ({ default: m.ReviewSession })));
+import { useHearts, loseHeart } from '../../lib/hearts/heartsStore';
+import { HeartsChip } from '../Hearts/HeartsChip';
+import { HeartsOptions, OutOfHeartsSheet } from '../Hearts/OutOfHeartsSheet';
 import { fetchWordTranslations } from '../../Exercises';
-import { DICT_LANG_CODE } from '../../lib/contentLang';
+import { CONTENT_LANG_LABEL, DICT_LANG_CODE } from '../../lib/contentLang';
 import { UI_TRANSLATE_CODE } from '../../lib/uiLang';
-import { CertificateView } from './CertificateView';
 import { VocabLearnPhase } from './VocabLearnPhase';
-import { LessonExerciseFlow } from './LessonExerciseFlow';
 import { ReadingView } from '../ReadingView';
-import { ScreenShell } from '../../components/ScreenShell';
-import { LevelCard, LevelCardGrid, LibraryCard, LibraryCardGrid } from '../../components/LevelCards';
 
 const LEVELS: Level[] = ['Beginner', 'Elementary', 'Pre-Intermediate', 'Intermediate', 'Advanced'];
 
 type HubView = 'levels' | 'units' | 'library' | 'lesson' | 'certificate';
 
 interface LessonsViewProps {
+  path: string[];
+  navigatePath: (path: string[], opts?: { replace?: boolean }) => void;
   level: Level;
   setLevel: (l: Level) => void;
   currentTextObj: ReadingText;
@@ -127,34 +116,40 @@ interface LessonsViewProps {
 
 export function LessonsView(props: LessonsViewProps) {
   const { contentLang, dictCode } = useContentLang();
-  const { t, tLevel, uiLang } = useUiLang();
+  const { t, tText, tLevel, uiLang } = useUiLang();
   const LEVEL_TEXTS = useLevelTexts();
+  const { awardBiteXP, previewMode, unlimitedHearts, navigate } = useProgress();
+  const hearts = useHearts();
+  const routeKind = props.path[0] || 'path';
+  const isBite = routeKind === 'bite';
+  const routeLevel = LEVELS.find(l => l === props.path[1]);
+  const biteLevel = isBite ? LEVELS.find(l => LEVEL_TEXTS[l].some(tx => tx.id === props.path[2])) : undefined;
+  const biteIndex = /^\d+$/.test(props.path[3] || '') ? Number(props.path[3]) : -1;
+  const biteDefs = useMemo(() => deriveBites(props.currentTextObj), [props.currentTextObj]);
+  const biteDef = biteDefs[biteIndex];
+
+  useEffect(() => {
+    const desired = isBite ? biteLevel : routeKind === 'path' ? routeLevel : undefined;
+    if (desired && desired !== props.level) props.setLevel(desired);
+  }, [isBite, biteLevel, routeKind, routeLevel, props.level]);
+
+  useEffect(() => {
+    registerMasteredCheck((lang, id) => {
+      if (lang !== contentLang) return false;
+      const text = Object.values(LEVEL_TEXTS).flat().find(tx => tx.id === id);
+      return !!text && lessonBiteState(lang, text).mastered;
+    });
+    return () => registerMasteredCheck(null);
+  }, [LEVEL_TEXTS, contentLang]);
 
   const [hubView, setHubView] = useState<HubView>('levels');
   const [phase, setPhase] = useState<LessonPhase>('pre-read');
-  const [selectedUnitIndex, setSelectedUnitIndex] = useState(0);
   const [unlock, setUnlock] = useState<LessonUnlock>(() =>
     loadLessonUnlock(contentLang, props.currentTextObj?.id || ''),
   );
   const [meanings, setMeanings] = useState<Record<string, string>>({});
-  const [certLevel, setCertLevel] = useState<Level>('Beginner');
-  const [showRecModal, setShowRecModal] = useState(false);
 
-  const passageIds = useMemo(
-    () => (LEVEL_TEXTS[props.level] || []).map((x) => x.id),
-    [LEVEL_TEXTS, props.level],
-  );
 
-  const levelTexts = LEVEL_TEXTS[props.level] || [];
-  const units = useMemo(
-    () => buildLessonUnits(levelTexts, props.level),
-    [levelTexts, props.level],
-  );
-  const selectedUnit: LessonUnit | undefined = units[selectedUnitIndex];
-  const nextLesson = useMemo(
-    () => findNextLesson(contentLang, levelTexts),
-    [contentLang, levelTexts, hubView, showRecModal],
-  );
 
   const passageVocab = useMemo(() => {
     const entries = (props.currentTextObj?.vocabulary || []).map((v) => [
@@ -196,7 +191,6 @@ export function LessonsView(props: LessonsViewProps) {
           v.definition || v.word,
         ]),
       );
-      setMeanings(defs);
       return defs;
     }
     const glosses: Record<string, string> = {};
@@ -212,14 +206,17 @@ export function LessonsView(props: LessonsViewProps) {
       const key = w.toLowerCase();
       merged[key] = map[w] || map[key] || w;
     }
-    setMeanings(merged);
     return merged;
   };
 
   useEffect(() => {
-    if (hubView === 'lesson') ensureMeanings();
+    if (hubView !== 'lesson' && !isBite) return;
+    let cancelled = false;
+    setMeanings({});
+    ensureMeanings().then(defs => { if (!cancelled) setMeanings(defs); });
+    return () => { cancelled = true; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hubView, props.currentTextObj?.id, contentLang, uiLang]);
+  }, [hubView, isBite, props.currentTextObj?.id, contentLang, uiLang]);
 
   // After vocab is learned once, never show the pre-read list again.
   useEffect(() => {
@@ -227,20 +224,6 @@ export function LessonsView(props: LessonsViewProps) {
     if (unlock.vocabPassed && phase === 'pre-read') setPhase('read');
   }, [hubView, unlock.vocabPassed, phase]);
 
-  const openPassage = (level: Level, text: ReadingText) => {
-    props.setLevel(level);
-    props.setIsCustomMode(false);
-    props.setCurrentTextId(text.id);
-    props.reset();
-    const u = loadLessonUnlock(contentLang, text.id);
-    setUnlock(u);
-    setShowRecModal(false);
-    const hasExerciseProgress = Object.keys(u.exerciseBest || {}).length > 0;
-    if (!u.vocabPassed) setPhase('pre-read');
-    else if (u.readingBest != null || u.readingPassed || hasExerciseProgress) setPhase('exercises');
-    else setPhase('read');
-    setHubView('lesson');
-  };
 
   /** Open exercises tab — reading score persisted if the session just finished. */
   const goToExercises = useCallback(() => {
@@ -274,324 +257,10 @@ export function LessonsView(props: LessonsViewProps) {
     };
   }, [props.feedbackContinueRef, goToExercises]);
 
-  const handleVocabLearned = () => {
-    if (!props.currentTextObj?.id) return;
-    const next = updateLessonUnlock(contentLang, props.currentTextObj.id, { vocabPassed: true });
-    setUnlock(next);
-    setPhase('read');
-  };
 
-  const handleExerciseComplete = (result: any) => {
-    const type = result.type as string;
-    let percent = 0;
-    if (typeof result.percent === 'number' && Number.isFinite(result.percent)) {
-      percent = Math.min(100, Math.max(0, Math.round(result.percent)));
-    } else if (
-      typeof result.score === 'number' &&
-      typeof result.total === 'number' &&
-      result.total > 0
-    ) {
-      percent = Math.min(100, Math.max(0, Math.round((result.score / result.total) * 100)));
-    } else {
-      const c = Array.isArray(result.correctWords) ? result.correctWords.length : 0;
-      const m = Array.isArray(result.mistakes) ? result.mistakes.length : 0;
-      if (c + m > 0) {
-        percent = Math.round((c / (c + m)) * 100);
-      } else if (typeof result.score === 'number') {
-        // Already a 0–100 percentage from the exercise itself
-        percent = Math.min(100, Math.max(0, Math.round(result.score)));
-      }
-    }
-    // Lesson exercise sessions are separate from Practice → Exercises history.
-    const next = recordLessonExerciseScore(
-      contentLang,
-      props.currentTextObj.id,
-      type,
-      percent,
-      result.mistakes || [],
-    );
-    setUnlock(next);
-    maybeAwardLevelCertificate(contentLang, props.level, passageIds, props.studentName);
-    const prog = lessonExerciseProgress(next);
-    if (prog.done >= prog.total) setShowRecModal(true);
-  };
 
-  // ── Levels — classic themed cards (row on phone, tall cards on desktop)
-  if (hubView === 'levels') {
-    return (
-      <ScreenShell size="wide" title={t('nav.learn')} subtitle="Learn vocab, read aloud, then master exercises.">
-          <LevelCardGrid>
-            {LEVELS.map((lvl, idx) => {
-              const ids = (LEVEL_TEXTS[lvl] || []).map((x) => x.id);
-              const summary = levelProgressSummary(contentLang, ids);
-              const cert = loadCertificateMeta(contentLang, lvl);
-              const pct = summary.total
-                ? Math.round((summary.exercisesComplete / summary.total) * 100)
-                : 0;
-              return (
-                <LevelCard
-                  key={lvl}
-                  title={tLevel(lvl)}
-                  desc={`${summary.exercisesComplete}/${summary.total} lessons · ${summary.vocabUnlocked} unlocked`}
-                  pct={pct}
-                  themeIndex={idx}
-                  forYou={props.startingLevel === lvl}
-                  certAwarded={!!cert?.awarded}
-                  onCertClick={() => { setCertLevel(lvl); setHubView('certificate'); }}
-                  onClick={() => { props.setLevel(lvl); setSelectedUnitIndex(0); setHubView('units'); }}
-                />
-              );
-            })}
-          </LevelCardGrid>
-          <button
-            type="button"
-            onClick={() => { window.location.hash = '#/classes'; }}
-            className="mt-3 md:mt-5 w-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl p-4 md:p-5 flex items-center gap-3.5 text-left shadow-sm hover:shadow-md hover:border-zinc-400 transition-all"
-          >
-            <div className="w-11 h-11 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-slate-100 text-zinc-600 flex items-center justify-center shrink-0">
-              <Users className="w-5 h-5 md:w-6 md:h-6" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <div className="font-bold text-[15px] md:text-lg text-zinc-900 dark:text-zinc-50">{t('nav.myClasses')}</div>
-              <div className="text-[12px] md:text-sm text-slate-400">Assignments from your teacher</div>
-            </div>
-            <ChevronRight className="w-4 h-4 text-slate-300 shrink-0" />
-          </button>
-      </ScreenShell>
-    );
-  }
-
-  if (hubView === 'certificate') {
-    return (
-      <CertificateView
-        level={certLevel}
-        contentLang={contentLang}
-        studentName={props.studentName}
-        onBack={() => setHubView('levels')}
-      />
-    );
-  }
-
-  if (hubView === 'units') {
-    const cert = loadCertificateMeta(contentLang, props.level);
-    const summary = levelProgressSummary(contentLang, passageIds);
-
-    return (
-      <ScreenShell size="wide">
-        <header className="mb-6 md:mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 pb-4 md:pb-6 border-b border-slate-200 dark:border-zinc-800">
-          <div>
-            <button
-              type="button"
-              onClick={() => setHubView('levels')}
-              className="text-sm font-bold text-slate-500 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-2 mb-3 md:mb-4 transition-colors bg-white dark:bg-zinc-900 px-4 py-2 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm w-fit"
-            >
-              <ArrowLeft className="w-4 h-4" /> {t('action.backToLevels')}
-            </button>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-slate-900 dark:text-zinc-50 tracking-tight flex items-center gap-3 md:gap-4 flex-wrap">
-              {tLevel(props.level)} <span className="text-slate-300 font-sans font-light">|</span>{' '}
-              <span className="font-sans text-lg sm:text-xl md:text-2xl text-zinc-900 dark:text-zinc-100 tracking-normal font-medium">Units</span>
-            </h1>
-            <p className="text-slate-500 text-sm mt-1.5 md:mt-2">Pick any unit — all lessons and activities are available.</p>
-          </div>
-          <div className="flex flex-row md:flex-col items-center md:items-end gap-3 shrink-0">
-            <div className="bg-white dark:bg-zinc-900 px-5 py-3 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm flex flex-col items-center">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Level progress</span>
-              <div className="flex items-baseline gap-1.5">
-                <span className="text-2xl font-black text-zinc-900 dark:text-zinc-50">{summary.exercisesComplete}</span>
-                <span className="font-bold text-slate-400">/ {summary.total}</span>
-              </div>
-            </div>
-            {cert?.awarded && (
-              <button
-                type="button"
-                onClick={() => { setCertLevel(props.level); setHubView('certificate'); }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-50 text-amber-800 border border-amber-200 font-bold text-sm"
-              >
-                <Award className="w-4 h-4" /> Certificate
-              </button>
-            )}
-          </div>
-        </header>
-
-        {nextLesson && (
-          <button
-            type="button"
-            onClick={() => {
-              setSelectedUnitIndex(nextLesson.unitIndex);
-              openPassage(props.level, nextLesson.text);
-            }}
-            className="w-full mb-6 p-4 md:p-5 rounded-2xl bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 font-bold text-left flex items-center justify-between gap-3 shadow-md hover:opacity-95 transition-opacity"
-          >
-            <div>
-              <div className="text-[10px] uppercase tracking-widest opacity-70 mb-1">Continue</div>
-              <div className="text-base md:text-lg">{nextLesson.text.title}</div>
-              <div className="text-xs opacity-70 mt-0.5">
-                {units[nextLesson.unitIndex]?.title ?? `Unit ${nextLesson.unitIndex + 1}`} · Lesson {(nextLesson.index % 10) + 1}
-              </div>
-            </div>
-            <ChevronRight className="w-5 h-5 shrink-0" />
-          </button>
-        )}
-
-        <LevelCardGrid cols={2}>
-          {units.map((unit) => {
-            const prog = unitProgress(contentLang, unit);
-            const pct = prog.total ? Math.round((prog.complete / prog.total) * 100) : 0;
-            return (
-              <LevelCard
-                key={unit.id}
-                title={unit.title}
-                desc={`${unit.subtitle} · ${prog.complete}/${prog.total} lessons`}
-                pct={pct}
-                themeIndex={unit.index}
-                onClick={() => {
-                  setSelectedUnitIndex(unit.index);
-                  setHubView('library');
-                }}
-              />
-            );
-          })}
-        </LevelCardGrid>
-      </ScreenShell>
-    );
-  }
-
-  if (hubView === 'library') {
-    const texts = selectedUnit?.lessons ?? levelTexts;
-    const cert = loadCertificateMeta(contentLang, props.level);
-    const summary = levelProgressSummary(contentLang, passageIds);
-
-    return (
-      <ScreenShell size="wide">
-          <header className="mb-6 md:mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 pb-4 md:pb-6 border-b border-slate-200 dark:border-zinc-800">
-            <div>
-              <button
-                type="button"
-                onClick={() => setHubView('units')}
-                className="text-sm font-bold text-slate-500 hover:text-zinc-900 dark:hover:text-zinc-100 flex items-center gap-2 mb-3 md:mb-4 transition-colors bg-white dark:bg-zinc-900 px-4 py-2 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm w-fit"
-              >
-                <ArrowLeft className="w-4 h-4" /> Back to units
-              </button>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-slate-900 dark:text-zinc-50 tracking-tight flex items-center gap-3 md:gap-4 flex-wrap">
-                {selectedUnit ? selectedUnit.title : tLevel(props.level)}{' '}
-                <span className="text-slate-300 font-sans font-light">|</span>{' '}
-                <span className="font-sans text-lg sm:text-xl md:text-2xl text-zinc-900 dark:text-zinc-100 tracking-normal font-medium">Lessons</span>
-              </h1>
-              <p className="text-slate-500 text-sm mt-1.5 md:mt-2">
-                {selectedUnit?.subtitle ?? 'Choose a lesson — complete them in order.'}
-              </p>
-            </div>
-            <div className="flex flex-row md:flex-col items-center md:items-end gap-3 shrink-0">
-              <div className="bg-white dark:bg-zinc-900 px-5 py-3 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm flex flex-col items-center">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">Unit progress</span>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-2xl font-black text-zinc-900 dark:text-zinc-50">
-                    {selectedUnit ? unitProgress(contentLang, selectedUnit).complete : summary.exercisesComplete}
-                  </span>
-                  <span className="font-bold text-slate-400">/ {selectedUnit?.lessonIds.length ?? summary.total}</span>
-                </div>
-              </div>
-              {cert?.awarded && (
-                <button
-                  type="button"
-                  onClick={() => { setCertLevel(props.level); setHubView('certificate'); }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-50 text-amber-800 border border-amber-200 font-bold text-sm"
-                >
-                  <Award className="w-4 h-4" /> Certificate
-                </button>
-              )}
-            </div>
-          </header>
-
-          <LibraryCardGrid>
-            {texts.map((text) => {
-              const u = loadLessonUnlock(contentLang, text.id);
-              const prog = lessonExerciseProgress(u);
-              const done = isLessonExercisesComplete(u);
-              const lessonIdx = lessonIndexInLevel(levelTexts, text.id);
-              const lessonNum = (lessonIdx % 10) + 1;
-              return (
-                <LibraryCard
-                  key={text.id}
-                  title={`${lessonNum}. ${text.title}`}
-                  preview={text.text}
-                  done={done}
-                  badge={u.readingBest != null ? (
-                    <span className={`text-xs font-bold px-2.5 py-0.5 rounded-md ${u.readingPassed ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
-                      {u.readingBest}%
-                    </span>
-                  ) : undefined}
-                  meta={`Vocab ${u.vocabPassed ? '✓' : '—'} · Read ${u.readingPassed ? '✓' : u.readingBest != null ? `${u.readingBest}%` : '—'} · Exercises ${prog.done}/${prog.total}`}
-                  onClick={() => openPassage(props.level, text)}
-                />
-              );
-            })}
-          </LibraryCardGrid>
-      </ScreenShell>
-    );
-  }
-
-  // All lesson resources (vocab, read, exercises) are always available.
-  const phaseTabs: { id: LessonPhase; label: string; locked: boolean }[] = [
-    { id: 'pre-read', label: 'Vocabulary', locked: false },
-    { id: 'read', label: 'Read', locked: false },
-    { id: 'exercises', label: 'Exercises', locked: false },
-  ];
-
-  const showPhaseChrome = true;
-
-  return (
-    <div className="min-h-full">
-      {showPhaseChrome && (
-      <div className={`sticky top-0 z-20 bg-white/90 dark:bg-zinc-950/90 backdrop-blur border-b border-slate-200 dark:border-zinc-800 px-4 py-3 ${phase === 'read' ? '' : ''}`}>
-        <div className="max-w-4xl mx-auto flex items-center gap-3 flex-wrap">
-            <button
-              onClick={() => { props.reset(); setShowRecModal(false); setHubView('library'); }}
-            className="text-sm font-semibold text-slate-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-50 flex items-center gap-2 transition-all bg-white dark:bg-zinc-900 hover:bg-slate-50 dark:hover:bg-zinc-800 px-4 py-2 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm"
-          >
-            <ArrowLeft className="w-4 h-4" /> Back to unit
-          </button>
-          <span className="font-serif font-bold text-zinc-900 dark:text-zinc-50 truncate flex-1">
-            {props.currentTextObj?.title}
-          </span>
-        </div>
-        <div className="max-w-4xl mx-auto flex gap-1 mt-3 overflow-x-auto">
-          {phaseTabs.map((tab) => (
-            <button
-              key={tab.id}
-              disabled={tab.locked}
-              onClick={() => {
-                if (tab.locked) return;
-                if (tab.id === 'exercises') goToExercises();
-                else setPhase(tab.id);
-              }}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-colors ${
-                phase === tab.id
-                  ? 'bg-zinc-900 text-white'
-                  : tab.locked
-                  ? 'text-slate-300 dark:text-zinc-600 cursor-not-allowed'
-                  : 'text-slate-600 dark:text-zinc-400 hover:bg-slate-100 dark:hover:bg-zinc-800'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-      </div>
-      )}
-
-      {phase === 'pre-read' && (
-        <VocabLearnPhase
-          text={props.currentTextObj}
-          playWord={props.playWord}
-          onBack={() => setHubView('library')}
-          onLearned={handleVocabLearned}
-          onMemorizeWord={(word, def) => props.handleAddVocab(word, def)}
-        />
-      )}
-
-      {phase === 'read' && (
-        <ReadingView
+  const renderReading = (embed: { ready: boolean; onBack: () => void; onContinue: () => void; hideNavigation?: boolean }) => (
+    <ReadingView
           readingView="practice"
           setReadingView={props.setReadingView}
           setActiveTab={props.setActiveTab}
@@ -668,90 +337,112 @@ export function LessonsView(props: LessonsViewProps) {
           transcriptionUnavailable={props.transcriptionUnavailable}
           transcriptionFailed={props.transcriptionFailed}
           lessonEmbed
-          lessonExercisesReady={unlock.readingBest != null || unlock.readingPassed}
-          onLessonBack={() => setHubView('library')}
-          onLessonContinue={goToExercises}
+          hideLessonNavigation={embed.hideNavigation}
+          lessonExercisesReady={embed.ready}
+          onLessonBack={embed.onBack}
+          onLessonContinue={embed.onContinue}
         />
-      )}
-
-      {phase === 'exercises' && (
-        <LessonExerciseFlow
-          text={props.currentTextObj}
-          contentLang={contentLang}
-          passageVocab={passageVocab}
-          meanings={meanings}
-          allVocabMap={props.allVocabMap}
-          unlock={unlock}
-          onBack={() => setHubView('library')}
-          onExerciseComplete={handleExerciseComplete}
-          onReRead={() => setPhase('read')}
-          onAllDone={() => setShowRecModal(true)}
-        />
-      )}
-
-      {/* Recommendations popup */}
-      {showRecModal && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm">
-          <div className="bg-white dark:bg-zinc-900 rounded-3xl p-6 md:p-8 max-w-md w-full shadow-2xl relative">
-            <button
-              onClick={() => setShowRecModal(false)}
-              className="absolute top-4 right-4 p-1.5 rounded-lg text-slate-400 hover:bg-slate-100"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <CheckCircle2 className="w-12 h-12 text-emerald-500 mb-3" />
-            <h2 className="text-2xl font-serif font-bold text-zinc-900 mb-2">Lesson complete</h2>
-            <p className="text-slate-500 text-sm mb-5">Recommended next — review these words:</p>
-            <div className="space-y-2 max-h-64 overflow-y-auto mb-6">
-              {[...new Set([...(unlock.missedWords || []), ...props.srsDueWords])].slice(0, 16).map((w) => (
-                <div
-                  key={w}
-                  className="flex items-center justify-between px-3 py-2.5 rounded-xl border border-slate-200 dark:border-zinc-800"
-                >
-                  <span className="font-medium capitalize">{w}</span>
-                  <button onClick={() => props.playWord(w)} className="p-1.5 rounded-lg hover:bg-slate-100 text-slate-500">
-                    <Volume2 className="w-4 h-4" />
-                  </button>
-                </div>
-              ))}
-              {[...new Set([...(unlock.missedWords || []), ...props.srsDueWords])].length === 0 && (
-                <p className="text-sm text-slate-500">No words due — great work!</p>
-              )}
-            </div>
-            {loadCertificateMeta(contentLang, props.level)?.awarded && (
-              <button
-                onClick={() => { setShowRecModal(false); setCertLevel(props.level); setHubView('certificate'); }}
-                className="w-full mb-3 py-3 rounded-xl bg-amber-500 text-white font-bold flex items-center justify-center gap-2"
-              >
-                <Award className="w-4 h-4" /> View certificate
-              </button>
-            )}
-            {(() => {
-              const curIdx = lessonIndexInLevel(levelTexts, props.currentTextObj?.id || '');
-              const immediateNext = curIdx >= 0 && curIdx < levelTexts.length - 1 ? levelTexts[curIdx + 1] : null;
-              if (!immediateNext) return null;
-              return (
-                <button
-                  onClick={() => {
-                    setShowRecModal(false);
-                    setSelectedUnitIndex(Math.floor((curIdx + 1) / 10));
-                    openPassage(props.level, immediateNext);
-                  }}
-                  className="w-full mb-3 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition-colors"
-                >
-                  Next lesson: {immediateNext.title}
-                </button>
-              );
-            })()}
-            <button
-              onClick={() => { setShowRecModal(false); setHubView('library'); }}
-              className="w-full py-3 rounded-xl bg-zinc-900 text-white font-bold"
-            >
-              Back to unit
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
   );
+
+  const backToPath = () => {
+    props.reset();
+    props.setShowFeedbackModal(false);
+    props.navigatePath(['path', biteLevel || props.level]);
+  };
+  const startBite = (text: ReadingText, index: number) => {
+    props.reset();
+    props.setIsCustomMode(false);
+    props.setCurrentTextId(text.id);
+    props.navigatePath(['bite', contentLang, text.id, String(index)]);
+  };
+
+  if (routeKind === 'today') return <ReviewSession kind="today" onExit={() => navigate({ tab: 'dashboard', path: [] })} onContinue={backToPath} />;
+  if (routeKind === 'hearts') {
+    const resumeBite = props.path.length === 5 ? () => props.navigatePath(['bite', ...props.path.slice(2)]) : backToPath;
+    if (props.path[1] === 'practice') return <ReviewSession kind="heart-practice" onExit={() => props.navigatePath(['hearts'])} onContinue={resumeBite} />;
+    return <div className="max-w-md w-full mx-auto px-5 py-8"><HeartsOptions
+      onPractice={() => props.navigatePath(['hearts', 'practice'])}
+      onToday={() => props.navigatePath(['today'])}
+      onClose={backToPath}
+    /></div>;
+  }
+
+  if (routeKind === 'test') {
+    const testLevel = LEVELS.find(l => l === props.path[1]);
+    if (testLevel) return <SectionTest level={testLevel} onDone={(passed) => props.navigatePath(['path', passed ? testLevel : props.level])} />;
+  }
+
+  // The path is the whole Learn tab now: older library pages fall back to it.
+  if (!isBite) {
+    if (!Object.values(LEVEL_TEXTS).some(texts => texts.length)) return <SmartyLoader sticker="flow.lesson-loading" />;
+    return <PathView
+      level={routeLevel || props.level}
+      setLevel={level => { props.setLevel(level); props.navigatePath(['path', level]); }}
+      textsByLevel={LEVEL_TEXTS}
+      contentLang={contentLang}
+      startingLevel={props.startingLevel}
+      onStartBite={startBite}
+      onTakeTest={(lvl) => props.navigatePath(['test', lvl])}
+    />;
+  }
+
+  if (isBite) {
+    const validLang = Object.hasOwn(CONTENT_LANG_LABEL, props.path[1]);
+    if (validLang && (props.path[1] !== contentLang || !Object.values(LEVEL_TEXTS).some(texts => texts.length))) return <SmartyLoader />;
+    if (!validLang || !biteLevel || !biteDef || props.currentTextObj.id !== props.path[2]) {
+      return <div className="m-auto p-6 text-center flex flex-col items-center">
+        <Sticker id="reward.toast" size={150} priority="hero" />
+        <p className="font-bold">{t('bites.notFound')}</p>
+        <button type="button" onClick={backToPath} className="mt-4 rounded-2xl bg-zinc-900 text-white px-6 py-3 font-bold shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75">{t('bites.backToPath')}</button>
+      </div>;
+    }
+    const nextText = LEVEL_TEXTS[biteLevel][LEVEL_TEXTS[biteLevel].findIndex(tx => tx.id === props.currentTextObj.id) + 1];
+    const nextDef = biteDefs[biteIndex + 1];
+    const readResult = props.isFinished && !props.isRecording && !props.transcriptionFailed && !props.transcriptionUnavailable
+      ? Math.round(props.readAccuracy) : null;
+    const blocked = biteDef.costsHearts && !unlimitedHearts && !previewMode && hearts.count === 0;
+    return <BiteRunner
+      key={`${contentLang}:${biteDef.id}`}
+      text={props.currentTextObj}
+      def={biteDef}
+      firstEver={biteDef.index === 0 && LEVEL_TEXTS[biteLevel][0]?.id === props.currentTextObj.id}
+      contentLang={contentLang}
+      passageVocab={passageVocab}
+      meanings={meanings}
+      allVocabMap={props.allVocabMap}
+      renderVocabIntro={(words, done) => <VocabLearnPhase
+        text={{ ...props.currentTextObj, vocabulary: props.currentTextObj.vocabulary.filter(v => words.includes(v.word.toLowerCase())) }}
+        playWord={props.playWord}
+        onBack={backToPath}
+        hideBack
+        variant="lesson"
+        continueLabel={t('smarty.continue')}
+        onLearned={done}
+        onMemorizeWord={props.handleAddVocab}
+      />}
+      renderRead={() => renderReading({ ready: false, onBack: backToPath, onContinue: () => {}, hideNavigation: true })}
+      readResult={readResult}
+      onStepScore={score => { if (!previewMode) recordBiteStep(contentLang, props.currentTextObj.id, score); }}
+      onComplete={result => {
+        if (!previewMode) {
+          recordBiteCompletion(contentLang, result);
+          maybeAwardLevelCertificate(contentLang, biteLevel, LEVEL_TEXTS[biteLevel].map(tx => tx.id), props.studentName);
+        }
+        return awardBiteXP(result, props.currentTextObj.title);
+      }}
+      onExit={backToPath}
+      onNext={nextDef ? () => startBite(props.currentTextObj, nextDef.index) : nextText ? () => startBite(nextText, 0) : backToPath}
+      nextLabel={nextDef || nextText ? t('smarty.continue') : t('bites.backToPath')}
+      topRight={<HeartsChip />}
+      onMistake={word => {
+        if (unlimitedHearts || previewMode) return true;
+        if (word) updateLessonUnlock(contentLang, props.currentTextObj.id, { missedWords: [word.toLowerCase()] });
+        return loseHeart();
+      }}
+      paused={blocked}
+      pausedOverlay={blocked ? <OutOfHeartsSheet onClose={backToPath} onToday={() => props.navigatePath(['today'])} onPractice={() => props.navigatePath(['hearts', 'practice', ...props.path.slice(1)])} /> : undefined}
+    />;
+  }
+
+  return null;
 }

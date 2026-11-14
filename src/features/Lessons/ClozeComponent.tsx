@@ -1,3 +1,5 @@
+import { useUiLang } from '../../contexts/UiLangContext';
+import { answerFeedback } from '../../lib/smarty/answer';
 import React, { useMemo, useState } from 'react';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 import type { ReadingText } from '../../lib/reading-logic';
@@ -11,6 +13,8 @@ interface Props {
   contentLang: ContentLang;
   onBack: () => void;
   hideBack?: boolean;
+  /** Cap the number of items (bite-sized sessions). */
+  maxItems?: number;
   onComplete: (result: {
     type: string;
     score: number;
@@ -20,9 +24,10 @@ interface Props {
   }) => void;
 }
 
-export function ClozeComponent({ text, contentLang, onBack, onComplete, hideBack }: Props) {
+export function ClozeComponent({ text, contentLang, onBack, onComplete, hideBack, maxItems = 14 }: Props) {
+  const { t } = useUiLang();
   const items = useMemo(
-    () => generateClozeItems(text.text, text.vocabulary || [], contentLang, 14, text.format),
+    () => generateClozeItems(text.text, text.vocabulary || [], contentLang, maxItems, text.format),
     [text, contentLang],
   );
   const [index, setIndex] = useState(0);
@@ -36,10 +41,9 @@ export function ClozeComponent({ text, contentLang, onBack, onComplete, hideBack
       <div className="max-w-2xl mx-auto py-10 px-6">
         {!hideBack && (
           <button onClick={onBack} className="mb-6 flex items-center gap-2 text-slate-500">
-            <ArrowLeft className="w-5 h-5" /> Back
-          </button>
+            <ArrowLeft className="w-5 h-5" />{' '}{t("onboard.back")}</button>
         )}
-        <p className="text-slate-600">No cloze items could be generated for this passage.</p>
+        <p className="text-slate-600">{t("learning.no.cloze.items.could.be.generated.for.this.passage.eaf5f5")}</p>
       </div>
     );
   }
@@ -53,11 +57,11 @@ export function ClozeComponent({ text, contentLang, onBack, onComplete, hideBack
       normalizeForMatch(input.trim(), contentLang) ===
       normalizeForMatch(current.answer, contentLang);
     if (ok) {
-      playSound('success');
+      answerFeedback(true, { questionId: String(index), word: current.word });
       setCorrectWords((w) => [...w, current.word]);
       setFeedback('ok');
     } else {
-      playSound('fail');
+      answerFeedback(false, { questionId: String(index), word: current.word });
       setMistakes((m) => [...new Set([...m, current.word])]);
       setFeedback('bad');
     }
@@ -88,14 +92,12 @@ export function ClozeComponent({ text, contentLang, onBack, onComplete, hideBack
     <div className="max-w-2xl mx-auto py-10 px-6">
       {!hideBack && (
         <button onClick={onBack} className="mb-6 flex items-center gap-2 text-slate-500 hover:text-zinc-900 font-medium">
-          <ArrowLeft className="w-5 h-5" /> Back
-        </button>
+          <ArrowLeft className="w-5 h-5" />{' '}{t("onboard.back")}</button>
       )}
-      <div className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-400">
-        Gap Fill · {index + 1} / {items.length}
+      <div className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-400">{t("learning.gap.fill.77e791")}{' '}{index + 1} / {items.length}
       </div>
-      <h2 className="text-2xl font-serif font-bold text-zinc-900 dark:text-zinc-50 mb-6">Fill in the blank</h2>
-      <p className="text-lg leading-relaxed text-slate-800 dark:text-zinc-200 mb-8 bg-slate-50 dark:bg-zinc-900 border border-slate-200 dark:border-zinc-700 rounded-2xl p-6">
+      <h2 className="text-2xl font-serif font-bold text-zinc-900 dark:text-zinc-50 mb-6">{t("learning.fill.in.the.blank.4ea837")}</h2>
+      <p className="text-lg leading-relaxed text-slate-800 dark:text-zinc-200 mb-8 bg-slate-50 dark:bg-zinc-900 border-2 border-slate-200 dark:border-zinc-700 rounded-2xl p-6">
         {current.blanked}
       </p>
       <input
@@ -110,22 +112,20 @@ export function ClozeComponent({ text, contentLang, onBack, onComplete, hideBack
             ? 'border-rose-400 bg-rose-50'
             : 'border-slate-200 focus:border-zinc-900 dark:bg-zinc-900 dark:border-zinc-700'
         }`}
-        placeholder="Type the missing word…"
+        placeholder={t("learning.type.the.missing.word.b32da4")}
         autoFocus
       />
       {feedback === 'bad' && (
-        <p className="mt-3 text-sm text-rose-600">Answer: <span className="font-bold">{current.answer}</span></p>
+        <p className="mt-3 text-sm text-rose-600">{t("learning.answer.c36008")}{' '}<span className="font-bold">{current.answer}</span></p>
       )}
       {feedback === 'ok' && (
-        <p className="mt-3 text-sm text-emerald-600 flex items-center gap-1"><CheckCircle2 className="w-4 h-4" /> Correct</p>
+        <p className="mt-3 text-sm text-emerald-600 flex items-center gap-1"><CheckCircle2 className="w-4 h-4" />{' '}{t("learning.correct.48e09e")}</p>
       )}
       <button
         onClick={submit}
         disabled={!input.trim() || feedback !== 'idle'}
-        className="mt-6 w-full py-3 rounded-xl bg-zinc-900 text-white font-bold uppercase tracking-wider text-sm disabled:opacity-40"
-      >
-        Check
-      </button>
+        className="mt-6 w-full py-3 rounded-2xl bg-zinc-900 text-white font-bold uppercase tracking-wider text-sm disabled:opacity-40 shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75"
+      >{t("lesson.check")}</button>
     </div>
   );
 }

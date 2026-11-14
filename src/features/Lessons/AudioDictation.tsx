@@ -1,3 +1,5 @@
+import { useUiLang } from '../../contexts/UiLangContext';
+import { answerFeedback } from '../../lib/smarty/answer';
 import React, { useMemo, useState } from 'react';
 import { ArrowLeft, Volume2 } from 'lucide-react';
 import type { ReadingText } from '../../lib/reading-logic';
@@ -13,6 +15,9 @@ interface Props {
   contentLang: ContentLang;
   onBack: () => void;
   hideBack?: boolean;
+  /** Bite-sized sessions: how many sentences, starting where. */
+  maxItems?: number;
+  sentenceOffset?: number;
   onComplete: (result: {
     type: string;
     score: number;
@@ -22,11 +27,12 @@ interface Props {
   }) => void;
 }
 
-export function AudioDictation({ text, contentLang, onBack, onComplete, hideBack }: Props) {
+export function AudioDictation({ text, contentLang, onBack, onComplete, hideBack, maxItems = 8, sentenceOffset = 0 }: Props) {
+  const { t } = useUiLang();
   const { speechLocale } = useContentLang();
   const sentences = useMemo(
-    () => splitSentences(text.text, text.format).slice(0, 8),
-    [text.text, text.format],
+    () => splitSentences(text.text, text.format).slice(sentenceOffset, sentenceOffset + maxItems),
+    [text.text, text.format, maxItems, sentenceOffset],
   );
   const [index, setIndex] = useState(0);
   const [input, setInput] = useState('');
@@ -41,10 +47,9 @@ export function AudioDictation({ text, contentLang, onBack, onComplete, hideBack
       <div className="max-w-2xl mx-auto py-10 px-6">
         {!hideBack && (
           <button onClick={onBack} className="mb-6 flex items-center gap-2 text-slate-500">
-            <ArrowLeft className="w-5 h-5" /> Back
-          </button>
+            <ArrowLeft className="w-5 h-5" />{' '}{t("onboard.back")}</button>
         )}
-        <p className="text-slate-600">No sentences available for dictation.</p>
+        <p className="text-slate-600">{t("learning.no.sentences.available.for.dictation.64b803")}</p>
       </div>
     );
   }
@@ -77,8 +82,8 @@ export function AudioDictation({ text, contentLang, onBack, onComplete, hideBack
     const ok = ratio >= 0.8;
     const nextPassed = passedCount + (ok ? 1 : 0);
     setPassedCount(nextPassed);
-    if (ok) playSound('success');
-    else playSound('fail');
+    if (ok) answerFeedback(true, { questionId: String(index) });
+    else answerFeedback(false, { questionId: String(index), word: wrong[0] });
     const nextCorrect = [...correctWords, ...correct];
     const nextMistakes = [...new Set([...mistakes, ...wrong])];
     setCorrectWords(nextCorrect);
@@ -113,19 +118,16 @@ export function AudioDictation({ text, contentLang, onBack, onComplete, hideBack
           onClick={() => { cancelSpeech(); onBack(); }}
           className="mb-6 flex items-center gap-2 text-slate-500 hover:text-zinc-900 font-medium"
         >
-          <ArrowLeft className="w-5 h-5" /> Back
-        </button>
+          <ArrowLeft className="w-5 h-5" />{' '}{t("onboard.back")}</button>
       )}
-      <div className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-400">
-        Audio Dictation · {index + 1} / {sentences.length}
+      <div className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-400">{t("learning.audio.dictation.606a52")}{' '}{index + 1} / {sentences.length}
       </div>
-      <h2 className="text-2xl font-serif font-bold text-zinc-900 dark:text-zinc-50 mb-4">Listen and type</h2>
+      <h2 className="text-2xl font-serif font-bold text-zinc-900 dark:text-zinc-50 mb-4">{t("learning.listen.and.type.2d59f7")}</h2>
       <button
         onClick={play}
-        className="mb-6 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-zinc-900 text-white font-bold text-sm"
+        className="mb-6 inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-zinc-900 text-white font-bold text-sm shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75"
       >
-        <Volume2 className="w-4 h-4" /> Play sentence
-      </button>
+        <Volume2 className="w-4 h-4" />{' '}{t("learning.play.sentence.eced0d")}</button>
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
@@ -138,20 +140,17 @@ export function AudioDictation({ text, contentLang, onBack, onComplete, hideBack
             ? 'border-rose-400 bg-rose-50'
             : 'border-slate-200 focus:border-zinc-900 dark:bg-zinc-900 dark:border-zinc-700'
         }`}
-        placeholder="Type what you hear…"
+        placeholder={t("learning.type.what.you.hear.4c7266")}
       />
       {revealed && (
-        <p className="mt-3 text-sm text-slate-600 dark:text-zinc-400">
-          Target: <span className="font-medium text-zinc-900 dark:text-zinc-100">{current}</span>
+        <p className="mt-3 text-sm text-slate-600 dark:text-zinc-400">{t("learning.target.652ac2")}{' '}<span className="font-medium text-zinc-900 dark:text-zinc-100">{current}</span>
         </p>
       )}
       <button
         onClick={submit}
         disabled={!input.trim() || feedback !== 'idle'}
-        className="mt-6 w-full py-3 rounded-xl bg-zinc-900 text-white font-bold uppercase tracking-wider text-sm disabled:opacity-40"
-      >
-        Check
-      </button>
+        className="mt-6 w-full py-3 rounded-2xl bg-zinc-900 text-white font-bold uppercase tracking-wider text-sm disabled:opacity-40 shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75"
+      >{t("lesson.check")}</button>
     </div>
   );
 }

@@ -6,8 +6,8 @@
 
 import type { Level } from './reading-logic';
 import type { ContentLang } from './contentLang';
-import { auth, db, isFirebaseConfigured } from '../firebase';
-import { doc, setDoc, getDocs, collection } from 'firebase/firestore';
+import { auth } from '../firebase';
+import { dataRequest } from './selfHostedApi';
 import { scopedKey, getStorageUid } from './userStorage';
 
 export type LessonPhase = 'pre-read' | 'read' | 'exercises' | 'recommendations';
@@ -19,6 +19,8 @@ export interface LessonUnlock {
   readingPassed: boolean;
   exerciseBest: Record<string, number>;
   missedWords: string[];
+  /** Bite-sized sessions finished for this lesson, by bite index. */
+  bites?: Record<number, { best: number; completedAt: number; perfect?: boolean; attempts: number }>;
 }
 
 export const LESSON_PASS_THRESHOLD = 80;
@@ -82,6 +84,33 @@ function emptyUnlock(): LessonUnlock {
   };
 }
 
+/** Additive cloud restore: keep the best scores and every completed bite. */
+export function mergeLessonUnlocks(local: LessonUnlock, remote: LessonUnlock): LessonUnlock {
+  const best = (a: number | null, b: number | null) => a == null ? b : b == null ? a : Math.max(a, b);
+  const exerciseBest = { ...local.exerciseBest };
+  for (const [kind, score] of Object.entries(remote.exerciseBest || {})) {
+    exerciseBest[kind] = Math.max(exerciseBest[kind] ?? 0, normalizePercentScore(score) ?? 0);
+  }
+  const bites = { ...local.bites };
+  for (const [index, record] of Object.entries(remote.bites || {})) {
+    const previous = bites[Number(index)];
+    bites[Number(index)] = {
+      best: Math.max(previous?.best ?? 0, normalizePercentScore(record.best) ?? 0),
+      completedAt: Math.max(previous?.completedAt ?? 0, record.completedAt || 0),
+      perfect: previous?.perfect || record.perfect || false,
+      attempts: Math.max(previous?.attempts ?? 0, record.attempts || 0),
+    };
+  }
+  const readingBest = best(local.readingBest, normalizePercentScore(remote.readingBest));
+  const vocabQuizScore = best(local.vocabQuizScore, normalizePercentScore(remote.vocabQuizScore));
+  return {
+    vocabQuizScore, vocabPassed: local.vocabPassed || remote.vocabPassed || deriveVocabPassed(vocabQuizScore),
+    readingBest, readingPassed: readingBest != null && readingBest >= LESSON_PASS_THRESHOLD,
+    exerciseBest, missedWords: [...new Set([...local.missedWords, ...remote.missedWords])],
+    ...(Object.keys(bites).length ? { bites } : {}),
+  };
+}
+
 function deriveVocabPassed(score: number | null | undefined): boolean {
   return typeof score === 'number' && Number.isFinite(score) && score >= LESSON_PASS_THRESHOLD;
 }
@@ -95,20 +124,17 @@ export function normalizePercentScore(n: number | null | undefined): number | nu
 
 function syncUnlockToCloud(lang: ContentLang, passageId: string, data: LessonUnlock): void {
   const uid = auth?.currentUser?.uid || getStorageUid();
-  if (!uid || !isFirebaseConfigured || !db) return;
-  const id = unlockDocId(lang, passageId);
-  setDoc(doc(db, 'users', uid, 'lessonUnlocks', id), {
-    lang,
-    passageId,
-    ...data,
-    updatedAt: Date.now(),
-  }, { merge: true }).catch(e => console.error('lessonUnlock sync failed:', e));
+  if (!uid) return;
+  dataRequest('lesson.upsert', { uid, lang, passageId, data: { ...data, updatedAt: Date.now() } })
+    .catch(e => console.error('lessonUnlock sync failed:', e));
 }
 
 export function loadLessonUnlock(lang: ContentLang, passageId: string): LessonUnlock {
   try {
+    // Signed in: only this account's copy (the server restores it). The shared
+    // unscoped key belongs to signed-out use and would leak between accounts.
     const raw = localStorage.getItem(unlockKey(lang, passageId))
-      || localStorage.getItem(`readmaster_lesson_unlock_${lang}_${passageId}`);
+      || (getStorageUid() ? null : localStorage.getItem(`readmaster_lesson_unlock_${lang}_${passageId}`));
     if (!raw) return emptyUnlock();
     const parsed = JSON.parse(raw) as Partial<LessonUnlock>;
     const vocabQuizScore = normalizePercentScore(
@@ -144,9 +170,9 @@ export function loadLessonUnlock(lang: ContentLang, passageId: string): LessonUn
 export function saveLessonUnlock(lang: ContentLang, passageId: string, data: LessonUnlock): void {
   try {
     localStorage.setItem(unlockKey(lang, passageId), JSON.stringify(data));
-    localStorage.setItem(`readmaster_lesson_unlock_${lang}_${passageId}`, JSON.stringify(data));
   } catch { /* ignore */ }
   syncUnlockToCloud(lang, passageId, data);
+  if (typeof window !== 'undefined') window.dispatchEvent(new Event('smarty:lesson-progress'));
 }
 
 export function updateLessonUnlock(
@@ -164,6 +190,7 @@ export function updateLessonUnlock(
     missedWords: patch.missedWords
       ? Array.from(new Set([...(prev.missedWords || []), ...patch.missedWords]))
       : prev.missedWords,
+    bites: patch.bites ? { ...(prev.bites || {}), ...patch.bites } : prev.bites,
   };
 
   if (typeof patch.vocabQuizScore === 'number' && Number.isFinite(patch.vocabQuizScore)) {
@@ -239,10 +266,6 @@ export function awardCertificate(lang: ContentLang, level: Level, meta?: { name?
   try {
     localStorage.setItem(certKey(lang, level), JSON.stringify(payload));
     localStorage.setItem(certKey(lang, level) + '_flag', '1');
-    localStorage.setItem(
-      `readmaster_certificate_${lang}_${level.toLowerCase().replace(/\s+/g, '_')}`,
-      JSON.stringify(payload),
-    );
   } catch { /* ignore */ }
 }
 
@@ -252,7 +275,7 @@ export function loadCertificateMeta(
 ): { awarded: boolean; date?: number; name?: string } | null {
   try {
     const raw = localStorage.getItem(certKey(lang, level))
-      || localStorage.getItem(`readmaster_certificate_${lang}_${level.toLowerCase().replace(/\s+/g, '_')}`);
+      || (getStorageUid() ? null : localStorage.getItem(`readmaster_certificate_${lang}_${level.toLowerCase().replace(/\s+/g, '_')}`));
     if (!raw || raw === '1') {
       if (localStorage.getItem(certKey(lang, level) + '_flag') === '1' || raw === '1') {
         return { awarded: true };
@@ -269,12 +292,16 @@ export function loadCertificateMeta(
   }
 }
 
+/** Optional extra check (bites mastered) registered by the bites module to avoid a cycle. */
+let masteredCheck: ((lang: ContentLang, passageId: string) => boolean) | null = null;
+export function registerMasteredCheck(fn: ((lang: ContentLang, passageId: string) => boolean) | null) { masteredCheck = fn; }
+
 export function checkLevelCertificateEligibility(
   lang: ContentLang,
   passageIds: string[],
 ): boolean {
   if (!passageIds.length) return false;
-  return passageIds.every((id) => isLessonExercisesComplete(loadLessonUnlock(lang, id)));
+  return passageIds.every((id) => isLessonExercisesComplete(loadLessonUnlock(lang, id)) || !!masteredCheck?.(lang, id));
 }
 
 export function maybeAwardLevelCertificate(
@@ -306,25 +333,25 @@ export function levelProgressSummary(
 }
 
 export async function hydrateLessonUnlocksFromCloud(uid: string): Promise<void> {
-  if (!isFirebaseConfigured || !db) return;
   try {
-    const snap = await getDocs(collection(db, 'users', uid, 'lessonUnlocks'));
-    snap.forEach(d => {
-      const data = d.data() as LessonUnlock & { lang?: ContentLang; passageId?: string };
+    const rows = await dataRequest<Array<LessonUnlock & { lang?: ContentLang; passageId?: string }>>('lesson.list', { uid });
+    rows.forEach((data) => {
       if (!data.lang || !data.passageId) return;
-      const unlock: LessonUnlock = {
+      const remote: LessonUnlock = {
         vocabQuizScore: data.vocabQuizScore ?? null,
         vocabPassed: !!data.vocabPassed,
         readingBest: data.readingBest ?? null,
         readingPassed: !!data.readingPassed,
         exerciseBest: data.exerciseBest || {},
         missedWords: Array.isArray(data.missedWords) ? data.missedWords : [],
+        ...(data.bites && typeof data.bites === 'object' ? { bites: data.bites } : {}),
       };
+      const unlock = mergeLessonUnlocks(loadLessonUnlock(data.lang, data.passageId), remote);
       try {
         localStorage.setItem(unlockKey(data.lang, data.passageId), JSON.stringify(unlock));
-        localStorage.setItem(`readmaster_lesson_unlock_${data.lang}_${data.passageId}`, JSON.stringify(unlock));
       } catch { /* ignore */ }
     });
+    if (typeof window !== 'undefined') window.dispatchEvent(new Event('smarty:lesson-progress'));
   } catch (e) {
     console.error('hydrateLessonUnlocksFromCloud failed:', e);
   }
