@@ -145,7 +145,7 @@ function StringListEditor({ items, onChange, placeholder = 'Add item…', rowLab
 
       {/* Add new item */}
       <div className="flex gap-2 mt-3">
-        <textarea
+        <textarea aria-label={placeholder}
           value={newText}
           onChange={e => setNewText(e.target.value)}
           onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); add(); } }}
@@ -453,7 +453,7 @@ function ShadowingEditor() {
             <div className="bg-zinc-50 rounded-2xl border border-zinc-200 p-4 space-y-3">
               <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{editIdx !== null ? tr("site.contentmanager.edit_530164") : tr("site.contentmanager.new_6403f2")}  {tr("site.contentmanager.shadowing_passage_8af61e")}</p>
               <div className="grid grid-cols-2 gap-3">
-                <input value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))}
+                <input aria-label={tr("site.contentmanager.passage_title_00488f")} value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))}
                   placeholder={tr("site.contentmanager.passage_title_00488f")} className="col-span-2 px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
                 <div className="relative">
                   <select value={form.level} onChange={e => setForm(f => ({ ...f, level: e.target.value as ShadowingLevel }))}
@@ -462,13 +462,13 @@ function ShadowingEditor() {
                   </select>
                   <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 pointer-events-none" />
                 </div>
-                <input value={form.topic} onChange={e => setForm(f => ({ ...f, topic: e.target.value }))}
+                <input aria-label={tr("site.contentmanager.topic_tag_eg_motivation_2dedb0")} value={form.topic} onChange={e => setForm(f => ({ ...f, topic: e.target.value }))}
                   placeholder={tr("site.contentmanager.topic_tag_eg_motivation_2dedb0")} className="px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
               </div>
-              <input value={form.audioSrc} onChange={e => setForm(f => ({ ...f, audioSrc: e.target.value }))}
+              <input aria-label={tr("site.contentmanager.audio_url_optional_https_or_73ec8f")} value={form.audioSrc} onChange={e => setForm(f => ({ ...f, audioSrc: e.target.value }))}
                 placeholder={tr("site.contentmanager.audio_url_optional_https_or_73ec8f")}
                 className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
-              <textarea value={form.text} onChange={e => setForm(f => ({ ...f, text: e.target.value }))}
+              <textarea aria-label={tr("site.contentmanager.full_transcript_text_2511f9")} value={form.text} onChange={e => setForm(f => ({ ...f, text: e.target.value }))}
                 rows={5} placeholder={tr("site.contentmanager.full_transcript_text_2511f9")}
                 className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400 resize-none" />
               <div className="flex gap-2 justify-end">
@@ -833,7 +833,7 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
           {showForm ? (
             <div className="bg-zinc-50 rounded-2xl border border-zinc-200 p-4 space-y-3">
               <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{editIdx !== null ? tr("site.contentmanager.edit_530164") : tr("site.contentmanager.new_6403f2")} {label}  {tr("onboard.passageLabel")}</p>
-              <input value={form.title} onChange={e => { setForm(f => ({ ...f, title: e.target.value })); setFormError(''); }}
+              <input aria-label={tr("site.contentmanager.passage_title_00488f")} value={form.title} onChange={e => { setForm(f => ({ ...f, title: e.target.value })); setFormError(''); }}
                 placeholder={tr("site.contentmanager.passage_title_00488f")} className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
               <div className="relative">
                 <select value={form.level} onChange={e => setForm(f => ({ ...f, level: e.target.value }))}
@@ -842,7 +842,7 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
                 </select>
                 <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 pointer-events-none" />
               </div>
-              <textarea value={form.passage} onChange={e => { setForm(f => ({ ...f, passage: e.target.value })); setFormError(''); }}
+              <textarea aria-label={placeholder} value={form.passage} onChange={e => { setForm(f => ({ ...f, passage: e.target.value })); setFormError(''); }}
                 rows={6} placeholder={placeholder}
                 className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400 resize-y" />
               <div>
@@ -851,7 +851,7 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
                   <button onClick={() => setForm(f => ({ ...f, questionsJson: TEMPLATE }))} className="text-xs text-indigo-600 font-semibold hover:underline inline-flex items-center gap-1">
                     <Code className="w-3 h-3" />  {tr("site.contentmanager.template_3ec1ae")}</button>
                 </div>
-                <textarea value={form.questionsJson} onChange={e => { setForm(f => ({ ...f, questionsJson: e.target.value })); setFormError(''); }}
+                <textarea aria-label={'[{"text":"Question?","options":["A","B","C","D"],"answer":0}]'} value={form.questionsJson} onChange={e => { setForm(f => ({ ...f, questionsJson: e.target.value })); setFormError(''); }}
                   rows={6} spellCheck={false} placeholder={'[{"text":"Question?","options":["A","B","C","D"],"answer":0}]'}
                   className="w-full px-3 py-2 rounded-xl border border-slate-200 text-[11px] font-mono focus:outline-none focus:border-zinc-400 resize-y" />
               </div>
@@ -1106,19 +1106,19 @@ function ReadingTextsEditor() {
           {showForm ? (
             <div className="bg-zinc-50 rounded-2xl border border-zinc-200 p-4 space-y-3">
               <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{editIdx !== null ? tr("site.contentmanager.edit_530164") : tr("site.contentmanager.new_6403f2")}  {tr("site.contentmanager.reading_text_6ac6dc")}</p>
-              <input value={form.title} onChange={e => { setForm(f => ({ ...f, title: e.target.value })); setFormError(''); }}
+              <input aria-label={tr("site.contentmanager.text_title_f4b779")} value={form.title} onChange={e => { setForm(f => ({ ...f, title: e.target.value })); setFormError(''); }}
                 placeholder={tr("site.contentmanager.text_title_f4b779")} className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
               <div className="flex gap-3">
-                <input value={form.targetSeconds} onChange={e => setForm(f => ({ ...f, targetSeconds: e.target.value }))}
+                <input aria-label={tr("site.contentmanager.target_seconds_eg_120_4b69ad")} value={form.targetSeconds} onChange={e => setForm(f => ({ ...f, targetSeconds: e.target.value }))}
                   placeholder={tr("site.contentmanager.target_seconds_eg_120_4b69ad")} type="number" min="10"
                   className="w-40 px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
               </div>
-              <textarea value={form.text} onChange={e => { setForm(f => ({ ...f, text: e.target.value })); setFormError(''); }}
+              <textarea aria-label={tr("site.contentmanager.full_text_content_for_the_278c41")} value={form.text} onChange={e => { setForm(f => ({ ...f, text: e.target.value })); setFormError(''); }}
                 rows={7} placeholder={tr("site.contentmanager.full_text_content_for_the_278c41")}
                 className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400 resize-y" />
               <div>
                 <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">{tr("site.contentmanager.vocabulary_json_7fe09b")}<span className="font-normal text-slate-400">{tr("site.contentmanager.optional_c7cdc4")}</span></label>
-                <textarea value={form.vocabJson} onChange={e => { setForm(f => ({ ...f, vocabJson: e.target.value })); setFormError(''); }}
+                <textarea aria-label={'[{"word":"ubiquitous","definition":"found everywhere"}]'} value={form.vocabJson} onChange={e => { setForm(f => ({ ...f, vocabJson: e.target.value })); setFormError(''); }}
                   rows={3} spellCheck={false} placeholder={'[{"word":"ubiquitous","definition":"found everywhere"}]'}
                   className="w-full px-3 py-2 rounded-xl border border-slate-200 text-[11px] font-mono focus:outline-none focus:border-zinc-400 resize-y" />
               </div>
@@ -1216,13 +1216,13 @@ function VocabReviewEditor() {
             {m.sampleSentence && <p className="text-sm italic text-slate-600 mb-2">“{m.sampleSentence}”</p>}
             {m.lastTranslation && <p className="text-sm text-slate-500 mb-2">{tr("site.contentmanager.api_1fa34c")}{m.lastTranslation}</p>}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <input
+              <input aria-label={tr("site.contentmanager.correct_word_in_known_language_6f468c")}
                 placeholder={tr("site.contentmanager.correct_word_in_known_language_6f468c")}
                 value={edits[m.id]?.w ?? ''}
                 onChange={(e) => setEdits((p) => ({ ...p, [m.id]: { w: e.target.value, d: p[m.id]?.d || '', lang: m.targetLang || 'en' } }))}
                 className="border border-slate-200 rounded-lg px-3 py-2 text-sm"
               />
-              <input
+              <input aria-label={tr("site.contentmanager.correct_definition_9528f7")}
                 placeholder={tr("site.contentmanager.correct_definition_9528f7")}
                 value={edits[m.id]?.d ?? ''}
                 onChange={(e) => setEdits((p) => ({ ...p, [m.id]: { w: p[m.id]?.w || '', d: e.target.value, lang: m.targetLang || 'en' } }))}

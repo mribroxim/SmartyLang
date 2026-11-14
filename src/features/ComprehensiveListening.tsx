@@ -1,3 +1,4 @@
+import { DialogSurface } from '../components/DialogSurface';
 import React, { useState, useEffect, useCallback } from 'react';
 import { playWord as sharedPlayWord } from '../lib/speech';
 import { useContentLang } from '../contexts/ContentLangContext';
@@ -217,7 +218,7 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
 
           <div className="relative mb-5">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-            <input
+            <input aria-label={t('library.searchPassages')}
               value={search}
               onChange={e => { setSearch(e.target.value); setPage(1); }}
               placeholder={t('library.searchPassages')}
@@ -321,11 +322,11 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
 
       {/* Print options modal */}
       {showPrintModal && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setShowPrintModal(false)}>
+        <DialogSurface onClose={() => setShowPrintModal(false)} className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setShowPrintModal(false)}>
           <div className="bg-white rounded-3xl w-full max-w-sm p-8 border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-6">
               <h2 className="font-serif font-extrabold text-zinc-900 text-lg">{t("site.comprehensivelistening.pdf_options_ba75a2")}</h2>
-              <button onClick={() => setShowPrintModal(false)} className="p-2 rounded-xl hover:bg-zinc-100 text-zinc-500">
+              <button aria-label={t('a11y.close')} onClick={() => setShowPrintModal(false)} className="p-2 rounded-xl hover:bg-zinc-100 text-zinc-500">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -343,7 +344,7 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
                 {t("site.comprehensivelistening.questions_only_no_blanks_e1a126")}</button>
             </div>
           </div>
-        </div>
+        </DialogSurface>
       )}
 
       <div className="flex flex-col lg:flex-row flex-1 overflow-hidden">

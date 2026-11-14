@@ -1,3 +1,4 @@
+import { DialogSurface } from '../components/DialogSurface';
 import React, { useEffect, useState, useMemo } from 'react';
 import { Check, CreditCard, AlertCircle, X, Loader2, Minus, Plus, Languages, Heart, Infinity as InfinityIcon, GraduationCap } from 'lucide-react';
 import {
@@ -329,7 +330,7 @@ function SubscribeModal({
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={onClose}>
+    <DialogSurface role="presentation" aria-modal={undefined} onClose={onClose} className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={onClose}>
       <div
         role="dialog"
         aria-modal="true"
@@ -342,7 +343,7 @@ function SubscribeModal({
               {t("core.paymentplans.configure_your_1712d3")} {plan.name}
             </h2>
             {!processing && (
-              <button onClick={onClose} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
+              <button aria-label={t('a11y.close')} onClick={onClose} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
                 <X className="w-5 h-5" />
               </button>
             )}
@@ -430,6 +431,6 @@ function SubscribeModal({
           </div>
         </div>
       </div>
-    </div>
+    </DialogSurface>
   );
 }

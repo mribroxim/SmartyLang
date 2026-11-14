@@ -1,3 +1,4 @@
+import { DialogSurface } from '../../components/DialogSurface';
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { BookOpen, Check, Coins, Crown, Flame, Heart, Keyboard, MessageCircleMore, Mic, Send, Trophy, Utensils, X, Zap } from 'lucide-react';
@@ -252,6 +253,7 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
     try {
       const name = getPrefs().preferredName || accountProfile?.displayName?.trim().split(/\s+/)[0] || undefined;
       const r = await smartyTalk({ utterance: text, history: history.current.slice(-8), contentLang, uiLang, level, name }, ac.signal);
+      if (r.safeFallback) r.reply = t('safety.ai.fallback');
       history.current.push({ role: 'user', content: text }, { role: 'assistant', content: r.reply });
       noteTalkedToSmarty();
       setTalk('speaking');
@@ -406,11 +408,11 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
           <motion.form key="type" initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 20, opacity: 0 }}
             onSubmit={(e) => { e.preventDefault(); sendTyped(); }}
             className="absolute left-1/2 z-20 flex w-[min(92cqw,520px)] -translate-x-1/2 gap-2 rounded-2xl border-2 border-zinc-900 bg-white p-1.5 shadow-[0_3px_0_0_#18181b]" style={{ top: `${L.talk.top - 9}%` }}>
-            <input autoFocus value={draft} onChange={(e) => setDraft(e.target.value)} placeholder={t('room.talk.placeholder')} maxLength={240}
+            <input aria-label={t('room.talk.placeholder')} autoFocus value={draft} onChange={(e) => setDraft(e.target.value)} placeholder={t('room.talk.placeholder')} maxLength={240}
               className="min-w-0 flex-1 bg-transparent px-2 text-base font-semibold text-zinc-900 outline-none" />
             <button type="submit" disabled={!draft.trim() || talk === 'thinking'} aria-label={t('room.talk.send')}
               className="flex h-10 w-10 items-center justify-center rounded-xl bg-zinc-900 text-white disabled:opacity-40"><Send className="h-4 w-4" /></button>
-            <button type="button" onClick={() => setTyping(false)} aria-label={t('history.close')} className="flex h-10 w-10 items-center justify-center rounded-xl text-slate-500"><X className="h-4 w-4" /></button>
+            <button type="button" onClick={() => setTyping(false)} aria-label={t('a11y.close')} className="flex h-10 w-10 items-center justify-center rounded-xl text-slate-500"><X className="h-4 w-4" /></button>
           </motion.form>
         )}
       </AnimatePresence>
@@ -464,14 +466,14 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
       {/* ── level up ── */}
       <AnimatePresence>
         {levelUp && (
-          <motion.div className="fixed inset-0 z-[90] flex items-center justify-center bg-zinc-900/60 p-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setLevelUp(null)}>
+          <DialogSurface asComponent={motion.div} onClose={() => setLevelUp(null)} className="fixed inset-0 z-[90] flex items-center justify-center bg-zinc-900/60 p-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setLevelUp(null)}>
             <motion.div initial={{ scale: 0.6, rotate: -6 }} animate={{ scale: 1, rotate: 0 }} transition={{ type: 'spring', stiffness: 300, damping: 16 }}
               className="w-full max-w-xs rounded-3xl border-2 border-zinc-900 bg-white p-6 text-center shadow-[0_6px_0_0_#18181b] dark:border-zinc-100 dark:bg-zinc-900">
               <Sticker id="achieve.level-up" size={150} priority="hero" mode="once" />
               <p className="font-serif text-2xl font-extrabold text-zinc-900 dark:text-zinc-50">{t('kitchen.levelUp.title')}</p>
               <p className="mt-1 text-sm font-semibold text-slate-500">{t('kitchen.levelUp.body', { n: levelUp, title: t(`kitchen.levelTitle.${smartyLevel(pantry.eaten).title}` as UiStringKey) })}</p>
             </motion.div>
-          </motion.div>
+          </DialogSurface>
         )}
       </AnimatePresence>
     </div>
@@ -498,7 +500,7 @@ function RoomSheet({ title, sticker, onClose, children, peek = false, right }: {
     return () => document.removeEventListener('keydown', key);
   }, [onClose]);
   return (
-    <motion.div className={`fixed inset-0 z-[85] flex items-end justify-center ${peek ? 'bg-zinc-900/10' : 'bg-zinc-900/40 sm:items-center sm:p-4'}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}>
+    <DialogSurface role="presentation" aria-modal={undefined} asComponent={motion.div} onClose={onClose} className={`fixed inset-0 z-[85] flex items-end justify-center ${peek ? 'bg-zinc-900/10' : 'bg-zinc-900/40 sm:items-center sm:p-4'}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}>
       <motion.div role="dialog" aria-modal="true" aria-label={title} initial={{ y: 60 }} animate={{ y: 0 }} exit={{ y: 80 }} transition={{ type: 'spring', stiffness: 380, damping: 32 }}
         className={`flex w-full max-w-lg flex-col overflow-hidden rounded-t-3xl border-2 border-zinc-900 bg-white shadow-[0_-4px_0_0_rgba(24,24,27,0.08)] dark:border-zinc-100 dark:bg-zinc-900 ${peek ? 'max-h-[52dvh] border-b-0 sm:max-h-[60dvh]' : 'max-h-[72dvh] sm:rounded-3xl'}`}
         onClick={(e) => e.stopPropagation()}>
@@ -507,11 +509,11 @@ function RoomSheet({ title, sticker, onClose, children, peek = false, right }: {
           {sticker && <Sticker id={sticker} size={44} mode="once" />}
           <h2 className="flex-1 font-serif text-xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50">{title}</h2>
           {right}
-          <button type="button" onClick={onClose} aria-label={t('history.close')} className="rounded-xl border-2 border-slate-200 p-2 text-slate-500 dark:border-zinc-700"><X className="h-5 w-5" /></button>
+          <button type="button" onClick={onClose} aria-label={t('a11y.close')} className="rounded-xl border-2 border-slate-200 p-2 text-slate-500 dark:border-zinc-700"><X className="h-5 w-5" /></button>
         </div>
         <div className="flex-1 overflow-y-auto px-5 pb-6 pt-1">{children}</div>
       </motion.div>
-    </motion.div>
+    </DialogSurface>
   );
 }
 
@@ -548,7 +550,7 @@ function Shop({ slot, onClose }: { slot: Slot; onClose: () => void }) {
           const owned = room.owned.includes(item.id);
           const on = room[slot] === item.id;
           return (
-            <motion.button key={item.id} type="button" onClick={() => choose(item.id)} aria-label={item.name.replace(/-/g, ' ')}
+            <motion.button key={item.id} type="button" onClick={() => choose(item.id)} aria-label={t(`room.item.${item.id}` as UiStringKey)}
               animate={popped === item.id ? { scale: [1, 1.12, 1], rotate: [0, -3, 3, 0] } : {}} transition={{ duration: 0.45 }}
               className={`relative flex flex-col items-center rounded-2xl border-2 p-2 transition-[transform,box-shadow] duration-75 active:translate-y-[3px] active:shadow-none ${on
                 ? 'border-zinc-900 bg-zinc-50 shadow-[0_3px_0_0_#18181b] dark:border-zinc-100 dark:bg-zinc-800 dark:shadow-[0_3px_0_0_#e4e4e7]'

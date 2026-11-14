@@ -107,7 +107,7 @@ export async function buddyTurn(opts: {
   contentLang: string;
   uiLang: string;
   signal?: AbortSignal;
-}): Promise<{ reply: string; followUp: string; correctionNote: string }> {
+}): Promise<{ reply: string; followUp: string; correctionNote: string; safeFallback?: boolean }> {
   const { signal, ...body } = opts;
   return postAi({ action: 'buddy-turn', ...body }, signal);
 }
@@ -122,6 +122,6 @@ export async function smartyTalk(opts: {
   uiLang: string;
   level?: string;
   name?: string;
-}, signal?: AbortSignal): Promise<{ reply: string; mood: SmartyMood; tip: string }> {
+}, signal?: AbortSignal): Promise<{ reply: string; mood: SmartyMood; tip: string; safeFallback?: boolean }> {
   return postAi({ action: 'smarty-talk', ...opts }, signal);
 }

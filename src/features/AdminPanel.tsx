@@ -257,7 +257,7 @@ const ACTION_LABELS: Record<string, string> = {
             <div className="mb-4 flex items-center gap-3">
               <div className="relative flex-1 max-w-sm">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                <input value={query} onChange={e => setQuery(e.target.value)} placeholder={tr("site.adminpanel.search_users_71cd28")} className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:border-zinc-400" />
+                <input aria-label={tr("site.adminpanel.search_users_71cd28")} value={query} onChange={e => setQuery(e.target.value)} placeholder={tr("site.adminpanel.search_users_71cd28")} className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:border-zinc-400" />
               </div>
             </div>
 

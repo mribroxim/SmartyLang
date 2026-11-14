@@ -221,7 +221,7 @@ function TranslateInline({ word }: { word: string }) {
           <div className="p-2 border-b border-slate-100">
             <div className="relative">
               <Search className="absolute left-2 top-1/2 -translate-y-1/2 w-3 h-3 text-slate-400" />
-              <input
+              <input aria-label={t("learning.search.language.bb13e8")}
                 autoFocus
                 type="text"
                 value={langSearch}
@@ -1123,7 +1123,7 @@ export function SpellingPractice({ savedVocab, onBack, onComplete, recordExercis
  </button>
 
  <form onSubmit={handleSubmit} className="max-w-md mx-auto">
- <input
+ <input aria-label={t("learning.type.what.you.hear.560934")}
  ref={inputRef}
  type="text"
  value={inputVal}
@@ -1964,7 +1964,7 @@ export function SentenceReorder({ savedVocab, onBack, onComplete, recordExercise
             <label className="block text-sm font-bold text-slate-700 mb-2">{t("learning.custom.sentences.34dd96")}{' '}<span className="font-normal text-slate-400">{t("learning.optional.b16c7a")}</span>
             </label>
             <p className="text-xs text-slate-400 mb-3">{t("learning.enter.your.own.sentences.separated.by.line.breaks.leave.em.0456a4")}</p>
-            <textarea
+            <textarea aria-label={'The cat sat on the mat\nLearning a language is fun\nPractice makes perfect'}
               value={customInput}
               onChange={e => setCustomInput(e.target.value)}
               placeholder={'The cat sat on the mat\nLearning a language is fun\nPractice makes perfect'}

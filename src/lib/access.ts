@@ -1,5 +1,6 @@
 import type { UserAccountProfile } from '../firebase';
 import { normalizePlanId } from './plans';
+import { paidPlanEnded } from './entitlements';
 
 export type AccountType = 'user' | 'smarty-max' | 'business' | 'admin' | 'content-manager';
 
@@ -20,14 +21,14 @@ export const accountTypeOf = (p?: UserAccountProfile | null): AccountType => {
   if (!p) return 'user';
   if (p.role === 'admin') return 'admin';
   if (p.role === 'content-manager') return 'content-manager';
-  if (isBusinessRole(p.role)) return 'business';
+  if (isBusinessRole(p.role)) return paidPlanEnded(p) ? 'user' : 'business';
   if (normalizePlanId(p.plan ?? undefined) === 'smarty-max' && !maxEnded(p)) return 'smarty-max';
   return 'user';
 };
 
 /** A cancelled Smarty Max runs until its paid period ends, then the account is free again. */
 export function maxEnded(p?: UserAccountProfile | null, now = Date.now()): boolean {
-  return typeof p?.planCancelAt === 'number' && now >= p.planCancelAt;
+  return paidPlanEnded(p, now);
 }
 
 /** Cancelled but still active: show "ends on …" and offer to keep it. */

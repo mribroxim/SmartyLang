@@ -1,3 +1,4 @@
+import { DialogSurface } from './DialogSurface';
 import { useUiLang } from '../contexts/UiLangContext';
 import React, { useEffect, useState, useMemo } from 'react';
 import {
@@ -62,7 +63,7 @@ export function StudentActivityModal({ studentUid, studentName, studentEmail, on
   }, [activity]);
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={onClose}>
+    <DialogSurface onClose={onClose} className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={onClose}>
       <div
         className="bg-white rounded-3xl w-full max-w-5xl overflow-hidden flex flex-col max-h-[90vh] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900"
         onClick={e => e.stopPropagation()}
@@ -77,7 +78,7 @@ export function StudentActivityModal({ studentUid, studentName, studentEmail, on
               <p className="text-xs text-zinc-500 font-medium">{studentEmail || studentUid}</p>
             </div>
           </div>
-          <button onClick={onClose} className="p-2 rounded-xl hover:bg-white/60 text-zinc-500 transition-colors">
+          <button aria-label={t('a11y.close')} onClick={onClose} className="p-2 rounded-xl hover:bg-white/60 text-zinc-500 transition-colors">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -180,7 +181,7 @@ export function StudentActivityModal({ studentUid, studentName, studentEmail, on
           </div>
         </div>
       </div>
-    </div>
+    </DialogSurface>
   );
 }
 

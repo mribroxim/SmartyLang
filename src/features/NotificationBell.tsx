@@ -97,7 +97,7 @@ export function NotificationBell({ uid, onNavigate }: NotificationBellProps) {
                   <CheckCheck className="w-4 h-4" />
                 </button>
               )}
-              <button onClick={() => setOpen(false)} className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100">
+              <button aria-label={t('a11y.close')} onClick={() => setOpen(false)} className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100">
                 <X className="w-4 h-4" />
               </button>
             </div>

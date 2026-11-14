@@ -100,7 +100,7 @@ export function ClozeComponent({ text, contentLang, onBack, onComplete, hideBack
       <p className="text-lg leading-relaxed text-slate-800 dark:text-zinc-200 mb-8 bg-slate-50 dark:bg-zinc-900 border-2 border-slate-200 dark:border-zinc-700 rounded-2xl p-6">
         {current.blanked}
       </p>
-      <input
+      <input aria-label={t("learning.type.the.missing.word.b32da4")}
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && submit()}

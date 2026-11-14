@@ -19,7 +19,8 @@ import { fetchWordTranslations } from '../../Exercises';
 import { UI_TRANSLATE_CODE } from '../../lib/uiLang';
 import { readPreferredTranslationCode } from '../../lib/preferredTranslationLang';
 
-export type PracticeMode = 'mistakes' | 'review' | 'listening' | 'speaking' | 'translate' | 'match' | 'truefalse' | 'scramble' | 'spell';
+export type { PracticeMode } from '../../lib/practicePools';
+import { practicePools, type PracticeMode } from '../../lib/practicePools';
 /** "Made for you": built from your own history. */
 const FOR_YOU: { id: PracticeMode; sticker: StickerId }[] = [
   { id: 'mistakes', sticker: 'feed.mistake-eraser' },
@@ -47,19 +48,7 @@ function usePools() {
   const all: ReadingText[] = useMemo(() => Object.values(texts).flat(), [texts]);
   return useMemo(() => {
     const catalog = wordCatalog(all, savedVocab, contentLang);
-    const missed = [...(Object.entries(problemWords) as [string, { count: number }][]).sort((a, b) => b[1].count - a[1].count).map(([w]) => w),
-      ...all.flatMap((tx) => loadLessonUnlock(contentLang, tx.id).missedWords)].map((w) => w.toLowerCase());
-    const mistakes = [...new Set(missed)].filter((w) => catalog.has(w));
-    const now = Date.now();
-    const saved = (Object.entries(savedVocab) as [string, { srs?: { nextReviewDate: number }; timestamp?: number }][]).filter(([w]) => catalog.has(w.toLowerCase()));
-    const due = saved.filter(([, v]) => (v.srs?.nextReviewDate ?? 0) <= now).map(([w]) => w.toLowerCase());
-    const review = due.length >= 4 ? due : [...due, ...saved.sort((a, b) => (a[1].timestamp ?? 0) - (b[1].timestamp ?? 0)).map(([w]) => w.toLowerCase()).filter((w) => !due.includes(w))];
-    const known = [...new Set([...mistakes, ...saved.map(([w]) => w.toLowerCase())])];
-    const single = known.filter((w) => !/\s/.test(w));
-    const pools: Record<PracticeMode, string[]> = {
-      mistakes, review, listening: known, speaking: single,
-      translate: known, match: known, truefalse: known, scramble: single, spell: single,
-    };
+    const pools = practicePools(all, savedVocab, problemWords, catalog, Object.fromEntries(all.map(tx => [tx.id, loadLessonUnlock(contentLang, tx.id).missedWords])));
     return { catalog, pools, ready: all.length > 0 };
   }, [all, savedVocab, problemWords, contentLang]);
 }

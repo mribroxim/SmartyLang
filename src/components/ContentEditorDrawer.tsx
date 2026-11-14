@@ -1,4 +1,5 @@
 import { useUiLang } from '../contexts/UiLangContext';
+import { DialogSurface } from './DialogSurface';
 import React, { Suspense, lazy } from 'react';
 import { X, LayoutGrid, Loader2 } from 'lucide-react';
 import { useEditMode } from '../contexts/EditModeContext';
@@ -22,7 +23,7 @@ export function ContentEditorDrawer() {
       />
 
       {/* Drawer panel */}
-      <div
+      <DialogSurface onClose={closeEditor} role={editorOpen ? 'dialog' : undefined} aria-modal={editorOpen || undefined} inert={!editorOpen} label={t('nav.content')}
         className={`fixed top-0 right-0 bottom-0 z-[70] w-full max-w-2xl bg-white dark:bg-zinc-900 shadow-2xl flex flex-col transition-transform duration-300 ${
           editorOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
@@ -61,7 +62,7 @@ export function ContentEditorDrawer() {
             </Suspense>
           )}
         </div>
-      </div>
+      </DialogSurface>
     </>
   );
 }

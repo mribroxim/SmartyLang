@@ -1,3 +1,4 @@
+import { DialogSurface } from '../components/DialogSurface';
 import React, { useState, useRef, useEffect } from 'react';
 import { Mic, Square, Play, ArrowLeft, Trash2, Search, ChevronRight, Plus, FileText, X } from 'lucide-react';
 import { set, get } from 'idb-keyval';
@@ -501,11 +502,11 @@ export function SpeakingPractice({
           )}
 
           {showTranscriptEditor && (
-            <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setShowTranscriptEditor(false)}>
+            <DialogSurface onClose={() => setShowTranscriptEditor(false)} className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setShowTranscriptEditor(false)}>
               <div className="bg-white dark:bg-zinc-900 rounded-3xl w-full max-w-2xl overflow-hidden flex flex-col max-h-[80vh] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]" onClick={e => e.stopPropagation()}>
                 <div className="px-6 py-5 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between shrink-0">
                   <h2 className="font-serif font-extrabold text-zinc-900 dark:text-zinc-50 text-lg">{t("learning.edit.transcript.f1a89a")}</h2>
-                  <button onClick={() => setShowTranscriptEditor(false)} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
+                  <button aria-label={t('a11y.close')} onClick={() => setShowTranscriptEditor(false)} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
                     <X className="w-5 h-5" />
                   </button>
                 </div>
@@ -529,7 +530,7 @@ export function SpeakingPractice({
                   >{t("learning.save.transcript.6fe7a4")}</button>
                 </div>
               </div>
-            </div>
+            </DialogSurface>
           )}
 
           {/* Saved recordings – newest first (metas[0] is newest) */}
@@ -642,13 +643,13 @@ export function SpeakingPractice({
 
         {/* New Session Modal */}
         {showNewForm && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-zinc-900/55 backdrop-blur-[2px]">
+          <DialogSurface onClose={() => setShowNewForm(false)} className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-zinc-900/55 backdrop-blur-[2px]">
             <div className="bg-white rounded-3xl p-8 max-w-lg w-full border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
               <h3 className="font-serif text-2xl font-extrabold text-slate-800 mb-6">{t("learning.new.custom.session.0e9d01")}</h3>
               <div className="space-y-4">
                 <div>
                   <label className="text-sm font-bold text-slate-600 mb-2 block">{t("common.title")}</label>
-                  <input
+                  <input aria-label={t("learning.my.custom.topic.17765b")}
                     autoFocus
                     value={formTitle}
                     onChange={e => setFormTitle(e.target.value)}
@@ -659,7 +660,7 @@ export function SpeakingPractice({
                 </div>
                 <div>
                   <label className="text-sm font-bold text-slate-600 mb-2 block">{t("learning.speaking.prompt.674c8f")}</label>
-                  <textarea
+                  <textarea aria-label={t("learning.enter.your.speaking.prompt.here.2f6806")}
                     value={formPrompt}
                     onChange={e => setFormPrompt(e.target.value)}
                     placeholder={t("learning.enter.your.speaking.prompt.here.2f6806")}
@@ -675,7 +676,7 @@ export function SpeakingPractice({
                   className="flex-1 py-3 bg-zinc-900 text-white rounded-2xl font-bold hover:bg-black shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75">{t("learning.start.practice.ae1bea")}</button>
               </div>
             </div>
-          </div>
+          </DialogSurface>
         )}
       </div>
     );
@@ -719,7 +720,7 @@ export function SpeakingPractice({
           {/* Search */}
           <div className="relative mb-8">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-            <input
+            <input aria-label={t('library.searchTopics')}
               value={search}
               onChange={e => { setSearch(e.target.value); setPage(1); }}
               placeholder={t('library.searchTopics')}

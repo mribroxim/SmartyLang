@@ -1,3 +1,4 @@
+import { DialogSurface } from '../DialogSurface';
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Sticker } from '../stickers/Sticker';
@@ -179,7 +180,7 @@ export function SmartyHost({ signedIn, stageEnabled }: { signedIn: boolean; stag
       {/* Big moments */}
       <AnimatePresence>
         {current && (
-          <motion.div
+          <DialogSurface role="presentation" aria-modal={undefined} asComponent={motion.div} onClose={() => setBig((cur) => cur.slice(1))}
             key={current.id}
             className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]"
             initial={{ opacity: 0 }}
@@ -210,7 +211,7 @@ export function SmartyHost({ signedIn, stageEnabled }: { signedIn: boolean; stag
                 {t('smarty.continue')}
               </button>
             </motion.div>
-          </motion.div>
+          </DialogSurface>
         )}
       </AnimatePresence>
     </>

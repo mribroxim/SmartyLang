@@ -231,7 +231,7 @@ export function LessonRunner({ questions, feedback, presenter, title, onComplete
               )}
 
               {q.type === 'type' && (
-                <input
+                <input aria-label={t('lesson.typeHere')}
                   autoFocus
                   value={typed}
                   disabled={locked}

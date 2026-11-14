@@ -128,7 +128,7 @@ export function AudioDictation({ text, contentLang, onBack, onComplete, hideBack
         className="mb-6 inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-zinc-900 text-white font-bold text-sm shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75"
       >
         <Volume2 className="w-4 h-4" />{' '}{t("learning.play.sentence.eced0d")}</button>
-      <textarea
+      <textarea aria-label={t("learning.type.what.you.hear.4c7266")}
         value={input}
         onChange={(e) => setInput(e.target.value)}
         disabled={feedback !== 'idle'}

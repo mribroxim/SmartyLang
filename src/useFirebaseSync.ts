@@ -20,7 +20,9 @@ import './lib/hearts/heartsStore';
 import './lib/smarty/pantry';
 import './lib/smarty/room';
 import './lib/bites/dailySession';
-import { type HabitState, normalizeHabit, emptyHabit, leagueForXp, levelForXp } from './lib/habitEngine';
+import './lib/bites/sections';
+import './lib/questState';
+import { type HabitState, normalizeHabit, emptyHabit, leagueForXp, levelForXp, leagueMeta } from './lib/habitEngine';
 
 function usePrevious<T>(value: T): T | undefined {
   const ref = useRef<T>(value);
@@ -168,7 +170,7 @@ export function useFirebaseSync(
           if (setUserProfile && (progress.xp != null || progress.coins != null || progress.league)) {
             const xp = typeof progress.xp === 'number' ? progress.xp : (profileRef.current?.xp ?? 0);
             const coins = typeof progress.coins === 'number' ? progress.coins : (profileRef.current?.coins ?? 0);
-            const next = { xp, coins, level: levelForXp(xp), league: progress.league || leagueForXp(xp) };
+            const next = { xp, coins, level: levelForXp(xp), league: leagueMeta(progress.league || leagueForXp(xp)).id };
             setUserProfile(next);
             writeScopedJSON('readmaster_profile', next, nextUser.uid);
           }

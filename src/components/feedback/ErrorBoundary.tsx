@@ -1,4 +1,5 @@
 import React from 'react';
+import { reportError } from '../../lib/monitoring';
 import { Smarty } from '../mascot/Smarty';
 import { translateUi } from '../../lib/uiStrings';
 import { readStoredUiLang } from '../../lib/uiLang';
@@ -28,6 +29,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
+    reportError('render');
     console.error('Screen crashed:', error, info.componentStack);
   }
 

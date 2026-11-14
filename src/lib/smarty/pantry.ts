@@ -51,7 +51,7 @@ export function normalizePantry(raw: unknown): PantryState {
     totalPieces: n(r.totalPieces),
     lastFedAt: typeof r.lastFedAt === 'number' ? r.lastFedAt : null,
     feedStreak: n(r.feedStreak),
-    lastFedDay: typeof r.lastFedDay === 'string' && /^d{4}-d{2}-d{2}$/.test(r.lastFedDay) ? r.lastFedDay : null,
+    lastFedDay: typeof r.lastFedDay === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(r.lastFedDay) ? r.lastFedDay : null,
     updatedAt: n(r.updatedAt),
   };
 }

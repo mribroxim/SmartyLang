@@ -1,3 +1,4 @@
+import { DialogSurface } from './DialogSurface';
 import React from 'react';
 import { motion } from 'motion/react';
 import { Flame, Target, X, Medal } from 'lucide-react';
@@ -29,7 +30,7 @@ export function HabitCelebrateModal({
   const sticker = goalJustCompleted ? 'streak.daily-goal-reached' : streakTicked ? 'streak.streak-growing' : 'reward.badge-earned';
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]">
+    <DialogSurface onClose={onClose} className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]">
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -40,7 +41,7 @@ export function HabitCelebrateModal({
         <div className="absolute left-1/2 -top-20 -translate-x-1/2">
           <Smarty sticker={sticker} size={150} priority="hero" title={t("core.habitcelebratemodal.smarty_celebrating_2c99b1")} />
         </div>
-        <button
+        <button aria-label={t('a11y.close')}
           onClick={onClose}
           className="absolute top-3 right-3 p-2 text-slate-400 hover:text-slate-600 rounded-full hover:bg-slate-100 dark:hover:bg-zinc-800"
         >
@@ -88,6 +89,6 @@ export function HabitCelebrateModal({
           </button>
         </div>
       </motion.div>
-    </div>
+    </DialogSurface>
   );
 }

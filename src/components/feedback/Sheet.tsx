@@ -1,5 +1,6 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import { motion } from 'motion/react';
+import { DialogSurface } from '../DialogSurface';
 
 export function Sheet({ titleId, onClose, children }: { titleId: string; onClose: () => void; children: ReactNode }) {
   const panel = useRef<HTMLDivElement>(null);
@@ -20,7 +21,7 @@ export function Sheet({ titleId, onClose, children }: { titleId: string; onClose
     document.addEventListener('keydown', key);
     return () => { document.removeEventListener('keydown', key); previous?.focus(); };
   }, []);
-  return <div className="fixed inset-0 z-[80] flex items-end sm:items-center justify-center bg-zinc-900/55 backdrop-blur-[2px]" onClick={onClose}>
+  return <DialogSurface role="presentation" aria-modal={undefined} onClose={onClose} className="fixed inset-0 z-[80] flex items-end sm:items-center justify-center bg-zinc-900/55 backdrop-blur-[2px]">
     <motion.div ref={panel} role="dialog" aria-modal="true" aria-labelledby={titleId} initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md max-h-[92dvh] overflow-y-auto rounded-t-3xl sm:rounded-3xl bg-white dark:bg-zinc-900 border-2 border-slate-200 dark:border-zinc-800 p-6 pb-[max(24px,env(safe-area-inset-bottom))] shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]" onClick={e => e.stopPropagation()}>{children}</motion.div>
-  </div>;
+  </DialogSurface>;
 }

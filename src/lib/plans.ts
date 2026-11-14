@@ -22,7 +22,7 @@ export const PLANS: Plan[] = [
   {
     id: 'smarty-max',
     name: 'SmartyLang Max',
-    basePriceUSD: 12.99,
+    basePriceUSD: 13,
     description: 'Full access for one learning language',
     features: [
       '1 learning language included (UI free in all 29)',

@@ -1,3 +1,4 @@
+import { DialogSurface } from './components/DialogSurface';
 import { useVosk, isMobileDevice } from './hooks/useVosk';
 import { useAppRoute } from './hooks/useAppRoute';
 import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from 'react';
@@ -19,6 +20,7 @@ import { getPrefs, setPrefs, useSmartyPrefs, type DailyMinutes } from './lib/sma
 import { findCurrentLesson } from './lib/bites/biteProgress';
 import { useFirebaseSync } from './useFirebaseSync';
 import { AuthGate } from './features/AuthGate';
+import { AgeGate } from './features/Legal';
 import { Onboarding } from './features/Onboarding';
 import { PaywallScreen } from './components/PaywallScreen';
 import { playSound } from './lib/audio';
@@ -1715,6 +1717,8 @@ export default function App() {
           >
             {t("site.app.refresh_56e3ba")}</button>
         </div>
+      ) : accountProfile.role !== 'admin' && (accountProfile as any).agePolicyVersion !== 1 ? (
+        <AgeGate onReady={() => window.location.reload()} />
       ) : needsOnboarding && activeTab !== 'plans' ? (
         <Onboarding
           canStartLessons={canUseBites(accountProfile)}
@@ -2168,9 +2172,9 @@ export default function App() {
       )}
 
       {showFeedbackModal && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 animate-in fade-in duration-200 bg-zinc-900/55 backdrop-blur-[2px]">
+        <DialogSurface onClose={() => setShowFeedbackModal(false)} className="fixed inset-0 z-[60] flex items-center justify-center p-4 animate-in fade-in duration-200 bg-zinc-900/55 backdrop-blur-[2px]">
           <div className="bg-white rounded-3xl p-6 md:p-8 max-w-md w-full relative animate-in zoom-in-95 duration-300 max-h-[90vh] overflow-y-auto border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
-            <button
+            <button aria-label={t('a11y.close')}
               onClick={() => {
                 setShowFeedbackModal(false);
                 setSessionReward(null);
@@ -2351,12 +2355,12 @@ export default function App() {
               </button>
             </div>
           </div>
-        </div>
+        </DialogSurface>
       )}
 
       {/* Exercise Complete Modal */}
       {isExerciseCompleteModalOpen && exerciseCompleteData && (
-        <div className="fixed inset-0 flex items-center justify-center z-[100] p-4 bg-zinc-900/55 backdrop-blur-[2px]">
+        <DialogSurface onClose={() => setIsExerciseCompleteModalOpen(false)} className="fixed inset-0 flex items-center justify-center z-[100] p-4 bg-zinc-900/55 backdrop-blur-[2px]">
            <div className="bg-white rounded-3xl p-8 max-w-sm w-full text-center transform transition-all animate-in zoom-in-95 duration-200 border-2 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
               <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle2 className="w-8 h-8 text-emerald-600" />
@@ -2397,16 +2401,16 @@ export default function App() {
               >
                 {t("path.continueBite")}</button>
            </div>
-        </div>
+        </DialogSurface>
       )}
 
       {/* Exercise Session Details Modal */}
       {selectedExerciseSession && (
-        <div className="fixed inset-0 flex items-center justify-center z-[100] p-4 bg-zinc-900/55 backdrop-blur-[2px]">
+        <DialogSurface onClose={() => setSelectedExerciseSession(null)} className="fixed inset-0 flex items-center justify-center z-[100] p-4 bg-zinc-900/55 backdrop-blur-[2px]">
            <div className="bg-white rounded-3xl max-w-lg w-full border-2 max-h-[80vh] flex flex-col overflow-hidden shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
              <div className="p-6 border-b border-slate-100 flex items-center justify-between shrink-0">
                 <h2 className="font-serif text-xl font-extrabold text-slate-800 capitalize">{selectedExerciseSession.type?.replace('-', ' ') || t("site.app.exercise_20863c")}  {t("site.app.details_dc3dec")}</h2>
-                <button onClick={() => setSelectedExerciseSession(null)} className="p-2 rounded-xl border-2 border-slate-200 dark:border-zinc-700 text-slate-500 hover:bg-slate-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 transition-colors">
+                <button aria-label={t('a11y.close')} onClick={() => setSelectedExerciseSession(null)} className="p-2 rounded-xl border-2 border-slate-200 dark:border-zinc-700 text-slate-500 hover:bg-slate-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 transition-colors">
                   <X className="w-5 h-5" />
                 </button>
              </div>
@@ -2463,7 +2467,7 @@ export default function App() {
                 )}
              </div>
            </div>
-        </div>
+        </DialogSurface>
       )}
 
       <WordDetailsModal

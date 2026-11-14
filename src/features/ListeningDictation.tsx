@@ -1,3 +1,4 @@
+import { DialogSurface } from '../components/DialogSurface';
 import React, { useState, useEffect } from 'react';
 import { Headphones, ArrowLeft, Volume2, PlayCircle, ChevronRight, Plus, Search } from 'lucide-react';
 import { playSound } from '../lib/audio';
@@ -186,7 +187,7 @@ export function ListeningDictation({ onBack }: any) {
 
         {/* Custom Dictation Modal */}
         {showCustomForm && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-zinc-900/55 backdrop-blur-[2px]">
+          <DialogSurface onClose={() => setShowCustomForm(false)} className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-zinc-900/55 backdrop-blur-[2px]">
             <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
               <h3 className="font-serif text-2xl font-extrabold text-slate-800 mb-6">{t('dictation.customTitle')}</h3>
 
@@ -224,13 +225,13 @@ export function ListeningDictation({ onBack }: any) {
               <div className="space-y-4">
                 <div>
                   <label className="text-sm font-bold text-slate-600 mb-2 block">{t('common.title')}</label>
-                  <input value={customTitle} onChange={e => setCustomTitle(e.target.value)}
+                  <input aria-label={t("site.listeningdictation.my_custom_dictation_ba3cc5")} value={customTitle} onChange={e => setCustomTitle(e.target.value)}
                     className="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-700"
                     placeholder={t("site.listeningdictation.my_custom_dictation_ba3cc5")} />
                 </div>
                 <div>
                   <label className="text-sm font-bold text-slate-600 mb-2 block">{t("site.listeningdictation.sentences_one_per_line_3f1725")}</label>
-                  <textarea value={customText} onChange={e => setCustomText(e.target.value)}
+                  <textarea aria-label={t("site.listeningdictation.enter_sentences_for_dictation_one_d82717")} value={customText} onChange={e => setCustomText(e.target.value)}
                     className="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-700 min-h-[160px] resize-none"
                     placeholder={t("site.listeningdictation.enter_sentences_for_dictation_one_d82717")} />
                 </div>
@@ -254,7 +255,7 @@ export function ListeningDictation({ onBack }: any) {
                 }} className="flex-1 py-3 bg-zinc-900 text-white rounded-2xl font-bold hover:bg-black shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75">{t('listening.dict.cta')}</button>
               </div>
             </div>
-          </div>
+          </DialogSurface>
         )}
       </ScreenShell>
     );
@@ -291,7 +292,7 @@ export function ListeningDictation({ onBack }: any) {
 
           <div className="relative mb-6">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-            <input
+            <input aria-label={t('library.searchExercises')}
               value={search}
               onChange={e => { setSearch(e.target.value); setPage(1); }}
               placeholder={t('library.searchExercises')}
@@ -440,7 +441,7 @@ export function ListeningDictation({ onBack }: any) {
             <button onClick={() => setShowCurrentTranscript(true)}
               className="text-xs font-bold text-slate-400 hover:text-emerald-600 transition-colors">{t("site.listeningdictation.reveal_text_4dbda2")}</button>
           </div>
-          <textarea value={userInput} onChange={e => setUserInput(e.target.value)}
+          <textarea aria-label={t("site.listeningdictation.start_typing_49d4b6")} value={userInput} onChange={e => setUserInput(e.target.value)}
             className="w-full bg-slate-50 rounded-2xl p-6 border-2 border-slate-200 focus:border-emerald-500 focus:ring-0 resize-none font-serif text-xl outline-none transition-colors h-32"
             placeholder={t("site.listeningdictation.start_typing_49d4b6")} autoFocus />
           {showCurrentTranscript && (

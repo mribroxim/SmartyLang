@@ -1,4 +1,6 @@
 import { accountUiLabel } from '../lib/uiAccountLabels';
+import { AccountData } from './AccountData';
+import { DialogSurface } from '../components/DialogSurface';
 import React, { useState } from 'react';
 import { Save, Loader2, CheckCircle2, LogOut, Languages, Globe, ArrowLeft, ChevronRight, Crown } from 'lucide-react';
 import { ArabicDisplayModeToggle } from '../components/ArabicDisplayModeToggle';
@@ -164,15 +166,16 @@ function SettingsView({
           </button>
         </SettingsGroup>
 
+        <AccountData />
         {confirmLogout ? (
-          <div role="dialog" aria-label={t('profile.logout.confirm')} className="flex flex-col items-center gap-2 rounded-2xl border-2 border-slate-200 p-4 text-center dark:border-zinc-800">
+          <DialogSurface onClose={() => setConfirmLogout(false)} label={t('profile.logout.confirm')} className="flex flex-col items-center gap-2 rounded-2xl border-2 border-slate-200 p-4 text-center dark:border-zinc-800">
             <Sticker id="pose.bye-for-now" size={110} priority="hero" />
             <p className="text-sm font-bold text-zinc-900 dark:text-zinc-50">{t('profile.logout.confirm')}</p>
             <div className="flex w-full gap-2">
               <button type="button" autoFocus onClick={() => setConfirmLogout(false)} className="flex-1 rounded-2xl border-2 border-slate-200 py-2.5 font-serif text-[13px] font-extrabold uppercase tracking-wide shadow-[0_3px_0_0_#e2e8f0] active:translate-y-[3px] active:shadow-none dark:border-zinc-700 dark:shadow-[0_3px_0_0_#3f3f46]">{t('profile.logout.stay')}</button>
               <button type="button" onClick={onLogout} className="flex-1 rounded-2xl bg-rose-600 py-2.5 font-serif text-[13px] font-extrabold uppercase tracking-wide text-white shadow-[0_3px_0_0_#9f1239] active:translate-y-[3px] active:shadow-none">{t('profile.logout.go')}</button>
             </div>
-          </div>
+          </DialogSurface>
         ) : (
           <button type="button" onClick={() => setConfirmLogout(true)}
             className="flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-slate-200 bg-white py-3.5 font-serif text-[13px] font-extrabold uppercase tracking-wide text-rose-600 shadow-[0_3px_0_0_#e2e8f0] transition-[transform,box-shadow] duration-75 active:translate-y-[3px] active:shadow-none dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-[0_3px_0_0_#27272a]">

@@ -1,3 +1,4 @@
+import { DialogSurface } from '../components/DialogSurface';
 import { useUiLang } from '../contexts/UiLangContext';
 import React, { useEffect, useMemo, useState, useCallback } from 'react';
 import { Crown, Mail, X, Loader2, CheckCircle2, Clock, Send, AlertCircle, Sparkles, Plus, Minus, CreditCard } from 'lucide-react';
@@ -110,7 +111,7 @@ export function SmartyMaxSeats({
 
   // ── Buy-Seats helpers ────────────────────────────────────────────────
   const plan = useMemo(() => getPlan(currentPlan), [currentPlan]);
-  const seatPrice = plan?.extraSeatPriceUSD ?? 12.99;
+  const seatPrice = plan?.extraSeatPriceUSD ?? 9;
   const buyTotalUSD = useMemo(
     () => plan ? computeSeatAddOnUSD(plan, buyCount) : 0,
     [plan, buyCount],
@@ -248,7 +249,7 @@ export function SmartyMaxSeats({
         <form onSubmit={handleInvite} className="flex flex-col sm:flex-row gap-2">
           <div className="flex-1 relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-            <input
+            <input aria-label={tr("site.smartymaxseats.studentexamplecom_75702e")}
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
@@ -333,7 +334,7 @@ export function SmartyMaxSeats({
 
       {/* ── Buy Seats modal ────────────────────────────────────────────── */}
       {showBuyModal && plan && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => !buyBusy && setShowBuyModal(false)}>
+        <DialogSurface onClose={() => !buyBusy && setShowBuyModal(false)} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => !buyBusy && setShowBuyModal(false)}>
           <div className="bg-white dark:bg-zinc-900 rounded-3xl max-w-md w-full overflow-hidden border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]" onClick={e => e.stopPropagation()}>
             {/* Header */}
             <div className="p-6 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/40 dark:to-orange-950/40 border-b border-amber-100 dark:border-amber-900">
@@ -347,7 +348,7 @@ export function SmartyMaxSeats({
                     <p className="text-xs text-slate-500 dark:text-zinc-400">{plan.name}  {tr("site.smartymaxseats.plan_508b8e")}{formatUSD(seatPrice)}  {tr("site.smartymaxseats.per_seat_month_7e9fce")}</p>
                   </div>
                 </div>
-                <button onClick={() => !buyBusy && setShowBuyModal(false)} className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-zinc-200 rounded-lg hover:bg-slate-100 dark:hover:bg-zinc-800">
+                <button aria-label={tr('a11y.close')} onClick={() => !buyBusy && setShowBuyModal(false)} className="p-1.5 text-slate-400 hover:text-slate-700 dark:hover:text-zinc-200 rounded-lg hover:bg-slate-100 dark:hover:bg-zinc-800">
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -450,7 +451,7 @@ export function SmartyMaxSeats({
                 {tr("site.smartymaxseats.secure_payment_via_dodo_payments_bd47d1")}</p>
             </div>
           </div>
-        </div>
+        </DialogSurface>
       )}
     </div>
   );

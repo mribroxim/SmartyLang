@@ -1,3 +1,4 @@
+import { DialogSurface } from '../components/DialogSurface';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { playWord as sharedPlayWord } from '../lib/speech';
 import { useContentLang } from '../contexts/ContentLangContext';
@@ -356,7 +357,7 @@ export function WritingPractice({
                 </div>
               )}
             </div>
-            <textarea
+            <textarea aria-label={t("learning.start.writing.here.8404ca")}
               autoFocus
               spellCheck={true}
               value={content}
@@ -382,14 +383,14 @@ export function WritingPractice({
 
         {/* My saved essays list modal */}
         {showSavedList && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setShowSavedList(false)}>
+          <DialogSurface onClose={() => setShowSavedList(false)} className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setShowSavedList(false)}>
             <div className="bg-white dark:bg-zinc-900 rounded-3xl w-full max-w-2xl overflow-hidden flex flex-col max-h-[80vh] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]" onClick={e => e.stopPropagation()}>
               <div className="px-6 py-5 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between shrink-0">
                 <div>
                   <h2 className="font-serif font-extrabold text-zinc-900 dark:text-zinc-50 text-lg">{t("learning.my.essays.for.this.topic.4f1aaf")}</h2>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">{t('learning.savedEssayCount', { n: savedListForTopic.length })}</p>
                 </div>
-                <button onClick={() => setShowSavedList(false)} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
+                <button aria-label={t('a11y.close')} onClick={() => setShowSavedList(false)} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -421,19 +422,19 @@ export function WritingPractice({
                 )}
               </div>
             </div>
-          </div>
+          </DialogSurface>
         )}
 
         {/* Single essay viewer */}
         {viewingEssay && (
-          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setViewingEssay(null)}>
+          <DialogSurface onClose={() => setViewingEssay(null)} className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setViewingEssay(null)}>
             <div className="bg-white dark:bg-zinc-900 rounded-3xl w-full max-w-3xl overflow-hidden flex flex-col max-h-[85vh] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]" onClick={e => e.stopPropagation()}>
               <div className="px-6 py-5 border-b border-zinc-100 dark:border-zinc-800 flex items-center justify-between shrink-0">
                 <div className="flex-1 min-w-0">
                   <h2 className="font-serif font-extrabold text-zinc-900 dark:text-zinc-50 text-lg truncate">{viewingEssay.title}</h2>
                   <p className="text-xs text-zinc-500 dark:text-zinc-400">{viewingEssay.wordCount}{' '}{t("learning.words.saved.4734d7")}{' '}{viewingEssay.savedAt}</p>
                 </div>
-                <button onClick={() => setViewingEssay(null)} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
+                <button aria-label={t('a11y.close')} onClick={() => setViewingEssay(null)} className="p-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-500 transition-colors">
                   <X className="w-5 h-5" />
                 </button>
               </div>
@@ -457,7 +458,7 @@ export function WritingPractice({
                 >{t("learning.load.into.editor.a500e8")}</button>
               </div>
             </div>
-          </div>
+          </DialogSurface>
         )}
       </div>
     );
@@ -499,7 +500,7 @@ export function WritingPractice({
 
           <div className="relative mb-8">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-            <input
+            <input aria-label={t('library.searchTopics')}
               value={search}
               onChange={e => { setSearch(e.target.value); setPage(1); }}
               placeholder={t('library.searchTopics')}
@@ -622,7 +623,7 @@ export function WritingPractice({
 
       {/* Custom Form Modal */}
       {showCustomForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-zinc-900/55 backdrop-blur-[2px]">
+        <DialogSurface onClose={() => setShowCustomForm(false)} className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-zinc-900/55 backdrop-blur-[2px]">
           <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
             <h3 className="font-serif text-2xl font-extrabold text-slate-800 mb-2">{t("learning.custom.writing.practice.9b292f")}</h3>
             <p className="text-sm text-slate-500 mb-6">{t("learning.optional.attach.a.chart.photo.or.diagram.and.describe.it.i.9fa6a1")}</p>
@@ -679,13 +680,13 @@ export function WritingPractice({
             <div className="space-y-4">
               <div>
                 <label className="text-sm font-bold text-slate-600 mb-2 block">{t("common.title")}</label>
-                <input value={customTitle} onChange={e => setCustomTitle(e.target.value)}
+                <input aria-label={t("learning.e.g.bar.chart.energy.consumption.b5070a")} value={customTitle} onChange={e => setCustomTitle(e.target.value)}
                   className="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-700"
                   placeholder={t("learning.e.g.bar.chart.energy.consumption.b5070a")} />
               </div>
               <div>
                 <label className="text-sm font-bold text-slate-600 mb-2 block">{t("learning.content.prompt.6527fd")}</label>
-                <textarea value={customTopicText} onChange={e => setCustomTopicText(e.target.value)}
+                <textarea aria-label={t("learning.the.chart.below.shows.summarise.the.information.by.selecti.db1e1a")} value={customTopicText} onChange={e => setCustomTopicText(e.target.value)}
                   className="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-700 min-h-[140px] resize-none"
                   placeholder={t("learning.the.chart.below.shows.summarise.the.information.by.selecti.db1e1a")} />
               </div>
@@ -786,7 +787,7 @@ export function WritingPractice({
               }} className="flex-1 py-3 bg-zinc-900 text-white rounded-2xl font-bold hover:bg-black shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75">{t("writing.general.cta")}</button>
             </div>
           </div>
-        </div>
+        </DialogSurface>
       )}
     </ScreenShell>
   );

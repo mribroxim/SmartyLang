@@ -1,3 +1,4 @@
+import { DialogSurface } from '../../components/DialogSurface';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Heart, X } from 'lucide-react';
@@ -60,7 +61,7 @@ export function CancelMaxFlow({ endsAt, onClose, onCancelled, formatDate }: {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center sm:p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => !busy && onClose()}>
+    <DialogSurface role="presentation" aria-modal={undefined} onClose={() => !busy && onClose()} className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center sm:p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => !busy && onClose()}>
       <motion.div
         role="dialog" aria-modal="true" aria-label={title[step]}
         initial={{ y: 60, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: 'spring', stiffness: 360, damping: 30 }}
@@ -136,6 +137,6 @@ export function CancelMaxFlow({ endsAt, onClose, onCancelled, formatDate }: {
           </motion.div>
         </AnimatePresence>
       </motion.div>
-    </div>
+    </DialogSurface>
   );
 }

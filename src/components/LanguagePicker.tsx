@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Check, ChevronDown, Globe, Languages, Search } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
+import { DialogSurface } from './DialogSurface';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
 import {
@@ -148,7 +149,7 @@ export function LanguagePicker({
                   className="fixed inset-0 z-[90] bg-zinc-950/10 dark:bg-black/50 bg-zinc-900/55 backdrop-blur-[2px]"
                   onPointerDown={() => setOpen(false)}
                 />
-                <motion.div
+                <DialogSurface asComponent={motion.div} onClose={() => setOpen(false)} data-popup
                   role="listbox"
                   aria-label={title}
                   initial={{ opacity: 0, y: menuPos.openUp ? 6 : -6, scale: 0.98 }}
@@ -168,7 +169,7 @@ export function LanguagePicker({
                 <div className="p-2 border-b border-slate-100 dark:border-zinc-800">
                   <div className="flex items-center gap-2 rounded-2xl bg-slate-50 dark:bg-zinc-800 border-2 border-slate-100 dark:border-zinc-700 px-2.5 py-2">
                     <Search className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                    <input
+                    <input aria-label={t('lang.search')}
                       ref={searchRef}
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
@@ -219,7 +220,7 @@ export function LanguagePicker({
                       })
                     )}
                   </div>
-                </motion.div>
+                </DialogSurface>
               </>
             )}
           </AnimatePresence>,

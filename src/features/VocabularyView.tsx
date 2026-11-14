@@ -116,7 +116,7 @@ export default function VocabularyView({
     <ScreenShell stickers={['learn.word-nerd', 'vocab.word-collector']} title={t('vocab.title')} subtitle={t('vocab.count', { n: rows.length, lang: CONTENT_LANG_LABEL[contentLang] })}>
       {/* add a word */}
       <form onSubmit={(e) => { e.preventDefault(); handleAddNewVocab(); }} className={`${seCard} flex items-center gap-2 p-2`}>
-        <input value={newVocabWord} onChange={(e) => setNewVocabWord(e.target.value)} placeholder={t('vocab.addPlaceholder')} lang={contentLang}
+        <input aria-label={t('vocab.addPlaceholder')} value={newVocabWord} onChange={(e) => setNewVocabWord(e.target.value)} placeholder={t('vocab.addPlaceholder')} lang={contentLang}
           autoCapitalize="off" autoCorrect="off" spellCheck={false}
           className="min-w-0 flex-1 bg-transparent px-3 py-2 text-base font-semibold text-zinc-900 outline-none placeholder:text-slate-400 dark:text-zinc-50" />
         <button type="submit" disabled={isAddingVocab || !newVocabWord.trim()}
@@ -161,7 +161,7 @@ export default function VocabularyView({
           </div>
           <label className={`${seCard} mt-3 flex items-center gap-2 px-3 py-2.5 focus-within:border-zinc-900 dark:focus-within:border-zinc-100`}>
             <Search className="h-4 w-4 shrink-0 text-slate-400" />
-            <input value={query} onChange={(e) => { setQuery(e.target.value); setLimit(PAGE); }} placeholder={t('learning.search.my.vocabulary.58df4d')}
+            <input aria-label={t('learning.search.my.vocabulary.58df4d')} value={query} onChange={(e) => { setQuery(e.target.value); setLimit(PAGE); }} placeholder={t('learning.search.my.vocabulary.58df4d')}
               className="min-w-0 flex-1 bg-transparent text-sm font-semibold text-zinc-900 outline-none placeholder:text-slate-400 dark:text-zinc-50" />
             {query && <button type="button" onClick={() => setQuery('')} aria-label={t('history.close')} className="text-slate-400 hover:text-zinc-900"><X className="h-4 w-4" /></button>}
           </label>

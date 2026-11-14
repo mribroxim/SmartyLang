@@ -287,7 +287,7 @@ export function WordPopover({
                 <div className="p-1.5 border-b border-slate-700">
                   <div className="relative">
                     <Search className="absolute left-2 top-1/2 -translate-y-1/2 w-3 h-3 text-slate-500 pointer-events-none" />
-                    <input
+                    <input aria-label={t("core.wordpopover.search_language_bb13e8")}
                       autoFocus
                       type="text"
                       value={langSearch}

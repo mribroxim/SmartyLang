@@ -8,8 +8,13 @@ import './index.css';
 import { StickerDefs } from './components/stickers/StickerDefs';
 import { loadUiLocale, translateUi } from './lib/uiStrings';
 import { readStoredUiLang } from './lib/uiLang';
+import { LegalRouter } from './features/Legal';
+import { initializeMonitoring } from './lib/monitoring';
+import { installDialogAccessibility } from './lib/dialogAccessibility';
 
 warmSpeechVoices();
+initializeMonitoring();
+installDialogAccessibility();
 
 // ── Redirect firebase default URLs to custom domain ──────────────────────────
 // The default .web.app and .firebaseapp.com URLs always exist but we want all
@@ -73,7 +78,7 @@ const renderApp = () => createRoot(document.getElementById('root')!).render(
     <StickerDefs />
     <ContentLangProvider>
       <UiLangProvider>
-        <App />
+        <LegalRouter><App /></LegalRouter>
       </UiLangProvider>
     </ContentLangProvider>
   </StrictMode>,

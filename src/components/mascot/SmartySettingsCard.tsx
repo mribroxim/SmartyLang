@@ -69,7 +69,7 @@ export function SmartySettingsCard({ fallbackName }: { fallbackName?: string }) 
       </Row>
 
       <Row title={t('settings.smarty.name')} desc={t('settings.smarty.name.desc')}>
-        <input
+        <input aria-label={fallbackName || t('settings.smarty.name.placeholder')}
           value={name}
           onChange={(e) => setName(e.target.value)}
           onBlur={() => { if (name.trim() !== (prefs.preferredName ?? '')) { setPrefs({ preferredName: name }); emitSmarty({ type: 'prefs.saved', name: !!name.trim() }); } }}

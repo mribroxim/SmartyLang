@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from 'react';
+import { LegalLinks } from './Legal';
 import { motion } from 'motion/react';
 import { Check, Crown, Mic, Sparkles } from 'lucide-react';
 import { useContentLang } from '../contexts/ContentLangContext';
@@ -157,7 +158,7 @@ export function HomePage({ user, loginWithGoogle, requestSubscribe, setActiveTab
                 <span className={`flex h-16 w-16 items-center justify-center rounded-full font-serif text-xl font-extrabold ${s === 'done' ? 'bg-amber-400 shadow-[0_5px_0_0_#b45309]' : s === 'now' ? 'bg-zinc-900 text-white shadow-[0_5px_0_0_#000]' : 'bg-slate-200 text-slate-400 shadow-[0_5px_0_0_#cbd5e1]'}`}>
                   {s === 'done' ? <Check className="h-7 w-7" strokeWidth={3} /> : s === 'now' ? '▶' : '🔒'}
                 </span>
-                {s === 'now' && <span className="rounded-xl border-2 border-zinc-900 bg-white px-3 py-1 font-serif text-xs font-extrabold uppercase">3 min</span>}
+                {s === 'now' && <span className="rounded-xl border-2 border-zinc-900 bg-white px-3 py-1 font-serif text-xs font-extrabold uppercase">{t('bites.minutes', { n: 3 })}</span>}
               </div>
             ))}
           </div>
@@ -267,6 +268,7 @@ export function HomePage({ user, loginWithGoogle, requestSubscribe, setActiveTab
       </section>
 
       <footer className="border-t-2 border-slate-100">
+        <LegalLinks />
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 py-6 text-sm font-bold text-slate-400 md:flex-row md:px-8">
           <span className="flex items-center gap-2"><CatLogo className="h-6 w-6" />© {new Date().getFullYear()} SmartyLang</span>
           <button type="button" onClick={plans} className="hover:text-zinc-900">{t('landing.footerPlans')}</button>

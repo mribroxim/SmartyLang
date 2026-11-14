@@ -217,6 +217,7 @@ export function SpeakingBuddy({
         signal: controller.signal,
       });
       if (!activeRef.current || controller.signal.aborted || generation !== generationRef.current) return;
+      if (res.safeFallback) res.reply = t('safety.ai.fallback');
       const spokenReply = [res.reply, res.followUp].filter(Boolean).join(' ');
       const bot: Turn = { role: 'assistant', content: spokenReply || res.reply, note: res.correctionNote };
       setTurns(prev => [...prev, bot]);

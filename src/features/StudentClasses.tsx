@@ -1,3 +1,4 @@
+import { DialogSurface } from '../components/DialogSurface';
 import React, { useState, useEffect, useCallback } from 'react';
 import { Users, Plus, BookOpen, Brain, GraduationCap, CheckCircle2, Calendar, Loader2, ChevronRight, X, Headphones, Mic, PenLine } from 'lucide-react';
 import {
@@ -108,15 +109,15 @@ export function StudentClasses({
 
         {/* Join Class Modal */}
         {showJoin && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]">
+          <DialogSurface onClose={() => setShowJoin(false)} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]">
             <div className="bg-white rounded-2xl p-6 w-full max-w-sm border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="font-bold text-lg">{tr("site.studentclasses.join_a_class_dd5315")}</h2>
-                <button onClick={() => { setShowJoin(false); setJoinCode(''); setJoinError(''); }} className="p-1 text-slate-400 hover:text-zinc-900 rounded"><X className="w-5 h-5" /></button>
+                <button aria-label={tr('a11y.close')} onClick={() => { setShowJoin(false); setJoinCode(''); setJoinError(''); }} className="p-1 text-slate-400 hover:text-zinc-900 rounded"><X className="w-5 h-5" /></button>
               </div>
               <p className="text-sm text-slate-500 mb-4">{tr("site.studentclasses.enter_the_6character_invite_code_4584e4")}</p>
               {joinError && <p className="text-rose-600 text-sm mb-3 bg-rose-50 px-3 py-2 rounded-lg">{joinError}</p>}
-              <input
+              <input aria-label={tr("site.studentclasses.eg_abc123_9ae2e4")}
                 value={joinCode}
                 onChange={e => setJoinCode(e.target.value.toUpperCase())}
                 onKeyDown={e => e.key === 'Enter' && handleJoin()}
@@ -127,7 +128,7 @@ export function StudentClasses({
               <button onClick={handleJoin} disabled={joinCode.length < 4 || joining} className="w-full bg-zinc-900 text-white py-3 rounded-2xl font-bold hover:bg-black disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75">
                 {joining && <Loader2 className="w-4 h-4 animate-spin" />}  {tr("site.studentclasses.join_class_3191b7")}</button>
             </div>
-          </div>
+          </DialogSurface>
         )}
 
         {joinSuccess && (

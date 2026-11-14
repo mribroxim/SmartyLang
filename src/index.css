@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800;900&display=swap');
 @import "tailwindcss";
+
+/* Keyboard focus and readable secondary/semantic text keep the chunky palette. */
+:where(button, a, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid #18181b;
+  outline-offset: 3px;
+}
+.dark :where(button, a, input, textarea, select, [tabindex]):focus-visible {
+  outline-color: #fafafa;
+}
+html:not(.dark) .text-slate-400 { color: #64748b; }
+html:not(.dark) .text-rose-500 { color: #be123c; }
+html:not(.dark) .text-emerald-500 { color: #047857; }
 @import "./styles/stickers.css";
 
 /* ── Class-based dark mode (Tailwind v4) ── */

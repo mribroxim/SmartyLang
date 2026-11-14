@@ -1,3 +1,4 @@
+import { DialogSurface } from '../components/DialogSurface';
 import { useUiLang } from '../contexts/UiLangContext';
 import React, { useState, useEffect, useCallback } from 'react';
 import {
@@ -395,8 +396,8 @@ const TYPE_META: Record<string, { label: string; icon: React.ElementType; color:
             {showNewClass && (
               <div className="bg-white rounded-2xl border-2 border-slate-200 p-6 mb-4 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
                 <h3 className="font-bold text-lg mb-4">{tr("site.teacherdashboard.create_class_59aac6")}</h3>
-                <input value={newClassName} onChange={e => setNewClassName(e.target.value)} placeholder={tr("site.teacherdashboard.class_name_b45d98")} className="w-full border-2 border-slate-200 rounded-2xl px-4 py-3 text-sm mb-3 focus:outline-none focus:border-zinc-400" />
-                <textarea value={newClassDesc} onChange={e => setNewClassDesc(e.target.value)} placeholder={tr("site.teacherdashboard.description_optional_388de6")} rows={2} className="w-full border-2 border-slate-200 rounded-2xl px-4 py-3 text-sm mb-4 focus:outline-none focus:border-zinc-400 resize-none" />
+                <input aria-label={tr("site.teacherdashboard.class_name_b45d98")} value={newClassName} onChange={e => setNewClassName(e.target.value)} placeholder={tr("site.teacherdashboard.class_name_b45d98")} className="w-full border-2 border-slate-200 rounded-2xl px-4 py-3 text-sm mb-3 focus:outline-none focus:border-zinc-400" />
+                <textarea aria-label={tr("site.teacherdashboard.description_optional_388de6")} value={newClassDesc} onChange={e => setNewClassDesc(e.target.value)} placeholder={tr("site.teacherdashboard.description_optional_388de6")} rows={2} className="w-full border-2 border-slate-200 rounded-2xl px-4 py-3 text-sm mb-4 focus:outline-none focus:border-zinc-400 resize-none" />
                 <div className="flex gap-2">
                   <button onClick={handleCreateClass} disabled={!newClassName.trim() || creatingClass} className="bg-zinc-900 text-white px-5 py-2.5 rounded-2xl font-semibold text-sm hover:bg-black disabled:opacity-50 flex items-center gap-2 shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75">
                     {creatingClass && <Loader2 className="w-4 h-4 animate-spin" />}  {tr("site.teacherdashboard.create_6e157c")}</button>
@@ -695,7 +696,7 @@ const TYPE_META: Record<string, { label: string; icon: React.ElementType; color:
 
                       {aExerciseWordSource === 'custom' && (
                         <div>
-                          <textarea
+                          <textarea aria-label={tr("site.teacherdashboard.enter_words_separated_by_commas_96c9b4")}
                             value={aExerciseCustomWords}
                             onChange={e => setAExerciseCustomWords(e.target.value)}
                             placeholder={tr("site.teacherdashboard.enter_words_separated_by_commas_96c9b4")}
@@ -713,9 +714,9 @@ const TYPE_META: Record<string, { label: string; icon: React.ElementType; color:
                 )}
 
                 {/* Title + Description + Due */}
-                <input value={aTitle} onChange={e => setATitle(e.target.value)} placeholder={tr("site.teacherdashboard.assignment_title_ed7125")}
+                <input aria-label={tr("site.teacherdashboard.assignment_title_ed7125")} value={aTitle} onChange={e => setATitle(e.target.value)} placeholder={tr("site.teacherdashboard.assignment_title_ed7125")}
                   className="w-full border-2 border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-400" />
-                <textarea value={aDesc} onChange={e => setADesc(e.target.value)} placeholder={tr("site.teacherdashboard.instructions_description_optional_512f8e")} rows={2}
+                <textarea aria-label={tr("site.teacherdashboard.instructions_description_optional_512f8e")} value={aDesc} onChange={e => setADesc(e.target.value)} placeholder={tr("site.teacherdashboard.instructions_description_optional_512f8e")} rows={2}
                   className="w-full border-2 border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-400 resize-none" />
                 <div>
                   <label className="text-xs font-semibold text-slate-500 mb-1 block">{tr("site.teacherdashboard.due_date_optional_cf0e5a")}</label>
@@ -733,7 +734,7 @@ const TYPE_META: Record<string, { label: string; icon: React.ElementType; color:
 
             {/* Submissions modal */}
             {viewingAssignment && (
-              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]">
+              <DialogSurface onClose={() => setViewingAssignment(null)} className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]">
                 <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
                   <div className="flex items-start justify-between p-6 border-b border-slate-100 shrink-0">
                     <div>
@@ -749,7 +750,7 @@ const TYPE_META: Record<string, { label: string; icon: React.ElementType; color:
                         {viewingAssignment.dueDate && <span>{tr("site.teacherdashboard.due_7eb307")}{new Date(viewingAssignment.dueDate).toLocaleDateString(uiLang)}</span>}
                       </div>
                     </div>
-                    <button onClick={() => setViewingAssignment(null)} className="p-1.5 text-slate-400 hover:text-zinc-900 rounded-lg hover:bg-slate-100 shrink-0"><X className="w-5 h-5" /></button>
+                    <button aria-label={tr('a11y.close')} onClick={() => setViewingAssignment(null)} className="p-1.5 text-slate-400 hover:text-zinc-900 rounded-lg hover:bg-slate-100 shrink-0"><X className="w-5 h-5" /></button>
                   </div>
                   <div className="overflow-y-auto flex-1 p-6">
                     {submissionsLoading ? <div className="flex justify-center py-10"><Loader2 className="w-6 h-6 animate-spin text-slate-400" /></div>
@@ -798,7 +799,7 @@ const TYPE_META: Record<string, { label: string; icon: React.ElementType; color:
                       )}
                   </div>
                 </div>
-              </div>
+              </DialogSurface>
             )}
 
             {!selectedClass ? (
@@ -865,8 +866,8 @@ const TYPE_META: Record<string, { label: string; icon: React.ElementType; color:
                   <option value="">{tr("site.teacherdashboard.all_my_students_6a0a72")}</option>
                   {classes.map(c => <option key={c.id} value={c.id}>{c.name}  {tr("site.teacherdashboard.only_f8969a")}</option>)}
                 </select>
-                <input value={annTitle} onChange={e => setAnnTitle(e.target.value)} placeholder={tr("site.teacherdashboard.announcement_title_b820d5")} className="w-full border-2 border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-400" />
-                <textarea value={annMessage} onChange={e => setAnnMessage(e.target.value)} placeholder={tr("site.teacherdashboard.write_your_message_e4c609")} rows={4} className="w-full border-2 border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-400 resize-none" />
+                <input aria-label={tr("site.teacherdashboard.announcement_title_b820d5")} value={annTitle} onChange={e => setAnnTitle(e.target.value)} placeholder={tr("site.teacherdashboard.announcement_title_b820d5")} className="w-full border-2 border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-400" />
+                <textarea aria-label={tr("site.teacherdashboard.write_your_message_e4c609")} value={annMessage} onChange={e => setAnnMessage(e.target.value)} placeholder={tr("site.teacherdashboard.write_your_message_e4c609")} rows={4} className="w-full border-2 border-slate-200 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-400 resize-none" />
                 <button onClick={handleSendAnnouncement} disabled={!annTitle.trim() || !annMessage.trim() || sendingAnn} className="w-full bg-zinc-900 text-white py-3 rounded-2xl font-bold hover:bg-black disabled:opacity-50 flex items-center justify-center gap-2 shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75">
                   {sendingAnn ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}  {tr("site.teacherdashboard.send_announcement_306429")}</button>
               </div>

@@ -606,7 +606,7 @@ function PassageList({
         {/* Search */}
         <div className="relative mb-8">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-          <input
+          <input aria-label={t('shadowing.search', { n: SHADOWING_PASSAGES.length })}
             type="text"
             value={query}
             onChange={e => setQuery(e.target.value)}
@@ -614,7 +614,7 @@ function PassageList({
             className="w-full pl-11 pr-10 py-3 bg-white border-2 border-slate-200 rounded-2xl text-sm focus:outline-none focus:border-sky-400 shadow-sm"
           />
           {query && (
-            <button
+            <button aria-label={t('a11y.close')}
               onClick={() => setQuery('')}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
             >

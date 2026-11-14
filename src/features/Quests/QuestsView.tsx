@@ -1,3 +1,4 @@
+import { questsFor, type QuestId } from '../../lib/quests';
 import { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import { Check, Clock, Lock } from 'lucide-react';
@@ -7,44 +8,19 @@ import type { UiStringKey } from '../../lib/uiStrings';
 import { ScreenShell, seCard, seChipOff, seChipOn } from '../../components/ScreenShell';
 import { Sticker, type StickerId } from '../../components/stickers/Sticker';
 import { loadLocalCompletions } from '../../lib/completions';
-import { readScopedJSON, writeScopedJSON } from '../../lib/userStorage';
+import { getQuests, saveQuests, useQuests } from '../../lib/questState';
 import { normalizeHabit, todayKey, visibleStreak, LEAGUE_TIERS, leagueMeta } from '../../lib/habitEngine';
 import { earnFishPiece, fedToday, usePantry } from '../../lib/smarty/pantry';
 import { canPractice } from '../../lib/access';
 import { playSound } from '../../lib/audio';
 
 // ── daily quests ────────────────────────────────────────────────────────
-type QuestId = 'xp' | 'bites' | 'feed' | 'perfect' | 'words' | 'practice' | 'talk' | 'streak';
-type Quest = { id: QuestId; target: number; sticker: StickerId; max?: boolean };
-const POOL: Quest[] = [
-  { id: 'xp', target: 30, sticker: 'achieve.xp-collector' },
-  { id: 'bites', target: 2, sticker: 'flow.finish-line' },
-  { id: 'feed', target: 1, sticker: 'reward.snack-time' },
-  { id: 'perfect', target: 1, sticker: 'mood.perfect-score' },
-  { id: 'words', target: 3, sticker: 'vocab.word-collector' },
-  { id: 'streak', target: 1, sticker: 'streak.streak-keeper' },
-  { id: 'practice', target: 1, sticker: 'game.challenge-accepted', max: true },
-  { id: 'talk', target: 1, sticker: 'speak.conversation-partner', max: true },
-];
-
-/** Three quests a day, the same all day, different tomorrow. */
-function questsFor(date: string, max: boolean): Quest[] {
-  const pool = POOL.filter((q) => max || !q.max);
-  let h = 0;
-  for (const c of date) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-  const out: Quest[] = [];
-  const left = [...pool];
-  while (out.length < 3 && left.length) { h = (h * 1103515245 + 12345) >>> 0; out.push(left.splice(h % left.length, 1)[0]); }
-  return out;
-}
-
-const QUEST_KEY = 'smarty_quests_v1';
 /** Called by the room when the learner talks to Smarty (for the "talk" quest). */
 export function noteTalkedToSmarty() {
   const day = todayKey();
-  const s = readScopedJSON<{ date: string; claimed: string[]; talked?: number }>(QUEST_KEY, { date: day, claimed: [] });
-  const cur = s.date === day ? s : { date: day, claimed: [] };
-  writeScopedJSON(QUEST_KEY, { ...cur, talked: (cur.talked ?? 0) + 1 });
+  const s = getQuests();
+  const cur = s.date === day ? s : { date: day, claimed: [], talked: 0 };
+  saveQuests({ ...cur, talked: cur.talked + 1 });
 }
 
 // ── achievements ────────────────────────────────────────────────────────
@@ -59,10 +35,8 @@ export function QuestsView({ xp, league }: { xp: number; league: string }) {
   const { habit, savedVocab, accountProfile } = useProgress();
   const pantry = usePantry();
   const [tab, setTab] = useState<'quests' | 'achievements'>('quests');
-  const [claimed, setClaimed] = useState<string[]>(() => {
-    const s = readScopedJSON<{ date: string; claimed: string[] }>(QUEST_KEY, { date: '', claimed: [] });
-    return s.date === todayKey() ? s.claimed : [];
-  });
+  const questState = useQuests();
+  const claimed = questState.date === todayKey() ? questState.claimed : [];
 
   const day = todayKey();
   const h = normalizeHabit(habit);
@@ -70,7 +44,7 @@ export function QuestsView({ xp, league }: { xp: number; league: string }) {
   const all = useMemo(() => loadLocalCompletions(), [claimed.length]);
   const today = all.filter((c) => todayKey(new Date(c.timestamp)) === day);
   const bitesToday = today.filter((c) => c.type === 'lesson-bite');
-  const talked = readScopedJSON<{ date: string; talked?: number }>(QUEST_KEY, { date: '' });
+  const talked = questState;
 
   const progress: Record<QuestId, number> = {
     xp: h.dailyGoal.xpEarned || 0,
@@ -88,9 +62,7 @@ export function QuestsView({ xp, league }: { xp: number; league: string }) {
     earnFishPiece();
     playSound('level-up', { mascot: false });
     const next = [...claimed, id];
-    setClaimed(next);
-    const prev = readScopedJSON<Record<string, unknown>>(QUEST_KEY, {});
-    writeScopedJSON(QUEST_KEY, { ...prev, date: day, claimed: next });
+    saveQuests({ ...getQuests(), date: day, claimed: next });
   };
   const msLeft = (() => { const n = new Date(); const end = new Date(n); end.setHours(24, 0, 0, 0); return end.getTime() - n.getTime(); })();
   const hoursLeft = Math.floor(msLeft / 3_600_000), minsLeft = Math.floor((msLeft % 3_600_000) / 60_000);

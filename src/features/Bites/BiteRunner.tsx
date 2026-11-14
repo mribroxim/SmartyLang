@@ -1,3 +1,4 @@
+import { DialogSurface } from '../../components/DialogSurface';
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { X, Volume2, VolumeX, MicOff } from 'lucide-react';
@@ -373,7 +374,7 @@ export function BiteRunner(props: Props) {
       {/* Quit sheet */}
       <AnimatePresence>
         {quit && (
-          <motion.div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-zinc-900/55 backdrop-blur-[2px]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setQuit(false)}>
+          <DialogSurface role="presentation" aria-modal={undefined} asComponent={motion.div} onClose={() => setQuit(false)} className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-zinc-900/55 backdrop-blur-[2px]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setQuit(false)}>
             <motion.div
               role="dialog"
               aria-modal="true"
@@ -390,7 +391,7 @@ export function BiteRunner(props: Props) {
               <button type="button" autoFocus onClick={() => setQuit(false)} className="mt-5 w-full rounded-2xl bg-zinc-900 py-3 text-sm font-black text-white shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75">{t('bites.keepGoing')}</button>
               <button type="button" onClick={props.onExit} className="mt-2 w-full rounded-full py-3 text-sm font-bold text-rose-600">{t('bites.quitConfirm')}</button>
             </motion.div>
-          </motion.div>
+          </DialogSurface>
         )}
       </AnimatePresence>
     </div>

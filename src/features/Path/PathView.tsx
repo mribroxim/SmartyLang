@@ -1,3 +1,4 @@
+import { DialogSurface } from '../../components/DialogSurface';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check, Crown, Lock, Play, ChevronRight, ListOrdered, X } from 'lucide-react';
@@ -158,7 +159,7 @@ export function PathView({ level, setLevel, textsByLevel, contentLang, startingL
         {/* All sections */}
         <AnimatePresence>
           {sections && (
-            <motion.div className="fixed inset-0 z-[85] flex items-end justify-center bg-zinc-900/40 sm:items-center sm:p-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSections(false)}>
+            <DialogSurface role="presentation" aria-modal={undefined} asComponent={motion.div} onClose={() => setSections(false)} className="fixed inset-0 z-[85] flex items-end justify-center bg-zinc-900/40 sm:items-center sm:p-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSections(false)}>
               <motion.div role="dialog" aria-modal="true" aria-label={t('path.sections')} initial={{ y: 60 }} animate={{ y: 0 }} exit={{ y: 80 }} transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                 className="w-full max-w-lg rounded-t-3xl border-2 border-zinc-900 bg-white p-5 dark:border-zinc-100 dark:bg-zinc-900 sm:rounded-3xl" onClick={(e) => e.stopPropagation()}>
                 <div className="mb-3 flex items-center justify-between">
@@ -189,7 +190,7 @@ export function PathView({ level, setLevel, textsByLevel, contentLang, startingL
                   })}
                 </ul>
               </motion.div>
-            </motion.div>
+            </DialogSurface>
           )}
         </AnimatePresence>
       </div>

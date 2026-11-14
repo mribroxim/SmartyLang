@@ -1,3 +1,4 @@
+import { DialogSurface } from './DialogSurface';
 import { useUiLang } from '../contexts/UiLangContext';
 import React, { useState, useEffect, useMemo } from 'react';
 import { X, BookOpen, Languages, Volume2, Loader2, Plus, CheckCircle2, Search } from 'lucide-react';
@@ -226,7 +227,7 @@ export function WordDetailsModal({ word, mode: initialMode, onClose, savedVocab,
       <div className="p-2 border-b border-zinc-100">
         <div className="relative">
           <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-zinc-400 pointer-events-none" />
-          <input
+          <input aria-label={t("core.wordpopover.search_language_bb13e8")}
             autoFocus
             value={langSearch}
             onChange={e => setLangSearch(e.target.value)}
@@ -266,7 +267,7 @@ export function WordDetailsModal({ word, mode: initialMode, onClose, savedVocab,
   );
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={onClose}>
+    <DialogSurface onClose={onClose} className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={onClose}>
       <div
         className="bg-white rounded-3xl w-full max-w-lg overflow-hidden flex flex-col max-h-[80vh] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900"
         onClick={e => e.stopPropagation()}
@@ -298,7 +299,7 @@ export function WordDetailsModal({ word, mode: initialMode, onClose, savedVocab,
                >
                  {isSaved ? <CheckCircle2 className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                </button>
-               <button type="button" onClick={onClose} className="p-2 rounded-xl border-2 border-slate-200 text-slate-500 hover:bg-slate-100 hover:text-zinc-900 dark:border-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 transition-colors">
+               <button aria-label={t('a11y.close')} type="button" onClick={onClose} className="p-2 rounded-xl border-2 border-slate-200 text-slate-500 hover:bg-slate-100 hover:text-zinc-900 dark:border-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-100 transition-colors">
                  <X className="w-5 h-5" />
                </button>
              </div>
@@ -435,6 +436,6 @@ export function WordDetailsModal({ word, mode: initialMode, onClose, savedVocab,
           ) : null}
         </div>
       </div>
-    </div>
+    </DialogSurface>
   );
 }

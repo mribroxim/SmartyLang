@@ -212,7 +212,7 @@ export function ReadingView(props: ReadingViewProps) {
         <ScreenShell size="wide" title={t('reading.level.title')} subtitle={t('reading.level.subtitle')}>
           <div className="relative mb-3">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-            <input
+            <input aria-label={t('reading.level.search')}
               type="text"
               placeholder={t('reading.level.search')}
               value={searchQuery}
@@ -220,7 +220,7 @@ export function ReadingView(props: ReadingViewProps) {
               className="w-full pl-10 pr-9 py-2.5 bg-white border-2 border-slate-200 rounded-2xl text-[13px] focus:outline-none focus:ring-2 focus:ring-zinc-700/30 focus:border-zinc-700"
             />
             {searchQuery && (
-              <button onClick={() => setSearchQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
+              <button aria-label={t('a11y.close')} onClick={() => setSearchQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
                 <X className="w-4 h-4" />
               </button>
             )}
@@ -326,7 +326,7 @@ export function ReadingView(props: ReadingViewProps) {
                <div className="space-y-6">
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-slate-600 uppercase tracking-wider ml-1">{t('custom.yourText')}</label>
-                    <textarea
+                    <textarea aria-label={t('custom.placeholder')}
                       placeholder={t('custom.placeholder')}
                       value={customText}
                       onChange={(e) => setCustomText(e.target.value)}

@@ -1,3 +1,4 @@
+import { DialogSurface } from '../../components/DialogSurface';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { X } from 'lucide-react';
@@ -60,7 +61,7 @@ export function HistorySheet({ onClose, showIelts }: { onClose: () => void; show
   let lastDay = '';
 
   return (
-    <div className="fixed inset-0 z-[85] flex items-end justify-center bg-zinc-900/55 backdrop-blur-[2px] sm:items-center sm:p-4" onClick={onClose}>
+    <DialogSurface role="presentation" aria-modal={undefined} onClose={onClose} className="fixed inset-0 z-[85] flex items-end justify-center bg-zinc-900/55 backdrop-blur-[2px] sm:items-center sm:p-4" onClick={onClose}>
       <motion.div ref={panel} tabIndex={-1} role="dialog" aria-modal="true" aria-labelledby="history-title"
         initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: 'spring', stiffness: 360, damping: 30 }}
         className="flex h-[88dvh] w-full max-w-2xl flex-col overflow-hidden rounded-t-3xl border-2 border-slate-200 bg-white shadow-[0_6px_0_0_#e2e8f0] outline-none dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-[0_6px_0_0_#27272a] sm:h-[80dvh] sm:rounded-3xl"
@@ -140,6 +141,6 @@ export function HistorySheet({ onClose, showIelts }: { onClose: () => void; show
           </AnimatePresence>
         </div>
       </motion.div>
-    </div>
+    </DialogSurface>
   );
 }

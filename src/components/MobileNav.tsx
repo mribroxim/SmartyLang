@@ -1,3 +1,4 @@
+import { DialogSurface } from './DialogSurface';
 import React, { useState } from 'react';
 import { BookOpen, Dumbbell, Trophy, User, Users, X, Trello, Shield, Moon, Sun, LogOut, Crown, LayoutGrid, GraduationCap, BookA, Target, Cat, Medal } from 'lucide-react';
 import type { UserRole } from '../firebase';
@@ -158,7 +159,7 @@ export function MobileNav({
       </nav>
 
       {open && (
-        <div className="fixed inset-0 z-50 lg:hidden flex flex-col justify-end">
+        <DialogSurface onClose={() => setOpen(false)} className="fixed inset-0 z-50 lg:hidden flex flex-col justify-end">
           <div
             className="absolute inset-0 bg-black/40 backdrop-blur-[2px] animate-backdrop-in"
             onClick={() => setOpen(false)}
@@ -176,7 +177,7 @@ export function MobileNav({
               <h2 className="text-lg font-serif font-black tracking-tight text-zinc-900 dark:text-zinc-50">
                 {t('nav.menu')}
               </h2>
-              <button
+              <button aria-label={t('a11y.close')}
                 onClick={() => setOpen(false)}
                 className="w-8 h-8 rounded-full bg-slate-100 dark:bg-zinc-800 flex items-center justify-center text-slate-500 dark:text-zinc-400 active:scale-95 transition-transform"
               >
@@ -252,7 +253,7 @@ export function MobileNav({
               </div>
             </div>
           </div>
-        </div>
+        </DialogSurface>
       )}
     </>
   );

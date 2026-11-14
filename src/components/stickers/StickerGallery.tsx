@@ -1,3 +1,4 @@
+import { DialogSurface } from '../DialogSurface';
 import { useMemo, useState } from 'react';
 import { STICKERS, type StickerId } from './manifest';
 import { Sticker } from './Sticker';
@@ -51,7 +52,7 @@ export function StickerGallery() {
         ))}
       </div>
       {current && (
-        <div className="fixed inset-0 z-[70] bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setOpen(null)}>
+        <DialogSurface onClose={() => setOpen(null)} className="fixed inset-0 z-[70] bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setOpen(null)}>
           <div className="bg-white dark:bg-zinc-900 rounded-3xl p-6 w-full max-w-md text-center" onClick={(e) => e.stopPropagation()}>
             <div className="flex justify-center"><Sticker id={current.id} size={300} priority="hero" title={STICKER_INFO[current.id].name} /></div>
             <div className="mt-2 text-xs font-mono text-slate-400">#{current.no} · {current.id}</div>
@@ -59,7 +60,7 @@ export function StickerGallery() {
             <div className="text-sm text-slate-500 dark:text-zinc-400">{STICKER_INFO[current.id].tag}</div>
             <button type="button" onClick={() => setOpen(null)} className="mt-4 px-5 py-2 rounded-full bg-zinc-900 text-white text-sm font-bold dark-keep">Close</button>
           </div>
-        </div>
+        </DialogSurface>
       )}
     </div>
   );

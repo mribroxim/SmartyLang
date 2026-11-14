@@ -1,5 +1,7 @@
 import { CatLogo } from '../components/brand/CatLogo';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { AgeGate, LegalLinks } from './Legal';
+import { apiRequest } from '../lib/selfHostedApi';
 import { loginWithEmail, registerWithEmail } from '../firebase';
 import { useUiLang } from '../contexts/UiLangContext';
 
@@ -86,6 +88,8 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
   const [error, setError]           = useState<string | null>(null);
 
   const busy = googleLoading || emailLoading;
+  const [ageReady, setAgeReady] = useState(false);
+  useEffect(() => { apiRequest<{ ready: boolean }>('/api/safety/age').then(result => setAgeReady(result.ready)).catch(() => {}); }, []);
 
   /* ── Google ───────────────────────────────────────────────────────────── */
   const handleGoogle = async () => {
@@ -131,6 +135,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
   };
 
   /* ── UI ───────────────────────────────────────────────────────────────── */
+  if (!ageReady) return <AgeGate onReady={() => setAgeReady(true)} />;
   return (
     <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-4 md:p-6">
       <div className="w-full max-w-md">
@@ -145,6 +150,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
         </div>
 
         {/* Card */}
+        <LegalLinks />
         <div className="bg-zinc-900 rounded-3xl p-6 md:p-8 border border-zinc-800 shadow-2xl">
           <h2 className="text-xl font-bold text-white mb-1">{t('auth.welcome')}</h2>
           <p className="text-zinc-400 text-sm mb-6">{t('auth.signInHint')}</p>
@@ -197,7 +203,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
 
               <form onSubmit={handleEmailSubmit} className="space-y-3">
                 {emailMode === 'register' && (
-                  <input
+                  <input aria-label={t("core.authgate.full_name_optional_69e68e")}
                     type="text"
                     placeholder={t("core.authgate.full_name_optional_69e68e")}
                     value={name}
@@ -207,7 +213,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
                   />
                 )}
 
-                <input
+                <input aria-label={t("core.authgate.email_address_c94d31")}
                   type="email"
                   placeholder={t("core.authgate.email_address_c94d31")}
                   value={email}
@@ -217,7 +223,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
                   className="w-full bg-zinc-800 border border-zinc-700 text-white placeholder-zinc-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-500 transition-colors disabled:opacity-60"
                 />
 
-                <input
+                <input aria-label={t("core.authgate.password_8be3c9")}
                   type="password"
                   placeholder={t("core.authgate.password_8be3c9")}
                   value={password}
@@ -228,7 +234,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
                 />
 
                 {emailMode === 'register' && (
-                  <input
+                  <input aria-label={t("core.authgate.confirm_password_4a7c56")}
                     type="password"
                     placeholder={t("core.authgate.confirm_password_4a7c56")}
                     value={confirm}
