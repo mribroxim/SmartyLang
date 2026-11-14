@@ -1,6 +1,5 @@
 import "dotenv/config";
 import express from "express";
-import { createServer as createViteServer } from "vite";
 import path from "path";
 import { createRequire } from "module";
 import { getConfig, synthesizeMp3, synthesizeMp3WithSync } from "./server/googleTts.ts";
@@ -215,6 +214,7 @@ async function startServer() {
 
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production" && process.env.SERVE_BUILT_APP !== '1') {
+    const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",

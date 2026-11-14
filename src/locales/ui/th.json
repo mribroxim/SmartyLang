@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "หนังสือ",
   "room.item.rug.cat-face": "หน้าแมว",
   "room.item.rug.checker": "เครื่องตรวจสอบ",
-  "room.item.rug.checker-wave": "รูปแบบเช็คคลื่น"
+  "room.item.rug.checker-wave": "รูปแบบเช็คคลื่น",
+  "time.secondsShort": "s"
 }

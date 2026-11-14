@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Le livre",
   "room.item.rug.cat-face": "Face de chat",
   "room.item.rug.checker": "Vérificateur",
-  "room.item.rug.checker-wave": "Modèle à coques ondulées"
+  "room.item.rug.checker-wave": "Modèle à coques ondulées",
+  "time.secondsShort": "s"
 }

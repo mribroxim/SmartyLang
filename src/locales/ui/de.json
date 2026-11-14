@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Buch",
   "room.item.rug.cat-face": "Katzengesicht",
   "room.item.rug.checker": "Prüfer",
-  "room.item.rug.checker-wave": "Wellenförmig gekennzeichnetes Muster"
+  "room.item.rug.checker-wave": "Wellenförmig gekennzeichnetes Muster",
+  "time.secondsShort": "s"
 }

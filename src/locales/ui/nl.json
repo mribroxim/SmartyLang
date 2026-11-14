@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Boek",
   "room.item.rug.cat-face": "Kattengezicht",
   "room.item.rug.checker": "Controleerder",
-  "room.item.rug.checker-wave": "Wave-gecontroleerd patroon"
+  "room.item.rug.checker-wave": "Wave-gecontroleerd patroon",
+  "time.secondsShort": "s"
 }

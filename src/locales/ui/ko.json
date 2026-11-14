@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "책",
   "room.item.rug.cat-face": "고양이 얼굴",
   "room.item.rug.checker": "체크",
-  "room.item.rug.checker-wave": "파동 체크 패턴"
+  "room.item.rug.checker-wave": "파동 체크 패턴",
+  "time.secondsShort": "s"
 }

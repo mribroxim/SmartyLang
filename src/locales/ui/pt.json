@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Livro",
   "room.item.rug.cat-face": "Cara de gato",
   "room.item.rug.checker": "Controlador",
-  "room.item.rug.checker-wave": "Padrão de verificação de ondas"
+  "room.item.rug.checker-wave": "Padrão de verificação de ondas",
+  "time.secondsShort": "s"
 }

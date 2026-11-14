@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "El libro",
   "room.item.rug.cat-face": "Cara de gato",
   "room.item.rug.checker": "El chequeo",
-  "room.item.rug.checker-wave": "Patrón marcado con ondas"
+  "room.item.rug.checker-wave": "Patrón marcado con ondas",
+  "time.secondsShort": "s"
 }

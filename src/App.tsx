@@ -807,7 +807,7 @@ export default function App() {
   const [vocabOpen, setVocabOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [fontScale, setFontScale] = useState(3);
-  const [speechRate, setSpeechRate] = useState(DEFAULT_SPEECH_RATE);
+  const [speechRate, setSpeechRate] = useState<number>(DEFAULT_SPEECH_RATE);
   const [customText, setCustomText] = useState('');
   const [savedCustomTexts, setSavedCustomTexts] = useState<string[]>(
     () => { try { return JSON.parse(localStorage.getItem('readmaster_saved_custom_texts') || '[]'); } catch { return []; } }
@@ -1020,7 +1020,7 @@ export default function App() {
   }, [isRecording]);
 
 
-  const currentTextObj = useMemo(() => {
+  const currentTextObj = useMemo<ReadingText>(() => {
     if (isBiteRoute) {
       // Deep links and browser Back select the route's passage across all levels.
       return (Object.values(LEVEL_TEXTS) as ReadingText[][]).flat().find(text => text.id === appPath[2])
@@ -1031,7 +1031,8 @@ export default function App() {
         id: 'custom-text',
         title: 'Custom Practice',
         text: customText,
-        vocabulary: []
+        vocabulary: [],
+        targetSeconds: 60,
       };
     }
     const texts = LEVEL_TEXTS[level] || [];
@@ -2084,7 +2085,7 @@ export default function App() {
               planSeats: seats,
               planLanguages: languages ?? 1,
               planStartedAt: Date.now(),
-              role: planId === 'business' || planId === 'teacher' || planId === 'organization' ? 'business' : prev.role,
+              role: planId === 'business' ? 'business' : ['admin', 'content-manager'].includes(prev.role) ? prev.role : 'student',
             } : prev);
           }}
         />

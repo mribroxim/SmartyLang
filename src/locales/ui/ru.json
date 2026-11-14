@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Книга",
   "room.item.rug.cat-face": "Лицо кота",
   "room.item.rug.checker": "Проверка",
-  "room.item.rug.checker-wave": "Переключенный волнообразный шаблон"
+  "room.item.rug.checker-wave": "Переключенный волнообразный шаблон",
+  "time.secondsShort": "s"
 }

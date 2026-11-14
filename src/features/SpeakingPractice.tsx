@@ -19,7 +19,7 @@ import { bumpWeeklyGoal } from '../lib/weeklyGoals';
 import { ScreenShell, HubRow } from '../components/ScreenShell';
 import { LevelCard, LevelCardGrid, LEVEL_THEMES } from '../components/LevelCards';
 
-type Recording     = { date: string; size: number };
+type Recording     = { date: string; size: number; timestamp?: number; audioKey?: string };
 type CustomSession = { id: string; title: string; prompt: string; createdAt: string };
 
 const CUSTOM_KEY = 'speaking_custom_v1';

@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "本",
   "room.item.rug.cat-face": "猫の顔",
   "room.item.rug.checker": "チェック",
-  "room.item.rug.checker-wave": "波紋でチェックされたパターン"
+  "room.item.rug.checker-wave": "波紋でチェックされたパターン",
+  "time.secondsShort": "s"
 }

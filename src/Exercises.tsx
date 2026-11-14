@@ -922,7 +922,7 @@ export function DefinitionQuiz({ savedVocab, onBack, onComplete, allVocabMap, re
  );
  }
 
- const current = words[currentIndex] || { word: '' };
+ const current = words[currentIndex] || { word: '', def: '' };
 
  return (
  <div className={EX_SHELL}>
@@ -1747,7 +1747,7 @@ export function ListeningMatch({ savedVocab, onBack, onComplete, allVocabMap, re
  );
  }
 
- const current = words[currentIndex] || { word: '' };
+ const current = words[currentIndex] || { word: '', def: '' };
 
  return (
  <div className={EX_SHELL}>

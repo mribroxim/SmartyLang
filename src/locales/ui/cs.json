@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Kniha",
   "room.item.rug.cat-face": "Kočičí tvář.",
   "room.item.rug.checker": "Kontrolor",
-  "room.item.rug.checker-wave": "Vlnitý kontrolovaný vzor"
+  "room.item.rug.checker-wave": "Vlnitý kontrolovaný vzor",
+  "time.secondsShort": "s"
 }

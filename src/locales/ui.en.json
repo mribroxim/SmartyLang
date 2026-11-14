@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Book",
   "room.item.rug.cat-face": "Cat face",
   "room.item.rug.checker": "Checker",
-  "room.item.rug.checker-wave": "Checker wave"
+  "room.item.rug.checker-wave": "Checker wave",
+  "time.secondsShort": "s"
 }

@@ -1,5 +1,5 @@
 {
-  "sourceHash": "3736cde76ced21c621d7cff42459e286672a93326fcf15ceded10161c584689f",
+  "sourceHash": "f1b9d1371e946350891837a8b82a239ef9c9c7ea5af3683d9ddf403822af318d",
   "sourceByKey": {
     "mascot.combo": "1d7bbd47b3434b85a735c986b11e2f9ea5f0e709dd5c90bab55f13f3ad5a3972",
     "mascot.goal": "dc1b569296c4fdd9754fd266bf0fe7f5f451a56b4588707c9a1014ccde0452d9",
@@ -1838,9 +1838,10 @@
     "room.item.rug.book": "909cb81127c5e1944b16dc5944ade59facb822c7a3f250d1f0256293bfd3c055",
     "room.item.rug.cat-face": "ccd970b89dff0e42b1ee0c1c17438fde69425fcee0823b2fe6c6439a0c29268c",
     "room.item.rug.checker": "2e7448215149f0bf50c0153d7a6121d3fcc332df713d37ad22afdc70bdf09f5a",
-    "room.item.rug.checker-wave": "891425b6409345e5a81613d36a104ea1360956ba7c77e5b4904e81530c050b3e"
+    "room.item.rug.checker-wave": "891425b6409345e5a81613d36a104ea1360956ba7c77e5b4904e81530c050b3e",
+    "time.secondsShort": "043a718774c572bd8a25adbeb1bfcd5c0256ae11cecf9f9c3f925d0e52beaf89"
   },
-  "sourceKeys": 1838,
+  "sourceKeys": 1839,
   "languages": [
     "ru",
     "tl",

@@ -52,7 +52,7 @@ export function ListeningDictation({ onBack }: any) {
       return null;
     } catch { return null; }
   });
-  const [speechRate, setSpeechRate] = useState(DEFAULT_SPEECH_RATE);
+  const [speechRate, setSpeechRate] = useState<number>(DEFAULT_SPEECH_RATE);
 
   useEffect(() => {
     try {

@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Książka",
   "room.item.rug.cat-face": "Twarz kota",
   "room.item.rug.checker": "Kontroler",
-  "room.item.rug.checker-wave": "Wzorzec podkreślony falą"
+  "room.item.rug.checker-wave": "Wzorzec podkreślony falą",
+  "time.secondsShort": "s"
 }

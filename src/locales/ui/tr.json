@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Kitap",
   "room.item.rug.cat-face": "Kedi yüzü.",
   "room.item.rug.checker": "Kontrolcü",
-  "room.item.rug.checker-wave": "Dalgalanmış işaretli desen"
+  "room.item.rug.checker-wave": "Dalgalanmış işaretli desen",
+  "time.secondsShort": "s"
 }

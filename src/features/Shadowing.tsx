@@ -369,7 +369,7 @@ function PracticeView({
               title={t("site.shadowing.delay_text_0ebd1b")}
             >−</button>
             <span className="text-[11px] font-bold text-slate-600 w-14 text-center select-none">
-              {t("site.shadowing.sync_905f63")} {timingOffset >= 0 ? '+' : ''}{timingOffset.toFixed(1)}{t("site.teacherdashboard.s_a0f149")}</span>
+              {t("site.shadowing.sync_905f63")} {timingOffset >= 0 ? '+' : ''}{timingOffset.toFixed(1)}{t('time.secondsShort')}</span>
             <button
               onClick={() => setTimingOffset(o => Math.min(4, parseFloat((o + 0.5).toFixed(1))))}
               className="w-5 h-5 flex items-center justify-center text-slate-500 hover:text-zinc-900 font-black text-sm leading-none"

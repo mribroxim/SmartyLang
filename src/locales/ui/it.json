@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Libro",
   "room.item.rug.cat-face": "Faccia di gatto",
   "room.item.rug.checker": "Controllo",
-  "room.item.rug.checker-wave": "Modello di controllo ondulato"
+  "room.item.rug.checker-wave": "Modello di controllo ondulato",
+  "time.secondsShort": "s"
 }

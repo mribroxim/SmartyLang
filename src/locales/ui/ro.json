@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Carte",
   "room.item.rug.cat-face": "Fata de pisică",
   "room.item.rug.checker": "Verificator",
-  "room.item.rug.checker-wave": "Model de verificare cu valuri"
+  "room.item.rug.checker-wave": "Model de verificare cu valuri",
+  "time.secondsShort": "s"
 }

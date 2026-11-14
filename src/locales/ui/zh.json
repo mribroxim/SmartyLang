@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "书籍",
   "room.item.rug.cat-face": "猫脸",
   "room.item.rug.checker": "检查员",
-  "room.item.rug.checker-wave": "波纹检查图案"
+  "room.item.rug.checker-wave": "波纹检查图案",
+  "time.secondsShort": "s"
 }

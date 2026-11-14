@@ -1837,7 +1837,8 @@
     "room.item.rug.book": "Книга",
     "room.item.rug.cat-face": "Лицо кота",
     "room.item.rug.checker": "Проверка",
-    "room.item.rug.checker-wave": "Переключенный волнообразный шаблон"
+    "room.item.rug.checker-wave": "Переключенный волнообразный шаблон",
+    "time.secondsShort": "s"
   },
   "tl": {
     "mascot.combo": "{n} sa isang hilera!",
@@ -3677,7 +3678,8 @@
     "room.item.rug.book": "Aklat",
     "room.item.rug.cat-face": "Mukha ng pusa",
     "room.item.rug.checker": "Pagsusuri",
-    "room.item.rug.checker-wave": "Ang pattern na naka-check na wavy"
+    "room.item.rug.checker-wave": "Ang pattern na naka-check na wavy",
+    "time.secondsShort": "s"
   },
   "es": {
     "mascot.combo": "¡{n} en una fila!",
@@ -5517,7 +5519,8 @@
     "room.item.rug.book": "El libro",
     "room.item.rug.cat-face": "Cara de gato",
     "room.item.rug.checker": "El chequeo",
-    "room.item.rug.checker-wave": "Patrón marcado con ondas"
+    "room.item.rug.checker-wave": "Patrón marcado con ondas",
+    "time.secondsShort": "s"
   },
   "uz": {
     "mascot.combo": "Ketma-ket {n} ta!",
@@ -7357,7 +7360,8 @@
     "room.item.rug.book": "Kitob",
     "room.item.rug.cat-face": "Mushukning yuzi",
     "room.item.rug.checker": "Tekshiruvchi",
-    "room.item.rug.checker-wave": "Toʻlqinli tekshirilgan naqsh"
+    "room.item.rug.checker-wave": "Toʻlqinli tekshirilgan naqsh",
+    "time.secondsShort": "s"
   },
   "de": {
     "mascot.combo": "{n} in Folge!",
@@ -9197,7 +9201,8 @@
     "room.item.rug.book": "Buch",
     "room.item.rug.cat-face": "Katzengesicht",
     "room.item.rug.checker": "Prüfer",
-    "room.item.rug.checker-wave": "Wellenförmig gekennzeichnetes Muster"
+    "room.item.rug.checker-wave": "Wellenförmig gekennzeichnetes Muster",
+    "time.secondsShort": "s"
   },
   "fr": {
     "mascot.combo": "{n} de suite !",
@@ -11037,7 +11042,8 @@
     "room.item.rug.book": "Le livre",
     "room.item.rug.cat-face": "Face de chat",
     "room.item.rug.checker": "Vérificateur",
-    "room.item.rug.checker-wave": "Modèle à coques ondulées"
+    "room.item.rug.checker-wave": "Modèle à coques ondulées",
+    "time.secondsShort": "s"
   },
   "it": {
     "mascot.combo": "{n} di fila!",
@@ -12877,7 +12883,8 @@
     "room.item.rug.book": "Libro",
     "room.item.rug.cat-face": "Faccia di gatto",
     "room.item.rug.checker": "Controllo",
-    "room.item.rug.checker-wave": "Modello di controllo ondulato"
+    "room.item.rug.checker-wave": "Modello di controllo ondulato",
+    "time.secondsShort": "s"
   },
   "pt": {
     "mascot.combo": "{n} seguidos!",
@@ -14717,7 +14724,8 @@
     "room.item.rug.book": "Livro",
     "room.item.rug.cat-face": "Cara de gato",
     "room.item.rug.checker": "Controlador",
-    "room.item.rug.checker-wave": "Padrão de verificação de ondas"
+    "room.item.rug.checker-wave": "Padrão de verificação de ondas",
+    "time.secondsShort": "s"
   },
   "ja": {
     "mascot.combo": "{n} 順番に!",
@@ -16557,7 +16565,8 @@
     "room.item.rug.book": "本",
     "room.item.rug.cat-face": "猫の顔",
     "room.item.rug.checker": "チェック",
-    "room.item.rug.checker-wave": "波紋でチェックされたパターン"
+    "room.item.rug.checker-wave": "波紋でチェックされたパターン",
+    "time.secondsShort": "s"
   },
   "ko": {
     "mascot.combo": "{n}명 연속!",
@@ -18397,7 +18406,8 @@
     "room.item.rug.book": "책",
     "room.item.rug.cat-face": "고양이 얼굴",
     "room.item.rug.checker": "체크",
-    "room.item.rug.checker-wave": "파동 체크 패턴"
+    "room.item.rug.checker-wave": "파동 체크 패턴",
+    "time.secondsShort": "s"
   },
   "zh": {
     "mascot.combo": "{n} 在一排!",
@@ -20237,7 +20247,8 @@
     "room.item.rug.book": "书籍",
     "room.item.rug.cat-face": "猫脸",
     "room.item.rug.checker": "检查员",
-    "room.item.rug.checker-wave": "波纹检查图案"
+    "room.item.rug.checker-wave": "波纹检查图案",
+    "time.secondsShort": "s"
   },
   "ar": {
     "mascot.combo": "إجابات صحيحة متتالية: {n}!",
@@ -22077,7 +22088,8 @@
     "room.item.rug.book": "كتاب",
     "room.item.rug.cat-face": "وجه القط",
     "room.item.rug.checker": "المحقق",
-    "room.item.rug.checker-wave": "النمط الموجة المختارة"
+    "room.item.rug.checker-wave": "النمط الموجة المختارة",
+    "time.secondsShort": "s"
   },
   "tr": {
     "mascot.combo": "Üst üste {n}!",
@@ -23917,7 +23929,8 @@
     "room.item.rug.book": "Kitap",
     "room.item.rug.cat-face": "Kedi yüzü.",
     "room.item.rug.checker": "Kontrolcü",
-    "room.item.rug.checker-wave": "Dalgalanmış işaretli desen"
+    "room.item.rug.checker-wave": "Dalgalanmış işaretli desen",
+    "time.secondsShort": "s"
   },
   "nl": {
     "mascot.combo": "{n} op een rij!",
@@ -25757,7 +25770,8 @@
     "room.item.rug.book": "Boek",
     "room.item.rug.cat-face": "Kattengezicht",
     "room.item.rug.checker": "Controleerder",
-    "room.item.rug.checker-wave": "Wave-gecontroleerd patroon"
+    "room.item.rug.checker-wave": "Wave-gecontroleerd patroon",
+    "time.secondsShort": "s"
   },
   "hi": {
     "mascot.combo": "{n} एक पंक्ति में!",
@@ -27597,7 +27611,8 @@
     "room.item.rug.book": "पुस्तक",
     "room.item.rug.cat-face": "बिल्ली का चेहरा",
     "room.item.rug.checker": "चेकर",
-    "room.item.rug.checker-wave": "तरंग-चिह्नित पैटर्न"
+    "room.item.rug.checker-wave": "तरंग-चिह्नित पैटर्न",
+    "time.secondsShort": "s"
   },
   "pl": {
     "mascot.combo": "{n} z rzędu!",
@@ -29437,7 +29452,8 @@
     "room.item.rug.book": "Książka",
     "room.item.rug.cat-face": "Twarz kota",
     "room.item.rug.checker": "Kontroler",
-    "room.item.rug.checker-wave": "Wzorzec podkreślony falą"
+    "room.item.rug.checker-wave": "Wzorzec podkreślony falą",
+    "time.secondsShort": "s"
   },
   "sv": {
     "mascot.combo": "{n} i rad!",
@@ -31277,7 +31293,8 @@
     "room.item.rug.book": "Bok",
     "room.item.rug.cat-face": "Katthand",
     "room.item.rug.checker": "Kontrollör",
-    "room.item.rug.checker-wave": "Vägvis checkat mönster"
+    "room.item.rug.checker-wave": "Vägvis checkat mönster",
+    "time.secondsShort": "s"
   },
   "id": {
     "mascot.combo": "{n} berturut-turut!",
@@ -33117,7 +33134,8 @@
     "room.item.rug.book": "Buku",
     "room.item.rug.cat-face": "Wajah kucing",
     "room.item.rug.checker": "Pengontrol",
-    "room.item.rug.checker-wave": "Pola bergelombang yang diperiksa"
+    "room.item.rug.checker-wave": "Pola bergelombang yang diperiksa",
+    "time.secondsShort": "s"
   },
   "ms": {
     "mascot.combo": "{n} berturut-turut!",
@@ -34957,7 +34975,8 @@
     "room.item.rug.book": "Buku",
     "room.item.rug.cat-face": "Muka kucing",
     "room.item.rug.checker": "Pengkaji",
-    "room.item.rug.checker-wave": "Corak yang disemak bergelombang"
+    "room.item.rug.checker-wave": "Corak yang disemak bergelombang",
+    "time.secondsShort": "s"
   },
   "vi": {
     "mascot.combo": "{n} liên tiếp!",
@@ -36797,7 +36816,8 @@
     "room.item.rug.book": "Sách",
     "room.item.rug.cat-face": "Mặt mèo",
     "room.item.rug.checker": "Kiểm tra",
-    "room.item.rug.checker-wave": "Mô hình kiểm tra sóng"
+    "room.item.rug.checker-wave": "Mô hình kiểm tra sóng",
+    "time.secondsShort": "s"
   },
   "th": {
     "mascot.combo": "{n} ต่อกัน!",
@@ -38637,7 +38657,8 @@
     "room.item.rug.book": "หนังสือ",
     "room.item.rug.cat-face": "หน้าแมว",
     "room.item.rug.checker": "เครื่องตรวจสอบ",
-    "room.item.rug.checker-wave": "รูปแบบเช็คคลื่น"
+    "room.item.rug.checker-wave": "รูปแบบเช็คคลื่น",
+    "time.secondsShort": "s"
   },
   "uk": {
     "mascot.combo": "{n} заряд!",
@@ -40477,7 +40498,8 @@
     "room.item.rug.book": "Книга",
     "room.item.rug.cat-face": "Кішкина обличчя",
     "room.item.rug.checker": "Перевірка",
-    "room.item.rug.checker-wave": "Хвильовий образок"
+    "room.item.rug.checker-wave": "Хвильовий образок",
+    "time.secondsShort": "s"
   },
   "el": {
     "mascot.combo": "{n} στη σειρά!",
@@ -42317,7 +42339,8 @@
     "room.item.rug.book": "Βιβλίο",
     "room.item.rug.cat-face": "Γάτα πρόσωπο",
     "room.item.rug.checker": "Ελέγχων",
-    "room.item.rug.checker-wave": "Σχήμα κυματισμένο με τσεκ"
+    "room.item.rug.checker-wave": "Σχήμα κυματισμένο με τσεκ",
+    "time.secondsShort": "s"
   },
   "cs": {
     "mascot.combo": "{n} za sebou!",
@@ -44157,7 +44180,8 @@
     "room.item.rug.book": "Kniha",
     "room.item.rug.cat-face": "Kočičí tvář.",
     "room.item.rug.checker": "Kontrolor",
-    "room.item.rug.checker-wave": "Vlnitý kontrolovaný vzor"
+    "room.item.rug.checker-wave": "Vlnitý kontrolovaný vzor",
+    "time.secondsShort": "s"
   },
   "ro": {
     "mascot.combo": "{n} la rând!",
@@ -45997,7 +46021,8 @@
     "room.item.rug.book": "Carte",
     "room.item.rug.cat-face": "Fata de pisică",
     "room.item.rug.checker": "Verificator",
-    "room.item.rug.checker-wave": "Model de verificare cu valuri"
+    "room.item.rug.checker-wave": "Model de verificare cu valuri",
+    "time.secondsShort": "s"
   },
   "fa": {
     "mascot.combo": "{n} پاسخ درست پشت سر هم!",
@@ -47837,7 +47862,8 @@
     "room.item.rug.book": "کتاب",
     "room.item.rug.cat-face": "صورت گربه",
     "room.item.rug.checker": "چک کننده",
-    "room.item.rug.checker-wave": "الگوی چک شده موج دار"
+    "room.item.rug.checker-wave": "الگوی چک شده موج دار",
+    "time.secondsShort": "s"
   },
   "ur": {
     "mascot.combo": "مسلسل درست جواب: {n}!",
@@ -49677,7 +49703,8 @@
     "room.item.rug.book": "کتاب",
     "room.item.rug.cat-face": "بلی کا چہرہ",
     "room.item.rug.checker": "چیکر",
-    "room.item.rug.checker-wave": "لہراتی چیک شدہ نمونہ"
+    "room.item.rug.checker-wave": "لہراتی چیک شدہ نمونہ",
+    "time.secondsShort": "s"
   },
   "sw": {
     "mascot.combo": "{n} mfululizo!",
@@ -51517,6 +51544,7 @@
     "room.item.rug.book": "Kitabu",
     "room.item.rug.cat-face": "Nyuso za paka",
     "room.item.rug.checker": "Mchunguzi",
-    "room.item.rug.checker-wave": "Wavy checked muundo"
+    "room.item.rug.checker-wave": "Wavy checked muundo",
+    "time.secondsShort": "s"
   }
 }

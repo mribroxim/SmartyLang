@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Книга",
   "room.item.rug.cat-face": "Кішкина обличчя",
   "room.item.rug.checker": "Перевірка",
-  "room.item.rug.checker-wave": "Хвильовий образок"
+  "room.item.rug.checker-wave": "Хвильовий образок",
+  "time.secondsShort": "s"
 }

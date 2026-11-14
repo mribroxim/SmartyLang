@@ -1,11 +1,23 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import fs from 'node:fs';
 import { defineConfig } from 'vite';
 
 export default defineConfig(({ mode }) => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [react(), tailwindcss(), {
+      name: 'exclude-local-translation-backups',
+      closeBundle() {
+        const packs = path.resolve('dist/data/lang-packs');
+        if (!fs.existsSync(packs)) return;
+        for (const entry of fs.readdirSync(packs, { withFileTypes: true })) {
+          if (!entry.isDirectory()) continue;
+          const backup = path.join(packs, entry.name, 'level-texts.pre-bulk-mt-backup.json');
+          if (fs.existsSync(backup)) fs.unlinkSync(backup);
+        }
+      },
+    }],
     define: {},
     resolve: {
       alias: {

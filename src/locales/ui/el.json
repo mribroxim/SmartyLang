@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Βιβλίο",
   "room.item.rug.cat-face": "Γάτα πρόσωπο",
   "room.item.rug.checker": "Ελέγχων",
-  "room.item.rug.checker-wave": "Σχήμα κυματισμένο με τσεκ"
+  "room.item.rug.checker-wave": "Σχήμα κυματισμένο με τσεκ",
+  "time.secondsShort": "s"
 }

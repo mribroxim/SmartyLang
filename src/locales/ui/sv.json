@@ -1836,5 +1836,6 @@
   "room.item.rug.book": "Bok",
   "room.item.rug.cat-face": "Katthand",
   "room.item.rug.checker": "Kontrollör",
-  "room.item.rug.checker-wave": "Vägvis checkat mönster"
+  "room.item.rug.checker-wave": "Vägvis checkat mönster",
+  "time.secondsShort": "s"
 }
