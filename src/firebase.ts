@@ -1,67 +1,101 @@
-import { initializeApp } from 'firebase/app';
-import {
-  getAuth, GoogleAuthProvider,
-  signInWithPopup, signInWithRedirect, getRedirectResult,
-  signOut,
-  signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile,
-  type User,
-} from 'firebase/auth';
-import {
-  getFirestore, doc, setDoc, getDoc, collection, getDocs, deleteField,
-  addDoc, query, where, orderBy, limit, writeBatch, arrayUnion, arrayRemove,
-  Timestamp, deleteDoc, updateDoc,
-} from 'firebase/firestore';
-
-const firebaseConfig = {
-  apiKey:            import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain:        import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId:         import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket:     import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId:             import.meta.env.VITE_FIREBASE_APP_ID,
-};
-const firestoreDatabaseId: string = import.meta.env.VITE_FIREBASE_DATABASE_ID || '(default)';
+/**
+ * Compatibility facade for the self-hosted SmartyLang API.
+ *
+ * Feature components keep importing this module, but all persistence now
+ * travels through same-origin requests to Express/PostgreSQL. Keeping the
+ * facade preserves the existing domain model while removing Firebase from the
+ * browser runtime.
+ */
+import { apiRequest, dataRequest } from './lib/selfHostedApi';
 
 export const ADMIN_EMAIL = 'abduraxmonovibroxim16@gmail.com';
+export const app = null as any;
+export const db = null as any;
 
-export const isFirebaseConfigured: boolean = !!(
-  import.meta.env.VITE_FIREBASE_API_KEY && import.meta.env.VITE_FIREBASE_PROJECT_ID
-);
-
-export const app  = isFirebaseConfigured ? initializeApp(firebaseConfig) : null as any;
-export const db   = isFirebaseConfigured ? getFirestore(app, firestoreDatabaseId) : null as any;
-export const auth = isFirebaseConfigured ? getAuth(app) : null as any;
-export const provider = new GoogleAuthProvider();
-
-// ─── Auth ────────────────────────────────────────────────────────────────────
-export const loginWithGoogle = async () => {
-  if (!isFirebaseConfigured || !auth) throw new Error('Firebase not configured.');
-  try { await signInWithPopup(auth, provider); }
-  catch (e: any) {
-    if (e?.code === 'auth/popup-blocked') await signInWithRedirect(auth, provider);
-    else throw e;
-  }
+export type User = {
+  uid: string;
+  email: string | null;
+  displayName: string | null;
+  photoURL?: string | null;
+  getIdToken: () => Promise<string>;
 };
-export const processGoogleRedirect = async () => {
-  if (!isFirebaseConfigured || !auth) return;
-  await getRedirectResult(auth);
-};
-export const loginWithEmail = async (email: string, password: string) => {
-  if (!isFirebaseConfigured || !auth) throw new Error('Firebase not configured.');
-  await signInWithEmailAndPassword(auth, email, password);
-};
-export const registerWithEmail = async (email: string, password: string, displayName?: string) => {
-  if (!isFirebaseConfigured || !auth) throw new Error('Firebase not configured.');
-  const { user } = await createUserWithEmailAndPassword(auth, email, password);
-  if (displayName) await updateProfile(user, { displayName });
-};
-export const logout = async () => { if (auth) await signOut(auth); };
 
-export enum OperationType { CREATE='create', UPDATE='update', DELETE='delete', LIST='list', GET='get', WRITE='write' }
+type AuthListener = (user: User | null) => void;
+let currentUser: User | null = null;
+const authListeners = new Set<AuthListener>();
 
-// ─── User Profiles ───────────────────────────────────────────────────────────
-export type UserRole = 'student' | 'teacher' | 'organization' | 'admin' | 'content-manager';
-export type PlanId  = 'smarty-max' | 'teacher' | 'organization';
+function userFromApi(value: any): User | null {
+  if (!value?.uid) return null;
+  return {
+    uid: String(value.uid),
+    email: value.email ?? null,
+    displayName: value.displayName ?? null,
+    photoURL: value.photoURL ?? null,
+    getIdToken: async () => '',
+  };
+}
+
+function setCurrentUser(value: any): User | null {
+  currentUser = userFromApi(value);
+  authListeners.forEach((listener) => listener(currentUser));
+  return currentUser;
+}
+
+export const auth = {
+  get currentUser(): User | null {
+    return currentUser;
+  },
+  onAuthStateChanged(listener: AuthListener): () => void {
+    authListeners.add(listener);
+    // Like Firebase: report the first state only once the session check is done.
+    // Reporting "signed out" before /api/auth/session answers made every reload
+    // look like a fresh sign-in, which bounced deep links (e.g. a bite) to the dashboard.
+    if (sessionResolved) listener(currentUser);
+    return () => authListeners.delete(listener);
+  },
+};
+
+let sessionResolved = false;
+const sessionReady = apiRequest<{ user?: any }>('/api/auth/session')
+  .then((session) => { sessionResolved = true; return setCurrentUser(session.user); })
+  .catch(() => { sessionResolved = true; return setCurrentUser(null); });
+
+export const loginWithGoogle = async (): Promise<void> => {
+  window.location.assign('/api/auth/google');
+};
+
+export const loginWithEmail = async (email: string, password: string): Promise<void> => {
+  const result = await apiRequest<{ user: any }>('/api/auth/login', {
+    method: 'POST',
+    body: JSON.stringify({ email, password }),
+  });
+  setCurrentUser(result.user);
+};
+
+export const registerWithEmail = async (email: string, password: string, displayName?: string): Promise<void> => {
+  const result = await apiRequest<{ user: any }>('/api/auth/register', {
+    method: 'POST',
+    body: JSON.stringify({ email, password, displayName }),
+  });
+  setCurrentUser(result.user);
+};
+
+export const logout = async (): Promise<void> => {
+  await apiRequest('/api/auth/logout', { method: 'POST' });
+  setCurrentUser(null);
+};
+
+export enum OperationType {
+  CREATE = 'create',
+  UPDATE = 'update',
+  DELETE = 'delete',
+  LIST = 'list',
+  GET = 'get',
+  WRITE = 'write',
+}
+
+export type UserRole = 'student' | 'business' | 'admin' | 'content-manager';
+export type PlanId = 'smarty-max' | 'business';
 
 export interface UserAccountProfile {
   uid?: string;
@@ -72,150 +106,76 @@ export interface UserAccountProfile {
   createdAt: number;
   organizationId?: string;
   suspended?: boolean;
-  /** Active subscription plan, if any. */
   plan?: PlanId | null;
-  /** Number of seats purchased (teacher/organization plans). */
   planSeats?: number;
-  /** Number of learning languages purchased (UI language is always free). */
   planLanguages?: number;
-  /** Timestamp the active subscription expires (or null = no expiry tracked). */
   planExpiresAt?: number | null;
-  /** Timestamp the subscription was activated. */
   planStartedAt?: number;
-  /** If this user's SmartyLang Max access is sponsored by a teacher/org, who? (their uid) */
+  /** Learner cancelled Smarty Max: it stays on until this time, then ends. */
+  planCancelAt?: number | null;
+  planCancelledAt?: number | null;
+  planCancelReason?: string | null;
   sponsoredBy?: string;
-  /** Pending invitations sent to this email — used to upgrade them on first sign-in. */
   pendingInviteFrom?: string;
-  /** CEFR-style lesson band from onboarding placement. Does not mark earlier levels complete. */
   startingLevel?: 'Beginner' | 'Elementary' | 'Pre-Intermediate' | 'Intermediate' | 'Advanced';
-  /** Why the student is learning. */
   learningGoal?: 'daily' | 'school' | 'exam';
-  /** Set when the student finishes or skips onboarding. */
   onboardingCompletedAt?: number;
+  dailyMinutes?: 5 | 10 | 15 | 20;
+  [key: string]: any;
 }
 
-const profileRef = (uid: string) => doc(db, 'userProfiles', uid);
-
-export const getUserProfile = async (uid: string): Promise<UserAccountProfile | null> => {
-  try {
-    const snap = await getDoc(profileRef(uid));
-    return snap.exists() ? ({ uid, ...(snap.data() as UserAccountProfile) }) : null;
-  } catch { return null; }
-};
-
-export const ensureUserProfile = async (user: User): Promise<UserAccountProfile> => {
-  const ref = profileRef(user.uid);
-  const snap = await getDoc(ref);
-  const isAdminEmail = (user.email ?? '').toLowerCase() === ADMIN_EMAIL.toLowerCase();
-  if (snap.exists()) {
-    const existing = snap.data() as UserAccountProfile;
-    if (isAdminEmail && existing.role !== 'admin') {
-      await setDoc(ref, { role: 'admin' }, { merge: true });
-      return { ...existing, uid: user.uid, role: 'admin' };
-    }
-    if (!isAdminEmail && existing.role === 'admin') {
-      await setDoc(ref, { role: 'student' }, { merge: true });
-      return { ...existing, uid: user.uid, role: 'student' };
-    }
-    return { uid: user.uid, ...existing };
-  }
-  // Firestore rejects `undefined` values; only include photoURL when present
-  const profile: UserAccountProfile = {
-    role: isAdminEmail ? 'admin' : 'student',
-    displayName: user.displayName ?? user.email?.split('@')[0] ?? 'User',
-    email: user.email ?? '',
+export function fallbackAccountProfile(user: User): UserAccountProfile {
+  const email = user.email ?? '';
+  return {
+    uid: user.uid,
+    role: email.toLowerCase() === ADMIN_EMAIL.toLowerCase() ? 'admin' : 'student',
+    displayName: user.displayName ?? email.split('@')[0] ?? 'User',
+    email,
     createdAt: Date.now(),
+    ...(user.photoURL ? { photoURL: user.photoURL } : {}),
   };
-  if (user.photoURL) profile.photoURL = user.photoURL;
-  await setDoc(ref, profile);
+}
 
-  // First sign-in: auto-accept any pending SmartyLang Max invitations sent to this email.
-  const sponsored = await acceptPendingInvitations(user);
-  if (sponsored) {
-    const refreshed = await getDoc(ref);
-    return { uid: user.uid, ...(refreshed.data() as UserAccountProfile) };
-  }
-  return { uid: user.uid, ...profile };
-};
+export const getUserProfile = async (uid: string): Promise<UserAccountProfile | null> =>
+  dataRequest<UserAccountProfile | null>('profile.get', { uid });
+
+export const ensureUserProfile = async (user: User): Promise<UserAccountProfile> =>
+  dataRequest<UserAccountProfile>('profile.ensure');
 
 export const saveOnboarding = async (
   uid: string,
   data: {
     startingLevel: UserAccountProfile['startingLevel'];
     learningGoal: UserAccountProfile['learningGoal'];
+    dailyMinutes: NonNullable<UserAccountProfile['dailyMinutes']>;
     onboardingCompletedAt?: number;
   },
 ): Promise<void> => {
-  await setDoc(profileRef(uid), {
-    startingLevel: data.startingLevel,
-    learningGoal: data.learningGoal,
-    onboardingCompletedAt: data.onboardingCompletedAt ?? Date.now(),
-  }, { merge: true });
+  await dataRequest('profile.update', { uid, patch: data });
 };
 
-export const updateUserDisplayName = async (uid: string, displayName: string) => {
-  await setDoc(profileRef(uid), { displayName }, { merge: true });
-  if (auth?.currentUser && auth.currentUser.uid === uid) {
-    await updateProfile(auth.currentUser, { displayName });
+export const updateUserDisplayName = async (uid: string, displayName: string): Promise<void> => {
+  await dataRequest('profile.update', { uid, patch: { displayName } });
+  if (auth.currentUser?.uid === uid) {
+    currentUser = { ...auth.currentUser, displayName };
   }
 };
 
-export const listAllProfiles = async (): Promise<UserAccountProfile[]> => {
-  const snap = await getDocs(collection(db, 'userProfiles'));
-  return snap.docs.map(d => ({ uid: d.id, ...(d.data() as UserAccountProfile) }));
-};
+export const listAllProfiles = (): Promise<UserAccountProfile[]> =>
+  dataRequest('profile.list');
 
 export const setUserRole = async (uid: string, role: UserRole): Promise<void> => {
-  if (role === 'admin') throw new Error('Admin role is reserved.');
-  const patch: any = { role };
-  if (role !== 'teacher') patch.organizationId = deleteField();
-  await setDoc(profileRef(uid), patch, { merge: true });
-  await addAuditLog({
-    action: 'role_changed', actorUid: auth?.currentUser?.uid ?? '', actorEmail: auth?.currentUser?.email ?? '',
-    targetUid: uid, details: { newRole: role }, timestamp: Date.now(),
-  });
+  await dataRequest('profile.role', { uid, role });
 };
 
-/**
- * Set the active subscription plan for a user.
- * Admin can override; the payment-success handler also calls this.
- * - 'smarty-max' → plan = 'smarty-max', role stays student
- * - 'teacher'    → plan = 'teacher', role becomes teacher
- * - 'organization' → plan = 'organization', role becomes organization
- * - null → clear plan, demote to student
- */
 export const setUserPlan = async (
   uid: string,
   plan: PlanId | null,
-  opts: { seats?: number; languages?: number; expiresAt?: number | null } = {}
+  opts: { seats?: number; languages?: number; expiresAt?: number | null } = {},
 ): Promise<void> => {
-  const patch: any = {};
-  if (plan === null) {
-    patch.plan = deleteField();
-    patch.planSeats = deleteField();
-    patch.planLanguages = deleteField();
-    patch.planExpiresAt = deleteField();
-    patch.planStartedAt = deleteField();
-    patch.role = 'student';
-  } else {
-    patch.plan = plan;
-    patch.planStartedAt = Date.now();
-    if (opts.seats !== undefined) patch.planSeats = opts.seats;
-    if (opts.languages !== undefined) patch.planLanguages = opts.languages;
-    if (opts.expiresAt !== undefined) patch.planExpiresAt = opts.expiresAt;
-    // SmartyLang Max keeps the user as a regular student; Teacher/Org plans elevate the role.
-    if (plan === 'teacher') patch.role = 'teacher';
-    else if (plan === 'organization') patch.role = 'organization';
-    else if (plan === 'smarty-max') patch.role = 'student';
-  }
-  await setDoc(profileRef(uid), patch, { merge: true });
-  await addAuditLog({
-    action: 'plan_changed', actorUid: auth?.currentUser?.uid ?? '', actorEmail: auth?.currentUser?.email ?? '',
-    targetUid: uid, details: { newPlan: plan ?? 'none', seats: opts.seats ?? 0, languages: opts.languages ?? 1 }, timestamp: Date.now(),
-  });
+  await dataRequest('profile.plan', { uid, plan, opts });
 };
 
-// ─── Payments / Subscription Records ────────────────────────────────────────
 export interface PaymentRecord {
   id?: string;
   uid: string;
@@ -227,44 +187,30 @@ export interface PaymentRecord {
   amountUZS: number;
   status: 'pending' | 'completed' | 'failed' | 'refunded';
   paidAt: number;
-  /** ATMOS transaction ID if available */
   transactionId?: string;
 }
 
-export const recordPayment = async (record: Omit<PaymentRecord, 'id'>): Promise<string> => {
-  const ref = await addDoc(collection(db, 'payments'), record);
-  return ref.id;
-};
+export const recordPayment = (record: Omit<PaymentRecord, 'id'>): Promise<string> =>
+  dataRequest('payment.record', { record });
 
-export const listPayments = async (max = 200): Promise<PaymentRecord[]> => {
-  try {
-    const q = query(collection(db, 'payments'), orderBy('paidAt', 'desc'), limit(max));
-    const snap = await getDocs(q);
-    return snap.docs.map(d => ({ id: d.id, ...(d.data() as PaymentRecord) }));
-  } catch { return []; }
-};
+export const confirmPayment = (
+  payment: Record<string, any>,
+  paymentId: string,
+): Promise<UserAccountProfile | null> =>
+  dataRequest('payment.confirm', { payment, paymentId });
 
-export const setTeacherOrganization = async (teacherUid: string, organizationUid: string | null) => {
-  await setDoc(profileRef(teacherUid), { organizationId: organizationUid ?? deleteField() }, { merge: true });
-};
+export const listPayments = (max = 200): Promise<PaymentRecord[]> =>
+  dataRequest('payment.list', { limit: max });
 
-export const suspendUser = async (uid: string, suspended: boolean) => {
-  await setDoc(profileRef(uid), { suspended }, { merge: true });
-  await addAuditLog({
-    action: suspended ? 'user_suspended' : 'user_unsuspended',
-    actorUid: auth?.currentUser?.uid ?? '', actorEmail: auth?.currentUser?.email ?? '',
-    targetUid: uid, details: { suspended }, timestamp: Date.now(),
-  });
-};
+export const suspendUser = (uid: string, suspended: boolean): Promise<void> =>
+  dataRequest('profile.suspend', { uid, suspended });
 
-// ─── Student Summaries (readable by teachers/orgs/admin) ─────────────────────
 export interface StudentSummary {
   uid?: string;
   displayName: string;
   email: string;
   photoURL?: string;
   streak: { current: number; max: number };
-  /** Account-wide habit streak (Duolingo-style). */
   globalStreak?: { current: number; max: number; lastDate?: string };
   totalSessions: number;
   avgAccuracy: number;
@@ -275,85 +221,37 @@ export interface StudentSummary {
   weeklyXp?: number;
   weekKey?: string;
   league?: string;
+  [key: string]: any;
 }
 
-export const updateStudentSummary = async (uid: string, data: Partial<StudentSummary>) => {
-  try { await setDoc(doc(db, 'studentSummaries', uid), data, { merge: true }); } catch { /* non-critical */ }
-};
-
-export const getStudentSummary = async (uid: string): Promise<StudentSummary | null> => {
-  try {
-    const snap = await getDoc(doc(db, 'studentSummaries', uid));
-    return snap.exists() ? { uid, ...(snap.data() as StudentSummary) } : null;
-  } catch { return null; }
-};
-
 export const getStudentSummaries = async (uids: string[]): Promise<StudentSummary[]> => {
-  const results: StudentSummary[] = [];
-  await Promise.all(uids.map(async uid => {
-    const s = await getStudentSummary(uid);
-    if (s) results.push(s);
-    else results.push({ uid, displayName: uid, email: '', streak: { current: 0, max: 0 }, totalSessions: 0, avgAccuracy: 0, lastActive: 0, problemWordCount: 0, vocabCount: 0 });
-  }));
-  return results;
+  const rows = await dataRequest<StudentSummary[]>('summary.list', { uids });
+  const byUid = new Map(rows.map((row) => [row.uid, row]));
+  return uids.map((uid) => byUid.get(uid) || {
+    uid, displayName: uid, email: '', streak: { current: 0, max: 0 }, totalSessions: 0,
+    avgAccuracy: 0, lastActive: 0, problemWordCount: 0, vocabCount: 0,
+  });
 };
 
-/** Sort by this week's XP (then lifetime XP as tiebreaker). */
 export function sortWeeklyLeagueRows(summaries: StudentSummary[], weekKey: string): StudentSummary[] {
   return [...summaries].sort((a, b) => {
     const ax = a.weekKey === weekKey ? (a.weeklyXp || 0) : 0;
     const bx = b.weekKey === weekKey ? (b.weeklyXp || 0) : 0;
-    if (bx !== ax) return bx - ax;
-    return (b.xp || 0) - (a.xp || 0);
+    return bx !== ax ? bx - ax : (b.xp || 0) - (a.xp || 0);
   });
 }
 
-/**
- * Global weekly leaderboard for one league tier (all SmartyLang learners, not just a class).
- */
 export const getGlobalLeagueLeaderboard = async (
   leagueId: string,
   weekKey: string,
   opts?: { max?: number; includeUid?: string },
 ): Promise<StudentSummary[]> => {
-  const max = opts?.max ?? 50;
-  let rows: StudentSummary[] = [];
-
-  try {
-    const q = query(
-      collection(db, 'studentSummaries'),
-      where('league', '==', leagueId),
-      orderBy('weeklyXp', 'desc'),
-      limit(Math.max(max * 2, 80)),
-    );
-    const snap = await getDocs(q);
-    rows = snap.docs.map(d => ({ uid: d.id, ...(d.data() as StudentSummary) }));
-  } catch (e) {
-    console.warn('Global league indexed query failed, using scan fallback', e);
-    try {
-      const snap = await getDocs(query(collection(db, 'studentSummaries'), limit(500)));
-      rows = snap.docs
-        .map(d => ({ uid: d.id, ...(d.data() as StudentSummary) }))
-        .filter(s => s.league === leagueId);
-    } catch (scanErr) {
-      console.error(scanErr);
-      rows = [];
-    }
-  }
-
-  rows = sortWeeklyLeagueRows(rows, weekKey);
-
-  if (opts?.includeUid && !rows.some(r => r.uid === opts.includeUid)) {
-    const me = await getStudentSummary(opts.includeUid);
-    if (me && me.league === leagueId) {
-      rows = sortWeeklyLeagueRows([...rows, me], weekKey);
-    }
-  }
-
-  return rows.slice(0, max);
+  const rows = await dataRequest<StudentSummary[]>('summary.global', {
+    leagueId, weekKey, max: opts?.max ?? 50, includeUid: opts?.includeUid,
+  });
+  return sortWeeklyLeagueRows(rows, weekKey).slice(0, opts?.max ?? 50);
 };
 
-// ─── Classes ─────────────────────────────────────────────────────────────────
 export interface ClassRoom {
   id?: string;
   teacherUid: string;
@@ -363,94 +261,36 @@ export interface ClassRoom {
   inviteCode: string;
   studentUids: string[];
   createdAt: number;
+  [key: string]: any;
 }
 
-const generateInviteCode = () => {
-  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  return Array.from({ length: 6 }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
-};
+export const createClass = (teacherUid: string, name: string, description?: string, organizationId?: string): Promise<string> =>
+  dataRequest('class.create', { teacherUid, name, description, organizationId });
 
-export const createClass = async (
-  teacherUid: string, name: string, description?: string, organizationId?: string
-): Promise<string> => {
-  const data: ClassRoom = {
-    teacherUid, name, inviteCode: generateInviteCode(),
-    studentUids: [], createdAt: Date.now(),
-    ...(description && { description }),
-    ...(organizationId && { organizationId }),
-  };
-  const ref = await addDoc(collection(db, 'classes'), data);
-  await addAuditLog({ action: 'class_created', actorUid: teacherUid, actorEmail: auth?.currentUser?.email ?? '', details: { classId: ref.id, name }, timestamp: Date.now() });
-  return ref.id;
-};
+export const getTeacherClasses = (teacherUid: string): Promise<ClassRoom[]> =>
+  dataRequest('class.list', { kind: 'teacher', uid: teacherUid });
 
-export const getTeacherClasses = async (teacherUid: string): Promise<ClassRoom[]> => {
-  const q = query(collection(db, 'classes'), where('teacherUid', '==', teacherUid));
-  const snap = await getDocs(q);
-  return snap.docs.map(d => ({ id: d.id, ...(d.data() as ClassRoom) }));
-};
+export const getStudentClasses = (studentUid: string): Promise<ClassRoom[]> =>
+  dataRequest('class.list', { kind: 'student', uid: studentUid });
 
-export const getStudentClasses = async (studentUid: string): Promise<ClassRoom[]> => {
-  const q = query(collection(db, 'classes'), where('studentUids', 'array-contains', studentUid));
-  const snap = await getDocs(q);
-  return snap.docs.map(d => ({ id: d.id, ...(d.data() as ClassRoom) }));
-};
+export const joinClassWithCode = (studentUid: string, code: string): Promise<ClassRoom> =>
+  dataRequest('class.join', { studentUid, code });
 
-export const getOrgClasses = async (organizationId: string): Promise<ClassRoom[]> => {
-  const q = query(collection(db, 'classes'), where('organizationId', '==', organizationId));
-  const snap = await getDocs(q);
-  return snap.docs.map(d => ({ id: d.id, ...(d.data() as ClassRoom) }));
-};
+export const removeStudentFromClass = (classId: string, studentUid: string): Promise<void> =>
+  dataRequest('class.remove', { classId, studentUid });
 
-export const joinClassWithCode = async (studentUid: string, code: string): Promise<ClassRoom> => {
-  const q = query(collection(db, 'classes'), where('inviteCode', '==', code.trim().toUpperCase()));
-  const snap = await getDocs(q);
-  if (snap.empty) throw new Error('Class not found. Check the invite code.');
-  const classDoc = snap.docs[0];
-  const classData = { id: classDoc.id, ...(classDoc.data() as ClassRoom) };
-  if (classData.studentUids.includes(studentUid)) throw new Error("You're already in this class.");
-  await updateDoc(classDoc.ref, { studentUids: arrayUnion(studentUid) });
-  await addNotification(studentUid, {
-    type: 'class_join', title: 'Joined a class!',
-    message: `You joined "${classData.name}". Good luck!`,
-    read: false, createdAt: Date.now(),
-  });
-  return { ...classData, studentUids: [...classData.studentUids, studentUid] };
-};
+export const deleteClass = (classId: string): Promise<void> =>
+  dataRequest('class.delete', { classId });
 
-export const removeStudentFromClass = async (classId: string, studentUid: string) => {
-  await updateDoc(doc(db, 'classes', classId), { studentUids: arrayRemove(studentUid) });
-};
-
-export const deleteClass = async (classId: string) => {
-  await deleteDoc(doc(db, 'classes', classId));
-};
-
-export const updateClassInfo = async (classId: string, updates: { name?: string; description?: string }) => {
-  await updateDoc(doc(db, 'classes', classId), updates);
-};
-
-export const regenerateInviteCode = async (classId: string): Promise<string> => {
-  const code = generateInviteCode();
-  await updateDoc(doc(db, 'classes', classId), { inviteCode: code });
-  return code;
-};
-
-// ─── SmartyLang Max Seat Invitations ────────────────────────────────────────────
-//
-// A teacher's plan comes with N invitation seats (5 for the Teacher plan,
-// 30+ for the Organization plan). Sponsoring a user grants them SmartyLang Max
-// access for as long as the teacher/org keeps them as a sponsored member.
+export const regenerateInviteCode = (classId: string): Promise<string> =>
+  dataRequest('class.regenerate', { classId });
 
 export interface SmartyMaxInvitation {
   id?: string;
-  /** The teacher OR organization granting the seat. */
   sponsorUid: string;
   sponsorName: string;
   sponsorRole: UserRole;
-  /** Email of the invited person. */
   inviteeEmail: string;
-  /** Filled in once the invitee signs in and is sponsored. */
   inviteeUid?: string;
   status: 'pending' | 'accepted' | 'revoked';
   createdAt: number;
@@ -458,143 +298,24 @@ export interface SmartyMaxInvitation {
   revokedAt?: number;
 }
 
-const invitesRef = () => collection(db, 'smartyMaxInvites');
-
-/** Sponsor count = invites that are currently 'pending' or 'accepted'. */
-export const getSponsorSeatUsage = async (sponsorUid: string): Promise<{
+export const getSponsorSeatUsage = (sponsorUid: string): Promise<{
   total: number;
   pending: number;
   accepted: number;
   invitations: SmartyMaxInvitation[];
-}> => {
-  try {
-    const q = query(invitesRef(), where('sponsorUid', '==', sponsorUid));
-    const snap = await getDocs(q);
-    const invitations = snap.docs.map(d => ({ id: d.id, ...(d.data() as SmartyMaxInvitation) }));
-    const active = invitations.filter(i => i.status !== 'revoked');
-    return {
-      total: active.length,
-      pending: active.filter(i => i.status === 'pending').length,
-      accepted: active.filter(i => i.status === 'accepted').length,
-      invitations,
-    };
-  } catch {
-    return { total: 0, pending: 0, accepted: 0, invitations: [] };
-  }
-};
+}> => dataRequest('invite.usage', { sponsorUid });
 
-/** Invite someone by email. If they already have an account, sponsor them now. */
-export const inviteToSmartyMax = async (
-  sponsorUid: string, sponsorName: string, sponsorRole: UserRole, inviteeEmail: string,
-): Promise<{ status: 'accepted' | 'pending'; invitation: SmartyMaxInvitation }> => {
-  const email = inviteeEmail.trim().toLowerCase();
-  if (!email) throw new Error('Email is required.');
+export const inviteToSmartyMax = (
+  sponsorUid: string,
+  sponsorName: string,
+  sponsorRole: UserRole,
+  inviteeEmail: string,
+): Promise<{ status: 'accepted' | 'pending'; invitation: SmartyMaxInvitation }> =>
+  dataRequest('invite.create', { sponsorUid, sponsorName, sponsorRole, inviteeEmail });
 
-  // Block duplicate invitations from the same sponsor.
-  const existing = await getDocs(query(
-    invitesRef(),
-    where('sponsorUid', '==', sponsorUid),
-    where('inviteeEmail', '==', email),
-  ));
-  const liveDup = existing.docs.find(d => (d.data() as SmartyMaxInvitation).status !== 'revoked');
-  if (liveDup) throw new Error('This email has already been invited.');
+export const revokeSmartyMaxInvitation = (invitationId: string): Promise<void> =>
+  dataRequest('invite.revoke', { invitationId });
 
-  // Try to find an existing account with that email.
-  let inviteeUid: string | undefined;
-  try {
-    const profiles = await getDocs(query(collection(db, 'userProfiles'), where('email', '==', email)));
-    if (!profiles.empty) inviteeUid = profiles.docs[0].id;
-  } catch { /* ignore — fall back to pending */ }
-
-  const data: Omit<SmartyMaxInvitation, 'id'> = {
-    sponsorUid, sponsorName, sponsorRole,
-    inviteeEmail: email,
-    status: inviteeUid ? 'accepted' : 'pending',
-    createdAt: Date.now(),
-    ...(inviteeUid && { inviteeUid, acceptedAt: Date.now() }),
-  };
-  const ref = await addDoc(invitesRef(), data);
-
-  // If we found an existing account, sponsor them right away.
-  if (inviteeUid) {
-    await setDoc(profileRef(inviteeUid), {
-      plan: 'smarty-max',
-      sponsoredBy: sponsorUid,
-      planStartedAt: Date.now(),
-    }, { merge: true });
-    await addNotification(inviteeUid, {
-      type: 'announcement',
-      title: '🎉 SmartyLang Max activated!',
-      message: `${sponsorName} just gifted you SmartyLang Max access. All features are unlocked!`,
-      read: false, createdAt: Date.now(),
-    });
-  }
-
-  return {
-    status: data.status as 'accepted' | 'pending',
-    invitation: { id: ref.id, ...data },
-  };
-};
-
-/** Revoke a previously sent invitation. Removes SmartyLang Max from the user if they were sponsored. */
-export const revokeSmartyMaxInvitation = async (invitationId: string): Promise<void> => {
-  const ref = doc(db, 'smartyMaxInvites', invitationId);
-  const snap = await getDoc(ref);
-  if (!snap.exists()) return;
-  const inv = snap.data() as SmartyMaxInvitation;
-  await updateDoc(ref, { status: 'revoked', revokedAt: Date.now() } as any);
-  // If the invitee was sponsored by this sponsor, clear their plan.
-  if (inv.inviteeUid) {
-    const userSnap = await getDoc(profileRef(inv.inviteeUid));
-    if (userSnap.exists()) {
-      const user = userSnap.data() as UserAccountProfile;
-      if (user.sponsoredBy === inv.sponsorUid && user.plan === 'smarty-max') {
-        await setDoc(profileRef(inv.inviteeUid), {
-          plan: deleteField(), sponsoredBy: deleteField(),
-          planStartedAt: deleteField(),
-        }, { merge: true });
-      }
-    }
-  }
-};
-
-/**
- * Called from ensureUserProfile on first sign-in — checks if any pending invitations
- * match this user's email, and if so accepts them and grants SmartyLang Max.
- */
-const acceptPendingInvitations = async (user: User): Promise<boolean> => {
-  if (!user.email) return false;
-  const email = user.email.toLowerCase();
-  try {
-    const q = query(invitesRef(), where('inviteeEmail', '==', email), where('status', '==', 'pending'));
-    const snap = await getDocs(q);
-    if (snap.empty) return false;
-    // Sponsor by the first pending invite. Mark all matching invites as accepted.
-    const first = snap.docs[0].data() as SmartyMaxInvitation;
-    const batch = writeBatch(db);
-    snap.docs.forEach(d => batch.update(d.ref, {
-      status: 'accepted', acceptedAt: Date.now(), inviteeUid: user.uid,
-    } as any));
-    await batch.commit();
-    await setDoc(profileRef(user.uid), {
-      plan: 'smarty-max',
-      sponsoredBy: first.sponsorUid,
-      planStartedAt: Date.now(),
-    }, { merge: true });
-    await addNotification(user.uid, {
-      type: 'announcement',
-      title: '🎉 SmartyLang Max activated!',
-      message: `${first.sponsorName} gifted you SmartyLang Max access. All features are unlocked!`,
-      read: false, createdAt: Date.now(),
-    });
-    return true;
-  } catch (e) {
-    console.error('acceptPendingInvitations failed:', e);
-    return false;
-  }
-};
-
-// ─── Assignments ─────────────────────────────────────────────────────────────
 export interface Assignment {
   id?: string;
   classId: string;
@@ -603,42 +324,27 @@ export interface Assignment {
   title: string;
   description?: string;
   type: 'reading' | 'listening' | 'speaking' | 'writing' | 'exercise' | 'comp-reading' | 'worksheet';
-
-  // ── AI-Generated Worksheet ───────────────────────────────────────────
-  /** Full worksheet payload from AI Creator. Present when type === 'worksheet'. */
   worksheet?: any;
   worksheetLevel?: string;
-
-  // ── Reading (pronunciation / fluency) ────────────────────────────────
   passageId?: string;
   passageLevel?: string;
   passageTitle?: string;
-
-  // ── Comprehensive Reading ─────────────────────────────────────────────
   compReadingLevel?: string;
   compReadingPassageTitle?: string;
-
-  // ── Listening / Comprehensive Listening ──────────────────────────────
   listeningLevel?: string;
   listeningPassageTitle?: string;
   listeningPassageIndex?: number;
-
-  // ── Speaking ─────────────────────────────────────────────────────────
   speakingLevel?: string;
   speakingTopicIndex?: number;
   speakingTopic?: string;
-
-  // ── Writing ──────────────────────────────────────────────────────────
   writingLevel?: string;
   writingTopicIndex?: number;
   writingTopic?: string;
-
-  // ── Exercises ────────────────────────────────────────────────────────
   exerciseType?: string;
-  exerciseWords?: string[];    // specific words to practice
-
+  exerciseWords?: string[];
   dueDate?: number;
   createdAt: number;
+  [key: string]: any;
 }
 
 export interface Submission {
@@ -646,80 +352,36 @@ export interface Submission {
   studentName?: string;
   completedAt: number;
   score?: number;
-  // Detailed reading results
   accuracy?: number;
   wordsRead?: number;
-  errors?: string[];   // words the student got wrong
+  errors?: string[];
+  [key: string]: any;
 }
 
-export const createAssignment = async (data: Omit<Assignment, 'id'>): Promise<string> => {
-  // Firestore rejects undefined field values — strip them before writing
-  const clean = Object.fromEntries(Object.entries(data).filter(([, v]) => v !== undefined));
-  const ref = await addDoc(collection(db, 'assignments'), clean);
-  // Notify all students in the class
-  const classSnap = await getDoc(doc(db, 'classes', data.classId));
-  if (classSnap.exists()) {
-    const cls = classSnap.data() as ClassRoom;
-    await Promise.all(cls.studentUids.map(uid =>
-      addNotification(uid, {
-        type: 'assignment', title: 'New Assignment!',
-        message: `"${data.title}" has been assigned to your class. ${data.dueDate ? `Due: ${new Date(data.dueDate).toLocaleDateString()}` : ''}`,
-        read: false, createdAt: Date.now(), link: 'assignments',
-      })
-    ));
-  }
-  return ref.id;
-};
+export const createAssignment = (data: Omit<Assignment, 'id'>): Promise<string> =>
+  dataRequest('assignment.create', { data });
 
-export const getClassAssignments = async (classId: string): Promise<Assignment[]> => {
-  // No orderBy here to avoid requiring a composite index; sort in JS instead
-  const q = query(collection(db, 'assignments'), where('classId', '==', classId));
-  const snap = await getDocs(q);
-  return snap.docs
-    .map(d => ({ id: d.id, ...(d.data() as Assignment) }))
-    .sort((a, b) => (b.createdAt ?? 0) - (a.createdAt ?? 0));
-};
+export const getClassAssignments = (classId: string): Promise<Assignment[]> =>
+  dataRequest('assignment.list', { classId });
 
-export const getStudentAssignments = async (classIds: string[]): Promise<Assignment[]> => {
-  if (!classIds.length) return [];
-  const results: Assignment[] = [];
-  await Promise.all(classIds.map(async classId => {
-    const q = query(collection(db, 'assignments'), where('classId', '==', classId));
-    const snap = await getDocs(q);
-    snap.docs.forEach(d => results.push({ id: d.id, ...(d.data() as Assignment) }));
-  }));
-  return results.sort((a, b) => (b.createdAt ?? 0) - (a.createdAt ?? 0));
-};
+export const getStudentAssignments = (classIds: string[]): Promise<Assignment[]> =>
+  dataRequest('assignment.list', { classIds });
 
-export const submitAssignment = async (assignmentId: string, submission: Submission) => {
-  const clean = Object.fromEntries(Object.entries(submission).filter(([, v]) => v !== undefined));
-  await setDoc(doc(db, 'assignments', assignmentId, 'submissions', submission.studentUid), clean);
-};
+export const submitAssignment = (assignmentId: string, submission: Submission): Promise<void> =>
+  dataRequest('assignment.submit', { assignmentId, submission });
 
-export const updateSubmission = async (assignmentId: string, studentUid: string, updates: Partial<Submission>) => {
-  const clean = Object.fromEntries(Object.entries(updates).filter(([, v]) => v !== undefined));
-  await setDoc(doc(db, 'assignments', assignmentId, 'submissions', studentUid), clean, { merge: true });
-};
+export const updateSubmission = (assignmentId: string, studentUid: string, updates: Partial<Submission>): Promise<void> =>
+  dataRequest('assignment.updateSubmission', { assignmentId, studentUid, updates });
 
-export const getAssignmentSubmissions = async (assignmentId: string): Promise<Submission[]> => {
-  const snap = await getDocs(collection(db, 'assignments', assignmentId, 'submissions'));
-  return snap.docs.map(d => d.data() as Submission);
-};
+export const getAssignmentSubmissions = (assignmentId: string): Promise<Submission[]> =>
+  dataRequest('assignment.submissions', { assignmentId });
 
-export const getStudentSubmissions = async (assignmentIds: string[], studentUid: string): Promise<Record<string, Submission>> => {
-  const result: Record<string, Submission> = {};
-  await Promise.all(assignmentIds.map(async id => {
-    const snap = await getDoc(doc(db, 'assignments', id, 'submissions', studentUid));
-    if (snap.exists()) result[id] = snap.data() as Submission;
-  }));
-  return result;
-};
+export const getStudentSubmissions = (assignmentIds: string[], studentUid: string): Promise<Record<string, Submission>> =>
+  dataRequest('assignment.studentSubmissions', { assignmentIds, studentUid });
 
-export const deleteAssignment = async (assignmentId: string) => {
-  await deleteDoc(doc(db, 'assignments', assignmentId));
-};
+export const deleteAssignment = (assignmentId: string): Promise<void> =>
+  dataRequest('assignment.delete', { assignmentId });
 
-// ─── Notifications ───────────────────────────────────────────────────────────
 export interface AppNotification {
   id?: string;
   type: 'assignment' | 'role_change' | 'class_join' | 'announcement' | 'system';
@@ -730,31 +392,15 @@ export interface AppNotification {
   link?: string;
 }
 
-export const addNotification = async (uid: string, notif: Omit<AppNotification, 'id'>) => {
-  try { await addDoc(collection(db, 'notifications', uid, 'items'), notif); } catch { /* non-critical */ }
-};
+export const getNotifications = (uid: string, limit = 20): Promise<AppNotification[]> =>
+  dataRequest('notification.list', { uid, limit });
 
-export const getNotifications = async (uid: string, limitN = 20): Promise<AppNotification[]> => {
-  try {
-    const q = query(collection(db, 'notifications', uid, 'items'), orderBy('createdAt', 'desc'), limit(limitN));
-    const snap = await getDocs(q);
-    return snap.docs.map(d => ({ id: d.id, ...(d.data() as AppNotification) }));
-  } catch { return []; }
-};
+export const markNotificationRead = (uid: string, id: string): Promise<void> =>
+  dataRequest('notification.read', { uid, id });
 
-export const markNotificationRead = async (uid: string, notifId: string) => {
-  await updateDoc(doc(db, 'notifications', uid, 'items', notifId), { read: true });
-};
+export const markAllNotificationsRead = (uid: string): Promise<void> =>
+  dataRequest('notification.readAll', { uid });
 
-export const markAllNotificationsRead = async (uid: string) => {
-  const q = query(collection(db, 'notifications', uid, 'items'), where('read', '==', false));
-  const snap = await getDocs(q);
-  const batch = writeBatch(db);
-  snap.docs.forEach(d => batch.update(d.ref, { read: true }));
-  await batch.commit();
-};
-
-// ─── Announcements ───────────────────────────────────────────────────────────
 export interface Announcement {
   id?: string;
   authorUid: string;
@@ -764,41 +410,12 @@ export interface Announcement {
   title: string;
   message: string;
   createdAt: number;
+  [key: string]: any;
 }
 
-export const createAnnouncement = async (data: Omit<Announcement, 'id'>): Promise<string> => {
-  const ref = await addDoc(collection(db, 'announcements'), data);
-  // If targeting a class, notify its members
-  if (data.targetType === 'class' && data.targetId) {
-    const classSnap = await getDoc(doc(db, 'classes', data.targetId));
-    if (classSnap.exists()) {
-      const cls = classSnap.data() as ClassRoom;
-      await Promise.all(cls.studentUids.map(uid =>
-        addNotification(uid, {
-          type: 'announcement', title: data.title,
-          message: `${data.authorName}: ${data.message}`,
-          read: false, createdAt: Date.now(),
-        })
-      ));
-    }
-  }
-  return ref.id;
-};
+export const createAnnouncement = (data: Omit<Announcement, 'id'>): Promise<string> =>
+  dataRequest('announcement.create', { data });
 
-export const getAnnouncements = async (targetType?: string, targetId?: string): Promise<Announcement[]> => {
-  try {
-    let q;
-    if (targetType && targetId) {
-      q = query(collection(db, 'announcements'), where('targetType', '==', targetType), where('targetId', '==', targetId), orderBy('createdAt', 'desc'), limit(50));
-    } else {
-      q = query(collection(db, 'announcements'), orderBy('createdAt', 'desc'), limit(50));
-    }
-    const snap = await getDocs(q);
-    return snap.docs.map(d => ({ id: d.id, ...(d.data() as Announcement) }));
-  } catch { return []; }
-};
-
-// ─── Audit Log ───────────────────────────────────────────────────────────────
 export interface AuditEntry {
   id?: string;
   action: string;
@@ -809,59 +426,31 @@ export interface AuditEntry {
   timestamp: number;
 }
 
-export const addAuditLog = async (entry: Omit<AuditEntry, 'id'>) => {
-  try { await addDoc(collection(db, 'auditLog'), entry); } catch { /* non-critical */ }
-};
+export const getAuditLog = (limit = 100): Promise<AuditEntry[]> =>
+  dataRequest('audit.list', { limit });
 
-export const getAuditLog = async (limitN = 100): Promise<AuditEntry[]> => {
-  const q = query(collection(db, 'auditLog'), orderBy('timestamp', 'desc'), limit(limitN));
-  const snap = await getDocs(q);
-  return snap.docs.map(d => ({ id: d.id, ...(d.data() as AuditEntry) }));
-};
-
-// ─── Platform Analytics ──────────────────────────────────────────────────────
 export interface PlatformStats {
-  totalUsers: number; students: number; teachers: number;
-  orgs: number; admins: number; suspended: number;
-  totalClasses: number; totalAssignments: number;
+  totalUsers: number;
+  students: number;
+  business: number;
+  admins: number;
+  suspended: number;
+  totalClasses: number;
+  totalAssignments: number;
 }
 
-export const getPlatformStats = async (): Promise<PlatformStats> => {
-  const [profilesSnap, classesSnap, assignmentsSnap] = await Promise.all([
-    getDocs(collection(db, 'userProfiles')),
-    getDocs(collection(db, 'classes')),
-    getDocs(collection(db, 'assignments')),
-  ]);
-  const counts = { student: 0, teacher: 0, organization: 0, admin: 0, suspended: 0 };
-  profilesSnap.docs.forEach(d => {
-    const data = d.data() as UserAccountProfile;
-    counts[data.role] = (counts[data.role] ?? 0) + 1;
-    if (data.suspended) counts.suspended++;
-  });
-  return {
-    totalUsers: profilesSnap.size,
-    students: counts.student, teachers: counts.teacher,
-    orgs: counts.organization, admins: counts.admin, suspended: counts.suspended,
-    totalClasses: classesSnap.size, totalAssignments: assignmentsSnap.size,
-  };
-};
+export const getPlatformStats = (): Promise<PlatformStats> =>
+  dataRequest('stats.platform');
 
-// ─── CMS Content ─────────────────────────────────────────────────────────────
-/** Generic get/set for the `cmsContent` Firestore collection. */
 export const getCMSDocument = async (docId: string): Promise<any | null> => {
-  try {
-    const snap = await getDoc(doc(db, 'cmsContent', docId));
-    return snap.exists() ? snap.data() : null;
-  } catch { return null; }
+  try { return await dataRequest('cms.get', { docId }); } catch { return null; }
 };
 
-export const setCMSDocument = async (docId: string, data: any): Promise<void> => {
-  await setDoc(doc(db, 'cmsContent', docId), { ...data, updatedAt: Date.now() });
-};
+export const setCMSDocument = (docId: string, data: any): Promise<void> =>
+  dataRequest('cms.set', { docId, data });
 
-export const deleteCMSDocument = async (docId: string): Promise<void> => {
-  await deleteDoc(doc(db, 'cmsContent', docId));
-};
+export const deleteCMSDocument = (docId: string): Promise<void> =>
+  dataRequest('cms.delete', { docId });
 
 export type VocabMissRecord = {
   id: string;
@@ -877,18 +466,11 @@ export type VocabMissRecord = {
   createdAt?: number;
 };
 
-export async function getVocabMisses(max = 80): Promise<VocabMissRecord[]> {
-  if (!db) return [];
-  const q = query(collection(db, 'vocabMisses'), orderBy('count', 'desc'), limit(max));
-  const snap = await getDocs(q);
-  return snap.docs.map((d) => ({ id: d.id, ...(d.data() as Omit<VocabMissRecord, 'id'>) }));
-}
+export const getVocabMisses = (max = 80): Promise<VocabMissRecord[]> =>
+  dataRequest('vocabMiss.list', { limit: max });
 
-export async function markVocabMissReviewed(id: string): Promise<void> {
-  await updateDoc(doc(db, 'vocabMisses', id), { reviewed: true, reviewedAt: Date.now() });
-}
-
-// ─── Custom IELTS Tests ──────────────────────────────────────────────────────
+export const markVocabMissReviewed = (id: string): Promise<void> =>
+  dataRequest('vocabMiss.review', { id });
 
 export interface CustomIELTSTestRecord {
   firestoreId: string;
@@ -898,44 +480,8 @@ export interface CustomIELTSTestRecord {
   updatedAt?: number;
   archived?: boolean;
   status?: 'draft' | 'published';
-  /** 0-indexed position of built-in test this overrides (0, 1, or 2). */
   builtInOverrideIndex?: number;
 }
-
-export const saveIELTSTest = async (data: {
-  title: string;
-  passages: any[];
-  builtInOverrideIndex?: number;
-  status?: 'draft' | 'published';
-}): Promise<string> => {
-  const ref = await addDoc(collection(db, 'ieltsTests'), {
-    ...data,
-    status: data.status ?? 'draft',
-    archived: false,
-    createdAt: Date.now(),
-  });
-  return ref.id;
-};
-
-export const updateIELTSTest = async (
-  firestoreId: string,
-  data: Partial<{ title: string; passages: any[]; archived: boolean; builtInOverrideIndex: number; status: 'draft' | 'published' }>,
-): Promise<void> => {
-  await updateDoc(doc(db, 'ieltsTests', firestoreId), { ...data, updatedAt: Date.now() });
-};
-
-export const getIELTSTests = async (opts: { publishedOnly?: boolean } = {}): Promise<CustomIELTSTestRecord[]> => {
-  const snap = await getDocs(query(collection(db, 'ieltsTests'), orderBy('createdAt', 'asc')));
-  return snap.docs
-    .map(d => ({ firestoreId: d.id, ...(d.data() as Omit<CustomIELTSTestRecord, 'firestoreId'>) }))
-    .filter(t => !opts.publishedOnly || t.status === 'published');
-};
-
-export const deleteIELTSTest = async (firestoreId: string): Promise<void> => {
-  await deleteDoc(doc(db, 'ieltsTests', firestoreId));
-};
-
-// ─── Custom IELTS Listening Tests ────────────────────────────────────────────
 
 export interface CustomIELTSListeningTestRecord {
   firestoreId: string;
@@ -945,52 +491,12 @@ export interface CustomIELTSListeningTestRecord {
   updatedAt?: number;
   archived?: boolean;
   status?: 'draft' | 'published';
-  /** 0-indexed position of built-in test this overrides (0 or 1). */
   builtInOverrideIndex?: number;
 }
 
-export const saveIELTSListeningTest = async (data: {
-  title: string;
-  sections: any[];
-  builtInOverrideIndex?: number;
-  status?: 'draft' | 'published';
-}): Promise<string> => {
-  const ref = await addDoc(collection(db, 'ieltsListeningTests'), {
-    ...data,
-    status: data.status ?? 'draft',
-    archived: false,
-    createdAt: Date.now(),
-  });
-  return ref.id;
-};
-
-export const updateIELTSListeningTest = async (
-  firestoreId: string,
-  data: Partial<{ title: string; sections: any[]; archived: boolean; builtInOverrideIndex: number; status: 'draft' | 'published' }>,
-): Promise<void> => {
-  await updateDoc(doc(db, 'ieltsListeningTests', firestoreId), { ...data, updatedAt: Date.now() });
-};
-
-export const getIELTSListeningTests = async (opts: { publishedOnly?: boolean } = {}): Promise<CustomIELTSListeningTestRecord[]> => {
-  const snap = await getDocs(query(collection(db, 'ieltsListeningTests'), orderBy('createdAt', 'asc')));
-  return snap.docs
-    .map(d => ({ firestoreId: d.id, ...(d.data() as Omit<CustomIELTSListeningTestRecord, 'firestoreId'>) }))
-    .filter(t => !opts.publishedOnly || t.status === 'published');
-};
-
-export const deleteIELTSListeningTest = async (firestoreId: string): Promise<void> => {
-  await deleteDoc(doc(db, 'ieltsListeningTests', firestoreId));
-};
-
-// ─── Error handling ──────────────────────────────────────────────────────────
-export interface FirestoreErrorInfo { error: string; operationType: OperationType; path: string | null; authInfo: { userId?: string | null; email?: string | null } }
-
-export function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
-  const errInfo: FirestoreErrorInfo = {
-    error: error instanceof Error ? error.message : String(error),
-    authInfo: { userId: auth?.currentUser?.uid, email: auth?.currentUser?.email },
-    operationType, path,
-  };
-  console.error('Firestore Error: ', JSON.stringify(errInfo));
-  throw new Error(JSON.stringify(errInfo));
+export interface FirestoreErrorInfo {
+  error: string;
+  operationType: OperationType;
+  path: string | null;
+  authInfo: { userId?: string | null; email?: string | null };
 }

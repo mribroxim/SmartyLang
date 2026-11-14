@@ -45,7 +45,7 @@ export function loadLevelTexts(lang: ContentLang = readStoredContentLang()): Pro
     _promiseByLang[lang] = (async () => {
       const docId = cmsDocId('customReadingTexts', lang);
       // Bust long-lived CDN/browser caches when content JSON changes (version bump).
-      const VOCAB_CACHE_BUST = 'v20260820c';
+      const VOCAB_CACHE_BUST = 'v20260826d';
       const basePromise =
         lang === 'en'
           ? fetch(`/level-texts.json?${VOCAB_CACHE_BUST}`).then(r => r.json()).catch(() => EMPTY_LEVEL_TEXTS)
@@ -54,11 +54,14 @@ export function loadLevelTexts(lang: ContentLang = readStoredContentLang()): Pro
       const [base, doc] = await Promise.all([basePromise, getCMSDocument(docId)]);
       const merged: LevelTexts = { ...EMPTY_LEVEL_TEXTS };
       for (const level of LEVELS) {
+        const baseLevel = base[level] ?? [];
         if (doc?.override?.[level] !== undefined) {
-          merged[level] = (doc.override[level] as ReadingText[]).filter((t: any) => !t.archived);
+          const overrideLevel = (doc.override[level] as ReadingText[]).filter((t: any) => !t.archived);
+          // Empty CMS overrides used to wipe the whole level (looked like "language shows nothing").
+          merged[level] = overrideLevel.length > 0 || baseLevel.length === 0 ? overrideLevel : baseLevel;
         } else {
           merged[level] = [
-            ...(base[level] ?? []),
+            ...baseLevel,
             ...(doc?.byLevel?.[level] ?? []).filter((t: any) => !t.archived),
           ];
         }

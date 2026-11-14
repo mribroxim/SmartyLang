@@ -1,0 +1,818 @@
+<title>Smarty Sticker Board</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: sticker-sheet grid — each card is a peel-off square of paper with the animated sticker on it. */
+:root {
+  --bg: #e9ebef;
+  --surface: #f7f8fa;
+  --fg: #16171a;
+  --muted: #5d6270;
+  --line: #d3d7de;
+  --accent: #3550e8;
+  --accent-ink: #ffffff;
+  --paper: #ffffff;
+  --paper-dot: #e4e6ea;
+  --fx: #141416;
+  --fx-soft: #a3a6ae;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111215; --surface: #1a1c20; --fg: #eceef2; --muted: #9aa0ac; --line: #2c2f36;
+    --accent: #7d90ff; --accent-ink: #0d0f14; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111215; --surface: #1a1c20; --fg: #eceef2; --muted: #9aa0ac; --line: #2c2f36;
+  --accent: #7d90ff; --accent-ink: #0d0f14; color-scheme: dark;
+}
+/* Paper preview toggle (independent from page theme): shows stickers on the website's dark mode. */
+body.paper-dark { --paper: #18181b; --paper-dot: #26262b; --fx: #f4f4f5; --fx-soft: #71717a; }
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 64px;
+}
+.wrap { max-width: 1240px; margin: 0 auto; display: grid; gap: 22px; }
+header { display: grid; gap: 10px; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(30px, 5vw, 52px); line-height: 1.02; letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+.lede { max-width: 62ch; color: var(--muted); margin: 0; }
+.lede strong { color: var(--fg); font-weight: 600; }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; border-bottom: 1px solid var(--line); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.chips, .toggles { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips { flex: 1 1 100%; min-width: 0; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.chip { flex: none; }
+@media (min-width: 900px) { .chips { flex-wrap: wrap; overflow: visible; padding-bottom: 0; } }
+.chip, .tbtn {
+  font: 600 13px/1 var(--font-body); padding: 9px 13px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--fg); cursor: pointer; display: inline-flex; gap: 6px; align-items: center;
+}
+.chip .n { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.chip[aria-pressed="true"], .tbtn[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.chip[aria-pressed="true"] .n { color: inherit; opacity: .7; }
+.chip:focus-visible, .tbtn:focus-visible, .card:focus-visible, .mbtn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: 14px; }
+@media (min-width: 700px) { .grid { grid-template-columns: repeat(auto-fill, minmax(196px, 1fr)); } }
+.card {
+  display: grid; grid-template-rows: auto 1fr; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 14px; overflow: hidden; cursor: zoom-in; text-align: left; padding: 0; color: inherit; font: inherit;
+  transition: transform .15s ease, border-color .15s ease;
+}
+.card:hover { transform: translateY(-2px); border-color: var(--fg); }
+.stage {
+  aspect-ratio: 1 / 1; max-width: 100%; background-color: var(--paper);
+  background-image: radial-gradient(var(--paper-dot) 1.2px, transparent 1.3px); background-size: 16px 16px;
+  display: grid; place-items: center; padding: 10px; color: var(--fx);
+}
+.stage svg { width: 100%; height: 100%; overflow: visible; }
+.meta { padding: 10px 12px 12px; display: grid; gap: 4px; border-top: 1px solid var(--line); }
+.meta .row { display: flex; gap: 8px; align-items: baseline; }
+.num { font-family: var(--font-mono); font-weight: 700; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.name { font-family: var(--font-display); font-weight: 800; font-size: 17px; letter-spacing: -.01em; }
+.tag { font-size: 12.5px; color: var(--muted); }
+
+/* Signature cards: featured section, spinning border, sheen sweep */
+.sect { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin: 8px 0 -2px; font-family: var(--font-display); font-weight: 800; font-size: 24px; letter-spacing: -.01em; }
+.sect small { font: 500 13.5px var(--font-body); color: var(--muted); letter-spacing: 0; }
+.feature { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); gap: 16px; }
+@property --ang { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+@keyframes sigspin { to { --ang: 360deg } }
+@keyframes sheen { 0%, 55% { transform: translateX(-70%) } 85%, 100% { transform: translateX(70%) } }
+.card.sig { position: relative; border: 3px solid transparent; border-radius: 18px;
+  background: linear-gradient(var(--surface), var(--surface)) padding-box, conic-gradient(from var(--ang), var(--fg), var(--muted), var(--accent), var(--fg)) border-box;
+  animation: sigspin 5s linear infinite; box-shadow: 0 10px 30px -14px color-mix(in srgb, var(--fg) 45%, transparent); }
+.card.sig:hover { border-color: transparent; transform: translateY(-3px) scale(1.01); }
+.card.sig .stage { position: relative; overflow: hidden; padding: 14px; }
+.card.sig .stage::after { content: ""; position: absolute; inset: -30%; pointer-events: none;
+  background: linear-gradient(115deg, transparent 44%, color-mix(in srgb, var(--fx-soft) 30%, transparent) 50%, transparent 56%); animation: sheen 4.5s ease-in-out infinite; }
+.card.sig .name { font-size: 20px; }
+.ribbon { position: absolute; top: 10px; left: 10px; z-index: 2; font: 700 11px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; background: var(--fg); color: var(--bg); padding: 6px 10px; border-radius: 999px; }
+.paused-all .card.sig, .paused-all .card.sig .stage::after { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .card.sig, .card.sig .stage::after { animation: none; } }
+
+/* Modal */
+.modal { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; background: color-mix(in srgb, var(--bg) 70%, transparent); backdrop-filter: blur(6px); padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.modal[hidden] { display: none; }
+.sheet { width: min(560px, 100%); background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: grid; }
+.sheet .stage { padding: 28px; }
+.sheet .meta { padding: 14px 16px 16px; }
+.sheet .name { font-size: 24px; }
+.mrow { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.mbtn { font: 600 13px/1 var(--font-body); padding: 10px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+.mbtn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+footer { color: var(--muted); font-size: 13px; }
+
+/* ── Sticker animation library ───────────────────────────── */
+.st * { transform-box: view-box; }
+.paused-all .st *, .st.off * { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) { .st * { animation: none !important; } }
+
+@keyframes breathe { 0%,100% { transform: scale(1,1) } 50% { transform: scale(.99,1.035) } }
+@keyframes bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-5px) } }
+@keyframes hop { 0%,15%,100% { transform: translateY(0) scale(1.05,.94) } 45% { transform: translateY(-20px) scale(.96,1.06) } 75% { transform: translateY(0) scale(1.04,.95) } 85% { transform: translateY(0) scale(1,1) } }
+@keyframes bigjump { 0%,100% { transform: translateY(0) scale(1.06,.9) } 40% { transform: translateY(-30px) scale(.95,1.08) rotate(-4deg) } 75% { transform: translateY(0) scale(1.05,.92) } }
+@keyframes jolt { 0%,40%,100% { transform: translateY(0) scale(1,1) } 6% { transform: translateY(0) scale(1.05,.92) } 16% { transform: translateY(-16px) scale(.96,1.08) } 28% { transform: translateY(0) scale(1.03,.96) } }
+@keyframes wag { 0%,100% { transform: rotate(-7deg) } 50% { transform: rotate(9deg) } }
+@keyframes lash { 0%,100% { transform: rotate(-14deg) } 50% { transform: rotate(16deg) } }
+@keyframes flick { 0%,78%,100% { transform: rotate(0) } 85% { transform: rotate(-20deg) } 92% { transform: rotate(7deg) } }
+@keyframes blink { 0%,90%,100% { transform: scaleY(1) } 94% { transform: scaleY(.08) } }
+@keyframes twitch { 0%,78%,92%,100% { transform: rotate(0) } 84% { transform: rotate(-12deg) } }
+@keyframes tilt { 0%,100% { transform: rotate(-5deg) } 50% { transform: rotate(4deg) } }
+@keyframes nod { 0%,100% { transform: rotate(0) } 50% { transform: rotate(7deg) } }
+@keyframes wave { 0%,100% { transform: rotate(0) } 25% { transform: rotate(-16deg) } 50% { transform: rotate(4deg) } 75% { transform: rotate(-16deg) } }
+@keyframes float { 0% { transform: translate(0,0) scale(.6); opacity: 0 } 20% { opacity: 1 } 100% { transform: translate(var(--fx-x, 8px), -44px) scale(1.1); opacity: 0 } }
+@keyframes twinkle { 0%,100% { transform: scale(0) rotate(0); opacity: 0 } 50% { transform: scale(1) rotate(45deg); opacity: 1 } }
+@keyframes shake { 0%,100% { transform: translateX(0) } 25% { transform: translateX(-2.5px) } 75% { transform: translateX(2.5px) } }
+@keyframes spin { to { transform: rotate(360deg) } }
+@keyframes legA { 0%,100% { transform: rotate(18deg) } 50% { transform: rotate(-18deg) } }
+@keyframes legB { 0%,100% { transform: rotate(-18deg) } 50% { transform: rotate(18deg) } }
+@keyframes speed { 0% { transform: translateX(0); opacity: 0 } 30% { opacity: 1 } 100% { transform: translateX(26px); opacity: 0 } }
+@keyframes pulse { 0%,100% { transform: scale(1) } 50% { transform: scale(1.14) } }
+@keyframes peek { 0%,100% { transform: translateY(16px) } 30%,75% { transform: translateY(0) } }
+@keyframes dart { 0%,100% { transform: translateX(0) } 30% { transform: translateX(-4px) } 65% { transform: translateX(4px) } }
+@keyframes read { 0%,100% { transform: translateX(-4px) } 50% { transform: translateX(4px) } }
+@keyframes tapA { 0%,50%,100% { transform: translateY(0) } 25% { transform: translateY(-6px) } }
+@keyframes tapB { 0%,50%,100% { transform: translateY(0) } 75% { transform: translateY(-6px) } }
+@keyframes flip { 0%,30% { transform: scaleX(1) } 50%,80% { transform: scaleX(-1) } 100% { transform: scaleX(1) } }
+@keyframes drip { 0% { transform: translateY(0) scale(.2); opacity: 0 } 15% { transform: translateY(0) scale(1); opacity: 1 } 80% { transform: translateY(24px); opacity: 1 } 100% { transform: translateY(30px); opacity: 0 } }
+@keyframes flicker { 0%,100% { transform: scale(1,1) skewX(0) } 25% { transform: scale(.96,1.07) skewX(3deg) } 50% { transform: scale(1.03,.95) skewX(-2deg) } 75% { transform: scale(.98,1.04) skewX(2deg) } }
+@keyframes ring { 0%,70%,100% { transform: rotate(0) } 10%,30%,50% { transform: rotate(-14deg) } 20%,40%,60% { transform: rotate(14deg) } }
+@keyframes roll { 0%,100% { transform: rotate(-7deg) } 50% { transform: rotate(7deg) } }
+@keyframes kickA { 0%,100% { transform: rotate(-14deg) } 50% { transform: rotate(12deg) } }
+@keyframes kickB { 0%,100% { transform: rotate(12deg) } 50% { transform: rotate(-14deg) } }
+@keyframes jiggle { 0%,100% { transform: scale(1,1) } 25% { transform: scale(1.06,.94) } 50% { transform: scale(.97,1.04) } 75% { transform: scale(1.02,.98) } }
+@keyframes wiggle { 0%,100% { transform: translateX(0) rotate(0) } 25% { transform: translateX(-4px) rotate(-2deg) } 75% { transform: translateX(4px) rotate(2deg) } }
+@keyframes burst { 0% { transform: translate(0,0) scale(.3) rotate(0); opacity: 0 } 15% { opacity: 1 } 100% { transform: translate(var(--dx),var(--dy)) scale(1) rotate(200deg); opacity: 0 } }
+@keyframes draw { 0% { stroke-dashoffset: var(--len) } 70%,100% { stroke-dashoffset: 0 } }
+@keyframes write { 0% { transform: translate(-66px,0) } 17% { transform: translate(-55px,-4px) } 35% { transform: translate(-33px,3px) } 52% { transform: translate(-22px,-4px) } 70%,100% { transform: translate(0,0) } }
+@keyframes pop { 0%,40%,100% { transform: scale(1) } 8% { transform: scale(1.16) } 16% { transform: scale(.94) } 24% { transform: scale(1) } }
+@keyframes swing { 0%,100% { transform: rotate(-12deg) } 50% { transform: rotate(12deg) } }
+@keyframes rollball { 0%,100% { transform: translateX(0) rotate(0) } 50% { transform: translateX(-12px) rotate(-200deg) } }
+@keyframes swat { 0%,55%,100% { transform: rotate(0) } 70% { transform: rotate(24deg) } 80% { transform: rotate(-4deg) } }
+@keyframes reach { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-9px) } }
+@keyframes flash { 0%,100% { opacity: 0 } 50% { opacity: 1 } }
+@keyframes pounce { 0%,100% { transform: translateY(0) rotate(0) scale(1.05,.95) } 40% { transform: translateY(-28px) rotate(-6deg) scale(.97,1.04) } 70% { transform: translateY(0) rotate(0) scale(1.05,.95) } }
+@keyframes shadow { 0%,70%,100% { transform: scaleX(1); opacity: .5 } 40% { transform: scaleX(.6); opacity: .25 } }
+@keyframes rock { 0%,100% { transform: rotate(-4deg) } 50% { transform: rotate(4deg) } }
+@keyframes bubble { 0% { transform: translateY(0) scale(.4); opacity: 0 } 20% { opacity: 1 } 100% { transform: translateY(-50px) scale(1); opacity: 0 } }
+@keyframes sink { 0%,100% { transform: translateY(2px) scaleY(.97) } 50% { transform: translateY(3px) scaleY(.985) } }
+@keyframes puff { 0%,100% { transform: scale(1) } 50% { transform: scale(1.04) } }
+@keyframes flap { 0%,100% { transform: rotate(-10deg) } 50% { transform: rotate(12deg) } }
+@keyframes dot { 0%,100% { opacity: .2; transform: translateY(0) } 50% { opacity: 1; transform: translateY(-3px) } }
+@keyframes stretch { 0%,100% { transform: scaleX(1) } 50% { transform: scaleX(1.06) } }
+
+.a-breathe { animation: breathe var(--d,3s) ease-in-out var(--dl,0s) infinite }
+.a-bob { animation: bob var(--d,1.6s) ease-in-out var(--dl,0s) infinite }
+.a-hop { animation: hop var(--d,.75s) ease-in-out var(--dl,0s) infinite }
+.a-bigjump { animation: bigjump var(--d,1.05s) ease-in-out var(--dl,0s) infinite }
+.a-jolt { animation: jolt var(--d,2.2s) ease-out var(--dl,0s) infinite }
+.a-wag { animation: wag var(--d,2.4s) ease-in-out var(--dl,0s) infinite }
+.a-lash { animation: lash var(--d,.5s) ease-in-out var(--dl,0s) infinite }
+.a-flick { animation: flick var(--d,3s) ease-in-out var(--dl,0s) infinite }
+.a-blink { animation: blink var(--d,4.2s) linear var(--dl,0s) infinite }
+.a-twitch { animation: twitch var(--d,4.5s) ease-in-out var(--dl,0s) infinite }
+.a-tilt { animation: tilt var(--d,2.6s) ease-in-out var(--dl,0s) infinite }
+.a-nod { animation: nod var(--d,.7s) ease-in-out var(--dl,0s) infinite }
+.a-wave { animation: wave var(--d,1.3s) ease-in-out var(--dl,0s) infinite }
+.a-float { animation: float var(--d,2.4s) ease-out var(--dl,0s) infinite }
+.a-twinkle { animation: twinkle var(--d,1.8s) ease-in-out var(--dl,0s) infinite }
+.a-shake { animation: shake var(--d,.18s) linear var(--dl,0s) infinite }
+.a-spin { animation: spin var(--d,2s) var(--e,linear) var(--dl,0s) infinite }
+.a-legA { animation: legA var(--d,.5s) ease-in-out var(--dl,0s) infinite }
+.a-legB { animation: legB var(--d,.5s) ease-in-out var(--dl,0s) infinite }
+.a-speed { animation: speed var(--d,.7s) linear var(--dl,0s) infinite }
+.a-pulse { animation: pulse var(--d,.9s) ease-in-out var(--dl,0s) infinite }
+.a-peek { animation: peek var(--d,3.6s) ease-in-out var(--dl,0s) infinite }
+.a-dart { animation: dart var(--d,2.4s) ease-in-out var(--dl,0s) infinite }
+.a-read { animation: read var(--d,1.4s) ease-in-out var(--dl,0s) infinite }
+.a-tapA { animation: tapA var(--d,.4s) linear var(--dl,0s) infinite }
+.a-tapB { animation: tapB var(--d,.4s) linear var(--dl,0s) infinite }
+.a-flip { animation: flip var(--d,3.2s) ease-in-out var(--dl,0s) infinite }
+.a-drip { animation: drip var(--d,2.4s) ease-in var(--dl,.3s) infinite }
+.a-flicker { animation: flicker var(--d,.9s) ease-in-out var(--dl,0s) infinite }
+.a-ring { animation: ring var(--d,1.2s) linear var(--dl,0s) infinite }
+.a-roll { animation: roll var(--d,1.4s) ease-in-out var(--dl,0s) infinite }
+.a-kickA { animation: kickA var(--d,.45s) ease-in-out var(--dl,0s) infinite }
+.a-kickB { animation: kickB var(--d,.45s) ease-in-out var(--dl,0s) infinite }
+.a-jiggle { animation: jiggle var(--d,1.6s) ease-in-out var(--dl,0s) infinite }
+.a-wiggle { animation: wiggle var(--d,.35s) ease-in-out var(--dl,0s) infinite }
+.a-burst { animation: burst var(--d,1.6s) ease-out var(--dl,0s) infinite }
+.a-draw { animation: draw var(--d,3s) ease-in-out var(--dl,0s) infinite }
+.a-write { animation: write var(--d,3s) ease-in-out var(--dl,0s) infinite }
+.a-pop { animation: pop var(--d,2.4s) ease-out var(--dl,0s) infinite }
+.a-swing { animation: swing var(--d,1.6s) ease-in-out var(--dl,0s) infinite }
+.a-rollball { animation: rollball var(--d,1.8s) ease-in-out var(--dl,0s) infinite }
+.a-swat { animation: swat var(--d,1.8s) ease-in-out var(--dl,0s) infinite }
+.a-reach { animation: reach var(--d,1.2s) ease-in-out var(--dl,0s) infinite }
+.a-flash { animation: flash var(--d,.6s) ease-in-out var(--dl,0s) infinite }
+.a-pounce { animation: pounce var(--d,1.4s) ease-in-out var(--dl,0s) infinite }
+.a-shadow { animation: shadow var(--d,1.4s) ease-in-out var(--dl,0s) infinite }
+.a-rock { animation: rock var(--d,2.4s) ease-in-out var(--dl,0s) infinite }
+.a-bubble { animation: bubble var(--d,2.2s) ease-in var(--dl,0s) infinite }
+.a-sink { animation: sink var(--d,3.4s) ease-in-out var(--dl,0s) infinite }
+.a-puff { animation: puff var(--d,1.4s) ease-in-out var(--dl,0s) infinite }
+.a-flap { animation: flap var(--d,.5s) ease-in-out var(--dl,0s) infinite }
+.a-dot { animation: dot var(--d,1.2s) ease-in-out var(--dl,0s) infinite }
+.a-stretch { animation: stretch var(--d,2.4s) ease-in-out var(--dl,0s) infinite }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="ink" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="ink"/>
+      <feMorphology in="ink" operator="erode" radius="1.4" result="core0"/>
+      <feComponentTransfer in="core0" result="core"><feFuncA type="linear" slope="4" intercept="-2.4"/></feComponentTransfer>
+      <feMorphology in="core" operator="dilate" radius="5.9" result="grow"/>
+      <feGaussianBlur in="grow" stdDeviation="2.2" result="b"/>
+      <feOffset in="b" dy="2.5" result="o"/>
+      <feFlood flood-color="#000" flood-opacity=".16"/>
+      <feComposite in2="o" operator="in" result="sh"/>
+      <feFlood flood-color="#fff"/>
+      <feComposite in2="grow" operator="in" result="ring"/>
+      <feMerge><feMergeNode in="sh"/><feMergeNode in="ring"/><feMergeNode in="ink"/></feMerge>
+    </filter>
+    <filter id="fuzz" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.11" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G" result="ink"/>
+      <feMorphology in="ink" operator="erode" radius="1.4" result="core0"/>
+      <feComponentTransfer in="core0" result="core"><feFuncA type="linear" slope="4" intercept="-2.4"/></feComponentTransfer>
+      <feMorphology in="core" operator="dilate" radius="5.9" result="grow"/>
+      <feGaussianBlur in="grow" stdDeviation="2.2" result="b"/>
+      <feOffset in="b" dy="2.5" result="o"/>
+      <feFlood flood-color="#000" flood-opacity=".16"/>
+      <feComposite in2="o" operator="in" result="sh"/>
+      <feFlood flood-color="#fff"/>
+      <feComposite in2="grow" operator="in" result="ring"/>
+      <feMerge><feMergeNode in="sh"/><feMergeNode in="ring"/><feMergeNode in="ink"/></feMerge>
+    </filter>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Smarty English · mascot review · not live yet</span>
+    <h1>Smarty Sticker Board</h1>
+    <p class="lede"><strong>229 animated stickers. Nothing has been added to the website yet.</strong> #1–55 are the first batch. #56–225 are your 170 ideas, in your order: your idea 1 is #56, so add 55 to any number on your list. #226–229 are the four signature animations, shown first. Pick by number (for example “3, 56, 74, 140”) and say what to change. Tap a sticker to see it big. Use “Dark paper” to check the app’s dark mode.</p>
+  </header>
+
+  <div class="toolbar">
+    <div class="chips" id="chips" role="group" aria-label="Filter stickers"></div>
+    <div class="toggles">
+      <button class="tbtn" id="paperBtn" type="button" aria-pressed="false">Dark paper</button>
+      <button class="tbtn" id="pauseBtn" type="button" aria-pressed="false">Pause all</button>
+    </div>
+  </div>
+
+  <main class="grid" id="grid" aria-live="polite"></main>
+  <footer>Black ink, white ring eyes, white sticker edge. Same cat in every pose. Each sticker notes where it would show up in the app.</footer>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mName">
+    <div class="stage st" id="mStage"></div>
+    <div class="meta">
+      <div class="row"><span class="num" id="mNum"></span><span class="name" id="mName"></span></div>
+      <span class="tag" id="mTag"></span>
+      <div class="mrow" style="margin-top:10px">
+        <div style="display:flex;gap:8px"><button class="mbtn" id="mPrev" type="button">← Prev</button><button class="mbtn" id="mNext" type="button">Next →</button></div>
+        <button class="mbtn primary" id="mClose" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═════════ Drawing kit (viewBox 0 0 200 200, feet on y≈190) ═════════ */
+const I = '#0b0b0c', W = '#ffffff', SOFT = 'var(--fx-soft)';
+const A = (cls, ox, oy, vars = '') => `class="${cls}" style="transform-origin:${ox}px ${oy}px;${vars}"`;
+const T = (x, y, s = 1, r = 0) => `transform="translate(${x} ${y}) rotate(${r}) scale(${s})"`;
+const stroke = (d, w = 9, col = I, extra = '') => `<path d="${d}" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" fill="none" ${extra}/>`;
+const paw = (x, y, rx = 9, ry = 8) => `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="${I}"/>`;
+const pawT = (x, y) => `${paw(x, y, 11, 8)}<path d="M${x - 4} ${y - 1} l0 5 M${x + 4} ${y - 1} l0 5" stroke="${W}" stroke-width="1.8" stroke-linecap="round"/>`;
+
+/* Head, drawn around its own centre (0,0). Spans x −56…56, y −71…43. */
+const HEAD = 'M-52 15 C-56 -5 -49 -27 -31 -36 C-19 -42 -9 -43 0 -43 C11 -43 22 -41 32 -35 C49 -26 56 -5 53 15 C51 30 38 40 17 42 C6 43 -6 43 -17 42 C-38 40 -50 30 -52 15 Z';
+const EARL = 'M-47 -7 C-50 -26 -50 -48 -45 -71 C-36 -62 -24 -49 -11 -37 C-23 -31 -37 -21 -47 -7 Z';
+const EARR = 'M49 -7 C52 -25 52 -46 47 -68 C38 -60 26 -48 12 -37 C24 -31 39 -21 49 -7 Z';
+const WHISK = stroke('M-53 17 C-61 14 -68 13 -76 14 M-53 24 C-60 24 -67 26 -74 29 M54 17 C62 14 69 13 77 14 M54 24 C61 24 68 26 75 29', 1.8);
+const EYES = [[-20, 7, -1], [20, 7, 1]];
+
+const ringC = (x, y, r = 13.5, w = 3.6) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${I}" stroke="${W}" stroke-width="${w}"/>`;
+const dotC = (x, y, r = 3.4) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${W}"/>`;
+const blinkG = (x, y, inner, dl = 0) => `<g ${A('a-blink', x, y, `--dl:${dl}s`)}>${inner}</g>`;
+const heartD = (x, y, s) => `M${x} ${y + 6 * s} C${x - 9 * s} ${y} ${x - 6 * s} ${y - 7 * s} ${x} ${y - 3 * s} C${x + 6 * s} ${y - 7 * s} ${x + 9 * s} ${y} ${x} ${y + 6 * s} Z`;
+const star5 = (x, y, r) => { let p = []; for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r * .48 : r; p.push(`${(x + rr * Math.cos(a)).toFixed(1)} ${(y + rr * Math.sin(a)).toFixed(1)}`); } return 'M' + p.join(' L') + ' Z'; };
+const sparkD = (x, y, s) => `M${x} ${y - 9 * s} Q${x + 1.6 * s} ${y - 1.6 * s} ${x + 9 * s} ${y} Q${x + 1.6 * s} ${y + 1.6 * s} ${x} ${y + 9 * s} Q${x - 1.6 * s} ${y + 1.6 * s} ${x - 9 * s} ${y} Q${x - 1.6 * s} ${y - 1.6 * s} ${x} ${y - 9 * s} Z`;
+const spiralD = (x, y) => { let d = ''; for (let i = 0; i <= 44; i++) { const t = i / 44 * 4.3 * Math.PI, r = 1 + t * .82; d += (i ? ' L' : 'M') + (x + r * Math.cos(t)).toFixed(1) + ' ' + (y + r * Math.sin(t)).toFixed(1); } return d; };
+
+function eyes(type) {
+  const each = f => EYES.map(([x, y, s], i) => f(x, y, s, i)).join('');
+  switch (type) {
+    case 'none': return '';
+    case 'still': return each((x, y) => ringC(x, y));
+    case 'dot': return each((x, y, s, i) => blinkG(x, y, ringC(x, y) + dotC(x, y), i * .02));
+    case 'focus': return each((x, y) => ringC(x, y) + dotC(x, y + 1, 3.8));
+    case 'up': return each((x, y) => blinkG(x, y, ringC(x, y) + dotC(x + 5, y - 5, 4.2)));
+    case 'read': return each((x, y) => ringC(x, y) + `<g ${A('a-read', x, y)}>${dotC(x, y + 5, 3.8)}</g>`);
+    case 'dart': return each((x, y) => ringC(x, y) + `<g ${A('a-dart', x, y)}>${dotC(x, y, 3.8)}</g>`);
+    case 'happy': return each((x, y) => stroke(`M${x - 11} ${y + 5} Q${x} ${y - 10} ${x + 11} ${y + 5}`, 3.6, W));
+    case 'closed': return each((x, y) => stroke(`M${x - 11} ${y + 1} Q${x} ${y + 10} ${x + 11} ${y + 1}`, 3.6, W));
+    case 'line': return each((x, y) => stroke(`M${x - 11} ${y + 2} L${x + 11} ${y + 2}`, 3.6, W));
+    case 'x': return each((x, y) => stroke(`M${x - 8} ${y - 8} L${x + 8} ${y + 8} M${x + 8} ${y - 8} L${x - 8} ${y + 8}`, 3.6, W));
+    case 'heart': return each((x, y) => `<g ${A('a-pulse', x, y)}><path d="${heartD(x, y + 1, 1.75)}" fill="${I}" stroke="${W}" stroke-width="3.2" stroke-linejoin="round"/></g>`);
+    case 'star': return each((x, y) => `<g ${A('a-pulse', x, y, '--d:.7s')}><path d="${star5(x, y, 14)}" fill="${I}" stroke="${W}" stroke-width="3" stroke-linejoin="round"/></g>`);
+    case 'big': return each((x, y) => ringC(x, y - 1, 17, 4) + dotC(x, y - 1, 3.6));
+    case 'tiny': return each((x, y) => blinkG(x, y, ringC(x, y + 2, 8, 3)));
+    case 'oval': return each((x, y) => blinkG(x, y, `<ellipse cx="${x}" cy="${y}" rx="5.5" ry="7.5" fill="${W}"/>`));
+    case 'spiral': return each((x, y) => `<g ${A('a-spin', x, y, '--d:1.4s')}>${stroke(spiralD(x, y), 2.8, W)}</g>`);
+    case 'glasses': return each((x, y) => `<circle cx="${x}" cy="${y}" r="16" fill="${I}" stroke="${W}" stroke-width="3"/>` + blinkG(x, y, dotC(x + 1, y + 2, 3.6))) + stroke('M-4 6 Q0 2 4 6', 2.4, W);
+    case 'side': return each((x, y) => ringC(x, y) + dotC(x + 6, y + 5, 3.4) + `<path d="M${x - 18} ${y - 18} L${x + 18} ${y - 18} L${x + 18} ${y - 1} L${x - 18} ${y - 1} Z" fill="${I}"/>` + stroke(`M${x - 14} ${y - 1} L${x + 14} ${y - 1}`, 3.2, W));
+    case 'sad': return each((x, y, s) => ringC(x, y + 2, 12.5) + stroke(`M${x + 11 * s} ${y - 13} L${x - 8 * s} ${y - 19}`, 3, W));
+    case 'sadtear': return each((x, y, s, i) => ringC(x, y + 2, 12.5) + stroke(`M${x + 11 * s} ${y - 13} L${x - 8 * s} ${y - 19}`, 3, W) +
+      (i === 0 ? `<g ${A('a-drip', x - 6, y + 16)}><path d="M${x - 6} ${y + 15} C${x - 10} ${y + 22} ${x - 11} ${y + 25} ${x - 8} ${y + 28} C${x - 5} ${y + 30} ${x - 1} ${y + 28} ${x - 2} ${y + 24} C${x - 2} ${y + 21} ${x - 4} ${y + 18} ${x - 6} ${y + 15} Z" fill="${W}"/></g>` : ''));
+    case 'angry': return each((x, y, s) => { const o = x + 17 * s, n = x - 17 * s; return ringC(x, y + 2, 12) + dotC(x - 2 * s, y + 4, 3) + `<path d="M${o} ${y - 18} L${n} ${y - 18} L${n} ${y + 1} L${o} ${y - 8} Z" fill="${I}"/>` + stroke(`M${o} ${y - 8} L${n} ${y + 1}`, 3.2, W); });
+    case 'wink': return blinkG(-20, 7, ringC(-20, 7)) + stroke('M9 12 Q20 -3 31 12', 3.6, W);
+    case 'ringL': return blinkG(-20, 7, ringC(-20, 7));
+    default: return each((x, y, s, i) => blinkG(x, y, ringC(x, y)));
+  }
+}
+function mouth(type) {
+  switch (type) {
+    case 'w': return stroke('M-7 26 Q-3.5 31 0 26.5 Q3.5 31 7 26', 2.4, W);
+    case 'o': return `<ellipse cx="0" cy="30" rx="3.8" ry="4.8" fill="${I}" stroke="${W}" stroke-width="2.2"/>`;
+    case 'frown': return stroke('M-6 31 Q0 25.5 6 31', 2.4, W);
+    case 'yawn': return `<ellipse cx="0" cy="30" rx="7" ry="9" fill="${I}" stroke="${W}" stroke-width="2.4"/>`;
+    case 'open': return `<path d="M-8 25 Q0 38 8 25 Z" fill="${I}" stroke="${W}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    case 'fang': return stroke('M-8 26 L-4 31 L0 26.5 L4 31 L8 26', 2.2, W);
+    case 'flat': return stroke('M-5 29 L5 29', 2.4, W);
+    case 'smile': return stroke('M-6 27 Q0 32 6 27', 2.4, W);
+    default: return '';
+  }
+}
+/* head({eyes, mouth, cls, droop, acc, noWhisk, earCls}) */
+function head(o = {}) {
+  const dr = o.droop || 0;
+  return `<g ${A(o.cls || '', 0, 42, o.vars || '')}>
+    <g ${A(o.earCls ?? 'a-twitch', -30, -24, `--dl:${o.edl || 0}s`)}><path d="${EARL}" fill="${I}" transform="rotate(${-dr} -30 -24)"/></g>
+    <g ${A(o.earCls2 ?? '', 30, -24)}><path d="${EARR}" fill="${I}" transform="rotate(${dr} 30 -24)"/></g>
+    <path d="${HEAD}" fill="${I}"/>
+    ${o.noWhisk ? '' : WHISK}
+    ${eyes(o.eyes || 'ring')}
+    ${mouth(o.mouth || '')}
+    ${o.acc || ''}
+  </g>`;
+}
+
+/* Sitting body (pear) + tail. Head sits at (101, 89). */
+const BODY = 'M70 118 C58 132 47 152 47 170 C47 183 56 190 70 190 L134 190 C148 190 156 183 155 170 C154 151 144 132 132 118 Z';
+const TAIL = 'M146 184 C170 186 186 172 184 150 C183 136 174 128 176 116 C177 108 184 104 190 106';
+const PAWL = stroke('M68 188 C69 182 78 181 81 187', 2, W), PAWR = stroke('M121 187 C124 181 133 182 134 188', 2, W);
+function sit(o = {}) {
+  const tail = o.tail || [TAIL, 146, 184];
+  return `<g ${A(o.bodyCls ?? 'a-breathe', 101, 190, o.bodyVars || '')}>
+    <g ${A(o.tailCls ?? 'a-wag', tail[1], tail[2], o.tailVars || '')}>${stroke(tail[0], 9)}</g>
+    <path d="${BODY}" fill="${I}"/>
+    ${o.noPaws ? '' : (o.noPawL ? '' : PAWL) + PAWR}
+    ${o.behind || ''}
+    <g ${T(101, 89, o.hs || 1, o.hr || 0)}>${head(o.head || {})}</g>
+    ${o.front || ''}
+  </g>`;
+}
+const waveArm = `<g ${A('a-wave', 72, 150)}>${stroke('M70 152 C58 138 46 120 38 98', 15)}<path d="M31 92 C30 86 36 82 40 86 C42 81 48 82 48 88 C49 95 44 100 38 100 C33 100 31 96 31 92 Z" fill="${I}"/></g>`;
+
+/* Loaf (front-left head) */
+function loaf(o = {}) {
+  return `<g ${A(o.bodyCls ?? 'a-breathe', 100, 186, o.bodyVars || '--d:3.6s')}>
+    <path d="M38 186 C24 186 22 168 30 152 C40 132 70 124 108 124 C146 124 176 134 180 158 C183 178 172 186 156 186 Z" fill="${I}"/>
+    ${stroke('M176 168 C190 178 182 192 160 192 L112 192', 9)}
+    <g ${A('a-flick', 112, 192, '--d:3.4s')}>${stroke('M112 192 C102 192 96 188 94 182', 9)}</g>
+    <g ${T(70, 118, .82)}>${head(o.head || { eyes: 'closed' })}</g>
+  </g>`;
+}
+/* Curled ball */
+function ball(o = {}) {
+  return `<g ${A('a-breathe', 104, 190, '--d:4s')}>
+    <path d="M40 150 C40 115 70 96 105 96 C142 96 168 118 168 150 C168 176 146 190 106 190 C66 190 40 178 40 150 Z" fill="${I}"/>
+    <g ${T(80, 146, .7, -16)}>${head(o.head || { eyes: 'closed', earCls: '', noWhisk: true })}</g>
+    ${stroke('M162 166 C152 190 104 196 74 190 C62 188 56 182 60 176', 10)}
+  </g>`;
+}
+
+/* FX (ink doodles; follow the paper colour via currentColor) */
+const sp = (x, y, s = 1, dl = 0, fill = 'currentColor', d = '1.8s') => `<path d="${sparkD(x, y, s)}" fill="${fill}" ${A('a-twinkle', x, y, `--dl:${dl}s;--d:${d}`)}/>`;
+const st5 = (x, y, r = 7, dl = 0, fill = 'currentColor', d = '1.8s') => `<path d="${star5(x, y, r)}" fill="${fill}" ${A('a-twinkle', x, y, `--dl:${dl}s;--d:${d}`)}/>`;
+const zzz = (x, y) => [0, 1, 2].map(i => `<text x="${x}" y="${y}" font-family="Bricolage Grotesque, system-ui" font-weight="800" font-size="${14 + i * 5}" fill="currentColor" ${A('a-float', x, y, `--dl:${i * .9}s;--d:2.7s;--fx-x:${10 + i * 4}px`)}>z</text>`).join('');
+const dots = (x, y) => [0, 1, 2].map(i => `<circle cx="${x + i * 12}" cy="${y}" r="4.2" fill="currentColor" ${A('a-dot', x + i * 12, y, `--dl:${i * .2}s`)}/>`).join('');
+const bang = (x, y) => `<g ${A('a-pop', x + 8, y + 30, '--d:2.2s')} fill="currentColor"><path d="M${x} ${y} L${x + 7} ${y} L${x + 5} ${y + 22} L${x + 2} ${y + 22} Z"/><circle cx="${x + 3.5}" cy="${y + 29}" r="3.6"/><path d="M${x + 13} ${y + 2} L${x + 20} ${y + 2} L${x + 18} ${y + 24} L${x + 15} ${y + 24} Z"/><circle cx="${x + 16.5}" cy="${y + 31}" r="3.6"/></g>`;
+const note = (x, y) => `<ellipse cx="${x}" cy="${y}" rx="5" ry="4" transform="rotate(-20 ${x} ${y})" fill="currentColor"/><path d="M${x + 4} ${y - 1} L${x + 4} ${y - 18} Q${x + 10} ${y - 15} ${x + 12} ${y - 9}" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>`;
+const notes = (x, y) => [0, 1, 2].map(i => `<g ${A('a-float', x, y, `--dl:${i * .8}s;--d:2.4s;--fx-x:${i % 2 ? -6 : 10}px`)}>${note(x + i * 8, y)}</g>`).join('');
+const heartsUp = (x, y) => [0, 1, 2].map(i => `<path d="${heartD(x + i * 10, y, 1.1 + i * .2)}" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" ${A('a-float', x, y, `--dl:${i * .7}s;--d:2.2s`)}/>`).join('');
+const burst = (cx, cy, n = 12) => Array.from({ length: n }, (_, i) => {
+  const a = -Math.PI / 2 + ((i - (n - 1) / 2) / (n - 1)) * Math.PI * 1.35, dist = 58 + (i % 3) * 16;
+  const dx = (Math.cos(a) * dist).toFixed(0), dy = (Math.sin(a) * dist * .8 + 26).toFixed(0);
+  const k = i % 3, fill = i % 2 ? 'currentColor' : SOFT;
+  const d = k === 0 ? star5(cx, cy, 6) : k === 1 ? sparkD(cx, cy, .7) : `M${cx - 3} ${cy - 3} h6 v6 h-6 Z`;
+  return `<path d="${d}" fill="${fill}" ${A('a-burst', cx, cy, `--dx:${dx}px;--dy:${dy}px;--dl:${(i % 4) * .08}s`)}/>`;
+}).join('');
+const speed = (x, y, n = 3) => Array.from({ length: n }, (_, i) => `<path d="M${x} ${y + i * 12} l20 0" stroke="currentColor" stroke-width="3" stroke-linecap="round" ${A('a-speed', x, y, `--dl:${i * .18}s`)}/>`).join('');
+const ringLines = (x, y) => `<g ${A('a-flash', x, y, '--d:.4s')} stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round"><path d="M${x - 34} ${y - 10} q-6 10 0 20"/><path d="M${x - 42} ${y - 14} q-8 14 0 28"/><path d="M${x + 34} ${y - 10} q6 10 0 20"/><path d="M${x + 42} ${y - 14} q8 14 0 28"/></g>`;
+const scratch = (x, y) => [0, 1, 2].map(i => `<path d="M${x + i * 8} ${y} q3 6 0 12 q-3 6 0 12" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" ${A('a-flash', x, y, `--d:1.2s;--dl:${i * .15}s`)}/>`).join('');
+const anger = (x, y) => `<g ${A('a-pulse', x, y, '--d:.6s')} stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"><path d="M${x - 10} ${y - 3} q4 0 4 -7"/><path d="M${x + 3} ${y - 10} q0 4 7 4"/><path d="M${x + 10} ${y + 3} q-4 0 -4 7"/><path d="M${x - 3} ${y + 10} q0 -4 -7 -4"/></g>`;
+const bubbles = (x, y) => [0, 1, 2].map(i => `<circle cx="${x + (i - 1) * 9}" cy="${y}" r="${3 + i}" fill="none" stroke="currentColor" stroke-width="2" ${A('a-bubble', x, y, `--dl:${i * .7}s`)}/>`).join('');
+const waveLines = (x, y) => `<g stroke="currentColor" stroke-width="2.6" stroke-linecap="round">${[0, 1, 2].map(i => `<path d="M${x + i * 9} ${y - (i === 1 ? 4 : 0)} l0 -12" ${A('a-flash', x, y, `--d:1.3s;--dl:${i * .12}s`)}/>`).join('')}</g>`;
+const orbit = (cx, cy) => `<g transform="translate(${cx} ${cy}) scale(1 .38)"><g ${A('a-spin', 0, 0, '--d:2.2s')}>${[[50, 0], [-25, 43], [-25, -43]].map(([x, y]) => `<path d="${star5(x, y, 9)}" fill="currentColor"/>`).join('')}</g></g>`;
+
+const wrapSvg = (main, fx = '', o = {}) => `<svg viewBox="0 0 200 200" role="img" aria-hidden="true">${o.defs ? `<defs>${o.defs}</defs>` : ''}<g filter="url(#${o.filter || 'ink'})">${main}</g><g>${fx}</g></svg>`;
+const shift = (x, y, s, inner) => `<g ${T(x, y, s)}>${inner}</g>`;
+
+/* ═════════ The stickers ═════════ */
+const S = [];
+const add = (name, tag, cat, svg) => S.push({ name, tag, cat, svg });
+
+/* — Moods — */
+add('Hello!', 'Welcome screen · first login', 'mood', () => wrapSvg(
+  sit({ noPawL: true, front: waveArm, head: { eyes: 'ring', mouth: 'w', cls: 'a-tilt' } }), waveLines(20, 74)));
+add('Hi there', 'Default · dashboard corner', 'mood', () => wrapSvg(
+  sit({ head: { eyes: 'ring' } }), sp(176, 50, .6, 0, SOFT, '3.2s')));
+add('Yay!', 'Correct answer', 'mood', () => wrapSvg(
+  sit({ bodyCls: 'a-hop', bodyVars: '--d:.7s', tailVars: '--d:.5s', head: { eyes: 'happy', mouth: 'w' } }),
+  sp(30, 58, 1) + st5(172, 48, 7, .5, SOFT) + sp(176, 84, .6, .9)));
+add('Party time', 'Lesson complete', 'mood', () => wrapSvg(
+  sit({ bodyCls: 'a-bigjump', tailVars: '--d:.5s', head: { eyes: 'happy', mouth: 'open' } }), burst(100, 52)));
+add('Teary', 'Wrong answer (gentle)', 'mood', () => wrapSvg(
+  sit({ bodyCls: 'a-sink', tailCls: 'a-wag', tailVars: '--d:4s', head: { eyes: 'sadtear', mouth: 'frown', droop: 18, earCls: '' } })));
+add('Hmm…', 'Thinking · loading answer', 'mood', () => wrapSvg(
+  sit({ noPawL: true, head: { eyes: 'up', cls: 'a-tilt', vars: '--d:3.2s' },
+    front: stroke('M74 156 C76 140 86 132 96 132', 13) + paw(99, 131, 9, 8) }), dots(146, 26)));
+add('Gasp!!', 'New badge · surprise', 'mood', () => wrapSvg(
+  sit({ bodyCls: 'a-jolt', head: { eyes: 'big', mouth: 'o', earCls: '' } }), bang(158, 10)));
+add('Smitten', 'Saved word · favourites', 'mood', () => wrapSvg(
+  sit({ bodyCls: 'a-rock', head: { eyes: 'heart', mouth: 'w', cls: 'a-tilt' } }), heartsUp(150, 64)));
+add('Dizzy', 'Too many mistakes in a row', 'mood', () => wrapSvg(
+  sit({ bodyCls: 'a-rock', bodyVars: '--d:1.6s', head: { eyes: 'spiral', mouth: 'o', earCls: '' } }), orbit(101, 30)));
+add('Grumpy', 'Streak lost', 'mood', () => wrapSvg(
+  sit({ bodyCls: 'a-puff', tailCls: 'a-lash', head: { eyes: 'angry', mouth: 'frown', earCls: '', droop: 10 } }), anger(170, 40), { filter: 'fuzz' }));
+add('Unimpressed', 'Skipped lesson', 'mood', () => wrapSvg(
+  sit({ tailCls: 'a-flick', tailVars: '--d:2.6s', head: { eyes: 'side', mouth: 'flat', earCls: '' } }), dots(146, 30)));
+add('You got this', 'Encouragement before a test', 'mood', () => wrapSvg(
+  sit({ noPawL: true, head: { eyes: 'wink', mouth: 'w', cls: 'a-tilt' },
+    front: `<g ${A('a-pulse', 66, 160, '--d:1.4s')}>${stroke('M68 160 C54 152 44 140 38 122', 14)}<path d="M30 118 C28 110 34 104 40 106 C42 100 50 101 50 108 C51 116 46 122 39 122 C33 122 30 121 30 118 Z" fill="${I}"/></g>` }),
+  sp(172, 70, .8, 0) + sp(22, 92, .6, .7, SOFT)));
+add('Perfect score', '100% result', 'mood', () => wrapSvg(
+  sit({ bodyCls: 'a-hop', bodyVars: '--d:1s', head: { eyes: 'star', mouth: 'open' } }),
+  sp(30, 50, 1) + sp(172, 44, 1.1, .4) + st5(176, 92, 6, .8, SOFT) + st5(24, 96, 5, 1.1, SOFT)));
+
+/* — Full-body poses — */
+add('Loaf', 'Empty state · nothing here yet', 'pose', () => wrapSvg(loaf(), ''));
+add('Snooze', 'Inactive for a while · night', 'pose', () => wrapSvg(ball(), zzz(150, 92)));
+add('Strut', 'Start lesson · let’s go', 'pose', () => {
+  const leg = (x, cls) => `<g ${A(cls, x, 132, '--d:.55s')}>${stroke(`M${x} 132 L${x} 184`, 12)}</g>`;
+  return wrapSvg(`<g ${A('a-bob', 110, 186, '--d:.55s')}>
+    <g ${A('a-wag', 166, 112)}>${stroke('M166 112 C186 104 190 76 180 58 C176 50 180 42 188 42', 9)}</g>
+    ${leg(92, 'a-legB')}${leg(154, 'a-legA')}
+    <path d="M62 116 C62 96 86 88 120 90 C152 92 170 102 170 120 C170 138 152 146 118 146 C84 146 62 136 62 116 Z" fill="${I}"/>
+    ${leg(78, 'a-legA')}${leg(140, 'a-legB')}
+    <g ${T(66, 86, .8)}>${head({ eyes: 'ring', mouth: 'w' })}</g></g>`);
+});
+add('Zoomies', 'Speed round · timed quiz', 'pose', () => {
+  const leg = (d, ox, oy, cls) => `<g ${A(cls, ox, oy, '--d:.28s')}>${stroke(d, 11)}</g>`;
+  return wrapSvg(`<g ${A('a-bob', 110, 140, '--d:.28s')}>
+    <g ${A('a-wag', 158, 110, '--d:.4s')}>${stroke('M158 110 C174 104 186 108 196 100', 9)}</g>
+    ${leg('M82 130 L58 158', 82, 130, 'a-legB')}${leg('M152 124 L184 136', 152, 124, 'a-legA')}
+    <path d="M54 112 C54 98 76 92 110 94 C142 96 160 104 160 116 C160 128 142 134 110 134 C78 134 54 126 54 112 Z" fill="${I}"/>
+    ${leg('M70 126 L42 146', 70, 126, 'a-legA')}${leg('M142 126 L172 146', 142, 126, 'a-legB')}
+    <g ${T(56, 98, .78)}>${head({ eyes: 'focus', droop: 16, earCls: '' })}</g></g>`, speed(168, 150) + speed(160, 70, 2));
+});
+add('Pounce', 'New challenge unlocked', 'pose', () => wrapSvg(`<g ${A('a-pounce', 100, 180)}>
+    <g ${A('a-wag', 156, 104, '--d:.7s')}>${stroke('M156 104 C176 92 186 70 180 52', 9)}</g>
+    <path d="M52 120 C50 100 74 90 108 92 C140 94 160 100 162 116 C164 132 142 140 108 140 C76 140 54 136 52 120 Z" fill="${I}" transform="rotate(-10 108 116)"/>
+    ${stroke('M62 132 L34 150 M74 138 L48 160', 11)}${stroke('M144 122 L178 132 M150 114 L184 116', 11)}
+    <g ${T(58, 104, .78, -8)}>${head({ eyes: 'focus', mouth: 'open', earCls: '' })}</g></g>`,
+  `<ellipse cx="106" cy="190" rx="54" ry="6" fill="currentColor" ${A('a-shadow', 106, 190)}/>`));
+add('Big stretch', 'Break time', 'pose', () => wrapSvg(`<g ${A('a-stretch', 30, 186, '--d:2.8s')}>
+    <g ${A('a-wag', 172, 112, '--d:1.8s')}>${stroke('M172 112 C188 98 192 72 180 54', 9)}</g>
+    ${stroke('M156 128 L160 184 M170 120 L176 182', 12)}
+    <ellipse cx="120" cy="140" rx="58" ry="26" fill="${I}" transform="rotate(-28 120 140)"/>
+    ${stroke('M84 166 L32 182 M92 172 L42 189', 12)}
+    <g ${T(56, 152, .74, -10)}>${head({ eyes: 'closed', mouth: 'yawn', earCls: '' })}</g></g>`, ''));
+add('Flop', 'Out of hearts · tired', 'pose', () => wrapSvg(`<g ${A('a-breathe', 100, 192, '--d:3.6s')}>
+    ${stroke('M34 170 L12 160 M36 184 L14 192 M164 184 L186 192', 11)}
+    <g ${A('a-flick', 166, 170, '--d:2.4s')}>${stroke('M166 170 L188 160', 11)}</g>
+    <path d="M22 176 C20 162 50 152 100 152 C150 152 180 162 178 176 C176 188 150 192 100 192 C50 192 24 188 22 176 Z" fill="${I}"/>
+    <g ${T(100, 150, .78)}>${head({ eyes: 'x', mouth: 'flat', droop: 22, earCls: '' })}</g></g>`, ''));
+add('Belly up', 'Silly · easter egg', 'pose', () => {
+  const kick = (d, ox, oy, cls) => `<g ${A(cls, ox, oy)}>${stroke(d, 11)}</g>`;
+  return wrapSvg(`<g ${A('a-roll', 106, 186)}>
+    ${kick('M78 128 L68 100', 78, 128, 'a-kickA')}${kick('M96 124 L92 96', 96, 124, 'a-kickB')}${kick('M118 124 L124 96', 118, 124, 'a-kickA')}${kick('M136 128 L148 102', 136, 128, 'a-kickB')}
+    <g ${A('a-wag', 164, 160, '--d:.8s')}>${stroke('M164 160 C182 166 192 154 188 140', 9)}</g>
+    <ellipse cx="106" cy="154" rx="60" ry="32" fill="${I}"/>
+    <g ${T(54, 138, .74, -28)}>${head({ eyes: 'happy', mouth: 'open', earCls: '' })}</g></g>`, sp(170, 70, .9) + sp(36, 80, .6, .6, SOFT));
+});
+add('Spooked', 'Error · connection lost', 'pose', () => wrapSvg(`<g ${A('a-shake', 100, 190)}>
+    ${stroke('M156 130 C176 112 182 80 172 52', 14)}
+    ${stroke('M66 154 L64 188 M84 156 L84 189 M134 156 L136 189 M152 154 L156 188', 11)}
+    <path d="M58 160 C54 120 74 82 108 80 C142 78 164 116 160 160 C150 156 136 154 122 156 L96 156 C82 154 68 156 58 160 Z" fill="${I}"/>
+    <g ${T(62, 100, .78)}>${head({ eyes: 'big', mouth: 'fang', earCls: '', droop: -6 })}</g></g>`,
+  bang(170, 14), { filter: 'fuzz' }));
+add('Reach', 'Level up', 'pose', () => wrapSvg(`<g ${A('a-breathe', 100, 190)}>
+    <g ${A('a-wag', 128, 186)}>${stroke('M128 186 C150 190 166 176 162 156 C160 146 166 140 172 142', 9)}</g>
+    <path d="M74 190 C60 190 56 174 60 156 C64 134 72 118 84 106 L120 106 C132 120 140 140 142 160 C144 178 138 190 124 190 Z" fill="${I}"/>
+    ${stroke('M80 122 C76 136 78 148 84 154', 12)}
+    <g ${A('a-reach', 120, 116)}>${stroke('M120 116 C130 94 138 66 144 42', 14)}${paw(145, 35, 10, 9)}</g>
+    <g ${T(98, 88, .84, -6)}>${head({ eyes: 'up', earCls: '' })}</g></g>`, scratch(138, 4)));
+add('Bye for now', 'Logout · end of session', 'pose', () => wrapSvg(
+  sit({ noPaws: true, tail: ['M100 188 C124 194 146 178 140 154 C136 140 146 132 156 136', 100, 188], tailVars: '--d:1.8s',
+    head: { eyes: 'none', cls: 'a-tilt', vars: '--d:3s' } }), ''));
+add('Tail chase', 'Loading spinner', 'pose', () => wrapSvg(`<g ${A('a-spin', 100, 112, '--d:2.2s')}>
+    ${stroke('M100 66 A46 46 0 1 1 54 112', 30)}
+    ${stroke('M100 66 C88 50 70 56 66 74', 9)}
+    <g ${T(56, 108, .6, -24)}>${head({ eyes: 'focus', earCls: '' })}</g></g>`, ''));
+add('Sneaky', 'Get ready · countdown', 'pose', () => wrapSvg(`
+    <g ${A('a-wiggle', 160, 190)}>
+      <circle cx="152" cy="160" r="30" fill="${I}"/>
+      <g ${A('a-flick', 178, 152, '--d:1.2s')}>${stroke('M178 152 C192 146 198 158 194 172', 9)}</g>
+    </g>
+    <path d="M44 178 C44 162 64 154 96 154 C124 154 140 142 156 142 C172 142 176 160 174 176 C172 186 168 190 150 190 L58 190 C48 190 44 186 44 178 Z" fill="${I}"/>
+    ${PAWL}
+    <g ${T(60, 152, .72)}>${head({ eyes: 'dart', earCls: '' })}</g>`, ''));
+add('Study buddies', 'Classes · friends · league', 'pose', () => wrapSvg(
+  `<g transform="translate(-16 58) scale(.66) rotate(6 101 190)">${sit({ head: { eyes: 'closed', mouth: 'w', earCls: '' } })}</g>` +
+  `<g transform="translate(216 58) scale(-.66 .66) rotate(6 101 190)">${sit({ head: { eyes: 'closed', mouth: 'w', earCls: '' }, bodyVars: '--dl:.5s' })}</g>`,
+  heartsUp(90, 70)));
+add('Mochi', 'App icon · profile avatar', 'pose', () => wrapSvg(`<g ${A('a-jiggle', 100, 190)}>
+    <path d="M60 100 C56 82 58 66 64 50 C74 58 84 70 92 80 Z" fill="${I}"/><path d="M140 100 C144 82 142 66 136 50 C126 58 116 70 108 80 Z" fill="${I}"/>
+    <path d="M48 150 C42 116 58 72 100 72 C142 72 158 116 152 150 C148 176 128 190 100 190 C72 190 52 176 48 150 Z" fill="${I}"/>
+    ${blinkG(82, 124, `<ellipse cx="82" cy="124" rx="8" ry="11" fill="${W}"/>`)}${blinkG(118, 124, `<ellipse cx="118" cy="124" rx="8" ry="11" fill="${W}"/>`)}
+    ${stroke('M43 132 L26 128 M43 140 L27 143 M157 132 L174 128 M157 140 L173 143', 1.8)}</g>`, sp(170, 70, .7, 0, SOFT)));
+
+/* — Learning — */
+add('Bookworm', 'Reading practice', 'learn', () => wrapSvg(sit({ head: { eyes: 'read', earCls: '' }, front: `
+    <path d="M56 134 L100 142 L144 134 L144 174 L100 182 L56 174 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>
+    ${stroke('M100 142 L100 182', 2.5)}${stroke('M64 148 L92 153 M64 156 L92 161 M64 164 L86 168', 2)}
+    <g ${A('a-flip', 100, 160)}><path d="M100 142 L138 135 L138 172 L100 180 Z" fill="${W}" stroke="${I}" stroke-width="2.5" stroke-linejoin="round"/>${stroke('M108 152 L130 148 M108 160 L130 156', 2)}</g>
+    ${paw(56, 152)}${paw(144, 152)}` }), ''));
+add('Listening', 'Listening practice', 'learn', () => wrapSvg(sit({ head: { eyes: 'closed', mouth: 'w', cls: 'a-nod', vars: '--d:.6s', noWhisk: true, earCls: '', acc: `
+    ${stroke('M-48 -4 C-50 -62 50 -62 48 -4', 10)}${stroke('M-48 -4 C-50 -62 50 -62 48 -4', 2.4, W)}
+    <rect x="-64" y="-10" width="18" height="30" rx="9" fill="${I}" stroke="${W}" stroke-width="2.6"/><rect x="46" y="-10" width="18" height="30" rx="9" fill="${I}" stroke="${W}" stroke-width="2.6"/>` },
+  tailVars: '--d:1.2s' }), notes(160, 70)));
+add('Chatterbox', 'Speaking practice', 'learn', () => wrapSvg(
+  shift(-22, 8, .92, sit({ head: { eyes: 'ring', mouth: 'open', cls: 'a-nod', vars: '--d:.5s' } })) +
+  `<g ${A('a-pop', 150, 70)}><path d="M120 18 L184 18 C190 18 194 22 194 28 L194 56 C194 62 190 66 184 66 L150 66 L134 80 L138 66 L120 66 C114 66 110 62 110 56 L110 28 C110 22 114 18 120 18 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>
+   <text x="152" y="50" text-anchor="middle" font-family="Bricolage Grotesque, system-ui" font-weight="800" font-size="22" fill="${I}">Hi!</text></g>`, ''));
+add('Scribbler', 'Writing practice', 'learn', () => wrapSvg(
+  shift(0, -6, 1, sit({ head: { eyes: 'read', earCls: '' } })) + `
+  <rect x="38" y="150" width="124" height="42" rx="3" fill="${W}" stroke="${I}" stroke-width="3.5" transform="rotate(-3 100 171)"/>
+  <path d="M52 172 C60 164 66 180 74 172 C82 164 88 180 96 172 C104 164 110 180 118 172" stroke="${I}" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-dasharray="120" ${A('a-draw', 52, 172, '--len:120')}/>
+  <g ${A('a-write', 118, 172)}><g transform="translate(118 172) rotate(28)"><rect x="-5" y="-46" width="10" height="36" fill="${W}" stroke="${I}" stroke-width="3"/><path d="M-5 -10 L0 0 L5 -10 Z" fill="${W}" stroke="${I}" stroke-width="3" stroke-linejoin="round"/><path d="M-1.8 -4 L0 0 L1.8 -4 Z" fill="${I}"/><ellipse cx="0" cy="-48" rx="10" ry="9" fill="${I}"/></g></g>`, ''));
+add('Smarty pants', 'Certificate · course complete', 'learn', () => wrapSvg(sit({ bodyCls: 'a-puff', head: { eyes: 'glasses', mouth: 'smile', cls: 'a-nod', vars: '--d:1.4s', earCls: '', acc: `
+    <path d="M-26 -42 L-26 -30 C-10 -24 10 -24 26 -30 L26 -42 Z" fill="${I}" stroke="${W}" stroke-width="2"/>
+    <path d="M-52 -46 L0 -64 L52 -46 L0 -30 Z" fill="${I}" stroke="${W}" stroke-width="2.6" stroke-linejoin="round"/>
+    <g ${A('a-swing', 38, -44)}>${stroke('M0 -47 L38 -44 L38 -22', 2, W)}<rect x="34" y="-24" width="8" height="10" rx="2" fill="${W}"/></g>` } }),
+  sp(28, 54, .8, 0) + sp(176, 92, .6, .6, SOFT)));
+add('Word nerd', 'Vocabulary', 'learn', () => wrapSvg(
+  shift(-30, 10, .86, sit({ head: { eyes: 'happy', mouth: 'w' }, noPawL: false })) + `
+  <rect x="118" y="156" width="34" height="34" rx="4" fill="${W}" stroke="${I}" stroke-width="3.5"/><text x="135" y="181" text-anchor="middle" font-family="Bricolage Grotesque, system-ui" font-weight="800" font-size="20" fill="${I}">A</text>
+  <rect x="154" y="156" width="34" height="34" rx="4" fill="${W}" stroke="${I}" stroke-width="3.5"/><text x="171" y="181" text-anchor="middle" font-family="Bricolage Grotesque, system-ui" font-weight="800" font-size="20" fill="${I}">B</text>
+  <g ${A('a-rock', 153, 156, '--d:1.2s')}><rect x="136" y="121" width="34" height="34" rx="4" fill="${W}" stroke="${I}" stroke-width="3.5"/><text x="153" y="146" text-anchor="middle" font-family="Bricolage Grotesque, system-ui" font-weight="800" font-size="20" fill="${I}">C</text></g>
+  ${paw(118, 172)}`, sp(176, 100, .7, .3)));
+add('Detective', 'Dictionary · search', 'learn', () => wrapSvg(sit({ head: { eyes: 'ringL', earCls: '' }, front: `
+  <g ${A('a-bob', 121, 96, '--d:1.8s')}>${stroke('M138 114 L166 156', 9)}${paw(168, 160)}
+  <circle cx="121" cy="96" r="25" fill="${I}" stroke="${W}" stroke-width="5"/>
+  <circle cx="121" cy="96" r="17" fill="${I}" stroke="${W}" stroke-width="4"/><g ${A('a-dart', 121, 96)}>${dotC(121, 97, 6)}</g></g>` }), ''));
+add('Typing away', 'AI writing checker', 'learn', () => wrapSvg(`
+  <g ${T(100, 84, .8)}>${head({ eyes: 'dart' })}</g>
+  <rect x="44" y="92" width="112" height="74" rx="6" fill="${W}" stroke="${I}" stroke-width="4"/>
+  <g ${T(100, 132, .2)}><path d="${EARL}" fill="${I}"/><path d="${EARR}" fill="${I}"/><path d="${HEAD}" fill="${I}"/></g>
+  <path d="M28 166 L172 166 L186 182 C187 185 185 187 182 187 L18 187 C15 187 13 185 14 182 Z" fill="${W}" stroke="${I}" stroke-width="4" stroke-linejoin="round"/>
+  <g ${A('a-tapA', 78, 172)}>${paw(78, 172, 11, 8)}</g><g ${A('a-tapB', 122, 172)}>${paw(122, 172, 11, 8)}</g>`, dots(158, 40)));
+add('Fishbowl', 'Pronunciation · dive in', 'learn', () => wrapSvg(`
+  <circle cx="100" cy="124" r="64" fill="${W}" stroke="${I}" stroke-width="5"/>
+  ${stroke('M44 104 C70 96 130 112 156 100', 2.4)}
+  <g ${A('a-bob', 100, 150, '--d:2.2s')}>
+    <path d="M70 128 C66 112 68 98 74 86 C82 94 88 100 94 108 Z" fill="${I}"/><path d="M130 128 C134 112 132 98 126 86 C118 94 112 100 106 108 Z" fill="${I}"/>
+    <path d="M62 160 C58 132 74 110 100 110 C126 110 142 132 138 160 C136 176 122 184 100 184 C78 184 64 176 62 160 Z" fill="${I}"/>
+    ${blinkG(86, 142, ringC(86, 142, 10, 3))}${blinkG(114, 142, ringC(114, 142, 10, 3))}
+  </g>
+  <rect x="58" y="52" width="84" height="12" rx="6" fill="${W}" stroke="${I}" stroke-width="4"/>`, bubbles(128, 104)));
+add('Peekaboo', 'Hints & tips', 'learn', () => wrapSvg(`
+  <g clip-path="url(#clipPeek)"><g ${A('a-peek', 100, 150, '--d:4s')}><g ${T(100, 122, .95)}>${head({ eyes: 'dart' })}</g></g></g>
+  <rect x="12" y="144" width="176" height="12" rx="6" fill="${I}"/>${pawT(72, 142)}${pawT(128, 142)}`, '',
+  { defs: '<clipPath id="clipPeek"><rect x="0" y="0" width="200" height="146"/></clipPath>' }));
+
+/* — Rewards — */
+add('On fire', 'Streak', 'reward', () => wrapSvg(
+  shift(-28, 12, .88, sit({ bodyCls: 'a-hop', bodyVars: '--d:1.1s', head: { eyes: 'happy', mouth: 'open' } })) + `
+  <g ${A('a-flicker', 152, 190)}>
+    <path d="M152 190 C128 190 118 170 124 150 C128 136 140 128 140 110 C152 120 160 132 158 146 C164 140 166 132 164 122 C178 136 184 160 176 176 C172 186 164 190 152 190 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M152 186 C142 186 138 176 142 166 C145 158 152 154 152 144 C160 152 164 166 160 176 C158 182 156 186 152 186 Z" fill="${I}"/></g>`,
+  sp(176, 90, .7, .2) + sp(118, 96, .5, .8, SOFT)));
+add('Champion', 'League #1', 'reward', () => wrapSvg(sit({ bodyCls: 'a-puff', head: { eyes: 'closed', mouth: 'w', earCls: '', acc: `
+    <path d="M-28 -40 L-33 -68 L-16 -54 L0 -76 L16 -54 L33 -68 L28 -40 Z" fill="${W}" stroke="${I}" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="0" cy="-50" r="3.5" fill="${I}"/>` } }), sp(52, 22, .8, 0) + sp(150, 18, .7, .6) + st5(172, 60, 6, 1, SOFT)));
+add('Badge earned', 'New badge', 'reward', () => wrapSvg(sit({ head: { eyes: 'happy', mouth: 'w' }, front: `
+  <g ${A('a-swing', 101, 124, '--d:2s')}>${stroke('M83 122 L101 152 L119 122', 4, W)}
+  <circle cx="101" cy="160" r="13" fill="${W}" stroke="${I}" stroke-width="3"/><path d="${star5(101, 160, 7)}" fill="${I}"/></g>` }), sp(30, 70, .8) + sp(172, 60, .7, .5, SOFT)));
+add('Snack time', 'XP reward', 'reward', () => wrapSvg(sit({ bodyCls: 'a-puff', head: { eyes: 'happy', earCls: '', acc: `
+  <g ${A('a-flap', 0, 28)}><path d="M-20 28 C-12 18 10 18 20 28 C10 38 -12 38 -20 28 Z" fill="${W}" stroke="${I}" stroke-width="2.6"/>
+  <path d="M20 28 L34 18 L32 38 Z" fill="${W}" stroke="${I}" stroke-width="2.6" stroke-linejoin="round"/><circle cx="-11" cy="26" r="2" fill="${I}"/>${stroke('M-3 22 C0 26 0 30 -3 34', 1.8)}</g>` } }),
+  sp(170, 60, .8, 0)));
+add('Skater', 'Streak momentum', 'reward', () => wrapSvg(`<g ${A('a-bob', 100, 180, '--d:.5s')}>
+  ${shift(22, 1, .78, loaf({ head: { eyes: 'happy', mouth: 'w' }, bodyCls: '' }))}
+  <path d="M30 150 C26 150 22 146 24 140 L36 146 L164 146 L176 140 C178 146 174 150 170 150 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>
+  <g ${A('a-spin', 58, 166, '--d:.5s')}><circle cx="58" cy="166" r="10" fill="${W}" stroke="${I}" stroke-width="3.5"/>${stroke('M58 159 L58 173', 2)}</g>
+  <g ${A('a-spin', 142, 166, '--d:.5s')}><circle cx="142" cy="166" r="10" fill="${W}" stroke="${I}" stroke-width="3.5"/>${stroke('M142 159 L142 173', 2)}</g></g>`, speed(2, 112) ));
+add('Bloom', 'Daily goal reached', 'reward', () => wrapSvg(`<g ${A('a-breathe', 101, 190)}>
+  <g ${A('a-wag', 146, 184)}>${stroke(TAIL, 9)}</g><path d="${BODY}" fill="${I}"/>${PAWL}${PAWR}
+  <g ${A('a-spin', 101, 86, '--d:10s')}>${[0, 1, 2, 3, 4, 5].map(k => `<ellipse cx="101" cy="40" rx="22" ry="30" fill="${W}" stroke="${I}" stroke-width="3.5" transform="rotate(${k * 60} 101 86)"/>`).join('')}</g>
+  <circle cx="101" cy="86" r="38" fill="${I}"/>
+  ${blinkG(86, 84, ringC(86, 84, 11, 3.2))}${blinkG(116, 84, ringC(116, 84, 11, 3.2))}
+  ${stroke('M95 101 Q98 105 101 101.5 Q104 105 107 101', 2.2, W)}</g>`, sp(172, 150, .7, .3) + sp(28, 150, .6, .9, SOFT)));
+add('Toast', '404 · page not found', 'reward', () => wrapSvg(`<g ${A('a-rock', 100, 190, '--d:2.8s')}>
+  <path d="M58 62 L64 22 L88 46 Z" fill="${I}"/><path d="M142 62 L136 22 L112 46 Z" fill="${I}"/>
+  <path d="M40 92 C30 92 24 80 28 68 C34 50 58 40 100 40 C142 40 166 50 172 68 C176 80 170 92 160 92 L160 176 C160 184 154 190 146 190 L54 190 C46 190 40 184 40 176 Z" fill="${W}" stroke="${I}" stroke-width="6" stroke-linejoin="round"/>
+  <ellipse cx="100" cy="122" rx="42" ry="36" fill="${I}"/>
+  ${blinkG(82, 120, ringC(82, 120, 11.5, 3.2))}${blinkG(118, 120, ringC(118, 120, 11.5, 3.2))}
+  ${stroke('M94 140 Q97 144 100 140.5 Q103 144 106 140', 2.2, W)}
+  <circle cx="60" cy="170" r="2" fill="${I}"/><circle cx="140" cy="68" r="2" fill="${I}"/><circle cx="148" cy="166" r="2" fill="${I}"/></g>`, dots(150, 22)));
+
+/* — App states — */
+add('Box cat', 'Empty inbox · no notifications', 'state', () => wrapSvg(`
+  <g ${A('a-peek', 100, 120)}><g ${T(100, 104, .86)}>${head({ eyes: 'dart' })}</g>${paw(80, 120)}${paw(120, 120)}</g>
+  <path d="M42 122 L24 102 L72 102 L84 122 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M158 122 L176 102 L128 102 L116 122 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M42 122 L158 122 L150 190 L50 190 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>
+  <circle cx="86" cy="152" r="3" fill="${I}"/><circle cx="114" cy="152" r="3" fill="${I}"/>${stroke('M94 162 L106 162', 2.6)}`, ''));
+add('Bag cat', 'Smarty Max · plans page', 'state', () => wrapSvg(`<g ${A('a-rock', 100, 190, '--d:2.6s')}>
+  ${stroke('M58 112 C56 76 86 76 86 112 M114 112 C116 76 144 76 142 112', 5)}
+  <g ${T(100, 96, .84)}>${head({ eyes: 'ring', mouth: 'w', cls: 'a-tilt' })}</g>
+  <path d="M36 110 L164 110 L172 186 C172 190 28 190 28 186 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>
+  ${stroke('M58 128 L64 150 M142 126 L136 148', 2)}
+  <text x="100" y="164" text-anchor="middle" font-family="Bricolage Grotesque, system-ui" font-weight="800" font-size="24" fill="${I}">MAX</text></g>`, sp(176, 72, .8) + sp(24, 80, .6, .6, SOFT)));
+add('Oops, deleted', 'Undo · removed item', 'state', () => {
+  let mesh = ''; for (let k = -8; k <= 10; k++) mesh += `M${k * 14} 100 L${k * 14 + 90} 190 M${k * 14 + 90} 100 L${k * 14} 190 `;
+  return wrapSvg(`
+  <g ${A('a-wag', 150, 172)}>${stroke('M150 172 C170 170 184 158 186 142', 9)}</g>
+  <g ${A('a-peek', 100, 110, '--d:3.8s')}><g ${T(100, 102, .82)}>${head({ eyes: 'ring' })}</g></g>
+  <path d="M42 100 L158 100 L148 190 L52 190 Z" fill="${I}"/>
+  <g clip-path="url(#clipBin)">${stroke(mesh, 2, W)}</g>
+  <rect x="36" y="94" width="128" height="11" rx="5.5" fill="${I}" stroke="${W}" stroke-width="2.5"/>`, '',
+  { defs: '<clipPath id="clipBin"><path d="M46 106 L154 106 L145 186 L55 186 Z"/></clipPath>' });
+});
+add('Wake up!', 'Study reminder', 'state', () => wrapSvg(
+  shift(-30, 12, .86, sit({ bodyCls: 'a-jolt', bodyVars: '--d:1.2s', head: { eyes: 'big', mouth: 'o', droop: 18, earCls: '' } })) + `
+  <g ${A('a-ring', 150, 150)}>
+    <circle cx="134" cy="118" r="9" fill="${W}" stroke="${I}" stroke-width="3.5"/><circle cx="166" cy="118" r="9" fill="${W}" stroke="${I}" stroke-width="3.5"/>
+    ${stroke('M134 168 L128 180 M166 168 L172 180', 4)}
+    <circle cx="150" cy="146" r="26" fill="${W}" stroke="${I}" stroke-width="4"/>${stroke('M150 146 L150 130 M150 146 L162 152', 3)}</g>`,
+  ringLines(150, 146)));
+add('Night owl', 'Late-night study', 'state', () => wrapSvg(`<g ${A('a-rock', 100, 112, '--d:4s')}>
+  <path d="M134 28 C84 32 50 68 50 112 C50 156 86 190 134 194 C104 178 88 146 88 112 C88 78 104 46 134 28 Z" fill="${W}" stroke="${I}" stroke-width="4" stroke-linejoin="round"/>
+  ${shift(66, 72, .62, ball())}</g>`, st5(166, 40, 7, 0) + sp(178, 92, .7, .7) + st5(150, 150, 5, 1.2, SOFT) + zzz(150, 70)));
+add('You’ve got mail', 'Notifications · class invite', 'state', () => wrapSvg(sit({ head: { eyes: 'happy', mouth: 'w' }, front: `
+  <g ${A('a-bob', 100, 150, '--d:1.6s')}>
+  <rect x="62" y="128" width="76" height="48" rx="4" fill="${W}" stroke="${I}" stroke-width="3.5"/>${stroke('M63 131 L100 158 L137 131', 3)}
+  <path d="${heartD(100, 158, 1)}" fill="${I}"/>${paw(60, 152)}${paw(140, 152)}</g>` }),
+  `<g ${A('a-pop', 150, 118, '--d:1.8s')}><circle cx="150" cy="118" r="10" fill="currentColor"/><text x="150" y="123" text-anchor="middle" font-family="Bricolage Grotesque, system-ui" font-weight="800" font-size="14" fill="var(--paper)">1</text></g>`));
+add('Playtime', 'Practice games', 'state', () => wrapSvg(
+  shift(-28, 8, .88, sit({ head: { eyes: 'focus', cls: '', earCls: '' },
+    front: `<g ${A('a-swat', 128, 136)}>${stroke('M128 136 C140 146 150 158 158 170', 13)}${paw(160, 174, 10, 9)}</g>` })) + `
+  <g ${A('a-rollball', 152, 168)}><circle cx="152" cy="168" r="21" fill="${W}" stroke="${I}" stroke-width="3.5"/>
+  ${stroke('M138 158 C148 150 162 156 168 166 M136 172 C148 176 162 172 170 160 M144 184 C152 174 164 176 168 182', 2)}</g>`, ''));
+
+add('Coffee break', 'Pause · come back later', 'state', () => wrapSvg(sit({ head: { eyes: 'closed', mouth: 'w', cls: 'a-tilt', vars: '--d:3.4s' }, front: `
+  <g ${A('a-bob', 100, 160, '--d:2.4s')}>
+  <path d="M120 146 C134 146 134 166 120 166" stroke="${I}" stroke-width="4" fill="none"/>
+  <path d="M78 136 L122 136 L118 176 C117 180 114 182 110 182 L90 182 C86 182 83 180 82 176 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>
+  ${stroke('M86 146 L114 146', 2)}${paw(76, 158)}${paw(124, 160)}</g>` }),
+  [0, 1, 2].map(i => `<path d="M${92 + i * 8} 128 q-5 -8 0 -16 q5 -8 0 -16" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" ${A('a-float', 96, 120, `--dl:${i * .6}s;--d:2.4s;--fx-x:2px`)}/>`).join('')));
+add('Side peek', 'Tooltip · “psst, try this”', 'state', () => wrapSvg(`
+  <g ${A('a-dart', 118, 100, '--d:3.4s')}>
+    <g ${T(112, 96, .9, 10)}>${head({ eyes: 'dart', earCls: '' })}</g>
+  </g>
+  <rect x="146" y="10" width="44" height="184" rx="4" fill="${W}" stroke="${I}" stroke-width="4"/>
+  ${stroke('M156 96 L156 112', 3)}
+  ${pawT(146, 116)}`, ''));
+add('Surprise gift', 'Chest / reward unlocked', 'reward', () => wrapSvg(
+  shift(-30, 12, .86, sit({ bodyCls: 'a-hop', bodyVars: '--d:1.2s', head: { eyes: 'big', mouth: 'open', earCls: '' } })) + `
+  <rect x="122" y="138" width="56" height="50" rx="3" fill="${W}" stroke="${I}" stroke-width="3.5"/>
+  <rect x="145" y="138" width="10" height="50" fill="${I}"/>
+  <g ${A('a-jolt', 150, 132, '--d:1.2s')}>
+    <rect x="116" y="124" width="68" height="16" rx="3" fill="${W}" stroke="${I}" stroke-width="3.5"/>
+    <rect x="145" y="124" width="10" height="16" fill="${I}"/>
+    ${stroke('M150 124 C138 108 128 116 138 122 M150 124 C162 108 172 116 162 122', 4)}
+  </g>`, sp(150, 96, 1, 0) + sp(126, 108, .6, .5, SOFT) + sp(176, 104, .7, .9)));
+</script>
+<script src="kit2.js"></script>
+<script src="set-a.js"></script>
+<script src="set-b.js"></script>
+<script src="set-c.js"></script>
+<script src="set-sig.js"></script>
+<script>
+/* ═════════ Board UI ═════════ */
+const CATS = [['all', 'All'], ['orig', 'First 55'], ['pers', 'Personality'], ['feed', 'Answer feedback'], ['read', 'Reading'], ['listen', 'Listening'], ['speak', 'Speaking'], ['write', 'Writing'],
+  ['vocab', 'Vocab & grammar'], ['flow', 'Lesson flow'], ['streak', 'Streaks'], ['achieve', 'Achievements'], ['game', 'Games'], ['social', 'Friends'], ['state2', 'App states'],
+  ['premium', 'Premium'], ['season', 'Seasonal'], ['egg', 'Easter eggs'], ['sig', 'Signature']];
+const ORIG = new Set(['mood', 'pose', 'learn', 'reward', 'state']);
+const match = (s, k) => k === 'all' || (k === 'orig' ? ORIG.has(s.cat) : s.cat === k);
+const grid = document.getElementById('grid'), chips = document.getElementById('chips');
+const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+let filter = 'all';
+try { filter = localStorage.getItem('smarty.filter') || 'all'; } catch (e) {}
+if (!CATS.some(([k]) => k === filter)) filter = 'all';
+const pad = n => String(n).padStart(2, '0');
+const draw = s => { try { return s.svg(); } catch (e) { console.error('Sticker failed:', s.name, e); return `<p style="font:12px var(--font-mono);color:var(--muted)">draw error</p>`; } };
+
+function renderChips() {
+  chips.innerHTML = CATS.map(([k, label]) => {
+    const n = S.filter(s => match(s, k)).length;
+    return `<button class="chip" type="button" data-k="${k}" aria-pressed="${filter === k}">${label} <span class="n">${n}</span></button>`;
+  }).join('');
+}
+const cardHtml = (s, i) => `
+    <button class="card${s.cat === 'sig' ? ' sig' : ''}" type="button" data-i="${i}" aria-label="Sticker ${i + 1}: ${s.name}">
+      ${s.cat === 'sig' ? '<span class="ribbon">★ Signature</span>' : ''}<div class="stage st"></div>
+      <div class="meta"><div class="row"><span class="num">#${pad(i + 1)}</span><span class="name">${s.name}</span></div><span class="tag">${s.tag}</span></div>
+    </button>`;
+function renderGrid() {
+  const feat = filter === 'all' || filter === 'sig';
+  let html = '';
+  if (feat) html += `<h2 class="sect">Signature animations <small>#226–229 · the special ones, longer loops with a full story</small></h2><div class="feature">${S.map((s, i) => s.cat === 'sig' ? cardHtml(s, i) : '').join('')}</div>`;
+  if (filter !== 'sig') {
+    if (feat) html += `<h2 class="sect">All stickers <small>#1–225</small></h2>`;
+    html += S.map((s, i) => match(s, filter) && s.cat !== 'sig' ? cardHtml(s, i) : '').join('');
+  }
+  grid.innerHTML = html;
+  observe();
+}
+/* Stickers draw only when near the screen, and pause when they leave it. */
+function smil(st, on) {
+  const svg = st && st.querySelector('svg');
+  if (!svg || !svg.pauseAnimations) return;
+  (on && !reduce && !document.body.classList.contains('paused-all')) ? svg.unpauseAnimations() : svg.pauseAnimations();
+}
+function fill(card) { const st = card.querySelector('.st'); if (!st.firstChild) st.innerHTML = draw(S[+card.dataset.i]); return st; }
+let io;
+function observe() {
+  io && io.disconnect();
+  const cards = grid.querySelectorAll('.card');
+  if (!('IntersectionObserver' in window)) { cards.forEach(c => smil(fill(c), true)); return; }
+  io = new IntersectionObserver(es => es.forEach(e => {
+    const st = e.isIntersecting ? fill(e.target) : e.target.querySelector('.st');
+    st.classList.toggle('off', !e.isIntersecting); smil(st, e.isIntersecting);
+  }), { rootMargin: '240px' });
+  cards.forEach(c => io.observe(c));
+}
+chips.addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if (!b) return;
+  filter = b.dataset.k; try { localStorage.setItem('smarty.filter', filter); } catch (er) {}
+  renderChips(); renderGrid();
+});
+
+/* Modal */
+const modal = document.getElementById('modal'), mStage = document.getElementById('mStage');
+let cur = 0;
+function visible() { return S.map((s, i) => i).filter(i => match(S[i], filter)); }
+function openAt(i) {
+  cur = i; const s = S[i];
+  mStage.innerHTML = draw(s); smil(mStage, true);
+  document.getElementById('mNum').textContent = '#' + pad(i + 1);
+  document.getElementById('mName').textContent = s.name;
+  document.getElementById('mTag').textContent = 'Use for: ' + s.tag;
+  modal.hidden = false; document.getElementById('mClose').focus();
+}
+function step(d) { const v = visible(); const k = v.indexOf(cur); openAt(v[(k + d + v.length) % v.length]); }
+grid.addEventListener('click', e => { const c = e.target.closest('.card'); if (c) openAt(+c.dataset.i); });
+document.getElementById('mClose').onclick = () => { modal.hidden = true; mStage.innerHTML = ''; };
+document.getElementById('mPrev').onclick = () => step(-1);
+document.getElementById('mNext').onclick = () => step(1);
+modal.addEventListener('click', e => { if (e.target === modal) document.getElementById('mClose').click(); });
+document.addEventListener('keydown', e => {
+  if (modal.hidden) return;
+  if (e.key === 'Escape') document.getElementById('mClose').click();
+  if (e.key === 'ArrowRight') step(1);
+  if (e.key === 'ArrowLeft') step(-1);
+});
+
+/* Toggles */
+const paperBtn = document.getElementById('paperBtn'), pauseBtn = document.getElementById('pauseBtn');
+paperBtn.onclick = () => { const on = document.body.classList.toggle('paper-dark'); paperBtn.setAttribute('aria-pressed', on); };
+pauseBtn.onclick = () => {
+  const on = document.body.classList.toggle('paused-all'); pauseBtn.setAttribute('aria-pressed', on); pauseBtn.textContent = on ? 'Play all' : 'Pause all';
+  document.querySelectorAll('.st').forEach(st => smil(st, !st.classList.contains('off')));
+};
+
+renderChips(); renderGrid();
+</script>

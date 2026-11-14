@@ -46,16 +46,15 @@ async function authHeaders(): Promise<Record<string, string>> {
   const headers: Record<string, string> = { 'Content-Type': 'application/json' };
   const user = auth?.currentUser;
   if (!user) throw new AiExaminerError('Sign in required', 401);
-  const token = await user.getIdToken();
-  headers.Authorization = `Bearer ${token}`;
   return headers;
 }
 
-async function postAi<T>(body: Record<string, unknown>): Promise<T> {
+async function postAi<T>(body: Record<string, unknown>, signal?: AbortSignal): Promise<T> {
   const r = await fetch('/api/ai', {
     method: 'POST',
     headers: await authHeaders(),
     body: JSON.stringify(body),
+    signal,
   });
   let data: any = null;
   try { data = await r.json(); } catch { /* ignore */ }
@@ -107,6 +106,22 @@ export async function buddyTurn(opts: {
   level: string;
   contentLang: string;
   uiLang: string;
+  signal?: AbortSignal;
 }): Promise<{ reply: string; followUp: string; correctionNote: string }> {
-  return postAi({ action: 'buddy-turn', ...opts });
+  const { signal, ...body } = opts;
+  return postAi({ action: 'buddy-turn', ...body }, signal);
+}
+
+export type SmartyMood = 'happy' | 'laugh' | 'curious' | 'love' | 'surprised' | 'sleepy' | 'sad' | 'proud';
+
+/** Talking Smarty (Max): one chat turn with the cat, in the learner's target language. */
+export async function smartyTalk(opts: {
+  utterance: string;
+  history: { role: 'user' | 'assistant'; content: string }[];
+  contentLang: string;
+  uiLang: string;
+  level?: string;
+  name?: string;
+}, signal?: AbortSignal): Promise<{ reply: string; mood: SmartyMood; tip: string }> {
+  return postAi({ action: 'smarty-talk', ...opts }, signal);
 }

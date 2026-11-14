@@ -7,10 +7,8 @@
 // student to render the activity feed. Failures are swallowed and logged — the
 // student's flow never blocks on tracking.
 
-import {
-  collection, addDoc, query, where, orderBy, limit as fbLimit, getDocs,
-} from 'firebase/firestore';
-import { auth, db, isFirebaseConfigured } from '../firebase';
+import { auth } from '../firebase';
+import { dataRequest } from './selfHostedApi';
 
 export type ActivityType =
   | 'reading_pronunciation'    // Speaking out a reading text
@@ -72,7 +70,7 @@ function clean<T extends Record<string, any>>(obj: T): T {
  */
 export function logActivity(record: ActivityRecord): void {
   try {
-    if (!isFirebaseConfigured || !auth?.currentUser) return;
+    if (!auth?.currentUser) return;
     const uid = auth.currentUser.uid;
     const detailsArr = Array.isArray(record.details)
       ? record.details.slice(0, MAX_DETAILS).map((d) => (d && typeof d === 'object' ? clean(d) : d))
@@ -86,7 +84,7 @@ export function logActivity(record: ActivityRecord): void {
       details: detailsArr,
     });
 
-    addDoc(collection(db, 'studentActivity', uid, 'events'), payload).catch((err) => {
+    dataRequest('activity.add', { uid, record: payload }).catch((err) => {
       console.warn('[activity-tracker] failed to log activity:', err?.message || err);
     });
   } catch (err: any) {
@@ -96,15 +94,8 @@ export function logActivity(record: ActivityRecord): void {
 
 /** Fetch the latest N events for a single student — used by the teacher view. */
 export async function getStudentActivity(studentUid: string, count = 100): Promise<ActivityRecord[]> {
-  if (!isFirebaseConfigured) return [];
   try {
-    const q = query(
-      collection(db, 'studentActivity', studentUid, 'events'),
-      orderBy('timestamp', 'desc'),
-      fbLimit(count),
-    );
-    const snap = await getDocs(q);
-    return snap.docs.map(d => d.data() as ActivityRecord);
+    return await dataRequest<ActivityRecord[]>('activity.list', { studentUid, limit: count });
   } catch (err) {
     console.warn('[activity-tracker] failed to fetch activity:', err);
     return [];

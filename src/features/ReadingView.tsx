@@ -1,12 +1,10 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
+import { writeScopedJSON } from '../lib/userStorage';
+import { EmptyState } from '../components/feedback/EmptyState';
 import { Level } from '../lib/reading-logic';
 import { useLevelTexts } from '../data/levelTexts';
 import { WordPopover, sentenceAroundWord } from '../components/WordPopover';
-import {
-  BookOpen, AlertCircle, CheckCircle2, Clock, Volume2, X, ChevronRight,
-  ArrowLeft, Search, PlusCircle, Type, Plus, Mic, Download, Target,
-  AlignLeft, Award, RefreshCw, Trash2, Loader2, Square
-} from 'lucide-react';
+import { BookOpen, AlertCircle, CheckCircle2, Clock, Volume2, X, ChevronRight, ArrowLeft, Search, PlusCircle, Plus, Mic, Download, RefreshCw, Trash2, Loader2, Square } from 'lucide-react';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
 import { vocabStorageKey } from '../lib/contentLang';
@@ -104,6 +102,8 @@ interface ReadingViewProps {
   transcriptionUnavailable?: boolean;
   /** When true, only the pronunciation practice UI is shown (Lessons embed). */
   lessonEmbed?: boolean;
+  /** BiteRunner supplies its own navigation and completion controls. */
+  hideLessonNavigation?: boolean;
   /** When true, show Continue to Exercises even if this session isn't finished yet. */
   lessonExercisesReady?: boolean;
   onLessonBack?: () => void;
@@ -199,6 +199,7 @@ export function ReadingView(props: ReadingViewProps) {
           <HubRow
             icon={<BookOpen className="w-6 h-6" />}
             iconClass="bg-blue-50 text-blue-600"
+            sticker="read.page-hunter"
             title={t('reading.comp.title')}
             desc={t('reading.comp.desc')}
             onClick={() => setActiveTab('comprehensive')}
@@ -216,7 +217,7 @@ export function ReadingView(props: ReadingViewProps) {
               placeholder={t('reading.level.search')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-9 py-2.5 bg-white border border-slate-200 rounded-xl text-[13px] focus:outline-none focus:ring-2 focus:ring-zinc-700/30 focus:border-zinc-700"
+              className="w-full pl-10 pr-9 py-2.5 bg-white border-2 border-slate-200 rounded-2xl text-[13px] focus:outline-none focus:ring-2 focus:ring-zinc-700/30 focus:border-zinc-700"
             />
             {searchQuery && (
               <button onClick={() => setSearchQuery('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
@@ -229,10 +230,7 @@ export function ReadingView(props: ReadingViewProps) {
             <div className="flex flex-col gap-2">
               <p className="text-[12px] font-semibold text-slate-400">{t('reading.searchResults', { n: searchResults.length })}</p>
               {searchResults.length === 0 ? (
-                <div className="text-center py-10 border border-dashed border-slate-200 rounded-xl">
-                  <AlertCircle className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                  <p className="text-[13px] text-slate-500">{t('reading.searchEmpty', { query: searchQuery })}</p>
-                </div>
+                <EmptyState sticker="state2.no-results" title={t('empty.search.title')} body={t('reading.searchEmpty', { query: searchQuery })} className="border border-dashed border-slate-200 dark:border-zinc-800 rounded-xl" />
               ) : (
                 <LibraryCardGrid>
                   {searchResults.map(text => {
@@ -314,7 +312,7 @@ export function ReadingView(props: ReadingViewProps) {
               <ArrowLeft className="w-4 h-4" /> {t('action.backToLevels')}
             </button>
 
-            <div className="bg-white rounded-xl p-4 md:p-5 border border-slate-200">
+            <div className="bg-white rounded-2xl p-4 md:p-5 border-2 border-slate-200 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
                <div className="flex items-center gap-4 mb-10">
                   <div className="w-16 h-16 bg-zinc-100 text-zinc-900 rounded-2xl flex items-center justify-center shrink-0">
                      <PlusCircle className="w-8 h-8" />
@@ -332,7 +330,7 @@ export function ReadingView(props: ReadingViewProps) {
                       placeholder={t('custom.placeholder')}
                       value={customText}
                       onChange={(e) => setCustomText(e.target.value)}
-                      className="w-full h-48 p-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-200 focus:border-zinc-700 transition-all text-[15px] leading-relaxed resize-none scrollbar-hide"
+                      className="w-full h-48 p-4 bg-slate-50 border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-200 focus:border-zinc-700 transition-all text-[15px] leading-relaxed resize-none scrollbar-hide"
                     />
                   </div>
 
@@ -349,12 +347,12 @@ export function ReadingView(props: ReadingViewProps) {
                             if (trimmed && !savedCustomTexts.includes(trimmed)) {
                               setSavedCustomTexts(prev => {
                                 const next = [trimmed, ...prev];
-                                localStorage.setItem('readmaster_saved_custom_texts', JSON.stringify(next));
+                                writeScopedJSON('readmaster_saved_custom_texts', next);
                                 return next;
                               });
                             }
                           }}
-                          className="w-full sm:w-auto px-6 py-4 bg-white border border-slate-200 text-slate-600 hover:text-zinc-900 hover:bg-zinc-100 hover:border-zinc-300 disabled:opacity-50 disabled:cursor-not-allowed font-bold rounded-2xl transition-all shadow-sm"
+                          className="w-full sm:w-auto px-6 py-4 bg-white border-2 border-slate-200 text-slate-600 hover:text-zinc-900 hover:bg-zinc-100 hover:border-zinc-300 disabled:opacity-50 disabled:cursor-not-allowed font-bold rounded-2xl transition-all shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]"
                         >
                           {t('custom.saveText')}
                         </button>
@@ -376,10 +374,10 @@ export function ReadingView(props: ReadingViewProps) {
 
                {savedCustomTexts.length > 0 && (
                  <div className="mt-12 space-y-4">
-                   <h2 className="text-xl font-bold text-slate-800">{t('custom.savedList')}</h2>
+                   <h2 className="font-serif text-xl font-extrabold text-slate-800">{t('custom.savedList')}</h2>
                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                      {savedCustomTexts.map((text, idx) => (
-                       <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-zinc-300 hover:shadow-md transition-all cursor-pointer group flex flex-col justify-between" onClick={() => setCustomText(text)}>
+                       <div key={idx} className="bg-white p-6 rounded-2xl border-2 border-slate-200 hover:border-zinc-300 transition-all cursor-pointer group flex flex-col justify-between shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]" onClick={() => setCustomText(text)}>
                           <p className="text-slate-600 line-clamp-3 mb-4">{text}</p>
                           <div className="flex items-center justify-between text-sm">
                              <span className="text-slate-400 font-bold bg-slate-50 px-2.5 py-1 rounded-md">{t('common.wordsCount', { n: text.split(/\s+/).filter(Boolean).length })}</span>
@@ -388,7 +386,7 @@ export function ReadingView(props: ReadingViewProps) {
                                  e.stopPropagation();
                                  setSavedCustomTexts(prev => {
                                    const next = prev.filter((_, i) => i !== idx);
-                                   localStorage.setItem('readmaster_saved_custom_texts', JSON.stringify(next));
+                                   writeScopedJSON('readmaster_saved_custom_texts', next);
                                    return next;
                                  });
                                }}
@@ -413,7 +411,7 @@ export function ReadingView(props: ReadingViewProps) {
             <div>
               <button
                 onClick={() => setReadingView('levels')}
-                className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-3 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm w-fit transition-colors"
+                className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-3 bg-white px-4 py-2 rounded-2xl border-2 border-slate-200 w-fit transition-colors shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]"
               >
                 <ArrowLeft className="w-4 h-4" /> {t('action.backToLevels')}
               </button>
@@ -422,7 +420,7 @@ export function ReadingView(props: ReadingViewProps) {
                 <span className="font-sans text-lg md:text-xl text-zinc-900 font-medium">{t('library.title')}</span>
               </h1>
             </div>
-            <div className="bg-white px-5 py-3 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center shrink-0">
+            <div className="bg-white px-5 py-3 rounded-2xl border-2 border-slate-200 flex flex-col items-center shrink-0 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
               <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">{t('library.levelProgress')}</span>
               <span className="text-2xl font-black text-zinc-900">
                 {LEVEL_TEXTS[level].filter(tx => sessionsForLang(history[tx.id], contentLang).length > 0).length}
@@ -452,7 +450,7 @@ export function ReadingView(props: ReadingViewProps) {
                   <p className="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-1">{t('library.continueBanner')}</p>
                   <p className="font-bold text-slate-800 text-sm truncate">{hasSnap ? `${t('library.resumeSession')} · ${title}` : title}</p>
                   {hasSnap && snap.timedMode && (
-                    <p className="text-xs text-emerald-700 mt-0.5">{snap.timeLeft}s left on timer</p>
+                    <p className="text-xs text-emerald-700 mt-0.5">{snap.timeLeft}{t("learning.s.left.on.timer.40a95b")}</p>
                   )}
                 </div>
                 <button
@@ -543,7 +541,7 @@ export function ReadingView(props: ReadingViewProps) {
       {/* ── 5. Practice ── */}
       {effectiveView === 'practice' && (
         <>
-          <main className="flex-grow flex flex-col items-center px-4 py-4 md:px-12 md:py-10 overflow-y-auto w-full bg-white dark:bg-zinc-950 relative pb-[calc(64px+0.75rem)] lg:pb-20">
+          <main className={`flex-grow flex flex-col items-center px-4 py-4 md:px-12 md:py-10 overflow-y-auto w-full bg-white dark:bg-zinc-950 relative ${lessonEmbed ? 'pb-36' : 'pb-[calc(64px+7rem)] lg:pb-32'}`}>
 
 
             <div className={`max-w-4xl w-full flex items-center mb-4 relative z-10 gap-3 flex-wrap ${lessonEmbed ? 'justify-end' : 'justify-between'}`}>
@@ -560,29 +558,28 @@ export function ReadingView(props: ReadingViewProps) {
                       setReadingView('library');
                     }
                   }}
-                  className="text-sm font-semibold text-slate-600 hover:text-zinc-900 flex items-center gap-2 transition-all bg-white hover:bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md"
+                  className="text-sm font-semibold text-slate-600 hover:text-zinc-900 flex items-center gap-2 transition-all bg-white hover:bg-slate-50 px-3 py-1.5 rounded-2xl border-2 border-slate-200 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]"
                 >
                   <ArrowLeft className="w-4 h-4" /> {isCustomMode ? t('action.backToEntry') : t('action.backToLibrary')}
                 </button>
                )}
-                {lessonEmbed && (isFinished || lessonExercisesReady) && (
+                {lessonEmbed && !props.hideLessonNavigation && (isFinished || lessonExercisesReady) && (
                   <button
                     onClick={() => onLessonContinue?.()}
                     className="text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-700 px-4 py-2 rounded-xl shadow-sm"
-                  >
-                    Continue to Exercises <ChevronRight className="w-4 h-4 inline" />
+                  >{t("learning.continue.to.exercises.318bcb")}{' '}<ChevronRight className="w-4 h-4 inline" />
                   </button>
                 )}
             </div>
 
-            <div className="max-w-4xl w-full bg-white dark:bg-zinc-900 rounded-2xl md:rounded-[2rem] p-4 sm:p-6 md:p-10 border border-slate-200 dark:border-zinc-700 shadow-xl shadow-slate-200/50 relative z-10 transition-all">
+            <div className={`relative z-10 w-full max-w-3xl ${lessonEmbed ? '' : 'rounded-3xl border-2 border-slate-200 bg-white p-4 shadow-[0_4px_0_0_#e2e8f0] dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-[0_4px_0_0_#27272a] sm:p-6 md:p-8'}`}>
               {recognitionError ? (
                  <div className="px-4 py-4 bg-rose-50 text-rose-600 rounded-2xl text-sm font-medium border border-rose-100 mb-4 shadow-sm flex flex-col sm:flex-row items-center gap-4">
                    <div className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center shrink-0">
                     <AlertCircle className="w-5 h-5 text-rose-600" />
                    </div>
                    <div className="flex-1 text-center sm:text-left">
-                     <p className="font-bold text-base mb-1">Microphone Connection Issue</p>
+                     <p className="font-bold text-base mb-1">{t("learning.microphone.connection.issue.e4bb60")}</p>
                      <p className="text-rose-500 mb-3 text-sm">{recognitionError}</p>
                      <div className="flex flex-wrap justify-center sm:justify-start gap-2">
                        <button
@@ -591,83 +588,26 @@ export function ReadingView(props: ReadingViewProps) {
                            toggleRecording();
                          }}
                          className="px-4 py-1.5 bg-rose-600 text-white font-bold rounded-xl hover:bg-rose-700 transition-all shadow-md hover:shadow-rose-200 text-sm"
-                       >
-                         Try Again
-                       </button>
+                       >{t("action.tryAgain")}</button>
                        <button
                          onClick={() => setRecognitionError(null)}
                          className="px-4 py-1.5 bg-white text-rose-600 border border-rose-200 font-bold rounded-xl hover:bg-rose-50 transition-all text-sm"
-                       >
-                         Dismiss
-                       </button>
+                       >{t("smarty.dismiss")}</button>
                      </div>
                    </div>
                  </div>
               ) : null}
 
-              <header className="flex flex-col gap-3 mb-5 md:mb-8 border-b border-slate-100 pb-4 md:pb-6">
-                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
-                  <div className="flex-1 min-w-0">
-                    <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-zinc-100 text-zinc-900 rounded-md text-[10px] font-bold uppercase tracking-wider mb-2">
-                      <BookOpen className="w-3 h-3" />
-                      {isCustomMode ? t('custom.label') : tLevel(level)}
-                    </div>
-                    <h1 className="text-lg sm:text-2xl md:text-3xl font-serif font-bold text-slate-900 tracking-tight leading-snug">{currentTextObj.title}</h1>
-                  </div>
-                  <div className="flex items-center gap-3 shrink-0 bg-slate-50 dark:bg-zinc-800 px-3 py-2 rounded-xl border border-slate-100 dark:border-zinc-700">
-                    <div className="flex flex-col">
-                      <span className="text-[9px] uppercase font-bold text-slate-400 tracking-wider">Words</span>
-                      <span className="text-base font-mono font-bold text-slate-800 leading-tight">{sourceWords.length}</span>
-                    </div>
-                    <div className="w-px h-7 bg-slate-200"></div>
-                    <div className="flex flex-col">
-                      <span className="text-[9px] uppercase font-bold text-slate-400 tracking-wider">Target</span>
-                      <span className="text-base font-mono font-bold text-slate-800 flex items-center gap-1 leading-tight">
-                        <Clock className="w-3.5 h-3.5 text-slate-400" />
-                        {targetTime}s
-                      </span>
-                    </div>
-                  </div>
+              <header className="mb-5 flex flex-col gap-3">
+                <div className="min-w-0">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-0.5 font-serif text-[11px] font-extrabold uppercase tracking-wide text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
+                    <BookOpen className="h-3 w-3" />{isCustomMode ? t('custom.label') : tLevel(level)}
+                    <span className="text-slate-400">· {t('read.wordsCount', { n: sourceWords.length })}</span>
+                  </span>
+                  <h1 className="mt-2 font-serif text-2xl font-extrabold leading-snug tracking-tight text-zinc-900 dark:text-zinc-50 md:text-3xl">{currentTextObj.title}</h1>
                 </div>
-
-                <div className="bg-slate-50 dark:bg-zinc-800/80 border border-slate-200 dark:border-zinc-700 rounded-xl px-3 py-2.5 flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-4">
-                  <div className="flex items-center gap-4 flex-1 min-w-0">
-                    <div className="flex items-center gap-2 flex-1 min-w-0">
-                      <Type className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                      <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider shrink-0">Size</span>
-                      <input
-                        type="range"
-                        min="1"
-                        max="5"
-                        step="1"
-                        value={fontScale}
-                        onChange={(e) => setFontScale(parseInt(e.target.value))}
-                        className="flex-1 min-w-0 max-w-[7rem] h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-zinc-900"
-                      />
-                      <span className="text-[10px] font-mono font-bold text-slate-600 w-3">{fontScale}</span>
-                    </div>
-                    <div className="flex items-center gap-2 flex-1 min-w-0">
-                      <Volume2 className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                      <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider shrink-0">Speed</span>
-                      <input
-                        type="range"
-                        min={0}
-                        max={SPEECH_RATE_PRESETS.length - 1}
-                        step={1}
-                        value={speechRateToIndex(speechRate)}
-                        onChange={(e) => setSpeechRate(speechRateFromIndex(parseInt(e.target.value, 10)))}
-                        className="flex-1 min-w-0 max-w-[7rem] h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-zinc-900"
-                        aria-label="Adjust speech speed"
-                        aria-valuetext={SPEECH_RATE_LABELS[snapSpeechRate(speechRate)]}
-                      />
-                      <span className="text-[10px] font-mono font-bold text-slate-600 w-12 text-right">
-                        {SPEECH_RATE_LABELS[snapSpeechRate(speechRate)]}
-                      </span>
-                    </div>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={async () => {
+                <div className="flex items-center gap-2">
+                  <button type="button" onClick={async () => {
                       if (isSpeakingPassage) {
                         stopPassageListen();
                         return;
@@ -711,17 +651,18 @@ export function ReadingView(props: ReadingViewProps) {
                         setListenWordIndex(-1);
                       }
                     }}
-                    className={`shrink-0 flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors ${
-                      isSpeakingPassage
-                        ? 'bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100'
-                        : 'bg-zinc-900 text-white hover:bg-black'
-                    }`}
-                  >
-                    {isSpeakingPassage ? (
-                      <><Square className="w-3.5 h-3.5 fill-current" /> Stop</>
-                    ) : (
-                      <><Volume2 className="w-3.5 h-3.5" /> Listen</>
-                    )}
+                    className={`dark-keep inline-flex flex-1 items-center justify-center gap-2 rounded-2xl py-2.5 font-serif text-[13px] font-extrabold uppercase tracking-wide transition-[transform,box-shadow] duration-75 active:translate-y-[3px] active:shadow-none sm:flex-none sm:px-5 ${isSpeakingPassage ? 'bg-rose-500 text-white shadow-[0_3px_0_0_#9f1239]' : 'bg-zinc-900 text-white shadow-[0_3px_0_0_#000] dark:bg-zinc-100 dark:text-zinc-900 dark:shadow-[0_3px_0_0_#a1a1aa]'}`}>
+                    {isSpeakingPassage ? <><Square className="h-4 w-4 fill-current" />{t('learning.stop.9e2534')}</> : <><Volume2 className="h-4 w-4" />{t('lesson.listen')}</>}
+                  </button>
+                  <button type="button" onClick={() => setFontScale(fontScale >= 5 ? 1 : fontScale + 1)} aria-label={t('learning.size.b71523')} title={t('learning.size.b71523')}
+                    className="inline-flex h-11 min-w-[52px] items-center justify-center gap-0.5 rounded-2xl border-2 border-slate-200 bg-white px-3 font-serif font-extrabold text-zinc-800 shadow-[0_3px_0_0_#e2e8f0] active:translate-y-[3px] active:shadow-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:shadow-[0_3px_0_0_#3f3f46]">
+                    <span className="text-xs">A</span><span className="text-lg leading-none">A</span>
+                    <span className="ml-1 flex gap-0.5">{[1, 2, 3, 4, 5].map((n) => <span key={n} className={`h-1.5 w-1.5 rounded-full ${n <= fontScale ? 'bg-zinc-900 dark:bg-zinc-100' : 'bg-slate-200 dark:bg-zinc-700'}`} />)}</span>
+                  </button>
+                  <button type="button" onClick={() => { const i = speechRateToIndex(speechRate); setSpeechRate(speechRateFromIndex(i >= SPEECH_RATE_PRESETS.length - 1 ? 0 : i + 1)); }}
+                    aria-label={t('learning.adjust.speech.speed.19fdae')} title={t('learning.speed.2d2cb0')}
+                    className="inline-flex h-11 items-center justify-center gap-1 rounded-2xl border-2 border-slate-200 bg-white px-3 font-serif text-xs font-extrabold text-zinc-800 shadow-[0_3px_0_0_#e2e8f0] active:translate-y-[3px] active:shadow-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100 dark:shadow-[0_3px_0_0_#3f3f46]">
+                    <Clock className="h-4 w-4 text-slate-400" />{SPEECH_RATE_LABELS[snapSpeechRate(speechRate)]}
                   </button>
                 </div>
               </header>
@@ -729,7 +670,7 @@ export function ReadingView(props: ReadingViewProps) {
               <div
                 dir={isRtl ? 'rtl' : 'ltr'}
                 lang={speechLocale || contentLang}
-                className={`font-serif leading-[1.8] text-slate-800 transition-all duration-300 relative ${
+                className={`relative rounded-2xl border-2 border-slate-200 bg-white p-4 font-semibold leading-[1.8] text-zinc-800 transition-all duration-300 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100 sm:p-6 ${
                 fontScale === 1 ? 'text-lg md:text-xl' :
                 fontScale === 2 ? 'text-xl md:text-2xl' :
                 fontScale === 3 ? 'text-xl md:text-3xl' :
@@ -766,9 +707,7 @@ export function ReadingView(props: ReadingViewProps) {
                     extraElements = (
                       <>
                         <span className="absolute -bottom-1 left-0 w-full h-[4px] bg-zinc-700 rounded-full animate-pulse shadow-[0_0_8px_rgba(99,102,241,0.6)]"></span>
-                        <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-[10px] px-2 py-1.5 rounded-lg whitespace-nowrap animate-in fade-in slide-in-from-bottom-2 pointer-events-none shadow-md font-sans">
-                          Reading...
-                        </span>
+                        <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-900 text-white text-[10px] px-2 py-1.5 rounded-lg whitespace-nowrap animate-in fade-in slide-in-from-bottom-2 pointer-events-none shadow-md font-sans">{t("learning.reading.48b240")}</span>
                       </>
                     );
                   } else if (status === 'pending' && !isRecording && !isFinished) {
@@ -790,7 +729,7 @@ export function ReadingView(props: ReadingViewProps) {
                         } else {
                           setClickedWordInfo({ word, index: i, cleanWord });
                         }
-                      }} title="Click for options">
+                      }} title={t("learning.click.for.options.36aec8")}>
                         {word}
                       </span>
                       {clickedWordInfo?.index === i && (
@@ -819,7 +758,7 @@ export function ReadingView(props: ReadingViewProps) {
                         {dialogue.turns.map((turn, ti) => (
                           <div key={ti} className="block">
                             {turn.speaker ? (
-                              <div className="font-sans text-[0.65em] md:text-[0.55em] font-bold uppercase tracking-wider text-zinc-500 mb-1 select-none pointer-events-none">
+                              <div className="pointer-events-none mb-1 inline-flex select-none rounded-full bg-slate-100 px-2.5 py-0.5 font-serif text-[0.55em] font-extrabold uppercase tracking-wider text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
                                 {turn.speaker}
                               </div>
                             ) : null}
@@ -838,15 +777,13 @@ export function ReadingView(props: ReadingViewProps) {
 
               {currentTextObj.vocabulary && currentTextObj.vocabulary.length > 0 && (
                 <details
-                  className="text-left mt-16 bg-slate-50 rounded-2xl border border-slate-200 group overflow-hidden"
+                  className="text-left mt-16 bg-slate-50 rounded-2xl border-2 border-slate-200 group overflow-hidden"
                   open={vocabOpen}
                   onToggle={(e) => setVocabOpen((e.target as HTMLDetailsElement).open)}
                 >
-                  <summary className="font-bold text-lg text-slate-800 p-6 flex items-center justify-between cursor-pointer list-none hover:bg-slate-100 transition-colors select-none">
+                  <summary className="font-serif font-extrabold text-lg text-slate-800 p-6 flex items-center justify-between cursor-pointer list-none hover:bg-slate-100 transition-colors select-none">
                     <span className="flex items-center gap-3">
-                       <BookOpen className="w-5 h-5 text-zinc-900" />
-                       Key Vocabulary
-                       <button
+                       <BookOpen className="w-5 h-5 text-zinc-900" />{t("learning.key.vocabulary.74d366")}<button
                          onClick={(e) => {
                            e.preventDefault();
                            e.stopPropagation();
@@ -873,8 +810,8 @@ export function ReadingView(props: ReadingViewProps) {
                          }`}
                          title={
                            (currentTextObj.vocabulary || []).every((w: any) => !!savedVocab[w.word.toLowerCase()])
-                             ? "All key vocabulary added"
-                             : "Add all key vocabulary words to My Vocabulary"
+                             ? t("learning.all.key.vocabulary.added.bec002")
+                             : t("learning.add.all.key.vocabulary.words.to.my.vocabulary.a5734a")
                          }
                        >
                          {(currentTextObj.vocabulary || []).every((w: any) => !!savedVocab[w.word.toLowerCase()])
@@ -882,8 +819,8 @@ export function ReadingView(props: ReadingViewProps) {
                            : <Plus className="w-3.5 h-3.5" />
                          }
                          {(currentTextObj.vocabulary || []).every((w: any) => !!savedVocab[w.word.toLowerCase()])
-                           ? "Added"
-                           : "Add All"
+                           ? t("learning.added.b68734")
+                           : t("learning.add.all.39c724")
                          }
                        </button>
                     </span>
@@ -898,7 +835,7 @@ export function ReadingView(props: ReadingViewProps) {
                             <span
                               onClick={() => playWord(v.word)}
                               className="font-bold text-slate-900 min-w-[120px] cursor-pointer hover:text-zinc-900 transition-colors flex items-center gap-2"
-                              title="Click to hear pronunciation"
+                              title={t("learning.click.to.hear.pronunciation.78cd5a")}
                             >
                               {v.word}
                               <Volume2 className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -919,7 +856,7 @@ export function ReadingView(props: ReadingViewProps) {
                                 });
                               }}
                               className={`ml-auto shrink-0 p-1.5 rounded-lg transition-colors border ${isSaved ? 'text-emerald-600 bg-emerald-50 border-emerald-200' : 'text-slate-400 border-slate-200 hover:text-zinc-900 hover:bg-zinc-100 hover:border-zinc-300'}`}
-                              title={isSaved ? "Remove from My Vocabulary" : "Add to My Vocabulary"}
+                              title={isSaved ? t("learning.remove.from.my.vocabulary.68146d") : t("learning.add.to.my.vocabulary.c6eb1d")}
                             >
                               {isSaved ? <CheckCircle2 className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                             </button>
@@ -936,154 +873,94 @@ export function ReadingView(props: ReadingViewProps) {
                 <button
                   disabled={!hasPrevText}
                   onClick={handlePrevText}
-                  className="w-full sm:w-auto px-6 py-3 border border-slate-200 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto px-6 py-3 border-2 border-slate-200 rounded-2xl text-sm font-semibold text-slate-600 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
                 >
-                  <ArrowLeft className="w-4 h-4" /> Previous Lesson
-                </button>
+                  <ArrowLeft className="w-4 h-4" />{' '}{t("learning.previous.lesson.83fd4c")}</button>
                 <button
                   disabled={!hasNextText}
                   onClick={handleNextText}
                   className="w-full sm:w-auto px-6 py-3 bg-zinc-100 text-black rounded-xl text-sm font-bold hover:bg-zinc-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
-                >
-                  Next Lesson <ChevronRight className="w-4 h-4" />
+                >{t("learning.next.lesson.74ed89")}{' '}<ChevronRight className="w-4 h-4" />
                 </button>
               </div>
               )}
-              {lessonEmbed && (isFinished || lessonExercisesReady) && (
+              {lessonEmbed && !props.hideLessonNavigation && (isFinished || lessonExercisesReady) && (
                 <div className="mt-12 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <button
                     onClick={() => onLessonBack?.()}
-                    className="w-full sm:w-auto px-6 py-3 border border-slate-200 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-6 py-3 border-2 border-slate-200 rounded-2xl text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-colors flex items-center justify-center gap-2"
                   >
                     <ArrowLeft className="w-4 h-4" /> {t('action.backToLibrary')}
                   </button>
                   <button
                     onClick={() => onLessonContinue?.()}
                     className="w-full sm:w-auto px-6 py-3 bg-emerald-600 text-white rounded-xl text-sm font-bold hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2"
-                  >
-                    Continue to Exercises <ChevronRight className="w-4 h-4" />
+                  >{t("learning.continue.to.exercises.318bcb")}{' '}<ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
               )}
             </div>
           </main>
 
-          {/* Footer Controls — same height as MobileNav (64px); sits flush above it, no overhang */}
+          {/* Footer: progress strip on top, a big mic in the middle, small toggles on the right */}
           <footer
-            className="fixed left-0 right-0 lg:left-64 xl:left-72 h-[64px] bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md border-t border-slate-200 dark:border-zinc-700 px-3 md:px-8 flex items-center justify-between z-30 bottom-[calc(64px+env(safe-area-inset-bottom,0px))] lg:bottom-0"
+            className={`fixed left-0 right-0 z-30 border-t-2 border-slate-200 bg-white/95 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/95 lg:left-64 xl:left-72 ${lessonEmbed ? 'bottom-0 lg:left-0 xl:left-0' : 'bottom-[calc(64px+env(safe-area-inset-bottom,0px))] lg:bottom-0'}`}
+            style={lessonEmbed ? { paddingBottom: 'env(safe-area-inset-bottom, 0px)' } : undefined}
           >
-
-            {/* Left Side: Stats */}
-            <div className="flex items-center gap-3 md:gap-5 min-w-0">
-              <div className="flex flex-col items-start">
-                <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-slate-400 dark:text-zinc-500 font-bold leading-none mb-0.5">Read</span>
-                <span className={`text-sm md:text-base font-mono font-bold tracking-tight leading-none ${isFinished && !transcriptionFailed ? 'text-emerald-500' : 'text-slate-800 dark:text-zinc-100'}`}>
-                   {isFinished ? (transcriptionFailed ? 'N/A' : `${readAccuracy}%`) : '--'}
-                </span>
-              </div>
-              <div className="flex flex-col items-start">
-                <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-slate-400 dark:text-zinc-500 font-bold leading-none mb-0.5">Pass</span>
-                <span className={`text-sm md:text-base font-mono font-bold tracking-tight leading-none ${isFinished && !transcriptionFailed ? 'text-sky-500' : 'text-slate-800 dark:text-zinc-100'}`}>
-                   {isFinished ? (transcriptionFailed ? 'N/A' : `${passageAccuracy}%`) : '--'}
-                </span>
-              </div>
-              <div className="w-px h-7 bg-slate-200 dark:bg-zinc-700"></div>
-              <div className="flex flex-col items-start min-w-0">
-                {timedMode && isRecording ? (
-                  <>
-                    <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-slate-400 dark:text-zinc-500 font-bold leading-none mb-0.5">Left</span>
-                    <span className="text-sm md:text-base font-mono font-bold tracking-tight text-rose-500 flex items-center gap-0.5 leading-none">
-                      <Clock className="w-3.5 h-3.5" />
-                      {timeLeft}s
-                    </span>
-                  </>
+            <div className="h-1.5 w-full bg-slate-100 dark:bg-zinc-800">
+              <div className="h-full bg-zinc-900 transition-[width] duration-300 dark:bg-zinc-100" style={{ width: `${sourceWords.length ? (Math.max(0, isFinished ? sourceWords.length : activeWordIndex) / sourceWords.length) * 100 : 0}%` }} />
+            </div>
+            <div className="mx-auto grid h-[84px] max-w-3xl grid-cols-[1fr_auto_1fr] items-center gap-2 px-4">
+              {/* left: score or progress */}
+              <div className="min-w-0">
+                {isFinished ? (
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-400">{t('bites.kind.read')}</span>
+                    <span className={`font-serif text-xl font-extrabold leading-none ${transcriptionFailed ? 'text-slate-400' : 'text-emerald-600'}`}>{transcriptionFailed ? t('learning.n.a.08d2e9') : `${readAccuracy}%`}</span>
+                  </div>
+                ) : timedMode && isRecording ? (
+                  <span className="inline-flex items-center gap-1 font-serif text-lg font-extrabold text-rose-500"><Clock className="h-4 w-4" />{t('learning.seconds', { n: timeLeft })}</span>
                 ) : (
-                  <>
-                    <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-slate-400 dark:text-zinc-500 font-bold leading-none mb-0.5">Progress</span>
-                    <span className="text-sm md:text-base font-mono font-bold tracking-tight text-slate-800 dark:text-zinc-100 leading-none">
-                       {Math.max(0, activeWordIndex)}<span className="text-xs text-slate-400 dark:text-zinc-500">/{sourceWords.length}</span>
-                    </span>
-                  </>
+                  <span className="font-serif text-lg font-extrabold tabular-nums text-zinc-900 dark:text-zinc-50">{Math.max(0, activeWordIndex)}<span className="text-sm text-slate-400">/{sourceWords.length}</span></span>
                 )}
               </div>
-            </div>
 
-            {/* Center: Mic stays inside the 64px bar — no negative top offset */}
-            <div className="flex items-center justify-center absolute left-1/2 -translate-x-1/2">
+              {/* centre: mic */}
               <div className="relative" data-preview-block>
                 <button
                   onClick={isAnalyzing ? undefined : toggleRecording}
                   disabled={!!recognitionError || isAnalyzing}
-                  className="group relative w-11 h-11 flex items-center justify-center transition-transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:hover:scale-100"
-                  title={isRecording ? 'Stop' : isAnalyzing ? 'Analyzing…' : isFinished ? 'Play Again' : 'Start Reading'}
+                  title={isRecording ? t('learning.stop.9e2534') : isAnalyzing ? t('learning.analyzing.3331cd') : isFinished ? t('learning.play.again.65a693') : t('reading.comp.cta')}
+                  className={`dark-keep flex h-16 w-16 items-center justify-center rounded-full border-[3px] transition-[transform,box-shadow] duration-75 active:translate-y-[4px] active:shadow-none disabled:opacity-60 ${
+                    isRecording ? 'animate-pulse border-rose-700 bg-rose-500 text-white shadow-[0_4px_0_0_#9f1239]'
+                    : isAnalyzing ? 'border-zinc-300 bg-zinc-100 text-zinc-500 shadow-[0_4px_0_0_#d4d4d8]'
+                    : isFinished ? 'border-emerald-700 bg-emerald-500 text-white shadow-[0_4px_0_0_#047857]'
+                    : 'border-zinc-900 bg-zinc-900 text-white shadow-[0_4px_0_0_#000] dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 dark:shadow-[0_4px_0_0_#a1a1aa]'}`}
                 >
-                  {isRecording ? (
-                     <>
-                       <div className="absolute inset-0 bg-rose-50 rounded-full"></div>
-                       <div className="absolute inset-0 border-2 border-rose-200 rounded-full animate-pulse"></div>
-                       <div className="w-9 h-9 bg-rose-500 rounded-full flex items-center justify-center shadow-md z-10 transition-colors hover:bg-rose-600">
-                         <div className="w-2.5 h-2.5 bg-white rounded-sm"></div>
-                       </div>
-                     </>
-                  ) : isAnalyzing ? (
-                     <div className="w-11 h-11 bg-indigo-100 rounded-full flex items-center justify-center shadow-md z-10">
-                       <Loader2 className="w-5 h-5 text-indigo-500 animate-spin" />
-                     </div>
-                  ) : isFinished ? (
-                     <div className="w-11 h-11 bg-emerald-500 rounded-full flex items-center justify-center shadow-md z-10 transition-colors hover:bg-emerald-600">
-                       <RefreshCw className="w-4 h-4 text-white" />
-                     </div>
-                  ) : (
-                     <div className="w-11 h-11 bg-zinc-900 rounded-full flex items-center justify-center shadow-md z-10 transition-colors hover:bg-black">
-                       <Mic className="w-4 h-4 text-white" />
-                     </div>
-                  )}
-                 </button>
-                 {(isFinished || isAnalyzing) && sessionAudioBlob && (
-                   <button
-                      onClick={() => downloadAudio(currentTextObj.id)}
-                      className="absolute left-full ml-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white dark:bg-zinc-800 text-slate-500 dark:text-zinc-400 rounded-full flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-700 border border-slate-200 dark:border-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors shadow-sm"
-                      title="Download Recording"
-                   >
-                      <Download className="w-3.5 h-3.5" />
-                   </button>
-                 )}
+                  {isRecording ? <span className="h-5 w-5 rounded-md bg-white" /> : isAnalyzing ? <Loader2 className="h-6 w-6 animate-spin" /> : isFinished ? <RefreshCw className="h-6 w-6" /> : <Mic className="h-7 w-7" />}
+                </button>
+                {(isFinished || isAnalyzing) && sessionAudioBlob && (
+                  <button onClick={() => downloadAudio(currentTextObj.id)} title={t('learning.download.recording.306b5e')}
+                    className="absolute left-full top-1/2 ml-2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-xl border-2 border-slate-200 bg-white text-slate-500 dark:border-zinc-700 dark:bg-zinc-900">
+                    <Download className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+
+              {/* right: timed / live / restart */}
+              <div className="flex items-center justify-end gap-1.5">
+                <button type="button" onClick={() => { if (!isRecording) setTimedMode(!timedMode); setTimeLeft(() => targetTime); }} disabled={isRecording}
+                  aria-pressed={timedMode} title={t('learning.timed.1c19d5')}
+                  className={`flex h-10 w-10 items-center justify-center rounded-xl border-2 transition-colors disabled:opacity-50 ${timedMode ? 'border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 dark-keep' : 'border-slate-200 text-slate-400 dark:border-zinc-700'}`}>
+                  <Clock className="h-4 w-4" />
+                </button>
+                <button type="button" onClick={() => setRealtime(!realtime)} aria-pressed={realtime} title={t('learning.live.65c821')}
+                  className={`flex h-10 w-10 items-center justify-center rounded-xl border-2 font-serif text-[10px] font-extrabold uppercase transition-colors ${realtime ? 'border-emerald-600 bg-emerald-500 text-white' : 'border-slate-200 text-slate-400 dark:border-zinc-700'}`}>
+                  {t('read.live')}
+                </button>
+                
               </div>
             </div>
-
-            {/* Right Side: Toggles — single row, fits 64px */}
-            <div className="flex items-center gap-2 md:gap-3.5 shrink-0">
-              <div className="flex items-center gap-1.5">
-                <span className="text-[8px] md:text-[10px] font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-wider hidden sm:inline">Timed</span>
-                <div
-                  onClick={() => {
-                    if (!isRecording) setTimedMode(!timedMode);
-                    setTimeLeft(() => targetTime);
-                  }}
-                  className={`w-8 h-4 rounded-full relative p-0.5 transition-colors ${isRecording ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} ${timedMode ? 'bg-zinc-700' : 'bg-slate-200'}`}
-                >
-                  <div className={`w-3 h-3 bg-white rounded-full absolute shadow-sm transition-transform ${timedMode ? 'translate-x-4' : 'translate-x-0'}`}></div>
-                </div>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[8px] md:text-[10px] font-bold text-slate-500 dark:text-zinc-400 uppercase tracking-wider hidden sm:inline">Live</span>
-                <div
-                  onClick={() => setRealtime(!realtime)}
-                  className={`w-8 h-4 rounded-full relative p-0.5 cursor-pointer transition-colors ${realtime ? 'bg-emerald-500' : 'bg-slate-200'}`}
-                >
-                  <div className={`w-3 h-3 bg-white rounded-full absolute shadow-sm transition-transform ${realtime ? 'translate-x-4' : 'translate-x-0'}`}></div>
-                </div>
-              </div>
-              <button
-                onClick={reset}
-                title="Restart reading passage"
-                className="text-[8px] md:text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-zinc-900 transition-colors flex items-center gap-1 p-1"
-              >
-                <RefreshCw className="w-3 h-3" />
-                <span className="hidden md:inline">Reset</span>
-              </button>
-            </div>
-
           </footer>
         </>
       )}

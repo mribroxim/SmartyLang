@@ -75,8 +75,12 @@ function extractPos(definition) {
 }
 
 function stripPos(definition) {
-  return String(definition || '')
-    .replace(/^\([^)]{0,40}\)\s*/u, '')
+  const text = String(definition || '');
+  const match = text.match(/^\(([^)]{0,40})\)\s*/u);
+  const raw = match?.[1]?.toLowerCase().trim() || '';
+  const isPos = /^(?:phrase|phrasal\s+verb|verb|noun|adjective|adverb|preposition|conjunction|pronoun|interjection|determiner)$/.test(raw)
+    || /noun|существитель|ot|ism|substantiv|nom|nomen|名詞|명사|名词|اسم|verb|глагол|fe['’]?l|동사|動詞|动词|فعل|adj|прилаг|sifat|형용사|形容|adv|нареч|zarf|부사|副詞|prep|предлог|conj|союз|pron|местоим|interj|восклиц|det|article|артикл/.test(raw);
+  return (isPos && match ? text.slice(match[0].length) : text)
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -143,12 +147,28 @@ function flattenPack(pack) {
   return slots;
 }
 
+/** Native uz pack has fewer vocab rows; pad/realign to EN passageId#index order. */
+function realignSlotsToEn(enSlots, otherSlots) {
+  const map = new Map(otherSlots.map((s) => [`${s.passageId}#${s.index}`, s]));
+  return enSlots.map((en) => {
+    const hit = map.get(`${en.passageId}#${en.index}`);
+    return hit
+      ? { ...hit, level: en.level, passageId: en.passageId, index: en.index }
+      : { level: en.level, passageId: en.passageId, index: en.index, word: '', definition: '' };
+  });
+}
+
 function assertAlignment(packs) {
   const en = packs.en;
   const mismatches = [];
   for (const lang of LANGS) {
     if (lang === 'en') continue;
-    const other = packs[lang];
+    let other = packs[lang];
+    if (lang === 'uz' && en.length !== other.length) {
+      packs[lang] = realignSlotsToEn(en, other);
+      other = packs[lang];
+      console.log(`[vocab] uz realigned ${other.filter((s) => s.word).length}/${en.length} slots`);
+    }
     if (en.length !== other.length) {
       mismatches.push({ lang, reason: `slot count ${other.length} != en ${en.length}` });
       continue;

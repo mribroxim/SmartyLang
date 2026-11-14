@@ -15,8 +15,16 @@ firebase-debug.*.log
 .env.*
 !.env.example
 *.local
+*.local.md
+*.pre-bulk-mt-backup.json
+__pycache__/
+*.pyc
+# Separate video project and working artwork are not web release assets.
+SMARTY VIDEO/
 serviceAccount*.json
 *-firebase-adminsdk-*.json
+firebase-auth-export.json
+backups/
 
 # Firebase / tooling caches
 .firebase/
@@ -38,6 +46,14 @@ vocab-report.json
 scripts/localize/.localize-uz-progress.json
 scripts/localize/localize-failures.json
 scripts/localize/*.log
+scripts/.seed-lang-packs-progress.json
+scripts/.seed-lang-packs-cache.json
+scripts/local-mt/.venv/
+scripts/local-mt/hf-cache/
+scripts/local-mt/ct2-models/
+scripts/local-mt/cache/
+scripts/local-mt/progress.json
+scripts/local-mt/seed.log
 
 # Raw source asset folders (built copies live under public/data/)
 Shadowing_Resources/
@@ -46,3 +62,9 @@ Comprehensive Listening/
 Comprehensive Reading/
 IELTS Reading/
 Interactive Reading/
+
+# Remotion pitch video (SMARTY VIDEO/app)
+SMARTY VIDEO/app/node_modules/
+SMARTY VIDEO/app/whisper.cpp/
+SMARTY VIDEO/app/out/
+SMARTY VIDEO/app/public/audio/*.wav

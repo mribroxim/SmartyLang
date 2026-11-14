@@ -229,28 +229,30 @@ export function getCard(senseId: string, knownLang?: string): VocabCard | null {
 }
 
 export function resolveSense(word: string, sentence?: string | null): string | null {
+  const ids = resolveAllSenseIds(word, sentence);
+  return ids[0] || null;
+}
+
+/** All sense ids for a lemma, best-first when `sentence` is provided. */
+export function resolveAllSenseIds(word: string, sentence?: string | null): string[] {
   const db = _loaded;
-  if (!db || !word) return null;
+  if (!db || !word) return [];
   const key = normalizeLemma(word);
-  if (!key) return null;
+  if (!key) return [];
   let ids = db.lemmaIndex.get(key);
   if (!ids && key.endsWith('s') && key.length > 4) ids = db.lemmaIndex.get(key.slice(0, -1));
   if (!ids && key.endsWith('ing') && key.length > 6) ids = db.lemmaIndex.get(key.slice(0, -3));
   if (!ids && key.endsWith('ed') && key.length > 5) ids = db.lemmaIndex.get(key.slice(0, -2));
-  if (!ids || !ids.length) return null;
-  if (ids.length === 1 || !sentence) return ids[0];
+  if (!ids || !ids.length) return [];
+  if (ids.length === 1 || !sentence) return [...ids];
 
-  let best = ids[0];
-  let bestScore = -1;
-  for (const id of ids) {
-    const def = db.learning[id]?.d || db.known[id]?.d || '';
-    const score = tokenOverlap(sentence, def);
-    if (score > bestScore) {
-      bestScore = score;
-      best = id;
-    }
-  }
-  return best;
+  return [...ids]
+    .map((id) => {
+      const def = db.learning[id]?.d || db.known[id]?.d || '';
+      return { id, score: tokenOverlap(sentence, def) };
+    })
+    .sort((a, b) => b.score - a.score)
+    .map((x) => x.id);
 }
 
 export function lookupWord(
@@ -260,6 +262,21 @@ export function lookupWord(
   const id = resolveSense(word, opts?.sentence);
   if (!id) return null;
   return getCard(id, opts?.knownLang);
+}
+
+/** Every matching sense for a spelling (homographs), ordered best-first. */
+export function lookupAllSenses(
+  word: string,
+  opts?: { sentence?: string | null; knownLang?: string; limit?: number },
+): VocabCard[] {
+  const ids = resolveAllSenseIds(word, opts?.sentence);
+  const lim = opts?.limit ?? 8;
+  const out: VocabCard[] = [];
+  for (const id of ids.slice(0, lim)) {
+    const card = getCard(id, opts?.knownLang);
+    if (card) out.push(card);
+  }
+  return out;
 }
 
 export async function lookupWordAsync(

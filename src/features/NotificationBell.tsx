@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Bell, X, CheckCheck, BookOpen, Users, Megaphone, Info, GraduationCap } from 'lucide-react';
 import { getNotifications, markNotificationRead, markAllNotificationsRead, AppNotification } from '../firebase';
+import { EmptyState } from '../components/feedback/EmptyState';
+import { Sticker } from '../components/stickers/Sticker';
+import { useUiLang } from '../contexts/UiLangContext';
+import { useLocalReminders, markLocalReminderRead, type LocalReminder } from '../lib/smarty/reminders';
+import { useProgress } from '../contexts/ProgressContext';
 
 const TYPE_ICON: Record<AppNotification['type'], React.ReactNode> = {
   assignment:   <BookOpen className="w-4 h-4 text-blue-500" />,
@@ -16,16 +21,20 @@ interface NotificationBellProps {
 }
 
 export function NotificationBell({ uid, onNavigate }: NotificationBellProps) {
+  const { t } = useUiLang();
+  const local = useLocalReminders();
+  const { navigate } = useProgress();
   const [open, setOpen] = useState(false);
   const [notifs, setNotifs] = useState<AppNotification[]>([]);
   const [loading, setLoading] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const unread = notifs.filter(n => !n.read).length;
+  const unread = notifs.filter(n => !n.read).length + local.filter(n => !n.read).length;
 
   const load = async () => {
     setLoading(true);
-    try { setNotifs(await getNotifications(uid, 20)); }
+    try { setNotifs((await getNotifications(uid, 20)) || []); }
+    catch { /* Keep the cached feed available while offline. */ }
     finally { setLoading(false); }
   };
 
@@ -48,8 +57,15 @@ export function NotificationBell({ uid, onNavigate }: NotificationBellProps) {
   };
 
   const handleReadAll = async () => {
+    markLocalReminderRead();
     await markAllNotificationsRead(uid);
     setNotifs(prev => prev.map(x => ({ ...x, read: true })));
+  };
+
+  const openLocal = (row: LocalReminder) => {
+    markLocalReminderRead(row.id);
+    setOpen(false);
+    navigate({ tab: 'lessons', path: ['today'] });
   };
 
   const timeAgo = (ts: number) => {
@@ -62,7 +78,7 @@ export function NotificationBell({ uid, onNavigate }: NotificationBellProps) {
 
   return (
     <div className="relative" ref={ref}>
-      <button onClick={handleOpen} className="relative p-2 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-zinc-900 transition-colors">
+      <button aria-label={t('today.notifications')} onClick={handleOpen} className="relative p-2 rounded-lg text-slate-500 hover:bg-slate-100 hover:text-zinc-900 transition-colors">
         <Bell className="w-5 h-5" />
         {unread > 0 && (
           <span className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-rose-500 text-white text-[10px] font-black rounded-full flex items-center justify-center">
@@ -72,12 +88,12 @@ export function NotificationBell({ uid, onNavigate }: NotificationBellProps) {
       </button>
 
       {open && (
-        <div className="absolute left-0 top-10 w-80 bg-white rounded-2xl shadow-2xl border border-slate-200 z-50 overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100">
-            <span className="font-bold text-zinc-900">Notifications {unread > 0 && <span className="text-rose-500">({unread})</span>}</span>
+        <div className="absolute right-0 top-10 w-[min(20rem,calc(100vw-24px))] bg-white dark:bg-zinc-900 rounded-2xl border-2 dark:border-zinc-700 z-50 overflow-hidden shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100 dark:border-zinc-800">
+            <span className="flex items-center gap-1.5 font-bold text-zinc-900 dark:text-zinc-100">{unread > 0 && <Sticker id={notifs.some(n => !n.read && n.type === 'class_join') ? 'state.youve-got-mail' : 'state2.notifications'} size={34} mode="once" className="-my-2" />}{t('today.notifications')} {unread > 0 && <span className="text-rose-500">({unread})</span>}</span>
             <div className="flex items-center gap-1">
               {unread > 0 && (
-                <button onClick={handleReadAll} className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100" title="Mark all read">
+                <button onClick={handleReadAll} className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100" title={t("site.notificationbell.mark_all_read_8958e2")}>
                   <CheckCheck className="w-4 h-4" />
                 </button>
               )}
@@ -88,13 +104,11 @@ export function NotificationBell({ uid, onNavigate }: NotificationBellProps) {
           </div>
 
           <div className="max-h-80 overflow-y-auto">
+            {local.map(row => <button key={row.id} type="button" onClick={() => openLocal(row)} className={`w-full text-left px-4 py-3 flex items-start gap-3 border-b border-slate-100 dark:border-zinc-800 ${row.read ? '' : 'bg-amber-50 dark:bg-amber-950/30'}`}><Bell className="w-4 h-4 mt-1 text-amber-500 shrink-0" /><div><p className="text-sm font-bold text-zinc-900 dark:text-zinc-100">{t(row.kind === 'streak' ? 'today.riskReminderTitle' : 'today.reminderTitle')}</p><p className="mt-1 text-xs text-slate-500 dark:text-zinc-400">{t(row.kind === 'streak' ? 'today.riskReminderBody' : 'today.reminderBody')}</p></div></button>)}
             {loading ? (
-              <div className="p-6 text-center text-slate-400 text-sm">Loading…</div>
-            ) : notifs.length === 0 ? (
-              <div className="p-8 text-center">
-                <Bell className="w-8 h-8 mx-auto mb-2 text-slate-200" />
-                <p className="text-slate-400 text-sm">No notifications yet</p>
-              </div>
+              <div className="p-6 text-center text-slate-400 text-sm">{t("site.contentmanager.loading_33ce41")}</div>
+            ) : notifs.length === 0 && local.length === 0 ? (
+              <EmptyState sticker="state.box-cat" title={t('empty.notifications.title')} body={t('empty.notifications.body')} compact />
             ) : (
               notifs.map(n => (
                 <button

@@ -1,0 +1,23 @@
+[Unit]
+Description=SmartyLang self-hosted application
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=smartylang
+Group=smartylang
+WorkingDirectory=/srv/smartylang/app
+EnvironmentFile=/etc/smartylang/app.env
+ExecStart=/usr/bin/node --experimental-strip-types /srv/smartylang/app/server.ts
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/smartylang/app/.tts-cache
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

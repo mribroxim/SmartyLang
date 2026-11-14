@@ -31,3 +31,22 @@ export function calculateSM2(quality: number, data?: SRSData): SRSData {
 
   return { interval, repetition, easeFactor, nextReviewDate };
 }
+
+/** Review each saved word once per result. A missed first attempt wins over a retry. */
+export function applySrsFromResult<T extends Record<string, { srs?: SRSData }>>(
+  vocab: T,
+  result: { correctWords?: unknown; mistakes?: unknown },
+): T {
+  const words = (value: unknown) => Array.isArray(value)
+    ? value.filter((w): w is string => typeof w === 'string').map(w => w.trim().toLowerCase()).filter(Boolean)
+    : [];
+  const missed = new Set(words(result.mistakes));
+  const correct = new Set(words(result.correctWords));
+  let next = vocab;
+  for (const word of new Set([...correct, ...missed])) {
+    if (!vocab[word]) continue;
+    if (next === vocab) next = { ...vocab };
+    Object.assign(next, { [word]: { ...vocab[word], srs: calculateSM2(missed.has(word) ? 1 : 4, vocab[word].srs) } });
+  }
+  return next;
+}

@@ -83,27 +83,38 @@ export async function translateWithCache(
   to: string,
   opts?: { signal?: AbortSignal; fallback?: string; sentence?: string },
 ): Promise<string | null> {
+  const packed = await translateWithAlternatives(q, from, to, opts);
+  return packed?.text || null;
+}
+
+/** Same as translateWithCache but keeps alternate glosses when the server returns them. */
+export async function translateWithAlternatives(
+  q: string,
+  from: string,
+  to: string,
+  opts?: { signal?: AbortSignal; fallback?: string; sentence?: string },
+): Promise<{ text: string; alternatives: string[] } | null> {
   const raw = q.trim();
   if (!raw) return null;
-  if (from === to) return raw;
+  if (from === to) return { text: raw, alternatives: [raw] };
 
   const query = normalizeTranslationQuery(raw);
   const cached = getCachedTranslation(query, from, to);
-  if (cached) return cached;
+  if (cached) return { text: cached, alternatives: [cached] };
 
   const gloss = sanitizeDefinitionText(opts?.fallback || '');
 
   try {
-    const { vocabDbEnabled, loadVocab, lookupWord, toVocabLang } = await import('./vocabDb');
+    const { vocabDbEnabled, loadVocab, lookupAllSenses, toVocabLang } = await import('./vocabDb');
     if (vocabDbEnabled() && query.split(/\s+/).length <= 4) {
       await loadVocab(from, to);
-      const card = lookupWord(raw, { sentence: opts?.sentence, knownLang: to });
-      if (card) {
-        const text = polishTranslation(card.knownWord || card.definition, query);
-        if (text && !isGarbageTranslation(text, query)) {
-          setCachedTranslation(query, from, to, text);
-          return text;
-        }
+      const cards = lookupAllSenses(raw, { sentence: opts?.sentence, knownLang: to, limit: 8 });
+      const alts = cards
+        .map((c) => polishTranslation(c.knownWord || c.definition, query))
+        .filter((t) => t && !isGarbageTranslation(t, query));
+      if (alts.length) {
+        setCachedTranslation(query, from, to, alts[0]);
+        return { text: alts[0], alternatives: [...new Set(alts)] };
       }
       void toVocabLang;
     }
@@ -111,25 +122,34 @@ export async function translateWithCache(
     /* vocab db optional */
   }
 
-  const attempt = async (): Promise<string | null> => {
+  const attempt = async (): Promise<{ text: string; alternatives: string[] } | null> => {
     const { translateFallback } = await import('./translateFallback');
     try {
-      const t = await translateFallback({
+      const packed = await translateFallback({
         word: raw,
         from,
         to,
         sentence: opts?.sentence || gloss || undefined,
         signal: opts?.signal,
       });
-      if (t && !isGarbageTranslation(t, query)) return polishTranslation(t, query);
+      if (packed?.text && !isGarbageTranslation(packed.text, query)) {
+        const text = polishTranslation(packed.text, query);
+        const alternatives = (packed.alternatives || [packed.text])
+          .map((a) => polishTranslation(a, query))
+          .filter((t) => t && !isGarbageTranslation(t, query));
+        return { text, alternatives: alternatives.length ? alternatives : [text] };
+      }
     } catch {
       /* fall through */
     }
     if (gloss && gloss !== raw) {
       try {
         const { translateFallback } = await import('./translateFallback');
-        const t = await translateFallback({ word: gloss, from, to, signal: opts?.signal });
-        if (t && !isGarbageTranslation(t, gloss)) return polishTranslation(t, query);
+        const packed = await translateFallback({ word: gloss, from, to, signal: opts?.signal });
+        if (packed?.text && !isGarbageTranslation(packed.text, gloss)) {
+          const text = polishTranslation(packed.text, query);
+          return { text, alternatives: [text] };
+        }
       } catch {
         /* ignore */
       }
@@ -138,19 +158,19 @@ export async function translateWithCache(
   };
 
   try {
-    const text = await attempt();
-    if (text && !isGarbageTranslation(text, query)) {
-      setCachedTranslation(query, from, to, text);
-      return text;
+    const packed = await attempt();
+    if (packed?.text && !isGarbageTranslation(packed.text, query)) {
+      setCachedTranslation(query, from, to, packed.text);
+      return packed;
     }
     return null;
   } catch {
     try {
       await new Promise((r) => setTimeout(r, 600));
-      const text = await attempt();
-      if (text && !isGarbageTranslation(text, query)) {
-        setCachedTranslation(query, from, to, text);
-        return text;
+      const packed = await attempt();
+      if (packed?.text && !isGarbageTranslation(packed.text, query)) {
+        setCachedTranslation(query, from, to, packed.text);
+        return packed;
       }
       return null;
     } catch {

@@ -1,38 +1,19 @@
+import { useUiLang } from '../contexts/UiLangContext';
 /**
  * ContentManager — admin UI for editing all major content types in Firestore.
  * Rendered inside AdminPanel under the "Content" tab.
  */
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import {
-  BookOpen, PenLine, Mic, Loader2, CheckCircle2, Trash2, Plus,
-  RotateCcw, Save, ChevronDown, Edit2, X, Code, AlertTriangle,
-  Volume2, FileText, Headphones, BookMarked, BarChart2,
-  EyeOff, Eye, ChevronRight, Languages,
-} from 'lucide-react';
-import {
-  getCMSDocument, setCMSDocument, deleteCMSDocument,
-  getIELTSTests, saveIELTSTest, updateIELTSTest, deleteIELTSTest,
-  type CustomIELTSTestRecord,
-  getIELTSListeningTests, saveIELTSListeningTest, updateIELTSListeningTest, deleteIELTSListeningTest,
-  type CustomIELTSListeningTestRecord,
-  getVocabMisses, markVocabMissReviewed, type VocabMissRecord,
-} from '../firebase';
+import { PenLine, Mic, Loader2, CheckCircle2, Trash2, Plus, RotateCcw, Save, ChevronDown, Edit2, Code, Volume2, FileText, BookMarked, EyeOff, Eye, ChevronRight, Languages } from 'lucide-react';
+import { getCMSDocument, setCMSDocument, deleteCMSDocument, getVocabMisses, markVocabMissReviewed, type VocabMissRecord } from '../firebase';
 import { invalidateCMS }          from '../lib/useCMSContent';
-import { TOPICS_BY_LEVEL, PRACTICE_LEVELS, type PracticeLevel } from '../data/practiceTopics';
-import { SPEAKING_TOPICS_BY_LEVEL, type SpeakingLevel }         from '../data/speakingTopics';
-import { TASK2_DATA, type Task2TypeData }                        from '../data/writingTask2';
-import { TASK1_DATA, type Task1ChartType, type Task1Prompt }     from '../data/writingTask1';
-import {
-  PART1_TOPICS, PART2_CARDS, PART3_TOPICS,
-  type Part1Topic, type Part2Card, type Part3Topic,
-} from '../data/ieltsSpeakingData';
+import { TOPICS_BY_LEVEL, PRACTICE_LEVELS } from '../data/practiceTopics';
+import { SPEAKING_TOPICS_BY_LEVEL }         from '../data/speakingTopics';
 import { SHADOWING_PASSAGES, type ShadowingPassage, type ShadowingLevel } from '../data/shadowingPassages';
 import { invalidateDictationCache, loadBuiltInSentences }               from '../data/audioDictation';
 import { invalidateCompReadingCache, loadBuiltInReadingPassages }        from '../data/comprehensiveReading';
 import { invalidateListeningCache, loadBuiltInListeningPassages }        from '../data/comprehensiveListening';
 import { invalidateLevelTextsCache }                                     from '../data/levelTexts';
-import { ieltsReadingTests, type IELTSTest }                            from '../data/ieltsReadingTests';
-import { ieltsListeningTests }                                           from '../data/ieltsListeningTests';
 import type { Level }                                                    from '../lib/reading-logic';
 import {
   type ContentLang, cmsDocId, CONTENT_LANGS, CONTENT_LANG_LABEL,
@@ -40,10 +21,9 @@ import {
 import { ScreenShell } from '../components/ScreenShell';
 
 type SubTab =
-  | 'writing' | 'speaking' | 'task2' | 'ielts-speaking' | 'ielts-reading'
-  | 'task1' | 'ielts-p2' | 'ielts-p3'
+  | 'writing' | 'speaking'
   | 'shadowing' | 'dictation' | 'comp-reading' | 'comp-listening' | 'reading-texts'
-  | 'ielts-listening' | 'vocab';
+  | 'vocab';
 
 /** Active CMS language — set by ContentManager so nested editors namespace doc ids. */
 let _cmsLang: ContentLang = 'en';
@@ -56,10 +36,7 @@ const EMPTY_TOPICS: Record<string, string[]> = {
   'Beginner': [], 'Elementary': [], 'Pre-Intermediate': [], 'Intermediate': [], 'Advanced': [],
 };
 
-const EN_ONLY_SUBTABS = new Set<SubTab>([
-  'ielts-speaking', 'ielts-p2', 'ielts-p3', 'ielts-reading', 'ielts-listening',
-  'comp-listening', 'shadowing',
-]);
+const EN_ONLY_SUBTABS = new Set<SubTab>(['comp-listening', 'shadowing']);
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -76,18 +53,18 @@ const LEVEL_COLORS: Record<string, string> = {
 // ── shared helpers ───────────────────────────────────────────────────────────
 
 function ArchivedBadge() {
+  const { t: tr, uiLang, tLevel } = useUiLang();
   return (
     <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 border border-amber-200">
-      <EyeOff className="w-2.5 h-2.5" /> Archived
-    </span>
+      <EyeOff className="w-2.5 h-2.5" />  {tr("site.contentmanager.archived_eddc81")}</span>
   );
 }
 
-function archiveBtn(isArchived: boolean, onClick: () => void) {
+function archiveBtn(isArchived: boolean, onClick: () => void, tr: ReturnType<typeof useUiLang>['t']) {
   return (
     <button
       onClick={onClick}
-      title={isArchived ? 'Restore (show to students)' : 'Archive (hide from students)'}
+      title={isArchived ? tr("core.management.restore_show_to_students_5c0c3b") : tr("core.management.archive_hide_from_students_7f0a9a")}
       className={`p-1.5 rounded-lg transition-colors ${isArchived ? 'text-emerald-600 hover:bg-emerald-50' : 'text-amber-500 hover:bg-amber-50'}`}
     >
       {isArchived ? <Eye className="w-3.5 h-3.5" /> : <EyeOff className="w-3.5 h-3.5" />}
@@ -105,6 +82,7 @@ interface StringListEditorProps {
 }
 
 function StringListEditor({ items, onChange, placeholder = 'Add item…', rowLabel }: StringListEditorProps) {
+  const { t: tr, uiLang, tLevel } = useUiLang();
   const [editIdx, setEditIdx] = useState<number | null>(null);
   const [editText, setEditText] = useState('');
   const [newText, setNewText] = useState('');
@@ -143,10 +121,9 @@ function StringListEditor({ items, onChange, placeholder = 'Add item…', rowLab
                 className="w-full text-sm px-2 py-1.5 rounded-lg border border-zinc-300 focus:outline-none focus:border-zinc-500 resize-none"
               />
               <div className="flex gap-2 mt-2 justify-end">
-                <button onClick={() => setEditIdx(null)} className="px-3 py-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg transition-colors">Cancel</button>
+                <button onClick={() => setEditIdx(null)} className="px-3 py-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg transition-colors">{tr("action.cancel")}</button>
                 <button onClick={saveEdit} className="px-3 py-1.5 text-xs font-semibold bg-zinc-900 text-white rounded-lg hover:bg-zinc-700 transition-colors flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5" /> Save
-                </button>
+                  <CheckCircle2 className="w-3.5 h-3.5" />  {tr("site.contentmanager.save_efc007")}</button>
               </div>
             </div>
           ) : (
@@ -154,10 +131,10 @@ function StringListEditor({ items, onChange, placeholder = 'Add item…', rowLab
               <span className="text-xs font-bold text-slate-400 shrink-0 mt-0.5 w-6 text-right">{rowLabel ? rowLabel(idx) : idx + 1}.</span>
               <p className="flex-1 text-sm text-slate-800 leading-snug">{item}</p>
               <div className="flex items-center gap-1 shrink-0 ml-1">
-                <button onClick={() => startEdit(idx)} title="Edit" className="p-1 rounded-md text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors">
+                <button onClick={() => startEdit(idx)} title={tr("site.contentmanager.edit_530164")} className="p-1 rounded-md text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors">
                   <Edit2 className="w-3.5 h-3.5" />
                 </button>
-                <button onClick={() => del(idx)} title="Delete" className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors">
+                <button onClick={() => del(idx)} title={tr("site.contentmanager.delete_f6fdbe")} className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors">
                   <Trash2 className="w-3.5 h-3.5" />
                 </button>
               </div>
@@ -181,8 +158,7 @@ function StringListEditor({ items, onChange, placeholder = 'Add item…', rowLab
           disabled={!newText.trim()}
           className="self-end px-3 py-2 rounded-xl bg-zinc-900 text-white text-sm font-semibold hover:bg-zinc-700 disabled:opacity-40 transition-colors inline-flex items-center gap-1"
         >
-          <Plus className="w-4 h-4" /> Add
-        </button>
+          <Plus className="w-4 h-4" />  {tr("site.contentmanager.add_61cc55")}</button>
       </div>
     </div>
   );
@@ -198,6 +174,7 @@ interface TopicsEditorProps {
 }
 
 function TopicsEditor({ docId, defaultTopics, levels, label }: TopicsEditorProps) {
+  const { t: tr, uiLang, tLevel } = useUiLang();
   const [level, setLevel] = useState<string>(levels[0]);
   const [allTopics, setAllTopics] = useState<Record<string, string[]>>(defaultTopics);
   const [dirty, setDirty] = useState(false);
@@ -226,21 +203,21 @@ function TopicsEditor({ docId, defaultTopics, levels, label }: TopicsEditorProps
       await setCMSDocument(docId, { levels: allTopics });
       invalidateCMS(activeCmsLang());
       setDirty(false);
-      showToast('Saved! Changes will appear on the next page load.');
-    } catch { showToast('Save failed.'); }
+      showToast(tr("core.management.saved_changes_will_appear_on_065a09"));
+    } catch { showToast(tr("core.management.save_failed_aefc63")); }
     finally { setSaving(false); }
   };
 
   const reset = async () => {
-    if (!confirm(`Reset all ${label} topics to built-in defaults? This removes your Firestore overrides.`)) return;
+    if (!confirm(tr("core.management.reset_all_label_topics_to_21c4fe", { label: label }))) return;
     setSaving(true);
     try {
       await deleteCMSDocument(docId);
       setAllTopics(defaultTopics);
       invalidateCMS(activeCmsLang());
       setDirty(false);
-      showToast('Reset to defaults.');
-    } catch { showToast('Reset failed.'); }
+      showToast(tr("core.management.reset_to_defaults_5b3b55"));
+    } catch { showToast(tr("core.management.reset_failed_29fe06")); }
     finally { setSaving(false); }
   };
 
@@ -268,11 +245,11 @@ function TopicsEditor({ docId, defaultTopics, levels, label }: TopicsEditorProps
       {/* Info row */}
       <div className="flex items-center justify-between mb-3">
         <p className="text-sm font-semibold text-slate-700">
-          {currentTopics.length} topics · <span className="text-slate-400 font-normal">{level}</span>
+          {currentTopics.length}  {tr("site.contentmanager.topics_674f5e")}<span className="text-slate-400 font-normal">{level}</span>
         </p>
         <div className="flex items-center gap-2">
-          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Unsaved changes</span>}
-          <button onClick={reset} disabled={saving} title="Reset to defaults" className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50">
+          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">{tr("site.contentmanager.unsaved_changes_292672")}</span>}
+          <button onClick={reset} disabled={saving} title={tr("site.contentmanager.reset_to_defaults_ddefe4")} className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50">
             <RotateCcw className="w-4 h-4" />
           </button>
           <button
@@ -281,8 +258,7 @@ function TopicsEditor({ docId, defaultTopics, levels, label }: TopicsEditorProps
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 disabled:opacity-40 transition-colors"
           >
             {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
-            Save
-          </button>
+            {tr("site.contentmanager.save_efc007")}</button>
         </div>
       </div>
 
@@ -292,1461 +268,8 @@ function TopicsEditor({ docId, defaultTopics, levels, label }: TopicsEditorProps
         <StringListEditor
           items={currentTopics}
           onChange={handleChange}
-          placeholder={`Add a new ${label.toLowerCase()} topic…`}
+          placeholder={tr("core.management.add_a_new_value1_topic_530455", { value1: label.toLowerCase() })}
         />
-      )}
-
-      {toast && (
-        <div className="fixed bottom-6 right-6 bg-zinc-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 text-sm font-semibold z-[60]">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400" /> {toast}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── Task2Editor ───────────────────────────────────────────────────────────────
-
-function Task2Editor() {
-  const [types, setTypes] = useState<Task2TypeData[]>(TASK2_DATA);
-  const [selectedType, setSelectedType] = useState(TASK2_DATA[0].type);
-  const [selectedCat, setSelectedCat] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [dirty, setDirty] = useState(false);
-  const [saving, setSaving] = useState(false);
-  const [toast, setToast] = useState<string | null>(null);
-
-  const showToast = (msg: string) => { setToast(msg); setTimeout(() => setToast(null), 3000); };
-
-  useEffect(() => {
-    cmsGet('writingTask2').then(data => {
-      if (data?.types?.length) setTypes(data.types);
-      setLoading(false);
-    }).catch(() => setLoading(false));
-  }, []);
-
-  const typeData = types.find(t => t.type === selectedType) ?? types[0];
-  const typeIdx  = types.findIndex(t => t.type === selectedType);
-  const category = typeData?.categories[selectedCat];
-
-  const handlePromptsChange = (prompts: string[]) => {
-    setTypes(prev => prev.map((t, ti) => ti !== typeIdx ? t : {
-      ...t,
-      categories: t.categories.map((c, ci) => ci !== selectedCat ? c : { ...c, prompts }),
-    }));
-    setDirty(true);
-  };
-
-  const save = async () => {
-    setSaving(true);
-    try {
-      await cmsSet('writingTask2', { types });
-      invalidateCMS(activeCmsLang());
-      setDirty(false);
-      showToast('Saved! Changes will appear on the next page load.');
-    } catch { showToast('Save failed.'); }
-    finally { setSaving(false); }
-  };
-
-  const reset = async () => {
-    if (!confirm('Reset all Writing Task 2 prompts to built-in defaults?')) return;
-    setSaving(true);
-    try {
-      await cmsDel('writingTask2');
-      setTypes(TASK2_DATA);
-      invalidateCMS(activeCmsLang());
-      setDirty(false);
-      showToast('Reset to defaults.');
-    } catch { showToast('Reset failed.'); }
-    finally { setSaving(false); }
-  };
-
-  return (
-    <div>
-      {/* Essay type selector */}
-      <div className="flex flex-wrap gap-2 mb-4">
-        {types.map(t => (
-          <button
-            key={t.type}
-            onClick={() => { setSelectedType(t.type); setSelectedCat(0); }}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition-all ${selectedType === t.type ? 'bg-zinc-900 text-white border-zinc-900 shadow' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'}`}
-          >
-            {t.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Category selector */}
-      {typeData && (
-        <div className="flex items-center gap-2 mb-5">
-          <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Category:</span>
-          <div className="relative">
-            <select
-              value={selectedCat}
-              onChange={e => setSelectedCat(Number(e.target.value))}
-              className="pl-3 pr-8 py-1.5 rounded-xl border border-slate-200 text-sm font-semibold text-zinc-900 bg-white focus:outline-none focus:border-zinc-400 appearance-none"
-            >
-              {typeData.categories.map((c, i) => (
-                <option key={i} value={i}>{c.name} ({c.prompts.length})</option>
-              ))}
-            </select>
-            <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 pointer-events-none" />
-          </div>
-          <div className="flex items-center gap-2 ml-auto">
-            {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Unsaved changes</span>}
-            <button onClick={reset} disabled={saving} title="Reset to defaults" className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50">
-              <RotateCcw className="w-4 h-4" />
-            </button>
-            <button
-              onClick={save}
-              disabled={!dirty || saving}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 disabled:opacity-40 transition-colors"
-            >
-              {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
-              Save
-            </button>
-          </div>
-        </div>
-      )}
-
-      {loading ? (
-        <div className="flex justify-center py-8"><Loader2 className="w-5 h-5 animate-spin text-slate-400" /></div>
-      ) : category ? (
-        <StringListEditor
-          items={category.prompts}
-          onChange={handlePromptsChange}
-          placeholder="Add a new Task 2 essay prompt…"
-        />
-      ) : null}
-
-      {toast && (
-        <div className="fixed bottom-6 right-6 bg-zinc-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 text-sm font-semibold z-[60]">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400" /> {toast}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── IELTSSpeakingEditor (Part 1) ─────────────────────────────────────────────
-
-function IELTSSpeakingEditor() {
-  const [topics, setTopics] = useState<Part1Topic[]>(PART1_TOPICS);
-  const [selectedId, setSelectedId] = useState(PART1_TOPICS[0]?.id ?? '');
-  const [loading, setLoading] = useState(true);
-  const [dirty, setDirty] = useState(false);
-  const [saving, setSaving] = useState(false);
-  const [toast, setToast] = useState<string | null>(null);
-  const [newTopicTitle, setNewTopicTitle] = useState('');
-  const [newTopicIcon, setNewTopicIcon] = useState('📝');
-  const [showNewTopic, setShowNewTopic] = useState(false);
-
-  const showToast = (msg: string) => { setToast(msg); setTimeout(() => setToast(null), 3000); };
-
-  useEffect(() => {
-    cmsGet('ieltsSpeakingPart1').then(data => {
-      if (data?.topics?.length) setTopics(data.topics);
-      setLoading(false);
-    }).catch(() => setLoading(false));
-  }, []);
-
-  const topic    = topics.find(t => t.id === selectedId);
-  const topicIdx = topics.findIndex(t => t.id === selectedId);
-  const isArchived = !!(topic as any)?.archived;
-
-  const handleQuestionsChange = (questions: string[]) => {
-    setTopics(prev => prev.map((t, i) => i !== topicIdx ? t : { ...t, questions }));
-    setDirty(true);
-  };
-
-  const toggleArchive = () => {
-    setTopics(prev => prev.map((t, i) => i !== topicIdx ? t : { ...t, archived: !isArchived }));
-    setDirty(true);
-  };
-
-  const addTopic = () => {
-    if (!newTopicTitle.trim()) return;
-    const id = `custom_${Date.now()}`;
-    const newTopic: Part1Topic = { id, title: newTopicTitle.trim(), icon: newTopicIcon, questions: [] };
-    setTopics(prev => [...prev, newTopic]);
-    setSelectedId(id);
-    setNewTopicTitle(''); setNewTopicIcon('📝'); setShowNewTopic(false);
-    setDirty(true);
-  };
-
-  const deleteTopic = () => {
-    if (!confirm(`Permanently delete topic "${topic?.title}"? This cannot be undone.`)) return;
-    const remaining = topics.filter(t => t.id !== selectedId);
-    setTopics(remaining);
-    setSelectedId(remaining.find(t => !(t as any).archived)?.id ?? remaining[0]?.id ?? '');
-    setDirty(true);
-  };
-
-  const save = async () => {
-    setSaving(true);
-    try {
-      await cmsSet('ieltsSpeakingPart1', { topics });
-      invalidateCMS(activeCmsLang());
-      setDirty(false);
-      showToast('Saved! Changes will appear on the next page load.');
-    } catch { showToast('Save failed.'); }
-    finally { setSaving(false); }
-  };
-
-  const reset = async () => {
-    if (!confirm('Reset all IELTS Speaking Part 1 topics to built-in defaults?')) return;
-    setSaving(true);
-    try {
-      await cmsDel('ieltsSpeakingPart1');
-      setTopics(PART1_TOPICS);
-      setSelectedId(PART1_TOPICS[0]?.id ?? '');
-      invalidateCMS(); setDirty(false);
-      showToast('Reset to defaults.');
-    } catch { showToast('Reset failed.'); }
-    finally { setSaving(false); }
-  };
-
-  const activeTopics   = topics.filter(t => !(t as any).archived);
-  const archivedTopics = topics.filter(t => !!(t as any).archived);
-
-  return (
-    <div>
-      <div className="flex flex-wrap items-start gap-3 mb-5">
-        <div className="flex-1 min-w-[200px]">
-          <div className="relative">
-            <select value={selectedId} onChange={e => setSelectedId(e.target.value)}
-              className="w-full pl-3 pr-8 py-2 rounded-xl border border-slate-200 text-sm font-semibold text-zinc-900 bg-white focus:outline-none focus:border-zinc-400 appearance-none">
-              <optgroup label="Active topics">
-                {activeTopics.map(t => <option key={t.id} value={t.id}>{t.icon} {t.title} ({t.questions.length}Q)</option>)}
-              </optgroup>
-              {archivedTopics.length > 0 && (
-                <optgroup label="Archived topics">
-                  {archivedTopics.map(t => <option key={t.id} value={t.id}>{t.icon} {t.title} [archived]</option>)}
-                </optgroup>
-              )}
-            </select>
-            <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 pointer-events-none" />
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2 shrink-0">
-          <button onClick={() => setShowNewTopic(s => !s)} className="inline-flex items-center gap-1 px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors">
-            <Plus className="w-3.5 h-3.5" /> New Topic
-          </button>
-          {topic && archiveBtn(isArchived, toggleArchive)}
-          {topic && (
-            <button onClick={deleteTopic} title="Permanently delete" className="p-2 rounded-xl border border-rose-200 text-rose-500 hover:bg-rose-50 transition-colors">
-              <Trash2 className="w-3.5 h-3.5" />
-            </button>
-          )}
-          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Unsaved</span>}
-          <button onClick={reset} disabled={saving} title="Reset to defaults" className="p-2 rounded-xl border border-slate-200 text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50">
-            <RotateCcw className="w-3.5 h-3.5" />
-          </button>
-          <button onClick={save} disabled={!dirty || saving}
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 disabled:opacity-40 transition-colors">
-            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />} Save
-          </button>
-        </div>
-      </div>
-
-      {showNewTopic && (
-        <div className="mb-4 p-4 bg-zinc-50 rounded-2xl border border-zinc-200 space-y-3">
-          <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">New Part 1 Topic</p>
-          <div className="flex gap-2">
-            <input value={newTopicIcon} onChange={e => setNewTopicIcon(e.target.value)} maxLength={4}
-              className="w-14 text-center px-2 py-2 rounded-xl border border-slate-200 text-lg focus:outline-none focus:border-zinc-400" placeholder="📝" />
-            <input value={newTopicTitle} onChange={e => setNewTopicTitle(e.target.value)}
-              placeholder="Topic title (e.g. Travel & Tourism)"
-              className="flex-1 px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
-            <button onClick={addTopic} disabled={!newTopicTitle.trim()}
-              className="px-3 py-2 rounded-xl bg-zinc-900 text-white text-sm font-semibold disabled:opacity-40 hover:bg-zinc-700 transition-colors">Add</button>
-            <button onClick={() => setShowNewTopic(false)} className="p-2 rounded-xl text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors"><X className="w-4 h-4" /></button>
-          </div>
-        </div>
-      )}
-
-      {loading ? (
-        <div className="flex justify-center py-8"><Loader2 className="w-5 h-5 animate-spin text-slate-400" /></div>
-      ) : topic ? (
-        <div className={isArchived ? 'opacity-60' : ''}>
-          {isArchived && <div className="flex items-center gap-2 mb-3 p-3 bg-amber-50 rounded-xl border border-amber-200"><ArchivedBadge /><span className="text-xs text-amber-700">This topic is hidden from students. Restore it to make it visible again.</span></div>}
-          <StringListEditor items={topic.questions} onChange={handleQuestionsChange} placeholder="Add a new interview question…" />
-        </div>
-      ) : (
-        <div className="text-center py-12 text-slate-400"><Mic className="w-10 h-10 mx-auto mb-3 text-slate-300" /><p>No topic selected.</p></div>
-      )}
-
-      {toast && (
-        <div className="fixed bottom-6 right-6 bg-zinc-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 text-sm font-semibold z-[60]">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400" /> {toast}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── IELTSReadingManager ──────────────────────────────────────────────────────
-
-function IELTSReadingManager() {
-  const [tests, setTests] = useState<CustomIELTSTestRecord[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [showArchived, setShowArchived] = useState(false);
-  const emptyForm = { open: false, editId: null as string | null, title: '', json: '', saving: false, error: null as string | null, builtInOverrideIdx: null as number | null, status: 'draft' as 'draft' | 'published' };
-  const [form, setForm] = useState(emptyForm);
-  const [toast, setToast] = useState<string | null>(null);
-
-  const showToast = (msg: string) => { setToast(msg); setTimeout(() => setToast(null), 3000); };
-
-  const load = useCallback(async () => {
-    setLoading(true);
-    try { setTests(await getIELTSTests()); } finally { setLoading(false); }
-  }, []);
-
-  useEffect(() => { load(); }, [load]);
-
-  const TEMPLATE = JSON.stringify([{
-    title: 'Passage 1 Title',
-    paragraphs: [{ label: 'A', text: 'First paragraph text.' }, { label: 'B', text: 'Second paragraph text.' }],
-    sections: [{
-      instructions: 'Questions 1–5. Write TRUE, FALSE, or NOT GIVEN.',
-      questionType: 'tfng', questionRange: [1, 5],
-      questions: [{ number: 1, type: 'tfng', statement: 'Statement here.', answer: 'TRUE', explanation: 'Explanation.' }],
-    }],
-  }], null, 2);
-
-  const openAdd = () => setForm({ ...emptyForm, open: true });
-  const openEdit = (t: CustomIELTSTestRecord) => setForm({
-    open: true, editId: t.firestoreId, title: t.title,
-    json: JSON.stringify(t.passages, null, 2), saving: false, error: null, builtInOverrideIdx: t.builtInOverrideIndex ?? null,
-    status: t.status ?? 'draft',
-  });
-
-  // Edit a built-in test — uses existing override if present, else seeds from built-in data
-  const openEditBuiltIn = (idx: number) => {
-    const override = tests.find(t => t.builtInOverrideIndex === idx && !t.archived);
-    if (override) {
-      setForm({ open: true, editId: override.firestoreId, title: override.title, json: JSON.stringify(override.passages, null, 2), saving: false, error: null, builtInOverrideIdx: idx, status: override.status ?? 'draft' });
-    } else {
-      const builtIn = ieltsReadingTests[idx];
-      setForm({ open: true, editId: null, title: builtIn.title, json: JSON.stringify(builtIn.passages, null, 2), saving: false, error: null, builtInOverrideIdx: idx, status: 'draft' });
-    }
-  };
-
-  const resetBuiltIn = async (idx: number) => {
-    const override = tests.find(t => t.builtInOverrideIndex === idx);
-    if (!override) return;
-    if (!confirm(`Reset Built-in Test ${idx + 1} to its original content? The custom override will be deleted.`)) return;
-    try {
-      await deleteIELTSTest(override.firestoreId);
-      await load();
-      showToast('Reset to built-in test.');
-    } catch { showToast('Delete failed.'); }
-  };
-
-  const onSave = async (status: 'draft' | 'published') => {
-    setForm(f => ({ ...f, saving: true, error: null }));
-    try {
-      const passages = JSON.parse(form.json);
-      if (!Array.isArray(passages) || passages.length === 0) throw new Error('Must be a non-empty JSON array of passages');
-      if (form.editId) {
-        await updateIELTSTest(form.editId, {
-          title: form.title.trim(), passages, status,
-          ...(form.builtInOverrideIdx !== null ? { builtInOverrideIndex: form.builtInOverrideIdx } : {}),
-        });
-      } else {
-        await saveIELTSTest({
-          title: form.title.trim(), passages, status,
-          ...(form.builtInOverrideIdx !== null ? { builtInOverrideIndex: form.builtInOverrideIdx } : {}),
-        });
-      }
-      showToast(status === 'published' ? 'Test published!' : 'Saved as draft.');
-      await load();
-      setForm(emptyForm);
-    } catch (e: any) {
-      setForm(f => ({ ...f, saving: false, error: e.message || 'Invalid JSON or save failed.' }));
-    }
-  };
-
-  const onToggleStatus = async (t: CustomIELTSTestRecord) => {
-    const newStatus = t.status === 'published' ? 'draft' : 'published';
-    try {
-      await updateIELTSTest(t.firestoreId, { status: newStatus });
-      setTests(prev => prev.map(x => x.firestoreId === t.firestoreId ? { ...x, status: newStatus } : x));
-      showToast(newStatus === 'published' ? 'Test published!' : 'Test set to draft.');
-    } catch { showToast('Failed to update status.'); }
-  };
-
-  const onToggleArchive = async (t: CustomIELTSTestRecord) => {
-    try {
-      await updateIELTSTest(t.firestoreId, { archived: !t.archived });
-      setTests(prev => prev.map(x => x.firestoreId === t.firestoreId ? { ...x, archived: !t.archived } : x));
-      showToast(t.archived ? 'Test restored.' : 'Test archived.');
-    } catch { showToast('Failed to update.'); }
-  };
-
-  const onDelete = async (id: string, title: string) => {
-    if (!confirm(`Permanently delete test "${title}"? This cannot be undone.`)) return;
-    try { await deleteIELTSTest(id); setTests(prev => prev.filter(t => t.firestoreId !== id)); showToast('Deleted.'); }
-    catch { showToast('Delete failed.'); }
-  };
-
-  const activeTests        = tests.filter(t => !t.archived);
-  const archivedTests      = tests.filter(t => t.archived);
-  const activeCustomTests  = activeTests.filter(t => t.builtInOverrideIndex === undefined);
-  const archivedCustomTests= archivedTests.filter(t => t.builtInOverrideIndex === undefined);
-
-  const TestRow = ({ t, idx }: { t: CustomIELTSTestRecord; idx: number }) => (
-    <div key={t.firestoreId} className={`bg-white rounded-2xl border p-4 flex items-center gap-4 ${t.archived ? 'border-amber-200 opacity-70' : t.status === 'published' ? 'border-emerald-200' : 'border-slate-200'}`}>
-      <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${t.archived ? 'bg-amber-50' : 'bg-zinc-100'}`}>
-        <span className="font-black text-zinc-900">{idx}</span>
-      </div>
-      <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2 flex-wrap">
-          <p className="font-bold text-zinc-900 truncate">{t.title}</p>
-          {t.archived && <ArchivedBadge />}
-          {!t.archived && (
-            <span className={`inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full border ${
-              t.status === 'published'
-                ? 'bg-emerald-100 text-emerald-700 border-emerald-200'
-                : 'bg-amber-100 text-amber-700 border-amber-200'
-            }`}>
-              {t.status === 'published' ? '✓ Published' : '⏸ Draft'}
-            </span>
-          )}
-        </div>
-        <p className="text-xs text-slate-400">{t.passages?.length ?? 0} passages · {new Date(t.createdAt).toLocaleDateString()}</p>
-      </div>
-      <div className="flex items-center gap-1 shrink-0">
-        {!t.archived && (
-          <>
-            <button onClick={() => onToggleStatus(t)}
-              title={t.status === 'published' ? 'Set to draft (hide from students)' : 'Publish (show to students)'}
-              className={`p-2 rounded-lg transition-colors ${t.status === 'published' ? 'text-emerald-600 hover:bg-emerald-50' : 'text-amber-500 hover:bg-amber-50'}`}>
-              {t.status === 'published' ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
-            </button>
-            <button onClick={() => openEdit(t)} title="Edit test" className="p-2 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors">
-              <Edit2 className="w-4 h-4" />
-            </button>
-          </>
-        )}
-        {archiveBtn(!!t.archived, () => onToggleArchive(t))}
-        <button onClick={() => onDelete(t.firestoreId, t.title)} title="Permanently delete" className="p-2 rounded-lg text-rose-500 hover:bg-rose-50 transition-colors">
-          <Trash2 className="w-4 h-4" />
-        </button>
-      </div>
-    </div>
-  );
-
-  return (
-    <div>
-      <div className="flex items-center justify-between mb-5">
-        <p className="text-sm text-slate-500">Edit built-in tests or add custom ones. Custom tests appear as Tests 4, 5, …</p>
-        <button onClick={openAdd}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 text-white text-sm font-semibold hover:bg-zinc-700 transition-colors shrink-0">
-          <Plus className="w-4 h-4" /> Add Test
-        </button>
-      </div>
-
-      {loading ? (
-        <div className="flex justify-center py-12"><Loader2 className="w-6 h-6 animate-spin text-slate-400" /></div>
-      ) : (
-        <>
-          {/* Built-in tests */}
-          <div className="mb-5">
-            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Built-in Tests</p>
-            <div className="grid gap-3">
-              {ieltsReadingTests.map((t, idx) => {
-                const override = tests.find(x => x.builtInOverrideIndex === idx && !x.archived);
-                return (
-                  <div key={t.id} className={`bg-white rounded-2xl border p-4 flex items-center gap-4 ${override ? 'border-emerald-200' : 'border-slate-200'}`}>
-                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${override ? 'bg-emerald-50' : 'bg-zinc-100'}`}>
-                      <span className="font-black text-zinc-900">{idx + 1}</span>
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <p className="font-bold text-zinc-900 truncate">{override ? override.title : t.title}</p>
-                        {override && <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200">✎ Modified</span>}
-                      </div>
-                      <p className="text-xs text-slate-400">{(override ? override.passages : t.passages)?.length ?? 0} passages · {override ? 'Custom override active' : 'Built-in'}</p>
-                    </div>
-                    <div className="flex items-center gap-1 shrink-0">
-                      <button onClick={() => openEditBuiltIn(idx)} title="Edit this test" className="p-2 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors">
-                        <Edit2 className="w-4 h-4" />
-                      </button>
-                      {override && (
-                        <button onClick={() => resetBuiltIn(idx)} title="Reset to built-in" className="p-2 rounded-lg text-amber-500 hover:bg-amber-50 transition-colors">
-                          <RotateCcw className="w-4 h-4" />
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Custom tests (exclude built-in overrides from this list) */}
-          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Custom Tests</p>
-          {activeCustomTests.length === 0 && archivedCustomTests.length === 0 ? (
-            <div className="bg-white rounded-2xl border border-slate-200 p-8 text-center">
-              <BookOpen className="w-8 h-8 mx-auto mb-2 text-slate-300" />
-              <p className="font-semibold text-slate-500 text-sm">No custom tests yet</p>
-            </div>
-          ) : (
-            <div className="grid gap-3">
-              {activeCustomTests.map((t, i) => <React.Fragment key={t.firestoreId}><TestRow t={t} idx={ieltsReadingTests.length + i + 1} /></React.Fragment>)}
-            </div>
-          )}
-          {archivedCustomTests.length > 0 && (
-            <div className="mt-4">
-              <button onClick={() => setShowArchived(s => !s)}
-                className="flex items-center gap-2 text-xs font-bold text-amber-600 hover:text-amber-800 transition-colors mb-2">
-                <ChevronRight className={`w-4 h-4 transition-transform ${showArchived ? 'rotate-90' : ''}`} />
-                Archived tests ({archivedCustomTests.length})
-              </button>
-              {showArchived && (
-                <div className="grid gap-3">
-                  {archivedCustomTests.map((t, i) => <React.Fragment key={t.firestoreId}><TestRow t={t} idx={activeCustomTests.length + i + ieltsReadingTests.length + 1} /></React.Fragment>)}
-                </div>
-              )}
-            </div>
-          )}
-        </>
-      )}
-
-      {form.open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col">
-            <div className="px-6 pt-6 pb-4 border-b border-slate-100 flex items-center justify-between shrink-0">
-              <h3 className="text-lg font-bold text-zinc-900">
-                {form.builtInOverrideIdx !== null
-                  ? `Edit Built-in Test ${form.builtInOverrideIdx + 1}`
-                  : form.editId ? 'Edit Custom Test' : 'Add Custom Test'}
-              </h3>
-              <button onClick={() => setForm(emptyForm)} className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors"><X className="w-5 h-5" /></button>
-            </div>
-            <div className="flex-1 overflow-y-auto px-6 py-5 space-y-4">
-              <div>
-                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Test Title</label>
-                <input value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))}
-                  placeholder="e.g. Academic Reading Test 4"
-                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
-              </div>
-              <div>
-                <div className="flex items-center justify-between mb-1.5">
-                  <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider">Passages (JSON)</label>
-                  <button onClick={() => setForm(f => ({ ...f, json: TEMPLATE, error: null }))} className="inline-flex items-center gap-1 text-xs text-indigo-600 font-semibold hover:underline">
-                    <Code className="w-3 h-3" /> Load template
-                  </button>
-                </div>
-                <textarea value={form.json} onChange={e => setForm(f => ({ ...f, json: e.target.value, error: null }))}
-                  rows={14} spellCheck={false} placeholder='Paste a JSON array of passages…'
-                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-[11px] font-mono focus:outline-none focus:border-zinc-400 resize-y" />
-                {form.error && <p className="mt-1.5 text-xs text-rose-600 font-semibold">⚠ {form.error}</p>}
-                <p className="mt-2 text-xs text-slate-400 leading-relaxed">
-                  Types: <code className="font-mono bg-slate-100 px-1 rounded">tfng</code> · <code className="font-mono bg-slate-100 px-1 rounded">ynng</code> · <code className="font-mono bg-slate-100 px-1 rounded">mcq</code> · <code className="font-mono bg-slate-100 px-1 rounded">paragraph-match</code> · <code className="font-mono bg-slate-100 px-1 rounded">heading</code> · <code className="font-mono bg-slate-100 px-1 rounded">wordbank</code> · <code className="font-mono bg-slate-100 px-1 rounded">concept-match</code>
-                </p>
-              </div>
-            </div>
-            <div className="px-6 pb-6 pt-4 border-t border-slate-100 flex items-center justify-between shrink-0">
-              <p className="text-xs text-slate-400">
-                {form.editId ? `Editing${form.status === 'published' ? ' (currently published)' : ' (currently draft)'}` : 'New test'}
-              </p>
-              <div className="flex gap-3">
-                <button onClick={() => setForm(emptyForm)} className="px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors">Cancel</button>
-                <button onClick={() => onSave('draft')} disabled={form.saving || !form.title.trim() || !form.json.trim()}
-                  className="px-4 py-2.5 rounded-xl border border-slate-300 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50 transition-colors inline-flex items-center gap-2">
-                  {form.saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
-                  Save as Draft
-                </button>
-                <button onClick={() => onSave('published')} disabled={form.saving || !form.title.trim() || !form.json.trim()}
-                  className="px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700 disabled:opacity-50 transition-colors inline-flex items-center gap-2">
-                  {form.saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
-                  Publish Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {toast && (
-        <div className="fixed bottom-6 right-6 bg-zinc-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 text-sm font-semibold z-[60]">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400" /> {toast}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── IELTSListeningManager ─────────────────────────────────────────────────────
-
-function IELTSListeningManager() {
-  const [tests, setTests] = useState<CustomIELTSListeningTestRecord[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [showArchived, setShowArchived] = useState(false);
-  const emptyForm = { open: false, editId: null as string | null, title: '', json: '', saving: false, error: null as string | null, builtInOverrideIdx: null as number | null, status: 'draft' as 'draft' | 'published' };
-  const [form, setForm] = useState(emptyForm);
-  const [toast, setToast] = useState<string | null>(null);
-
-  const showToast = (msg: string) => { setToast(msg); setTimeout(() => setToast(null), 3000); };
-
-  const load = useCallback(async () => {
-    setLoading(true);
-    try { setTests(await getIELTSListeningTests()); } finally { setLoading(false); }
-  }, []);
-
-  useEffect(() => { load(); }, [load]);
-
-  const SECTION_TEMPLATE = JSON.stringify([{
-    number: 1,
-    title: 'Section Title',
-    context: 'Brief scene-setter shown to the student before audio plays.',
-    transcript: 'Full audio transcript here. Speaker A: ... Speaker B: ...',
-    questionRange: [1, 10],
-    instructions: 'Complete the form below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.',
-    questions: [
-      { number: 1, type: 'fill', label: 'Name:', answer: 'Smith', explanation: 'Explanation of where the answer appears.' },
-      { number: 2, type: 'mcq', stem: 'Which option is correct?', options: [{ label: 'A', text: 'Option A' }, { label: 'B', text: 'Option B' }, { label: 'C', text: 'Option C' }], answer: 'B', explanation: 'Explanation.' },
-    ],
-  }], null, 2);
-
-  const openAdd = () => setForm({ ...emptyForm, open: true });
-  const openEdit = (t: CustomIELTSListeningTestRecord) => setForm({
-    open: true, editId: t.firestoreId, title: t.title,
-    json: JSON.stringify(t.sections, null, 2), saving: false, error: null, builtInOverrideIdx: t.builtInOverrideIndex ?? null,
-    status: t.status ?? 'draft',
-  });
-
-  const openEditBuiltIn = (idx: number) => {
-    const override = tests.find(t => t.builtInOverrideIndex === idx && !t.archived);
-    if (override) {
-      setForm({ open: true, editId: override.firestoreId, title: override.title, json: JSON.stringify(override.sections, null, 2), saving: false, error: null, builtInOverrideIdx: idx, status: override.status ?? 'draft' });
-    } else {
-      const builtIn = ieltsListeningTests[idx];
-      setForm({ open: true, editId: null, title: builtIn.title, json: JSON.stringify(builtIn.sections, null, 2), saving: false, error: null, builtInOverrideIdx: idx, status: 'draft' });
-    }
-  };
-
-  const resetBuiltIn = async (idx: number) => {
-    const override = tests.find(t => t.builtInOverrideIndex === idx);
-    if (!override) return;
-    if (!confirm(`Reset Built-in Test ${idx + 1} to its original content? The custom override will be deleted.`)) return;
-    try {
-      await deleteIELTSListeningTest(override.firestoreId);
-      await load();
-      showToast('Reset to built-in test.');
-    } catch { showToast('Delete failed.'); }
-  };
-
-  const onSave = async (status: 'draft' | 'published') => {
-    setForm(f => ({ ...f, saving: true, error: null }));
-    try {
-      const sections = JSON.parse(form.json);
-      if (!Array.isArray(sections) || sections.length === 0) throw new Error('Must be a non-empty JSON array of sections');
-      if (form.editId) {
-        await updateIELTSListeningTest(form.editId, {
-          title: form.title.trim(), sections, status,
-          ...(form.builtInOverrideIdx !== null ? { builtInOverrideIndex: form.builtInOverrideIdx } : {}),
-        });
-      } else {
-        await saveIELTSListeningTest({
-          title: form.title.trim(), sections, status,
-          ...(form.builtInOverrideIdx !== null ? { builtInOverrideIndex: form.builtInOverrideIdx } : {}),
-        });
-      }
-      showToast(status === 'published' ? 'Test published!' : 'Saved as draft.');
-      await load();
-      setForm(emptyForm);
-    } catch (e: any) {
-      setForm(f => ({ ...f, saving: false, error: e.message || 'Invalid JSON or save failed.' }));
-    }
-  };
-
-  const onToggleStatus = async (t: CustomIELTSListeningTestRecord) => {
-    const newStatus = t.status === 'published' ? 'draft' : 'published';
-    try {
-      await updateIELTSListeningTest(t.firestoreId, { status: newStatus });
-      setTests(prev => prev.map(x => x.firestoreId === t.firestoreId ? { ...x, status: newStatus } : x));
-      showToast(newStatus === 'published' ? 'Test published!' : 'Test set to draft.');
-    } catch { showToast('Failed to update status.'); }
-  };
-
-  const onToggleArchive = async (t: CustomIELTSListeningTestRecord) => {
-    try {
-      await updateIELTSListeningTest(t.firestoreId, { archived: !t.archived });
-      setTests(prev => prev.map(x => x.firestoreId === t.firestoreId ? { ...x, archived: !t.archived } : x));
-      showToast(t.archived ? 'Test restored.' : 'Test archived.');
-    } catch { showToast('Failed to update.'); }
-  };
-
-  const onDelete = async (id: string, title: string) => {
-    if (!confirm(`Permanently delete test "${title}"? This cannot be undone.`)) return;
-    try { await deleteIELTSListeningTest(id); setTests(prev => prev.filter(t => t.firestoreId !== id)); showToast('Deleted.'); }
-    catch { showToast('Delete failed.'); }
-  };
-
-  const activeTests        = tests.filter(t => !t.archived);
-  const archivedTests      = tests.filter(t => t.archived);
-  const activeCustomTests  = activeTests.filter(t => t.builtInOverrideIndex === undefined);
-  const archivedCustomTests= archivedTests.filter(t => t.builtInOverrideIndex === undefined);
-
-  const TestRow = ({ t, idx }: { t: CustomIELTSListeningTestRecord; idx: number }) => (
-    <div key={t.firestoreId} className={`bg-white rounded-2xl border p-4 flex items-center gap-4 ${t.archived ? 'border-amber-200 opacity-70' : t.status === 'published' ? 'border-emerald-200' : 'border-slate-200'}`}>
-      <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${t.archived ? 'bg-amber-50' : 'bg-zinc-100'}`}>
-        <span className="font-black text-zinc-900">{idx}</span>
-      </div>
-      <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2 flex-wrap">
-          <p className="font-bold text-zinc-900 truncate">{t.title}</p>
-          {t.archived && <ArchivedBadge />}
-          {!t.archived && (
-            <span className={`inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full border ${
-              t.status === 'published'
-                ? 'bg-emerald-100 text-emerald-700 border-emerald-200'
-                : 'bg-amber-100 text-amber-700 border-amber-200'
-            }`}>
-              {t.status === 'published' ? '✓ Published' : '⏸ Draft'}
-            </span>
-          )}
-        </div>
-        <p className="text-xs text-slate-400">{t.sections?.length ?? 0} sections · {new Date(t.createdAt).toLocaleDateString()}</p>
-      </div>
-      <div className="flex items-center gap-1 shrink-0">
-        {!t.archived && (
-          <>
-            <button onClick={() => onToggleStatus(t)}
-              title={t.status === 'published' ? 'Set to draft (hide from students)' : 'Publish (show to students)'}
-              className={`p-2 rounded-lg transition-colors ${t.status === 'published' ? 'text-emerald-600 hover:bg-emerald-50' : 'text-amber-500 hover:bg-amber-50'}`}>
-              {t.status === 'published' ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
-            </button>
-            <button onClick={() => openEdit(t)} title="Edit test" className="p-2 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors">
-              <Edit2 className="w-4 h-4" />
-            </button>
-          </>
-        )}
-        {archiveBtn(!!t.archived, () => onToggleArchive(t))}
-        <button onClick={() => onDelete(t.firestoreId, t.title)} title="Permanently delete" className="p-2 rounded-lg text-rose-500 hover:bg-rose-50 transition-colors">
-          <Trash2 className="w-4 h-4" />
-        </button>
-      </div>
-    </div>
-  );
-
-  return (
-    <div>
-      <div className="flex items-center justify-between mb-5">
-        <p className="text-sm text-slate-500">Edit built-in tests or add custom ones. Custom tests appear as Tests 3, 4, …</p>
-        <button onClick={openAdd}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-zinc-900 text-white text-sm font-semibold hover:bg-zinc-700 transition-colors shrink-0">
-          <Plus className="w-4 h-4" /> Add Test
-        </button>
-      </div>
-
-      {loading ? (
-        <div className="flex justify-center py-12"><Loader2 className="w-6 h-6 animate-spin text-slate-400" /></div>
-      ) : (
-        <>
-          {/* Built-in tests */}
-          <div className="mb-5">
-            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Built-in Tests</p>
-            <div className="grid gap-3">
-              {ieltsListeningTests.map((t, idx) => {
-                const override = tests.find(x => x.builtInOverrideIndex === idx && !x.archived);
-                return (
-                  <div key={t.id} className={`bg-white rounded-2xl border p-4 flex items-center gap-4 ${override ? 'border-emerald-200' : 'border-slate-200'}`}>
-                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${override ? 'bg-emerald-50' : 'bg-zinc-100'}`}>
-                      <span className="font-black text-zinc-900">{idx + 1}</span>
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <p className="font-bold text-zinc-900 truncate">{override ? override.title : t.title}</p>
-                        {override && <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200">✎ Modified</span>}
-                      </div>
-                      <p className="text-xs text-slate-400">{(override ? override.sections : t.sections)?.length ?? 0} sections · {override ? 'Custom override active' : 'Built-in'}</p>
-                    </div>
-                    <div className="flex items-center gap-1 shrink-0">
-                      <button onClick={() => openEditBuiltIn(idx)} title="Edit this test" className="p-2 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors">
-                        <Edit2 className="w-4 h-4" />
-                      </button>
-                      {override && (
-                        <button onClick={() => resetBuiltIn(idx)} title="Reset to built-in" className="p-2 rounded-lg text-amber-500 hover:bg-amber-50 transition-colors">
-                          <RotateCcw className="w-4 h-4" />
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Custom tests */}
-          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Custom Tests</p>
-          {activeCustomTests.length === 0 && archivedCustomTests.length === 0 ? (
-            <div className="bg-white rounded-2xl border border-slate-200 p-8 text-center">
-              <Headphones className="w-8 h-8 mx-auto mb-2 text-slate-300" />
-              <p className="font-semibold text-slate-500 text-sm">No custom tests yet</p>
-            </div>
-          ) : (
-            <div className="grid gap-3">
-              {activeCustomTests.map((t, i) => <React.Fragment key={t.firestoreId}><TestRow t={t} idx={ieltsListeningTests.length + i + 1} /></React.Fragment>)}
-            </div>
-          )}
-          {archivedCustomTests.length > 0 && (
-            <div className="mt-4">
-              <button onClick={() => setShowArchived(s => !s)}
-                className="flex items-center gap-2 text-xs font-bold text-amber-600 hover:text-amber-800 transition-colors mb-2">
-                <ChevronRight className={`w-4 h-4 transition-transform ${showArchived ? 'rotate-90' : ''}`} />
-                Archived tests ({archivedCustomTests.length})
-              </button>
-              {showArchived && (
-                <div className="grid gap-3">
-                  {archivedCustomTests.map((t, i) => <React.Fragment key={t.firestoreId}><TestRow t={t} idx={activeCustomTests.length + i + ieltsListeningTests.length + 1} /></React.Fragment>)}
-                </div>
-              )}
-            </div>
-          )}
-        </>
-      )}
-
-      {form.open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col">
-            <div className="px-6 pt-6 pb-4 border-b border-slate-100 flex items-center justify-between shrink-0">
-              <h3 className="text-lg font-bold text-zinc-900">
-                {form.builtInOverrideIdx !== null
-                  ? `Edit Built-in Test ${form.builtInOverrideIdx + 1}`
-                  : form.editId ? 'Edit Custom Test' : 'Add Custom Test'}
-              </h3>
-              <button onClick={() => setForm(emptyForm)} className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors"><X className="w-5 h-5" /></button>
-            </div>
-            <div className="flex-1 overflow-y-auto px-6 py-5 space-y-4">
-              <div>
-                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Test Title</label>
-                <input value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))}
-                  placeholder="e.g. IELTS Listening Test 3"
-                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
-              </div>
-              <div>
-                <div className="flex items-center justify-between mb-1.5">
-                  <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider">Sections (JSON)</label>
-                  <button onClick={() => setForm(f => ({ ...f, json: SECTION_TEMPLATE, error: null }))} className="inline-flex items-center gap-1 text-xs text-indigo-600 font-semibold hover:underline">
-                    <Code className="w-3 h-3" /> Load template
-                  </button>
-                </div>
-                <textarea value={form.json} onChange={e => setForm(f => ({ ...f, json: e.target.value, error: null }))}
-                  rows={14} spellCheck={false} placeholder='Paste a JSON array of sections…'
-                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-[11px] font-mono focus:outline-none focus:border-zinc-400 resize-y" />
-                {form.error && <p className="mt-1.5 text-xs text-rose-600 font-semibold">⚠ {form.error}</p>}
-                <p className="mt-2 text-xs text-slate-400 leading-relaxed">
-                  Question types: <code className="font-mono bg-slate-100 px-1 rounded">fill</code> · <code className="font-mono bg-slate-100 px-1 rounded">mcq</code> · <code className="font-mono bg-slate-100 px-1 rounded">match</code>
-                </p>
-              </div>
-            </div>
-            <div className="px-6 pb-6 pt-4 border-t border-slate-100 flex items-center justify-between shrink-0">
-              <p className="text-xs text-slate-400">
-                {form.editId ? `Editing${form.status === 'published' ? ' (currently published)' : ' (currently draft)'}` : 'New test'}
-              </p>
-              <div className="flex gap-3">
-                <button onClick={() => setForm(emptyForm)} className="px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-colors">Cancel</button>
-                <button onClick={() => onSave('draft')} disabled={form.saving || !form.title.trim() || !form.json.trim()}
-                  className="px-4 py-2.5 rounded-xl border border-slate-300 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50 transition-colors inline-flex items-center gap-2">
-                  {form.saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
-                  Save as Draft
-                </button>
-                <button onClick={() => onSave('published')} disabled={form.saving || !form.title.trim() || !form.json.trim()}
-                  className="px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700 disabled:opacity-50 transition-colors inline-flex items-center gap-2">
-                  {form.saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
-                  Publish Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {toast && (
-        <div className="fixed bottom-6 right-6 bg-zinc-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 text-sm font-semibold z-[60]">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400" /> {toast}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── Task1Editor ───────────────────────────────────────────────────────────────
-
-const CHART_TYPE_LABELS: Record<Task1ChartType, string> = {
-  table: 'Table', bar: 'Bar Chart', line: 'Line Chart',
-  pie: 'Pie Chart', map: 'Map', process: 'Process Diagram',
-};
-
-interface Task1CustomDoc {
-  byType: Record<string, Task1Prompt[]>;
-}
-
-function Task1Editor() {
-  const [customByType, setCustomByType] = useState<Record<string, Task1Prompt[]>>({});
-  const [chartType, setChartType] = useState<Task1ChartType>('table');
-  const [loading, setLoading]  = useState(true);
-  const [saving, setSaving]    = useState(false);
-  const [dirty, setDirty]      = useState(false);
-  const [toast, setToast]      = useState<string | null>(null);
-  const [showForm, setShowForm] = useState(false);
-  const [editIdx, setEditIdx]   = useState<number | null>(null);
-  const [showArchived, setShowArchived] = useState(false);
-  const emptyForm = { title: '', instruction: '', chartJson: '', error: '' };
-  const [form, setForm] = useState(emptyForm);
-
-  const showToast = (msg: string) => { setToast(msg); setTimeout(() => setToast(null), 3000); };
-
-  useEffect(() => {
-    cmsGet('customTask1Prompts').then((doc: Task1CustomDoc | null) => {
-      if (doc?.byType) setCustomByType(doc.byType);
-      setLoading(false);
-    }).catch(() => setLoading(false));
-  }, []);
-
-  const builtInCount  = TASK1_DATA.find(d => d.type === chartType)?.prompts.length ?? 0;
-  const customForType = customByType[chartType] ?? [];
-
-  const openAdd = () => { setEditIdx(null); setForm(emptyForm); setShowForm(true); };
-  const openEdit = (idx: number) => {
-    const p = customForType[idx];
-    setEditIdx(idx);
-    setForm({ title: p.title, instruction: p.instruction, chartJson: p.chartData ? JSON.stringify(p.chartData, null, 2) : '', error: '' });
-    setShowForm(true);
-  };
-  const cancelForm = () => { setShowForm(false); setEditIdx(null); setForm(emptyForm); };
-
-  const submitPrompt = () => {
-    if (!form.title.trim() || !form.instruction.trim()) {
-      setForm(f => ({ ...f, error: 'Title and instruction are required.' })); return;
-    }
-    let chartData: any = { type: chartType };
-    if (form.chartJson.trim()) {
-      try { chartData = JSON.parse(form.chartJson); }
-      catch { setForm(f => ({ ...f, error: 'Invalid JSON for chart data.' })); return; }
-    }
-    const prompt: Task1Prompt = { title: form.title.trim(), instruction: form.instruction.trim(), chartData };
-    setCustomByType(prev => {
-      const list = [...(prev[chartType] ?? [])];
-      if (editIdx !== null) { list[editIdx] = prompt; } else { list.push(prompt); }
-      return { ...prev, [chartType]: list };
-    });
-    cancelForm();
-    setDirty(true);
-  };
-
-  const toggleArchive = (idx: number) => {
-    setCustomByType(prev => {
-      const list = [...(prev[chartType] ?? [])];
-      list[idx] = { ...list[idx], archived: !(list[idx] as any).archived } as any;
-      return { ...prev, [chartType]: list };
-    });
-    setDirty(true);
-  };
-
-  const deletePrompt = (idx: number) => {
-    if (!confirm('Permanently delete this prompt?')) return;
-    setCustomByType(prev => {
-      const list = [...(prev[chartType] ?? [])];
-      list.splice(idx, 1);
-      return { ...prev, [chartType]: list };
-    });
-    setDirty(true);
-  };
-
-  const save = async () => {
-    setSaving(true);
-    try {
-      await cmsSet('customTask1Prompts', { byType: customByType });
-      invalidateCMS(activeCmsLang());
-      setDirty(false);
-      showToast('Saved! Refresh the page to see changes.');
-    } catch { showToast('Save failed.'); }
-    finally { setSaving(false); }
-  };
-
-  const reset = async () => {
-    if (!confirm('Remove all custom Task 1 prompts? Built-in prompts are unaffected.')) return;
-    setSaving(true);
-    try {
-      await cmsDel('customTask1Prompts');
-      setCustomByType({});
-      invalidateCMS(activeCmsLang());
-      setDirty(false);
-      showToast('Custom prompts removed.');
-    } catch { showToast('Reset failed.'); }
-    finally { setSaving(false); }
-  };
-
-  return (
-    <div>
-      <p className="text-sm text-slate-500 mb-4">Add custom prompts to any chart type. Built-in prompts are not editable but custom ones appear alongside them.</p>
-
-      {/* Chart type selector */}
-      <div className="flex flex-wrap gap-2 mb-5">
-        {(Object.keys(CHART_TYPE_LABELS) as Task1ChartType[]).map(ct => (
-          <button key={ct} onClick={() => setChartType(ct)}
-            className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition-all ${chartType === ct ? 'bg-zinc-900 text-white border-zinc-900 shadow' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'}`}>
-            {CHART_TYPE_LABELS[ct]}
-          </button>
-        ))}
-      </div>
-
-      <div className="flex items-center justify-between mb-4">
-        <p className="text-sm text-slate-600">
-          <span className="font-semibold text-zinc-900">{builtInCount}</span> built-in ·{' '}
-          <span className="font-semibold text-zinc-900">{customForType.length}</span> custom
-        </p>
-        <div className="flex items-center gap-2">
-          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Unsaved changes</span>}
-          <button onClick={reset} disabled={saving} title="Remove all custom prompts" className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50">
-            <RotateCcw className="w-4 h-4" />
-          </button>
-          <button onClick={save} disabled={!dirty || saving}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 disabled:opacity-40 transition-colors">
-            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />} Save
-          </button>
-        </div>
-      </div>
-
-      {loading ? (
-        <div className="flex justify-center py-8"><Loader2 className="w-5 h-5 animate-spin text-slate-400" /></div>
-      ) : (
-        <>
-          {/* Active prompts */}
-          {customForType.filter(p => !(p as any).archived).length === 0 && (
-            <div className="bg-slate-50 rounded-2xl border border-dashed border-slate-300 p-8 text-center text-slate-400 mb-4">
-              <BarChart2 className="w-8 h-8 mx-auto mb-2 text-slate-300" />
-              <p className="text-sm">No custom prompts yet for {CHART_TYPE_LABELS[chartType]}.</p>
-            </div>
-          )}
-          <div className="space-y-2 mb-4">
-            {customForType.map((p, i) => !(p as any).archived && (
-              <div key={i} className="bg-white rounded-xl border border-slate-200 p-3 flex items-start gap-3">
-                <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-sm text-zinc-900 truncate">{p.title}</p>
-                  <p className="text-xs text-slate-500 mt-0.5 line-clamp-2">{p.instruction}</p>
-                </div>
-                <div className="flex items-center gap-1 shrink-0">
-                  <button onClick={() => openEdit(i)} title="Edit" className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors"><Edit2 className="w-3.5 h-3.5" /></button>
-                  {archiveBtn(false, () => toggleArchive(i))}
-                  <button onClick={() => deletePrompt(i)} title="Delete" className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Archived prompts */}
-          {customForType.some(p => (p as any).archived) && (
-            <div className="mb-4">
-              <button onClick={() => setShowArchived(s => !s)} className="flex items-center gap-2 text-xs font-bold text-amber-600 hover:text-amber-800 transition-colors mb-2">
-                <ChevronRight className={`w-4 h-4 transition-transform ${showArchived ? 'rotate-90' : ''}`} />
-                Archived prompts ({customForType.filter(p => (p as any).archived).length})
-              </button>
-              {showArchived && (
-                <div className="space-y-2">
-                  {customForType.map((p, i) => (p as any).archived && (
-                    <div key={i} className="bg-amber-50 rounded-xl border border-amber-200 p-3 flex items-start gap-3 opacity-70">
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-0.5"><ArchivedBadge /></div>
-                        <p className="font-semibold text-sm text-zinc-900 truncate">{p.title}</p>
-                        <p className="text-xs text-slate-500 mt-0.5 line-clamp-2">{p.instruction}</p>
-                      </div>
-                      <div className="flex items-center gap-1 shrink-0">
-                        {archiveBtn(true, () => toggleArchive(i))}
-                        <button onClick={() => deletePrompt(i)} title="Permanently delete" className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Add / Edit form */}
-          {showForm ? (
-            <div className="bg-zinc-50 rounded-2xl border border-zinc-200 p-4 space-y-3">
-              <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{editIdx !== null ? 'Edit' : 'New'} {CHART_TYPE_LABELS[chartType]} Prompt</p>
-              <input value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value, error: '' }))}
-                placeholder="Prompt title (e.g. Coffee Consumption by Country 2023)"
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
-              <textarea value={form.instruction} onChange={e => setForm(f => ({ ...f, instruction: e.target.value, error: '' }))}
-                rows={3} placeholder="Instruction text shown to the student…"
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400 resize-none" />
-              <div>
-                <p className="text-xs font-semibold text-slate-500 mb-1">Chart Data (JSON) <span className="font-normal text-slate-400">— optional</span></p>
-                <textarea value={form.chartJson} onChange={e => setForm(f => ({ ...f, chartJson: e.target.value, error: '' }))}
-                  rows={6} spellCheck={false} placeholder={'{"type":"bar","unit":"kg","groups":["2020","2021"],"series":[{"name":"UK","color":"#3b82f6","values":[45,52]}]}'}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 text-[11px] font-mono focus:outline-none focus:border-zinc-400 resize-y" />
-              </div>
-              {form.error && <p className="text-xs text-rose-600 font-semibold">⚠ {form.error}</p>}
-              <div className="flex gap-2 justify-end">
-                <button onClick={cancelForm} className="px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">Cancel</button>
-                <button onClick={submitPrompt} className="px-4 py-2 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 transition-colors">
-                  {editIdx !== null ? 'Update Prompt' : 'Add Prompt'}
-                </button>
-              </div>
-            </div>
-          ) : (
-            <button onClick={openAdd}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-2xl border border-dashed border-slate-300 text-sm font-semibold text-slate-500 hover:border-zinc-400 hover:bg-slate-50 transition-colors">
-              <Plus className="w-4 h-4" /> Add Custom Prompt
-            </button>
-          )}
-        </>
-      )}
-
-      {toast && (
-        <div className="fixed bottom-6 right-6 bg-zinc-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 text-sm font-semibold z-[60]">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400" /> {toast}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── IELTSPart2Editor ──────────────────────────────────────────────────────────
-
-function IELTSPart2Editor() {
-  const [cards, setCards]          = useState<Part2Card[]>(PART2_CARDS);
-  const [selectedId, setSelectedId] = useState(PART2_CARDS[0]?.id ?? '');
-  const [loading, setLoading]      = useState(true);
-  const [dirty, setDirty]          = useState(false);
-  const [saving, setSaving]        = useState(false);
-  const [toast, setToast]          = useState<string | null>(null);
-  const [showNew, setShowNew]      = useState(false);
-  const [newForm, setNewForm] = useState({ title: '', prompt: '', followUp: '', part3Id: '' });
-
-  const showToast = (msg: string) => { setToast(msg); setTimeout(() => setToast(null), 3000); };
-
-  useEffect(() => {
-    cmsGet('ieltsSpeakingPart2').then(data => {
-      if (data?.cards?.length) setCards(data.cards);
-      setLoading(false);
-    }).catch(() => setLoading(false));
-  }, []);
-
-  const card = cards.find(c => c.id === selectedId);
-  const cardIdx = cards.findIndex(c => c.id === selectedId);
-  const isArchived = !!(card as any)?.archived;
-
-  const updateField = <K extends keyof Part2Card>(field: K, value: Part2Card[K]) => {
-    setCards(prev => prev.map((c, i) => i !== cardIdx ? c : { ...c, [field]: value }));
-    setDirty(true);
-  };
-
-  const toggleArchive = () => {
-    setCards(prev => prev.map((c, i) => i !== cardIdx ? c : { ...c, archived: !isArchived } as any));
-    setDirty(true);
-  };
-
-  const addCard = () => {
-    if (!newForm.title.trim() || !newForm.prompt.trim()) return;
-    const id = `p2_custom_${Date.now()}`;
-    const nc: Part2Card = {
-      id,
-      title: newForm.title.trim(),
-      prompt: newForm.prompt.trim(),
-      bullets: [],
-      followUp: newForm.followUp.trim(),
-      part3Id: newForm.part3Id.trim() || '',
-    };
-    setCards(prev => [...prev, nc]);
-    setSelectedId(id);
-    setNewForm({ title: '', prompt: '', followUp: '', part3Id: '' });
-    setShowNew(false);
-    setDirty(true);
-  };
-
-  const deleteCard = () => {
-    if (!confirm(`Permanently delete card "${card?.title}"? This cannot be undone.`)) return;
-    const rest = cards.filter(c => c.id !== selectedId);
-    setCards(rest);
-    setSelectedId(rest.find(c => !(c as any).archived)?.id ?? rest[0]?.id ?? '');
-    setDirty(true);
-  };
-
-  const activeCards   = cards.filter(c => !(c as any).archived);
-  const archivedCards = cards.filter(c => !!(c as any).archived);
-
-  const save = async () => {
-    setSaving(true);
-    try {
-      await cmsSet('ieltsSpeakingPart2', { cards });
-      invalidateCMS(activeCmsLang());
-      setDirty(false);
-      showToast('Saved! Changes appear on next page load.');
-    } catch { showToast('Save failed.'); }
-    finally { setSaving(false); }
-  };
-
-  const reset = async () => {
-    if (!confirm('Reset IELTS Speaking Part 2 cards to built-in defaults?')) return;
-    setSaving(true);
-    try {
-      await cmsDel('ieltsSpeakingPart2');
-      setCards(PART2_CARDS);
-      setSelectedId(PART2_CARDS[0]?.id ?? '');
-      invalidateCMS(activeCmsLang());
-      setDirty(false);
-      showToast('Reset to defaults.');
-    } catch { showToast('Reset failed.'); }
-    finally { setSaving(false); }
-  };
-
-  return (
-    <div>
-      <div className="flex flex-wrap items-start gap-3 mb-5">
-        <div className="flex-1 min-w-[200px]">
-          <div className="relative">
-            <select value={selectedId} onChange={e => setSelectedId(e.target.value)}
-              className="w-full pl-3 pr-8 py-2 rounded-xl border border-slate-200 text-sm font-semibold text-zinc-900 bg-white focus:outline-none focus:border-zinc-400 appearance-none">
-              <optgroup label="Active cards">
-                {activeCards.map(c => <option key={c.id} value={c.id}>{c.title}</option>)}
-              </optgroup>
-              {archivedCards.length > 0 && (
-                <optgroup label="Archived cards">
-                  {archivedCards.map(c => <option key={c.id} value={c.id}>{c.title} [archived]</option>)}
-                </optgroup>
-              )}
-            </select>
-            <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 pointer-events-none" />
-          </div>
-        </div>
-        <div className="flex items-center gap-2 shrink-0">
-          <button onClick={() => setShowNew(s => !s)} className="inline-flex items-center gap-1 px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors">
-            <Plus className="w-3.5 h-3.5" /> New Card
-          </button>
-          {card && archiveBtn(isArchived, toggleArchive)}
-          {card && <button onClick={deleteCard} title="Permanently delete" className="p-2 rounded-xl border border-rose-200 text-rose-500 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>}
-          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Unsaved</span>}
-          <button onClick={reset} disabled={saving} className="p-2 rounded-xl border border-slate-200 text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50"><RotateCcw className="w-3.5 h-3.5" /></button>
-          <button onClick={save} disabled={!dirty || saving}
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 disabled:opacity-40 transition-colors">
-            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />} Save
-          </button>
-        </div>
-      </div>
-
-      {showNew && (
-        <div className="mb-4 p-4 bg-zinc-50 rounded-2xl border border-zinc-200 space-y-3">
-          <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">New Part 2 Cue Card</p>
-          <input value={newForm.title} onChange={e => setNewForm(f => ({ ...f, title: e.target.value }))}
-            placeholder="Card title (e.g. A Favourite Season)" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
-          <textarea value={newForm.prompt} onChange={e => setNewForm(f => ({ ...f, prompt: e.target.value }))}
-            rows={2} placeholder="Describe a… (main cue card instruction)"
-            className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400 resize-none" />
-          <input value={newForm.followUp} onChange={e => setNewForm(f => ({ ...f, followUp: e.target.value }))}
-            placeholder="Follow-up statement (e.g. And explain why you enjoy it.)" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
-          <input value={newForm.part3Id} onChange={e => setNewForm(f => ({ ...f, part3Id: e.target.value }))}
-            placeholder="Part 3 topic ID to link (optional, e.g. p3_seasons)" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
-          <div className="flex gap-2 justify-end">
-            <button onClick={() => setShowNew(false)} className="px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">Cancel</button>
-            <button onClick={addCard} disabled={!newForm.title.trim() || !newForm.prompt.trim()}
-              className="px-4 py-2 rounded-xl bg-zinc-900 text-white text-xs font-semibold disabled:opacity-40 hover:bg-zinc-700 transition-colors">Add</button>
-          </div>
-        </div>
-      )}
-
-      {loading ? (
-        <div className="flex justify-center py-8"><Loader2 className="w-5 h-5 animate-spin text-slate-400" /></div>
-      ) : card ? (
-        <div className={`space-y-4 ${isArchived ? 'opacity-60' : ''}`}>
-          {isArchived && <div className="flex items-center gap-2 p-3 bg-amber-50 rounded-xl border border-amber-200"><ArchivedBadge /><span className="text-xs text-amber-700">This card is hidden from students. Restore it to make it visible again.</span></div>}
-          {/* Title */}
-          <div>
-            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Title</label>
-            <input value={card.title} onChange={e => updateField('title', e.target.value)}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
-          </div>
-          {/* Prompt */}
-          <div>
-            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Cue Card Prompt</label>
-            <textarea value={card.prompt} onChange={e => updateField('prompt', e.target.value)} rows={2}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400 resize-none" />
-          </div>
-          {/* Bullets */}
-          <div>
-            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Bullet Points (talking guides)</label>
-            <StringListEditor items={card.bullets} onChange={bullets => updateField('bullets', bullets)}
-              placeholder="Add a bullet point…" />
-          </div>
-          {/* Follow-up */}
-          <div>
-            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Follow-up Statement</label>
-            <input value={card.followUp} onChange={e => updateField('followUp', e.target.value)}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
-          </div>
-          {/* Part 3 ID */}
-          <div>
-            <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Linked Part 3 Topic ID</label>
-            <input value={card.part3Id} onChange={e => updateField('part3Id', e.target.value)}
-              placeholder="e.g. p3_inspiration"
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm font-mono focus:outline-none focus:border-zinc-400" />
-          </div>
-        </div>
-      ) : null}
-
-      {toast && (
-        <div className="fixed bottom-6 right-6 bg-zinc-900 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 text-sm font-semibold z-[60]">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400" /> {toast}
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ── IELTSPart3Editor ──────────────────────────────────────────────────────────
-
-function IELTSPart3Editor() {
-  const [topics, setTopics]         = useState<Part3Topic[]>(PART3_TOPICS);
-  const [selectedId, setSelectedId]  = useState(PART3_TOPICS[0]?.id ?? '');
-  const [loading, setLoading]       = useState(true);
-  const [dirty, setDirty]           = useState(false);
-  const [saving, setSaving]         = useState(false);
-  const [toast, setToast]           = useState<string | null>(null);
-  const [showNew, setShowNew]       = useState(false);
-  const [newForm, setNewForm] = useState({ id: '', cardId: '', cardTitle: '' });
-
-  const showToast = (msg: string) => { setToast(msg); setTimeout(() => setToast(null), 3000); };
-
-  useEffect(() => {
-    cmsGet('ieltsSpeakingPart3').then(data => {
-      if (data?.topics?.length) setTopics(data.topics);
-      setLoading(false);
-    }).catch(() => setLoading(false));
-  }, []);
-
-  const topic = topics.find(t => t.id === selectedId);
-  const topicIdx = topics.findIndex(t => t.id === selectedId);
-  const p3IsArchived = !!(topic as any)?.archived;
-
-  const updateQuestions = (questions: string[]) => {
-    setTopics(prev => prev.map((t, i) => i !== topicIdx ? t : { ...t, questions }));
-    setDirty(true);
-  };
-
-  const toggleP3Archive = () => {
-    setTopics(prev => prev.map((t, i) => i !== topicIdx ? t : { ...t, archived: !p3IsArchived } as any));
-    setDirty(true);
-  };
-
-  const addTopic = () => {
-    if (!newForm.cardTitle.trim()) return;
-    const id = newForm.id.trim() || `p3_custom_${Date.now()}`;
-    const nt: Part3Topic = { id, cardId: newForm.cardId.trim(), cardTitle: newForm.cardTitle.trim(), questions: [] };
-    setTopics(prev => [...prev, nt]);
-    setSelectedId(id);
-    setNewForm({ id: '', cardId: '', cardTitle: '' });
-    setShowNew(false);
-    setDirty(true);
-  };
-
-  const deleteTopic = () => {
-    if (!confirm(`Permanently delete Part 3 topic "${topic?.cardTitle}"? This cannot be undone.`)) return;
-    const rest = topics.filter(t => t.id !== selectedId);
-    setTopics(rest);
-    setSelectedId(rest.find(t => !(t as any).archived)?.id ?? rest[0]?.id ?? '');
-    setDirty(true);
-  };
-
-  const activeP3Topics   = topics.filter(t => !(t as any).archived);
-  const archivedP3Topics = topics.filter(t => !!(t as any).archived);
-
-  const save = async () => {
-    setSaving(true);
-    try {
-      await cmsSet('ieltsSpeakingPart3', { topics });
-      invalidateCMS(activeCmsLang());
-      setDirty(false);
-      showToast('Saved! Changes appear on next page load.');
-    } catch { showToast('Save failed.'); }
-    finally { setSaving(false); }
-  };
-
-  const reset = async () => {
-    if (!confirm('Reset IELTS Speaking Part 3 topics to built-in defaults?')) return;
-    setSaving(true);
-    try {
-      await cmsDel('ieltsSpeakingPart3');
-      setTopics(PART3_TOPICS);
-      setSelectedId(PART3_TOPICS[0]?.id ?? '');
-      invalidateCMS(activeCmsLang());
-      setDirty(false);
-      showToast('Reset to defaults.');
-    } catch { showToast('Reset failed.'); }
-    finally { setSaving(false); }
-  };
-
-  return (
-    <div>
-      <div className="flex flex-wrap items-start gap-3 mb-5">
-        <div className="flex-1 min-w-[200px]">
-          <div className="relative">
-            <select value={selectedId} onChange={e => setSelectedId(e.target.value)}
-              className="w-full pl-3 pr-8 py-2 rounded-xl border border-slate-200 text-sm font-semibold text-zinc-900 bg-white focus:outline-none focus:border-zinc-400 appearance-none">
-              <optgroup label="Active topics">
-                {activeP3Topics.map(t => <option key={t.id} value={t.id}>{t.cardTitle} ({t.questions.length}Q)</option>)}
-              </optgroup>
-              {archivedP3Topics.length > 0 && (
-                <optgroup label="Archived topics">
-                  {archivedP3Topics.map(t => <option key={t.id} value={t.id}>{t.cardTitle} [archived]</option>)}
-                </optgroup>
-              )}
-            </select>
-            <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 pointer-events-none" />
-          </div>
-        </div>
-        <div className="flex items-center gap-2 shrink-0">
-          <button onClick={() => setShowNew(s => !s)} className="inline-flex items-center gap-1 px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors">
-            <Plus className="w-3.5 h-3.5" /> New Topic Set
-          </button>
-          {topic && archiveBtn(p3IsArchived, toggleP3Archive)}
-          {topic && <button onClick={deleteTopic} title="Permanently delete" className="p-2 rounded-xl border border-rose-200 text-rose-500 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>}
-          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Unsaved</span>}
-          <button onClick={reset} disabled={saving} className="p-2 rounded-xl border border-slate-200 text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50"><RotateCcw className="w-3.5 h-3.5" /></button>
-          <button onClick={save} disabled={!dirty || saving}
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 disabled:opacity-40 transition-colors">
-            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />} Save
-          </button>
-        </div>
-      </div>
-
-      {showNew && (
-        <div className="mb-4 p-4 bg-zinc-50 rounded-2xl border border-zinc-200 space-y-3">
-          <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">New Part 3 Topic Set</p>
-          <input value={newForm.cardTitle} onChange={e => setNewForm(f => ({ ...f, cardTitle: e.target.value }))}
-            placeholder="Topic name (e.g. Seasons & Climate)"
-            className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
-          <input value={newForm.cardId} onChange={e => setNewForm(f => ({ ...f, cardId: e.target.value }))}
-            placeholder="Linked Part 2 card ID (optional, e.g. p2_season)"
-            className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm font-mono focus:outline-none focus:border-zinc-400" />
-          <input value={newForm.id} onChange={e => setNewForm(f => ({ ...f, id: e.target.value }))}
-            placeholder="Topic ID (optional, auto-generated if blank)"
-            className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm font-mono focus:outline-none focus:border-zinc-400" />
-          <div className="flex gap-2 justify-end">
-            <button onClick={() => setShowNew(false)} className="px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">Cancel</button>
-            <button onClick={addTopic} disabled={!newForm.cardTitle.trim()}
-              className="px-4 py-2 rounded-xl bg-zinc-900 text-white text-xs font-semibold disabled:opacity-40 hover:bg-zinc-700 transition-colors">Add</button>
-          </div>
-        </div>
-      )}
-
-      {loading ? (
-        <div className="flex justify-center py-8"><Loader2 className="w-5 h-5 animate-spin text-slate-400" /></div>
-      ) : topic ? (
-        <div className={p3IsArchived ? 'opacity-60' : ''}>
-          {p3IsArchived && <div className="flex items-center gap-2 mb-3 p-3 bg-amber-50 rounded-xl border border-amber-200"><ArchivedBadge /><span className="text-xs text-amber-700">This topic set is hidden from students. Restore it to make it visible again.</span></div>}
-          <StringListEditor items={topic.questions} onChange={updateQuestions}
-            placeholder="Add a Part 3 discussion question…" />
-        </div>
-      ) : (
-        <div className="text-center py-12 text-slate-400"><Mic className="w-10 h-10 mx-auto mb-3 text-slate-300" /><p>No topic selected.</p></div>
       )}
 
       {toast && (
@@ -1763,6 +286,7 @@ function IELTSPart3Editor() {
 const SHADOWING_LEVELS: ShadowingLevel[] = ['beginner', 'intermediate', 'advanced'];
 
 function ShadowingEditor() {
+  const { t: tr, uiLang, tLevel } = useUiLang();
   const [passages, setPassages]    = useState<ShadowingPassage[]>([]);
   const [loading, setLoading]      = useState(true);
   const [saving, setSaving]        = useState(false);
@@ -1824,7 +348,7 @@ function ShadowingEditor() {
   };
 
   const deletePassage = (idx: number) => {
-    if (!confirm('Permanently delete this shadowing passage? This cannot be undone.')) return;
+    if (!confirm(tr("core.management.permanently_delete_this_shadowing_passage_d6dc9f"))) return;
     setPassages(prev => prev.filter((_, i) => i !== idx));
     setDirty(true);
   };
@@ -1837,13 +361,13 @@ function ShadowingEditor() {
       setCmsDoc(newDoc);
       invalidateCMS(activeCmsLang());
       setDirty(false);
-      showToast('Saved!');
-    } catch { showToast('Save failed.'); }
+      showToast(tr("core.profilepage.saved_e929bf"));
+    } catch { showToast(tr("core.management.save_failed_aefc63")); }
     finally { setSaving(false); }
   };
 
   const reset = async () => {
-    if (!confirm('Reset all shadowing passages to built-in defaults? All edits and custom additions will be removed.')) return;
+    if (!confirm(tr("core.management.reset_all_shadowing_passages_to_c8f4a8"))) return;
     setSaving(true);
     try {
       const newDoc = { ...(cmsDoc ?? {}) };
@@ -1854,23 +378,22 @@ function ShadowingEditor() {
       setPassages([...SHADOWING_PASSAGES, ...remaining]);
       invalidateCMS(activeCmsLang());
       setDirty(false);
-      showToast('Reset to built-in passages.');
-    } catch { showToast('Failed.'); }
+      showToast(tr("core.management.reset_to_builtin_passages_7f157f"));
+    } catch { showToast(tr("core.management.failed_254aaf")); }
     finally { setSaving(false); }
   };
 
   return (
     <div>
-      <p className="text-sm text-slate-500 mb-4">Edit all shadowing passages — both built-in and custom. Changes are saved as a full override of the passage list.</p>
+      <p className="text-sm text-slate-500 mb-4">{tr("site.contentmanager.edit_all_shadowing_passages_both_a67cbd")}</p>
       <div className="flex items-center justify-between mb-4">
-        <p className="text-sm text-slate-600"><span className="font-semibold text-zinc-900">{passages.filter(p => !(p as any).archived).length}</span> active · <span className="font-semibold text-zinc-900">{passages.filter(p => !!(p as any).archived).length}</span> archived</p>
+        <p className="text-sm text-slate-600"><span className="font-semibold text-zinc-900">{passages.filter(p => !(p as any).archived).length}</span>  {tr("site.contentmanager.active_4c7107")}<span className="font-semibold text-zinc-900">{passages.filter(p => !!(p as any).archived).length}</span>  {tr("site.contentmanager.archived_48f0f9")}</p>
         <div className="flex items-center gap-2">
-          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Unsaved changes</span>}
+          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">{tr("site.contentmanager.unsaved_changes_292672")}</span>}
           <button onClick={reset} disabled={saving} className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50"><RotateCcw className="w-4 h-4" /></button>
           <button onClick={save} disabled={!dirty || saving}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 disabled:opacity-40 transition-colors">
-            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />} Save
-          </button>
+            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}  {tr("site.contentmanager.save_efc007")}</button>
         </div>
       </div>
 
@@ -1891,9 +414,9 @@ function ShadowingEditor() {
                   <p className="text-xs text-slate-500 line-clamp-1">{p.text.substring(0, 80)}…</p>
                 </div>
                 <div className="flex items-center gap-1 shrink-0">
-                  <button onClick={() => openEdit(i)} title="Edit" className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors"><Edit2 className="w-3.5 h-3.5" /></button>
-                  {archiveBtn(false, () => toggleShadowArchive(i))}
-                  <button onClick={() => deletePassage(i)} title="Delete" className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
+                  <button onClick={() => openEdit(i)} title={tr("site.contentmanager.edit_530164")} className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors"><Edit2 className="w-3.5 h-3.5" /></button>
+                  {archiveBtn(false, () => toggleShadowArchive(i), tr)}
+                  <button onClick={() => deletePassage(i)} title={tr("site.contentmanager.delete_f6fdbe")} className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
                 </div>
               </div>
             ))}
@@ -1904,7 +427,7 @@ function ShadowingEditor() {
             <div className="mb-3">
               <button onClick={() => setShowArchived(s => !s)} className="flex items-center gap-2 text-xs font-bold text-amber-600 hover:text-amber-800 transition-colors mb-2">
                 <ChevronRight className={`w-4 h-4 transition-transform ${showArchived ? 'rotate-90' : ''}`} />
-                Archived passages ({passages.filter(p => (p as any).archived).length})
+                {tr("site.contentmanager.archived_passages_436080")}{passages.filter(p => (p as any).archived).length})
               </button>
               {showArchived && (
                 <div className="space-y-2">
@@ -1916,8 +439,8 @@ function ShadowingEditor() {
                         <p className="text-xs text-slate-500 line-clamp-1">{p.text.substring(0, 80)}…</p>
                       </div>
                       <div className="flex items-center gap-1 shrink-0">
-                        {archiveBtn(true, () => toggleShadowArchive(i))}
-                        <button onClick={() => deletePassage(i)} title="Permanently delete" className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
+                        {archiveBtn(true, () => toggleShadowArchive(i), tr)}
+                        <button onClick={() => deletePassage(i)} title={tr("site.contentmanager.permanently_delete_2eea1f")} className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     </div>
                   ))}
@@ -1928,10 +451,10 @@ function ShadowingEditor() {
 
           {showForm ? (
             <div className="bg-zinc-50 rounded-2xl border border-zinc-200 p-4 space-y-3">
-              <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{editIdx !== null ? 'Edit' : 'New'} Shadowing Passage</p>
+              <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{editIdx !== null ? tr("site.contentmanager.edit_530164") : tr("site.contentmanager.new_6403f2")}  {tr("site.contentmanager.shadowing_passage_8af61e")}</p>
               <div className="grid grid-cols-2 gap-3">
                 <input value={form.title} onChange={e => setForm(f => ({ ...f, title: e.target.value }))}
-                  placeholder="Passage title" className="col-span-2 px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
+                  placeholder={tr("site.contentmanager.passage_title_00488f")} className="col-span-2 px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
                 <div className="relative">
                   <select value={form.level} onChange={e => setForm(f => ({ ...f, level: e.target.value as ShadowingLevel }))}
                     className="w-full pl-3 pr-7 py-2 rounded-xl border border-slate-200 text-sm bg-white focus:outline-none focus:border-zinc-400 appearance-none">
@@ -1940,27 +463,26 @@ function ShadowingEditor() {
                   <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 pointer-events-none" />
                 </div>
                 <input value={form.topic} onChange={e => setForm(f => ({ ...f, topic: e.target.value }))}
-                  placeholder="Topic tag (e.g. Motivation)" className="px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
+                  placeholder={tr("site.contentmanager.topic_tag_eg_motivation_2dedb0")} className="px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
               </div>
               <input value={form.audioSrc} onChange={e => setForm(f => ({ ...f, audioSrc: e.target.value }))}
-                placeholder="Audio URL (optional — https://… or /data/shadowing/…/audio.mp3)"
+                placeholder={tr("site.contentmanager.audio_url_optional_https_or_73ec8f")}
                 className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
               <textarea value={form.text} onChange={e => setForm(f => ({ ...f, text: e.target.value }))}
-                rows={5} placeholder="Full transcript text…"
+                rows={5} placeholder={tr("site.contentmanager.full_transcript_text_2511f9")}
                 className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400 resize-none" />
               <div className="flex gap-2 justify-end">
-                <button onClick={cancelForm} className="px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">Cancel</button>
+                <button onClick={cancelForm} className="px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">{tr("action.cancel")}</button>
                 <button onClick={submitForm} disabled={!form.title.trim() || !form.text.trim()}
                   className="px-4 py-2 rounded-xl bg-zinc-900 text-white text-xs font-semibold disabled:opacity-40 hover:bg-zinc-700 transition-colors">
-                  {editIdx !== null ? 'Update' : 'Add Passage'}
+                  {editIdx !== null ? tr("site.contentmanager.update_fb91e2") : tr("site.contentmanager.add_passage_a769b8")}
                 </button>
               </div>
             </div>
           ) : (
             <button onClick={openAdd}
               className="w-full flex items-center justify-center gap-2 py-3 rounded-2xl border border-dashed border-slate-300 text-sm font-semibold text-slate-500 hover:border-zinc-400 hover:bg-slate-50 transition-colors">
-              <Plus className="w-4 h-4" /> Add Custom Passage
-            </button>
+              <Plus className="w-4 h-4" />  {tr("site.contentmanager.add_custom_passage_2009c5")}</button>
           )}
         </>
       )}
@@ -1977,6 +499,7 @@ function ShadowingEditor() {
 // ── DictationEditor ───────────────────────────────────────────────────────────
 
 function DictationEditor() {
+  const { t: tr, uiLang, tLevel } = useUiLang();
   const [sentences, setSentences] = useState<string[]>([]); // ALL sentences for current level
   const [level, setLevel]         = useState<string>(LEVELS[0]);
   const [cmsDoc, setCmsDoc]       = useState<any | null>(null); // null = loading
@@ -2016,13 +539,13 @@ function DictationEditor() {
       setCmsDoc(newDoc);
       invalidateDictationCache();
       setDirty(false);
-      showToast('Saved! Changes appear on next dictation load.');
-    } catch { showToast('Save failed.'); }
+      showToast(tr("core.management.saved_changes_appear_on_next_8e7a67"));
+    } catch { showToast(tr("core.management.save_failed_aefc63")); }
     finally { setSaving(false); }
   };
 
   const resetLevel = async () => {
-    if (!confirm(`Reset "${level}" dictation sentences back to built-in defaults?`)) return;
+    if (!confirm(tr("core.management.reset_level_dictation_sentences_back_d83dde", { level: level }))) return;
     setSaving(true);
     try {
       const newDoc = { ...cmsDoc, override: { ...(cmsDoc?.override ?? {}) } };
@@ -2031,14 +554,14 @@ function DictationEditor() {
       setCmsDoc(newDoc); // triggers useEffect to reload built-in
       invalidateDictationCache();
       setDirty(false);
-      showToast('Reset to built-in sentences.');
-    } catch { showToast('Reset failed.'); }
+      showToast(tr("core.management.reset_to_builtin_sentences_0fb5a4"));
+    } catch { showToast(tr("core.management.reset_failed_29fe06")); }
     finally { setSaving(false); }
   };
 
   return (
     <div>
-      <p className="text-sm text-slate-500 mb-4">Edit all dictation sentences per level — both built-in and custom. Changes are saved and override the built-in set for that level.</p>
+      <p className="text-sm text-slate-500 mb-4">{tr("site.contentmanager.edit_all_dictation_sentences_per_9c727e")}</p>
       <div className="flex flex-wrap gap-2 mb-5">
         {LEVELS.map(l => (
           <button key={l} onClick={() => setLevel(l)}
@@ -2050,16 +573,15 @@ function DictationEditor() {
       </div>
       <div className="flex items-center justify-between mb-3">
         <p className="text-sm font-semibold text-slate-700">
-          {sentences.length} sentences · <span className="text-slate-400 font-normal">{level}</span>
-          {cmsDoc?.override?.[level] !== undefined && <span className="ml-2 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">Custom override active</span>}
+          {sentences.length}  {tr("site.contentmanager.sentences_333216")}<span className="text-slate-400 font-normal">{level}</span>
+          {cmsDoc?.override?.[level] !== undefined && <span className="ml-2 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">{tr("site.contentmanager.custom_override_active_5731e2")}</span>}
         </p>
         <div className="flex items-center gap-2">
-          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Unsaved changes</span>}
-          <button onClick={resetLevel} disabled={saving} title="Reset this level to built-in sentences" className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50"><RotateCcw className="w-4 h-4" /></button>
+          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">{tr("site.contentmanager.unsaved_changes_292672")}</span>}
+          <button onClick={resetLevel} disabled={saving} title={tr("site.contentmanager.reset_this_level_to_builtin_7bb110")} className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50"><RotateCcw className="w-4 h-4" /></button>
           <button onClick={save} disabled={!dirty || saving}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 disabled:opacity-40 transition-colors">
-            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />} Save
-          </button>
+            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}  {tr("site.contentmanager.save_efc007")}</button>
         </div>
       </div>
       {levelLoading || cmsDoc === null ? (
@@ -2068,7 +590,7 @@ function DictationEditor() {
         <StringListEditor
           items={sentences}
           onChange={items => { setSentences(items); setDirty(true); }}
-          placeholder="Add a new dictation sentence…"
+          placeholder={tr("site.contentmanager.add_a_new_dictation_sentence_14b5bd")}
         />
       )}
       {toast && (
@@ -2098,6 +620,7 @@ interface PassageEditorProps {
 }
 
 function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache, loadBuiltIn }: PassageEditorProps) {
+  const { t: tr, uiLang, tLevel } = useUiLang();
   const [cmsDoc, setCmsDoc]       = useState<any | null>(null); // null = loading
   const [byLevel, setByLevel]     = useState<Record<string, any[]>>({});
   const [level, setLevel]         = useState(LEVELS[0]);
@@ -2168,11 +691,11 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
   const cancelPassageForm = () => { setShowForm(false); setEditIdx(null); setFormError(''); };
 
   const submitPassage = () => {
-    if (!form.title.trim() || !form.passage.trim()) { setFormError('Title and passage text are required.'); return; }
+    if (!form.title.trim() || !form.passage.trim()) { setFormError(tr("core.management.title_and_passage_text_are_d06523")); return; }
     let questions: any[] = [];
     if (form.questionsJson.trim()) {
       try { questions = JSON.parse(form.questionsJson); }
-      catch { setFormError('Invalid JSON for questions.'); return; }
+      catch { setFormError(tr("core.management.invalid_json_for_questions_809b02")); return; }
     }
     const entry = { title: form.title.trim(), passage: form.passage.trim(), level: form.level, questions };
     if (editIdx !== null) {
@@ -2201,7 +724,7 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
   };
 
   const deletePassage = (idx: number) => {
-    if (!confirm('Permanently delete this passage? This cannot be undone.')) return;
+    if (!confirm(tr("core.management.permanently_delete_this_passage_this_0ef776"))) return;
     setByLevel(prev => ({ ...prev, [level]: (prev[level] ?? []).filter((_, i) => i !== idx) }));
     setDirty(true);
   };
@@ -2214,13 +737,13 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
       setCmsDoc(newDoc);
       invalidateCache();
       setDirty(false);
-      showToast('Saved! Changes appear on next load.');
-    } catch { showToast('Save failed.'); }
+      showToast(tr("core.management.saved_changes_appear_on_next_6d1a8d"));
+    } catch { showToast(tr("core.management.save_failed_aefc63")); }
     finally { setSaving(false); }
   };
 
   const resetLevel = async () => {
-    if (!confirm(`Reset "${level}" ${label} passages back to built-in defaults?`)) return;
+    if (!confirm(tr("core.management.reset_level_label_passages_back_4e7a32", { level: level, label: label }))) return;
     setSaving(true);
     try {
       const newDoc = { ...(cmsDoc ?? {}), override: { ...(cmsDoc?.override ?? {}) } };
@@ -2229,14 +752,14 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
       setCmsDoc(newDoc); // triggers useEffect to reload built-in
       invalidateCache();
       setDirty(false);
-      showToast('Reset to built-in passages.');
-    } catch { showToast('Reset failed.'); }
+      showToast(tr("core.management.reset_to_builtin_passages_7f157f"));
+    } catch { showToast(tr("core.management.reset_failed_29fe06")); }
     finally { setSaving(false); }
   };
 
   return (
     <div>
-      <p className="text-sm text-slate-500 mb-4">Edit all {label.toLowerCase()} passages — both built-in and custom. Changes are saved as a full override for the selected level.</p>
+      <p className="text-sm text-slate-500 mb-4">{tr("site.contentmanager.edit_all_a6eb30")}{label.toLowerCase()}  {tr("site.contentmanager.passages_both_builtin_and_custom_eca7a7")}</p>
       <div className="flex flex-wrap gap-2 mb-5">
         {LEVELS.map(l => (
           <button key={l} onClick={() => setLevel(l)}
@@ -2248,16 +771,15 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
       </div>
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm font-semibold text-slate-700">
-          {currentPassages.filter(p => !p.archived).length} active · {currentPassages.filter(p => p.archived).length} archived · <span className="text-slate-400 font-normal">{level}</span>
-          {overrideActive && <span className="ml-2 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">Custom override active</span>}
+          {currentPassages.filter(p => !p.archived).length}  {tr("site.contentmanager.active_4c7107")}{currentPassages.filter(p => p.archived).length}  {tr("site.contentmanager.archived_8bef8e")}<span className="text-slate-400 font-normal">{level}</span>
+          {overrideActive && <span className="ml-2 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">{tr("site.contentmanager.custom_override_active_5731e2")}</span>}
         </p>
         <div className="flex items-center gap-2">
-          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Unsaved changes</span>}
-          <button onClick={resetLevel} disabled={saving} title="Reset this level to built-in passages" className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50"><RotateCcw className="w-4 h-4" /></button>
+          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">{tr("site.contentmanager.unsaved_changes_292672")}</span>}
+          <button onClick={resetLevel} disabled={saving} title={tr("site.contentmanager.reset_this_level_to_builtin_861ae1")} className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50"><RotateCcw className="w-4 h-4" /></button>
           <button onClick={save} disabled={!dirty || saving}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 disabled:opacity-40 transition-colors">
-            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />} Save
-          </button>
+            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}  {tr("site.contentmanager.save_efc007")}</button>
         </div>
       </div>
       {cmsDoc === null || levelLoading ? (
@@ -2270,12 +792,12 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
               <div key={i} className="bg-white rounded-xl border border-slate-200 p-3 flex items-start gap-3">
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold text-sm text-zinc-900 truncate">{p.title}</p>
-                  <p className="text-xs text-slate-500">{p.questions?.length ?? 0} questions · {p.passage?.substring(0, 60)}…</p>
+                  <p className="text-xs text-slate-500">{p.questions?.length ?? 0}  {tr("site.contentmanager.questions_21292f")}{p.passage?.substring(0, 60)}…</p>
                 </div>
                 <div className="flex items-center gap-1 shrink-0">
-                  <button onClick={() => openEdit(i)} title="Edit" className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors"><Edit2 className="w-3.5 h-3.5" /></button>
-                  {archiveBtn(false, () => togglePassageArchive(i))}
-                  <button onClick={() => deletePassage(i)} title="Delete" className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
+                  <button onClick={() => openEdit(i)} title={tr("site.contentmanager.edit_530164")} className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors"><Edit2 className="w-3.5 h-3.5" /></button>
+                  {archiveBtn(false, () => togglePassageArchive(i), tr)}
+                  <button onClick={() => deletePassage(i)} title={tr("site.contentmanager.delete_f6fdbe")} className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
                 </div>
               </div>
             ))}
@@ -2286,7 +808,7 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
             <div className="mb-3">
               <button onClick={() => setShowArchived(s => !s)} className="flex items-center gap-2 text-xs font-bold text-amber-600 hover:text-amber-800 transition-colors mb-2">
                 <ChevronRight className={`w-4 h-4 transition-transform ${showArchived ? 'rotate-90' : ''}`} />
-                Archived passages ({currentPassages.filter(p => p.archived).length})
+                {tr("site.contentmanager.archived_passages_436080")}{currentPassages.filter(p => p.archived).length})
               </button>
               {showArchived && (
                 <div className="space-y-2">
@@ -2295,11 +817,11 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-0.5"><ArchivedBadge /></div>
                         <p className="font-semibold text-sm text-zinc-900 truncate">{p.title}</p>
-                        <p className="text-xs text-slate-500">{p.questions?.length ?? 0} questions · {p.passage?.substring(0, 60)}…</p>
+                        <p className="text-xs text-slate-500">{p.questions?.length ?? 0}  {tr("site.contentmanager.questions_21292f")}{p.passage?.substring(0, 60)}…</p>
                       </div>
                       <div className="flex items-center gap-1 shrink-0">
-                        {archiveBtn(true, () => togglePassageArchive(i))}
-                        <button onClick={() => deletePassage(i)} title="Permanently delete" className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
+                        {archiveBtn(true, () => togglePassageArchive(i), tr)}
+                        <button onClick={() => deletePassage(i)} title={tr("site.contentmanager.permanently_delete_2eea1f")} className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     </div>
                   ))}
@@ -2310,9 +832,9 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
 
           {showForm ? (
             <div className="bg-zinc-50 rounded-2xl border border-zinc-200 p-4 space-y-3">
-              <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{editIdx !== null ? 'Edit' : 'New'} {label} Passage</p>
+              <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{editIdx !== null ? tr("site.contentmanager.edit_530164") : tr("site.contentmanager.new_6403f2")} {label}  {tr("onboard.passageLabel")}</p>
               <input value={form.title} onChange={e => { setForm(f => ({ ...f, title: e.target.value })); setFormError(''); }}
-                placeholder="Passage title" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
+                placeholder={tr("site.contentmanager.passage_title_00488f")} className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
               <div className="relative">
                 <select value={form.level} onChange={e => setForm(f => ({ ...f, level: e.target.value }))}
                   className="w-full pl-3 pr-7 py-2 rounded-xl border border-slate-200 text-sm bg-white focus:outline-none focus:border-zinc-400 appearance-none">
@@ -2325,28 +847,26 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
                 className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400 resize-y" />
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Questions (JSON) — optional</label>
+                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">{tr("site.contentmanager.questions_json_optional_14e814")}</label>
                   <button onClick={() => setForm(f => ({ ...f, questionsJson: TEMPLATE }))} className="text-xs text-indigo-600 font-semibold hover:underline inline-flex items-center gap-1">
-                    <Code className="w-3 h-3" /> Template
-                  </button>
+                    <Code className="w-3 h-3" />  {tr("site.contentmanager.template_3ec1ae")}</button>
                 </div>
                 <textarea value={form.questionsJson} onChange={e => { setForm(f => ({ ...f, questionsJson: e.target.value })); setFormError(''); }}
-                  rows={6} spellCheck={false} placeholder='[{"text":"Question?","options":["A","B","C","D"],"answer":0}]'
+                  rows={6} spellCheck={false} placeholder={'[{"text":"Question?","options":["A","B","C","D"],"answer":0}]'}
                   className="w-full px-3 py-2 rounded-xl border border-slate-200 text-[11px] font-mono focus:outline-none focus:border-zinc-400 resize-y" />
               </div>
               {formError && <p className="text-xs text-rose-600 font-semibold">⚠ {formError}</p>}
               <div className="flex gap-2 justify-end">
-                <button onClick={cancelPassageForm} className="px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">Cancel</button>
+                <button onClick={cancelPassageForm} className="px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">{tr("action.cancel")}</button>
                 <button onClick={submitPassage} className="px-4 py-2 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 transition-colors">
-                  {editIdx !== null ? 'Update Passage' : 'Add Passage'}
+                  {editIdx !== null ? tr("site.contentmanager.update_passage_669625") : tr("site.contentmanager.add_passage_a769b8")}
                 </button>
               </div>
             </div>
           ) : (
             <button onClick={openAdd}
               className="w-full flex items-center justify-center gap-2 py-3 rounded-2xl border border-dashed border-slate-300 text-sm font-semibold text-slate-500 hover:border-zinc-400 hover:bg-slate-50 transition-colors">
-              <Plus className="w-4 h-4" /> Add Custom Passage
-            </button>
+              <Plus className="w-4 h-4" />  {tr("site.contentmanager.add_custom_passage_2009c5")}</button>
           )}
         </>
       )}
@@ -2363,6 +883,7 @@ function PassageWithQuestionsEditor({ docId, label, placeholder, invalidateCache
 // ── ReadingTextsEditor ────────────────────────────────────────────────────────
 
 function ReadingTextsEditor() {
+  const { t: tr, uiLang, tLevel } = useUiLang();
   const [cmsDoc, setCmsDoc]       = useState<any | null>(null); // null = loading
   const [builtInBase, setBuiltInBase] = useState<Record<string, any[]>>({});
   const [byLevel, setByLevel]     = useState<Record<string, any[]>>({});
@@ -2431,11 +952,11 @@ function ReadingTextsEditor() {
   const cancelTextForm = () => { setShowForm(false); setEditIdx(null); setFormError(''); };
 
   const submitText = () => {
-    if (!form.title.trim() || !form.text.trim()) { setFormError('Title and text are required.'); return; }
+    if (!form.title.trim() || !form.text.trim()) { setFormError(tr("core.management.title_and_text_are_required_078033")); return; }
     let vocabulary: any[] = [];
     if (form.vocabJson.trim()) {
       try { vocabulary = JSON.parse(form.vocabJson); }
-      catch { setFormError('Invalid JSON for vocabulary.'); return; }
+      catch { setFormError(tr("core.management.invalid_json_for_vocabulary_e0b9c0")); return; }
     }
     if (editIdx !== null) {
       setByLevel(prev => {
@@ -2476,7 +997,7 @@ function ReadingTextsEditor() {
   };
 
   const deleteText = (idx: number) => {
-    if (!confirm('Permanently delete this reading text? This cannot be undone.')) return;
+    if (!confirm(tr("core.management.permanently_delete_this_reading_text_36ca3d"))) return;
     setByLevel(prev => ({ ...prev, [level]: (prev[level] ?? []).filter((_, i) => i !== idx) }));
     setDirty(true);
   };
@@ -2489,13 +1010,13 @@ function ReadingTextsEditor() {
       setCmsDoc(newDoc);
       invalidateLevelTextsCache(activeCmsLang());
       setDirty(false);
-      showToast('Saved! Changes appear on next load.');
-    } catch { showToast('Save failed.'); }
+      showToast(tr("core.management.saved_changes_appear_on_next_6d1a8d"));
+    } catch { showToast(tr("core.management.save_failed_aefc63")); }
     finally { setSaving(false); }
   };
 
   const resetLevel = async () => {
-    if (!confirm(`Reset "${level}" reading texts back to built-in defaults?`)) return;
+    if (!confirm(tr("core.management.reset_level_reading_texts_back_b79021", { level: level }))) return;
     setSaving(true);
     try {
       const newDoc = { ...(cmsDoc ?? {}), override: { ...(cmsDoc?.override ?? {}) } };
@@ -2504,14 +1025,14 @@ function ReadingTextsEditor() {
       setCmsDoc(newDoc); // triggers useEffect to reload built-in
       invalidateLevelTextsCache(activeCmsLang());
       setDirty(false);
-      showToast('Reset to built-in texts.');
-    } catch { showToast('Reset failed.'); }
+      showToast(tr("core.management.reset_to_builtin_texts_f28539"));
+    } catch { showToast(tr("core.management.reset_failed_29fe06")); }
     finally { setSaving(false); }
   };
 
   return (
     <div>
-      <p className="text-sm text-slate-500 mb-4">Edit all reading texts — both built-in and custom. Changes are saved as a full override for the selected level.</p>
+      <p className="text-sm text-slate-500 mb-4">{tr("site.contentmanager.edit_all_reading_texts_both_341152")}</p>
       <div className="flex flex-wrap gap-2 mb-5">
         {LEVELS.map(l => (
           <button key={l} onClick={() => setLevel(l)}
@@ -2523,16 +1044,15 @@ function ReadingTextsEditor() {
       </div>
       <div className="flex items-center justify-between mb-4">
         <p className="text-sm font-semibold text-slate-700">
-          {currentTexts.filter(t => !t.archived).length} active · {currentTexts.filter(t => t.archived).length} archived · <span className="text-slate-400 font-normal">{level}</span>
-          {overrideActive && <span className="ml-2 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">Custom override active</span>}
+          {currentTexts.filter(t => !t.archived).length}  {tr("site.contentmanager.active_4c7107")}{currentTexts.filter(t => t.archived).length}  {tr("site.contentmanager.archived_8bef8e")}<span className="text-slate-400 font-normal">{level}</span>
+          {overrideActive && <span className="ml-2 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-full">{tr("site.contentmanager.custom_override_active_5731e2")}</span>}
         </p>
         <div className="flex items-center gap-2">
-          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">Unsaved changes</span>}
-          <button onClick={resetLevel} disabled={saving} title="Reset this level to built-in texts" className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50"><RotateCcw className="w-4 h-4" /></button>
+          {dirty && <span className="text-[11px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">{tr("site.contentmanager.unsaved_changes_292672")}</span>}
+          <button onClick={resetLevel} disabled={saving} title={tr("site.contentmanager.reset_this_level_to_builtin_d3ee8a")} className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors disabled:opacity-50"><RotateCcw className="w-4 h-4" /></button>
           <button onClick={save} disabled={!dirty || saving}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 disabled:opacity-40 transition-colors">
-            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />} Save
-          </button>
+            {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}  {tr("site.contentmanager.save_efc007")}</button>
         </div>
       </div>
       {cmsDoc === null || levelLoading ? (
@@ -2545,12 +1065,12 @@ function ReadingTextsEditor() {
               <div key={t.id || i} className="bg-white rounded-xl border border-slate-200 p-3 flex items-start gap-3">
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold text-sm text-zinc-900 truncate">{t.title}</p>
-                  <p className="text-xs text-slate-500">{t.targetSeconds}s target · {t.vocabulary?.length ?? 0} vocab items · {t.text?.substring(0, 60)}…</p>
+                  <p className="text-xs text-slate-500">{t.targetSeconds}{tr("site.contentmanager.s_target_406af5")}{t.vocabulary?.length ?? 0}  {tr("site.contentmanager.vocab_items_1fa075")}{t.text?.substring(0, 60)}…</p>
                 </div>
                 <div className="flex items-center gap-1 shrink-0">
-                  <button onClick={() => openEditText(i)} title="Edit" className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors"><Edit2 className="w-3.5 h-3.5" /></button>
-                  {archiveBtn(false, () => toggleTextArchive(i))}
-                  <button onClick={() => deleteText(i)} title="Delete" className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
+                  <button onClick={() => openEditText(i)} title={tr("site.contentmanager.edit_530164")} className="p-1.5 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-slate-100 transition-colors"><Edit2 className="w-3.5 h-3.5" /></button>
+                  {archiveBtn(false, () => toggleTextArchive(i), tr)}
+                  <button onClick={() => deleteText(i)} title={tr("site.contentmanager.delete_f6fdbe")} className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
                 </div>
               </div>
             ))}
@@ -2561,7 +1081,7 @@ function ReadingTextsEditor() {
             <div className="mb-3">
               <button onClick={() => setShowArchived(s => !s)} className="flex items-center gap-2 text-xs font-bold text-amber-600 hover:text-amber-800 transition-colors mb-2">
                 <ChevronRight className={`w-4 h-4 transition-transform ${showArchived ? 'rotate-90' : ''}`} />
-                Archived texts ({currentTexts.filter(t => t.archived).length})
+                {tr("site.contentmanager.archived_texts_884ee2")}{currentTexts.filter(t => t.archived).length})
               </button>
               {showArchived && (
                 <div className="space-y-2">
@@ -2570,11 +1090,11 @@ function ReadingTextsEditor() {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-0.5"><ArchivedBadge /></div>
                         <p className="font-semibold text-sm text-zinc-900 truncate">{t.title}</p>
-                        <p className="text-xs text-slate-500">{t.targetSeconds}s target · {t.vocabulary?.length ?? 0} vocab items</p>
+                        <p className="text-xs text-slate-500">{t.targetSeconds}{tr("site.contentmanager.s_target_406af5")}{t.vocabulary?.length ?? 0}  {tr("site.contentmanager.vocab_items_787b43")}</p>
                       </div>
                       <div className="flex items-center gap-1 shrink-0">
-                        {archiveBtn(true, () => toggleTextArchive(i))}
-                        <button onClick={() => deleteText(i)} title="Permanently delete" className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
+                        {archiveBtn(true, () => toggleTextArchive(i), tr)}
+                        <button onClick={() => deleteText(i)} title={tr("site.contentmanager.permanently_delete_2eea1f")} className="p-1.5 rounded-lg text-rose-400 hover:bg-rose-50 transition-colors"><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     </div>
                   ))}
@@ -2585,36 +1105,35 @@ function ReadingTextsEditor() {
 
           {showForm ? (
             <div className="bg-zinc-50 rounded-2xl border border-zinc-200 p-4 space-y-3">
-              <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{editIdx !== null ? 'Edit' : 'New'} Reading Text</p>
+              <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{editIdx !== null ? tr("site.contentmanager.edit_530164") : tr("site.contentmanager.new_6403f2")}  {tr("site.contentmanager.reading_text_6ac6dc")}</p>
               <input value={form.title} onChange={e => { setForm(f => ({ ...f, title: e.target.value })); setFormError(''); }}
-                placeholder="Text title" className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
+                placeholder={tr("site.contentmanager.text_title_f4b779")} className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
               <div className="flex gap-3">
                 <input value={form.targetSeconds} onChange={e => setForm(f => ({ ...f, targetSeconds: e.target.value }))}
-                  placeholder="Target seconds (e.g. 120)" type="number" min="10"
+                  placeholder={tr("site.contentmanager.target_seconds_eg_120_4b69ad")} type="number" min="10"
                   className="w-40 px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400" />
               </div>
               <textarea value={form.text} onChange={e => { setForm(f => ({ ...f, text: e.target.value })); setFormError(''); }}
-                rows={7} placeholder="Full text content for the student to read aloud…"
+                rows={7} placeholder={tr("site.contentmanager.full_text_content_for_the_278c41")}
                 className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-zinc-400 resize-y" />
               <div>
-                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Vocabulary JSON <span className="font-normal text-slate-400">— optional</span></label>
+                <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">{tr("site.contentmanager.vocabulary_json_7fe09b")}<span className="font-normal text-slate-400">{tr("site.contentmanager.optional_c7cdc4")}</span></label>
                 <textarea value={form.vocabJson} onChange={e => { setForm(f => ({ ...f, vocabJson: e.target.value })); setFormError(''); }}
-                  rows={3} spellCheck={false} placeholder='[{"word":"ubiquitous","definition":"found everywhere"}]'
+                  rows={3} spellCheck={false} placeholder={'[{"word":"ubiquitous","definition":"found everywhere"}]'}
                   className="w-full px-3 py-2 rounded-xl border border-slate-200 text-[11px] font-mono focus:outline-none focus:border-zinc-400 resize-y" />
               </div>
               {formError && <p className="text-xs text-rose-600 font-semibold">⚠ {formError}</p>}
               <div className="flex gap-2 justify-end">
-                <button onClick={cancelTextForm} className="px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">Cancel</button>
+                <button onClick={cancelTextForm} className="px-3 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-xl transition-colors">{tr("action.cancel")}</button>
                 <button onClick={submitText} className="px-4 py-2 rounded-xl bg-zinc-900 text-white text-xs font-semibold hover:bg-zinc-700 transition-colors">
-                  {editIdx !== null ? 'Update Text' : 'Add Text'}
+                  {editIdx !== null ? tr("site.contentmanager.update_text_511d1e") : tr("site.contentmanager.add_text_827a9c")}
                 </button>
               </div>
             </div>
           ) : (
             <button onClick={openAddText}
               className="w-full flex items-center justify-center gap-2 py-3 rounded-2xl border border-dashed border-slate-300 text-sm font-semibold text-slate-500 hover:border-zinc-400 hover:bg-slate-50 transition-colors">
-              <Plus className="w-4 h-4" /> Add Custom Text
-            </button>
+              <Plus className="w-4 h-4" />  {tr("site.contentmanager.add_custom_text_d67da1")}</button>
           )}
         </>
       )}
@@ -2629,6 +1148,7 @@ function ReadingTextsEditor() {
 }
 
 function VocabReviewEditor() {
+  const { t: tr, uiLang, tLevel } = useUiLang();
   const [misses, setMisses] = useState<VocabMissRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -2641,11 +1161,11 @@ function VocabReviewEditor() {
     try {
       setMisses(await getVocabMisses(100));
     } catch (e: any) {
-      setError(e?.message || 'Could not load vocab misses');
+      setError(e?.message || tr("core.management.could_not_load_vocab_misses_77bcf6"));
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [tr]);
 
   useEffect(() => { void reload(); }, [reload]);
 
@@ -2672,40 +1192,38 @@ function VocabReviewEditor() {
   return (
     <div className="space-y-4">
       <p className="text-sm text-slate-500">
-        Words students looked up that were not in the predetermined vocabulary database.
-        Save the exported JSON as <code className="text-xs bg-slate-100 px-1 rounded">scripts/vocab-patches.json</code> and run <code className="text-xs bg-slate-100 px-1 rounded">npm run build:vocab</code>.
+        {tr("site.contentmanager.words_students_looked_up_that_350d28")} <code className="text-xs bg-slate-100 px-1 rounded">{tr("site.contentmanager.scriptsvocabpatchesjson_ff0853")}</code>  {tr("site.contentmanager.and_run_2ae262")}<code className="text-xs bg-slate-100 px-1 rounded">{tr("site.contentmanager.npm_run_buildvocab_53fbf9")}</code>.
       </p>
-      {loading && <div className="flex items-center gap-2 text-slate-500"><Loader2 className="w-4 h-4 animate-spin" /> Loading…</div>}
+      {loading && <div className="flex items-center gap-2 text-slate-500"><Loader2 className="w-4 h-4 animate-spin" />  {tr("site.contentmanager.loading_33ce41")}</div>}
       {error && <p className="text-rose-600 text-sm">{error}</p>}
-      {!loading && misses.length === 0 && <p className="text-slate-500 text-sm">No misses yet. The queue fills when students tap words outside the seed.</p>}
+      {!loading && misses.length === 0 && <p className="text-slate-500 text-sm">{tr("site.contentmanager.no_misses_yet_the_queue_530d77")}</p>}
       <div className="space-y-3">
         {misses.map((m) => (
           <div key={m.id} className={`bg-white border rounded-xl p-3 ${m.reviewed ? 'border-emerald-200 opacity-70' : 'border-slate-200'}`}>
             <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
               <div>
                 <p className="font-bold text-zinc-900">{m.word} <span className="text-xs font-medium text-slate-400">{m.lang} → {m.targetLang || '?'}</span></p>
-                <p className="text-xs text-slate-500">Requested {m.count || 1}× {m.source === 'api' ? '· provisional API' : ''}</p>
+                <p className="text-xs text-slate-500">{tr("site.contentmanager.requested_c26bf6")}{m.count || 1}× {m.source === 'api' ? tr("site.contentmanager.provisional_api_bf3617") : ''}</p>
               </div>
               {!m.reviewed && (
                 <button
                   onClick={() => markVocabMissReviewed(m.id).then(reload)}
                   className="text-xs font-bold px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200"
                 >
-                  Mark reviewed
-                </button>
+                  {tr("site.contentmanager.mark_reviewed_277c92")}</button>
               )}
             </div>
             {m.sampleSentence && <p className="text-sm italic text-slate-600 mb-2">“{m.sampleSentence}”</p>}
-            {m.lastTranslation && <p className="text-sm text-slate-500 mb-2">API: {m.lastTranslation}</p>}
+            {m.lastTranslation && <p className="text-sm text-slate-500 mb-2">{tr("site.contentmanager.api_1fa34c")}{m.lastTranslation}</p>}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <input
-                placeholder="Correct word in known language"
+                placeholder={tr("site.contentmanager.correct_word_in_known_language_6f468c")}
                 value={edits[m.id]?.w ?? ''}
                 onChange={(e) => setEdits((p) => ({ ...p, [m.id]: { w: e.target.value, d: p[m.id]?.d || '', lang: m.targetLang || 'en' } }))}
                 className="border border-slate-200 rounded-lg px-3 py-2 text-sm"
               />
               <input
-                placeholder="Correct definition"
+                placeholder={tr("site.contentmanager.correct_definition_9528f7")}
                 value={edits[m.id]?.d ?? ''}
                 onChange={(e) => setEdits((p) => ({ ...p, [m.id]: { w: p[m.id]?.w || '', d: e.target.value, lang: m.targetLang || 'en' } }))}
                 className="border border-slate-200 rounded-lg px-3 py-2 text-sm"
@@ -2723,7 +1241,7 @@ function VocabReviewEditor() {
           }}
           className="px-4 py-2 rounded-xl bg-zinc-900 text-white text-sm font-bold"
         >
-          {copied ? 'Copied patch JSON' : 'Copy vocab-patches.json'}
+          {copied ? tr("site.contentmanager.copied_patch_json_78dd9a") : tr("site.contentmanager.copy_vocabpatchesjson_a3e33a")}
         </button>
       )}
     </div>
@@ -2732,47 +1250,38 @@ function VocabReviewEditor() {
 
 // ── ContentManager (main export) ─────────────────────────────────────────────
 
+
+
+
+
+export function ContentManager({ initialSubTab, embedded }: { initialSubTab?: SubTab; embedded?: boolean } = {}) {
+  const { t: tr, uiLang, tLevel } = useUiLang();
 const SUB_TAB_GROUPS = [
   {
-    label: 'Writing',
+    label: tr("nav.writing"),
     tabs: [
-      { id: 'writing'  as SubTab, label: 'Writing Topics',  icon: PenLine,    description: 'Free-writing practice prompts by level' },
-      { id: 'speaking' as SubTab, label: 'Speaking Topics', icon: Mic,        description: 'Speaking practice topics by level' },
-      { id: 'task2'    as SubTab, label: 'Writing Task 2',  icon: PenLine,    description: 'IELTS Task 2 essay prompts by type & category' },
-      { id: 'task1'    as SubTab, label: 'Writing Task 1',  icon: BarChart2,  description: 'Add custom Task 1 chart prompts' },
+      { id: 'writing'  as SubTab, label: tr("core.management.writing_topics_638b1a"),  icon: PenLine,    description: tr("core.management.freewriting_practice_prompts_by_level_bec732") },
+      { id: 'speaking' as SubTab, label: tr("core.management.speaking_topics_602fe9"), icon: Mic,        description: tr("core.management.speaking_practice_topics_by_level_53e950") },
     ],
   },
   {
-    label: 'IELTS Speaking',
+    label: tr("core.management.reading_listening_600d2c"),
     tabs: [
-      { id: 'ielts-speaking' as SubTab, label: 'Part 1 Topics',   icon: Mic,      description: 'Interview topic groups & questions' },
-      { id: 'ielts-p2'       as SubTab, label: 'Part 2 Cards',    icon: FileText, description: 'Cue cards with bullets & follow-up' },
-      { id: 'ielts-p3'       as SubTab, label: 'Part 3 Topics',   icon: Mic,      description: 'Discussion question sets' },
+      { id: 'comp-reading'     as SubTab, label: tr("core.management.comp_reading_69cffb"),   icon: BookMarked,  description: tr("core.management.custom_reading_passages_mcq_0ddc4d") },
+      { id: 'comp-listening'   as SubTab, label: tr("core.management.comp_listening_9bfe80"), icon: Volume2,     description: tr("core.management.custom_listening_scripts_mcq_783e95") },
+      { id: 'reading-texts'    as SubTab, label: tr("core.management.reading_texts_508fd8"),   icon: FileText,    description: tr("core.management.pronunciation_reading_level_texts_d132ae") },
     ],
   },
   {
-    label: 'Reading & Listening',
+    label: tr("core.management.other_6e6a6f"),
     tabs: [
-      { id: 'ielts-reading'    as SubTab, label: 'IELTS Reading',   icon: BookOpen,    description: 'Full tests (3 passages, 40 Q)' },
-      { id: 'ielts-listening'  as SubTab, label: 'IELTS Listening', icon: Headphones,  description: 'Full tests (4 sections, 40 Q)' },
-      { id: 'comp-reading'     as SubTab, label: 'Comp. Reading',   icon: BookMarked,  description: 'Custom reading passages + MCQ' },
-      { id: 'comp-listening'   as SubTab, label: 'Comp. Listening', icon: Volume2,     description: 'Custom listening scripts + MCQ' },
-      { id: 'reading-texts'    as SubTab, label: 'Reading Texts',   icon: FileText,    description: 'Pronunciation & reading level texts' },
-    ],
-  },
-  {
-    label: 'Other',
-    tabs: [
-      { id: 'vocab'      as SubTab, label: 'Vocabulary', icon: Languages, description: 'Review API fallback misses and export seed patches' },
-      { id: 'shadowing'  as SubTab, label: 'Shadowing',  icon: Volume2, description: 'Custom audio shadowing passages' },
-      { id: 'dictation'  as SubTab, label: 'Dictation',  icon: Mic,     description: 'Custom audio dictation sentences' },
+      { id: 'vocab'      as SubTab, label: tr("onboard.section.vocabulary"), icon: Languages, description: tr("core.management.review_api_fallback_misses_and_3c3aa0") },
+      { id: 'shadowing'  as SubTab, label: tr("speaking.shadow.title"),  icon: Volume2, description: tr("core.management.custom_audio_shadowing_passages_808bfe") },
+      { id: 'dictation'  as SubTab, label: tr("core.management.dictation_2a7fe4"),  icon: Mic,     description: tr("core.management.custom_audio_dictation_sentences_e48bcc") },
     ],
   },
 ];
 
-const ALL_SUB_TABS = SUB_TAB_GROUPS.flatMap(g => g.tabs);
-
-export function ContentManager({ initialSubTab, embedded }: { initialSubTab?: SubTab; embedded?: boolean } = {}) {
   const [cmsLang, setCmsLang] = useState<ContentLang>('en');
   _cmsLang = cmsLang;
   const [subTab, setSubTab] = useState<SubTab>(initialSubTab ?? 'writing');
@@ -2783,7 +1292,7 @@ export function ContentManager({ initialSubTab, embedded }: { initialSubTab?: Su
       ...g,
       tabs: g.tabs.filter(t => !EN_ONLY_SUBTABS.has(t.id)),
     })).filter(g => g.tabs.length > 0);
-  }, [cmsLang]);
+  }, [cmsLang, tr]);
 
   const allTabs = useMemo(() => groups.flatMap(g => g.tabs), [groups]);
   const current = allTabs.find(t => t.id === subTab) ?? allTabs[0];
@@ -2803,7 +1312,7 @@ export function ContentManager({ initialSubTab, embedded }: { initialSubTab?: Su
     <>
       <div className="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Content language</p>
+          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">{tr("site.contentmanager.content_language_9dc835")}</p>
           <select
             value={cmsLang}
             onChange={e => setCmsLang(e.target.value as ContentLang)}
@@ -2815,8 +1324,8 @@ export function ContentManager({ initialSubTab, embedded }: { initialSubTab?: Su
           </select>
           <p className="text-xs text-slate-400 mt-1.5">
             {cmsLang === 'en'
-              ? 'Editing English (built-ins + CMS overrides).'
-              : `Editing ${CONTENT_LANG_LABEL[cmsLang]} — CMS-only (no built-in pack yet).`}
+              ? tr("site.contentmanager.editing_english_builtins_cms_overrides_f8bdff")
+              : tr("core.management.editing_value1_cmsonly_no_builtin_f1e9cd", { value1: CONTENT_LANG_LABEL[cmsLang] })}
           </p>
         </div>
       </div>
@@ -2856,7 +1365,7 @@ export function ContentManager({ initialSubTab, embedded }: { initialSubTab?: Su
           docId={cmsDocId('writingTopics', cmsLang)}
           defaultTopics={emptyDefaults}
           levels={LEVELS}
-          label="Writing"
+          label={tr("nav.writing")}
         />
       )}
       {subTab === 'speaking' && (
@@ -2864,21 +1373,14 @@ export function ContentManager({ initialSubTab, embedded }: { initialSubTab?: Su
           docId={cmsDocId('speakingTopics', cmsLang)}
           defaultTopics={emptySpeaking}
           levels={LEVELS}
-          label="Speaking"
+          label={tr("home.preview.speaking")}
         />
       )}
-      {subTab === 'task2' && <Task2Editor />}
-      {subTab === 'task1' && <Task1Editor />}
-      {cmsLang === 'en' && subTab === 'ielts-speaking' && <IELTSSpeakingEditor />}
-      {cmsLang === 'en' && subTab === 'ielts-p2' && <IELTSPart2Editor />}
-      {cmsLang === 'en' && subTab === 'ielts-p3' && <IELTSPart3Editor />}
-      {cmsLang === 'en' && subTab === 'ielts-reading' && <IELTSReadingManager />}
-      {cmsLang === 'en' && subTab === 'ielts-listening' && <IELTSListeningManager />}
       {subTab === 'comp-reading' && (
         <PassageWithQuestionsEditor
           docId={cmsDocId('customComprehensiveReading', cmsLang)}
-          label="Comprehensive Reading"
-          placeholder="Paste the reading passage text here…"
+          label={tr("reading.comp.title")}
+          placeholder={tr("site.contentmanager.paste_the_reading_passage_text_af544e")}
           invalidateCache={invalidateCompReadingCache}
           loadBuiltIn={(level) => loadBuiltInReadingPassages(level, cmsLang)}
         />
@@ -2886,8 +1388,8 @@ export function ContentManager({ initialSubTab, embedded }: { initialSubTab?: Su
       {cmsLang === 'en' && subTab === 'comp-listening' && (
         <PassageWithQuestionsEditor
           docId={cmsDocId('customListening', cmsLang)}
-          label="Comprehensive Listening"
-          placeholder="Paste the listening audio script / transcript here…"
+          label={tr("listening.comp.title")}
+          placeholder={tr("site.contentmanager.paste_the_listening_audio_script_f920c1")}
           invalidateCache={invalidateListeningCache}
           loadBuiltIn={loadBuiltInListeningPassages}
         />
@@ -2902,7 +1404,7 @@ export function ContentManager({ initialSubTab, embedded }: { initialSubTab?: Su
 
   if (embedded) return body;
   return (
-    <ScreenShell size="wide" title="Content" subtitle="Lessons, IELTS, and library material.">
+    <ScreenShell size="wide" title={tr("nav.contentShort")} subtitle={tr("site.contentmanager.lessons_ielts_and_library_material_f9b2c0")}>
       {body}
     </ScreenShell>
   );

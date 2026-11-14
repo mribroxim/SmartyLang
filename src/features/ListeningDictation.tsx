@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mic, Headphones, ArrowLeft, Loader2, Sparkles, Volume2, CheckCircle2, PlayCircle, BookOpen, ChevronRight, Plus, Search } from 'lucide-react';
+import { Headphones, ArrowLeft, Volume2, PlayCircle, ChevronRight, Plus, Search } from 'lucide-react';
 import { playSound } from '../lib/audio';
 import { getRandomDictation } from '../data/audioDictation';
 import type { Level } from '../lib/reading-logic';
@@ -9,7 +9,6 @@ import { BookmarkPlus, Trash2 } from 'lucide-react';
 import { PracticeHistory } from '../components/PracticeHistory';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
-import { CONTENT_LANG_NATIVE } from '../lib/contentLang';
 import { activityLangStamp } from '../lib/activityMeta';
 import { speakText, cancelSpeech } from '../lib/speech';
 import { normalizeForMatch, tokenizeForLang } from '../lib/pronunciationProfile';
@@ -66,7 +65,7 @@ export function ListeningDictation({ onBack }: any) {
     try {
       const s = customSentences || await getRandomDictation(level, 3, contentLang, arabicDisplayMode);
       if (!s.length) {
-        alert(`No ${nativeName} dictation materials yet. Ask a content manager to add sentences.`);
+        alert(t("learning.no.v0.dictation.materials.yet.ask.a.content.manager.to.add.ff26a9", { v0: nativeName }));
         return;
       }
       setSentences(s);
@@ -85,7 +84,7 @@ export function ListeningDictation({ onBack }: any) {
       setView('activity');
       playAudio(s[0]);
     } catch {
-      alert("Error loading dictation.");
+      alert(t("learning.error.loading.dictation.f6f925"));
     } finally {
       setIsGenerating(false);
     }
@@ -137,8 +136,8 @@ export function ListeningDictation({ onBack }: any) {
       try {
         const prev = JSON.parse(localStorage.getItem('ld_completions_v1') || '[]');
         prev.push({
-          label: exerciseLabel || 'Exercise',
-          title: exerciseLabel || 'Dictation',
+          label: exerciseLabel || t("site.app.exercise_20863c"),
+          title: exerciseLabel || t("learning.dictation.2a7fe4"),
           level: level,
           timestamp: Date.now(),
           score,
@@ -150,7 +149,7 @@ export function ListeningDictation({ onBack }: any) {
       } catch {}
       logActivity({
         type: 'audio_dictation',
-        title: exerciseLabel || 'Audio Dictation',
+        title: exerciseLabel || t("listening.dict.title"),
         level,
         score,
         total: sentences.length,
@@ -187,9 +186,9 @@ export function ListeningDictation({ onBack }: any) {
 
         {/* Custom Dictation Modal */}
         {showCustomForm && (
-          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-6">
-            <div className="bg-white rounded-3xl p-8 max-w-2xl w-full shadow-2xl max-h-[90vh] overflow-y-auto">
-              <h3 className="text-2xl font-bold text-slate-800 mb-6">{t('dictation.customTitle')}</h3>
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-zinc-900/55 backdrop-blur-[2px]">
+            <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
+              <h3 className="font-serif text-2xl font-extrabold text-slate-800 mb-6">{t('dictation.customTitle')}</h3>
 
               {/* Saved dictation sessions */}
               {customSessions.length > 0 && (
@@ -197,7 +196,7 @@ export function ListeningDictation({ onBack }: any) {
                   <p className="text-xs font-black text-slate-500 uppercase tracking-widest mb-2">{t('dictation.savedSessions')}</p>
                   <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
                     {customSessions.map(s => (
-                      <div key={s.id} className="flex items-center gap-2 p-3 bg-slate-50 border border-slate-200 rounded-xl">
+                      <div key={s.id} className="flex items-center gap-2 p-3 bg-slate-50 border-2 border-slate-200 rounded-2xl">
                         <div className="flex-1 min-w-0">
                           <p className="font-bold text-slate-900 text-sm truncate">{s.title}</p>
                           <p className="text-xs text-slate-500 truncate">{s.prompt.replace(/\n/g, ' · ').slice(0, 80)}</p>
@@ -213,12 +212,12 @@ export function ListeningDictation({ onBack }: any) {
                         <button
                           onClick={() => removeCustomSession(s.id)}
                           className="p-1.5 text-slate-400 hover:text-rose-500 rounded transition-colors shrink-0"
-                          title="Delete saved session"
+                          title={t("site.listeningdictation.delete_saved_session_659b6b")}
                         ><Trash2 className="w-3.5 h-3.5" /></button>
                       </div>
                     ))}
                   </div>
-                  <p className="text-xs text-slate-400 text-center mt-3 mb-2">— or create a new one below —</p>
+                  <p className="text-xs text-slate-400 text-center mt-3 mb-2">{t("site.listeningdictation.or_create_a_new_one_6787ea")}</p>
                 </div>
               )}
 
@@ -226,33 +225,33 @@ export function ListeningDictation({ onBack }: any) {
                 <div>
                   <label className="text-sm font-bold text-slate-600 mb-2 block">{t('common.title')}</label>
                   <input value={customTitle} onChange={e => setCustomTitle(e.target.value)}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-700"
-                    placeholder="My Custom Dictation" />
+                    className="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-700"
+                    placeholder={t("site.listeningdictation.my_custom_dictation_ba3cc5")} />
                 </div>
                 <div>
-                  <label className="text-sm font-bold text-slate-600 mb-2 block">Sentences (one per line)</label>
+                  <label className="text-sm font-bold text-slate-600 mb-2 block">{t("site.listeningdictation.sentences_one_per_line_3f1725")}</label>
                   <textarea value={customText} onChange={e => setCustomText(e.target.value)}
-                    className="w-full px-4 py-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-700 min-h-[160px] resize-none"
-                    placeholder="Enter sentences for dictation (one per line)..." />
+                    className="w-full px-4 py-3 border-2 border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-zinc-700 min-h-[160px] resize-none"
+                    placeholder={t("site.listeningdictation.enter_sentences_for_dictation_one_d82717")} />
                 </div>
               </div>
               <div className="flex gap-3 mt-6">
-                <button onClick={() => setShowCustomForm(false)} className="flex-1 py-3 border border-slate-200 rounded-xl font-bold text-slate-600 hover:bg-slate-50">{t('action.cancel')}</button>
+                <button onClick={() => setShowCustomForm(false)} className="flex-1 py-3 border-2 border-slate-200 rounded-2xl font-bold text-slate-600 hover:bg-slate-50">{t('action.cancel')}</button>
                 <button
                   onClick={async () => {
                     if (!customText.trim()) return;
                     await saveCustomSession({ title: customTitle, prompt: customText });
                   }}
                   disabled={!customText.trim()}
-                  className="px-4 py-3 border border-slate-200 bg-white rounded-xl font-bold text-slate-700 hover:bg-slate-50 flex items-center gap-2 disabled:opacity-40"
-                  title="Save this dictation set for later"
-                ><BookmarkPlus className="w-4 h-4" /> Save</button>
+                  className="px-4 py-3 border-2 border-slate-200 bg-white rounded-2xl font-bold text-slate-700 hover:bg-slate-50 flex items-center gap-2 disabled:opacity-40 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]"
+                  title={t("site.listeningdictation.save_this_dictation_set_for_e4be2a")}
+                ><BookmarkPlus className="w-4 h-4" />  {t("site.contentmanager.save_efc007")}</button>
                 <button onClick={() => {
                   if (!customText.trim()) return;
                   setShowCustomForm(false);
                   const sents = customText.split('\n').map(s => s.trim()).filter(Boolean);
                   startDictation(customTitle || t('dictation.customTitle'), sents);
-                }} className="flex-1 py-3 bg-zinc-900 text-white rounded-xl font-bold hover:bg-black">{t('listening.dict.cta')}</button>
+                }} className="flex-1 py-3 bg-zinc-900 text-white rounded-2xl font-bold hover:bg-black shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none transition-[transform,box-shadow] duration-75">{t('listening.dict.cta')}</button>
               </div>
             </div>
           </div>
@@ -273,7 +272,7 @@ export function ListeningDictation({ onBack }: any) {
         <div className="max-w-5xl mx-auto px-4 md:px-12 py-6 md:py-12">
           <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200">
             <div>
-              <button onClick={() => setView('levels')} className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-4 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm w-fit transition-colors">
+              <button onClick={() => setView('levels')} className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-4 bg-white px-4 py-2 rounded-2xl border-2 border-slate-200 w-fit transition-colors shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
                 <ArrowLeft className="w-4 h-4" /> {t('action.backToLevels')}
               </button>
               <h1 className="text-[22px] font-serif font-black text-slate-900 tracking-tight flex items-center gap-2 flex-wrap">
@@ -281,7 +280,7 @@ export function ListeningDictation({ onBack }: any) {
                 <span className="font-sans text-2xl text-zinc-900 tracking-normal font-medium">{t('library.title')}</span>
               </h1>
             </div>
-            <div className="bg-white px-5 py-3 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center shrink-0">
+            <div className="bg-white px-5 py-3 rounded-2xl border-2 border-slate-200 flex flex-col items-center shrink-0 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
               <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">{t('library.levelProgress')}</span>
               <div className="flex items-baseline gap-1.5">
                 <span className="text-2xl font-black text-zinc-900">{allExercises.length}</span>
@@ -313,13 +312,13 @@ export function ListeningDictation({ onBack }: any) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {pagedItems.map(i => (
               <button key={i} onClick={() => startDictation(`Exercise ${i}`)}
-                className="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-zinc-400 hover:-translate-y-1 transition-all duration-300 text-left group min-h-[220px] relative overflow-hidden">
+                className="bg-white p-6 md:p-8 rounded-3xl border-2 border-slate-200 flex flex-col justify-between hover:shadow-xl hover:border-zinc-400 hover:-translate-y-1 transition-all duration-300 text-left group min-h-[220px] relative overflow-hidden shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
                 <div>
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${theme.card}`}>
                     <PlayCircle className="w-6 h-6" />
                   </div>
-                  <h3 className="font-bold text-xl md:text-2xl text-slate-800 mb-3 group-hover:text-black">Exercise {i}</h3>
-                  <p className="text-base text-slate-500 leading-relaxed">3 dictation sentences at {tLevel(level)} level</p>
+                  <h3 className="font-serif font-extrabold text-xl md:text-2xl text-slate-800 mb-3 group-hover:text-black">{t("site.app.exercise_20863c")}{i}</h3>
+                  <p className="text-base text-slate-500 leading-relaxed">{t("site.listeningdictation.3_dictation_sentences_at_4f476b")}{tLevel(level)}  {t("site.listeningdictation.level_ad60c5")}</p>
                 </div>
                 <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
                   <div className="flex flex-col">
@@ -355,7 +354,7 @@ export function ListeningDictation({ onBack }: any) {
 
           <PracticeHistory
             storageKey="ld_completions_v1"
-            label="Past Dictation Sessions"
+            label={t("site.listeningdictation.past_dictation_sessions_839f37")}
             level={level}
           />
         </div>
@@ -370,27 +369,26 @@ export function ListeningDictation({ onBack }: any) {
       <div className="flex-grow overflow-y-auto w-full bg-white">
       <div className="max-w-3xl mx-auto px-4 md:px-6 py-6 md:py-12">
         <button onClick={() => { cancelSpeech(); setSubmitted(false); setView('library'); }}
-          className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-8 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm w-fit transition-colors">
-          <ArrowLeft className="w-4 h-4" /> Back to Exercises</button>
-        <div className="bg-white rounded-[2rem] p-6 md:p-12 shadow-xl border border-slate-200 text-center">
-          <h2 className="text-2xl sm:text-4xl font-serif font-black text-slate-900 mb-4">Practice Complete!</h2>
-          <p className="text-xl text-slate-500 mb-12">You got {score} out of {sentences.length} sentences correct.</p>
+          className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-8 bg-white px-4 py-2 rounded-2xl border-2 border-slate-200 w-fit transition-colors shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
+          <ArrowLeft className="w-4 h-4" />  {t("action.backToExercises")}</button>
+        <div className="bg-white rounded-[2rem] p-6 md:p-12 border-2 text-center shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
+          <h2 className="text-2xl sm:text-4xl font-serif font-black text-slate-900 mb-4">{t("site.listeningdictation.practice_complete_588a5f")}</h2>
+          <p className="text-xl text-slate-500 mb-12">{t('learning.message.df9f922b0f', { v0: score, v1: sentences.length })}</p>
           {sentences.map((sent, i) => (
-            <div key={i} className="bg-slate-50 rounded-2xl p-6 border border-slate-100 mb-4 text-left">
+            <div key={i} className="bg-slate-50 rounded-2xl p-6 border-2 border-slate-100 mb-4 text-left">
               <div className="flex items-center justify-between mb-3">
-                <span className="font-bold text-slate-400">Sentence {i + 1}</span>
+                <span className="font-bold text-slate-400">{t("site.listeningdictation.sentence_1bb1f3")}{i + 1}</span>
                 <button onClick={() => playNormalAudio(sent)} className="text-emerald-600 hover:bg-emerald-50 p-2 rounded-lg transition-colors flex items-center gap-2 text-sm font-bold">
-                  <Volume2 className="w-4 h-4" /> Listen
-                </button>
+                  <Volume2 className="w-4 h-4" />  {t("lesson.listen")}</button>
               </div>
               <div className="text-lg font-serif text-slate-900 mb-2">{sent}</div>
               {!results[i].correct && (
                 <div className="bg-white border-l-4 border-rose-400 p-4 rounded-r-xl">
-                  <span className="text-xs font-bold text-slate-400 block mb-1 uppercase tracking-wider">What you wrote:</span>
+                  <span className="text-xs font-bold text-slate-400 block mb-1 uppercase tracking-wider">{t("site.listeningdictation.what_you_wrote_09d405")}</span>
                   <div className="flex flex-wrap gap-1">
                     {results[i].diff.map((d: any, idx) => (
                       <span key={idx} className={d.type === 'correct' ? 'text-zinc-400' : 'text-rose-600 font-bold underline decoration-rose-300'}>
-                        {d.type === 'correct' ? d.val : (d.actual || '(missed)')}
+                        {d.type === 'correct' ? d.val : (d.actual || t("site.listeningdictation.missed_2718d8"))}
                       </span>
                     ))}
                   </div>
@@ -399,9 +397,8 @@ export function ListeningDictation({ onBack }: any) {
             </div>
           ))}
           <button onClick={() => { setSubmitted(false); setView('library'); }}
-            className="px-8 py-4 bg-zinc-900 text-white rounded-xl font-bold uppercase tracking-widest hover:bg-black transition-colors mt-6">
-            Try More Exercises
-          </button>
+            className="px-8 py-4 bg-zinc-900 text-white rounded-2xl font-bold uppercase tracking-widest hover:bg-black transition-colors mt-6 shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none">
+            {t("site.listeningdictation.try_more_exercises_a6eaf6")}</button>
         </div>
       </div>
       </div>
@@ -412,14 +409,14 @@ export function ListeningDictation({ onBack }: any) {
     <div className="flex-grow overflow-y-auto w-full bg-white">
     <div className="max-w-3xl mx-auto px-4 md:px-6 py-6 md:py-12">
       <button onClick={() => { cancelSpeech(); setView('library'); }}
-        className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-8 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm w-fit transition-colors">
-        <ArrowLeft className="w-4 h-4" /> Exit Dictation</button>
+        className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-8 bg-white px-4 py-2 rounded-2xl border-2 border-slate-200 w-fit transition-colors shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
+        <ArrowLeft className="w-4 h-4" />  {t("site.listeningdictation.exit_dictation_ee722e")}</button>
       <div className="space-y-2 mb-8 flex gap-2">
         {sentences.map((_, i) => (
           <div key={i} className={`h-2 flex-1 rounded-full ${i < currentIndex ? 'bg-emerald-500' : i === currentIndex ? 'bg-emerald-200' : 'bg-slate-200'}`} />
         ))}
       </div>
-      <div className="bg-white rounded-[2rem] p-6 md:p-12 shadow-xl border border-slate-200 text-center">
+      <div className="bg-white rounded-[2rem] p-6 md:p-12 border-2 text-center shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
         <div className="mb-8">
           <span className="font-bold text-slate-400 uppercase tracking-widest mb-6 block">{exerciseLabel}</span>
           <div className="flex flex-col items-center gap-4">
@@ -430,7 +427,7 @@ export function ListeningDictation({ onBack }: any) {
               className="flex flex-col items-center justify-center p-6 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-2xl transition-all group w-full max-w-xs"
             >
               <Headphones className="w-8 h-8 text-emerald-600 mb-2 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-bold text-emerald-900">Play Audio</span>
+              <span className="text-sm font-bold text-emerald-900">{t("site.comprehensivelistening.play_audio_1edc94")}</span>
               <span className="text-[10px] font-mono text-emerald-700/70 mt-1">
                 {SPEECH_RATE_LABELS[snapSpeechRate(speechRate)]}
               </span>
@@ -439,16 +436,16 @@ export function ListeningDictation({ onBack }: any) {
         </div>
         <div className="mb-8 text-left">
           <div className="flex justify-between items-end mb-2">
-            <label className="block text-sm font-bold text-slate-700 uppercase tracking-wider">Type what you hear</label>
+            <label className="block text-sm font-bold text-slate-700 uppercase tracking-wider">{t("site.listeningdictation.type_what_you_hear_419758")}</label>
             <button onClick={() => setShowCurrentTranscript(true)}
-              className="text-xs font-bold text-slate-400 hover:text-emerald-600 transition-colors">Reveal text</button>
+              className="text-xs font-bold text-slate-400 hover:text-emerald-600 transition-colors">{t("site.listeningdictation.reveal_text_4dbda2")}</button>
           </div>
           <textarea value={userInput} onChange={e => setUserInput(e.target.value)}
             className="w-full bg-slate-50 rounded-2xl p-6 border-2 border-slate-200 focus:border-emerald-500 focus:ring-0 resize-none font-serif text-xl outline-none transition-colors h-32"
-            placeholder="Start typing..." autoFocus />
+            placeholder={t("site.listeningdictation.start_typing_49d4b6")} autoFocus />
           {showCurrentTranscript && (
             <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl">
-              <span className="text-xs font-bold text-amber-700 uppercase block mb-1">Transcript</span>
+              <span className="text-xs font-bold text-amber-700 uppercase block mb-1">{t("site.comprehensivelistening.transcript_5bcd60")}</span>
               <span className="text-amber-900 font-serif">{sentences[currentIndex]}</span>
             </div>
           )}
@@ -456,7 +453,7 @@ export function ListeningDictation({ onBack }: any) {
         <div className="flex justify-end">
           <button onClick={handleNext} disabled={!userInput.trim()}
             className="px-8 py-4 bg-emerald-600 text-white rounded-xl font-bold uppercase tracking-widest hover:bg-emerald-700 transition-colors disabled:opacity-50">
-            {currentIndex < sentences.length - 1 ? 'Next' : 'Finish'}
+            {currentIndex < sentences.length - 1 ? t("lesson.next") : t("site.ieltsspeaking.finish_b74bde")}
           </button>
         </div>
       </div>

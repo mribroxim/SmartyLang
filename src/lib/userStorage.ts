@@ -22,11 +22,14 @@ export function readScopedJSON<T>(base: string, fallback: T, uid: string | null 
   try {
     const scoped = localStorage.getItem(scopedKey(base, uid));
     if (scoped) return JSON.parse(scoped) as T;
-    // Legacy unscoped migration read
+    // Legacy unscoped data (written before per-account keys, or while signed out):
+    // hand it to ONE account, then delete it, so a shared device can't pass one
+    // learner's progress on to the next person who signs in.
     if (uid) {
       const legacy = localStorage.getItem(base);
       if (legacy) {
         localStorage.setItem(scopedKey(base, uid), legacy);
+        localStorage.removeItem(base);
         return JSON.parse(legacy) as T;
       }
     } else {

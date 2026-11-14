@@ -38,6 +38,14 @@ function load(lang) {
   return JSON.parse(fs.readFileSync(path.join(VOCAB, `${lang}.json`), 'utf8'));
 }
 
+function hasRepeatedToken(text) {
+  const counts = new Map();
+  for (const token of String(text || '').split(/\s+/).filter(Boolean)) {
+    counts.set(token, (counts.get(token) || 0) + 1);
+  }
+  return [...counts.values()].some((count) => count >= 5);
+}
+
 const index = JSON.parse(fs.readFileSync(path.join(VOCAB, 'index.json'), 'utf8'));
 const shards = Object.fromEntries(LANGS.map((l) => [l, load(l)]));
 
@@ -64,8 +72,14 @@ for (const id of Object.keys(index.senses)) {
       issues.push({ id, lang, kind: 'missing-native-script', word: entry.w, def: entry.d });
     }
     const ratio = entry.d.length / Math.max(en.d.length, 1);
-    if (ratio > 4 || ratio < 0.15) {
+    // CJK languages naturally use far fewer characters than English; length
+    // ratios are useful for alphabetic languages but create false positives
+    // for concise, valid Japanese/Chinese/Korean definitions.
+    if (!['ja', 'zh', 'ko'].includes(lang) && (ratio > 4 || ratio < 0.15)) {
       issues.push({ id, lang, kind: 'length-mismatch', word: entry.w, def: entry.d, en: en.d, ratio: Number(ratio.toFixed(2)) });
+    }
+    if (hasRepeatedToken(entry.d)) {
+      issues.push({ id, lang, kind: 'repeated-output', word: entry.w, def: entry.d });
     }
   }
 }

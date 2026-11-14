@@ -127,14 +127,64 @@ const ELISION_PREFIXES = [
   /^(?:de[ls]|à[ls]|a[ls]|d['’]|dell['’])['’]/i,
 ];
 
-function stripElision(word: string): string[] {
+function asciiFold(word: string): string {
+  try {
+    return word.normalize('NFD').replace(/\p{M}/gu, '');
+  } catch {
+    return word;
+  }
+}
+
+/** Surface → headword candidates (opens → open, café → cafe). */
+function lookupCandidates(word: string): string[] {
+  const raw = word.trim();
+  if (!raw) return [];
+  const lower = raw.toLocaleLowerCase();
+  const ascii = asciiFold(lower).toLocaleLowerCase();
+  const forms: string[] = [raw, lower];
+  if (ascii !== lower) forms.push(ascii);
+
+  const stemFrom = (base: string) => {
+    if (!/^[a-z][a-z'-]*$/i.test(base)) return;
+    if (base.endsWith('ies') && base.length > 4) forms.push(`${base.slice(0, -3)}y`);
+    if (base.endsWith('ves') && base.length > 4) {
+      forms.push(`${base.slice(0, -3)}f`, `${base.slice(0, -3)}fe`);
+    }
+    if (/(?:sses|xes|zes|ches|shes)$/.test(base) && base.length > 5) forms.push(base.slice(0, -2));
+    if (base.endsWith('es') && base.length > 3) forms.push(base.slice(0, -2));
+    if (base.endsWith('s') && !base.endsWith('ss') && base.length > 3) forms.push(base.slice(0, -1));
+    if (base.endsWith('ing') && base.length > 5) {
+      forms.push(base.slice(0, -3), `${base.slice(0, -3)}e`);
+      if (/(.)\1ing$/.test(base)) forms.push(base.slice(0, -4));
+    }
+    if (base.endsWith('ied') && base.length > 4) forms.push(`${base.slice(0, -3)}y`);
+    if (base.endsWith('ed') && base.length > 3) {
+      forms.push(base.slice(0, -2), base.slice(0, -1));
+      if (/(.)\1ed$/.test(base)) forms.push(base.slice(0, -3));
+    }
+    if (base.endsWith('ly') && base.length > 4) forms.push(base.slice(0, -2));
+  };
+  stemFrom(lower);
+  if (ascii !== lower) stemFrom(ascii);
+
   for (const rx of ELISION_PREFIXES) {
-    if (rx.test(word)) {
-      const stripped = word.replace(rx, '').trim();
-      if (stripped) return [stripped];
+    if (rx.test(lower)) {
+      const stripped = lower.replace(rx, '').trim();
+      if (stripped) forms.push(stripped);
     }
   }
-  return [];
+
+  const out: string[] = [];
+  const seen = new Set<string>();
+  for (const f of forms) {
+    const t = f.trim();
+    if (!t) continue;
+    const key = t.toLocaleLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(t);
+  }
+  return out.slice(0, 12);
 }
 
 /**
@@ -173,6 +223,22 @@ function isPlausibleLang(result: DictResult, code: string): boolean {
   return re.test(sample);
 }
 
+async function lookupViaProxy(word: string, lang: string): Promise<DictResult | null> {
+  try {
+    const r = await fetch('/api/dictionary', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ word, lang }),
+    });
+    if (!r.ok) return null;
+    const data = await r.json();
+    if (!data?.meanings?.length) return null;
+    return data as DictResult;
+  } catch {
+    return null;
+  }
+}
+
 export async function lookupDictionary(
   word: string,
   srcLang: string,
@@ -182,26 +248,49 @@ export async function lookupDictionary(
   if (!q) return null;
   const code = srcLang === 'en' ? 'en' : srcLang;
 
-  const candidates = [q, ...stripElision(q)];
+  // Server already stems; still send the raw word once. Client fallbacks
+  // retry morphology if the proxy is down or returns 404.
+  const candidates = lookupCandidates(q);
 
   let result: DictResult | null = null;
 
-  // English uses the rich Free Dictionary API (most complete + free).
-  if (code === 'en') {
-    for (const c of candidates) {
-      const en = await lookupEnglish(c);
-      if (en) { result = en; break; }
-    }
-  } else {
-    // Non-English: Wiktionary (strictly validated for the target language).
-    for (const c of candidates) {
-      const wikt = await lookupWiktionary(c, code);
-      if (wikt && isPlausibleLang(wikt, code)) { result = wikt; break; }
+  // Prefer server proxy (reliable CORS / no client blocks), then direct.
+  result = await lookupViaProxy(q, code);
+
+  if (!result) {
+    if (code === 'en') {
+      for (const c of candidates) {
+        try {
+          const wikt = await lookupWiktionary(c, 'en');
+          if (wikt) { result = wikt; break; }
+          const en = await lookupEnglish(c);
+          if (en) { result = en; break; }
+        } catch { /* blocked */ }
+      }
+    } else {
+      for (const c of candidates) {
+        try {
+          const wikt = await lookupWiktionary(c, code);
+          if (wikt && isPlausibleLang(wikt, code)) { result = wikt; break; }
+        } catch { /* blocked */ }
+      }
+      if (!result) {
+        for (const c of candidates) {
+          const folded = asciiFold(c);
+          if (!/^[A-Za-z][A-Za-z' -]*$/.test(folded)) continue;
+          try {
+            const en = await lookupEnglish(folded);
+            if (en) { result = en; break; }
+            const wiktEn = await lookupWiktionary(folded, 'en');
+            if (wiktEn) { result = wiktEn; break; }
+          } catch { /* blocked */ }
+        }
+      }
     }
   }
 
   // Translate to the display language when it differs from the source.
-  if (result && displayLang && displayLang !== srcLang) {
+  if (result && displayLang && displayLang !== srcLang && mtCode(displayLang) !== mtCode(srcLang)) {
     result = await translateDictResult(result, srcLang, displayLang);
   }
 

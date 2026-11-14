@@ -1,0 +1,130 @@
+{
+  "tl": {
+    "Account": "Akawnt",
+    "Admin Panel": "Panel ng administrador",
+    "Pre-Intermediate": "Bago ang gitnang antas",
+    "Intermediate": "Gitnang antas",
+    "Audio Dictation": "Dikta mula sa audio",
+    "Audio Dictation ·": "Dikta mula sa audio ·",
+    "Dashboard": "Buod",
+    "Unit {n}": "Yunit {n}",
+    "Unit {v0}": "Yunit {v0}",
+    "Regular": "Karaniwan",
+    "Blog": "Mga artikulo",
+    "Email address": "Adres ng email",
+    "Admin access": "Akses ng administrador",
+    "definition-quiz": "Pagsusulit sa kahulugan",
+    "{v0} · Custom": "{v0} · Pasadya",
+    "def.": "kahulugan",
+    "Suspended": "Nasuspinde",
+    "Built-in": "Kasama sa app",
+    "wordbank": "Bangko ng salita",
+    "Band Score": "Iskor sa IELTS",
+    "Draft": "Burador",
+    "Est. Band": "Tinatayang iskor",
+    "Cue Card": "Kard ng paksa",
+    "· Writing band": "· Iskor sa pagsulat",
+    "(min 150)": "(hindi bababa sa 150)",
+    "(min 250)": "(hindi bababa sa 250)",
+    "IELTS Task 1 ·": "Gawain 1 sa IELTS ·",
+    "IELTS Task 2 ·": "Gawain 2 sa IELTS ·",
+    "Global": "Pandaigdigan",
+    "Loading Engine...": "Inihahanda ang sistema..."
+  },
+  "es": {
+    "Total XP": "XP total",
+    "base": "base",
+    "Actor": "Responsable",
+    "(min 150)": "(mínimo 150)",
+    "(min 250)": "(mínimo 250)"
+  },
+  "de": {
+    "Blog": "Artikel",
+    "Pass": "Bestanden",
+    "Pause Audio": "Audio pausieren",
+    "Start Mock": "Probeprüfung starten",
+    "(min 150)": "(mindestens 150)",
+    "(min 250)": "(mindestens 250)"
+  },
+  "fr": {
+    "Skip placement": "Passer le test de niveau",
+    "Vibration": "Vibrations",
+    "{n} min": "{n} min",
+    "Total XP": "XP au total",
+    "Casual": "Détendu",
+    "base": "de base",
+    "Expert": "Expert",
+    "60 minutes": "60 minutes",
+    "(min 150)": "(150 minimum)",
+    "(min 250)": "(250 minimum)",
+    "40 questions · 4 sections": "40 questions · 4 sections"
+  },
+  "it": {
+    "{n} min": "{n} min",
+    "Casual": "Rilassato",
+    "Blog": "Articoli",
+    "base": "di base",
+    "def.": "definizione",
+    "Feedback": "Valutazione",
+    "wordbank": "Elenco di parole",
+    "(min 150)": "(minimo 150)",
+    "(min 250)": "(minimo 250)"
+  },
+  "pt": {
+    "{n} min": "{n} min",
+    "Total XP": "XP total",
+    "Casual": "Descontraído",
+    "Regular": "Regular",
+    "base": "básico",
+    "Checkout": "Pagamento",
+    "def.": "definição",
+    "Exit Mock": "Sair do simulado",
+    "(min 150)": "(mínimo 150)",
+    "(min 250)": "(mínimo 250)"
+  },
+  "ko": {
+    "FAQ": "자주 묻는 질문",
+    "Prev": "이전"
+  },
+  "pl": {
+    "def.": "definicja",
+    "Prev": "Wstecz",
+    "(min 150)": "(co najmniej 150)",
+    "(min 250)": "(co najmniej 250)"
+  },
+  "sv": {
+    "flashcards": "övningskort",
+    "Flashcards": "Övningskort",
+    "definition-quiz": "Quiz om definitioner",
+    "Layout Edit Mode": "Redigeringsläge för layout",
+    "Import": "Importera",
+    "Est. Band": "Beräknad IELTS-poäng",
+    "Prev Passage": "Föregående text",
+    "(min 150)": "(minst 150)",
+    "(min 250)": "(minst 250)",
+    "Rank {v1}": "Placering {v1}"
+  },
+  "cs": {
+    "% Acc": "% úspěšnosti",
+    "Quiz": "Kvíz",
+    "Export CSV": "Exportovat CSV",
+    "def.": "definice",
+    "(min 150)": "(alespoň 150)",
+    "(min 250)": "(alespoň 250)"
+  },
+  "ro": {
+    "% Acc": "% corectitudine",
+    "Total XP": "XP în total",
+    "Quiz": "Test",
+    "Timed": "Cronometrat",
+    "Export CSV": "Exportă CSV",
+    "Import": "Importă",
+    "Read-back Shadowing ·": "Repetare cu voce tare ·",
+    "Feedback": "Evaluare",
+    "Actor": "Responsabil",
+    "wordbank": "Bancă de cuvinte",
+    "Interrupt": "Întrerupe",
+    "(min 150)": "(minimum 150)",
+    "(min 250)": "(minimum 250)"
+  }
+}

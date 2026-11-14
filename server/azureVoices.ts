@@ -39,14 +39,45 @@ export const AZURE_VOICES: Record<string, VoiceSpec> = {
   fa: { locale: 'fa-IR', voice: 'fa-IR-DilaraNeural' },
 };
 
-export const EN_DIALOGUE_VOICES = {
-  female: ['en-US-Ava:DragonHDOmniLatestNeural', 'en-US-Dana:DragonHDOmniLatestNeural'],
-  male: ['en-US-Andrew:DragonHDOmniLatestNeural', 'en-US-Caleb:DragonHDOmniLatestNeural'],
-} as const;
+export const DIALOGUE_VOICES: Record<string, { female: readonly string[]; male: readonly string[] }> = {
+  en: {
+    female: ['en-US-Ava:DragonHDOmniLatestNeural', 'en-US-Dana:DragonHDOmniLatestNeural'],
+    male: ['en-US-Andrew:DragonHDOmniLatestNeural', 'en-US-Caleb:DragonHDOmniLatestNeural'],
+  },
+  ru: { female: ['ru-RU-SvetlanaNeural'], male: ['ru-RU-DmitryNeural'] },
+  tl: { female: ['fil-PH-BlessicaNeural'], male: ['fil-PH-AngeloNeural'] },
+  es: { female: ['es-ES-ElviraNeural'], male: ['es-ES-AlvaroNeural'] },
+  uz: { female: ['uz-UZ-MadinaNeural'], male: ['uz-UZ-SardorNeural'] },
+  de: { female: ['de-DE-KatjaNeural'], male: ['de-DE-ConradNeural'] },
+  fr: { female: ['fr-FR-DeniseNeural'], male: ['fr-FR-HenriNeural'] },
+  it: { female: ['it-IT-ElsaNeural'], male: ['it-IT-DiegoNeural'] },
+  pt: { female: ['pt-BR-FranciscaNeural'], male: ['pt-BR-AntonioNeural'] },
+  ja: { female: ['ja-JP-NanamiNeural'], male: ['ja-JP-KeitaNeural'] },
+  ko: { female: ['ko-KR-SunHiNeural'], male: ['ko-KR-InJoonNeural'] },
+  zh: { female: ['zh-CN-XiaoxiaoNeural'], male: ['zh-CN-YunxiNeural'] },
+  ar: { female: ['ar-SA-ZariyahNeural'], male: ['ar-SA-HamedNeural'] },
+  tr: { female: ['tr-TR-EmelNeural'], male: ['tr-TR-AhmetNeural'] },
+  nl: { female: ['nl-NL-ColetteNeural'], male: ['nl-NL-MaartenNeural'] },
+  hi: { female: ['hi-IN-SwaraNeural'], male: ['hi-IN-MadhurNeural'] },
+  pl: { female: ['pl-PL-ZofiaNeural'], male: ['pl-PL-MarekNeural'] },
+  sv: { female: ['sv-SE-SofieNeural'], male: ['sv-SE-MattiasNeural'] },
+  id: { female: ['id-ID-GadisNeural'], male: ['id-ID-ArdiNeural'] },
+  ms: { female: ['ms-MY-YasminNeural'], male: ['ms-MY-OsmanNeural'] },
+  vi: { female: ['vi-VN-HoaiMyNeural'], male: ['vi-VN-NamMinhNeural'] },
+  th: { female: ['th-TH-PremwadeeNeural'], male: ['th-TH-NiwatNeural'] },
+  uk: { female: ['uk-UA-PolinaNeural'], male: ['uk-UA-OstapNeural'] },
+  el: { female: ['el-GR-AthinaNeural'], male: ['el-GR-NestorasNeural'] },
+  cs: { female: ['cs-CZ-VlastaNeural'], male: ['cs-CZ-AntoninNeural'] },
+  ro: { female: ['ro-RO-AlinaNeural'], male: ['ro-RO-EmilNeural'] },
+  ur: { female: ['ur-PK-UzmaNeural'], male: ['ur-PK-AsadNeural'] },
+  sw: { female: ['sw-KE-ZuriNeural'], male: ['sw-KE-RafikiNeural'] },
+  fa: { female: ['fa-IR-DilaraNeural'], male: ['fa-IR-FaridNeural'] },
+};
+
+export const EN_DIALOGUE_VOICES = DIALOGUE_VOICES.en;
 
 export const ALLOWED_VOICE_OVERRIDES = new Set<string>([
-  ...EN_DIALOGUE_VOICES.female,
-  ...EN_DIALOGUE_VOICES.male,
+  ...Object.values(DIALOGUE_VOICES).flatMap(pair => [...pair.female, ...pair.male]),
 ]);
 
 export function resolveVoiceCfg(lang: string, voiceOverride?: string): VoiceSpec {

@@ -403,11 +403,43 @@ Return JSON: { "reply": "...", "followUp": "...", "correctionNote": "..." }`,
   };
 }
 
+/** Talking Smarty: the black cat chats with the learner in the language they are learning. */
+const SMARTY_MOODS = ["happy", "laugh", "curious", "love", "surprised", "sleepy", "sad", "proud"];
+async function smartyTalk(apiKey, body) {
+  const history = Array.isArray(body.history) ? body.history.slice(-12) : [];
+  const last = clip(body.utterance || "", 600);
+  if (!last.trim()) {
+    const err = new Error("Missing utterance");
+    err.status = 400;
+    throw err;
+  }
+  const content = langName(body.contentLang || "en");
+  const ui = langName(body.uiLang || "en");
+  const level = body.level || "Beginner";
+  const name = clip(body.name || "", 40);
+  const histLines = history.map(h => `${h.role === "assistant" ? "Smarty" : "Learner"}: ${clip(h.content || "", 300)}`).join("\n");
+  const raw = await callOpenRouter(apiKey, {
+    temperature: 0.8,
+    maxTokens: 300,
+    system: `You are Smarty, a friendly black cat who is also a patient ${content} teacher. You chat with a ${level} learner of ${content}${name ? ` called ${name}` : ""} to help them practise.
+Always answer in ${content} only, at ${level} level: 1–2 short, simple sentences, warm and a little funny. Each reply should teach something small: use a useful word or phrase naturally, or model the correct form of what they tried to say. End with a short, easy question so they keep talking.
+You are a cat, but a classy one: only now and then (about one reply in six, never twice in a row) add a cat sound like "Meow!" or "Purr…". Most replies have no cat sound at all.
+Stay kind and child-safe: no grown-up, scary or unsafe topics; if asked, gently steer back to everyday life, food, hobbies, cats or learning.
+If the learner made a clear mistake, put a one-line friendly correction in ${ui} in "tip" (shown, not spoken); otherwise "tip" is "".
+Pick the mood that matches what you say, from: ${SMARTY_MOODS.join(", ")}.
+Return JSON: { "reply": "...", "mood": "...", "tip": "..." }`,
+    user: `${histLines ? `Chat so far:\n${histLines}\n\n` : ""}Learner says: ${last}`,
+  });
+  const mood = SMARTY_MOODS.includes(raw?.mood) ? raw.mood : "happy";
+  return { reply: clip(raw?.reply || raw?.text || "", 400), mood, tip: clip(raw?.tip || "", 300) };
+}
+
 async function runAction(body, apiKey) {
   const action = String(body?.action || "");
   if (action === "check-writing") return { report: await checkWriting(apiKey, body) };
   if (action === "check-speaking") return { report: await checkSpeaking(apiKey, body) };
   if (action === "buddy-turn") return await buddyTurn(apiKey, body);
+  if (action === "smarty-talk") return await smartyTalk(apiKey, body);
   const err = new Error("Unknown action");
   err.status = 400;
   throw err;
@@ -416,7 +448,8 @@ async function runAction(body, apiKey) {
 function isMaxOrAdmin(profile) {
   if (!profile) return false;
   if (profile.role === "admin") return true;
-  if (profile.plan === "smarty-max") return true;
+  // A cancelled Max stays on until its end date (planCancelAt), then it is a free account again.
+  if (profile.plan === "smarty-max") return !(typeof profile.planCancelAt === "number" && Date.now() >= profile.planCancelAt);
   return false;
 }
 
@@ -461,7 +494,7 @@ async function handleAiRequest(req, res, ctx) {
   }
 
   const action = String(req.body?.action || "");
-  const cap = action === "buddy-turn" ? 80 : 30;
+  const cap = action === "buddy-turn" || action === "smarty-talk" ? 80 : 30;
   if (rateLimited(uid, cap)) {
     res.status(429).json({ error: "Too many AI requests. Try again in a few minutes." });
     return;

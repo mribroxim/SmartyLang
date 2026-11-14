@@ -368,10 +368,13 @@ export function normalizeLesson(raw, enLesson) {
     }))
     .filter((v) => v.word && v.definition)
     .filter((v) => !hasCyrillic(v.word) && !hasCyrillic(v.definition))
-    .filter((v) => vocabAppearsInText(v.word, text))
+    .filter((v) => vocabAppearsInText(v.word, text) || englishLeakageScore(v.word) < 0.15)
     .filter((v) => englishLeakageScore(v.definition) < 0.4);
-  // Prefer 6–12; keep at least whatever survived
-  if (vocabulary.length > 12) vocabulary = vocabulary.slice(0, 12);
+  // Keep EN slot alignment — never truncate below the English lesson's vocab count.
+  const enVocab = Array.isArray(enLesson.vocabulary) ? enLesson.vocabulary : [];
+  if (vocabulary.length > enVocab.length && enVocab.length > 0) {
+    vocabulary = vocabulary.slice(0, enVocab.length);
+  }
   return {
     id: enLesson.id,
     title,

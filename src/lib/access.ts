@@ -1,64 +1,61 @@
-// Unified account-type model.
-//
-// The codebase historically stored two separate fields on UserAccountProfile:
-//   - role: 'student' | 'teacher' | 'organization' | 'admin'
-//   - plan: 'smarty-max' | 'teacher' | 'organization' | undefined
-//
-// User-facing UI now treats these as a single concept ("Account Type") with
-// 5 values: User, SmartyLang Max, Teacher, Organization, Admin.
-//
-// Access rules:
-//   - User            → no access to any practice or learning material (locked behind paywall)
-//   - SmartyLang Max  → full access to everything
-//   - Teacher         → preview-only (can see materials, cannot record or submit)
-//   - Organization    → preview-only (same as Teacher)
-//   - Admin           → full access (with admin tools)
-//
-// Use these helpers everywhere instead of inspecting role/plan directly.
-
 import type { UserAccountProfile } from '../firebase';
+import { normalizePlanId } from './plans';
 
-export type AccountType = 'user' | 'smarty-max' | 'teacher' | 'organization' | 'admin' | 'content-manager';
+export type AccountType = 'user' | 'smarty-max' | 'business' | 'admin' | 'content-manager';
 
 export const ACCOUNT_TYPE_LABEL: Record<AccountType, string> = {
   'user':            'User',
   'smarty-max':      'SmartyLang Max',
-  'teacher':         'Teacher',
-  'organization':    'Organization',
+  'business':        'SmartyLang Business',
   'admin':           'Admin',
   'content-manager': 'Content Manager',
 };
 
-/** Derive the unified account type from a profile. Null/undefined → 'user'. */
+/** Legacy teacher/organization roles map to business. */
+export function isBusinessRole(role?: string | null): boolean {
+  return role === 'business' || role === 'teacher' || role === 'organization';
+}
+
 export const accountTypeOf = (p?: UserAccountProfile | null): AccountType => {
   if (!p) return 'user';
   if (p.role === 'admin') return 'admin';
   if (p.role === 'content-manager') return 'content-manager';
-  if (p.role === 'teacher') return 'teacher';
-  if (p.role === 'organization') return 'organization';
-  if (p.plan === 'smarty-max') return 'smarty-max';
+  if (isBusinessRole(p.role)) return 'business';
+  if (normalizePlanId(p.plan ?? undefined) === 'smarty-max' && !maxEnded(p)) return 'smarty-max';
   return 'user';
 };
 
-/** Can this account fully use practice features (record, submit, save progress)? */
+/** A cancelled Smarty Max runs until its paid period ends, then the account is free again. */
+export function maxEnded(p?: UserAccountProfile | null, now = Date.now()): boolean {
+  return typeof p?.planCancelAt === 'number' && now >= p.planCancelAt;
+}
+
+/** Cancelled but still active: show "ends on …" and offer to keep it. */
+export function maxEndsAt(p?: UserAccountProfile | null): number | null {
+  return typeof p?.planCancelAt === 'number' && !maxEnded(p) ? p.planCancelAt : null;
+}
+
 export const canPractice = (p?: UserAccountProfile | null): boolean => {
   const t = accountTypeOf(p);
   return t === 'smarty-max' || t === 'admin';
 };
 
-/** Can this account view materials (read texts, see exercises) — even if read-only? */
 export const canPreview = (p?: UserAccountProfile | null): boolean => {
   const t = accountTypeOf(p);
   return t !== 'user';
 };
 
-/** Is this account in preview-only mode (sees content but can't interact)? */
 export const isPreviewMode = (p?: UserAccountProfile | null): boolean => {
   const t = accountTypeOf(p);
-  return t === 'teacher' || t === 'organization' || t === 'content-manager';
+  return t === 'business' || t === 'content-manager';
 };
 
-/** Is this a free User account (no plan)? */
 export const isFreeUser = (p?: UserAccountProfile | null): boolean => {
   return accountTypeOf(p) === 'user';
 };
+
+export const canUseBites = (p?: UserAccountProfile | null): boolean => !!p && !p.suspended;
+export const hasUnlimitedHearts = (p?: UserAccountProfile | null): boolean => canPractice(p);
+export function isFreeLearningRoute(tab: string, path: string[]): boolean {
+  return tab === 'lessons' && (!path.length || ['path', 'bite', 'today', 'hearts'].includes(path[0]));
+}

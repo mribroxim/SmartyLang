@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import { Headphones, Mic } from 'lucide-react';
 import { ComprehensiveListening } from './ComprehensiveListening';
 import { ListeningDictation } from './ListeningDictation';
-import { IELTSListening } from './IELTSListening';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
 import { ScreenShell, HubRow } from '../components/ScreenShell';
 
-type ListeningView = 'menu' | 'comprehensive' | 'dictation' | 'ielts';
+type ListeningView = 'menu' | 'comprehensive' | 'dictation';
 
 function parseView(raw?: string): ListeningView {
-  if (raw === 'comprehensive' || raw === 'dictation' || raw === 'ielts') return raw;
+  if (raw === 'comprehensive' || raw === 'dictation') return raw;
   return 'menu';
 }
 
@@ -72,21 +71,13 @@ export function ListeningPractice({
     );
   }
 
-  if (view === 'ielts' && isEnglish) {
-    return (
-      <IELTSListening
-        onBack={() => (onIeltsBack ? onIeltsBack() : setView('menu'))}
-        recordExercise={recordExercise}
-      />
-    );
-  }
-
   return (
     <ScreenShell title={t('listening.title')} subtitle={t('listening.subtitle')}>
       <div className="flex flex-col gap-2">
         <HubRow
           icon={<Headphones className="w-6 h-6" />}
           iconClass="bg-blue-50 text-blue-600"
+          sticker="listen.sound-detective"
           title={t('listening.comp.title')}
           desc={t('listening.comp.desc')}
           onClick={() => setView('comprehensive')}
@@ -94,6 +85,7 @@ export function ListeningPractice({
         <HubRow
           icon={<Mic className="w-6 h-6" />}
           iconClass="bg-emerald-50 text-emerald-600"
+          sticker="listen.sound-catcher"
           title={t('listening.dict.title')}
           desc={t('listening.dict.desc')}
           onClick={() => setView('dictation')}

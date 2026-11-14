@@ -1,15 +1,15 @@
+import { accountUiLabel } from '../lib/uiAccountLabels';
+import { useUiLang } from '../contexts/UiLangContext';
 import React, { useEffect, useMemo, useState, useCallback } from 'react';
+import { Shield, Users, GraduationCap, RefreshCw, CheckCircle2, BarChart2, FileText, Ban, Crown, User as UserIcon, Loader2, Search, TrendingUp, DollarSign, CreditCard, LayoutGrid } from 'lucide-react';
 import {
-  Shield, Users, Building2, GraduationCap, RefreshCw,
-  CheckCircle2, BarChart2, FileText, Ban, Crown, User as UserIcon,
-  Loader2, Search, TrendingUp, DollarSign, CreditCard, LayoutGrid,
-} from 'lucide-react';
-import {
-  listAllProfiles, setTeacherOrganization, suspendUser, setUserPlan, setUserRole,
+  listAllProfiles, suspendUser, setUserPlan, setUserRole,
   getAuditLog, getPlatformStats, listPayments,
   UserAccountProfile, PlanId,
   AuditEntry, PlatformStats, PaymentRecord,
 } from '../firebase';
+import { accountTypeOf, AccountType } from '../lib/access';
+import { normalizePlanId } from '../lib/plans';
 import { ContentManager } from './ContentManager';
 import { ScreenShell, seCard } from '../components/ScreenShell';
 
@@ -24,55 +24,37 @@ type Tab = 'users' | 'financials' | 'analytics' | 'audit' | 'content';
  * - admin           → role: admin (locked)
  * - content-manager → role: content-manager (CMS access only)
  */
-type AccountType = 'user' | 'smarty-max' | 'teacher' | 'organization' | 'admin' | 'content-manager';
-
-const TYPE_LABEL: Record<AccountType, string> = {
-  'user':            'User',
-  'smarty-max':      'SmartyLang Max',
-  'teacher':         'Teacher',
-  'organization':    'Organization',
-  'admin':           'Admin',
-  'content-manager': 'Content Manager',
-};
 const TYPE_BADGE: Record<AccountType, string> = {
   'user':            'bg-slate-50  text-slate-600  border-slate-200',
   'smarty-max':      'bg-amber-50  text-amber-700  border-amber-200',
-  'teacher':         'bg-emerald-50 text-emerald-700 border-emerald-200',
-  'organization':    'bg-violet-50 text-violet-700 border-violet-200',
+  'business':        'bg-emerald-50 text-emerald-700 border-emerald-200',
   'admin':           'bg-rose-50   text-rose-700   border-rose-200',
   'content-manager': 'bg-sky-50    text-sky-700    border-sky-200',
 };
 const TYPE_ICON: Record<AccountType, React.ReactNode> = {
   'user':            <UserIcon       className="w-4 h-4" />,
   'smarty-max':      <Crown          className="w-4 h-4" />,
-  'teacher':         <GraduationCap  className="w-4 h-4" />,
-  'organization':    <Building2      className="w-4 h-4" />,
+  'business':        <GraduationCap  className="w-4 h-4" />,
   'admin':           <Shield         className="w-4 h-4" />,
   'content-manager': <LayoutGrid     className="w-4 h-4" />,
 };
 
-/** Derive the unified account type from a profile's role + plan. */
-const accountTypeOf = (p: UserAccountProfile): AccountType => {
-  if (p.role === 'admin') return 'admin';
-  if (p.role === 'content-manager') return 'content-manager';
-  if (p.role === 'teacher') return 'teacher';
-  if (p.role === 'organization') return 'organization';
-  if (p.plan === 'smarty-max') return 'smarty-max';
-  return 'user';
-};
-
 /** Plan-only label (kept for the Payments table / financials breakdown). */
 const PLAN_LABEL: Record<PlanId, string> = {
-  'smarty-max':   'SmartyLang Max',
-  'teacher':      'Teacher',
-  'organization': 'Organization',
+  'smarty-max': 'SmartyLang Max',
+  'business':   'SmartyLang Business',
 };
 const PLAN_BADGE: Record<PlanId, string> = {
-  'smarty-max':   'bg-amber-50  text-amber-700  border-amber-200',
-  'teacher':      'bg-emerald-50 text-emerald-700 border-emerald-200',
-  'organization': 'bg-violet-50 text-violet-700 border-violet-200',
+  'smarty-max': 'bg-amber-50  text-amber-700  border-amber-200',
+  'business':   'bg-emerald-50 text-emerald-700 border-emerald-200',
 };
 
+
+
+const fmtUSD = (n: number) => `$${n.toFixed(2)}`;
+
+export function AdminPanel() {
+  const { t: tr, uiLang, tLevel } = useUiLang();
 const ACTION_LABELS: Record<string, string> = {
   role_changed: 'Role Changed',
   plan_changed: 'Plan Changed',
@@ -81,9 +63,6 @@ const ACTION_LABELS: Record<string, string> = {
   user_unsuspended: 'User Unsuspended',
 };
 
-const fmtUSD = (n: number) => `$${n.toFixed(2)}`;
-
-export function AdminPanel() {
   const [tab, setTab] = useState<Tab>('users');
   const [profiles, setProfiles] = useState<UserAccountProfile[]>([]);
   const [loading, setLoading] = useState(true);
@@ -128,18 +107,16 @@ export function AdminPanel() {
   useEffect(() => { if (tab === 'audit') loadAudit(); }, [tab, loadAudit]);
   useEffect(() => { if (tab === 'financials') loadPayments(); }, [tab, loadPayments]);
 
-  const organizations = useMemo(() => profiles.filter(p => p.role === 'organization'), [profiles]);
-
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     const list = q ? profiles.filter(p => (p.email ?? '').toLowerCase().includes(q) || (p.displayName ?? '').toLowerCase().includes(q)) : profiles;
-    const order: Record<string, number> = { admin: 0, organization: 1, teacher: 2, student: 3 };
+    const order: Record<string, number> = { admin: 0, business: 1, teacher: 1, organization: 1, student: 2 };
     return [...list].sort((a, b) => (order[a.role] - order[b.role]) || (a.createdAt - b.createdAt));
   }, [profiles, query]);
 
   const counts = useMemo(() => {
     const c: Record<AccountType | 'suspended', number> = {
-      'user': 0, 'smarty-max': 0, 'teacher': 0, 'organization': 0, 'admin': 0, 'content-manager': 0, 'suspended': 0,
+      'user': 0, 'smarty-max': 0, 'business': 0, 'admin': 0, 'content-manager': 0, 'suspended': 0,
     };
     profiles.forEach(p => {
       c[accountTypeOf(p)]++;
@@ -153,13 +130,12 @@ export function AdminPanel() {
     const completed = payments.filter(p => p.status === 'completed');
     const totalRevenueUSD = completed.reduce((s, p) => s + (p.amountUSD || 0), 0);
     const byPlan: Record<PlanId, { count: number; revenue: number; seats: number }> = {
-      'smarty-max':  { count: 0, revenue: 0, seats: 0 },
-      'teacher':     { count: 0, revenue: 0, seats: 0 },
-      'organization':{ count: 0, revenue: 0, seats: 0 },
+      'smarty-max': { count: 0, revenue: 0, seats: 0 },
+      'business':   { count: 0, revenue: 0, seats: 0 },
     };
     completed.forEach(p => {
-      const k = p.planId as PlanId;
-      if (byPlan[k]) {
+      const k = normalizePlanId(p.planId);
+      if (k && byPlan[k]) {
         byPlan[k].count++;
         byPlan[k].revenue += p.amountUSD || 0;
         byPlan[k].seats += p.seats || 0;
@@ -191,30 +167,17 @@ export function AdminPanel() {
       } else {
         const planArg: PlanId | null =
           next === 'user' ? null
-          : next === 'smarty-max'  ? 'smarty-max'
-          : next === 'teacher'     ? 'teacher'
-          : 'organization';
+          : next === 'smarty-max' ? 'smarty-max'
+          : 'business';
         await setUserPlan(p.uid, planArg);
         setProfiles(prev => prev.map(x => x.uid === p.uid ? {
           ...x,
           plan: planArg ?? undefined,
-          role: next === 'teacher' ? 'teacher' : next === 'organization' ? 'organization' : 'student',
-          organizationId: next === 'teacher' ? x.organizationId : undefined,
+          role: next === 'business' ? 'business' : 'student',
         } : x));
       }
-      showToast(`${p.displayName || p.email} → ${TYPE_LABEL[next]}`);
-    } catch (e: any) { showToast(e?.message || 'Failed.'); }
-    finally { setSavingUid(null); }
-  };
-
-  const onOrgChange = async (p: UserAccountProfile, orgUid: string) => {
-    if (!p.uid) return;
-    setSavingUid(p.uid);
-    try {
-      await setTeacherOrganization(p.uid, orgUid || null);
-      setProfiles(prev => prev.map(x => x.uid === p.uid ? { ...x, organizationId: orgUid || undefined } : x));
-      showToast(orgUid ? `Assigned to organization.` : 'Removed from organization.');
-    } catch (e: any) { showToast(e?.message || 'Failed.'); }
+      showToast(tr("core.management.value1_value2_891e24", { value1: p.displayName || p.email, value2: accountUiLabel(tr, next) }));
+    } catch (e: any) { showToast(e?.message || tr("core.management.failed_254aaf")); }
     finally { setSavingUid(null); }
   };
 
@@ -225,32 +188,31 @@ export function AdminPanel() {
     try {
       await suspendUser(p.uid, newSuspended);
       setProfiles(prev => prev.map(x => x.uid === p.uid ? { ...x, suspended: newSuspended } : x));
-      showToast(`${p.displayName} ${newSuspended ? 'suspended' : 'unsuspended'}.`);
-    } catch { showToast('Failed.'); }
+      showToast(newSuspended ? tr("core.management.suspended_name_ecbf61", { name: p.displayName }) : tr("core.management.restored_access_for_name_df24ca", { name: p.displayName }));
+    } catch { showToast(tr("core.management.failed_254aaf")); }
     finally { setSavingUid(null); }
   };
 
   const tabs: { id: Tab; label: string; icon: React.ElementType }[] = [
-    { id: 'users',      label: 'Users',           icon: Users },
-    { id: 'financials', label: 'Financials',      icon: DollarSign },
-    { id: 'analytics',  label: 'Analytics',       icon: BarChart2 },
-    { id: 'audit',      label: 'Audit Log',       icon: FileText },
-    { id: 'content',    label: 'Content',         icon: LayoutGrid },
+    { id: 'users',      label: tr("core.management.users_57f2b1"),           icon: Users },
+    { id: 'financials', label: tr("core.management.financials_0aeb7c"),      icon: DollarSign },
+    { id: 'analytics',  label: tr("core.management.analytics_25bc96"),       icon: BarChart2 },
+    { id: 'audit',      label: tr("core.management.audit_log_28dd75"),       icon: FileText },
+    { id: 'content',    label: tr("nav.contentShort"),         icon: LayoutGrid },
   ];
 
   return (
     <ScreenShell
       size="wide"
-      title="Admin"
-      subtitle="Users, billing, analytics, and content."
+      title={tr("nav.adminShort")}
+      subtitle={tr("site.adminpanel.users_billing_analytics_and_content_3ad020")}
       actions={
         <button
           onClick={() => { loadUsers(); if (tab === 'analytics') loadStats(); if (tab === 'audit') loadAudit(); if (tab === 'financials') loadPayments(); }}
           disabled={loading}
           className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-60 text-sm font-semibold"
         >
-          <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> Refresh
-        </button>
+          <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />  {tr("site.app.refresh_56e3ba")}</button>
       }
     >
       <div className="flex items-center justify-end mb-3 lg:hidden">
@@ -259,8 +221,7 @@ export function AdminPanel() {
           disabled={loading}
           className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-200 bg-white text-sm font-semibold"
         >
-          <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> Refresh
-        </button>
+          <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />  {tr("site.app.refresh_56e3ba")}</button>
       </div>
       <div className="flex gap-1.5 mb-4 overflow-x-auto pb-1 -mx-1 px-1">
         {tabs.map(t => (
@@ -275,11 +236,11 @@ export function AdminPanel() {
         {tab === 'users' && (
           <>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-2 mb-4">
-              {(['user', 'smarty-max', 'teacher', 'organization', 'content-manager', 'admin'] as AccountType[]).map(t => (
+              {(['user', 'smarty-max', 'business', 'content-manager', 'admin'] as AccountType[]).map(t => (
                 <div key={t} className={`${seCard} p-3 flex items-center gap-2.5`}>
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center border shrink-0 ${TYPE_BADGE[t]}`}>{TYPE_ICON[t]}</div>
                   <div className="min-w-0">
-                    <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold truncate">{TYPE_LABEL[t]}</div>
+                    <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold truncate">{accountUiLabel(tr, t)}</div>
                     <div className="text-xl font-black text-zinc-900 leading-tight">{counts[t] ?? 0}</div>
                   </div>
                 </div>
@@ -287,7 +248,7 @@ export function AdminPanel() {
               <div className={`${seCard} p-3 flex items-center gap-2.5`}>
                 <div className="w-8 h-8 rounded-lg flex items-center justify-center border bg-slate-50 text-slate-500 border-slate-200 shrink-0"><Ban className="w-4 h-4" /></div>
                 <div>
-                  <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Suspended</div>
+                  <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">{tr("site.adminpanel.suspended_794696")}</div>
                   <div className="text-xl font-black text-zinc-900 leading-tight">{counts.suspended ?? 0}</div>
                 </div>
               </div>
@@ -296,7 +257,7 @@ export function AdminPanel() {
             <div className="mb-4 flex items-center gap-3">
               <div className="relative flex-1 max-w-sm">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                <input value={query} onChange={e => setQuery(e.target.value)} placeholder="Search users…" className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:border-zinc-400" />
+                <input value={query} onChange={e => setQuery(e.target.value)} placeholder={tr("site.adminpanel.search_users_71cd28")} className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:border-zinc-400" />
               </div>
             </div>
 
@@ -308,10 +269,9 @@ export function AdminPanel() {
                 <table className="w-full text-sm">
                   <thead className="bg-slate-50 text-slate-500 text-xs uppercase tracking-wider">
                     <tr>
-                      <th className="text-left font-semibold px-4 py-3">User</th>
-                      <th className="text-left font-semibold px-4 py-3">Account Type</th>
-                      <th className="text-left font-semibold px-4 py-3 hidden md:table-cell">Organization</th>
-                      <th className="text-left font-semibold px-4 py-3">Actions</th>
+                      <th className="text-left font-semibold px-4 py-3">{tr("site.adminpanel.user_9f8a23")}</th>
+                      <th className="text-left font-semibold px-4 py-3">{tr("site.adminpanel.account_type_ff6962")}</th>
+                      <th className="text-left font-semibold px-4 py-3">{tr("site.adminpanel.actions_c3cd63")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -333,42 +293,32 @@ export function AdminPanel() {
                           <td className="px-4 py-3">
                             {isAdmin ? (
                               <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold border ${TYPE_BADGE.admin}`}>
-                                <Shield className="w-3.5 h-3.5" /> Admin
-                              </span>
+                                <Shield className="w-3.5 h-3.5" />  {tr("nav.adminShort")}</span>
                             ) : (
                               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                                 <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-bold border ${TYPE_BADGE[type]}`}>
                                   {type === 'smarty-max' && <Crown className="w-3 h-3" />}
-                                  {TYPE_LABEL[type]}
+                                  {accountUiLabel(tr, type)}
                                 </span>
                                 <select
                                   value={type}
                                   onChange={e => onAccountTypeChange(p, e.target.value as AccountType)}
                                   disabled={saving}
                                   className="px-2 py-1 rounded-md border border-slate-200 bg-white text-xs font-semibold text-zinc-900 focus:outline-none disabled:opacity-60"
-                                  title="Change account type"
+                                  title={tr("site.adminpanel.change_account_type_fc5d08")}
                                 >
-                                  <option value="user">User</option>
-                                  <option value="smarty-max">SmartyLang Max</option>
-                                  <option value="teacher">Teacher</option>
-                                  <option value="organization">Organization</option>
-                                  <option value="content-manager">Content Manager</option>
+                                  <option value="user">{tr("site.adminpanel.user_9f8a23")}</option>
+                                  <option value="smarty-max">{tr("home.plan.max.name")}</option>
+                                  <option value="business">{tr("home.plan.business.name")}</option>
+                                  <option value="content-manager">{tr("nav.content")}</option>
                                 </select>
                               </div>
                             )}
                           </td>
-                          <td className="px-4 py-3 hidden md:table-cell">
-                            {p.role === 'teacher' ? (
-                              <select value={p.organizationId ?? ''} onChange={e => onOrgChange(p, e.target.value)} disabled={saving || organizations.length === 0} className="px-2.5 py-1.5 rounded-md border border-slate-200 bg-white text-sm text-zinc-900 focus:outline-none disabled:opacity-60 min-w-[160px]">
-                                <option value="">— Unassigned —</option>
-                                {organizations.map(o => <option key={o.uid} value={o.uid}>{o.displayName || o.email}</option>)}
-                              </select>
-                            ) : <span className="text-slate-400 text-xs">—</span>}
-                          </td>
                           <td className="px-4 py-3">
                             {!isAdmin && (
-                              <button onClick={() => onSuspend(p)} disabled={saving} title={p.suspended ? 'Unsuspend' : 'Suspend'} className={`p-1.5 rounded-lg text-xs font-semibold ${p.suspended ? 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100' : 'bg-rose-50 text-rose-700 hover:bg-rose-100'}`}>
-                                {p.suspended ? 'Unsuspend' : 'Suspend'}
+                              <button onClick={() => onSuspend(p)} disabled={saving} title={p.suspended ? tr("site.adminpanel.unsuspend_6a9485") : tr("site.adminpanel.suspend_b24247")} className={`p-1.5 rounded-lg text-xs font-semibold ${p.suspended ? 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100' : 'bg-rose-50 text-rose-700 hover:bg-rose-100'}`}>
+                                {p.suspended ? tr("site.adminpanel.unsuspend_6a9485") : tr("site.adminpanel.suspend_b24247")}
                               </button>
                             )}
                           </td>
@@ -389,36 +339,35 @@ export function AdminPanel() {
             {/* KPI cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
               <div className={`${seCard} p-5`}>
-                <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">Total Revenue</div>
+                <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">{tr("site.adminpanel.total_revenue_f3a837")}</div>
                 <div className="text-xl lg:text-3xl font-black text-emerald-700">{fmtUSD(financials.totalRevenueUSD)}</div>
-                <div className="text-xs text-slate-500 mt-1">{financials.completed} completed payments</div>
+                <div className="text-xs text-slate-500 mt-1">{financials.completed}  {tr("site.adminpanel.completed_payments_006fe0")}</div>
               </div>
               <div className={`${seCard} p-5`}>
-                <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">Last 30 Days</div>
+                <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">{tr("site.adminpanel.last_30_days_611886")}</div>
                 <div className="text-xl lg:text-3xl font-black text-indigo-700">{fmtUSD(financials.mrr)}</div>
-                <div className="text-xs text-slate-500 mt-1">Recent subscription revenue</div>
+                <div className="text-xs text-slate-500 mt-1">{tr("site.adminpanel.recent_subscription_revenue_08ece5")}</div>
               </div>
               <div className={`${seCard} p-5`}>
-                <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">SmartyLang Max</div>
+                <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">{tr("home.plan.max.name")}</div>
                 <div className="text-xl lg:text-3xl font-black text-amber-700">{financials.byPlan['smarty-max'].count}</div>
-                <div className="text-xs text-slate-500 mt-1">{fmtUSD(financials.byPlan['smarty-max'].revenue)} revenue</div>
+                <div className="text-xs text-slate-500 mt-1">{fmtUSD(financials.byPlan['smarty-max'].revenue)}  {tr("site.adminpanel.revenue_abf72c")}</div>
               </div>
               <div className={`${seCard} p-5`}>
-                <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">Teachers + Orgs</div>
+                <div className="text-xs uppercase tracking-wider text-slate-400 font-bold mb-1">{tr("home.nav.business")}</div>
                 <div className="text-xl lg:text-3xl font-black text-emerald-700">
-                  {financials.byPlan['teacher'].count + financials.byPlan['organization'].count}
+                  {financials.byPlan['business'].count}
                 </div>
                 <div className="text-xs text-slate-500 mt-1">
-                  {fmtUSD(financials.byPlan['teacher'].revenue + financials.byPlan['organization'].revenue)} revenue
-                </div>
+                  {fmtUSD(financials.byPlan['business'].revenue)}  {tr("site.adminpanel.revenue_abf72c")}</div>
               </div>
             </div>
 
             {/* Per-plan breakdown */}
             <div className={`${seCard} p-6 mb-6`}>
-              <h2 className="font-bold text-lg mb-4 flex items-center gap-2"><TrendingUp className="w-5 h-5" /> Revenue by Plan</h2>
+              <h2 className="font-bold text-lg mb-4 flex items-center gap-2"><TrendingUp className="w-5 h-5" />  {tr("site.adminpanel.revenue_by_plan_098e8b")}</h2>
               <div className="space-y-3">
-                {(['smarty-max', 'teacher', 'organization'] as PlanId[]).map(planId => {
+                {(['smarty-max', 'business'] as PlanId[]).map(planId => {
                   const data = financials.byPlan[planId];
                   const pct = financials.totalRevenueUSD > 0 ? (data.revenue / financials.totalRevenueUSD) * 100 : 0;
                   return (
@@ -426,13 +375,11 @@ export function AdminPanel() {
                       <div className="flex justify-between text-sm mb-1">
                         <span className="font-semibold text-zinc-900">{PLAN_LABEL[planId]}</span>
                         <span className="text-slate-500 font-mono">
-                          {fmtUSD(data.revenue)} · {data.count} payments · {data.seats} seats
-                        </span>
+                          {fmtUSD(data.revenue)} · {data.count}  {tr("site.adminpanel.payments_79e025")}{data.seats}  {tr("site.adminpanel.seats_05d560")}</span>
                       </div>
                       <div className="h-2.5 bg-slate-100 rounded-full overflow-hidden">
                         <div className={`h-full rounded-full ${
-                          planId === 'smarty-max' ? 'bg-amber-500' :
-                          planId === 'teacher' ? 'bg-emerald-500' : 'bg-violet-500'
+                          planId === 'smarty-max' ? 'bg-amber-500' : 'bg-emerald-500'
                         }`} style={{ width: `${pct}%` }} />
                       </div>
                     </div>
@@ -445,28 +392,28 @@ export function AdminPanel() {
             <div className={`${seCard} overflow-hidden`}>
               <div className="px-6 py-4 border-b border-slate-100 flex items-center gap-2">
                 <CreditCard className="w-5 h-5 text-slate-500" />
-                <h2 className="font-bold text-zinc-900">All Payments</h2>
-                <span className="text-xs text-slate-400 ml-auto">{payments.length} records</span>
+                <h2 className="font-bold text-zinc-900">{tr("site.adminpanel.all_payments_ba6058")}</h2>
+                <span className="text-xs text-slate-400 ml-auto">{payments.length}  {tr("site.adminpanel.records_86761b")}</span>
               </div>
               {paymentsLoading ? (
                 <div className="p-12 flex items-center justify-center"><Loader2 className="w-5 h-5 animate-spin text-slate-400" /></div>
               ) : payments.length === 0 ? (
                 <div className="p-12 text-center text-slate-400">
                   <DollarSign className="w-10 h-10 mx-auto mb-3 text-slate-300" />
-                  <p className="font-semibold text-slate-500">No payments yet</p>
-                  <p className="text-xs mt-1">Payments will appear here automatically after users subscribe.</p>
+                  <p className="font-semibold text-slate-500">{tr("site.adminpanel.no_payments_yet_d48f53")}</p>
+                  <p className="text-xs mt-1">{tr("site.adminpanel.payments_will_appear_here_automatically_1f73cd")}</p>
                 </div>
               ) : (
                 <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-slate-50 text-slate-500 text-xs uppercase tracking-wider">
                     <tr>
-                      <th className="text-left font-semibold px-4 py-3">Customer</th>
-                      <th className="text-left font-semibold px-4 py-3">Plan</th>
-                      <th className="text-right font-semibold px-4 py-3">Seats</th>
-                      <th className="text-right font-semibold px-4 py-3">Amount</th>
-                      <th className="text-left font-semibold px-4 py-3">Status</th>
-                      <th className="text-left font-semibold px-4 py-3">Date</th>
+                      <th className="text-left font-semibold px-4 py-3">{tr("site.adminpanel.customer_0e8574")}</th>
+                      <th className="text-left font-semibold px-4 py-3">{tr("site.adminpanel.plan_ae2f98")}</th>
+                      <th className="text-right font-semibold px-4 py-3">{tr("site.adminpanel.seats_692aab")}</th>
+                      <th className="text-right font-semibold px-4 py-3">{tr("site.adminpanel.amount_43dc85")}</th>
+                      <th className="text-left font-semibold px-4 py-3">{tr("library.status")}</th>
+                      <th className="text-left font-semibold px-4 py-3">{tr("site.adminpanel.date_eb9a4b")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -484,7 +431,7 @@ export function AdminPanel() {
                         <td className="px-4 py-3 text-right font-mono text-zinc-900">{p.seats}</td>
                         <td className="px-4 py-3 text-right">
                           <div className="font-bold text-zinc-900">{fmtUSD(p.amountUSD)}</div>
-                          <div className="text-[10px] text-slate-400">{p.amountUZS.toLocaleString()} so'm</div>
+                          <div className="text-[10px] text-slate-400">{p.amountUZS.toLocaleString(uiLang)}  {tr("site.adminpanel.som_ea8628")}</div>
                         </td>
                         <td className="px-4 py-3">
                           <span className={`px-2 py-0.5 rounded text-xs font-bold ${
@@ -494,7 +441,7 @@ export function AdminPanel() {
                             'bg-rose-50 text-rose-700'
                           }`}>{p.status}</span>
                         </td>
-                        <td className="px-4 py-3 text-slate-500 text-xs whitespace-nowrap">{new Date(p.paidAt).toLocaleString()}</td>
+                        <td className="px-4 py-3 text-slate-500 text-xs whitespace-nowrap">{new Date(p.paidAt).toLocaleString(uiLang)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -512,14 +459,13 @@ export function AdminPanel() {
             <div className="grid gap-6">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {[
-                  { label: 'Total Accounts', value: stats.totalUsers, color: 'text-zinc-900' },
-                  { label: 'Users',           value: stats.students,    color: 'text-slate-600' },
-                  { label: 'Teachers',        value: stats.teachers,    color: 'text-emerald-600' },
-                  { label: 'Organizations',   value: stats.orgs,        color: 'text-violet-600' },
-                  { label: 'Total Classes',   value: stats.totalClasses,    color: 'text-indigo-600' },
-                  { label: 'Assignments',     value: stats.totalAssignments, color: 'text-orange-600' },
-                  { label: 'Admins',          value: stats.admins,      color: 'text-rose-600' },
-                  { label: 'Suspended',       value: stats.suspended,   color: 'text-slate-500' },
+                  { label: tr("core.management.total_accounts_b8b140"), value: stats.totalUsers, color: 'text-zinc-900' },
+                  { label: tr("core.management.users_57f2b1"),           value: stats.students,    color: 'text-slate-600' },
+                  { label: tr("home.nav.business"),        value: stats.business,    color: 'text-emerald-600' },
+                  { label: tr("core.management.total_classes_7afd39"),   value: stats.totalClasses,    color: 'text-indigo-600' },
+                  { label: tr("core.management.assignments_057d58"),     value: stats.totalAssignments, color: 'text-orange-600' },
+                  { label: tr("core.management.admins_ed6b52"),          value: stats.admins,      color: 'text-rose-600' },
+                  { label: tr("site.adminpanel.suspended_794696"),       value: stats.suspended,   color: 'text-slate-500' },
                 ].map(({ label, value, color }) => (
                   <div key={label} className={`${seCard} p-5 text-center`}>
                     <div className={`text-3xl font-black ${color}`}>{value}</div>
@@ -528,12 +474,11 @@ export function AdminPanel() {
                 ))}
               </div>
               <div className={`${seCard} p-6`}>
-                <h2 className="font-bold text-lg mb-4 flex items-center gap-2"><TrendingUp className="w-5 h-5" /> Role Distribution</h2>
+                <h2 className="font-bold text-lg mb-4 flex items-center gap-2"><TrendingUp className="w-5 h-5" />  {tr("site.adminpanel.role_distribution_aa4bff")}</h2>
                 <div className="space-y-3">
                   {[
                     { role: 'Users',         count: stats.students, total: stats.totalUsers, color: 'bg-slate-500' },
-                    { role: 'Teachers',      count: stats.teachers, total: stats.totalUsers, color: 'bg-emerald-500' },
-                    { role: 'Organizations', count: stats.orgs,     total: stats.totalUsers, color: 'bg-violet-500' },
+                    { role: 'Business', count: stats.business, total: stats.totalUsers, color: 'bg-emerald-500' },
                   ].map(({ role, count, total, color }) => (
                     <div key={role}>
                       <div className="flex justify-between text-sm mb-1"><span className="font-semibold text-zinc-900">{role}</span><span className="text-slate-500">{count} ({total > 0 ? Math.round(count / total * 100) : 0}%)</span></div>
@@ -551,16 +496,16 @@ export function AdminPanel() {
           auditLoading ? <div className="flex justify-center py-16"><Loader2 className="w-6 h-6 animate-spin text-slate-400" /></div> : (
             <div className={`${seCard} overflow-hidden`}>
               {auditLog.length === 0 ? (
-                <div className="p-12 text-center text-slate-400"><FileText className="w-10 h-10 mx-auto mb-3 text-slate-300" /><p>No audit entries yet.</p></div>
+                <div className="p-12 text-center text-slate-400"><FileText className="w-10 h-10 mx-auto mb-3 text-slate-300" /><p>{tr("site.adminpanel.no_audit_entries_yet_33de4c")}</p></div>
               ) : (
                 <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead className="bg-slate-50 text-slate-500 text-xs uppercase tracking-wider">
                     <tr>
-                      <th className="text-left px-4 py-3 font-semibold">Action</th>
-                      <th className="text-left px-4 py-3 font-semibold">Actor</th>
-                      <th className="text-left px-4 py-3 font-semibold">Target / Details</th>
-                      <th className="text-left px-4 py-3 font-semibold">Time</th>
+                      <th className="text-left px-4 py-3 font-semibold">{tr("site.adminpanel.action_97c89a")}</th>
+                      <th className="text-left px-4 py-3 font-semibold">{tr("site.adminpanel.actor_cbd19b")}</th>
+                      <th className="text-left px-4 py-3 font-semibold">{tr("site.adminpanel.target_details_c893b8")}</th>
+                      <th className="text-left px-4 py-3 font-semibold">{tr("lesson.stat.time")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -572,8 +517,8 @@ export function AdminPanel() {
                           </span>
                         </td>
                         <td className="px-4 py-3 text-slate-700 text-xs font-mono truncate max-w-[140px]">{e.actorEmail}</td>
-                        <td className="px-4 py-3 text-slate-500 text-xs max-w-[200px] truncate">{e.targetUid ? `→ ${e.targetUid.slice(0, 8)}…` : ''} {Object.entries(e.details ?? {}).map(([k, v]) => `${k}: ${v}`).join(', ')}</td>
-                        <td className="px-4 py-3 text-slate-400 text-xs whitespace-nowrap">{new Date(e.timestamp).toLocaleString()}</td>
+                        <td className="px-4 py-3 text-slate-500 text-xs max-w-[200px] truncate">{e.targetUid ? tr("core.management.value1_aa645e", { value1: e.targetUid.slice(0, 8) }) : ''} {Object.entries(e.details ?? {}).map(([k, v]) => `${k}: ${v}`).join(', ')}</td>
+                        <td className="px-4 py-3 text-slate-400 text-xs whitespace-nowrap">{new Date(e.timestamp).toLocaleString(uiLang)}</td>
                       </tr>
                     ))}
                   </tbody>

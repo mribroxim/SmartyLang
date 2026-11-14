@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
+import { useUiLang } from '../contexts/UiLangContext';
 
 /** True on phones/tablets. Used to skip the MediaRecorder mic-on-mobile, because
  * requesting a second getUserMedia alongside SpeechRecognition is what makes Web
@@ -13,6 +14,7 @@ export function isMobileDevice(): boolean {
 }
 
 export function useVosk(speechLocale: string = 'en-US') {
+  const { t } = useUiLang();
   const [modelLoading, setModelLoading] = useState(false);
   const [modelError, setModelError] = useState<string | null>(null);
   const [isReady, setIsReady] = useState(false);
@@ -36,20 +38,21 @@ export function useVosk(speechLocale: string = 'en-US') {
     if (SpeechRecognition) {
       setIsReady(true);
     } else {
-      setModelError('Web Speech API is not supported in this browser.');
+      setModelError(t('learning.speech.recognition.not.supported.9a4ce8'));
     }
-  }, []);
+  }, [t]);
 
   const isIntentionallyStopped = useRef<boolean>(false);
 
   const startRecognition = useCallback(async (
     onResult: (text: string) => void,
     onPartialResult: (text: string) => void,
-    captureStream = true
+    captureStream = true,
+    onError?: (error: string) => void,
   ) => {
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) {
-      throw new Error("Speech Recognition not supported");
+      throw new Error(t('learning.speech.recognition.not.supported.9a4ce8'));
     }
 
     if (recognitionRef.current) {
@@ -96,6 +99,7 @@ export function useVosk(speechLocale: string = 'en-US') {
 
     recognition.onerror = (event: any) => {
       console.error("Speech recognition error", event.error);
+      onError?.(String(event.error || 'speech-error'));
       // Don't throw or stop, let onend handle it if it was a network error
     };
     
@@ -142,7 +146,7 @@ export function useVosk(speechLocale: string = 'en-US') {
         console.error("Speech recognition start error", e);
         throw e;
     }
-  }, []);
+  }, [t]);
 
   const stopRecognition = useCallback(() => {
      isIntentionallyStopped.current = true;

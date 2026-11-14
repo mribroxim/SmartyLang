@@ -2,11 +2,10 @@
  * Browser client for POST /api/translate-fallback.
  * The frontend never talks to Google Translate / MyMemory directly.
  */
-import { auth } from '../firebase';
-
 export type FallbackResult = {
   text: string;
-  source: 'cache' | 'v3' | 'v2' | 'gtx' | 'api';
+  source: 'cache' | 'v3' | 'v2' | 'gtx' | 'mymemory' | 'api';
+  alternatives?: string[];
 };
 
 export async function translateFallback(opts: {
@@ -15,17 +14,12 @@ export async function translateFallback(opts: {
   to: string;
   sentence?: string;
   signal?: AbortSignal;
-}): Promise<string | null> {
+}): Promise<{ text: string; alternatives: string[] } | null> {
   const word = (opts.word || '').trim();
-  if (!word || opts.from === opts.to) return word || null;
+  if (!word || opts.from === opts.to) {
+    return word ? { text: word, alternatives: [word] } : null;
+  }
   const headers: Record<string, string> = { 'Content-Type': 'application/json' };
-  try {
-    const user = auth?.currentUser;
-    if (user) {
-      const token = await user.getIdToken();
-      if (token) headers.Authorization = `Bearer ${token}`;
-    }
-  } catch { /* anonymous is fine */ }
 
   const r = await fetch('/api/translate-fallback', {
     method: 'POST',
@@ -40,5 +34,10 @@ export async function translateFallback(opts: {
   });
   if (!r.ok) throw new Error(`fallback ${r.status}`);
   const d = (await r.json()) as FallbackResult & { translation?: string };
-  return (d.text || d.translation || '').trim() || null;
+  const text = (d.text || d.translation || '').trim();
+  if (!text) return null;
+  const alternatives = Array.isArray(d.alternatives) && d.alternatives.length
+    ? d.alternatives.map((a) => String(a || '').trim()).filter(Boolean)
+    : [text];
+  return { text, alternatives };
 }

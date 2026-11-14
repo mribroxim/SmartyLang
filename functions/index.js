@@ -359,7 +359,13 @@ exports.translateFallback = onRequest(
       if (cached.exists) {
         const data = cached.data() || {};
         if (data.text) {
-          res.json({ text: data.text, source: "cache" });
+          res.json({
+            text: data.text,
+            source: "cache",
+            alternatives: Array.isArray(data.alternatives) && data.alternatives.length
+              ? data.alternatives
+              : [data.text],
+          });
           return;
         }
       }
@@ -375,10 +381,11 @@ exports.translateFallback = onRequest(
       try {
         await db.collection("sharedVocabCache").doc(cid).set({
           text: result.text,
+          alternatives: result.alternatives || [result.text],
           from,
           to,
           word: word.toLowerCase(),
-          source: result.source === "gtx" ? "api" : result.source,
+          source: result.source === "gtx" || result.source === "mymemory" ? "api" : result.source,
           confidence: result.source === "v3" || result.source === "v2" ? 0.7 : 0.4,
           createdAt: Date.now(),
         });
@@ -415,10 +422,56 @@ exports.translateFallback = onRequest(
       } catch (e) {
         console.warn("[translateFallback] miss log", e.message);
       }
-      res.json({ text: result.text, source: result.source });
+      res.json({
+        text: result.text,
+        source: result.source,
+        alternatives: result.alternatives || [result.text],
+      });
     } catch (error) {
       console.error("translateFallback error:", error?.message || error);
       res.status(500).json({ error: error?.message || "Translation failed" });
+    }
+  },
+);
+
+const { lookupDictionaryServer } = require("./dictionaryCore");
+
+exports.dictionaryLookup = onRequest(
+  {
+    region: "us-central1",
+    maxInstances: 10,
+    cors: true,
+    invoker: "public",
+  },
+  async (req, res) => {
+    if (req.method === "OPTIONS") {
+      res.status(204).send("");
+      return;
+    }
+    if (req.method !== "POST" && req.method !== "GET") {
+      res.status(405).json({ error: "POST or GET only" });
+      return;
+    }
+    const word = typeof (req.body?.word ?? req.query?.word) === "string"
+      ? String(req.body?.word ?? req.query?.word).trim()
+      : "";
+    const lang = typeof (req.body?.lang ?? req.query?.lang) === "string"
+      ? String(req.body?.lang ?? req.query?.lang).trim()
+      : "en";
+    if (!word) {
+      res.status(400).json({ error: "Missing word" });
+      return;
+    }
+    try {
+      const result = await lookupDictionaryServer(word, lang);
+      if (!result) {
+        res.status(404).json({ error: "not_found" });
+        return;
+      }
+      res.json(result);
+    } catch (error) {
+      console.error("dictionaryLookup error:", error?.message || error);
+      res.status(500).json({ error: error?.message || "Dictionary failed" });
     }
   },
 );

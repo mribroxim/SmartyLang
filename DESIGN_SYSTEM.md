@@ -69,15 +69,20 @@ Defined in `src/index.css` `@theme`:
 | `rounded-2xl` | Feature cards, larger panels |
 | `rounded-full` | Pills, primary CTA buttons, avatars |
 
-### Elevation
+### Elevation: chunky surfaces (Duolingo-style, Smarty colours)
 
-| Token | Use |
+Interactive things have a **solid bottom edge** they press into, not a soft shadow.
+
+| Element | Classes |
 |---|---|
-| `shadow-sm` | Default card elevation |
-| `shadow-md` | Hover state on interactive cards |
-| `shadow-xl` / `shadow-2xl` | Hero CTAs, modals, primary marketing buttons |
+| Card / row | `border-2 border-slate-200 rounded-2xl shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]` (use `seCard` / `seRow`) |
+| Primary button | black, `shadow-[0_4px_0_0_#000] active:translate-y-[4px] active:shadow-none`, `font-serif font-extrabold uppercase tracking-wide` (use `sePrimary` or `<ChunkyButton>`) |
+| Secondary button | white, 2px border, `shadow-[0_3px_0_0_#e2e8f0]` (use `seSecondary` or `<ChunkyButton tone="secondary">`) |
+| Selected option | `border-zinc-900 bg-zinc-50 shadow-[0_3px_0_0_#18181b]` (use `<Tile state="selected">`) |
+| Right / wrong | `tone="good"` emerald, `tone="bad"` rose. The only colours besides black and white |
 
-`src/index.css` already darkens every shadow level under `.dark` — don't hand-roll dark shadow values in components.
+React primitives live in `src/features/Bites/lesson/chunky.tsx` (`ChunkyButton`, `Tile`, `ChunkyProgress`). Hub rows take a Smarty `sticker` instead of an icon tile.
+Modals may still use `shadow-xl` / `shadow-2xl`.
 
 ### Icons
 
@@ -107,7 +112,7 @@ Reserve the `motion` library (currently only in `Gamification.tsx`) for genuinel
 ### Dark Mode
 
 Class-based (`.dark`), handled two ways — both are correct, use whichever fits:
-1. **Default:** write normal light-mode classes (`bg-white`, `text-slate-900`, `bg-emerald-50`, etc.) — `src/index.css` remaps them globally via unlayered `.dark` selectors. No extra work needed for standard surfaces/text/borders/shadows.
+1. **Default:** write normal light-mode classes (`bg-white`, `text-slate-900`, `bg-emerald-50`, etc.) — `src/index.css` remaps them globally. The working remap is the **generated, guarded block** (`/* @generated dark-guards */`): it applies only when the element has no `dark:` class of that kind and isn't `dark-keep`. To add a colour, add it to the `@layer base` dark block and re-run `node scripts/design/dark-guards.cjs` (the layered rules alone lose to Tailwind utilities).
 2. **Exception:** for opacity/blur or custom-hex values the global override can't target (e.g. `bg-white/90`, `bg-[#ebebeb]`), add an explicit `dark:` variant alongside it, as `Sidebar.tsx` and `MobileNav.tsx` do.
 
 ---
@@ -162,7 +167,40 @@ Two separate hand-built implementations, intentionally not unified (different in
 
 ---
 
-## 3. Audit Summary
+## 3. Smarty (mascot & stickers)
+
+Smarty is the black-and-white sticker cat. 229 animated stickers; the source of truth is `design/sticker-board/` (the reviewed board), ported to code by `node scripts/port-stickers.mjs`. Never hand-edit `src/components/stickers/sets/*` or `stickers.css`. Change the board and re-run the port.
+
+### Using a sticker
+```tsx
+<Sticker id="mood.yay" size={96} priority="normal" mode="auto" />
+```
+- `id` uses `${category}.${slug}` (typed `StickerId`). `#/stickers` shows the in-app gallery with each sticker's intended use.
+- `priority`: `hero` (the focus of the screen), `normal`, `ambient` (headers, decoration).
+- `mode`: `auto` loops, `once` plays about 2.6 s and then holds its last frame, `still` shows the poster frame only. Use `once` for anything in a list, toast or card.
+- Decorative by default (`aria-hidden`). Pass `title` only when the sticker carries meaning that is not in nearby text.
+- Page headers: `<ScreenShell stickers={[...]}>` picks one sticker per day.
+- Empty states: `<EmptyState sticker=... title body action />`. Loaders: `<SmartyLoader sticker=... />`.
+
+### Performance budget
+`scheduler.ts` lets only a few stickers animate at once: Lively 4 (2 on phones and slow devices), Calm 2 (1), Off 0. Highest priority and newest win, and offscreen stickers, hidden tabs and reduced-motion freeze on a chosen poster frame. Don't fight the budget with CSS.
+
+### Reactions: emit events, don't place cats
+Feature code calls `emitSmarty({ type: ... })` (or `answerFeedback(correct, meta)` for graded answers). The director (`src/lib/smarty/director.ts`) decides the sticker, the line, the surface (stage, toast or fullscreen), priority, cooldown and whether the current liveliness allows it. `SmartyHost` renders the result. To add a reaction:
+1. Add the event to `events.ts`.
+2. Add a rule to `RULES` (stickers, pool, surface, `min` liveliness, cooldown).
+3. Add a line pool to `lines.ts`, with keys `smarty.<pool>.<n>` and optional `.named.<n>` lines that use `{name}`.
+4. Add the English strings to `src/locales/ui.en.json`, then run `node scripts/gen-ui-locales.mjs && node scripts/audit-ui-locales.mjs`.
+
+### Voice
+Warm, short, playful, never mean. Plain words first; puns only where a literal translation still reads fine. Personal (name, streak, weak word) but never guilt-trippy.
+
+### Checks
+`node scripts/verify-stickers.mjs` validates all 229 (ids, classes, defs). `--usage` must report 229/229 referenced in `src/`.
+
+---
+
+## 4. Audit Summary
 
 | Category | Status | Notes |
 |---|---|---|

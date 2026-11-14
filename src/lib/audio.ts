@@ -1,6 +1,50 @@
+import { mascotReact } from '../components/mascot/mascotBus';
+import { getPrefs } from './smarty/prefs';
+
 let sharedCtx: any = null;
 
-export const playSound = (type: 'click' | 'success' | 'complete' | 'fail' | 'hover' | 'bop' | 'start_record' | 'stop_record' | 'tick') => {
+export type SoundType =
+  | 'click' | 'success' | 'complete' | 'fail' | 'hover' | 'bop' | 'start_record' | 'stop_record' | 'tick'
+  | 'heart-lost' | 'heart-refill' | 'level-up' | 'meow';
+
+/** Short vibration on phones, if the learner allows it in Settings → Smarty. */
+export function haptic(pattern: number | number[]) {
+  try {
+    if (!getPrefs().haptics) return;
+    if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') navigator.vibrate(pattern);
+  } catch { /* unsupported */ }
+}
+
+/** Play a little melody: [frequency, startOffsetSec, durationSec][]. */
+function tones(ctx: any, wave: OscillatorType, notes: [number, number, number][], vol = 0.09) {
+  for (const [freq, at, dur] of notes) {
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    o.type = wave;
+    o.connect(g); g.connect(ctx.destination);
+    const t0 = ctx.currentTime + at;
+    o.frequency.setValueAtTime(freq, t0);
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.exponentialRampToValueAtTime(vol, t0 + 0.015);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.start(t0);
+    o.stop(t0 + dur + 0.02);
+  }
+}
+
+export const playSound = (type: SoundType, options?: { mascot?: boolean }) => {
+  // Answer feedback doubles as mascot feedback (floating Smarty reacts).
+  if (options?.mascot !== false) {
+    if (type === 'success') mascotReact('correct');
+    else if (type === 'fail') mascotReact('wrong');
+    else if (type === 'complete') mascotReact('complete');
+  }
+
+  if (type === 'fail' || type === 'heart-lost') haptic(60);
+  else if (type === 'complete' || type === 'level-up') haptic([30, 40, 30]);
+
+  if (!getPrefs().sound) return;
+
   try {
     const AudioContext = (window as any).AudioContext || (window as any).webkitAudioContext;
     if (!AudioContext) return;
@@ -15,6 +59,18 @@ export const playSound = (type: 'click' | 'success' | 'complete' | 'fail' | 'hov
     }
     
     const ctx = sharedCtx;
+    if (type === 'heart-lost') { tones(ctx, 'triangle', [[392, 0, 0.12], [311, 0.11, 0.22]]); return; }
+    if (type === 'heart-refill') { tones(ctx, 'sine', [[523, 0, 0.1], [659, 0.08, 0.1], [784, 0.16, 0.18]]); return; }
+    if (type === 'level-up') { tones(ctx, 'triangle', [[523, 0, 0.12], [659, 0.1, 0.12], [784, 0.2, 0.12], [1047, 0.3, 0.3]], 0.1); return; }
+    if (type === 'meow') {
+      const o = ctx.createOscillator(); const g = ctx.createGain();
+      o.type = 'sawtooth'; o.connect(g); g.connect(ctx.destination);
+      const t = ctx.currentTime;
+      o.frequency.setValueAtTime(700, t); o.frequency.exponentialRampToValueAtTime(1100, t + 0.12); o.frequency.exponentialRampToValueAtTime(600, t + 0.35);
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.05, t + 0.04); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.38);
+      o.start(t); o.stop(t + 0.4);
+      return;
+    }
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     osc.connect(gain);

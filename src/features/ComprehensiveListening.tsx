@@ -42,7 +42,7 @@ export function ComprehensiveListening({ onBack, onToggleVocab, savedVocab = {},
   const { t, tLevel, tLevelDesc } = useUiLang();
   const canDownloadPDF = (() => {
     const t = accountTypeOf(accountProfile as UserAccountProfile | null);
-    return t === 'teacher' || t === 'organization' || t === 'admin';
+    return t === 'business' || t === 'teacher' || t === 'organization' || t === 'admin';
   })();
   const hasInitial = !!initialLevel && !!initialPassageTitle;
   const [view, setView] = useState<'levels' | 'library' | 'activity'>(hasInitial ? 'library' : 'levels');
@@ -132,13 +132,13 @@ export function ComprehensiveListening({ onBack, onToggleVocab, savedVocab = {},
     const answerBlank = includeAnswerBlanks
       ? `<div style="margin-top:8px;border-bottom:1px solid #ccc;height:28px;width:100%;"></div>`
       : '';
-    const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><title>Listening – ${content.title}</title>
+    const html = `<!DOCTYPE html><html lang="${contentLang}"><head><meta charset="UTF-8"/><title>${t("nav.listening")} – ${content.title}</title>
 <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Georgia,serif;color:#1a1a1a;max-width:720px;margin:40px auto;padding:0 24px;line-height:1.8}h1{font-size:2rem;margin-bottom:8px}.badge{display:inline-block;background:#dbeafe;color:#1e40af;border-radius:99px;padding:2px 12px;font-size:.8rem;font-weight:700;margin-bottom:24px}.passage{font-size:1.1rem;margin-bottom:32px;border-left:4px solid #bfdbfe;padding-left:16px}h2{font-size:1.1rem;margin-top:24px;margin-bottom:12px;border-bottom:2px solid #e5e5e5;padding-bottom:4px}.question{margin-bottom:18px}.q{font-weight:700;margin-bottom:6px}.opt{padding:3px 0}@page{margin:20mm}</style>
 </head><body>
-<h1>${content.title}</h1><div class="badge">${level} – Listening</div>
-<h2>Transcript</h2>
+<h1>${content.title}</h1><div class="badge">${tLevel(level)} – ${t("nav.listening")}</div>
+<h2>${t("site.print.transcript")}</h2>
 <div class="passage">${content.passage}</div>
-<h2>Comprehension Questions</h2>
+<h2>${t("site.print.questions")}</h2>
 ${content.questions.map((q: any, i: number) => `<div class="question"><div class="q">${i + 1}. ${q.text}</div>${q.options.map((o: string, oi: number) => `<div class="opt">${String.fromCharCode(65 + oi)}) ${o}</div>`).join('')}${answerBlank}</div>`).join('')}
 </body></html>`;
     const win = window.open('', '_blank');
@@ -148,7 +148,7 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
     win.focus();
     setTimeout(() => win.print(), 400);
     setShowPrintModal(false);
-  }, [content, level]);
+  }, [content, level, contentLang, t, tLevel]);
 
   const shuffleOptions = (questions: any[]): any[] =>
     questions.map((q: any) => {
@@ -201,7 +201,7 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
       <ScreenShell size="wide">
           <header className="mb-6 md:mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 md:pb-6 border-b border-slate-200">
             <div>
-              <button onClick={() => setView('levels')} className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-3 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm w-fit transition-colors">
+              <button onClick={() => setView('levels')} className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-3 bg-white px-4 py-2 rounded-2xl border-2 border-slate-200 w-fit transition-colors shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
                 <ArrowLeft className="w-4 h-4" /> {t('action.backToLevels')}
               </button>
               <h1 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 tracking-tight flex items-center gap-3 flex-wrap">
@@ -209,7 +209,7 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
                 <span className="font-sans text-lg md:text-xl text-zinc-900 font-medium">{t('library.title')}</span>
               </h1>
             </div>
-            <div className="bg-white px-5 py-3 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center shrink-0">
+            <div className="bg-white px-5 py-3 rounded-2xl border-2 border-slate-200 flex flex-col items-center shrink-0 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
               <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">{t('library.passages')}</span>
               <span className="text-2xl font-black text-zinc-900">{passages.length}</span>
             </div>
@@ -221,7 +221,7 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
               value={search}
               onChange={e => { setSearch(e.target.value); setPage(1); }}
               placeholder={t('library.searchPassages')}
-              className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-[13px] text-slate-700 focus:outline-none focus:ring-2 focus:ring-zinc-700/30 focus:border-zinc-700"
+              className="w-full pl-10 pr-4 py-2.5 bg-white border-2 border-slate-200 rounded-2xl text-[13px] text-slate-700 focus:outline-none focus:ring-2 focus:ring-zinc-700/30 focus:border-zinc-700"
             />
           </div>
 
@@ -240,7 +240,7 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
                 <p className="text-xs font-bold text-teal-600 uppercase tracking-wider mb-1">{t('library.continueBanner')}</p>
                 <p className="font-bold text-slate-800 text-sm line-clamp-1">{resumeTitle}</p>
                 {answered > 0 && (
-                  <p className="text-xs text-teal-700 mt-0.5">{answered} answers saved</p>
+                  <p className="text-xs text-teal-700 mt-0.5">{answered}  {t("site.comprehensivelistening.answers_saved_c702ad")}</p>
                 )}
               </div>
               <button
@@ -295,7 +295,7 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
 
           <PracticeHistory
             storageKey="cl_completions_v1"
-            label="Past Listening Sessions"
+            label={t("site.comprehensivelistening.past_listening_sessions_2e38e4")}
             level={level}
           />
       </ScreenShell>
@@ -305,46 +305,42 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
   return (
     <div className="flex flex-col h-[calc(100vh-80px)] bg-white relative">
       <div className="px-6 py-4 border-b border-slate-200 bg-white flex items-center justify-between shrink-0 gap-4 shadow-sm">
-        <button onClick={() => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); setView('library'); }} className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 bg-slate-50 hover:bg-slate-100 px-3 py-2 rounded-xl border border-slate-200 transition-colors shrink-0">
-          <ArrowLeft className="w-4 h-4" /> Back
-        </button>
+        <button onClick={() => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); setView('library'); }} className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 bg-slate-50 hover:bg-slate-100 px-3 py-2 rounded-2xl border-2 border-slate-200 transition-colors shrink-0">
+          <ArrowLeft className="w-4 h-4" />  {t("onboard.back")}</button>
         <div className="flex items-center gap-2 font-bold text-slate-800 text-sm truncate min-w-0 flex-1 justify-center">
-          <Headphones className="w-4 h-4 text-blue-500 shrink-0" /> <span className="truncate">{content.title || 'Comprehensive Listening'}</span>
+          <Headphones className="w-4 h-4 text-blue-500 shrink-0" /> <span className="truncate">{content.title || t("listening.comp.title")}</span>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <FontSizeControl value={fontScale} onChange={setFontScale} />
           {canDownloadPDF && (
-            <button onClick={() => setShowPrintModal(true)} className="flex items-center gap-1.5 text-sm font-medium text-slate-600 bg-slate-50 border border-slate-200 px-3 py-2 rounded-xl hover:bg-slate-100 transition-colors">
-              <Download className="w-4 h-4" /> PDF
-            </button>
+            <button onClick={() => setShowPrintModal(true)} className="flex items-center gap-1.5 text-sm font-medium text-slate-600 bg-slate-50 border-2 border-slate-200 px-3 py-2 rounded-2xl hover:bg-slate-100 transition-colors">
+              <Download className="w-4 h-4" />  {t("site.comprehensivelistening.pdf_d613d8")}</button>
           )}
         </div>
       </div>
 
       {/* Print options modal */}
       {showPrintModal && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-zinc-900/50 backdrop-blur-sm" onClick={() => setShowPrintModal(false)}>
-          <div className="bg-white rounded-3xl w-full max-w-sm shadow-2xl p-8" onClick={e => e.stopPropagation()}>
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-zinc-900/55 backdrop-blur-[2px]" onClick={() => setShowPrintModal(false)}>
+          <div className="bg-white rounded-3xl w-full max-w-sm p-8 border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-6">
-              <h2 className="font-bold text-zinc-900 text-lg">PDF Options</h2>
+              <h2 className="font-serif font-extrabold text-zinc-900 text-lg">{t("site.comprehensivelistening.pdf_options_ba75a2")}</h2>
               <button onClick={() => setShowPrintModal(false)} className="p-2 rounded-xl hover:bg-zinc-100 text-zinc-500">
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <p className="text-sm text-slate-500 mb-8">Would you like to include blank answer lines for students to write in?</p>
+            <p className="text-sm text-slate-500 mb-8">{t("site.comprehensivelistening.would_you_like_to_include_addbed")}</p>
             <div className="flex flex-col gap-3">
               <button
                 onClick={() => doPrint(true)}
-                className="w-full py-3 px-4 rounded-2xl bg-zinc-900 text-white font-bold text-sm hover:bg-black transition-colors"
+                className="w-full py-3 px-4 rounded-2xl bg-zinc-900 text-white font-bold text-sm hover:bg-black transition-colors shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none"
               >
-                Include Answer Lines
-              </button>
+                {t("site.comprehensivelistening.include_answer_lines_dd4e96")}</button>
               <button
                 onClick={() => doPrint(false)}
                 className="w-full py-3 px-4 rounded-2xl bg-slate-100 text-slate-700 font-bold text-sm hover:bg-slate-200 transition-colors"
               >
-                Questions Only (No Blanks)
-              </button>
+                {t("site.comprehensivelistening.questions_only_no_blanks_e1a126")}</button>
             </div>
           </div>
         </div>
@@ -357,16 +353,14 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
           </div>
           <div className="flex items-center gap-3 mb-8">
             <button onClick={() => playPassage(content.passage)} className="flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 text-sm font-bold rounded-xl hover:bg-blue-700 transition-colors shadow-sm">
-              <Volume2 className="w-4 h-4" /> Play Audio
-            </button>
+              <Volume2 className="w-4 h-4" />  {t("site.comprehensivelistening.play_audio_1edc94")}</button>
             <button onClick={() => setShowTranscript(v => !v)} className="flex items-center gap-2 bg-slate-100 text-slate-700 px-4 py-2.5 text-sm font-bold rounded-xl hover:bg-slate-200 transition-colors">
-              <Eye className="w-4 h-4" /> {showTranscript ? 'Hide' : 'Show'} Transcript
-            </button>
+              <Eye className="w-4 h-4" /> {showTranscript ? t("site.comprehensivelistening.hide_34d8b6") : t("site.comprehensivelistening.show_d97d1e")}  {t("site.comprehensivelistening.transcript_5bcd60")}</button>
           </div>
           {!showTranscript ? (
             <div className="h-48 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center">
               <Headphones className="w-12 h-12 text-slate-300 mb-4" />
-              <p className="text-slate-500 font-medium">Listen to the passage, then answer the questions.</p>
+              <p className="text-slate-500 font-medium">{t("site.comprehensivelistening.listen_to_the_passage_then_63b2c0")}</p>
             </div>
           ) : (
             <div className={`font-serif text-slate-800 leading-[1.9] border-l-4 border-blue-200 pl-6 transition-all duration-300 ${fontScaleClasses(fontScale)}`}>
@@ -400,12 +394,12 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
         </div>
         <div className="w-full lg:w-1/2 p-6 md:p-10 overflow-y-auto bg-slate-50">
           <div className="max-w-xl mx-auto space-y-8">
-            <h3 className="text-2xl font-black text-slate-900">Questions</h3>
+            <h3 className="text-2xl font-black text-slate-900">{t("site.comprehensivelistening.questions_9a1fc1")}</h3>
             {content.questions.map((q: any, i: number) => {
               const qIdx = q.id || i;
               return (
-                <div key={qIdx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-                  <h4 className="font-bold text-lg text-slate-900">{i + 1}. {q.text}</h4>
+                <div key={qIdx} className="bg-white p-6 rounded-2xl border-2 border-slate-200 space-y-4 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
+                  <h4 className="font-serif font-extrabold text-lg text-slate-900">{i + 1}. {q.text}</h4>
                   <div className="space-y-3">
                     {q.options.map((opt: string, oi: number) => {
                       const isChosen = answers[qIdx] === oi;
@@ -424,7 +418,7 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
               );
             })}
             {!submitted ? (
-              <button onClick={() => { if (Object.keys(answers).length < content.questions.length) { alert('Answer all questions.'); return; }
+              <button onClick={() => { if (Object.keys(answers).length < content.questions.length) { alert(t("site.comprehensivereading.answer_all_questions_9214a7")); return; }
                 const score = Object.entries(answers).filter(([qid, a]) =>
                   content.questions.find((q: any, qi: number) => (q.id || qi) === Number(qid))?.answer === a
                 ).length;
@@ -458,12 +452,12 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
                 clearListeningSession();
                 bumpWeeklyGoal('listening');
                 setSubmitted(true); playSound('success'); }}
-                className="w-full py-4 bg-zinc-900 text-white font-bold rounded-xl hover:bg-black transition-colors">Submit Answers</button>
+                className="w-full py-4 bg-zinc-900 text-white font-bold rounded-2xl hover:bg-black transition-colors shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none">{t("site.comprehensivelistening.submit_answers_b4eabb")}</button>
             ) : (
               <div className="p-6 bg-blue-50 border border-blue-200 rounded-2xl flex flex-col items-center text-center">
                 <CheckCircle2 className="w-12 h-12 text-blue-500 mb-3" />
-                <p className="text-blue-700 mb-4">You scored {Object.entries(answers).filter(([qid, a]) => content.questions.find((q: any, i: number) => (q.id || i) === Number(qid))?.answer === a).length} out of {content.questions.length}!</p>
-                <button onClick={() => setView('library')} className="px-6 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors">Try Another</button>
+                <p className="text-blue-700 mb-4">{t("site.comprehensivelistening.you_scored_6a5599")}{Object.entries(answers).filter(([qid, a]) => content.questions.find((q: any, i: number) => (q.id || i) === Number(qid))?.answer === a).length}  {t("site.comprehensivelistening.out_of_5ee0bb")}{content.questions.length}!</p>
+                <button onClick={() => setView('library')} className="px-6 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors">{t("site.comprehensivelistening.try_another_edddec")}</button>
               </div>
             )}
           </div>

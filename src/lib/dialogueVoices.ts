@@ -1,11 +1,11 @@
 /**
- * Dialogue speaker gender + Azure Dragon HD Omni pairing (English-first).
+ * Dialogue speaker gender + Azure voice pairing for every content language.
  * Used so Listen alternates distinct voices and matches name gender.
  */
 
 export type SpeakerGender = 'female' | 'male';
 
-/** Primary + alternate voices so two same-gender speakers still sound different. */
+/** English primary + alternate voices so same-gender speakers still differ. */
 export const EN_DIALOGUE_VOICES: Record<SpeakerGender, string[]> = {
   female: [
     'en-US-Ava:DragonHDOmniLatestNeural',
@@ -15,6 +15,39 @@ export const EN_DIALOGUE_VOICES: Record<SpeakerGender, string[]> = {
     'en-US-Andrew:DragonHDOmniLatestNeural',
     'en-US-Caleb:DragonHDOmniLatestNeural',
   ],
+};
+
+/** Native male/female pairs used for dialogue playback in every content language. */
+export const DIALOGUE_VOICES: Record<string, Record<SpeakerGender, string[]>> = {
+  en: EN_DIALOGUE_VOICES,
+  ru: { female: ['ru-RU-SvetlanaNeural'], male: ['ru-RU-DmitryNeural'] },
+  tl: { female: ['fil-PH-BlessicaNeural'], male: ['fil-PH-AngeloNeural'] },
+  es: { female: ['es-ES-ElviraNeural'], male: ['es-ES-AlvaroNeural'] },
+  uz: { female: ['uz-UZ-MadinaNeural'], male: ['uz-UZ-SardorNeural'] },
+  de: { female: ['de-DE-KatjaNeural'], male: ['de-DE-ConradNeural'] },
+  fr: { female: ['fr-FR-DeniseNeural'], male: ['fr-FR-HenriNeural'] },
+  it: { female: ['it-IT-ElsaNeural'], male: ['it-IT-DiegoNeural'] },
+  pt: { female: ['pt-BR-FranciscaNeural'], male: ['pt-BR-AntonioNeural'] },
+  ja: { female: ['ja-JP-NanamiNeural'], male: ['ja-JP-KeitaNeural'] },
+  ko: { female: ['ko-KR-SunHiNeural'], male: ['ko-KR-InJoonNeural'] },
+  zh: { female: ['zh-CN-XiaoxiaoNeural'], male: ['zh-CN-YunxiNeural'] },
+  ar: { female: ['ar-SA-ZariyahNeural'], male: ['ar-SA-HamedNeural'] },
+  tr: { female: ['tr-TR-EmelNeural'], male: ['tr-TR-AhmetNeural'] },
+  nl: { female: ['nl-NL-ColetteNeural'], male: ['nl-NL-MaartenNeural'] },
+  hi: { female: ['hi-IN-SwaraNeural'], male: ['hi-IN-MadhurNeural'] },
+  pl: { female: ['pl-PL-ZofiaNeural'], male: ['pl-PL-MarekNeural'] },
+  sv: { female: ['sv-SE-SofieNeural'], male: ['sv-SE-MattiasNeural'] },
+  id: { female: ['id-ID-GadisNeural'], male: ['id-ID-ArdiNeural'] },
+  ms: { female: ['ms-MY-YasminNeural'], male: ['ms-MY-OsmanNeural'] },
+  vi: { female: ['vi-VN-HoaiMyNeural'], male: ['vi-VN-NamMinhNeural'] },
+  th: { female: ['th-TH-PremwadeeNeural'], male: ['th-TH-NiwatNeural'] },
+  uk: { female: ['uk-UA-PolinaNeural'], male: ['uk-UA-OstapNeural'] },
+  el: { female: ['el-GR-AthinaNeural'], male: ['el-GR-NestorasNeural'] },
+  cs: { female: ['cs-CZ-VlastaNeural'], male: ['cs-CZ-AntoninNeural'] },
+  ro: { female: ['ro-RO-AlinaNeural'], male: ['ro-RO-EmilNeural'] },
+  fa: { female: ['fa-IR-DilaraNeural'], male: ['fa-IR-FaridNeural'] },
+  ur: { female: ['ur-PK-UzmaNeural'], male: ['ur-PK-AsadNeural'] },
+  sw: { female: ['sw-KE-ZuriNeural'], male: ['sw-KE-RafikiNeural'] },
 };
 
 const FEMALE_NAMES = new Set([
@@ -29,7 +62,7 @@ const MALE_NAMES = new Set([
   'adam', 'alex', 'andrew', 'ben', 'brian', 'chris', 'dan', 'daniel', 'david',
   'dad', 'father', 'jack', 'james', 'jamal', 'joe', 'john', 'jon', 'jonah',
   'kai', 'leo', 'liam', 'lucas', 'mark', 'max', 'mike', 'noah', 'omar',
-  'paul', 'peter', 'ravi', 'sam', 'tom', 'tommy', 'will',
+  'paul', 'peter', 'ravi', 'sam', 'tom', 'tommy', 'will', 'jonas',
 ]);
 
 const FEMALE_ROLES = new Set([
@@ -84,8 +117,7 @@ export function assignDialogueVoices(
   const unique = [...new Set(speakers.map((s) => s.trim()).filter(Boolean))];
   if (!unique.length) return map;
 
-  // Non-English: fall back to default cloud voice (no override)
-  if (langBase !== 'en') return map;
+  const pools = DIALOGUE_VOICES[langBase] ?? DIALOGUE_VOICES.en;
 
   let femaleIdx = 0;
   let maleIdx = 0;
@@ -97,7 +129,7 @@ export function assignDialogueVoices(
       gender = nextUnknown;
       nextUnknown = nextUnknown === 'female' ? 'male' : 'female';
     }
-    const pool = EN_DIALOGUE_VOICES[gender];
+    const pool = pools[gender];
     const idx = gender === 'female' ? femaleIdx++ : maleIdx++;
     map.set(speaker, pool[idx % pool.length]);
   }

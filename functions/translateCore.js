@@ -1,6 +1,7 @@
 /**
  * Official Cloud Translation helper (server / Cloud Function only).
- * Prefer Translation API v3 via ADC, then v2 with API key, then gtx last resort.
+ * Prefer Translation API v3 via ADC, then v2 with API key, then gtx,
+ * then MyMemory (returns multiple alternative glosses).
  */
 const GTX =
   'https://translate.googleapis.com/translate_a/single?client=gtx';
@@ -11,6 +12,12 @@ function normalizeLang(code) {
   if (c === 'fil' || c === 'tl-ph') return 'tl';
   if (c.startsWith('zh')) return 'zh-CN';
   return c.split('-')[0];
+}
+
+function myMemoryPair(from, to) {
+  const f = from === 'zh-CN' || from === 'zh' ? 'zh-CN' : from;
+  const t = to === 'zh-CN' || to === 'zh' ? 'zh-CN' : to;
+  return `${f}|${t}`;
 }
 
 async function gtxTranslate(text, from, to) {
@@ -78,16 +85,52 @@ async function v3Translate(text, from, to) {
 }
 
 /**
- * @returns {{ text: string, source: 'v3' | 'v2' | 'gtx' }}
+ * MyMemory often returns several quality-ranked matches — useful for homographs.
+ * @returns {{ text: string, alternatives: string[] } | null}
+ */
+async function myMemoryTranslate(text, from, to) {
+  const url =
+    `https://api.mymemory.translated.net/get?q=${encodeURIComponent(String(text).slice(0, 450))}` +
+    `&langpair=${encodeURIComponent(myMemoryPair(from, to))}`;
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`mymemory ${r.status}`);
+  const d = await r.json();
+  if (Number(d?.responseStatus) !== 200) throw new Error(`mymemory status ${d?.responseStatus}`);
+  const primary = String(d?.responseData?.translatedText || '').trim();
+  const alts = [];
+  const seen = new Set();
+  const push = (t) => {
+    const s = String(t || '').trim();
+    if (!s) return;
+    const key = s.toLocaleLowerCase();
+    if (seen.has(key)) return;
+    // Skip identity / junk corpus rows
+    if (key === String(text).trim().toLocaleLowerCase()) return;
+    if (/^see\s+p\.?\s*\d+/i.test(s)) return;
+    seen.add(key);
+    alts.push(s);
+  };
+  push(primary);
+  const matches = Array.isArray(d?.matches) ? d.matches : [];
+  matches
+    .slice()
+    .sort((a, b) => Number(b.quality || 0) - Number(a.quality || 0))
+    .forEach((m) => push(m.translation));
+  if (!alts.length) return null;
+  return { text: alts[0], alternatives: alts.slice(0, 8) };
+}
+
+/**
+ * @returns {{ text: string, source: string, alternatives?: string[] }}
  */
 async function officialTranslate(text, fromRaw, toRaw, apiKey) {
   const from = normalizeLang(fromRaw);
   const to = normalizeLang(toRaw);
-  if (!text || from === to) return { text: String(text || ''), source: 'v3' };
+  if (!text || from === to) return { text: String(text || ''), source: 'v3', alternatives: [String(text || '')] };
 
   try {
     const t = await v3Translate(text, from, to);
-    if (t) return { text: t, source: 'v3' };
+    if (t) return { text: t, source: 'v3', alternatives: [t] };
   } catch (e) {
     console.warn('[translate] v3 failed:', e.message);
   }
@@ -95,15 +138,22 @@ async function officialTranslate(text, fromRaw, toRaw, apiKey) {
   if (apiKey) {
     try {
       const t = await v2Translate(text, from, to, apiKey);
-      if (t) return { text: t, source: 'v2' };
+      if (t) return { text: t, source: 'v2', alternatives: [t] };
     } catch (e) {
       console.warn('[translate] v2 failed:', e.message);
     }
   }
 
-  const t = await gtxTranslate(text, from, to);
-  if (!t) throw new Error('translate empty');
-  return { text: t, source: 'gtx' };
+  try {
+    const t = await gtxTranslate(text, from, to);
+    if (t) return { text: t, source: 'gtx', alternatives: [t] };
+  } catch (e) {
+    console.warn('[translate] gtx failed:', e.message);
+  }
+
+  const mm = await myMemoryTranslate(text, from, to);
+  if (!mm?.text) throw new Error('translate empty');
+  return { text: mm.text, source: 'mymemory', alternatives: mm.alternatives };
 }
 
 function cacheDocId(from, to, word) {

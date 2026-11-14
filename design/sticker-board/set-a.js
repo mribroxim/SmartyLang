@@ -1,0 +1,324 @@
+/* ═════════ New stickers, part A: personality, feedback, reading, listening, speaking, writing ═════════ */
+
+/* — 1. Personality & emotions — */
+add2('pers', 'Judging you', 'Wrong answer (sassy) · skipped lesson', () => wrapSvg(
+  sit({ tailCls: 'a-flick', head: { eyes: 'none', mouth: 'flat', cls: 'a-judge', earCls: '', acc:
+    blinkG(-20, 7, ringC(-20, 7) + dotC(-15, 9, 3.6)) + lidEye(20, 7, 0, 5, 4) + brow(-20, -15, -3) } }), dots(150, 30)));
+
+add2('pers', 'Suspicious', 'Answer looks too easy · double-check', () => wrapSvg(
+  sit({ tailCls: 'a-flick', tailVars: '--d:2s', head: { eyes: 'none', mouth: 'flat', cls: 'a-tilt', vars: '--d:3.4s', earCls: '', droop: 8, acc: slitEye(-20, 7) + slitEye(20, 7) } }),
+  say(160, 40, '?', 30) + say(178, 66, '?', 18, .6)));
+
+add2('pers', 'Happy purr', 'Streak kept · cosy moment', () => wrapSvg(
+  G('a-purr', 101, 190, sit({ tailVars: '--d:3s', head: { eyes: 'happy', mouth: 'w', acc: BLUSH, earCls: '' } })),
+  fxs('M38 120 q-6 8 0 16 M28 116 q-8 12 0 24', 2.6, A('a-flash', 34, 128, '--d:.5s')) + fxs('M164 120 q6 8 0 16 M174 116 q8 12 0 24', 2.6, A('a-flash', 168, 128, '--d:.5s;--dl:.25s')) + say(34, 58, 'prrr', 15)));
+
+add2('pers', 'Shy', 'Compliment · first friend request', () => {
+  const paws = G('a-shy', 0, 7, [-1, 1].map(s => pawO(s * 21, 7, 16, 14) + stroke(`M${s * 21 - 5} -1 l0 6 M${s * 21 + 5} -1 l0 6`, 2, W)).join(''));
+  return wrapSvg(sit({ tailVars: '--d:3.4s', head: { eyes: 'dot', mouth: 'w', cls: 'a-tilt', vars: '--d:4s', earCls: '', droop: 10, acc: BLUSH + paws } }), heartsUp(150, 60));
+});
+
+add2('pers', 'Mind blown', 'Fun fact · grammar “aha” moment', () => wrapSvg(
+  sit({ bodyCls: 'a-jolt', head: { eyes: 'big', mouth: 'o', cls: 'a-rubber', earCls: '', droop: -6 } }),
+  burst(101, 34, 12) + G('a-smoke', 101, 16, fxs('M84 22 q-8 -10 2 -16 q4 -12 14 -6 q10 -8 16 4 q10 2 4 14', 2.6), '--d:1.6s')));
+
+add2('pers', 'Evil genius', 'Tricky question ahead · boss level', () => wrapSvg(
+  sit({ tailCls: 'a-lash', tailVars: '--d:1.2s', head: { eyes: 'angry', earCls: '', acc: MO.grin },
+    front: G('a-rub', 92, 156, pawO(91, 156, 11, 10) + stroke('M87 151 l0 5 M95 151 l0 5', 1.8, W)) + G('a-rub', 112, 156, pawO(112, 156, 11, 10) + stroke('M108 151 l0 5 M116 151 l0 5', 1.8, W), '--dl:-.25s') }),
+  say(176, 62, 'hehe', 15) + say(30, 64, 'heh', 12, .9)));
+
+add2('pers', 'Dramatic cry', 'Streak lost (over-the-top)', () => wrapSvg(
+  G('a-faint', 150, 190, sit({ noPawL: true, bodyCls: '', tailCls: 'a-lash', tailVars: '--d:.8s',
+    head: { eyes: 'closed', earCls: '', droop: 16, acc: MO.big + [-1, 1].map(s => `<path d="M${s * 20} 15 C${s * 26} 26 ${s * 22} 34 ${s * 28} 44" stroke="${W}" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="36" ${A('a-draw', s * 20, 15, '--len:36;--d:1.2s')}/>`).join('') },
+    front: arm(70, 150, 36, 110, 70, 64, { out: true }) }), '--r:12deg'),
+  [0, 1, 2, 3].map(i => `<path d="M${i % 2 ? 150 : 50} 104 c-3 5 -4 8 -1 10 c2 2 5 0 4 -3 c0 -2 -2 -4 -3 -7 z" fill="currentColor" ${A('a-drop', 100, 104, `--dx:${i % 2 ? 16 : -16}px;--dl:${i * .3}s`)}/>`).join('') + say(154, 34, 'WAAH', 16)));
+
+add2('pers', 'Confident', 'Top of the league · exam ready', () => wrapSvg(
+  sit({ bodyCls: 'a-puff', tailCls: 'a-flick', hr: -5, head: { eyes: 'happy', mouth: 'smile', earCls: '' },
+    front: arm(58, 146, 90, 170, 128, 156, { out: true, w: 14 }) + arm(144, 146, 112, 172, 74, 158, { out: true, w: 14 }) }),
+  sp(34, 60, .8, 0) + sp(170, 50, .6, .7, SOFT)));
+
+add2('pers', 'Curious', 'New word · tap to explore', () => wrapSvg(
+  sit({ tailCls: 'a-flick', head: { eyes: 'big', mouth: 'o', cls: 'a-tiltLR', earCls: 'a-twitch', earCls2: 'a-twitch', edl: .3 } }),
+  say(168, 44, '?', 28) + sp(30, 70, .6, .5, SOFT)));
+
+add2('pers', 'Facepalm', 'Silly mistake · typo', () => wrapSvg(
+  sit({ tailCls: 'a-flick', tailVars: '--d:2.2s', head: { eyes: 'line', mouth: 'flat', earCls: '', droop: 12, cls: 'a-nod', vars: '--d:2.8s' },
+    front: arm(132, 150, 166, 100, 104, 70, { out: true, toes: true }) }),
+  say(38, 50, 'ugh', 15) + fxs('M150 36 q6 -6 12 0 q6 6 12 0', 2.6, A('a-flash', 160, 36, '--d:1.6s'))));
+
+add2('pers', 'Awkward', 'Not sure · low score', () => wrapSvg(
+  sit({ tailCls: 'a-flick', head: { eyes: 'none', earCls: '', acc: look(6, 1, 'a-glance', '--px:2px') + MO.wobble + sweat(44, -14, 'a-bob') } }),
+  say(176, 60, 'heh…', 14)));
+
+add2('pers', 'Daydreaming', 'Idle on a lesson · come back?', () => wrapSvg(
+  catS(-18, 26, .84, { tailVars: '--d:4s', head: { eyes: 'up', mouth: 'w', cls: 'a-tilt', vars: '--d:4s' } }) +
+  G('a-appear', 150, 60, C(118, 72, 4, 3) + C(128, 58, 6, 3) + thought(152, 34, .9, fish(0, 0, .8)), '--d:4s'), ''));
+
+add2('pers', 'Excited', 'Lesson about to start · new unlock', () => wrapSvg(
+  G('a-wiggle', 101, 190, sit({ tailCls: 'a-lash', tailVars: '--d:.22s', head: { eyes: 'star', mouth: 'open', earCls: '' } }), '--d:.22s'),
+  fxs('M30 110 l-10 -4 M28 126 l-12 0 M30 142 l-10 4', 3, A('a-flash', 22, 126, '--d:.4s')) + fxs('M172 110 l10 -4 M174 126 l12 0 M172 142 l10 4', 3, A('a-flash', 180, 126, '--d:.4s;--dl:.2s')) + sp(40, 50, .7, 0) + sp(166, 44, .8, .4)));
+
+add2('pers', 'Bored', 'Same lesson again · try something new', () => wrapSvg(
+  sit({ tailVars: '--d:5s', hr: 8, front: arm(134, 152, 142, 140, 114, 136, { out: true, toes: true }),
+    head: { mouth: 'flat', earCls: '', droop: 14, eyes: 'none', acc: G('a-slowblink', 0, 9, lidEye(-20, 7, 3, 0, 5) + lidEye(20, 7, 3, 0, 5), '--d:5s') } }),
+  dots(146, 34)));
+
+add2('pers', 'Dramatic entrance', 'App launch · splash screen', () => wrapSvg(
+  G('a-emerge', 101, 190, sit({ noPawL: true, front: waveArm, head: { eyes: 'ring', mouth: 'open' } })) +
+  [[40, 176, 1.3, 0], [100, 186, 1.6, .3], [160, 176, 1.3, .6], [66, 158, 1, .9], [138, 158, 1, 1.2]].map(([x, y, s, dl]) => G('a-smoke', x, y, puffC(x, y, s), `--d:2.2s;--dl:${dl}s`)).join(''),
+  sp(30, 50, .9, 0) + sp(170, 40, 1, .5) + st5(176, 100, 6, 1, SOFT)));
+
+add2('pers', 'Fake innocence', 'Mistake undone · easter egg', () => wrapSvg(
+  catS(18, 12, .86, { tailVars: '--d:1.6s', head: { eyes: 'none', earCls: '', cls: 'a-tilt', vars: '--d:2.2s', acc: look(-6, -5) + MO.whistle } }) +
+  `<path d="M44 186 C52 178 74 180 82 188 C70 194 52 194 44 186 Z" fill="${I}"/>` + P('M10 170 L44 166 L46 190 L12 192 Z') + `<ellipse cx="45" cy="178" rx="5" ry="12" fill="${I}" stroke="${I}" stroke-width="3"/>` + stroke('M20 166 C20 156 34 154 36 166', 4) + `<circle cx="90" cy="184" r="3" fill="${I}"/><circle cx="98" cy="190" r="2" fill="${I}"/>`,
+  notes(150, 60)));
+
+/* — 2. Answer feedback & reactions — */
+add2('feed', 'Purrfect!', 'Correct answer', () => wrapSvg(
+  sit({ tail: ['M0 0', 0, 0], tailCls: '', head: { eyes: 'happy', mouth: 'w' },
+    behind: `<path d="M146 166 L166 184 L196 126" stroke="${I}" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" ${A('a-draw', 146, 166, '--len:100;--d:2.2s')}/>` }),
+  sp(178, 100, .8, .6) + say(101, 30, 'purrfect!', 13)));
+
+add2('feed', 'Paw five!', 'Correct streak · nice one', () => wrapSvg(
+  sit({ head: { eyes: 'happy', mouth: 'open' }, front: stroke('M128 152 C142 144 152 134 158 124', 15) + G('a-pulse', 162, 110, beans(162, 110, 1.05), '--d:1.1s') }),
+  G('a-flash', 162, 110, fxs('M190 82 l8 -8 M196 106 l8 0 M190 134 l8 8 M140 78 l-6 -8', 3), '--d:1.1s')));
+
+add2('feed', 'Tiny applause', 'Correct answer · well done', () => wrapSvg(
+  sit({ head: { eyes: 'happy', mouth: 'open', cls: 'a-bob', vars: '--d:.64s' },
+    front: arm(62, 150, 68, 162, 92, 150, { out: true, toes: true, cls: 'a-push', ox: 62, oy: 150, vars: '--px:5px;--d:.32s' }) + arm(140, 150, 134, 162, 110, 150, { out: true, toes: true, cls: 'a-push', ox: 140, oy: 150, vars: '--px:-5px;--d:.32s' }) }),
+  G('a-flash', 101, 138, fxs('M101 124 l0 -8', 2.6), '--d:.32s') + sp(36, 70, .6, 0) + sp(168, 60, .7, .3) + say(101, 28, 'clap clap', 12)));
+
+add2('feed', 'Victory dance', 'Correct answer · 3 in a row', () => wrapSvg(
+  G('a-dance', 101, 190, sit({ noPawL: true, bodyCls: '', tailCls: 'a-lash', tailVars: '--d:.4s', head: { eyes: 'happy', mouth: 'open' }, front: UPL('a-wave', '--d:.8s') + UPR('a-wave', '--d:.8s;--dl:.4s') })),
+  notes(160, 50) + notes(20, 70)));
+
+add2('feed', 'Shiny whiskers', 'Correct answer (sparkly)', () => {
+  const w = 'M-53 17 C-61 14 -68 13 -76 14 M-53 24 C-60 24 -67 26 -74 29 M54 17 C62 14 69 13 77 14 M54 24 C61 24 68 26 75 29';
+  return wrapSvg(sit({ bodyCls: 'a-puff', head: { eyes: 'closed', mouth: 'w', noWhisk: true, earCls: '', acc: stroke(w, 6) + G('a-glowp', 0, 20, stroke(w, 2.4, W), '--d:1s') } }),
+    sp(20, 100, .7, 0) + sp(184, 100, .7, .3) + sp(24, 126, .5, .6, SOFT) + sp(182, 126, .5, .9, SOFT) + sp(101, 20, .9, .2));
+});
+
+add2('feed', 'Smart move', 'Clever answer · used a hint well', () => wrapSvg(
+  sit({ head: { eyes: 'wink', mouth: 'smile' }, front: arm(132, 150, 172, 120, 154, 78, { out: true, cls: 'a-tapA', ox: 132, oy: 150, vars: '--d:.6s' }) }),
+  sp(176, 54, .8, 0) + sp(168, 32, .5, .4, SOFT)));
+
+add2('feed', 'Nailed it', 'Correct answer · stamp of approval', () => wrapSvg(
+  catL({ head: { eyes: 'happy', mouth: 'open' } }) +
+  `<path d="M108 168 L192 160 L194 192 L110 194 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>` +
+  G('a-imprint', 150, 180, check(152, 180, 1.4, I, 5.5)) + G('a-slam', 150, 160, stampTool(150, 164)),
+  say(150, 32, 'nailed it!', 15)));
+
+add2('feed', 'Brilliant!', 'Great answer · idea', () => wrapSvg(
+  catS(12, 34, .88, { head: { eyes: 'star', mouth: 'open', earCls: '' } }) + G('a-pop', 101, 24, bulb(101, 22, .85), '--d:1.4s'),
+  rays(101, 20, 26, 10, 0, 9)));
+
+add2('feed', 'Triple correct', '3 correct in a row', () => wrapSvg(
+  catS(12, 36, .88, { noPawL: true, head: { eyes: 'up', mouth: 'w' }, front: UPL('a-tapA', '--d:.4s') + UPR('a-tapB', '--d:.4s') }) +
+  [[50, 42, 0], [101, 28, -.27], [152, 42, -.54]].map(([x, y, dl]) => G('a-toss', x, y, checkBadge(x, y, .85), `--d:.8s;--dl:${dl}s;--py:-18px`)).join(''), ''));
+
+add2('feed', 'Combo spin', 'Combo streak (5, 10, 20…)', () => wrapSvg(
+  G('a-combo', 101, 120, sit({ noPawL: true, tailCls: 'a-lash', tailVars: '--d:.3s', head: { eyes: 'happy', mouth: 'open' }, front: UPL() })),
+  ['×3', '×5', '×10'].map((s, i) => G('a-third', 176, 56, txt(176, 64, s, 22, 'currentColor'), `--d:3s;--dl:${[0, -2, -1][i]}s`)).join('') + speed(6, 120, 3)));
+
+add2('feed', 'Almost there', 'Close answer · one letter off', () => wrapSvg(
+  sit({ head: { eyes: 'none', mouth: 'smile', earCls: '', acc: blinkG(-20, 7, ringC(-20, 7) + dotC(-20, 9)) + stroke('M9 9 Q20 0 31 9', 3.6, W) },
+    front: arm(58, 148, 64, 164, 88, 154, { out: true, cls: 'a-push', ox: 58, oy: 148, vars: '--px:-2px;--d:1s' }) + arm(144, 148, 138, 164, 114, 154, { out: true, cls: 'a-push', ox: 144, oy: 148, vars: '--px:2px;--d:1s' }) +
+      `<path d="M74 170 L86 177 L74 184 Z M128 170 L116 177 L128 184 Z" fill="${W}"/>` }),
+  say(101, 28, 'sooo close', 12)));
+
+add2('feed', 'Try again', 'Wrong answer · retry button', () => wrapSvg(
+  catL({ head: { eyes: 'dot', mouth: 'smile', cls: 'a-tilt' } }) +
+  G('a-jab', 150, 150, arm(96, 152, 110, 140, 122, 146, { w: 12 }) + card(152, 148, 52, 64, '', 18, 6) + replay(152, 150, 11, 3.6) + pawO(128, 148, 10, 9), '--px:10px;--py:4px;--d:1.8s'), ''));
+
+add2('feed', 'Oopsie', 'Wrong answer (light)', () => wrapSvg(
+  sit({ head: { eyes: 'dot', mouth: 'o', earCls: 'a-droopL', earCls2: 'a-droopR', acc: sweat(44, -12) } }),
+  say(178, 60, 'oops!', 15)));
+
+add2('feed', 'Not quite', 'Wrong answer · encouraging', () => wrapSvg(
+  sit({ noPawL: true, head: { eyes: 'happy', mouth: 'smile', cls: 'a-tilt', vars: '--d:2.4s' }, front: G('a-rock', 54, 140, stroke('M70 152 C58 140 52 130 50 118', 14) + E(50, 110, 11, 10), '--d:.8s') }),
+  say(174, 62, 'almost!', 13) + sp(172, 70, .5, .4, SOFT)));
+
+add2('feed', 'Second chance', 'Retry a question', () => wrapSvg(
+  catL({ head: { eyes: 'dot', mouth: 'w' }, front: arm(132, 152, 150, 162, 176, 176, { w: 12 }) }) +
+  G('a-rollacross', 128, 172, replayBtn(128, 172, 16)), say(160, 60, 'one more go', 13)));
+
+add2('feed', 'Helpful hint', 'Hint button · stuck on a question', () => wrapSvg(
+  G('a-climb', 126, 160, bulb(126, 160, .9), '--px:38px;--py:-94px;--d:3.4s') +
+  sit({ head: { eyes: 'up', mouth: 'w', cls: 'a-tilt' } }),
+  G('a-imprint', 164, 66, rays(164, 66, 26, 8, 0, 8), '--d:3.4s') + say(28, 54, 'psst!', 14)));
+
+add2('feed', 'Mistake eraser', 'Clear answer · undo', () => wrapSvg(
+  catL({ tail: ['M0 0', 0, 0], tailCls: '', head: { eyes: 'focus', mouth: 'flat', earCls: '' } }) +
+  R(112, 124, 82, 44, 6) + G('a-fadeOut', 153, 146, txt(153, 154, 'teh', 22), '--d:2.8s') +
+  G('a-erase', 104, 176, stroke('M96 178 C120 186 146 182 150 160', 9) + `<rect x="140" y="146" width="22" height="14" rx="3" fill="${W}" stroke="${I}" stroke-width="3" transform="rotate(-20 151 153)"/>`, '--d:.7s'),
+  say(64, 30, 'swish', 14)));
+
+add2('feed', 'You fixed it!', 'Correct after a retry', () => wrapSvg(
+  catL({ noPawL: true, bodyCls: 'a-hop', bodyVars: '--d:.8s', head: { eyes: 'happy', mouth: 'open' }, front: UPL('a-wave', '--d:.8s') }) +
+  R(122, 118, 64, 64, 10) + G('a-fadeA', 154, 150, stroke('M142 138 L166 162 M166 138 L142 162', 6), '--d:3s') + G('a-fadeB', 154, 150, check(154, 152, 1.6, I, 6), '--d:3s'),
+  G('a-fadeB', 154, 100, sp(130, 104, .7) + sp(182, 100, .6, .3), '--d:3s')));
+
+add2('feed', 'Close call', 'Answered just in time', () => wrapSvg(
+  sit({ head: { eyes: 'closed', earCls: '', acc: stroke('M-6 27 Q0 32 6 27', 2.4, W) + sweat(-40, -10) },
+    front: G('a-wipe', 150, 70, arm(132, 150, 170, 110, 148, 66, { out: true }), '--d:2.4s') }),
+  [0, 1].map(i => `<path d="M${124 + i * 20} 46 c-3 5 -4 8 -1 10 c2 2 5 0 4 -3 c0 -2 -2 -4 -3 -7 z" fill="currentColor" ${A('a-drop', 130, 50, `--dx:${14 + i * 8}px;--dl:${i * .4}s`)}/>`).join('') + say(28, 56, 'phew!', 14)));
+
+add2('feed', 'Comeback king', 'Recovered after mistakes', () => wrapSvg(
+  sit({ bodyCls: 'a-puff', head: { eyes: 'happy', mouth: 'w', earCls: '', acc: G('a-landOn', 0, -44, crown(0, -40, .8)) } }),
+  sp(36, 30, .8, 1) + sp(166, 26, .7, 1.3)));
+
+/* — 3a. Reading — */
+add2('read', 'Speed reader', 'Reading practice · fast mode', () => wrapSvg(sit({
+  head: { eyes: 'none', earCls: '', droop: 14, acc: [-20, 20].map(x => ringC(x, 7) + G('a-read', x, 7, dotC(x, 12, 3.8), '--d:.3s')).join('') },
+  front: book(100, 150, 1) + G('a-flip', 100, 158, P('M100 142 L138 135 L138 172 L100 180 Z', 2.5), '--d:.5s') + paw(56, 152) + paw(144, 152) }),
+  speed(156, 70, 3)));
+
+add2('read', 'Page hunter', 'Next page · swipe to continue', () => wrapSvg(
+  catS(-18, 30, .84, { head: { eyes: 'up', mouth: 'open', earCls: '' }, front: arm(132, 150, 166, 120, 170, 84, { cls: 'a-reach', ox: 132, oy: 150 }) }) +
+  G('a-chase', 150, 46, G('a-flap', 150, 46, `<path d="M128 30 L166 26 L172 62 L134 66 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>` + stroke('M136 38 L162 35 M137 46 L163 43 M138 54 L156 52', 2), '--d:.6s')), ''));
+
+add2('read', 'Reading glasses', 'Reading level · study mode', () => wrapSvg(sit({
+  head: { eyes: 'dot', mouth: 'w', earCls: '', acc: G('a-landOn', 0, 7, BIGGLASSES, '--d:3.2s;--py:-34px') },
+  front: cbook(100, 162, .9, -4, 'ABC') + paw(70, 168) + paw(132, 166) }), ''));
+
+add2('read', 'Highlight hero', 'Key words · notes', () => wrapSvg(
+  catL({ head: { eyes: 'read', earCls: '' } }) +
+  R(110, 116, 84, 72, 5) + stroke('M120 132 L184 132 M120 174 L176 174', 3) +
+  txt(151, 159, 'WORD', 15) + G('a-growX', 118, 153, `<rect x="118" y="144" width="66" height="19" rx="3" fill="${I}"/>`, '--d:3s') + txt(151, 159, 'WORD', 15, W) +
+  G('a-climb', 118, 150, at(118, 150, 1, R(-6, -40, 12, 30, 3, 3) + R(-6, -10, 12, 10, 1, 3, I) + E(0, -32, 10, 9), -25), '--px:66px;--py:0px;--d:3s'), ''));
+
+add2('read', 'Lost in a book', 'Long reading session', () => wrapSvg(
+  G('a-wiggle', 100, 150, G('a-kickA', 88, 90, stroke('M88 92 L74 54', 11) + paw(73, 50, 8, 7), '--d:.35s') + G('a-kickB', 112, 90, stroke('M112 92 L126 54', 11) + paw(127, 50, 8, 7), '--d:.35s') +
+    G('a-wag', 104, 84, stroke('M104 86 C120 72 116 48 132 38', 9), '--d:.5s') + `<path d="M76 152 C70 122 78 88 100 86 C122 88 130 122 124 152 Z" fill="${I}"/>`, '--d:.6s') +
+  P('M20 140 L100 156 L180 140 L180 186 L100 198 L20 186 Z') + stroke('M100 156 L100 198', 3) + stroke('M34 154 L86 164 M34 164 L86 174 M114 164 L166 154 M114 174 L166 164', 2),
+  [['A', 46, 0], ['b', 156, .8], ['?', 130, 1.6]].map(([c, x, dl]) => G('a-float', x, 128, txt(x, 128, c, 16, 'currentColor'), `--dl:${dl}s;--d:2.4s`)).join('')));
+
+add2('read', 'Story portal', 'Start a story · new reading', () => wrapSvg(
+  G('a-emerge', 101, 170, catS(10, 22, .9, { noPawL: true, head: { eyes: 'big', mouth: 'open' }, front: UPL() }), '--py:70px;--d:3.6s') +
+  P('M10 150 L100 168 L190 150 L190 192 L100 198 L10 192 Z') + stroke('M100 168 L100 198', 3) + stroke('M22 164 L84 176 M116 176 L178 164', 2),
+  rays(100, 120, 76, 12, 0, 12) + sp(26, 60, .8, .3) + sp(178, 70, .7, .9)));
+
+add2('read', 'Reading complete', 'Story finished', () => wrapSvg(sit({
+  head: { eyes: 'happy', mouth: 'w', earCls: '' },
+  front: `<path d="M52 150 L148 150 L156 184 L44 184 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/><path d="M52 150 L148 150 L150 158 L50 158 Z" fill="${I}"/>` + txt(100, 177, 'THE END', 13) +
+    G('a-tapA', 122, 146, paw(124, 146, 11, 8), '--d:.8s') + paw(68, 160) }), sp(36, 70, .8) + sp(168, 60, .6, .5)));
+
+add2('read', 'Plot twist!', 'Story surprise · unexpected answer', () => wrapSvg(sit({
+  bodyCls: 'a-jolt', head: { eyes: 'big', mouth: 'big', earCls: '', droop: -8 },
+  front: book(100, 152, .9) + paw(60, 154) + paw(140, 154) }), say(166, 36, '!?', 30), { filter: 'fuzz' }));
+
+/* — 3b. Listening — */
+add2('listen', 'Ear twitch', 'Audio playing', () => wrapSvg(
+  catL({ head: { eyes: 'none', mouth: 'o', earCls: 'a-lean', earCls2: 'a-lean', vars: '--r:20deg;--px:0px', acc: look(5, 0) } }) + speaker(164, 100, 1.1),
+  arcs(178, 100, 3, 1)));
+
+add2('listen', 'Sound detective', 'Find the word you hear', () => wrapSvg(
+  catL({ head: { eyes: 'ringL', earCls: '' }, front: G('a-sway', 150, 100, stroke('M126 150 C134 140 138 130 140 122', 12) + magnifier(166, 94, .8, 90), '--d:2.2s;--sx:-6px;--ex:10px') }),
+  G('a-slideX', 150, 54, fxs('M120 54 q5 -10 10 0 t10 0 t10 0 t10 0 t10 0', 3), '--sx:-30px;--ex:40px;--d:2.2s')));
+
+add2('listen', 'Repeat please', 'Replay audio', () => wrapSvg(
+  catL({ tail: ['M0 0', 0, 0], tailCls: '', head: { eyes: 'none', mouth: 'o', earCls: '', acc: look(5, -2) } }) +
+  G('a-tapTail', 100, 178, stroke('M96 180 C126 188 144 176 140 152 C138 140 142 134 148 132', 9), '--d:1.4s') + replayBtn(166, 118, 22),
+  G('a-flash', 166, 118, fxs('M190 94 l8 -8 M196 118 l8 0', 3), '--d:1.4s')));
+
+add2('listen', 'Audio radar', 'Listening test · scanning', () => wrapSvg(
+  sit({ head: { eyes: 'focus', earCls: 'a-radar', earCls2: 'a-radar' } }),
+  [0, .5, 1].map(dl => G('a-fw', 101, 30, fxs('M66 26 Q101 -2 136 26', 3), `--dl:${dl}s;--d:1.5s`)).join('')));
+
+add2('listen', 'Sound catcher', 'Catch the right sound', () => wrapSvg(
+  sit({ noPawL: true, head: { eyes: 'up', mouth: 'open' }, front: arm(70, 152, 34, 96, 80, 26, { cls: 'a-swat', ox: 70, oy: 152, vars: '--d:1.1s' }) + arm(132, 152, 168, 96, 122, 26, { cls: 'a-swat', ox: 132, oy: 152, vars: '--d:1.1s' }) }),
+  [0, 1, 2].map(i => G('a-into', 101, 34, note(101, 34), `--dx:${50 + i * 14}px;--dy:${20 - i * 10}px;--dl:${i * .5}s;--d:1.6s`)).join('')));
+
+add2('listen', 'Listening carefully', 'Hard audio · focus', () => wrapSvg(
+  G('a-lean', 101, 190, sit({ bodyCls: '', head: { eyes: 'none', earCls: '', mouth: 'flat', acc: slitEye(-20, 7, '') + slitEye(20, 7, '') }, front: arm(132, 150, 178, 110, 156, 66, { out: true }) }), '--r:7deg;--px:6px'),
+  arcs(186, 70, 3, -1)));
+
+add2('listen', 'Slow it down', '0.5× audio speed', () => wrapSvg(
+  catL({ head: { eyes: 'focus', mouth: 'w', earCls: '' } }) +
+  G('a-spin', 156, 152, C(156, 152, 32, 4, I) + `<circle cx="156" cy="152" r="22" fill="none" stroke="${W}" stroke-width="1.6"/><circle cx="156" cy="152" r="14" fill="none" stroke="${W}" stroke-width="1.6"/>` + C(156, 152, 8, 2.5) + stroke('M156 124 L156 132', 3, W), '--d:3s;--e:cubic-bezier(.1,.75,.3,1)') +
+  stroke('M100 150 C112 140 124 132 132 130', 12) + pawO(136, 128, 10, 9),
+  say(162, 98, '0.5×', 18)));
+
+add2('listen', 'Heard that!', 'Recognised a word', () => wrapSvg(
+  sit({ bodyCls: 'a-jolt', bodyVars: '--d:2.6s', head: { eyes: 'big', mouth: 'o', earCls: 'a-snapUp', earCls2: 'a-snapR', vars: '--r:-28deg' } }),
+  bang(162, 18) + G('a-imprint', 40, 50, speech(40, 46, 56, 32, 'cat!', 16, 1), '--d:2.6s')));
+
+/* — 3c. Speaking — */
+add2('speak', 'Mic ready', 'Speaking exercise intro', () => wrapSvg(sit({
+  head: { eyes: 'dot', mouth: 'smile', earCls: '' },
+  front: G('a-rise', 132, 140, arm(132, 156, 152, 150, 142, 134, { w: 12 }) + mic(140, 118, .9, -18), '--d:2.8s;--py:30px') }),
+  notes(162, 60)));
+
+add2('speak', 'Your turn!', 'Speak now · record button', () => wrapSvg(sit({
+  head: { eyes: 'wink', mouth: 'open' },
+  front: stroke('M126 152 C134 150 140 148 146 146', 13) + G('a-pulse', 152, 140, C(152, 134, 20, 4) + stroke('M138 126 L166 126 M136 134 L168 134 M138 142 L166 142', 1.8) + E(152, 158, 9, 8), '--d:1.2s') }),
+  say(101, 26, 'your turn!', 12) + arcs(178, 134, 2, 1)));
+
+add2('speak', 'Voice waves', 'Speaking · voice detected', () => wrapSvg(
+  sit({ head: { eyes: 'closed', earCls: '', acc: G('a-fadeA', 0, 30, mouth('o'), '--d:.5s') + G('a-fadeB', 0, 30, mouth('open'), '--d:.5s') } }),
+  [0, .4, .8].map(dl => G('a-fw', 101, 118, fxs('M58 100 Q46 118 58 136 M144 100 Q156 118 144 136', 3), `--dl:${dl}s;--d:1.2s`)).join('')));
+
+add2('speak', 'Pronunciation coach', 'Mouth-shape tips', () => wrapSvg(
+  catL({ head: { eyes: 'glasses', earCls: '', acc: ['o', 'open', 'smile'].map((m, i) => G('a-third', 0, 30, mouth(m), `--d:2.4s;--dl:${[0, -1.6, -.8][i]}s`)).join('') } }) +
+  speech(152, 54, 70, 50, '', 18, -1) + ['/o/', '/a/', '/i/'].map((t, i) => G('a-third', 152, 58, txt(152, 61, t, 20), `--d:2.4s;--dl:${[0, -1.6, -.8][i]}s`)).join(''), ''));
+
+add2('speak', 'Loud and clear', 'Pronunciation passed', () => wrapSvg(
+  sit({ noPawL: true, head: { eyes: 'wink', mouth: 'w' }, front: G('a-pop', 50, 112, stroke('M70 152 C58 140 52 128 50 116', 14) + thumb(50, 108), '--d:1.6s') }),
+  checkBadge(166, 48, 1) + arcs(152, 112, 2, 1)));
+
+add2('speak', 'Tongue twister', 'Hard pronunciation', () => wrapSvg(
+  sit({ bodyCls: 'a-rock', bodyVars: '--d:1.4s', head: { eyes: 'spiral', earCls: '', acc: MO.wobble }, front: stroke('M52 150 C80 136 120 170 150 146 M56 172 C90 160 110 186 146 170', 3.5, W) }),
+  G('a-spin', 101, 100, ['S', 'H', 'E', 'L', 'L', 'S'].map((c, i) => { const a = i / 6 * Math.PI * 2; return txt(n1(101 + Math.cos(a) * 84), n1(106 + Math.sin(a) * 84), c, 18, 'currentColor'); }).join(''), '--d:6s')));
+
+add2('speak', 'Say it again', 'Re-record answer', () => wrapSvg(
+  catL({ head: { eyes: 'none', mouth: 'open', earCls: '', acc: look(6, 2) } }) +
+  stroke('M152 190 L152 150', 5) + stroke('M132 190 L172 190', 6) + G('a-spin', 152, 112, replay(152, 112, 30, 3.6), '--d:2.4s') + mic(152, 120, 1.1, 0), ''));
+
+add2('speak', 'Conversation partner', 'Dialogue practice', () => wrapSvg(
+  catL({ head: { eyes: 'dot', earCls: '', acc: G('a-fadeA', 0, 30, mouth('open'), '--d:3s') + G('a-fadeB', 0, 30, mouth('w'), '--d:3s') },
+    front: G('a-fadeB', 156, 70, arm(132, 150, 178, 110, 156, 66, { out: true }), '--d:3s') }) +
+  G('a-fadeA', 154, 50, speech(154, 50, 70, 42, 'Hola!', 18, -1), '--d:3s') + G('a-fadeB', 158, 50, speech(158, 50, 56, 42, '…', 22, -1), '--d:3s'),
+  G('a-fadeB', 124, 76, arcs(124, 76, 2, -1), '--d:3s')));
+
+/* — 3d. Writing & spelling — */
+add2('write', 'Typo catcher', 'Spelling mistake found', () => wrapSvg(
+  sit({ noPawL: true, head: { eyes: 'up', mouth: 'o', earCls: '' },
+    front: G('a-fall', 101, 28, block(101, 26, 'q', 30, 20), '--fy:-60px;--d:2.4s') + arm(70, 152, 30, 96, 76, 30, { out: true }) + arm(132, 152, 172, 96, 126, 30, { out: true }) }),
+  say(178, 74, 'gotcha', 12, 1)));
+
+add2('write', 'Letter builder', 'Build the word', () => wrapSvg(
+  catL({ head: { eyes: 'up', mouth: 'w', earCls: '' } }) +
+  [['T', 174, 0], ['A', 140, .5], ['C', 106, 1]].map(([c, y, dl]) => G('a-fall', 156, y, block(156, y, c, 32, 20), `--fy:-60px;--d:3.6s;--dl:${dl}s`)).join(''), ''));
+
+add2('write', 'Spelling bee', 'Spelling challenge', () => wrapSvg(
+  G('a-flap', 66, 142, P('M66 142 C36 120 22 140 38 158 C48 168 62 158 66 148 Z', 3), '--d:.2s') + G('a-flap', 136, 142, P('M136 142 C166 120 180 140 164 158 C154 168 140 158 136 148 Z', 3), '--d:.2s;--dl:.1s') +
+  sit({ bodyCls: 'a-hover', head: { eyes: 'ring', mouth: 'w', earCls: '', acc: ANTENNAE }, front: stroke('M56 158 Q101 172 148 158 M50 178 Q101 192 154 178', 7, W) }),
+  ['B', 'E', 'E'].map((c, i) => G('a-float', 160, 80, txt(160 + i * 8, 80, c, 16, 'currentColor'), `--dl:${i * .7}s;--d:2.1s`)).join('')));
+
+add2('write', 'Keyboard ninja', 'Typing exercise · speed', () => wrapSvg(
+  `<path d="M46 152 C48 128 70 116 100 116 C130 116 152 128 154 152 Z" fill="${I}"/>` + at(100, 90, .82, head({ eyes: 'angry', mouth: 'flat', earCls: '', acc: HEADBAND() })) +
+  `<path d="M22 150 L178 150 L192 184 C193 188 190 190 186 190 L14 190 C10 190 7 188 8 184 Z" fill="${W}" stroke="${I}" stroke-width="4" stroke-linejoin="round"/>` +
+  [0, 1, 2].map(r => Array.from({ length: 7 - r % 2 }, (_, k) => `<rect x="${30 + r * 6 + k * 20}" y="${158 + r * 10}" width="14" height="7" rx="2" fill="${I}"/>`).join('')).join('') +
+  G('a-tapA', 74, 152, paw(74, 152, 12, 9), '--d:.16s') + G('a-tapB', 126, 152, paw(126, 152, 12, 9), '--d:.16s'),
+  speed(172, 66, 3) + say(36, 36, 'tak tak', 13)));
+
+add2('write', 'Ink trouble', 'Messy writing · oops', () => wrapSvg(sit({
+  head: { eyes: 'x', mouth: 'o', earCls: '', droop: 10, acc: `<path d="M-8 14 C-14 10 -10 2 -4 6 C-2 0 6 0 6 6 C12 4 14 12 8 14 C12 18 6 24 2 20 C-2 26 -10 22 -8 18 Z" fill="${W}"/>` + G('a-drip', 0, 22, E(1, 24, 2.6, 3.4, W), '--d:1.6s') },
+  front: `<path d="M126 190 C146 180 186 182 196 190 Z" fill="${I}"/><g transform="rotate(70 156 172)">${R(140, 152, 30, 34, 6)}${R(148, 144, 14, 10, 2, 3, I)}</g>` }),
+  [0, 1, 2].map(i => `<circle cx="${50 + i * 50}" cy="${36 + (i % 2) * 14}" r="${3 + i}" fill="currentColor" ${A('a-twinkle', 50 + i * 50, 36, `--dl:${i * .3}s`)}/>`).join('')));
+
+add2('write', 'Sentence architect', 'Word-order exercise', () => wrapSvg(
+  catS(-20, 6, .8, { head: { eyes: 'up', mouth: 'w', earCls: '', acc: at(44, -40, 1, R(-4, -26, 8, 28, 1, 2.6) + P('M-4 2 L0 10 L4 2 Z', 2.6), 30) } }) +
+  stroke('M12 192 L190 192', 3) +
+  [['I', 28, 0, 40, -60], ['love', 80, .4, 20, -80], ['cats', 146, .8, -30, -90]].map(([w, x, dl, dx, dy]) => G('a-settle', x, 176, chip(x, 176, w, 15), `--dx:${dx}px;--dy:${dy}px;--dl:${dl}s;--d:3.6s`)).join(''), ''));
+
+add2('write', 'Grammar editor', 'Punctuation · grammar fix', () => wrapSvg(
+  catL({ head: { eyes: 'glasses', mouth: 'flat', earCls: '' } }) +
+  R(108, 112, 86, 54, 5) + txt(150, 145, 'Hi there', 13) + G('a-pop', 135, 150, txt(134, 150, ',', 22) + stroke('M130 162 L134 156 L138 162', 2.4), '--d:1.6s') +
+  G('a-tapA', 184, 160, pencil(186, 164, .8, 30), '--d:.8s'), ''));
+
+add2('write', 'Signed!', 'Writing task submitted', () => wrapSvg(
+  catL({ head: { eyes: 'happy', mouth: 'w', earCls: '' } }) +
+  `<path d="M112 70 L188 64 L194 186 L118 192 Z" fill="${W}" stroke="${I}" stroke-width="3.5" stroke-linejoin="round"/>` + stroke('M124 88 L178 84 M125 102 L180 98 M126 116 L176 112 M127 130 L170 126', 2.4) +
+  G('a-stamp', 160, 162, pawPrint(160, 162, 1.3, I)), sp(182, 44, .7, .5)));

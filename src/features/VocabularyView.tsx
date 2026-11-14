@@ -1,32 +1,27 @@
-import React from 'react';
-import { GraduationCap, BookOpen, Search, Volume2, X, ChevronRight, ArrowLeft, Type, Plus, Brain, Trash2, AlertCircle, Languages } from 'lucide-react';
-import { LANGUAGES } from '../lib/constants';
+import { useEffect, useMemo, useState } from 'react';
+import { AlertCircle, Brain, Plus, Search, Star, Trash2, Volume2, X } from 'lucide-react';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
-import { vocabStorageKey } from '../lib/contentLang';
-import { ScreenShell } from '../components/ScreenShell';
+import { vocabStorageKey, CONTENT_LANG_LABEL } from '../lib/contentLang';
+import { readPreferredTranslationCode } from '../lib/preferredTranslationLang';
+import { getCard, loadVocab, lookupAllSenses, vocabDbEnabled } from '../lib/vocabDb';
+import { ScreenShell, seCard, seChipOff, seChipOn } from '../components/ScreenShell';
+import { EmptyState } from '../components/feedback/EmptyState';
+import type { UiStringKey } from '../lib/uiStrings';
+
+type Entry = { definition: string; timestamp: number; favorite?: boolean; srs?: any; senseId?: string; displayWord?: string; pos?: string; translation?: string };
 
 interface VocabularyViewProps {
-  savedVocab: Record<string, { definition: string; timestamp: number; favorite?: boolean; srs?: any }>;
+  savedVocab: Record<string, Entry>;
   setSavedVocab: (fn: (prev: any) => any) => void;
-  vocabFilter: 'all' | 'favorites';
-  setVocabFilter: (f: 'all' | 'favorites') => void;
-  myVocabPage: number;
-  setMyVocabPage: (fn: (p: number) => number) => void;
-  myVocabSearchQuery: string;
-  setMyVocabSearchQuery: (q: string) => void;
-  targetLangs: string[];
-  setTargetLangs: (fn: (prev: string[]) => string[]) => void;
-  translations: Record<string, string>;
-  setTranslations: (fn: (prev: Record<string, string>) => Record<string, string>) => void;
-  translateText: (id: string, text: string) => void;
-  isTranslating: Record<string, boolean>;
   playWord: (word: string) => void;
   srsDueWords: string[];
   setSelectedVocabWords: (words: string[]) => void;
   setShowExerciseWordSelector: (v: any) => void;
   setActiveExercise: (ex: string | null) => void;
   setActiveTab: (tab: string) => void;
+  /** Opens Practice → Review your words. */
+  onReview: () => void;
   newVocabWord: string;
   setNewVocabWord: (w: string) => void;
   isAddingVocab: boolean;
@@ -35,368 +30,186 @@ interface VocabularyViewProps {
   onShowModal?: (word: string, mode: 'dictionary' | 'translation') => void;
 }
 
+type Tab = 'all' | 'important' | 'noun' | 'verb' | 'adjective' | 'phrase' | 'other';
+const TABS: Tab[] = ['all', 'important', 'noun', 'verb', 'adjective', 'phrase', 'other'];
+const PAGE = 40;
+
+/** Machine translations sometimes end in a stray " ." or quote marks. */
+const tidy = (s: string) => s.trim().replace(/^["'«“]+|["'»”]+$/g, '').replace(/s*[.。]$/, '').trim();
+
+/** Word type: saved with the word, else from the vocabulary database, else from "(noun) …" in the definition. */
+function kindOf(word: string, e: Entry, dbPos?: string): Exclude<Tab, 'all' | 'important'> {
+  if (/\s/.test(word.trim())) return 'phrase';
+  const pos = (e.pos || dbPos || e.definition?.match(/^\((\w[\w ]*)\)/)?.[1] || '').toLowerCase();
+  if (pos.startsWith('noun')) return 'noun';
+  if (pos.includes('phrasal')) return 'phrase';
+  if (pos.startsWith('verb')) return 'verb';
+  if (pos.startsWith('adj')) return 'adjective';
+  return 'other';
+}
+
+/**
+ * My vocabulary: every saved word or phrase with its translation into your
+ * own language, sorted into tabs by word type. Add new words from the bar at
+ * the top; tap a word for the full dictionary card.
+ */
 export default function VocabularyView({
-  savedVocab,
-  setSavedVocab,
-  vocabFilter,
-  setVocabFilter,
-  myVocabPage,
-  setMyVocabPage,
-  myVocabSearchQuery,
-  setMyVocabSearchQuery,
-  targetLangs,
-  setTargetLangs,
-  translations,
-  setTranslations,
-  translateText,
-  isTranslating,
-  playWord,
-  srsDueWords,
-  setSelectedVocabWords,
-  setShowExerciseWordSelector,
-  setActiveExercise,
-  setActiveTab,
-  newVocabWord,
-  setNewVocabWord,
-  isAddingVocab,
-  addVocabError,
-  handleAddNewVocab,
-  onShowModal,
+  savedVocab, setSavedVocab, playWord, srsDueWords, setSelectedVocabWords, setShowExerciseWordSelector,
+  setActiveExercise, setActiveTab, onReview, newVocabWord, setNewVocabWord, isAddingVocab, addVocabError, handleAddNewVocab, onShowModal,
 }: VocabularyViewProps) {
   const { contentLang } = useContentLang();
   const { t } = useUiLang();
-  const persistLocal = (next: any) => {
-    try { localStorage.setItem(vocabStorageKey(contentLang), JSON.stringify(next)); } catch { /* ignore */ }
-  };
+  const known = useMemo(() => readPreferredTranslationCode() || 'en', []);
+  const [tab, setTab] = useState<Tab>('all');
+  const [query, setQuery] = useState('');
+  const [limit, setLimit] = useState(PAGE);
+  const [dbReady, setDbReady] = useState(false);
+  const [extra, setExtra] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    let alive = true;
+    if (vocabDbEnabled()) loadVocab(contentLang, known).then(() => { if (alive) setDbReady(true); }).catch(() => {});
+    return () => { alive = false; };
+  }, [contentLang, known]);
+
+  const persist = (next: any) => { try { localStorage.setItem(vocabStorageKey(contentLang), JSON.stringify(next)); } catch { /* ignore */ } };
+
+  // Word, translation and type for every saved entry.
+  const rows = useMemo(() => Object.entries(savedVocab).map(([key, e]) => {
+    const word = e.displayWord || key;
+    const card = dbReady ? (e.senseId ? getCard(e.senseId, known) : lookupAllSenses(word, { knownLang: known, limit: 1 })[0]) : null;
+    const dbTr = card && card.knownWord && card.knownWord.toLowerCase() !== word.toLowerCase() ? tidy(card.knownWord) : '';
+    return { key, word, entry: e, kind: kindOf(word, e, card?.pos), translation: e.translation || dbTr || extra[key] || '' };
+  }).sort((a, b) => (b.entry.timestamp || 0) - (a.entry.timestamp || 0)), [savedVocab, dbReady, known, extra]);
+
+  // Words the database doesn't know: translate the visible ones once (cached).
+  useEffect(() => {
+    if (!dbReady && vocabDbEnabled()) return;
+    if (known === contentLang) return;
+    const missing = rows.filter((r) => !r.translation).slice(0, 24);
+    if (!missing.length) return;
+    let alive = true;
+    (async () => {
+      const { translateWithCache } = await import('../lib/networkCache');
+      for (const r of missing) {
+        const tr = await translateWithCache(r.word, contentLang, known).catch(() => null);
+        if (!alive) return;
+        setExtra((x) => ({ ...x, [r.key]: tr && tidy(tr) && tidy(tr).toLowerCase() !== r.word.toLowerCase() ? tidy(tr) : '—' }));
+      }
+    })();
+    return () => { alive = false; };
+  }, [rows, dbReady, known, contentLang]);
+
+  const counts = useMemo(() => {
+    const c: Record<Tab, number> = { all: rows.length, important: 0, noun: 0, verb: 0, adjective: 0, phrase: 0, other: 0 };
+    for (const r of rows) { c[r.kind]++; if (r.entry.favorite) c.important++; }
+    return c;
+  }, [rows]);
+  const q = query.trim().toLowerCase();
+  const list = rows.filter((r) => (tab === 'all' || (tab === 'important' ? r.entry.favorite : r.kind === tab))
+    && (!q || r.word.toLowerCase().includes(q) || r.translation.toLowerCase().includes(q)));
+
+  const toggleStar = (key: string) => setSavedVocab((prev: any) => { const next = { ...prev, [key]: { ...prev[key], favorite: !prev[key]?.favorite } }; persist(next); return next; });
+  const remove = (key: string) => setSavedVocab((prev: any) => { const next = { ...prev }; delete next[key]; persist(next); return next; });
+
   return (
-    <ScreenShell title={t('vocab.title')} subtitle={t('vocab.subtitle')}>
-            <div className="flex flex-wrap gap-2 mb-4">
-               <button
-                 onClick={() => {
-                   const csvContent = "data:text/csv;charset=utf-8,Word,Definition\n" + Object.entries(savedVocab as any).map(([w, d]) => `${w},"${((d as any).definition || '').replace(/"/g, '""')}"`).join("\n");
-                   const link = document.createElement("a");
-                   link.setAttribute("href", encodeURI(csvContent));
-                   link.setAttribute("download", "readmaster_vocab.csv");
-                   document.body.appendChild(link);
-                   link.click();
-                   document.body.removeChild(link);
-                 }}
-                 className="px-3.5 py-2 rounded-xl border border-slate-200 font-bold text-[13px] text-slate-600 hover:bg-slate-50 transition-colors"
-               >
-                 Export CSV
-               </button>
-               <label className="px-3.5 py-2 rounded-xl bg-zinc-900 hover:bg-black text-white font-bold text-[13px] transition-colors cursor-pointer">
-                 Import
-                 <input
-                   type="file"
-                   accept=".csv"
-                   className="hidden"
-                   onChange={(e) => {
-                      const file = e.target.files?.[0];
-                      if (!file) return;
-                      const reader = new FileReader();
-                      reader.onload = (evt) => {
-                         const text = (evt.target?.result as string) || '';
-                         const lines = text.split('\n');
-                         const nextVocab = { ...savedVocab };
-                         lines.forEach((line, i) => {
-                            if (i === 0) return;
-                            const parts = line.split(',');
-                            if (parts.length >= 2) {
-                               const word = parts[0].trim().toLowerCase();
-                               let def = parts.slice(1).join(',').trim();
-                               if (def.startsWith('"') && def.endsWith('"')) def = def.substring(1, def.length - 1).replace(/""/g, '"');
-                               if (word) nextVocab[word] = { ...nextVocab[word], definition: def, timestamp: Date.now() };
-                            }
-                         });
-                         setSavedVocab(() => nextVocab);
-                         persistLocal(nextVocab);
-                         alert('Vocabulary imported successfully!');
-                      };
-                      reader.readAsText(file);
-                   }}
-                 />
-               </label>
-            </div>
+    <ScreenShell stickers={['learn.word-nerd', 'vocab.word-collector']} title={t('vocab.title')} subtitle={t('vocab.count', { n: rows.length, lang: CONTENT_LANG_LABEL[contentLang] })}>
+      {/* add a word */}
+      <form onSubmit={(e) => { e.preventDefault(); handleAddNewVocab(); }} className={`${seCard} flex items-center gap-2 p-2`}>
+        <input value={newVocabWord} onChange={(e) => setNewVocabWord(e.target.value)} placeholder={t('vocab.addPlaceholder')} lang={contentLang}
+          autoCapitalize="off" autoCorrect="off" spellCheck={false}
+          className="min-w-0 flex-1 bg-transparent px-3 py-2 text-base font-semibold text-zinc-900 outline-none placeholder:text-slate-400 dark:text-zinc-50" />
+        <button type="submit" disabled={isAddingVocab || !newVocabWord.trim()}
+          className="dark-keep inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-zinc-900 px-4 py-2.5 font-serif text-[13px] font-extrabold uppercase tracking-wide text-white shadow-[0_3px_0_0_#000] transition-[transform,box-shadow] duration-75 active:translate-y-[3px] active:shadow-none disabled:opacity-40 dark:bg-zinc-100 dark:text-zinc-900 dark:shadow-[0_3px_0_0_#a1a1aa]">
+          {isAddingVocab ? <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" /> : <Plus className="h-4 w-4" strokeWidth={3} />}
+          {t('vocab.add')}
+        </button>
+      </form>
+      {addVocabError && (
+        <p className="mt-2 flex items-center gap-1.5 text-sm font-bold text-rose-600"><AlertCircle className="h-4 w-4" />{addVocabError}</p>
+      )}
 
-{srsDueWords.length > 0 && (
-          <section className="mb-4 bg-zinc-100 border border-zinc-200 rounded-xl p-4">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-               <div>
-                  <h2 className="text-xl font-bold text-indigo-900 flex items-center gap-2 mb-2">
-                     <Brain className="w-6 h-6 text-zinc-900" />
-                     Spaced Repetition: Due for Review
-                  </h2>
-                  <p className="text-black">You have {srsDueWords.length} word{srsDueWords.length === 1 ? '' : 's'} ready for review. Practice them now to commit them to long-term memory!</p>
-               </div>
-               <button
-                 onClick={() => {
-                    setSelectedVocabWords(srsDueWords);
-                    setShowExerciseWordSelector(null);
-                    setActiveExercise('flashcards');
-                    setActiveTab('exercises');
-                 }}
-                 className="px-6 py-3 bg-zinc-900 hover:bg-black text-white font-bold rounded-xl shadow-sm hover:shadow-md transition-all shrink-0"
-               >
-                 Review Now
-               </button>
-            </div>
-          </section>
-)}
+      {/* review */}
+      {srsDueWords.length > 0 && (
+        <button type="button" onClick={onReview}
+          className={`${seCard} mt-4 flex w-full items-center gap-3 p-3.5 text-left transition-[transform,box-shadow] duration-75 active:translate-y-[3px] active:shadow-none`}>
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 dark-keep"><Brain className="h-5 w-5" /></span>
+          <span className="min-w-0 flex-1">
+            <span className="block font-serif font-extrabold text-zinc-900 dark:text-zinc-50">{t('vocab.reviewTitle')}</span>
+            <span className="block text-sm font-semibold text-slate-500 dark:text-zinc-400">{t('learning.reviewReady', { n: srsDueWords.length })}</span>
+          </span>
+          <span className="shrink-0 font-serif text-xs font-extrabold uppercase tracking-wide text-zinc-900 dark:text-zinc-50">{t('learning.review.now.5cca4b')}</span>
+        </button>
+      )}
 
-
-
-
-
-
-
-
-
-
-
-        <section>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <div className="flex items-center gap-2">
-                <BookOpen className="w-6 h-6 text-zinc-700" />
-                <h2 className="text-xl sm:text-2xl font-bold text-slate-800">My Vocabulary</h2>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
-               <span className="text-sm font-bold text-slate-500 shrink-0">Translate to:</span>
-              <div className="flex flex-col gap-2 relative z-10 w-full sm:w-auto">
-                <div className="flex flex-wrap gap-1.5 justify-start sm:justify-end">
-                  {targetLangs.map(lang => {
-                     const lobj = LANGUAGES.find(l => l.code === lang);
-                     return (
-                       <div key={lang} className="flex items-center gap-1 px-2.5 py-1 bg-zinc-100 text-black font-bold text-xs rounded-full border border-zinc-200 shadow-sm">
-                         {lobj ? lobj.name : lang}
-                         <button title="Remove" onClick={(e) => {
-                           e.preventDefault();
-                           setTargetLangs(prev => prev.length > 1 ? prev.filter(x => x !== lang) : prev);
-                         }} className="hover:text-rose-600 text-indigo-400 bg-white rounded-full p-0.5 transition-colors"><X className="w-3 h-3" /></button>
-                       </div>
-                     );
-                  })}
-                </div>
-                <select
-                  value=""
-                  onChange={(e) => {
-                     const val = e.target.value;
-                     if (val && !targetLangs.includes(val)) setTargetLangs(prev => [...prev, val]);
-                  }}
-                  className="bg-white border text-sm font-bold text-slate-600 box-border border-slate-200 hover:border-zinc-400 rounded-lg px-2 py-1.5 outline-none focus:border-zinc-700 shadow-sm transition-all cursor-pointer"
-                >
-                  <option value="" disabled>+ Add Language...</option>
-                  {LANGUAGES.map(l => <option key={l.code} value={l.code} disabled={targetLangs.includes(l.code)}>{l.name}</option>)}
-                </select>
-              </div>
-            </div>
-
+      {rows.length === 0 ? (
+        <div className={`${seCard} mt-5 p-6`}>
+          <EmptyState sticker="vocab.word-garden" title={t('empty.vocab.title')} body={t('empty.vocab.body')} className="!py-2" />
+        </div>
+      ) : (
+        <>
+          {/* tabs + search */}
+          <div className="mt-5 -mx-4 flex gap-2 overflow-x-auto px-4 pb-1 lg:mx-0 lg:flex-wrap lg:px-0" role="tablist" aria-label={t('vocab.types')}>
+            {TABS.filter((k) => k === 'all' || k === 'important' || counts[k] > 0).map((k) => (
+              <button key={k} type="button" role="tab" aria-selected={tab === k} onClick={() => { setTab(k); setLimit(PAGE); }}
+                className={`flex shrink-0 items-center gap-1.5 rounded-2xl px-3.5 py-2 font-serif text-xs font-extrabold uppercase tracking-wide transition-[transform,box-shadow] duration-75 active:translate-y-[2px] ${tab === k ? seChipOn : seChipOff}`}>
+                {k === 'important' && <Star className={`h-3.5 w-3.5 ${tab === k ? 'fill-current' : 'fill-amber-400 text-amber-400'}`} />}
+                {t(`vocab.tab.${k}` as UiStringKey)}
+                <span className={`rounded-md px-1.5 text-[10px] ${tab === k ? 'bg-white/20' : 'bg-slate-100 dark:bg-zinc-800'}`}>{counts[k]}</span>
+              </button>
+            ))}
           </div>
+          <label className={`${seCard} mt-3 flex items-center gap-2 px-3 py-2.5 focus-within:border-zinc-900 dark:focus-within:border-zinc-100`}>
+            <Search className="h-4 w-4 shrink-0 text-slate-400" />
+            <input value={query} onChange={(e) => { setQuery(e.target.value); setLimit(PAGE); }} placeholder={t('learning.search.my.vocabulary.58df4d')}
+              className="min-w-0 flex-1 bg-transparent text-sm font-semibold text-zinc-900 outline-none placeholder:text-slate-400 dark:text-zinc-50" />
+            {query && <button type="button" onClick={() => setQuery('')} aria-label={t('history.close')} className="text-slate-400 hover:text-zinc-900"><X className="h-4 w-4" /></button>}
+          </label>
 
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4">
-            {Object.keys(savedVocab).length > 0 && (
-              <div className="flex bg-white items-center border border-slate-200 rounded-xl px-3 py-2 w-full max-w-xs shadow-sm focus-within:border-zinc-700 focus-within:ring-2 focus-within:ring-zinc-300 transition-all">
-                <Search className="w-4 h-4 text-slate-400 mr-2 shrink-0" />
-                <input
-                  type="text"
-                  placeholder="Search my vocabulary..."
-                  className="bg-transparent outline-none w-full text-sm text-slate-700"
-                  value={myVocabSearchQuery}
-                  onChange={(e) => { setMyVocabSearchQuery(e.target.value); setMyVocabPage(() => 1); }}
-                />
-              </div>
-            )}
-            {Object.keys(savedVocab).length > 0 && (() => {
-              const filteredList = Object.entries(savedVocab as any)
-                .filter(([word, data]) => word.includes(myVocabSearchQuery.trim().toLowerCase()) && (vocabFilter === 'all' || (data as any).favorite));
-              const totalPages = Math.ceil(filteredList.length / 6) || 1;
-              return (
-                <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                  <div className="flex bg-slate-100 p-1 rounded-xl">
-                    <button onClick={() => { setVocabFilter('all'); setMyVocabPage(() => 1); }} className={`px-4 py-1.5 rounded-lg text-sm font-bold transition-all ${vocabFilter === 'all' ? 'bg-white text-black shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}>All</button>
-                    <button onClick={() => { setVocabFilter('favorites'); setMyVocabPage(() => 1); }} className={`px-4 py-1.5 rounded-lg text-sm font-bold transition-all ${vocabFilter === 'favorites' ? 'bg-white text-rose-600 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}>Favorites</button>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => setMyVocabPage(p => Math.max(1, p - 1))}
-                      disabled={myVocabPage === 1}
-                      className="p-1 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-zinc-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <ArrowLeft className="w-5 h-5" />
-                    </button>
-                    <span className="text-sm font-bold text-slate-600">
-                      {myVocabPage} / {totalPages}
-                    </span>
-                    <button
-                      onClick={() => setMyVocabPage(p => Math.min(totalPages, p + 1))}
-                      disabled={myVocabPage >= totalPages}
-                      className="p-1 rounded-lg text-slate-400 hover:text-zinc-900 hover:bg-zinc-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
-                  </div>
-                </div>
-              );
-            })()}
-          </div>
-
-          {Object.keys(savedVocab).length === 0 ? (
-            <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm text-center">
-              <div className="w-16 h-16 bg-slate-50 text-slate-300 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="w-8 h-8" />
-              </div>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">No words saved yet</h3>
-              <p className="text-slate-500">Add words from the "Key Vocabulary" list in any reading exercise to build your personal dictionary.</p>
-            </div>
+          {/* words */}
+          {list.length === 0 ? (
+            <EmptyState sticker={tab === 'important' && !q ? 'vocab.word-collector' : 'state2.no-results'}
+              title={tab === 'important' && !q ? t('vocab.noImportantTitle') : t('empty.search.title')}
+              body={tab === 'important' && !q ? t('vocab.noImportantBody') : t('empty.search.body')} compact />
           ) : (
-            <>
-              {Object.entries(savedVocab as any).filter(([word, data]) => word.includes(myVocabSearchQuery.trim().toLowerCase()) && (vocabFilter === 'all' || (data as any).favorite)).length === 0 && (
-                <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm text-center">
-                  <p className="text-slate-500">No matching words found.</p>
-                </div>
-              )}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {Object.entries(savedVocab as any)
-                  .filter(([word, data]) => word.includes(myVocabSearchQuery.trim().toLowerCase()) && (vocabFilter === 'all' || (data as any).favorite))
-                  .sort((a, b) => (b[1] as any).timestamp - (a[1] as any).timestamp)
-                  .slice((myVocabPage - 1) * 6, myVocabPage * 6)
-                  .map(([word, data]) => {
-                   return (
-                   <div
-                     key={word}
-                     role="button"
-                     tabIndex={0}
-                     onClick={() => onShowModal?.(word, 'dictionary')}
-                     onKeyDown={(e) => {
-                       if (e.key === 'Enter' || e.key === ' ') {
-                         e.preventDefault();
-                         onShowModal?.(word, 'dictionary');
-                       }
-                     }}
-                     className="bg-white rounded-2xl p-6 border border-zinc-200 shadow-sm hover:shadow-md hover:border-zinc-400 hover:-translate-y-1 transition-all group relative cursor-pointer text-left"
-                   >
-                     <div className="flex items-start justify-between mb-3">
-                       <h3 className="text-lg font-bold text-slate-900 capitalize flex items-center gap-2">
-                         {word}
-                         <button
-                           type="button"
-                           onClick={(e) => { e.stopPropagation(); playWord(word); }}
-                           className="p-1 rounded-md text-zinc-400 hover:text-zinc-900 hover:bg-zinc-100 transition-colors"
-                           title="Hear pronunciation"
-                         >
-                           <Volume2 className="w-4 h-4" />
-                         </button>
-                       </h3>
-                         <div className="flex items-center gap-1">
-                           <button
-                             onClick={(e) => {
-                               e.stopPropagation();
-                               setSavedVocab(prev => {
-                                 const next = { ...prev };
-                                 next[word] = { ...next[word], favorite: !next[word].favorite };
-                                 persistLocal(next);
-                                 return next;
-                               });
-                             }}
-                             className={`transition-colors p-1 rounded-md ${(data as any).favorite ? 'text-amber-500 bg-amber-50 hover:bg-amber-100' : 'text-slate-300 hover:text-amber-500 bg-slate-50 hover:bg-amber-50 opacity-0 group-hover:opacity-100'}`}
-                             title={(data as any).favorite ? "Unfavorite" : "Favorite"}
-                           >
-                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill={(data as any).favorite ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                           </button>
-                           <button
-                             onClick={(e) => {
-                               e.stopPropagation();
-                               setSavedVocab(prev => {
-                                 const next = { ...prev };
-                                 delete next[word.toLowerCase()];
-                                 persistLocal(next);
-                                 return next;
-                               });
-                             }}
-                            className="text-slate-300 hover:text-rose-500 transition-colors opacity-0 group-hover:opacity-100 p-1 bg-slate-50 hover:bg-rose-50 rounded-md"
-                            title="Remove"
-                         >
-                            <Trash2 className="w-4 h-4" />
-                         </button>
-                         </div>
-                     </div>
-                     <p className="text-sm text-slate-600 leading-relaxed mb-4 line-clamp-3"><span className="text-zinc-400 font-bold mr-1">def.</span>{(data as any).definition}</p>
-
-                     <div className="pt-4 border-t border-slate-50 flex flex-col gap-2">
-                        <div className="flex items-center gap-2">
-                           <button
-                             onClick={(e) => { e.stopPropagation(); translateText(`word_${word}`, word + ": " + (data as any).definition); }}
-                             disabled={isTranslating[`word_${word}`]}
-                             className="text-xs font-bold text-zinc-900 hover:text-indigo-800 flex items-center gap-1.5 transition-colors disabled:opacity-50"
-                           >
-                             {isTranslating[`word_${word}`] ? <span className="w-2.5 h-2.5 border-2 border-zinc-300 border-t-zinc-900 animate-spin rounded-full inline-block" /> : <Languages className="w-3.5 h-3.5" />}
-                             Translate Meaning
-                           </button>
-                        </div>
-
-                        {targetLangs.map(lang => translations[`${lang}_word_${word}`] ? (
-                           <div key={lang} className="mt-1 p-2.5 bg-zinc-100/50 rounded-xl border border-zinc-200/50 flex flex-col gap-1 relative group transition-all">
-                             <button onClick={(e) => { e.stopPropagation(); setTranslations(prev => { const next = {...prev}; delete next[`${lang}_word_${word}`]; return next; })}} className="absolute top-1.5 right-1.5 opacity-0 group-hover:opacity-100 p-1 text-indigo-400 hover:text-rose-500 bg-white rounded-full shadow-sm transition-all"><X className="w-3 h-3" /></button>
-                             <span className="text-[10px] font-bold uppercase text-indigo-400">{LANGUAGES.find(l => l.code === lang)?.name || lang}</span>
-                             <p className="text-xs text-indigo-900 font-medium leading-relaxed pr-5">{translations[`${lang}_word_${word}`]}</p>
-                           </div>
-                        ) : null)}
-                     </div>
-
+            <ul className="mt-3 grid grid-cols-1 gap-2.5 lg:grid-cols-2">
+              {list.slice(0, limit).map((r) => (
+                <li key={r.key}>
+                  <div role="button" tabIndex={0} onClick={() => onShowModal?.(r.word, 'dictionary')}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onShowModal?.(r.word, 'dictionary'); } }}
+                    className={`${seCard} group flex cursor-pointer items-center gap-2 py-2.5 pl-2 pr-1.5 transition-[transform,box-shadow] duration-75 hover:border-zinc-300 active:translate-y-[3px] active:shadow-none dark:hover:border-zinc-600`}>
+                    <button type="button" onClick={(e) => { e.stopPropagation(); playWord(r.word); }} aria-label={t('learning.hear.pronunciation.046cac')}
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-zinc-500 hover:bg-slate-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
+                      <Volume2 className="h-5 w-5" />
+                    </button>
+                    <div className="min-w-0 flex-1">
+                      <div className="truncate font-serif text-[17px] font-extrabold leading-tight text-zinc-900 dark:text-zinc-50">{r.word}</div>
+                      <div className="truncate text-sm font-semibold text-slate-500 dark:text-zinc-400">
+                        {known === contentLang ? r.entry.definition : r.translation && r.translation !== '—' ? r.translation : r.translation === '—' ? r.entry.definition : <span className="inline-block h-3 w-20 animate-pulse rounded bg-slate-100 align-middle dark:bg-zinc-800" />}
+                      </div>
                     </div>
-                 );
-               })}
-             </div>
-            </>
-           )}
-        </section>
-
-
-<section className="mb-12">
-            <div className="bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm">
-               <div className="flex flex-col w-full max-w-2xl">
-                   <h2 className="text-xl font-bold text-slate-800 mb-1">{t('vocab.addTitle')}</h2>
-                   <p className="text-slate-500 mb-6">{t('vocab.addSubtitle')}</p>
-                   <form onSubmit={(e) => { e.preventDefault(); handleAddNewVocab(); }} className="flex flex-col sm:flex-row items-center gap-4">
-                       <div className="relative flex-grow w-full">
-                         <Type className="w-6 h-6 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
-                         <input
-                           type="text"
-                           value={newVocabWord}
-                           onChange={(e) => setNewVocabWord(e.target.value)}
-                           placeholder={t('vocab.addPlaceholder')}
-                           className="pl-12 pr-4 py-4 w-full border border-slate-200 rounded-xl focus:outline-none focus:border-zinc-700 focus:ring-4 focus:ring-zinc-200 text-lg transition-all"
-                         />
-                       </div>
-                       <button
-                         type="submit"
-                         disabled={isAddingVocab || !newVocabWord.trim()}
-                         className="w-full sm:w-auto px-8 py-4 bg-zinc-900 hover:bg-black text-white font-bold rounded-xl shadow-sm hover:shadow transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-lg whitespace-nowrap"
-                       >
-                         {isAddingVocab ? (
-                           <span className="w-6 h-6 border-2 border-white/30 border-t-white animate-spin rounded-full inline-block" />
-                         ) : (
-                           <>
-                             <Plus className="w-5 h-5" />
-                             {t('vocab.addButton')}
-                           </>
-                         )}
-                       </button>
-                   </form>
-                   {addVocabError && (
-                     <div className="mt-4 text-rose-500 flex items-center gap-2 font-medium bg-rose-50 p-3 rounded-lg border border-rose-100 w-fit">
-                       <AlertCircle className="w-5 h-5" />
-                       {addVocabError}
-                     </div>
-                   )}
-               </div>
-            </div>
-          </section>
-
-
-      </ScreenShell>
+                    <button type="button" onClick={(e) => { e.stopPropagation(); toggleStar(r.key); }} aria-pressed={!!r.entry.favorite}
+                      aria-label={r.entry.favorite ? t('learning.unfavorite.de9bba') : t('learning.favorite.6b90b6')}
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${r.entry.favorite ? 'text-amber-500' : 'text-slate-300 hover:text-amber-500 dark:text-zinc-600'}`}>
+                      <Star className={`h-5 w-5 ${r.entry.favorite ? 'fill-current' : ''}`} />
+                    </button>
+                    <button type="button" onClick={(e) => { e.stopPropagation(); remove(r.key); }} aria-label={t('learning.remove.e96390')}
+                      className="flex h-10 w-8 shrink-0 items-center justify-center rounded-xl text-slate-300 transition-colors hover:text-rose-500 dark:text-zinc-600 lg:opacity-0 lg:group-hover:opacity-100 lg:focus:opacity-100">
+                      <Trash2 className="h-4 w-4" />
+                    </button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
+          {list.length > limit && (
+            <button type="button" onClick={() => setLimit((n) => n + PAGE)}
+              className="mx-auto mt-4 block rounded-2xl border-2 border-slate-200 bg-white px-5 py-2.5 font-serif text-xs font-extrabold uppercase tracking-wide text-zinc-700 shadow-[0_3px_0_0_#e2e8f0] active:translate-y-[3px] active:shadow-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:shadow-[0_3px_0_0_#3f3f46]">
+              {t('vocab.showMore', { n: list.length - limit })}
+            </button>
+          )}
+        </>
+      )}
+    </ScreenShell>
   );
 }

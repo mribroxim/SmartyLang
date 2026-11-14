@@ -32,6 +32,10 @@
         "function": "translateFallback"
       },
       {
+        "source": "/api/dictionary",
+        "function": "dictionaryLookup"
+      },
+      {
         "source": "/api/ai",
         "function": "ai"
       },

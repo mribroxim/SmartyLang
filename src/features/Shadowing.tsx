@@ -29,8 +29,8 @@ function fmtTime(s: number): string {
   return `${m}:${sec.toString().padStart(2, '0')}`;
 }
 
-function fmtDate(iso: string): string {
-  return new Date(iso).toLocaleDateString('en-GB', {
+function fmtDate(iso: string, uiLang: string): string {
+  return new Date(iso).toLocaleDateString(uiLang, {
     day: 'numeric', month: 'short', year: 'numeric',
     hour: '2-digit', minute: '2-digit',
   });
@@ -93,6 +93,7 @@ function PracticeView({
   passage: ShadowingPassage;
   onBack: () => void;
 }) {
+  const { t, uiLang } = useUiLang();
   const { contentLang } = useContentLang();
   // Audio
   const audioRef       = useRef<HTMLAudioElement | null>(null);
@@ -281,9 +282,9 @@ function PracticeView({
         if (a) { a.currentTime = 0; a.play().catch(() => {}); }
       }
     } catch {
-      alert('Microphone access was denied. Please allow it in your browser settings.');
+      alert(t("learning.microphone.access.was.denied.please.allow.it.in.your.brows.7e2c24"));
     }
-  }, [passage.id, passage.title, passage.level, contentLang]);
+  }, [passage.id, passage.title, passage.level, contentLang, t]);
 
   const stopRec = () => {
     mediaRecRef.current?.stop();
@@ -318,18 +319,17 @@ function PracticeView({
         <div className="flex items-center gap-3 px-4 pt-3 pb-2">
           <button
             onClick={() => { audioRef.current?.pause(); stopRec(); onBack(); }}
-            className="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-zinc-900 bg-slate-50 hover:bg-slate-100 px-3 py-2 rounded-xl border border-slate-200 shrink-0"
+            className="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-zinc-900 bg-slate-50 hover:bg-slate-100 px-3 py-2 rounded-2xl border-2 border-slate-200 shrink-0"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span className="hidden sm:inline">Passages</span>
+            <span className="hidden sm:inline">{t("site.shadowing.passages_c4982f")}</span>
           </button>
           <div className="flex-1 min-w-0">
             <p className="font-bold text-slate-800 text-sm truncate">{passage.title}</p>
-            <p className="text-[11px] text-slate-400">{subtitles.length} lines · {passage.text.split(/\s+/).length} words</p>
+            <p className="text-[11px] text-slate-400">{t('learning.message.ccf7fdb3c8', { v0: subtitles.length, v1: passage.text.split(/\s+/).length })}</p>
           </div>
           <span className="flex items-center gap-1 text-[10px] text-sky-600 font-bold px-2 py-1 bg-sky-50 rounded-full shrink-0">
-            <Volume2 className="w-3 h-3" /> Audio
-          </span>
+            <Volume2 className="w-3 h-3" />  {t("site.shadowing.audio_acdac2")}</span>
         </div>
 
         {/* Seek bar */}
@@ -366,15 +366,14 @@ function PracticeView({
             <button
               onClick={() => setTimingOffset(o => Math.max(-2, parseFloat((o - 0.5).toFixed(1))))}
               className="w-5 h-5 flex items-center justify-center text-slate-500 hover:text-zinc-900 font-black text-sm leading-none"
-              title="Delay text"
+              title={t("site.shadowing.delay_text_0ebd1b")}
             >−</button>
             <span className="text-[11px] font-bold text-slate-600 w-14 text-center select-none">
-              Sync {timingOffset >= 0 ? '+' : ''}{timingOffset.toFixed(1)}s
-            </span>
+              {t("site.shadowing.sync_905f63")} {timingOffset >= 0 ? '+' : ''}{timingOffset.toFixed(1)}{t("site.teacherdashboard.s_a0f149")}</span>
             <button
               onClick={() => setTimingOffset(o => Math.min(4, parseFloat((o + 0.5).toFixed(1))))}
               className="w-5 h-5 flex items-center justify-center text-slate-500 hover:text-zinc-900 font-black text-sm leading-none"
-              title="Advance text"
+              title={t("site.shadowing.advance_text_847cd7")}
             >+</button>
           </div>
           {/* Playback */}
@@ -437,65 +436,61 @@ function PracticeView({
         {/* ── Recording section ── */}
         <div className="max-w-2xl mx-auto px-4 py-6">
           <h3 className="text-sm font-bold text-slate-700 mb-4 flex items-center gap-2">
-            <Mic className="w-4 h-4 text-rose-400" /> Record Yourself
-          </h3>
+            <Mic className="w-4 h-4 text-rose-400" />  {t("site.shadowing.record_yourself_f010a9")}</h3>
 
           {isRecording ? (
             /* Recording in progress */
             <div className="flex items-center gap-4 bg-rose-50 border border-rose-200 rounded-2xl px-5 py-4">
               <span className="w-3 h-3 rounded-full bg-rose-500 animate-pulse shrink-0" />
               <div className="flex-1">
-                <p className="text-sm font-bold text-rose-700">Recording…</p>
+                <p className="text-sm font-bold text-rose-700">{t("site.shadowing.recording_72f9eb")}</p>
                 <p className="text-xs text-rose-500">{fmtTime(recSeconds)}</p>
               </div>
               <button
                 onClick={stopRec}
                 className="flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white font-bold text-sm px-4 py-2 rounded-xl transition-colors"
               >
-                <Square className="w-3.5 h-3.5" /> Stop
-              </button>
+                <Square className="w-3.5 h-3.5" />  {t("site.ieltslistening.stop_9e2534")}</button>
             </div>
           ) : (
             /* Record buttons */
             <div className="grid grid-cols-2 gap-3">
               <button
                 onClick={() => startRec(false)}
-                className="flex flex-col items-center gap-2 bg-white border-2 border-slate-200 hover:border-rose-400 hover:bg-rose-50 rounded-2xl p-5 transition-all group"
+                className="flex flex-col items-center gap-2 bg-white border-2 border-slate-200 hover:border-rose-400 hover:bg-rose-50 rounded-2xl p-5 group shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] active:translate-y-[3px] active:shadow-none transition-[transform,box-shadow,background-color,border-color] duration-75"
               >
                 <Mic className="w-7 h-7 text-slate-400 group-hover:text-rose-500 transition-colors" />
-                <span className="text-sm font-bold text-slate-600 group-hover:text-rose-600">Record Yourself</span>
-                <span className="text-[11px] text-slate-400 text-center">Read the text aloud and record</span>
+                <span className="text-sm font-bold text-slate-600 group-hover:text-rose-600">{t("site.shadowing.record_yourself_f010a9")}</span>
+                <span className="text-[11px] text-slate-400 text-center">{t("site.shadowing.read_the_text_aloud_and_2b6563")}</span>
               </button>
               <button
                 onClick={() => startRec(true)}
-                className="flex flex-col items-center gap-2 bg-white border-2 border-slate-200 hover:border-sky-400 hover:bg-sky-50 rounded-2xl p-5 transition-all group"
+                className="flex flex-col items-center gap-2 bg-white border-2 border-slate-200 hover:border-sky-400 hover:bg-sky-50 rounded-2xl p-5 group shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a] active:translate-y-[3px] active:shadow-none transition-[transform,box-shadow,background-color,border-color] duration-75"
               >
                 <div className="flex items-center gap-1">
                   <Mic className="w-6 h-6 text-slate-400 group-hover:text-sky-500 transition-colors" />
                   <span className="text-slate-300 group-hover:text-sky-300">+</span>
                   <Volume2 className="w-5 h-5 text-slate-400 group-hover:text-sky-500 transition-colors" />
                 </div>
-                <span className="text-sm font-bold text-slate-600 group-hover:text-sky-600">Shadow</span>
-                <span className="text-[11px] text-slate-400 text-center">Speak along with the audio</span>
+                <span className="text-sm font-bold text-slate-600 group-hover:text-sky-600">{t("site.shadowing.shadow_aa0e7e")}</span>
+                <span className="text-[11px] text-slate-400 text-center">{t("site.shadowing.speak_along_with_the_audio_65fa71")}</span>
               </button>
             </div>
           )}
 
           <p className="text-[11px] text-slate-400 mt-3 text-center">
-            💡 Use headphones in Shadow mode to avoid echo
-          </p>
+            {t("site.shadowing.use_headphones_in_shadow_mode_304628")}</p>
 
           {/* ── Playback of last recording ── */}
           {playUrl && (
-            <div className="mt-4 bg-slate-50 border border-slate-200 rounded-xl p-4">
-              <p className="text-xs font-bold text-slate-600 mb-2">Playing recording</p>
+            <div className="mt-4 bg-slate-50 border-2 border-slate-200 rounded-2xl p-4">
+              <p className="text-xs font-bold text-slate-600 mb-2">{t("site.shadowing.playing_recording_fbb106")}</p>
               <audio src={playUrl} controls className="w-full h-9" />
               <button
                 onClick={() => { URL.revokeObjectURL(playUrl); setPlayUrl(null); }}
                 className="mt-2 text-[11px] text-slate-400 hover:text-slate-600 underline"
               >
-                Close
-              </button>
+                {t("site.shadowing.close_bbfa77")}</button>
             </div>
           )}
 
@@ -503,13 +498,13 @@ function PracticeView({
           {recordings.length > 0 && (
             <div className="mt-6">
               <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">
-                My Recordings ({recordings.length})
+                {t("site.shadowing.my_recordings_62a575")}{recordings.length})
               </h4>
               <div className="space-y-2">
                 {recordings.map(rec => (
                   <div
                     key={rec.id}
-                    className="flex items-center gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3"
+                    className="flex items-center gap-3 bg-white border-2 border-slate-200 rounded-2xl px-4 py-3 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]"
                   >
                     <button
                       onClick={() => playRecording(rec)}
@@ -518,7 +513,7 @@ function PracticeView({
                       <Play className="w-3.5 h-3.5 text-sky-600 ml-0.5" />
                     </button>
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs font-bold text-slate-700">{fmtDate(rec.dateISO)}</p>
+                      <p className="text-xs font-bold text-slate-700">{fmtDate(rec.dateISO, uiLang)}</p>
                       <p className="text-[11px] text-slate-400">{fmtTime(rec.durationMs / 1000)}</p>
                     </div>
                     <button
@@ -592,7 +587,7 @@ function PassageList({
         {onBack && (
           <button
             onClick={onBack}
-            className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-6 bg-white px-4 py-2 rounded-xl border border-slate-200 shadow-sm w-fit"
+            className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-6 bg-white px-4 py-2 rounded-2xl border-2 border-slate-200 w-fit shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]"
           >
             <ArrowLeft className="w-4 h-4" /> {t('action.back')}
           </button>
@@ -616,7 +611,7 @@ function PassageList({
             value={query}
             onChange={e => setQuery(e.target.value)}
             placeholder={t('shadowing.search', { n: SHADOWING_PASSAGES.length })}
-            className="w-full pl-11 pr-10 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:outline-none focus:border-sky-400 shadow-sm"
+            className="w-full pl-11 pr-10 py-3 bg-white border-2 border-slate-200 rounded-2xl text-sm focus:outline-none focus:border-sky-400 shadow-sm"
           />
           {query && (
             <button
@@ -640,14 +635,13 @@ function PassageList({
                   <button
                     key={p.id}
                     onClick={() => onSelect(p)}
-                    className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all text-left group flex items-center justify-between gap-3"
+                    className="bg-white p-5 rounded-2xl border-2 border-slate-200 hover:shadow-lg hover:-translate-y-0.5 transition-all text-left group flex items-center justify-between gap-3 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]"
                   >
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1.5">
                         <span className="flex items-center gap-1 text-[10px] text-sky-600 font-bold px-2 py-0.5 bg-sky-50 rounded-full">
-                          <Volume2 className="w-2.5 h-2.5" /> Audio
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-medium">~{words} words</span>
+                          <Volume2 className="w-2.5 h-2.5" />  {t("site.shadowing.audio_acdac2")}</span>
+                        <span className="text-[10px] text-slate-400 font-medium">~{words}  {t("common.words")}</span>
                       </div>
                       <p className="font-bold text-slate-800 text-sm leading-snug">{p.title}</p>
                       <p className="text-slate-400 text-xs mt-1 line-clamp-2 leading-relaxed">
@@ -704,19 +698,19 @@ function PassageList({
         )}
 
         {/* How it works */}
-        <div className="mt-12 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
-          <h3 className="font-bold text-slate-800 mb-3">💡 How Shadowing Works</h3>
+        <div className="mt-12 bg-white border-2 border-slate-200 rounded-2xl p-6 shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
+          <h3 className="font-bold text-slate-800 mb-3">{t("site.shadowing.how_shadowing_works_638036")}</h3>
           <ol className="space-y-2 text-sm text-slate-600 list-decimal list-inside leading-relaxed">
-            <li>Select any passage — real audio plays immediately.</li>
-            <li>Follow the highlighted text as the speaker talks (like subtitles).</li>
-            <li>Click a line at any time to jump to that part of the audio.</li>
-            <li>Hit <strong>Record Yourself</strong> to practise reading the passage aloud.</li>
-            <li>Hit <strong>Shadow</strong> to record yourself speaking along with the audio simultaneously — the ultimate technique.</li>
-            <li>Play back your recordings to compare with the original.</li>
+            <li>{t("site.shadowing.select_any_passage_real_audio_19a873")}</li>
+            <li>{t("site.shadowing.follow_the_highlighted_text_as_b5837e")}</li>
+            <li>{t("site.shadowing.click_a_line_at_any_fbaabf")}</li>
+            <li>{t("site.shadowing.hit_ea490a")}<strong>{t("site.shadowing.record_yourself_f010a9")}</strong>  {t("site.shadowing.to_practise_reading_the_passage_c9130c")}</li>
+            <li>{t("site.shadowing.hit_ea490a")}<strong>{t("site.shadowing.shadow_aa0e7e")}</strong>  {t("site.shadowing.to_record_yourself_speaking_along_38e646")}</li>
+            <li>{t("site.shadowing.play_back_your_recordings_to_4c408e")}</li>
           </ol>
         </div>
 
-        <PracticeHistory storageKey={SHADOWING_HISTORY_KEY} label="Past Shadowing Sessions" />
+        <PracticeHistory storageKey={SHADOWING_HISTORY_KEY} label={t("site.shadowing.past_shadowing_sessions_ea8d2a")} />
       </div>
     </div>
   );
