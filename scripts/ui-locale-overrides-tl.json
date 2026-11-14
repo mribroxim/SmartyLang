@@ -67,5 +67,7 @@
   "path.allLessons": "Lahat ng aralin",
   "path.unit": "Yunit {n}",
   "path.continueBite": "Magpatuloy",
-  "path.startLesson": "Magsimula"
+  "path.startLesson": "Magsimula",
+  "core.management.suspended_name_ecbf61": "Sinuspinde si {name}.",
+  "kitchen.pieceProgress": "{n}/{total} piraso para sa susunod na pagkain ni Smarty"
 }

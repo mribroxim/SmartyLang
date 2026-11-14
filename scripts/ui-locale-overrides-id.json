@@ -67,5 +67,16 @@
   "path.allLessons": "Semua pelajaran",
   "path.unit": "Unit {n}",
   "path.continueBite": "Lanjutkan",
-  "path.startLesson": "Mulai"
+  "path.startLesson": "Mulai",
+  "lesson.stat.xp": "Total XP",
+  "learning.word.scramble.b1e4dc": "Susun huruf",
+  "learning.edit.transcript.f1a89a": "Sunting transkrip",
+  "learning.v0.custom.886f45": "{v0} · Buatan sendiri",
+  "site.contentmanager.vocabulary_json_7fe09b": "Data kosakata JSON",
+  "site.metadata.d170e34bd6": "Pejuang target",
+  "site.metadata.f1c6d3dedb": "Halo dan saya",
+  "profile.stat.xp": "Total XP",
+  "room.cat.window": "Jendela",
+  "practice.scramble.title": "Susun huruf",
+  "ach.meals.title": "Koki Smarty"
 }

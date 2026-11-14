@@ -67,5 +67,9 @@
   "path.allLessons": "Masomo yote",
   "path.unit": "Sehemu ya {n}",
   "path.continueBite": "Endelea",
-  "path.startLesson": "Anza"
+  "path.startLesson": "Anza",
+  "settings.smarty.haptics": "Mtetemo",
+  "learning.audio.dictation.606a52": "Imla ya sauti ·",
+  "site.metadata.d170e34bd6": "Mpambanaji wa malengo",
+  "kitchen.pieceProgress": "Vipande {n}/{total} vya mlo unaofuata wa Smarty"
 }

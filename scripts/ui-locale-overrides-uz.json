@@ -322,7 +322,7 @@
   "onboard.meet.placeholder": "Ismingiz yoki taxallusingiz",
   "onboard.meet.optional": "Majburiy emas. Buni Smarty sozlamalarida o‘zgartirishingiz mumkin.",
   "onboard.meet.hello": "Salom, {name}! Birga o‘rganishga tayyormisiz?",
-  "onboard.meet.friend": "Salom! Men Smartyman. Keling, dastlabki so‘zlaringizni o‘rganamiz.",
+  "onboard.meet.friend": "Salom! Men Smarty. Keling, dastlabki so‘zlaringizni o‘rganamiz.",
   "onboard.minutes.title": "Kuniga qancha vaqt ajratasiz?",
   "onboard.minutes.subtitle": "Oz-ozdan boshlang. Maqsadni istalgan vaqtda o‘zgartirishingiz mumkin.",
   "onboard.minutes.option": "{n} daqiqa",
@@ -354,7 +354,7 @@
   "path.start": "Boshlash",
   "path.jump": "Shu yerga o‘tasizmi?",
   "lesson.next": "Keyingi",
-  "onboard.hello.title": "Salom! Men Smartyman!",
+  "onboard.hello.title": "Salom! Men Smarty!",
   "onboard.hello.body": "Bir nechta qisqa savoldan keyin birinchi darsingizni boshlaymiz.",
   "onboard.moreLanguages": "Boshqa tillar",
   "onboard.choose": "Tanlang…",
@@ -389,5 +389,7 @@
   "site.identity.student": "O‘quvchi",
   "site.duration.minutes": "{n} daqiqa",
   "sticker.nailedIt": "Uddaladingiz!",
-  "sticker.gotIt": "To‘g‘ri!"
+  "sticker.gotIt": "To‘g‘ri!",
+  "ex.definition-quiz.title": "Viktorina",
+  "kitchen.pieceProgress": "{n}/{total} — Smarty uchun navbatdagi taom bo‘laklari"
 }

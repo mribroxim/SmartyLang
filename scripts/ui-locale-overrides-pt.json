@@ -177,5 +177,7 @@
   "plans.cancel.done": "Concluído",
   "dash.keepGoing": "Continue assim!",
   "core.accountRole.organization": "Organização",
-  "site.duration.minutes": "{n} min"
+  "site.duration.minutes": "{n} min",
+  "site.metadata.f1c6d3dedb": "Olá e eu",
+  "landing.schools.classes": "Turmas"
 }

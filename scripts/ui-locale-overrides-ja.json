@@ -69,5 +69,7 @@
   "smarty.complete.2": "完了！着実に進歩していますね。",
   "smarty.complete.3": "おしまい！ごほうびの時間かな？僕のですけど。",
   "smarty.complete.named.1": "やりましたね、{name}さん！",
-  "smarty.complete.named.2": "{name}さん、すばらしい頑張りでした。"
+  "smarty.complete.named.2": "{name}さん、すばらしい頑張りでした。",
+  "site.league.classRace": "クラスのみんなと競う毎週のXPランキング",
+  "kitchen.pieceProgress": "Smartyの次のごはん：{n}/{total}かけら"
 }

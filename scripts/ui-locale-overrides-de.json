@@ -177,5 +177,7 @@
   "plans.cancel.done": "Fertig",
   "dash.keepGoing": "Weiter so!",
   "core.accountRole.organization": "Organisation",
-  "site.duration.minutes": "{n} Min."
+  "site.duration.minutes": "{n} Min.",
+  "site.metadata.c57604db58": "Gold",
+  "kitchen.pieceProgress": "{n}/{total} Teile für die nächste Mahlzeit von Smarty"
 }

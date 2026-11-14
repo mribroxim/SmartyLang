@@ -15,4 +15,7 @@ if (!fs.existsSync(python)) {
 }
 const result = spawnSync(python, [path.join(root, 'scripts/local-mt/generate_ui.py'), ...process.argv.slice(2)], { cwd: root, stdio: 'inherit', env: { ...process.env, PYTHONUTF8: '1', HF_HUB_OFFLINE: '1', TRANSFORMERS_OFFLINE: '1' } });
 if (result.error) console.error(result.error.message);
-process.exit(result.status ?? 1);
+if (result.status !== 0) process.exit(result.status ?? 1);
+// Use the same validator as CI before declaring generation successful.
+const audit = spawnSync(process.execPath, [path.join(root, 'scripts/audit-ui-locales.mjs')], { cwd: root, stdio: 'inherit' });
+process.exit(audit.status ?? 1);

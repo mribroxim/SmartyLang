@@ -110,7 +110,7 @@
   "bites.doneTitle": "Korte les afgerond!",
   "bites.accuracy": "Nauwkeurigheid",
   "bites.time": "Tijd",
-  "bites.minutes": "{n} min",
+  "bites.minutes": "{n} minuten",
   "bites.goalProgress": "Vandaag: {n} / {goal} XP",
   "bites.backToPath": "Terug naar je leerpad",
   "bites.share": "Delen",
@@ -150,7 +150,7 @@
   "onboard.meet.optional": "Niet verplicht. Je kunt dit wijzigen in de instellingen van Smarty.",
   "onboard.minutes.title": "Hoeveel tijd per dag?",
   "onboard.minutes.subtitle": "Begin klein. Je kunt je doel op elk moment aanpassen.",
-  "onboard.minutes.option": "{n} min",
+  "onboard.minutes.option": "{n} minuten",
   "onboard.minutes.xp": "Dagdoel: {n} XP",
   "onboard.startBite": "Mijn eerste korte les starten",
   "onboard.saving": "Even voorbereiden…",
@@ -177,5 +177,11 @@
   "plans.cancel.done": "Klaar",
   "dash.keepGoing": "Ga zo door!",
   "core.accountRole.organization": "Organisatie",
-  "site.duration.minutes": "{n} min"
+  "site.duration.minutes": "{n} min",
+  "learning.score.6ac979": "Score:",
+  "site.contentmanager.update_passage_669625": "Tekst bijwerken",
+  "site.metadata.d170e34bd6": "Doelgerichte doorzetter",
+  "room.cat.window": "Ramen",
+  "landing.read.s2": "is",
+  "kitchen.pieceProgress": "{n}/{total} stukjes voor de volgende maaltijd van Smarty"
 }

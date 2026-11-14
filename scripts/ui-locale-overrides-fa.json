@@ -295,5 +295,6 @@
   "settings.smarty.sound.desc": "صداهای کوتاه برای پاسخ‌ها و پاداش‌ها.",
   "settings.smarty.haptics.desc": "لرزش کوتاه گوشی برای پاسخ‌ها و پاداش‌ها.",
   "settings.smarty.seasonal.desc": "لباس‌های مناسبتی و روزهای ویژه.",
-  "settings.smarty.reminder.desc": "اگر هنوز درس نخوانده باشی، Smarty در این ساعت یادآوری می‌کند."
+  "settings.smarty.reminder.desc": "اگر هنوز درس نخوانده باشی، Smarty در این ساعت یادآوری می‌کند.",
+  "kitchen.pieceProgress": "{n}/{total} تکه برای وعده بعدی Smarty"
 }

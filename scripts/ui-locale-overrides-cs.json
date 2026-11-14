@@ -145,7 +145,7 @@
   "onboard.meet.title": "Seznam se se Smartym",
   "onboard.meet.name": "Jak ti mám říkat?",
   "onboard.meet.placeholder": "Tvé jméno nebo přezdívka",
-  "onboard.meet.optional": "Nepovinné. Můžeš to změnit v nastavení Smartyho.",
+  "onboard.meet.optional": "Nepovinné. Můžeš to změnit v nastavení pro Smarty.",
   "onboard.minutes.title": "Kolik času denně?",
   "onboard.minutes.subtitle": "Začni po malých krocích. Cíl můžeš kdykoli změnit.",
   "onboard.minutes.option": "{n} min",
@@ -175,5 +175,6 @@
   "plans.cancel.done": "Hotovo",
   "dash.keepGoing": "Jen tak dál!",
   "core.accountRole.organization": "Organizace",
-  "site.duration.minutes": "{n} min"
+  "site.duration.minutes": "{n} min",
+  "site.metadata.f1c6d3dedb": "Ahoj a já"
 }

@@ -295,5 +295,6 @@
   "settings.smarty.sound.desc": "جوابوں اور انعامات کے لیے ہلکی آوازیں۔",
   "settings.smarty.haptics.desc": "جوابوں اور انعامات پر فون میں ہلکی وائبریشن۔",
   "settings.smarty.seasonal.desc": "تہواروں کے لباس اور خاص دن۔",
-  "settings.smarty.reminder.desc": "اگر آپ نے ابھی نہیں پڑھا تو Smarty اس وقت یاد دلائے گا۔"
+  "settings.smarty.reminder.desc": "اگر آپ نے ابھی نہیں پڑھا تو Smarty اس وقت یاد دلائے گا۔",
+  "kitchen.pieceProgress": "Smarty کے اگلے کھانے کے لیے {n}/{total} ٹکڑے"
 }

@@ -113,7 +113,8 @@
     "Q)",
     " (n/a)",
     "Definition",
-    "Quiz"
+    "Quiz",
+    "Gold"
   ],
   "fr": [
     "Audio",
@@ -283,7 +284,9 @@
     "Tests",
     "Badges",
     "essay",
-    "A1 Beginner"
+    "A1 Beginner",
+    "Score:",
+    "is"
   ],
   "hi": [
     "API:",
@@ -316,7 +319,9 @@
     " (n/a)",
     "Blog",
     "{n} min",
-    "plan ·"
+    "plan ·",
+    "Administrator",
+    "Laptop"
   ],
   "sv": [
     "Audio",
@@ -373,7 +378,9 @@
     "N",
     "x",
     "Q)",
-    " (n/a)"
+    " (n/a)",
+    "Unit {n}",
+    "Total XP"
   ],
   "ms": [
     "Audio",
@@ -403,7 +410,8 @@
     "N",
     "x",
     "Q)",
-    " (n/a)"
+    " (n/a)",
+    "Unit {n}"
   ],
   "vi": [
     "Video",
@@ -500,7 +508,9 @@
     "Q)",
     " (n/a)",
     "{n} min",
-    "Blog"
+    "Blog",
+    "Administrator",
+    "Laptop"
   ],
   "fa": [
     "API:",

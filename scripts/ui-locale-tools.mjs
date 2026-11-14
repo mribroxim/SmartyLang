@@ -2,6 +2,7 @@ import crypto from 'node:crypto';
 
 export const LANGS = ['ru', 'tl', 'es', 'uz', 'de', 'fr', 'it', 'pt', 'ja', 'ko', 'zh', 'ar', 'tr', 'nl', 'hi', 'pl', 'sv', 'id', 'ms', 'vi', 'th', 'uk', 'el', 'cs', 'ro', 'fa', 'ur', 'sw'];
 export const placeholders = value => (String(value).match(/\{[A-Za-z][A-Za-z0-9_]*\}/g) ?? []).sort();
+export const numbers = value => (String(value).replace(/\{[A-Za-z][A-Za-z0-9_]*\}/g, '').replace(/[٠-٩۰-۹０-９]/g, digit => String('٠١٢٣٤٥٦٧٨٩'.includes(digit) ? '٠١٢٣٤٥٦٧٨٩'.indexOf(digit) : '۰۱۲۳۴۵۶۷۸۹'.includes(digit) ? '۰۱۲۳۴۵۶۷۸۹'.indexOf(digit) : '０１２３４５６７８９'.indexOf(digit))).match(/\d+(?:\.\d+)?/g) ?? []).sort();
 export const sourceHash = source => crypto.createHash('sha256').update(JSON.stringify(source)).digest('hex');
 export const numberRanges = value => {
   const normalized = String(value).replace(/\{[A-Za-z][A-Za-z0-9_]*\}/g, '').replace(/[٠-٩۰-۹０-９]/g, digit => String('٠١٢٣٤٥٦٧٨٩'.includes(digit) ? '٠١٢٣٤٥٦٧٨٩'.indexOf(digit) : '۰۱۲۳۴۵۶۷۸۹'.includes(digit) ? '۰۱۲۳۴۵۶۷۸۹'.indexOf(digit) : '０１２３４５６７８９'.indexOf(digit)));
@@ -20,6 +21,9 @@ export function translationIssues(source, translated, lang, approved = {}) {
   const issues = [];
   if (JSON.stringify(placeholders(source)) !== JSON.stringify(placeholders(translated))) issues.push('placeholder');
   if (JSON.stringify(numberRanges(source)) !== JSON.stringify(numberRanges(translated))) issues.push('number-range');
+  // A written-out English number may naturally become a digit ("six" → "6").
+  // Literal numeric tokens, including decimals, must remain unchanged.
+  if (numbers(source).length && JSON.stringify(numbers(source)) !== JSON.stringify(numbers(translated))) issues.push('number');
   if (/<<<SEP>>>|\uFFFD|&#\d+;|&(?:quot|amp|lt|gt);|\n\s*</u.test(translated)) issues.push('artifact');
   if (/[{}]/.test(translated.replace(/\{[A-Za-z][A-Za-z0-9_]*\}/g, ''))) issues.push('malformed-placeholder');
   if (translated.trim() === source.trim() && !canStayEnglish(source, lang, approved)) issues.push('english-copy');

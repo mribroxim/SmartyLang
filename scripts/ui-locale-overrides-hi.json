@@ -67,5 +67,6 @@
   "path.allLessons": "सभी पाठ",
   "path.unit": "यूनिट {n}",
   "path.continueBite": "जारी रखें",
-  "path.startLesson": "शुरू करें"
+  "path.startLesson": "शुरू करें",
+  "kitchen.pieceProgress": "Smarty के अगले भोजन के {n}/{total} टुकड़े"
 }

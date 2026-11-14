@@ -145,7 +145,7 @@
   "onboard.meet.title": "Lär känna Smarty",
   "onboard.meet.name": "Vad ska jag kalla dig?",
   "onboard.meet.placeholder": "Ditt namn eller smeknamn",
-  "onboard.meet.optional": "Valfritt. Du kan ändra det i Smartys inställningar.",
+  "onboard.meet.optional": "Valfritt. Du kan ändra det i inställningarna för Smarty.",
   "onboard.minutes.title": "Hur mycket tid varje dag?",
   "onboard.minutes.subtitle": "Börja smått. Du kan ändra ditt mål när som helst.",
   "onboard.minutes.option": "{n} min",
@@ -175,5 +175,8 @@
   "plans.cancel.done": "Klart",
   "dash.keepGoing": "Fortsätt så!",
   "core.accountRole.organization": "Organisation",
-  "site.duration.minutes": "{n} min"
+  "site.duration.minutes": "{n} min",
+  "site.metadata.f1c6d3dedb": "Hej och jag",
+  "kitchen.pieceProgress": "{n}/{total} bitar till nästa måltid för Smarty",
+  "ach.meals.title": "Kock åt Smarty"
 }

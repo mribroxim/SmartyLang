@@ -25,7 +25,7 @@ sys.stderr.reconfigure(encoding="utf-8")
 LANGS = dict(ru="rus_Cyrl", tl="tgl_Latn", es="spa_Latn", uz="uzn_Latn", de="deu_Latn", fr="fra_Latn", it="ita_Latn", pt="por_Latn", ja="jpn_Jpan", ko="kor_Hang", zh="zho_Hans", ar="arb_Arab", tr="tur_Latn", nl="nld_Latn", hi="hin_Deva", pl="pol_Latn", sv="swe_Latn", id="ind_Latn", ms="zsm_Latn", vi="vie_Latn", th="tha_Thai", uk="ukr_Cyrl", el="ell_Grek", cs="ces_Latn", ro="ron_Latn", fa="pes_Arab", ur="urd_Arab", sw="swh_Latn")
 PH = re.compile(r"\{[A-Za-z][A-Za-z0-9_]*\}")
 BRANDS = re.compile(r"\b(?:Smarty(?:Lang)?(?: Max)?|Max|IELTS|XP|SRS|CEFR|Google|Microsoft|YouTube)\b")
-PROTECT = re.compile(PH.pattern + r"|" + BRANDS.pattern + r"|https?://[^\s]+|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|\b[A-C][12]\b|(?<![A-Za-z])\d+(?:[.,:/–—-]\d+)*(?:%|×)?")
+PROTECT = re.compile(PH.pattern + r"|" + BRANDS.pattern + r"|https?://[^\s]+|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|\b[A-Za-z]+\d+\b|(?<![A-Za-z])\d+(?:[.,:/–—-]\d+)*(?:%|×)?")
 SENTENCE_SPLIT = re.compile(r'(\n+|(?<=[.!?])\s+(?=[A-Z“‘"{0-9]))')
 CACHE_PATH = ROOT / ".tmp-ui-locale-cache.json"
 OUT_PATH = ROOT / "src/locales/ui.generated.json"
@@ -40,7 +40,15 @@ def write(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_name(path.name + ".tmp")
     temp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    temp.replace(path)
+    # Vite/antivirus may briefly hold the destination open on Windows.
+    for attempt in range(20):
+        try:
+            temp.replace(path)
+            break
+        except PermissionError:
+            if attempt == 19:
+                raise
+            time.sleep(0.1 * (attempt + 1))
 
 def allowed(source, lang, identical):
     stripped = BRANDS.sub("", PH.sub("", source)).strip()
@@ -57,8 +65,10 @@ def valid(source, target, lang, identical):
         return False
     if ranges(source) != ranges(target):
         return False
+    if re.search(r"\d", PH.sub("", source)) and sorted(re.findall(r"\d+(?:\.\d+)?", PH.sub("", source))) != sorted(re.findall(r"\d+(?:\.\d+)?", PH.sub("", target))):
+        return False
     for brand in BRANDS.findall(source):
-        if source.count(brand) > target.count(brand):
+        if len(re.findall(r"(?<![A-Za-z0-9_])" + re.escape(brand) + r"(?![A-Za-z0-9_])", source)) > len(re.findall(r"(?<![A-Za-z0-9_])" + re.escape(brand) + r"(?![A-Za-z0-9_])", target)):
             return False
     return source.strip() != target.strip() or allowed(source, lang, identical)
 
@@ -67,6 +77,11 @@ def ranges(text):
     return sorted(re.sub(r"\s*[–—-]\s*", "-", value) for value in re.findall(r"\d+\s*[–—-]\s*\d+", text))
 
 def prepare(source):
+    furniture_glossary = {'Paw': 'Cat paw', 'Neon': 'Neon glow', 'Laptop': 'Laptop computer', 'Gamer': 'Video game player', 'Artist': 'Artist desk', 'Gingham': 'Small check pattern', 'Atlas': 'Atlas book', 'Explorer': 'Explorer shelf', 'Hexagon': 'Hexagonal shape', 'Pegboard': 'Perforated wall board', 'Shutters': 'Window shutters', 'Saturn': 'Planet Saturn', 'Stitch': 'Stitched fabric', 'Globe': 'World globe', 'Canopy': 'Canopy bed', 'Trailing': 'Trailing plant', 'Nook': 'Cozy reading corner', 'Plaid': 'Checked fabric', 'Snapshot': 'Photograph', 'Storm': 'Stormy weather', 'Checker wave': 'Wavy checked pattern', 'Fluffy': 'Fluffy fabric', 'Fairy': 'Fairy lights'}
+    source = furniture_glossary.get(source, source)
+    source = source.replace('{days} d {hours} h', '{days} days {hours} hours').replace('{hours} h {minutes} min', '{hours} hours {minutes} minutes').replace('Lv. {n}', 'Level {n}')
+    glossary = {'App': 'Application', 'Default': 'Default setting', 'Bar Chart': 'Bar chart diagram', 'Chonky cat': 'Chubby cat', 'shelf': 'Furniture shelf', 'Nom nom nom!': 'Yummy!', 'Band': 'Score band', 'Quests': 'Daily missions', 'Admins': 'Administrators', 'Admin': 'Administrator', 'Normal': 'Normal status', 'Dictation': 'Dictation exercise', 'Offline': 'No internet connection', 'Eureka!': 'I found it!', 'Phew!': 'What a relief!', 'Oops!': 'Oh no!', 'Flashcards': 'Vocabulary cards', 'Score': 'Test score', 'Update': 'Save changes', 'Update passage': 'Save passage changes', 'Spelling': 'Spelling exercise', 'window': 'Room window', 'Window': 'Room window', 'bed': 'Cat bed', 'Listen': 'Listen to the audio', 'Medium (10)': 'Medium difficulty (10)', 'Undo': 'Undo change', 'Word scramble': 'Unscramble the word', 'Edit transcript': 'Edit the speech transcript', 'Custom': 'Custom content', 'Auto-saved': 'Saved automatically', 'Prev': 'Previous', 'Template': 'Content template', 'Vocabulary (JSON)': 'Vocabulary data (JSON)', 'Meals': 'Cat meals', 'False': 'Incorrect', 'Casual': 'Relaxed pace', 'Sync': 'Synchronize audio', 'Due ': 'Due date ', 'Haptics': 'Touch vibration', 'Reload': 'Reload the page', 'Premium': 'Premium access', 'Checkout': 'Proceed to payment', 'Unsuspend': 'Restore account access', 'rug': 'Floor rug', 'XP': 'XP'}
+    source = glossary.get(source, source)
     tokens = []
     def protect(match):
         number = str(710001 + len(tokens))

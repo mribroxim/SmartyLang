@@ -67,5 +67,7 @@
   "path.allLessons": "Tất cả bài học",
   "path.unit": "Chương {n}",
   "path.continueBite": "Tiếp tục",
-  "path.startLesson": "Bắt đầu"
+  "path.startLesson": "Bắt đầu",
+  "site.metadata.f1c6d3dedb": "Xin chào và tôi",
+  "kitchen.pieceProgress": "{n}/{total} miếng cho bữa ăn tiếp theo của Smarty"
 }

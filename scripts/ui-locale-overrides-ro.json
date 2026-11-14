@@ -175,5 +175,7 @@
   "plans.cancel.done": "Gata",
   "dash.keepGoing": "Continuă tot așa!",
   "core.accountRole.organization": "Organizație",
-  "site.duration.minutes": "{n} min"
+  "site.duration.minutes": "{n} min",
+  "site.metadata.f1c6d3dedb": "Salut și eu",
+  "core.accountRole.admin": "Administrator"
 }

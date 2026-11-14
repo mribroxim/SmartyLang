@@ -12,7 +12,7 @@ let intentional = 0;
 // Explicit examples belong to the lesson/editor schema, not interface copy.
 const examples = new Map([
   ['src/components/InteractiveDemos.tsx', new Set(['A Beautiful Morning'])],
-  ['src/Exercises.tsx', new Set(['The cat sat on the mat\\nLearning a language is fun\\nPractice makes perfect'])],
+  ['src/Exercises.tsx', new Set(['The cat sat on the mat Learning a language is fun Practice makes perfect'])],
   ['src/features/TeacherDashboard.tsx', new Set(['es'])],
 ]);
 for (const file of files(path.join(root, 'src'))) {

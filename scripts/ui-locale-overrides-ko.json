@@ -69,5 +69,6 @@
   "smarty.complete.2": "끝났어요! 확실히 발전하고 있네요.",
   "smarty.complete.3": "모두 끝났어요. 간식 시간인가요? 제 간식이요.",
   "smarty.complete.named.1": "해냈어요, {name}님!",
-  "smarty.complete.named.2": "{name}님, 정말 잘하셨어요."
+  "smarty.complete.named.2": "{name}님, 정말 잘하셨어요.",
+  "kitchen.feedStreak": "Smarty에게 먹이를 준 연속 일수"
 }

@@ -177,5 +177,6 @@
   "plans.cancel.done": "Fatto",
   "dash.keepGoing": "Continua così!",
   "core.accountRole.organization": "Organizzazione",
-  "site.duration.minutes": "{n} min"
+  "site.duration.minutes": "{n} min",
+  "kitchen.pieceProgress": "{n}/{total} pezzi per il prossimo pasto di Smarty"
 }

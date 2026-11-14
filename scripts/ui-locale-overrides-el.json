@@ -175,5 +175,6 @@
   "plans.cancel.done": "Τέλος",
   "dash.keepGoing": "Συνέχισε έτσι!",
   "core.accountRole.organization": "Οργανισμός",
-  "site.duration.minutes": "{n} λεπτά"
+  "site.duration.minutes": "{n} λεπτά",
+  "kitchen.pieceProgress": "{n}/{total} κομμάτια για το επόμενο γεύμα του Smarty"
 }
