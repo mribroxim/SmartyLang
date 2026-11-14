@@ -1,5 +1,7 @@
+import { LeagueTrophy, LeagueLadder } from '../components/LeagueTrophy';
+import { useUiLang } from '../contexts/UiLangContext';
 import React, { useEffect, useMemo, useState } from 'react';
-import { Trophy, Medal, Flame, Loader2, Clock, ArrowUp, ArrowDown, Minus, Globe, Users } from 'lucide-react';
+import { Trophy, Medal, Flame, Loader2, Clock, ArrowUp, ArrowDown, Users } from 'lucide-react';
 import {
   getStudentClasses,
   getStudentSummaries,
@@ -7,20 +9,9 @@ import {
   sortWeeklyLeagueRows,
   type StudentSummary,
 } from '../firebase';
-import {
-  BADGE_META,
-  type HabitState,
-  normalizeHabit,
-  isoWeekKey,
-  leagueMeta,
-  leagueZones,
-  msUntilWeekEnd,
-  formatWeekCountdown,
-  leagueForXp,
-} from '../lib/habitEngine';
+import { type HabitState, normalizeHabit, isoWeekKey, leagueMeta, leagueZones, msUntilWeekEnd, leagueForXp } from '../lib/habitEngine';
 import { ScreenShell, seCard } from '../components/ScreenShell';
 
-type Tab = 'league' | 'badges';
 type BoardScope = 'global' | 'class';
 
 function avatarHue(name: string) {
@@ -30,6 +21,7 @@ function avatarHue(name: string) {
 }
 
 function RankGlyph({ rank }: { rank: number }) {
+  const { t } = useUiLang();
   if (rank <= 3) {
     const colors =
       rank === 1
@@ -38,7 +30,7 @@ function RankGlyph({ rank }: { rank: number }) {
           ? 'bg-slate-200 text-slate-600'
           : 'bg-orange-100 text-orange-700';
     return (
-      <span className={`w-8 h-8 flex items-center justify-center rounded-full ${colors}`} aria-label={`Rank ${rank}`}>
+      <span className={`w-8 h-8 flex items-center justify-center rounded-full ${colors}`} aria-label={t("site.gamification.rank_v1_2b1c7f", {v1: String(rank)})}>
         <Medal className="w-4 h-4" />
       </span>
     );
@@ -55,32 +47,43 @@ export function GamificationDash({
   habit,
   uid,
   displayName,
+  onOpenClass,
 }: {
   profile?: { xp?: number; coins?: number; level?: number; league?: string; name?: string };
   habit?: HabitState;
   uid?: string;
   displayName?: string;
+  /** Students get a "My class" button under the board. */
+  onOpenClass?: () => void;
 }) {
-  const [tab, setTab] = useState<Tab>('league');
-  const [boardScope, setBoardScope] = useState<BoardScope>('global');
+  const { t, tText } = useUiLang();
+  const boardScope: BoardScope = 'global';
   const [rows, setRows] = useState<StudentSummary[]>([]);
   const [loading, setLoading] = useState(false);
   const [className, setClassName] = useState<string | null>(null);
-  const [countdown, setCountdown] = useState(() => formatWeekCountdown(msUntilWeekEnd()));
+  const [remaining, setRemaining] = useState(() => msUntilWeekEnd());
   const h = normalizeHabit(habit);
   const week = isoWeekKey();
 
   const leagueId = profile?.league || leagueForXp(profile?.xp || 0);
-  const league = leagueMeta(leagueId);
+  const rawLeague = leagueMeta(leagueId);
+  const league = { ...rawLeague, label: tText(rawLeague.label) };
   const myWeekly = h.weekKey === week ? h.weeklyXp : 0;
-  const myName = displayName || profile?.name || 'You';
+  const myName = displayName || profile?.name || t('site.identity.you');
 
   useEffect(() => {
-    const tick = () => setCountdown(formatWeekCountdown(msUntilWeekEnd()));
+    const tick = () => setRemaining(msUntilWeekEnd());
     tick();
     const id = window.setInterval(tick, 60_000);
     return () => window.clearInterval(id);
   }, []);
+
+  const days = Math.floor(remaining / 86_400_000);
+  const hours = Math.floor((remaining % 86_400_000) / 3_600_000);
+  const minutes = Math.floor((remaining % 3_600_000) / 60_000);
+  const countdown = days > 0
+    ? t('site.duration.daysHours', { days, hours })
+    : t('site.duration.hoursMinutes', { hours, minutes });
 
   useEffect(() => {
     if (!uid) return;
@@ -109,7 +112,7 @@ export function GamificationDash({
           }
           return;
         }
-        if (!cancelled) setClassName(primary.name || 'Your class');
+        if (!cancelled) setClassName(primary.name || t('site.identity.yourClass'));
         const summaries = await getStudentSummaries(primary.studentUids);
         const ranked = sortWeeklyLeagueRows(summaries, week);
         if (!cancelled) setRows(ranked);
@@ -136,169 +139,84 @@ export function GamificationDash({
     return 'safe' as const;
   }, [myRank, rows.length, zones]);
 
-  const earnedBadges = h.badges || [];
 
   const zoneLabel =
     myZone === 'promote' ? (
-      <span className="inline-flex items-center gap-1 text-emerald-700"><ArrowUp className="w-3.5 h-3.5" /> #{myRank} · promotion</span>
+      <span className="inline-flex items-center gap-1 text-emerald-700"><ArrowUp className="w-3.5 h-3.5" /> #{myRank}  {t("site.gamification.promotion_06f5ba")}</span>
     ) : myZone === 'demote' ? (
-      <span className="inline-flex items-center gap-1 text-rose-600"><ArrowDown className="w-3.5 h-3.5" /> #{myRank} · demotion</span>
+      <span className="inline-flex items-center gap-1 text-rose-600"><ArrowDown className="w-3.5 h-3.5" /> #{myRank}  {t("site.gamification.demotion_5e04af")}</span>
     ) : myRank != null ? (
-      <span className="inline-flex items-center gap-1 text-slate-500"><Minus className="w-3.5 h-3.5" /> #{myRank} · {league.label}</span>
+      <span className="text-slate-500">#{myRank}</span>
     ) : null;
 
-  const subtitle =
     boardScope === 'global'
-      ? `Global ${league.label} league · weekly XP`
+      ? t('site.league.globalSubtitle', { league: league.label })
       : className
-        ? `Class leaderboard · ${className}`
-        : 'Weekly XP race with your class';
+        ? t('site.league.classSubtitle', { name: className })
+        : t('site.league.classRace');
 
   return (
-    <ScreenShell title="League" subtitle={subtitle}>
-      <div className="flex gap-1.5 mb-4 bg-slate-100 dark:bg-zinc-800 p-1 rounded-xl">
-        {[
-          { id: 'league' as const, label: 'League' },
-          { id: 'badges' as const, label: 'Badges' },
-        ].map(t => (
-          <button
-            key={t.id}
-            type="button"
-            onClick={() => setTab(t.id)}
-            className={`flex-1 py-2 rounded-lg text-[13px] font-bold transition-colors ${
-              tab === t.id
-                ? 'bg-zinc-900 text-white shadow-sm'
-                : 'text-slate-500 hover:text-slate-700 dark:text-zinc-400'
-            }`}
-          >
-            {t.label}
-          </button>
-        ))}
+    <ScreenShell stickers={['reward.champion', 'social.friendly-rivalry', 'social.leaderboard-climb']} title={t('nav.league')} subtitle={t('site.league.globalSubtitle', { league: league.label })}>
+      {/* the five leagues */}
+      <div className={`${seCard} px-2 pb-3 pt-4`}>
+        <LeagueLadder current={league.id} label={(id) => tText(leagueMeta(id).label)} />
       </div>
 
-      {tab === 'league' && (
-        <div className="space-y-2.5">
-          <div className="flex gap-1.5 bg-slate-50 dark:bg-zinc-900 p-1 rounded-xl border border-slate-200 dark:border-zinc-800">
-            {([
-              { id: 'global' as const, label: 'Global', icon: Globe },
-              { id: 'class' as const, label: 'My class', icon: Users },
-            ]).map(({ id, label, icon: Icon }) => (
-              <button
-                key={id}
-                type="button"
-                onClick={() => setBoardScope(id)}
-                className={`flex-1 py-2 rounded-lg text-[12px] font-bold transition-colors inline-flex items-center justify-center gap-1.5 ${
-                  boardScope === id
-                    ? 'bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-50 shadow-sm'
-                    : 'text-slate-500 hover:text-slate-700 dark:text-zinc-400'
-                }`}
-              >
-                <Icon className="w-3.5 h-3.5" />
-                {label}
-              </button>
-            ))}
-          </div>
-
-          <div className={`${seCard} p-3.5 flex items-center gap-3`}>
-            <div
-              className="league-tile w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
-              style={{ ['--league-soft' as string]: league.soft, ['--league-ink' as string]: league.ink } as React.CSSProperties}
-            >
-              <Trophy className="w-5 h-5" />
-            </div>
-            <div className="min-w-0 flex-1">
-              <div className="font-bold text-[15px] text-zinc-900 dark:text-zinc-50">{league.label} League</div>
-              <div className="text-[12px] text-slate-400 flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-0.5">
-                <span className="inline-flex items-center gap-1"><Clock className="w-3 h-3" /> {countdown} left</span>
-                {zoneLabel && <span>· {zoneLabel}</span>}
-              </div>
-            </div>
-            <div className="text-right shrink-0">
-              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Your XP</div>
-              <div className="font-black tabular-nums text-zinc-900 dark:text-zinc-50">{myWeekly}</div>
-            </div>
-          </div>
-
-          <div className={`${seCard} overflow-hidden`}>
-            {loading ? (
-              <div className="flex justify-center py-12">
-                <Loader2 className="w-6 h-6 animate-spin text-slate-300" />
-              </div>
-            ) : rows.length === 0 ? (
-              <div className="px-4 py-10 text-center">
-                <Trophy className="w-8 h-8 mx-auto text-slate-200 mb-2" />
-                <p className="font-bold text-[14px] text-slate-700">
-                  {boardScope === 'global' ? 'No global rankings yet' : 'No league mates yet'}
-                </p>
-                <p className="text-[12px] text-slate-400 mt-1 max-w-xs mx-auto">
-                  {boardScope === 'global'
-                    ? 'Earn XP this week to appear on the global leaderboard.'
-                    : 'Join a class to see your class rankings, or switch to Global.'}
-                </p>
-              </div>
-            ) : (
-              <div>
-                {zones.promote > 0 && (
-                  <ZoneLabel kind="promote" text={`Promotion · top ${zones.promote}`} />
-                )}
-                {rows.map((s, i) => {
-                  const rank = i + 1;
-                  const you = s.uid === uid;
-                  const wx = s.weekKey === week ? (s.weeklyXp || 0) : 0;
-                  const name = you ? myName : (s.displayName || 'Student');
-                  const inPromote = zones.promote > 0 && rank <= zones.promote;
-                  const inDemote = zones.demote > 0 && rank > rows.length - zones.demote;
-                  const showPromoteDivider = zones.promote > 0 && rank === zones.promote;
-                  const showDemoteDivider =
-                    zones.demote > 0 && rank === rows.length - zones.demote + 1;
-
-                  return (
-                    <React.Fragment key={s.uid || i}>
-                      {showDemoteDivider && (
-                        <ZoneLabel kind="demote" text={`Demotion · bottom ${zones.demote}`} />
-                      )}
-                      <LeaderRow
-                        rank={rank}
-                        name={name}
-                        xp={wx}
-                        you={you}
-                        streak={s.globalStreak?.current ?? s.streak?.current ?? 0}
-                        promote={inPromote}
-                        demote={inDemote}
-                      />
-                      {showPromoteDivider && <div className="mx-3.5 h-px bg-slate-100 dark:bg-zinc-800" />}
-                    </React.Fragment>
-                  );
-                })}
-                <p className="px-3.5 py-3 text-center text-[11px] text-slate-400 leading-snug">
-                  {boardScope === 'global'
-                    ? 'Top learners worldwide in your league · XP resets Monday'
-                    : 'Top move up · bottom drop · XP resets Monday'}
-                </p>
-              </div>
-            )}
+      {/* where you stand this week */}
+      <div className={`${seCard} mt-3 flex items-center gap-3 p-3.5`}>
+        <LeagueTrophy id={league.id} size={48} />
+        <div className="min-w-0 flex-1">
+          <div className="font-serif text-[17px] font-extrabold text-zinc-900 dark:text-zinc-50">{t('site.league.name', { league: league.label })}</div>
+          <div className="mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[12px] font-semibold text-slate-400">
+            <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" />{t('site.league.resetsIn', { time: countdown })}</span>
+            {zoneLabel && <span>· {zoneLabel}</span>}
           </div>
         </div>
-      )}
-
-      {tab === 'badges' && (
-        <div className="grid grid-cols-2 gap-2.5">
-          {Object.entries(BADGE_META).map(([id, meta]) => {
-            const earned = earnedBadges.includes(id);
-            return (
-              <div
-                key={id}
-                className={`${seCard} p-3.5 text-left ${
-                  earned ? '' : 'opacity-45 grayscale'
-                }`}
-              >
-                <Medal className={`w-5 h-5 mb-2 ${earned ? 'text-amber-600' : 'text-slate-400'}`} />
-                <h4 className={`font-bold text-[13px] ${earned ? 'text-zinc-900 dark:text-zinc-50' : 'text-slate-600'}`}>{meta.label}</h4>
-                <p className="text-[11px] text-slate-400 mt-1 leading-snug">{meta.desc}</p>
-              </div>
-            );
-          })}
+        <div className="shrink-0 text-right">
+          <div className="font-serif text-xl font-extrabold tabular-nums text-zinc-900 dark:text-zinc-50">{myWeekly}</div>
+          <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{t('site.league.weekXp')}</div>
         </div>
+      </div>
+
+      {/* the board */}
+      <div className={`${seCard} mt-3 overflow-hidden`}>
+        {loading ? (
+          <div className="flex justify-center py-12"><Loader2 className="h-6 w-6 animate-spin text-slate-300" /></div>
+        ) : rows.length === 0 ? (
+          <div className="px-4 py-10 text-center">
+            <Trophy className="mx-auto mb-2 h-8 w-8 text-slate-200" />
+            <p className="text-[14px] font-bold text-slate-700 dark:text-zinc-200">{t('site.gamification.no_global_rankings_yet_2d06d9')}</p>
+            <p className="mx-auto mt-1 max-w-xs text-[12px] text-slate-400">{t('site.gamification.earn_xp_this_week_to_6d3ba1')}</p>
+          </div>
+        ) : (
+          <div>
+            {zones.promote > 0 && <ZoneLabel kind="promote" text={t('site.gamification.promotion_top_v1_5f7395', { v1: String(zones.promote) })} />}
+            {rows.map((s, i) => {
+              const rank = i + 1;
+              const you = s.uid === uid;
+              const wx = s.weekKey === week ? (s.weeklyXp || 0) : 0;
+              const name = you ? myName : (s.displayName || t('site.identity.student'));
+              const inPromote = zones.promote > 0 && rank <= zones.promote;
+              const inDemote = zones.demote > 0 && rank > rows.length - zones.demote;
+              const showPromoteDivider = zones.promote > 0 && rank === zones.promote;
+              const showDemoteDivider = zones.demote > 0 && rank === rows.length - zones.demote + 1;
+              return (
+                <React.Fragment key={s.uid || i}>
+                  {showDemoteDivider && <ZoneLabel kind="demote" text={t('site.gamification.demotion_bottom_v1_34d44f', { v1: String(zones.demote) })} />}
+                  <LeaderRow rank={rank} name={name} xp={wx} you={you} streak={s.globalStreak?.current ?? s.streak?.current ?? 0} promote={inPromote} demote={inDemote} />
+                  {showPromoteDivider && <div className="mx-3.5 h-px bg-slate-100 dark:bg-zinc-800" />}
+                </React.Fragment>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      {onOpenClass && (
+        <button type="button" onClick={onOpenClass}
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-slate-200 bg-white py-3 font-serif text-[13px] font-extrabold uppercase tracking-wide text-zinc-700 shadow-[0_3px_0_0_#e2e8f0] transition-[transform,box-shadow] duration-75 active:translate-y-[3px] active:shadow-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:shadow-[0_3px_0_0_#3f3f46]">
+          <Users className="h-4 w-4" />{t('site.league.myClass')}
+        </button>
       )}
     </ScreenShell>
   );
@@ -334,12 +252,13 @@ function LeaderRow({
   promote: boolean;
   demote: boolean;
 }) {
+  const { t } = useUiLang();
   const hue = avatarHue(name);
   return (
     <div
       className={`flex items-center gap-2.5 px-3.5 py-2.5 ${
         you
-          ? 'bg-sky-50 dark:bg-sky-950/40'
+          ? 'bg-zinc-100 dark:bg-zinc-800'
           : promote
             ? 'bg-emerald-50/50'
             : demote
@@ -356,12 +275,11 @@ function LeaderRow({
         {(name?.[0] || '?').toUpperCase()}
       </div>
       <div className="min-w-0 flex-1">
-        <div className={`font-bold text-[13px] truncate ${you ? 'text-sky-950 dark:text-sky-100' : 'text-zinc-900 dark:text-zinc-50'}`}>
+        <div className={`font-bold text-[13px] truncate ${you ? 'text-zinc-950 dark:text-zinc-50' : 'text-zinc-900 dark:text-zinc-50'}`}>
           {name}
           {you && (
-            <span className="ml-1.5 align-middle text-[9px] font-black uppercase tracking-wide bg-sky-200 text-sky-900 px-1 py-0.5 rounded">
-              You
-            </span>
+            <span className="ml-1.5 align-middle text-[9px] font-black uppercase tracking-wide bg-zinc-900 text-white px-1.5 py-0.5 rounded-md dark:bg-zinc-100 dark:text-zinc-900">
+              {t("site.gamification.you_905cb3")}</span>
           )}
         </div>
         {streak > 0 && (
@@ -370,7 +288,7 @@ function LeaderRow({
           </div>
         )}
       </div>
-      <div className={`text-[13px] font-black tabular-nums shrink-0 ${you ? 'text-sky-900 dark:text-sky-100' : 'text-zinc-700 dark:text-zinc-300'}`}>
+      <div className={`text-[13px] font-black tabular-nums shrink-0 ${you ? 'text-zinc-950 dark:text-zinc-50' : 'text-zinc-700 dark:text-zinc-300'}`}>
         {xp} <span className="text-[10px] font-bold text-slate-400">XP</span>
       </div>
     </div>

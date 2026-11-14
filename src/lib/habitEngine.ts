@@ -99,32 +99,26 @@ export const LEAGUE_TIERS = [
   { id: 'Bronze', label: 'Bronze', accent: '#C4793B', soft: '#F5E6D3', ink: '#7A4A1E' },
   { id: 'Silver', label: 'Silver', accent: '#8E9AA8', soft: '#E8EEF3', ink: '#3F4A56' },
   { id: 'Gold', label: 'Gold', accent: '#E5A100', soft: '#FFF3CC', ink: '#7A5500' },
-  { id: 'Sapphire', label: 'Sapphire', accent: '#1CB0F6', soft: '#D7F1FC', ink: '#0B6B96' },
-  { id: 'Ruby', label: 'Ruby', accent: '#FF4B4B', soft: '#FFE0E0', ink: '#9B1C1C' },
-  { id: 'Emerald', label: 'Emerald', accent: '#58CC02', soft: '#E4F7D0', ink: '#2B6B00' },
-  { id: 'Amethyst', label: 'Amethyst', accent: '#CE82FF', soft: '#F3E4FF', ink: '#6B2F9B' },
-  { id: 'Pearl', label: 'Pearl', accent: '#F0E6D8', soft: '#FAF7F2', ink: '#6B5E4E' },
-  { id: 'Obsidian', label: 'Obsidian', accent: '#4B4B4B', soft: '#E8E8E8', ink: '#1F1F1F' },
-  { id: 'Diamond', label: 'Diamond', accent: '#86D3F5', soft: '#E8F7FD', ink: '#1A6B8A' },
+  { id: 'Emerald', label: 'Emerald', accent: '#22A447', soft: '#E1F6E6', ink: '#14632B' },
+  { id: 'Diamond', label: 'Diamond', accent: '#5AA9F0', soft: '#E3F1FD', ink: '#1A5A8A' },
 ] as const;
+
+/** Leagues from the old 10-tier ladder, folded into the five above. */
+export const LEGACY_LEAGUE: Record<string, string> = {
+  Sapphire: 'Gold', Platinum: 'Gold', Pearl: 'Emerald', Ruby: 'Emerald', Amethyst: 'Emerald', Obsidian: 'Diamond',
+};
 
 export type LeagueId = (typeof LEAGUE_TIERS)[number]['id'];
 
 export function leagueMeta(id?: string | null) {
-  // Legacy name from earlier XP ladder
-  if (id === 'Platinum') return LEAGUE_TIERS.find(t => t.id === 'Pearl')!;
-  return LEAGUE_TIERS.find(t => t.id === id) || LEAGUE_TIERS[0];
+  const key = (id && LEGACY_LEAGUE[id]) || id;
+  return LEAGUE_TIERS.find(t => t.id === key) || LEAGUE_TIERS[0];
 }
 
 export function leagueForXp(xp: number): LeagueId {
-  if (xp > 20000) return 'Diamond';
-  if (xp > 14000) return 'Obsidian';
-  if (xp > 10000) return 'Pearl';
-  if (xp > 7000) return 'Amethyst';
+  if (xp > 10000) return 'Diamond';
   if (xp > 4500) return 'Emerald';
-  if (xp > 2800) return 'Ruby';
-  if (xp > 1500) return 'Sapphire';
-  if (xp > 700) return 'Gold';
+  if (xp > 1500) return 'Gold';
   if (xp > 250) return 'Silver';
   return 'Bronze';
 }
@@ -164,6 +158,15 @@ export function formatWeekCountdown(ms: number): string {
 }
 
 /** Normalize habit fields after load / across midnight. */
+/** Streak as the learner should see it today: a missed day with no freeze left means it's gone. */
+export function visibleStreak(habit: HabitState, now = new Date()): number {
+  const last = habit.globalStreak.lastDate;
+  if (!last) return 0;
+  const days = Math.round((Date.parse(`${todayKey(now)}T12:00:00`) - Date.parse(`${last}T12:00:00`)) / 86400000);
+  if (days <= 1) return habit.globalStreak.current;
+  return habit.streakFreezes > 0 ? habit.globalStreak.current : 0;
+}
+
 export function normalizeHabit(raw: Partial<HabitState> | null | undefined): HabitState {
   const base = emptyHabit();
   if (!raw || typeof raw !== 'object') return base;
@@ -176,6 +179,8 @@ export function normalizeHabit(raw: Partial<HabitState> | null | undefined): Hab
   } else if (daily.weekKey !== weekKey) {
     daily = { ...daily, weekHits: 0, weekKey };
   }
+  // Callers may apply XP more than once in a tick; never mutate their input.
+  daily = { ...daily };
 
   let weeklyXp = raw.weeklyXp ?? 0;
   let stateWeek = raw.weekKey || weekKey;
@@ -210,6 +215,7 @@ export function normalizeHabit(raw: Partial<HabitState> | null | undefined): Hab
 export function applyXpToHabit(
   habit: HabitState,
   xpAmount: number,
+  targetXp = DAILY_GOAL_XP,
 ): { habit: HabitState; goalJustCompleted: boolean; streakTicked: boolean; newBadges: string[] } {
   const next = normalizeHabit(habit);
   const date = todayKey();
@@ -220,7 +226,7 @@ export function applyXpToHabit(
   next.weeklyXp = (next.weeklyXp || 0) + Math.max(0, xpAmount);
   next.dailyGoal.xpEarned = (next.dailyGoal.xpEarned || 0) + Math.max(0, xpAmount);
 
-  if (!next.dailyGoal.completed && next.dailyGoal.xpEarned >= DAILY_GOAL_XP) {
+  if (!next.dailyGoal.completed && next.dailyGoal.xpEarned >= Math.max(1, targetXp)) {
     next.dailyGoal.completed = true;
     goalJustCompleted = true;
     next.dailyGoal.weekHits = (next.dailyGoal.weekHits || 0) + 1;
