@@ -60,6 +60,28 @@ async function getClass(classId: string): Promise<Json | null> {
   return classFromRow(result.rows[0], await listClassMembers(classId));
 }
 
+async function requireClassAccess(user: AuthUser, classId: string, write = false): Promise<Json> {
+  const cls = await getClass(classId);
+  if (!cls) throw errorWithStatus('Class not found', 404);
+  if (user.role === 'admin' || cls.teacherUid === user.uid) return cls;
+  if (!write && cls.studentUids.includes(user.uid)) return cls;
+  throw errorWithStatus('Class access denied', 403);
+}
+
+async function requireStudentAccess(user: AuthUser, uid: string): Promise<void> {
+  if (user.uid === uid || user.role === 'admin') return;
+  requireRole(user, ['business']);
+  const found = await query('SELECT 1 FROM class_members m JOIN classes c ON c.id = m.class_id WHERE m.user_uid = $1 AND c.teacher_uid = $2 LIMIT 1', [uid, user.uid]);
+  if (!found.rowCount) throw errorWithStatus('Student access denied', 403);
+}
+
+async function requireAssignmentAccess(user: AuthUser, id: string, write = false): Promise<Json> {
+  const found = await query('SELECT class_id, data FROM assignments WHERE id = $1', [id]);
+  if (!found.rows[0]) throw errorWithStatus('Assignment not found', 404);
+  await requireClassAccess(user, found.rows[0].class_id, write);
+  return found.rows[0];
+}
+
 async function addNotificationInternal(uid: string, notification: Json): Promise<void> {
   const id = notification.id || newId('notif_');
   const data: Json = { ...notification, id };
@@ -273,13 +295,21 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
       );
       return null;
     case 'summary.get': {
-      selfOrRole(user, String(args.uid || user.uid), ['admin', 'business']);
+      await requireStudentAccess(user, String(args.uid || user.uid));
       const result = await query('SELECT data FROM student_summaries WHERE user_uid = $1', [String(args.uid || user.uid)]);
       return result.rows[0] ? { uid: args.uid, ...result.rows[0].data } : null;
     }
     case 'summary.list': {
       requireRole(user, ['admin', 'business']);
       const ids = Array.isArray(args.uids) ? args.uids.map(String) : [];
+      if (user.role !== 'admin') {
+        if (!ids.length) {
+          const members = await query('SELECT DISTINCT m.user_uid FROM class_members m JOIN classes c ON c.id = m.class_id WHERE c.teacher_uid = $1', [user.uid]);
+          ids.push(...members.rows.map(row => row.user_uid));
+          if (!ids.length) return [];
+        }
+        for (const uid of ids) await requireStudentAccess(user, uid);
+      }
       const result = ids.length
         ? await query('SELECT user_uid, data FROM student_summaries WHERE user_uid = ANY($1::text[])', [ids])
         : await query('SELECT user_uid, data FROM student_summaries');
@@ -299,7 +329,7 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
       const ids = [String(args.leagueId), ...(LEGACY[String(args.leagueId)] ?? [])];
       const result = await query('SELECT user_uid, data FROM student_summaries WHERE data->>\'league\' = ANY($1)', [ids]);
       return result.rows
-        .map((row) => ({ uid: row.user_uid, ...row.data }))
+        .map((row) => ({ uid: row.user_uid, displayName: row.data.displayName, weeklyXp: row.data.weeklyXp, league: String(args.leagueId) }))
         .sort((a, b) => Number(b.weeklyXp || 0) - Number(a.weeklyXp || 0))
         .slice(0, Math.min(Number(args.max || 50), 100));
     }
@@ -307,6 +337,7 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
     case 'class.create': {
       requireRole(user, ['business', 'admin']);
       if (user.uid !== args.teacherUid && user.role !== 'admin') throw errorWithStatus('Not your account', 403);
+      if (args.organizationId && args.organizationId !== user.uid && user.role !== 'admin') throw errorWithStatus('Organization access denied', 403);
       const id = newId('class_');
       const data = cleanObject({
         name: String(args.name || '').trim(),
@@ -398,9 +429,15 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
       };
     }
     case 'invite.create': {
+      return withTransaction(async tx => {
       if (user.uid !== String(args.sponsorUid)) requireRole(user, ['admin']);
       if (!['admin', 'business', 'teacher', 'organization'].includes(user.role)) throw errorWithStatus('Only sponsors can invite users.', 403);
       const email = String(args.inviteeEmail || '').trim().toLowerCase();
+      const sponsor = (await tx.query('SELECT role, profile FROM app_users WHERE uid = $1 FOR UPDATE', [String(args.sponsorUid)])).rows[0];
+      const quota = Number(sponsor?.profile?.planSeats || 0);
+      const used = Number((await tx.query("SELECT COUNT(*)::int AS n FROM smarty_max_invites WHERE sponsor_uid = $1 AND status <> 'revoked'", [String(args.sponsorUid)])).rows[0].n);
+      const expired = sponsor?.profile?.planExpiresAt && Date.now() >= sponsor.profile.planExpiresAt;
+      if (sponsor?.role !== 'admin' && (expired || sponsor?.profile?.plan !== 'business' || !Number.isSafeInteger(quota) || used >= quota)) throw errorWithStatus('No paid seats available', 403);
       if (!email) throw errorWithStatus('Email is required.');
       const duplicate = await query('SELECT 1 FROM smarty_max_invites WHERE sponsor_uid = $1 AND lower(invitee_email) = $2 AND status <> \'revoked\' LIMIT 1', [String(args.sponsorUid), email]);
       if (duplicate.rowCount) throw errorWithStatus('This email has already been invited.', 409);
@@ -427,12 +464,13 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
         });
       }
       return { status: data.status, invitation: data };
+      });
     }
     case 'invite.revoke': {
       const result = await query<{ sponsor_uid: string; invitee_uid: string | null; data: Json }>('SELECT sponsor_uid, invitee_uid, data FROM smarty_max_invites WHERE id = $1', [String(args.invitationId)]);
       const row = result.rows[0];
       if (!row) return null;
-      selfOrRole(user, row.sponsor_uid, ['admin', 'business']);
+      selfOrRole(user, row.sponsor_uid);
       await query('UPDATE smarty_max_invites SET status = \'revoked\', data = data || $2::jsonb WHERE id = $1', [String(args.invitationId), JSON.stringify({ status: 'revoked', revokedAt: Date.now() })]);
       if (row.invitee_uid) {
         const profile = await getProfile(row.invitee_uid);
@@ -447,6 +485,8 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
       requireRole(user, ['business', 'admin']);
       const id = newId('assignment_');
       const data = cleanObject({ ...args.data, id });
+      await requireClassAccess(user, String(data.classId), true);
+      data.teacherUid = user.uid;
       await query('INSERT INTO assignments (id, class_id, teacher_uid, created_at, data) VALUES ($1, $2, $3, $4, $5)', [
         id, data.classId, data.teacherUid, Number(data.createdAt || Date.now()), JSON.stringify(data),
       ]);
@@ -458,11 +498,14 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
     }
     case 'assignment.list': {
       const classIds = Array.isArray(args.classIds) ? args.classIds.map(String) : [String(args.classId)];
+      for (const classId of classIds) await requireClassAccess(user, classId);
       const result = await query('SELECT id, data FROM assignments WHERE class_id = ANY($1::text[]) ORDER BY created_at DESC', [classIds]);
       return result.rows.map((row) => ({ id: row.id, ...row.data }));
     }
     case 'assignment.submit':
       selfOrRole(user, String(args.submission.studentUid));
+      await requireAssignmentAccess(user, String(args.assignmentId));
+      if (Object.keys(args.submission || {}).some(key => /grade|feedback|teacher/i.test(key))) throw errorWithStatus('Grading fields are teacher-only', 403);
       await query(
         `INSERT INTO submissions (assignment_id, student_uid, data, completed_at) VALUES ($1, $2, $3, $4)
          ON CONFLICT (assignment_id, student_uid) DO UPDATE SET data = submissions.data || EXCLUDED.data, completed_at = EXCLUDED.completed_at`,
@@ -471,6 +514,11 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
       return null;
     case 'assignment.updateSubmission':
       requireRole(user, ['business', 'admin']);
+      {
+        const assignment = await requireAssignmentAccess(user, String(args.assignmentId), true);
+        const cls = await requireClassAccess(user, assignment.class_id, true);
+        if (!cls.studentUids.includes(String(args.studentUid))) throw errorWithStatus('Student not in class', 403);
+      }
       await query(
         `INSERT INTO submissions (assignment_id, student_uid, data, completed_at) VALUES ($1, $2, $3, $4)
          ON CONFLICT (assignment_id, student_uid) DO UPDATE SET data = submissions.data || EXCLUDED.data`,
@@ -479,6 +527,7 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
       return null;
     case 'assignment.submissions': {
       requireRole(user, ['business', 'admin']);
+      await requireAssignmentAccess(user, String(args.assignmentId), true);
       const result = await query('SELECT data FROM submissions WHERE assignment_id = $1', [String(args.assignmentId)]);
       return result.rows.map((row) => row.data);
     }
@@ -497,6 +546,7 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
 
     case 'notification.add':
       requireRole(user, ['admin', 'business']);
+      await requireStudentAccess(user, String(args.uid));
       await addNotificationInternal(String(args.uid), args.notification || {});
       return null;
     case 'notification.list':
@@ -516,6 +566,8 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
     case 'announcement.create': {
       requireRole(user, ['business', 'admin']);
       const data = cleanObject(args.data || {});
+      if (data.targetType === 'class') await requireClassAccess(user, String(data.targetId), true);
+      else requireRole(user, ['admin']);
       const id = newId('announcement_');
       await query('INSERT INTO announcements (id, author_uid, target_type, target_id, created_at, data) VALUES ($1, $2, $3, $4, $5, $6)', [
         id, user.uid, data.targetType, data.targetId || null, Number(data.createdAt || Date.now()), JSON.stringify({ ...data, id }),
@@ -529,10 +581,13 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
       return id;
     }
     case 'announcement.list': {
+      if (args.targetType === 'class' && args.targetId) await requireClassAccess(user, String(args.targetId));
+      else if (!args.targetType) requireRole(user, ['admin']);
+      else if (args.targetType !== 'global') throw errorWithStatus('Announcement access denied', 403);
       const result = await query(
         args.targetType && args.targetId
           ? 'SELECT data FROM announcements WHERE target_type = $1 AND target_id = $2 ORDER BY created_at DESC LIMIT 50'
-          : 'SELECT data FROM announcements ORDER BY created_at DESC LIMIT 50',
+          : args.targetType === 'global' ? "SELECT data FROM announcements WHERE target_type = 'global' ORDER BY created_at DESC LIMIT 50" : 'SELECT data FROM announcements ORDER BY created_at DESC LIMIT 50',
         args.targetType && args.targetId ? [String(args.targetType), String(args.targetId)] : [],
       );
       return result.rows.map((row) => row.data);
@@ -592,6 +647,7 @@ async function handleAction(user: AuthUser, body: Json): Promise<any> {
     }
     case 'activity.list': {
       requireRole(user, ['admin', 'business']);
+      await requireStudentAccess(user, String(args.studentUid));
       return (await query('SELECT data FROM student_activity WHERE student_uid = $1 ORDER BY timestamp DESC LIMIT $2', [
         String(args.studentUid), Math.min(Number(args.limit || 100), 500),
       ])).rows.map((row) => row.data);

@@ -17,6 +17,7 @@ import {
 } from "./server/auth.ts";
 import { registerDataApi } from "./server/dataApi.ts";
 import { registerPaymentsApi, registerPaymentsWebhook, registerSubscriptionApi } from "./server/paymentsApi.ts";
+import { installSecurity, demoLoginEnabled, providerAuth, rateLimit, reserveAiRequest } from './server/security.ts';
 
 const require = createRequire(import.meta.url);
 const { officialTranslate } = require("./functions/translateCore.js");
@@ -26,7 +27,7 @@ const { lookupDictionaryServer } = require("./functions/dictionaryCore.js");
 async function startServer() {
   const app = express();
   const PORT = Number(process.env.PORT || 3000);
-  app.set("trust proxy", 1);
+  installSecurity(app);
 
   registerPaymentsWebhook(app);
   app.use(express.json({ limit: "256kb" }));
@@ -50,7 +51,7 @@ async function startServer() {
   });
   // Local demo only: one-click sign-in as a demo account (/api/dev/demo-login?as=max|free).
   // Enabled solely by DEMO_LOGIN=1 outside production (set in the "smarty-demo" launch config).
-  if (process.env.DEMO_LOGIN === "1" && process.env.NODE_ENV !== "production") {
+  if (demoLoginEnabled()) {
     app.get("/api/dev/demo-login", async (req, res) => {
       try {
         const as = req.query.as === "free" ? "free" : "max";
@@ -105,7 +106,7 @@ async function startServer() {
   });
 
   // API Route for translation fallback (vocab DB miss → official provider)
-  app.post("/api/translate-fallback", async (req, res) => {
+  app.post("/api/translate-fallback", rateLimit(30, 60_000), providerAuth, async (req, res) => {
     try {
       const word = typeof req.body?.word === "string" ? req.body.word.trim() : "";
       const from = typeof req.body?.from === "string" ? req.body.from : "en";
@@ -113,6 +114,7 @@ async function startServer() {
       if (!word) {
         return res.status(400).json({ error: "Missing word" });
       }
+      if (word.length > 500) return res.status(400).json({ error: 'Text too long' });
       const apiKey = process.env.GOOGLE_TRANSLATE_API_KEY || "";
       const result = await officialTranslate(word, from, to, apiKey);
       res.json({ text: result.text, source: result.source });
@@ -138,13 +140,14 @@ async function startServer() {
           (err as Error & { status?: number }).status = 403;
           throw err;
         }
+        await reserveAiRequest(user.uid, String(r.body?.action || ''));
         return { uid: user.uid, profile: profile || user.profile, strict: false };
       },
     });
   });
 
   // Microsoft Azure Text-to-Speech (MP3; synced reads use SDK bookmark timepoints)
-  app.post("/api/tts", async (req, res) => {
+  app.post("/api/tts", rateLimit(60, 60_000), providerAuth, async (req, res) => {
     try {
       const cfg = getConfig();
       if ("missing" in cfg) {
@@ -161,6 +164,7 @@ async function startServer() {
       if (!text.trim()) {
         return res.status(400).json({ error: "Missing text" });
       }
+      if (text.length > 5000 || words.length > 1000 || !Number.isFinite(rate) || rate < 0.5 || rate > 2) return res.status(400).json({ error: 'Invalid speech request' });
 
       if (sync && words.length > 0) {
         const result = await synthesizeMp3WithSync(text, lang, rate, words, voice);
@@ -182,11 +186,12 @@ async function startServer() {
     }
   });
 
-  app.post("/api/dictionary", async (req, res) => {
+  app.post("/api/dictionary", rateLimit(60, 60_000), providerAuth, async (req, res) => {
     try {
       const word = typeof req.body?.word === "string" ? req.body.word.trim() : "";
       const lang = typeof req.body?.lang === "string" ? req.body.lang : "en";
       if (!word) return res.status(400).json({ error: "Missing word" });
+      if (word.length > 100) return res.status(400).json({ error: 'Word too long' });
       const result = await lookupDictionaryServer(word, lang);
       if (!result) return res.status(404).json({ error: `Could not find definition for ${word}` });
       return res.json(result);
@@ -197,6 +202,7 @@ async function startServer() {
   });
 
   registerDataApi(app);
+  app.use('/api', (_req, res) => res.status(404).json({ error: 'API route not found' }));
 
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {

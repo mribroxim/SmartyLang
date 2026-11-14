@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import pg from 'pg';
 
@@ -40,8 +40,16 @@ export async function withTransaction<T>(fn: (client: pg.PoolClient) => Promise<
 
 export async function runMigrations(): Promise<void> {
   if (!databaseConfigured) return;
-  const sql = await readFile(path.join(process.cwd(), 'server', 'migrations', '001_initial.sql'), 'utf8');
-  await query(sql);
+  const dir = path.join(process.cwd(), 'server', 'migrations');
+  await withTransaction(async tx => {
+    await tx.query("SELECT pg_advisory_xact_lock(7342901)");
+    await tx.query('CREATE TABLE IF NOT EXISTS schema_migrations (name TEXT PRIMARY KEY, applied_at TIMESTAMPTZ NOT NULL DEFAULT NOW())');
+    for (const name of (await readdir(dir)).filter(name => /^\d+_.*\.sql$/.test(name)).sort()) {
+      if ((await tx.query('SELECT 1 FROM schema_migrations WHERE name = $1', [name])).rowCount) continue;
+      await tx.query(await readFile(path.join(dir, name), 'utf8'));
+      await tx.query('INSERT INTO schema_migrations (name) VALUES ($1)', [name]);
+    }
+  });
 }
 
 export async function closeDatabase(): Promise<void> {

@@ -58,11 +58,10 @@ function getCookie(req: Request, name: string): string | undefined {
   }
 }
 
-function cookieOptions(req: Request) {
-  const forwardedProto = String(req.headers['x-forwarded-proto'] || '').split(',')[0].trim();
+export function cookieOptions(req: Request) {
   return {
     httpOnly: true,
-    secure: forwardedProto === 'https' || req.secure,
+    secure: process.env.NODE_ENV === 'production' || req.secure,
     sameSite: 'lax' as const,
     path: '/',
     maxAge: SESSION_DAYS * 24 * 60 * 60 * 1000,
@@ -90,7 +89,7 @@ export async function setSession(res: Response, req: Request, uid: string): Prom
 export async function clearSession(req: Request, res: Response): Promise<void> {
   const token = getCookie(req, SESSION_COOKIE);
   if (token) await query('DELETE FROM sessions WHERE token_hash = $1', [tokenHash(token)]);
-  res.setHeader('Set-Cookie', `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax`);
+  res.setHeader('Set-Cookie', `${SESSION_COOKIE}=; Path=/; Max-Age=0; HttpOnly; SameSite=Lax${cookieOptions(req).secure ? '; Secure' : ''}`);
 }
 
 export async function getSessionUser(req: Request): Promise<AuthUser | null> {
@@ -168,7 +167,8 @@ export async function registerUser(
   const profile = {
     displayName,
     email,
-    role: email === String(process.env.ADMIN_EMAIL || 'abduraxmonovibroxim16@gmail.com').toLowerCase() ? 'admin' : 'student',
+    // Public registration must never grant a privileged role from an unverified email.
+    role: 'student',
     createdAt: Date.now(),
   };
   const passwordHash = await hashPassword(input.password);
@@ -296,7 +296,10 @@ export async function loginGoogleUser(
         WHERE i.provider = 'google' AND i.provider_id = $1`,
       [providerId],
     );
-    if (identity.rows[0]) return userFromRow(identity.rows[0]);
+    if (identity.rows[0]) {
+      if (identity.rows[0].disabled) throw Object.assign(new Error('Account disabled'), { status: 403 });
+      return userFromRow(identity.rows[0]);
+    }
 
     const existing = await tx.query<StoredUser>(
       `SELECT uid, email, display_name, photo_url, role, profile, disabled
@@ -304,6 +307,7 @@ export async function loginGoogleUser(
       [email],
     );
     let row = existing.rows[0];
+    if (row?.disabled) throw Object.assign(new Error('Account disabled'), { status: 403 });
     if (!row) {
       const uid = `local_${crypto.randomBytes(16).toString('hex')}`;
       const displayName = payload?.name || email.split('@')[0];

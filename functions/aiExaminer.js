@@ -24,6 +24,8 @@ const rateBuckets = new Map();
 
 function rateLimited(uid, max, windowMs = 10 * 60 * 1000) {
   const now = Date.now();
+  for (const [key, bucket] of rateBuckets) if (now - bucket.start >= windowMs) rateBuckets.delete(key);
+  if (!rateBuckets.has(uid) && rateBuckets.size >= 10000) return true;
   const hit = rateBuckets.get(uid);
   if (!hit || now - hit.start > windowMs) {
     rateBuckets.set(uid, { start: now, count: 1 });
@@ -152,6 +154,7 @@ function langName(code) {
 
 async function callOpenRouter(apiKey, { system, user, temperature = 0.3, maxTokens = 3500 }) {
   const r = await fetch(OPENROUTER_URL, {
+      signal: AbortSignal.timeout(45_000),
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
@@ -172,7 +175,7 @@ async function callOpenRouter(apiKey, { system, user, temperature = 0.3, maxToke
   });
   const text = await r.text();
   if (!r.ok) {
-    const err = new Error(`OpenRouter ${r.status}: ${text.slice(0, 240)}`);
+    const err = new Error(`AI provider unavailable (${r.status})`);
     err.status = r.status === 429 ? 429 : 502;
     throw err;
   }
@@ -494,7 +497,7 @@ async function handleAiRequest(req, res, ctx) {
   }
 
   const action = String(req.body?.action || "");
-  const cap = action === "buddy-turn" || action === "smarty-talk" ? 80 : 30;
+  const cap = action === "buddy-turn" || action === "smarty-talk" ? 30 : 20;
   if (rateLimited(uid, cap)) {
     res.status(429).json({ error: "Too many AI requests. Try again in a few minutes." });
     return;
