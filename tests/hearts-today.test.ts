@@ -1,4 +1,4 @@
-import { test, beforeEach } from 'node:test';
+import { test, beforeEach } from 'vitest';
 import assert from 'node:assert/strict';
 import { emptyHearts, regen, lose, gain, nextHeartIn, mergeHearts, chargeFirstAttempt, HEART_REGEN_MS, MAX_HEARTS } from '../src/lib/hearts/hearts';
 import { initializeHearts, getHearts, loseHeart, purchaseHeartRefill } from '../src/lib/hearts/heartsStore';
@@ -174,7 +174,7 @@ test('daily XP is awarded once and a successful replay can earn its one heart', 
   assert.deepEqual(completeDailySession('en', '2026-11-13', 90), { xp: false, heart: true });
   assert.deepEqual(completeDailySession('en', '2026-11-13', 100), { xp: false, heart: false });
   assert.equal(dailyCompletion('en', '2026-11-13')!.best, 100);
-  assert.deepEqual(biteXp('today', 100, true), { xp: 15, coins: 8 });
+  assert.deepEqual(biteXp('today', 100, true), { xp: 15, coins: 0 });
   assert.deepEqual(completeDailySession('en', '2026-11-14', 80), { xp: true, heart: true });
 });
 

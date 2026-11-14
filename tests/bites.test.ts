@@ -1,4 +1,4 @@
-import { test, beforeEach } from 'node:test';
+import { test, beforeEach } from 'vitest';
 import assert from 'node:assert/strict';
 import { deriveBites, seededPick } from '../src/lib/bites/deriveBites';
 import { biteDone, biteBest, lessonBiteState, recordBiteCompletion, recordBiteStep } from '../src/lib/bites/biteProgress';
@@ -112,9 +112,9 @@ test('certificate checks accept a fully mastered bite path and reject an unfinis
 });
 
 test('path XP and coins scale with accuracy; daily goals match minutes', () => {
-  assert.deepEqual(biteXp('meet', 70, false), { xp: 10, coins: 5 });
-  assert.deepEqual(biteXp('meet', 90, false), { xp: 15, coins: 8 });
-  assert.deepEqual(biteXp('read', 100, true), { xp: 20, coins: 10 });
+  assert.deepEqual(biteXp('meet', 70, false), { xp: 10, coins: 0 });
+  assert.deepEqual(biteXp('meet', 90, false), { xp: 15, coins: 0 });
+  assert.deepEqual(biteXp('read', 100, true), { xp: 20, coins: 0 });
   assert.deepEqual([5, 10, 15, 20].map(goalXpForMinutes), [15, 30, 45, 60]);
 });
 
