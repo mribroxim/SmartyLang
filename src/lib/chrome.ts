@@ -13,7 +13,7 @@ export interface ChromeState {
 /** Routes that take over the whole screen (bite sessions, heart practice). */
 export function isFocusRoute(tab: string, path: string[] = []): boolean {
   if (tab === 'practice' && path[0]) return true; // a running Practice session
-  return tab === 'lessons' && (path[0] === 'bite' || path[0] === 'today' || path[0] === 'hearts' || path[0] === 'test');
+  return tab === 'lessons' && (path[0] === 'bite' || path[0] === 'today' || path[0] === 'hearts' || path[0] === 'test' || path[0] === 'unit-one');
 }
 
 export function shouldShowChrome(s: ChromeState): boolean {

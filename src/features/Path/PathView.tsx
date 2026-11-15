@@ -12,6 +12,9 @@ import { learnerName } from '../../lib/smarty/context';
 import type { UiStringKey } from '../../lib/uiStrings';
 import { ChunkyButton } from '../Bites/lesson/chunky';
 import { SECTIONS, isSectionOpen, sectionComplete } from '../../lib/bites/sections';
+import { UNIT_ONE_PILOT_ENABLED } from '../../lib/unitOnePilot/enabled';
+import { UnitOnePilotCard } from '../UnitOnePilot/UnitOnePilot';
+import { PILOT_COPY } from '../../lib/unitOnePilot/copy';
 
 const LEVELS: Level[] = ['Beginner', 'Elementary', 'Pre-Intermediate', 'Intermediate', 'Advanced'];
 const ZIG = [0, 44, 72, 44, 0, -44, -72, -44];
@@ -26,10 +29,12 @@ interface Props {
   onStartBite: (text: ReadingText, biteIndex: number) => void;
   /** Take the jump test for a locked section. */
   onTakeTest: (level: Level) => void;
+  onOpenPilot?: () => void;
+  showOriginalUnitOne?: boolean;
 }
 
 /** Duolingo-style winding path: units → lesson nodes (ring = bites done) → bites. */
-export function PathView({ level, setLevel, textsByLevel, contentLang, startingLevel, onStartBite, onTakeTest }: Props) {
+export function PathView({ level, setLevel, textsByLevel, contentLang, startingLevel, onStartBite, onTakeTest, onOpenPilot, showOriginalUnitOne = false }: Props) {
   const { t, tText, tLevel } = useUiLang();
   const texts = textsByLevel[level] || [];
   const units = useMemo(() => buildLessonUnits(texts, level), [texts, level]);
@@ -40,6 +45,8 @@ export function PathView({ level, setLevel, textsByLevel, contentLang, startingL
   const currentRef = useRef<HTMLDivElement>(null);
   const done = states.filter((s) => s.complete).length;
   const [sections, setSections] = useState(false);
+  const [original, setOriginal] = useState(showOriginalUnitOne);
+  useEffect(() => setOriginal(showOriginalUnitOne), [showOriginalUnitOne]);
   const sectionIdx = SECTIONS.indexOf(level);
   const nextLevel = SECTIONS[sectionIdx + 1];
   const nextOpen = nextLevel ? isSectionOpen(contentLang, nextLevel, textsByLevel, startingLevel) : false;
@@ -77,6 +84,9 @@ export function PathView({ level, setLevel, textsByLevel, contentLang, startingL
 
         {/* Units */}
         {units.map((unit) => {
+          if (UNIT_ONE_PILOT_ENABLED && contentLang === 'en' && level === 'Beginner' && unit.index === 0 && !original && onOpenPilot) {
+            return <UnitOnePilotCard key="unit-one-pilot" onOpen={onOpenPilot} onOriginal={() => setOriginal(true)} />;
+          }
           const first = unit.index * 10;
           const unitStates = states.slice(first, first + unit.lessons.length);
           const unitDone = unitStates.filter((s) => s.complete).length;
@@ -89,6 +99,7 @@ export function PathView({ level, setLevel, textsByLevel, contentLang, startingL
                 </div>
                 <Sticker id={UNIT_STICKERS[unit.index % UNIT_STICKERS.length]} size={54} priority="ambient" quality="full" />
               </div>
+              {UNIT_ONE_PILOT_ENABLED && contentLang === 'en' && level === 'Beginner' && unit.index === 0 && onOpenPilot && <button onClick={onOpenPilot} className="mt-4 min-h-11 font-bold underline">{PILOT_COPY.try_new_unit}</button>}
 
               <div className="relative mt-14 flex flex-col items-center gap-6">
                 {unit.lessons.map((text, i) => {

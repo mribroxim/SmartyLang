@@ -22,6 +22,7 @@ import './lib/smarty/room';
 import './lib/bites/dailySession';
 import './lib/bites/sections';
 import './lib/questState';
+import './lib/unitOnePilot/progress';
 import { type HabitState, normalizeHabit, emptyHabit, leagueForXp, levelForXp, leagueMeta } from './lib/habitEngine';
 
 function usePrevious<T>(value: T): T | undefined {

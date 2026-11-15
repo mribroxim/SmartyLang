@@ -21,6 +21,8 @@ import { CONTENT_LANG_LABEL, DICT_LANG_CODE } from '../../lib/contentLang';
 import { UI_TRANSLATE_CODE } from '../../lib/uiLang';
 import { VocabLearnPhase } from './VocabLearnPhase';
 import { ReadingView } from '../ReadingView';
+import { UNIT_ONE_PILOT_ENABLED } from '../../lib/unitOnePilot/enabled';
+const UnitOnePilot = lazy(() => import('../UnitOnePilot/UnitOnePilot').then(m => ({ default: m.UnitOnePilot })));
 
 const LEVELS: Level[] = ['Beginner', 'Elementary', 'Pre-Intermediate', 'Intermediate', 'Advanced'];
 
@@ -372,6 +374,11 @@ export function LessonsView(props: LessonsViewProps) {
     if (testLevel) return <SectionTest level={testLevel} onDone={(passed) => props.navigatePath(['path', passed ? testLevel : props.level])} />;
   }
 
+  if (UNIT_ONE_PILOT_ENABLED && contentLang === 'en' && routeKind === 'unit-one') {
+    return <UnitOnePilot sessionId={props.path[1]} onOpen={id => props.navigatePath(['unit-one', ...(id ? [id] : [])])}
+      onBack={() => props.navigatePath(['path', 'Beginner'])} onOriginal={() => props.navigatePath(['path', 'Beginner', 'original'])} />;
+  }
+
   // The path is the whole Learn tab now: older library pages fall back to it.
   if (!isBite) {
     if (!Object.values(LEVEL_TEXTS).some(texts => texts.length)) return <SmartyLoader sticker="flow.lesson-loading" />;
@@ -383,6 +390,8 @@ export function LessonsView(props: LessonsViewProps) {
       startingLevel={props.startingLevel}
       onStartBite={startBite}
       onTakeTest={(lvl) => props.navigatePath(['test', lvl])}
+      onOpenPilot={() => props.navigatePath(['unit-one'])}
+      showOriginalUnitOne={props.path[2] === 'original'}
     />;
   }
 

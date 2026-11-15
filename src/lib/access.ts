@@ -58,5 +58,5 @@ export const isFreeUser = (p?: UserAccountProfile | null): boolean => {
 export const canUseBites = (p?: UserAccountProfile | null): boolean => !!p && !p.suspended;
 export const hasUnlimitedHearts = (p?: UserAccountProfile | null): boolean => canPractice(p);
 export function isFreeLearningRoute(tab: string, path: string[]): boolean {
-  return tab === 'lessons' && (!path.length || ['path', 'bite', 'today', 'hearts'].includes(path[0]));
+  return tab === 'lessons' && (!path.length || ['path', 'bite', 'today', 'hearts', 'unit-one'].includes(path[0]));
 }

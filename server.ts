@@ -68,7 +68,7 @@ async function startServer() {
         const uid = found.rows[0]?.uid;
         if (!uid) return res.status(404).send("Demo account not found");
         await setSession(res, req, uid);
-        return res.redirect("/#/dashboard");
+        return res.redirect(req.query.next === 'unit-one' ? '/#/lessons/unit-one' : '/#/dashboard');
       } catch (error: any) {
         return res.status(500).send(error?.message || "Demo sign-in failed");
       }
