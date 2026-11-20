@@ -1,5 +1,5 @@
 import { DialogSurface } from '../../components/DialogSurface';
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { X, Volume2, VolumeX, MicOff } from 'lucide-react';
 import type { ReadingText } from '../../lib/reading-logic';
@@ -20,6 +20,7 @@ import { chargeFirstAttempt } from '../../lib/hearts/hearts';
 import { ChunkyButton, ChunkyProgress } from './lesson/chunky';
 import { NATIVE_KINDS } from './lesson/questions';
 import type { LessonFeedback } from './lesson/LessonRunner';
+import { monotoneProgress } from './lesson/retryQueue';
 
 // Per step kind, Smarty rotates through a few intro stickers (picked per lesson + step, so it is stable on resume).
 const KIND_INTRO: Record<string, StickerId[]> = {
@@ -114,12 +115,13 @@ export function BiteRunner(props: Props) {
   const answerHistory = useRef<AnswerHistory>(resume?.answerHistory ?? { mistakes: [], hadWrong: false });
   const pausedRef = useRef(!!props.paused);
   const pendingScore = useRef<StepScore | null>(null);
+  const shownProgress = useRef(0);
   const step = steps[idx];
   const isRetry = !!step?.retry;
   // Quiz-style steps run on the lesson engine, which shows Smarty's reaction in its feedback sheet.
   const native = !!step && NATIVE_KINDS.has(step.kind);
   // Screens that bring their own lesson-style title and footer.
-  const fullBleed = native || step?.kind === 'vocab-intro';
+  const fullBleed = native || step?.kind === 'vocab-intro' || step?.kind === 'teach' || step?.kind === 'scene';
 
   useEffect(() => { emitSmarty({ type: 'session.start' }); }, []);
   useEffect(() => () => window.clearTimeout(flashTimer.current), []);
@@ -148,7 +150,7 @@ export function BiteRunner(props: Props) {
       if (e.questionId) saveBiteSession(props.contentLang, def, steps, idx, scores, Date.now() - startedAt.current, answered.current, answerHistory.current);
       // Speaking steps are graded by speech recognition, which can mishear: never charge hearts there.
       const speechStep = step?.kind === 'pronunciation' || step?.kind === 'read-back-shadowing';
-      if (charge && def.costsHearts && !speechStep && !pausedRef.current && props.onMistake && !props.onMistake(e.word)) pausedRef.current = true;
+      if (charge && def.costsHearts && !speechStep && !step?.free && !pausedRef.current && props.onMistake && !props.onMistake(e.word)) pausedRef.current = true;
       const r = decide(e, st.current);
       if (native) {
         setLessonFeedback({
@@ -180,13 +182,14 @@ export function BiteRunner(props: Props) {
   useEffect(() => { props.onReadStepChange?.(step?.kind === 'read-aloud' && !done); }, [step?.kind, done]);
 
   const finish = (all: StepScore[]) => {
-    const graded = all.filter((s) => !s.skipped && s.kind !== 'vocab-intro');
+    // Teach cards and the scene are shown, not graded.
+    const graded = all.filter((s) => !s.skipped && s.kind !== 'vocab-intro' && s.kind !== 'teach' && s.kind !== 'scene');
     const first = graded.filter((s) => !s.retry);
     const accuracy = first.length ? Math.round(first.reduce((a, s) => a + s.percent, 0) / first.length) : 100;
     const mistakes = [...new Set([...first.flatMap((s) => s.mistakes), ...answerHistory.current.mistakes])];
     const correctWords = [...new Set(graded.flatMap((s) => s.correctWords))];
     const res: BiteResult = {
-      def, accuracy, correctWords, mistakes,
+      def, accuracy, correctWords, mistakes, scores: all,
       perfect: first.length > 0 && mistakes.length === 0 && !answerHistory.current.hadWrong && !all.some(s => s.skipped) && first.every((s) => s.percent === 100),
       recovered: mistakes.length >= 3 && accuracy >= 80,
       ms: Date.now() - startedAt.current,
@@ -244,7 +247,10 @@ export function BiteRunner(props: Props) {
     });
   };
 
-  const progress = useMemo(() => (steps.length ? (idx + (done ? 1 : subProgress)) / steps.length : 0), [idx, steps.length, done, subProgress]);
+  // Duolingo-style: retries add steps, but the bar never moves backwards.
+  const rawProgress = steps.length ? (idx + (done ? 1 : subProgress)) / steps.length : 0;
+  shownProgress.current = monotoneProgress(shownProgress.current, rawProgress);
+  const progress = shownProgress.current;
 
   if (done) {
     return (
@@ -304,7 +310,7 @@ export function BiteRunner(props: Props) {
       <div inert={props.paused || undefined} aria-hidden={props.paused || undefined} className={`flex-1 w-full mx-auto flex flex-col ${fullBleed ? '' : 'max-w-3xl px-2 sm:px-4 pb-24'}`}>
         <motion.div key={`${idx}-${step.kind}`} className="flex flex-1 flex-col" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}>
           {step.kind === 'vocab-intro' ? (
-            props.renderVocabIntro(step.words ?? [], () => advance({ kind: 'vocab-intro', percent: 100, mistakes: [], correctWords: [] }))
+            props.renderVocabIntro(step.words ?? [], () => advance({ kind: 'vocab-intro', percent: 100, mistakes: [], correctWords: step.words ?? [] }))
           ) : step.kind === 'read-aloud' ? (
             props.renderRead()
           ) : (
@@ -320,6 +326,7 @@ export function BiteRunner(props: Props) {
               feedback={lessonFeedback}
               presenter={introSticker(step.kind, def.id, idx, steps.length, isRetry, !!props.firstEver)}
               onProgress={setSubProgress}
+              retryMisses={props.retryMisses !== false}
               onSkip={speaking ? () => advance({ kind: step.kind, percent: 0, mistakes: [], correctWords: [], skipped: true }) : undefined}
               title={isRetry ? t('bites.retry') : t(`bites.step.${step.kind}` as UiStringKey)}
             />

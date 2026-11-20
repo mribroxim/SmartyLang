@@ -1,0 +1,23 @@
+/* Shared Smarty typography and controls, scoped to management screens. */
+.smarty-management :is(h2, h3, th) {
+  font-family: var(--font-serif);
+  font-weight: 800;
+}
+.smarty-management :is(input, textarea, select) {
+  min-height: 44px;
+  border-width: 2px;
+  border-radius: 1rem;
+}
+.smarty-management :is(input, textarea, select):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.smarty-management th { white-space: nowrap; }
+.smarty-management button { min-height: 40px; }
+.smarty-management td { vertical-align: middle; }
+.smarty-management :is(td, th) { padding-block: 1rem; }
+.dark .smarty-management :is(input, textarea, select) {
+  background-color: #18181b;
+  color: #f4f4f5;
+  border-color: #3f3f46;
+}

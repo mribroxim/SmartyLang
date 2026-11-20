@@ -1,6 +1,16 @@
 import express, { type Express, type Request, type Response } from 'express';
 import { getProfile, requireUser, updateProfile } from './auth.ts';
 import { checkoutQuote } from './paymentPolicy.ts';
+import { query } from './db.ts';
+
+/** Students in a class run by a (free) teacher account get this much off Smarty Max. */
+const TEACHER_DISCOUNT = 0.1;
+async function hasTeacherDiscount(uid: string): Promise<boolean> {
+  const found = await query(
+    `SELECT 1 FROM class_members m JOIN classes c ON c.id = m.class_id JOIN app_users t ON t.uid = c.teacher_uid
+      WHERE m.user_uid = $1 AND t.role = 'teacher' LIMIT 1`, [uid]);
+  return !!found.rowCount;
+}
 import {
   createCheckoutSession,
   fulfillPayment,
@@ -46,6 +56,16 @@ export function registerPaymentsApi(app: Express): void {
     res.json({ configured: isDodoConfigured() });
   });
 
+  app.get('/api/payments/teacher-discount', async (req, res) => {
+    try {
+      const user = await requireUser(req);
+      const eligible = await hasTeacherDiscount(user.uid);
+      return res.json({ eligible, percent: eligible ? Math.round(TEACHER_DISCOUNT * 100) : 0 });
+    } catch (error: any) {
+      return res.status(errorStatus(error)).json({ error: error?.message || 'Failed' });
+    }
+  });
+
   app.post('/api/payments/checkout', async (req, res) => {
     try {
       const user = await requireUser(req);
@@ -55,7 +75,11 @@ export function registerPaymentsApi(app: Express): void {
 
       const body = req.body || {};
       const quote = checkoutQuote(body, user.profile);
-      const { kind, planId, amountUSD } = quote;
+      const { kind, planId } = quote;
+      // Teacher discount: Smarty Max only, applied through a Dodo discount code set in the dashboard.
+      const discountCode = planId === 'smarty-max' && kind !== 'seats' && process.env.DODO_TEACHER_DISCOUNT_CODE?.trim() && await hasTeacherDiscount(user.uid)
+        ? process.env.DODO_TEACHER_DISCOUNT_CODE.trim() : undefined;
+      const amountUSD = discountCode ? Math.round(quote.amountUSD * (1 - TEACHER_DISCOUNT) * 100) / 100 : quote.amountUSD;
       const description = `SmartyLang — ${planId}`;
 
       if (!planId || !Number.isFinite(amountUSD) || amountUSD <= 0) {
@@ -84,8 +108,9 @@ export function registerPaymentsApi(app: Express): void {
         description,
         customerEmail: user.email || undefined,
         customerName: user.displayName || user.email || undefined,
-        metadata,
+        metadata: discountCode ? { ...metadata, teacherDiscount: String(TEACHER_DISCOUNT) } : metadata,
         profile: user.profile,
+        discountCode,
       });
 
       return res.json({ checkoutUrl: session.checkoutUrl, sessionId: session.sessionId });

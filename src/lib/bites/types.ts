@@ -1,9 +1,10 @@
 import type { LessonExerciseType } from '../lessonProgress';
 
 /** A bite is a 3–5 minute slice of a lesson. */
-export type BiteKind = 'meet' | 'read' | 'words' | 'sentences' | 'listen-speak' | 'today' | 'heart-practice' | 'practice' | 'section-test';
+export type BiteKind = 'learn' | 'drill' | 'story' | 'mission' | 'meet' | 'read' | 'words' | 'sentences' | 'listen-speak' | 'today' | 'heart-practice' | 'practice' | 'section-test' | 'unit-exam' | 'refine';
 
-export type StepKind = 'vocab-intro' | 'read-aloud' | 'word-review' | LessonExerciseType;
+/** v2 lessons add: teach (narrated cards), v2-recognise / v2-produce (authored practice), scene (dialogue), v2-scene-quiz. */
+export type StepKind = 'vocab-intro' | 'read-aloud' | 'word-review' | 'mission-reply' | 'teach' | 'v2-recognise' | 'v2-produce' | 'scene' | 'v2-scene-quiz' | LessonExerciseType;
 
 export interface BiteStep {
   kind: StepKind;
@@ -14,6 +15,8 @@ export interface BiteStep {
   sentenceOffset?: number;
   /** Re-ask of earlier mistakes: never costs hearts. */
   retry?: boolean;
+  /** Never costs hearts (e.g. recycled words from older lessons). */
+  free?: boolean;
 }
 
 export interface BiteDef {
@@ -45,4 +48,6 @@ export interface BiteResult {
   perfect: boolean;
   recovered: boolean;
   ms: number;
+  /** First attempts and retries, preserved on resume for personalized practice. */
+  scores?: import('./session').StepScore[];
 }

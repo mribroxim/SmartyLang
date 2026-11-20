@@ -35,7 +35,7 @@ function normalizeEmail(email: unknown): string {
 
 function userFromRow(row: StoredUser): AuthUser {
   const expired = paidPlanEnded(row.profile);
-  const role = expired && ['business', 'teacher', 'organization'].includes(row.role) ? 'student' : row.role;
+  const role = expired && ['business', 'organization'].includes(row.role) ? 'student' : row.role === 'content-manager' ? 'student' : row.role;
   return {
     uid: row.uid,
     email: row.email,
@@ -146,10 +146,10 @@ export async function requireUser(req: Request, allowAgePending = false): Promis
 
 function roleMatches(userRole: string, roles: string[]): boolean {
   const expanded = new Set(roles);
-  if (expanded.has('business')) {
-    expanded.add('teacher');
-    expanded.add('organization');
-  }
+  // Organization is the legacy name for business. Teachers are separate: they
+  // must be listed explicitly ('teacher') or via 'educator' (class tools).
+  if (expanded.has('business')) expanded.add('organization');
+  if (expanded.has('educator')) { expanded.add('teacher'); expanded.add('business'); expanded.add('organization'); }
   return expanded.has(userRole);
 }
 

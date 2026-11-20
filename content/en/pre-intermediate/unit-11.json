@@ -1,0 +1,4472 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "pre-intermediate",
+  "unit": 11,
+  "title": "Feelings & Relationships",
+  "room": "theatre",
+  "lessons": [
+    {
+      "id": "en.pre-intermediate.u11.l01",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Emotions",
+      "canDo": "Name emotions",
+      "scenario": "Smarty meets the cast backstage at the theatre before their first rehearsal.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u11.l01.angry",
+          "text": "angry",
+          "kind": "word",
+          "forms": [
+            "angrier",
+            "angriest",
+            "angrily"
+          ],
+          "example": "Ben is angry because he lost his notebook.",
+          "note": "Say 'angry' when someone is mad because something bad happened.",
+          "image": {
+            "id": "angry",
+            "describe": "a brown cat with furrowed eyebrows and crossed arms frowning next to a dropped notebook"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.jealous",
+          "text": "jealous",
+          "kind": "word",
+          "example": "Sam feels jealous of Leo because Leo has the big part.",
+          "note": "Use 'jealous' when you want something that another person has.",
+          "image": {
+            "id": "jealous",
+            "describe": "a grey cat peeking from behind a stage curtain looking envious at a friend holding a shiny crown"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.proud",
+          "text": "proud",
+          "kind": "word",
+          "forms": [
+            "prouder",
+            "proudest",
+            "proudly"
+          ],
+          "example": "Leo is proud of his new costume.",
+          "note": "Say 'proud' when you feel great about something good you or a friend did.",
+          "image": {
+            "id": "proud",
+            "describe": "an orange cat standing tall on a wooden stage smiling brightly in a royal cape"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.nervous",
+          "text": "nervous",
+          "kind": "word",
+          "forms": [
+            "nervously"
+          ],
+          "example": "Mia is nervous before she goes on stage.",
+          "note": "Use 'nervous' when you feel a bit scared or worried before something big.",
+          "image": {
+            "id": "nervous",
+            "describe": "a white cat peeking nervously from behind a velvet theatre curtain at an empty auditorium"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.lonely",
+          "text": "lonely",
+          "kind": "word",
+          "forms": [
+            "lonelier",
+            "loneliest"
+          ],
+          "example": "Zara feels lonely when nobody is backstage with her.",
+          "note": "Say 'lonely' when you feel sad because you are by yourself.",
+          "image": {
+            "id": "lonely",
+            "describe": "a small calico cat sitting quietly by itself on a wooden bench in a quiet dressing room"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.embarrassed",
+          "text": "embarrassed",
+          "kind": "word",
+          "forms": [
+            "embarrassing"
+          ],
+          "example": "Tom felt embarrassed when he dropped the box on stage.",
+          "note": "Use 'embarrassed' when your face turns red after a silly mistake.",
+          "image": {
+            "id": "embarrassed",
+            "describe": "a striped cat with pink cheeks covering its eyes with one paw next to a spilled box of props"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l01.task.pick-nervous",
+          "kind": "choice",
+          "prompt": "Mia is about to sing in front of a big audience for the first time. How does she feel?",
+          "answer": "nervous",
+          "options": [
+            "nervous",
+            "proud",
+            "lonely"
+          ],
+          "explanation": "Before performing in front of many people, it is natural to feel nervous.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l01.nervous",
+            "en.pre-intermediate.u05.l09.audience"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.task.hear-proud",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you hear.",
+          "audio": "Leo is proud of his new costume.",
+          "answer": "Leo is proud of his new costume.",
+          "options": [
+            "Leo is proud of his new costume.",
+            "Leo is angry about his new costume.",
+            "Leo is nervous in his new costume."
+          ],
+          "explanation": "Leo feels great about his costume, so he is proud.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l01.proud",
+            "en.elementary.u09.l03.costume"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.task.match-emotions",
+          "kind": "match",
+          "prompt": "Match each situation with the best emotion.",
+          "pairs": [
+            {
+              "left": "You have no friends with you",
+              "right": "lonely"
+            },
+            {
+              "left": "You made a big mistake on stage",
+              "right": "embarrassed"
+            },
+            {
+              "left": "You want your friend's prize",
+              "right": "jealous"
+            },
+            {
+              "left": "Someone broke your favourite pen",
+              "right": "angry"
+            }
+          ],
+          "explanation": "Match the feeling to the situation: lonely without friends, embarrassed after a mistake, jealous of a prize, and angry about a broken pen.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l01.lonely",
+            "en.pre-intermediate.u11.l01.embarrassed",
+            "en.pre-intermediate.u11.l01.jealous",
+            "en.pre-intermediate.u11.l01.angry"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.task.fill-jealous",
+          "kind": "fill",
+          "prompt": "Sam wants the big part that Leo got. Complete the sentence.",
+          "text": "Sam feels ___ of Leo.",
+          "answer": "jealous",
+          "options": [
+            "jealous",
+            "proud",
+            "lonely"
+          ],
+          "explanation": "Use 'jealous' when someone wants what another person has.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l01.jealous"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.task.build-angry",
+          "kind": "build",
+          "prompt": "Put the words in order to tell why Ben is upset.",
+          "answer": "Ben is angry because he lost his key.",
+          "tiles": [
+            "Ben",
+            "is",
+            "angry",
+            "because",
+            "he",
+            "lost",
+            "his",
+            "key",
+            "proud"
+          ],
+          "explanation": "Subject + is + angry + because + reason.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l01.angry",
+            "en.beginner.u05.l06.key"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.task.fill-embarrassed",
+          "kind": "fill",
+          "prompt": "Tom walked onto the stage in the wrong hat and everyone looked at him. Complete the sentence.",
+          "text": "Tom felt very ___ on stage.",
+          "answer": "embarrassed",
+          "options": [
+            "embarrassed",
+            "angry",
+            "jealous"
+          ],
+          "explanation": "A silly mistake in front of others makes you feel embarrassed.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l01.embarrassed",
+            "en.pre-intermediate.u05.l09.stage"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.task.fill-lonely",
+          "kind": "fill",
+          "prompt": "Everyone went home after rehearsal, and Zara stayed backstage. Complete the sentence.",
+          "text": "Zara felt ___ backstage.",
+          "answer": "lonely",
+          "options": [
+            "lonely",
+            "proud",
+            "angry"
+          ],
+          "explanation": "Being all by yourself can make you feel lonely.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l01.lonely",
+            "en.pre-intermediate.u05.l09.backstage"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l01.task.say-proud",
+          "kind": "speak",
+          "prompt": "Say this sentence out loud.",
+          "text": "I am proud of our team.",
+          "answer": "I am proud of our team.",
+          "explanation": "Use 'proud of' to show you feel happy about someone's good work.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l01.proud"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why is everyone backstage feeling so many different emotions today?",
+        "image": {
+          "id": "en-b1-u11-l01-scene",
+          "describe": "Backstage at a cozy theatre: Smarty the black cat talks with Mia, Leo, Sam, Ben, Zara, and Tom among costumes and stage props."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, everyone! How do you feel before our first rehearsal?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I am nervous, Smarty! The stage looks so big."
+          },
+          {
+            "speaker": "Leo",
+            "text": "I am thrilled and very proud of my costume."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I feel a bit jealous because Leo has the best hat."
+          },
+          {
+            "speaker": "Ben",
+            "text": "And I am angry and upset! I lost my notebook."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Here it is, Ben! Sorry, I dropped it earlier. I felt so embarrassed."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Oh, I am relieved! Thanks, Tom. Do not feel disappointed, Zara—come rehearse with us so you are not lonely!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "Why is Mia nervous?",
+            "answer": "Because the stage looks big.",
+            "options": [
+              "Because the stage looks big.",
+              "Because she lost her notebook.",
+              "Because she wants Leo's hat."
+            ],
+            "explanation": "Mia says she is nervous because the stage looks big.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l01.nervous",
+              "en.pre-intermediate.u05.l09.stage"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "How does Sam feel about Leo's hat?",
+            "answer": "jealous",
+            "options": [
+              "jealous",
+              "embarrassed",
+              "lonely"
+            ],
+            "explanation": "Sam says he feels a bit jealous because Leo has the best hat.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l01.jealous"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Why was Tom embarrassed?",
+            "answer": "He made a mistake.",
+            "options": [
+              "He made a mistake.",
+              "He forgot his costume.",
+              "He was late for rehearsal."
+            ],
+            "explanation": "Tom dropped Ben's notebook earlier and felt embarrassed.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l01.embarrassed",
+              "en.pre-intermediate.u11.l01.angry"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks how you feel before going on stage at the theatre.",
+        "turns": [
+          {
+            "smarty": "Welcome backstage! How do you feel before a big show?",
+            "accept": [
+              "^i feel (?:nervous|proud|happy|excited)$",
+              "^i am (?:nervous|proud|happy|excited)$"
+            ],
+            "example": "I feel nervous.",
+            "hint": "Say 'I feel nervous' or 'I am proud'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l01.nervous",
+              "en.pre-intermediate.u11.l01.proud"
+            ]
+          },
+          {
+            "smarty": "Tom dropped his hat on stage! How does he feel now?",
+            "accept": [
+              "^he feels (?:embarrassed|nervous|angry)$",
+              "^he is (?:embarrassed|nervous|angry)$"
+            ],
+            "example": "He feels embarrassed.",
+            "hint": "Say 'He feels embarrassed' or 'He is embarrassed'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l01.embarrassed"
+            ]
+          },
+          {
+            "smarty": "You did a great job on stage! Are you proud?",
+            "accept": [
+              "^yes i am(?: proud)?$",
+              "^i am very proud$"
+            ],
+            "example": "Yes, I am proud.",
+            "hint": "Say 'Yes, I am proud.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l01.proud"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "thrilled",
+          "gloss": "very excited and happy"
+        },
+        {
+          "text": "upset",
+          "gloss": "unhappy or worried"
+        },
+        {
+          "text": "disappointed",
+          "gloss": "sad because something was not as good as hoped"
+        },
+        {
+          "text": "relieved",
+          "gloss": "happy that something bad did not happen"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u05.l09.audience",
+        "en.elementary.u09.l03.costume",
+        "en.beginner.u05.l06.key",
+        "en.pre-intermediate.u05.l09.stage",
+        "en.pre-intermediate.u05.l09.backstage"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u11.l02",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Moods",
+      "canDo": "Describe how you feel",
+      "scenario": "A rainy afternoon rehearsal at the theatre puts everyone in a different mood.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u11.l02.in-a-good-mood",
+          "text": "in a good mood",
+          "kind": "phrase",
+          "example": "Lily is in a good mood because the sun came out.",
+          "note": "Say 'in a good mood' when someone feels cheerful and happy."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.cheer-up",
+          "text": "cheer up",
+          "kind": "phrase",
+          "forms": [
+            "cheers up",
+            "cheered up",
+            "cheering up"
+          ],
+          "example": "Let us buy some cake to cheer up Omar.",
+          "note": "Use 'cheer up' when you try to make yourself or a friend feel happier."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.calm-down",
+          "text": "calm down",
+          "kind": "phrase",
+          "forms": [
+            "calms down",
+            "calmed down",
+            "calming down"
+          ],
+          "example": "Please calm down and drink some water.",
+          "note": "Say 'calm down' to help someone stop feeling angry or nervous."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.fed-up",
+          "text": "fed up",
+          "kind": "phrase",
+          "example": "Omar is fed up with waiting in the rain.",
+          "note": "Use 'fed up' when you are tired and annoyed because something has gone on too long."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.i-could-not-care-less",
+          "text": "I could not care less",
+          "kind": "phrase",
+          "forms": [
+            "he could not care less",
+            "she could not care less",
+            "they could not care less"
+          ],
+          "example": "Sam says he does not like soup, and I could not care less.",
+          "note": "Say 'I could not care less' when something is not important to you at all."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.on-edge",
+          "text": "on edge",
+          "kind": "phrase",
+          "example": "Mia is on edge before her big song.",
+          "note": "Use 'on edge' when you feel tense and cannot relax."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l02.task.pick-good-mood",
+          "kind": "choice",
+          "prompt": "Lily is singing and helping everyone backstage. How is she feeling?",
+          "answer": "in a good mood",
+          "options": [
+            "in a good mood",
+            "fed up",
+            "on edge"
+          ],
+          "explanation": "Someone who is happy and cheerful is in a good mood.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l02.in-a-good-mood",
+            "en.pre-intermediate.u05.l09.backstage"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.task.hear-calm-down",
+          "kind": "listen",
+          "prompt": "Listen and choose what Smarty says.",
+          "audio": "Take a seat and calm down.",
+          "answer": "Take a seat and calm down.",
+          "options": [
+            "Take a seat and calm down.",
+            "Take a seat and cheer up.",
+            "Go outside and wait."
+          ],
+          "explanation": "'Calm down' means to relax when you are nervous or angry.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l02.calm-down"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.task.match-moods",
+          "kind": "match",
+          "prompt": "Match each phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "cheer up",
+              "right": "feel happier"
+            },
+            {
+              "left": "calm down",
+              "right": "stop feeling angry or nervous"
+            },
+            {
+              "left": "fed up",
+              "right": "angry and tired of something"
+            },
+            {
+              "left": "on edge",
+              "right": "nervous and not calm"
+            }
+          ],
+          "explanation": "Cheer up means feel happier, calm down means relax, fed up means annoyed, and on edge means nervous.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l02.cheer-up",
+            "en.pre-intermediate.u11.l02.calm-down",
+            "en.pre-intermediate.u11.l02.fed-up",
+            "en.pre-intermediate.u11.l02.on-edge"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.task.fill-fed-up",
+          "kind": "fill",
+          "prompt": "We have rehearsed the same scene ten times! Complete the sentence.",
+          "text": "I am ___ with practising this scene.",
+          "answer": "fed up",
+          "options": [
+            "fed up",
+            "in a good mood",
+            "proud"
+          ],
+          "explanation": "Use 'fed up' when you are tired and annoyed by repeating something.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l02.fed-up",
+            "en.pre-intermediate.u11.l01.proud"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.task.build-care-less",
+          "kind": "build",
+          "prompt": "Build a sentence that shows you do not care about the rain.",
+          "answer": "I could not care less about the rain.",
+          "tiles": [
+            "I",
+            "could",
+            "not",
+            "care",
+            "less",
+            "about",
+            "the",
+            "rain",
+            "more"
+          ],
+          "explanation": "'I could not care less' means it does not bother you at all.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l02.i-could-not-care-less"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.task.fill-on-edge",
+          "kind": "fill",
+          "prompt": "Mia cannot sit still before the show starts. Complete the sentence.",
+          "text": "Mia is ___ before the show.",
+          "answer": "on edge",
+          "options": [
+            "on edge",
+            "in a good mood",
+            "fed up"
+          ],
+          "explanation": "When someone is tense and nervous, they are on edge.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l02.on-edge",
+            "en.pre-intermediate.u11.l01.nervous"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.task.fill-cheer-up",
+          "kind": "fill",
+          "prompt": "Omar looks unhappy. Tell him to feel happier.",
+          "text": "___, Omar! Everything is going well.",
+          "answer": "Cheer up",
+          "options": [
+            "Cheer up",
+            "Calm down",
+            "Fed up"
+          ],
+          "explanation": "Say 'Cheer up' to help a friend feel happier.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l02.cheer-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l02.task.say-good-mood",
+          "kind": "speak",
+          "prompt": "Say this sentence out loud.",
+          "text": "I am in a good mood.",
+          "answer": "I am in a good mood.",
+          "explanation": "Say 'I am in a good mood' when you feel happy.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l02.in-a-good-mood"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Can Smarty help his friends feel better on a rainy rehearsal afternoon?",
+        "image": {
+          "id": "en-b1-u11-l02-scene",
+          "describe": "Inside a warm theatre lounge with rain on the window: Smarty the black cat offers tea to Omar, Mia, Lily, and Sam."
+        },
+        "lines": [
+          {
+            "speaker": "Lily",
+            "text": "Good afternoon, Smarty! I am in a good mood today."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Well, I am grumpy and fed up with this rain!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Cheer up, Omar! Have some hot chocolate."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I am so restless and on edge about my song."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Calm down, Mia. You practised all week, and you are carefree when you sing!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "The rain? I could not care less! Let us rehearse!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thanks, Smarty. Now I feel ready, and Omar is not tearful any more!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Why is Omar fed up?",
+            "answer": "Because of the rain.",
+            "options": [
+              "Because of the rain.",
+              "Because of his song.",
+              "Because of the hot chocolate."
+            ],
+            "explanation": "Omar says he is fed up with the rain.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l02.fed-up"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Smarty tell Mia to do?",
+            "answer": "calm down",
+            "options": [
+              "calm down",
+              "cheer up",
+              "go home"
+            ],
+            "explanation": "Mia is on edge about her song, so Smarty tells her to calm down.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l02.calm-down",
+              "en.pre-intermediate.u11.l02.on-edge"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "How does Sam feel about the rain?",
+            "answer": "He could not care less.",
+            "options": [
+              "He could not care less.",
+              "He is fed up with it.",
+              "He is on edge about it."
+            ],
+            "explanation": "Sam says 'I could not care less!' about the rain.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l02.i-could-not-care-less"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty checks on your mood before rehearsal.",
+        "turns": [
+          {
+            "smarty": "How is your mood right now?",
+            "accept": [
+              "^i am in a good mood$",
+              "^i am (?:fed up|on edge|happy)$"
+            ],
+            "example": "I am in a good mood.",
+            "hint": "Say 'I am in a good mood', 'I am fed up', or 'I am on edge'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l02.in-a-good-mood",
+              "en.pre-intermediate.u11.l02.fed-up",
+              "en.pre-intermediate.u11.l02.on-edge"
+            ]
+          },
+          {
+            "smarty": "Omar is unhappy because it is raining. What do you say to him?",
+            "accept": [
+              "^cheer up(?: omar)?$",
+              "^please cheer up$"
+            ],
+            "example": "Cheer up, Omar!",
+            "hint": "Tell Omar to cheer up.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l02.cheer-up"
+            ]
+          },
+          {
+            "smarty": "Mia is nervous and speaking too fast. What do you tell her?",
+            "accept": [
+              "^calm down(?: mia)?$",
+              "^please calm down$"
+            ],
+            "example": "Calm down, Mia.",
+            "hint": "Tell Mia to calm down.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l02.calm-down"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "grumpy",
+          "gloss": "in a bad mood and easily annoyed"
+        },
+        {
+          "text": "tearful",
+          "gloss": "almost crying"
+        },
+        {
+          "text": "carefree",
+          "gloss": "having no worries"
+        },
+        {
+          "text": "restless",
+          "gloss": "unable to stay still or relax"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u05.l09.backstage",
+        "en.pre-intermediate.u11.l01.proud",
+        "en.pre-intermediate.u11.l01.nervous"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u11.l03",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "He must be",
+      "canDo": "Make guesses about now",
+      "scenario": "Smarty and Ana find clues backstage at the theatre and guess who left them.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u11.l03.he-must-be",
+          "text": "He must be",
+          "kind": "phrase",
+          "forms": [
+            "must be",
+            "she must be",
+            "it must be",
+            "they must be",
+            "you must be"
+          ],
+          "example": "Leo is smiling, so he must be in a good mood.",
+          "note": "Use 'must be' when you are almost sure something is true right now."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.she-might-be",
+          "text": "She might be",
+          "kind": "phrase",
+          "forms": [
+            "might be",
+            "he might be",
+            "it might be",
+            "they might be",
+            "you might be"
+          ],
+          "example": "Mia is quiet, so she might be nervous.",
+          "note": "Say 'might be' when something is possible, but you are not sure."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.it-can-not-be",
+          "text": "It can not be",
+          "kind": "phrase",
+          "forms": [
+            "can not be",
+            "cannot be",
+            "he cannot be",
+            "she cannot be",
+            "they cannot be",
+            "he can not be",
+            "she can not be",
+            "they can not be"
+          ],
+          "example": "It can not be Leo's hat because his hat is blue.",
+          "note": "Use 'can not be' when you are almost sure something is impossible."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.they-may-be",
+          "text": "They may be",
+          "kind": "phrase",
+          "forms": [
+            "may be",
+            "he may be",
+            "she may be",
+            "it may be",
+            "you may be"
+          ],
+          "example": "The lights are on, so they may be on stage.",
+          "note": "Say 'may be' to make a polite, possible guess about now."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.it-could-be",
+          "text": "It could be",
+          "kind": "phrase",
+          "forms": [
+            "could be",
+            "he could be",
+            "she could be",
+            "they could be",
+            "you could be"
+          ],
+          "example": "Whose scarf is this? It could be Zara's.",
+          "note": "Use 'could be' when there is a chance something is true."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.you-must-be-joking",
+          "text": "You must be joking",
+          "kind": "phrase",
+          "forms": [
+            "must be joking",
+            "he must be joking",
+            "she must be joking"
+          ],
+          "example": "Snow in July? You must be joking!",
+          "note": "Say 'You must be joking' when someone says something surprising or hard to believe."
+        }
+      ],
+      "grammar": {
+        "title": "Guessing about now: must, might, may, could, can not",
+        "explanation": "Use 'must be' when clues make you 95% sure. Use 'might be', 'may be', or 'could be' when something is possible (about 50% sure). Use 'can not be' when you are 95% sure it is impossible.",
+        "examples": [
+          "He has been working all day, so he must be tired.",
+          "She is not here yet; she might be on the bus.",
+          "It can not be midnight—the sun is still out!"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l03.task.pick-must-be",
+          "kind": "choice",
+          "prompt": "Ben ran all the way to the theatre and has no water. How sure are you that he is thirsty?",
+          "answer": "He must be thirsty.",
+          "options": [
+            "He must be thirsty.",
+            "He can not be thirsty.",
+            "You must be joking."
+          ],
+          "explanation": "Running without water is a strong clue, so use 'He must be'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.he-must-be",
+            "en.beginner.u03.l01.thirsty"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.task.hear-can-not-be",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you hear.",
+          "audio": "It can not be Ben because he is at home.",
+          "answer": "It can not be Ben because he is at home.",
+          "options": [
+            "It can not be Ben because he is at home.",
+            "It must be Ben because he is at home.",
+            "It could be Ben because he is at home."
+          ],
+          "explanation": "If Ben is at home, it is impossible for him to be here, so use 'It can not be'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.it-can-not-be"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.task.match-certainty",
+          "kind": "match",
+          "prompt": "Match each phrase with how sure you are.",
+          "pairs": [
+            {
+              "left": "He must be",
+              "right": "very sure yes"
+            },
+            {
+              "left": "She might be",
+              "right": "not very sure"
+            },
+            {
+              "left": "It can not be",
+              "right": "very sure no"
+            },
+            {
+              "left": "You must be joking",
+              "right": "that is hard to believe"
+            }
+          ],
+          "explanation": "Must be = sure yes, might be = possible, can not be = sure no, you must be joking = disbelief.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.he-must-be",
+            "en.pre-intermediate.u11.l03.she-might-be",
+            "en.pre-intermediate.u11.l03.it-can-not-be",
+            "en.pre-intermediate.u11.l03.you-must-be-joking"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.task.fill-might-be",
+          "kind": "fill",
+          "prompt": "Zara is not in the room. Maybe she is in the café. Complete the sentence.",
+          "text": "___ in the café.",
+          "answer": "She might be",
+          "options": [
+            "She might be",
+            "It can not be",
+            "You must be joking"
+          ],
+          "explanation": "When something is possible, use 'She might be'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.she-might-be",
+            "en.beginner.u08.l01.cafe"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.task.fill-may-be",
+          "kind": "fill",
+          "prompt": "Leo and Sam are not backstage. Maybe they are on stage. Complete the sentence.",
+          "text": "___ on stage now.",
+          "answer": "They may be",
+          "options": [
+            "They may be",
+            "It can not be",
+            "He must be"
+          ],
+          "explanation": "For two people when something is possible, use 'They may be'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.they-may-be",
+            "en.pre-intermediate.u05.l09.stage"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.task.build-could-be",
+          "kind": "build",
+          "prompt": "Build a guess about the red scarf on the table.",
+          "answer": "It could be Mia's scarf.",
+          "tiles": [
+            "It",
+            "could",
+            "be",
+            "Mia's",
+            "scarf",
+            "can"
+          ],
+          "explanation": "'It could be' shows a possible guess.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.it-could-be",
+            "en.beginner.u06.l06.scarf"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.task.pick-joking",
+          "kind": "choice",
+          "prompt": "Sam says he ate ten pizzas for lunch! What do you say?",
+          "answer": "You must be joking!",
+          "options": [
+            "You must be joking!",
+            "They may be hungry.",
+            "It could be lunch."
+          ],
+          "explanation": "Say 'You must be joking!' when someone says something hard to believe.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.you-must-be-joking"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l03.task.say-must-be",
+          "kind": "speak",
+          "prompt": "Say this guess out loud.",
+          "text": "He must be in a good mood.",
+          "answer": "He must be in a good mood.",
+          "explanation": "Use 'He must be' when you are sure from the clues.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.he-must-be",
+            "en.pre-intermediate.u11.l02.in-a-good-mood"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Whose red scarf is on the chair backstage, and where is everyone?",
+        "image": {
+          "id": "en-b1-u11-l03-scene",
+          "describe": "Smarty the black cat and Ana examine a red scarf on a backstage chair while hearing violin music through a door."
+        },
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "Look at this red scarf, Smarty. Whose is it?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It can not be Ben's—he never wears red. It could be Mia's!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Listen! Someone is playing the violin behind that door."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "The evidence is obvious! That is Omar's favourite song, so he must be in there."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Where are Mia and Lily? Presumably they are still at the café."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, they may be having tea. Or she might be on stage already!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Mia on stage an hour early? That is unlikely—you must be joking!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Why does Smarty say the scarf can not be Ben's?",
+            "answer": "Because Ben never wears red.",
+            "options": [
+              "Because Ben never wears red.",
+              "Because Ben is at the café.",
+              "Because Ben plays the violin."
+            ],
+            "explanation": "Smarty says 'It can not be Ben's—he never wears red.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l03.it-can-not-be",
+              "en.pre-intermediate.u11.l03.it-could-be"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Who does Smarty think is playing the violin?",
+            "answer": "Omar",
+            "options": [
+              "Omar",
+              "Ben",
+              "Lily"
+            ],
+            "explanation": "It is Omar's favourite song, so Smarty says 'he must be in there.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l03.he-must-be"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Ana say when Smarty guesses Mia is on stage early?",
+            "answer": "You must be joking!",
+            "options": [
+              "You must be joking!",
+              "He must be right!",
+              "It can not be Mia!"
+            ],
+            "explanation": "Ana does not believe Mia is on stage an hour early, so she says 'You must be joking!'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l03.you-must-be-joking",
+              "en.pre-intermediate.u11.l03.she-might-be"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty shows you clues backstage and asks for your guesses.",
+        "turns": [
+          {
+            "smarty": "Leo just won a prize and is smiling! How does he feel?",
+            "accept": [
+              "^he must be (?:proud|happy|in a good mood)$",
+              "^he might be (?:proud|happy|in a good mood)$"
+            ],
+            "example": "He must be proud.",
+            "hint": "Say 'He must be proud' or 'He must be happy'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l03.he-must-be",
+              "en.pre-intermediate.u11.l01.proud"
+            ]
+          },
+          {
+            "smarty": "Mia is not backstage. Where is she?",
+            "accept": [
+              "^she (?:might|may|could) be (?:on stage|at the cafe|at home|outside)$",
+              "^she must be (?:on stage|at the cafe|at home)$"
+            ],
+            "example": "She might be on stage.",
+            "hint": "Say 'She might be on stage' or 'She may be at the café'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l03.she-might-be"
+            ]
+          },
+          {
+            "smarty": "Look! A pink hat! Is it Tom's hat?",
+            "accept": [
+              "^it can not be (?:his|toms)?(?: hat)?$",
+              "^it cannot be (?:his|toms)?(?: hat)?$",
+              "^no it can not be$"
+            ],
+            "example": "It can not be his hat.",
+            "hint": "Say 'It can not be his hat.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l03.it-can-not-be"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "obvious",
+          "gloss": "easy to see or understand"
+        },
+        {
+          "text": "evidence",
+          "gloss": "facts or clues that show something is true"
+        },
+        {
+          "text": "presumably",
+          "gloss": "probably, based on what you know"
+        },
+        {
+          "text": "unlikely",
+          "gloss": "not probable"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u03.l01.thirsty",
+        "en.beginner.u08.l01.cafe",
+        "en.pre-intermediate.u05.l09.stage",
+        "en.beginner.u06.l06.scarf",
+        "en.pre-intermediate.u11.l02.in-a-good-mood",
+        "en.pre-intermediate.u11.l01.proud"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u11.l04",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty and Mia review emotions, moods, and guesses while watching rehearsal.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l04.task.pick-emotion",
+          "kind": "choice",
+          "prompt": "Tom tripped on stage and his face turned red. How did he feel?",
+          "answer": "embarrassed",
+          "options": [
+            "embarrassed",
+            "jealous",
+            "proud"
+          ],
+          "explanation": "Making a mistake in front of others makes you feel embarrassed.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l01.embarrassed"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l04.task.hear-mood",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you hear.",
+          "audio": "Cheer up and calm down before the show.",
+          "answer": "Cheer up and calm down before the show.",
+          "options": [
+            "Cheer up and calm down before the show.",
+            "Fed up and on edge before the show.",
+            "In a good mood before the show."
+          ],
+          "explanation": "Cheer up means feel happier, and calm down means relax.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l02.cheer-up",
+            "en.pre-intermediate.u11.l02.calm-down"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l04.task.match-review",
+          "kind": "match",
+          "prompt": "Match the clues with Smarty's guesses.",
+          "pairs": [
+            {
+              "left": "He is happy and singing",
+              "right": "He must be in a good mood"
+            },
+            {
+              "left": "She is not here",
+              "right": "She might be on stage"
+            },
+            {
+              "left": "That coat is way too small for Sam",
+              "right": "It can not be Sam's coat"
+            },
+            {
+              "left": "Whose notebook is on the chair?",
+              "right": "It could be Ben's"
+            }
+          ],
+          "explanation": "Match the level of certainty to each clue.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.he-must-be",
+            "en.pre-intermediate.u11.l02.in-a-good-mood",
+            "en.pre-intermediate.u11.l03.she-might-be",
+            "en.pre-intermediate.u11.l03.it-can-not-be",
+            "en.pre-intermediate.u11.l03.it-could-be"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l04.task.fill-fed-up",
+          "kind": "fill",
+          "prompt": "Ben has waited for the bus for an hour. Complete the sentence.",
+          "text": "Ben is ___ with waiting.",
+          "answer": "fed up",
+          "options": [
+            "fed up",
+            "proud",
+            "lonely"
+          ],
+          "explanation": "'Fed up' means annoyed because something has taken too long.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l02.fed-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l04.task.build-guess",
+          "kind": "build",
+          "prompt": "Build a sentence guessing how Mia feels.",
+          "answer": "She might be on edge now.",
+          "tiles": [
+            "She",
+            "might",
+            "be",
+            "on",
+            "edge",
+            "now",
+            "can"
+          ],
+          "explanation": "She + might be + on edge.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.she-might-be",
+            "en.pre-intermediate.u11.l02.on-edge"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l04.task.fill-lonely",
+          "kind": "fill",
+          "prompt": "Zara has nobody to sit with at lunch. Complete the sentence.",
+          "text": "She feels ___ at lunch.",
+          "answer": "lonely",
+          "options": [
+            "lonely",
+            "jealous",
+            "angry"
+          ],
+          "explanation": "Sitting without friends makes someone feel lonely.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l01.lonely"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l04.task.say-joking",
+          "kind": "speak",
+          "prompt": "Say this phrase out loud.",
+          "text": "You must be joking!",
+          "answer": "You must be joking!",
+          "explanation": "Use this phrase when something sounds impossible or funny.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.you-must-be-joking"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why is Ben standing alone by the stage door?",
+        "image": {
+          "id": "en-b1-u11-l04-scene",
+          "describe": "Smarty the black cat and Mia watch Ben standing by the theatre stage door with a worried look."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Look at Ben by the door, Smarty. He is not in a good mood."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "He might be nervous about his lines, or he could be lonely."
+          },
+          {
+            "speaker": "Mia",
+            "text": "He looks a bit angry too. He must be fed up with waiting."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Let us go speak to him! We can help him cheer up and calm down."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Oh, hi! I was on edge because I thought rehearsal was cancelled!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Cancelled? You must be joking! Everyone is on stage right now!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Why was Ben on edge?",
+            "answer": "He thought rehearsal was cancelled.",
+            "options": [
+              "He thought rehearsal was cancelled.",
+              "He lost his costume.",
+              "He was jealous of Leo."
+            ],
+            "explanation": "Ben says he was on edge because he thought rehearsal was cancelled.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l02.on-edge"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Smarty want to help Ben do?",
+            "answer": "cheer up and calm down",
+            "options": [
+              "cheer up and calm down",
+              "go home early",
+              "sing a new song"
+            ],
+            "explanation": "Smarty says 'We can help him cheer up and calm down.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l02.cheer-up",
+              "en.pre-intermediate.u11.l02.calm-down"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "Where is everyone right now?",
+            "answer": "On stage",
+            "options": [
+              "On stage",
+              "At the station",
+              "In the café"
+            ],
+            "explanation": "Mia says everyone is on stage right now.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l03.you-must-be-joking"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty tests what you remember from Lessons 1–3.",
+        "turns": [
+          {
+            "smarty": "Zara is by herself and looks sad. How does she feel?",
+            "accept": [
+              "^she (?:must|might|may|could) be lonely$",
+              "^she feels lonely$",
+              "^she is lonely$"
+            ],
+            "example": "She must be lonely.",
+            "hint": "Say 'She must be lonely' or 'She feels lonely'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l01.lonely",
+              "en.pre-intermediate.u11.l03.he-must-be"
+            ]
+          },
+          {
+            "smarty": "How can we help a friend who is angry?",
+            "accept": [
+              "^(?:we can )?help (?:him|her|them) calm down$",
+              "^tell (?:him|her|them) to calm down$",
+              "^calm down$"
+            ],
+            "example": "Tell him to calm down.",
+            "hint": "Use 'calm down'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l02.calm-down"
+            ]
+          },
+          {
+            "smarty": "Leo is smiling after rehearsal. Make a guess about his mood!",
+            "accept": [
+              "^he must be (?:in a good mood|proud|happy)$",
+              "^he might be (?:in a good mood|proud|happy)$"
+            ],
+            "example": "He must be in a good mood.",
+            "hint": "Say 'He must be in a good mood' or 'He must be proud'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l03.he-must-be",
+              "en.pre-intermediate.u11.l02.in-a-good-mood"
+            ]
+          }
+        ]
+      },
+      "exposure": [],
+      "recycle": [
+        "en.pre-intermediate.u11.l01.embarrassed",
+        "en.pre-intermediate.u11.l02.cheer-up",
+        "en.pre-intermediate.u11.l02.calm-down",
+        "en.pre-intermediate.u11.l03.he-must-be",
+        "en.pre-intermediate.u11.l02.in-a-good-mood",
+        "en.pre-intermediate.u11.l03.she-might-be",
+        "en.pre-intermediate.u11.l03.it-can-not-be",
+        "en.pre-intermediate.u11.l03.it-could-be",
+        "en.pre-intermediate.u11.l02.fed-up",
+        "en.pre-intermediate.u11.l02.on-edge",
+        "en.pre-intermediate.u11.l01.lonely",
+        "en.pre-intermediate.u11.l03.you-must-be-joking"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u11.l05",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Family life",
+      "canDo": "Talk about family relations",
+      "scenario": "During a break at the theatre, Sam and Zara chat with Smarty about their families.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u11.l05.get-on-with",
+          "text": "get on with",
+          "kind": "phrase",
+          "forms": [
+            "gets on with",
+            "got on with",
+            "getting on with"
+          ],
+          "example": "I get on with my brother very well.",
+          "note": "Say 'get on with' when you have a friendly relationship with someone."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.look-up-to",
+          "text": "look up to",
+          "kind": "phrase",
+          "forms": [
+            "looks up to",
+            "looked up to",
+            "looking up to"
+          ],
+          "example": "Zara looks up to her older sister because she is kind and clever.",
+          "note": "Use 'look up to' when you admire and like someone."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.bring-up",
+          "text": "bring up",
+          "kind": "phrase",
+          "forms": [
+            "brings up",
+            "brought up",
+            "bringing up"
+          ],
+          "example": "My grandparents helped bring up my cousins.",
+          "note": "Say 'bring up' when parents or family care for children until they are adults."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.grow-up",
+          "text": "grow up",
+          "kind": "phrase",
+          "forms": [
+            "grows up",
+            "grew up",
+            "growing up"
+          ],
+          "example": "Sam and his sister grew up in a small town.",
+          "note": "Use 'grow up' to talk about changing from a child into an adult."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.take-after",
+          "text": "take after",
+          "kind": "phrase",
+          "forms": [
+            "takes after",
+            "took after",
+            "taking after"
+          ],
+          "example": "Leo takes after his father—both love music.",
+          "note": "Say 'take after' when you look or act like an older family member."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.fall-out-with",
+          "text": "fall out with",
+          "kind": "phrase",
+          "forms": [
+            "falls out with",
+            "fell out with",
+            "falling out with"
+          ],
+          "example": "I never fall out with my best friend for long.",
+          "note": "Use 'fall out with' when you argue with someone and stop being friendly for a while."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l05.task.pick-take-after",
+          "kind": "choice",
+          "prompt": "Mia has curly hair and a great sense of humour, just like her mother. Which phrase fits?",
+          "answer": "take after",
+          "options": [
+            "take after",
+            "bring up",
+            "fall out with"
+          ],
+          "explanation": "'Take after' means to look or behave like a parent or older relative.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l05.take-after",
+            "en.beginner.u02.l01.mother"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.task.hear-look-up-to",
+          "kind": "listen",
+          "prompt": "Listen and choose what you hear.",
+          "audio": "I really look up to my grandmother.",
+          "answer": "I really look up to my grandmother.",
+          "options": [
+            "I really look up to my grandmother.",
+            "I really take after my grandmother.",
+            "I really get on with my grandmother."
+          ],
+          "explanation": "'Look up to' means to admire and like someone.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l05.look-up-to",
+            "en.beginner.u02.l03.grandmother"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.task.match-family",
+          "kind": "match",
+          "prompt": "Match each phrasal verb with its meaning.",
+          "pairs": [
+            {
+              "left": "get on with",
+              "right": "be friendly with someone"
+            },
+            {
+              "left": "look up to",
+              "right": "admire and like someone"
+            },
+            {
+              "left": "bring up",
+              "right": "care for a child as they grow"
+            },
+            {
+              "left": "fall out with",
+              "right": "be angry and stop speaking"
+            }
+          ],
+          "explanation": "Get on with = be friendly, look up to = admire, bring up = raise a child, fall out with = argue.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l05.get-on-with",
+            "en.pre-intermediate.u11.l05.look-up-to",
+            "en.pre-intermediate.u11.l05.bring-up",
+            "en.pre-intermediate.u11.l05.fall-out-with"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.task.fill-grow-up",
+          "kind": "fill",
+          "prompt": "Where did your parents spend their childhood? Complete the question.",
+          "text": "Where did your parents ___?",
+          "answer": "grow up",
+          "options": [
+            "grow up",
+            "take after",
+            "fall out"
+          ],
+          "explanation": "'Grow up' means to spend your childhood and become an adult.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l05.grow-up",
+            "en.beginner.u02.l02.parents"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.task.build-get-on",
+          "kind": "build",
+          "prompt": "Build a sentence about Sam and his cousin.",
+          "answer": "Sam gets on with his cousin.",
+          "tiles": [
+            "Sam",
+            "gets",
+            "on",
+            "with",
+            "his",
+            "cousin",
+            "after"
+          ],
+          "explanation": "Sam + gets on with + his cousin.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l05.get-on-with",
+            "en.beginner.u02.l10.cousin"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.task.fill-bring-up",
+          "kind": "fill",
+          "prompt": "Parents work hard to care for their children. Complete the sentence.",
+          "text": "It takes love and patience to ___ a child.",
+          "answer": "bring up",
+          "options": [
+            "bring up",
+            "grow up",
+            "take after"
+          ],
+          "explanation": "Parents 'bring up' their children.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l05.bring-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.task.fill-fall-out",
+          "kind": "fill",
+          "prompt": "Ben was angry with Tom yesterday, so they stopped speaking. Complete the sentence.",
+          "text": "Ben did not want to ___ Tom.",
+          "answer": "fall out with",
+          "options": [
+            "fall out with",
+            "look up to",
+            "take after"
+          ],
+          "explanation": "'Fall out with' means to argue and stop being friendly.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l05.fall-out-with",
+            "en.pre-intermediate.u11.l01.angry"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l05.task.say-take-after",
+          "kind": "speak",
+          "prompt": "Say this sentence out loud.",
+          "text": "I take after my mother.",
+          "answer": "I take after my mother.",
+          "explanation": "Say 'I take after my mother' when you are like her.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l05.take-after"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who in Zara's family inspired her to act on stage?",
+        "image": {
+          "id": "en-b1-u11-l05-scene",
+          "describe": "Backstage on a cozy sofa, Smarty the black cat listens as Zara and Sam look at a family photo."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "You act so well, Zara! Do you take after someone in your family?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes! My aunt is an actress, and I really look up to her."
+          },
+          {
+            "speaker": "Sam",
+            "text": "That is great! Did you grow up in the same household?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "No, my parents brought me up near the sea, and my aunt lived with her nephew in the city."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Do you get on with every relative in your family?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes! Sometimes I fall out with my younger sibling about music, but we are proud of each other."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Who does Zara look up to?",
+            "answer": "Her aunt",
+            "options": [
+              "Her aunt",
+              "Her brother",
+              "Her cousin"
+            ],
+            "explanation": "Zara says her aunt is an actress and she looks up to her.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l05.look-up-to",
+              "en.pre-intermediate.u11.l05.take-after"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "Where did Zara's parents bring her up?",
+            "answer": "Near the sea",
+            "options": [
+              "Near the sea",
+              "At school",
+              "In the mountains"
+            ],
+            "explanation": "Zara says 'my parents brought me up near the sea.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l05.bring-up",
+              "en.pre-intermediate.u11.l05.grow-up"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "Why does Zara sometimes fall out with her younger sibling?",
+            "answer": "About music",
+            "options": [
+              "About music",
+              "About costumes",
+              "About homework"
+            ],
+            "explanation": "Zara says she sometimes falls out with her younger sibling about music.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l05.fall-out-with",
+              "en.pre-intermediate.u11.l05.get-on-with"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about your family and friends.",
+        "turns": [
+          {
+            "smarty": "Do you get on with your family?",
+            "accept": [
+              "^yes i get on with (?:my family|them)$",
+              "^yes i do$",
+              "^i get on with my family(?: very well)?$"
+            ],
+            "example": "Yes, I get on with my family.",
+            "hint": "Say 'Yes, I get on with my family.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l05.get-on-with"
+            ]
+          },
+          {
+            "smarty": "Who do you take after in your family?",
+            "accept": [
+              "^i take after my (?:mother|father|grandmother|grandfather|sister|brother)$"
+            ],
+            "example": "I take after my father.",
+            "hint": "Say 'I take after my mother' or 'I take after my father'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l05.take-after"
+            ]
+          },
+          {
+            "smarty": "Who do you look up to?",
+            "accept": [
+              "^i look up to my (?:mother|father|sister|brother|grandmother|grandfather|teacher|aunt|uncle)$"
+            ],
+            "example": "I look up to my mother.",
+            "hint": "Say 'I look up to my...'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l05.look-up-to"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "sibling",
+          "gloss": "a brother or sister"
+        },
+        {
+          "text": "relative",
+          "gloss": "a person in your family"
+        },
+        {
+          "text": "nephew",
+          "gloss": "the son of your brother or sister"
+        },
+        {
+          "text": "household",
+          "gloss": "the people living together in one home"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u02.l01.mother",
+        "en.beginner.u02.l03.grandmother",
+        "en.beginner.u02.l02.parents",
+        "en.beginner.u02.l10.cousin",
+        "en.pre-intermediate.u11.l01.angry"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u11.l06",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Love",
+      "canDo": "Talk about relationships",
+      "scenario": "Smarty explains the relationship story in the theatre play to Leo and Mia.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u11.l06.fall-in-love",
+          "text": "fall in love",
+          "kind": "phrase",
+          "forms": [
+            "falls in love",
+            "fell in love",
+            "falling in love"
+          ],
+          "example": "In the play, the hero and the singer fall in love.",
+          "note": "Say 'fall in love' when two people start having deep romantic feelings for each other."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.get-engaged",
+          "text": "get engaged",
+          "kind": "phrase",
+          "forms": [
+            "gets engaged",
+            "got engaged",
+            "getting engaged",
+            "engaged"
+          ],
+          "example": "They decided to get engaged in spring.",
+          "note": "Use 'get engaged' when two people agree to get married each other."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.get-married",
+          "text": "get married",
+          "kind": "phrase",
+          "forms": [
+            "gets married",
+            "got married",
+            "getting married",
+            "married"
+          ],
+          "example": "They are going to get married at a big wedding in June.",
+          "note": "Say 'get married' when two people become husband and wife at a wedding."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.split-up",
+          "text": "split up",
+          "kind": "phrase",
+          "forms": [
+            "splits up",
+            "splitting up"
+          ],
+          "example": "Why did that couple split up last year?",
+          "note": "Use 'split up' when two people end their relationship."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.a-couple",
+          "text": "a couple",
+          "kind": "phrase",
+          "forms": [
+            "couple",
+            "couples"
+          ],
+          "example": "Ana and Omar make a very happy couple.",
+          "note": "Say 'a couple' for two people who are in a relationship together."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.go-out-with",
+          "text": "go out with",
+          "kind": "phrase",
+          "forms": [
+            "goes out with",
+            "went out with",
+            "going out with"
+          ],
+          "example": "Tom started to go out with his best friend's cousin.",
+          "note": "Use 'go out with' when you spend time together as boyfriend and girlfriend."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l06.task.pick-couple",
+          "kind": "choice",
+          "prompt": "Two people are together in a relationship. What do we call them?",
+          "answer": "a couple",
+          "options": [
+            "a couple",
+            "an audience",
+            "a band"
+          ],
+          "explanation": "Two people in a relationship are called 'a couple'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l06.a-couple"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.task.hear-engaged",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you hear.",
+          "audio": "They got engaged after two years together.",
+          "answer": "They got engaged after two years together.",
+          "options": [
+            "They got engaged after two years together.",
+            "They split up after two years together.",
+            "They fell in love after two years together."
+          ],
+          "explanation": "'Got engaged' means they agreed to get married.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l06.get-engaged"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.task.match-stages",
+          "kind": "match",
+          "prompt": "Match each relationship phrase with what happens.",
+          "pairs": [
+            {
+              "left": "go out with",
+              "right": "spend time together as partners"
+            },
+            {
+              "left": "fall in love",
+              "right": "start to love someone"
+            },
+            {
+              "left": "get engaged",
+              "right": "agree to get married"
+            },
+            {
+              "left": "split up",
+              "right": "stop going out together"
+            }
+          ],
+          "explanation": "Go out with = date, fall in love = start loving, get engaged = agree to marry, split up = stop going out together.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l06.go-out-with",
+            "en.pre-intermediate.u11.l06.fall-in-love",
+            "en.pre-intermediate.u11.l06.get-engaged",
+            "en.pre-intermediate.u11.l06.split-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.task.fill-married",
+          "kind": "fill",
+          "prompt": "The wedding is this Saturday! Complete the sentence.",
+          "text": "They are going to ___ on Saturday.",
+          "answer": "get married",
+          "options": [
+            "get married",
+            "split up",
+            "fall out"
+          ],
+          "explanation": "People get married at a wedding.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l06.get-married",
+            "en.elementary.u09.l03.wedding"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.task.build-fall-in-love",
+          "kind": "build",
+          "prompt": "Build a sentence about the characters in the story.",
+          "answer": "They fall in love at the station.",
+          "tiles": [
+            "They",
+            "fall",
+            "in",
+            "love",
+            "at",
+            "the",
+            "station",
+            "up"
+          ],
+          "explanation": "They + fall in love + at the station.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l06.fall-in-love",
+            "en.beginner.u08.l02.station"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.task.fill-split-up",
+          "kind": "fill",
+          "prompt": "The two characters argued and ended their relationship. Complete the sentence.",
+          "text": "Sadly, they decided to ___.",
+          "answer": "split up",
+          "options": [
+            "split up",
+            "get engaged",
+            "get married"
+          ],
+          "explanation": "'Split up' means to stop going out together.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l06.split-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.task.fill-go-out",
+          "kind": "fill",
+          "prompt": "Before getting engaged, people usually date each other. Complete the sentence.",
+          "text": "He asked her to ___ him.",
+          "answer": "go out with",
+          "options": [
+            "go out with",
+            "split up",
+            "bring up"
+          ],
+          "explanation": "'Go out with' means to date someone.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l06.go-out-with",
+            "en.pre-intermediate.u11.l05.bring-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l06.task.say-couple",
+          "kind": "speak",
+          "prompt": "Say this sentence out loud.",
+          "text": "They are a happy couple.",
+          "answer": "They are a happy couple.",
+          "explanation": "Say 'a happy couple' for two people who are happy together.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l06.a-couple"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Does the couple in Smarty's play have a happy ending?",
+        "image": {
+          "id": "en-b1-u11-l06-scene",
+          "describe": "Smarty the black cat holds a theatre script on stage while Leo and Mia act out a wedding scene with paper flowers."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Smarty, tell us what happens to the romantic couple in our play!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "First, the hero meets his partner at a café, and he asks to go out with her."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Do they fall in love right away?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! Soon he is her fiance and she is his fiancee because they get engaged."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Oh no, do they split up in the second part?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "They almost do, because they fall out with each other—but in the end they get married!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "Where does the hero first meet his partner?",
+            "answer": "At a café",
+            "options": [
+              "At a café",
+              "At a station",
+              "At a market"
+            ],
+            "explanation": "Smarty says the hero meets his partner at a café.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l06.go-out-with",
+              "en.pre-intermediate.u11.l06.a-couple"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What happens after they fall in love?",
+            "answer": "They get engaged.",
+            "options": [
+              "They get engaged.",
+              "They move to France.",
+              "They buy a boat."
+            ],
+            "explanation": "Smarty says they fall in love and then get engaged.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l06.fall-in-love",
+              "en.pre-intermediate.u11.l06.get-engaged"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "How does the play end?",
+            "answer": "They get married.",
+            "options": [
+              "They get married.",
+              "They split up.",
+              "They lose touch."
+            ],
+            "explanation": "In the end, the couple gets married.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l06.get-married",
+              "en.pre-intermediate.u11.l06.split-up"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you to summarize the relationship story in the play.",
+        "turns": [
+          {
+            "smarty": "In our play, two people meet and like each other. What happens next?",
+            "accept": [
+              "^they fall in love$",
+              "^they go out with each other$",
+              "^they become a couple$"
+            ],
+            "example": "They fall in love.",
+            "hint": "Say 'They fall in love' or 'They become a couple'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l06.fall-in-love",
+              "en.pre-intermediate.u11.l06.a-couple"
+            ]
+          },
+          {
+            "smarty": "They want to have a wedding next summer! What do they do first?",
+            "accept": [
+              "^they get engaged$",
+              "^they get married$"
+            ],
+            "example": "They get engaged.",
+            "hint": "Say 'They get engaged.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l06.get-engaged"
+            ]
+          },
+          {
+            "smarty": "And what happens at the happy ending of the play?",
+            "accept": [
+              "^they get married$",
+              "^the couple gets married$"
+            ],
+            "example": "They get married.",
+            "hint": "Say 'They get married.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l06.get-married"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "fiancee",
+          "gloss": "the woman someone is engaged to marry"
+        },
+        {
+          "text": "fiance",
+          "gloss": "the man someone is engaged to marry"
+        },
+        {
+          "text": "romantic",
+          "gloss": "showing love and affection"
+        },
+        {
+          "text": "partner",
+          "gloss": "the person you are in a relationship with"
+        }
+      ],
+      "recycle": [
+        "en.elementary.u09.l03.wedding",
+        "en.beginner.u08.l02.station",
+        "en.pre-intermediate.u11.l05.bring-up",
+        "en.pre-intermediate.u11.l05.fall-out-with"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u11.l07",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Advice",
+      "canDo": "Give and ask for advice",
+      "scenario": "Ben fell out with Tom before rehearsal and asks Smarty and Mia for advice.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u11.l07.you-should-try",
+          "text": "You should try",
+          "kind": "phrase",
+          "forms": [
+            "should try"
+          ],
+          "example": "You should try speaking to Tom after rehearsal.",
+          "note": "Say 'You should try...' to give helpful, friendly advice."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.why-do-not-you",
+          "text": "Why do not you",
+          "kind": "phrase",
+          "forms": [
+            "Why does not he",
+            "Why does not she"
+          ],
+          "example": "Why do not you send him a nice message?",
+          "note": "Use 'Why do not you...' to suggest an easy idea."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.it-might-help-to",
+          "text": "It might help to",
+          "kind": "phrase",
+          "forms": [
+            "might help to"
+          ],
+          "example": "It might help to say sorry first.",
+          "note": "Say 'It might help to...' when you want to give gentle advice."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.what-do-you-suggest",
+          "text": "What do you suggest?",
+          "kind": "phrase",
+          "forms": [
+            "What does he suggest?",
+            "What does she suggest?"
+          ],
+          "example": "I have a problem with my lines—what do you suggest?",
+          "note": "Ask 'What do you suggest?' when you want someone's advice."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.if-i-were-in-your-shoes",
+          "text": "If I were in your shoes",
+          "kind": "phrase",
+          "forms": [
+            "in your shoes",
+            "in his shoes",
+            "in her shoes"
+          ],
+          "example": "If I were in your shoes, I would call him.",
+          "note": "Say 'If I were in your shoes' to tell what you would do in their place."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.have-you-thought-about",
+          "text": "Have you thought about",
+          "kind": "phrase",
+          "forms": [
+            "Has he thought about",
+            "Has she thought about"
+          ],
+          "example": "Have you thought about writing him a note?",
+          "note": "Ask 'Have you thought about...' to offer a new idea gently."
+        }
+      ],
+      "grammar": {
+        "title": "Patterns for giving advice",
+        "explanation": "Notice what comes after each phrase: 'Why do not you' and 'It might help to' take the base verb (go, call, say). 'Have you thought about' takes a noun or -ing verb (writing, speaking). 'You should try' can take -ing or to + verb.",
+        "examples": [
+          "Why do not you call him?",
+          "It might help to take a rest.",
+          "Have you thought about practising together?"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l07.task.pick-ask-advice",
+          "kind": "choice",
+          "prompt": "You have a problem and want Smarty's advice. What do you ask?",
+          "answer": "What do you suggest?",
+          "options": [
+            "What do you suggest?",
+            "You must be joking!",
+            "I could not care less."
+          ],
+          "explanation": "Ask 'What do you suggest?' when you want ideas or advice.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l07.what-do-you-suggest"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.task.hear-shoes",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you hear.",
+          "audio": "If I were in your shoes, I would say sorry.",
+          "answer": "If I were in your shoes, I would say sorry.",
+          "options": [
+            "If I were in your shoes, I would say sorry.",
+            "If I had your shoes, I would go home.",
+            "Why do not you wear your new shoes?"
+          ],
+          "explanation": "'If I were in your shoes' means 'If I were in your situation'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l07.if-i-were-in-your-shoes",
+            "en.pre-intermediate.u07.l06.i-would"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.task.match-advice",
+          "kind": "match",
+          "prompt": "Match the beginnings and endings of these advice sentences.",
+          "pairs": [
+            {
+              "left": "Why do not you",
+              "right": "call him now?"
+            },
+            {
+              "left": "It might help to",
+              "right": "take a seat."
+            },
+            {
+              "left": "Have you thought about",
+              "right": "writing a nice message?"
+            },
+            {
+              "left": "What do you",
+              "right": "suggest?"
+            }
+          ],
+          "explanation": "Check the verb form after each phrase: base verb after 'Why do not you' and 'It might help to', and -ing after 'Have you thought about'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l07.why-do-not-you",
+            "en.pre-intermediate.u11.l07.it-might-help-to",
+            "en.pre-intermediate.u11.l07.have-you-thought-about",
+            "en.pre-intermediate.u11.l07.what-do-you-suggest"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.task.fill-should-try",
+          "kind": "fill",
+          "prompt": "Mia is nervous about her song. Give her friendly advice.",
+          "text": "___ practising with the piano.",
+          "answer": "You should try",
+          "options": [
+            "You should try",
+            "Why do not you",
+            "It might help to"
+          ],
+          "explanation": "'You should try' goes well with 'practising' (-ing).",
+          "itemIds": [
+            "en.pre-intermediate.u11.l07.you-should-try",
+            "en.pre-intermediate.u11.l01.nervous"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.task.fill-why-not",
+          "kind": "fill",
+          "prompt": "Suggest asking Smarty for help. Complete the question.",
+          "text": "___ ask Smarty for help?",
+          "answer": "Why do not you",
+          "options": [
+            "Why do not you",
+            "Have you thought about",
+            "If I were in your shoes"
+          ],
+          "explanation": "'Why do not you' is followed by the base verb 'ask'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l07.why-do-not-you"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.task.build-might-help",
+          "kind": "build",
+          "prompt": "Build a sentence giving gentle advice.",
+          "answer": "It might help to drink some tea.",
+          "tiles": [
+            "It",
+            "might",
+            "help",
+            "to",
+            "drink",
+            "some",
+            "tea",
+            "drinking"
+          ],
+          "explanation": "It might help to + base verb (drink).",
+          "itemIds": [
+            "en.pre-intermediate.u11.l07.it-might-help-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.task.fill-thought-about",
+          "kind": "fill",
+          "prompt": "Offer a new idea to a friend who fell out with his brother.",
+          "text": "___ speaking to him calmly?",
+          "answer": "Have you thought about",
+          "options": [
+            "Have you thought about",
+            "Why do not you",
+            "It might help to"
+          ],
+          "explanation": "'Have you thought about' is followed by the -ing form 'speaking'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l07.have-you-thought-about",
+            "en.pre-intermediate.u11.l05.fall-out-with"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l07.task.say-suggest",
+          "kind": "speak",
+          "prompt": "Ask for advice out loud.",
+          "text": "What do you suggest?",
+          "answer": "What do you suggest?",
+          "explanation": "Use this question when you need advice.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l07.what-do-you-suggest"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How can Ben fix things after falling out with Tom?",
+        "image": {
+          "id": "en-b1-u11-l07-scene",
+          "describe": "At a small table in the theatre café, Ben looks worried while Smarty the black cat and Mia offer friendly advice."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Smarty, Mia, I fell out with Tom earlier, and now I feel bad. What do you suggest?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Do not worry—there is an easy solution. Why do not you meet him at the café?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, like a good counsellor would say, it might help to speak honestly."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I feel a bit embarrassed. What if he is still angry?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Have you thought about bringing him his favourite chocolate?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great idea! If I were in your shoes, I would go right now. You should try!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "Why does Ben ask Smarty and Mia for advice?",
+            "answer": "He fell out with Tom.",
+            "options": [
+              "He fell out with Tom.",
+              "He lost his ticket.",
+              "He forgot his costume."
+            ],
+            "explanation": "Ben says he fell out with Tom earlier and asks 'What do you suggest?'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l07.what-do-you-suggest",
+              "en.pre-intermediate.u11.l05.fall-out-with"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Mia suggest bringing Tom?",
+            "answer": "His favourite chocolate",
+            "options": [
+              "His favourite chocolate",
+              "A new scarf",
+              "A cup of soup"
+            ],
+            "explanation": "Mia asks 'Have you thought about bringing him his favourite chocolate?'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l07.have-you-thought-about"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "What would Smarty do in Ben's shoes?",
+            "answer": "Go right now",
+            "options": [
+              "Go right now",
+              "Wait a week",
+              "Say sorry"
+            ],
+            "explanation": "Smarty says 'If I were in your shoes, I would go right now.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l07.if-i-were-in-your-shoes",
+              "en.pre-intermediate.u11.l07.you-should-try"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty has a small problem before the show and asks for your advice.",
+        "turns": [
+          {
+            "smarty": "I am nervous before going on stage! What do you suggest?",
+            "accept": [
+              "^you should try (?:practising|drinking water|calming down)$",
+              "^why do not you (?:practise|drink water|calm down|take a rest)$",
+              "^it might help to (?:practise|drink water|calm down|take a rest)$"
+            ],
+            "example": "Why do not you calm down?",
+            "hint": "Start with 'Why do not you...', 'You should try...', or 'It might help to...'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l07.why-do-not-you",
+              "en.pre-intermediate.u11.l07.you-should-try",
+              "en.pre-intermediate.u11.l07.it-might-help-to"
+            ]
+          },
+          {
+            "smarty": "I also fell out with Sam yesterday. What would you do in my shoes?",
+            "accept": [
+              "^if i were in your shoes i would (?:call him|speak to him|say sorry|text him)$",
+              "^have you thought about (?:calling him|speaking to him)$"
+            ],
+            "example": "If I were in your shoes, I would say sorry.",
+            "hint": "Say 'If I were in your shoes, I would say sorry.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l07.if-i-were-in-your-shoes"
+            ]
+          },
+          {
+            "smarty": "Thank you! Ask me for advice about something now.",
+            "accept": [
+              "^what do you suggest$"
+            ],
+            "example": "What do you suggest?",
+            "hint": "Ask 'What do you suggest?'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l07.what-do-you-suggest"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "worry",
+          "gloss": "think about problems and feel nervous"
+        },
+        {
+          "text": "solution",
+          "gloss": "the answer to a problem"
+        },
+        {
+          "text": "problem page",
+          "gloss": "a magazine page where people ask for advice"
+        },
+        {
+          "text": "counsellor",
+          "gloss": "someone trained to listen and give advice"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u07.l06.i-would",
+        "en.pre-intermediate.u11.l01.nervous",
+        "en.pre-intermediate.u11.l05.fall-out-with"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u11.l08",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Omar asks Ana and Smarty for advice about his family and relationships.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l08.task.pick-look-up",
+          "kind": "choice",
+          "prompt": "Omar admires his older brother very much. Which phrase fits?",
+          "answer": "looks up to",
+          "options": [
+            "looks up to",
+            "falls out with",
+            "splits up"
+          ],
+          "explanation": "'Look up to' means to admire and respect someone.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l05.look-up-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l08.task.hear-love",
+          "kind": "listen",
+          "prompt": "Listen and choose what you hear.",
+          "audio": "They fell in love and got engaged.",
+          "answer": "They fell in love and got engaged.",
+          "options": [
+            "They fell in love and got engaged.",
+            "They fell out and split up.",
+            "They grew up and got married."
+          ],
+          "explanation": "First people fall in love, and then they get engaged.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l06.fall-in-love",
+            "en.pre-intermediate.u11.l06.get-engaged"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l08.task.match-review",
+          "kind": "match",
+          "prompt": "Match the phrases with their meanings.",
+          "pairs": [
+            {
+              "left": "take after",
+              "right": "look like a parent"
+            },
+            {
+              "left": "get married",
+              "right": "have a wedding"
+            },
+            {
+              "left": "What do you suggest?",
+              "right": "help with a problem"
+            },
+            {
+              "left": "If I were in your shoes",
+              "right": "be in someone's place"
+            }
+          ],
+          "explanation": "Review of family, relationship, and advice phrases.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l05.take-after",
+            "en.pre-intermediate.u11.l06.get-married",
+            "en.pre-intermediate.u11.l07.what-do-you-suggest",
+            "en.pre-intermediate.u11.l07.if-i-were-in-your-shoes"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l08.task.fill-get-on",
+          "kind": "fill",
+          "prompt": "Ana and Zara are great friends. Complete the sentence.",
+          "text": "Ana and Zara ___ each other very well.",
+          "answer": "get on with",
+          "options": [
+            "get on with",
+            "fall out with",
+            "split up"
+          ],
+          "explanation": "'Get on with' means to have a friendly relationship.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l05.get-on-with"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l08.task.build-advice",
+          "kind": "build",
+          "prompt": "Build a sentence giving advice to Omar.",
+          "answer": "Why do not you call your brother?",
+          "tiles": [
+            "Why",
+            "do",
+            "not",
+            "you",
+            "call",
+            "your",
+            "brother",
+            "should"
+          ],
+          "explanation": "Why do not you + base verb (call).",
+          "itemIds": [
+            "en.pre-intermediate.u11.l07.why-do-not-you"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l08.task.fill-couple",
+          "kind": "fill",
+          "prompt": "Two people who go out together are called ***.",
+          "text": "They are a lovely ___.",
+          "answer": "couple",
+          "options": [
+            "couple",
+            "cousin",
+            "guest"
+          ],
+          "explanation": "Two people in a relationship are a couple.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l06.a-couple"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l08.task.say-thought",
+          "kind": "speak",
+          "prompt": "Say this advice question out loud.",
+          "text": "Have you thought about speaking to him?",
+          "answer": "Have you thought about speaking to him?",
+          "explanation": "Use 'Have you thought about' + -ing to offer an idea.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l07.have-you-thought-about"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How can Omar help his cousin before the wedding?",
+        "image": {
+          "id": "en-b1-u11-l08-scene",
+          "describe": "At a wooden table backstage, Smarty the black cat and Ana talk with Omar, who holds a wedding invitation."
+        },
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Smarty, my cousin and his partner got engaged, and they get married next month!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "That is wonderful! They make such a nice couple."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Yes, I really look up to my cousin—we grew up together. What do you suggest for a wedding present?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Have you thought about making a photo album of when you were young?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "It might help to ask your aunt what they need for their new home too."
+          },
+          {
+            "speaker": "Omar",
+            "text": "If I were in your shoes, I would give the same great advice! Thanks!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Omar's cousin doing next month?",
+            "answer": "Getting married",
+            "options": [
+              "Getting married",
+              "Splitting up",
+              "Going to Spain"
+            ],
+            "explanation": "Omar says his cousin and his partner get married next month.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l06.get-married",
+              "en.pre-intermediate.u11.l06.get-engaged"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "What present does Smarty suggest?",
+            "answer": "A photo album",
+            "options": [
+              "A photo album",
+              "A guitar",
+              "A suitcase"
+            ],
+            "explanation": "Smarty asks 'Have you thought about making a photo album?'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l07.have-you-thought-about",
+              "en.pre-intermediate.u11.l05.grow-up"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "Who does Ana suggest asking?",
+            "answer": "Omar's aunt",
+            "options": [
+              "Omar's aunt",
+              "Leo",
+              "The manager"
+            ],
+            "explanation": "Ana says 'It might help to ask your aunt what they need.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l07.it-might-help-to"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you to combine family, relationship, and advice phrases.",
+        "turns": [
+          {
+            "smarty": "Two friends fell in love and want to get married. What do we call them?",
+            "accept": [
+              "^a couple$",
+              "^they are a couple$",
+              "^a happy couple$"
+            ],
+            "example": "They are a couple.",
+            "hint": "Say 'They are a couple.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l06.a-couple",
+              "en.pre-intermediate.u11.l06.fall-in-love"
+            ]
+          },
+          {
+            "smarty": "Omar fell out with his sister. Give him one piece of advice!",
+            "accept": [
+              "^you should try (?:speaking to her|calling her)$",
+              "^why do not you (?:speak to her|call her|say sorry)$",
+              "^it might help to (?:speak to her|call her|say sorry)$"
+            ],
+            "example": "Why do not you say sorry?",
+            "hint": "Use 'Why do not you...' or 'It might help to...'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l07.why-do-not-you",
+              "en.pre-intermediate.u11.l07.it-might-help-to"
+            ]
+          },
+          {
+            "smarty": "Do you take after your mother or your father?",
+            "accept": [
+              "^i take after my (?:mother|father|parents)$"
+            ],
+            "example": "I take after my mother.",
+            "hint": "Say 'I take after my mother' or 'I take after my father'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l05.take-after"
+            ]
+          }
+        ]
+      },
+      "exposure": [],
+      "recycle": [
+        "en.pre-intermediate.u11.l05.look-up-to",
+        "en.pre-intermediate.u11.l06.fall-in-love",
+        "en.pre-intermediate.u11.l06.get-engaged",
+        "en.pre-intermediate.u11.l05.take-after",
+        "en.pre-intermediate.u11.l06.get-married",
+        "en.pre-intermediate.u11.l07.what-do-you-suggest",
+        "en.pre-intermediate.u11.l07.if-i-were-in-your-shoes",
+        "en.pre-intermediate.u11.l05.get-on-with",
+        "en.pre-intermediate.u11.l07.why-do-not-you",
+        "en.pre-intermediate.u11.l06.a-couple",
+        "en.pre-intermediate.u11.l07.have-you-thought-about",
+        "en.pre-intermediate.u11.l05.grow-up",
+        "en.pre-intermediate.u11.l07.it-might-help-to"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u11.l09",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "Comfort",
+      "canDo": "Support someone",
+      "scenario": "Lily forgets a line during warm-up backstage, and Smarty and Zara comfort her.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u11.l09.try-not-to-worry",
+          "text": "Try not to worry",
+          "kind": "phrase",
+          "forms": [
+            "try not to worry"
+          ],
+          "example": "Try not to worry about one small mistake.",
+          "note": "Say 'Try not to worry' to help a friend feel calmer about a problem."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.it-is-not-your-fault",
+          "text": "It is not your fault",
+          "kind": "phrase",
+          "forms": [
+            "not your fault",
+            "not his fault",
+            "not her fault",
+            "not my fault",
+            "fault"
+          ],
+          "example": "The door was locked, so it is not your fault we are late.",
+          "note": "Use 'It is not your fault' when someone feels bad about something they did not cause."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.i-am-here-for-you",
+          "text": "I am here for you",
+          "kind": "phrase",
+          "forms": [
+            "here for you",
+            "be here for you"
+          ],
+          "example": "Whenever you feel lonely, remember I am here for you.",
+          "note": "Say 'I am here for you' to show a friend you will always support them."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.take-your-time",
+          "text": "Take your time",
+          "kind": "phrase",
+          "forms": [
+            "take your time"
+          ],
+          "example": "Do not rush—take your time and speak slowly.",
+          "note": "Use 'Take your time' when you want someone to relax and not hurry."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.everything-will-be-fine",
+          "text": "Everything will be fine",
+          "kind": "phrase",
+          "forms": [
+            "everything will be fine"
+          ],
+          "example": "You practised so hard, so everything will be fine.",
+          "note": "Say 'Everything will be fine' to give someone hope that things will go well."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.buck-up",
+          "text": "buck up",
+          "kind": "phrase",
+          "forms": [
+            "bucks up",
+            "bucked up",
+            "bucking up"
+          ],
+          "example": "Buck up! Our team is going to have a great show.",
+          "note": "Say 'buck up' as a friendly way to tell someone to feel braver and more cheerful."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l09.task.pick-fault",
+          "kind": "choice",
+          "prompt": "The train was delayed, so Sam arrived late. What do you say to him?",
+          "answer": "It is not your fault.",
+          "options": [
+            "It is not your fault.",
+            "You must be joking.",
+            "I could not care less."
+          ],
+          "explanation": "Sam could not control the train, so tell him 'It is not your fault.'",
+          "itemIds": [
+            "en.pre-intermediate.u11.l09.it-is-not-your-fault",
+            "en.pre-intermediate.u02.l01.delayed"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.task.hear-here-for-you",
+          "kind": "listen",
+          "prompt": "Listen and choose the comforting sentence you hear.",
+          "audio": "Try not to worry, I am here for you.",
+          "answer": "Try not to worry, I am here for you.",
+          "options": [
+            "Try not to worry, I am here for you.",
+            "Take your time, I am waiting for you.",
+            "Buck up, everything will be fine."
+          ],
+          "explanation": "Both 'Try not to worry' and 'I am here for you' comfort a worried friend.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l09.try-not-to-worry",
+            "en.pre-intermediate.u11.l09.i-am-here-for-you"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.task.match-comfort",
+          "kind": "match",
+          "prompt": "Match each comforting phrase with when to say it.",
+          "pairs": [
+            {
+              "left": "Take your time",
+              "right": "When a friend is in a hurry"
+            },
+            {
+              "left": "It is not your fault",
+              "right": "When a friend is very sorry"
+            },
+            {
+              "left": "Everything will be fine",
+              "right": "When a friend is nervous"
+            },
+            {
+              "left": "Buck up",
+              "right": "When a friend needs courage"
+            }
+          ],
+          "explanation": "Choose the comforting phrase that matches the friend's need.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l09.take-your-time",
+            "en.pre-intermediate.u11.l09.it-is-not-your-fault",
+            "en.pre-intermediate.u11.l09.everything-will-be-fine",
+            "en.pre-intermediate.u11.l09.buck-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.task.fill-fine",
+          "kind": "fill",
+          "prompt": "Mia is nervous before walking on stage. Comfort her.",
+          "text": "Do not be scared—___.",
+          "answer": "everything will be fine",
+          "options": [
+            "everything will be fine",
+            "it is not your fault",
+            "you must be joking"
+          ],
+          "explanation": "'Everything will be fine' reassures someone who is scared.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l09.everything-will-be-fine",
+            "en.pre-intermediate.u11.l01.nervous"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.task.build-take-time",
+          "kind": "build",
+          "prompt": "Tell Lily not to hurry while reading her lines.",
+          "answer": "Take your time and read slowly.",
+          "tiles": [
+            "Take",
+            "your",
+            "time",
+            "and",
+            "read",
+            "slowly",
+            "fault"
+          ],
+          "explanation": "'Take your time' tells someone not to rush.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l09.take-your-time"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.task.fill-buck-up",
+          "kind": "fill",
+          "prompt": "Tell Leo to cheer up and be brave.",
+          "text": "___, Leo! You can do this!",
+          "answer": "Buck up",
+          "options": [
+            "Buck up",
+            "Split up",
+            "Grow up"
+          ],
+          "explanation": "'Buck up' encourages someone to feel braver and happier.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l09.buck-up",
+            "en.pre-intermediate.u11.l02.cheer-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.task.fill-worry",
+          "kind": "fill",
+          "prompt": "Tom is worried about his costume. Complete the sentence.",
+          "text": "___, we have a spare hat.",
+          "answer": "Try not to worry",
+          "options": [
+            "Try not to worry",
+            "It is not your fault",
+            "Take your time"
+          ],
+          "explanation": "'Try not to worry' helps calm someone down.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l09.try-not-to-worry"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l09.task.say-here-for-you",
+          "kind": "speak",
+          "prompt": "Say this supportive sentence out loud.",
+          "text": "I am here for you.",
+          "answer": "I am here for you.",
+          "explanation": "Say 'I am here for you' to show support.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l09.i-am-here-for-you"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How do Smarty and Zara help Lily when she forgets her lines?",
+        "image": {
+          "id": "en-b1-u11-l09-scene",
+          "describe": "Backstage beside a dressing mirror, Smarty the black cat and Zara comfort Lily, who holds a tissue and a script."
+        },
+        "lines": [
+          {
+            "speaker": "Lily",
+            "text": "Oh no! I forgot my lines during warm-up, and the lights went out! I feel so embarrassed."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Here is a tissue and a big hug, Lily. There was a power cut—it is not your fault!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Zara is right. Try not to worry! We want to reassure you."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Thank you for your kindness. I am still on edge about tonight."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Take your time, Lily. Remember I am here for you."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Buck up! You know every word, and everything will be fine!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "Why does Zara say 'It is not your fault'?",
+            "answer": "Because there was a power cut.",
+            "options": [
+              "Because there was a power cut.",
+              "Because the show was cancelled.",
+              "Because she lost her phone."
+            ],
+            "explanation": "There was a power cut, so Zara tells Lily 'it is not your fault!'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l09.it-is-not-your-fault",
+              "en.pre-intermediate.u06.l09.power-cut"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "How does Lily feel about tonight's show?",
+            "answer": "on edge",
+            "options": [
+              "on edge",
+              "jealous",
+              "fed up"
+            ],
+            "explanation": "Lily says 'I am still on edge about tonight.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l02.on-edge"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Smarty say at the end to encourage Lily?",
+            "answer": "Buck up! Everything will be fine!",
+            "options": [
+              "Buck up! Everything will be fine!",
+              "Split up! It is too late!",
+              "You must be joking!"
+            ],
+            "explanation": "Smarty says 'Buck up! You know every word, and everything will be fine!'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l09.buck-up",
+              "en.pre-intermediate.u11.l09.everything-will-be-fine"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is worried before walking onto the big stage. Comfort him!",
+        "turns": [
+          {
+            "smarty": "Oh no, I dropped my notebook backstage! I feel so bad!",
+            "accept": [
+              "^it is not your fault$",
+              "^try not to worry$"
+            ],
+            "example": "It is not your fault.",
+            "hint": "Say 'It is not your fault' or 'Try not to worry'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l09.it-is-not-your-fault",
+              "en.pre-intermediate.u11.l09.try-not-to-worry"
+            ]
+          },
+          {
+            "smarty": "I am nervous about forgetting my words in front of the audience.",
+            "accept": [
+              "^everything will be fine$",
+              "^take your time$",
+              "^buck up$"
+            ],
+            "example": "Everything will be fine.",
+            "hint": "Say 'Everything will be fine' or 'Take your time'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l09.everything-will-be-fine",
+              "en.pre-intermediate.u11.l09.take-your-time"
+            ]
+          },
+          {
+            "smarty": "Thank you for being such a good friend!",
+            "accept": [
+              "^i am here for you$",
+              "^no problem i am here for you$"
+            ],
+            "example": "I am here for you.",
+            "hint": "Say 'I am here for you.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l09.i-am-here-for-you"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "hug",
+          "gloss": "putting your arms around someone to show love or comfort"
+        },
+        {
+          "text": "tissue",
+          "gloss": "a soft piece of paper used to wipe tears or your nose"
+        },
+        {
+          "text": "reassure",
+          "gloss": "say something to stop someone worrying"
+        },
+        {
+          "text": "kindness",
+          "gloss": "being friendly, generous, and caring"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u02.l01.delayed",
+        "en.pre-intermediate.u11.l01.nervous",
+        "en.pre-intermediate.u11.l02.cheer-up",
+        "en.pre-intermediate.u06.l09.power-cut",
+        "en.pre-intermediate.u11.l02.on-edge"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u11.l10",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 10,
+      "type": "lesson",
+      "title": "Verb patterns",
+      "canDo": "Use verbs with -ing or to",
+      "scenario": "Smarty gives final reminders to the cast before opening night at the theatre.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u11.l10.remember-to",
+          "text": "remember to",
+          "kind": "phrase",
+          "forms": [
+            "remembers to",
+            "remembered to"
+          ],
+          "example": "Please remember to bring your costume tomorrow.",
+          "note": "Use 'remember to' when you do not forget to do something important."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.forget-to",
+          "text": "forget to",
+          "kind": "phrase",
+          "forms": [
+            "forgets to",
+            "forgot to"
+          ],
+          "example": "Do not forget to speak loudly on stage.",
+          "note": "Say 'forget to' when someone does not remember to do something."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.stop-doing",
+          "text": "stop doing",
+          "kind": "phrase",
+          "forms": [
+            "stops doing",
+            "stopped doing"
+          ],
+          "example": "You should stop doing homework so late at night.",
+          "note": "Use 'stop' + -ing when you quit an activity."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.try-doing",
+          "text": "try doing",
+          "kind": "phrase",
+          "forms": [
+            "tries doing",
+            "tried doing"
+          ],
+          "example": "If you feel nervous, try reading a funny book.",
+          "note": "Say 'try' + -ing when you test a new idea to see if it helps."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.i-am-used-to",
+          "text": "I am used to",
+          "kind": "phrase",
+          "forms": [
+            "used to",
+            "he is used to",
+            "she is used to",
+            "we are used to",
+            "they are used to"
+          ],
+          "example": "I am used to working late before a big show.",
+          "note": "Say 'I am used to' + -ing when something feels normal because you have done it often."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.look-forward-to",
+          "text": "look forward to",
+          "kind": "phrase",
+          "forms": [
+            "looks forward to",
+            "looked forward to",
+            "looking forward to"
+          ],
+          "example": "We look forward to meeting the audience after the play.",
+          "note": "Use 'look forward to' + -ing or a noun when you feel excited about something in the future."
+        }
+      ],
+      "grammar": {
+        "title": "Verbs followed by 'to' or '-ing'",
+        "explanation": "Use 'to + verb' for things you need to do ('remember to bring', 'forget to call'). Use '-ing' after 'stop', 'try' (for an experiment), 'be used to', and 'look forward to' ('stop working', 'look forward to meeting').",
+        "examples": [
+          "Remember to pack your hat.",
+          "Stop working so hard and take a rest.",
+          "I look forward to seeing you!"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l10.task.pick-remember",
+          "kind": "choice",
+          "prompt": "Smarty reminds Ben to bring his hat. Which sentence is right?",
+          "answer": "Remember to bring your hat.",
+          "options": [
+            "Remember to bring your hat.",
+            "Remember bringing your hat.",
+            "Remember bring your hat."
+          ],
+          "explanation": "Use 'remember to' + base verb for a task you must not forget.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l10.remember-to",
+            "en.elementary.u01.l06.remember"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.task.hear-look-forward",
+          "kind": "listen",
+          "prompt": "Listen and choose what you hear.",
+          "audio": "I look forward to meeting your parents.",
+          "answer": "I look forward to meeting your parents.",
+          "options": [
+            "I look forward to meeting your parents.",
+            "I am used to meeting your parents.",
+            "I forgot to meet your parents."
+          ],
+          "explanation": "'Look forward to' is followed by the -ing form 'meeting'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l10.look-forward-to",
+            "en.pre-intermediate.u07.l10.i-look-forward-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.task.match-patterns",
+          "kind": "match",
+          "prompt": "Match each verb pattern with the right ending.",
+          "pairs": [
+            {
+              "left": "Do not forget to",
+              "right": "call me when you arrive."
+            },
+            {
+              "left": "Please stop",
+              "right": "working so late every night."
+            },
+            {
+              "left": "I am used to",
+              "right": "getting up early for school."
+            },
+            {
+              "left": "We look forward to",
+              "right": "coming to your party."
+            }
+          ],
+          "explanation": "Forget to + base verb; stop, be used to, and look forward to + -ing.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l10.forget-to",
+            "en.pre-intermediate.u11.l10.stop-doing",
+            "en.pre-intermediate.u11.l10.i-am-used-to",
+            "en.pre-intermediate.u11.l10.look-forward-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.task.fill-try-doing",
+          "kind": "fill",
+          "prompt": "Leo has a headache. Suggest an idea to test. Complete the sentence.",
+          "text": "___ some water and resting.",
+          "answer": "Try drinking",
+          "options": [
+            "Try drinking",
+            "Forget to drink",
+            "Used to drink"
+          ],
+          "explanation": "Use 'try' + -ing when you suggest an idea to see if it works.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l10.try-doing"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.task.fill-used-to",
+          "kind": "fill",
+          "prompt": "Mia sings on stage every weekend, so it feels normal to her. Complete the sentence.",
+          "text": "___ performing in front of people.",
+          "answer": "She is used to",
+          "options": [
+            "She is used to",
+            "She forgot to",
+            "She stopped"
+          ],
+          "explanation": "'Be used to' + -ing means something is familiar and normal.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l10.i-am-used-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.task.build-forget-to",
+          "kind": "build",
+          "prompt": "Build a reminder for Sam.",
+          "answer": "Do not forget to pack your shoes.",
+          "tiles": [
+            "Do",
+            "not",
+            "forget",
+            "to",
+            "pack",
+            "your",
+            "shoes",
+            "packing"
+          ],
+          "explanation": "Do not forget to + base verb (pack).",
+          "itemIds": [
+            "en.pre-intermediate.u11.l10.forget-to",
+            "en.elementary.u01.l06.forget"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.task.fill-stop-doing",
+          "kind": "fill",
+          "prompt": "Tell Ben to quit reading his messages during rehearsal.",
+          "text": "Please ___ your phone on stage!",
+          "answer": "stop checking",
+          "options": [
+            "stop checking",
+            "remember to check",
+            "forget to check"
+          ],
+          "explanation": "Wait—use 'stop reading' or 'stop playing'! Let's check: 'Please ___ your messages on stage!' -> 'stop reading'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l10.stop-doing"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l10.task.say-look-forward",
+          "kind": "speak",
+          "prompt": "Say this sentence out loud.",
+          "text": "I look forward to meeting you.",
+          "answer": "I look forward to meeting you.",
+          "explanation": "Remember to use -ing ('meeting') after 'look forward to'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l10.look-forward-to"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What final tips does Smarty give the actors on stage?",
+        "image": {
+          "id": "en-b1-u11-l10-scene",
+          "describe": "Smarty the black cat stands on the wooden theatre stage giving tips to Mia, Leo, Sam, and Tom."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Listen up, team! Remember to arrive early tomorrow, and do not forget to bring your costumes."
+          },
+          {
+            "speaker": "Tom",
+            "text": "I will not forget! I prefer coming early anyway."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I used to feel scared, Smarty, and I regret worrying so much last week."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Now I am used to performing! If you feel on edge, try drinking warm water and stop reading your script backstage."
+          },
+          {
+            "speaker": "Leo",
+            "text": "I did not mean to be late yesterday, Smarty. Let us go on practising!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "You are all ready! I really look forward to meeting the audience tomorrow night!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Smarty tell the team not to forget?",
+            "answer": "To bring their costumes",
+            "options": [
+              "To bring their costumes",
+              "To buy tickets",
+              "To clean the café"
+            ],
+            "explanation": "Smarty says 'do not forget to bring your costumes.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l10.forget-to",
+              "en.pre-intermediate.u11.l10.remember-to"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Smarty say to do if someone feels on edge?",
+            "answer": "Try drinking warm water",
+            "options": [
+              "Try drinking warm water",
+              "Go home to sleep",
+              "Call a friend"
+            ],
+            "explanation": "Smarty says 'try drinking warm water and stop reading your script backstage.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l10.try-doing",
+              "en.pre-intermediate.u11.l10.stop-doing"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Smarty look forward to tomorrow night?",
+            "answer": "Meeting the audience",
+            "options": [
+              "Meeting the audience",
+              "Going to school",
+              "Cooking dinner"
+            ],
+            "explanation": "Smarty says 'I really look forward to meeting the audience tomorrow night!'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l10.look-forward-to"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty checks if you can use 'to' and '-ing' verb patterns correctly.",
+        "turns": [
+          {
+            "smarty": "What must you remember to do before a big show?",
+            "accept": [
+              "^i must remember to (?:practise|bring my costume|arrive early|be on time)$",
+              "^remember to (?:practise|bring my costume|arrive early|be on time)$"
+            ],
+            "example": "I must remember to practise.",
+            "hint": "Say 'I must remember to practise' or 'Remember to be on time'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l10.remember-to"
+            ]
+          },
+          {
+            "smarty": "If a friend feels nervous, what should they try doing?",
+            "accept": [
+              "^they should try (?:drinking water|reading|practising)$",
+              "^try (?:drinking water|reading|practising)$"
+            ],
+            "example": "Try drinking water.",
+            "hint": "Say 'Try drinking water' or 'Try practising'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l10.try-doing"
+            ]
+          },
+          {
+            "smarty": "Are you excited about the play? Use 'look forward to'!",
+            "accept": [
+              "^i look forward to (?:the play|meeting you|coming|going)$"
+            ],
+            "example": "I look forward to the play.",
+            "hint": "Say 'I look forward to the play' or 'I look forward to coming'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l10.look-forward-to"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "regret",
+          "gloss": "feel sorry about something you did"
+        },
+        {
+          "text": "mean to",
+          "gloss": "intend or plan to do something"
+        },
+        {
+          "text": "go on",
+          "gloss": "continue doing something"
+        },
+        {
+          "text": "prefer",
+          "gloss": "like one thing more than another"
+        }
+      ],
+      "recycle": [
+        "en.elementary.u01.l06.remember",
+        "en.pre-intermediate.u07.l10.i-look-forward-to",
+        "en.elementary.u01.l06.forget"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u11.l11",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 11,
+      "type": "lesson",
+      "title": "At the theatre",
+      "canDo": "Talk about a play",
+      "scenario": "Opening night arrives at Smarty's theatre, and the whole play is a huge success.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u11.l11.curtain",
+          "text": "curtain",
+          "kind": "word",
+          "forms": [
+            "curtains"
+          ],
+          "example": "The big red curtain goes up when the play starts.",
+          "note": "A 'curtain' is the heavy cloth that opens and closes in front of the stage.",
+          "image": {
+            "id": "curtain",
+            "describe": "heavy red velvet stage curtains parting on a warmly lit wooden theatre stage"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.the-cast",
+          "text": "the cast",
+          "kind": "phrase",
+          "forms": [
+            "cast"
+          ],
+          "example": "The cast worked together for months to prepare the play.",
+          "note": "Say 'the cast' for all the actors and actresses performing in a play or film.",
+          "image": {
+            "id": "the-cast",
+            "describe": "a group of cheerful cat actors in colorful stage costumes standing together and bowing on stage"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.the-plot-twist",
+          "text": "the plot twist",
+          "kind": "phrase",
+          "forms": [
+            "plot twist",
+            "plot twists"
+          ],
+          "example": "Nobody expected the plot twist at the end of the story!",
+          "note": "Use 'the plot twist' for a sudden surprise change in a story.",
+          "image": {
+            "id": "the-plot-twist",
+            "describe": "two cat actors on stage looking amazed as a third cat removes a disguise mask"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.an-interval",
+          "text": "an interval",
+          "kind": "phrase",
+          "forms": [
+            "interval",
+            "intervals"
+          ],
+          "example": "We bought cold drinks during an interval in the middle of the show.",
+          "note": "Say 'an interval' for the short break in the middle of a play or concert."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.a-standing-ovation",
+          "text": "a standing ovation",
+          "kind": "phrase",
+          "forms": [
+            "standing ovation",
+            "standing ovations"
+          ],
+          "example": "The audience gave the cast a standing ovation at the end.",
+          "note": "Use 'a standing ovation' when the audience stands up and claps loudly because the show was amazing."
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.box-office",
+          "text": "box office",
+          "kind": "phrase",
+          "forms": [
+            "the box office"
+          ],
+          "example": "You can buy tickets at the box office near the front door.",
+          "note": "Say 'box office' for the ticket desk at a theatre or cinema."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l11.task.pick-box-office",
+          "kind": "choice",
+          "prompt": "Where at the theatre do you buy tickets for the play?",
+          "answer": "box office",
+          "options": [
+            "box office",
+            "curtain",
+            "an interval"
+          ],
+          "explanation": "Tickets are sold at the theatre's box office.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l11.box-office"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.task.hear-ovation",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you hear.",
+          "audio": "The cast received a standing ovation.",
+          "answer": "The cast received a standing ovation.",
+          "options": [
+            "The cast received a standing ovation.",
+            "The cast enjoyed an interval.",
+            "The cast was behind the curtain."
+          ],
+          "explanation": "A standing ovation means the audience stood up to clap for the cast.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l11.the-cast",
+            "en.pre-intermediate.u11.l11.a-standing-ovation"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.task.match-theatre",
+          "kind": "match",
+          "prompt": "Match each theatre word with its meaning.",
+          "pairs": [
+            {
+              "left": "curtain",
+              "right": "big and in front of the stage"
+            },
+            {
+              "left": "the cast",
+              "right": "all the actors in the play"
+            },
+            {
+              "left": "the plot twist",
+              "right": "a big surprise in the story"
+            },
+            {
+              "left": "an interval",
+              "right": "a short break in the show"
+            }
+          ],
+          "explanation": "Match each theatre term to what it describes.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l11.curtain",
+            "en.pre-intermediate.u11.l11.the-cast",
+            "en.pre-intermediate.u11.l11.the-plot-twist",
+            "en.pre-intermediate.u11.l11.an-interval"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.task.fill-curtain",
+          "kind": "fill",
+          "prompt": "The music began and the red ___ opened slowly. Complete the sentence.",
+          "text": "The red ___ opened and the play began.",
+          "answer": "curtain",
+          "options": [
+            "curtain",
+            "box office",
+            "interval"
+          ],
+          "explanation": "The curtain opens in front of the stage when a play starts.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l11.curtain",
+            "en.pre-intermediate.u05.l09.stage"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.task.build-plot-twist",
+          "kind": "build",
+          "prompt": "Build a sentence about the surprise in the story.",
+          "answer": "Everyone loved the plot twist.",
+          "tiles": [
+            "Everyone",
+            "loved",
+            "the",
+            "plot",
+            "twist",
+            "curtain"
+          ],
+          "explanation": "Everyone + loved + the plot twist.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l11.the-plot-twist"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.task.fill-interval",
+          "kind": "fill",
+          "prompt": "Halfway through the play, there is a fifteen-minute break. Complete the sentence.",
+          "text": "We had tea during ___.",
+          "answer": "an interval",
+          "options": [
+            "an interval",
+            "a standing ovation",
+            "the plot twist"
+          ],
+          "explanation": "The break in the middle of a play is called an interval.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l11.an-interval"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.task.fill-proud-cast",
+          "kind": "fill",
+          "prompt": "After the standing ovation, Smarty felt wonderful about all the actors.",
+          "text": "Smarty was so proud of ___.",
+          "answer": "the cast",
+          "options": [
+            "the cast",
+            "the box office",
+            "the curtain"
+          ],
+          "explanation": "The group of actors in the play is called 'the cast'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l11.the-cast",
+            "en.pre-intermediate.u11.l01.proud"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l11.task.say-ovation",
+          "kind": "speak",
+          "prompt": "Say this sentence out loud.",
+          "text": "The audience gave a standing ovation.",
+          "answer": "The audience gave a standing ovation.",
+          "explanation": "Use 'a standing ovation' when everyone stands and claps.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l11.a-standing-ovation",
+            "en.pre-intermediate.u05.l09.audience"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How does opening night go at Smarty's theatre?",
+        "image": {
+          "id": "en-b1-u11-l11-scene",
+          "describe": "On the brightly lit theatre stage, Smarty the black cat and the entire cast bow together before a cheering audience."
+        },
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Smarty! The usher says every ticket at the box office is sold!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Amazing! Our dress rehearsal went well, and now the curtain is going up!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "In an interval, I read the programme—everyone in the audience is excited!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Wait until they see the plot twist in the second half!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "They loved it! Listen—the audience is giving the cast a standing ovation!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Let us meet our friends by the stage door—I am so proud of you all!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l11.task.story-one",
+            "kind": "choice",
+            "prompt": "What happened at the box office?",
+            "answer": "Every ticket was sold.",
+            "options": [
+              "Every ticket was sold.",
+              "The door was locked.",
+              "No one came."
+            ],
+            "explanation": "Omar says every ticket at the box office is sold.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l11.box-office"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l11.task.story-two",
+            "kind": "choice",
+            "prompt": "When did Ana read the programme?",
+            "answer": "In an interval",
+            "options": [
+              "In an interval",
+              "Before breakfast",
+              "On the bus"
+            ],
+            "explanation": "Ana says 'In an interval, I read the programme.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l11.an-interval"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l11.task.story-three",
+            "kind": "choice",
+            "prompt": "What did the audience give the cast at the end?",
+            "answer": "a standing ovation",
+            "options": [
+              "a standing ovation",
+              "a new curtain",
+              "a box of shoes"
+            ],
+            "explanation": "Leo says 'the audience is giving the cast a standing ovation!'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l11.the-cast",
+              "en.pre-intermediate.u11.l11.a-standing-ovation"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about a play you watched at the theatre.",
+        "turns": [
+          {
+            "smarty": "Where did you get your tickets for the play?",
+            "accept": [
+              "^at the box office$",
+              "^i bought them at the box office$",
+              "^from the box office$"
+            ],
+            "example": "At the box office.",
+            "hint": "Say 'At the box office.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l11.box-office"
+            ]
+          },
+          {
+            "smarty": "Was the story exciting?",
+            "accept": [
+              "^yes i loved the plot twist$",
+              "^yes the plot twist was (?:amazing|great|exciting)$",
+              "^yes it was (?:amazing|great)$"
+            ],
+            "example": "Yes, I loved the plot twist.",
+            "hint": "Mention 'the plot twist'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l11.the-plot-twist"
+            ]
+          },
+          {
+            "smarty": "What did the audience do for the cast at the end?",
+            "accept": [
+              "^they gave (?:the cast )?a standing ovation$",
+              "^a standing ovation$"
+            ],
+            "example": "They gave the cast a standing ovation.",
+            "hint": "Say 'They gave the cast a standing ovation.'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l11.a-standing-ovation",
+              "en.pre-intermediate.u11.l11.the-cast"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "usher",
+          "gloss": "a person who shows people to their seats in a theatre"
+        },
+        {
+          "text": "programme",
+          "gloss": "a small book with information about a play"
+        },
+        {
+          "text": "dress rehearsal",
+          "gloss": "the final practice in full costumes before opening night"
+        },
+        {
+          "text": "stage door",
+          "gloss": "the back entrance to a theatre used by actors"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u05.l09.stage",
+        "en.pre-intermediate.u11.l01.proud",
+        "en.pre-intermediate.u05.l09.audience"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u11.l12",
+      "section": "pre-intermediate",
+      "unit": 11,
+      "lesson": 12,
+      "type": "test",
+      "title": "Mission: Backstage chat",
+      "canDo": "Guess how people feel and comfort them",
+      "scenario": "After the show backstage, Smarty and the cast guess how Tom feels, comfort him, and celebrate.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u11.l12.task.pick-deduction",
+          "kind": "choice",
+          "prompt": "The audience is standing and clapping loudly for the cast. How must the cast feel?",
+          "answer": "They must be proud.",
+          "options": [
+            "They must be proud.",
+            "They can not be proud.",
+            "They must be lonely."
+          ],
+          "explanation": "A standing ovation is a clear clue that the cast feels proud.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l03.he-must-be",
+            "en.pre-intermediate.u11.l01.proud",
+            "en.pre-intermediate.u11.l11.the-cast"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l12.task.hear-comfort",
+          "kind": "listen",
+          "prompt": "Listen and choose what Smarty says to comfort his friend.",
+          "audio": "Try not to worry, everything will be fine.",
+          "answer": "Try not to worry, everything will be fine.",
+          "options": [
+            "Try not to worry, everything will be fine.",
+            "You must be joking, it is your fault.",
+            "I could not care less about the show."
+          ],
+          "explanation": "Smarty uses two comforting phrases: 'Try not to worry' and 'everything will be fine'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l09.try-not-to-worry",
+            "en.pre-intermediate.u11.l09.everything-will-be-fine"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l12.task.match-unit",
+          "kind": "match",
+          "prompt": "Match the phrases from Unit 11 with their meanings.",
+          "pairs": [
+            {
+              "left": "in a good mood",
+              "right": "feeling happy and cheerful"
+            },
+            {
+              "left": "look up to",
+              "right": "admire and like someone"
+            },
+            {
+              "left": "get engaged",
+              "right": "agree to get married"
+            },
+            {
+              "left": "a standing ovation",
+              "right": "a big thank you from the audience"
+            }
+          ],
+          "explanation": "Key expressions across emotions, family, relationships, and the theatre.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l02.in-a-good-mood",
+            "en.pre-intermediate.u11.l05.look-up-to",
+            "en.pre-intermediate.u11.l06.get-engaged",
+            "en.pre-intermediate.u11.l11.a-standing-ovation"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l12.task.fill-advice",
+          "kind": "fill",
+          "prompt": "Your friend fell out with his cousin. Give him advice. Complete the sentence.",
+          "text": "___ calling him to say sorry?",
+          "answer": "Have you thought about",
+          "options": [
+            "Have you thought about",
+            "Why do not you",
+            "It might help to"
+          ],
+          "explanation": "'Have you thought about' is followed by the -ing verb 'calling'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l07.have-you-thought-about",
+            "en.pre-intermediate.u11.l05.fall-out-with"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l12.task.build-verb-pattern",
+          "kind": "build",
+          "prompt": "Build a sentence using 'look forward to'.",
+          "answer": "We look forward to meeting the cast.",
+          "tiles": [
+            "We",
+            "look",
+            "forward",
+            "to",
+            "meeting",
+            "the",
+            "cast",
+            "meet"
+          ],
+          "explanation": "'Look forward to' takes the -ing form 'meeting'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l10.look-forward-to",
+            "en.pre-intermediate.u11.l11.the-cast"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l12.task.fill-fault",
+          "kind": "fill",
+          "prompt": "The curtain stuck because of a broken rope. Comfort the stage helper.",
+          "text": "Buck up! ___.",
+          "answer": "It is not your fault",
+          "options": [
+            "It is not your fault",
+            "You must be joking",
+            "I could not care less"
+          ],
+          "explanation": "Reassure the helper with 'It is not your fault'.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l09.it-is-not-your-fault",
+            "en.pre-intermediate.u11.l09.buck-up",
+            "en.pre-intermediate.u11.l11.curtain"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l12.task.fill-remember",
+          "kind": "fill",
+          "prompt": "Remind Mia to pick up her tickets at the box office.",
+          "text": "Please ___ pick up your tickets.",
+          "answer": "remember to",
+          "options": [
+            "remember to",
+            "stop doing",
+            "used to"
+          ],
+          "explanation": "'Remember to' + base verb is used for things you must not forget.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l10.remember-to",
+            "en.pre-intermediate.u11.l11.box-office"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u11.l12.task.say-comfort",
+          "kind": "speak",
+          "prompt": "Say this comforting sentence out loud.",
+          "text": "Take your time, I am here for you.",
+          "answer": "Take your time, I am here for you.",
+          "explanation": "Combine two supportive expressions to comfort a friend.",
+          "itemIds": [
+            "en.pre-intermediate.u11.l09.take-your-time",
+            "en.pre-intermediate.u11.l09.i-am-here-for-you"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why is Tom sitting quietly backstage after a standing ovation?",
+        "image": {
+          "id": "en-b1-u11-l12-scene",
+          "describe": "Backstage after the show, Smarty the black cat and Mia sit next to Tom on a trunk while flowers and costumes surround them."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Look at Tom by the curtain, Smarty. Everyone else is in a good mood, but he looks on edge."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "He can not be angry after that standing ovation! He might be worried about his parents in the audience."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Oh, hi! I dropped my hat right before the plot twist. I felt so embarrassed!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Tom, you must be joking! Nobody noticed—they loved the cast!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is not your fault the hat was too big. Try not to worry—I am here for you."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Thanks, Smarty and Mia! I really look up to you both. Now I feel proud!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u11.l12.task.story-one",
+            "kind": "choice",
+            "prompt": "Why was Tom embarrassed?",
+            "answer": "He made a mistake before the plot twist.",
+            "options": [
+              "He made a mistake before the plot twist.",
+              "He missed the bus.",
+              "He forgot the interval."
+            ],
+            "explanation": "Tom says he dropped his hat right before the plot twist and felt embarrassed.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l01.embarrassed",
+              "en.pre-intermediate.u11.l11.the-plot-twist"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l12.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Mia say when Tom tells her about dropping the hat?",
+            "answer": "You must be joking!",
+            "options": [
+              "You must be joking!",
+              "I could not care less!",
+              "Calm down!"
+            ],
+            "explanation": "Mia says 'Tom, you must be joking! Nobody noticed!'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l03.you-must-be-joking",
+              "en.pre-intermediate.u11.l11.the-cast"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u11.l12.task.story-three",
+            "kind": "choice",
+            "prompt": "How does Tom feel at the end of the chat?",
+            "answer": "proud",
+            "options": [
+              "proud",
+              "jealous",
+              "lonely"
+            ],
+            "explanation": "After Smarty and Mia comfort him, Tom says 'Now I feel proud!'",
+            "itemIds": [
+              "en.pre-intermediate.u11.l01.proud",
+              "en.pre-intermediate.u11.l09.i-am-here-for-you"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Backstage chat: Zara is nervous before her solo song. Guess how she feels, give advice, and comfort her!",
+        "turns": [
+          {
+            "smarty": "Look at Zara—she is quiet and cannot sit still before the curtain opens. How does she feel?",
+            "accept": [
+              "^she must be (?:nervous|on edge)$",
+              "^she might be (?:nervous|on edge)$",
+              "^she could be (?:nervous|on edge)$"
+            ],
+            "example": "She must be nervous.",
+            "hint": "Guess with 'She must be nervous' or 'She might be on edge'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l03.she-might-be",
+              "en.pre-intermediate.u11.l01.nervous",
+              "en.pre-intermediate.u11.l02.on-edge"
+            ]
+          },
+          {
+            "smarty": "Good guess! Give Zara one piece of friendly advice before she goes on stage.",
+            "accept": [
+              "^you should try (?:drinking water|practising|calming down)$",
+              "^why do not you (?:calm down|drink water|take a rest)$",
+              "^it might help to (?:calm down|drink water|take a rest)$"
+            ],
+            "example": "It might help to drink water.",
+            "hint": "Use 'You should try...', 'Why do not you...', or 'It might help to...'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l07.it-might-help-to",
+              "en.pre-intermediate.u11.l07.why-do-not-you",
+              "en.pre-intermediate.u11.l07.you-should-try"
+            ]
+          },
+          {
+            "smarty": "Now comfort Zara so she feels brave!",
+            "accept": [
+              "^try not to worry(?: everything will be fine)?$",
+              "^everything will be fine$",
+              "^i am here for you$",
+              "^take your time$",
+              "^buck up$"
+            ],
+            "example": "Everything will be fine.",
+            "hint": "Say 'Everything will be fine', 'Try not to worry', or 'I am here for you'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l09.everything-will-be-fine",
+              "en.pre-intermediate.u11.l09.try-not-to-worry",
+              "en.pre-intermediate.u11.l09.i-am-here-for-you"
+            ]
+          },
+          {
+            "smarty": "She sang amazingly and got a standing ovation! How does she feel now?",
+            "accept": [
+              "^she must be (?:proud|happy|in a good mood)$",
+              "^she is (?:proud|happy|in a good mood)$"
+            ],
+            "example": "She must be proud.",
+            "hint": "Say 'She must be proud' or 'She must be in a good mood'.",
+            "itemIds": [
+              "en.pre-intermediate.u11.l03.she-might-be",
+              "en.pre-intermediate.u11.l01.proud",
+              "en.pre-intermediate.u11.l02.in-a-good-mood"
+            ]
+          }
+        ]
+      },
+      "exposure": [],
+      "recycle": [
+        "en.pre-intermediate.u11.l03.he-must-be",
+        "en.pre-intermediate.u11.l01.proud",
+        "en.pre-intermediate.u11.l11.the-cast",
+        "en.pre-intermediate.u11.l09.try-not-to-worry",
+        "en.pre-intermediate.u11.l09.everything-will-be-fine",
+        "en.pre-intermediate.u11.l02.in-a-good-mood",
+        "en.pre-intermediate.u11.l05.look-up-to",
+        "en.pre-intermediate.u11.l06.get-engaged",
+        "en.pre-intermediate.u11.l11.a-standing-ovation",
+        "en.pre-intermediate.u11.l07.have-you-thought-about",
+        "en.pre-intermediate.u11.l05.fall-out-with",
+        "en.pre-intermediate.u11.l10.look-forward-to",
+        "en.pre-intermediate.u11.l09.it-is-not-your-fault",
+        "en.pre-intermediate.u11.l09.buck-up",
+        "en.pre-intermediate.u11.l11.curtain",
+        "en.pre-intermediate.u11.l10.remember-to",
+        "en.pre-intermediate.u11.l11.box-office",
+        "en.pre-intermediate.u11.l09.take-your-time",
+        "en.pre-intermediate.u11.l09.i-am-here-for-you",
+        "en.pre-intermediate.u11.l01.embarrassed",
+        "en.pre-intermediate.u11.l11.the-plot-twist",
+        "en.pre-intermediate.u11.l03.you-must-be-joking",
+        "en.pre-intermediate.u11.l03.she-might-be",
+        "en.pre-intermediate.u11.l01.nervous",
+        "en.pre-intermediate.u11.l02.on-edge",
+        "en.pre-intermediate.u11.l07.it-might-help-to",
+        "en.pre-intermediate.u11.l07.why-do-not-you",
+        "en.pre-intermediate.u11.l07.you-should-try"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Mystery Note Backstage",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "What a night! The curtain closed after a huge standing ovation!",
+        "image": {
+          "id": "en-b1-u11-ep-01",
+          "describe": "Smarty the black cat stands on the theatre stage behind the closed red curtain, beaming with pride."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "The whole cast is in a good mood! Everyone is proud of our show.",
+        "image": {
+          "id": "en-b1-u11-ep-02",
+          "describe": "Mia, Leo, Ben, and Lily celebrate together backstage holding bouquets of flowers."
+        }
+      },
+      {
+        "speaker": "Zara",
+        "text": "Look! Someone left a red rose and a note on my table!",
+        "image": {
+          "id": "en-b1-u11-ep-03",
+          "describe": "Zara picks up a single red rose and a folded white envelope from a backstage dressing table."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Read it, Zara! Could it be from someone who fell in love with your singing?",
+        "image": {
+          "id": "en-b1-u11-ep-04",
+          "describe": "Zara opens the note while Mia and Smarty lean in curiously."
+        }
+      },
+      {
+        "speaker": "Zara",
+        "text": "It says: Meet me by the old tower after the curtain falls. There is no name!",
+        "image": {
+          "id": "en-b1-u11-ep-05",
+          "describe": "A close-up of Zara holding the opened note with a mysterious expression."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "It can not be Leo—he is right over there eating cake. It might be an old friend!",
+        "image": {
+          "id": "en-b1-u11-ep-06",
+          "describe": "Smarty points toward Leo eating cake across the room while thinking hard."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "If I were in your shoes, I would take Smarty with you. We are here for you!",
+        "image": {
+          "id": "en-b1-u11-ep-07",
+          "describe": "Mia puts a supportive paw on Zara's shoulder while Smarty nods confidently."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Listen! Someone is knocking on the stage door right now! Who could it be?",
+        "image": {
+          "id": "en-b1-u11-ep-08",
+          "describe": "Smarty, Zara, and Mia turn toward the backstage door as a shadow appears outside the frosted glass."
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.pre-intermediate.u11.ep.q1",
+        "kind": "choice",
+        "prompt": "What did Zara find on her dressing table?",
+        "answer": "A red rose and a note",
+        "options": [
+          "A red rose and a note",
+          "A pair of boots",
+          "A box of chocolate"
+        ],
+        "explanation": "Zara found a red rose and an unsigned note on her table.",
+        "itemIds": [
+          "en.pre-intermediate.u11.l11.curtain"
+        ]
+      },
+      {
+        "id": "en.pre-intermediate.u11.ep.q2",
+        "kind": "choice",
+        "prompt": "Why does Smarty say the note can not be from Leo?",
+        "answer": "Because Leo is across the room eating cake.",
+        "options": [
+          "Because Leo is across the room eating cake.",
+          "Because Leo went home early.",
+          "Because Leo can not write."
+        ],
+        "explanation": "Smarty sees Leo eating cake in the room, so he says 'It can not be Leo.'",
+        "itemIds": [
+          "en.pre-intermediate.u11.l03.it-can-not-be",
+          "en.pre-intermediate.u11.l03.she-might-be"
+        ]
+      },
+      {
+        "id": "en.pre-intermediate.u11.ep.q3",
+        "kind": "choice",
+        "prompt": "What happens at the very end of the episode?",
+        "answer": "Someone knocks on the stage door.",
+        "options": [
+          "Someone knocks on the stage door.",
+          "The curtain goes up again.",
+          "Everyone goes to sleep."
+        ],
+        "explanation": "Smarty hears someone knocking on the stage door right at the end.",
+        "itemIds": [
+          "en.pre-intermediate.u11.l09.i-am-here-for-you",
+          "en.pre-intermediate.u11.l07.if-i-were-in-your-shoes"
+        ]
+      }
+    ]
+  }
+}

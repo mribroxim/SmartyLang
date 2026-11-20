@@ -1,0 +1,3515 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "beginner",
+  "unit": 3,
+  "title": "Food & Drink",
+  "room": "kitchen",
+  "lessons": [
+    {
+      "id": "en.beginner.u03.l01",
+      "section": "beginner",
+      "unit": 3,
+      "lesson": 1,
+      "title": "I'm hungry",
+      "canDo": "Say you are hungry or thirsty.",
+      "scenario": "Smarty is hungry and thirsty in the kitchen. Mia gives him water, bread and an apple.",
+      "items": [
+        {
+          "id": "en.beginner.u03.l01.hungry",
+          "text": "hungry",
+          "kind": "word",
+          "example": "I am hungry.",
+          "note": "Say 'I am hungry' when you want to eat.",
+          "image": {
+            "id": "hungry",
+            "describe": "a thin cat with a rumbling tummy staring at an empty bowl"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l01.thirsty",
+          "text": "thirsty",
+          "kind": "word",
+          "example": "I am thirsty.",
+          "note": "Say 'I am thirsty' when you want to drink something.",
+          "image": {
+            "id": "thirsty",
+            "describe": "a cat with its tongue out looking at a tall empty glass"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l01.water",
+          "text": "water",
+          "kind": "word",
+          "example": "This is water.",
+          "note": "Water is the clear drink we all need every day.",
+          "image": {
+            "id": "water",
+            "describe": "a cat pouring clear water from a jug into a glass"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l01.bread",
+          "text": "bread",
+          "kind": "word",
+          "example": "I have bread.",
+          "note": "Say 'bread' for the food we cut into slices and eat at meals.",
+          "image": {
+            "id": "bread",
+            "describe": "a cat holding a fresh loaf of bread with slices on a board"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l01.apple",
+          "text": "apple",
+          "kind": "word",
+          "forms": [
+            "apples"
+          ],
+          "example": "I have an apple.",
+          "note": "Say 'apple' for one round fruit; more than one is 'apples'.",
+          "image": {
+            "id": "apple",
+            "describe": "a cat proudly holding a big red apple"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u03.l01.task.p1",
+          "kind": "choice",
+          "prompt": "Look at a cat with an empty glass. How does it feel?",
+          "answer": "thirsty",
+          "options": [
+            "thirsty",
+            "hungry",
+            "happy"
+          ],
+          "explanation": "Thirsty is for drinks; hungry is for food.",
+          "itemIds": [
+            "en.beginner.u03.l01.thirsty"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l01.task.p2",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I am hungry.",
+          "answer": "I am hungry.",
+          "options": [
+            "I am hungry.",
+            "I am tired.",
+            "I am thirsty."
+          ],
+          "explanation": "Hungry means you want to eat.",
+          "itemIds": [
+            "en.beginner.u03.l01.hungry"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l01.task.p3",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I am thirsty.",
+          "tiles": [
+            "I",
+            "am",
+            "thirsty",
+            "hungry"
+          ],
+          "explanation": "I am thirsty means you want a drink.",
+          "itemIds": [
+            "en.beginner.u03.l01.thirsty"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l01.task.p4",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the fruit.",
+          "text": "I have an ___.",
+          "answer": "apple",
+          "options": [
+            "apple",
+            "bread",
+            "water"
+          ],
+          "explanation": "Use an before apple.",
+          "itemIds": [
+            "en.beginner.u03.l01.apple"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l01.task.p5",
+          "kind": "match",
+          "prompt": "Match the feeling or word to its partner.",
+          "pairs": [
+            {
+              "left": "hungry",
+              "right": "bread"
+            },
+            {
+              "left": "thirsty",
+              "right": "water"
+            },
+            {
+              "left": "apple",
+              "right": "apples"
+            }
+          ],
+          "explanation": "Hungry goes with bread, thirsty with water, and one apple becomes apples.",
+          "itemIds": [
+            "en.beginner.u03.l01.hungry",
+            "en.beginner.u03.l01.thirsty",
+            "en.beginner.u03.l01.water",
+            "en.beginner.u03.l01.bread",
+            "en.beginner.u03.l01.apple"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l01.task.p6",
+          "kind": "speak",
+          "prompt": "Say it aloud. You can try again.",
+          "text": "I am hungry.",
+          "answer": "I am hungry.",
+          "explanation": "You said you want to eat.",
+          "itemIds": [
+            "en.beginner.u03.l01.hungry"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l01.task.p7",
+          "kind": "fill",
+          "prompt": "Smarty asks about a drink.",
+          "text": "Are you ___?",
+          "answer": "thirsty",
+          "options": [
+            "thirsty",
+            "water",
+            "bread"
+          ],
+          "explanation": "Are you thirsty? asks about a feeling.",
+          "itemIds": [
+            "en.beginner.u03.l01.thirsty"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l01.task.p8",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have an apple.",
+          "answer": "I have an apple.",
+          "options": [
+            "I have an apple.",
+            "I have bread.",
+            "I have a cat."
+          ],
+          "explanation": "Apple comes after I have an.",
+          "itemIds": [
+            "en.beginner.u03.l01.apple",
+            "en.beginner.u03.l01.bread"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Mia give Smarty?",
+        "image": {
+          "id": "u03-l01-scene",
+          "describe": "The kitchen: Smarty the black cat sits at the table while Mia puts a glass of water, bread and a red apple in front of him."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "I am hungry."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Are you hungry, Smarty?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, I am. I am thirsty, too."
+          },
+          {
+            "speaker": "Mia",
+            "text": "This is water."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I have bread and an apple."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Mia!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u03.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "Smarty says: I am ___.",
+            "answer": "hungry",
+            "options": [
+              "hungry",
+              "tired",
+              "happy"
+            ],
+            "explanation": "Smarty says: I am hungry.",
+            "itemIds": [
+              "en.beginner.u03.l01.hungry"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "What is the drink on the table?",
+            "answer": "water",
+            "options": [
+              "water",
+              "bread",
+              "apple"
+            ],
+            "explanation": "Mia says: This is water.",
+            "itemIds": [
+              "en.beginner.u03.l01.water"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Who has bread and an apple?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Mia says: I have bread and an apple.",
+            "itemIds": [
+              "en.beginner.u03.l01.bread",
+              "en.beginner.u03.l01.apple"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are in the kitchen with Smarty. Say how you feel and say thank you.",
+        "turns": [
+          {
+            "smarty": "Are you hungry?",
+            "accept": [
+              "^yes(?: i am(?: hungry)?)?$",
+              "^i am hungry$"
+            ],
+            "example": "Yes, I am hungry.",
+            "hint": "Say yes and use the word hungry.",
+            "itemIds": [
+              "en.beginner.u03.l01.hungry"
+            ]
+          },
+          {
+            "smarty": "Are you thirsty?",
+            "accept": [
+              "^yes(?: i am(?: thirsty)?)?$",
+              "^i am thirsty$"
+            ],
+            "example": "Yes, I am thirsty.",
+            "hint": "Say yes and use the word thirsty.",
+            "itemIds": [
+              "en.beginner.u03.l01.thirsty"
+            ]
+          },
+          {
+            "smarty": "This is water. This is bread. Say thank you.",
+            "accept": [
+              "^thank you(?: smarty)?$",
+              "^thanks(?: smarty)?$"
+            ],
+            "example": "Thank you!",
+            "hint": "Say thank you to Smarty.",
+            "itemIds": [
+              "en.beginner.u03.l01.water",
+              "en.beginner.u03.l01.bread",
+              "en.beginner.u01.l03.thank-you"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l03.thank-you"
+      ]
+    },
+    {
+      "id": "en.beginner.u03.l02",
+      "section": "beginner",
+      "unit": 3,
+      "lesson": 2,
+      "title": "Breakfast",
+      "canDo": "Name breakfast food.",
+      "scenario": "Mia and Sam make breakfast. Smarty learns the words for morning food and drinks.",
+      "items": [
+        {
+          "id": "en.beginner.u03.l02.breakfast",
+          "text": "breakfast",
+          "kind": "word",
+          "example": "I like breakfast.",
+          "note": "'Breakfast' is the first meal of the day, in the morning.",
+          "image": {
+            "id": "breakfast",
+            "describe": "a cat at a kitchen table with a plate of breakfast and a sunrise window"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l02.egg",
+          "text": "egg",
+          "kind": "word",
+          "forms": [
+            "eggs"
+          ],
+          "example": "I have an egg.",
+          "note": "Say 'egg' for one and 'eggs' for more than one.",
+          "image": {
+            "id": "egg",
+            "describe": "a cat carefully holding a white egg next to a frying pan"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l02.milk",
+          "text": "milk",
+          "kind": "word",
+          "example": "I like milk.",
+          "note": "Say 'milk' for the white drink that comes from cows.",
+          "image": {
+            "id": "milk",
+            "describe": "a kitten drinking milk from a small saucer"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l02.tea",
+          "text": "tea",
+          "kind": "word",
+          "example": "I have tea.",
+          "note": "Say 'tea' for the hot drink made with leaves.",
+          "image": {
+            "id": "tea",
+            "describe": "a cat holding a steaming cup of tea"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l02.coffee",
+          "text": "coffee",
+          "kind": "word",
+          "example": "Sam has coffee.",
+          "note": "Say 'coffee' for the dark hot drink many people like in the morning.",
+          "image": {
+            "id": "coffee",
+            "describe": "a sleepy cat holding a steaming mug of coffee"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l02.for",
+          "text": "for",
+          "kind": "word",
+          "example": "I have an egg for breakfast.",
+          "note": "Use 'for' to say what you have at a meal: for breakfast."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u03.l02.task.p1",
+          "kind": "choice",
+          "prompt": "Which word is the morning meal?",
+          "answer": "breakfast",
+          "options": [
+            "breakfast",
+            "water",
+            "apple"
+          ],
+          "explanation": "Breakfast is the meal in the morning.",
+          "itemIds": [
+            "en.beginner.u03.l02.breakfast"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l02.task.p2",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have an egg.",
+          "answer": "I have an egg.",
+          "options": [
+            "I have an egg.",
+            "I have an apple.",
+            "I have bread."
+          ],
+          "explanation": "An egg starts with a vowel sound, so we say an egg.",
+          "itemIds": [
+            "en.beginner.u03.l02.egg"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l02.task.p3",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I have tea for breakfast.",
+          "tiles": [
+            "I",
+            "have",
+            "tea",
+            "for",
+            "breakfast",
+            "milk"
+          ],
+          "explanation": "We use for to say the meal.",
+          "itemIds": [
+            "en.beginner.u03.l02.tea",
+            "en.beginner.u03.l02.for",
+            "en.beginner.u03.l02.breakfast"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l02.task.p4",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "Bread and milk ___ breakfast.",
+          "answer": "for",
+          "options": [
+            "for",
+            "and",
+            "my"
+          ],
+          "explanation": "We say for breakfast.",
+          "itemIds": [
+            "en.beginner.u03.l02.for",
+            "en.beginner.u03.l02.milk"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l02.task.p5",
+          "kind": "match",
+          "prompt": "Match one thing to many things.",
+          "pairs": [
+            {
+              "left": "egg",
+              "right": "eggs"
+            },
+            {
+              "left": "apple",
+              "right": "apples"
+            },
+            {
+              "left": "cat",
+              "right": "cats"
+            }
+          ],
+          "explanation": "Add s to make most words plural.",
+          "itemIds": [
+            "en.beginner.u03.l02.egg",
+            "en.beginner.u03.l01.apple",
+            "en.beginner.u02.l07.cat"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l02.task.p6",
+          "kind": "choice",
+          "prompt": "Which drink is white?",
+          "answer": "milk",
+          "options": [
+            "milk",
+            "tea",
+            "coffee"
+          ],
+          "explanation": "Milk is white.",
+          "itemIds": [
+            "en.beginner.u03.l02.milk"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l02.task.p7",
+          "kind": "speak",
+          "prompt": "Say it aloud. You can try again.",
+          "text": "I have an egg for breakfast.",
+          "answer": "I have an egg for breakfast.",
+          "explanation": "You told Smarty your breakfast.",
+          "itemIds": [
+            "en.beginner.u03.l02.egg",
+            "en.beginner.u03.l02.for",
+            "en.beginner.u03.l02.breakfast"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l02.task.p8",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Tea and coffee for breakfast.",
+          "answer": "Tea and coffee for breakfast.",
+          "options": [
+            "Tea and coffee for breakfast.",
+            "Eggs and bread for breakfast.",
+            "Milk and an apple for breakfast."
+          ],
+          "explanation": "Tea and coffee are hot morning drinks.",
+          "itemIds": [
+            "en.beginner.u03.l02.tea",
+            "en.beginner.u03.l02.coffee",
+            "en.beginner.u03.l02.for"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is for breakfast?",
+        "image": {
+          "id": "u03-l02-scene",
+          "describe": "The kitchen in the morning: Mia, Sam and Smarty sit at a table with eggs, bread, milk, tea and coffee."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Good morning, Smarty!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good morning, Mia. I am hungry."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Breakfast is eggs and bread."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I have milk for you."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I have tea and coffee."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you! Eggs for breakfast!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u03.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Mia have for Smarty?",
+            "answer": "milk",
+            "options": [
+              "milk",
+              "tea",
+              "coffee"
+            ],
+            "explanation": "Mia says: I have milk for you.",
+            "itemIds": [
+              "en.beginner.u03.l02.milk"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "Who has tea and coffee?",
+            "answer": "Sam",
+            "options": [
+              "Sam",
+              "Mia",
+              "Ben"
+            ],
+            "explanation": "Sam says: I have tea and coffee.",
+            "itemIds": [
+              "en.beginner.u03.l02.tea",
+              "en.beginner.u03.l02.coffee"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "Smarty says: Eggs ___ breakfast!",
+            "answer": "for",
+            "options": [
+              "for",
+              "and",
+              "my"
+            ],
+            "explanation": "We say eggs for breakfast.",
+            "itemIds": [
+              "en.beginner.u03.l02.for",
+              "en.beginner.u03.l02.egg"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "It is morning in the kitchen. Tell Smarty what you have for breakfast.",
+        "turns": [
+          {
+            "smarty": "Good morning! What do you have for breakfast?",
+            "accept": [
+              "^i have (?:an egg|eggs|bread|milk|tea|coffee) for breakfast$",
+              "^i have (?:an egg|eggs|bread|milk|tea|coffee)$"
+            ],
+            "example": "I have an egg for breakfast.",
+            "hint": "Say: I have ... for breakfast.",
+            "itemIds": [
+              "en.beginner.u03.l02.breakfast",
+              "en.beginner.u03.l02.egg",
+              "en.beginner.u03.l02.for"
+            ]
+          },
+          {
+            "smarty": "Do you have milk?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^yes i have milk$",
+              "^i have milk$"
+            ],
+            "example": "Yes, I have milk.",
+            "hint": "Say yes and use milk.",
+            "itemIds": [
+              "en.beginner.u03.l02.milk"
+            ]
+          },
+          {
+            "smarty": "Say: I have tea and coffee.",
+            "accept": [
+              "^i have tea and coffee$",
+              "^tea and coffee$"
+            ],
+            "example": "I have tea and coffee.",
+            "hint": "Say the whole sentence.",
+            "itemIds": [
+              "en.beginner.u03.l02.tea",
+              "en.beginner.u03.l02.coffee"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l01.apple",
+        "en.beginner.u02.l07.cat"
+      ]
+    },
+    {
+      "id": "en.beginner.u03.l03",
+      "section": "beginner",
+      "unit": 3,
+      "lesson": 3,
+      "title": "Do you like bananas?",
+      "canDo": "Ask and answer about likes.",
+      "scenario": "Ben asks Smarty which food he likes and which food he does not like.",
+      "items": [
+        {
+          "id": "en.beginner.u03.l03.do-you-like",
+          "text": "Do you like",
+          "kind": "phrase",
+          "example": "Do you like cheese?",
+          "note": "Ask 'Do you like...?' to find out if someone enjoys a food."
+        },
+        {
+          "id": "en.beginner.u03.l03.i-do-not-like",
+          "text": "I do not like",
+          "kind": "phrase",
+          "forms": [
+            "I don't like"
+          ],
+          "example": "I do not like cheese.",
+          "note": "Say 'I do not like' (or 'I don't like') when you do not enjoy something."
+        },
+        {
+          "id": "en.beginner.u03.l03.banana",
+          "text": "banana",
+          "kind": "word",
+          "forms": [
+            "bananas"
+          ],
+          "example": "I like bananas.",
+          "note": "Say 'banana' for one yellow fruit; more than one is 'bananas'.",
+          "image": {
+            "id": "banana",
+            "describe": "a cat holding a long yellow banana"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l03.cheese",
+          "text": "cheese",
+          "kind": "word",
+          "example": "I like cheese.",
+          "note": "Say 'cheese' for the yellow food made from milk.",
+          "image": {
+            "id": "cheese",
+            "describe": "a cat sitting next to a big yellow wedge of cheese with holes"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l03.or",
+          "text": "or",
+          "kind": "word",
+          "example": "Milk or tea?",
+          "note": "Use 'or' to offer a choice between two things."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u03.l03.task.p1",
+          "kind": "choice",
+          "prompt": "Ask a friend if they enjoy cheese.",
+          "answer": "Do you like cheese?",
+          "options": [
+            "Do you like cheese?",
+            "Do you have cheese?",
+            "I like cheese."
+          ],
+          "explanation": "Do you like...? asks about likes.",
+          "itemIds": [
+            "en.beginner.u03.l03.do-you-like",
+            "en.beginner.u03.l03.cheese"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l03.task.p2",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I do not like bananas.",
+          "answer": "I do not like bananas.",
+          "options": [
+            "I do not like bananas.",
+            "I like bananas.",
+            "I do not like cheese."
+          ],
+          "explanation": "I do not like says something is not enjoyable.",
+          "itemIds": [
+            "en.beginner.u03.l03.i-do-not-like",
+            "en.beginner.u03.l03.banana"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l03.task.p3",
+          "kind": "build",
+          "prompt": "Build the question.",
+          "answer": "Do you like bananas?",
+          "tiles": [
+            "Do",
+            "you",
+            "like",
+            "bananas",
+            "I"
+          ],
+          "explanation": "Start the question with Do you like.",
+          "itemIds": [
+            "en.beginner.u03.l03.do-you-like",
+            "en.beginner.u03.l03.banana"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l03.task.p4",
+          "kind": "fill",
+          "prompt": "Offer a choice.",
+          "text": "Tea ___ coffee?",
+          "answer": "or",
+          "options": [
+            "or",
+            "and",
+            "for"
+          ],
+          "explanation": "Or offers two choices.",
+          "itemIds": [
+            "en.beginner.u03.l03.or",
+            "en.beginner.u03.l02.tea"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l03.task.p5",
+          "kind": "match",
+          "prompt": "Match one to many.",
+          "pairs": [
+            {
+              "left": "banana",
+              "right": "bananas"
+            },
+            {
+              "left": "egg",
+              "right": "eggs"
+            },
+            {
+              "left": "cheese",
+              "right": "cheese"
+            }
+          ],
+          "explanation": "Add s for many; cheese stays the same.",
+          "itemIds": [
+            "en.beginner.u03.l03.banana",
+            "en.beginner.u03.l02.egg",
+            "en.beginner.u03.l03.cheese"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l03.task.p6",
+          "kind": "choice",
+          "prompt": "Say you do not enjoy cheese.",
+          "answer": "I do not like cheese.",
+          "options": [
+            "I do not like cheese.",
+            "I like cheese.",
+            "I have cheese."
+          ],
+          "explanation": "I do not like says no.",
+          "itemIds": [
+            "en.beginner.u03.l03.i-do-not-like",
+            "en.beginner.u03.l03.cheese"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l03.task.p7",
+          "kind": "speak",
+          "prompt": "Say it aloud. You can try again.",
+          "text": "Do you like cheese?",
+          "answer": "Do you like cheese?",
+          "explanation": "You asked a like question.",
+          "itemIds": [
+            "en.beginner.u03.l03.do-you-like"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l03.task.p8",
+          "kind": "fill",
+          "prompt": "Smarty asks about milk. Answer yes.",
+          "text": "Do you like milk? Yes, I ___.",
+          "answer": "do",
+          "options": [
+            "do",
+            "am",
+            "are"
+          ],
+          "explanation": "We answer Do you like with Yes, I do.",
+          "itemIds": [
+            "en.beginner.u03.l03.do-you-like",
+            "en.beginner.u01.l09.yes"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l03.task.p9",
+          "kind": "choice",
+          "prompt": "Say you enjoy apples.",
+          "answer": "I like apples.",
+          "options": [
+            "I like apples.",
+            "I do not like apples.",
+            "I have apples."
+          ],
+          "explanation": "I like says yes.",
+          "itemIds": [
+            "en.beginner.u02.l09.i-like",
+            "en.beginner.u03.l01.apple"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What food does Smarty not like?",
+        "image": {
+          "id": "u03-l03-scene",
+          "describe": "The kitchen: Ben shows Smarty a bunch of bananas, a block of cheese, a jug of milk and a cup of tea."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Do you like bananas, Smarty?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, I do."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Do you like cheese?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No, I do not like cheese."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Milk or tea?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Milk, please."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I like tea."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u03.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Ben asks: Do you like bananas? Smarty says: ___, I do.",
+            "answer": "Yes",
+            "options": [
+              "Yes",
+              "No",
+              "Hello"
+            ],
+            "explanation": "Smarty answers yes to bananas.",
+            "itemIds": [
+              "en.beginner.u03.l03.do-you-like",
+              "en.beginner.u03.l03.banana"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Smarty does not like ___.",
+            "answer": "cheese",
+            "options": [
+              "cheese",
+              "bananas",
+              "milk"
+            ],
+            "explanation": "Smarty says: I do not like cheese.",
+            "itemIds": [
+              "en.beginner.u03.l03.i-do-not-like",
+              "en.beginner.u03.l03.cheese"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "Smarty wants milk or tea?",
+            "answer": "milk",
+            "options": [
+              "milk",
+              "tea",
+              "coffee"
+            ],
+            "explanation": "Smarty says: Milk, please.",
+            "itemIds": [
+              "en.beginner.u03.l03.or",
+              "en.beginner.u03.l02.milk"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Ben asks about food. Answer with what you like and do not like.",
+        "turns": [
+          {
+            "smarty": "Do you like bananas?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^yes i like bananas$",
+              "^no(?: i do not)?$",
+              "^i do not like bananas$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say yes or no.",
+            "itemIds": [
+              "en.beginner.u03.l03.do-you-like",
+              "en.beginner.u03.l03.banana",
+              "en.beginner.u01.l09.yes"
+            ]
+          },
+          {
+            "smarty": "Do you like cheese?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^no i do not like cheese$",
+              "^i do not like cheese$"
+            ],
+            "example": "No, I do not like cheese.",
+            "hint": "Say you like it or do not like it.",
+            "itemIds": [
+              "en.beginner.u03.l03.i-do-not-like",
+              "en.beginner.u03.l03.cheese",
+              "en.beginner.u01.l09.no"
+            ]
+          },
+          {
+            "smarty": "Milk or tea?",
+            "accept": [
+              "^milk(?: please)?$",
+              "^tea(?: please)?$",
+              "^i like milk$",
+              "^i like tea$"
+            ],
+            "example": "Milk, please.",
+            "hint": "Pick milk or tea.",
+            "itemIds": [
+              "en.beginner.u03.l03.or",
+              "en.beginner.u03.l02.milk",
+              "en.beginner.u03.l02.tea"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l02.tea",
+        "en.beginner.u03.l02.egg",
+        "en.beginner.u01.l09.yes",
+        "en.beginner.u02.l09.i-like",
+        "en.beginner.u03.l01.apple",
+        "en.beginner.u03.l02.milk",
+        "en.beginner.u01.l09.no"
+      ]
+    },
+    {
+      "id": "en.beginner.u03.l04",
+      "section": "beginner",
+      "unit": 3,
+      "lesson": 4,
+      "title": "Lunch and dinner",
+      "canDo": "Name main meals.",
+      "scenario": "Leo tells Smarty about lunch and dinner.",
+      "items": [
+        {
+          "id": "en.beginner.u03.l04.lunch",
+          "text": "lunch",
+          "kind": "word",
+          "example": "I like lunch.",
+          "note": "'Lunch' is the meal in the middle of the day.",
+          "image": {
+            "id": "lunch",
+            "describe": "a cat eating lunch under a bright midday sun"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l04.dinner",
+          "text": "dinner",
+          "kind": "word",
+          "example": "We have dinner together.",
+          "note": "'Dinner' is the main meal in the evening.",
+          "image": {
+            "id": "dinner",
+            "describe": "a family of cats at a dinner table at night with candles"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l04.rice",
+          "text": "rice",
+          "kind": "word",
+          "example": "I like rice.",
+          "note": "Say 'rice' for the small white grains we cook and eat.",
+          "image": {
+            "id": "rice",
+            "describe": "a cat with a bowl of white rice and a spoon"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l04.soup",
+          "text": "soup",
+          "kind": "word",
+          "example": "I like soup.",
+          "note": "Say 'soup' for the warm food you eat with a spoon.",
+          "image": {
+            "id": "soup",
+            "describe": "a cat blowing on a steaming bowl of soup"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l04.chicken",
+          "text": "chicken",
+          "kind": "word",
+          "example": "I have chicken for lunch.",
+          "note": "Say 'chicken' for the bird we cook and eat.",
+          "image": {
+            "id": "chicken",
+            "describe": "a cat next to a roast chicken on a plate"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u03.l04.task.p1",
+          "kind": "choice",
+          "prompt": "Which meal is in the evening?",
+          "answer": "dinner",
+          "options": [
+            "dinner",
+            "lunch",
+            "breakfast"
+          ],
+          "explanation": "Dinner is the evening meal.",
+          "itemIds": [
+            "en.beginner.u03.l04.dinner",
+            "en.beginner.u03.l02.breakfast"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l04.task.p2",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I like chicken and rice.",
+          "answer": "I like chicken and rice.",
+          "options": [
+            "I like chicken and rice.",
+            "I like soup and bread.",
+            "I do not like chicken."
+          ],
+          "explanation": "Chicken and rice go together.",
+          "itemIds": [
+            "en.beginner.u03.l04.chicken",
+            "en.beginner.u03.l04.rice"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l04.task.p3",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "Lunch is chicken and rice.",
+          "tiles": [
+            "Lunch",
+            "is",
+            "chicken",
+            "and",
+            "rice",
+            "soup"
+          ],
+          "explanation": "Lunch is the midday meal.",
+          "itemIds": [
+            "en.beginner.u03.l04.lunch",
+            "en.beginner.u03.l04.chicken",
+            "en.beginner.u03.l04.rice"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l04.task.p4",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "We have ___ for dinner.",
+          "answer": "soup",
+          "options": [
+            "soup",
+            "lunch",
+            "dinner"
+          ],
+          "explanation": "Soup is a food for dinner.",
+          "itemIds": [
+            "en.beginner.u03.l04.soup",
+            "en.beginner.u03.l04.dinner",
+            "en.beginner.u03.l02.for"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l04.task.p5",
+          "kind": "match",
+          "prompt": "Match the meal to the time.",
+          "pairs": [
+            {
+              "left": "breakfast",
+              "right": "morning"
+            },
+            {
+              "left": "lunch",
+              "right": "afternoon"
+            },
+            {
+              "left": "dinner",
+              "right": "evening"
+            }
+          ],
+          "explanation": "Breakfast is morning, lunch is afternoon, dinner is evening.",
+          "itemIds": [
+            "en.beginner.u03.l02.breakfast",
+            "en.beginner.u03.l04.lunch",
+            "en.beginner.u03.l04.dinner"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l04.task.p6",
+          "kind": "speak",
+          "prompt": "Say it aloud. You can try again.",
+          "text": "Do you like soup?",
+          "answer": "Do you like soup?",
+          "explanation": "You asked about soup.",
+          "itemIds": [
+            "en.beginner.u03.l04.soup",
+            "en.beginner.u03.l03.do-you-like"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l04.task.p7",
+          "kind": "choice",
+          "prompt": "Say you do not like rice.",
+          "answer": "I do not like rice.",
+          "options": [
+            "I do not like rice.",
+            "I like rice.",
+            "I have rice."
+          ],
+          "explanation": "I do not like says no.",
+          "itemIds": [
+            "en.beginner.u03.l03.i-do-not-like",
+            "en.beginner.u03.l04.rice"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l04.task.p8",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Chicken for dinner.",
+          "answer": "Chicken for dinner.",
+          "options": [
+            "Chicken for dinner.",
+            "Chicken for lunch.",
+            "Rice for dinner."
+          ],
+          "explanation": "Listen for dinner or lunch.",
+          "itemIds": [
+            "en.beginner.u03.l04.chicken",
+            "en.beginner.u03.l04.dinner"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is for lunch and dinner?",
+        "image": {
+          "id": "u03-l04-scene",
+          "describe": "The kitchen: Leo puts chicken and rice on one table and soup and bread on another while Smarty watches."
+        },
+        "lines": [
+          {
+            "speaker": "Leo",
+            "text": "Hello, Smarty! Do you like chicken?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, I do! I like rice, too."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Lunch is chicken and rice."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And dinner?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Dinner is soup and bread."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I like soup!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u03.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Lunch is chicken and ___.",
+            "answer": "rice",
+            "options": [
+              "rice",
+              "soup",
+              "bread"
+            ],
+            "explanation": "Leo says: Lunch is chicken and rice.",
+            "itemIds": [
+              "en.beginner.u03.l04.lunch",
+              "en.beginner.u03.l04.chicken",
+              "en.beginner.u03.l04.rice"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "Dinner is bread and ___.",
+            "answer": "soup",
+            "options": [
+              "soup",
+              "rice",
+              "cheese"
+            ],
+            "explanation": "Leo says: Dinner is soup and bread.",
+            "itemIds": [
+              "en.beginner.u03.l04.dinner",
+              "en.beginner.u03.l04.soup"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "Who asks: Do you like chicken?",
+            "answer": "Leo",
+            "options": [
+              "Leo",
+              "Mia",
+              "Ben"
+            ],
+            "explanation": "Leo asks the question.",
+            "itemIds": [
+              "en.beginner.u03.l04.chicken",
+              "en.beginner.u03.l03.do-you-like"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Leo talks about lunch and dinner. Answer his questions.",
+        "turns": [
+          {
+            "smarty": "It is lunch. Do you like chicken?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^yes i like chicken$"
+            ],
+            "example": "Yes, I like chicken.",
+            "hint": "Say yes and use chicken.",
+            "itemIds": [
+              "en.beginner.u03.l04.lunch",
+              "en.beginner.u03.l04.chicken",
+              "en.beginner.u03.l03.do-you-like"
+            ]
+          },
+          {
+            "smarty": "Rice or soup for dinner?",
+            "accept": [
+              "^rice(?: please)?$",
+              "^soup(?: please)?$",
+              "^rice for dinner$",
+              "^soup for dinner$"
+            ],
+            "example": "Soup for dinner.",
+            "hint": "Pick rice or soup.",
+            "itemIds": [
+              "en.beginner.u03.l04.dinner",
+              "en.beginner.u03.l04.rice",
+              "en.beginner.u03.l04.soup",
+              "en.beginner.u03.l03.or"
+            ]
+          },
+          {
+            "smarty": "What do you have for lunch?",
+            "accept": [
+              "^i have (?:chicken|rice|soup) for lunch$",
+              "^i have (?:chicken|rice|soup)$"
+            ],
+            "example": "I have rice for lunch.",
+            "hint": "Say: I have ... for lunch.",
+            "itemIds": [
+              "en.beginner.u03.l04.lunch",
+              "en.beginner.u03.l04.rice",
+              "en.beginner.u03.l02.for"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l02.breakfast",
+        "en.beginner.u03.l02.for",
+        "en.beginner.u03.l03.do-you-like",
+        "en.beginner.u03.l03.i-do-not-like",
+        "en.beginner.u03.l03.or"
+      ]
+    },
+    {
+      "id": "en.beginner.u03.l05",
+      "section": "beginner",
+      "unit": 3,
+      "lesson": 5,
+      "title": "Can I have juice?",
+      "canDo": "Ask for food politely.",
+      "scenario": "Sam and Smarty ask Mia politely for juice and cake.",
+      "items": [
+        {
+          "id": "en.beginner.u03.l05.can-i-have",
+          "text": "Can I have",
+          "kind": "phrase",
+          "example": "Can I have juice, please?",
+          "note": "Say 'Can I have...?' to ask for something politely."
+        },
+        {
+          "id": "en.beginner.u03.l05.juice",
+          "text": "juice",
+          "kind": "word",
+          "example": "I like juice.",
+          "note": "Say 'juice' for the sweet drink made from fruit.",
+          "image": {
+            "id": "juice",
+            "describe": "a cat pouring bright juice into a glass with a straw"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l05.cake",
+          "text": "cake",
+          "kind": "word",
+          "forms": [
+            "cakes"
+          ],
+          "example": "I like cake.",
+          "note": "Say 'cake' for a sweet food for a party; more than one is 'cakes'.",
+          "image": {
+            "id": "cake",
+            "describe": "a cat next to a big birthday cake with candles"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l05.of-course",
+          "text": "Of course",
+          "kind": "phrase",
+          "example": "Can I have cake? Of course!",
+          "note": "Say 'Of course' to answer yes in a friendly way."
+        },
+        {
+          "id": "en.beginner.u03.l05.here-you-are",
+          "text": "Here you are",
+          "kind": "phrase",
+          "example": "Here you are.",
+          "note": "Say 'Here you are' when you give something to someone."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u03.l05.task.p1",
+          "kind": "choice",
+          "prompt": "Ask politely for juice.",
+          "answer": "Can I have juice, please?",
+          "options": [
+            "Can I have juice, please?",
+            "I have juice.",
+            "Do you like juice?"
+          ],
+          "explanation": "Can I have... is a polite question.",
+          "itemIds": [
+            "en.beginner.u03.l05.can-i-have",
+            "en.beginner.u03.l05.juice",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l05.task.p2",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Can I have cake, please?",
+          "answer": "Can I have cake, please?",
+          "options": [
+            "Can I have cake, please?",
+            "Can I have tea, please?",
+            "Can I have milk, please?"
+          ],
+          "explanation": "Listen for cake.",
+          "itemIds": [
+            "en.beginner.u03.l05.can-i-have",
+            "en.beginner.u03.l05.cake",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l05.task.p3",
+          "kind": "build",
+          "prompt": "Build the question.",
+          "answer": "Can I have milk?",
+          "tiles": [
+            "Can",
+            "I",
+            "have",
+            "milk",
+            "you"
+          ],
+          "explanation": "Start with Can I have.",
+          "itemIds": [
+            "en.beginner.u03.l05.can-i-have",
+            "en.beginner.u03.l02.milk"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l05.task.p4",
+          "kind": "fill",
+          "prompt": "Complete what you say when you give something.",
+          "text": "Here you ___.",
+          "answer": "are",
+          "options": [
+            "are",
+            "am",
+            "is"
+          ],
+          "explanation": "We say Here you are.",
+          "itemIds": [
+            "en.beginner.u03.l05.here-you-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l05.task.p5",
+          "kind": "match",
+          "prompt": "Match one to many.",
+          "pairs": [
+            {
+              "left": "cake",
+              "right": "cakes"
+            },
+            {
+              "left": "apple",
+              "right": "apples"
+            },
+            {
+              "left": "egg",
+              "right": "eggs"
+            }
+          ],
+          "explanation": "Add s for many.",
+          "itemIds": [
+            "en.beginner.u03.l05.cake",
+            "en.beginner.u03.l01.apple",
+            "en.beginner.u03.l02.egg"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l05.task.p6",
+          "kind": "choice",
+          "prompt": "A friend asks: Can I have an apple? Say yes.",
+          "answer": "Of course!",
+          "options": [
+            "Of course!",
+            "I am sorry.",
+            "Goodbye!"
+          ],
+          "explanation": "Of course means yes.",
+          "itemIds": [
+            "en.beginner.u03.l05.of-course",
+            "en.beginner.u03.l01.apple"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l05.task.p7",
+          "kind": "speak",
+          "prompt": "Say it aloud. You can try again.",
+          "text": "Can I have juice?",
+          "answer": "Can I have juice?",
+          "explanation": "You asked politely.",
+          "itemIds": [
+            "en.beginner.u03.l05.can-i-have",
+            "en.beginner.u03.l05.juice"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l05.task.p8",
+          "kind": "fill",
+          "prompt": "Ask for tea.",
+          "text": "Can I ___ tea?",
+          "answer": "have",
+          "options": [
+            "have",
+            "like",
+            "am"
+          ],
+          "explanation": "The question is Can I have.",
+          "itemIds": [
+            "en.beginner.u03.l05.can-i-have",
+            "en.beginner.u03.l02.tea"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What do Sam and Smarty ask for?",
+        "image": {
+          "id": "u03-l05-scene",
+          "describe": "The kitchen: Mia gives a glass of juice to Sam and a slice of cake to Smarty, and both smile."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Can I have juice, please?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Of course! Here you are."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Thank you!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Can I have cake?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Of course. Here you are, Smarty."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Mia!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u03.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Sam asks for ___.",
+            "answer": "juice",
+            "options": [
+              "juice",
+              "milk",
+              "tea"
+            ],
+            "explanation": "Sam says: Can I have juice, please?",
+            "itemIds": [
+              "en.beginner.u03.l05.can-i-have",
+              "en.beginner.u03.l05.juice"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "Mia says: Of course! ___",
+            "answer": "Here you are.",
+            "options": [
+              "Here you are.",
+              "Goodbye.",
+              "I am sorry."
+            ],
+            "explanation": "Mia gives the juice and says Here you are.",
+            "itemIds": [
+              "en.beginner.u03.l05.here-you-are",
+              "en.beginner.u03.l05.of-course"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "Smarty asks for ___.",
+            "answer": "cake",
+            "options": [
+              "cake",
+              "bread",
+              "rice"
+            ],
+            "explanation": "Smarty says: Can I have cake?",
+            "itemIds": [
+              "en.beginner.u03.l05.cake",
+              "en.beginner.u03.l05.can-i-have"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Ask Mia for food politely and answer her.",
+        "turns": [
+          {
+            "smarty": "I have juice and cake. What do you say?",
+            "accept": [
+              "^can i have juice(?: please)?$",
+              "^juice please$"
+            ],
+            "example": "Can I have juice, please?",
+            "hint": "Start with: Can I have...",
+            "itemIds": [
+              "en.beginner.u03.l05.can-i-have",
+              "en.beginner.u03.l05.juice",
+              "en.beginner.u01.l03.please"
+            ]
+          },
+          {
+            "smarty": "Can I have cake?",
+            "accept": [
+              "^of course(?: here you are)?$",
+              "^here you are$",
+              "^yes(?: of course)?$"
+            ],
+            "example": "Of course! Here you are.",
+            "hint": "Say yes and give the cake.",
+            "itemIds": [
+              "en.beginner.u03.l05.of-course",
+              "en.beginner.u03.l05.here-you-are",
+              "en.beginner.u03.l05.cake"
+            ]
+          },
+          {
+            "smarty": "Here you are.",
+            "accept": [
+              "^thank you(?: smarty)?$",
+              "^thanks(?: smarty)?$"
+            ],
+            "example": "Thank you!",
+            "hint": "Say thank you.",
+            "itemIds": [
+              "en.beginner.u03.l05.here-you-are",
+              "en.beginner.u01.l03.thank-you"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l03.please",
+        "en.beginner.u03.l02.milk",
+        "en.beginner.u03.l01.apple",
+        "en.beginner.u03.l02.egg",
+        "en.beginner.u03.l02.tea",
+        "en.beginner.u01.l03.thank-you"
+      ]
+    },
+    {
+      "id": "en.beginner.u03.l06",
+      "section": "beginner",
+      "unit": 3,
+      "lesson": 6,
+      "title": "Fruit and vegetables",
+      "canDo": "Name fruit and vegetables.",
+      "scenario": "Ana shows Smarty fruit and vegetables in the kitchen.",
+      "items": [
+        {
+          "id": "en.beginner.u03.l06.orange",
+          "text": "orange",
+          "kind": "word",
+          "forms": [
+            "oranges"
+          ],
+          "example": "I like oranges.",
+          "note": "Say 'orange' for the round orange fruit; more than one is 'oranges'.",
+          "image": {
+            "id": "orange",
+            "describe": "a cat holding a bright orange fruit"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l06.tomato",
+          "text": "tomato",
+          "kind": "word",
+          "forms": [
+            "tomatoes"
+          ],
+          "example": "I have a tomato.",
+          "note": "Say 'tomato' for the round red food; more than one is 'tomatoes'.",
+          "image": {
+            "id": "tomato",
+            "describe": "a cat sniffing a round red tomato"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l06.potato",
+          "text": "potato",
+          "kind": "word",
+          "forms": [
+            "potatoes"
+          ],
+          "example": "I have a potato.",
+          "note": "Say 'potato' for the brown food we boil or cook; more than one is 'potatoes'.",
+          "image": {
+            "id": "potato",
+            "describe": "a cat sitting next to a big brown potato"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l06.carrot",
+          "text": "carrot",
+          "kind": "word",
+          "forms": [
+            "carrots"
+          ],
+          "example": "I like carrots.",
+          "note": "Say 'carrot' for the long orange vegetable.",
+          "image": {
+            "id": "carrot",
+            "describe": "a cat holding a long orange carrot with green leaves"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l06.fruit",
+          "text": "fruit",
+          "kind": "word",
+          "example": "Apples and oranges are fruit.",
+          "note": "Say 'fruit' for sweet food like apples, bananas and oranges."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u03.l06.task.p1",
+          "kind": "choice",
+          "prompt": "Which one is a fruit?",
+          "answer": "orange",
+          "options": [
+            "orange",
+            "carrot",
+            "potato"
+          ],
+          "explanation": "An orange is a fruit.",
+          "itemIds": [
+            "en.beginner.u03.l06.orange",
+            "en.beginner.u03.l06.fruit"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l06.task.p2",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have a tomato.",
+          "answer": "I have a tomato.",
+          "options": [
+            "I have a tomato.",
+            "I have a potato.",
+            "I have a carrot."
+          ],
+          "explanation": "Listen for the vegetable.",
+          "itemIds": [
+            "en.beginner.u03.l06.tomato",
+            "en.beginner.u03.l06.potato",
+            "en.beginner.u03.l06.carrot"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l06.task.p3",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I like oranges and bananas.",
+          "tiles": [
+            "I",
+            "like",
+            "oranges",
+            "and",
+            "bananas",
+            "carrots"
+          ],
+          "explanation": "Fruit words use like.",
+          "itemIds": [
+            "en.beginner.u03.l06.orange",
+            "en.beginner.u03.l03.banana"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l06.task.p4",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I have potatoes for ___.",
+          "answer": "dinner",
+          "options": [
+            "dinner",
+            "fruit",
+            "carrots"
+          ],
+          "explanation": "Potatoes are a food for dinner.",
+          "itemIds": [
+            "en.beginner.u03.l06.potato",
+            "en.beginner.u03.l04.dinner"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l06.task.p5",
+          "kind": "match",
+          "prompt": "Match one to many.",
+          "pairs": [
+            {
+              "left": "orange",
+              "right": "oranges"
+            },
+            {
+              "left": "tomato",
+              "right": "tomatoes"
+            },
+            {
+              "left": "potato",
+              "right": "potatoes"
+            },
+            {
+              "left": "carrot",
+              "right": "carrots"
+            }
+          ],
+          "explanation": "Words with o often add es.",
+          "itemIds": [
+            "en.beginner.u03.l06.orange",
+            "en.beginner.u03.l06.tomato",
+            "en.beginner.u03.l06.potato",
+            "en.beginner.u03.l06.carrot"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l06.task.p6",
+          "kind": "speak",
+          "prompt": "Say it aloud. You can try again.",
+          "text": "Do you like fruit?",
+          "answer": "Do you like fruit?",
+          "explanation": "You asked about fruit.",
+          "itemIds": [
+            "en.beginner.u03.l06.fruit",
+            "en.beginner.u03.l03.do-you-like"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l06.task.p7",
+          "kind": "choice",
+          "prompt": "Say you do not like carrots.",
+          "answer": "I do not like carrots.",
+          "options": [
+            "I do not like carrots.",
+            "I like carrots.",
+            "I have carrots."
+          ],
+          "explanation": "I do not like says no.",
+          "itemIds": [
+            "en.beginner.u03.l06.carrot",
+            "en.beginner.u03.l03.i-do-not-like"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l06.task.p8",
+          "kind": "choice",
+          "prompt": "Apples and bananas are fruit. Which one is not fruit?",
+          "answer": "carrot",
+          "options": [
+            "carrot",
+            "apple",
+            "banana"
+          ],
+          "explanation": "A carrot is a vegetable.",
+          "itemIds": [
+            "en.beginner.u03.l06.fruit",
+            "en.beginner.u03.l06.carrot",
+            "en.beginner.u03.l01.apple",
+            "en.beginner.u03.l03.banana"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Ana have?",
+        "image": {
+          "id": "u03-l06-scene",
+          "describe": "The kitchen: Ana and Smarty look at a table full of apples, oranges, tomatoes, carrots and potatoes."
+        },
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "Hello, Smarty! Do you like fruit?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! I like apples and oranges."
+          },
+          {
+            "speaker": "Ana",
+            "text": "I have tomatoes and carrots."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Do you have potatoes?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Yes, I do. Potatoes for dinner!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I do not like tomatoes."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u03.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "Smarty says: I like apples and ___.",
+            "answer": "oranges",
+            "options": [
+              "oranges",
+              "carrots",
+              "potatoes"
+            ],
+            "explanation": "Smarty says: I like apples and oranges.",
+            "itemIds": [
+              "en.beginner.u03.l06.orange",
+              "en.beginner.u03.l01.apple"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "Ana has tomatoes and ___.",
+            "answer": "carrots",
+            "options": [
+              "carrots",
+              "oranges",
+              "bananas"
+            ],
+            "explanation": "Ana says: I have tomatoes and carrots.",
+            "itemIds": [
+              "en.beginner.u03.l06.tomato",
+              "en.beginner.u03.l06.carrot"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "Potatoes are for ___.",
+            "answer": "dinner",
+            "options": [
+              "dinner",
+              "breakfast",
+              "lunch"
+            ],
+            "explanation": "Ana says: Potatoes for dinner!",
+            "itemIds": [
+              "en.beginner.u03.l06.potato",
+              "en.beginner.u03.l04.dinner"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Ana talks about fruit and vegetables. Answer her questions.",
+        "turns": [
+          {
+            "smarty": "Do you like fruit?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^yes i like fruit$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say yes.",
+            "itemIds": [
+              "en.beginner.u03.l06.fruit",
+              "en.beginner.u03.l03.do-you-like"
+            ]
+          },
+          {
+            "smarty": "Do you like carrots?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i do not like carrots$",
+              "^i like carrots$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say yes or no.",
+            "itemIds": [
+              "en.beginner.u03.l06.carrot",
+              "en.beginner.u03.l03.i-do-not-like"
+            ]
+          },
+          {
+            "smarty": "I have an orange. What do you have?",
+            "accept": [
+              "^i have (?:a|an) (?:tomato|potato|carrot|orange)$",
+              "^(?:a|an) (?:tomato|potato|carrot|orange)$"
+            ],
+            "example": "I have a tomato.",
+            "hint": "Say: I have a ...",
+            "itemIds": [
+              "en.beginner.u03.l06.orange",
+              "en.beginner.u03.l06.tomato",
+              "en.beginner.u03.l06.potato",
+              "en.beginner.u03.l06.carrot"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l03.banana",
+        "en.beginner.u03.l04.dinner",
+        "en.beginner.u03.l03.do-you-like",
+        "en.beginner.u03.l03.i-do-not-like",
+        "en.beginner.u03.l01.apple"
+      ]
+    },
+    {
+      "id": "en.beginner.u03.l07",
+      "section": "beginner",
+      "unit": 3,
+      "lesson": 7,
+      "title": "Delicious!",
+      "canDo": "Say how food tastes.",
+      "scenario": "Tom and Smarty try food that is hot, cold and sweet.",
+      "items": [
+        {
+          "id": "en.beginner.u03.l07.delicious",
+          "text": "delicious",
+          "kind": "word",
+          "example": "The soup is delicious!",
+          "note": "Say 'delicious' when food tastes very good.",
+          "image": {
+            "id": "delicious",
+            "describe": "a cat closing its eyes happily while eating a spoonful of soup"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l07.hot",
+          "text": "hot",
+          "kind": "word",
+          "example": "The soup is hot.",
+          "note": "Say 'hot' for food or drink with a high temperature.",
+          "image": {
+            "id": "hot",
+            "describe": "a cat blowing on a steaming bowl with steam rising"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l07.cold",
+          "text": "cold",
+          "kind": "word",
+          "example": "The milk is cold.",
+          "note": "Say 'cold' for food or drink that is not warm.",
+          "image": {
+            "id": "cold",
+            "describe": "a cat holding a frosty glass of cold milk with ice"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l07.sweet",
+          "text": "sweet",
+          "kind": "word",
+          "example": "The cake is sweet.",
+          "note": "Say 'sweet' for food with sugar, like cake.",
+          "image": {
+            "id": "sweet",
+            "describe": "a cat licking pink icing from a sweet cupcake"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l07.but",
+          "text": "but",
+          "kind": "word",
+          "example": "The tea is hot, but I like it.",
+          "note": "Use 'but' to show a different idea: hot, but delicious."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u03.l07.task.p1",
+          "kind": "choice",
+          "prompt": "Choose the word for a very good taste.",
+          "answer": "delicious",
+          "options": [
+            "delicious",
+            "hot",
+            "cold"
+          ],
+          "explanation": "Delicious means very good to eat.",
+          "itemIds": [
+            "en.beginner.u03.l07.delicious"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l07.task.p2",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The soup is hot.",
+          "answer": "The soup is hot.",
+          "options": [
+            "The soup is hot.",
+            "The soup is cold.",
+            "The tea is hot."
+          ],
+          "explanation": "Listen for soup and hot.",
+          "itemIds": [
+            "en.beginner.u03.l07.hot",
+            "en.beginner.u03.l04.soup"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l07.task.p3",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "The cake is sweet.",
+          "tiles": [
+            "The",
+            "cake",
+            "is",
+            "sweet",
+            "hot"
+          ],
+          "explanation": "Cake is sweet.",
+          "itemIds": [
+            "en.beginner.u03.l07.sweet",
+            "en.beginner.u03.l05.cake"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l07.task.p4",
+          "kind": "match",
+          "prompt": "Match the opposites.",
+          "pairs": [
+            {
+              "left": "hot",
+              "right": "cold"
+            },
+            {
+              "left": "yes",
+              "right": "no"
+            },
+            {
+              "left": "big",
+              "right": "small"
+            }
+          ],
+          "explanation": "Hot and cold are opposites.",
+          "itemIds": [
+            "en.beginner.u03.l07.hot",
+            "en.beginner.u03.l07.cold",
+            "en.beginner.u01.l09.yes",
+            "en.beginner.u01.l09.no",
+            "en.beginner.u02.l06.big",
+            "en.beginner.u02.l06.small"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l07.task.p5",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I like tea, ___ I do not like coffee.",
+          "answer": "but",
+          "options": [
+            "but",
+            "or",
+            "for"
+          ],
+          "explanation": "But shows a different idea.",
+          "itemIds": [
+            "en.beginner.u03.l07.but",
+            "en.beginner.u03.l02.tea",
+            "en.beginner.u03.l02.coffee"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l07.task.p6",
+          "kind": "speak",
+          "prompt": "Say it aloud. You can try again.",
+          "text": "It is hot, but it is delicious.",
+          "answer": "It is hot, but it is delicious.",
+          "explanation": "You used but.",
+          "itemIds": [
+            "en.beginner.u03.l07.but",
+            "en.beginner.u03.l07.hot",
+            "en.beginner.u03.l07.delicious"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l07.task.p7",
+          "kind": "choice",
+          "prompt": "Say that the milk is cold.",
+          "answer": "The milk is cold.",
+          "options": [
+            "The milk is cold.",
+            "The milk is hot.",
+            "The milk is sweet."
+          ],
+          "explanation": "Cold is the opposite of hot.",
+          "itemIds": [
+            "en.beginner.u03.l07.cold",
+            "en.beginner.u03.l02.milk"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l07.task.p8",
+          "kind": "fill",
+          "prompt": "Do you like soup? Say how it tastes.",
+          "text": "Yes, it is ___!",
+          "answer": "delicious",
+          "options": [
+            "delicious",
+            "tired",
+            "happy"
+          ],
+          "explanation": "Delicious describes food.",
+          "itemIds": [
+            "en.beginner.u03.l07.delicious",
+            "en.beginner.u03.l04.soup"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How is the food?",
+        "image": {
+          "id": "u03-l07-scene",
+          "describe": "The kitchen: Tom puts a steaming bowl of soup, a cold glass of milk and a sweet cake in front of Smarty."
+        },
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "The soup is hot."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is hot, but it is delicious!"
+          },
+          {
+            "speaker": "Tom",
+            "text": "The milk is cold."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I like cold milk."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Do you like cake?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! The cake is sweet."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u03.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "The soup is hot, but it is ___.",
+            "answer": "delicious",
+            "options": [
+              "delicious",
+              "cold",
+              "sweet"
+            ],
+            "explanation": "Smarty says: It is hot, but it is delicious!",
+            "itemIds": [
+              "en.beginner.u03.l07.delicious",
+              "en.beginner.u03.l07.hot",
+              "en.beginner.u03.l07.but"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "The milk is ___.",
+            "answer": "cold",
+            "options": [
+              "cold",
+              "hot",
+              "sweet"
+            ],
+            "explanation": "Tom says: The milk is cold.",
+            "itemIds": [
+              "en.beginner.u03.l07.cold"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "Which food is sweet?",
+            "answer": "cake",
+            "options": [
+              "cake",
+              "soup",
+              "milk"
+            ],
+            "explanation": "Smarty says: The cake is sweet.",
+            "itemIds": [
+              "en.beginner.u03.l07.sweet",
+              "en.beginner.u03.l05.cake"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Tom gives you food. Say how it tastes.",
+        "turns": [
+          {
+            "smarty": "The tea is hot. Is it delicious?",
+            "accept": [
+              "^yes(?: it is(?: delicious)?)?$",
+              "^it is delicious$"
+            ],
+            "example": "Yes, it is delicious!",
+            "hint": "Say yes and use delicious.",
+            "itemIds": [
+              "en.beginner.u03.l07.delicious",
+              "en.beginner.u03.l07.hot",
+              "en.beginner.u03.l02.tea"
+            ]
+          },
+          {
+            "smarty": "Do you like cold milk?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i like cold milk$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say yes or no.",
+            "itemIds": [
+              "en.beginner.u03.l07.cold",
+              "en.beginner.u03.l02.milk",
+              "en.beginner.u03.l03.do-you-like"
+            ]
+          },
+          {
+            "smarty": "Is the cake sweet?",
+            "accept": [
+              "^yes(?: it is(?: sweet)?)?$",
+              "^it is sweet$"
+            ],
+            "example": "Yes, it is sweet.",
+            "hint": "Say yes and use sweet.",
+            "itemIds": [
+              "en.beginner.u03.l07.sweet",
+              "en.beginner.u03.l05.cake"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l04.soup",
+        "en.beginner.u03.l05.cake",
+        "en.beginner.u01.l09.yes",
+        "en.beginner.u01.l09.no",
+        "en.beginner.u02.l06.big",
+        "en.beginner.u02.l06.small",
+        "en.beginner.u03.l02.tea",
+        "en.beginner.u03.l02.coffee",
+        "en.beginner.u03.l02.milk",
+        "en.beginner.u03.l03.do-you-like"
+      ]
+    },
+    {
+      "id": "en.beginner.u03.l08",
+      "section": "beginner",
+      "unit": 3,
+      "lesson": 8,
+      "title": "Cook with Smarty",
+      "canDo": "Follow simple kitchen steps.",
+      "scenario": "Smarty cooks soup with Mia, Sam and Ben and learns kitchen steps.",
+      "items": [
+        {
+          "id": "en.beginner.u03.l08.eat",
+          "text": "eat",
+          "kind": "word",
+          "forms": [
+            "eats"
+          ],
+          "example": "Eat the bread.",
+          "note": "Say 'eat' to tell someone to put food in their mouth.",
+          "image": {
+            "id": "eat",
+            "describe": "a cat taking a big bite of bread"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l08.drink",
+          "text": "drink",
+          "kind": "word",
+          "forms": [
+            "drinks"
+          ],
+          "example": "Drink the water.",
+          "note": "Say 'drink' for water, milk, tea and juice.",
+          "image": {
+            "id": "drink",
+            "describe": "a cat drinking water from a glass"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l08.cook",
+          "text": "cook",
+          "kind": "word",
+          "forms": [
+            "cooks"
+          ],
+          "example": "Cook the rice.",
+          "note": "Say 'cook' when you make food hot on the stove.",
+          "image": {
+            "id": "cook",
+            "describe": "a cat stirring a pot on a stove"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l08.cut",
+          "text": "cut",
+          "kind": "word",
+          "forms": [
+            "cuts"
+          ],
+          "example": "Cut the carrot.",
+          "note": "Say 'cut' when you use a knife on food.",
+          "image": {
+            "id": "cut",
+            "describe": "a cat carefully cutting a carrot on a wooden board"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l08.wash",
+          "text": "wash",
+          "kind": "word",
+          "forms": [
+            "washes"
+          ],
+          "example": "Wash the apple.",
+          "note": "Say 'wash' to clean something with water.",
+          "image": {
+            "id": "wash",
+            "describe": "a cat washing a red apple under a tap"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u03.l08.task.p1",
+          "kind": "choice",
+          "prompt": "Choose the word for putting food in your mouth.",
+          "answer": "eat",
+          "options": [
+            "eat",
+            "cut",
+            "wash"
+          ],
+          "explanation": "Eat is for putting food in your mouth.",
+          "itemIds": [
+            "en.beginner.u03.l08.eat"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l08.task.p2",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Wash the apple.",
+          "answer": "Wash the apple.",
+          "options": [
+            "Wash the apple.",
+            "Cut the apple.",
+            "Eat the apple."
+          ],
+          "explanation": "Listen for wash.",
+          "itemIds": [
+            "en.beginner.u03.l08.wash",
+            "en.beginner.u03.l01.apple"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l08.task.p3",
+          "kind": "build",
+          "prompt": "Build the command.",
+          "answer": "Cut the carrots.",
+          "tiles": [
+            "Cut",
+            "the",
+            "carrots",
+            "wash"
+          ],
+          "explanation": "Cut uses a knife.",
+          "itemIds": [
+            "en.beginner.u03.l08.cut",
+            "en.beginner.u03.l06.carrot"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l08.task.p4",
+          "kind": "fill",
+          "prompt": "Use a knife on the potato.",
+          "text": "___ the potato.",
+          "answer": "Cut",
+          "options": [
+            "Cut",
+            "Drink",
+            "Wash"
+          ],
+          "explanation": "Use a knife to cut.",
+          "itemIds": [
+            "en.beginner.u03.l08.cut",
+            "en.beginner.u03.l06.potato"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l08.task.p5",
+          "kind": "match",
+          "prompt": "Match each word to its s form.",
+          "pairs": [
+            {
+              "left": "eat",
+              "right": "eats"
+            },
+            {
+              "left": "drink",
+              "right": "drinks"
+            },
+            {
+              "left": "cook",
+              "right": "cooks"
+            },
+            {
+              "left": "cut",
+              "right": "cuts"
+            },
+            {
+              "left": "wash",
+              "right": "washes"
+            }
+          ],
+          "explanation": "Add s or es for he, she and it.",
+          "itemIds": [
+            "en.beginner.u03.l08.eat",
+            "en.beginner.u03.l08.drink",
+            "en.beginner.u03.l08.cook",
+            "en.beginner.u03.l08.cut",
+            "en.beginner.u03.l08.wash"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l08.task.p6",
+          "kind": "speak",
+          "prompt": "Say it aloud. You can try again.",
+          "text": "Wash the carrots, please.",
+          "answer": "Wash the carrots, please.",
+          "explanation": "You gave a polite command.",
+          "itemIds": [
+            "en.beginner.u03.l08.wash",
+            "en.beginner.u03.l06.carrot",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l08.task.p7",
+          "kind": "choice",
+          "prompt": "Say it to a friend who is thirsty.",
+          "answer": "Drink the water.",
+          "options": [
+            "Drink the water.",
+            "Cut the water.",
+            "Cook the water."
+          ],
+          "explanation": "We drink water.",
+          "itemIds": [
+            "en.beginner.u03.l08.drink",
+            "en.beginner.u03.l01.water",
+            "en.beginner.u03.l01.thirsty"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l08.task.p8",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Eat the bread.",
+          "answer": "Eat the bread.",
+          "options": [
+            "Eat the bread.",
+            "Cut the bread.",
+            "Eat the rice."
+          ],
+          "explanation": "Listen for eat and bread.",
+          "itemIds": [
+            "en.beginner.u03.l08.eat",
+            "en.beginner.u03.l01.bread"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What do they do in the kitchen?",
+        "image": {
+          "id": "u03-l08-scene",
+          "describe": "The kitchen: Mia washes carrots, Sam cuts potatoes, Ben stirs a big pot of soup and Smarty watches happily."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "We cook soup!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Wash the carrots, please."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Cut the potatoes."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Cook the soup."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is delicious! Eat!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Drink water, please."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u03.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "Mia says: ___ the carrots.",
+            "answer": "Wash",
+            "options": [
+              "Wash",
+              "Cut",
+              "Cook"
+            ],
+            "explanation": "Mia says: Wash the carrots.",
+            "itemIds": [
+              "en.beginner.u03.l08.wash",
+              "en.beginner.u03.l06.carrot"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Sam cuts the ___.",
+            "answer": "potatoes",
+            "options": [
+              "potatoes",
+              "carrots",
+              "tomatoes"
+            ],
+            "explanation": "Sam says: Cut the potatoes.",
+            "itemIds": [
+              "en.beginner.u03.l08.cut",
+              "en.beginner.u03.l06.potato"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "What do they cook?",
+            "answer": "soup",
+            "options": [
+              "soup",
+              "rice",
+              "chicken"
+            ],
+            "explanation": "Ben says: Cook the soup.",
+            "itemIds": [
+              "en.beginner.u03.l08.cook",
+              "en.beginner.u03.l04.soup"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Give Smarty kitchen steps with short commands.",
+        "turns": [
+          {
+            "smarty": "I have a carrot. What do I do?",
+            "accept": [
+              "^cut the carrot$",
+              "^wash the carrot$",
+              "^eat the carrot$"
+            ],
+            "example": "Wash the carrot.",
+            "hint": "Tell Smarty to cut, wash or eat the carrot.",
+            "itemIds": [
+              "en.beginner.u03.l06.carrot",
+              "en.beginner.u03.l08.wash",
+              "en.beginner.u03.l08.cut",
+              "en.beginner.u03.l08.eat"
+            ]
+          },
+          {
+            "smarty": "I am thirsty.",
+            "accept": [
+              "^drink(?: the)? water$",
+              "^drink the juice$"
+            ],
+            "example": "Drink the water.",
+            "hint": "Tell Smarty to drink.",
+            "itemIds": [
+              "en.beginner.u03.l08.drink",
+              "en.beginner.u03.l01.water",
+              "en.beginner.u03.l01.thirsty"
+            ]
+          },
+          {
+            "smarty": "I am hungry.",
+            "accept": [
+              "^eat(?: the)? (?:bread|apple|cake)$",
+              "^eat the (?:rice|fish)$"
+            ],
+            "example": "Eat the bread.",
+            "hint": "Tell Smarty to eat something.",
+            "itemIds": [
+              "en.beginner.u03.l08.eat",
+              "en.beginner.u03.l01.hungry",
+              "en.beginner.u03.l01.bread"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l01.apple",
+        "en.beginner.u03.l06.carrot",
+        "en.beginner.u03.l06.potato",
+        "en.beginner.u01.l03.please",
+        "en.beginner.u03.l01.water",
+        "en.beginner.u03.l01.thirsty",
+        "en.beginner.u03.l01.bread",
+        "en.beginner.u03.l04.soup",
+        "en.beginner.u03.l01.hungry"
+      ]
+    },
+    {
+      "id": "en.beginner.u03.l09",
+      "section": "beginner",
+      "unit": 3,
+      "lesson": 9,
+      "title": "Some and any",
+      "canDo": "Talk about amounts.",
+      "scenario": "Smarty asks Mia for juice and cake and learns some, any and kitchen things.",
+      "items": [
+        {
+          "id": "en.beginner.u03.l09.some",
+          "text": "some",
+          "kind": "word",
+          "example": "I have some water.",
+          "note": "Use 'some' for an amount: some water, some apples."
+        },
+        {
+          "id": "en.beginner.u03.l09.any",
+          "text": "any",
+          "kind": "word",
+          "example": "Do you have any milk?",
+          "note": "Use 'any' in questions and with not: Do you have any milk?"
+        },
+        {
+          "id": "en.beginner.u03.l09.plate",
+          "text": "plate",
+          "kind": "word",
+          "forms": [
+            "plates"
+          ],
+          "example": "I have a plate.",
+          "note": "Say 'plate' for the flat dish we put food on.",
+          "image": {
+            "id": "plate",
+            "describe": "a cat carrying a round plate with food"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l09.cup",
+          "text": "cup",
+          "kind": "word",
+          "forms": [
+            "cups"
+          ],
+          "example": "I have a cup of tea.",
+          "note": "Say 'cup' for the small thing we use for tea.",
+          "image": {
+            "id": "cup",
+            "describe": "a cat holding a small cup of tea"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l09.glass",
+          "text": "glass",
+          "kind": "word",
+          "forms": [
+            "glasses"
+          ],
+          "example": "A glass of water, please.",
+          "note": "Say 'glass' for the tall thing we use for water or juice.",
+          "image": {
+            "id": "glass",
+            "describe": "a cat holding a tall glass of water"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u03.l09.task.p1",
+          "kind": "choice",
+          "prompt": "Choose the tall thing for water.",
+          "answer": "glass",
+          "options": [
+            "glass",
+            "plate",
+            "cup"
+          ],
+          "explanation": "We use a glass for water.",
+          "itemIds": [
+            "en.beginner.u03.l09.glass"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l09.task.p2",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Do you have any milk?",
+          "answer": "Do you have any milk?",
+          "options": [
+            "Do you have any milk?",
+            "Do you have any tea?",
+            "Do you have some milk?"
+          ],
+          "explanation": "Listen for any and milk.",
+          "itemIds": [
+            "en.beginner.u03.l09.any",
+            "en.beginner.u03.l02.milk"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l09.task.p3",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I have some bread.",
+          "tiles": [
+            "I",
+            "have",
+            "some",
+            "bread",
+            "any"
+          ],
+          "explanation": "Some is for an amount.",
+          "itemIds": [
+            "en.beginner.u03.l09.some",
+            "en.beginner.u03.l01.bread"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l09.task.p4",
+          "kind": "fill",
+          "prompt": "Use the word for not.",
+          "text": "I do not have ___ cake.",
+          "answer": "any",
+          "options": [
+            "any",
+            "some",
+            "and"
+          ],
+          "explanation": "We say not any.",
+          "itemIds": [
+            "en.beginner.u03.l09.any",
+            "en.beginner.u03.l05.cake"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l09.task.p5",
+          "kind": "fill",
+          "prompt": "Say that you have an amount.",
+          "text": "I have ___ juice.",
+          "answer": "some",
+          "options": [
+            "some",
+            "any",
+            "and"
+          ],
+          "explanation": "We say some juice.",
+          "itemIds": [
+            "en.beginner.u03.l09.some",
+            "en.beginner.u03.l05.juice"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l09.task.p6",
+          "kind": "match",
+          "prompt": "Match one to many.",
+          "pairs": [
+            {
+              "left": "plate",
+              "right": "plates"
+            },
+            {
+              "left": "cup",
+              "right": "cups"
+            },
+            {
+              "left": "glass",
+              "right": "glasses"
+            }
+          ],
+          "explanation": "Glass becomes glasses.",
+          "itemIds": [
+            "en.beginner.u03.l09.plate",
+            "en.beginner.u03.l09.cup",
+            "en.beginner.u03.l09.glass"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l09.task.p7",
+          "kind": "speak",
+          "prompt": "Say it aloud. You can try again.",
+          "text": "A glass of water, please.",
+          "answer": "A glass of water, please.",
+          "explanation": "You asked politely.",
+          "itemIds": [
+            "en.beginner.u03.l09.glass",
+            "en.beginner.u03.l01.water",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l09.task.p8",
+          "kind": "choice",
+          "prompt": "What do you put cake on?",
+          "answer": "plate",
+          "options": [
+            "plate",
+            "cup",
+            "glass"
+          ],
+          "explanation": "We put food on a plate.",
+          "itemIds": [
+            "en.beginner.u03.l09.plate",
+            "en.beginner.u03.l05.cake"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Mia not have?",
+        "image": {
+          "id": "u03-l09-scene",
+          "describe": "The kitchen: Smarty holds a glass of juice while Mia shows an empty cake plate and a bowl of bread."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Do you have any juice?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes, I have some juice."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "A glass of juice, please."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Here you are."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Do you have any cake?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Sorry, I do not have any cake. I have some bread."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Bread is fine. Thank you!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u03.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "Mia has some ___.",
+            "answer": "juice",
+            "options": [
+              "juice",
+              "cake",
+              "tea"
+            ],
+            "explanation": "Mia says: I have some juice.",
+            "itemIds": [
+              "en.beginner.u03.l09.some",
+              "en.beginner.u03.l05.juice"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "Mia does not have any ___.",
+            "answer": "cake",
+            "options": [
+              "cake",
+              "bread",
+              "juice"
+            ],
+            "explanation": "Mia says: I do not have any cake.",
+            "itemIds": [
+              "en.beginner.u03.l09.any",
+              "en.beginner.u03.l05.cake"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "Smarty asks for a ___ of juice.",
+            "answer": "glass",
+            "options": [
+              "glass",
+              "plate",
+              "cup"
+            ],
+            "explanation": "Smarty says: A glass of juice, please.",
+            "itemIds": [
+              "en.beginner.u03.l09.glass",
+              "en.beginner.u03.l05.juice"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Mia talks about food. Answer with some and any.",
+        "turns": [
+          {
+            "smarty": "Do you have any juice?",
+            "accept": [
+              "^yes(?: i have some juice)?$",
+              "^yes i do$",
+              "^i have some juice$"
+            ],
+            "example": "Yes, I have some juice.",
+            "hint": "Say yes and use some.",
+            "itemIds": [
+              "en.beginner.u03.l09.any",
+              "en.beginner.u03.l09.some",
+              "en.beginner.u03.l05.juice"
+            ]
+          },
+          {
+            "smarty": "Do you have any cake?",
+            "accept": [
+              "^no(?: i do not have any cake)?$",
+              "^sorry(?: i do not have any cake)?$",
+              "^i do not have any cake$"
+            ],
+            "example": "Sorry, I do not have any cake.",
+            "hint": "Say no and use any.",
+            "itemIds": [
+              "en.beginner.u03.l09.any",
+              "en.beginner.u03.l05.cake",
+              "en.beginner.u01.l03.sorry"
+            ]
+          },
+          {
+            "smarty": "A glass of water, please.",
+            "accept": [
+              "^here you are$",
+              "^of course(?: here you are)?$"
+            ],
+            "example": "Of course! Here you are.",
+            "hint": "Give Smarty the water.",
+            "itemIds": [
+              "en.beginner.u03.l09.glass",
+              "en.beginner.u03.l01.water",
+              "en.beginner.u03.l05.here-you-are",
+              "en.beginner.u03.l05.of-course"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l02.milk",
+        "en.beginner.u03.l01.bread",
+        "en.beginner.u03.l05.cake",
+        "en.beginner.u03.l05.juice",
+        "en.beginner.u03.l01.water",
+        "en.beginner.u01.l03.please",
+        "en.beginner.u01.l03.sorry",
+        "en.beginner.u03.l05.here-you-are",
+        "en.beginner.u03.l05.of-course"
+      ]
+    },
+    {
+      "id": "en.beginner.u03.l10",
+      "section": "beginner",
+      "unit": 3,
+      "lesson": 10,
+      "title": "Feed Smarty",
+      "canDo": "Offer food and say you are full.",
+      "scenario": "Mia feeds Smarty fish and rice, and Smarty says he is full.",
+      "items": [
+        {
+          "id": "en.beginner.u03.l10.food",
+          "text": "food",
+          "kind": "word",
+          "example": "I like food.",
+          "note": "Say 'food' for everything we eat."
+        },
+        {
+          "id": "en.beginner.u03.l10.fish",
+          "text": "fish",
+          "kind": "word",
+          "example": "I like fish.",
+          "note": "Say 'fish' for the animal from the sea that we cook and eat.",
+          "image": {
+            "id": "fish",
+            "describe": "Smarty the black cat looking happily at a fish on a plate"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l10.sandwich",
+          "text": "sandwich",
+          "kind": "word",
+          "forms": [
+            "sandwiches"
+          ],
+          "example": "I have a sandwich.",
+          "note": "Say 'sandwich' for bread with food inside; more than one is 'sandwiches'.",
+          "image": {
+            "id": "sandwich",
+            "describe": "a cat holding a big sandwich with lettuce"
+          }
+        },
+        {
+          "id": "en.beginner.u03.l10.full",
+          "text": "full",
+          "kind": "word",
+          "example": "I am full.",
+          "note": "Say 'I am full' when you cannot eat any more."
+        },
+        {
+          "id": "en.beginner.u03.l10.very",
+          "text": "very",
+          "kind": "word",
+          "example": "I am very hungry.",
+          "note": "Use 'very' before a word to make it stronger: very hungry."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u03.l10.task.p1",
+          "kind": "choice",
+          "prompt": "You cannot eat more. What do you say?",
+          "answer": "I am full.",
+          "options": [
+            "I am full.",
+            "I am hungry.",
+            "I am thirsty."
+          ],
+          "explanation": "Full means you cannot eat more.",
+          "itemIds": [
+            "en.beginner.u03.l10.full",
+            "en.beginner.u03.l01.hungry",
+            "en.beginner.u03.l01.thirsty"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l10.task.p2",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have fish and rice.",
+          "answer": "I have fish and rice.",
+          "options": [
+            "I have fish and rice.",
+            "I have fish and soup.",
+            "I have chicken and rice."
+          ],
+          "explanation": "Listen for fish and rice.",
+          "itemIds": [
+            "en.beginner.u03.l10.fish",
+            "en.beginner.u03.l04.rice"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l10.task.p3",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I am very hungry.",
+          "tiles": [
+            "I",
+            "am",
+            "very",
+            "hungry",
+            "full"
+          ],
+          "explanation": "Very makes hungry stronger.",
+          "itemIds": [
+            "en.beginner.u03.l10.very",
+            "en.beginner.u03.l01.hungry"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l10.task.p4",
+          "kind": "fill",
+          "prompt": "Make the feeling stronger.",
+          "text": "I am ___ happy.",
+          "answer": "very",
+          "options": [
+            "very",
+            "full",
+            "food"
+          ],
+          "explanation": "Very comes before happy.",
+          "itemIds": [
+            "en.beginner.u03.l10.very"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l10.task.p5",
+          "kind": "match",
+          "prompt": "Match one to many.",
+          "pairs": [
+            {
+              "left": "sandwich",
+              "right": "sandwiches"
+            },
+            {
+              "left": "cup",
+              "right": "cups"
+            },
+            {
+              "left": "apple",
+              "right": "apples"
+            }
+          ],
+          "explanation": "Sandwich becomes sandwiches.",
+          "itemIds": [
+            "en.beginner.u03.l10.sandwich",
+            "en.beginner.u03.l09.cup",
+            "en.beginner.u03.l01.apple"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l10.task.p6",
+          "kind": "choice",
+          "prompt": "Choose the word for everything we eat.",
+          "answer": "food",
+          "options": [
+            "food",
+            "glass",
+            "plate"
+          ],
+          "explanation": "Food means what we eat.",
+          "itemIds": [
+            "en.beginner.u03.l10.food"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l10.task.p7",
+          "kind": "speak",
+          "prompt": "Say it aloud. You can try again.",
+          "text": "I am full, thank you.",
+          "answer": "I am full, thank you.",
+          "explanation": "You said you are full politely.",
+          "itemIds": [
+            "en.beginner.u03.l10.full",
+            "en.beginner.u01.l03.thank-you"
+          ]
+        },
+        {
+          "id": "en.beginner.u03.l10.task.p8",
+          "kind": "fill",
+          "prompt": "Complete the question.",
+          "text": "___ you like fish?",
+          "answer": "Do",
+          "options": [
+            "Do",
+            "Are",
+            "Can"
+          ],
+          "explanation": "Do you like starts the question.",
+          "itemIds": [
+            "en.beginner.u03.l10.fish",
+            "en.beginner.u03.l03.do-you-like"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Is Smarty hungry at the end?",
+        "image": {
+          "id": "u03-l10-scene",
+          "describe": "The kitchen: Mia puts a plate of fish and rice in front of Smarty, who then pats his full tummy."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Smarty, do you like fish?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! I am very hungry."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Here you are. Fish and rice."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you! It is very delicious."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Do you like a sandwich?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No, thank you. I am full!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u03.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "Smarty is very ___.",
+            "answer": "hungry",
+            "options": [
+              "hungry",
+              "full",
+              "tired"
+            ],
+            "explanation": "Smarty says: I am very hungry.",
+            "itemIds": [
+              "en.beginner.u03.l10.very",
+              "en.beginner.u03.l01.hungry"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "Mia has fish and ___.",
+            "answer": "rice",
+            "options": [
+              "rice",
+              "bread",
+              "soup"
+            ],
+            "explanation": "Mia says: Fish and rice.",
+            "itemIds": [
+              "en.beginner.u03.l10.fish",
+              "en.beginner.u03.l04.rice"
+            ]
+          },
+          {
+            "id": "en.beginner.u03.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "At the end Smarty is ___.",
+            "answer": "full",
+            "options": [
+              "full",
+              "hungry",
+              "thirsty"
+            ],
+            "explanation": "Smarty says: I am full!",
+            "itemIds": [
+              "en.beginner.u03.l10.full"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Mia feeds Smarty. Answer her kitchen questions.",
+        "turns": [
+          {
+            "smarty": "Do you like fish?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^yes i like fish$",
+              "^i like fish$"
+            ],
+            "example": "Yes, I like fish.",
+            "hint": "Say yes and use fish.",
+            "itemIds": [
+              "en.beginner.u03.l10.fish",
+              "en.beginner.u03.l03.do-you-like"
+            ]
+          },
+          {
+            "smarty": "Here is a sandwich. Are you hungry?",
+            "accept": [
+              "^yes(?: i am hungry)?$",
+              "^yes i am very hungry$",
+              "^i am very hungry$",
+              "^i am full$"
+            ],
+            "example": "Yes, I am very hungry.",
+            "hint": "Say how hungry you are.",
+            "itemIds": [
+              "en.beginner.u03.l10.sandwich",
+              "en.beginner.u03.l10.very",
+              "en.beginner.u03.l01.hungry"
+            ]
+          },
+          {
+            "smarty": "Are you full?",
+            "accept": [
+              "^yes(?: i am full)?$",
+              "^yes i am very full$",
+              "^i am full$",
+              "^i am very full$"
+            ],
+            "example": "Yes, I am very full.",
+            "hint": "Say you are full.",
+            "itemIds": [
+              "en.beginner.u03.l10.full",
+              "en.beginner.u03.l10.very"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l01.hungry",
+        "en.beginner.u03.l01.thirsty",
+        "en.beginner.u03.l04.rice",
+        "en.beginner.u03.l09.cup",
+        "en.beginner.u03.l01.apple",
+        "en.beginner.u01.l03.thank-you",
+        "en.beginner.u03.l03.do-you-like"
+      ]
+    }
+  ]
+}

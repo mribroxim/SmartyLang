@@ -1,0 +1,3603 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "beginner",
+  "unit": 4,
+  "title": "My Day",
+  "lessons": [
+    {
+      "id": "en.beginner.u04.l01",
+      "section": "beginner",
+      "unit": 4,
+      "lesson": 1,
+      "title": "What time is it?",
+      "canDo": "Ask and tell the time",
+      "scenario": "You and Smarty are in the hall at school. Mia, Sam and Ben want to know the time. Ask and tell the time.",
+      "items": [
+        {
+          "id": "en.beginner.u04.l01.what-time-is-it",
+          "text": "What time is it?",
+          "kind": "phrase",
+          "example": "What time is it?",
+          "note": "We say 'What time is it?' when we want to know the time."
+        },
+        {
+          "id": "en.beginner.u04.l01.o-clock",
+          "text": "o'clock",
+          "kind": "word",
+          "example": "It is seven o'clock.",
+          "note": "We say 'o'clock' when the time is exactly on the hour."
+        },
+        {
+          "id": "en.beginner.u04.l01.clock",
+          "text": "clock",
+          "kind": "word",
+          "forms": [
+            "clocks"
+          ],
+          "example": "The clock is big.",
+          "note": "A clock shows us the time. We say 'clocks' for more than one.",
+          "image": {
+            "id": "clock",
+            "describe": "A big round wall clock with hands, no numbers needed; Smarty the black cat sits under it and looks up."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l01.half-past",
+          "text": "half past",
+          "kind": "phrase",
+          "example": "It is half past eight.",
+          "note": "We say 'half past' when it is thirty minutes after the hour, like half past eight."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u04.l01.task.01",
+          "kind": "choice",
+          "prompt": "Ask for the time.",
+          "answer": "What time is it?",
+          "options": [
+            "What time is it?",
+            "What is your name?",
+            "How are you?"
+          ],
+          "explanation": "Use 'What time is it?' to ask the time.",
+          "itemIds": [
+            "en.beginner.u04.l01.what-time-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l01.task.02",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "It is seven o'clock.",
+          "answer": "It is seven o'clock.",
+          "options": [
+            "It is seven o'clock.",
+            "It is eight o'clock.",
+            "It is half past seven."
+          ],
+          "explanation": "Listen to the number, then to o'clock or half past.",
+          "itemIds": [
+            "en.beginner.u04.l01.o-clock"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l01.task.03",
+          "kind": "build",
+          "prompt": "Build the question that asks the time.",
+          "answer": "What time is it?",
+          "tiles": [
+            "What",
+            "time",
+            "is",
+            "it?",
+            "your"
+          ],
+          "explanation": "The order is What + time + is + it.",
+          "itemIds": [
+            "en.beginner.u04.l01.what-time-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l01.task.04",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the time.",
+          "text": "It is nine ___.",
+          "answers": [
+            "o'clock"
+          ],
+          "explanation": "We use o'clock when the time is exactly on the hour.",
+          "itemIds": [
+            "en.beginner.u04.l01.o-clock"
+          ],
+          "options": [
+            "o'clock",
+            "clock",
+            "bye"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l01.task.05",
+          "kind": "choice",
+          "prompt": "Choose the way to say 2:30.",
+          "answer": "It is half past two.",
+          "options": [
+            "It is two o'clock.",
+            "It is half past two.",
+            "It is half past three."
+          ],
+          "explanation": "Half past means thirty minutes after the hour.",
+          "itemIds": [
+            "en.beginner.u04.l01.half-past"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l01.task.06",
+          "kind": "match",
+          "prompt": "Match each question with its answer.",
+          "pairs": [
+            {
+              "left": "What time is it?",
+              "right": "It is seven o'clock."
+            },
+            {
+              "left": "What is your name?",
+              "right": "My name is Mia."
+            },
+            {
+              "left": "How are you?",
+              "right": "I am fine."
+            },
+            {
+              "left": "Hello!",
+              "right": "Hi!"
+            }
+          ],
+          "explanation": "Each question has its own kind of answer.",
+          "itemIds": [
+            "en.beginner.u04.l01.what-time-is-it",
+            "en.beginner.u01.l02.ask-name",
+            "en.beginner.u01.l08.how-are",
+            "en.beginner.u01.l01.hello"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l01.task.07",
+          "kind": "speak",
+          "prompt": "Say the time aloud. You can retry if recognition mishears you.",
+          "text": "It is half past seven.",
+          "answer": "It is half past seven.",
+          "explanation": "You said the time with half past.",
+          "itemIds": [
+            "en.beginner.u04.l01.half-past"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l01.task.08",
+          "kind": "choice",
+          "prompt": "Choose the word for the round thing with hands that shows the time.",
+          "answer": "clock",
+          "options": [
+            "clock",
+            "cat",
+            "apple"
+          ],
+          "explanation": "A clock shows the time.",
+          "itemIds": [
+            "en.beginner.u04.l01.clock"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l01.task.09",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "The clock is big.",
+          "answer": "The clock is big.",
+          "options": [
+            "The clock is big.",
+            "The clock is small.",
+            "The cat is big."
+          ],
+          "explanation": "Listen for the word clock.",
+          "itemIds": [
+            "en.beginner.u04.l01.clock"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who tells Mia the time?",
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Sam, what time is it?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "It is seven o'clock."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thank you! The clock is big."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Smarty, what time is it?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is half past seven."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Thanks, Smarty!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u04.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "What time does Sam say?",
+            "answer": "It is seven o'clock.",
+            "options": [
+              "It is seven o'clock.",
+              "It is half past seven.",
+              "It is eight o'clock."
+            ],
+            "explanation": "Sam's answer is the second line.",
+            "itemIds": [
+              "en.beginner.u04.l01.o-clock"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "Who asks Smarty the time?",
+            "answer": "Ben",
+            "options": [
+              "Ben",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Find the line where someone asks Smarty.",
+            "itemIds": [
+              "en.beginner.u04.l01.what-time-is-it"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Mia say about the clock?",
+            "answer": "The clock is big.",
+            "options": [
+              "The clock is big.",
+              "The clock is small.",
+              "The clock is hot."
+            ],
+            "explanation": "Mia says it after Thank you.",
+            "itemIds": [
+              "en.beginner.u04.l01.clock"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u04-l01-scene",
+          "describe": "The school hall with a big clock on the wall. Mia, Sam, Ben and Smarty stand near it."
+        }
+      },
+      "mission": {
+        "setup": "You meet Smarty in the school hall. Ask the time, then tell Smarty the time.",
+        "turns": [
+          {
+            "smarty": "Hello! I am Smarty.",
+            "accept": [
+              "^what time is it$",
+              "^(?:hello|hi) what time is it$",
+              "^(?:hello|hi) smarty what time is it$",
+              "^smarty what time is it$"
+            ],
+            "example": "What time is it?",
+            "hint": "Ask Smarty: What time is it?",
+            "itemIds": [
+              "en.beginner.u04.l01.what-time-is-it"
+            ]
+          },
+          {
+            "smarty": "What time is it?",
+            "accept": [
+              "^it is (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) o'clock$",
+              "^it is half past (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)$",
+              "^(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) o'clock$",
+              "^half past (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)$"
+            ],
+            "example": "It is seven o'clock.",
+            "hint": "Say the time: It is ... o'clock or It is half past ...",
+            "itemIds": [
+              "en.beginner.u04.l01.o-clock",
+              "en.beginner.u04.l01.half-past"
+            ]
+          },
+          {
+            "smarty": "Thank you! Goodbye!",
+            "accept": [
+              "^goodbye(?: smarty)?$",
+              "^bye(?: smarty)?$",
+              "^see you later(?: smarty)?$"
+            ],
+            "example": "Bye, Smarty!",
+            "hint": "End the conversation with Goodbye or Bye.",
+            "itemIds": [
+              "en.beginner.u01.l01.goodbye",
+              "en.beginner.u01.l01.bye"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l02.ask-name",
+        "en.beginner.u01.l08.how-are",
+        "en.beginner.u01.l01.hello",
+        "en.beginner.u01.l01.goodbye",
+        "en.beginner.u01.l01.bye"
+      ]
+    },
+    {
+      "id": "en.beginner.u04.l02",
+      "section": "beginner",
+      "unit": 4,
+      "lesson": 2,
+      "title": "Morning routine",
+      "canDo": "Say what you do in the morning",
+      "scenario": "It is morning in the bathroom. Mia and Sam get ready. Say what you do in the morning.",
+      "items": [
+        {
+          "id": "en.beginner.u04.l02.get-up",
+          "text": "get up",
+          "kind": "phrase",
+          "forms": [
+            "gets up"
+          ],
+          "example": "I get up.",
+          "note": "We say 'get up' when we leave the bed. With he or she we say 'gets up'.",
+          "image": {
+            "id": "get-up",
+            "describe": "Mia sits up in bed, stretching her arms, with morning sun in the window; Smarty the black cat is on the blanket."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l02.brush-my-teeth",
+          "text": "brush my teeth",
+          "kind": "phrase",
+          "forms": [
+            "brushes"
+          ],
+          "example": "I brush my teeth.",
+          "note": "We say 'brush my teeth' for cleaning our teeth. With he or she we say 'brushes'.",
+          "image": {
+            "id": "brush-teeth",
+            "describe": "Mia at the bathroom sink brushing her teeth with a foamy smile; Smarty watches from the sink edge."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l02.take-a-shower",
+          "text": "take a shower",
+          "kind": "phrase",
+          "forms": [
+            "takes"
+          ],
+          "example": "I take a shower.",
+          "note": "We say 'take a shower' when we wash under water. With he or she we say 'takes'.",
+          "image": {
+            "id": "take-shower",
+            "describe": "Sam smiling under a shower with soap bubbles around him; Smarty peeks around the shower curtain."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l02.towel",
+          "text": "towel",
+          "kind": "word",
+          "example": "Here is my towel.",
+          "note": "A towel is soft and we use it to dry after a shower.",
+          "image": {
+            "id": "towel",
+            "describe": "A soft folded blue towel on a hook in a bathroom; Smarty the black cat sits next to it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u04.l02.task.01",
+          "kind": "choice",
+          "prompt": "Choose what you do when you leave your bed.",
+          "answer": "I get up.",
+          "options": [
+            "I get up.",
+            "I brush my teeth.",
+            "I take a shower."
+          ],
+          "explanation": "We say get up when we leave the bed.",
+          "itemIds": [
+            "en.beginner.u04.l02.get-up"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l02.task.02",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I brush my teeth.",
+          "answer": "I brush my teeth.",
+          "options": [
+            "I brush my teeth.",
+            "I take a shower.",
+            "I get up."
+          ],
+          "explanation": "Listen for brush.",
+          "itemIds": [
+            "en.beginner.u04.l02.brush-my-teeth"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l02.task.03",
+          "kind": "build",
+          "prompt": "Build the sentence about water and washing.",
+          "answer": "I take a shower.",
+          "tiles": [
+            "I",
+            "take",
+            "a",
+            "shower.",
+            "get"
+          ],
+          "explanation": "The order is I + take + a + shower.",
+          "itemIds": [
+            "en.beginner.u04.l02.take-a-shower"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l02.task.04",
+          "kind": "fill",
+          "prompt": "Complete the sentence about Mia.",
+          "text": "Mia ___ up.",
+          "answers": [
+            "gets"
+          ],
+          "explanation": "With she, he or a name we say gets up.",
+          "itemIds": [
+            "en.beginner.u04.l02.get-up"
+          ],
+          "options": [
+            "gets",
+            "get",
+            "has"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l02.task.05",
+          "kind": "choice",
+          "prompt": "Mia cleans her teeth. Choose the sentence.",
+          "answer": "Mia brushes her teeth.",
+          "options": [
+            "Mia brushes her teeth.",
+            "Mia gets up.",
+            "Mia takes a shower."
+          ],
+          "explanation": "With she, brush becomes brushes.",
+          "itemIds": [
+            "en.beginner.u04.l02.brush-my-teeth"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l02.task.06",
+          "kind": "match",
+          "prompt": "Match the two parts of each sentence.",
+          "pairs": [
+            {
+              "left": "I get",
+              "right": "up."
+            },
+            {
+              "left": "I brush",
+              "right": "my teeth."
+            },
+            {
+              "left": "I take",
+              "right": "a shower."
+            },
+            {
+              "left": "Here is",
+              "right": "my towel."
+            }
+          ],
+          "explanation": "Each phrase needs its own ending.",
+          "itemIds": [
+            "en.beginner.u04.l02.get-up",
+            "en.beginner.u04.l02.brush-my-teeth",
+            "en.beginner.u04.l02.take-a-shower",
+            "en.beginner.u04.l02.towel"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l02.task.07",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can retry if recognition mishears you.",
+          "text": "Here is my towel.",
+          "answer": "Here is my towel.",
+          "explanation": "You can offer a towel with Here is my towel.",
+          "itemIds": [
+            "en.beginner.u04.l02.towel"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l02.task.08",
+          "kind": "choice",
+          "prompt": "Choose the word for the soft cloth you use after a shower.",
+          "answer": "towel",
+          "options": [
+            "towel",
+            "bread",
+            "water"
+          ],
+          "explanation": "A towel dries us.",
+          "itemIds": [
+            "en.beginner.u04.l02.towel"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l02.task.09",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "He gets up.",
+          "answer": "He gets up.",
+          "options": [
+            "He gets up.",
+            "He brushes his teeth.",
+            "He takes a shower."
+          ],
+          "explanation": "Listen to the end of the sentence.",
+          "itemIds": [
+            "en.beginner.u04.l02.get-up"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Mia need after her shower?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good morning, Mia!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Good morning, Smarty! I get up."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I brush my teeth."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I take a shower. Where is my towel?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Here you are."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thank you, Sam!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u04.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Sam say?",
+            "answer": "I brush my teeth.",
+            "options": [
+              "I brush my teeth.",
+              "I take a shower.",
+              "I get up."
+            ],
+            "explanation": "Find Sam's line.",
+            "itemIds": [
+              "en.beginner.u04.l02.brush-my-teeth"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "Who takes a shower?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Mia says I take a shower.",
+            "itemIds": [
+              "en.beginner.u04.l02.take-a-shower"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Mia ask for?",
+            "answer": "towel",
+            "options": [
+              "towel",
+              "water",
+              "bread"
+            ],
+            "explanation": "Mia asks Where is my towel?",
+            "itemIds": [
+              "en.beginner.u04.l02.towel"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u04-l02-scene",
+          "describe": "A bright bathroom in the morning. Mia and Sam get ready, and Smarty watches."
+        }
+      },
+      "mission": {
+        "setup": "It is morning. Smarty is in the bathroom with you. Say what you do and help Smarty.",
+        "turns": [
+          {
+            "smarty": "Good morning! I brush my teeth. And you?",
+            "accept": [
+              "^i get up$",
+              "^i brush my teeth$",
+              "^i take a shower$",
+              "^good morning i (?:get up|brush my teeth|take a shower)$"
+            ],
+            "example": "I get up.",
+            "hint": "Say one thing you do in the morning.",
+            "itemIds": [
+              "en.beginner.u04.l02.get-up",
+              "en.beginner.u04.l02.brush-my-teeth",
+              "en.beginner.u04.l02.take-a-shower"
+            ]
+          },
+          {
+            "smarty": "Where is my towel?",
+            "accept": [
+              "^here you are$",
+              "^here is (?:the|your|my) towel$",
+              "^please here you are$"
+            ],
+            "example": "Here you are.",
+            "hint": "Give Smarty the towel: Here you are.",
+            "itemIds": [
+              "en.beginner.u04.l02.towel"
+            ]
+          }
+        ]
+      },
+      "recycle": []
+    },
+    {
+      "id": "en.beginner.u04.l03",
+      "section": "beginner",
+      "unit": 4,
+      "lesson": 3,
+      "title": "Every day",
+      "canDo": "Talk about your routine",
+      "scenario": "Ana and Omar meet in the morning before school. Talk about what you do every day.",
+      "items": [
+        {
+          "id": "en.beginner.u04.l03.every-day",
+          "text": "every day",
+          "kind": "phrase",
+          "example": "I brush my teeth every day.",
+          "note": "We say 'every day' for something we do on each day."
+        },
+        {
+          "id": "en.beginner.u04.l03.go-to-school",
+          "text": "go to school",
+          "kind": "phrase",
+          "forms": [
+            "goes"
+          ],
+          "example": "I go to school.",
+          "note": "We say 'go to school' for the place where we learn. With he or she we say 'goes'.",
+          "image": {
+            "id": "go-to-school",
+            "describe": "Ben walks to a school door with a backpack, smiling; Smarty the black cat walks beside him."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l03.work",
+          "text": "work",
+          "kind": "word",
+          "forms": [
+            "works"
+          ],
+          "example": "My mother works every day.",
+          "note": "People work to do their job. With he or she we say 'works'.",
+          "image": {
+            "id": "work",
+            "describe": "A person at a desk typing on a laptop with papers around; Smarty the black cat sits on the desk and watches."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l03.at",
+          "text": "at",
+          "kind": "word",
+          "example": "I get up at seven o'clock.",
+          "note": "We say 'at' before a time, like at seven o'clock."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u04.l03.task.01",
+          "kind": "choice",
+          "prompt": "Say that Ben goes to school.",
+          "answer": "Ben goes to school.",
+          "options": [
+            "Ben goes to school.",
+            "Ben go to school.",
+            "Ben goes school."
+          ],
+          "explanation": "With Ben, he or she we say goes.",
+          "itemIds": [
+            "en.beginner.u04.l03.go-to-school"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l03.task.02",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I go to school every day.",
+          "answer": "I go to school every day.",
+          "options": [
+            "I go to school every day.",
+            "I work every day.",
+            "I go to school."
+          ],
+          "explanation": "Listen for every day.",
+          "itemIds": [
+            "en.beginner.u04.l03.go-to-school",
+            "en.beginner.u04.l03.every-day"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l03.task.03",
+          "kind": "build",
+          "prompt": "Build the sentence about getting up.",
+          "answer": "I get up at seven o'clock.",
+          "tiles": [
+            "I",
+            "get",
+            "up",
+            "at",
+            "seven",
+            "o'clock.",
+            "clock"
+          ],
+          "explanation": "We say at before the time.",
+          "itemIds": [
+            "en.beginner.u04.l03.at",
+            "en.beginner.u04.l02.get-up",
+            "en.beginner.u04.l01.o-clock"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l03.task.04",
+          "kind": "fill",
+          "prompt": "Complete the sentence about my mother.",
+          "text": "My mother ___ every day.",
+          "answers": [
+            "works"
+          ],
+          "explanation": "With she, he or my mother we say works.",
+          "itemIds": [
+            "en.beginner.u04.l03.work"
+          ],
+          "options": [
+            "works",
+            "work",
+            "gets"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l03.task.05",
+          "kind": "choice",
+          "prompt": "Sam asks the time. Smarty sees the clock. Choose the answer.",
+          "answer": "It is half past eight.",
+          "options": [
+            "It is half past eight.",
+            "Hello, half past.",
+            "I am happy."
+          ],
+          "explanation": "A time question needs a time answer.",
+          "itemIds": [
+            "en.beginner.u04.l01.what-time-is-it",
+            "en.beginner.u04.l01.half-past"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l03.task.06",
+          "kind": "match",
+          "prompt": "Match the two parts of each sentence.",
+          "pairs": [
+            {
+              "left": "I brush my teeth",
+              "right": "every day."
+            },
+            {
+              "left": "My father works",
+              "right": "at nine o'clock."
+            },
+            {
+              "left": "I go to school",
+              "right": "at eight o'clock."
+            },
+            {
+              "left": "I get up",
+              "right": "at seven."
+            }
+          ],
+          "explanation": "Each time or every day fits the sentence.",
+          "itemIds": [
+            "en.beginner.u04.l03.every-day",
+            "en.beginner.u04.l03.at",
+            "en.beginner.u04.l03.work",
+            "en.beginner.u04.l03.go-to-school"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l03.task.07",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can retry if recognition mishears you.",
+          "text": "I go to school every day.",
+          "answer": "I go to school every day.",
+          "explanation": "You told Smarty about your routine.",
+          "itemIds": [
+            "en.beginner.u04.l03.go-to-school",
+            "en.beginner.u04.l03.every-day"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l03.task.08",
+          "kind": "choice",
+          "prompt": "Tell Smarty when you take a shower: at six.",
+          "answer": "I take a shower at six o'clock.",
+          "options": [
+            "I take a shower at six o'clock.",
+            "I take a shower six at o'clock.",
+            "At I take a shower six."
+          ],
+          "explanation": "The order is at + number + o'clock.",
+          "itemIds": [
+            "en.beginner.u04.l03.at",
+            "en.beginner.u04.l02.take-a-shower"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l03.task.09",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "He works every day.",
+          "answer": "He works every day.",
+          "options": [
+            "He works every day.",
+            "He goes to school every day.",
+            "She works every day."
+          ],
+          "explanation": "Listen for He and works.",
+          "itemIds": [
+            "en.beginner.u04.l03.work",
+            "en.beginner.u04.l03.every-day"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What time does Ana go to school?",
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "Good morning, Omar!"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Good morning, Ana! What time is it?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "It is eight o'clock. I go to school at half past eight."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Me too!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "My mother works at nine o'clock."
+          },
+          {
+            "speaker": "Omar",
+            "text": "My father works every day."
+          },
+          {
+            "speaker": "Ana",
+            "text": "See you later, Omar!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u04.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "What time does Ana go to school?",
+            "answer": "half past eight",
+            "options": [
+              "half past eight",
+              "eight o'clock",
+              "nine o'clock"
+            ],
+            "explanation": "Ana says she goes at half past eight.",
+            "itemIds": [
+              "en.beginner.u04.l03.go-to-school"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Who says: My mother works at nine o'clock?",
+            "answer": "Ana",
+            "options": [
+              "Ana",
+              "Omar",
+              "Smarty"
+            ],
+            "explanation": "Find the line with mother.",
+            "itemIds": [
+              "en.beginner.u04.l03.work"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "What time is it?",
+            "answer": "It is eight o'clock.",
+            "options": [
+              "It is eight o'clock.",
+              "It is nine o'clock.",
+              "It is half past eight."
+            ],
+            "explanation": "Omar asks the time and Ana answers.",
+            "itemIds": [
+              "en.beginner.u04.l03.at"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u04-l03-scene",
+          "describe": "Ana and Omar meet at the school gate in the morning."
+        }
+      },
+      "mission": {
+        "setup": "You meet Smarty before school. Tell Smarty about your day.",
+        "turns": [
+          {
+            "smarty": "Do you go to school every day?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i go to school every day$",
+              "^i go to school at (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) o'clock$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes or No, or tell when you go to school.",
+            "itemIds": [
+              "en.beginner.u04.l03.go-to-school",
+              "en.beginner.u04.l03.every-day"
+            ]
+          },
+          {
+            "smarty": "What time is it?",
+            "accept": [
+              "^it is (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) o'clock$",
+              "^it is half past (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)$",
+              "^(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) o'clock$",
+              "^half past (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)$"
+            ],
+            "example": "It is eight o'clock.",
+            "hint": "Say a time: It is ... o'clock or half past ...",
+            "itemIds": [
+              "en.beginner.u04.l03.at",
+              "en.beginner.u04.l01.o-clock",
+              "en.beginner.u04.l01.half-past"
+            ]
+          },
+          {
+            "smarty": "I get up at seven o'clock. And you?",
+            "accept": [
+              "^i get up at (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)(?: o'clock)?$",
+              "^i get up at half past (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)$",
+              "^i get up early$"
+            ],
+            "example": "I get up at six o'clock.",
+            "hint": "Say when you get up. Use I get up at ...",
+            "itemIds": [
+              "en.beginner.u04.l03.at",
+              "en.beginner.u04.l02.get-up"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u04.l02.get-up",
+        "en.beginner.u04.l01.o-clock",
+        "en.beginner.u04.l01.what-time-is-it",
+        "en.beginner.u04.l01.half-past",
+        "en.beginner.u04.l02.take-a-shower"
+      ]
+    },
+    {
+      "id": "en.beginner.u04.l04",
+      "section": "beginner",
+      "unit": 4,
+      "lesson": 4,
+      "title": "She gets up early",
+      "canDo": "Say how often",
+      "scenario": "Lily and Tom talk about their mornings. Say how often you do things.",
+      "items": [
+        {
+          "id": "en.beginner.u04.l04.usually",
+          "text": "usually",
+          "kind": "word",
+          "example": "I usually get up at seven.",
+          "note": "We say 'usually' for something we do most days."
+        },
+        {
+          "id": "en.beginner.u04.l04.always",
+          "text": "always",
+          "kind": "word",
+          "example": "She always gets up early.",
+          "note": "We say 'always' for something we do every time."
+        },
+        {
+          "id": "en.beginner.u04.l04.never",
+          "text": "never",
+          "kind": "word",
+          "example": "Sam never gets up early.",
+          "note": "We say 'never' for something we do not do at any time."
+        },
+        {
+          "id": "en.beginner.u04.l04.sometimes",
+          "text": "sometimes",
+          "kind": "word",
+          "example": "Sometimes I get up early.",
+          "note": "We say 'sometimes' for something we do not do every day."
+        },
+        {
+          "id": "en.beginner.u04.l04.early",
+          "text": "early",
+          "kind": "word",
+          "example": "I get up early.",
+          "note": "We say 'early' when it is before the normal time."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u04.l04.task.01",
+          "kind": "choice",
+          "prompt": "Choose the word for something you do every time.",
+          "answer": "always",
+          "options": [
+            "always",
+            "never",
+            "sometimes"
+          ],
+          "explanation": "Always means every time.",
+          "itemIds": [
+            "en.beginner.u04.l04.always"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l04.task.02",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "She always gets up early.",
+          "answer": "She always gets up early.",
+          "options": [
+            "She always gets up early.",
+            "She never gets up early.",
+            "She sometimes gets up early."
+          ],
+          "explanation": "Listen to the first word after she.",
+          "itemIds": [
+            "en.beginner.u04.l04.always",
+            "en.beginner.u04.l04.early",
+            "en.beginner.u04.l02.get-up"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l04.task.03",
+          "kind": "build",
+          "prompt": "Build the sentence with usually.",
+          "answer": "He usually gets up early.",
+          "tiles": [
+            "He",
+            "usually",
+            "gets",
+            "up",
+            "early.",
+            "always"
+          ],
+          "explanation": "The word usually goes before the verb.",
+          "itemIds": [
+            "en.beginner.u04.l04.usually"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l04.task.04",
+          "kind": "fill",
+          "prompt": "Complete the sentence so that Sam does not go to school on any day.",
+          "text": "Sam ___ goes to school.",
+          "answers": [
+            "never"
+          ],
+          "explanation": "Never means not at any time.",
+          "itemIds": [
+            "en.beginner.u04.l04.never"
+          ],
+          "options": [
+            "never",
+            "always",
+            "usually"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l04.task.05",
+          "kind": "choice",
+          "prompt": "Choose the sentence with the correct word order.",
+          "answer": "I always brush my teeth.",
+          "options": [
+            "I always brush my teeth.",
+            "I brush always my teeth.",
+            "Always I my brush teeth."
+          ],
+          "explanation": "The word always goes before the verb.",
+          "itemIds": [
+            "en.beginner.u04.l04.always",
+            "en.beginner.u04.l02.brush-my-teeth"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l04.task.06",
+          "kind": "match",
+          "prompt": "Match the two parts of each sentence.",
+          "pairs": [
+            {
+              "left": "I always",
+              "right": "get up early."
+            },
+            {
+              "left": "She never",
+              "right": "goes to school."
+            },
+            {
+              "left": "He usually",
+              "right": "works every day."
+            },
+            {
+              "left": "Sometimes I",
+              "right": "brush my teeth."
+            }
+          ],
+          "explanation": "Each adverb fits a sentence about a routine.",
+          "itemIds": [
+            "en.beginner.u04.l04.always",
+            "en.beginner.u04.l04.never",
+            "en.beginner.u04.l04.usually",
+            "en.beginner.u04.l04.sometimes"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l04.task.07",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can retry if recognition mishears you.",
+          "text": "I usually get up early.",
+          "answer": "I usually get up early.",
+          "explanation": "You said how often you get up.",
+          "itemIds": [
+            "en.beginner.u04.l04.usually",
+            "en.beginner.u04.l04.early"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l04.task.08",
+          "kind": "choice",
+          "prompt": "It is six o'clock. Mia gets up. Choose the sentence.",
+          "answer": "Mia gets up early.",
+          "options": [
+            "Mia gets up early.",
+            "Mia never gets up.",
+            "Mia goes to school."
+          ],
+          "explanation": "Six o'clock is early.",
+          "itemIds": [
+            "en.beginner.u04.l04.early",
+            "en.beginner.u04.l02.get-up",
+            "en.beginner.u04.l01.o-clock"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l04.task.09",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Sometimes I take a shower.",
+          "answer": "Sometimes I take a shower.",
+          "options": [
+            "Sometimes I take a shower.",
+            "I always take a shower.",
+            "I never take a shower."
+          ],
+          "explanation": "Listen to the first word.",
+          "itemIds": [
+            "en.beginner.u04.l04.sometimes",
+            "en.beginner.u04.l02.take-a-shower"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who always gets up early?",
+        "lines": [
+          {
+            "speaker": "Lily",
+            "text": "Good morning, Tom!"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Good morning! What time is it?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "It is six o'clock. I always get up early."
+          },
+          {
+            "speaker": "Tom",
+            "text": "I never get up early."
+          },
+          {
+            "speaker": "Lily",
+            "text": "I usually take a shower at six o'clock."
+          },
+          {
+            "speaker": "Tom",
+            "text": "I sometimes take a shower at seven."
+          },
+          {
+            "speaker": "Lily",
+            "text": "See you later, Tom!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u04.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Who always gets up early?",
+            "answer": "Lily",
+            "options": [
+              "Lily",
+              "Tom",
+              "Smarty"
+            ],
+            "explanation": "Lily says I always get up early.",
+            "itemIds": [
+              "en.beginner.u04.l04.always"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "Who never gets up early?",
+            "answer": "Tom",
+            "options": [
+              "Tom",
+              "Lily",
+              "Smarty"
+            ],
+            "explanation": "Tom says I never get up early.",
+            "itemIds": [
+              "en.beginner.u04.l04.never"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Lily usually do?",
+            "answer": "I take a shower.",
+            "options": [
+              "I take a shower.",
+              "I brush my teeth.",
+              "I go to school."
+            ],
+            "explanation": "Find the line with usually.",
+            "itemIds": [
+              "en.beginner.u04.l04.usually"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u04-l04-scene",
+          "describe": "Lily and Tom are in the morning kitchen. Lily is ready. Tom is still tired."
+        }
+      },
+      "mission": {
+        "setup": "You and Smarty talk about your mornings. Say how often you do things.",
+        "turns": [
+          {
+            "smarty": "I always get up early. And you?",
+            "accept": [
+              "^i (?:always|usually|sometimes|never) get up(?: early)?$",
+              "^i get up early$",
+              "^i (?:always|usually|sometimes|never) get up at (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)(?: o'clock)?$"
+            ],
+            "example": "I usually get up early.",
+            "hint": "Say how often you get up early: always, usually, sometimes or never.",
+            "itemIds": [
+              "en.beginner.u04.l04.always",
+              "en.beginner.u04.l04.usually",
+              "en.beginner.u04.l04.sometimes",
+              "en.beginner.u04.l04.never",
+              "en.beginner.u04.l04.early"
+            ]
+          },
+          {
+            "smarty": "Do you brush your teeth every day?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i (?:always|usually|sometimes|never) brush my teeth$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes or No, or use always, usually, sometimes or never.",
+            "itemIds": [
+              "en.beginner.u04.l02.brush-my-teeth",
+              "en.beginner.u04.l03.every-day",
+              "en.beginner.u04.l04.always"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u04.l02.get-up",
+        "en.beginner.u04.l02.brush-my-teeth",
+        "en.beginner.u04.l01.o-clock",
+        "en.beginner.u04.l02.take-a-shower",
+        "en.beginner.u04.l03.every-day"
+      ]
+    },
+    {
+      "id": "en.beginner.u04.l05",
+      "section": "beginner",
+      "unit": 4,
+      "lesson": 5,
+      "title": "Days of the week",
+      "canDo": "Name weekdays",
+      "scenario": "Leo and Zara are in class. Learn the school days from Monday to Friday.",
+      "items": [
+        {
+          "id": "en.beginner.u04.l05.monday",
+          "text": "Monday",
+          "kind": "word",
+          "example": "It is Monday.",
+          "note": "Days of the week start with a capital letter. Monday is the first school day."
+        },
+        {
+          "id": "en.beginner.u04.l05.tuesday",
+          "text": "Tuesday",
+          "kind": "word",
+          "example": "Hello, it is Tuesday!",
+          "note": "Tuesday is the day after Monday."
+        },
+        {
+          "id": "en.beginner.u04.l05.wednesday",
+          "text": "Wednesday",
+          "kind": "word",
+          "example": "Wednesday is a good day.",
+          "note": "Wednesday is in the middle of the school week."
+        },
+        {
+          "id": "en.beginner.u04.l05.thursday",
+          "text": "Thursday",
+          "kind": "word",
+          "example": "It is Thursday.",
+          "note": "Thursday is the day before Friday."
+        },
+        {
+          "id": "en.beginner.u04.l05.friday",
+          "text": "Friday",
+          "kind": "word",
+          "example": "Friday is a good day.",
+          "note": "Friday is the last school day of the week."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u04.l05.task.01",
+          "kind": "choice",
+          "prompt": "Choose the first day of the school week.",
+          "answer": "Monday",
+          "options": [
+            "Monday",
+            "Friday",
+            "Wednesday"
+          ],
+          "explanation": "Monday is the first school day.",
+          "itemIds": [
+            "en.beginner.u04.l05.monday"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l05.task.02",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "It is Tuesday.",
+          "answer": "It is Tuesday.",
+          "options": [
+            "It is Tuesday.",
+            "It is Thursday.",
+            "It is Monday."
+          ],
+          "explanation": "Listen to the day name.",
+          "itemIds": [
+            "en.beginner.u04.l05.tuesday"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l05.task.03",
+          "kind": "build",
+          "prompt": "Build the sentence about the day.",
+          "answer": "It is Wednesday.",
+          "tiles": [
+            "It",
+            "is",
+            "Wednesday.",
+            "Thursday",
+            "o'clock"
+          ],
+          "explanation": "The order is It + is + the day.",
+          "itemIds": [
+            "en.beginner.u04.l05.wednesday"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l05.task.04",
+          "kind": "fill",
+          "prompt": "Complete the days in order.",
+          "text": "Wednesday, ___, Friday.",
+          "answers": [
+            "Thursday"
+          ],
+          "explanation": "Thursday comes between Wednesday and Friday.",
+          "itemIds": [
+            "en.beginner.u04.l05.thursday"
+          ],
+          "options": [
+            "Thursday",
+            "Monday",
+            "Tuesday"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l05.task.05",
+          "kind": "choice",
+          "prompt": "You want to know the day. Choose the question.",
+          "answer": "What day is it?",
+          "options": [
+            "What day is it?",
+            "What time is it?",
+            "What is your name?"
+          ],
+          "explanation": "Day asks about the day. Time asks about the clock.",
+          "itemIds": [
+            "en.beginner.u04.l05.monday",
+            "en.beginner.u04.l01.what-time-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l05.task.06",
+          "kind": "match",
+          "prompt": "Match each day with the day after it.",
+          "pairs": [
+            {
+              "left": "Monday",
+              "right": "Tuesday"
+            },
+            {
+              "left": "Tuesday",
+              "right": "Wednesday"
+            },
+            {
+              "left": "Wednesday",
+              "right": "Thursday"
+            },
+            {
+              "left": "Thursday",
+              "right": "Friday"
+            }
+          ],
+          "explanation": "The days come in this order.",
+          "itemIds": [
+            "en.beginner.u04.l05.monday",
+            "en.beginner.u04.l05.tuesday",
+            "en.beginner.u04.l05.wednesday",
+            "en.beginner.u04.l05.thursday",
+            "en.beginner.u04.l05.friday"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l05.task.07",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can retry if recognition mishears you.",
+          "text": "It is Friday.",
+          "answer": "It is Friday.",
+          "explanation": "You named the last school day.",
+          "itemIds": [
+            "en.beginner.u04.l05.friday"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l05.task.08",
+          "kind": "build",
+          "prompt": "Build the sentence about school.",
+          "answer": "I go to school every day.",
+          "tiles": [
+            "I",
+            "go",
+            "to",
+            "school",
+            "every",
+            "day.",
+            "always"
+          ],
+          "explanation": "Every day means each day.",
+          "itemIds": [
+            "en.beginner.u04.l03.go-to-school",
+            "en.beginner.u04.l03.every-day"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l05.task.09",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "She never gets up early.",
+          "answer": "She never gets up early.",
+          "options": [
+            "She never gets up early.",
+            "She always gets up early.",
+            "She usually gets up early."
+          ],
+          "explanation": "Listen to the word after she.",
+          "itemIds": [
+            "en.beginner.u04.l04.never",
+            "en.beginner.u04.l04.early",
+            "en.beginner.u04.l02.get-up"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l05.task.10",
+          "kind": "choice",
+          "prompt": "Choose the word that is not a day.",
+          "answer": "clock",
+          "options": [
+            "clock",
+            "Friday",
+            "Monday"
+          ],
+          "explanation": "Clock is a thing. The others are days.",
+          "itemIds": [
+            "en.beginner.u04.l05.monday",
+            "en.beginner.u04.l01.clock"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What day is it?",
+        "lines": [
+          {
+            "speaker": "Leo",
+            "text": "What day is it, Zara?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "It is Wednesday."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Thank you! I go to school every day."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Me too. Monday, Tuesday, Wednesday, Thursday, Friday!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Friday is a good day."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes! Bye, Leo!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u04.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "What day is it?",
+            "answer": "Wednesday",
+            "options": [
+              "Wednesday",
+              "Monday",
+              "Friday"
+            ],
+            "explanation": "Zara says It is Wednesday.",
+            "itemIds": [
+              "en.beginner.u04.l05.wednesday"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "Who says Friday is a good day?",
+            "answer": "Leo",
+            "options": [
+              "Leo",
+              "Zara",
+              "Smarty"
+            ],
+            "explanation": "Find the line with good day.",
+            "itemIds": [
+              "en.beginner.u04.l05.friday"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Leo say after Thank you?",
+            "answer": "I go to school every day.",
+            "options": [
+              "I go to school every day.",
+              "I work every day.",
+              "I get up early."
+            ],
+            "explanation": "Leo says it in the same line.",
+            "itemIds": [
+              "en.beginner.u04.l05.monday"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u04-l05-scene",
+          "describe": "Leo and Zara sit in a bright classroom. A calendar is on the wall."
+        }
+      },
+      "mission": {
+        "setup": "You and Smarty are in class. Talk about the days of the week.",
+        "turns": [
+          {
+            "smarty": "What day is it?",
+            "accept": [
+              "^it is (?:monday|tuesday|wednesday|thursday|friday)$",
+              "^(?:monday|tuesday|wednesday|thursday|friday)$",
+              "^hello it is (?:monday|tuesday|wednesday|thursday|friday)$"
+            ],
+            "example": "It is Monday.",
+            "hint": "Say a day from Monday to Friday.",
+            "itemIds": [
+              "en.beginner.u04.l05.monday",
+              "en.beginner.u04.l05.tuesday",
+              "en.beginner.u04.l05.wednesday",
+              "en.beginner.u04.l05.thursday",
+              "en.beginner.u04.l05.friday"
+            ]
+          },
+          {
+            "smarty": "Friday is a good day. Do you like Friday?",
+            "accept": [
+              "^yes(?: i do| i like friday)?$",
+              "^no(?: i do not)?$",
+              "^i like (?:monday|tuesday|wednesday|thursday|friday)$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes or No, or say which day you like.",
+            "itemIds": [
+              "en.beginner.u04.l05.friday",
+              "en.beginner.u03.l03.do-you-like"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u04.l01.what-time-is-it",
+        "en.beginner.u04.l03.go-to-school",
+        "en.beginner.u04.l03.every-day",
+        "en.beginner.u04.l04.never",
+        "en.beginner.u04.l04.early",
+        "en.beginner.u04.l02.get-up",
+        "en.beginner.u04.l01.clock",
+        "en.beginner.u03.l03.do-you-like"
+      ]
+    },
+    {
+      "id": "en.beginner.u04.l06",
+      "section": "beginner",
+      "unit": 4,
+      "lesson": 6,
+      "title": "The weekend",
+      "canDo": "Talk about the weekend",
+      "scenario": "It is the weekend. Mia and Ben talk about Saturday and Sunday.",
+      "items": [
+        {
+          "id": "en.beginner.u04.l06.saturday",
+          "text": "Saturday",
+          "kind": "word",
+          "example": "It is Saturday.",
+          "note": "Saturday is the day after Friday."
+        },
+        {
+          "id": "en.beginner.u04.l06.sunday",
+          "text": "Sunday",
+          "kind": "word",
+          "example": "Sunday is a good day.",
+          "note": "Sunday is the day after Saturday."
+        },
+        {
+          "id": "en.beginner.u04.l06.weekend",
+          "text": "weekend",
+          "kind": "word",
+          "example": "Saturday and Sunday are the weekend.",
+          "note": "The weekend is Saturday and Sunday."
+        },
+        {
+          "id": "en.beginner.u04.l06.sleep",
+          "text": "sleep",
+          "kind": "word",
+          "forms": [
+            "sleeps"
+          ],
+          "example": "I sleep.",
+          "note": "We sleep in bed at night. With he or she we say 'sleeps'.",
+          "image": {
+            "id": "sleep",
+            "describe": "Leo asleep in bed under a blanket, a crescent moon in the window; Smarty the black cat is curled up on the pillow."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l06.late",
+          "text": "late",
+          "kind": "word",
+          "example": "I get up late.",
+          "note": "We say 'late' when it is after the normal time."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u04.l06.task.01",
+          "kind": "choice",
+          "prompt": "Choose the day after Friday.",
+          "answer": "Saturday",
+          "options": [
+            "Saturday",
+            "Monday",
+            "Sunday"
+          ],
+          "explanation": "Saturday comes after Friday.",
+          "itemIds": [
+            "en.beginner.u04.l06.saturday"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l06.task.02",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "It is Sunday.",
+          "answer": "It is Sunday.",
+          "options": [
+            "It is Sunday.",
+            "It is Saturday.",
+            "It is Monday."
+          ],
+          "explanation": "Listen to the day name.",
+          "itemIds": [
+            "en.beginner.u04.l06.sunday"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l06.task.03",
+          "kind": "build",
+          "prompt": "Build the sentence about sleeping.",
+          "answer": "I sleep late.",
+          "tiles": [
+            "I",
+            "sleep",
+            "late.",
+            "early"
+          ],
+          "explanation": "The word late goes at the end.",
+          "itemIds": [
+            "en.beginner.u04.l06.sleep",
+            "en.beginner.u04.l06.late"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l06.task.04",
+          "kind": "fill",
+          "prompt": "Complete the sentence about Saturday and Sunday.",
+          "text": "Saturday and Sunday are the ___.",
+          "answers": [
+            "weekend"
+          ],
+          "explanation": "Saturday and Sunday make the weekend.",
+          "itemIds": [
+            "en.beginner.u04.l06.weekend"
+          ],
+          "options": [
+            "weekend",
+            "clock",
+            "towel"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l06.task.05",
+          "kind": "choice",
+          "prompt": "Choose the opposite of I get up late.",
+          "answer": "I get up early.",
+          "options": [
+            "I get up early.",
+            "I get up late.",
+            "I sleep early."
+          ],
+          "explanation": "Early is the opposite of late.",
+          "itemIds": [
+            "en.beginner.u04.l06.late",
+            "en.beginner.u04.l04.early",
+            "en.beginner.u04.l02.get-up"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l06.task.06",
+          "kind": "match",
+          "prompt": "Match each day with the day after it.",
+          "pairs": [
+            {
+              "left": "Monday",
+              "right": "Tuesday"
+            },
+            {
+              "left": "Thursday",
+              "right": "Friday"
+            },
+            {
+              "left": "Friday",
+              "right": "Saturday"
+            },
+            {
+              "left": "Saturday",
+              "right": "Sunday"
+            }
+          ],
+          "explanation": "The days come in this order.",
+          "itemIds": [
+            "en.beginner.u04.l06.saturday",
+            "en.beginner.u04.l06.sunday",
+            "en.beginner.u04.l05.monday",
+            "en.beginner.u04.l05.thursday",
+            "en.beginner.u04.l05.friday"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l06.task.07",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can retry if recognition mishears you.",
+          "text": "I sleep late.",
+          "answer": "I sleep late.",
+          "explanation": "You said that you sleep late.",
+          "itemIds": [
+            "en.beginner.u04.l06.sleep",
+            "en.beginner.u04.l06.late"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l06.task.08",
+          "kind": "choice",
+          "prompt": "No school on Saturday and Sunday. Choose the sentence.",
+          "answer": "I never go to school at the weekend.",
+          "options": [
+            "I never go to school at the weekend.",
+            "I always go to school at the weekend.",
+            "I never go to school every day."
+          ],
+          "explanation": "Never means not at any time.",
+          "itemIds": [
+            "en.beginner.u04.l06.weekend",
+            "en.beginner.u04.l04.never",
+            "en.beginner.u04.l03.go-to-school",
+            "en.beginner.u04.l03.at"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l06.task.09",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I always sleep late at the weekend.",
+          "answer": "I always sleep late at the weekend.",
+          "options": [
+            "I always sleep late at the weekend.",
+            "I never sleep late at the weekend.",
+            "I sometimes sleep late at the weekend."
+          ],
+          "explanation": "Listen to always.",
+          "itemIds": [
+            "en.beginner.u04.l06.sleep",
+            "en.beginner.u04.l06.late",
+            "en.beginner.u04.l06.weekend",
+            "en.beginner.u04.l04.always"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l06.task.10",
+          "kind": "fill",
+          "prompt": "Say the time exactly.",
+          "text": "It is ten ___.",
+          "answers": [
+            "o'clock"
+          ],
+          "explanation": "We use o'clock for the exact hour.",
+          "itemIds": [
+            "en.beginner.u04.l01.o-clock"
+          ],
+          "options": [
+            "o'clock",
+            "early",
+            "late"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Mia do at the weekend?",
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "It is Saturday!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Good morning, Ben! I sleep late."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I usually get up early."
+          },
+          {
+            "speaker": "Mia",
+            "text": "At the weekend I sleep late."
+          },
+          {
+            "speaker": "Ben",
+            "text": "What time is it?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "It is ten o'clock."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Sunday is a good day too!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u04.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "Who sleeps late?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Ben",
+              "Smarty"
+            ],
+            "explanation": "Mia says I sleep late.",
+            "itemIds": [
+              "en.beginner.u04.l06.sleep"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What day is it?",
+            "answer": "Saturday",
+            "options": [
+              "Saturday",
+              "Sunday",
+              "Friday"
+            ],
+            "explanation": "Ben says It is Saturday.",
+            "itemIds": [
+              "en.beginner.u04.l06.saturday"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "What time is it?",
+            "answer": "It is ten o'clock.",
+            "options": [
+              "It is ten o'clock.",
+              "It is half past ten.",
+              "It is six o'clock."
+            ],
+            "explanation": "Mia answers Ben's question.",
+            "itemIds": [
+              "en.beginner.u04.l06.late"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u04-l06-scene",
+          "describe": "Mia and Ben are at home on Saturday morning. Smarty is on the sofa."
+        }
+      },
+      "mission": {
+        "setup": "It is the weekend. Smarty asks about your Saturday and Sunday.",
+        "turns": [
+          {
+            "smarty": "It is Saturday! Do you get up early?",
+            "accept": [
+              "^(?:no )?i (?:sleep|get up) late$",
+              "^(?:yes )?i get up early$",
+              "^i (?:always|usually|sometimes|never) (?:sleep|get up) late$"
+            ],
+            "example": "No, I sleep late.",
+            "hint": "Say if you get up early or late at the weekend.",
+            "itemIds": [
+              "en.beginner.u04.l06.late",
+              "en.beginner.u04.l06.sleep",
+              "en.beginner.u04.l04.early",
+              "en.beginner.u04.l02.get-up"
+            ]
+          },
+          {
+            "smarty": "What do you do at the weekend?",
+            "accept": [
+              "^i sleep late$",
+              "^i (?:always|usually|sometimes|never) sleep late$",
+              "^i do not go to school$",
+              "^i read a book$"
+            ],
+            "example": "I sleep late.",
+            "hint": "Say one thing you do at the weekend.",
+            "itemIds": [
+              "en.beginner.u04.l06.weekend",
+              "en.beginner.u04.l06.sleep",
+              "en.beginner.u04.l03.go-to-school"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u04.l04.early",
+        "en.beginner.u04.l02.get-up",
+        "en.beginner.u04.l05.monday",
+        "en.beginner.u04.l05.thursday",
+        "en.beginner.u04.l05.friday",
+        "en.beginner.u04.l04.never",
+        "en.beginner.u04.l03.go-to-school",
+        "en.beginner.u04.l03.at",
+        "en.beginner.u04.l04.always",
+        "en.beginner.u04.l01.o-clock"
+      ]
+    },
+    {
+      "id": "en.beginner.u04.l07",
+      "section": "beginner",
+      "unit": 4,
+      "lesson": 7,
+      "title": "Bathroom things",
+      "canDo": "Name bathroom things",
+      "scenario": "Omar is in the bathroom. Smarty helps him find things.",
+      "items": [
+        {
+          "id": "en.beginner.u04.l07.soap",
+          "text": "soap",
+          "kind": "word",
+          "example": "Here is the soap.",
+          "note": "We use soap to wash. It makes bubbles.",
+          "image": {
+            "id": "soap",
+            "describe": "A bar of soap with many bubbles on a bathroom sink; Smarty the black cat sniffs a bubble."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l07.toothbrush",
+          "text": "toothbrush",
+          "kind": "word",
+          "example": "Here is my toothbrush.",
+          "note": "We use a toothbrush to brush our teeth.",
+          "image": {
+            "id": "toothbrush",
+            "describe": "A toothbrush with toothpaste standing in a cup on the sink; Smarty the black cat sits next to it."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l07.mirror",
+          "text": "mirror",
+          "kind": "word",
+          "example": "The mirror is big.",
+          "note": "We look at ourselves in a mirror.",
+          "image": {
+            "id": "mirror",
+            "describe": "A big round bathroom mirror; Smarty the black cat sits on the sink and sees himself in it."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l07.bath",
+          "text": "bath",
+          "kind": "word",
+          "example": "I take a bath.",
+          "note": "We take a bath when we sit in warm water. We say 'take a bath'.",
+          "image": {
+            "id": "bath",
+            "describe": "Omar sits in a bathtub full of bubbles with a smile; Smarty watches from the edge of the tub."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u04.l07.task.01",
+          "kind": "choice",
+          "prompt": "Choose the thing you use to wash your hands.",
+          "answer": "soap",
+          "options": [
+            "soap",
+            "mirror",
+            "clock"
+          ],
+          "explanation": "We use soap to wash.",
+          "itemIds": [
+            "en.beginner.u04.l07.soap"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l07.task.02",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Here is my toothbrush.",
+          "answer": "Here is my toothbrush.",
+          "options": [
+            "Here is my toothbrush.",
+            "Here is my towel.",
+            "Here is my soap."
+          ],
+          "explanation": "Listen to the last word.",
+          "itemIds": [
+            "en.beginner.u04.l07.toothbrush"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l07.task.03",
+          "kind": "build",
+          "prompt": "Build the sentence about the bath.",
+          "answer": "I take a bath.",
+          "tiles": [
+            "I",
+            "take",
+            "a",
+            "bath.",
+            "shower"
+          ],
+          "explanation": "We say take a bath.",
+          "itemIds": [
+            "en.beginner.u04.l07.bath"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l07.task.04",
+          "kind": "fill",
+          "prompt": "Complete the sentence. Two answers fit.",
+          "text": "I take a ___.",
+          "answers": [
+            "bath",
+            "shower"
+          ],
+          "explanation": "We take a bath or a shower.",
+          "itemIds": [
+            "en.beginner.u04.l07.bath",
+            "en.beginner.u04.l02.take-a-shower"
+          ],
+          "options": [
+            "bath",
+            "shower",
+            "soap",
+            "mirror"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l07.task.05",
+          "kind": "choice",
+          "prompt": "You get out of the shower. Choose the thing to dry yourself.",
+          "answer": "towel",
+          "options": [
+            "towel",
+            "soap",
+            "mirror"
+          ],
+          "explanation": "A towel dries us.",
+          "itemIds": [
+            "en.beginner.u04.l02.towel"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l07.task.06",
+          "kind": "match",
+          "prompt": "Match each word with its sentence.",
+          "pairs": [
+            {
+              "left": "soap",
+              "right": "Here is the soap."
+            },
+            {
+              "left": "toothbrush",
+              "right": "Here is my toothbrush."
+            },
+            {
+              "left": "mirror",
+              "right": "The mirror is big."
+            },
+            {
+              "left": "bath",
+              "right": "I take a bath."
+            }
+          ],
+          "explanation": "Each sentence uses its own word.",
+          "itemIds": [
+            "en.beginner.u04.l07.soap",
+            "en.beginner.u04.l07.toothbrush",
+            "en.beginner.u04.l07.mirror",
+            "en.beginner.u04.l07.bath"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l07.task.07",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can retry if recognition mishears you.",
+          "text": "Here is the soap.",
+          "answer": "Here is the soap.",
+          "explanation": "You gave someone the soap.",
+          "itemIds": [
+            "en.beginner.u04.l07.soap"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l07.task.08",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I usually take a shower at seven o'clock.",
+          "answer": "I usually take a shower at seven o'clock.",
+          "options": [
+            "I usually take a shower at seven o'clock.",
+            "I usually take a bath at seven o'clock.",
+            "I never take a shower at seven o'clock."
+          ],
+          "explanation": "Listen for shower and usually.",
+          "itemIds": [
+            "en.beginner.u04.l02.take-a-shower",
+            "en.beginner.u04.l04.usually",
+            "en.beginner.u04.l07.bath",
+            "en.beginner.u04.l01.o-clock"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l07.task.09",
+          "kind": "build",
+          "prompt": "Build the sentence about every day.",
+          "answer": "I always brush my teeth every day.",
+          "tiles": [
+            "I",
+            "always",
+            "brush",
+            "my",
+            "teeth",
+            "every",
+            "day.",
+            "never"
+          ],
+          "explanation": "Always and every day go with a routine.",
+          "itemIds": [
+            "en.beginner.u04.l02.brush-my-teeth",
+            "en.beginner.u04.l04.always",
+            "en.beginner.u04.l03.every-day"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l07.task.10",
+          "kind": "choice",
+          "prompt": "Choose the word that does not belong in the bathroom.",
+          "answer": "bread",
+          "options": [
+            "bread",
+            "soap",
+            "mirror"
+          ],
+          "explanation": "Bread is food. The others are bathroom things.",
+          "itemIds": [
+            "en.beginner.u04.l07.soap",
+            "en.beginner.u04.l07.mirror",
+            "en.beginner.u03.l01.bread"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Smarty give Omar at the end?",
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Where is my toothbrush, Smarty?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Here you are."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Thank you! Where is the soap?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Here is the soap."
+          },
+          {
+            "speaker": "Omar",
+            "text": "I take a bath. The mirror is small!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Here is a towel."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Thanks, Smarty!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u04.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Omar ask for first?",
+            "answer": "toothbrush",
+            "options": [
+              "toothbrush",
+              "soap",
+              "towel"
+            ],
+            "explanation": "His first question is about the toothbrush.",
+            "itemIds": [
+              "en.beginner.u04.l07.toothbrush"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Omar take?",
+            "answer": "bath",
+            "options": [
+              "bath",
+              "shower",
+              "mirror"
+            ],
+            "explanation": "Omar says I take a bath.",
+            "itemIds": [
+              "en.beginner.u04.l07.bath"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Smarty give Omar last?",
+            "answer": "towel",
+            "options": [
+              "towel",
+              "soap",
+              "toothbrush"
+            ],
+            "explanation": "The last gift is a towel.",
+            "itemIds": [
+              "en.beginner.u04.l07.soap"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u04-l07-scene",
+          "describe": "A small bathroom with a bath, a mirror and a towel. Omar and Smarty are there."
+        }
+      },
+      "mission": {
+        "setup": "You are in the bathroom with Smarty. Give Smarty things and talk about washing.",
+        "turns": [
+          {
+            "smarty": "Where is the soap?",
+            "accept": [
+              "^here you are$",
+              "^here is the soap$",
+              "^here it is$"
+            ],
+            "example": "Here you are.",
+            "hint": "Give Smarty the soap: Here you are.",
+            "itemIds": [
+              "en.beginner.u04.l07.soap"
+            ]
+          },
+          {
+            "smarty": "Do you take a bath or a shower?",
+            "accept": [
+              "^(?:i take )?a (?:bath|shower)$",
+              "^(?:a )?bath$",
+              "^(?:a )?shower$"
+            ],
+            "example": "I take a bath.",
+            "hint": "Say bath or shower.",
+            "itemIds": [
+              "en.beginner.u04.l07.bath",
+              "en.beginner.u04.l02.take-a-shower"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u04.l02.take-a-shower",
+        "en.beginner.u04.l02.towel",
+        "en.beginner.u04.l04.usually",
+        "en.beginner.u04.l01.o-clock",
+        "en.beginner.u04.l02.brush-my-teeth",
+        "en.beginner.u04.l04.always",
+        "en.beginner.u04.l03.every-day",
+        "en.beginner.u03.l01.bread"
+      ]
+    },
+    {
+      "id": "en.beginner.u04.l08",
+      "section": "beginner",
+      "unit": 4,
+      "lesson": 8,
+      "title": "Does he read?",
+      "canDo": "Ask about someone's routine",
+      "scenario": "Lily and Tom talk about what Ben and Mia do. Ask about someone's routine.",
+      "items": [
+        {
+          "id": "en.beginner.u04.l08.does",
+          "text": "does",
+          "kind": "word",
+          "example": "Does Ben read?",
+          "note": "We say 'does' to ask a question about he, she or one person."
+        },
+        {
+          "id": "en.beginner.u04.l08.watch-tv",
+          "text": "watch TV",
+          "kind": "phrase",
+          "forms": [
+            "watches TV"
+          ],
+          "example": "I watch TV.",
+          "note": "We say 'watch TV' for looking at programmes. With he or she we say 'watches TV'.",
+          "image": {
+            "id": "watch-tv",
+            "describe": "Sam sits on a sofa and watches a TV with a cartoon on the screen; Smarty the black cat is next to him."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l08.read",
+          "text": "read",
+          "kind": "word",
+          "forms": [
+            "reads"
+          ],
+          "example": "I read.",
+          "note": "We read words in books. With he or she we say 'reads'.",
+          "image": {
+            "id": "read",
+            "describe": "Mia sits in an armchair reading an open book with a happy face; Smarty is on her lap."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l08.book",
+          "text": "book",
+          "kind": "word",
+          "forms": [
+            "books"
+          ],
+          "example": "I have a book.",
+          "note": "We read a book. A book has many pages.",
+          "image": {
+            "id": "book",
+            "describe": "A colourful open book on a small table, with a lamp near it; Smarty the black cat sits on the book."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u04.l08.task.01",
+          "kind": "choice",
+          "prompt": "Ask about Mia's routine.",
+          "answer": "Does Mia read?",
+          "options": [
+            "Does Mia read?",
+            "Do Mia read?",
+            "Does Mia reads?"
+          ],
+          "explanation": "With Mia, he or she we use does and the short verb.",
+          "itemIds": [
+            "en.beginner.u04.l08.does",
+            "en.beginner.u04.l08.read"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l08.task.02",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "He watches TV.",
+          "answer": "He watches TV.",
+          "options": [
+            "He watches TV.",
+            "He reads a book.",
+            "She watches TV."
+          ],
+          "explanation": "Listen to he or she, then watches.",
+          "itemIds": [
+            "en.beginner.u04.l08.watch-tv"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l08.task.03",
+          "kind": "build",
+          "prompt": "Build the question about a book.",
+          "answer": "Does he read a book?",
+          "tiles": [
+            "Does",
+            "he",
+            "read",
+            "a",
+            "book?",
+            "she"
+          ],
+          "explanation": "The order is Does + he + read + a book.",
+          "itemIds": [
+            "en.beginner.u04.l08.does",
+            "en.beginner.u04.l08.read",
+            "en.beginner.u04.l08.book"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l08.task.04",
+          "kind": "fill",
+          "prompt": "Complete the question.",
+          "text": "___ she watch TV?",
+          "answers": [
+            "Does"
+          ],
+          "explanation": "We use does with she, he and a name.",
+          "itemIds": [
+            "en.beginner.u04.l08.does"
+          ],
+          "options": [
+            "Does",
+            "Do",
+            "Is"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l08.task.05",
+          "kind": "choice",
+          "prompt": "Ben reads a book every day. Choose the sentence.",
+          "answer": "He reads a book every day.",
+          "options": [
+            "He reads a book every day.",
+            "He read a book every day.",
+            "He reads book a every day."
+          ],
+          "explanation": "With he, read becomes reads.",
+          "itemIds": [
+            "en.beginner.u04.l08.read",
+            "en.beginner.u04.l08.book",
+            "en.beginner.u04.l03.every-day"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l08.task.06",
+          "kind": "match",
+          "prompt": "Match each question with its answer.",
+          "pairs": [
+            {
+              "left": "Does he read?",
+              "right": "Yes, he does."
+            },
+            {
+              "left": "Does she watch TV?",
+              "right": "No, she does not."
+            },
+            {
+              "left": "Are you a student?",
+              "right": "Yes, I am."
+            },
+            {
+              "left": "Is he tired?",
+              "right": "No, he is not."
+            }
+          ],
+          "explanation": "The answer repeats does, am or is.",
+          "itemIds": [
+            "en.beginner.u04.l08.does",
+            "en.beginner.u04.l08.read",
+            "en.beginner.u04.l08.watch-tv",
+            "en.beginner.u01.l10.ask-student"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l08.task.07",
+          "kind": "speak",
+          "prompt": "Say the question aloud. You can retry if recognition mishears you.",
+          "text": "Does he read a book?",
+          "answer": "Does he read a book?",
+          "explanation": "You asked about someone's routine.",
+          "itemIds": [
+            "en.beginner.u04.l08.does",
+            "en.beginner.u04.l08.book"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l08.task.08",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "She sometimes watches TV.",
+          "answer": "She sometimes watches TV.",
+          "options": [
+            "She sometimes watches TV.",
+            "She never watches TV.",
+            "She always watches TV."
+          ],
+          "explanation": "Listen to the word after she.",
+          "itemIds": [
+            "en.beginner.u04.l08.watch-tv",
+            "en.beginner.u04.l04.sometimes"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l08.task.09",
+          "kind": "build",
+          "prompt": "Build the sentence about the weekend.",
+          "answer": "I usually read a book at the weekend.",
+          "tiles": [
+            "I",
+            "usually",
+            "read",
+            "a",
+            "book",
+            "at",
+            "the",
+            "weekend.",
+            "never"
+          ],
+          "explanation": "Usually goes before read.",
+          "itemIds": [
+            "en.beginner.u04.l04.usually",
+            "en.beginner.u04.l08.read",
+            "en.beginner.u04.l03.at",
+            "en.beginner.u04.l06.weekend"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l08.task.10",
+          "kind": "choice",
+          "prompt": "Tom gets up early. Choose the answer to: Does he get up early?",
+          "answer": "Yes, he does.",
+          "options": [
+            "Yes, he does.",
+            "Yes, I am.",
+            "No, he is not."
+          ],
+          "explanation": "We answer a does question with does.",
+          "itemIds": [
+            "en.beginner.u04.l08.does",
+            "en.beginner.u04.l02.get-up",
+            "en.beginner.u04.l04.early"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Does Ben watch TV?",
+        "lines": [
+          {
+            "speaker": "Lily",
+            "text": "Does Ben read, Tom?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Yes, he does. He reads a book every day."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Does he watch TV?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "No, he does not."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Does Mia watch TV?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Yes, she does. She watches TV at six o'clock."
+          },
+          {
+            "speaker": "Lily",
+            "text": "I read a book. I do not watch TV."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u04.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "Does Ben read a book?",
+            "answer": "Yes, he does.",
+            "options": [
+              "Yes, he does.",
+              "No, he does not.",
+              "Yes, she does."
+            ],
+            "explanation": "Tom says Yes, he does.",
+            "itemIds": [
+              "en.beginner.u04.l08.read"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Who watches TV at six o'clock?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Ben",
+              "Lily"
+            ],
+            "explanation": "Find the line with six o'clock.",
+            "itemIds": [
+              "en.beginner.u04.l08.watch-tv"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Lily do?",
+            "answer": "She reads a book.",
+            "options": [
+              "She reads a book.",
+              "She watches TV.",
+              "She goes to school."
+            ],
+            "explanation": "Lily says I read a book.",
+            "itemIds": [
+              "en.beginner.u04.l08.book"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u04-l08-scene",
+          "describe": "Lily and Tom are on a sofa at home. They talk about Ben and Mia."
+        }
+      },
+      "mission": {
+        "setup": "You and Smarty talk about reading and TV.",
+        "turns": [
+          {
+            "smarty": "Do you read a book every day?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i (?:always|usually|sometimes|never) read(?: a book)?$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes or No, or say how often you read.",
+            "itemIds": [
+              "en.beginner.u04.l08.read",
+              "en.beginner.u04.l08.book",
+              "en.beginner.u04.l03.every-day"
+            ]
+          },
+          {
+            "smarty": "Do you watch TV?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i (?:always|usually|sometimes|never) watch tv$"
+            ],
+            "example": "I sometimes watch TV.",
+            "hint": "Say Yes or No, or say how often you watch TV.",
+            "itemIds": [
+              "en.beginner.u04.l08.watch-tv"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u04.l03.every-day",
+        "en.beginner.u01.l10.ask-student",
+        "en.beginner.u04.l04.sometimes",
+        "en.beginner.u04.l04.usually",
+        "en.beginner.u04.l03.at",
+        "en.beginner.u04.l06.weekend",
+        "en.beginner.u04.l02.get-up",
+        "en.beginner.u04.l04.early"
+      ]
+    },
+    {
+      "id": "en.beginner.u04.l09",
+      "section": "beginner",
+      "unit": 4,
+      "lesson": 9,
+      "title": "In the evening",
+      "canDo": "Talk about the evening",
+      "scenario": "It is the evening. Zara tells Smarty what she does after dinner.",
+      "items": [
+        {
+          "id": "en.beginner.u04.l09.go-to-bed",
+          "text": "go to bed",
+          "kind": "phrase",
+          "forms": [
+            "goes to bed"
+          ],
+          "example": "I go to bed at nine o'clock.",
+          "note": "We say 'go to bed' when we get into bed to sleep. With he or she we say 'goes to bed'.",
+          "image": {
+            "id": "go-to-bed",
+            "describe": "Ana in pyjamas getting into bed with a smile, a small lamp on the table; Smarty the black cat already on the pillow."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l09.homework",
+          "text": "homework",
+          "kind": "word",
+          "example": "I do my homework.",
+          "note": "Homework is the work we do after school. We say 'do my homework'.",
+          "image": {
+            "id": "homework",
+            "describe": "Zara sits at a desk with notebooks and a pencil doing homework; Smarty the black cat sits next to the notebook."
+          }
+        },
+        {
+          "id": "en.beginner.u04.l09.night",
+          "text": "night",
+          "kind": "word",
+          "example": "Good night, Smarty!",
+          "note": "We say 'Good night' before bed. Night is the dark part of the day."
+        },
+        {
+          "id": "en.beginner.u04.l09.then",
+          "text": "then",
+          "kind": "word",
+          "example": "I eat dinner. Then I read a book.",
+          "note": "We say 'then' for what we do next."
+        },
+        {
+          "id": "en.beginner.u04.l09.after",
+          "text": "after",
+          "kind": "word",
+          "example": "After dinner I do my homework.",
+          "note": "We say 'after' for something that comes later."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u04.l09.task.01",
+          "kind": "choice",
+          "prompt": "Say goodbye before bed.",
+          "answer": "Good night!",
+          "options": [
+            "Good night!",
+            "Good morning!",
+            "Hello!"
+          ],
+          "explanation": "We say good night before bed.",
+          "itemIds": [
+            "en.beginner.u04.l09.night"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l09.task.02",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I go to bed at nine o'clock.",
+          "answer": "I go to bed at nine o'clock.",
+          "options": [
+            "I go to bed at nine o'clock.",
+            "I go to bed at eight o'clock.",
+            "I go to bed at half past nine."
+          ],
+          "explanation": "Listen to the number.",
+          "itemIds": [
+            "en.beginner.u04.l09.go-to-bed"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l09.task.03",
+          "kind": "build",
+          "prompt": "Build the sentence about homework.",
+          "answer": "I do my homework.",
+          "tiles": [
+            "I",
+            "do",
+            "my",
+            "homework.",
+            "get"
+          ],
+          "explanation": "We say do my homework.",
+          "itemIds": [
+            "en.beginner.u04.l09.homework"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l09.task.04",
+          "kind": "fill",
+          "prompt": "Complete the sentence about what comes next.",
+          "text": "I eat dinner. ___ I do my homework.",
+          "answers": [
+            "Then"
+          ],
+          "explanation": "Then tells us what happens next.",
+          "itemIds": [
+            "en.beginner.u04.l09.then"
+          ],
+          "options": [
+            "Then",
+            "Early",
+            "Bye"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l09.task.05",
+          "kind": "choice",
+          "prompt": "Mia goes to bed at nine. Choose the sentence.",
+          "answer": "She goes to bed at nine o'clock.",
+          "options": [
+            "She goes to bed at nine o'clock.",
+            "She go to bed at nine o'clock.",
+            "She goes to bed nine at o'clock."
+          ],
+          "explanation": "With she we say goes to bed.",
+          "itemIds": [
+            "en.beginner.u04.l09.go-to-bed",
+            "en.beginner.u04.l03.at",
+            "en.beginner.u04.l01.o-clock"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l09.task.06",
+          "kind": "build",
+          "prompt": "Build the sentence about dinner.",
+          "answer": "After dinner I do my homework.",
+          "tiles": [
+            "After",
+            "dinner",
+            "I",
+            "do",
+            "my",
+            "homework.",
+            "then"
+          ],
+          "explanation": "After comes at the start of the idea.",
+          "itemIds": [
+            "en.beginner.u04.l09.after",
+            "en.beginner.u04.l09.homework"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l09.task.07",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can retry if recognition mishears you.",
+          "text": "Good night, Smarty!",
+          "answer": "Good night, Smarty!",
+          "explanation": "You said good night.",
+          "itemIds": [
+            "en.beginner.u04.l09.night"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l09.task.08",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "He never watches TV after dinner.",
+          "answer": "He never watches TV after dinner.",
+          "options": [
+            "He never watches TV after dinner.",
+            "He always watches TV after dinner.",
+            "He sometimes watches TV after dinner."
+          ],
+          "explanation": "Listen for never.",
+          "itemIds": [
+            "en.beginner.u04.l08.watch-tv",
+            "en.beginner.u04.l04.never",
+            "en.beginner.u04.l09.after"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l09.task.09",
+          "kind": "match",
+          "prompt": "Match each start with its end.",
+          "pairs": [
+            {
+              "left": "After dinner",
+              "right": "I do my homework."
+            },
+            {
+              "left": "Then",
+              "right": "I go to bed."
+            },
+            {
+              "left": "Good night,",
+              "right": "Smarty!"
+            },
+            {
+              "left": "I read",
+              "right": "a book."
+            }
+          ],
+          "explanation": "Each start has a sentence that fits.",
+          "itemIds": [
+            "en.beginner.u04.l09.after",
+            "en.beginner.u04.l09.then",
+            "en.beginner.u04.l09.homework",
+            "en.beginner.u04.l09.go-to-bed",
+            "en.beginner.u04.l09.night",
+            "en.beginner.u04.l08.read",
+            "en.beginner.u04.l08.book"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l09.task.10",
+          "kind": "choice",
+          "prompt": "Ask about her homework.",
+          "answer": "Does she do her homework?",
+          "options": [
+            "Does she do her homework?",
+            "Do she do her homework?",
+            "Does she does homework?"
+          ],
+          "explanation": "Does goes with she.",
+          "itemIds": [
+            "en.beginner.u04.l08.does",
+            "en.beginner.u04.l09.homework"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Zara do after dinner?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good evening, Zara!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Good evening, Smarty! I eat dinner."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Do you do your homework?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes. After dinner I do my homework."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Then I read a book."
+          },
+          {
+            "speaker": "Zara",
+            "text": "I go to bed at nine o'clock."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good night, Zara!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Good night, Smarty!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u04.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Zara do after dinner?",
+            "answer": "I do my homework.",
+            "options": [
+              "I do my homework.",
+              "I go to bed.",
+              "I take a bath."
+            ],
+            "explanation": "Find the line with After dinner.",
+            "itemIds": [
+              "en.beginner.u04.l09.after",
+              "en.beginner.u04.l09.homework"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Zara do then?",
+            "answer": "I read a book.",
+            "options": [
+              "I read a book.",
+              "I watch TV.",
+              "I go to bed."
+            ],
+            "explanation": "Zara says Then I read a book.",
+            "itemIds": [
+              "en.beginner.u04.l09.then"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "What time does Zara go to bed?",
+            "answer": "At nine o'clock.",
+            "options": [
+              "At nine o'clock.",
+              "At half past nine.",
+              "At eight o'clock."
+            ],
+            "explanation": "She says I go to bed at nine o'clock.",
+            "itemIds": [
+              "en.beginner.u04.l09.go-to-bed"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u04-l09-scene",
+          "describe": "Zara and Smarty sit in the living room in the evening."
+        }
+      },
+      "mission": {
+        "setup": "It is the evening. Smarty asks about your homework and bedtime.",
+        "turns": [
+          {
+            "smarty": "Do you do your homework after dinner?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i (?:always|usually|sometimes|never) do my homework(?: after dinner)?$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes or No, or say how often you do your homework.",
+            "itemIds": [
+              "en.beginner.u04.l09.homework",
+              "en.beginner.u04.l09.after"
+            ]
+          },
+          {
+            "smarty": "What time do you go to bed?",
+            "accept": [
+              "^i go to bed at (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)(?: o'clock)?$",
+              "^i go to bed at half past (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)$",
+              "^at (?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) o'clock$"
+            ],
+            "example": "I go to bed at nine o'clock.",
+            "hint": "Say the time: I go to bed at ...",
+            "itemIds": [
+              "en.beginner.u04.l09.go-to-bed"
+            ]
+          },
+          {
+            "smarty": "Good night!",
+            "accept": [
+              "^good night(?: smarty)?$",
+              "^goodbye(?: smarty)?$",
+              "^bye(?: smarty)?$"
+            ],
+            "example": "Good night, Smarty!",
+            "hint": "Say Good night.",
+            "itemIds": [
+              "en.beginner.u04.l09.night"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u04.l03.at",
+        "en.beginner.u04.l01.o-clock",
+        "en.beginner.u04.l08.watch-tv",
+        "en.beginner.u04.l04.never",
+        "en.beginner.u04.l08.read",
+        "en.beginner.u04.l08.book",
+        "en.beginner.u04.l08.does"
+      ]
+    },
+    {
+      "id": "en.beginner.u04.l10",
+      "section": "beginner",
+      "unit": 4,
+      "lesson": 10,
+      "title": "My day",
+      "canDo": "Tell Smarty about your day",
+      "scenario": "Smarty asks Mia about her day. Tell Smarty what you do in the morning and in the evening.",
+      "items": [
+        {
+          "id": "en.beginner.u04.l10.before",
+          "text": "before",
+          "kind": "word",
+          "example": "I brush my teeth before school.",
+          "note": "We say 'before' for something that comes earlier."
+        },
+        {
+          "id": "en.beginner.u04.l10.in-the-morning",
+          "text": "in the morning",
+          "kind": "phrase",
+          "example": "I get up in the morning.",
+          "note": "We say 'in the morning' for the first part of the day."
+        },
+        {
+          "id": "en.beginner.u04.l10.in-the-evening",
+          "text": "in the evening",
+          "kind": "phrase",
+          "example": "I read a book in the evening.",
+          "note": "We say 'in the evening' for the part of the day after school or work."
+        },
+        {
+          "id": "en.beginner.u04.l10.first",
+          "text": "first",
+          "kind": "word",
+          "example": "First I get up.",
+          "note": "We say 'first' for the first thing we do."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u04.l10.task.01",
+          "kind": "choice",
+          "prompt": "You brush your teeth. Then you go to school. Choose the sentence.",
+          "answer": "I brush my teeth before school.",
+          "options": [
+            "I brush my teeth before school.",
+            "I brush my teeth after school.",
+            "I never brush my teeth."
+          ],
+          "explanation": "Before school means earlier than school.",
+          "itemIds": [
+            "en.beginner.u04.l10.before",
+            "en.beginner.u04.l02.brush-my-teeth",
+            "en.beginner.u04.l03.go-to-school"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l10.task.02",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I get up in the morning.",
+          "answer": "I get up in the morning.",
+          "options": [
+            "I get up in the morning.",
+            "I get up in the evening.",
+            "I go to bed in the morning."
+          ],
+          "explanation": "Listen to the end of the sentence.",
+          "itemIds": [
+            "en.beginner.u04.l10.in-the-morning",
+            "en.beginner.u04.l02.get-up"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l10.task.03",
+          "kind": "build",
+          "prompt": "Build the sentence about the evening.",
+          "answer": "I read a book in the evening.",
+          "tiles": [
+            "I",
+            "read",
+            "a",
+            "book",
+            "in",
+            "the",
+            "evening.",
+            "morning"
+          ],
+          "explanation": "In the evening goes at the end.",
+          "itemIds": [
+            "en.beginner.u04.l10.in-the-evening",
+            "en.beginner.u04.l08.read",
+            "en.beginner.u04.l08.book"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l10.task.04",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the first thing.",
+          "text": "___ I get up. Then I brush my teeth.",
+          "answers": [
+            "First"
+          ],
+          "explanation": "First is the beginning of the list.",
+          "itemIds": [
+            "en.beginner.u04.l10.first",
+            "en.beginner.u04.l09.then"
+          ],
+          "options": [
+            "First",
+            "Never",
+            "Night"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l10.task.05",
+          "kind": "choice",
+          "prompt": "Choose the morning sentences in the right order.",
+          "answer": "First I get up. Then I take a shower.",
+          "options": [
+            "First I get up. Then I take a shower.",
+            "First I take a shower. Then I get up.",
+            "Then I get up. First I take a shower."
+          ],
+          "explanation": "We get up before we take a shower.",
+          "itemIds": [
+            "en.beginner.u04.l10.first",
+            "en.beginner.u04.l09.then",
+            "en.beginner.u04.l02.get-up",
+            "en.beginner.u04.l02.take-a-shower"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l10.task.06",
+          "kind": "match",
+          "prompt": "Match each time with what you do.",
+          "pairs": [
+            {
+              "left": "in the morning",
+              "right": "I get up."
+            },
+            {
+              "left": "in the evening",
+              "right": "I do my homework."
+            },
+            {
+              "left": "before school",
+              "right": "I brush my teeth."
+            },
+            {
+              "left": "after dinner",
+              "right": "I read a book."
+            }
+          ],
+          "explanation": "Each time of day goes with a routine.",
+          "itemIds": [
+            "en.beginner.u04.l10.in-the-morning",
+            "en.beginner.u04.l10.in-the-evening",
+            "en.beginner.u04.l10.before",
+            "en.beginner.u04.l09.after",
+            "en.beginner.u04.l09.homework"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l10.task.07",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can retry if recognition mishears you.",
+          "text": "In the morning I get up.",
+          "answer": "In the morning I get up.",
+          "explanation": "You told Smarty about your morning.",
+          "itemIds": [
+            "en.beginner.u04.l10.in-the-morning",
+            "en.beginner.u04.l02.get-up"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l10.task.08",
+          "kind": "choice",
+          "prompt": "Which day is before Tuesday?",
+          "answer": "Monday",
+          "options": [
+            "Monday",
+            "Wednesday",
+            "Friday"
+          ],
+          "explanation": "Monday comes before Tuesday.",
+          "itemIds": [
+            "en.beginner.u04.l10.before",
+            "en.beginner.u04.l05.monday",
+            "en.beginner.u04.l05.tuesday"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l10.task.09",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I take a shower before school.",
+          "answer": "I take a shower before school.",
+          "options": [
+            "I take a shower before school.",
+            "I take a bath before school.",
+            "I take a shower after school."
+          ],
+          "explanation": "Listen for shower and before.",
+          "itemIds": [
+            "en.beginner.u04.l10.before",
+            "en.beginner.u04.l02.take-a-shower",
+            "en.beginner.u04.l03.go-to-school"
+          ]
+        },
+        {
+          "id": "en.beginner.u04.l10.task.10",
+          "kind": "build",
+          "prompt": "Build the sentence about bedtime.",
+          "answer": "Then I go to bed.",
+          "tiles": [
+            "Then",
+            "I",
+            "go",
+            "to",
+            "bed.",
+            "first"
+          ],
+          "explanation": "Then tells us the next thing.",
+          "itemIds": [
+            "en.beginner.u04.l09.then",
+            "en.beginner.u04.l09.go-to-bed"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Mia do first?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Mia! What do you do every day?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "In the morning I get up early."
+          },
+          {
+            "speaker": "Mia",
+            "text": "First I brush my teeth. Then I take a shower."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And then?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I go to school. In the evening I read a book."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I do my homework before dinner."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Mia!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u04.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "After Mia gets up, what does she do first?",
+            "answer": "She brushes her teeth.",
+            "options": [
+              "She brushes her teeth.",
+              "She takes a shower.",
+              "She goes to school."
+            ],
+            "explanation": "Mia says First I brush my teeth.",
+            "itemIds": [
+              "en.beginner.u04.l10.first"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "When does Mia read a book?",
+            "answer": "In the evening.",
+            "options": [
+              "In the evening.",
+              "In the morning.",
+              "At nine o'clock."
+            ],
+            "explanation": "Mia says In the evening I read a book.",
+            "itemIds": [
+              "en.beginner.u04.l10.in-the-evening"
+            ]
+          },
+          {
+            "id": "en.beginner.u04.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Mia do before dinner?",
+            "answer": "She does her homework.",
+            "options": [
+              "She does her homework.",
+              "She goes to bed.",
+              "She reads a book."
+            ],
+            "explanation": "Mia says I do my homework before dinner.",
+            "itemIds": [
+              "en.beginner.u04.l10.before"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u04-l10-scene",
+          "describe": "Smarty and Mia sit at a table. Mia tells Smarty about her day."
+        }
+      },
+      "mission": {
+        "setup": "Tell Smarty about your day. Say what you do in the morning and in the evening.",
+        "turns": [
+          {
+            "smarty": "What do you do in the morning?",
+            "accept": [
+              "^i (?:get up|brush my teeth|take a shower)(?: in the morning)?$",
+              "^first i (?:get up|brush my teeth|take a shower)$",
+              "^in the morning i (?:get up|brush my teeth|take a shower)$",
+              "^i get up (?:early|late)$"
+            ],
+            "example": "In the morning I get up.",
+            "hint": "Say something you do in the morning.",
+            "itemIds": [
+              "en.beginner.u04.l10.in-the-morning",
+              "en.beginner.u04.l02.get-up",
+              "en.beginner.u04.l02.brush-my-teeth",
+              "en.beginner.u04.l02.take-a-shower"
+            ]
+          },
+          {
+            "smarty": "And then?",
+            "accept": [
+              "^then i (?:brush my teeth|take a shower|go to school|get up|read a book)$",
+              "^i (?:brush my teeth|take a shower|go to school)$",
+              "^then i go to school$"
+            ],
+            "example": "Then I brush my teeth.",
+            "hint": "Say what you do next. Start with Then.",
+            "itemIds": [
+              "en.beginner.u04.l10.first",
+              "en.beginner.u04.l09.then"
+            ]
+          },
+          {
+            "smarty": "What do you do in the evening?",
+            "accept": [
+              "^i (?:do my homework|read a book|watch tv|eat dinner|go to bed)(?: in the evening)?$",
+              "^in the evening i (?:do my homework|read a book|watch tv|eat dinner|go to bed)$",
+              "^after dinner i (?:do my homework|read a book|watch tv|go to bed)$"
+            ],
+            "example": "In the evening I read a book.",
+            "hint": "Say something you do in the evening.",
+            "itemIds": [
+              "en.beginner.u04.l10.in-the-evening",
+              "en.beginner.u04.l09.homework",
+              "en.beginner.u04.l08.read",
+              "en.beginner.u04.l08.watch-tv"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u04.l02.brush-my-teeth",
+        "en.beginner.u04.l03.go-to-school",
+        "en.beginner.u04.l02.get-up",
+        "en.beginner.u04.l08.read",
+        "en.beginner.u04.l08.book",
+        "en.beginner.u04.l09.then",
+        "en.beginner.u04.l02.take-a-shower",
+        "en.beginner.u04.l09.after",
+        "en.beginner.u04.l09.homework",
+        "en.beginner.u04.l05.monday",
+        "en.beginner.u04.l05.tuesday",
+        "en.beginner.u04.l09.go-to-bed",
+        "en.beginner.u04.l08.watch-tv"
+      ]
+    }
+  ]
+}

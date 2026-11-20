@@ -1,0 +1,1204 @@
+You are writing one unit of lessons for **SmartyLang**, a language-learning app for children and adults. The mascot is **Smarty**, a friendly black cat who teaches. You must output **one JSON object only** (no Markdown fences, no comments, no text before or after), exactly in the format described below. A program will check it automatically.
+
+# What you are writing
+- Language being learned (target language): **English** (code `en`)
+- Level: **Elementary (A2)** (section `elementary`)
+- Unit 1: **School & Study**. Smarty's room for this unit: **study** (scenes may happen there)
+- Can do by the end of the unit: Talk about school, subjects and how you learn
+- Grammar and patterns of the unit: present simple vs continuous (review), question words, good at
+
+# Languages inside the JSON
+- **Target-language text** goes in: `items[].text`, `items[].forms`, `items[].example`, `grammar.examples`, task `answer`/`answers`/`options`/`audio`/`text`/`tiles`/`pairs`, `story.lines[].text`, `mission.turns[].smarty`, `mission.turns[].example`, `exposure[].text`, `episode.panels[].text`. Write natural, correct English as a native speaker would say it today. Use British or American spelling consistently (American).
+- **Everything else is in simple English** (the app translates it into the learner's own language): `title`, `canDo`, `scenario`, `prompt`, `explanation`, `note`, `hint`, `setup`, `hook`, `grammar.title`, `grammar.explanation`, `image.describe`, `exposure[].gloss`.
+
+# The teaching method (what makes a great lesson)
+1. **One small goal per lesson** (its `canDo`). Teach exactly the lesson's planned items, in the plan's order, nothing more.
+2. **Teach, then guided practice, then free use.** Each item gets:
+   - an `example` sentence (only taught words);
+   - a `note`: ONE friendly sentence Smarty says out loud explaining *when/how* to use it, e.g. "Say 'Can I have…?' to ask for something politely." Never write a dictionary definition.
+3. **Practice until it sticks.** Write as many `practice` tasks as the items need: easy items need few, tricky contrasts need many and in several formats.
+   - Start with recognising (`choice`, `listen`, `match`), then producing (`build`, `fill`, `speak`).
+   - Every task has a short `explanation` saying *why* the answer is right (shown when the learner is wrong).
+   - Mix in earlier items often (about a third of tasks); list every earlier item you reuse in `recycle`.
+4. **Scene** (`story`): a short, natural dialogue in a real situation (in or near study when it fits), using the lesson's items. It has:
+   - a `hook` (a curiosity question);
+   - comprehension `questions`;
+   - an `image` describing the scene for an illustrator.
+5. **Mission**: Smarty talks, the learner answers in their own words.
+   - Give one or more `accept` patterns (regular expressions, anchored `^…$`, lowercase, no punctuation, no `.*`, no `+`, no lookarounds; use `(?:a|b)` and `?`).
+   - Give an `example` that matches one pattern after lowercasing, removing punctuation and expanding English contractions (I'm → i am).
+6. **Review lessons** (`"type": "review"`): `items` is `[]`. Practice, scene and mission use only earlier items (all listed in `recycle`).
+7. **Unit test** (`"type": "test"`, the last lesson): mixes the whole unit; may teach the few items the plan lists.
+8. **Only taught words.** Every target-language word in answers, options, audio, tiles, pairs, examples, scene lines, mission lines and episode panels must be either:
+   - taught (this unit's items so far, or the "Taught before this unit" list below);
+   - listed in some taught item's `forms` (plurals, verb forms, cases, contractions: add them to the item where it is taught in THIS unit);
+   - a whitelisted name or number;
+   - from B1 on, one of the lesson's `exposure` words, in scene lines only.
+
+   If you need a word that isn't allowed, rephrase.
+9. **Pictures**: items marked `"picture": true` in the plan get `"image": { "id": "<english-kebab-slug-of-the-meaning>", "describe": "<one concrete scene to draw>" }`.
+   - Items without `picture` get no `image` field at all.
+   - Characters are cats (Smarty or friends).
+   - No written words in pictures.
+   - Every scene gets an image too, id `en-a2-u01-lNN-scene`.
+   - Reuse the same image id for the same meaning across lessons and languages (e.g. `apple`, `brush-teeth`).
+10. **Episode** (optional, recommended): `episode` on the unit = the next chapter of Smarty's story, shown as a reward after the unit.
+    - 6–12 short `panels` (each one or two sentences, optional `speaker`, optional `image`) plus 2–3 `questions`.
+    - Only words taught by the end of the unit (plus this unit's exposure words from B1).
+    - End on a small cliffhanger that makes the learner want the next unit.
+11. **Tone**: warm, playful, kid-safe, inclusive, culturally neutral. No violence, romance, politics, religion, brands or real people.
+12. **Names**: speakers and names in target text must come from this list only: Smarty, Mia, Sam, Ben, Leo, Ana, Lily, Omar, Zara, Tom. Numbers always allowed: zero, one, two, three, four, five, six, seven, eight, nine, ten.
+
+# Exact JSON format
+Top level:
+```
+{ "$schema": "../../schema/lesson-v2.schema.json", "schemaVersion": 2, "lang": "en", "section": "elementary",
+  "unit": 1, "title": "School & Study", "room": "study", "lessons": [ … one per planned lesson, in order … ], "episode": { … } }
+```
+Each lesson:
+```
+{ "id": "en.elementary.u01.l01", "section": "elementary", "unit": 1, "lesson": 1, "type": "lesson" | "review" | "test",
+  "title": "<plan title>", "canDo": "<plan canDo>", "scenario": "<one line: where this happens>",
+  "items": [ { "id": "<plan id>", "text": "<plan text>", "kind": "word" | "phrase" | "pattern", "forms": [ … optional … ], "example": "…", "note": "…", "image": { "id": "…", "describe": "…" } } ],
+  "grammar": { "title": "…", "explanation": "…", "examples": [ "…" ] },            ← optional, only when a pattern needs a tip
+  "practice": [ tasks … ],
+  "story": { "hook": "…", "lines": [ { "speaker": "<name>", "text": "…" } ], "questions": [ tasks … ], "image": { "id": "…", "describe": "…" } },
+  "mission": { "setup": "…", "turns": [ { "smarty": "…", "accept": [ "^…$" ], "example": "…", "hint": "…", "itemIds": [ "<item ids>" ] } ] },
+  "exposure": [ { "text": "…", "gloss": "English meaning" } ],                      ← B1+ only, words used in the scene that aren't taught
+  "recycle": [ "<ids of earlier items used anywhere in this lesson>" ] }
+```
+Tasks: every task has `id` (unique in the lesson, e.g. `en.elementary.u01.l01.task.pick-hello`), `kind`, `prompt` (English instruction), `explanation`, `itemIds` (the items it practises; earlier ones must be in `recycle`), and `answer` (or `answers` when several are correct), plus:
+
+| kind | extra fields | rules |
+|---|---|---|
+| `choice` | `options` | the answer + at least 2 distinct wrong options |
+| `listen` | `audio`, `options` | `audio` is spoken; options include it |
+| `build` | `tiles` | all words of the answer + 1–2 extra tiles; must be buildable from whole tiles |
+| `fill` | `text` (exactly one `___`), optional `options` | answer fills the blank |
+| `match` | `pairs`: `[{ "left", "right" }]` | sides distinct; no answer field needed |
+| `speak` | `text` | `answer` equals `text` |
+
+Rules the checker enforces:
+- Item `id` and `text` exactly as in the plan, in order.
+- Lesson `type` exactly as in the plan.
+- Every new item is used in at least one practice task.
+- No item is taught twice.
+
+# Plan for this unit (copy ids, texts and types exactly; add an image to every item marked picture)
+{
+ "unit": 1,
+ "title": "School & Study",
+ "room": "study",
+ "lessons": [
+  {
+   "lesson": 1,
+   "type": "lesson",
+   "title": "School subjects",
+   "canDo": "Name school subjects",
+   "items": [
+    {
+     "id": "en.elementary.u01.l01.maths",
+     "text": "maths",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l01.history",
+     "text": "history",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l01.science",
+     "text": "science",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l01.geography",
+     "text": "geography",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l01.art",
+     "text": "art",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l01.p-e",
+     "text": "P.E.",
+     "kind": "word",
+     "picture": true
+    }
+   ]
+  },
+  {
+   "lesson": 2,
+   "type": "lesson",
+   "title": "In the classroom",
+   "canDo": "Name classroom things",
+   "items": [
+    {
+     "id": "en.elementary.u01.l02.teacher",
+     "text": "teacher",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l02.classroom",
+     "text": "classroom",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l02.desk",
+     "text": "desk",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l02.board",
+     "text": "board",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l02.dictionary",
+     "text": "dictionary",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l02.ruler",
+     "text": "ruler",
+     "kind": "word",
+     "picture": true
+    }
+   ]
+  },
+  {
+   "lesson": 3,
+   "type": "lesson",
+   "title": "My timetable",
+   "canDo": "Talk about a school day",
+   "items": [
+    {
+     "id": "en.elementary.u01.l03.timetable",
+     "text": "timetable",
+     "kind": "word"
+    },
+    {
+     "id": "en.elementary.u01.l03.first-lesson",
+     "text": "first lesson",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.elementary.u01.l03.break-time",
+     "text": "break time",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.elementary.u01.l03.my-favourite-subject",
+     "text": "my favourite subject",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.elementary.u01.l03.what-subject",
+     "text": "What subject?",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.elementary.u01.l03.which-one",
+     "text": "Which one?",
+     "kind": "phrase"
+    }
+   ]
+  },
+  {
+   "lesson": 4,
+   "type": "review",
+   "title": "Review",
+   "canDo": "Practise lessons 1–3",
+   "items": []
+  },
+  {
+   "lesson": 5,
+   "type": "lesson",
+   "title": "Tests and marks",
+   "canDo": "Talk about exams",
+   "items": [
+    {
+     "id": "en.elementary.u01.l05.exam",
+     "text": "exam",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l05.test",
+     "text": "test",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l05.mark",
+     "text": "mark",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l05.pass",
+     "text": "pass",
+     "kind": "word"
+    },
+    {
+     "id": "en.elementary.u01.l05.fail",
+     "text": "fail",
+     "kind": "word"
+    },
+    {
+     "id": "en.elementary.u01.l05.good-luck",
+     "text": "Good luck",
+     "kind": "phrase"
+    }
+   ]
+  },
+  {
+   "lesson": 6,
+   "type": "lesson",
+   "title": "Learning well",
+   "canDo": "Say how you study",
+   "items": [
+    {
+     "id": "en.elementary.u01.l06.learn",
+     "text": "learn",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l06.practise",
+     "text": "practise",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l06.remember",
+     "text": "remember",
+     "kind": "word"
+    },
+    {
+     "id": "en.elementary.u01.l06.forget",
+     "text": "forget",
+     "kind": "word"
+    },
+    {
+     "id": "en.elementary.u01.l06.spell",
+     "text": "spell",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l06.well-done",
+     "text": "Well done",
+     "kind": "phrase"
+    }
+   ]
+  },
+  {
+   "lesson": 7,
+   "type": "lesson",
+   "title": "Right now",
+   "canDo": "Say what is happening now",
+   "items": [
+    {
+     "id": "en.elementary.u01.l07.i-am-studying",
+     "text": "I am studying",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.elementary.u01.l07.she-is-working",
+     "text": "She is working",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.elementary.u01.l07.at-the-moment",
+     "text": "at the moment",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.elementary.u01.l07.lesson",
+     "text": "lesson",
+     "kind": "word",
+     "picture": true
+    },
+    {
+     "id": "en.elementary.u01.l07.how-often",
+     "text": "How often?",
+     "kind": "phrase"
+    }
+   ]
+  },
+  {
+   "lesson": 8,
+   "type": "review",
+   "title": "Review",
+   "canDo": "Practise lessons 5–7",
+   "items": []
+  },
+  {
+   "lesson": 9,
+   "type": "lesson",
+   "title": "Easy or difficult?",
+   "canDo": "Give opinions about study",
+   "items": [
+    {
+     "id": "en.elementary.u01.l09.i-think-it-is",
+     "text": "I think it is",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.elementary.u01.l09.easy",
+     "text": "easy",
+     "kind": "word"
+    },
+    {
+     "id": "en.elementary.u01.l09.difficult",
+     "text": "difficult",
+     "kind": "word"
+    },
+    {
+     "id": "en.elementary.u01.l09.boring",
+     "text": "boring",
+     "kind": "word"
+    },
+    {
+     "id": "en.elementary.u01.l09.interesting",
+     "text": "interesting",
+     "kind": "word"
+    },
+    {
+     "id": "en.elementary.u01.l09.i-am-good-at",
+     "text": "I am good at",
+     "kind": "phrase"
+    }
+   ]
+  },
+  {
+   "lesson": 10,
+   "type": "test",
+   "title": "Study group",
+   "canDo": "Ask for and offer help",
+   "items": [
+    {
+     "id": "en.elementary.u01.l10.can-you-help-me",
+     "text": "Can you help me?",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.elementary.u01.l10.i-need-help-with",
+     "text": "I need help with",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.elementary.u01.l10.lets-study-together",
+     "text": "Let's study together",
+     "kind": "phrase"
+    }
+   ]
+  }
+ ]
+}
+
+# Taught before this unit (you may use these words freely; list an item's id in `recycle` when a task, question or mission turn targets it)
+## Beginner (CEFR A1) · Unit 0: Sounds & Letters
+en.beginner.u00.l01.the-alphabet = the alphabet
+en.beginner.u00.l01.a-to-g = A to G
+en.beginner.u00.l01.h-to-n = H to N
+en.beginner.u00.l01.o-to-u = O to U
+en.beginner.u00.l01.v-to-z = V to Z
+en.beginner.u00.l02.spell-it-please = Spell it please
+en.beginner.u00.l02.how-do-you-spell-that = How do you spell that?
+en.beginner.u00.l02.capital-letter = capital letter
+en.beginner.u00.l02.letter = letter
+en.beginner.u00.l02.a-an = a / an
+en.beginner.u00.l03.zero = zero
+en.beginner.u00.l03.one = one
+en.beginner.u00.l03.two = two
+en.beginner.u00.l03.three = three
+en.beginner.u00.l03.four = four
+en.beginner.u00.l03.five = five
+en.beginner.u00.l04.six = six
+en.beginner.u00.l04.seven = seven
+en.beginner.u00.l04.eight = eight
+en.beginner.u00.l04.nine = nine
+en.beginner.u00.l04.ten = ten
+en.beginner.u00.l06.repeat-please = Repeat please
+en.beginner.u00.l06.can-you-say-that-again = Can you say that again?
+en.beginner.u00.l06.i-do-not-understand = I do not understand
+## Beginner (CEFR A1) · Unit 1: Hello & Me
+en.beginner.u01.l01.hello = Hello
+en.beginner.u01.l01.hi = Hi
+en.beginner.u01.l01.goodbye = Goodbye
+en.beginner.u01.l01.bye = Bye
+en.beginner.u01.l02.my-name-is = My name is
+en.beginner.u01.l02.i-am = I am
+en.beginner.u01.l02.what-is-your-name = What is your name?
+en.beginner.u01.l02.and-you = And you?
+en.beginner.u01.l03.sorry = Sorry
+en.beginner.u01.l03.please = Please
+en.beginner.u01.l03.thank-you = Thank you
+en.beginner.u01.l03.thanks = Thanks
+en.beginner.u01.l05.you-are = You are
+en.beginner.u01.l05.he-is = He is
+en.beginner.u01.l05.she-is = She is
+en.beginner.u01.l05.we-are = We are
+en.beginner.u01.l06.good-morning = Good morning
+en.beginner.u01.l06.good-afternoon = Good afternoon
+en.beginner.u01.l06.good-evening = Good evening
+en.beginner.u01.l06.see-you-later = See you later
+en.beginner.u01.l07.i-am-from = I am from
+en.beginner.u01.l07.where-are-you-from = Where are you from?
+en.beginner.u01.l07.uzbekistan = Uzbekistan
+en.beginner.u01.l07.brazil = Brazil
+en.beginner.u01.l07.england = England
+en.beginner.u01.l09.how-are-you = How are you?
+en.beginner.u01.l09.i-am-fine = I am fine
+en.beginner.u01.l09.i-am-happy = I am happy
+en.beginner.u01.l09.i-am-tired = I am tired
+en.beginner.u01.l10.nice-to-meet-you = Nice to meet you
+en.beginner.u01.l10.this-is = This is
+en.beginner.u01.l10.friend = friend
+en.beginner.u01.l10.yes = Yes
+en.beginner.u01.l10.no = No
+en.beginner.u01.l11.are-you-a-student = Are you a student?
+en.beginner.u01.l11.i-am-a-student = I am a student
+en.beginner.u01.l11.nice-to-meet-you-too = Nice to meet you too
+## Beginner (CEFR A1) · Unit 2: Family & Friends
+en.beginner.u02.l01.mother = mother
+en.beginner.u02.l01.father = father
+en.beginner.u02.l01.brother = brother
+en.beginner.u02.l01.sister = sister
+en.beginner.u02.l01.my = my
+en.beginner.u02.l02.baby = baby
+en.beginner.u02.l02.parents = parents
+en.beginner.u02.l02.his = his
+en.beginner.u02.l02.her = her
+en.beginner.u02.l02.our = our
+en.beginner.u02.l03.who-is-she = Who is she?
+en.beginner.u02.l03.grandmother = grandmother
+en.beginner.u02.l03.grandfather = grandfather
+en.beginner.u02.l03.it = it
+en.beginner.u02.l05.how-old-are-you = How old are you?
+en.beginner.u02.l05.years-old = years old
+en.beginner.u02.l05.eleven = eleven
+en.beginner.u02.l05.twelve = twelve
+en.beginner.u02.l05.twenty = twenty
+en.beginner.u02.l06.best-friend = best friend
+en.beginner.u02.l06.boy = boy
+en.beginner.u02.l06.girl = girl
+en.beginner.u02.l06.they = they
+en.beginner.u02.l06.they-are = they are
+en.beginner.u02.l07.big = big
+en.beginner.u02.l07.small = small
+en.beginner.u02.l07.tall = tall
+en.beginner.u02.l07.short = short
+en.beginner.u02.l07.young = young
+en.beginner.u02.l08.i-have = I have
+en.beginner.u02.l08.has = has
+en.beginner.u02.l08.cat = cat
+en.beginner.u02.l08.dog = dog
+en.beginner.u02.l08.bird = bird
+en.beginner.u02.l10.aunt = aunt
+en.beginner.u02.l10.uncle = uncle
+en.beginner.u02.l10.cousin = cousin
+## Beginner (CEFR A1) · Unit 3: Food & Drink
+en.beginner.u03.l01.hungry = hungry
+en.beginner.u03.l01.thirsty = thirsty
+en.beginner.u03.l01.water = water
+en.beginner.u03.l01.bread = bread
+en.beginner.u03.l01.apple = apple
+en.beginner.u03.l01.the = the
+en.beginner.u03.l02.breakfast = breakfast
+en.beginner.u03.l02.egg = egg
+en.beginner.u03.l02.milk = milk
+en.beginner.u03.l02.tea = tea
+en.beginner.u03.l02.for = for
+en.beginner.u03.l03.do-you-like = Do you like
+en.beginner.u03.l03.i-like = I like
+en.beginner.u03.l03.i-do-not-like = I do not like
+en.beginner.u03.l03.banana = banana
+en.beginner.u03.l03.cheese = cheese
+en.beginner.u03.l05.lunch = lunch
+en.beginner.u03.l05.dinner = dinner
+en.beginner.u03.l05.rice = rice
+en.beginner.u03.l05.soup = soup
+en.beginner.u03.l05.chicken = chicken
+en.beginner.u03.l06.can-i-have = Can I have
+en.beginner.u03.l06.juice = juice
+en.beginner.u03.l06.cake = cake
+en.beginner.u03.l06.of-course = Of course
+en.beginner.u03.l06.here-you-are = Here you are
+en.beginner.u03.l07.orange = orange
+en.beginner.u03.l07.tomato = tomato
+en.beginner.u03.l07.potato = potato
+en.beginner.u03.l07.carrot = carrot
+en.beginner.u03.l07.fruit = fruit
+en.beginner.u03.l09.delicious = delicious
+en.beginner.u03.l09.hot = hot
+en.beginner.u03.l09.cold = cold
+en.beginner.u03.l09.sweet = sweet
+en.beginner.u03.l09.but = but
+en.beginner.u03.l10.some = some
+en.beginner.u03.l10.any = any
+en.beginner.u03.l10.plate = plate
+en.beginner.u03.l10.cup = cup
+en.beginner.u03.l10.glass = glass
+en.beginner.u03.l11.fish = fish
+en.beginner.u03.l11.sandwich = sandwich
+en.beginner.u03.l11.full = full
+## Beginner (CEFR A1) · Unit 4: My Day
+en.beginner.u04.l01.what-time-is-it = What time is it?
+en.beginner.u04.l01.oclock = o'clock
+en.beginner.u04.l01.clock = clock
+en.beginner.u04.l01.half-past = half past
+en.beginner.u04.l02.get-up = get up
+en.beginner.u04.l02.brush-my-teeth = brush my teeth
+en.beginner.u04.l02.take-a-shower = take a shower
+en.beginner.u04.l02.towel = towel
+en.beginner.u04.l02.toothbrush = toothbrush
+en.beginner.u04.l03.every-day = every day
+en.beginner.u04.l03.go-to-school = go to school
+en.beginner.u04.l03.work = work
+en.beginner.u04.l03.at = at
+en.beginner.u04.l03.in-the-morning = in the morning
+en.beginner.u04.l05.usually = usually
+en.beginner.u04.l05.always = always
+en.beginner.u04.l05.never = never
+en.beginner.u04.l05.sometimes = sometimes
+en.beginner.u04.l05.early = early
+en.beginner.u04.l06.monday = Monday
+en.beginner.u04.l06.tuesday = Tuesday
+en.beginner.u04.l06.wednesday = Wednesday
+en.beginner.u04.l06.thursday = Thursday
+en.beginner.u04.l06.friday = Friday
+en.beginner.u04.l07.saturday = Saturday
+en.beginner.u04.l07.sunday = Sunday
+en.beginner.u04.l07.weekend = weekend
+en.beginner.u04.l07.sleep = sleep
+en.beginner.u04.l07.late = late
+en.beginner.u04.l09.does = does
+en.beginner.u04.l09.watch-tv = watch TV
+en.beginner.u04.l09.read = read
+en.beginner.u04.l09.book = book
+en.beginner.u04.l10.go-to-bed = go to bed
+en.beginner.u04.l10.homework = homework
+en.beginner.u04.l10.in-the-evening = in the evening
+## Beginner (CEFR A1) · Unit 5: My Home
+en.beginner.u05.l01.room = room
+en.beginner.u05.l01.kitchen = kitchen
+en.beginner.u05.l01.bedroom = bedroom
+en.beginner.u05.l01.bathroom = bathroom
+en.beginner.u05.l01.living-room = living room
+en.beginner.u05.l02.there-is = There is
+en.beginner.u05.l02.there-are = There are
+en.beginner.u05.l02.door = door
+en.beginner.u05.l02.window = window
+en.beginner.u05.l03.table = table
+en.beginner.u05.l03.chair = chair
+en.beginner.u05.l03.bed = bed
+en.beginner.u05.l03.sofa = sofa
+en.beginner.u05.l03.lamp = lamp
+en.beginner.u05.l05.in = in
+en.beginner.u05.l05.on = on
+en.beginner.u05.l05.under = under
+en.beginner.u05.l05.next-to = next to
+en.beginner.u05.l05.box = box
+en.beginner.u05.l06.this = this
+en.beginner.u05.l06.that = that
+en.beginner.u05.l06.these = these
+en.beginner.u05.l06.those = those
+en.beginner.u05.l06.key = key
+en.beginner.u05.l07.phone = phone
+en.beginner.u05.l07.computer = computer
+en.beginner.u05.l07.pen = pen
+en.beginner.u05.l07.notebook = notebook
+en.beginner.u05.l07.pencil = pencil
+en.beginner.u05.l09.new = new
+en.beginner.u05.l09.clean = clean
+en.beginner.u05.l09.dirty = dirty
+en.beginner.u05.l09.beautiful = beautiful
+en.beginner.u05.l10.home = home
+en.beginner.u05.l10.is-there = Is there
+en.beginner.u05.l10.are-there = Are there
+## Beginner (CEFR A1) · Unit 6: Clothes & Colours
+en.beginner.u06.l01.red = red
+en.beginner.u06.l01.blue = blue
+en.beginner.u06.l01.green = green
+en.beginner.u06.l01.yellow = yellow
+en.beginner.u06.l01.black = black
+en.beginner.u06.l02.white = white
+en.beginner.u06.l02.pink = pink
+en.beginner.u06.l02.purple = purple
+en.beginner.u06.l02.brown = brown
+en.beginner.u06.l02.what-colour-is-it = What colour is it?
+en.beginner.u06.l03.shirt = shirt
+en.beginner.u06.l03.t-shirt = T-shirt
+en.beginner.u06.l03.trousers = trousers
+en.beginner.u06.l03.dress = dress
+en.beginner.u06.l03.shoes = shoes
+en.beginner.u06.l05.i-am-wearing = I am wearing
+en.beginner.u06.l05.jacket = jacket
+en.beginner.u06.l05.hat = hat
+en.beginner.u06.l05.socks = socks
+en.beginner.u06.l06.whose-is-this = Whose is this?
+en.beginner.u06.l06.mine = mine
+en.beginner.u06.l06.yours = yours
+en.beginner.u06.l06.scarf = scarf
+en.beginner.u06.l07.me = me
+en.beginner.u06.l07.him = him
+en.beginner.u06.l07.them = them
+en.beginner.u06.l07.us = us
+en.beginner.u06.l07.coat = coat
+en.beginner.u06.l08.i-want = I want
+en.beginner.u06.l08.boots = boots
+en.beginner.u06.l08.favourite = favourite
+## Beginner (CEFR A1) · Unit 7: Shopping & Numbers
+en.beginner.u07.l01.thirteen = thirteen
+en.beginner.u07.l01.fourteen = fourteen
+en.beginner.u07.l01.fifteen = fifteen
+en.beginner.u07.l01.sixteen = sixteen
+en.beginner.u07.l01.seventeen = seventeen
+en.beginner.u07.l02.eighteen = eighteen
+en.beginner.u07.l02.nineteen = nineteen
+en.beginner.u07.l02.thirty = thirty
+en.beginner.u07.l02.forty = forty
+en.beginner.u07.l02.fifty = fifty
+en.beginner.u07.l03.sixty = sixty
+en.beginner.u07.l03.seventy = seventy
+en.beginner.u07.l03.eighty = eighty
+en.beginner.u07.l03.ninety = ninety
+en.beginner.u07.l03.hundred = hundred
+en.beginner.u07.l05.how-much-is-it = How much is it?
+en.beginner.u07.l05.money = money
+en.beginner.u07.l05.dollar = dollar
+en.beginner.u07.l05.cheap = cheap
+en.beginner.u07.l05.expensive = expensive
+en.beginner.u07.l06.market = market
+en.beginner.u07.l06.kilo = kilo
+en.beginner.u07.l06.how-many = How many
+en.beginner.u07.l06.bottle = bottle
+en.beginner.u07.l06.i-would-like = I would like
+en.beginner.u07.l07.card = card
+en.beginner.u07.l07.cash = cash
+en.beginner.u07.l07.shop = shop
+en.beginner.u07.l07.pay = pay
+en.beginner.u07.l07.buy = buy
+en.beginner.u07.l08.can-i-help-you = Can I help you?
+en.beginner.u07.l08.just-looking = Just looking
+en.beginner.u07.l08.that-is-all = That is all
+## Beginner (CEFR A1) · Unit 8: Town & Directions
+en.beginner.u08.l01.park = park
+en.beginner.u08.l01.school = school
+en.beginner.u08.l01.hospital = hospital
+en.beginner.u08.l01.bank = bank
+en.beginner.u08.l01.cafe = café
+en.beginner.u08.l02.supermarket = supermarket
+en.beginner.u08.l02.library = library
+en.beginner.u08.l02.cinema = cinema
+en.beginner.u08.l02.station = station
+en.beginner.u08.l02.museum = museum
+en.beginner.u08.l03.where-is = Where is
+en.beginner.u08.l03.near = near
+en.beginner.u08.l03.far = far
+en.beginner.u08.l03.map = map
+en.beginner.u08.l05.turn-left = turn left
+en.beginner.u08.l05.turn-right = turn right
+en.beginner.u08.l05.go-straight-on = go straight on
+en.beginner.u08.l05.corner = corner
+en.beginner.u08.l05.stop = stop
+en.beginner.u08.l06.i-can = I can
+en.beginner.u08.l06.i-cannot = I cannot
+en.beginner.u08.l06.swim = swim
+en.beginner.u08.l06.ride-a-bike = ride a bike
+en.beginner.u08.l07.opposite = opposite
+en.beginner.u08.l07.between = between
+en.beginner.u08.l07.behind = behind
+en.beginner.u08.l07.in-front-of = in front of
+en.beginner.u08.l09.when = When
+en.beginner.u08.l09.why = Why
+en.beginner.u08.l09.because = because
+en.beginner.u08.l09.by-bus = by bus
+en.beginner.u08.l09.by-car = by car
+en.beginner.u08.l10.excuse-me = Excuse me
+en.beginner.u08.l10.traffic-lights = traffic lights
+en.beginner.u08.l10.is-it-far = Is it far?
+## Beginner (CEFR A1) · Unit 9: Weather & Free Time
+en.beginner.u09.l01.sunny = sunny
+en.beginner.u09.l01.rainy = rainy
+en.beginner.u09.l01.windy = windy
+en.beginner.u09.l01.cloudy = cloudy
+en.beginner.u09.l01.what-is-the-weather-like = What is the weather like?
+en.beginner.u09.l02.snow = snow
+en.beginner.u09.l02.rain = rain
+en.beginner.u09.l02.warm = warm
+en.beginner.u09.l02.umbrella = umbrella
+en.beginner.u09.l03.spring = spring
+en.beginner.u09.l03.summer = summer
+en.beginner.u09.l03.autumn = autumn
+en.beginner.u09.l03.winter = winter
+en.beginner.u09.l03.season = season
+en.beginner.u09.l05.i-love = I love
+en.beginner.u09.l05.play-football = play football
+en.beginner.u09.l05.dance = dance
+en.beginner.u09.l05.sing = sing
+en.beginner.u09.l05.draw = draw
+en.beginner.u09.l06.hobby = hobby
+en.beginner.u09.l06.music = music
+en.beginner.u09.l06.paint = paint
+en.beginner.u09.l06.game = game
+en.beginner.u09.l07.tennis = tennis
+en.beginner.u09.l07.basketball = basketball
+en.beginner.u09.l07.run = run
+en.beginner.u09.l07.jump = jump
+en.beginner.u09.l09.it-is-raining = It is raining
+en.beginner.u09.l09.now = now
+en.beginner.u09.l09.outside = outside
+en.beginner.u09.l09.lets = Let's
+en.beginner.u09.l10.picnic = picnic
+en.beginner.u09.l10.flower = flower
+en.beginner.u09.l10.tree = tree
+## Beginner (CEFR A1) · Unit 10: Yesterday
+en.beginner.u10.l01.where-were-you = Where were you?
+en.beginner.u10.l01.i-was = I was
+en.beginner.u10.l01.you-were = you were
+en.beginner.u10.l01.yesterday = yesterday
+en.beginner.u10.l01.last-night = last night
+en.beginner.u10.l02.was-not = was not
+en.beginner.u10.l02.were-not = were not
+en.beginner.u10.l02.was-it = Was it?
+en.beginner.u10.l02.were-you = Were you?
+en.beginner.u10.l03.i-went = I went
+en.beginner.u10.l03.i-had = I had
+en.beginner.u10.l03.i-saw = I saw
+en.beginner.u10.l03.i-ate = I ate
+en.beginner.u10.l05.i-played = I played
+en.beginner.u10.l05.i-watched = I watched
+en.beginner.u10.l05.i-visited = I visited
+en.beginner.u10.l05.i-cooked = I cooked
+en.beginner.u10.l06.i-bought = I bought
+en.beginner.u10.l06.i-made = I made
+en.beginner.u10.l06.i-came = I came
+en.beginner.u10.l06.i-met = I met
+en.beginner.u10.l07.i-studied = I studied
+en.beginner.u10.l07.i-helped = I helped
+en.beginner.u10.l07.i-walked = I walked
+en.beginner.u10.l07.did-you = Did you
+en.beginner.u10.l08.what-did-you-do = What did you do?
+en.beginner.u10.l08.last-weekend = last weekend
+en.beginner.u10.l08.i-did-not-go = I did not go
+## Beginner (CEFR A1) · Unit 11: Plans & Travel
+en.beginner.u11.l01.train = train
+en.beginner.u11.l01.plane = plane
+en.beginner.u11.l01.boat = boat
+en.beginner.u11.l01.motorbike = motorbike
+en.beginner.u11.l01.suitcase = suitcase
+en.beginner.u11.l02.january = January
+en.beginner.u11.l02.february = February
+en.beginner.u11.l02.march = March
+en.beginner.u11.l02.april = April
+en.beginner.u11.l02.may = May
+en.beginner.u11.l03.june = June
+en.beginner.u11.l03.july = July
+en.beginner.u11.l03.august = August
+en.beginner.u11.l03.september = September
+en.beginner.u11.l03.october = October
+en.beginner.u11.l05.november = November
+en.beginner.u11.l05.december = December
+en.beginner.u11.l05.month = month
+en.beginner.u11.l05.year = year
+en.beginner.u11.l05.birthday = birthday
+en.beginner.u11.l06.i-am-going-to = I am going to
+en.beginner.u11.l06.tomorrow = tomorrow
+en.beginner.u11.l06.next-week = next week
+en.beginner.u11.l06.visit = visit
+en.beginner.u11.l06.where-are-you-going = Where are you going?
+en.beginner.u11.l07.pack = pack
+en.beginner.u11.l07.need = need
+en.beginner.u11.l07.i-want-to = I want to
+en.beginner.u11.l07.passport = passport
+en.beginner.u11.l07.camera = camera
+en.beginner.u11.l08.have-a-good-trip = Have a good trip!
+en.beginner.u11.l08.postcard = postcard
+en.beginner.u11.l08.hotel = hotel
+
+# A complete example lesson in the right format (from an English Beginner course; match its structure and quality, not its content)
+{
+ "id": "example.u00.l02",
+ "section": "beginner",
+ "unit": 2,
+ "lesson": 2,
+ "title": "This is my…",
+ "canDo": "Introduce a family member.",
+ "scenario": "Mia and Sam show Smarty their family, including a baby sister.",
+ "items": [
+  {
+   "id": "example.u00.l02.his",
+   "text": "his",
+   "kind": "word",
+   "example": "This is his mother.",
+   "note": "Use ‘his’ for something that belongs to a boy or man."
+  },
+  {
+   "id": "example.u00.l02.her",
+   "text": "her",
+   "kind": "word",
+   "example": "This is her father.",
+   "note": "Use ‘her’ for something that belongs to a girl or woman."
+  },
+  {
+   "id": "example.u00.l02.our",
+   "text": "our",
+   "kind": "word",
+   "example": "This is our family.",
+   "note": "Use ‘our’ when something belongs to you and another person together."
+  },
+  {
+   "id": "example.u00.l02.baby",
+   "text": "baby",
+   "kind": "word",
+   "forms": [
+    "babies"
+   ],
+   "example": "The baby is happy.",
+   "note": "A baby is a very small child; more than one is ‘babies’.",
+   "image": {
+    "id": "baby",
+    "describe": "a tiny baby kitten sleeping in a basket with a soft blanket"
+   }
+  },
+  {
+   "id": "example.u00.l02.parents",
+   "text": "parents",
+   "kind": "word",
+   "example": "My parents are happy.",
+   "note": "We say ‘parents’ for a mother and a father together.",
+   "image": {
+    "id": "parents",
+    "describe": "a mother cat and a father cat standing close together and smiling"
+   }
+  }
+ ],
+ "grammar": {
+  "title": "my, his, her, our",
+  "explanation": "Choose the word by who owns it: my is for me, his is for a boy or man, her is for a girl or woman, and our is for me and another person.",
+  "examples": [
+   "This is my mother.",
+   "This is her father."
+  ]
+ },
+ "practice": [
+  {
+   "id": "example.u00.l02.task.fill-his",
+   "kind": "fill",
+   "prompt": "Smarty talks about Sam, a boy. You are not his sister. Complete the sentence.",
+   "text": "This is ___ mother.",
+   "answer": "his",
+   "options": [
+    "his",
+    "her",
+    "our"
+   ],
+   "explanation": "Use his for a boy: this is his mother.",
+   "itemIds": [
+    "example.u00.l02.his"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.hear-her",
+   "kind": "listen",
+   "prompt": "Listen, then choose what you heard.",
+   "audio": "This is her father.",
+   "answer": "This is her father.",
+   "options": [
+    "This is her father.",
+    "This is his father.",
+    "This is our father."
+   ],
+   "explanation": "Her is for a girl or woman. Listen to the middle word.",
+   "itemIds": [
+    "example.u00.l02.her"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.fill-her",
+   "kind": "fill",
+   "prompt": "Mia is a girl. Complete the sentence about her.",
+   "text": "This is ___ brother.",
+   "answer": "her",
+   "options": [
+    "her",
+    "his",
+    "our"
+   ],
+   "explanation": "Use her for a girl: this is her brother.",
+   "itemIds": [
+    "example.u00.l02.her"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.build-our",
+   "kind": "build",
+   "prompt": "You and Mia talk about your family together. Build the sentence.",
+   "answer": "This is our family.",
+   "tiles": [
+    "This",
+    "is",
+    "our",
+    "family",
+    "my"
+   ],
+   "explanation": "Our shows that the family belongs to both of you.",
+   "itemIds": [
+    "example.u00.l02.our"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.pick-baby",
+   "kind": "choice",
+   "prompt": "Look at the picture of a very small child. Which word fits?",
+   "answer": "baby",
+   "options": [
+    "baby",
+    "mother",
+    "father"
+   ],
+   "explanation": "A baby is a very small child.",
+   "itemIds": [
+    "example.u00.l02.baby"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.match-same",
+   "kind": "match",
+   "prompt": "Match the phrases with the same meaning.",
+   "pairs": [
+    {
+     "left": "my mother",
+     "right": "my mum"
+    },
+    {
+     "left": "my father",
+     "right": "my dad"
+    },
+    {
+     "left": "my parents",
+     "right": "my mum and dad"
+    }
+   ],
+   "explanation": "Parents means mother and father together.",
+   "itemIds": [
+    "example.u00.l02.parents",
+    "example.u00.l01.mother",
+    "example.u00.l01.father"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.hear-parents",
+   "kind": "listen",
+   "prompt": "Listen, then choose what you heard.",
+   "audio": "My parents are happy.",
+   "answer": "My parents are happy.",
+   "options": [
+    "My parents are happy.",
+    "My parents are tired.",
+    "My brother is happy."
+   ],
+   "explanation": "Parents is for both mother and father.",
+   "itemIds": [
+    "example.u00.l02.parents"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.say-parents",
+   "kind": "speak",
+   "prompt": "Say the sentence aloud. You can try again.",
+   "text": "Mum and dad are our parents.",
+   "answer": "Mum and dad are our parents.",
+   "explanation": "Our parents means the parents of both of us.",
+   "itemIds": [
+    "example.u00.l02.parents",
+    "example.u00.l02.our"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.fill-our",
+   "kind": "fill",
+   "prompt": "You and Mia are sisters. Talk about the mother you share. Complete the sentence.",
+   "text": "This is ___ mother.",
+   "answer": "our",
+   "options": [
+    "our",
+    "his",
+    "her"
+   ],
+   "explanation": "You share the mother, so use our.",
+   "itemIds": [
+    "example.u00.l02.our"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.fill-her-name",
+   "kind": "fill",
+   "prompt": "Lily is a girl. Complete the sentence about her.",
+   "text": "___ name is Lily.",
+   "answer": "Her",
+   "options": [
+    "Her",
+    "His",
+    "Our"
+   ],
+   "explanation": "Use her for a girl: her name.",
+   "itemIds": [
+    "example.u00.l02.her"
+   ]
+  }
+ ],
+ "story": {
+  "hook": "Who is the baby in Mia and Sam’s family?",
+  "image": {
+   "id": "example-scene",
+   "describe": "Mia and Sam’s living room: Smarty the black cat meets Mia, Sam, their parents and a baby sister sleeping in a basket."
+  },
+  "lines": [
+   {
+    "speaker": "Smarty",
+    "text": "Hello, Mia! Hello, Sam!"
+   },
+   {
+    "speaker": "Mia",
+    "text": "This is our family, Smarty."
+   },
+   {
+    "speaker": "Sam",
+    "text": "Mum and dad are our parents."
+   },
+   {
+    "speaker": "Mia",
+    "text": "This is our baby sister."
+   },
+   {
+    "speaker": "Sam",
+    "text": "Her name is Lily."
+   },
+   {
+    "speaker": "Smarty",
+    "text": "Hello, Lily! I am Smarty."
+   },
+   {
+    "speaker": "Mia",
+    "text": "She is happy. She is our baby!"
+   }
+  ],
+  "questions": [
+   {
+    "id": "example.u00.l02.task.story-one",
+    "kind": "choice",
+    "prompt": "What is the baby’s name?",
+    "answer": "Lily",
+    "options": [
+     "Lily",
+     "Mia",
+     "Ana"
+    ],
+    "explanation": "Sam says: Her name is Lily.",
+    "itemIds": [
+     "example.u00.l02.baby"
+    ]
+   },
+   {
+    "id": "example.u00.l02.task.story-two",
+    "kind": "choice",
+    "prompt": "Mia says: This is our baby ___.",
+    "answer": "sister",
+    "options": [
+     "sister",
+     "brother",
+     "mother"
+    ],
+    "explanation": "Mia says: This is our baby sister.",
+    "itemIds": [
+     "example.u00.l02.baby"
+    ]
+   },
+   {
+    "id": "example.u00.l02.task.story-three",
+    "kind": "choice",
+    "prompt": "Mum and dad are Sam and Mia’s ___.",
+    "answer": "parents",
+    "options": [
+     "parents",
+     "babies",
+     "brothers"
+    ],
+    "explanation": "Sam says: Mum and dad are our parents.",
+    "itemIds": [
+     "example.u00.l02.parents"
+    ]
+   }
+  ]
+ },
+ "mission": {
+  "setup": "You show Smarty a picture of your family. Answer in your own words; an imaginary family is fine.",
+  "turns": [
+   {
+    "smarty": "This is my mother. And you?",
+    "accept": [
+     "^this is my (?:mother|mum|father|dad)$",
+     "^my (?:mother|mum|father|dad) is (?:happy|tired|fine)$"
+    ],
+    "example": "This is my mum.",
+    "hint": "Tell Smarty about your mother or your father.",
+    "itemIds": [
+     "example.u00.l01.mother",
+     "example.u00.l01.father",
+     "en.beginner.u01.l02.and-you"
+    ]
+   },
+   {
+    "smarty": "My mother and father are my parents. Are your parents happy?",
+    "accept": [
+     "^(?:yes|no)(?: my parents are (?:happy|tired))?$",
+     "^my parents are (?:happy|tired|fine)$"
+    ],
+    "example": "Yes, my parents are happy.",
+    "hint": "Say Yes or No, or say how your parents are.",
+    "itemIds": [
+     "example.u00.l02.parents"
+    ]
+   },
+   {
+    "smarty": "Say hello to our baby!",
+    "accept": [
+     "^(?:hello|hi)(?: baby| smarty)?$",
+     "^(?:hello|hi) our baby$"
+    ],
+    "example": "Hello, baby!",
+    "hint": "Say hello to the baby.",
+    "itemIds": [
+     "example.u00.l02.baby",
+     "example.u00.l02.our",
+     "en.beginner.u01.l01.hello"
+    ]
+   }
+  ]
+ },
+ "recycle": [
+  "example.u00.l01.mother",
+  "example.u00.l01.father",
+  "en.beginner.u01.l02.and-you",
+  "en.beginner.u01.l01.hello"
+ ]
+}
+
+Now write Unit 1. Output the JSON object only.

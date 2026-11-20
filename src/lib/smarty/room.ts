@@ -9,7 +9,7 @@ import { getStorageUid, scopedKey, writeScopedJSON } from '../userStorage';
 import { registerSyncedStore } from '../syncedStores';
 
 export * from './roomModel';
-import { defaultRoom, normalizeRoom, place, itemById, SLOT_CATEGORY, type RoomState, type Slot } from './roomModel';
+import { defaultRoom, normalizeRoom, place, itemById, ITEMS, SLOT_CATEGORY, type RoomState, type Slot } from './roomModel';
 
 // ── store ───────────────────────────────────────────────────────────────
 
@@ -56,3 +56,12 @@ registerSyncedStore({
   },
   subscribe: subscribeRoom,
 });
+
+/** Unit milestone gift: the cheapest piece not owned yet (null when everything is owned). */
+export function grantGift(): ReturnType<typeof itemById> | null {
+  ensureLoaded();
+  const gift = ITEMS.filter((i) => !current.owned.includes(i.id)).sort((a, b) => a.price - b.price || a.id.localeCompare(b.id))[0];
+  if (!gift) return null;
+  commit({ ...current, owned: [...current.owned, gift.id], updatedAt: Math.max(Date.now(), current.updatedAt + 1) });
+  return gift;
+}

@@ -1,10 +1,9 @@
 import { DialogSurface } from './DialogSurface';
 import React, { useState } from 'react';
-import { BookOpen, Dumbbell, Trophy, User, Users, X, Trello, Shield, Moon, Sun, LogOut, Crown, LayoutGrid, GraduationCap, BookA, Target, Cat, Medal } from 'lucide-react';
+import { BookOpen, Trophy, User, Users, X, Trello, Shield, Moon, Sun, LogOut, Crown, GraduationCap, BookA, Target, Cat, Medal } from 'lucide-react';
 import type { UserRole } from '../firebase';
-import { isBusinessRole } from '../lib/access';
+import { isBusinessRole, isTeacherRole } from '../lib/access';
 import { useUiLang } from '../contexts/UiLangContext';
-import { useContentLang } from '../contexts/ContentLangContext';
 
 interface MobileNavProps {
   activeTab: string;
@@ -16,8 +15,8 @@ interface MobileNavProps {
   onToggleDark: () => void;
   logout: () => void;
   onContentLangChange?: (lang: any) => void;
-  /** Only students an organization has added to a class see "My class". */
-  inClass?: boolean;
+  /** Students can join classes and classroom games from "My Classes". */
+  showClasses?: boolean;
   /** When true, open the extras sheet (driven by top-bar menu). */
   menuOpen?: boolean;
   onMenuOpenChange?: (open: boolean) => void;
@@ -41,7 +40,7 @@ function tabFamily(tab: string): string {
 
 export function MobileNav({
   activeTab, setActiveTab, setReadingView, userRole, user,
-  darkMode, onToggleDark, logout, menuOpen, onMenuOpenChange, inClass = false,
+  darkMode, onToggleDark, logout, menuOpen, onMenuOpenChange, showClasses = false,
 }: MobileNavProps) {
   const [internalOpen, setInternalOpen] = useState(false);
   const open = menuOpen ?? internalOpen;
@@ -51,9 +50,8 @@ export function MobileNav({
   };
   const isAdmin = userRole === 'admin';
   const isBusiness = isBusinessRole(userRole);
-  const isContentManager = userRole === 'content-manager';
+  const isTeacher = isTeacherRole(userRole);
   const { t } = useUiLang();
-  const { isEnglish } = useContentLang();
   const family = tabFamily(activeTab);
 
   const go = (tab: string) => {
@@ -65,56 +63,47 @@ export function MobileNav({
     ? [
         { tab: 'admin', Icon: Shield, label: t('nav.adminShort') },
         { tab: 'business', Icon: Trello, label: t('nav.businessShort') },
-        { tab: 'content', Icon: LayoutGrid, label: t('nav.contentShort') },
-        { tab: 'profile', Icon: User, label: t('nav.profile') },
-      ]
-    : isContentManager
-    ? [
-        { tab: 'content', Icon: LayoutGrid, label: t('nav.contentShort') },
         { tab: 'profile', Icon: User, label: t('nav.profile') },
       ]
     : isBusiness
     ? [
         { tab: 'business', Icon: Trello, label: t('nav.businessShort') },
-        { tab: 'lessons', Icon: BookOpen, label: t('nav.learn') },
-        { tab: 'practice', Icon: Dumbbell, label: t('nav.practice') },
         { tab: 'profile', Icon: User, label: t('nav.profile') },
       ]
     : [
         { tab: 'lessons', Icon: GraduationCap, label: t('nav.learn') },
+        // Teachers learn for free too, and get their classes tab instead of Practice.
+        ...(isTeacher ? [{ tab: 'business', Icon: Trello, label: t('nav.teach') }] : []),
         { tab: 'vocabulary', Icon: BookA, label: t('nav.vocabulary') },
-        { tab: 'practice', Icon: Target, label: t('nav.practice') },
-        ...(inClass ? [{ tab: 'classes', Icon: Users, label: t('nav.myClasses') }] : []),
+        ...(isTeacher ? [] : [{ tab: 'practice', Icon: Target, label: t('nav.practice') }]),
+        ...(showClasses && !isTeacher ? [{ tab: 'classes', Icon: Users, label: t('nav.myClasses') }] : []),
         { tab: 'gamification', Icon: Trophy, label: t('nav.league') },
         { tab: 'quests', Icon: Medal, label: t('nav.quests') },
         { tab: 'profile', Icon: Cat, label: t('nav.profile') },
       ];
 
   const drawerSections: { title: string; items: { tab: string; Icon: React.ElementType; label: string }[] }[] = [
-    ...(!isContentManager ? [{
+    ...([{
       title: t('nav.learn'),
       items: [
         { tab: 'lessons', Icon: BookOpen, label: t('nav.learn') },
-        ...(inClass ? [{ tab: 'classes', Icon: Users, label: t('nav.myClasses') }] : []),
+        ...(isAdmin ? [{ tab: 'practice', Icon: Target, label: t('nav.practice') }] : []),
+        ...(showClasses ? [{ tab: 'classes', Icon: Users, label: t('nav.myClasses') }] : []),
       ],
-    }] : []),
-    ...(!isContentManager ? [{
+    }]),
+    ...([{
       title: t('nav.keepGoing'),
       items: [
         { tab: 'vocabulary', Icon: GraduationCap, label: t('nav.vocabulary') },
         { tab: 'gamification', Icon: Trophy, label: t('nav.league') },
+        ...(isAdmin ? [{ tab: 'quests', Icon: Medal, label: t('nav.quests') }] : []),
       ],
-    }] : []),
-    ...(isContentManager ? [{
-      title: t('nav.content'),
-      items: [{ tab: 'content', Icon: LayoutGrid, label: t('nav.content') }],
-    }] : []),
+    }]),
     ...((isBusiness || isAdmin) ? [{
       title: t('nav.management'),
       items: [
         ...((isBusiness || isAdmin) ? [{ tab: 'business', Icon: Trello, label: t('nav.business') }] : []),
         ...(isAdmin ? [{ tab: 'admin', Icon: Shield, label: t('nav.admin') }] : []),
-        ...(isAdmin ? [{ tab: 'content', Icon: LayoutGrid, label: t('nav.content') }] : []),
       ],
     }] : []),
     {
@@ -206,7 +195,7 @@ export function MobileNav({
                 <User className="w-4 h-4 text-slate-400" />
               </button>
 
-              {drawerSections.map(section =>
+              {!isBusiness && drawerSections.map(section =>
                 section.items.length === 0 ? null : (
                   <div key={section.title || section.items.map(i => i.tab).join('-')}>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-2 px-1">

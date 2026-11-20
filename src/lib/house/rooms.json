@@ -1,0 +1,1927 @@
+{
+  "themes": [
+    "simple",
+    "paw-print",
+    "cloud",
+    "moon-and-stars",
+    "fish-bone",
+    "cat-ears"
+  ],
+  "rooms": [
+    {
+      "id": "doorstep",
+      "section": 0,
+      "unit": 0,
+      "topic": "Sounds & Letters",
+      "describe": "the front doorstep of Smarty's house",
+      "slots": [
+        {
+          "id": "front-door",
+          "describe": "front door"
+        },
+        {
+          "id": "doormat",
+          "describe": "welcome mat (no words)"
+        },
+        {
+          "id": "mailbox",
+          "describe": "mailbox"
+        },
+        {
+          "id": "porch-light",
+          "describe": "porch light"
+        },
+        {
+          "id": "flower-pot",
+          "describe": "big flower pot"
+        },
+        {
+          "id": "house-number",
+          "describe": "house number plate (digits shapes only, no words)"
+        }
+      ]
+    },
+    {
+      "id": "bedroom",
+      "section": 0,
+      "unit": 1,
+      "topic": "Hello & Me",
+      "describe": "Smarty's cosy bedroom",
+      "built": true,
+      "slots": [
+        {
+          "id": "bed",
+          "describe": "single bed"
+        },
+        {
+          "id": "desk",
+          "describe": "small study desk"
+        },
+        {
+          "id": "chair",
+          "describe": "desk chair"
+        },
+        {
+          "id": "shelf",
+          "describe": "wall shelf with books and a small plant"
+        },
+        {
+          "id": "window",
+          "describe": "window with curtains"
+        },
+        {
+          "id": "rug",
+          "describe": "round floor rug"
+        }
+      ]
+    },
+    {
+      "id": "living-room",
+      "section": 0,
+      "unit": 2,
+      "topic": "Family & Friends",
+      "describe": "a family living room with photos on the wall",
+      "slots": [
+        {
+          "id": "sofa",
+          "describe": "three-seat sofa with cushions"
+        },
+        {
+          "id": "tv",
+          "describe": "TV on a low cabinet"
+        },
+        {
+          "id": "coffee-table",
+          "describe": "low coffee table with a teapot"
+        },
+        {
+          "id": "photo-wall",
+          "describe": "group of framed family photos (cats) for the wall"
+        },
+        {
+          "id": "floor-lamp",
+          "describe": "tall floor lamp"
+        },
+        {
+          "id": "armchair",
+          "describe": "soft armchair"
+        }
+      ]
+    },
+    {
+      "id": "kitchen",
+      "section": 0,
+      "unit": 3,
+      "topic": "Food & Drink",
+      "describe": "a bright kitchen where Smarty is fed",
+      "slots": [
+        {
+          "id": "fridge",
+          "describe": "tall fridge with magnets"
+        },
+        {
+          "id": "stove",
+          "describe": "cooker with a pot and a pan"
+        },
+        {
+          "id": "dining-table",
+          "describe": "small round dining table with two chairs"
+        },
+        {
+          "id": "food-bowl",
+          "describe": "cat food bowl on a little mat"
+        },
+        {
+          "id": "pantry-shelf",
+          "describe": "open shelf with jars, bread and fruit"
+        },
+        {
+          "id": "sink",
+          "describe": "kitchen sink with a tap and dishes"
+        }
+      ]
+    },
+    {
+      "id": "bathroom",
+      "section": 0,
+      "unit": 4,
+      "topic": "My Day",
+      "describe": "a tidy bathroom for morning and evening routines",
+      "slots": [
+        {
+          "id": "bathtub",
+          "describe": "bathtub with bubbles"
+        },
+        {
+          "id": "sink",
+          "describe": "bathroom sink with toothbrush cup"
+        },
+        {
+          "id": "mirror",
+          "describe": "wall mirror"
+        },
+        {
+          "id": "towel-rack",
+          "describe": "towel rack with folded towels"
+        },
+        {
+          "id": "wall-clock",
+          "describe": "round wall clock"
+        },
+        {
+          "id": "bath-mat",
+          "describe": "bath mat"
+        }
+      ]
+    },
+    {
+      "id": "hallway",
+      "section": 0,
+      "unit": 5,
+      "topic": "My Home",
+      "describe": "the entrance hallway with the front door",
+      "slots": [
+        {
+          "id": "front-door",
+          "describe": "front door with a little window"
+        },
+        {
+          "id": "coat-rack",
+          "describe": "coat rack with a coat and a bag"
+        },
+        {
+          "id": "shoe-shelf",
+          "describe": "shoe shelf with pairs of shoes"
+        },
+        {
+          "id": "key-hook",
+          "describe": "key holder with keys on the wall"
+        },
+        {
+          "id": "stairs",
+          "describe": "short wooden staircase"
+        },
+        {
+          "id": "runner-rug",
+          "describe": "long hallway rug"
+        }
+      ]
+    },
+    {
+      "id": "wardrobe",
+      "section": 0,
+      "unit": 6,
+      "topic": "Clothes & Colours",
+      "describe": "a dressing room full of clothes",
+      "slots": [
+        {
+          "id": "wardrobe",
+          "describe": "open wardrobe with hanging clothes"
+        },
+        {
+          "id": "dresser",
+          "describe": "chest of drawers"
+        },
+        {
+          "id": "long-mirror",
+          "describe": "full-length standing mirror"
+        },
+        {
+          "id": "hat-stand",
+          "describe": "hat stand with hats and a scarf"
+        },
+        {
+          "id": "shoe-rack",
+          "describe": "rack of boots and shoes"
+        },
+        {
+          "id": "stool",
+          "describe": "small round stool"
+        }
+      ]
+    },
+    {
+      "id": "shop",
+      "section": 0,
+      "unit": 7,
+      "topic": "Shopping & Numbers",
+      "describe": "Smarty's little corner shop inside the house",
+      "slots": [
+        {
+          "id": "counter",
+          "describe": "shop counter"
+        },
+        {
+          "id": "till",
+          "describe": "cash register"
+        },
+        {
+          "id": "fruit-stand",
+          "describe": "wooden fruit and vegetable stand"
+        },
+        {
+          "id": "shelves",
+          "describe": "shop shelves with boxes and bottles"
+        },
+        {
+          "id": "awning",
+          "describe": "striped shop awning"
+        },
+        {
+          "id": "basket",
+          "describe": "shopping basket stack"
+        }
+      ]
+    },
+    {
+      "id": "balcony",
+      "section": 0,
+      "unit": 8,
+      "topic": "Town & Directions",
+      "describe": "a balcony with a view over a small town",
+      "slots": [
+        {
+          "id": "railing",
+          "describe": "balcony railing"
+        },
+        {
+          "id": "telescope",
+          "describe": "small telescope on a stand"
+        },
+        {
+          "id": "bistro-set",
+          "describe": "little table with two chairs"
+        },
+        {
+          "id": "planters",
+          "describe": "row of flower planters"
+        },
+        {
+          "id": "string-lights",
+          "describe": "string of fairy lights"
+        },
+        {
+          "id": "town-map",
+          "describe": "town map pinned to the wall (no words)"
+        }
+      ]
+    },
+    {
+      "id": "garden",
+      "section": 0,
+      "unit": 9,
+      "topic": "Weather & Free Time",
+      "describe": "a garden for sunny days and hobbies",
+      "slots": [
+        {
+          "id": "tree",
+          "describe": "garden tree"
+        },
+        {
+          "id": "flowerbed",
+          "describe": "flowerbed"
+        },
+        {
+          "id": "bench",
+          "describe": "garden bench"
+        },
+        {
+          "id": "swing",
+          "describe": "swing"
+        },
+        {
+          "id": "fountain",
+          "describe": "small fountain or bird bath"
+        },
+        {
+          "id": "fence",
+          "describe": "garden fence section"
+        }
+      ]
+    },
+    {
+      "id": "playroom",
+      "section": 0,
+      "unit": 10,
+      "topic": "Yesterday",
+      "describe": "a playroom full of toys and memories of yesterday",
+      "slots": [
+        {
+          "id": "toy-box",
+          "describe": "toy box"
+        },
+        {
+          "id": "play-tent",
+          "describe": "play tent"
+        },
+        {
+          "id": "blocks",
+          "describe": "tower of building blocks"
+        },
+        {
+          "id": "rocking-horse",
+          "describe": "rocking horse"
+        },
+        {
+          "id": "drawing-wall",
+          "describe": "wall of children's drawings (no words)"
+        },
+        {
+          "id": "bean-bag",
+          "describe": "bean bag"
+        }
+      ]
+    },
+    {
+      "id": "garage",
+      "section": 0,
+      "unit": 11,
+      "topic": "Plans & Travel",
+      "describe": "a garage packed for a big trip",
+      "slots": [
+        {
+          "id": "car",
+          "describe": "small car"
+        },
+        {
+          "id": "bike",
+          "describe": "bicycle"
+        },
+        {
+          "id": "suitcases",
+          "describe": "stack of suitcases"
+        },
+        {
+          "id": "workbench",
+          "describe": "workbench with tools"
+        },
+        {
+          "id": "travel-map",
+          "describe": "world map on the wall with pins (no words)"
+        },
+        {
+          "id": "storage",
+          "describe": "metal storage shelf with boxes"
+        }
+      ]
+    },
+    {
+      "id": "study",
+      "section": 1,
+      "unit": 1,
+      "topic": "School & Work",
+      "describe": "a study room for school and work",
+      "slots": [
+        {
+          "id": "big-desk",
+          "describe": "large desk with a computer"
+        },
+        {
+          "id": "bookcase",
+          "describe": "tall bookcase"
+        },
+        {
+          "id": "office-chair",
+          "describe": "office chair"
+        },
+        {
+          "id": "board",
+          "describe": "chalkboard (no words)"
+        },
+        {
+          "id": "globe",
+          "describe": "globe on a stand"
+        },
+        {
+          "id": "desk-lamp",
+          "describe": "desk lamp"
+        }
+      ]
+    },
+    {
+      "id": "dining-room",
+      "section": 1,
+      "unit": 2,
+      "topic": "Eating Out",
+      "describe": "a dining room set like a little restaurant",
+      "slots": [
+        {
+          "id": "long-table",
+          "describe": "long dining table"
+        },
+        {
+          "id": "chairs",
+          "describe": "set of dining chairs"
+        },
+        {
+          "id": "chandelier",
+          "describe": "ceiling chandelier"
+        },
+        {
+          "id": "sideboard",
+          "describe": "sideboard with plates"
+        },
+        {
+          "id": "menu-board",
+          "describe": "menu board (no words)"
+        },
+        {
+          "id": "cake-stand",
+          "describe": "tiered cake stand"
+        }
+      ]
+    },
+    {
+      "id": "gym",
+      "section": 1,
+      "unit": 3,
+      "topic": "Health & Body",
+      "describe": "a small home gym",
+      "slots": [
+        {
+          "id": "treadmill",
+          "describe": "treadmill"
+        },
+        {
+          "id": "yoga-mat",
+          "describe": "yoga mat"
+        },
+        {
+          "id": "weights",
+          "describe": "rack of small weights"
+        },
+        {
+          "id": "ball",
+          "describe": "exercise ball"
+        },
+        {
+          "id": "water-cooler",
+          "describe": "water cooler"
+        },
+        {
+          "id": "punch-bag",
+          "describe": "hanging punch bag"
+        }
+      ]
+    },
+    {
+      "id": "attic",
+      "section": 1,
+      "unit": 4,
+      "topic": "Memories & the Past",
+      "describe": "an attic full of old memories",
+      "slots": [
+        {
+          "id": "trunk",
+          "describe": "old travel trunk"
+        },
+        {
+          "id": "photo-albums",
+          "describe": "pile of photo albums"
+        },
+        {
+          "id": "rocking-chair",
+          "describe": "rocking chair"
+        },
+        {
+          "id": "old-radio",
+          "describe": "old radio"
+        },
+        {
+          "id": "round-window",
+          "describe": "round attic window"
+        },
+        {
+          "id": "boxes",
+          "describe": "stack of cardboard boxes"
+        }
+      ]
+    },
+    {
+      "id": "music-room",
+      "section": 1,
+      "unit": 5,
+      "topic": "Films & Music",
+      "describe": "a music and film room",
+      "slots": [
+        {
+          "id": "piano",
+          "describe": "upright piano"
+        },
+        {
+          "id": "guitar",
+          "describe": "guitar on a stand"
+        },
+        {
+          "id": "speakers",
+          "describe": "pair of speakers"
+        },
+        {
+          "id": "projector",
+          "describe": "projector and screen"
+        },
+        {
+          "id": "bean-bag",
+          "describe": "bean bag"
+        },
+        {
+          "id": "record-shelf",
+          "describe": "shelf of records"
+        }
+      ]
+    },
+    {
+      "id": "greenhouse",
+      "section": 1,
+      "unit": 6,
+      "topic": "Animals & Nature",
+      "describe": "a glass greenhouse with plants and small animals",
+      "slots": [
+        {
+          "id": "plant-table",
+          "describe": "table of potted plants"
+        },
+        {
+          "id": "fish-tank",
+          "describe": "fish tank"
+        },
+        {
+          "id": "bird-cage",
+          "describe": "open bird cage with a bird"
+        },
+        {
+          "id": "watering-cans",
+          "describe": "watering cans"
+        },
+        {
+          "id": "big-plant",
+          "describe": "big leafy plant"
+        },
+        {
+          "id": "hanging-pots",
+          "describe": "hanging flower pots"
+        }
+      ]
+    },
+    {
+      "id": "workshop",
+      "section": 1,
+      "unit": 7,
+      "topic": "Jobs & Tools",
+      "describe": "a busy workshop",
+      "slots": [
+        {
+          "id": "tool-wall",
+          "describe": "pegboard of tools"
+        },
+        {
+          "id": "sewing-machine",
+          "describe": "sewing machine on a table"
+        },
+        {
+          "id": "easel",
+          "describe": "painting easel"
+        },
+        {
+          "id": "ladder",
+          "describe": "step ladder"
+        },
+        {
+          "id": "toolbox",
+          "describe": "toolbox"
+        },
+        {
+          "id": "work-lamp",
+          "describe": "work lamp"
+        }
+      ]
+    },
+    {
+      "id": "game-room",
+      "section": 1,
+      "unit": 8,
+      "topic": "Technology & Communication",
+      "describe": "a game and computer room",
+      "slots": [
+        {
+          "id": "game-desk",
+          "describe": "gaming desk with screens"
+        },
+        {
+          "id": "arcade",
+          "describe": "arcade machine"
+        },
+        {
+          "id": "phone-stand",
+          "describe": "phone and tablet stand"
+        },
+        {
+          "id": "headphones",
+          "describe": "headphones on a hook"
+        },
+        {
+          "id": "neon-sign",
+          "describe": "neon cat-shape sign (no words)"
+        },
+        {
+          "id": "beanbag-chair",
+          "describe": "gaming bean bag chair"
+        }
+      ]
+    },
+    {
+      "id": "rooftop",
+      "section": 1,
+      "unit": 9,
+      "topic": "Celebrations",
+      "describe": "a rooftop terrace ready for a party",
+      "slots": [
+        {
+          "id": "party-table",
+          "describe": "party table with a cake"
+        },
+        {
+          "id": "bunting",
+          "describe": "bunting flags (no words)"
+        },
+        {
+          "id": "lanterns",
+          "describe": "paper lanterns"
+        },
+        {
+          "id": "grill",
+          "describe": "barbecue grill"
+        },
+        {
+          "id": "deck-chairs",
+          "describe": "deck chairs"
+        },
+        {
+          "id": "gift-pile",
+          "describe": "pile of wrapped gifts"
+        }
+      ]
+    },
+    {
+      "id": "library",
+      "section": 1,
+      "unit": 10,
+      "topic": "Stories & the World",
+      "describe": "a two-level home library",
+      "slots": [
+        {
+          "id": "tall-shelves",
+          "describe": "tall bookshelves with a rolling ladder"
+        },
+        {
+          "id": "reading-chair",
+          "describe": "big reading armchair"
+        },
+        {
+          "id": "fireplace",
+          "describe": "fireplace"
+        },
+        {
+          "id": "map-table",
+          "describe": "table with an open atlas"
+        },
+        {
+          "id": "telescope",
+          "describe": "brass telescope"
+        },
+        {
+          "id": "book-nook",
+          "describe": "window book nook with cushions"
+        }
+      ]
+    },
+    {
+      "id": "laundry-room",
+      "section": 1,
+      "unit": 11,
+      "topic": "Problems & Help",
+      "describe": "a laundry room where things get fixed",
+      "slots": [
+        {
+          "id": "washing-machine",
+          "describe": "washing machine"
+        },
+        {
+          "id": "ironing-board",
+          "describe": "ironing board"
+        },
+        {
+          "id": "laundry-basket",
+          "describe": "laundry basket"
+        },
+        {
+          "id": "drying-rack",
+          "describe": "drying rack"
+        },
+        {
+          "id": "tool-shelf",
+          "describe": "shelf with a toolbox and light bulbs"
+        },
+        {
+          "id": "mop-bucket",
+          "describe": "mop and bucket"
+        }
+      ]
+    },
+    {
+      "id": "guest-room",
+      "section": 1,
+      "unit": 12,
+      "topic": "At the Hotel",
+      "describe": "a guest room set up like a little hotel room",
+      "slots": [
+        {
+          "id": "double-bed",
+          "describe": "neat double bed"
+        },
+        {
+          "id": "luggage-rack",
+          "describe": "luggage rack with a suitcase"
+        },
+        {
+          "id": "room-key",
+          "describe": "key card holder"
+        },
+        {
+          "id": "minibar",
+          "describe": "small fridge"
+        },
+        {
+          "id": "reception-bell",
+          "describe": "reception bell on a table"
+        },
+        {
+          "id": "wardrobe",
+          "describe": "small wardrobe"
+        }
+      ]
+    },
+    {
+      "id": "cafe",
+      "section": 2,
+      "unit": 1,
+      "topic": "Experiences",
+      "describe": "a cosy café corner in Smarty's house",
+      "slots": [
+        {
+          "id": "counter",
+          "describe": "coffee counter with espresso machine"
+        },
+        {
+          "id": "menu-board",
+          "describe": "chalkboard menu board (no words)"
+        },
+        {
+          "id": "round-table",
+          "describe": "small round café table with two chairs"
+        },
+        {
+          "id": "cake-display",
+          "describe": "glass cake display case"
+        },
+        {
+          "id": "coffee-cups",
+          "describe": "stack of coffee cups"
+        },
+        {
+          "id": "pendant-lamp",
+          "describe": "pendant lamp over the table"
+        }
+      ]
+    },
+    {
+      "id": "train-carriage",
+      "section": 2,
+      "unit": 2,
+      "topic": "Journeys",
+      "describe": "a train carriage in Smarty's house",
+      "slots": [
+        {
+          "id": "seats",
+          "describe": "pair of cushioned train seats"
+        },
+        {
+          "id": "luggage-rack",
+          "describe": "overhead luggage rack"
+        },
+        {
+          "id": "window",
+          "describe": "large carriage window"
+        },
+        {
+          "id": "folding-table",
+          "describe": "small folding table"
+        },
+        {
+          "id": "route-map",
+          "describe": "route map on the wall (no words)"
+        },
+        {
+          "id": "hand-rail",
+          "describe": "metal hand rail"
+        }
+      ]
+    },
+    {
+      "id": "market-square",
+      "section": 2,
+      "unit": 3,
+      "topic": "Money",
+      "describe": "a little market square in Smarty's house",
+      "slots": [
+        {
+          "id": "striped-awning",
+          "describe": "striped market awning"
+        },
+        {
+          "id": "fruit-stall",
+          "describe": "wooden fruit stall with crates"
+        },
+        {
+          "id": "weighing-scale",
+          "describe": "old weighing scale"
+        },
+        {
+          "id": "cash-box",
+          "describe": "metal cash box"
+        },
+        {
+          "id": "wicker-basket",
+          "describe": "wicker shopping basket"
+        },
+        {
+          "id": "price-tags",
+          "describe": "price tags on the stall (no words)"
+        }
+      ]
+    },
+    {
+      "id": "museum",
+      "section": 2,
+      "unit": 4,
+      "topic": "Then & Now",
+      "describe": "a quiet museum hall in Smarty's house",
+      "slots": [
+        {
+          "id": "display-case",
+          "describe": "glass display case"
+        },
+        {
+          "id": "old-clock",
+          "describe": "tall antique clock"
+        },
+        {
+          "id": "pottery-vase",
+          "describe": "old pottery vase"
+        },
+        {
+          "id": "wall-painting",
+          "describe": "framed oil painting"
+        },
+        {
+          "id": "velvet-bench",
+          "describe": "velvet bench"
+        },
+        {
+          "id": "info-plaque",
+          "describe": "brass info plaque (no words)"
+        }
+      ]
+    },
+    {
+      "id": "studio",
+      "section": 2,
+      "unit": 5,
+      "topic": "Hobbies & Skills",
+      "describe": "a bright art and music studio in Smarty's house",
+      "slots": [
+        {
+          "id": "easel",
+          "describe": "wooden painting easel"
+        },
+        {
+          "id": "paint-shelf",
+          "describe": "shelf of paint tubes and brushes"
+        },
+        {
+          "id": "guitar",
+          "describe": "acoustic guitar on a stand"
+        },
+        {
+          "id": "upright-piano",
+          "describe": "upright piano"
+        },
+        {
+          "id": "art-table",
+          "describe": "table with sketchbooks"
+        },
+        {
+          "id": "ceiling-spotlight",
+          "describe": "ceiling spotlight"
+        }
+      ]
+    },
+    {
+      "id": "observatory",
+      "section": 2,
+      "unit": 6,
+      "topic": "Science & Discoveries",
+      "describe": "a small observatory on the roof of Smarty's house",
+      "slots": [
+        {
+          "id": "telescope",
+          "describe": "large telescope on a tripod"
+        },
+        {
+          "id": "star-chart",
+          "describe": "star chart poster (no words)"
+        },
+        {
+          "id": "dome-window",
+          "describe": "domed window in the ceiling"
+        },
+        {
+          "id": "globe",
+          "describe": "desk globe"
+        },
+        {
+          "id": "planet-model",
+          "describe": "model of the solar system"
+        },
+        {
+          "id": "control-panel",
+          "describe": "panel with dials and switches"
+        }
+      ]
+    },
+    {
+      "id": "office",
+      "section": 2,
+      "unit": 7,
+      "topic": "Work & Careers",
+      "describe": "Smarty's tidy home office",
+      "slots": [
+        {
+          "id": "desk",
+          "describe": "large wooden desk"
+        },
+        {
+          "id": "office-chair",
+          "describe": "swivel office chair"
+        },
+        {
+          "id": "monitor",
+          "describe": "computer monitor (no words)"
+        },
+        {
+          "id": "filing-cabinet",
+          "describe": "grey filing cabinet"
+        },
+        {
+          "id": "desk-plant",
+          "describe": "small desk plant"
+        },
+        {
+          "id": "wall-calendar",
+          "describe": "wall calendar (no words)"
+        }
+      ]
+    },
+    {
+      "id": "newsroom",
+      "section": 2,
+      "unit": 8,
+      "topic": "News & Stories",
+      "describe": "a busy newsroom corner in Smarty's house",
+      "slots": [
+        {
+          "id": "news-desk",
+          "describe": "long news desk"
+        },
+        {
+          "id": "printer",
+          "describe": "old office printer"
+        },
+        {
+          "id": "newspaper-stack",
+          "describe": "stack of newspapers"
+        },
+        {
+          "id": "typewriter",
+          "describe": "vintage typewriter"
+        },
+        {
+          "id": "pin-board",
+          "describe": "pin board with notes (no words)"
+        },
+        {
+          "id": "tv-screen",
+          "describe": "wall TV screen (no words)"
+        }
+      ]
+    },
+    {
+      "id": "campsite",
+      "section": 2,
+      "unit": 9,
+      "topic": "Outdoors",
+      "describe": "a campsite under the trees beside Smarty's house",
+      "slots": [
+        {
+          "id": "tent",
+          "describe": "green camping tent"
+        },
+        {
+          "id": "campfire",
+          "describe": "small campfire with stones"
+        },
+        {
+          "id": "camping-chair",
+          "describe": "folding camping chair"
+        },
+        {
+          "id": "backpack",
+          "describe": "hiking backpack"
+        },
+        {
+          "id": "lantern",
+          "describe": "hanging camping lantern"
+        },
+        {
+          "id": "log-bench",
+          "describe": "wooden log bench"
+        }
+      ]
+    },
+    {
+      "id": "town-hall",
+      "section": 2,
+      "unit": 10,
+      "topic": "Community",
+      "describe": "a town hall meeting room in Smarty's house",
+      "slots": [
+        {
+          "id": "podium",
+          "describe": "wooden podium"
+        },
+        {
+          "id": "long-table",
+          "describe": "long meeting table"
+        },
+        {
+          "id": "chair-row",
+          "describe": "row of folding chairs"
+        },
+        {
+          "id": "flag",
+          "describe": "flag on a pole"
+        },
+        {
+          "id": "notice-board",
+          "describe": "notice board (no words)"
+        },
+        {
+          "id": "ceiling-light",
+          "describe": "large ceiling light"
+        }
+      ]
+    },
+    {
+      "id": "theatre",
+      "section": 2,
+      "unit": 11,
+      "topic": "Feelings & Relationships",
+      "describe": "a little theatre in Smarty's house",
+      "slots": [
+        {
+          "id": "stage",
+          "describe": "wooden theatre stage"
+        },
+        {
+          "id": "velvet-curtain",
+          "describe": "red velvet curtain"
+        },
+        {
+          "id": "spotlight",
+          "describe": "stage spotlight"
+        },
+        {
+          "id": "theatre-seats",
+          "describe": "rows of red theatre seats"
+        },
+        {
+          "id": "poster-frame",
+          "describe": "framed show poster (no words)"
+        },
+        {
+          "id": "prop-chest",
+          "describe": "chest of stage props"
+        }
+      ]
+    },
+    {
+      "id": "club-room",
+      "section": 2,
+      "unit": 12,
+      "topic": "Opinions",
+      "describe": "a club room with a debate corner in Smarty's house",
+      "slots": [
+        {
+          "id": "round-table",
+          "describe": "round discussion table"
+        },
+        {
+          "id": "sofa",
+          "describe": "comfy sofa"
+        },
+        {
+          "id": "microphone-stand",
+          "describe": "microphone stand"
+        },
+        {
+          "id": "bookshelf",
+          "describe": "bookshelf"
+        },
+        {
+          "id": "poster-board",
+          "describe": "poster board (no words)"
+        },
+        {
+          "id": "snack-bowl",
+          "describe": "bowl of snacks"
+        }
+      ]
+    },
+    {
+      "id": "harbour",
+      "section": 3,
+      "unit": 1,
+      "topic": "Telling Stories",
+      "describe": "a harbour dock beside Smarty's house",
+      "slots": [
+        {
+          "id": "fishing-boat",
+          "describe": "small wooden fishing boat"
+        },
+        {
+          "id": "anchor",
+          "describe": "heavy iron anchor"
+        },
+        {
+          "id": "coiled-rope",
+          "describe": "coil of thick rope"
+        },
+        {
+          "id": "wooden-crates",
+          "describe": "stacked wooden crates"
+        },
+        {
+          "id": "fishing-nets",
+          "describe": "hanging fishing nets"
+        },
+        {
+          "id": "lantern-post",
+          "describe": "lantern on a post"
+        }
+      ]
+    },
+    {
+      "id": "laboratory",
+      "section": 3,
+      "unit": 2,
+      "topic": "Science & Technology",
+      "describe": "a tidy laboratory in Smarty's house",
+      "slots": [
+        {
+          "id": "lab-bench",
+          "describe": "steel lab bench"
+        },
+        {
+          "id": "microscope",
+          "describe": "brass microscope"
+        },
+        {
+          "id": "test-tube-rack",
+          "describe": "rack of test tubes"
+        },
+        {
+          "id": "glass-flasks",
+          "describe": "glass flasks"
+        },
+        {
+          "id": "centrifuge",
+          "describe": "laboratory centrifuge"
+        },
+        {
+          "id": "computer-screen",
+          "describe": "lab computer screen (no words)"
+        }
+      ]
+    },
+    {
+      "id": "detectives-office",
+      "section": 3,
+      "unit": 3,
+      "topic": "Mysteries",
+      "describe": "a detective's office in Smarty's house",
+      "slots": [
+        {
+          "id": "wooden-desk",
+          "describe": "old wooden desk"
+        },
+        {
+          "id": "magnifying-glass",
+          "describe": "large magnifying glass"
+        },
+        {
+          "id": "desk-lamp",
+          "describe": "green desk lamp"
+        },
+        {
+          "id": "filing-cabinet",
+          "describe": "tall filing cabinet"
+        },
+        {
+          "id": "corkboard",
+          "describe": "corkboard with photos (no words)"
+        },
+        {
+          "id": "coat-stand",
+          "describe": "coat stand with a hat"
+        }
+      ]
+    },
+    {
+      "id": "boardroom",
+      "section": 3,
+      "unit": 4,
+      "topic": "Work & the Future",
+      "describe": "a sleek boardroom in Smarty's house",
+      "slots": [
+        {
+          "id": "long-table",
+          "describe": "long polished table"
+        },
+        {
+          "id": "leather-chairs",
+          "describe": "leather chairs"
+        },
+        {
+          "id": "projector-screen",
+          "describe": "projector screen (no words)"
+        },
+        {
+          "id": "water-jug",
+          "describe": "jug of water and glasses"
+        },
+        {
+          "id": "wall-clock",
+          "describe": "wall clock"
+        },
+        {
+          "id": "coffee-tray",
+          "describe": "tray of coffee cups"
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "section": 3,
+      "unit": 5,
+      "topic": "Art & Regrets",
+      "describe": "a quiet art gallery wing in Smarty's house",
+      "slots": [
+        {
+          "id": "framed-painting",
+          "describe": "large framed painting"
+        },
+        {
+          "id": "sculpture-pedestal",
+          "describe": "white sculpture pedestal"
+        },
+        {
+          "id": "spotlight-rail",
+          "describe": "track of gallery spotlights"
+        },
+        {
+          "id": "velvet-rope",
+          "describe": "velvet rope on brass posts"
+        },
+        {
+          "id": "bench",
+          "describe": "grey gallery bench"
+        },
+        {
+          "id": "info-label",
+          "describe": "wall label (no words)"
+        }
+      ]
+    },
+    {
+      "id": "stadium",
+      "section": 3,
+      "unit": 6,
+      "topic": "Sport & Competition",
+      "describe": "a small stadium stand in Smarty's house",
+      "slots": [
+        {
+          "id": "bleachers",
+          "describe": "rows of stadium bleachers"
+        },
+        {
+          "id": "scoreboard",
+          "describe": "scoreboard with lights (no words)"
+        },
+        {
+          "id": "trophy-cabinet",
+          "describe": "glass trophy cabinet"
+        },
+        {
+          "id": "football",
+          "describe": "football on the grass"
+        },
+        {
+          "id": "hurdles",
+          "describe": "row of hurdles"
+        },
+        {
+          "id": "stopwatch",
+          "describe": "stopwatch on a hook"
+        }
+      ]
+    },
+    {
+      "id": "clinic",
+      "section": 3,
+      "unit": 7,
+      "topic": "Body & Mind",
+      "describe": "a calm clinic room in Smarty's house",
+      "slots": [
+        {
+          "id": "exam-bed",
+          "describe": "padded examination bed"
+        },
+        {
+          "id": "medicine-cabinet",
+          "describe": "white medicine cabinet"
+        },
+        {
+          "id": "wall-chart",
+          "describe": "wall chart of the body (no words)"
+        },
+        {
+          "id": "reception-desk",
+          "describe": "reception desk"
+        },
+        {
+          "id": "weighing-scale",
+          "describe": "bathroom-style weighing scale"
+        },
+        {
+          "id": "waiting-chairs",
+          "describe": "pair of waiting chairs"
+        }
+      ]
+    },
+    {
+      "id": "radio-station",
+      "section": 3,
+      "unit": 8,
+      "topic": "Media & Opinion",
+      "describe": "a radio studio in Smarty's house",
+      "slots": [
+        {
+          "id": "microphone",
+          "describe": "studio microphone"
+        },
+        {
+          "id": "mixing-desk",
+          "describe": "sound mixing desk"
+        },
+        {
+          "id": "headphones",
+          "describe": "pair of headphones"
+        },
+        {
+          "id": "on-air-light",
+          "describe": "red on-air light (no words)"
+        },
+        {
+          "id": "vinyl-records",
+          "describe": "shelf of vinyl records"
+        },
+        {
+          "id": "armchair",
+          "describe": "studio armchair"
+        }
+      ]
+    },
+    {
+      "id": "forest-lodge",
+      "section": 3,
+      "unit": 9,
+      "topic": "Our Planet",
+      "describe": "a wooden forest lodge in the woods behind Smarty's house",
+      "slots": [
+        {
+          "id": "wood-stove",
+          "describe": "iron wood stove"
+        },
+        {
+          "id": "log-armchair",
+          "describe": "armchair made of logs"
+        },
+        {
+          "id": "bird-feeder",
+          "describe": "hanging bird feeder"
+        },
+        {
+          "id": "pine-table",
+          "describe": "pine dining table"
+        },
+        {
+          "id": "recycling-bins",
+          "describe": "recycling bins (no words)"
+        },
+        {
+          "id": "solar-panel",
+          "describe": "small solar panel on the roof"
+        }
+      ]
+    },
+    {
+      "id": "embassy",
+      "section": 3,
+      "unit": 10,
+      "topic": "Cultures & Customs",
+      "describe": "an embassy reception hall in Smarty's house",
+      "slots": [
+        {
+          "id": "flag-stand",
+          "describe": "flag stand with a flag"
+        },
+        {
+          "id": "carved-screen",
+          "describe": "carved wooden screen"
+        },
+        {
+          "id": "tea-set",
+          "describe": "ceremonial tea set"
+        },
+        {
+          "id": "ceremonial-vase",
+          "describe": "tall ceremonial vase"
+        },
+        {
+          "id": "patterned-rug",
+          "describe": "patterned rug"
+        },
+        {
+          "id": "guest-sofa",
+          "describe": "guest sofa"
+        }
+      ]
+    },
+    {
+      "id": "stage",
+      "section": 3,
+      "unit": 11,
+      "topic": "Presenting",
+      "describe": "a small stage with a podium in Smarty's house",
+      "slots": [
+        {
+          "id": "podium",
+          "describe": "presentation podium"
+        },
+        {
+          "id": "spotlight",
+          "describe": "bright stage spotlight"
+        },
+        {
+          "id": "backdrop-curtain",
+          "describe": "dark backdrop curtain"
+        },
+        {
+          "id": "projector-screen",
+          "describe": "projector screen (no words)"
+        },
+        {
+          "id": "microphone-stand",
+          "describe": "microphone stand"
+        },
+        {
+          "id": "stage-steps",
+          "describe": "wooden stage steps"
+        }
+      ]
+    },
+    {
+      "id": "project-room",
+      "section": 3,
+      "unit": 12,
+      "topic": "Solving Problems",
+      "describe": "a project room with a whiteboard in Smarty's house",
+      "slots": [
+        {
+          "id": "whiteboard",
+          "describe": "whiteboard (no words)"
+        },
+        {
+          "id": "team-table",
+          "describe": "team table"
+        },
+        {
+          "id": "sticky-note-wall",
+          "describe": "wall covered in sticky notes (no words)"
+        },
+        {
+          "id": "laptop",
+          "describe": "open laptop"
+        },
+        {
+          "id": "toolbox",
+          "describe": "red toolbox"
+        },
+        {
+          "id": "puzzle-box",
+          "describe": "box of puzzle pieces"
+        }
+      ]
+    },
+    {
+      "id": "conference-room",
+      "section": 4,
+      "unit": 1,
+      "topic": "Register & Tone",
+      "describe": "a formal conference room in Smarty's house",
+      "slots": [
+        {
+          "id": "long-table",
+          "describe": "long conference table"
+        },
+        {
+          "id": "executive-chairs",
+          "describe": "executive chairs"
+        },
+        {
+          "id": "presentation-screen",
+          "describe": "presentation screen (no words)"
+        },
+        {
+          "id": "water-carafe",
+          "describe": "glass water carafe"
+        },
+        {
+          "id": "name-placards",
+          "describe": "name placards (no words)"
+        },
+        {
+          "id": "notepad-stack",
+          "describe": "stack of notepads"
+        }
+      ]
+    },
+    {
+      "id": "debating-chamber",
+      "section": 4,
+      "unit": 2,
+      "topic": "Argument",
+      "describe": "a debating chamber in Smarty's house",
+      "slots": [
+        {
+          "id": "speaker-podium",
+          "describe": "tall speaker podium"
+        },
+        {
+          "id": "curved-benches",
+          "describe": "curved wooden benches"
+        },
+        {
+          "id": "wooden-gavel",
+          "describe": "wooden gavel"
+        },
+        {
+          "id": "timer-clock",
+          "describe": "timer clock"
+        },
+        {
+          "id": "voting-panel",
+          "describe": "voting panel (no words)"
+        },
+        {
+          "id": "banner",
+          "describe": "hanging banner (no words)"
+        }
+      ]
+    },
+    {
+      "id": "archive",
+      "section": 4,
+      "unit": 3,
+      "topic": "History & Interpretation",
+      "describe": "a quiet archive room in Smarty's house",
+      "slots": [
+        {
+          "id": "tall-shelves",
+          "describe": "tall archive shelves"
+        },
+        {
+          "id": "archive-boxes",
+          "describe": "archive boxes (no words)"
+        },
+        {
+          "id": "reading-table",
+          "describe": "reading table"
+        },
+        {
+          "id": "magnifying-lamp",
+          "describe": "magnifying desk lamp"
+        },
+        {
+          "id": "old-map",
+          "describe": "old map on the wall (no words)"
+        },
+        {
+          "id": "scroll-case",
+          "describe": "case of rolled scrolls"
+        }
+      ]
+    },
+    {
+      "id": "concert-hall",
+      "section": 4,
+      "unit": 4,
+      "topic": "Arts & Criticism",
+      "describe": "a concert hall in Smarty's house",
+      "slots": [
+        {
+          "id": "grand-piano",
+          "describe": "grand piano"
+        },
+        {
+          "id": "stage-curtain",
+          "describe": "heavy stage curtain"
+        },
+        {
+          "id": "music-stand",
+          "describe": "music stand"
+        },
+        {
+          "id": "chandelier",
+          "describe": "crystal chandelier"
+        },
+        {
+          "id": "balcony-rail",
+          "describe": "gold balcony rail"
+        },
+        {
+          "id": "orchestra-chairs",
+          "describe": "rows of orchestra chairs"
+        }
+      ]
+    },
+    {
+      "id": "think-tank",
+      "section": 4,
+      "unit": 5,
+      "topic": "Ideas & Ethics",
+      "describe": "a think tank lounge in Smarty's house",
+      "slots": [
+        {
+          "id": "round-table",
+          "describe": "round discussion table"
+        },
+        {
+          "id": "whiteboard",
+          "describe": "whiteboard (no words)"
+        },
+        {
+          "id": "bookshelf",
+          "describe": "tall bookshelf"
+        },
+        {
+          "id": "reading-armchair",
+          "describe": "reading armchair"
+        },
+        {
+          "id": "desk-globe",
+          "describe": "desk globe"
+        },
+        {
+          "id": "pendant-lamp",
+          "describe": "pendant lamp"
+        }
+      ]
+    },
+    {
+      "id": "press-room",
+      "section": 4,
+      "unit": 6,
+      "topic": "Media & Influence",
+      "describe": "a press room in Smarty's house",
+      "slots": [
+        {
+          "id": "printing-press",
+          "describe": "old printing press"
+        },
+        {
+          "id": "press-desk",
+          "describe": "press desk"
+        },
+        {
+          "id": "camera-tripod",
+          "describe": "camera on a tripod"
+        },
+        {
+          "id": "paper-rolls",
+          "describe": "rolls of paper"
+        },
+        {
+          "id": "photo-wall",
+          "describe": "wall of photographs (no words)"
+        },
+        {
+          "id": "tv-monitor",
+          "describe": "tv monitor (no words)"
+        }
+      ]
+    },
+    {
+      "id": "bazaar",
+      "section": 4,
+      "unit": 7,
+      "topic": "Identity & Belonging",
+      "describe": "a colourful bazaar in Smarty's house",
+      "slots": [
+        {
+          "id": "striped-awning",
+          "describe": "striped bazaar awning"
+        },
+        {
+          "id": "rug-stall",
+          "describe": "stall of woven rugs"
+        },
+        {
+          "id": "lantern-rack",
+          "describe": "rack of hanging lanterns"
+        },
+        {
+          "id": "spice-jars",
+          "describe": "jars of spices"
+        },
+        {
+          "id": "brass-teapot",
+          "describe": "brass teapot"
+        },
+        {
+          "id": "woven-basket",
+          "describe": "woven basket"
+        }
+      ]
+    },
+    {
+      "id": "summit",
+      "section": 4,
+      "unit": 8,
+      "topic": "Innovation",
+      "describe": "a mountain summit lookout beside Smarty's house",
+      "slots": [
+        {
+          "id": "flagpole",
+          "describe": "tall flagpole"
+        },
+        {
+          "id": "stone-cairn",
+          "describe": "stone cairn"
+        },
+        {
+          "id": "lookout-telescope",
+          "describe": "lookout telescope"
+        },
+        {
+          "id": "hiking-backpack",
+          "describe": "hiking backpack"
+        },
+        {
+          "id": "wooden-signpost",
+          "describe": "wooden signpost (no words)"
+        },
+        {
+          "id": "thermos-flask",
+          "describe": "thermos flask"
+        }
+      ]
+    },
+    {
+      "id": "salon",
+      "section": 4,
+      "unit": 9,
+      "topic": "Idiom & Subtext",
+      "describe": "an elegant salon in Smarty's house",
+      "slots": [
+        {
+          "id": "chaise-longue",
+          "describe": "velvet chaise longue"
+        },
+        {
+          "id": "chandelier",
+          "describe": "small crystal chandelier"
+        },
+        {
+          "id": "gilded-mirror",
+          "describe": "gilded wall mirror"
+        },
+        {
+          "id": "tea-trolley",
+          "describe": "silver tea trolley"
+        },
+        {
+          "id": "portrait-painting",
+          "describe": "portrait painting"
+        },
+        {
+          "id": "fireplace",
+          "describe": "marble fireplace"
+        }
+      ]
+    },
+    {
+      "id": "lighthouse",
+      "section": 4,
+      "unit": 10,
+      "topic": "Capstone Projects",
+      "describe": "a lighthouse room at the top of Smarty's tower",
+      "slots": [
+        {
+          "id": "lamp-light",
+          "describe": "big rotating lamp"
+        },
+        {
+          "id": "spiral-staircase",
+          "describe": "spiral staircase"
+        },
+        {
+          "id": "brass-telescope",
+          "describe": "brass telescope"
+        },
+        {
+          "id": "lens-mirror",
+          "describe": "large glass lens"
+        },
+        {
+          "id": "chart-table",
+          "describe": "chart table"
+        },
+        {
+          "id": "round-window",
+          "describe": "round window"
+        }
+      ]
+    }
+  ]
+}

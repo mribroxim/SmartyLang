@@ -103,6 +103,7 @@ export function LanguagePicker({
   }, [open]);
 
   const Icon = isInterface ? Languages : Globe;
+  const phone = typeof window !== 'undefined' && window.innerWidth < 640;
   const title = isInterface ? t('lang.interface') : t('lang.learning');
 
   return (
@@ -156,7 +157,8 @@ export function LanguagePicker({
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: menuPos.openUp ? 6 : -6, scale: 0.98 }}
                   transition={{ duration: 0.16, ease: [0.22, 1, 0.36, 1] }}
-                  style={{
+                  // Phones: a bottom sheet with a tall scrollable list. Larger screens: a menu under the button.
+                  style={phone ? { position: 'fixed', left: 0, right: 0, bottom: 0, zIndex: 91 } : {
                     position: 'fixed',
                     top: menuPos.openUp ? undefined : menuPos.top,
                     bottom: menuPos.openUp ? window.innerHeight - menuPos.top : undefined,
@@ -178,7 +180,7 @@ export function LanguagePicker({
                     />
                     </div>
                   </div>
-                  <div className="max-h-72 overflow-y-auto p-1.5">
+                  <div className={`${phone ? 'max-h-[62dvh] pb-[max(env(safe-area-inset-bottom),8px)]' : 'max-h-72'} touch-pan-y overflow-y-auto overscroll-contain p-1.5`}>
                     {filtered.length === 0 ? (
                       <p className="px-3 py-6 text-center text-sm text-slate-400">{t('lang.search')}</p>
                     ) : (
@@ -190,8 +192,8 @@ export function LanguagePicker({
                             type="button"
                             role="option"
                             aria-selected={active}
-                            onPointerDown={(e) => {
-                              e.preventDefault();
+                            // A tap (not pointer-down) so a finger can scroll the list without picking a language.
+                            onClick={(e) => {
                               e.stopPropagation();
                               apply(code);
                             }}

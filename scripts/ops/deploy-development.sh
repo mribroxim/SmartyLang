@@ -20,13 +20,20 @@ cd "$release"
 npm ci --omit=dev --no-audit --no-fund
 
 python3 - <<'PY'
-import json, os, secrets, subprocess
+import json, os, re, secrets, subprocess
 from pathlib import Path
 from urllib.parse import urlparse
 import ipaddress
 dev_host=str(ipaddress.ip_address(os.environ['DEVELOPMENT_HOST']))
 dev_port=int(os.environ.get('DEVELOPMENT_PORT','3100'))
 if not 1024 <= dev_port <= 65535: raise ValueError('Invalid development port')
+https_origin=os.environ.get('DEVELOPMENT_HTTPS_ORIGIN','').rstrip('/')
+if https_origin:
+    origin=urlparse(https_origin)
+    if (not re.fullmatch(r'https://[a-zA-Z0-9.\-]+(?::[0-9]+)?', https_origin)
+        or not origin.hostname or origin.username or origin.password
+        or origin.path or origin.query or origin.fragment or not ipaddress.ip_address(dev_host).is_loopback):
+        raise ValueError('Private HTTPS staging needs an HTTPS origin and a loopback app bind address')
 env_path=Path('/etc/smartylang/development.env')
 def read_env(path):
     result={}
@@ -46,7 +53,17 @@ if sql("SELECT 1 FROM pg_database WHERE datname='smartylang_development';")!='1'
     sql('CREATE DATABASE smartylang_development OWNER smarty_dev;')
 values={k:v for k,v in production.items() if k in ['AZURE_SPEECH_KEY','AZURE_SPEECH_REGION','OPENROUTER_API_KEY','GOOGLE_TRANSLATE_API_KEY','CONTENT_SAFETY_ENDPOINT','CONTENT_SAFETY_KEY','CONTENT_SAFETY_LANGUAGES']}
 values.update(existing)
-values.update({'NODE_ENV':'development','SERVE_BUILT_APP':'1','HOST':dev_host,'PORT':str(dev_port),'APP_URL':f'http://{dev_host}:{dev_port}','DEV_ALLOWED_ORIGINS':f'http://localhost:{dev_port}','DATABASE_URL':'postgres://smarty_dev:'+password+'@127.0.0.1:5432/smartylang_development','DATABASE_SSL':'false','DEMO_LOGIN':'1','AGE_PROOF_SECRET':existing.get('AGE_PROOF_SECRET') or secrets.token_hex(32),'AI_DAILY_REQUEST_CAP':'100'})
+dev_url_host=f'[{dev_host}]' if ':' in dev_host else dev_host
+dev_http_url=f'http://{dev_url_host}:{dev_port}'
+values.update({'NODE_ENV':'development','SERVE_BUILT_APP':'1','HOST':dev_host,'PORT':str(dev_port),'APP_URL':https_origin or dev_http_url,'TRUST_PROXY':'1' if https_origin else '0','DEV_ALLOWED_ORIGINS':f'http://localhost:{dev_port}','DATABASE_URL':'postgres://smarty_dev:'+password+'@127.0.0.1:5432/smartylang_development','DATABASE_SSL':'false','DEMO_LOGIN':'1','AGE_PROOF_SECRET':existing.get('AGE_PROOF_SECRET') or secrets.token_hex(32),'AI_DAILY_REQUEST_CAP':'100'})
+push_contact=os.environ.get('DEVELOPMENT_PUSH_CONTACT') or existing.get('PUSH_VAPID_CONTACT')
+if https_origin and push_contact:
+    if not re.fullmatch(r'(?:mailto:|https://)[a-zA-Z0-9@._:/+%\-]+', push_contact):
+        raise ValueError('Use a mailto: or https:// VAPID contact for staging')
+    if not (values.get('PUSH_VAPID_PUBLIC_KEY') and values.get('PUSH_VAPID_PRIVATE_KEY')):
+        keys=json.loads(subprocess.check_output(['node','-e',"console.log(JSON.stringify(require('web-push').generateVAPIDKeys()))"],text=True))
+        values.update({'PUSH_VAPID_PUBLIC_KEY':keys['publicKey'],'PUSH_VAPID_PRIVATE_KEY':keys['privateKey']})
+    values['PUSH_VAPID_CONTACT']=push_contact
 # Do not inherit a live merchant or production OAuth callback into a demo server.
 values={k:v for k,v in values.items() if not k.startswith('DODO_') and not k.startswith('GOOGLE_OAUTH_')}
 env_path.write_text(''.join(k+'='+str(v)+'\n' for k,v in values.items()))
@@ -107,8 +124,10 @@ systemctl daemon-reload
 systemctl enable smartylang-development.service >/dev/null
 systemctl restart smartylang-development.service
 ready=0
+health_host="$DEVELOPMENT_HOST"
+if [[ "$health_host" = *:* ]]; then health_host="[$health_host]"; fi
 for attempt in $(seq 1 20); do
-  if curl -fsS "http://$DEVELOPMENT_HOST:$DEVELOPMENT_PORT/api/ready" >/dev/null; then ready=1; break; fi
+  if curl -fsS "http://$health_host:$DEVELOPMENT_PORT/api/ready" >/dev/null; then ready=1; break; fi
   sleep 1
 done
 if [ "$ready" != 1 ]; then
@@ -116,5 +135,5 @@ if [ "$ready" != 1 ]; then
   echo 'Development readiness failed; previous development release restored when available.' >&2
   exit 1
 fi
-printf 'Development ready: http://%s:%s (release %s)\n' "$DEVELOPMENT_HOST" "$DEVELOPMENT_PORT" "$release_id"
+printf 'Development ready: %s (release %s)\n' "$APP_URL" "$release_id"
 systemctl is-active smartylang.service smartylang-development.service

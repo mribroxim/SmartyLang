@@ -6,21 +6,28 @@ import type { BiteStep } from '../../../lib/bites/types';
 import type { ContentLang } from '../../../lib/contentLang';
 import type { ReadingText } from '../../../lib/reading-logic';
 import { generateClozeItems, generateComprehensionQuestions } from '../../Lessons/generators';
+import { missionTurns } from '../../../lib/bites/deriveBites';
+import type { V2Lesson, V2Task } from '../../../lib/lessons/v2';
 
 export type Question =
   /** prompt: word = meaning of a word, audio = pick what you hear, cloze = fill the ______ in `show`, text = a question about the story. */
-  | { type: 'choice'; id: string; word: string; prompt: 'word' | 'audio' | 'cloze' | 'text'; show: string; options: string[]; answer: string }
+  /** meaning = show a meaning, pick the word; ask = an authored question shown in `show`. */
+  | { type: 'choice'; id: string; word: string; prompt: 'word' | 'audio' | 'cloze' | 'text' | 'meaning' | 'ask'; show: string; options: string[]; answer: string; why?: string; image?: string }
   | { type: 'tf'; id: string; word: string; def: string; answer: boolean }
-  | { type: 'tiles'; id: string; word: string; mode: 'letters' | 'words'; hint: string; audio?: string; tiles: string[]; answer: string[] }
+  /** scene = a conversation line to reply to (missions). */
+  | { type: 'tiles'; id: string; word: string; mode: 'letters' | 'words'; hint: string; audio?: string; tiles: string[]; answer: string[]; scene?: { speaker: string; text: string }; why?: string }
   /** sentence = graded word by word (dictation), audio-only prompt. */
-  | { type: 'type'; id: string; word: string; hint: string; answer: string; sentence?: boolean }
-  | { type: 'speak'; id: string; word: string; target: string; mode: 'word' | 'sentence' }
-  | { type: 'pairs'; id: string; pairs: { word: string; def: string }[] };
+  | { type: 'type'; id: string; word: string; hint: string; answer: string; sentence?: boolean; answers?: string[]; why?: string }
+  | { type: 'speak'; id: string; word: string; target: string; mode: 'word' | 'sentence'; why?: string }
+  | { type: 'pairs'; id: string; pairs: { word: string; def: string }[] }
+  /** Mission turn: reply to Smarty in your own words, checked against accepted patterns. */
+  | { type: 'reply'; id: string; word: string; smarty: string; accept: string[]; example: string; hint: string; keys?: string[] };
 
 /** Step kinds the lesson engine renders natively. */
 export const NATIVE_KINDS = new Set<BiteStep['kind']>([
   'definition-quiz', 'true-false-quiz', 'listening-match', 'word-scramble', 'sentence-reorder', 'spelling-practice', 'word-match',
-  'cloze', 'comprehension', 'audio-dictation', 'pronunciation', 'read-back-shadowing',
+  'cloze', 'comprehension', 'audio-dictation', 'pronunciation', 'read-back-shadowing', 'word-review', 'mission-reply',
+  'v2-recognise', 'v2-produce', 'v2-scene-quiz',
 ]);
 
 /** Steps graded by speech recognition (never cost hearts; can be skipped). */
@@ -94,6 +101,21 @@ export function buildQuestions({ step, defs, meaningPool, wordPool, sentences, t
         type: 'choice', id: w, word: w, prompt: 'word', show: w,
         answer: defs[w], options: shuffle([defs[w], ...distractors([...words.map((x) => defs[x]), ...meaningPool], defs[w], 3)]),
       }));
+    case 'word-review':
+      // Older words both ways: word → meaning, then meaning → word.
+      return order.map((w, i) => i % 2 === 0
+        ? { type: 'choice', id: `rev-${w}`, word: w, prompt: 'word', show: w, answer: defs[w], options: shuffle([defs[w], ...distractors([...words.map((x) => defs[x]), ...meaningPool], defs[w], 3)]) }
+        : { type: 'choice', id: `rev-${w}`, word: w, prompt: 'meaning', show: defs[w], answer: w, options: shuffle([w, ...distractors([...words, ...wordPool], w, 3)]) });
+    case 'mission-reply': {
+      if (!text) return [];
+      const extra = shuffle(wordPool.filter((w) => /^[\p{L}'’-]+$/u.test(w))).slice(0, 8);
+      return missionTurns(text.text, step.maxItems ?? 3, `${text.id}:mission`).map((turn, i) => {
+        const answer = turn.reply.split(/\s+/);
+        const lower = new Set(answer.map((x) => x.toLowerCase().replace(/[^\p{L}'’-]/gu, '')));
+        const decoys = extra.filter((w) => !lower.has(w.toLowerCase())).slice(0, 2);
+        return { type: 'tiles', id: `mission-${i}`, word: turn.reply, mode: 'words', hint: '', tiles: shuffle([...answer, ...decoys]), answer, scene: turn.cue };
+      });
+    }
     case 'listening-match':
       return order.map((w) => ({
         type: 'choice', id: w, word: w, prompt: 'audio', show: w,
@@ -177,6 +199,42 @@ export function buildQuestions({ step, defs, meaningPool, wordPool, sentences, t
     default:
       return [];
   }
+}
+
+/**
+ * v2 lessons: authored tasks → lesson questions. `word` is the first taught
+ * item's text, so the workshop credits the right word.
+ */
+export function v2Questions(lesson: V2Lesson, which: 'recognise' | 'produce' | 'scene' | 'mission', itemText: (id: string) => string | undefined, itemImage: (id: string) => string | undefined = () => undefined): Question[] {
+  const wordOf = (t: { itemIds: string[] }) => (itemText(t.itemIds[0]) ?? '').toLowerCase();
+  const answerOf = (t: V2Task) => t.answer ?? t.answers?.[0] ?? '';
+  if (which === 'mission') {
+    return lesson.mission.turns.map((turn, i) => ({ type: 'reply', id: `${lesson.id}:m${i}`, word: (itemText(turn.itemIds[0]) ?? '').toLowerCase(), smarty: turn.smarty, accept: turn.accept, example: turn.example, hint: turn.hint, keys: turn.itemIds.map(itemText).filter((x): x is string => !!x) }));
+  }
+  const tasks = which === 'scene' ? lesson.story.questions
+    : lesson.practice.filter((t) => (which === 'recognise') === ['choice', 'listen', 'match'].includes(t.kind));
+  const out: Question[] = [];
+  for (const t of tasks) {
+    const why = t.explanation;
+    switch (t.kind) {
+      case 'choice': out.push({ type: 'choice', id: t.id, word: wordOf(t), prompt: 'ask', show: t.prompt, options: shuffle(t.options), answer: answerOf(t), why, image: itemImage(t.itemIds[0]) }); break;
+      case 'listen': out.push({ type: 'choice', id: t.id, word: wordOf(t), prompt: 'audio', show: t.audio, options: shuffle(t.options), answer: answerOf(t), why }); break;
+      case 'match': if (t.pairs.length >= 2) out.push({ type: 'pairs', id: t.id, pairs: t.pairs.map((p) => ({ word: p.left, def: p.right })) }); break;
+      case 'build': {
+        const answer = answerOf(t).split(/\s+/);
+        out.push({ type: 'tiles', id: t.id, word: wordOf(t), mode: 'words', hint: t.prompt, tiles: shuffle(t.tiles), answer, why });
+        break;
+      }
+      case 'fill': {
+        const show = t.text.replace(/_{2,}/u, '______');
+        if (t.options?.length) out.push({ type: 'choice', id: t.id, word: wordOf(t), prompt: 'cloze', show, options: shuffle(t.options), answer: answerOf(t), why });
+        else out.push({ type: 'type', id: t.id, word: wordOf(t), hint: `${t.prompt} ${show}`, answer: answerOf(t), answers: t.answers, why });
+        break;
+      }
+      case 'speak': out.push({ type: 'speak', id: t.id, word: wordOf(t), target: t.text, mode: /\s/.test(t.text.trim()) ? 'sentence' : 'word', why }); break;
+    }
+  }
+  return out;
 }
 
 const norm = (s: string) => s.toLowerCase().normalize('NFKC').replace(/[’]/g, "'").replace(/[^\p{L}\p{M}\p{N}' ]/gu, '').replace(/\s+/g, ' ').trim();

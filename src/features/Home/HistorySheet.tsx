@@ -1,7 +1,7 @@
 import { DialogSurface } from '../../components/DialogSurface';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { X } from 'lucide-react';
+import { ChevronDown, X } from 'lucide-react';
 import { loadLocalCompletions, type CompletionRecord, type CompletionType } from '../../lib/completions';
 import { useUiLang } from '../../contexts/UiLangContext';
 import type { UiStringKey } from '../../lib/uiStrings';
@@ -28,6 +28,7 @@ const catOf = (type: CompletionType): Cat => CATS.find((c) => c.types.includes(t
 export function HistorySheet({ onClose, showIelts }: { onClose: () => void; showIelts: boolean }) {
   const { t, uiLang } = useUiLang();
   const [cat, setCat] = useState<Cat>('all');
+  const [open, setOpen] = useState<string | null>(null);
   const panel = useRef<HTMLDivElement>(null);
   const all = useMemo(() => loadLocalCompletions().slice().sort((a, b) => b.timestamp - a.timestamp), []);
   const cats = CATS.filter((c) => showIelts || c.id !== 'ielts');
@@ -117,7 +118,8 @@ export function HistorySheet({ onClose, showIelts }: { onClose: () => void; show
                     return (
                       <li key={r.id}>
                         {header && <div className="mb-2 mt-4 font-serif text-[11px] font-extrabold uppercase tracking-widest text-slate-400 first:mt-0">{day}</div>}
-                        <div className="flex items-center gap-3 rounded-2xl border-2 border-slate-200 bg-white p-2.5 pr-3 shadow-[0_2px_0_0_#e2e8f0] dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-[0_2px_0_0_#27272a]">
+                        <div className="overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-[0_2px_0_0_#e2e8f0] dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-[0_2px_0_0_#27272a]">
+                        <button type="button" aria-expanded={open === r.id} onClick={() => setOpen(open === r.id ? null : r.id)} className="flex w-full items-center gap-3 p-2.5 pr-3 text-left">
                           <Sticker id={c.sticker} size={44} mode="still" className="shrink-0" />
                           <div className="min-w-0 flex-1">
                             <div className="truncate font-serif text-sm font-extrabold text-zinc-900 dark:text-zinc-50">{r.title || t(`history.cat.${c.id}` as UiStringKey)}</div>
@@ -131,6 +133,11 @@ export function HistorySheet({ onClose, showIelts }: { onClose: () => void; show
                               {s}
                             </span>
                           )}
+                          <ChevronDown className={`h-4 w-4 shrink-0 text-slate-400 transition-transform ${open === r.id ? 'rotate-180' : ''}`} />
+                        </button>
+                        <AnimatePresence initial={false}>
+                          {open === r.id && <EntryDetail key="d" r={r} />}
+                        </AnimatePresence>
                         </div>
                       </li>
                     );
@@ -142,5 +149,37 @@ export function HistorySheet({ onClose, showIelts }: { onClose: () => void; show
         </div>
       </motion.div>
     </DialogSurface>
+  );
+}
+
+/** What happened in one session: time, score, XP, coins, mistakes and words got right. */
+function EntryDetail({ r }: { r: CompletionRecord }) {
+  const { t, uiLang } = useUiLang();
+  const d = (r.data ?? {}) as { ms?: number; xp?: number; coins?: number; mistakes?: string[]; correctWords?: string[]; kind?: string };
+  const rows: [string, string][] = [];
+  rows.push([t('history.d.when'), new Date(r.timestamp).toLocaleString(uiLang, { weekday: 'short', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })]);
+  if (typeof d.ms === 'number' && d.ms > 0) rows.push([t('history.d.time'), d.ms < 60000 ? `${Math.max(1, Math.round(d.ms / 1000))} s` : `${Math.round(d.ms / 60000)} min`]);
+  if (typeof r.accuracy === 'number') rows.push([t('history.d.accuracy'), `${Math.round(r.accuracy)}%`]);
+  if (typeof r.score === 'number' && typeof r.total === 'number' && r.total > 0) rows.push([t('history.d.score'), `${r.score}/${r.total}`]);
+  if (typeof d.xp === 'number' && d.xp > 0) rows.push(['XP', `+${d.xp}`]);
+  if (typeof d.coins === 'number' && d.coins > 0) rows.push([t('history.d.coins'), `+${d.coins}`]);
+  const mistakes = [...new Set((d.mistakes ?? []).filter(Boolean))];
+  const right = [...new Set((d.correctWords ?? []).filter(Boolean))].filter((w) => !mistakes.includes(w));
+  const chips = (words: string[], tone: string) => <div className="mt-1 flex flex-wrap gap-1.5">{words.slice(0, 24).map((w) => <span key={w} className={`rounded-lg px-2 py-0.5 text-xs font-bold ${tone}`}>{w}</span>)}</div>;
+  return (
+    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.18 }} className="overflow-hidden">
+      <div className="space-y-3 border-t-2 border-slate-100 px-3 py-3 dark:border-zinc-800">
+        <dl className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+          {rows.map(([k, v]) => (
+            <div key={k} className="rounded-xl bg-slate-50 px-2.5 py-1.5 dark:bg-zinc-800">
+              <dt className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">{k}</dt>
+              <dd className="font-serif text-sm font-extrabold text-zinc-900 dark:text-zinc-50">{v}</dd>
+            </div>
+          ))}
+        </dl>
+        {mistakes.length > 0 && <div><div className="text-xs font-extrabold text-amber-700 dark:text-amber-300">{t('history.d.mistakes')}</div>{chips(mistakes, 'bg-amber-50 text-amber-800 dark:bg-amber-950 dark:text-amber-200')}</div>}
+        {right.length > 0 && <div><div className="text-xs font-extrabold text-emerald-700 dark:text-emerald-300">{t('history.d.right')}</div>{chips(right, 'bg-emerald-50 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200')}</div>}
+      </div>
+    </motion.div>
   );
 }

@@ -2,7 +2,6 @@
  * What Smarty knows about the learner, so lines can be personal.
  * App.tsx pushes a fresh snapshot whenever the underlying state changes.
  */
-import { getPrefs } from './prefs';
 
 export type TimeOfDay = 'morning' | 'afternoon' | 'evening' | 'night';
 
@@ -27,10 +26,8 @@ export function getSmartyCtx(): SmartyCtx {
   return ctx;
 }
 
-/** Preferred name from Settings, else first word of the display name. */
+/** Use the first name from the profile. */
 export function learnerName(): string | undefined {
-  const pref = getPrefs().preferredName;
-  if (pref) return pref;
   const first = (ctx.displayName || '').trim().split(/\s+/)[0];
   return first || undefined;
 }

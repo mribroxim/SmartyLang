@@ -8,7 +8,7 @@ export function acceptsReply(value: string, rule: ReplyRule): boolean {
   if (rule === 'ask-name') return ["what's your name", 'what is your name'].includes(text);
   if (rule === 'ask-origin') return text === 'where are you from';
   const clean = text.replace(/^(?:hello|hi|hey)\s+/, '');
-  const match = rule === 'origin' ? clean.match(/^(?:i am|i'm) from ([\p{L}\p{M}][\p{L}\p{M}' -]{0,60})$/u)
+  const match = rule === 'origin' ? clean.match(/^(?:i am|i'm) from ([\p{L}\p{M}][\p{L}\p{M} -]{0,60})$/u)
     : clean.match(/^(?:my name is|my name's|i am|i'm) ([\p{L}\p{M}][\p{L}\p{M}' -]{0,40})$/u);
   if (!match) return false;
   const detail = match[1].trim();

@@ -36,8 +36,10 @@ export async function apiRequest<T = unknown>(
 export async function dataRequest<T = unknown>(
   action: string,
   args: Record<string, unknown> = {},
+  options: Pick<RequestInit, 'signal'> = {},
 ): Promise<T> {
   const response = await apiRequest<{ result: T }>('/api/data', {
+    ...options,
     method: 'POST',
     body: JSON.stringify({ action, args }),
   });

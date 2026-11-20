@@ -6,6 +6,7 @@ import { Sticker } from '../components/stickers/Sticker';
 import { useUiLang } from '../contexts/UiLangContext';
 import { useLocalReminders, markLocalReminderRead, type LocalReminder } from '../lib/smarty/reminders';
 import { useProgress } from '../contexts/ProgressContext';
+import { HOMEWORK_REFRESH } from '../lib/classHomework';
 
 const TYPE_ICON: Record<AppNotification['type'], React.ReactNode> = {
   assignment:   <BookOpen className="w-4 h-4 text-blue-500" />,
@@ -28,12 +29,21 @@ export function NotificationBell({ uid, onNavigate }: NotificationBellProps) {
   const [notifs, setNotifs] = useState<AppNotification[]>([]);
   const [loading, setLoading] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const latestHomework = useRef<string | undefined>(undefined);
 
   const unread = notifs.filter(n => !n.read).length + local.filter(n => !n.read).length;
 
   const load = async () => {
     setLoading(true);
-    try { setNotifs((await getNotifications(uid, 20)) || []); }
+    try {
+      const fresh = (await getNotifications(uid, 20)) || [];
+      setNotifs(fresh);
+      const latest = fresh.find(item => item.type === 'assignment')?.id;
+      if (latest && latest !== latestHomework.current) {
+        latestHomework.current = latest;
+        window.dispatchEvent(new Event(HOMEWORK_REFRESH));
+      }
+    }
     catch { /* Keep the cached feed available while offline. */ }
     finally { setLoading(false); }
   };

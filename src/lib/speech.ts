@@ -1,11 +1,12 @@
 /**
- * Text-to-speech: Azure Neural TTS via /api/tts, with browser speechSynthesis fallback.
+ * Text-to-speech via /api/tts (Google Gemini, or Azure Neural TTS), with browser speechSynthesis fallback.
  * Lyric sync: Azure Speech SDK bookmark timepoints (accurate per word);
  * falls back to language-aware duration weights + rAF, or native word-boundary events.
  */
 
 import { getCachedTtsBlob, setCachedTtsBlob, enqueueTtsRetry } from './networkCache';
 import { snapSpeechRate } from './speechRates';
+import { tokenDurationWeight, progressToWordIndex, wordIndexFromTimepoints, type Timepoint } from './progress/readAlong';
 
 let _audioFallback: HTMLAudioElement | null = null;
 let _objectUrl: string | null = null;
@@ -28,7 +29,6 @@ export type SpeakOpts = {
   voice?: string;
 };
 
-type Timepoint = { index: number; timeSeconds: number };
 
 function langCandidates(lang: string): string[] {
   const base = lang.split('-')[0].toLowerCase();
@@ -132,66 +132,6 @@ export function chunkSpeechText(text: string, maxLen = CHUNK_MAX): string[] {
   return chunks;
 }
 
-/**
- * Language-aware speaking-duration weight for lyric fallback sync.
- * Higher weight = longer highlight dwell. Tuned for TTS, not human speech.
- */
-function tokenDurationWeight(token: string, lang: string): number {
-  const base = langBase(lang);
-  const t = token.normalize('NFC');
-  if (!t.trim()) return 0.15;
-
-  // Punctuation / pause markers
-  if (/^[.!?。！？…]+$/u.test(t)) return 2.4;
-  if (/^[,;:，、；：]+$/u.test(t)) return 1.1;
-  if (/^["'“”‘’()[\]{}「」『』]+$/u.test(t)) return 0.2;
-
-  const letters = t.replace(/[^\p{L}\p{N}\p{M}]/gu, '');
-  if (!letters) return 0.3;
-
-  // CJK ideographs / kana — roughly one beat per char
-  if (base === 'zh' || base === 'ja' || /[\u3400-\u9FFF\uF900-\uFAFF\u3040-\u30FF]/u.test(letters)) {
-    return Math.max(1, [...letters].length) * 1.15;
-  }
-  // Hangul syllables
-  if (base === 'ko' || /[\uAC00-\uD7AF]/u.test(letters)) {
-    return Math.max(1, [...letters].length) * 1.05;
-  }
-  // Thai
-  if (base === 'th' || /[\u0E00-\u0E7F]/u.test(letters)) {
-    return Math.max(1, [...letters].length) * 0.95;
-  }
-  // Arabic / Persian / Urdu — letter count with slight boost
-  if (base === 'ar' || base === 'fa' || base === 'ur' || /[\u0600-\u06FF]/u.test(letters)) {
-    return Math.max(1, [...letters].length) * 0.55;
-  }
-  // Devanagari
-  if (base === 'hi' || /[\u0900-\u097F]/u.test(letters)) {
-    return Math.max(1, [...letters].length) * 0.6;
-  }
-
-  // Latin / Cyrillic / Greek — syllable heuristic (vowel groups)
-  const lower = letters.toLowerCase();
-  const vowels = lower.match(/[aeiouyаеёиоуыэюяіїєґαεηιουωäöüáéíóúàèìòùâêîôûæøå]/gi);
-  const syl = Math.max(1, vowels?.length || Math.ceil(letters.length / 3));
-  return 0.55 + syl * 0.85;
-}
-
-function progressToWordIndex(words: string[], progress: number, lang: string): number {
-  if (!words.length) return 0;
-  const p = Math.min(1, Math.max(0, progress));
-  if (p >= 1) return words.length - 1;
-  const weights = words.map(w => Math.max(0.15, tokenDurationWeight(w, lang)));
-  const total = weights.reduce((s, w) => s + w, 0) || 1;
-  let acc = 0;
-  const target = p * total;
-  for (let i = 0; i < weights.length; i++) {
-    acc += weights[i];
-    if (target < acc) return i;
-  }
-  return words.length - 1;
-}
-
 /** Build char spans of each word inside `text` for boundary → index mapping. */
 function buildWordSpans(text: string, words: string[]): Array<{ start: number; end: number }> {
   const spans: Array<{ start: number; end: number }> = [];
@@ -224,15 +164,9 @@ function charIndexToWordIndexFromSpans(
   return spans.length - 1;
 }
 
-function wordIndexFromTimepoints(timepoints: Timepoint[], t: number, wordCount: number): number {
-  if (!timepoints.length || wordCount <= 0) return 0;
-  let idx = timepoints[0].index;
-  for (const tp of timepoints) {
-    if (tp.timeSeconds <= t) idx = tp.index;
-    else break;
-  }
-  return Math.max(0, Math.min(wordCount - 1, idx));
-}
+/** Blob URLs whose audio is natural speed and must be played at this rate (Gemini voices). */
+const naturalSpeedRate = new Map<string, number>();
+const markNaturalSpeed = (url: string, type: string, rate: number) => { if (/wav/i.test(type)) naturalSpeedRate.set(url, rate); };
 
 function playUrlWithSync(
   url: string,
@@ -254,6 +188,9 @@ function playUrlWithSync(
     if ('speechSynthesis' in window) window.speechSynthesis.cancel();
 
     const audio = new Audio(url);
+    // Natural-speed clips (Gemini WAV) are slowed in the browser, keeping the pitch.
+    const slow = naturalSpeedRate.get(url);
+    if (slow && slow !== 1) { audio.playbackRate = slow; (audio as HTMLAudioElement & { preservesPitch?: boolean }).preservesPitch = true; }
     _audioFallback = audio;
     _playResolve = (ok) => resolve(ok && gen === _speakGen);
 
@@ -342,7 +279,7 @@ async function fetchCloudMp3(
 ): Promise<string | null> {
   const clamped = snapSpeechRate(rate);
   const voiceTag = voice || '';
-  const cacheKey = `${lang}|${voiceTag}|${clamped.toFixed(2)}|${text}`;
+  const cacheKey = `v2|${lang}|${voiceTag}|${clamped.toFixed(2)}|${text}`;
   const cached = blobCache.get(cacheKey);
   if (cached) return cached;
 
@@ -351,6 +288,7 @@ async function fetchCloudMp3(
     const idbBlob = await getCachedTtsBlob(cacheKey);
     if (idbBlob && idbBlob.size) {
       const url = URL.createObjectURL(idbBlob);
+      markNaturalSpeed(url, idbBlob.type, clamped);
       rememberBlobUrl(cacheKey, url);
       return url;
     }
@@ -370,6 +308,7 @@ async function fetchCloudMp3(
     if (!blob.size) return null;
     void setCachedTtsBlob(cacheKey, blob);
     const url = URL.createObjectURL(blob);
+    markNaturalSpeed(url, blob.type, clamped);
     rememberBlobUrl(cacheKey, url);
     return url;
   } catch {
@@ -387,7 +326,7 @@ async function fetchCloudSynced(
 ): Promise<{ url: string; timepoints: Timepoint[] } | null> {
   const clamped = snapSpeechRate(rate);
   const voiceTag = voice || '';
-  const cacheKey = `sync|${lang}|${voiceTag}|${clamped.toFixed(2)}|${words.length}|${text}`;
+  const cacheKey = `v2|sync|${lang}|${voiceTag}|${clamped.toFixed(2)}|${words.length}|${text}`;
   // Don't reuse blob cache for sync JSON; always request (server caches)
   try {
     const res = await fetch('/api/tts', {
@@ -414,13 +353,15 @@ async function fetchCloudSynced(
     }
     const data = await res.json() as {
       audioContent?: string;
+      mime?: string;
       timepoints?: Timepoint[];
     };
     if (!data.audioContent) return null;
     const binary = atob(data.audioContent);
     const bytes = new Uint8Array(binary.length);
     for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-    const url = URL.createObjectURL(new Blob([bytes], { type: 'audio/mpeg' }));
+    const url = URL.createObjectURL(new Blob([bytes], { type: data.mime || 'audio/mpeg' }));
+    markNaturalSpeed(url, data.mime || '', clamped);
     rememberBlobUrl(cacheKey, url);
     const timepoints = Array.isArray(data.timepoints) ? data.timepoints : [];
     return { url, timepoints };

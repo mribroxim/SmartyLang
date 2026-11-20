@@ -159,7 +159,9 @@ export function loadLessonUnlock(lang: ContentLang, passageId: string): LessonUn
       missedWords: Array.isArray(parsed.missedWords) ? parsed.missedWords : [],
     };
     if (readingBest !== parsed.readingBest || vocabQuizScore !== parsed.vocabQuizScore) {
-      saveLessonUnlock(lang, passageId, next);
+      // Normalize legacy cache entries locally. Reading progress during render
+      // must never issue writes or dispatch another progress-render event.
+      localStorage.setItem(unlockKey(lang, passageId), JSON.stringify(next));
     }
     return next;
   } catch {

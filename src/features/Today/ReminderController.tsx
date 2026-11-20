@@ -4,27 +4,42 @@ import { useProgress } from '../../contexts/ProgressContext';
 import { useUiLang } from '../../contexts/UiLangContext';
 import { useSmartyPrefs } from '../../lib/smarty/prefs';
 import { normalizeHabit, visibleStreak } from '../../lib/habitEngine';
-import { ensureLocalReminder, isStreakAtRisk, markReminderNotified, reminderDue } from '../../lib/smarty/reminders';
+import { ensureLocalReminder, isStreakAtRisk, reminderDue } from '../../lib/smarty/reminders';
+import { restoreBackgroundReminderState } from '../../lib/pushReminders';
+import { setReminderSnapshot } from '../../lib/reminders';
+import { useDailyQuests } from '../Quests/dailyQuests';
 
-/** Local reminders run only while the app is open; never request permission automatically. */
+/**
+ * Keeps in-app reminders and feeds the notification scheduler (src/lib/reminders.ts).
+ * The browser handles closed-app delivery through the push worker.
+ */
 export function ReminderController({ enabled }: { enabled: boolean }) {
   const now = useNow();
-  const { habit, previewMode, navigate } = useProgress();
+  const { habit, previewMode } = useProgress();
   const { t } = useUiLang();
   const prefs = useSmartyPrefs();
+  const { quests, progress, claimed } = useDailyQuests();
+  const finished = quests.length > 0 && quests.every((q) => (progress[q.metric] ?? 0) >= q.target);
+  const questsReady = finished && claimed.length < quests.length;
+
   useEffect(() => {
-    if (!enabled || previewMode) return;
+    if (!enabled || previewMode) { setReminderSnapshot(null); return; }
     const date = new Date(now);
     const h = normalizeHabit(habit);
-    if (isStreakAtRisk(visibleStreak(h, date), h.dailyGoal.xpEarned, date)) ensureLocalReminder('streak', date);
-    if (!reminderDue(prefs.reminderTime, h.dailyGoal.completed, date)) return;
-    const row = ensureLocalReminder('daily', date);
-    if (row.notified || row.read || typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
-    try {
-      const notification = new Notification(t('today.reminderTitle'), { body: t('today.reminderBody'), tag: row.id });
-      notification.onclick = () => { window.focus(); navigate({ tab: 'lessons', path: ['today'] }); notification.close(); };
-      markReminderNotified(row.id);
-    } catch { /* The in-app notification remains available if desktop notifications fail. */ }
-  }, [enabled, previewMode, now, habit, prefs.reminderTime, t]);
+    const streak = visibleStreak(h, date);
+    if (isStreakAtRisk(streak, h.dailyGoal.xpEarned, date)) ensureLocalReminder('streak', date);
+    if (reminderDue(prefs.reminderTime, h.dailyGoal.completed, date)) ensureLocalReminder('daily', date);
+    setReminderSnapshot({
+      enabled: true,
+      time: prefs.reminderTime,
+      xpToday: h.dailyGoal.xpEarned || 0,
+      streak,
+      questsReady,
+      title: (kind) => (kind === 'quests' ? t('reminder.questsTitle') : t('reminder.title')),
+      body: (kind, n) => (kind === 'quests' ? t('reminder.questsBody') : n > 0 ? t('reminder.streakBody', { n }) : t('reminder.studyBody')),
+    });
+  }, [enabled, previewMode, now, habit, prefs.reminderTime, questsReady, t]);
+  useEffect(() => { if (enabled) void restoreBackgroundReminderState(); }, [enabled]);
+  useEffect(() => () => setReminderSnapshot(null), []);
   return null;
 }

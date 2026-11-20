@@ -1,0 +1,902 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:smartylang:lesson-v2",
+  "title": "SmartyLang lesson v2 and ten-lesson unit",
+  "description": "Four bites are represented by items/grammar, practice, story, and mission. Semantic rules are enforced by validate-lessons.mjs.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/unit"
+    },
+    {
+      "$ref": "#/$defs/lesson"
+    }
+  ],
+  "$defs": {
+    "choiceTask": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9.-]*$"
+        },
+        "kind": {
+          "const": "choice"
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "itemIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "prompt",
+        "explanation",
+        "itemIds",
+        "options"
+      ],
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "answer"
+              ]
+            },
+            {
+              "required": [
+                "answers"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "buildTask": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9.-]*$"
+        },
+        "kind": {
+          "const": "build"
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "itemIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "tiles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "prompt",
+        "explanation",
+        "itemIds",
+        "tiles"
+      ],
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "answer"
+              ]
+            },
+            {
+              "required": [
+                "answers"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "listenTask": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9.-]*$"
+        },
+        "kind": {
+          "const": "listen"
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "itemIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "audio": {
+          "type": "string",
+          "minLength": 1
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "prompt",
+        "explanation",
+        "itemIds",
+        "audio",
+        "options"
+      ],
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "answer"
+              ]
+            },
+            {
+              "required": [
+                "answers"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "fillTask": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9.-]*$"
+        },
+        "kind": {
+          "const": "fill"
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "itemIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "prompt",
+        "explanation",
+        "itemIds",
+        "text"
+      ],
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "answer"
+              ]
+            },
+            {
+              "required": [
+                "answers"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "matchTask": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9.-]*$"
+        },
+        "kind": {
+          "const": "match"
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "itemIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "pairs": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "left": {
+                "type": "string",
+                "minLength": 1
+              },
+              "right": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "left",
+              "right"
+            ]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "prompt",
+        "explanation",
+        "itemIds",
+        "pairs"
+      ]
+    },
+    "speakTask": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9.-]*$"
+        },
+        "kind": {
+          "const": "speak"
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "itemIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "answer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "prompt",
+        "explanation",
+        "itemIds",
+        "text"
+      ],
+      "allOf": [
+        {
+          "oneOf": [
+            {
+              "required": [
+                "answer"
+              ]
+            },
+            {
+              "required": [
+                "answers"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "task": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/choiceTask"
+        },
+        {
+          "$ref": "#/$defs/buildTask"
+        },
+        {
+          "$ref": "#/$defs/listenTask"
+        },
+        {
+          "$ref": "#/$defs/fillTask"
+        },
+        {
+          "$ref": "#/$defs/matchTask"
+        },
+        {
+          "$ref": "#/$defs/speakTask"
+        }
+      ]
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9.-]*$"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "word",
+            "phrase",
+            "pattern"
+          ]
+        },
+        "forms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "example": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        },
+        "image": {
+          "$ref": "#/$defs/image"
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "kind",
+        "example"
+      ]
+    },
+    "lesson": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lang": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9.-]*$"
+        },
+        "section": {
+          "enum": [
+            "beginner",
+            "elementary",
+            "pre-intermediate",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "unit": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999
+        },
+        "lesson": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 999
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "canDo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scenario": {
+          "type": "string",
+          "minLength": 1
+        },
+        "items": {
+          "type": "array",
+          "minItems": 0,
+          "items": {
+            "$ref": "#/$defs/item"
+          }
+        },
+        "grammar": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "explanation": {
+              "type": "string",
+              "minLength": 1
+            },
+            "examples": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "title",
+            "explanation",
+            "examples"
+          ]
+        },
+        "practice": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/task"
+          }
+        },
+        "story": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "hook": {
+              "type": "string",
+              "minLength": 1
+            },
+            "lines": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "speaker": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "speaker",
+                  "text"
+                ]
+              }
+            },
+            "questions": {
+              "type": "array",
+              "minItems": 0,
+              "items": {
+                "$ref": "#/$defs/choiceTask"
+              }
+            },
+            "image": {
+              "$ref": "#/$defs/image"
+            }
+          },
+          "required": [
+            "lines",
+            "questions"
+          ]
+        },
+        "mission": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "setup": {
+              "type": "string",
+              "minLength": 1
+            },
+            "turns": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "smarty": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "accept": {
+                    "type": "array",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "minLength": 3,
+                      "maxLength": 400
+                    }
+                  },
+                  "example": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "hint": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "itemIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                  }
+                },
+                "required": [
+                  "smarty",
+                  "accept",
+                  "example",
+                  "hint",
+                  "itemIds"
+                ]
+              }
+            },
+            "image": {
+              "$ref": "#/$defs/image"
+            }
+          },
+          "required": [
+            "setup",
+            "turns"
+          ]
+        },
+        "recycle": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "lesson",
+            "review",
+            "test"
+          ],
+          "description": "lesson (default): teaches new items. review: no new items, mixed practice of earlier ones. test: unit test/mission, 0–3 new items."
+        },
+        "exposure": {
+          "type": "array",
+          "description": "B1+ only: words met glossed (tap to translate) in this lesson's scene. Not tested; allowed in story lines without being taught.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "text"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "gloss": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "id",
+        "section",
+        "unit",
+        "lesson",
+        "title",
+        "canDo",
+        "scenario",
+        "items",
+        "practice",
+        "story",
+        "mission",
+        "recycle"
+      ]
+    },
+    "unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "minLength": 1
+        },
+        "schemaVersion": {
+          "const": 2
+        },
+        "lang": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "section": {
+          "enum": [
+            "beginner",
+            "elementary",
+            "pre-intermediate",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "unit": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 999
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lessons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/lesson"
+          }
+        },
+        "room": {
+          "type": "string",
+          "pattern": "^[a-z]+(?:-[a-z]+)*$"
+        },
+        "episode": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "panels"
+          ],
+          "description": "Optional reward story unlocked when the unit is finished: the next chapter of Smarty's adventure. Uses only words taught up to the end of the unit (plus the unit's exposure words from B1).",
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1
+            },
+            "hook": {
+              "type": "string"
+            },
+            "panels": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "text"
+                ],
+                "properties": {
+                  "speaker": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "image": {
+                    "$ref": "#/$defs/image"
+                  }
+                }
+              }
+            },
+            "questions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/task"
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "lang",
+        "section",
+        "unit",
+        "title",
+        "lessons"
+      ]
+    },
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "describe"
+      ],
+      "description": "Language-neutral picture. id = file name in public/img/{words|scenes}/<id>.webp, shared by every language; describe = what the picture must show (English, for the illustrator).",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "describe": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 600
+        }
+      }
+    }
+  }
+}

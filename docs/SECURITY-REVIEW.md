@@ -23,7 +23,7 @@ not an independent penetration-test certification.
 | assignment grading/submissions | Class owner/admin; business role alone is insufficient |
 | sponsor invitations | Self/admin sponsor; paid quota serialized under a row lock; revocation cannot target another sponsor |
 | announcements | Class membership/ownership; only admin publishes global content |
-| CMS writes and vocabulary-miss review | Admin/content-manager; CMS reads require sign-in |
+| Published content reads | Signed-in; content manager, editor writes, and vocabulary-miss review endpoints removed |
 | checkout, cancel, resume, payment confirmation | Self; server quote/product map; provider-owned metadata and current subscription state |
 | payment webhook | Raw-body HMAC, constant-time comparison, ±5 minute timestamp window; provider state lookup and idempotent payment record |
 | parent consent issue/revoke | Admin after external verification; single-use, expiring grants; revocation deletes child sessions |

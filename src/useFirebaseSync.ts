@@ -9,6 +9,7 @@ import {
   UserAccountProfile,
 } from './firebase';
 import { apiRequest, dataRequest } from './lib/selfHostedApi';
+import { syncVocabulary, vocabularyChanges } from './lib/vocabularySync';
 import { type ContentLang } from './lib/contentLang';
 import { setStorageUid, readScopedJSON, writeScopedJSON } from './lib/userStorage';
 import { isBusinessRole } from './lib/access';
@@ -22,7 +23,10 @@ import './lib/smarty/room';
 import './lib/bites/dailySession';
 import './lib/bites/sections';
 import './lib/questState';
+import './lib/practiceMastery';
 import './lib/unitOnePilot/progress';
+import './lib/workshop/store';
+import './lib/house/store';
 import { type HabitState, normalizeHabit, emptyHabit, leagueForXp, levelForXp, leagueMeta } from './lib/habitEngine';
 
 function usePrevious<T>(value: T): T | undefined {
@@ -219,11 +223,10 @@ export function useFirebaseSync(
 
         const remoteVocab = await loadVocab(nextUser.uid, contentLangRef.current);
         if (Object.keys(remoteVocab).length) {
+          skipNextVocabSync.current = true;
           setSavedVocab((previous: any) => ({ ...previous, ...remoteVocab }));
         } else {
-          for (const [word, data] of Object.entries(savedVocabRef.current || {})) {
-            await dataRequest('vocab.upsert', { uid: nextUser.uid, lang: contentLangRef.current, word, data });
-          }
+          await syncVocabulary(nextUser.uid, contentLangRef.current, vocabularyChanges({}, savedVocabRef.current || {}));
         }
         await hydrateCompletionsFromCloud(nextUser.uid);
         await hydrateLessonUnlocksFromCloud(nextUser.uid);
@@ -248,7 +251,10 @@ export function useFirebaseSync(
     let cancelled = false;
     skipNextVocabSync.current = true;
     loadVocab(user.uid, contentLang).then((remote) => {
-      if (!cancelled && Object.keys(remote).length) setSavedVocab((previous: any) => ({ ...previous, ...remote }));
+      if (!cancelled && Object.keys(remote).length) {
+        skipNextVocabSync.current = true;
+        setSavedVocab((previous: any) => ({ ...previous, ...remote }));
+      }
     }).catch((error) => console.error('Vocabulary reload failed:', error));
     return () => { cancelled = true; };
   }, [contentLang, user, initialLoadDone, canSyncAccount, setSavedVocab]);
@@ -309,14 +315,7 @@ export function useFirebaseSync(
     }
     if (!user || !initialLoadDone || !canSyncAccount || !prevVocab || prevVocab === savedVocab || isBusinessRole(accountProfile?.role)) return;
     const lang = contentLangRef.current;
-    const previousKeys = Object.keys(prevVocab);
-    const currentKeys = Object.keys(savedVocab);
-    currentKeys.filter((key) => prevVocab[key] !== savedVocab[key]).forEach((word) => {
-      dataRequest('vocab.upsert', { uid: user.uid, lang, word, data: savedVocab[word] }).catch(console.error);
-    });
-    previousKeys.filter((word) => !currentKeys.includes(word)).forEach((word) => {
-      dataRequest('vocab.delete', { uid: user.uid, lang, word }).catch(console.error);
-    });
+    syncVocabulary(user.uid, lang, vocabularyChanges(prevVocab, savedVocab)).catch(console.error);
   }, [savedVocab, prevVocab, user, initialLoadDone, canSyncAccount, accountProfile, contentLang]);
 
   // Rehydrating the same account must keep onboarding mounted (and its current

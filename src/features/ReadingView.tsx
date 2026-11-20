@@ -123,8 +123,16 @@ export function ReadingView(props: ReadingViewProps) {
 
   useEffect(() => {
     if (!isSpeakingPassage || listenWordIndex < 0) return;
-    listenWordRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+    // Gentle follow: only scroll when the spoken word nears the edge of the screen.
+    const el = listenWordRef.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const vh = window.innerHeight || 800;
+    if (r.top < vh * 0.18 || r.bottom > vh * 0.62) el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
   }, [listenWordIndex, isSpeakingPassage]);
+
+  // Leaving the reading screen must stop the voice.
+  useEffect(() => () => { cancelSpeech(); }, []);
 
   const stopPassageListen = () => {
     cancelSpeech();
@@ -688,13 +696,13 @@ export function ReadingView(props: ReadingViewProps) {
                     // Spotify-style: upcoming words dim; spoken + current fully visible
                     if (i < listenWordIndex) {
                       opacityClass = 'opacity-100';
-                      colorClass = 'text-slate-800 transition-opacity duration-200 cursor-pointer';
+                      colorClass = 'text-slate-800 dark:text-zinc-100 transition-opacity duration-200 cursor-pointer';
                     } else if (i === listenWordIndex) {
                       opacityClass = 'opacity-100';
-                      colorClass = 'text-zinc-950 font-semibold transition-opacity duration-200 cursor-pointer';
+                      colorClass = 'rounded-md bg-amber-200 px-1 -mx-1 text-zinc-950 font-extrabold shadow-[0_2px_0_0_#f59e0b] dark:bg-amber-300 dark:text-zinc-950 transition-[opacity,background-color] duration-150 cursor-pointer';
                     } else {
-                      opacityClass = 'opacity-[0.28]';
-                      colorClass = 'text-slate-800 transition-opacity duration-200 cursor-pointer';
+                      opacityClass = 'opacity-[0.35]';
+                      colorClass = 'text-slate-800 dark:text-zinc-100 transition-opacity duration-200 cursor-pointer';
                     }
                   } else if (status === 'correct') {
                     colorClass = 'text-emerald-500 transition-colors duration-300 hover:text-emerald-400 cursor-pointer';

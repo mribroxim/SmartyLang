@@ -1,0 +1,3221 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "beginner",
+  "unit": 1,
+  "title": "Meet someone new",
+  "room": "bedroom",
+  "lessons": [
+    {
+      "id": "en.beginner.u01.l01",
+      "section": "beginner",
+      "unit": 1,
+      "lesson": 1,
+      "title": "Say hello",
+      "canDo": "Start and end a friendly conversation.",
+      "scenario": "You and Smarty meet Mia and Sam at the classroom door. Practise starting and ending a conversation; no personal details are needed.",
+      "items": [
+        {
+          "id": "en.beginner.u01.l01.hello",
+          "text": "Hello",
+          "kind": "word",
+          "example": "Hello, Smarty!",
+          "note": "Hello and Hi start a conversation. Goodbye ends it. Hi is more informal."
+        },
+        {
+          "id": "en.beginner.u01.l01.hi",
+          "text": "Hi",
+          "kind": "word",
+          "example": "Hi, Mia!"
+        },
+        {
+          "id": "en.beginner.u01.l01.goodbye",
+          "text": "Goodbye",
+          "kind": "word",
+          "example": "Goodbye, Sam!"
+        },
+        {
+          "id": "en.beginner.u01.l01.bye",
+          "text": "Bye",
+          "kind": "word",
+          "example": "Bye, Ben!"
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u01.l01.task.choose",
+          "kind": "choice",
+          "prompt": "Start the conversation with a greeting, rather than ending it.",
+          "answer": "Hello, Smarty!",
+          "options": [
+            "Hello, Smarty!",
+            "Goodbye, Smarty!",
+            "Bye, Smarty!"
+          ],
+          "explanation": "Hello is a complete greeting. Use it when you meet someone.",
+          "itemIds": [
+            "en.beginner.u01.l01.hello"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l01.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Hi, Mia!",
+          "answer": "Hi, Mia!",
+          "options": [
+            "Hi, Mia!",
+            "Hello, Smarty!",
+            "Goodbye, Sam!"
+          ],
+          "explanation": "Hi is a short, friendly way to say hello.",
+          "itemIds": [
+            "en.beginner.u01.l01.hi"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l01.task.build",
+          "kind": "build",
+          "prompt": "Build the taught phrase in its natural word order.",
+          "answer": "Goodbye, Sam!",
+          "tiles": [
+            "Sam!",
+            "Goodbye,",
+            "Bye"
+          ],
+          "explanation": "Goodbye ends the conversation.",
+          "itemIds": [
+            "en.beginner.u01.l01.goodbye"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l01.task.fill",
+          "kind": "fill",
+          "prompt": "Say a short goodbye to Smarty. Complete the phrase.",
+          "text": "___, Smarty!",
+          "explanation": "Bye and Goodbye both end a conversation. Bye is the shorter form.",
+          "itemIds": [
+            "en.beginner.u01.l01.bye",
+            "en.beginner.u01.l01.goodbye"
+          ],
+          "answers": [
+            "Bye",
+            "Goodbye"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l01.task.use-again",
+          "kind": "choice",
+          "prompt": "You are speaking to Smarty for the first time. Choose the greeting addressed to Smarty.",
+          "answer": "Hello, Smarty!",
+          "options": [
+            "Hello, Smarty!",
+            "Hi, Mia!",
+            "Goodbye, Sam!"
+          ],
+          "explanation": "Address Smarty by name. Hi, Mia addresses a different person; Goodbye ends the conversation.",
+          "itemIds": [
+            "en.beginner.u01.l01.hello"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l01.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "Hello, Smarty!",
+          "answer": "Hello, Smarty!",
+          "explanation": "You have greeted someone in English. You can also say Hi, Smarty!",
+          "itemIds": [
+            "en.beginner.u01.l01.hello"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l01.task.return",
+          "kind": "choice",
+          "prompt": "Mia greets you with Hi. Choose a greeting back, not a goodbye.",
+          "answer": "Hi, Mia!",
+          "options": [
+            "Hi, Mia!",
+            "Goodbye, Mia!",
+            "Bye, Mia!"
+          ],
+          "explanation": "You can reply to a greeting with another greeting.",
+          "itemIds": [
+            "en.beginner.u01.l01.hi"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l01.task.recall",
+          "kind": "build",
+          "prompt": "Build the longer goodbye to Sam.",
+          "answer": "Goodbye, Sam!",
+          "tiles": [
+            "Sam!",
+            "Goodbye,",
+            "Bye"
+          ],
+          "explanation": "Goodbye ends the conversation.",
+          "itemIds": [
+            "en.beginner.u01.l01.goodbye"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l01.task.catch",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Bye, Ben!",
+          "answer": "Bye, Ben!",
+          "options": [
+            "Hello, Ben!",
+            "Hi, Ben!",
+            "Bye, Ben!"
+          ],
+          "explanation": "Bye is a short goodbye. Listen to the first word.",
+          "itemIds": [
+            "en.beginner.u01.l01.bye"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who gives Smarty a short goodbye?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Mia!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Hi, Smarty!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Hello, Ben!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Hi, Sam!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Goodbye, Smarty!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Bye, Mia!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Goodbye, Ben!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Bye, Sam!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u01.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "Who says Hi to Smarty?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Find the line with the name or phrase in the question.",
+            "itemIds": [
+              "en.beginner.u01.l01.hello"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "Who says Bye to Mia?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Use the speaker labels and the actual words in the dialogue.",
+            "itemIds": [
+              "en.beginner.u01.l01.hi"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says Goodbye to Ben?",
+            "answer": "Sam",
+            "options": [
+              "Sam",
+              "Mia",
+              "Ben"
+            ],
+            "explanation": "Find the matching line in the dialogue; use what the story actually says.",
+            "itemIds": [
+              "en.beginner.u01.l01.goodbye"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u01-l01-scene",
+          "describe": "A bright classroom door where Smarty the black cat waves hello while Mia and Sam stand smiling beside him."
+        }
+      },
+      "mission": {
+        "setup": "You and Smarty meet Mia and Sam at the classroom door. Practise starting and ending a conversation; no personal details are needed.",
+        "turns": [
+          {
+            "smarty": "Hello!",
+            "accept": [
+              "^hello(?: smarty)?$",
+              "^hi(?: smarty)?$"
+            ],
+            "example": "Hello, Smarty!",
+            "hint": "Greet Smarty. Hello and Hi both work.",
+            "itemIds": [
+              "en.beginner.u01.l01.hello",
+              "en.beginner.u01.l01.hi"
+            ]
+          },
+          {
+            "smarty": "Goodbye!",
+            "accept": [
+              "^goodbye(?: smarty)?$",
+              "^bye(?: smarty)?$"
+            ],
+            "example": "Bye, Smarty!",
+            "hint": "End with Goodbye or Bye.",
+            "itemIds": [
+              "en.beginner.u01.l01.goodbye",
+              "en.beginner.u01.l01.bye"
+            ]
+          }
+        ]
+      },
+      "recycle": []
+    },
+    {
+      "id": "en.beginner.u01.l02",
+      "section": "beginner",
+      "unit": 1,
+      "lesson": 2,
+      "title": "Tell me your name",
+      "canDo": "Introduce yourself and recognise a name question.",
+      "scenario": "A new classmate asks what to call you. Choose an imaginary name or nickname, then ask their name back.",
+      "items": [
+        {
+          "id": "en.beginner.u01.l02.my-name",
+          "text": "My name is",
+          "kind": "pattern",
+          "forms": [
+            "My name’s"
+          ],
+          "example": "My name is Mia.",
+          "note": "My name is… and I’m… both introduce you. I’m is the short form of I am. Use a nickname or an imaginary name if you prefer. My name is Mia means the speaker is called Mia."
+        },
+        {
+          "id": "en.beginner.u01.l02.i-am",
+          "text": "I am",
+          "kind": "pattern",
+          "forms": [
+            "I’m"
+          ],
+          "example": "I am Sam."
+        },
+        {
+          "id": "en.beginner.u01.l02.ask-name",
+          "text": "What is your name?",
+          "kind": "phrase",
+          "forms": [
+            "What’s your name?"
+          ],
+          "example": "What is your name?"
+        },
+        {
+          "id": "en.beginner.u01.l02.and-you",
+          "text": "And you?",
+          "kind": "phrase",
+          "example": "And you?"
+        }
+      ],
+      "grammar": {
+        "title": "Two ways to introduce yourself",
+        "explanation": "My name is… and I’m… both introduce you. I’m is the short form of I am. Use a nickname or an imaginary name if you prefer.",
+        "examples": [
+          "My name is Mia.",
+          "I’m Mia."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u01.l02.task.choose",
+          "kind": "choice",
+          "prompt": "Introduce yourself as Mia using My name is.",
+          "answer": "My name is Mia.",
+          "options": [
+            "My name is Mia.",
+            "I am Sam.",
+            "What is your name?"
+          ],
+          "explanation": "My name is + a name. My tells us the name belongs to the speaker.",
+          "itemIds": [
+            "en.beginner.u01.l02.my-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l02.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I am Sam.",
+          "answer": "I am Sam.",
+          "options": [
+            "I am Sam.",
+            "My name is Mia.",
+            "What is your name?"
+          ],
+          "explanation": "I am Sam and I’m Sam both introduce the speaker as Sam. Listen for the name after am.",
+          "itemIds": [
+            "en.beginner.u01.l02.i-am"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l02.task.build",
+          "kind": "build",
+          "prompt": "Build the taught phrase in its natural word order.",
+          "answer": "What is your name?",
+          "tiles": [
+            "name?",
+            "your",
+            "is",
+            "What",
+            "Bye"
+          ],
+          "explanation": "What’s your name? asks what to call you.",
+          "itemIds": [
+            "en.beginner.u01.l02.ask-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l02.task.fill",
+          "kind": "fill",
+          "prompt": "Introduce yourself as Mia. Complete the introduction.",
+          "text": "My ___ is Mia.",
+          "answer": "name",
+          "explanation": "My name is + a name. My tells us the name belongs to the speaker.",
+          "itemIds": [
+            "en.beginner.u01.l02.my-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l02.task.match",
+          "kind": "match",
+          "prompt": "Match each full form to its short form. They have the same meaning.",
+          "pairs": [
+            {
+              "left": "My name is",
+              "right": "My name’s"
+            },
+            {
+              "left": "I am",
+              "right": "I’m"
+            },
+            {
+              "left": "What is your name?",
+              "right": "What’s your name?"
+            }
+          ],
+          "explanation": "The short forms express the same meaning as their full forms. The apostrophe marks missing letters.",
+          "itemIds": [
+            "en.beginner.u01.l02.my-name",
+            "en.beginner.u01.l02.i-am",
+            "en.beginner.u01.l02.ask-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l02.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "My name is Mia.",
+          "answer": "My name is Mia.",
+          "explanation": "Say the complete phrase, including the small grammar words.",
+          "itemIds": [
+            "en.beginner.u01.l02.my-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l02.task.recycle-greet",
+          "kind": "choice",
+          "prompt": "Start a new conversation with Smarty. Choose the greeting, not an ending.",
+          "answer": "Hello, Smarty!",
+          "options": [
+            "Hello, Smarty!",
+            "Goodbye, Smarty!",
+            "Bye, Smarty!"
+          ],
+          "explanation": "Hello starts the conversation. Goodbye and Bye end it.",
+          "itemIds": [
+            "en.beginner.u01.l01.hello"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l02.task.recycle-build",
+          "kind": "build",
+          "prompt": "Build a longer goodbye to Sam.",
+          "answer": "Goodbye, Sam!",
+          "tiles": [
+            "Sam!",
+            "Goodbye,",
+            "Bye"
+          ],
+          "explanation": "Goodbye ends the conversation.",
+          "itemIds": [
+            "en.beginner.u01.l01.goodbye"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l02.task.recycle-listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Hi, Mia!",
+          "answer": "Hi, Mia!",
+          "options": [
+            "Goodbye, Mia!",
+            "Hi, Mia!",
+            "Bye, Mia!"
+          ],
+          "explanation": "Hi is a short, friendly way to say hello.",
+          "itemIds": [
+            "en.beginner.u01.l01.hi"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l02.task.follow-up",
+          "kind": "choice",
+          "prompt": "Ask the name question back using the short follow-up phrase.",
+          "answer": "And you?",
+          "options": [
+            "And you?",
+            "Goodbye, Mia!",
+            "Hello, Smarty!"
+          ],
+          "explanation": "And you? asks the same question back after you have answered it.",
+          "itemIds": [
+            "en.beginner.u01.l02.and-you"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "A new classmate joins the group. Which name will you hear?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello! What’s your name?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "My name is Mia. And you?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I’m Smarty."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Hi! I’m Sam."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Hello, Sam!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "What is your name?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "My name is Ben."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Goodbye, Ben!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u01.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Who introduces themselves as Mia?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Find the line with the name or phrase in the question.",
+            "itemIds": [
+              "en.beginner.u01.l02.my-name"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "Who speaks first?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Use the speaker labels and the actual words in the dialogue.",
+            "itemIds": [
+              "en.beginner.u01.l02.i-am"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says Goodbye to Ben?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Smarty ends the dialogue with Goodbye, Ben!",
+            "itemIds": [
+              "en.beginner.u01.l02.ask-name"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u01-l02-scene",
+          "describe": "A classroom table where Smarty the black cat sits with Mia, Sam and Ben, Sam leaning forward with a friendly smile."
+        }
+      },
+      "mission": {
+        "setup": "A new classmate asks what to call you. Choose an imaginary name or nickname, then ask their name back.",
+        "turns": [
+          {
+            "smarty": "What’s your name?",
+            "accept": [
+              "^(?:hello )?my name is [\\p{L}][\\p{L}' -]{0,39}$",
+              "^(?:hi )?i am [\\p{L}][\\p{L}' -]{0,39}$"
+            ],
+            "example": "My name is Sam.",
+            "hint": "Use My name is… or I’m… followed by a name.",
+            "itemIds": [
+              "en.beginner.u01.l02.my-name",
+              "en.beginner.u01.l02.i-am"
+            ]
+          },
+          {
+            "smarty": "Hi, Sam!",
+            "accept": [
+              "^what is your name$",
+              "^and you$"
+            ],
+            "example": "And you?",
+            "hint": "Ask the question back using And you? or What’s your name?",
+            "itemIds": [
+              "en.beginner.u01.l02.ask-name",
+              "en.beginner.u01.l02.and-you"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l01.hello",
+        "en.beginner.u01.l01.goodbye",
+        "en.beginner.u01.l01.hi"
+      ]
+    },
+    {
+      "id": "en.beginner.u01.l03",
+      "section": "beginner",
+      "unit": 1,
+      "lesson": 3,
+      "title": "Catch the name",
+      "canDo": "Understand short introductions and politely ask for a repeat.",
+      "scenario": "The classroom is a little noisy. Catch names, politely ask to hear them again, and thank the speaker.",
+      "items": [
+        {
+          "id": "en.beginner.u01.l03.sorry",
+          "text": "Sorry",
+          "kind": "word",
+          "example": "Sorry, Mia.",
+          "note": "The name usually comes after I’m or My name is. You do not have to understand every sound to catch a name."
+        },
+        {
+          "id": "en.beginner.u01.l03.please",
+          "text": "Please",
+          "kind": "word",
+          "example": "Again, please."
+        },
+        {
+          "id": "en.beginner.u01.l03.again",
+          "text": "Again",
+          "kind": "word",
+          "example": "Again, please."
+        },
+        {
+          "id": "en.beginner.u01.l03.thank-you",
+          "text": "Thank you",
+          "kind": "phrase",
+          "example": "Thank you, Smarty."
+        },
+        {
+          "id": "en.beginner.u01.l03.thanks",
+          "text": "Thanks",
+          "kind": "word",
+          "example": "Thanks, Sam."
+        }
+      ],
+      "grammar": {
+        "title": "Names after be",
+        "explanation": "The name usually comes after I’m or My name is. You do not have to understand every sound to catch a name.",
+        "examples": [
+          "I’m Ben.",
+          "My name is Mia."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u01.l03.task.choose",
+          "kind": "choice",
+          "prompt": "A name was not clear. Start with a polite apology.",
+          "answer": "Sorry, Mia.",
+          "options": [
+            "Sorry, Mia.",
+            "Again, please.",
+            "Thank you, Smarty."
+          ],
+          "explanation": "Sorry politely signals that something was not heard or understood.",
+          "itemIds": [
+            "en.beginner.u01.l03.sorry"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l03.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Again, please.",
+          "answer": "Again, please.",
+          "options": [
+            "Again, please.",
+            "Sorry, Mia.",
+            "Thanks, Sam."
+          ],
+          "explanation": "Again, please is a polite request to hear the words once more.",
+          "itemIds": [
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l03.task.build",
+          "kind": "build",
+          "prompt": "Build the taught phrase in its natural word order.",
+          "answer": "Again, please.",
+          "tiles": [
+            "please.",
+            "Again,",
+            "Bye"
+          ],
+          "explanation": "Put please after again to make this short repeat request polite.",
+          "itemIds": [
+            "en.beginner.u01.l03.again"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l03.task.fill",
+          "kind": "fill",
+          "prompt": "Thank Smarty after a repeat. Complete the phrase.",
+          "text": "Thank ___, Smarty.",
+          "answer": "you",
+          "explanation": "Thank you acknowledges the person who helped by repeating the words.",
+          "itemIds": [
+            "en.beginner.u01.l03.thank-you"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l03.task.use-again",
+          "kind": "choice",
+          "prompt": "Sam repeats his name for you. Choose a short way to thank him.",
+          "answer": "Thanks, Sam.",
+          "options": [
+            "Thanks, Sam.",
+            "Sorry, Mia.",
+            "Again, please."
+          ],
+          "explanation": "Thanks is another friendly way to thank the speaker.",
+          "itemIds": [
+            "en.beginner.u01.l03.thanks"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l03.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "Sorry, Mia.",
+          "answer": "Sorry, Mia.",
+          "explanation": "Say the complete phrase, including the small grammar words.",
+          "itemIds": [
+            "en.beginner.u01.l03.sorry"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l03.task.recycle-ben",
+          "kind": "listen",
+          "prompt": "Listen for the speaker’s name.",
+          "audio": "Hello! I am Ben.",
+          "answer": "Ben",
+          "options": [
+            "Ben",
+            "Sam",
+            "Mia"
+          ],
+          "itemIds": [
+            "en.beginner.u01.l02.i-am"
+          ],
+          "explanation": "I’m Ben introduces Ben. The greeting changes, but the name still comes after I’m."
+        },
+        {
+          "id": "en.beginner.u01.l03.task.recycle-sam",
+          "kind": "listen",
+          "prompt": "Listen for the speaker’s name.",
+          "audio": "Hi! My name is Sam.",
+          "answer": "Sam",
+          "options": [
+            "Sam",
+            "Mia",
+            "Ben"
+          ],
+          "itemIds": [
+            "en.beginner.u01.l02.my-name"
+          ],
+          "explanation": "Listen for Sam after My name is."
+        },
+        {
+          "id": "en.beginner.u01.l03.task.recycle-question",
+          "kind": "listen",
+          "prompt": "Choose the question you hear.",
+          "audio": "What is your name?",
+          "answer": "What is your name?",
+          "options": [
+            "What is your name?",
+            "My name is Mia.",
+            "I am Sam."
+          ],
+          "itemIds": [
+            "en.beginner.u01.l02.ask-name"
+          ],
+          "explanation": "What’s is the short form of What is."
+        },
+        {
+          "id": "en.beginner.u01.l03.task.recycle-bye",
+          "kind": "listen",
+          "prompt": "Choose the ending you hear.",
+          "audio": "Goodbye, Mia!",
+          "answer": "Goodbye, Mia!",
+          "options": [
+            "Goodbye, Mia!",
+            "Hello, Mia!",
+            "Hi, Mia!"
+          ],
+          "itemIds": [
+            "en.beginner.u01.l01.goodbye"
+          ],
+          "explanation": "Goodbye signals that the conversation is ending."
+        }
+      ],
+      "story": {
+        "hook": "Smarty missed a name. Can the friends help him catch it?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello! What’s your name?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I’m Mia."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Sorry, Mia. Again, please."
+          },
+          {
+            "speaker": "Mia",
+            "text": "My name is Mia."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Mia."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Hi, Smarty!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What is your name?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "My name is Sam. Thanks!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u01.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Who introduces themselves as Mia?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Find the line with the name or phrase in the question.",
+            "itemIds": [
+              "en.beginner.u01.l03.sorry"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Who speaks first?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Use the speaker labels and the actual words in the dialogue.",
+            "itemIds": [
+              "en.beginner.u01.l03.please"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says My name is Sam, followed by Thanks?",
+            "answer": "Sam",
+            "options": [
+              "Sam",
+              "Mia",
+              "Ben"
+            ],
+            "explanation": "Sam gives his name and says Thanks in the last line.",
+            "itemIds": [
+              "en.beginner.u01.l03.again"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u01-l03-scene",
+          "describe": "A noisy school classroom where Smarty the black cat cups a paw to his ear while Mia smiles and nods, with Sam waving nearby."
+        }
+      },
+      "mission": {
+        "setup": "The classroom is a little noisy. Catch names, politely ask to hear them again, and thank the speaker.",
+        "turns": [
+          {
+            "smarty": "My name is Smarty.",
+            "accept": [
+              "^again please$",
+              "^sorry again please$"
+            ],
+            "example": "Again, please.",
+            "hint": "Politely ask to hear the name again.",
+            "itemIds": [
+              "en.beginner.u01.l03.sorry",
+              "en.beginner.u01.l03.please",
+              "en.beginner.u01.l03.again"
+            ]
+          },
+          {
+            "smarty": "My name is Smarty.",
+            "accept": [
+              "^thank you(?: smarty)?$",
+              "^thanks(?: smarty)?$"
+            ],
+            "example": "Thank you, Smarty.",
+            "hint": "Thank the speaker after the repeat.",
+            "itemIds": [
+              "en.beginner.u01.l03.thank-you",
+              "en.beginner.u01.l03.thanks"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l02.i-am",
+        "en.beginner.u01.l02.my-name",
+        "en.beginner.u01.l02.ask-name",
+        "en.beginner.u01.l01.goodbye"
+      ]
+    },
+    {
+      "id": "en.beginner.u01.l04",
+      "section": "beginner",
+      "unit": 1,
+      "lesson": 4,
+      "title": "I am, you are",
+      "canDo": "Use the right form of be in an introduction.",
+      "scenario": "Smarty introduces fictional classmates. Confirm who each person is and introduce the pair together.",
+      "items": [
+        {
+          "id": "en.beginner.u01.l04.you-are",
+          "text": "You are",
+          "kind": "pattern",
+          "forms": [
+            "You’re"
+          ],
+          "example": "You are Mia.",
+          "note": "Use am with I, and are with you. In speech, I am often becomes I’m and you are becomes you’re. They mean the same thing."
+        },
+        {
+          "id": "en.beginner.u01.l04.he-is",
+          "text": "He is",
+          "kind": "pattern",
+          "forms": [
+            "He’s"
+          ],
+          "example": "He is Sam."
+        },
+        {
+          "id": "en.beginner.u01.l04.she-is",
+          "text": "She is",
+          "kind": "pattern",
+          "forms": [
+            "She’s"
+          ],
+          "example": "She is Mia."
+        },
+        {
+          "id": "en.beginner.u01.l04.we-are",
+          "text": "We are",
+          "kind": "pattern",
+          "forms": [
+            "We’re"
+          ],
+          "example": "We are Sam and Mia."
+        }
+      ],
+      "grammar": {
+        "title": "I am. You are.",
+        "explanation": "Use am with I, and are with you. In speech, I am often becomes I’m and you are becomes you’re. They mean the same thing.",
+        "examples": [
+          "I am Sam.",
+          "You are Mia.",
+          "He is Sam.",
+          "She is Mia."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u01.l04.task.choose",
+          "kind": "choice",
+          "prompt": "Confirm that the other person is Mia.",
+          "answer": "You are Mia.",
+          "options": [
+            "You are Mia.",
+            "He is Sam.",
+            "She is Mia."
+          ],
+          "explanation": "You goes with are: You are Mia.",
+          "itemIds": [
+            "en.beginner.u01.l04.you-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l04.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "He is Sam.",
+          "answer": "He is Sam.",
+          "options": [
+            "He is Sam.",
+            "You are Mia.",
+            "She is Mia."
+          ],
+          "explanation": "Use He is to introduce the fictional character Sam. He’s is the short form.",
+          "itemIds": [
+            "en.beginner.u01.l04.he-is"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l04.task.build",
+          "kind": "build",
+          "prompt": "Build the taught phrase in its natural word order.",
+          "answer": "She is Mia.",
+          "tiles": [
+            "Mia.",
+            "is",
+            "She",
+            "Bye"
+          ],
+          "explanation": "Use She is to introduce Mia. She’s is the short form.",
+          "itemIds": [
+            "en.beginner.u01.l04.she-is"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l04.task.fill",
+          "kind": "fill",
+          "prompt": "Use the form of be that goes with you.",
+          "text": "You ___ Mia.",
+          "answer": "are",
+          "explanation": "You are + a name. We do not say You am.",
+          "itemIds": [
+            "en.beginner.u01.l04.you-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l04.task.match",
+          "kind": "match",
+          "prompt": "Match each full form to its short form. They have the same meaning.",
+          "pairs": [
+            {
+              "left": "You are",
+              "right": "You’re"
+            },
+            {
+              "left": "He is",
+              "right": "He’s"
+            },
+            {
+              "left": "She is",
+              "right": "She’s"
+            },
+            {
+              "left": "We are",
+              "right": "We’re"
+            }
+          ],
+          "explanation": "The short forms express the same meaning as their full forms. The apostrophe marks missing letters.",
+          "itemIds": [
+            "en.beginner.u01.l04.you-are",
+            "en.beginner.u01.l04.he-is",
+            "en.beginner.u01.l04.she-is",
+            "en.beginner.u01.l04.we-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l04.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "I’m Sam.",
+          "answer": "I’m Sam.",
+          "explanation": "I am Sam and I’m Sam are both correct introductions.",
+          "itemIds": [
+            "en.beginner.u01.l02.i-am"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l04.task.recall-am",
+          "kind": "choice",
+          "prompt": "Choose the form of be for I: I ___ Sam.",
+          "answer": "am",
+          "options": [
+            "am",
+            "are",
+            "is"
+          ],
+          "explanation": "I goes with am: I am Sam.",
+          "itemIds": [
+            "en.beginner.u01.l02.i-am"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l04.task.recall-short",
+          "kind": "choice",
+          "prompt": "Which sentence means the same as I am Ben?",
+          "answer": "I’m Ben.",
+          "options": [
+            "I’m Ben.",
+            "You’re Ben.",
+            "My name is Mia."
+          ],
+          "explanation": "I’m combines I and am. The apostrophe replaces the missing a.",
+          "itemIds": [
+            "en.beginner.u01.l02.i-am"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l04.task.recycle-listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Hi, Mia!",
+          "answer": "Hi, Mia!",
+          "options": [
+            "Goodbye, Mia!",
+            "Hi, Mia!",
+            "Bye, Mia!"
+          ],
+          "explanation": "Hi is a short, friendly way to say hello.",
+          "itemIds": [
+            "en.beginner.u01.l01.hi"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Two classmates arrive. Can you introduce them together?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello! I’m Smarty."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I’m Mia."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "You’re Mia."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I’m Sam."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "He is Sam. She is Mia."
+          },
+          {
+            "speaker": "Mia",
+            "text": "We are Mia and Sam."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u01.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Who introduces themselves as Mia?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Find the line with the name or phrase in the question.",
+            "itemIds": [
+              "en.beginner.u01.l04.you-are"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "Who speaks first?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Use the speaker labels and the actual words in the dialogue.",
+            "itemIds": [
+              "en.beginner.u01.l04.he-is"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says We are Mia and Sam?",
+            "answer": "Mia",
+            "options": [
+              "Sam",
+              "Mia",
+              "Ben"
+            ],
+            "explanation": "Mia introduces the pair using We are.",
+            "itemIds": [
+              "en.beginner.u01.l04.she-is"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u01-l04-scene",
+          "describe": "A school corridor where Smarty the black cat points to Mia and Sam, who stand side by side and wave to each other."
+        }
+      },
+      "mission": {
+        "setup": "Smarty introduces fictional classmates. Confirm who each person is and introduce the pair together.",
+        "turns": [
+          {
+            "smarty": "My name is Mia.",
+            "accept": [
+              "^you are mia$",
+              "^hi you are mia$"
+            ],
+            "example": "You are Mia.",
+            "hint": "Imagine Smarty is playing Mia. Confirm her name.",
+            "itemIds": [
+              "en.beginner.u01.l04.you-are"
+            ]
+          },
+          {
+            "smarty": "He is Sam.",
+            "accept": [
+              "^she is mia$",
+              "^we are sam and mia$"
+            ],
+            "example": "She is Mia.",
+            "hint": "Introduce Mia or introduce the pair, Sam and Mia.",
+            "itemIds": [
+              "en.beginner.u01.l04.he-is",
+              "en.beginner.u01.l04.she-is",
+              "en.beginner.u01.l04.we-are"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l02.i-am",
+        "en.beginner.u01.l01.hi"
+      ]
+    },
+    {
+      "id": "en.beginner.u01.l05",
+      "section": "beginner",
+      "unit": 1,
+      "lesson": 5,
+      "title": "A quick reunion",
+      "canDo": "Use time-of-day greetings while recalling earlier introductions.",
+      "scenario": "Meet the same friends at different times of day and say that you will see them later.",
+      "items": [
+        {
+          "id": "en.beginner.u01.l05.morning",
+          "text": "Good morning",
+          "kind": "phrase",
+          "example": "Good morning, Mia!"
+        },
+        {
+          "id": "en.beginner.u01.l05.afternoon",
+          "text": "Good afternoon",
+          "kind": "phrase",
+          "example": "Good afternoon, Sam!"
+        },
+        {
+          "id": "en.beginner.u01.l05.evening",
+          "text": "Good evening",
+          "kind": "phrase",
+          "example": "Good evening, Smarty!"
+        },
+        {
+          "id": "en.beginner.u01.l05.see-you",
+          "text": "See you later",
+          "kind": "phrase",
+          "example": "See you later, Ben!"
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u01.l05.task.choose",
+          "kind": "choice",
+          "prompt": "You see Mia in the morning. Choose the matching greeting.",
+          "answer": "Good morning, Mia!",
+          "options": [
+            "Good morning, Mia!",
+            "Good afternoon, Sam!",
+            "Good evening, Smarty!"
+          ],
+          "explanation": "Good morning is the taught greeting for the morning. Use it before the afternoon.",
+          "itemIds": [
+            "en.beginner.u01.l05.morning"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l05.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Good afternoon, Sam!",
+          "answer": "Good afternoon, Sam!",
+          "options": [
+            "Good afternoon, Sam!",
+            "Good morning, Mia!",
+            "Good evening, Smarty!"
+          ],
+          "explanation": "Listen for afternoon to identify Good afternoon.",
+          "itemIds": [
+            "en.beginner.u01.l05.afternoon"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l05.task.build",
+          "kind": "build",
+          "prompt": "Build the taught phrase in its natural word order.",
+          "answer": "Good evening, Smarty!",
+          "tiles": [
+            "Smarty!",
+            "evening,",
+            "Good",
+            "Bye"
+          ],
+          "explanation": "Good evening is one phrase; put the greeting before the person’s name.",
+          "itemIds": [
+            "en.beginner.u01.l05.evening"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l05.task.fill",
+          "kind": "fill",
+          "prompt": "It is evening. Complete the greeting.",
+          "text": "Good ___, Smarty!",
+          "answer": "evening",
+          "explanation": "The time in this scene is evening, so complete Good evening.",
+          "itemIds": [
+            "en.beginner.u01.l05.evening"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l05.task.use-again",
+          "kind": "choice",
+          "prompt": "Say that you will see Ben later.",
+          "answer": "See you later, Ben!",
+          "options": [
+            "See you later, Ben!",
+            "Good morning, Ben!",
+            "Good afternoon, Ben!"
+          ],
+          "explanation": "See you later is a friendly way to end the conversation when you expect to meet again.",
+          "itemIds": [
+            "en.beginner.u01.l05.see-you"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l05.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "Good morning, Mia!",
+          "answer": "Good morning, Mia!",
+          "explanation": "Say the complete phrase, including the small grammar words.",
+          "itemIds": [
+            "en.beginner.u01.l05.morning"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l05.task.recycle-greet",
+          "kind": "choice",
+          "prompt": "Start a new conversation with Smarty. Choose the greeting, not an ending.",
+          "answer": "Hello, Smarty!",
+          "options": [
+            "Hello, Smarty!",
+            "Goodbye, Smarty!",
+            "Bye, Smarty!"
+          ],
+          "explanation": "Hello starts the conversation. Goodbye and Bye end it. Start with a greeting, then introduce yourself or ask a question.",
+          "itemIds": [
+            "en.beginner.u01.l01.hello"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l05.task.recycle-build",
+          "kind": "build",
+          "prompt": "Introduce yourself as Mia using My name is.",
+          "answer": "My name is Mia.",
+          "tiles": [
+            "Mia.",
+            "is",
+            "name",
+            "My",
+            "Bye"
+          ],
+          "explanation": "My name is + a name. My tells us the name belongs to the speaker.",
+          "itemIds": [
+            "en.beginner.u01.l02.my-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l05.task.recycle-question",
+          "kind": "listen",
+          "prompt": "Listen and choose a reply that gives your name.",
+          "audio": "Hello! What’s your name?",
+          "answer": "My name is Mia.",
+          "options": [
+            "My name is Mia.",
+            "Goodbye, Mia!",
+            "Hi, Mia!"
+          ],
+          "itemIds": [
+            "en.beginner.u01.l02.ask-name",
+            "en.beginner.u01.l02.my-name"
+          ],
+          "explanation": "They are asking what to call you."
+        }
+      ],
+      "story": {
+        "hook": "The same friends meet again later. Which greeting changes?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good morning, Mia!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Good morning, Smarty!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Good afternoon, Ben!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Good afternoon, Sam!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good evening, Mia!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Good evening, Smarty!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "See you later, Ben!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Goodbye, Sam!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u01.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Who says Good morning to Smarty?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Mia replies Good morning, Smarty.",
+            "itemIds": [
+              "en.beginner.u01.l05.morning"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "Who says Good afternoon to Sam?",
+            "answer": "Ben",
+            "options": [
+              "Ben",
+              "Mia",
+              "Smarty"
+            ],
+            "explanation": "Use the speaker labels and the actual words in the dialogue.",
+            "itemIds": [
+              "en.beginner.u01.l05.afternoon"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says See you later to Ben?",
+            "answer": "Sam",
+            "options": [
+              "Sam",
+              "Mia",
+              "Smarty"
+            ],
+            "explanation": "Sam uses See you later, Ben!",
+            "itemIds": [
+              "en.beginner.u01.l05.evening"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u01-l05-scene",
+          "describe": "A school hallway with a sunny window, where Smarty the black cat and Mia wave at each other while Sam and Ben wave goodbye."
+        }
+      },
+      "mission": {
+        "setup": "Meet the same friends at different times of day and say that you will see them later.",
+        "turns": [
+          {
+            "smarty": "Good morning!",
+            "accept": [
+              "^good morning(?: smarty)?$",
+              "^hello(?: smarty)?$"
+            ],
+            "example": "Good morning, Smarty.",
+            "hint": "It is morning. Give a greeting back.",
+            "itemIds": [
+              "en.beginner.u01.l05.morning",
+              "en.beginner.u01.l01.hello"
+            ]
+          },
+          {
+            "smarty": "Goodbye!",
+            "accept": [
+              "^see you later(?: smarty)?$",
+              "^goodbye(?: smarty)?$"
+            ],
+            "example": "See you later, Smarty.",
+            "hint": "Say you will see your friend later, or give a goodbye.",
+            "itemIds": [
+              "en.beginner.u01.l05.see-you",
+              "en.beginner.u01.l01.goodbye"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l01.hello",
+        "en.beginner.u01.l02.my-name",
+        "en.beginner.u01.l02.ask-name",
+        "en.beginner.u01.l01.goodbye"
+      ],
+      "grammar": {
+        "title": "Recall an introduction",
+        "explanation": "I am; you are. The verb changes with the speaker. My name is… and I’m… are both accepted.",
+        "examples": [
+          "I am Mia.",
+          "You are Sam."
+        ]
+      }
+    },
+    {
+      "id": "en.beginner.u01.l06",
+      "section": "beginner",
+      "unit": 1,
+      "lesson": 6,
+      "title": "Where are you from?",
+      "canDo": "Say where you are from and ask someone else.",
+      "scenario": "Tell a new classmate where your imaginary character is from, then ask the question back. Countries are examples, never assumptions about learners.",
+      "items": [
+        {
+          "id": "en.beginner.u01.l06.i-am-from",
+          "text": "I am from",
+          "kind": "pattern",
+          "forms": [
+            "I’m from"
+          ],
+          "example": "I am from Uzbekistan.",
+          "note": "I’m from… tells someone your country or place of origin. Where are you from? asks the same question back. Use a real or imaginary place for practice."
+        },
+        {
+          "id": "en.beginner.u01.l06.ask-from",
+          "text": "Where are you from?",
+          "kind": "phrase",
+          "example": "Where are you from?"
+        },
+        {
+          "id": "en.beginner.u01.l06.uzbekistan",
+          "text": "Uzbekistan",
+          "kind": "word",
+          "example": "I am from Uzbekistan."
+        },
+        {
+          "id": "en.beginner.u01.l06.brazil",
+          "text": "Brazil",
+          "kind": "word",
+          "example": "I am from Brazil."
+        },
+        {
+          "id": "en.beginner.u01.l06.england",
+          "text": "England",
+          "kind": "word",
+          "example": "I am from England."
+        }
+      ],
+      "grammar": {
+        "title": "From + a place",
+        "explanation": "I’m from… tells someone your country or place of origin. Where are you from? asks the same question back. Use a real or imaginary place for practice.",
+        "examples": [
+          "I’m from Uzbekistan.",
+          "I am from Brazil.",
+          "Where are you from?"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u01.l06.task.choose",
+          "kind": "choice",
+          "prompt": "Introduce your imaginary character as coming from Uzbekistan.",
+          "answer": "I am from Uzbekistan.",
+          "options": [
+            "I am from Uzbekistan.",
+            "I am from Brazil.",
+            "I am from England."
+          ],
+          "explanation": "From introduces the place you come from.",
+          "itemIds": [
+            "en.beginner.u01.l06.i-am-from"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l06.task.listen",
+          "kind": "listen",
+          "prompt": "Listen and choose the speaker’s country.",
+          "audio": "Hello! I am from Brazil.",
+          "answer": "Brazil",
+          "options": [
+            "Uzbekistan",
+            "Brazil",
+            "England"
+          ],
+          "explanation": "Listen for the place after from.",
+          "itemIds": [
+            "en.beginner.u01.l06.i-am-from",
+            "en.beginner.u01.l06.brazil"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l06.task.build",
+          "kind": "build",
+          "prompt": "Build a question to ask where someone is from.",
+          "answer": "Where are you from?",
+          "tiles": [
+            "from?",
+            "you",
+            "Where",
+            "are",
+            "am"
+          ],
+          "explanation": "Question order: Where + are + you + from?",
+          "itemIds": [
+            "en.beginner.u01.l06.ask-from"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l06.task.fill",
+          "kind": "fill",
+          "prompt": "Say that your character comes from Brazil.",
+          "text": "I am ___ Brazil.",
+          "answer": "from",
+          "explanation": "Use I’m from… or I am from… followed by a place.",
+          "itemIds": [
+            "en.beginner.u01.l06.i-am-from"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l06.task.match",
+          "kind": "match",
+          "prompt": "Match each place with the sentence about that same place.",
+          "pairs": [
+            {
+              "left": "Uzbekistan",
+              "right": "I am from Uzbekistan."
+            },
+            {
+              "left": "Brazil",
+              "right": "I am from Brazil."
+            },
+            {
+              "left": "England",
+              "right": "I am from England."
+            }
+          ],
+          "explanation": "The country after from tells you where the speaker comes from.",
+          "itemIds": [
+            "en.beginner.u01.l06.i-am-from",
+            "en.beginner.u01.l06.uzbekistan",
+            "en.beginner.u01.l06.brazil",
+            "en.beginner.u01.l06.england"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l06.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "I am from Uzbekistan.",
+          "answer": "I am from Uzbekistan.",
+          "explanation": "Say the complete phrase, including the small grammar words.",
+          "itemIds": [
+            "en.beginner.u01.l06.i-am-from"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l06.task.recycle-greet",
+          "kind": "choice",
+          "prompt": "Start a new conversation with Smarty. Choose the greeting, not an ending.",
+          "answer": "Hello, Smarty!",
+          "options": [
+            "Hello, Smarty!",
+            "Goodbye, Smarty!",
+            "Bye, Smarty!"
+          ],
+          "explanation": "Hello starts the conversation. Goodbye and Bye end it.",
+          "itemIds": [
+            "en.beginner.u01.l01.hello"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l06.task.recycle-build",
+          "kind": "build",
+          "prompt": "Introduce yourself as Mia using My name is.",
+          "answer": "My name is Mia.",
+          "tiles": [
+            "Mia.",
+            "is",
+            "name",
+            "My",
+            "Bye"
+          ],
+          "explanation": "My name is + a name. My tells us the name belongs to the speaker.",
+          "itemIds": [
+            "en.beginner.u01.l02.my-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l06.task.recycle-listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Hi, Mia!",
+          "answer": "Hi, Mia!",
+          "options": [
+            "Goodbye, Mia!",
+            "Hi, Mia!",
+            "Bye, Mia!"
+          ],
+          "explanation": "Hi is a short, friendly way to say hello.",
+          "itemIds": [
+            "en.beginner.u01.l01.hi"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Smarty has a visiting friend. Which country will you hear?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello! Where are you from?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I am from Uzbekistan."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I’m from Brazil."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I am from England."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Ben."
+          },
+          {
+            "speaker": "Mia",
+            "text": "And you?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I am from Uzbekistan."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Goodbye, Smarty!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u01.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "Who is from Brazil?",
+            "answer": "Sam",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Sam says I’m from Brazil.",
+            "itemIds": [
+              "en.beginner.u01.l06.i-am-from"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "Who speaks first?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Use the speaker labels and the actual words in the dialogue.",
+            "itemIds": [
+              "en.beginner.u01.l06.ask-from"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "Who asks And you?",
+            "answer": "Mia",
+            "options": [
+              "Sam",
+              "Mia",
+              "Ben"
+            ],
+            "explanation": "Mia asks the question back after the classmates give their countries.",
+            "itemIds": [
+              "en.beginner.u01.l06.uzbekistan"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u01-l06-scene",
+          "describe": "A classroom with a world map on the wall, where Smarty the black cat points at the map while Mia, Sam and Ben stand by it."
+        }
+      },
+      "mission": {
+        "setup": "Tell a new classmate where your imaginary character is from, then ask the question back. Countries are examples, never assumptions about learners.",
+        "turns": [
+          {
+            "smarty": "Where are you from?",
+            "accept": [
+              "^i am from [\\p{L}][\\p{L}' -]{0,39}$",
+              "^(?:hello |hi )i am from [\\p{L}][\\p{L}' -]{0,39}$"
+            ],
+            "example": "I’m from Uzbekistan.",
+            "hint": "Use I’m from… or I am from… followed by a place.",
+            "itemIds": [
+              "en.beginner.u01.l06.i-am-from",
+              "en.beginner.u01.l06.uzbekistan"
+            ]
+          },
+          {
+            "smarty": "Thank you.",
+            "accept": [
+              "^where are you from$",
+              "^and you$"
+            ],
+            "example": "Where are you from?",
+            "hint": "Question order: Where + are + you + from?",
+            "itemIds": [
+              "en.beginner.u01.l06.ask-from",
+              "en.beginner.u01.l02.and-you"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l01.hello",
+        "en.beginner.u01.l02.my-name",
+        "en.beginner.u01.l01.hi",
+        "en.beginner.u01.l02.and-you"
+      ]
+    },
+    {
+      "id": "en.beginner.u01.l07",
+      "section": "beginner",
+      "unit": 1,
+      "lesson": 7,
+      "title": "Two new classmates",
+      "canDo": "Understand a tiny conversation and follow who says what.",
+      "scenario": "Smarty introduces a visiting friend. Exchange names and countries, then give a friendly reply.",
+      "items": [
+        {
+          "id": "en.beginner.u01.l07.nice-meet",
+          "text": "Nice to meet you",
+          "kind": "phrase",
+          "example": "Nice to meet you, Mia!",
+          "note": "Say Nice to meet you when you meet someone for the first time. You can reply Nice to meet you, too. Too means also here."
+        },
+        {
+          "id": "en.beginner.u01.l07.nice-too",
+          "text": "Nice to meet you, too",
+          "kind": "phrase",
+          "example": "Nice to meet you, too!"
+        },
+        {
+          "id": "en.beginner.u01.l07.this-is",
+          "text": "This is",
+          "kind": "pattern",
+          "example": "This is my friend, Sam."
+        },
+        {
+          "id": "en.beginner.u01.l07.friend",
+          "text": "friend",
+          "kind": "word",
+          "example": "Mia is my friend."
+        }
+      ],
+      "grammar": {
+        "title": "A friendly reply with too",
+        "explanation": "Say Nice to meet you when you meet someone for the first time. You can reply Nice to meet you, too. Too means also here. They exchange names, ask about countries and say Nice to meet you.",
+        "examples": [
+          "Nice to meet you!",
+          "Nice to meet you, too!"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u01.l07.task.choose",
+          "kind": "choice",
+          "prompt": "Say that you are pleased to meet Mia for the first time.",
+          "answer": "Nice to meet you, Mia!",
+          "options": [
+            "Nice to meet you, Mia!",
+            "Goodbye, Mia!",
+            "I am from Brazil."
+          ],
+          "explanation": "Nice to meet you is a friendly phrase for a first meeting.",
+          "itemIds": [
+            "en.beginner.u01.l07.nice-meet"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l07.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Nice to meet you, too!",
+          "answer": "Nice to meet you, too!",
+          "options": [
+            "Nice to meet you, too!",
+            "Nice to meet you, Mia!",
+            "This is my friend, Sam."
+          ],
+          "explanation": "Too lets Sam say that he is also pleased to meet Mia.",
+          "itemIds": [
+            "en.beginner.u01.l07.nice-too"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l07.task.build",
+          "kind": "build",
+          "prompt": "Build the taught phrase in its natural word order.",
+          "answer": "This is my friend, Sam.",
+          "tiles": [
+            "Sam.",
+            "friend,",
+            "my",
+            "is",
+            "This",
+            "Bye"
+          ],
+          "explanation": "This is introduces another person. My friend tells the listener how you know Sam.",
+          "itemIds": [
+            "en.beginner.u01.l07.this-is",
+            "en.beginner.u01.l07.friend"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l07.task.fill",
+          "kind": "fill",
+          "prompt": "Show that you are also pleased to meet the person.",
+          "text": "Nice to meet you, ___.",
+          "answer": "too",
+          "explanation": "Too means also here: you are also pleased to meet the person.",
+          "itemIds": [
+            "en.beginner.u01.l07.nice-too"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l07.task.use-again",
+          "kind": "choice",
+          "prompt": "Say that you are pleased to meet Mia for the first time.",
+          "answer": "Nice to meet you, Mia!",
+          "options": [
+            "Nice to meet you, Mia!",
+            "Goodbye, Mia!",
+            "I am from Brazil."
+          ],
+          "explanation": "Recall the complete phrase from its teaching card.",
+          "itemIds": [
+            "en.beginner.u01.l07.nice-meet"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l07.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "Nice to meet you, Mia!",
+          "answer": "Nice to meet you, Mia!",
+          "explanation": "Say the complete phrase, including the small grammar words.",
+          "itemIds": [
+            "en.beginner.u01.l07.nice-meet"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l07.task.recycle-greet",
+          "kind": "choice",
+          "prompt": "Start a new conversation with Smarty. Choose the greeting, not an ending.",
+          "answer": "Hello, Smarty!",
+          "options": [
+            "Hello, Smarty!",
+            "Goodbye, Smarty!",
+            "Bye, Smarty!"
+          ],
+          "explanation": "Hello starts the conversation. Goodbye and Bye end it.",
+          "itemIds": [
+            "en.beginner.u01.l01.hello"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l07.task.recycle-build",
+          "kind": "build",
+          "prompt": "Introduce yourself as Mia using My name is.",
+          "answer": "My name is Mia.",
+          "tiles": [
+            "Mia.",
+            "is",
+            "name",
+            "My",
+            "Bye"
+          ],
+          "explanation": "My name is + a name. My tells us the name belongs to the speaker.",
+          "itemIds": [
+            "en.beginner.u01.l02.my-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l07.task.recycle-listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Hi, Mia!",
+          "answer": "Hi, Mia!",
+          "options": [
+            "Goodbye, Mia!",
+            "Hi, Mia!",
+            "Bye, Mia!"
+          ],
+          "explanation": "Hi is a short, friendly way to say hello.",
+          "itemIds": [
+            "en.beginner.u01.l01.hi"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Smarty’s friend arrives. Where is he from? Read or listen. Look for each person’s name and country.",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "This is my friend, Sam."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Hello! My name is Mia."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Hi, Mia! I’m Sam."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I’m from Uzbekistan. Where are you from?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "I’m from Brazil."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Nice to meet you!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Nice to meet you, too!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u01.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "Who is from Uzbekistan?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Mia says I’m from Uzbekistan.",
+            "itemIds": [
+              "en.beginner.u01.l07.nice-meet"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "Who is from Brazil?",
+            "answer": "Sam",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Sam says I’m from Brazil.",
+            "itemIds": [
+              "en.beginner.u01.l07.nice-too"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "Who replies Nice to meet you, too?",
+            "answer": "Sam",
+            "options": [
+              "Sam",
+              "Mia",
+              "Ben"
+            ],
+            "explanation": "Too lets Sam say that he is also pleased to meet Mia.",
+            "itemIds": [
+              "en.beginner.u01.l07.this-is"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u01-l07-scene",
+          "describe": "A school entrance where Smarty the black cat introduces his friend Sam, and Mia shakes Sam's paw with a big smile."
+        }
+      },
+      "mission": {
+        "setup": "Smarty introduces a visiting friend. Exchange names and countries, then give a friendly reply.",
+        "turns": [
+          {
+            "smarty": "Nice to meet you!",
+            "accept": [
+              "^nice to meet you too$",
+              "^nice to meet you$"
+            ],
+            "example": "Nice to meet you, too!",
+            "hint": "Too lets Sam say that he is also pleased to meet Mia.",
+            "itemIds": [
+              "en.beginner.u01.l07.nice-meet",
+              "en.beginner.u01.l07.nice-too"
+            ]
+          },
+          {
+            "smarty": "What’s your name?",
+            "accept": [
+              "^(?:hello )?my name is [\\p{L}][\\p{L}' -]{0,39}$",
+              "^(?:hi )?i am [\\p{L}][\\p{L}' -]{0,39}$"
+            ],
+            "example": "I’m Sam.",
+            "hint": "Use My name is… or I’m… followed by a name.",
+            "itemIds": [
+              "en.beginner.u01.l02.my-name",
+              "en.beginner.u01.l02.i-am"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l01.hello",
+        "en.beginner.u01.l02.my-name",
+        "en.beginner.u01.l01.hi",
+        "en.beginner.u01.l02.i-am"
+      ]
+    },
+    {
+      "id": "en.beginner.u01.l08",
+      "section": "beginner",
+      "unit": 1,
+      "lesson": 8,
+      "title": "Your turn with Smarty",
+      "canDo": "Exchange names, origins and a short answer about feelings.",
+      "scenario": "Check in with Smarty and classmates. Different feelings are all acceptable; nobody has to pretend to feel happy.",
+      "items": [
+        {
+          "id": "en.beginner.u01.l08.how-are",
+          "text": "How are you?",
+          "kind": "phrase",
+          "example": "How are you?"
+        },
+        {
+          "id": "en.beginner.u01.l08.fine",
+          "text": "I am fine",
+          "kind": "pattern",
+          "forms": [
+            "I’m fine"
+          ],
+          "example": "I am fine, thank you."
+        },
+        {
+          "id": "en.beginner.u01.l08.happy",
+          "text": "I am happy",
+          "kind": "pattern",
+          "forms": [
+            "I’m happy"
+          ],
+          "example": "I am happy."
+        },
+        {
+          "id": "en.beginner.u01.l08.tired",
+          "text": "I am tired",
+          "kind": "pattern",
+          "forms": [
+            "I’m tired"
+          ],
+          "example": "I am tired."
+        }
+      ],
+      "grammar": {
+        "title": "I am + a feeling",
+        "explanation": "Use I am or I’m before a feeling. A complete reply can include Thank you and a question back.",
+        "examples": [
+          "I am fine.",
+          "I’m happy.",
+          "I am tired."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u01.l08.task.choose",
+          "kind": "choice",
+          "prompt": "Ask a friend about their feelings.",
+          "answer": "How are you?",
+          "options": [
+            "How are you?",
+            "I am fine, thank you.",
+            "I am happy."
+          ],
+          "explanation": "How are you? asks about the other person’s feelings.",
+          "itemIds": [
+            "en.beginner.u01.l08.how-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l08.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I am fine, thank you.",
+          "answer": "I am fine, thank you.",
+          "options": [
+            "I am fine, thank you.",
+            "How are you?",
+            "I am happy."
+          ],
+          "explanation": "Use I am or I’m before fine. Thank you makes this reply friendly.",
+          "itemIds": [
+            "en.beginner.u01.l08.fine"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l08.task.build",
+          "kind": "build",
+          "prompt": "Build the taught phrase in its natural word order.",
+          "answer": "I am happy.",
+          "tiles": [
+            "happy.",
+            "am",
+            "I",
+            "Bye"
+          ],
+          "explanation": "The pattern is I am + a feeling. Keep am after I.",
+          "itemIds": [
+            "en.beginner.u01.l08.happy"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l08.task.fill",
+          "kind": "fill",
+          "prompt": "Your imaginary character needs some rest. Complete the feeling.",
+          "text": "I am ___.",
+          "answer": "tired",
+          "explanation": "Tired is the feeling in this imaginary scene. Other feelings are valid in an open conversation.",
+          "itemIds": [
+            "en.beginner.u01.l08.tired"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l08.task.use-again",
+          "kind": "choice",
+          "prompt": "Ask Mia about her feelings, rather than stating your own feeling.",
+          "answer": "How are you?",
+          "options": [
+            "How are you?",
+            "I am fine, thank you.",
+            "I am happy."
+          ],
+          "explanation": "How are you? is the taught question about feelings, not a statement about yourself.",
+          "itemIds": [
+            "en.beginner.u01.l08.how-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l08.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "How are you?",
+          "answer": "How are you?",
+          "explanation": "Say the complete phrase, including the small grammar words.",
+          "itemIds": [
+            "en.beginner.u01.l08.how-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l08.task.recycle-greet",
+          "kind": "choice",
+          "prompt": "Start a new conversation with Smarty. Choose the greeting, not an ending.",
+          "answer": "Hello, Smarty!",
+          "options": [
+            "Hello, Smarty!",
+            "Goodbye, Smarty!",
+            "Bye, Smarty!"
+          ],
+          "explanation": "Reply to a greeting with a greeting.",
+          "itemIds": [
+            "en.beginner.u01.l01.hello"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l08.task.recycle-build",
+          "kind": "build",
+          "prompt": "Introduce yourself as Mia using My name is.",
+          "answer": "My name is Mia.",
+          "tiles": [
+            "Mia.",
+            "is",
+            "name",
+            "My",
+            "Bye"
+          ],
+          "explanation": "A complete introduction includes My name is… or I’m… plus a name.",
+          "itemIds": [
+            "en.beginner.u01.l02.my-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l08.task.recycle-listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Hi, Mia!",
+          "answer": "Hi, Mia!",
+          "options": [
+            "Goodbye, Mia!",
+            "Hi, Mia!",
+            "Bye, Mia!"
+          ],
+          "explanation": "Hi is a short, friendly way to say hello.",
+          "itemIds": [
+            "en.beginner.u01.l01.hi"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l08.task.close",
+          "kind": "choice",
+          "prompt": "You need to leave. Finish the conversation.",
+          "answer": "Goodbye, Smarty!",
+          "options": [
+            "Goodbye, Smarty!",
+            "Hello, Smarty!",
+            "Hi, Smarty!"
+          ],
+          "explanation": "You can finish politely with Goodbye.",
+          "itemIds": [
+            "en.beginner.u01.l01.goodbye"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Three friends feel different today. Who is tired?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello! How are you?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I’m fine, thank you. And you?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I’m tired."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I am happy."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Nice to meet you, Sam!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Nice to meet you, too!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u01.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "Who is tired?",
+            "answer": "Smarty",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Smarty says I’m tired.",
+            "itemIds": [
+              "en.beginner.u01.l08.how-are"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Who is happy?",
+            "answer": "Sam",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Use the speaker labels and the actual words in the dialogue.",
+            "itemIds": [
+              "en.beginner.u01.l08.fine"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "Who replies Nice to meet you, too?",
+            "answer": "Sam",
+            "options": [
+              "Sam",
+              "Mia",
+              "Ben"
+            ],
+            "explanation": "Nice to meet you, too is a friendly reply when you meet someone.",
+            "itemIds": [
+              "en.beginner.u01.l08.happy"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u01-l08-scene",
+          "describe": "A bright classroom where Smarty the black cat sits slumped and tired at a desk, while Mia and Sam smile and wave hello."
+        }
+      },
+      "mission": {
+        "setup": "Check in with Smarty and classmates. Different feelings are all acceptable; nobody has to pretend to feel happy.",
+        "turns": [
+          {
+            "smarty": "How are you?",
+            "accept": [
+              "^i am fine(?: thank you)?$",
+              "^i am happy$",
+              "^i am tired$"
+            ],
+            "example": "I am fine, thank you.",
+            "hint": "Choose a real or imaginary feeling; all three taught feelings are valid.",
+            "itemIds": [
+              "en.beginner.u01.l08.fine",
+              "en.beginner.u01.l08.happy",
+              "en.beginner.u01.l08.tired"
+            ]
+          },
+          {
+            "smarty": "Thank you.",
+            "accept": [
+              "^how are you$",
+              "^and you$"
+            ],
+            "example": "And you?",
+            "hint": "Now practise asking about the other person.",
+            "itemIds": [
+              "en.beginner.u01.l08.how-are",
+              "en.beginner.u01.l02.and-you"
+            ]
+          },
+          {
+            "smarty": "Where are you from?",
+            "accept": [
+              "^i am from [\\p{L}][\\p{L}' -]{0,39}$",
+              "^hi i am from [\\p{L}][\\p{L}' -]{0,39}$"
+            ],
+            "example": "I am from Brazil.",
+            "hint": "Use I am from… or I’m from… and a place.",
+            "itemIds": [
+              "en.beginner.u01.l06.i-am-from"
+            ]
+          },
+          {
+            "smarty": "Thank you.",
+            "accept": [
+              "^where are you from$",
+              "^and you$"
+            ],
+            "example": "Where are you from?",
+            "hint": "Use Where are you from? to ask the question back.",
+            "itemIds": [
+              "en.beginner.u01.l06.ask-from",
+              "en.beginner.u01.l02.and-you"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l01.hello",
+        "en.beginner.u01.l02.my-name",
+        "en.beginner.u01.l01.hi",
+        "en.beginner.u01.l01.goodbye",
+        "en.beginner.u01.l02.and-you",
+        "en.beginner.u01.l06.i-am-from",
+        "en.beginner.u01.l06.ask-from"
+      ]
+    },
+    {
+      "id": "en.beginner.u01.l09",
+      "section": "beginner",
+      "unit": 1,
+      "lesson": 9,
+      "title": "Make it stick",
+      "canDo": "Ask for repetition or slower speech when a conversation is difficult.",
+      "scenario": "Keep a conversation going when you do not understand. Practise clarification alongside earlier introductions.",
+      "items": [
+        {
+          "id": "en.beginner.u01.l09.say-again",
+          "text": "Can you say that again?",
+          "kind": "phrase",
+          "example": "Can you say that again?"
+        },
+        {
+          "id": "en.beginner.u01.l09.not-understand",
+          "text": "I do not understand",
+          "kind": "pattern",
+          "forms": [
+            "I don’t understand"
+          ],
+          "example": "I do not understand."
+        },
+        {
+          "id": "en.beginner.u01.l09.slowly",
+          "text": "Slowly, please",
+          "kind": "phrase",
+          "example": "Slowly, please."
+        },
+        {
+          "id": "en.beginner.u01.l09.yes",
+          "text": "Yes",
+          "kind": "word",
+          "example": "Yes, Smarty."
+        },
+        {
+          "id": "en.beginner.u01.l09.no",
+          "text": "No",
+          "kind": "word",
+          "example": "No, Sam."
+        }
+      ],
+      "grammar": {
+        "title": "A polite request",
+        "explanation": "Can you…? makes a request. Please makes it polite. I don’t understand means I do not understand; ask to hear the words again.",
+        "examples": [
+          "Can you say that again?",
+          "Slowly, please.",
+          "I don’t understand."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u01.l09.task.choose",
+          "kind": "choice",
+          "prompt": "You missed a phrase. Ask to hear it again.",
+          "answer": "Can you say that again?",
+          "options": [
+            "Can you say that again?",
+            "I do not understand.",
+            "Slowly, please."
+          ],
+          "explanation": "Choose the phrase that fits this situation.",
+          "itemIds": [
+            "en.beginner.u01.l09.say-again"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l09.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I do not understand.",
+          "answer": "I do not understand.",
+          "options": [
+            "I do not understand.",
+            "Can you say that again?",
+            "Slowly, please."
+          ],
+          "explanation": "Listen for the words in this phrase, then match the whole utterance.",
+          "itemIds": [
+            "en.beginner.u01.l09.not-understand"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l09.task.build",
+          "kind": "build",
+          "prompt": "Build the taught phrase in its natural word order.",
+          "answer": "Slowly, please.",
+          "tiles": [
+            "please.",
+            "Slowly,",
+            "Bye"
+          ],
+          "explanation": "Put the words in the same order as the example on the teaching card.",
+          "itemIds": [
+            "en.beginner.u01.l09.slowly"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l09.task.fill",
+          "kind": "fill",
+          "prompt": "Smarty correctly guesses that your character is Mia. Confirm with Yes.",
+          "text": "___, Smarty.",
+          "answer": "Yes",
+          "explanation": "Complete the phrase using the taught pattern.",
+          "itemIds": [
+            "en.beginner.u01.l09.yes"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l09.task.use-again",
+          "kind": "choice",
+          "prompt": "Smarty wrongly guesses that your imaginary name is Sam. Correct that guess with No.",
+          "answer": "No, Smarty.",
+          "options": [
+            "No, Smarty.",
+            "Yes, Smarty.",
+            "Thank you, Smarty."
+          ],
+          "explanation": "Recall the complete phrase from its teaching card.",
+          "itemIds": [
+            "en.beginner.u01.l09.no"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l09.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "Can you say that again?",
+          "answer": "Can you say that again?",
+          "explanation": "Say the complete phrase, including the small grammar words.",
+          "itemIds": [
+            "en.beginner.u01.l09.say-again"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l09.task.recycle-greet",
+          "kind": "choice",
+          "prompt": "Start a new conversation with Smarty. Choose the greeting, not an ending.",
+          "answer": "Hello, Smarty!",
+          "options": [
+            "Hello, Smarty!",
+            "Goodbye, Smarty!",
+            "Bye, Smarty!"
+          ],
+          "explanation": "Hello starts the conversation. Goodbye and Bye end it.",
+          "itemIds": [
+            "en.beginner.u01.l01.hello"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l09.task.recycle-build",
+          "kind": "build",
+          "prompt": "Introduce yourself as Mia using My name is.",
+          "answer": "My name is Mia.",
+          "tiles": [
+            "Mia.",
+            "is",
+            "name",
+            "My",
+            "Bye"
+          ],
+          "explanation": "My name is + a name. My tells us the name belongs to the speaker.",
+          "itemIds": [
+            "en.beginner.u01.l02.my-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l09.task.recycle-listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Hi, Mia!",
+          "answer": "Hi, Mia!",
+          "options": [
+            "Goodbye, Mia!",
+            "Hi, Mia!",
+            "Bye, Mia!"
+          ],
+          "explanation": "Hi is a short, friendly way to say hello.",
+          "itemIds": [
+            "en.beginner.u01.l01.hi"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "A name was not understood. Can the friends repair the conversation?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hi! My name is Smarty."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Sorry! Can you say that again?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "My name is Smarty."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Slowly, please."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "My name is Smarty."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thank you, Smarty."
+          },
+          {
+            "speaker": "Sam",
+            "text": "You are Sam?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "No. My name is Mia."
+          },
+          {
+            "speaker": "Sam",
+            "text": "You are Mia?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u01.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "Who introduces themselves as Mia?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Find the line with the name or phrase in the question.",
+            "itemIds": [
+              "en.beginner.u01.l09.say-again"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "Who speaks first?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Use the speaker labels and the actual words in the dialogue.",
+            "itemIds": [
+              "en.beginner.u01.l09.not-understand"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "Who gives a wrong guess about Mia’s name?",
+            "answer": "Sam",
+            "options": [
+              "Sam",
+              "Mia",
+              "Ben"
+            ],
+            "explanation": "Sam asks You are Sam? Mia corrects the name.",
+            "itemIds": [
+              "en.beginner.u01.l09.slowly"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u01-l09-scene",
+          "describe": "A classroom where Smarty the black cat cups a paw to his ear, while Mia raises a hand and Sam leans in to listen."
+        }
+      },
+      "mission": {
+        "setup": "Keep a conversation going when you do not understand. Practise clarification alongside earlier introductions.",
+        "turns": [
+          {
+            "smarty": "Hello! My name is Smarty.",
+            "accept": [
+              "^can you say that again$",
+              "^sorry can you say that again$"
+            ],
+            "example": "Can you say that again?",
+            "hint": "Ask for a repeat using the complete phrase.",
+            "itemIds": [
+              "en.beginner.u01.l09.say-again",
+              "en.beginner.u01.l03.sorry"
+            ]
+          },
+          {
+            "smarty": "My name is Smarty.",
+            "accept": [
+              "^slowly please$",
+              "^i do not understand$"
+            ],
+            "example": "Slowly, please.",
+            "hint": "Ask for slower speech or explain that you do not understand.",
+            "itemIds": [
+              "en.beginner.u01.l09.not-understand",
+              "en.beginner.u01.l09.slowly"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l01.hello",
+        "en.beginner.u01.l02.my-name",
+        "en.beginner.u01.l01.hi",
+        "en.beginner.u01.l03.sorry"
+      ]
+    },
+    {
+      "id": "en.beginner.u01.l10",
+      "section": "beginner",
+      "unit": 1,
+      "lesson": 10,
+      "title": "Meet someone new",
+      "canDo": "Introduce yourself, exchange origins, ask about someone else and answer a student question.",
+      "scenario": "Meet new fictional classmates. Introduce yourself, exchange origins, ask a question and say whether your character is a student.",
+      "items": [
+        {
+          "id": "en.beginner.u01.l10.student",
+          "text": "I am a student",
+          "kind": "pattern",
+          "forms": [
+            "I’m a student"
+          ],
+          "example": "I am a student.",
+          "note": "Imagine you are meeting a new classmate. Write your own replies without answer tiles. A nickname and an imaginary place are fine. This checks the English pattern, not whether personal details are real."
+        },
+        {
+          "id": "en.beginner.u01.l10.ask-student",
+          "text": "Are you a student?",
+          "kind": "phrase",
+          "example": "Are you a student?"
+        },
+        {
+          "id": "en.beginner.u01.l10.yes-i-am",
+          "text": "Yes, I am",
+          "kind": "phrase",
+          "example": "Yes, I am."
+        },
+        {
+          "id": "en.beginner.u01.l10.no-i-am-not",
+          "text": "No, I am not",
+          "kind": "phrase",
+          "example": "No, I am not."
+        }
+      ],
+      "grammar": {
+        "title": "Turn a statement into a question",
+        "explanation": "I am a student is a statement. Are you a student? asks the other person. Reply Yes, I am or No, I am not.",
+        "examples": [
+          "I am a student.",
+          "Are you a student?",
+          "Yes, I am.",
+          "No, I am not."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u01.l10.task.choose",
+          "kind": "choice",
+          "prompt": "Your imaginary character is a student. Make a statement about yourself.",
+          "answer": "I am a student.",
+          "options": [
+            "I am a student.",
+            "Are you a student?",
+            "Yes, I am."
+          ],
+          "explanation": "I am a student is a statement about your imaginary character.",
+          "itemIds": [
+            "en.beginner.u01.l10.student"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l10.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Are you a student?",
+          "answer": "Are you a student?",
+          "options": [
+            "Are you a student?",
+            "I am a student.",
+            "Yes, I am."
+          ],
+          "explanation": "Are you a student? asks the other person. Listen for the question order.",
+          "itemIds": [
+            "en.beginner.u01.l10.ask-student"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l10.task.build",
+          "kind": "build",
+          "prompt": "Build the taught phrase in its natural word order.",
+          "answer": "Yes, I am.",
+          "tiles": [
+            "am.",
+            "I",
+            "Yes,",
+            "Bye"
+          ],
+          "explanation": "Yes, I am is a short positive reply to Are you a student?",
+          "itemIds": [
+            "en.beginner.u01.l10.yes-i-am"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l10.task.fill",
+          "kind": "fill",
+          "prompt": "Your imaginary character is not a student. Complete the reply.",
+          "text": "No, I am ___.",
+          "answer": "not",
+          "explanation": "No, I am not is the short negative reply. Keep not after am.",
+          "itemIds": [
+            "en.beginner.u01.l10.no-i-am-not"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l10.task.use-again",
+          "kind": "choice",
+          "prompt": "Make a complete statement saying that your imaginary character is a student.",
+          "answer": "I am a student.",
+          "options": [
+            "I am a student.",
+            "Are you a student?",
+            "Yes, I am."
+          ],
+          "explanation": "The complete statement includes a before student: I am a student.",
+          "itemIds": [
+            "en.beginner.u01.l10.student"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l10.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "I am a student.",
+          "answer": "I am a student.",
+          "explanation": "Say the complete phrase, including the small grammar words.",
+          "itemIds": [
+            "en.beginner.u01.l10.student"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l10.task.recycle-greet",
+          "kind": "choice",
+          "prompt": "Start a new conversation with Smarty. Choose the greeting, not an ending.",
+          "answer": "Hello, Smarty!",
+          "options": [
+            "Hello, Smarty!",
+            "Goodbye, Smarty!",
+            "Bye, Smarty!"
+          ],
+          "explanation": "Hello starts the conversation. Goodbye and Bye end it.",
+          "itemIds": [
+            "en.beginner.u01.l01.hello"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l10.task.recycle-build",
+          "kind": "build",
+          "prompt": "A new classmate joins. Build a question to ask their name.",
+          "answer": "What is your name?",
+          "tiles": [
+            "your",
+            "name?",
+            "What",
+            "is",
+            "my"
+          ],
+          "explanation": "What’s your name? and What is your name? both work. Use your when you ask about the other person’s name.",
+          "itemIds": [
+            "en.beginner.u01.l02.ask-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u01.l10.task.recycle-listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Hi, Mia!",
+          "answer": "Hi, Mia!",
+          "options": [
+            "Goodbye, Mia!",
+            "Hi, Mia!",
+            "Bye, Mia!"
+          ],
+          "explanation": "Hi is a short, friendly way to say hello.",
+          "itemIds": [
+            "en.beginner.u01.l01.hi"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "A new classmate joins the group. Can you keep the conversation going?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello! My name is Smarty."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Hi! I’m Mia."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Are you a student?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes, I am."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I am a student, too."
+          },
+          {
+            "speaker": "Mia",
+            "text": "What is your name?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "My name is Sam. I’m from Brazil."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Nice to meet you!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u01.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "Who introduces themselves as Mia?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Find the line with the name or phrase in the question.",
+            "itemIds": [
+              "en.beginner.u01.l10.student"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "Who speaks first?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Use the speaker labels and the actual words in the dialogue.",
+            "itemIds": [
+              "en.beginner.u01.l10.ask-student"
+            ]
+          },
+          {
+            "id": "en.beginner.u01.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says they are a student, too?",
+            "answer": "Sam",
+            "options": [
+              "Sam",
+              "Mia",
+              "Ben"
+            ],
+            "explanation": "Find the matching line in the dialogue; use what the story actually says.",
+            "itemIds": [
+              "en.beginner.u01.l10.yes-i-am"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u01-l10-scene",
+          "describe": "A school courtyard with a bench, where Smarty the black cat, Mia and Sam sit together chatting and smiling, with Sam waving hello."
+        }
+      },
+      "mission": {
+        "setup": "Imagine you are meeting a new classmate. Write your own replies without answer tiles. A nickname and an imaginary place are fine. This checks the English pattern, not whether personal details are real. You have introduced yourself and kept a short conversation going.",
+        "turns": [
+          {
+            "smarty": "Hello! What’s your name?",
+            "accept": [
+              "^(?:hello )?my name is [\\p{L}][\\p{L}' -]{0,39}$",
+              "^(?:hi )?i am [\\p{L}][\\p{L}' -]{0,39}$"
+            ],
+            "example": "Hello! My name is Sam.",
+            "hint": "Use My name is… or I’m… and a name.",
+            "itemIds": [
+              "en.beginner.u01.l02.my-name",
+              "en.beginner.u01.l02.i-am"
+            ]
+          },
+          {
+            "smarty": "Where are you from?",
+            "accept": [
+              "^i am from [\\p{L}][\\p{L}' -]{0,39}$",
+              "^(?:hello |hi )i am from [\\p{L}][\\p{L}' -]{0,39}$"
+            ],
+            "example": "I’m from Brazil.",
+            "hint": "Use I’m from… or I am from… and a place.",
+            "itemIds": [
+              "en.beginner.u01.l06.i-am-from",
+              "en.beginner.u01.l06.brazil"
+            ]
+          },
+          {
+            "smarty": "Thank you.",
+            "accept": [
+              "^where are you from$",
+              "^what is your name$"
+            ],
+            "example": "Where are you from?",
+            "hint": "Where are you from? asks about the other person.",
+            "itemIds": [
+              "en.beginner.u01.l06.ask-from",
+              "en.beginner.u01.l02.ask-name"
+            ]
+          },
+          {
+            "smarty": "Are you a student?",
+            "accept": [
+              "^yes i am$",
+              "^no i am not$"
+            ],
+            "example": "Yes, I am.",
+            "hint": "Answer for your imaginary character. Yes and No are both valid.",
+            "itemIds": [
+              "en.beginner.u01.l10.student",
+              "en.beginner.u01.l10.ask-student",
+              "en.beginner.u01.l10.yes-i-am",
+              "en.beginner.u01.l10.no-i-am-not"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l01.hello",
+        "en.beginner.u01.l02.ask-name",
+        "en.beginner.u01.l01.hi",
+        "en.beginner.u01.l02.my-name",
+        "en.beginner.u01.l02.i-am",
+        "en.beginner.u01.l06.i-am-from",
+        "en.beginner.u01.l06.brazil",
+        "en.beginner.u01.l06.ask-from"
+      ]
+    }
+  ]
+}

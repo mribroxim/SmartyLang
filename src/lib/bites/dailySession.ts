@@ -4,6 +4,8 @@ import type { ReadingText, Level } from '../reading-logic';
 import { todayKey } from '../habitEngine';
 import { scopedKey, writeScopedJSON } from '../userStorage';
 import { registerSyncedStore } from '../syncedStores';
+import { workshopItems } from '../workshop/store';
+import { isDusty } from '../workshop/model';
 import { seededPick } from './deriveBites';
 import { findCurrentLesson } from './biteProgress';
 import { loadLessonUnlock } from '../lessonProgress';
@@ -22,6 +24,7 @@ export interface DailyInput {
   vocab: ReviewVocab;
   missed: string[];
   now: number;
+  workshopDue?: string[];
 }
 
 const normalize = (word: string) => word.trim().toLowerCase();
@@ -36,7 +39,7 @@ export function wordCatalog(texts: ReadingText[], vocab: ReviewVocab, lang: Cont
   return catalog;
 }
 
-/** Seeded 3 new + 5 due + 3 missed words, with deterministic backfill for new accounts. */
+/** Short, deterministic review of known vocabulary. */
 export function deriveDailySession(input: DailyInput): DailySession {
   const { lang, date, nextText, vocab, now } = input;
   const catalog = wordCatalog(input.texts, vocab, lang);
@@ -48,17 +51,11 @@ export function deriveDailySession(input: DailyInput): DailySession {
       seen.add(word); items.push({ word, definition: catalog.get(word)!, source });
     }
   };
-  const nextWords = nextText.vocabulary.map(v => normalize(v.word));
-  add(nextWords.filter(word => !vocab[word]), 3, 'new', 'new');
-  add(Object.entries(vocab).filter(([, v]) => (!v.lang || v.lang === lang) && v.srs && v.srs.nextReviewDate <= now).map(([word]) => word), 5, 'review', 'due');
-  add(input.missed, 3, 'missed', 'missed');
-  const target = 11;
-  if (items.length < target) add(Object.keys(vocab).filter(word => !vocab[word].lang || vocab[word].lang === lang), target - items.length, 'review', 'saved');
-  if (!items.length) add(nextWords, 3, 'new', 'lesson');
-  // A new learner has no review history yet: revisit the three new words
-  // in both directions instead of introducing eleven unfamiliar words.
-  const base = [...items];
-  while (items.length && items.length < target) items.push({ ...base[items.length % base.length], source: 'review' });
+  const due = Object.entries(vocab).filter(([, v]) => (!v.lang || v.lang === lang) && v.srs && v.srs.nextReviewDate <= now).map(([word]) => word);
+  add(input.missed, 4, 'missed', 'missed');
+  add([...due, ...(input.workshopDue ?? [])], 8 - items.length, 'review', 'due');
+  add(input.missed, 8 - items.length, 'missed', 'extra-missed');
+  if (items.length < 2) add(Object.keys(vocab).filter(word => !vocab[word].lang || vocab[word].lang === lang), 2 - items.length, 'review', 'saved');
   return { v: 1, date, lang, passageId: nextText.id, items };
 }
 
@@ -69,16 +66,20 @@ function readLocal<T>(key: string, fallback: T): T {
 /** Freeze the day's selection, even when SRS dates or path progress change later. */
 export function getDailySession(lang: ContentLang, level: Level, textsByLevel: Record<Level, ReadingText[]>, vocab: ReviewVocab, problemWords: Record<string, { count: number }>, now = Date.now()): DailySession | null {
   const date = todayKey(new Date(now));
-  const cache = readLocal<Partial<Record<ContentLang, DailySession>>>('today_session_v1', {});
+  const cacheKey = 'today_session_v2';
+  const cache = readLocal<Partial<Record<ContentLang, DailySession>>>(cacheKey, {});
   const existing = cache[lang];
   if (existing?.v === 1 && existing.date === date && existing.lang === lang && Array.isArray(existing.items) && existing.items.length > 0) return existing;
   const texts = textsByLevel[level] || [];
   const next = findCurrentLesson(lang, texts)?.text ?? texts[0] ?? Object.values(textsByLevel).flat()[0];
   if (!next) return null;
-  const missed = [...Object.keys(problemWords).sort((a, b) => problemWords[b].count - problemWords[a].count), ...texts.flatMap(text => loadLessonUnlock(lang, text.id).missedWords)];
-  const session = deriveDailySession({ lang, date, nextText: next, texts: Object.values(textsByLevel).flat(), vocab, missed, now });
+  const all = Object.values(textsByLevel).flat();
+  const shop = Object.entries(workshopItems(lang));
+  const missed = [...Object.keys(problemWords), ...all.flatMap(text => loadLessonUnlock(lang, text.id).missedWords), ...shop.filter(([, item]) => item.lapses > 0 && isDusty(item, now)).map(([word]) => word)];
+  const workshopDue = shop.filter(([, item]) => isDusty(item, now)).map(([word]) => word);
+  const session = deriveDailySession({ lang, date, nextText: next, texts: all, vocab, missed, now, workshopDue });
   if (!session.items.length) return null;
-  writeScopedJSON('today_session_v1', { ...cache, [lang]: session });
+  writeScopedJSON(cacheKey, { ...cache, [lang]: session });
   return session;
 }
 

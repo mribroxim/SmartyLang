@@ -6,7 +6,6 @@ export function accountUiLabel(t: (key: UiStringKey) => string, role?: string | 
     case 'smarty-max': return 'SmartyLang Max';
     case 'business': return 'SmartyLang Business';
     case 'admin': return t('core.accountRole.admin');
-    case 'content-manager': return t('core.accountRole.contentManager');
     case 'teacher': return t('core.accountRole.teacher');
     case 'organization': return t('core.accountRole.organization');
     case 'student': return t('core.accountRole.student');

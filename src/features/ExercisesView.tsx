@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { ArrowLeft, Check, Play, RotateCcw, Volume2, X } from 'lucide-react';
 import type { Level, ReadingText } from '../lib/reading-logic';
 import { useLevelTexts } from '../data/levelTexts';
-import { fetchWordTranslations } from '../Exercises';
+import { fetchWordTranslations } from '../lib/wordTranslations';
 import { useUiLang } from '../contexts/UiLangContext';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useProgress } from '../contexts/ProgressContext';
@@ -12,6 +12,7 @@ import { normalizeForMatch, tokenizeForLang } from '../lib/pronunciationProfile'
 import { playWord } from '../lib/speech';
 import { todayKey } from '../lib/habitEngine';
 import type { BiteDef, StepKind } from '../lib/bites/types';
+import { seededPick } from '../lib/bites/deriveBites';
 import type { UiStringKey } from '../lib/uiStrings';
 import { Sticker, type StickerId } from '../components/stickers/Sticker';
 import { BiteRunner } from './Bites/BiteRunner';
@@ -51,6 +52,7 @@ interface ExercisesViewProps {
   setExerciseSourceCustomTextSel: (v: string) => void;
   savedCustomTexts: string[];
   recordExercise: (type: string, data?: any) => void;
+  assigned?: { id: string; type: string; words: string[]; lang?: string; onComplete: (accuracy?: number) => void; onExit: () => void };
 }
 
 const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; };
@@ -61,41 +63,79 @@ const shuffle = <T,>(a: T[]) => { const b = [...a]; for (let i = b.length - 1; i
  * into your own language.
  */
 export default function ExercisesView(props: ExercisesViewProps) {
-  const { savedVocab, allVocabMap, setActiveExercise, selectedVocabWords, setSelectedVocabWords, showExerciseWordSelector, setShowExerciseWordSelector } = props;
+  const { savedVocab, allVocabMap, setActiveExercise, selectedVocabWords, setSelectedVocabWords, showExerciseWordSelector, setShowExerciseWordSelector, assigned } = props;
   const { contentLang, dictCode } = useContentLang();
+  const { t } = useUiLang();
   const [session, setSession] = useState<{ type: string; words: string[]; meanings: Record<string, string> } | null>(null);
   const [loading, setLoading] = useState(false);
 
   // Leaving or finishing an exercise goes back to Practice (App redirects once nothing is open).
-  const leave = () => { setSession(null); setActiveExercise(null); setShowExerciseWordSelector(null); };
+  const leave = () => {
+    if (assigned) { assigned.onExit(); return; }
+    setSession(null); setActiveExercise(null); setShowExerciseWordSelector(null);
+  };
 
-  const start = async (type: string, words: string[]) => {
+  const start = async (type: string, words: string[], cancelled = () => false) => {
     setLoading(true);
     const to = readPreferredTranslationLang().code;
+    // An assignment can say which language its words are in; otherwise use the student's learning language.
+    const from = assigned?.lang || dictCode;
     let tr: Record<string, string> = {};
-    try { tr = await fetchWordTranslations(words, dictCode, to); } catch { /* fall back below */ }
+    try { tr = await fetchWordTranslations(words, from, to); } catch { /* fall back below */ }
+    // Last resort for words with no translation or lesson definition: the built-in dictionary.
+    let lookup: ((w: string) => string) | null = null;
+    try {
+      const db = await import('../lib/vocabDb');
+      if (db.vocabDbEnabled()) {
+        await db.loadVocab(from, to);
+        lookup = (w) => { const c = db.lookupWord(w, { knownLang: to }); return (c?.knownWord || c?.definition || '').trim(); };
+      }
+    } catch { /* dictionary unavailable */ }
+    if (cancelled()) return;
     const meanings: Record<string, string> = {};
     for (const w of words) {
       const tx = (tr[w] || '').trim();
       // Translations only; when the "translation" is the same word (same language), use the short meaning instead.
       const raw = allVocabMap.get(w.toLowerCase()) || savedVocab[w]?.definition || '';
       const fallback = raw.split(' · ')[0].replace(/^\([^)]*\)\s*/, '').trim();
-      const m = tx && tx.toLowerCase() !== w.toLowerCase() ? tx : fallback;
+      const m = tx && tx.toLowerCase() !== w.toLowerCase() ? tx : fallback || lookup?.(w) || '';
       if (m) meanings[w] = m;
     }
     setLoading(false);
-    const usable = words.filter((w) => meanings[w]);
+    // Assigned words are always played: a word without a known meaning is shown as itself rather than dropped.
+    if (assigned) for (const w of words) if (!meanings[w]) meanings[w] = w;
+    const usable = [...new Set(words)].filter((w) => meanings[w]);
     if (usable.length < 2) return;
     setActiveExercise(type);
     setShowExerciseWordSelector(null);
     setSession({ type, words: usable, meanings });
   };
 
+  useEffect(() => {
+    if (!assigned) return;
+    let cancelled = false;
+    void start(assigned.type, assigned.words, () => cancelled);
+    return () => { cancelled = true; };
+  }, [assigned?.id, contentLang]);
+
   if (session) {
-    if (session.type === 'flashcards') return <FlashcardsRun words={session.words} meanings={session.meanings} onDone={(known) => { props.recordExercise('flashcards', { score: known, total: session.words.length }); leave(); }} onExit={leave} />;
-    if (session.type === 'memory-match') return <MemoryRun words={session.words} meanings={session.meanings} onDone={(moves) => { const n = Math.min(6, session.words.length); props.recordExercise('memory-match', { score: n, total: n, moves }); leave(); }} onExit={leave} />;
-    return <LessonRun type={session.type} words={session.words} meanings={session.meanings} contentLang={contentLang} onExit={leave} />;
+    if (session.type === 'flashcards') return <FlashcardsRun words={session.words} meanings={session.meanings} onDone={(known) => {
+      if (assigned) assigned.onComplete();
+      else props.recordExercise('flashcards', { score: known, total: session.words.length });
+      leave();
+    }} onExit={leave} />;
+    if (session.type === 'memory-match') return <MemoryRun words={session.words} meanings={session.meanings} onDone={(moves) => {
+      const n = Math.min(6, session.words.length);
+      if (assigned) assigned.onComplete();
+      else props.recordExercise('memory-match', { score: n, total: n, moves });
+      leave();
+    }} onExit={leave} />;
+    return <LessonRun type={session.type} words={session.words} meanings={session.meanings} contentLang={contentLang} runId={assigned?.id} onAccuracy={assigned?.onComplete} onExit={leave} />;
   }
+  if (assigned) return <div className="mx-auto max-w-md p-6 text-center">
+    <p className="mb-4">{t(loading ? 'class.challenge.loading' : 'path.assessmentUnavailable')}</p>
+    <ChunkyButton onClick={leave}>{t('nav.myClasses')}</ChunkyButton>
+  </div>;
   if (!showExerciseWordSelector) return null;
   return <WordPicker {...props} type={showExerciseWordSelector} loading={loading}
     onBack={() => setShowExerciseWordSelector(null)}
@@ -215,11 +255,14 @@ function WordPicker({ type, loading, onBack, onStart, selected, setSelected, sav
 }
 
 // ── lesson-style exercises (quiz, listening, true/false, match, spelling, speaking, scramble) ──
-function LessonRun({ type, words, meanings, contentLang, onExit }: { type: string; words: string[]; meanings: Record<string, string>; contentLang: any; onExit: () => void }) {
+function LessonRun({ type, words, meanings, contentLang, runId, onAccuracy, onExit }: { type: string; words: string[]; meanings: Record<string, string>; contentLang: any; runId?: string; onAccuracy?: (accuracy: number) => void; onExit: () => void }) {
   const { t } = useUiLang();
   const { awardBiteXP } = useProgress();
-  const [list] = useState(() => shuffle(words).slice(0, type === 'word-match' ? 10 : 12));
-  const id = `exercise:${type}:${list.length}`;
+  const [list] = useState(() => {
+    const limit = type === 'word-match' ? 10 : 12;
+    return runId ? seededPick(words, limit, runId) : shuffle(words).slice(0, limit);
+  });
+  const id = runId ? `assignment:${runId}` : `exercise:${type}:${list.length}`;
   const title = t(`ex.${type}.title` as UiStringKey);
   const steps = type === 'word-match'
     ? [{ kind: 'word-match' as StepKind, words: list.slice(0, 5) }, ...(list.length >= 7 ? [{ kind: 'word-match' as StepKind, words: list.slice(5, 10) }] : [])]
@@ -231,7 +274,10 @@ function LessonRun({ type, words, meanings, contentLang, onExit }: { type: strin
       passageVocab={Object.fromEntries(list.map((w) => [w, { definition: meanings[w], timestamp: Date.now() }]))}
       meanings={meanings} allVocabMap={new Map<string, string>(list.map((w) => [w, meanings[w]]))}
       renderVocabIntro={() => null} renderRead={() => null} readResult={null} onStepScore={() => {}}
-      onComplete={(result) => awardBiteXP(result, title)} onExit={onExit} onNext={onExit} nextLabel={t('smarty.continue')} retryMisses />
+      onComplete={(result) => {
+        if (result.scores?.some(score => !score.skipped)) onAccuracy?.(result.accuracy);
+        return awardBiteXP(result, title);
+      }} onExit={onExit} onNext={onExit} nextLabel={t('smarty.continue')} retryMisses />
   );
 }
 

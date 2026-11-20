@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Headphones, Mic } from 'lucide-react';
 import { ComprehensiveListening } from './ComprehensiveListening';
 import { ListeningDictation } from './ListeningDictation';
@@ -21,6 +21,7 @@ export function ListeningPractice({
   initialLevel,
   initialPassageTitle,
   accountProfile,
+  assigned,
   recordExercise,
   navView,
   onNavView,
@@ -35,7 +36,7 @@ export function ListeningPractice({
       : (!isEnglish ? 'dictation' : 'menu')
   );
 
-  const view: ListeningView = !isEnglish
+  const view: ListeningView = !isEnglish && !assigned
     ? 'dictation'
     : controlled
       ? parseView(navView)
@@ -46,10 +47,11 @@ export function ListeningPractice({
     else setLocalView(v);
   };
 
-  if (view === 'comprehensive' && isEnglish) {
+  if (view === 'comprehensive' && (isEnglish || assigned)) {
     return (
       <ComprehensiveListening
-        onBack={() => setView('menu')}
+        onBack={() => assigned ? onBack?.() : setView('menu')}
+        assigned={assigned}
         onToggleVocab={onToggleVocab}
         savedVocab={savedVocab}
         onShowModal={onShowModal}

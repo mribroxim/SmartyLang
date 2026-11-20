@@ -1,5 +1,4 @@
 import { DialogSurface } from './DialogSurface';
-import React from 'react';
 import { motion } from 'motion/react';
 import { Flame, Target, X, Medal } from 'lucide-react';
 import { BADGE_META } from '../lib/habitEngine';

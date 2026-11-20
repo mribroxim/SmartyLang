@@ -1,0 +1,367 @@
+{
+ "id": "example.u00.l02",
+ "section": "beginner",
+ "unit": 2,
+ "lesson": 2,
+ "title": "This is my…",
+ "canDo": "Introduce a family member.",
+ "scenario": "Mia and Sam show Smarty their family, including a baby sister.",
+ "items": [
+  {
+   "id": "example.u00.l02.his",
+   "text": "his",
+   "kind": "word",
+   "example": "This is his mother.",
+   "note": "Use ‘his’ for something that belongs to a boy or man."
+  },
+  {
+   "id": "example.u00.l02.her",
+   "text": "her",
+   "kind": "word",
+   "example": "This is her father.",
+   "note": "Use ‘her’ for something that belongs to a girl or woman."
+  },
+  {
+   "id": "example.u00.l02.our",
+   "text": "our",
+   "kind": "word",
+   "example": "This is our family.",
+   "note": "Use ‘our’ when something belongs to you and another person together."
+  },
+  {
+   "id": "example.u00.l02.baby",
+   "text": "baby",
+   "kind": "word",
+   "forms": [
+    "babies"
+   ],
+   "example": "The baby is happy.",
+   "note": "A baby is a very small child; more than one is ‘babies’.",
+   "image": {
+    "id": "baby",
+    "describe": "a tiny baby kitten sleeping in a basket with a soft blanket"
+   }
+  },
+  {
+   "id": "example.u00.l02.parents",
+   "text": "parents",
+   "kind": "word",
+   "example": "My parents are happy.",
+   "note": "We say ‘parents’ for a mother and a father together.",
+   "image": {
+    "id": "parents",
+    "describe": "a mother cat and a father cat standing close together and smiling"
+   }
+  }
+ ],
+ "grammar": {
+  "title": "my, his, her, our",
+  "explanation": "Choose the word by who owns it: my is for me, his is for a boy or man, her is for a girl or woman, and our is for me and another person.",
+  "examples": [
+   "This is my mother.",
+   "This is her father."
+  ]
+ },
+ "practice": [
+  {
+   "id": "example.u00.l02.task.fill-his",
+   "kind": "fill",
+   "prompt": "Smarty talks about Sam, a boy. You are not his sister. Complete the sentence.",
+   "text": "This is ___ mother.",
+   "answer": "his",
+   "options": [
+    "his",
+    "her",
+    "our"
+   ],
+   "explanation": "Use his for a boy: this is his mother.",
+   "itemIds": [
+    "example.u00.l02.his"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.hear-her",
+   "kind": "listen",
+   "prompt": "Listen, then choose what you heard.",
+   "audio": "This is her father.",
+   "answer": "This is her father.",
+   "options": [
+    "This is her father.",
+    "This is his father.",
+    "This is our father."
+   ],
+   "explanation": "Her is for a girl or woman. Listen to the middle word.",
+   "itemIds": [
+    "example.u00.l02.her"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.fill-her",
+   "kind": "fill",
+   "prompt": "Mia is a girl. Complete the sentence about her.",
+   "text": "This is ___ brother.",
+   "answer": "her",
+   "options": [
+    "her",
+    "his",
+    "our"
+   ],
+   "explanation": "Use her for a girl: this is her brother.",
+   "itemIds": [
+    "example.u00.l02.her"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.build-our",
+   "kind": "build",
+   "prompt": "You and Mia talk about your family together. Build the sentence.",
+   "answer": "This is our family.",
+   "tiles": [
+    "This",
+    "is",
+    "our",
+    "family",
+    "my"
+   ],
+   "explanation": "Our shows that the family belongs to both of you.",
+   "itemIds": [
+    "example.u00.l02.our"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.pick-baby",
+   "kind": "choice",
+   "prompt": "Look at the picture of a very small child. Which word fits?",
+   "answer": "baby",
+   "options": [
+    "baby",
+    "mother",
+    "father"
+   ],
+   "explanation": "A baby is a very small child.",
+   "itemIds": [
+    "example.u00.l02.baby"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.match-same",
+   "kind": "match",
+   "prompt": "Match the phrases with the same meaning.",
+   "pairs": [
+    {
+     "left": "my mother",
+     "right": "my mum"
+    },
+    {
+     "left": "my father",
+     "right": "my dad"
+    },
+    {
+     "left": "my parents",
+     "right": "my mum and dad"
+    }
+   ],
+   "explanation": "Parents means mother and father together.",
+   "itemIds": [
+    "example.u00.l02.parents",
+    "example.u00.l01.mother",
+    "example.u00.l01.father"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.hear-parents",
+   "kind": "listen",
+   "prompt": "Listen, then choose what you heard.",
+   "audio": "My parents are happy.",
+   "answer": "My parents are happy.",
+   "options": [
+    "My parents are happy.",
+    "My parents are tired.",
+    "My brother is happy."
+   ],
+   "explanation": "Parents is for both mother and father.",
+   "itemIds": [
+    "example.u00.l02.parents"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.say-parents",
+   "kind": "speak",
+   "prompt": "Say the sentence aloud. You can try again.",
+   "text": "Mum and dad are our parents.",
+   "answer": "Mum and dad are our parents.",
+   "explanation": "Our parents means the parents of both of us.",
+   "itemIds": [
+    "example.u00.l02.parents",
+    "example.u00.l02.our"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.fill-our",
+   "kind": "fill",
+   "prompt": "You and Mia are sisters. Talk about the mother you share. Complete the sentence.",
+   "text": "This is ___ mother.",
+   "answer": "our",
+   "options": [
+    "our",
+    "his",
+    "her"
+   ],
+   "explanation": "You share the mother, so use our.",
+   "itemIds": [
+    "example.u00.l02.our"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.fill-her-name",
+   "kind": "fill",
+   "prompt": "Lily is a girl. Complete the sentence about her.",
+   "text": "___ name is Lily.",
+   "answer": "Her",
+   "options": [
+    "Her",
+    "His",
+    "Our"
+   ],
+   "explanation": "Use her for a girl: her name.",
+   "itemIds": [
+    "example.u00.l02.her"
+   ]
+  }
+ ],
+ "story": {
+  "hook": "Who is the baby in Mia and Sam’s family?",
+  "image": {
+   "id": "example-scene",
+   "describe": "Mia and Sam’s living room: Smarty the black cat meets Mia, Sam, their parents and a baby sister sleeping in a basket."
+  },
+  "lines": [
+   {
+    "speaker": "Smarty",
+    "text": "Hello, Mia! Hello, Sam!"
+   },
+   {
+    "speaker": "Mia",
+    "text": "This is our family, Smarty."
+   },
+   {
+    "speaker": "Sam",
+    "text": "Mum and dad are our parents."
+   },
+   {
+    "speaker": "Mia",
+    "text": "This is our baby sister."
+   },
+   {
+    "speaker": "Sam",
+    "text": "Her name is Lily."
+   },
+   {
+    "speaker": "Smarty",
+    "text": "Hello, Lily! I am Smarty."
+   },
+   {
+    "speaker": "Mia",
+    "text": "She is happy. She is our baby!"
+   }
+  ],
+  "questions": [
+   {
+    "id": "example.u00.l02.task.story-one",
+    "kind": "choice",
+    "prompt": "What is the baby’s name?",
+    "answer": "Lily",
+    "options": [
+     "Lily",
+     "Mia",
+     "Ana"
+    ],
+    "explanation": "Sam says: Her name is Lily.",
+    "itemIds": [
+     "example.u00.l02.baby"
+    ]
+   },
+   {
+    "id": "example.u00.l02.task.story-two",
+    "kind": "choice",
+    "prompt": "Mia says: This is our baby ___.",
+    "answer": "sister",
+    "options": [
+     "sister",
+     "brother",
+     "mother"
+    ],
+    "explanation": "Mia says: This is our baby sister.",
+    "itemIds": [
+     "example.u00.l02.baby"
+    ]
+   },
+   {
+    "id": "example.u00.l02.task.story-three",
+    "kind": "choice",
+    "prompt": "Mum and dad are Sam and Mia’s ___.",
+    "answer": "parents",
+    "options": [
+     "parents",
+     "babies",
+     "brothers"
+    ],
+    "explanation": "Sam says: Mum and dad are our parents.",
+    "itemIds": [
+     "example.u00.l02.parents"
+    ]
+   }
+  ]
+ },
+ "mission": {
+  "setup": "You show Smarty a picture of your family. Answer in your own words; an imaginary family is fine.",
+  "turns": [
+   {
+    "smarty": "This is my mother. And you?",
+    "accept": [
+     "^this is my (?:mother|mum|father|dad)$",
+     "^my (?:mother|mum|father|dad) is (?:happy|tired|fine)$"
+    ],
+    "example": "This is my mum.",
+    "hint": "Tell Smarty about your mother or your father.",
+    "itemIds": [
+     "example.u00.l01.mother",
+     "example.u00.l01.father",
+     "en.beginner.u01.l02.and-you"
+    ]
+   },
+   {
+    "smarty": "My mother and father are my parents. Are your parents happy?",
+    "accept": [
+     "^(?:yes|no)(?: my parents are (?:happy|tired))?$",
+     "^my parents are (?:happy|tired|fine)$"
+    ],
+    "example": "Yes, my parents are happy.",
+    "hint": "Say Yes or No, or say how your parents are.",
+    "itemIds": [
+     "example.u00.l02.parents"
+    ]
+   },
+   {
+    "smarty": "Say hello to our baby!",
+    "accept": [
+     "^(?:hello|hi)(?: baby| smarty)?$",
+     "^(?:hello|hi) our baby$"
+    ],
+    "example": "Hello, baby!",
+    "hint": "Say hello to the baby.",
+    "itemIds": [
+     "example.u00.l02.baby",
+     "example.u00.l02.our",
+     "en.beginner.u01.l01.hello"
+    ]
+   }
+  ]
+ },
+ "recycle": [
+  "example.u00.l01.mother",
+  "example.u00.l01.father",
+  "en.beginner.u01.l02.and-you",
+  "en.beginner.u01.l01.hello"
+ ]
+}

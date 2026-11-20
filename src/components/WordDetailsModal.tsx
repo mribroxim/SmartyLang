@@ -1,6 +1,6 @@
 import { DialogSurface } from './DialogSurface';
 import { useUiLang } from '../contexts/UiLangContext';
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { X, BookOpen, Languages, Volume2, Loader2, Plus, CheckCircle2, Search } from 'lucide-react';
 import { LANGUAGES, type LanguageOption, decodeHtmlEntities } from '../lib/languages';
 import { readPreferredTranslationLang } from '../lib/preferredTranslationLang';

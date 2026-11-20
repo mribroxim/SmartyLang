@@ -51,6 +51,22 @@ test('Google sign-in starts before the onboarding age question and retains its s
   expect(cookie).toContain('HttpOnly; SameSite=Lax; Secure');
 });
 
+test('shared classroom session checks do not spend sign-in attempts', async () => {
+  const app = express();
+  installSecurity(app);
+  app.get('/api/auth/session', (_req, res) => res.sendStatus(204));
+  app.post('/api/auth/login', (_req, res) => res.sendStatus(204));
+  const server = app.listen(0, '127.0.0.1');
+  await new Promise<void>(resolve => server.once('listening', resolve));
+  const base = `http://127.0.0.1:${(server.address() as AddressInfo).port}/api/auth`;
+  try {
+    for (let count = 0; count < 35; count++) expect((await fetch(`${base}/session`)).status).toBe(204);
+    for (let count = 0; count < 20; count++) expect((await fetch(`${base}/login`, { method: 'POST' })).status).toBe(204);
+    expect((await fetch(`${base}/login`, { method: 'POST' })).status).toBe(429);
+    expect((await fetch(`${base}/session`)).status).toBe(204);
+  } finally { await new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve())); }
+});
+
 test('email signup enters onboarding without granting learning access before age consent', async () => {
   const res = { setHeader: vi.fn() };
   const user = await registerUser({ headers: {}, secure: false, get: () => undefined } as any, res as any, { email: 'onboarding@example.test', password: 'test-only-password' });

@@ -1,10 +1,12 @@
-import { CatLogo } from '../components/brand/CatLogo';
+import { ArrowLeft } from 'lucide-react';
+import { Sticker } from '../components/stickers/Sticker';
 import React, { useState } from 'react';
 import { LegalLinks } from './Legal';
 import { loginWithEmail, registerWithEmail } from '../firebase';
 import { useUiLang } from '../contexts/UiLangContext';
 
 interface AuthGateProps {
+  onBack?: () => void;
   loginWithGoogle: () => Promise<void>;
 }
 
@@ -74,7 +76,7 @@ const MailIcon = () => (
   </svg>
 );
 
-export function AuthGate({ loginWithGoogle }: AuthGateProps) {
+export function AuthGate({ loginWithGoogle, onBack }: AuthGateProps) {
   const { t } = useUiLang();
   const [googleLoading, setGoogleLoading] = useState(false);
   const [showEmail, setShowEmail]   = useState(false);
@@ -133,29 +135,30 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
 
   /* ── UI ───────────────────────────────────────────────────────────────── */
   return (
-    <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-4 md:p-6">
+    <div className="min-h-dvh bg-slate-50 dark:bg-zinc-950 flex items-center justify-center p-4 md:p-6">
       <div className="w-full max-w-md">
+        {onBack && <button type="button" onClick={onBack} aria-label={t('onboard.back')} className="mb-2 rounded-xl p-2 text-zinc-600 dark:text-zinc-300"><ArrowLeft size={24} /></button>}
 
         {/* Brand */}
         <div className="text-center mb-6 md:mb-10">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl mb-5 border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a] dark:bg-zinc-900">
-            <CatLogo className="h-12 w-12" />
+            <Sticker id="mood.hi-there" size={56} mode="once" />
           </div>
-          <h1 className="text-2xl sm:text-4xl font-serif font-black text-white tracking-tight mb-2">SmartyLang</h1>
-          <p className="text-zinc-400 text-base">{t('auth.tagline')}</p>
+          <h1 className="text-2xl sm:text-4xl font-serif font-black text-zinc-900 dark:text-white tracking-tight mb-2">SmartyLang</h1>
+          <p className="text-slate-600 dark:text-zinc-400 text-base">{t('auth.tagline')}</p>
         </div>
 
         {/* Card */}
         <LegalLinks />
-        <div className="bg-zinc-900 rounded-3xl p-6 md:p-8 border border-zinc-800 shadow-2xl">
-          <h2 className="text-xl font-bold text-white mb-1">{t('auth.welcome')}</h2>
-          <p className="text-zinc-400 text-sm mb-6">{t('auth.signInHint')}</p>
+        <div className="bg-white dark:bg-zinc-900 rounded-3xl p-6 md:p-8 border-2 border-zinc-200 dark:border-zinc-700 shadow-[0_5px_0_0_#e4e4e7] dark:shadow-[0_5px_0_0_#3f3f46]">
+          <h2 className="text-xl font-serif font-extrabold text-zinc-900 dark:text-zinc-50 mb-1">{t('auth.welcome')}</h2>
+          <p className="text-slate-600 dark:text-zinc-400 text-sm mb-6">{t('auth.signInHint')}</p>
 
           {/* Google */}
           <button
             onClick={handleGoogle}
             disabled={busy}
-            className="w-full flex items-center justify-center gap-3 bg-white text-zinc-900 font-semibold py-3.5 px-6 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition-all duration-150 disabled:opacity-60 disabled:cursor-not-allowed shadow-lg"
+            className="w-full flex items-center justify-center gap-3 bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 dark-keep font-bold py-3.5 px-6 rounded-xl hover:opacity-90 active:scale-[0.98] transition-all duration-150 disabled:opacity-60 disabled:cursor-not-allowed shadow-lg"
           >
             {googleLoading
               ? <div className="w-5 h-5 border-2 border-zinc-400 border-t-zinc-800 rounded-full animate-spin" />
@@ -165,9 +168,9 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
 
           {/* Divider */}
           <div className="flex items-center gap-3 my-5">
-            <div className="flex-1 h-px bg-zinc-800" />
+            <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-700" />
             <span className="text-zinc-500 text-xs font-medium">{t("core.authgate.or_175835")}</span>
-            <div className="flex-1 h-px bg-zinc-800" />
+            <div className="flex-1 h-px bg-zinc-200 dark:bg-zinc-700" />
           </div>
 
           {/* Email section */}
@@ -175,21 +178,21 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
             <button
               onClick={() => setShowEmail(true)}
               disabled={busy}
-              className="w-full flex items-center justify-center gap-2 border border-zinc-700 text-zinc-300 font-semibold py-3.5 px-6 rounded-xl hover:border-zinc-500 hover:text-white active:scale-[0.98] transition-all duration-150 disabled:opacity-60"
+              className="w-full flex items-center justify-center gap-2 border-2 border-slate-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-200 font-semibold py-3.5 px-6 rounded-xl hover:border-zinc-500 active:scale-[0.98] transition-all duration-150 disabled:opacity-60"
             >
               <MailIcon />  {t("core.authgate.continue_with_email_880014")}</button>
           ) : (
             <>
               {/* Sign In / Register tabs */}
-              <div className="flex bg-zinc-800 rounded-xl p-1 mb-5">
+              <div className="flex bg-slate-100 dark:bg-zinc-800 rounded-xl p-1 mb-5">
                 {(['signin', 'register'] as const).map((m) => (
                   <button
                     key={m}
                     onClick={() => switchMode(m)}
                     className={`flex-1 py-2 text-sm font-semibold rounded-lg transition-colors ${
                       emailMode === m
-                        ? 'bg-zinc-600 text-white shadow'
-                        : 'text-zinc-400 hover:text-zinc-200'
+                        ? 'bg-zinc-900 text-white shadow dark-keep'
+                        : 'text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100'
                     }`}
                   >
                     {m === 'signin' ? t("home.cta.signIn") : t("core.authgate.register_d67299")}
@@ -205,7 +208,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     disabled={busy}
-                    className="w-full bg-zinc-800 border border-zinc-700 text-white placeholder-zinc-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-500 transition-colors disabled:opacity-60"
+                    className="w-full bg-slate-50 dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white placeholder-zinc-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-500 transition-colors disabled:opacity-60"
                   />
                 )}
 
@@ -216,7 +219,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   disabled={busy}
-                  className="w-full bg-zinc-800 border border-zinc-700 text-white placeholder-zinc-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-500 transition-colors disabled:opacity-60"
+                  className="w-full bg-slate-50 dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white placeholder-zinc-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-500 transition-colors disabled:opacity-60"
                 />
 
                 <input aria-label={t("core.authgate.password_8be3c9")}
@@ -226,7 +229,7 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   disabled={busy}
-                  className="w-full bg-zinc-800 border border-zinc-700 text-white placeholder-zinc-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-500 transition-colors disabled:opacity-60"
+                  className="w-full bg-slate-50 dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white placeholder-zinc-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-500 transition-colors disabled:opacity-60"
                 />
 
                 {emailMode === 'register' && (
@@ -237,14 +240,14 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
                     onChange={(e) => setConfirm(e.target.value)}
                     required
                     disabled={busy}
-                    className="w-full bg-zinc-800 border border-zinc-700 text-white placeholder-zinc-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-500 transition-colors disabled:opacity-60"
+                    className="w-full bg-slate-50 dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white placeholder-zinc-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-zinc-500 transition-colors disabled:opacity-60"
                   />
                 )}
 
                 <button
                   type="submit"
                   disabled={busy}
-                  className="w-full bg-white text-zinc-900 font-semibold py-3.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition-all duration-150 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-1"
+                  className="w-full bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 dark-keep font-bold py-3.5 rounded-xl hover:opacity-90 active:scale-[0.98] transition-all duration-150 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 mt-1"
                 >
                   {emailLoading && (
                     <div className="w-5 h-5 border-2 border-zinc-400 border-t-zinc-900 rounded-full animate-spin" />
@@ -259,26 +262,13 @@ export function AuthGate({ loginWithGoogle }: AuthGateProps) {
 
           {/* Error */}
           {error && (
-            <p className="text-rose-400 text-sm text-center mt-4">{error}</p>
+            <p role="alert" className="text-rose-600 dark:text-rose-400 text-sm text-center mt-4">{error}</p>
           )}
 
           <p className="text-zinc-600 text-xs text-center mt-6">
             {t("core.authgate.by_continuing_you_agree_to_312b82")}</p>
         </div>
 
-        {/* Feature pills */}
-        <div className="mt-8 grid grid-cols-3 gap-3">
-          {[
-            { icon: '🎙️', label: t("home.preview.speaking") },
-            { icon: '📖', label: t("home.preview.reading") },
-            { icon: '✍️', label: t("nav.writing") },
-          ].map(({ icon, label }) => (
-            <div key={label} className="bg-zinc-900/60 rounded-2xl p-4 text-center border border-zinc-800">
-              <div className="text-2xl mb-1">{icon}</div>
-              <div className="text-zinc-400 text-xs font-medium">{label}</div>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );

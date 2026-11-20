@@ -1,0 +1,3725 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "elementary",
+  "unit": 5,
+  "title": "Films & Music",
+  "room": "music-room",
+  "lessons": [
+    {
+      "id": "en.elementary.u05.l01",
+      "section": "elementary",
+      "unit": 5,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Instruments",
+      "canDo": "Name instruments",
+      "scenario": "Smarty shows Mia and Sam different musical instruments in the music room.",
+      "items": [
+        {
+          "id": "en.elementary.u05.l01.guitar",
+          "text": "guitar",
+          "kind": "word",
+          "forms": [
+            "guitars"
+          ],
+          "example": "I have a brown guitar.",
+          "note": "Use ‘guitar’ for the instrument with strings that you hold and play.",
+          "image": {
+            "id": "guitar",
+            "describe": "a wooden brown acoustic guitar leaning against a chair in a bright music room"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l01.piano",
+          "text": "piano",
+          "kind": "word",
+          "forms": [
+            "pianos"
+          ],
+          "example": "The big piano is black.",
+          "note": "Say ‘piano’ for the large instrument with black and white keys.",
+          "image": {
+            "id": "piano",
+            "describe": "a shiny black upright piano with black and white keys in Smarty's music room"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l01.violin",
+          "text": "violin",
+          "kind": "word",
+          "forms": [
+            "violins"
+          ],
+          "example": "Mia can play the violin.",
+          "note": "Use ‘violin’ for the small string instrument you hold under your chin.",
+          "image": {
+            "id": "violin",
+            "describe": "a small brown violin with its bow resting on a music stand"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l01.drum",
+          "text": "drum",
+          "kind": "word",
+          "forms": [
+            "drums"
+          ],
+          "example": "Sam played the red drum yesterday.",
+          "note": "Say ‘drum’ for the round instrument you hit to make a beat.",
+          "image": {
+            "id": "drum",
+            "describe": "a bright red round snare drum with two wooden drumsticks on top"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l01.trumpet",
+          "text": "trumpet",
+          "kind": "word",
+          "forms": [
+            "trumpets"
+          ],
+          "example": "His new trumpet is yellow.",
+          "note": "Use ‘trumpet’ for the shiny brass instrument you blow into.",
+          "image": {
+            "id": "trumpet",
+            "describe": "a shiny golden-yellow brass trumpet resting on a soft blue cushion"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l01.flute",
+          "text": "flute",
+          "kind": "word",
+          "forms": [
+            "flutes"
+          ],
+          "example": "She has a small white flute.",
+          "note": "Say ‘flute’ for the long, thin instrument you hold to the side and blow.",
+          "image": {
+            "id": "flute",
+            "describe": "a slim silver-white flute lying next to a sheet of music notes"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u05.l01.task.pick-guitar",
+          "kind": "choice",
+          "prompt": "Look at the instrument with six strings. Which word is it?",
+          "answer": "guitar",
+          "options": [
+            "guitar",
+            "drum",
+            "flute"
+          ],
+          "explanation": "A guitar has strings and a wooden body.",
+          "itemIds": [
+            "en.elementary.u05.l01.guitar"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l01.task.hear-piano",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The big piano is black.",
+          "answer": "The big piano is black.",
+          "options": [
+            "The big piano is black.",
+            "The big drum is black.",
+            "The small violin is black."
+          ],
+          "explanation": "Smarty said ‘piano’—the large instrument with keys.",
+          "itemIds": [
+            "en.elementary.u05.l01.piano",
+            "en.beginner.u02.l07.big",
+            "en.beginner.u06.l01.black"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l01.task.pick-violin",
+          "kind": "choice",
+          "prompt": "Which instrument is smaller than a guitar and has strings?",
+          "answer": "violin",
+          "options": [
+            "violin",
+            "trumpet",
+            "piano"
+          ],
+          "explanation": "A violin is a small string instrument.",
+          "itemIds": [
+            "en.elementary.u05.l01.violin"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l01.task.match-instruments",
+          "kind": "match",
+          "prompt": "Match each instrument with its description.",
+          "pairs": [
+            {
+              "left": "drum",
+              "right": "you play it"
+            },
+            {
+              "left": "trumpet",
+              "right": "it is yellow"
+            },
+            {
+              "left": "flute",
+              "right": "it is long"
+            }
+          ],
+          "explanation": "You hit a drum, and you blow into a trumpet or a flute.",
+          "itemIds": [
+            "en.elementary.u05.l01.drum",
+            "en.elementary.u05.l01.trumpet",
+            "en.elementary.u05.l01.flute"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l01.task.hear-flute",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I can play the flute.",
+          "answer": "I can play the flute.",
+          "options": [
+            "I can play the flute.",
+            "I can play the trumpet.",
+            "I can play the violin."
+          ],
+          "explanation": "Listen to the last word: flute.",
+          "itemIds": [
+            "en.elementary.u05.l01.flute",
+            "en.beginner.u08.l06.i-can"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l01.task.build-guitar",
+          "kind": "build",
+          "prompt": "Put the words in order to say what you can play.",
+          "answer": "I can play the guitar.",
+          "tiles": [
+            "I",
+            "can",
+            "play",
+            "the",
+            "guitar",
+            "drum"
+          ],
+          "explanation": "Start with ‘I can play’, then ‘the guitar’.",
+          "itemIds": [
+            "en.elementary.u05.l01.guitar",
+            "en.beginner.u08.l06.i-can"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l01.task.fill-drum",
+          "kind": "fill",
+          "prompt": "Sam loves rhythm. Complete the sentence.",
+          "text": "Sam has a big red ___.",
+          "answer": "drum",
+          "options": [
+            "drum",
+            "flute",
+            "violin"
+          ],
+          "explanation": "A drum is the round instrument Sam plays.",
+          "itemIds": [
+            "en.elementary.u05.l01.drum",
+            "en.beginner.u02.l08.has"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l01.task.fill-trumpet",
+          "kind": "fill",
+          "prompt": "Complete the sentence about Leo’s yellow instrument.",
+          "text": "Leo played the ___ yesterday.",
+          "answer": "trumpet",
+          "options": [
+            "trumpet",
+            "piano",
+            "guitar"
+          ],
+          "explanation": "A trumpet is a shiny yellow instrument.",
+          "itemIds": [
+            "en.elementary.u05.l01.trumpet",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l01.task.say-piano",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "There is a piano in the room.",
+          "answer": "There is a piano in the room.",
+          "explanation": "Use ‘There is a piano’ to say a piano is in the room.",
+          "itemIds": [
+            "en.elementary.u05.l01.piano",
+            "en.beginner.u05.l02.there-is"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which instruments are in Smarty’s music room?",
+        "image": {
+          "id": "en-a2-u05-l01-scene",
+          "describe": "Smarty the black cat stands in his cozy music room next to a black piano while Mia holds a violin and Sam sits by a red drum, with a guitar, trumpet, and flute nearby."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Mia! Hello, Sam! Welcome to my music room."
+          },
+          {
+            "speaker": "Mia",
+            "text": "There is a big black piano here!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! I can play the piano and the guitar."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Look! There is a red drum next to the window."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I have a violin at home, and my sister has a flute."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And here is a yellow trumpet. Let's play music together!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u05.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "What colour is the piano in the music room?",
+            "answer": "black",
+            "options": [
+              "black",
+              "red",
+              "yellow"
+            ],
+            "explanation": "Mia says: There is a big black piano here!",
+            "itemIds": [
+              "en.elementary.u05.l01.piano",
+              "en.beginner.u06.l01.black"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "What instrument does Mia’s sister have?",
+            "answer": "flute",
+            "options": [
+              "flute",
+              "drum",
+              "trumpet"
+            ],
+            "explanation": "Mia says: my sister has a flute.",
+            "itemIds": [
+              "en.elementary.u05.l01.flute"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Where is the red drum?",
+            "answer": "next to the window",
+            "options": [
+              "next to the window",
+              "under the table",
+              "on the bed"
+            ],
+            "explanation": "Sam says: There is a red drum next to the window.",
+            "itemIds": [
+              "en.elementary.u05.l01.drum",
+              "en.beginner.u05.l05.next-to"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are in Smarty’s music room. Tell Smarty about instruments you have or can play.",
+        "turns": [
+          {
+            "smarty": "I can play the piano and the guitar. What instrument can you play?",
+            "accept": [
+              "^i can play (?:the )?(?:guitar|piano|violin|drum|trumpet|flute)$",
+              "^(?:the )?(?:guitar|piano|violin|drum|trumpet|flute)$",
+              "^i cannot play$"
+            ],
+            "example": "I can play the guitar.",
+            "hint": "Say ‘I can play the…’ with an instrument name.",
+            "itemIds": [
+              "en.elementary.u05.l01.guitar",
+              "en.elementary.u05.l01.piano",
+              "en.elementary.u05.l01.violin",
+              "en.elementary.u05.l01.drum",
+              "en.elementary.u05.l01.trumpet",
+              "en.elementary.u05.l01.flute",
+              "en.beginner.u08.l06.i-can"
+            ]
+          },
+          {
+            "smarty": "Do you have a guitar or a drum at home?",
+            "accept": [
+              "^yes i have a (?:guitar|drum|piano|violin|trumpet|flute)$",
+              "^i have a (?:guitar|drum|piano|violin|trumpet|flute)$",
+              "^no(?: i do not)?$"
+            ],
+            "example": "Yes, I have a guitar.",
+            "hint": "Say ‘Yes, I have a…’ or ‘No’.",
+            "itemIds": [
+              "en.elementary.u05.l01.guitar",
+              "en.elementary.u05.l01.drum",
+              "en.beginner.u02.l08.i-have"
+            ]
+          },
+          {
+            "smarty": "I love music! Which instrument do you like: the violin, the trumpet, or the flute?",
+            "accept": [
+              "^i like (?:the )?(?:violin|trumpet|flute|guitar|piano|drum)$",
+              "^(?:the )?(?:violin|trumpet|flute|guitar|piano|drum)$"
+            ],
+            "example": "I like the violin.",
+            "hint": "Say ‘I like the…’ and name one instrument.",
+            "itemIds": [
+              "en.elementary.u05.l01.violin",
+              "en.elementary.u05.l01.trumpet",
+              "en.elementary.u05.l01.flute",
+              "en.beginner.u03.l03.i-like"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l07.big",
+        "en.beginner.u06.l01.black",
+        "en.beginner.u08.l06.i-can",
+        "en.beginner.u02.l08.has",
+        "en.beginner.u10.l01.yesterday",
+        "en.beginner.u05.l02.there-is",
+        "en.beginner.u05.l05.next-to",
+        "en.beginner.u02.l08.i-have",
+        "en.beginner.u03.l03.i-like"
+      ]
+    },
+    {
+      "id": "en.elementary.u05.l02",
+      "section": "elementary",
+      "unit": 5,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Music",
+      "canDo": "Talk about music",
+      "scenario": "Leo and Zara talk with Smarty about songs, bands, concerts, and headphones.",
+      "items": [
+        {
+          "id": "en.elementary.u05.l02.song",
+          "text": "song",
+          "kind": "word",
+          "forms": [
+            "songs"
+          ],
+          "example": "This new song is beautiful.",
+          "note": "Use ‘song’ for a short piece of music with words that people sing.",
+          "image": {
+            "id": "song",
+            "describe": "musical notes floating out of a small speaker while Smarty the black cat smiles and taps a paw"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l02.singer",
+          "text": "singer",
+          "kind": "word",
+          "forms": [
+            "singers"
+          ],
+          "example": "She is my favourite singer.",
+          "note": "Say ‘singer’ for a person who sings songs.",
+          "image": {
+            "id": "singer",
+            "describe": "a cheerful cat standing at a microphone singing a song on a small stage"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l02.band",
+          "text": "band",
+          "kind": "word",
+          "forms": [
+            "bands"
+          ],
+          "example": "The band has four instruments.",
+          "note": "Use ‘band’ for a group of people who play music together.",
+          "image": {
+            "id": "band",
+            "describe": "four cat musicians playing guitar, piano, drums, and trumpet together as a band"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l02.concert",
+          "text": "concert",
+          "kind": "word",
+          "forms": [
+            "concerts"
+          ],
+          "example": "We went to a concert on Saturday.",
+          "note": "Say ‘concert’ for a live music show where a singer or band plays for people.",
+          "image": {
+            "id": "concert",
+            "describe": "a lively concert stage with bright lights and a happy crowd of cats watching a band"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l02.headphones",
+          "text": "headphones",
+          "kind": "word",
+          "example": "I am wearing my blue headphones.",
+          "note": "Use ‘headphones’ for the pair of speakers you wear over your ears to hear music.",
+          "image": {
+            "id": "headphones",
+            "describe": "a pair of sleek blue over-ear headphones resting on a wooden desk"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l02.i-prefer",
+          "text": "I prefer",
+          "kind": "phrase",
+          "forms": [
+            "prefer",
+            "prefers",
+            "preferred"
+          ],
+          "example": "I prefer this song.",
+          "note": "Say ‘I prefer’ to show which thing you like more."
+        }
+      ],
+      "grammar": {
+        "title": "Saying what you like more: I prefer",
+        "explanation": "Use ‘I prefer’ followed by a noun to say what you like more than something else.",
+        "examples": [
+          "I prefer the guitar.",
+          "I prefer this band."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u05.l02.task.pick-singer",
+          "kind": "choice",
+          "prompt": "Who sings songs on stage?",
+          "answer": "singer",
+          "options": [
+            "singer",
+            "concert",
+            "headphones"
+          ],
+          "explanation": "A singer is a person who sings songs.",
+          "itemIds": [
+            "en.elementary.u05.l02.singer"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l02.task.pick-band",
+          "kind": "choice",
+          "prompt": "What do we call a group of musicians playing together?",
+          "answer": "band",
+          "options": [
+            "band",
+            "song",
+            "piano"
+          ],
+          "explanation": "A band is a group of people playing music together.",
+          "itemIds": [
+            "en.elementary.u05.l02.band"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l02.task.hear-concert",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I went to a concert yesterday.",
+          "answer": "I went to a concert yesterday.",
+          "options": [
+            "I went to a concert yesterday.",
+            "I went to a library yesterday.",
+            "I went to a market yesterday."
+          ],
+          "explanation": "Smarty said ‘concert’—a live music show.",
+          "itemIds": [
+            "en.elementary.u05.l02.concert",
+            "en.beginner.u10.l03.i-went"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l02.task.match-music",
+          "kind": "match",
+          "prompt": "Match the words with their meanings.",
+          "pairs": [
+            {
+              "left": "headphones",
+              "right": "these are for music"
+            },
+            {
+              "left": "song",
+              "right": "music to sing"
+            },
+            {
+              "left": "concert",
+              "right": "a big music show"
+            }
+          ],
+          "explanation": "You wear headphones, sing a song, and watch a band at a concert.",
+          "itemIds": [
+            "en.elementary.u05.l02.headphones",
+            "en.elementary.u05.l02.song",
+            "en.elementary.u05.l02.concert"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l02.task.build-prefer",
+          "kind": "build",
+          "prompt": "Put the words in order to show which instrument you like more.",
+          "answer": "I prefer the piano.",
+          "tiles": [
+            "I",
+            "prefer",
+            "the",
+            "piano",
+            "song"
+          ],
+          "explanation": "Use ‘I prefer’ before ‘the piano’.",
+          "itemIds": [
+            "en.elementary.u05.l02.i-prefer",
+            "en.elementary.u05.l01.piano"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l02.task.fill-headphones",
+          "kind": "fill",
+          "prompt": "Zara wants to hear her music on the bus. Complete the sentence.",
+          "text": "Zara is wearing her new ___.",
+          "answer": "headphones",
+          "options": [
+            "headphones",
+            "concerts",
+            "singers"
+          ],
+          "explanation": "You wear headphones over your ears.",
+          "itemIds": [
+            "en.elementary.u05.l02.headphones",
+            "en.beginner.u05.l09.new"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l02.task.fill-song",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the music.",
+          "text": "My favourite ___ is on the radio.",
+          "answer": "song",
+          "options": [
+            "song",
+            "band",
+            "guitar"
+          ],
+          "explanation": "A song is a piece of music.",
+          "itemIds": [
+            "en.elementary.u05.l02.song",
+            "en.beginner.u06.l08.favourite"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l02.task.fill-prefer",
+          "kind": "fill",
+          "prompt": "Leo likes this band more than the other one. Complete the sentence.",
+          "text": "___ this band.",
+          "answer": "I prefer",
+          "options": [
+            "I prefer",
+            "I cannot",
+            "I am"
+          ],
+          "explanation": "Use ‘I prefer’ to say what you like more.",
+          "itemIds": [
+            "en.elementary.u05.l02.i-prefer",
+            "en.elementary.u05.l02.band"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l02.task.say-singer",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "The singer in that band is good.",
+          "answer": "The singer in that band is good.",
+          "explanation": "‘The singer in that band’ names the person who sings for the group.",
+          "itemIds": [
+            "en.elementary.u05.l02.singer",
+            "en.elementary.u05.l02.band"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is Zara wearing in the music room?",
+        "image": {
+          "id": "en-a2-u05-l02-scene",
+          "describe": "Zara wears blue headphones while Leo shows a concert poster to Smarty the black cat in the music room."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hi, Zara! You are wearing new blue headphones."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes! I am enjoying a new song."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Who is the singer?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "She is in a band with a guitar and two drums."
+          },
+          {
+            "speaker": "Leo",
+            "text": "There is a concert in the park on Sunday!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I love concerts, but I prefer quiet songs in my music room."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u05.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Zara wearing?",
+            "answer": "blue headphones",
+            "options": [
+              "blue headphones",
+              "a red hat",
+              "yellow boots"
+            ],
+            "explanation": "Smarty says: You are wearing new blue headphones.",
+            "itemIds": [
+              "en.elementary.u05.l02.headphones",
+              "en.beginner.u06.l01.blue"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "When is the concert in the park?",
+            "answer": "on Sunday",
+            "options": [
+              "on Sunday",
+              "on Monday",
+              "on Friday"
+            ],
+            "explanation": "Leo says: There is a concert in the park on Sunday!",
+            "itemIds": [
+              "en.elementary.u05.l02.concert",
+              "en.beginner.u04.l07.sunday"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Smarty prefer?",
+            "answer": "songs in his music room",
+            "options": [
+              "songs in his music room",
+              "playing football",
+              "watching TV"
+            ],
+            "explanation": "Smarty says he prefers songs in his music room.",
+            "itemIds": [
+              "en.elementary.u05.l02.i-prefer",
+              "en.elementary.u05.l02.song"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty wants to know what music you like. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "I love this song! Do you have headphones?",
+            "accept": [
+              "^yes(?: i have headphones| i do)?$",
+              "^no(?: i do not)?$",
+              "^i have (?:new |blue |black |white |red )?headphones$"
+            ],
+            "example": "Yes, I have headphones.",
+            "hint": "Say ‘Yes, I have headphones’ or ‘No’.",
+            "itemIds": [
+              "en.elementary.u05.l02.headphones",
+              "en.elementary.u05.l02.song",
+              "en.beginner.u02.l08.i-have"
+            ]
+          },
+          {
+            "smarty": "Which do you prefer: a small singer with a piano, or a big band at a concert?",
+            "accept": [
+              "^i prefer (?:a |the )?(?:singer|piano|band|concert)$",
+              "^i prefer a (?:small )?singer(?: with a piano)?$",
+              "^i prefer a (?:big )?band(?: at a concert)?$"
+            ],
+            "example": "I prefer a big band.",
+            "hint": "Start with ‘I prefer…’",
+            "itemIds": [
+              "en.elementary.u05.l02.i-prefer",
+              "en.elementary.u05.l02.singer",
+              "en.elementary.u05.l02.band",
+              "en.elementary.u05.l02.concert",
+              "en.elementary.u05.l01.piano"
+            ]
+          },
+          {
+            "smarty": "Did you go to a concert last year?",
+            "accept": [
+              "^yes(?: i did| i went to a concert)?$",
+              "^no(?: i did not)?$"
+            ],
+            "example": "Yes, I did.",
+            "hint": "Say ‘Yes, I did’ or ‘No, I did not’.",
+            "itemIds": [
+              "en.elementary.u05.l02.concert",
+              "en.elementary.u04.l05.yes-i-did",
+              "en.elementary.u04.l05.no-i-did-not"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l07.big",
+        "en.beginner.u06.l01.black",
+        "en.beginner.u10.l03.i-went",
+        "en.elementary.u05.l01.piano",
+        "en.beginner.u05.l09.new",
+        "en.beginner.u06.l08.favourite",
+        "en.beginner.u06.l01.blue",
+        "en.beginner.u04.l07.sunday",
+        "en.beginner.u02.l08.i-have",
+        "en.elementary.u04.l05.yes-i-did",
+        "en.elementary.u04.l05.no-i-did-not"
+      ]
+    },
+    {
+      "id": "en.elementary.u05.l03",
+      "section": "elementary",
+      "unit": 5,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "At the cinema",
+      "canDo": "Name film people and things",
+      "scenario": "Ben and Ana talk with Smarty outside the cinema about a new film.",
+      "items": [
+        {
+          "id": "en.elementary.u05.l03.film",
+          "text": "film",
+          "kind": "word",
+          "forms": [
+            "films"
+          ],
+          "example": "We watched a new film at the cinema.",
+          "note": "Use ‘film’ for a story with moving pictures that you watch at the cinema or at home.",
+          "image": {
+            "id": "film",
+            "describe": "a classic cinema film reel and clapperboard on a red velvet seat"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l03.actor",
+          "text": "actor",
+          "kind": "word",
+          "forms": [
+            "actors"
+          ],
+          "example": "That tall actor is in three films.",
+          "note": "Say ‘actor’ for a man or boy who plays a character in a film.",
+          "image": {
+            "id": "actor",
+            "describe": "a friendly male cat actor wearing a smart jacket and smiling under stage lights"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l03.actress",
+          "text": "actress",
+          "kind": "word",
+          "forms": [
+            "actresses"
+          ],
+          "example": "The actress in this film is young.",
+          "note": "Use ‘actress’ for a woman or girl who plays a character in a film.",
+          "image": {
+            "id": "actress",
+            "describe": "a cheerful female cat actress holding a film script on a bright movie set"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l03.director",
+          "text": "director",
+          "kind": "word",
+          "forms": [
+            "directors"
+          ],
+          "example": "The director told the actors where to stand.",
+          "note": "Say ‘director’ for the person who tells actors what to do when making a film.",
+          "image": {
+            "id": "director",
+            "describe": "a cat director sitting in a folding chair holding a megaphone next to a film camera"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l03.screen",
+          "text": "screen",
+          "kind": "word",
+          "forms": [
+            "screens"
+          ],
+          "example": "The cinema screen is very big.",
+          "note": "Use ‘screen’ for the large white wall or surface where you see the film.",
+          "image": {
+            "id": "screen",
+            "describe": "a huge white cinema screen showing a sunny landscape in a cozy dark theater"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l03.i-enjoy",
+          "text": "I enjoy",
+          "kind": "phrase",
+          "forms": [
+            "enjoy",
+            "enjoys",
+            "enjoyed"
+          ],
+          "example": "I enjoy this film.",
+          "note": "Say ‘I enjoy’ when you like doing or watching something."
+        }
+      ],
+      "grammar": {
+        "title": "Saying what makes you happy: I enjoy",
+        "explanation": "Use ‘I enjoy’ followed by a noun to say that something gives you pleasure.",
+        "examples": [
+          "I enjoy films.",
+          "I enjoy music."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u05.l03.task.pick-screen",
+          "kind": "choice",
+          "prompt": "Where do you see the pictures at the cinema?",
+          "answer": "screen",
+          "options": [
+            "screen",
+            "director",
+            "actor"
+          ],
+          "explanation": "At the cinema, you watch the film on a big screen.",
+          "itemIds": [
+            "en.elementary.u05.l03.screen"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l03.task.pick-director",
+          "kind": "choice",
+          "prompt": "Who tells the actors what to do in a film?",
+          "answer": "director",
+          "options": [
+            "director",
+            "singer",
+            "screen"
+          ],
+          "explanation": "The director guides the actors and makes the film.",
+          "itemIds": [
+            "en.elementary.u05.l03.director"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l03.task.hear-actress",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The actress in this film is young.",
+          "answer": "The actress in this film is young.",
+          "options": [
+            "The actress in this film is young.",
+            "The actor in this film is young.",
+            "The director in this film is young."
+          ],
+          "explanation": "Smarty said ‘actress’—a woman or girl acting in a film.",
+          "itemIds": [
+            "en.elementary.u05.l03.actress",
+            "en.elementary.u05.l03.film",
+            "en.beginner.u02.l07.young"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l03.task.match-cinema",
+          "kind": "match",
+          "prompt": "Match the cinema words with their descriptions.",
+          "pairs": [
+            {
+              "left": "actor",
+              "right": "he is in a film"
+            },
+            {
+              "left": "actress",
+              "right": "she is in a film"
+            },
+            {
+              "left": "screen",
+              "right": "it is big, at the cinema"
+            }
+          ],
+          "explanation": "An actor and an actress appear on the cinema screen.",
+          "itemIds": [
+            "en.elementary.u05.l03.actor",
+            "en.elementary.u05.l03.actress",
+            "en.elementary.u05.l03.screen"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l03.task.build-enjoy",
+          "kind": "build",
+          "prompt": "Put the words in order to say you like films.",
+          "answer": "I enjoy new films.",
+          "tiles": [
+            "I",
+            "enjoy",
+            "new",
+            "films",
+            "prefer"
+          ],
+          "explanation": "Use ‘I enjoy’ followed by ‘new films’.",
+          "itemIds": [
+            "en.elementary.u05.l03.i-enjoy",
+            "en.elementary.u05.l03.film",
+            "en.beginner.u05.l09.new"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l03.task.fill-actor",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the man in the film.",
+          "text": "My favourite ___ is in that new film.",
+          "answer": "actor",
+          "options": [
+            "actor",
+            "screen",
+            "band"
+          ],
+          "explanation": "An actor is a man who acts in films.",
+          "itemIds": [
+            "en.elementary.u05.l03.actor",
+            "en.elementary.u05.l03.film",
+            "en.beginner.u06.l08.favourite"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l03.task.fill-screen",
+          "kind": "fill",
+          "prompt": "Ben likes watching films at the cinema, not on his phone. Complete the sentence.",
+          "text": "The cinema ___ is big.",
+          "answer": "screen",
+          "options": [
+            "screen",
+            "director",
+            "actress"
+          ],
+          "explanation": "The screen at the cinema is big.",
+          "itemIds": [
+            "en.elementary.u05.l03.screen",
+            "en.beginner.u08.l02.cinema"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l03.task.fill-enjoy",
+          "kind": "fill",
+          "prompt": "Ana smiles at the cinema. Complete what she says.",
+          "text": "___ this film!",
+          "answer": "I enjoy",
+          "options": [
+            "I enjoy",
+            "I am",
+            "I was"
+          ],
+          "explanation": "Use ‘I enjoy’ to say you like the film.",
+          "itemIds": [
+            "en.elementary.u05.l03.i-enjoy",
+            "en.elementary.u05.l03.film"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l03.task.say-film",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "I enjoy watching films on a big screen.",
+          "answer": "I enjoy watching films on a big screen.",
+          "explanation": "Great! Say ‘films on a big screen’ smoothly.",
+          "itemIds": [
+            "en.elementary.u05.l03.i-enjoy",
+            "en.elementary.u05.l03.film",
+            "en.elementary.u05.l03.screen"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why does Ana like the cinema more than watching TV at home?",
+        "image": {
+          "id": "en-a2-u05-l03-scene",
+          "describe": "Smarty the black cat stands outside a bright cinema with Ben and Ana looking at a large film poster showing an actor and an actress."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good evening, Ben! Good evening, Ana! Were you at the cinema?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Yes! We watched a new film."
+          },
+          {
+            "speaker": "Ana",
+            "text": "I enjoy the cinema because the screen is big."
+          },
+          {
+            "speaker": "Ben",
+            "text": "The actor and the actress were great."
+          },
+          {
+            "speaker": "Ana",
+            "text": "And the director made a beautiful story."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I enjoy films too, but I prefer concerts!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u05.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Where were Ben and Ana?",
+            "answer": "at the cinema",
+            "options": [
+              "at the cinema",
+              "at the hospital",
+              "at the station"
+            ],
+            "explanation": "Ben says they were at the cinema and watched a new film.",
+            "itemIds": [
+              "en.elementary.u05.l03.film",
+              "en.beginner.u08.l02.cinema"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Why does Ana enjoy the cinema?",
+            "answer": "because the screen is big",
+            "options": [
+              "because the screen is big",
+              "because it is cheap",
+              "because she is tired"
+            ],
+            "explanation": "Ana says: I enjoy the cinema because the screen is big.",
+            "itemIds": [
+              "en.elementary.u05.l03.i-enjoy",
+              "en.elementary.u05.l03.screen"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Smarty prefer?",
+            "answer": "concerts",
+            "options": [
+              "concerts",
+              "homework",
+              "exams"
+            ],
+            "explanation": "Smarty says: I enjoy films too, but I prefer concerts!",
+            "itemIds": [
+              "en.elementary.u05.l02.i-prefer",
+              "en.elementary.u05.l02.concert"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You meet Smarty outside the cinema. Answer his questions about films.",
+        "turns": [
+          {
+            "smarty": "Hello! Do you enjoy films?",
+            "accept": [
+              "^yes(?: i do| i enjoy films| i enjoy a good film)?$",
+              "^no(?: i do not)?$"
+            ],
+            "example": "Yes, I enjoy films.",
+            "hint": "Say ‘Yes, I enjoy films’ or ‘No, I do not’.",
+            "itemIds": [
+              "en.elementary.u05.l03.i-enjoy",
+              "en.elementary.u05.l03.film"
+            ]
+          },
+          {
+            "smarty": "Do you prefer a big screen at the cinema or a small screen at home?",
+            "accept": [
+              "^i prefer (?:a |the )?(?:big )?screen(?: at the cinema)?$",
+              "^i prefer (?:a |the )?(?:small )?screen(?: at home)?$",
+              "^i prefer the cinema$",
+              "^i prefer home$"
+            ],
+            "example": "I prefer a big screen at the cinema.",
+            "hint": "Use ‘I prefer…’ and ‘screen’.",
+            "itemIds": [
+              "en.elementary.u05.l02.i-prefer",
+              "en.elementary.u05.l03.screen",
+              "en.beginner.u08.l02.cinema"
+            ]
+          },
+          {
+            "smarty": "In a film, who do you like: the actor, the actress, or the director?",
+            "accept": [
+              "^i like (?:the )?(?:actor|actress|director)$",
+              "^i enjoy (?:the )?(?:actor|actress|director)$",
+              "^(?:the )?(?:actor|actress|director)$"
+            ],
+            "example": "I like the actor.",
+            "hint": "Name ‘the actor’, ‘the actress’, or ‘the director’.",
+            "itemIds": [
+              "en.elementary.u05.l03.actor",
+              "en.elementary.u05.l03.actress",
+              "en.elementary.u05.l03.director",
+              "en.beginner.u03.l03.i-like"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l07.young",
+        "en.beginner.u05.l09.new",
+        "en.beginner.u06.l08.favourite",
+        "en.beginner.u08.l02.cinema",
+        "en.elementary.u05.l02.i-prefer",
+        "en.elementary.u05.l02.concert",
+        "en.beginner.u03.l03.i-like"
+      ]
+    },
+    {
+      "id": "en.elementary.u05.l04",
+      "section": "elementary",
+      "unit": 5,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty, Mia, and Ben plan a music and film evening in the music room.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u05.l04.task.pick-violin",
+          "kind": "choice",
+          "prompt": "Which instrument has strings and is smaller than a guitar?",
+          "answer": "violin",
+          "options": [
+            "violin",
+            "trumpet",
+            "drum"
+          ],
+          "explanation": "A violin is a small string instrument.",
+          "itemIds": [
+            "en.elementary.u05.l01.violin",
+            "en.elementary.u05.l01.guitar"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l04.task.hear-band",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The singer and the band are here.",
+          "answer": "The singer and the band are here.",
+          "options": [
+            "The singer and the band are here.",
+            "The actor and the actress are here.",
+            "The director and the singer are here."
+          ],
+          "explanation": "Listen for ‘singer’ and ‘band’.",
+          "itemIds": [
+            "en.elementary.u05.l02.singer",
+            "en.elementary.u05.l02.band"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l04.task.match-review1",
+          "kind": "match",
+          "prompt": "Match the words that go together.",
+          "pairs": [
+            {
+              "left": "cinema",
+              "right": "screen and film"
+            },
+            {
+              "left": "concert",
+              "right": "band and singer"
+            },
+            {
+              "left": "music room",
+              "right": "piano and flute"
+            }
+          ],
+          "explanation": "You see a film on a screen at the cinema, a band at a concert, and instruments in the music room.",
+          "itemIds": [
+            "en.elementary.u05.l03.screen",
+            "en.elementary.u05.l03.film",
+            "en.elementary.u05.l02.concert",
+            "en.elementary.u05.l02.band",
+            "en.elementary.u05.l01.piano",
+            "en.elementary.u05.l01.flute"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l04.task.build-prefer",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "I prefer this song.",
+          "tiles": [
+            "I",
+            "prefer",
+            "this",
+            "song",
+            "film"
+          ],
+          "explanation": "‘I prefer this song’ says which song you like more.",
+          "itemIds": [
+            "en.elementary.u05.l02.i-prefer",
+            "en.elementary.u05.l02.song"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l04.task.fill-headphones",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I wear my ___ when I walk to school.",
+          "answer": "headphones",
+          "options": [
+            "headphones",
+            "trumpets",
+            "screens"
+          ],
+          "explanation": "You wear headphones on your ears.",
+          "itemIds": [
+            "en.elementary.u05.l02.headphones"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l04.task.fill-director",
+          "kind": "fill",
+          "prompt": "Complete the sentence about making a film.",
+          "text": "The ___ works with the actor and the actress.",
+          "answer": "director",
+          "options": [
+            "director",
+            "drum",
+            "guitar"
+          ],
+          "explanation": "The director leads the actor and actress in a film.",
+          "itemIds": [
+            "en.elementary.u05.l03.director",
+            "en.elementary.u05.l03.actor",
+            "en.elementary.u05.l03.actress"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l04.task.fill-trumpet",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "Tom can play the drum and the ___.",
+          "answer": "trumpet",
+          "options": [
+            "trumpet",
+            "cinema",
+            "concert"
+          ],
+          "explanation": "A trumpet is a musical instrument.",
+          "itemIds": [
+            "en.elementary.u05.l01.drum",
+            "en.elementary.u05.l01.trumpet"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l04.task.say-enjoy",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "I enjoy music and films.",
+          "answer": "I enjoy music and films.",
+          "explanation": "Nice! You combined ‘I enjoy’ with music and films.",
+          "itemIds": [
+            "en.elementary.u05.l03.i-enjoy",
+            "en.elementary.u05.l03.film",
+            "en.beginner.u09.l06.music"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Will Smarty, Mia, and Ben play music or watch a film?",
+        "image": {
+          "id": "en-a2-u05-l04-scene",
+          "describe": "Smarty the black cat, Mia, and Ben sit in the music room surrounded by a guitar, piano, flute, and a laptop screen."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Let's watch a film on my computer screen!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I enjoy films, but I prefer playing music."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "We can be a band! Mia can play the violin, and I can play the piano."
+          },
+          {
+            "speaker": "Ben",
+            "text": "And I can be the singer!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Great! Afterwards, we can watch your favourite actor in that new film."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "First a concert in our music room, then the film!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u05.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Mia prefer?",
+            "answer": "playing music",
+            "options": [
+              "playing music",
+              "reading",
+              "sleeping"
+            ],
+            "explanation": "Mia says: I enjoy films, but I prefer playing music.",
+            "itemIds": [
+              "en.elementary.u05.l02.i-prefer",
+              "en.elementary.u05.l03.i-enjoy"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "Who wants to be the singer in the band?",
+            "answer": "Ben",
+            "options": [
+              "Ben",
+              "Mia",
+              "Smarty"
+            ],
+            "explanation": "Ben says: And I can be the singer!",
+            "itemIds": [
+              "en.elementary.u05.l02.singer",
+              "en.elementary.u05.l02.band"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is planning an evening with friends. Tell him what you enjoy and prefer.",
+        "turns": [
+          {
+            "smarty": "Do you enjoy concerts or the cinema?",
+            "accept": [
+              "^i enjoy (?:concerts|the cinema|both)$",
+              "^(?:concerts|the cinema)$"
+            ],
+            "example": "I enjoy the cinema.",
+            "hint": "Say ‘I enjoy concerts’ or ‘I enjoy the cinema’.",
+            "itemIds": [
+              "en.elementary.u05.l03.i-enjoy",
+              "en.elementary.u05.l02.concert",
+              "en.beginner.u08.l02.cinema"
+            ]
+          },
+          {
+            "smarty": "If we start a band, which instrument do you prefer: the guitar, the piano, or the drum?",
+            "accept": [
+              "^i prefer (?:the )?(?:guitar|piano|drum|violin|trumpet|flute)$",
+              "^(?:the )?(?:guitar|piano|drum|violin|trumpet|flute)$"
+            ],
+            "example": "I prefer the drum.",
+            "hint": "Start with ‘I prefer the…’",
+            "itemIds": [
+              "en.elementary.u05.l02.i-prefer",
+              "en.elementary.u05.l01.guitar",
+              "en.elementary.u05.l01.piano",
+              "en.elementary.u05.l01.drum"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u05.l01.violin",
+        "en.elementary.u05.l01.guitar",
+        "en.elementary.u05.l02.singer",
+        "en.elementary.u05.l02.band",
+        "en.elementary.u05.l03.screen",
+        "en.elementary.u05.l03.film",
+        "en.elementary.u05.l02.concert",
+        "en.elementary.u05.l01.piano",
+        "en.elementary.u05.l01.flute",
+        "en.elementary.u05.l02.i-prefer",
+        "en.elementary.u05.l02.song",
+        "en.elementary.u05.l02.headphones",
+        "en.elementary.u05.l03.director",
+        "en.elementary.u05.l03.actor",
+        "en.elementary.u05.l03.actress",
+        "en.elementary.u05.l01.drum",
+        "en.elementary.u05.l01.trumpet",
+        "en.elementary.u05.l03.i-enjoy",
+        "en.beginner.u09.l06.music",
+        "en.beginner.u08.l02.cinema"
+      ]
+    },
+    {
+      "id": "en.elementary.u05.l05",
+      "section": "elementary",
+      "unit": 5,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Kinds of film",
+      "canDo": "Name film types",
+      "scenario": "Omar and Lily talk with Smarty about different kinds of film they like or dislike.",
+      "items": [
+        {
+          "id": "en.elementary.u05.l05.a-comedy",
+          "text": "a comedy",
+          "kind": "phrase",
+          "forms": [
+            "comedy",
+            "comedies"
+          ],
+          "example": "We watched a comedy last night.",
+          "note": "Use ‘a comedy’ for a happy film that makes people smile and laugh."
+        },
+        {
+          "id": "en.elementary.u05.l05.a-horror-film",
+          "text": "a horror film",
+          "kind": "phrase",
+          "forms": [
+            "horror film",
+            "horror films"
+          ],
+          "example": "I do not watch a horror film at night.",
+          "note": "Say ‘a horror film’ for a dark, frightening film."
+        },
+        {
+          "id": "en.elementary.u05.l05.a-cartoon",
+          "text": "a cartoon",
+          "kind": "phrase",
+          "forms": [
+            "cartoon",
+            "cartoons"
+          ],
+          "example": "My little brother loves a cartoon.",
+          "note": "Use ‘a cartoon’ for a film made with drawings or computer art."
+        },
+        {
+          "id": "en.elementary.u05.l05.an-action-film",
+          "text": "an action film",
+          "kind": "phrase",
+          "forms": [
+            "action film",
+            "action films"
+          ],
+          "example": "Omar wants to watch an action film.",
+          "note": "Say ‘an action film’ for a film with running, jumping, and big adventures."
+        },
+        {
+          "id": "en.elementary.u05.l05.a-documentary",
+          "text": "a documentary",
+          "kind": "phrase",
+          "forms": [
+            "documentary",
+            "documentaries"
+          ],
+          "example": "I watched a documentary about birds.",
+          "note": "Use ‘a documentary’ for a film about real life, animals, or history."
+        },
+        {
+          "id": "en.elementary.u05.l05.i-dislike",
+          "text": "I dislike",
+          "kind": "phrase",
+          "forms": [
+            "dislike",
+            "dislikes",
+            "disliked"
+          ],
+          "example": "I dislike horror films.",
+          "note": "Say ‘I dislike’ as a polite way to say you do not like something."
+        }
+      ],
+      "grammar": {
+        "title": "a vs. an with film types",
+        "explanation": "Use ‘an’ before a vowel sound, as in ‘an action film’, and ‘a’ before a consonant sound, as in ‘a comedy’ or ‘a cartoon’.",
+        "examples": [
+          "an action film",
+          "a comedy"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u05.l05.task.pick-cartoon",
+          "kind": "choice",
+          "prompt": "Which kind of film is made with drawings?",
+          "answer": "a cartoon",
+          "options": [
+            "a cartoon",
+            "a documentary",
+            "a horror film"
+          ],
+          "explanation": "A cartoon is an animated film made with drawings.",
+          "itemIds": [
+            "en.elementary.u05.l05.a-cartoon"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l05.task.pick-documentary",
+          "kind": "choice",
+          "prompt": "Which kind of film teaches you about real animals or history?",
+          "answer": "a documentary",
+          "options": [
+            "a documentary",
+            "a comedy",
+            "an action film"
+          ],
+          "explanation": "A documentary is about real life, science, or history.",
+          "itemIds": [
+            "en.elementary.u05.l05.a-documentary"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l05.task.hear-action",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Let's watch an action film.",
+          "answer": "Let's watch an action film.",
+          "options": [
+            "Let's watch an action film.",
+            "Let's watch a horror film.",
+            "Let's watch a comedy."
+          ],
+          "explanation": "Smarty said ‘an action film’.",
+          "itemIds": [
+            "en.elementary.u05.l05.an-action-film",
+            "en.beginner.u09.l09.lets"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l05.task.match-types",
+          "kind": "match",
+          "prompt": "Match each film type with what it is about.",
+          "pairs": [
+            {
+              "left": "a comedy",
+              "right": "a happy film"
+            },
+            {
+              "left": "an action film",
+              "right": "a film with big adventures"
+            },
+            {
+              "left": "a horror film",
+              "right": "a film at night"
+            }
+          ],
+          "explanation": "Comedies make you laugh, action films have adventures, and horror films are frightening.",
+          "itemIds": [
+            "en.elementary.u05.l05.a-comedy",
+            "en.elementary.u05.l05.an-action-film",
+            "en.elementary.u05.l05.a-horror-film"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l05.task.build-dislike",
+          "kind": "build",
+          "prompt": "Put the words in order to say you do not like horror films.",
+          "answer": "I dislike horror films.",
+          "tiles": [
+            "I",
+            "dislike",
+            "horror",
+            "films",
+            "enjoy"
+          ],
+          "explanation": "Use ‘I dislike’ before ‘horror films’.",
+          "itemIds": [
+            "en.elementary.u05.l05.i-dislike",
+            "en.elementary.u05.l05.a-horror-film"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l05.task.fill-action",
+          "kind": "fill",
+          "prompt": "Remember ‘a’ vs. ‘an’. Complete the sentence.",
+          "text": "Sam watched ___ action film yesterday.",
+          "answer": "an",
+          "options": [
+            "an",
+            "a",
+            "some"
+          ],
+          "explanation": "‘Action’ starts with a vowel sound, so use ‘an action film’.",
+          "itemIds": [
+            "en.elementary.u05.l05.an-action-film",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l05.task.fill-comedy",
+          "kind": "fill",
+          "prompt": "Lily wants to smile and laugh. Complete the sentence.",
+          "text": "Lily prefers ___.",
+          "answer": "a comedy",
+          "options": [
+            "a comedy",
+            "a horror film",
+            "a flute"
+          ],
+          "explanation": "A comedy is a happy film that makes people laugh.",
+          "itemIds": [
+            "en.elementary.u05.l05.a-comedy",
+            "en.elementary.u05.l02.i-prefer"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l05.task.say-documentary",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "I enjoy a documentary about history.",
+          "answer": "I enjoy a documentary about history.",
+          "explanation": "Great! ‘A documentary’ is a film about real topics like history.",
+          "itemIds": [
+            "en.elementary.u05.l05.a-documentary",
+            "en.elementary.u05.l03.i-enjoy",
+            "en.elementary.u01.l01.history"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which kind of film do Smarty, Omar, and Lily choose to watch?",
+        "image": {
+          "id": "en-a2-u05-l05-scene",
+          "describe": "Smarty the black cat, Omar, and Lily sit on a sofa looking at film choices on a screen."
+        },
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Let's watch a film! I want an action film."
+          },
+          {
+            "speaker": "Lily",
+            "text": "I dislike action films. What about a horror film?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No, thank you! I dislike horror films at night."
+          },
+          {
+            "speaker": "Lily",
+            "text": "There is a documentary about cats, or a comedy."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Or a cartoon! Everyone enjoys a cartoon."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! Let's watch a comedy first, and then a cartoon!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u05.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "What kind of film does Omar want at first?",
+            "answer": "an action film",
+            "options": [
+              "an action film",
+              "a documentary",
+              "a horror film"
+            ],
+            "explanation": "Omar says: I want an action film.",
+            "itemIds": [
+              "en.elementary.u05.l05.an-action-film"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "What kind of film does Smarty dislike at night?",
+            "answer": "horror films",
+            "options": [
+              "horror films",
+              "cartoons",
+              "comedies"
+            ],
+            "explanation": "Smarty says: I dislike horror films at night.",
+            "itemIds": [
+              "en.elementary.u05.l05.i-dislike",
+              "en.elementary.u05.l05.a-horror-film"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "What do they watch first?",
+            "answer": "a comedy",
+            "options": [
+              "a comedy",
+              "an action film",
+              "a documentary"
+            ],
+            "explanation": "Smarty says: Let's watch a comedy first.",
+            "itemIds": [
+              "en.elementary.u05.l05.a-comedy"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty wants to choose a film with you. Tell him what kinds of film you like and dislike.",
+        "turns": [
+          {
+            "smarty": "What kind of film do you enjoy: a comedy, an action film, or a cartoon?",
+            "accept": [
+              "^i enjoy (?:a comedy|an action film|a cartoon|a documentary|a horror film)$",
+              "^(?:a comedy|an action film|a cartoon|a documentary|a horror film)$"
+            ],
+            "example": "I enjoy a comedy.",
+            "hint": "Say ‘I enjoy…’ and a kind of film.",
+            "itemIds": [
+              "en.elementary.u05.l05.a-comedy",
+              "en.elementary.u05.l05.an-action-film",
+              "en.elementary.u05.l05.a-cartoon",
+              "en.elementary.u05.l03.i-enjoy"
+            ]
+          },
+          {
+            "smarty": "And what kind of film do you dislike?",
+            "accept": [
+              "^i dislike (?:horror films|a horror film|action films|an action film|comedies|a comedy|cartoons|a cartoon|documentaries|a documentary)$"
+            ],
+            "example": "I dislike horror films.",
+            "hint": "Start with ‘I dislike…’",
+            "itemIds": [
+              "en.elementary.u05.l05.i-dislike",
+              "en.elementary.u05.l05.a-horror-film"
+            ]
+          },
+          {
+            "smarty": "Do you enjoy a documentary about animals?",
+            "accept": [
+              "^yes(?: i do| i enjoy a documentary| i enjoy documentaries)?$",
+              "^no(?: i do not| i dislike documentaries)?$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say ‘Yes, I do’ or ‘No, I do not’.",
+            "itemIds": [
+              "en.elementary.u05.l05.a-documentary",
+              "en.elementary.u05.l03.i-enjoy"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u09.l09.lets",
+        "en.beginner.u10.l01.yesterday",
+        "en.elementary.u05.l02.i-prefer",
+        "en.elementary.u05.l03.i-enjoy",
+        "en.elementary.u01.l01.history"
+      ]
+    },
+    {
+      "id": "en.elementary.u05.l06",
+      "section": "elementary",
+      "unit": 5,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Comparing",
+      "canDo": "Compare two things",
+      "scenario": "Tom and Mia compare two films and two screens with Smarty.",
+      "items": [
+        {
+          "id": "en.elementary.u05.l06.better",
+          "text": "better",
+          "kind": "word",
+          "example": "This song is better than the first song.",
+          "note": "Use ‘better’ when one thing is more good than another."
+        },
+        {
+          "id": "en.elementary.u05.l06.worse",
+          "text": "worse",
+          "kind": "word",
+          "example": "The second film was worse than the book.",
+          "note": "Say ‘worse’ when one thing is less good than another."
+        },
+        {
+          "id": "en.elementary.u05.l06.bigger-than",
+          "text": "bigger than",
+          "kind": "phrase",
+          "forms": [
+            "bigger",
+            "than"
+          ],
+          "example": "The cinema screen is bigger than my TV.",
+          "note": "Use ‘bigger than’ to compare the size of two things."
+        },
+        {
+          "id": "en.elementary.u05.l06.more-exciting",
+          "text": "more exciting",
+          "kind": "phrase",
+          "forms": [
+            "exciting"
+          ],
+          "example": "An action film is more exciting than a documentary.",
+          "note": "Say ‘more exciting’ when something gives you stronger energy and interest."
+        },
+        {
+          "id": "en.elementary.u05.l06.funnier",
+          "text": "funnier",
+          "kind": "word",
+          "example": "A comedy is funnier than a horror film.",
+          "note": "Use ‘funnier’ when something makes you laugh more."
+        },
+        {
+          "id": "en.elementary.u05.l06.much-better",
+          "text": "much better",
+          "kind": "phrase",
+          "example": "This band is much better than that band.",
+          "note": "Say ‘much better’ when one thing is a lot better than another."
+        }
+      ],
+      "grammar": {
+        "title": "Comparing two things",
+        "explanation": "Add ‘-er’ to short words (big → bigger, funny → funnier) and use ‘more’ with longer words (more exciting). ‘Better’ and ‘worse’ are special forms. Use ‘than’ before the second thing.",
+        "examples": [
+          "A cinema screen is bigger than a phone screen.",
+          "This comedy is funnier than that cartoon."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u05.l06.task.pick-better",
+          "kind": "choice",
+          "prompt": "You like the new film more than the old film. The new film is ___.",
+          "answer": "better",
+          "options": [
+            "better",
+            "worse",
+            "boring"
+          ],
+          "explanation": "‘Better’ means higher quality or nicer than the other.",
+          "itemIds": [
+            "en.elementary.u05.l06.better"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l06.task.pick-worse",
+          "kind": "choice",
+          "prompt": "Which word is the opposite of ‘better’?",
+          "answer": "worse",
+          "options": [
+            "worse",
+            "funnier",
+            "much better"
+          ],
+          "explanation": "‘Worse’ is the opposite of ‘better’.",
+          "itemIds": [
+            "en.elementary.u05.l06.worse"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l06.task.hear-exciting",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "An action film is more exciting than a documentary.",
+          "answer": "An action film is more exciting than a documentary.",
+          "options": [
+            "An action film is more exciting than a documentary.",
+            "A comedy is funnier than a documentary.",
+            "A horror film is worse than a documentary."
+          ],
+          "explanation": "Smarty compared an action film and a documentary using ‘more exciting’.",
+          "itemIds": [
+            "en.elementary.u05.l06.more-exciting",
+            "en.elementary.u05.l05.an-action-film",
+            "en.elementary.u05.l05.a-documentary"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l06.task.match-compare",
+          "kind": "match",
+          "prompt": "Match each comparison with its meaning.",
+          "pairs": [
+            {
+              "left": "bigger than",
+              "right": "it is big"
+            },
+            {
+              "left": "funnier",
+              "right": "it is funnier"
+            },
+            {
+              "left": "much better",
+              "right": "a lot better"
+            }
+          ],
+          "explanation": "‘Bigger than’ compares size, ‘funnier’ compares humour, and ‘much better’ shows a big difference.",
+          "itemIds": [
+            "en.elementary.u05.l06.bigger-than",
+            "en.elementary.u05.l06.funnier",
+            "en.elementary.u05.l06.much-better"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l06.task.build-bigger",
+          "kind": "build",
+          "prompt": "Put the words in order to compare two screens.",
+          "answer": "The cinema screen is bigger than my phone.",
+          "tiles": [
+            "The",
+            "cinema",
+            "screen",
+            "is",
+            "bigger than",
+            "my",
+            "phone",
+            "worse"
+          ],
+          "explanation": "Put ‘bigger than’ between the two things you compare.",
+          "itemIds": [
+            "en.elementary.u05.l06.bigger-than",
+            "en.elementary.u05.l03.screen",
+            "en.beginner.u05.l07.phone"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l06.task.fill-funnier",
+          "kind": "fill",
+          "prompt": "This cartoon made everyone laugh more. Complete the sentence.",
+          "text": "This cartoon is ___ than that film.",
+          "answer": "funnier",
+          "options": [
+            "funnier",
+            "worse",
+            "bigger than"
+          ],
+          "explanation": "Use ‘funnier’ when something makes you laugh more.",
+          "itemIds": [
+            "en.elementary.u05.l06.funnier",
+            "en.elementary.u05.l05.a-cartoon"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l06.task.fill-much-better",
+          "kind": "fill",
+          "prompt": "The live concert was a lot better than listening at home. Complete the sentence.",
+          "text": "The concert was ___ than the radio.",
+          "answer": "much better",
+          "options": [
+            "much better",
+            "worse",
+            "funnier"
+          ],
+          "explanation": "Use ‘much better’ to show a big improvement.",
+          "itemIds": [
+            "en.elementary.u05.l06.much-better",
+            "en.elementary.u05.l02.concert"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l06.task.fill-worse",
+          "kind": "fill",
+          "prompt": "Tom disliked the second song. Complete the sentence.",
+          "text": "The second song was ___ than the first.",
+          "answer": "worse",
+          "options": [
+            "worse",
+            "better",
+            "funnier"
+          ],
+          "explanation": "Use ‘worse’ when something is less good.",
+          "itemIds": [
+            "en.elementary.u05.l06.worse",
+            "en.elementary.u05.l02.song"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l06.task.say-better",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "This film is much better than yesterday.",
+          "answer": "This film is much better than yesterday.",
+          "explanation": "Well done comparing the two films!",
+          "itemIds": [
+            "en.elementary.u05.l06.much-better",
+            "en.elementary.u05.l03.film"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which film did Tom and Mia think was better?",
+        "image": {
+          "id": "en-a2-u05-l06-scene",
+          "describe": "Tom, Mia, and Smarty the black cat sit at a table in a café comparing two film tickets and talking excitedly."
+        },
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "I watched two films last weekend: an action film and a comedy."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Which one was better?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "The action film was more exciting, but the comedy was funnier."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I watched a horror film on Friday. It was worse than homework!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "At the cinema, everything is much better because the screen is bigger than my sofa!"
+          },
+          {
+            "speaker": "Tom",
+            "text": "True! Let's go to the cinema next weekend."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u05.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "How was the action film compared to the comedy?",
+            "answer": "more exciting",
+            "options": [
+              "more exciting",
+              "funnier",
+              "worse"
+            ],
+            "explanation": "Tom says: The action film was more exciting.",
+            "itemIds": [
+              "en.elementary.u05.l06.more-exciting",
+              "en.elementary.u05.l05.an-action-film"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Mia think of the horror film?",
+            "answer": "It was worse than homework.",
+            "options": [
+              "It was worse than homework.",
+              "It was much better.",
+              "It was funnier."
+            ],
+            "explanation": "Mia says: It was worse than homework!",
+            "itemIds": [
+              "en.elementary.u05.l06.worse",
+              "en.elementary.u05.l05.a-horror-film",
+              "en.beginner.u04.l10.homework"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "Why does Smarty think the cinema is much better?",
+            "answer": "The screen is bigger than his sofa.",
+            "options": [
+              "The screen is bigger than his sofa.",
+              "The film is short.",
+              "It is near the station."
+            ],
+            "explanation": "Smarty says the screen is bigger than his sofa!",
+            "itemIds": [
+              "en.elementary.u05.l06.much-better",
+              "en.elementary.u05.l06.bigger-than",
+              "en.elementary.u05.l03.screen"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Compare films and music with Smarty.",
+        "turns": [
+          {
+            "smarty": "Which is funnier: a comedy or a documentary?",
+            "accept": [
+              "^a comedy(?: is funnier(?: than a documentary)?)?$",
+              "^a documentary(?: is funnier(?: than a comedy)?)?$"
+            ],
+            "example": "A comedy is funnier.",
+            "hint": "Say ‘A comedy is funnier’.",
+            "itemIds": [
+              "en.elementary.u05.l06.funnier",
+              "en.elementary.u05.l05.a-comedy",
+              "en.elementary.u05.l05.a-documentary"
+            ]
+          },
+          {
+            "smarty": "Which is more exciting: an action film or a cartoon?",
+            "accept": [
+              "^an action film(?: is more exciting(?: than a cartoon)?)?$",
+              "^a cartoon(?: is more exciting(?: than an action film)?)?$"
+            ],
+            "example": "An action film is more exciting.",
+            "hint": "Use ‘more exciting’ in your answer.",
+            "itemIds": [
+              "en.elementary.u05.l06.more-exciting",
+              "en.elementary.u05.l05.an-action-film",
+              "en.elementary.u05.l05.a-cartoon"
+            ]
+          },
+          {
+            "smarty": "Is a live concert better or worse than listening with headphones?",
+            "accept": [
+              "^(?:a live concert is )?(?:much )?better(?: than listening with headphones| than headphones)?$",
+              "^(?:a live concert is )?worse(?: than listening with headphones| than headphones)?$"
+            ],
+            "example": "Much better.",
+            "hint": "Say ‘Better’, ‘Much better’, or ‘Worse’.",
+            "itemIds": [
+              "en.elementary.u05.l06.better",
+              "en.elementary.u05.l06.much-better",
+              "en.elementary.u05.l06.worse",
+              "en.elementary.u05.l02.concert",
+              "en.elementary.u05.l02.headphones"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u05.l05.an-action-film",
+        "en.elementary.u05.l05.a-documentary",
+        "en.elementary.u05.l03.screen",
+        "en.beginner.u05.l07.phone",
+        "en.elementary.u05.l05.a-cartoon",
+        "en.elementary.u05.l02.concert",
+        "en.elementary.u05.l02.song",
+        "en.elementary.u05.l03.film",
+        "en.elementary.u05.l05.a-horror-film",
+        "en.beginner.u04.l10.homework",
+        "en.elementary.u05.l05.a-comedy",
+        "en.elementary.u05.l02.headphones"
+      ]
+    },
+    {
+      "id": "en.elementary.u05.l07",
+      "section": "elementary",
+      "unit": 5,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "The best",
+      "canDo": "Say what is the best",
+      "scenario": "Smarty, Sam, and Zara share their all-time favourite songs and films.",
+      "items": [
+        {
+          "id": "en.elementary.u05.l07.the-best",
+          "text": "the best",
+          "kind": "phrase",
+          "forms": [
+            "best"
+          ],
+          "example": "This is the best song on the album.",
+          "note": "Use ‘the best’ for number one out of everything."
+        },
+        {
+          "id": "en.elementary.u05.l07.the-worst",
+          "text": "the worst",
+          "kind": "phrase",
+          "forms": [
+            "worst"
+          ],
+          "example": "That was the worst film of the year.",
+          "note": "Say ‘the worst’ for the lowest quality out of all."
+        },
+        {
+          "id": "en.elementary.u05.l07.the-most-popular",
+          "text": "the most popular",
+          "kind": "phrase",
+          "forms": [
+            "most popular",
+            "popular"
+          ],
+          "example": "She is the most popular singer in our school.",
+          "note": "Use ‘the most popular’ for the person or thing that the most people like."
+        },
+        {
+          "id": "en.elementary.u05.l07.the-funniest",
+          "text": "the funniest",
+          "kind": "phrase",
+          "forms": [
+            "funniest"
+          ],
+          "example": "That cartoon is the funniest film here.",
+          "note": "Say ‘the funniest’ for the one that makes people laugh the most."
+        },
+        {
+          "id": "en.elementary.u05.l07.my-all-time-favourite",
+          "text": "my all-time favourite",
+          "kind": "phrase",
+          "forms": [
+            "all-time favourite"
+          ],
+          "example": "This comedy is my all-time favourite.",
+          "note": "Use ‘my all-time favourite’ for the one you love most out of your whole life."
+        },
+        {
+          "id": "en.elementary.u05.l07.i-hate",
+          "text": "I hate",
+          "kind": "phrase",
+          "forms": [
+            "hate",
+            "hates",
+            "hated"
+          ],
+          "example": "I hate boring films.",
+          "note": "Say ‘I hate’ when you strongly dislike something."
+        }
+      ],
+      "grammar": {
+        "title": "Superlatives: the best, the most...",
+        "explanation": "Use ‘the’ + ‘-est’ for short adjectives (funny → the funniest) and ‘the most’ for longer adjectives (the most popular). ‘The best’ and ‘the worst’ are special forms.",
+        "examples": [
+          "He is the best actor.",
+          "This is the most popular band."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u05.l07.task.pick-best",
+          "kind": "choice",
+          "prompt": "You think no other film is better than this one. It is ***.",
+          "answer": "the best",
+          "options": [
+            "the best",
+            "the worst",
+            "worse"
+          ],
+          "explanation": "‘The best’ means number one out of all films.",
+          "itemIds": [
+            "en.elementary.u05.l07.the-best"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l07.task.pick-popular",
+          "kind": "choice",
+          "prompt": "Everyone in town loves this band. It is ___ band.",
+          "answer": "the most popular",
+          "options": [
+            "the most popular",
+            "the worst",
+            "the funniest"
+          ],
+          "explanation": "‘The most popular’ means liked by the most people.",
+          "itemIds": [
+            "en.elementary.u05.l07.the-most-popular"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l07.task.hear-funniest",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "That actor is the funniest actor in the film.",
+          "answer": "That actor is the funniest actor in the film.",
+          "options": [
+            "That actor is the funniest actor in the film.",
+            "That actor is the worst actor in the film.",
+            "That director is the most popular actor in the film."
+          ],
+          "explanation": "Smarty said ‘the funniest’.",
+          "itemIds": [
+            "en.elementary.u05.l07.the-funniest",
+            "en.elementary.u05.l03.actor"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l07.task.match-superlatives",
+          "kind": "match",
+          "prompt": "Match each phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "the best",
+              "right": "the best one"
+            },
+            {
+              "left": "the worst",
+              "right": "not good"
+            },
+            {
+              "left": "my all-time favourite",
+              "right": "my best film"
+            }
+          ],
+          "explanation": "‘The best’ and ‘the worst’ are opposites, and ‘my all-time favourite’ is your top choice ever.",
+          "itemIds": [
+            "en.elementary.u05.l07.the-best",
+            "en.elementary.u05.l07.the-worst",
+            "en.elementary.u05.l07.my-all-time-favourite"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l07.task.build-favourite",
+          "kind": "build",
+          "prompt": "Put the words in order to name your number-one song ever.",
+          "answer": "This song is my all-time favourite.",
+          "tiles": [
+            "This",
+            "song",
+            "is",
+            "my all-time favourite",
+            "the worst"
+          ],
+          "explanation": "Put ‘my all-time favourite’ after ‘This song is’.",
+          "itemIds": [
+            "en.elementary.u05.l07.my-all-time-favourite",
+            "en.elementary.u05.l02.song"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l07.task.fill-worst",
+          "kind": "fill",
+          "prompt": "Nobody enjoyed that film. Complete the sentence.",
+          "text": "That was ___ film of the summer.",
+          "answer": "the worst",
+          "options": [
+            "the worst",
+            "the best",
+            "the funniest"
+          ],
+          "explanation": "Use ‘the worst’ for the lowest quality film.",
+          "itemIds": [
+            "en.elementary.u05.l07.the-worst",
+            "en.elementary.u05.l03.film"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l07.task.fill-hate",
+          "kind": "fill",
+          "prompt": "Zara strongly dislikes horror films. Complete what she says.",
+          "text": "___ horror films!",
+          "answer": "I hate",
+          "options": [
+            "I hate",
+            "I enjoy",
+            "I prefer"
+          ],
+          "explanation": "Use ‘I hate’ for a strong dislike.",
+          "itemIds": [
+            "en.elementary.u05.l07.i-hate",
+            "en.elementary.u05.l05.a-horror-film"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l07.task.fill-funniest",
+          "kind": "fill",
+          "prompt": "We laughed from start to finish. Complete the sentence.",
+          "text": "This comedy is ___ film at the cinema.",
+          "answer": "the funniest",
+          "options": [
+            "the funniest",
+            "the worst",
+            "the most popular"
+          ],
+          "explanation": "Use ‘the funniest’ for the comedy that makes you laugh most.",
+          "itemIds": [
+            "en.elementary.u05.l07.the-funniest",
+            "en.elementary.u05.l05.a-comedy"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l07.task.say-best",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "You are the best singer in the band.",
+          "answer": "You are the best singer in the band.",
+          "explanation": "Great! ‘The best singer’ means number one in the band.",
+          "itemIds": [
+            "en.elementary.u05.l07.the-best",
+            "en.elementary.u05.l02.singer",
+            "en.elementary.u05.l02.band"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is Smarty’s all-time favourite film?",
+        "image": {
+          "id": "en-a2-u05-l07-scene",
+          "describe": "Smarty the black cat, Sam, and Zara sit in the music room holding notebooks and voting on their favourite bands and films."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Who is the most popular singer in our class?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Mia! She is the best singer and plays the violin."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And what is your all-time favourite film, Sam?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "That cartoon about a space dog! It is the funniest film."
+          },
+          {
+            "speaker": "Zara",
+            "text": "I hate horror films. Yesterday I watched the worst horror film."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "A comedy about cats is my all-time favourite!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u05.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "Who is the best singer in the class?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Zara"
+            ],
+            "explanation": "Zara says: Mia! She is the best singer.",
+            "itemIds": [
+              "en.elementary.u05.l07.the-best",
+              "en.elementary.u05.l02.singer"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Zara hate?",
+            "answer": "horror films",
+            "options": [
+              "horror films",
+              "cartoons",
+              "music"
+            ],
+            "explanation": "Zara says: I hate horror films.",
+            "itemIds": [
+              "en.elementary.u05.l07.i-hate",
+              "en.elementary.u05.l05.a-horror-film"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "What is Smarty’s all-time favourite film?",
+            "answer": "a comedy",
+            "options": [
+              "a comedy",
+              "a documentary",
+              "an action film"
+            ],
+            "explanation": "Smarty says: A comedy about cats is my all-time favourite!",
+            "itemIds": [
+              "en.elementary.u05.l07.my-all-time-favourite",
+              "en.elementary.u05.l05.a-comedy"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Tell Smarty about the best and worst films or songs you know.",
+        "turns": [
+          {
+            "smarty": "What is your all-time favourite: a comedy, an action film, or a cartoon?",
+            "accept": [
+              "^(?:a comedy|an action film|a cartoon|a documentary)(?: is my alltime favourite| is my all time favourite)?$",
+              "^my alltime favourite is (?:a comedy|an action film|a cartoon|a documentary)$",
+              "^my all time favourite is (?:a comedy|an action film|a cartoon|a documentary)$"
+            ],
+            "example": "A comedy is my all-time favourite.",
+            "hint": "Use ‘my all-time favourite’ in your sentence.",
+            "itemIds": [
+              "en.elementary.u05.l07.my-all-time-favourite",
+              "en.elementary.u05.l05.a-comedy",
+              "en.elementary.u05.l05.an-action-film",
+              "en.elementary.u05.l05.a-cartoon"
+            ]
+          },
+          {
+            "smarty": "Which instrument makes the best music: the piano, the guitar, or the violin?",
+            "accept": [
+              "^(?:the )?(?:piano|guitar|violin)(?: makes the best music| is the best)?$",
+              "^the best(?: instrument)? is (?:the )?(?:piano|guitar|violin)$"
+            ],
+            "example": "The piano is the best.",
+            "hint": "Say ‘The… is the best’.",
+            "itemIds": [
+              "en.elementary.u05.l07.the-best",
+              "en.elementary.u05.l01.piano",
+              "en.elementary.u05.l01.guitar",
+              "en.elementary.u05.l01.violin"
+            ]
+          },
+          {
+            "smarty": "Is there a kind of film you hate?",
+            "accept": [
+              "^i hate (?:horror films|a horror film|action films|an action film|comedies|a comedy|cartoons|a cartoon|documentaries|a documentary|boring films)$",
+              "^yes i hate (?:horror films|action films|comedies|cartoons|documentaries)$",
+              "^no(?: i do not)?$"
+            ],
+            "example": "I hate horror films.",
+            "hint": "Say ‘I hate…’ or ‘No’.",
+            "itemIds": [
+              "en.elementary.u05.l07.i-hate",
+              "en.elementary.u05.l05.a-horror-film"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u05.l03.actor",
+        "en.elementary.u05.l02.song",
+        "en.elementary.u05.l03.film",
+        "en.elementary.u05.l05.a-horror-film",
+        "en.elementary.u05.l05.a-comedy",
+        "en.elementary.u05.l02.singer",
+        "en.elementary.u05.l02.band",
+        "en.elementary.u05.l05.an-action-film",
+        "en.elementary.u05.l05.a-cartoon",
+        "en.elementary.u05.l01.piano",
+        "en.elementary.u05.l01.guitar",
+        "en.elementary.u05.l01.violin"
+      ]
+    },
+    {
+      "id": "en.elementary.u05.l08",
+      "section": "elementary",
+      "unit": 5,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Smarty hosts a film and music quiz with Ana and Leo.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u05.l08.task.pick-documentary",
+          "kind": "choice",
+          "prompt": "Which film shows real animals or real history?",
+          "answer": "a documentary",
+          "options": [
+            "a documentary",
+            "a cartoon",
+            "a horror film"
+          ],
+          "explanation": "A documentary is about real life.",
+          "itemIds": [
+            "en.elementary.u05.l05.a-documentary"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l08.task.hear-compare",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "A comedy is funnier than an action film.",
+          "answer": "A comedy is funnier than an action film.",
+          "options": [
+            "A comedy is funnier than an action film.",
+            "An action film is worse than a comedy.",
+            "A cartoon is bigger than a comedy."
+          ],
+          "explanation": "Smarty compared a comedy and an action film with ‘funnier’.",
+          "itemIds": [
+            "en.elementary.u05.l06.funnier",
+            "en.elementary.u05.l05.a-comedy",
+            "en.elementary.u05.l05.an-action-film"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l08.task.match-review2",
+          "kind": "match",
+          "prompt": "Match the opposites.",
+          "pairs": [
+            {
+              "left": "better",
+              "right": "worse"
+            },
+            {
+              "left": "the best",
+              "right": "the worst"
+            },
+            {
+              "left": "I enjoy",
+              "right": "I dislike"
+            }
+          ],
+          "explanation": "‘Better’/‘worse’, ‘the best’/‘the worst’, and ‘I enjoy’/‘I dislike’ are pairs of opposites.",
+          "itemIds": [
+            "en.elementary.u05.l06.better",
+            "en.elementary.u05.l06.worse",
+            "en.elementary.u05.l07.the-best",
+            "en.elementary.u05.l07.the-worst",
+            "en.elementary.u05.l03.i-enjoy",
+            "en.elementary.u05.l05.i-dislike"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l08.task.build-popular",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "This is the most popular cartoon.",
+          "tiles": [
+            "This",
+            "is",
+            "the most popular",
+            "cartoon",
+            "funnier"
+          ],
+          "explanation": "‘The most popular’ comes before ‘cartoon’.",
+          "itemIds": [
+            "en.elementary.u05.l07.the-most-popular",
+            "en.elementary.u05.l05.a-cartoon"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l08.task.fill-exciting",
+          "kind": "fill",
+          "prompt": "Complete the comparison.",
+          "text": "This concert is ___ than last year.",
+          "answer": "more exciting",
+          "options": [
+            "more exciting",
+            "the funniest",
+            "the worst"
+          ],
+          "explanation": "Use ‘more exciting’ with ‘than’ when comparing two concerts.",
+          "itemIds": [
+            "en.elementary.u05.l06.more-exciting",
+            "en.elementary.u05.l02.concert"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l08.task.fill-bigger",
+          "kind": "fill",
+          "prompt": "Compare the two instruments. Complete the sentence.",
+          "text": "A piano is ___ a flute.",
+          "answer": "bigger than",
+          "options": [
+            "bigger than",
+            "funnier",
+            "the best"
+          ],
+          "explanation": "A piano is much larger in size, so it is ‘bigger than’ a flute.",
+          "itemIds": [
+            "en.elementary.u05.l06.bigger-than",
+            "en.elementary.u05.l01.piano",
+            "en.elementary.u05.l01.flute"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l08.task.fill-much-better",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "The new singer is ___ than the old singer.",
+          "answer": "much better",
+          "options": [
+            "much better",
+            "the best",
+            "the worst"
+          ],
+          "explanation": "Use ‘much better’ before ‘than’.",
+          "itemIds": [
+            "en.elementary.u05.l06.much-better",
+            "en.elementary.u05.l02.singer"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l08.task.say-hate",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "I hate boring documentaries, but I love comedies.",
+          "answer": "I hate boring documentaries, but I love comedies.",
+          "explanation": "Great contrast using ‘I hate’ and ‘I love’!",
+          "itemIds": [
+            "en.elementary.u05.l07.i-hate",
+            "en.elementary.u05.l05.a-documentary",
+            "en.elementary.u05.l05.a-comedy",
+            "en.elementary.u01.l09.boring"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who wins Smarty’s film and music quiz?",
+        "image": {
+          "id": "en-a2-u05-l08-scene",
+          "describe": "Smarty the black cat stands at a small board in the music room asking quiz questions to Ana and Leo."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Quiz time! Which is bigger than a violin?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "A piano! And a piano is much better for concerts."
+          },
+          {
+            "speaker": "Leo",
+            "text": "I think a guitar is the most popular instrument."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Next question: what is the funniest kind of film?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "A comedy! A comedy is funnier than an action film."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Well done! You are both the best!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u05.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Leo think is the most popular instrument?",
+            "answer": "a guitar",
+            "options": [
+              "a guitar",
+              "a flute",
+              "a trumpet"
+            ],
+            "explanation": "Leo says: I think a guitar is the most popular instrument.",
+            "itemIds": [
+              "en.elementary.u05.l07.the-most-popular",
+              "en.elementary.u05.l01.guitar"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "According to Ana, what is the funniest kind of film?",
+            "answer": "a comedy",
+            "options": [
+              "a comedy",
+              "a horror film",
+              "a documentary"
+            ],
+            "explanation": "Ana says: A comedy! A comedy is funnier than an action film.",
+            "itemIds": [
+              "en.elementary.u05.l07.the-funniest",
+              "en.elementary.u05.l06.funnier",
+              "en.elementary.u05.l05.a-comedy"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Join Smarty’s quiz and give your own opinions.",
+        "turns": [
+          {
+            "smarty": "Which is better: a cartoon or a documentary?",
+            "accept": [
+              "^(?:a cartoon|a documentary)(?: is (?:much )?better(?: than (?:a cartoon|a documentary))?)?$",
+              "^i prefer (?:a cartoon|a documentary)$"
+            ],
+            "example": "A cartoon is better.",
+            "hint": "Say ‘A cartoon is better’ or ‘A documentary is better’.",
+            "itemIds": [
+              "en.elementary.u05.l06.better",
+              "en.elementary.u05.l05.a-cartoon",
+              "en.elementary.u05.l05.a-documentary"
+            ]
+          },
+          {
+            "smarty": "What is the best song or film in your opinion?",
+            "accept": [
+              "^(?:my alltime favourite is |my all time favourite is |the best is )?(?:a comedy|an action film|a cartoon|a documentary|this song|this film)$",
+              "^(?:a comedy|an action film|a cartoon|a documentary) is (?:the best|my alltime favourite|my all time favourite)$"
+            ],
+            "example": "A comedy is the best.",
+            "hint": "Use ‘the best’ or ‘my all-time favourite’.",
+            "itemIds": [
+              "en.elementary.u05.l07.the-best",
+              "en.elementary.u05.l07.my-all-time-favourite",
+              "en.elementary.u05.l05.a-comedy"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u05.l05.a-documentary",
+        "en.elementary.u05.l06.funnier",
+        "en.elementary.u05.l05.a-comedy",
+        "en.elementary.u05.l05.an-action-film",
+        "en.elementary.u05.l06.better",
+        "en.elementary.u05.l06.worse",
+        "en.elementary.u05.l07.the-best",
+        "en.elementary.u05.l07.the-worst",
+        "en.elementary.u05.l03.i-enjoy",
+        "en.elementary.u05.l05.i-dislike",
+        "en.elementary.u05.l07.the-most-popular",
+        "en.elementary.u05.l05.a-cartoon",
+        "en.elementary.u05.l06.more-exciting",
+        "en.elementary.u05.l02.concert",
+        "en.elementary.u05.l06.bigger-than",
+        "en.elementary.u05.l01.piano",
+        "en.elementary.u05.l01.flute",
+        "en.elementary.u05.l06.much-better",
+        "en.elementary.u05.l02.singer",
+        "en.elementary.u05.l07.i-hate",
+        "en.elementary.u01.l09.boring",
+        "en.elementary.u05.l01.guitar",
+        "en.elementary.u05.l07.the-funniest",
+        "en.elementary.u05.l07.my-all-time-favourite"
+      ]
+    },
+    {
+      "id": "en.elementary.u05.l09",
+      "section": "elementary",
+      "unit": 5,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "Feelings",
+      "canDo": "Describe your reaction",
+      "scenario": "Mia, Omar, and Smarty talk about how films and concerts make them feel.",
+      "items": [
+        {
+          "id": "en.elementary.u05.l09.bored",
+          "text": "bored",
+          "kind": "word",
+          "example": "I was bored because the film was long.",
+          "note": "Say ‘bored’ to describe how you feel when nothing is interesting.",
+          "image": {
+            "id": "bored",
+            "describe": "a sleepy kitten resting its chin on a paw looking unimpressed during a slow show"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l09.excited",
+          "text": "excited",
+          "kind": "word",
+          "example": "We are excited about the concert tonight.",
+          "note": "Use ‘excited’ when you feel happy and full of energy about something.",
+          "image": {
+            "id": "excited",
+            "describe": "Smarty the black cat jumping with joy and sparkling eyes holding two concert tickets"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l09.scared",
+          "text": "scared",
+          "kind": "word",
+          "example": "Omar was scared during the horror film.",
+          "note": "Say ‘scared’ when you feel afraid or frightened.",
+          "image": {
+            "id": "scared",
+            "describe": "a wide-eyed kitten peeking out from behind a sofa pillow in a dark room"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l09.surprised",
+          "text": "surprised",
+          "kind": "word",
+          "example": "I was surprised by the end of the film.",
+          "note": "Use ‘surprised’ when something unexpected happens.",
+          "image": {
+            "id": "surprised",
+            "describe": "a cat with raised ears and wide eyes opening a gift box with musical notes"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l09.amazing",
+          "text": "amazing",
+          "kind": "word",
+          "example": "The singer and the band were amazing!",
+          "note": "Say ‘amazing’ when a film, song, or show is wonderfully good.",
+          "image": {
+            "id": "amazing",
+            "describe": "a dazzling concert stage with golden stars and a cheering crowd of cats"
+          }
+        },
+        {
+          "id": "en.elementary.u05.l09.i-am-into",
+          "text": "I am into",
+          "kind": "phrase",
+          "example": "I am into action films and rock music.",
+          "note": "Say ‘I am into’ to talk about a hobby, music, or film type you enjoy a lot."
+        }
+      ],
+      "grammar": {
+        "title": "-ed and -ing adjectives",
+        "explanation": "Words ending in ‘-ed’ (bored, excited, scared, surprised) describe how a person feels. Words ending in ‘-ing’ (boring, exciting, amazing) describe the film, song, or thing.",
+        "examples": [
+          "I am bored because the film is boring.",
+          "We are excited because the concert is amazing."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u05.l09.task.pick-scared",
+          "kind": "choice",
+          "prompt": "How do people often feel during a horror film?",
+          "answer": "scared",
+          "options": [
+            "scared",
+            "bored",
+            "amazing"
+          ],
+          "explanation": "Horror films are frightening, so people feel ‘scared’.",
+          "itemIds": [
+            "en.elementary.u05.l09.scared",
+            "en.elementary.u05.l05.a-horror-film"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l09.task.pick-bored-vs-boring",
+          "kind": "choice",
+          "prompt": "The documentary was boring, so Mia felt ___.",
+          "answer": "bored",
+          "options": [
+            "bored",
+            "boring",
+            "amazing"
+          ],
+          "explanation": "Use ‘bored’ (-ed) for how a person feels, and ‘boring’ (-ing) for the film.",
+          "itemIds": [
+            "en.elementary.u05.l09.bored",
+            "en.elementary.u01.l09.boring"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l09.task.hear-excited",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I am excited because the band is amazing.",
+          "answer": "I am excited because the band is amazing.",
+          "options": [
+            "I am excited because the band is amazing.",
+            "I am bored because the band is boring.",
+            "I am scared because the film is old."
+          ],
+          "explanation": "Smarty felt ‘excited’ and called the band ‘amazing’.",
+          "itemIds": [
+            "en.elementary.u05.l09.excited",
+            "en.elementary.u05.l09.amazing",
+            "en.elementary.u05.l02.band"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l09.task.match-feelings",
+          "kind": "match",
+          "prompt": "Match the situation with the feeling.",
+          "pairs": [
+            {
+              "left": "watching a horror film",
+              "right": "scared"
+            },
+            {
+              "left": "going to your favourite concert",
+              "right": "excited"
+            },
+            {
+              "left": "watching a boring film",
+              "right": "bored"
+            }
+          ],
+          "explanation": "You feel scared in a horror film, excited at a concert, and bored in a boring film.",
+          "itemIds": [
+            "en.elementary.u05.l09.scared",
+            "en.elementary.u05.l09.excited",
+            "en.elementary.u05.l09.bored"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l09.task.build-into",
+          "kind": "build",
+          "prompt": "Put the words in order to say what films you like a lot.",
+          "answer": "I am into comedies and cartoons.",
+          "tiles": [
+            "I am into",
+            "comedies",
+            "and",
+            "cartoons",
+            "scared"
+          ],
+          "explanation": "Use ‘I am into’ followed by the things you enjoy.",
+          "itemIds": [
+            "en.elementary.u05.l09.i-am-into",
+            "en.elementary.u05.l05.a-comedy",
+            "en.elementary.u05.l05.a-cartoon"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l09.task.fill-surprised",
+          "kind": "fill",
+          "prompt": "Nobody expected the ending! Complete the sentence.",
+          "text": "Everyone was ___ at the end of the film.",
+          "answer": "surprised",
+          "options": [
+            "surprised",
+            "bored",
+            "amazing"
+          ],
+          "explanation": "Use ‘surprised’ when something unexpected happens.",
+          "itemIds": [
+            "en.elementary.u05.l09.surprised",
+            "en.elementary.u05.l03.film"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l09.task.fill-amazing",
+          "kind": "fill",
+          "prompt": "Describe the concert, not the person. Complete the sentence.",
+          "text": "The concert yesterday was ___!",
+          "answer": "amazing",
+          "options": [
+            "amazing",
+            "bored",
+            "scared"
+          ],
+          "explanation": "Use ‘amazing’ (-ing) to describe the concert.",
+          "itemIds": [
+            "en.elementary.u05.l09.amazing",
+            "en.elementary.u05.l02.concert"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l09.task.fill-excited",
+          "kind": "fill",
+          "prompt": "Describe how Sam feels before the show. Complete the sentence.",
+          "text": "Sam is ___ because the action film is starting.",
+          "answer": "excited",
+          "options": [
+            "excited",
+            "amazing",
+            "boring"
+          ],
+          "explanation": "Use ‘excited’ (-ed) to describe how Sam feels.",
+          "itemIds": [
+            "en.elementary.u05.l09.excited",
+            "en.elementary.u05.l05.an-action-film"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l09.task.say-into",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "I am into music and amazing films.",
+          "answer": "I am into music and amazing films.",
+          "explanation": "Well done! ‘I am into’ sounds very natural.",
+          "itemIds": [
+            "en.elementary.u05.l09.i-am-into",
+            "en.elementary.u05.l09.amazing",
+            "en.elementary.u05.l03.film"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why was Mia surprised at the end of the film?",
+        "image": {
+          "id": "en-a2-u05-l09-scene",
+          "describe": "Smarty the black cat, Mia, and Omar chat in the music room; Omar pretends to be scared while Mia looks excited."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "How was your weekend, Omar?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "I watched a horror film. I was scared!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I watched a documentary on Saturday. At first I was bored, because it was boring."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Did you watch all of it?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes! Suddenly a band played an amazing song. I was surprised and excited!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Now I am into documentaries about music too!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u05.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "How did Omar feel during the horror film?",
+            "answer": "scared",
+            "options": [
+              "scared",
+              "bored",
+              "surprised"
+            ],
+            "explanation": "Omar says: I was scared!",
+            "itemIds": [
+              "en.elementary.u05.l09.scared",
+              "en.elementary.u05.l05.a-horror-film"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "Why was Mia bored at first?",
+            "answer": "because the documentary was boring",
+            "options": [
+              "because the documentary was boring",
+              "because she was ill",
+              "because she was hungry"
+            ],
+            "explanation": "Mia says: At first I was bored, because it was boring.",
+            "itemIds": [
+              "en.elementary.u05.l09.bored",
+              "en.elementary.u01.l09.boring",
+              "en.elementary.u05.l05.a-documentary"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "What is Smarty into now?",
+            "answer": "documentaries about music",
+            "options": [
+              "documentaries about music",
+              "horror films",
+              "football"
+            ],
+            "explanation": "Smarty says: Now I am into documentaries about music too!",
+            "itemIds": [
+              "en.elementary.u05.l09.i-am-into",
+              "en.elementary.u05.l05.a-documentary"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Tell Smarty how films and music make you feel.",
+        "turns": [
+          {
+            "smarty": "Are you into music or films?",
+            "accept": [
+              "^i am into (?:music|films|both|comedies|action films|cartoons|documentaries|songs|concerts)$",
+              "^(?:music|films|both)$"
+            ],
+            "example": "I am into music.",
+            "hint": "Start with ‘I am into…’",
+            "itemIds": [
+              "en.elementary.u05.l09.i-am-into",
+              "en.beginner.u09.l06.music",
+              "en.elementary.u05.l03.film"
+            ]
+          },
+          {
+            "smarty": "When you watch a horror film, are you scared or bored?",
+            "accept": [
+              "^i am (?:scared|bored|excited|surprised)$",
+              "^(?:scared|bored|excited|surprised)$"
+            ],
+            "example": "I am scared.",
+            "hint": "Say ‘I am scared’ or ‘I am bored’.",
+            "itemIds": [
+              "en.elementary.u05.l09.scared",
+              "en.elementary.u05.l09.bored",
+              "en.elementary.u05.l05.a-horror-film"
+            ]
+          },
+          {
+            "smarty": "Think of your favourite concert or film. Was it amazing?",
+            "accept": [
+              "^yes(?: it was amazing| it was)?$",
+              "^it was amazing$",
+              "^no(?: it was boring)?$"
+            ],
+            "example": "Yes, it was amazing.",
+            "hint": "Say ‘Yes, it was amazing’.",
+            "itemIds": [
+              "en.elementary.u05.l09.amazing",
+              "en.elementary.u05.l02.concert",
+              "en.elementary.u05.l03.film"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u05.l05.a-horror-film",
+        "en.elementary.u01.l09.boring",
+        "en.elementary.u05.l02.band",
+        "en.elementary.u05.l05.a-comedy",
+        "en.elementary.u05.l05.a-cartoon",
+        "en.elementary.u05.l03.film",
+        "en.elementary.u05.l02.concert",
+        "en.elementary.u05.l05.an-action-film",
+        "en.elementary.u05.l05.a-documentary",
+        "en.beginner.u09.l06.music"
+      ]
+    },
+    {
+      "id": "en.elementary.u05.l10",
+      "section": "elementary",
+      "unit": 5,
+      "lesson": 10,
+      "type": "test",
+      "title": "Going out",
+      "canDo": "Buy tickets and choose a film",
+      "scenario": "Smarty and Ben buy tickets at the cinema, choose a film, and share their opinions afterwards.",
+      "items": [
+        {
+          "id": "en.elementary.u05.l10.two-tickets-please",
+          "text": "Two tickets please",
+          "kind": "phrase",
+          "forms": [
+            "ticket",
+            "tickets"
+          ],
+          "example": "Two tickets please, for the comedy.",
+          "note": "Say ‘Two tickets please’ at the cinema or concert when you buy two seats."
+        },
+        {
+          "id": "en.elementary.u05.l10.what-time-does-it-start",
+          "text": "What time does it start?",
+          "kind": "phrase",
+          "forms": [
+            "start",
+            "starts",
+            "started"
+          ],
+          "example": "What time does it start? At seven o'clock.",
+          "note": "Ask ‘What time does it start?’ to check when a film or concert begins."
+        },
+        {
+          "id": "en.elementary.u05.l10.it-was-great",
+          "text": "It was great",
+          "kind": "phrase",
+          "forms": [
+            "great"
+          ],
+          "example": "I enjoyed the film. It was great!",
+          "note": "Say ‘It was great’ after a film or concert to say you loved it."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u05.l10.task.pick-tickets",
+          "kind": "choice",
+          "prompt": "You and your friend arrive at the cinema. What do you say to buy seats?",
+          "answer": "Two tickets please",
+          "options": [
+            "Two tickets please",
+            "It was great",
+            "I hate horror films"
+          ],
+          "explanation": "Say ‘Two tickets please’ to buy two tickets.",
+          "itemIds": [
+            "en.elementary.u05.l10.two-tickets-please"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l10.task.hear-start",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "What time does it start?",
+          "answer": "What time does it start?",
+          "options": [
+            "What time does it start?",
+            "What time is it?",
+            "Where are you going?"
+          ],
+          "explanation": "Smarty asked ‘What time does it start?’ to check the film time.",
+          "itemIds": [
+            "en.elementary.u05.l10.what-time-does-it-start"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l10.task.match-unit5",
+          "kind": "match",
+          "prompt": "Match the phrases with when you say them.",
+          "pairs": [
+            {
+              "left": "Two tickets please",
+              "right": "you buy tickets"
+            },
+            {
+              "left": "What time does it start?",
+              "right": "you say the time"
+            },
+            {
+              "left": "It was great",
+              "right": "you say it is good"
+            }
+          ],
+          "explanation": "You buy tickets first, ask the start time, and say ‘It was great’ afterwards.",
+          "itemIds": [
+            "en.elementary.u05.l10.two-tickets-please",
+            "en.elementary.u05.l10.what-time-does-it-start",
+            "en.elementary.u05.l10.it-was-great"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l10.task.build-great",
+          "kind": "build",
+          "prompt": "Put the words in order after an amazing concert.",
+          "answer": "It was great.",
+          "tiles": [
+            "It",
+            "was",
+            "great",
+            "worse"
+          ],
+          "explanation": "‘It was great’ gives a happy opinion about the show.",
+          "itemIds": [
+            "en.elementary.u05.l10.it-was-great"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l10.task.fill-instruments",
+          "kind": "fill",
+          "prompt": "Test your Unit 5 vocabulary! Complete the sentence.",
+          "text": "Mia plays the ___ and Sam plays the drum.",
+          "answer": "violin",
+          "options": [
+            "violin",
+            "screen",
+            "ticket"
+          ],
+          "explanation": "A violin is a musical instrument, like a drum.",
+          "itemIds": [
+            "en.elementary.u05.l01.violin",
+            "en.elementary.u05.l01.drum"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l10.task.fill-prefer-film",
+          "kind": "fill",
+          "prompt": "Complete the sentence about film types.",
+          "text": "I dislike horror films, so ___ a comedy.",
+          "answer": "I prefer",
+          "options": [
+            "I prefer",
+            "I hate",
+            "I was"
+          ],
+          "explanation": "Use ‘I prefer’ to say what you choose instead.",
+          "itemIds": [
+            "en.elementary.u05.l02.i-prefer",
+            "en.elementary.u05.l05.a-comedy",
+            "en.elementary.u05.l05.a-horror-film"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l10.task.fill-compare",
+          "kind": "fill",
+          "prompt": "Compare the cinema screen and a computer screen.",
+          "text": "The cinema screen is ___ a computer screen.",
+          "answer": "bigger than",
+          "options": [
+            "bigger than",
+            "the funniest",
+            "bored"
+          ],
+          "explanation": "Use ‘bigger than’ when comparing two sizes.",
+          "itemIds": [
+            "en.elementary.u05.l06.bigger-than",
+            "en.elementary.u05.l03.screen"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l10.task.fill-superlative",
+          "kind": "fill",
+          "prompt": "Complete the superlative sentence.",
+          "text": "This band is ___ band in the country!",
+          "answer": "the best",
+          "options": [
+            "the best",
+            "better",
+            "worse"
+          ],
+          "explanation": "Use ‘the best’ when comparing one band to all others.",
+          "itemIds": [
+            "en.elementary.u05.l07.the-best",
+            "en.elementary.u05.l02.band"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l10.task.fill-feelings",
+          "kind": "fill",
+          "prompt": "Describe how you felt during the exciting action film.",
+          "text": "The action film was exciting, so I was ___.",
+          "answer": "excited",
+          "options": [
+            "excited",
+            "bored",
+            "scared"
+          ],
+          "explanation": "Use ‘excited’ (-ed) for your feeling.",
+          "itemIds": [
+            "en.elementary.u05.l09.excited",
+            "en.elementary.u05.l05.an-action-film"
+          ]
+        },
+        {
+          "id": "en.elementary.u05.l10.task.say-tickets",
+          "kind": "speak",
+          "prompt": "Say this aloud at the cinema.",
+          "text": "Two tickets please. What time does it start?",
+          "answer": "Two tickets please. What time does it start?",
+          "explanation": "Great job! You bought your tickets and checked the start time.",
+          "itemIds": [
+            "en.elementary.u05.l10.two-tickets-please",
+            "en.elementary.u05.l10.what-time-does-it-start"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What time does Smarty and Ben’s film start?",
+        "image": {
+          "id": "en-a2-u05-l10-scene",
+          "describe": "Smarty the black cat and Ben stand at a bright cinema ticket counter buying two tickets with a big clock showing 6:30."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Let's watch the new comedy! It has the funniest actor."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good idea! Two tickets please, for the comedy."
+          },
+          {
+            "speaker": "Ben",
+            "text": "What time does it start?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It starts at half past six. We have ten minutes!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Afterwards, outside the cinema: I was surprised! That film was amazing!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, it was great! Much better than the horror film last week!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u05.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "How many tickets does Smarty ask for?",
+            "answer": "two",
+            "options": [
+              "two",
+              "three",
+              "four"
+            ],
+            "explanation": "Smarty says: Two tickets please, for the comedy.",
+            "itemIds": [
+              "en.elementary.u05.l10.two-tickets-please"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "What time does the comedy start?",
+            "answer": "half past six",
+            "options": [
+              "half past six",
+              "seven o'clock",
+              "eight o'clock"
+            ],
+            "explanation": "Smarty says: It starts at half past six.",
+            "itemIds": [
+              "en.elementary.u05.l10.what-time-does-it-start",
+              "en.beginner.u04.l01.half-past"
+            ]
+          },
+          {
+            "id": "en.elementary.u05.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "What did Smarty and Ben think after the film?",
+            "answer": "It was great!",
+            "options": [
+              "It was great!",
+              "It was worse.",
+              "They were bored."
+            ],
+            "explanation": "Smarty says: Yes, it was great!",
+            "itemIds": [
+              "en.elementary.u05.l10.it-was-great"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are at the cinema with Smarty. Buy tickets, ask the start time, and give your opinion after the film.",
+        "turns": [
+          {
+            "smarty": "We are at the cinema! Ask for two tickets.",
+            "accept": [
+              "^two tickets please(?: for the (?:comedy|action film|cartoon|documentary|film))?$"
+            ],
+            "example": "Two tickets please.",
+            "hint": "Say ‘Two tickets please’.",
+            "itemIds": [
+              "en.elementary.u05.l10.two-tickets-please"
+            ]
+          },
+          {
+            "smarty": "Here are the tickets! Now ask when the film begins.",
+            "accept": [
+              "^what time does it start$",
+              "^what time does the film start$"
+            ],
+            "example": "What time does it start?",
+            "hint": "Ask ‘What time does it start?’",
+            "itemIds": [
+              "en.elementary.u05.l10.what-time-does-it-start"
+            ]
+          },
+          {
+            "smarty": "The film is over! How was it?",
+            "accept": [
+              "^it was great$",
+              "^it was amazing$",
+              "^it was (?:much )?better(?: than last week)?$",
+              "^it was the best(?: film)?$"
+            ],
+            "example": "It was great!",
+            "hint": "Say ‘It was great!’ or ‘It was amazing!’",
+            "itemIds": [
+              "en.elementary.u05.l10.it-was-great",
+              "en.elementary.u05.l09.amazing",
+              "en.elementary.u05.l06.better",
+              "en.elementary.u05.l07.the-best"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u05.l01.violin",
+        "en.elementary.u05.l01.drum",
+        "en.elementary.u05.l02.i-prefer",
+        "en.elementary.u05.l05.a-comedy",
+        "en.elementary.u05.l05.a-horror-film",
+        "en.elementary.u05.l06.bigger-than",
+        "en.elementary.u05.l03.screen",
+        "en.elementary.u05.l07.the-best",
+        "en.elementary.u05.l02.band",
+        "en.elementary.u05.l09.excited",
+        "en.elementary.u05.l05.an-action-film",
+        "en.beginner.u04.l01.half-past",
+        "en.elementary.u05.l09.amazing",
+        "en.elementary.u05.l06.better"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Secret Concert Ticket",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "Our band is ready! Mia has the violin, Sam has the drum, and I have the guitar.",
+        "image": {
+          "id": "en-a2-u05-ep-01",
+          "describe": "Smarty the black cat, Mia, and Sam practise together in the cozy music room with a guitar, violin, and red drum."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "This new song is much better than yesterday. We are the best band in school!"
+      },
+      {
+        "speaker": "Sam",
+        "text": "Look behind the big black piano! There is an old box under the window."
+      },
+      {
+        "speaker": "Smarty",
+        "text": "I am surprised! What is in this box?",
+        "image": {
+          "id": "en-a2-u05-ep-02",
+          "describe": "Smarty the black cat kneels behind the black piano looking at a dusty wooden box with a golden key."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "There is an old photo of a famous singer, a map, and two golden tickets!"
+      },
+      {
+        "speaker": "Sam",
+        "text": "It is a ticket for a secret concert at the old museum tomorrow evening!"
+      },
+      {
+        "speaker": "Smarty",
+        "text": "I am excited! What time does it start? Let's look at the map!",
+        "image": {
+          "id": "en-a2-u05-ep-03",
+          "describe": "Smarty, Mia, and Sam huddle around an old map and two shiny concert tickets under a warm lamp in the music room."
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.elementary.u05.ep.task.one",
+        "kind": "choice",
+        "prompt": "Where did Sam find the old box?",
+        "answer": "behind the big black piano",
+        "options": [
+          "behind the big black piano",
+          "on the cinema screen",
+          "in the kitchen"
+        ],
+        "explanation": "Sam saw the old box behind the big black piano.",
+        "itemIds": [
+          "en.elementary.u05.l01.piano",
+          "en.beginner.u08.l07.behind"
+        ]
+      },
+      {
+        "id": "en.elementary.u05.ep.task.two",
+        "kind": "choice",
+        "prompt": "What was in the box with the old photo and map?",
+        "answer": "two golden tickets for a concert",
+        "options": [
+          "two golden tickets for a concert",
+          "a red trumpet and a flute",
+          "a horror film"
+        ],
+        "explanation": "They found two golden tickets for a secret concert at the museum.",
+        "itemIds": [
+          "en.elementary.u05.l10.two-tickets-please",
+          "en.elementary.u05.l02.concert"
+        ]
+      }
+    ]
+  }
+}

@@ -1,5 +1,4 @@
 import { useUiLang } from '../contexts/UiLangContext';
-import React from 'react';
 import { Type } from 'lucide-react';
 import { useContentLang } from '../contexts/ContentLangContext';
 

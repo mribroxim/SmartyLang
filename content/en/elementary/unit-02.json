@@ -1,0 +1,2977 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "elementary",
+  "unit": 2,
+  "title": "Eating Out",
+  "room": "dining-room",
+  "lessons": [
+    {
+      "id": "en.elementary.u02.l01",
+      "section": "elementary",
+      "unit": 2,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "At the restaurant",
+      "canDo": "Get a table",
+      "scenario": "Smarty and Mia arrive at a cozy restaurant for dinner.",
+      "items": [
+        {
+          "id": "en.elementary.u02.l01.restaurant",
+          "text": "restaurant",
+          "kind": "word",
+          "forms": [
+            "restaurants"
+          ],
+          "example": "We are at a new restaurant.",
+          "note": "A restaurant is a place where you go to buy and eat a meal.",
+          "image": {
+            "id": "restaurant",
+            "describe": "a cozy restaurant dining room with round tables, warm lights, and cats sitting together"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l01.waiter",
+          "text": "waiter",
+          "kind": "word",
+          "forms": [
+            "waiters"
+          ],
+          "example": "The waiter is very friendly.",
+          "note": "Say 'waiter' for the person who brings food and drinks to your table.",
+          "image": {
+            "id": "waiter",
+            "describe": "a friendly cat wearing a white apron and carrying a tray in a dining room"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l01.menu",
+          "text": "menu",
+          "kind": "word",
+          "forms": [
+            "menus"
+          ],
+          "example": "Can I have the menu, please?",
+          "note": "Ask for the 'menu' when you want to see what food and drinks you can order.",
+          "image": {
+            "id": "menu",
+            "describe": "a cat holding a folded menu card with small food drawings on it"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l01.a-table-for-two",
+          "text": "A table for two",
+          "kind": "phrase",
+          "example": "Hello, a table for two, please.",
+          "note": "Say 'A table for two' when you arrive at a restaurant with one other person."
+        },
+        {
+          "id": "en.elementary.u02.l01.follow-me",
+          "text": "Follow me",
+          "kind": "phrase",
+          "example": "Good evening! Follow me, please.",
+          "note": "A waiter says 'Follow me' when they walk ahead to show you your table."
+        },
+        {
+          "id": "en.elementary.u02.l01.are-you-ready-to-order",
+          "text": "Are you ready to order?",
+          "kind": "phrase",
+          "example": "Are you ready to order now?",
+          "note": "The waiter asks 'Are you ready to order?' when you have chosen your food."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u02.l01.task.pick-restaurant",
+          "kind": "choice",
+          "prompt": "Where do you go to sit down and eat dinner with friends?",
+          "answer": "restaurant",
+          "options": [
+            "restaurant",
+            "library",
+            "hospital"
+          ],
+          "explanation": "A restaurant is a place where you buy and eat a meal.",
+          "itemIds": [
+            "en.elementary.u02.l01.restaurant"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l01.task.hear-waiter",
+          "kind": "listen",
+          "prompt": "Listen and choose what you hear.",
+          "audio": "The waiter is near the door.",
+          "answer": "The waiter is near the door.",
+          "options": [
+            "The waiter is near the door.",
+            "The teacher is near the door.",
+            "The water is near the door."
+          ],
+          "explanation": "A waiter works in a restaurant and helps guests.",
+          "itemIds": [
+            "en.elementary.u02.l01.waiter"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l01.task.fill-menu",
+          "kind": "fill",
+          "prompt": "You want to read the list of food. Complete the question.",
+          "text": "Can I have the ___, please?",
+          "answer": "menu",
+          "options": [
+            "menu",
+            "waiter",
+            "table"
+          ],
+          "explanation": "The menu shows the food and drinks in the restaurant.",
+          "itemIds": [
+            "en.elementary.u02.l01.menu",
+            "en.beginner.u03.l06.can-i-have"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l01.task.build-table-two",
+          "kind": "build",
+          "prompt": "You and your friend arrive at the restaurant. Build the phrase.",
+          "answer": "A table for two, please.",
+          "tiles": [
+            "A",
+            "table",
+            "for",
+            "two",
+            "please",
+            "menu"
+          ],
+          "explanation": "Say 'A table for two' when two people want to sit together.",
+          "itemIds": [
+            "en.elementary.u02.l01.a-table-for-two",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l01.task.match-phrases",
+          "kind": "match",
+          "prompt": "Match who says each sentence.",
+          "pairs": [
+            {
+              "left": "Ben",
+              "right": "A table for two, please."
+            },
+            {
+              "left": "Waiter at the door",
+              "right": "Follow me, please."
+            },
+            {
+              "left": "Waiter at the table",
+              "right": "Are you ready to order?"
+            }
+          ],
+          "explanation": "Guests ask for a table, and the waiter shows the table and asks if you are ready to order.",
+          "itemIds": [
+            "en.elementary.u02.l01.a-table-for-two",
+            "en.elementary.u02.l01.follow-me",
+            "en.elementary.u02.l01.are-you-ready-to-order"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l01.task.say-ready",
+          "kind": "speak",
+          "prompt": "Say the waiter's question aloud.",
+          "text": "Are you ready to order?",
+          "answer": "Are you ready to order?",
+          "explanation": "Use 'Are you ready to order?' to ask if someone is ready to choose food.",
+          "itemIds": [
+            "en.elementary.u02.l01.are-you-ready-to-order"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Where does Sam put Smarty and Mia's table?",
+        "image": {
+          "id": "en-a2-u02-l01-scene",
+          "describe": "Sam the cat waiter leading Smarty and Mia to a quiet table next to a window in a warm restaurant dining room."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good evening! This restaurant is beautiful."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Good evening! I am Sam, your waiter."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Hello, Sam. A table for two, please."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Of course! Follow me, please. Here is a table next to the window."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you! Can we have the menu?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Here you are. Two menus."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Are you ready to order?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes, we are!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u02.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "How many people need a table?",
+            "answer": "Two",
+            "options": [
+              "Two",
+              "Three",
+              "Four"
+            ],
+            "explanation": "Mia asks for a table for two.",
+            "itemIds": [
+              "en.elementary.u02.l01.a-table-for-two"
+            ]
+          },
+          {
+            "id": "en.elementary.u02.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "Where is their table?",
+            "answer": "Next to the window",
+            "options": [
+              "Next to the window",
+              "Near the door",
+              "Behind the kitchen"
+            ],
+            "explanation": "Sam says: Here is a table next to the window.",
+            "itemIds": [
+              "en.elementary.u02.l01.restaurant",
+              "en.beginner.u05.l05.next-to"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You and Smarty walk into a restaurant. Smarty is the waiter at the door.",
+        "turns": [
+          {
+            "smarty": "Good evening! Welcome to our restaurant. How many people?",
+            "accept": [
+              "^a table for (?:one|two|three|four)(?: please)?$",
+              "^hello a table for (?:one|two|three|four)(?: please)?$"
+            ],
+            "example": "A table for two, please.",
+            "hint": "Ask for a table for two.",
+            "itemIds": [
+              "en.elementary.u02.l01.a-table-for-two"
+            ]
+          },
+          {
+            "smarty": "Follow me, please. Here is your table. Do you need the menu?",
+            "accept": [
+              "^yes(?: please)?$",
+              "^(?:yes )?can i have the menu(?: please)?$",
+              "^(?:yes )?the menu please$"
+            ],
+            "example": "Yes, can I have the menu, please?",
+            "hint": "Say yes and ask for the menu.",
+            "itemIds": [
+              "en.elementary.u02.l01.menu"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l06.can-i-have",
+        "en.beginner.u01.l03.please",
+        "en.beginner.u05.l05.next-to"
+      ]
+    },
+    {
+      "id": "en.elementary.u02.l02",
+      "section": "elementary",
+      "unit": 2,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Ordering",
+      "canDo": "Order a meal",
+      "scenario": "Smarty and Mia look at the menu and order their dinner from Sam.",
+      "items": [
+        {
+          "id": "en.elementary.u02.l02.what-would-you-like",
+          "text": "What would you like?",
+          "kind": "phrase",
+          "example": "What would you like to eat?",
+          "note": "The waiter asks 'What would you like?' to politely find out what you want to order."
+        },
+        {
+          "id": "en.elementary.u02.l02.i-will-have",
+          "text": "I will have",
+          "kind": "phrase",
+          "forms": [
+            "I'll have",
+            "we will have",
+            "we'll have"
+          ],
+          "example": "I will have the chicken soup, please.",
+          "note": "Say 'I will have…' when you decide what food or drink you want in a restaurant."
+        },
+        {
+          "id": "en.elementary.u02.l02.could-i-have-the-bill",
+          "text": "Could I have the bill?",
+          "kind": "phrase",
+          "example": "Excuse me, could I have the bill?",
+          "note": "Ask 'Could I have the bill?' when you finish eating and want to pay."
+        },
+        {
+          "id": "en.elementary.u02.l02.starter",
+          "text": "starter",
+          "kind": "word",
+          "forms": [
+            "starters"
+          ],
+          "example": "I would like soup for my starter.",
+          "note": "A 'starter' is a small dish you eat before the big main part of the meal.",
+          "image": {
+            "id": "starter",
+            "describe": "a small bowl of warm tomato soup with a little piece of bread on a restaurant plate"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l02.main-course",
+          "text": "main course",
+          "kind": "phrase",
+          "forms": [
+            "main courses"
+          ],
+          "example": "For my main course, I will have fish and rice.",
+          "note": "The 'main course' is the biggest and most important dish of your meal.",
+          "image": {
+            "id": "main-course",
+            "describe": "a large dinner plate with roasted chicken, potatoes, and carrots"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l02.dessert",
+          "text": "dessert",
+          "kind": "word",
+          "forms": [
+            "desserts"
+          ],
+          "example": "We want chocolate cake for dessert.",
+          "note": "Say 'dessert' for the sweet food you eat at the end of a meal.",
+          "image": {
+            "id": "dessert",
+            "describe": "a slice of sweet fruit cake on a small white dessert plate with a fork"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "Ordering politely with 'I will have'",
+        "explanation": "When you choose from a menu at that moment, use 'I will have' (or 'I'll have') plus the food. At the end of the meal, ask politely with 'Could I have the bill?'",
+        "examples": [
+          "I will have the tomato soup.",
+          "I'll have chicken for my main course."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u02.l02.task.match-courses",
+          "kind": "match",
+          "prompt": "Match the part of the meal with when you eat it.",
+          "pairs": [
+            {
+              "left": "starter",
+              "right": "It is first."
+            },
+            {
+              "left": "main course",
+              "right": "It is big."
+            },
+            {
+              "left": "dessert",
+              "right": "It is sweet."
+            }
+          ],
+          "explanation": "A meal goes in order: starter, main course, and dessert.",
+          "itemIds": [
+            "en.elementary.u02.l02.starter",
+            "en.elementary.u02.l02.main-course",
+            "en.elementary.u02.l02.dessert"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l02.task.hear-would-like",
+          "kind": "listen",
+          "prompt": "Listen and choose what the waiter says.",
+          "audio": "What would you like?",
+          "answer": "What would you like?",
+          "options": [
+            "What would you like?",
+            "Are you ready to order?",
+            "Could I have the bill?"
+          ],
+          "explanation": "The waiter asks 'What would you like?' to take your order.",
+          "itemIds": [
+            "en.elementary.u02.l02.what-would-you-like"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l02.task.fill-will-have",
+          "kind": "fill",
+          "prompt": "You choose fish from the menu. Complete the sentence.",
+          "text": "___ the fish and potatoes, please.",
+          "answer": "I will have",
+          "options": [
+            "I will have",
+            "Follow me",
+            "What would you like"
+          ],
+          "explanation": "Use 'I will have' to order a dish from the menu.",
+          "itemIds": [
+            "en.elementary.u02.l02.i-will-have",
+            "en.beginner.u03.l11.fish"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l02.task.build-bill",
+          "kind": "build",
+          "prompt": "You finished your dessert and want to pay. Build the question.",
+          "answer": "Could I have the bill?",
+          "tiles": [
+            "Could",
+            "I",
+            "have",
+            "the",
+            "bill",
+            "menu"
+          ],
+          "explanation": "Ask 'Could I have the bill?' when you are ready to pay.",
+          "itemIds": [
+            "en.elementary.u02.l02.could-i-have-the-bill"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l02.task.pick-dessert",
+          "kind": "choice",
+          "prompt": "You want sweet cake after your main course. What do you ask for?",
+          "answer": "dessert",
+          "options": [
+            "dessert",
+            "starter",
+            "waiter"
+          ],
+          "explanation": "Sweet food at the end of a meal is called dessert.",
+          "itemIds": [
+            "en.elementary.u02.l02.dessert",
+            "en.elementary.u02.l02.main-course"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l02.task.say-order",
+          "kind": "speak",
+          "prompt": "Order your main course aloud.",
+          "text": "I will have chicken for my main course.",
+          "answer": "I will have chicken for my main course.",
+          "explanation": "Say 'I will have…' followed by the dish you want.",
+          "itemIds": [
+            "en.elementary.u02.l02.i-will-have",
+            "en.elementary.u02.l02.main-course"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Does Smarty order a starter, a main course, or a dessert?",
+        "image": {
+          "id": "en-a2-u02-l02-scene",
+          "describe": "Smarty and Mia sitting at their restaurant table looking at menus while Sam the waiter writes down their food order."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Are you ready to order? What would you like?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "For my starter, I will have tomato soup."
+          },
+          {
+            "speaker": "Sam",
+            "text": "And for your main course?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I will have fish and rice, please."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No starter for me. For my main course, I will have chicken."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And after that, cake for dessert!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Great! Your food is coming soon."
+          },
+          {
+            "speaker": "Mia",
+            "text": "The meal was delicious! Excuse me, Sam, could I have the bill?"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u02.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Mia order for her starter?",
+            "answer": "Tomato soup",
+            "options": [
+              "Tomato soup",
+              "Fish and rice",
+              "Cake"
+            ],
+            "explanation": "Mia says: For my starter, I will have tomato soup.",
+            "itemIds": [
+              "en.elementary.u02.l02.starter",
+              "en.elementary.u02.l02.i-will-have"
+            ]
+          },
+          {
+            "id": "en.elementary.u02.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Smarty order for dessert?",
+            "answer": "Cake",
+            "options": [
+              "Cake",
+              "Soup",
+              "Chicken"
+            ],
+            "explanation": "Smarty says: And after that, cake for dessert!",
+            "itemIds": [
+              "en.elementary.u02.l02.dessert"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are sitting in a restaurant. Smarty is your waiter and takes your order.",
+        "turns": [
+          {
+            "smarty": "Welcome! What would you like for your main course?",
+            "accept": [
+              "^i will have (?:the )?(?:chicken|fish|soup|rice|sandwich)(?: please)?$",
+              "^for my main course i will have (?:the )?(?:chicken|fish|soup|rice|sandwich)(?: please)?$"
+            ],
+            "example": "I will have the fish, please.",
+            "hint": "Say 'I will have' and name a dish like chicken or fish.",
+            "itemIds": [
+              "en.elementary.u02.l02.what-would-you-like",
+              "en.elementary.u02.l02.i-will-have",
+              "en.elementary.u02.l02.main-course"
+            ]
+          },
+          {
+            "smarty": "Delicious! You finished your meal. What do you say now?",
+            "accept": [
+              "^(?:excuse me )?could i have the bill(?: please)?$",
+              "^the bill please$"
+            ],
+            "example": "Excuse me, could I have the bill?",
+            "hint": "Ask politely for the bill.",
+            "itemIds": [
+              "en.elementary.u02.l02.could-i-have-the-bill"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l11.fish",
+        "en.elementary.u02.l01.are-you-ready-to-order"
+      ]
+    },
+    {
+      "id": "en.elementary.u02.l03",
+      "section": "elementary",
+      "unit": 2,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "Drinks",
+      "canDo": "Order drinks",
+      "scenario": "Smarty and Mia choose cold and hot drinks at the restaurant.",
+      "items": [
+        {
+          "id": "en.elementary.u02.l03.lemonade",
+          "text": "lemonade",
+          "kind": "word",
+          "forms": [
+            "lemonades"
+          ],
+          "example": "I would like a cold glass of lemonade.",
+          "note": "Lemonade is a sweet yellow drink made from lemons, water, and sugar.",
+          "image": {
+            "id": "lemonade",
+            "describe": "a tall glass of yellow lemonade with a yellow lemon slice on the rim"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l03.mineral-water",
+          "text": "mineral water",
+          "kind": "phrase",
+          "example": "A bottle of mineral water, please.",
+          "note": "Order 'mineral water' when you want clean bottled water in a restaurant.",
+          "image": {
+            "id": "mineral-water",
+            "describe": "a clear glass bottle of mineral water next to a clean drinking glass"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l03.hot-chocolate",
+          "text": "hot chocolate",
+          "kind": "phrase",
+          "example": "She loves hot chocolate in winter.",
+          "note": "Hot chocolate is a warm, sweet brown drink made with milk and chocolate.",
+          "image": {
+            "id": "hot-chocolate",
+            "describe": "a warm mug of brown hot chocolate with light steam rising from the top"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l03.still-or-sparkling",
+          "text": "still or sparkling?",
+          "kind": "phrase",
+          "forms": [
+            "still",
+            "sparkling"
+          ],
+          "example": "Would you like still or sparkling water?",
+          "note": "Waiters ask 'still or sparkling?' to know if you want flat water or water with bubbles."
+        },
+        {
+          "id": "en.elementary.u02.l03.ice",
+          "text": "ice",
+          "kind": "word",
+          "example": "Can I have my lemonade with ice?",
+          "note": "Ask for 'ice' when you want frozen water cubes to make your drink very cold.",
+          "image": {
+            "id": "ice",
+            "describe": "clear square ice cubes inside a cold glass of water"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l03.cheers",
+          "text": "Cheers!",
+          "kind": "word",
+          "example": "Cheers! Enjoy your drink!",
+          "note": "Say 'Cheers!' when you lift your glass with friends before you drink."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u02.l03.task.pick-hot-chocolate",
+          "kind": "choice",
+          "prompt": "It is cold outside and you want a warm, sweet drink. Which one do you order?",
+          "answer": "hot chocolate",
+          "options": [
+            "hot chocolate",
+            "lemonade",
+            "ice"
+          ],
+          "explanation": "Hot chocolate is a warm, sweet drink.",
+          "itemIds": [
+            "en.elementary.u02.l03.hot-chocolate"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l03.task.hear-still-sparkling",
+          "kind": "listen",
+          "prompt": "Listen and choose the waiter's question.",
+          "audio": "Mineral water: still or sparkling?",
+          "answer": "Mineral water: still or sparkling?",
+          "options": [
+            "Mineral water: still or sparkling?",
+            "Hot chocolate: hot or cold?",
+            "Lemonade: big or small?"
+          ],
+          "explanation": "Still water has no bubbles; sparkling water has bubbles.",
+          "itemIds": [
+            "en.elementary.u02.l03.mineral-water",
+            "en.elementary.u02.l03.still-or-sparkling"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l03.task.fill-ice",
+          "kind": "fill",
+          "prompt": "You want your lemonade very cold. Complete the sentence.",
+          "text": "I will have lemonade with ___, please.",
+          "answer": "ice",
+          "options": [
+            "ice",
+            "still",
+            "cheers"
+          ],
+          "explanation": "Ice makes cold drinks even colder.",
+          "itemIds": [
+            "en.elementary.u02.l03.ice",
+            "en.elementary.u02.l03.lemonade"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l03.task.match-drinks",
+          "kind": "match",
+          "prompt": "Match the drink or word with its description.",
+          "pairs": [
+            {
+              "left": "lemonade",
+              "right": "It is yellow and cold."
+            },
+            {
+              "left": "hot chocolate",
+              "right": "It is warm and brown."
+            },
+            {
+              "left": "Cheers!",
+              "right": "You say it with a glass."
+            }
+          ],
+          "explanation": "Lemonade is cold and yellow, hot chocolate is warm, and Cheers! is a friendly toast.",
+          "itemIds": [
+            "en.elementary.u02.l03.lemonade",
+            "en.elementary.u02.l03.hot-chocolate",
+            "en.elementary.u02.l03.cheers"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l03.task.build-mineral-water",
+          "kind": "build",
+          "prompt": "Order bottled water without bubbles. Build the sentence.",
+          "answer": "Still mineral water, please.",
+          "tiles": [
+            "Still",
+            "mineral",
+            "water",
+            "please",
+            "ice"
+          ],
+          "explanation": "Say 'Still mineral water' when you do not want bubbles.",
+          "itemIds": [
+            "en.elementary.u02.l03.mineral-water",
+            "en.elementary.u02.l03.still-or-sparkling"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l03.task.say-cheers",
+          "kind": "speak",
+          "prompt": "Lift your glass and say the word aloud.",
+          "text": "Cheers! To a nice dinner!",
+          "answer": "Cheers! To a nice dinner!",
+          "explanation": "Say 'Cheers!' when sharing drinks with friends.",
+          "itemIds": [
+            "en.elementary.u02.l03.cheers"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Does Smarty choose still water or sparkling water?",
+        "image": {
+          "id": "en-a2-u02-l03-scene",
+          "describe": "Smarty and Mia holding up their glasses of lemonade and water at a restaurant table, saying Cheers together."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "What would you like to drink?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I will have lemonade with ice, please."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And I will have mineral water."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Still or sparkling?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Sparkling, please. No ice for me."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Here you are. Lemonade with ice, and sparkling mineral water."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thank you! Cheers, Smarty!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Cheers, Mia!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u02.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Mia order to drink?",
+            "answer": "Lemonade with ice",
+            "options": [
+              "Lemonade with ice",
+              "Hot chocolate",
+              "Still mineral water"
+            ],
+            "explanation": "Mia says: I will have lemonade with ice, please.",
+            "itemIds": [
+              "en.elementary.u02.l03.lemonade",
+              "en.elementary.u02.l03.ice"
+            ]
+          },
+          {
+            "id": "en.elementary.u02.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "What kind of mineral water does Smarty want?",
+            "answer": "Sparkling",
+            "options": [
+              "Sparkling",
+              "Still",
+              "Hot"
+            ],
+            "explanation": "Smarty says: Sparkling, please.",
+            "itemIds": [
+              "en.elementary.u02.l03.still-or-sparkling",
+              "en.elementary.u02.l03.mineral-water"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is the waiter taking your drink order.",
+        "turns": [
+          {
+            "smarty": "What would you like to drink today?",
+            "accept": [
+              "^i will have (?:a )?(?:lemonade|mineral water|hot chocolate|water|juice|tea)(?: with ice)?(?: please)?$",
+              "^(?:lemonade|mineral water|hot chocolate)(?: with ice)?(?: please)?$"
+            ],
+            "example": "I will have lemonade with ice, please.",
+            "hint": "Order lemonade, mineral water, or hot chocolate.",
+            "itemIds": [
+              "en.elementary.u02.l03.lemonade",
+              "en.elementary.u02.l03.mineral-water",
+              "en.elementary.u02.l03.hot-chocolate",
+              "en.elementary.u02.l02.i-will-have"
+            ]
+          },
+          {
+            "smarty": "Here is your drink! Lift your glass with me!",
+            "accept": [
+              "^cheers(?: smarty)?$"
+            ],
+            "example": "Cheers!",
+            "hint": "Say 'Cheers!'",
+            "itemIds": [
+              "en.elementary.u02.l03.cheers"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u02.l02.what-would-you-like",
+        "en.elementary.u02.l02.i-will-have"
+      ]
+    },
+    {
+      "id": "en.elementary.u02.l04",
+      "section": "elementary",
+      "unit": 2,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty, Ben, and Lily visit a restaurant and practise getting a table and ordering food and drinks.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u02.l04.task.build-table",
+          "kind": "build",
+          "prompt": "You arrive at the restaurant with a friend. Build the request.",
+          "answer": "A table for two, please.",
+          "tiles": [
+            "A",
+            "table",
+            "for",
+            "two",
+            "please",
+            "bill"
+          ],
+          "explanation": "Ask for 'A table for two' when two people want to sit.",
+          "itemIds": [
+            "en.elementary.u02.l01.a-table-for-two"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l04.task.match-review",
+          "kind": "match",
+          "prompt": "Match each item with what it is.",
+          "pairs": [
+            {
+              "left": "menu",
+              "right": "It is on the table."
+            },
+            {
+              "left": "starter",
+              "right": "It is first."
+            },
+            {
+              "left": "mineral water",
+              "right": "It is still or sparkling."
+            },
+            {
+              "left": "bill",
+              "right": "It shows what you pay."
+            }
+          ],
+          "explanation": "You read the menu, eat a starter, drink mineral water, and pay the bill.",
+          "itemIds": [
+            "en.elementary.u02.l01.menu",
+            "en.elementary.u02.l02.starter",
+            "en.elementary.u02.l03.mineral-water",
+            "en.elementary.u02.l02.could-i-have-the-bill"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l04.task.fill-order",
+          "kind": "fill",
+          "prompt": "Order your dessert from the waiter. Complete the sentence.",
+          "text": "___ the hot chocolate and cake for dessert.",
+          "answer": "I will have",
+          "options": [
+            "I will have",
+            "Follow me",
+            "Are you ready"
+          ],
+          "explanation": "Use 'I will have' to order food and drinks.",
+          "itemIds": [
+            "en.elementary.u02.l02.i-will-have",
+            "en.elementary.u02.l02.dessert",
+            "en.elementary.u02.l03.hot-chocolate"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l04.task.hear-ready",
+          "kind": "listen",
+          "prompt": "Listen and choose what the waiter asks.",
+          "audio": "Are you ready to order?",
+          "answer": "Are you ready to order?",
+          "options": [
+            "Are you ready to order?",
+            "Still or sparkling?",
+            "Could I have the bill?"
+          ],
+          "explanation": "The waiter asks 'Are you ready to order?' after you read the menu.",
+          "itemIds": [
+            "en.elementary.u02.l01.are-you-ready-to-order"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l04.task.pick-still",
+          "kind": "choice",
+          "prompt": "The waiter asks: 'Still or sparkling?' You do not want bubbles. What do you say?",
+          "answer": "Still, please.",
+          "options": [
+            "Still, please.",
+            "Sparkling, please.",
+            "Follow me, please."
+          ],
+          "explanation": "Still water has no bubbles.",
+          "itemIds": [
+            "en.elementary.u02.l03.still-or-sparkling"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l04.task.say-bill",
+          "kind": "speak",
+          "prompt": "Ask the waiter for the bill aloud.",
+          "text": "Could I have the bill, please?",
+          "answer": "Could I have the bill, please?",
+          "explanation": "Use 'Could I have the bill?' to ask to pay politely.",
+          "itemIds": [
+            "en.elementary.u02.l02.could-i-have-the-bill"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Ben order for his drink?",
+        "image": {
+          "id": "en-a2-u02-l04-scene",
+          "describe": "Ben and Lily sitting at a restaurant table with Smarty as the waiter holding a notepad."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good afternoon! Welcome to our restaurant. Follow me, please."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Thank you! Can we have the menu?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Here you are. Are you ready to order?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Yes. For my main course, I will have chicken and rice."
+          },
+          {
+            "speaker": "Lily",
+            "text": "I will have soup for my starter, and fish for my main course."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And what would you like to drink?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "I will have lemonade with ice, please."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Hot chocolate for me, please. Cheers!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u02.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Ben order to drink?",
+            "answer": "Lemonade with ice",
+            "options": [
+              "Lemonade with ice",
+              "Hot chocolate",
+              "Sparkling mineral water"
+            ],
+            "explanation": "Ben says: I will have lemonade with ice, please.",
+            "itemIds": [
+              "en.elementary.u02.l03.lemonade",
+              "en.elementary.u02.l03.ice"
+            ]
+          },
+          {
+            "id": "en.elementary.u02.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Lily order for her starter?",
+            "answer": "Soup",
+            "options": [
+              "Soup",
+              "Chicken",
+              "Cake"
+            ],
+            "explanation": "Lily says: I will have soup for my starter.",
+            "itemIds": [
+              "en.elementary.u02.l02.starter"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Role-play a full mini visit to Smarty's restaurant.",
+        "turns": [
+          {
+            "smarty": "Hello! I am your waiter. Are you ready to order your starter and main course?",
+            "accept": [
+              "^yes i will have (?:the )?(?:soup|chicken|fish|rice|salad)(?: please)?$",
+              "^i will have (?:the )?(?:soup|chicken|fish|rice)(?: for my main course)?(?: please)?$"
+            ],
+            "example": "I will have the soup, please.",
+            "hint": "Use 'I will have' to order food.",
+            "itemIds": [
+              "en.elementary.u02.l01.are-you-ready-to-order",
+              "en.elementary.u02.l02.i-will-have",
+              "en.elementary.u02.l02.starter",
+              "en.elementary.u02.l02.main-course"
+            ]
+          },
+          {
+            "smarty": "Would you like mineral water? Still or sparkling?",
+            "accept": [
+              "^(?:still|sparkling)(?: mineral water)?(?: please)?$",
+              "^i will have (?:still|sparkling)(?: mineral water)?(?: please)?$"
+            ],
+            "example": "Sparkling, please.",
+            "hint": "Choose 'still' or 'sparkling'.",
+            "itemIds": [
+              "en.elementary.u02.l03.mineral-water",
+              "en.elementary.u02.l03.still-or-sparkling"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u02.l01.restaurant",
+        "en.elementary.u02.l01.waiter",
+        "en.elementary.u02.l01.menu",
+        "en.elementary.u02.l01.a-table-for-two",
+        "en.elementary.u02.l01.follow-me",
+        "en.elementary.u02.l01.are-you-ready-to-order",
+        "en.elementary.u02.l02.what-would-you-like",
+        "en.elementary.u02.l02.i-will-have",
+        "en.elementary.u02.l02.could-i-have-the-bill",
+        "en.elementary.u02.l02.starter",
+        "en.elementary.u02.l02.main-course",
+        "en.elementary.u02.l02.dessert",
+        "en.elementary.u02.l03.lemonade",
+        "en.elementary.u02.l03.mineral-water",
+        "en.elementary.u02.l03.hot-chocolate",
+        "en.elementary.u02.l03.still-or-sparkling",
+        "en.elementary.u02.l03.ice",
+        "en.elementary.u02.l03.cheers"
+      ]
+    },
+    {
+      "id": "en.elementary.u02.l05",
+      "section": "elementary",
+      "unit": 2,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Meat and fish",
+      "canDo": "Name main dishes",
+      "scenario": "Smarty reads the main courses on the dinner menu in the dining room.",
+      "items": [
+        {
+          "id": "en.elementary.u02.l05.beef",
+          "text": "beef",
+          "kind": "word",
+          "example": "I will have beef with potatoes.",
+          "note": "Beef is meat from a cow, and we do not count it as one beef or two beefs.",
+          "image": {
+            "id": "beef",
+            "describe": "a cooked slice of brown roast beef on a dinner plate with vegetables"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l05.lamb",
+          "text": "lamb",
+          "kind": "word",
+          "example": "We ate roast lamb for dinner.",
+          "note": "Lamb is meat from a young sheep, often served as a warm main course.",
+          "image": {
+            "id": "lamb",
+            "describe": "cooked lamb chops on a white plate with green herbs"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l05.salmon",
+          "text": "salmon",
+          "kind": "word",
+          "example": "Salmon is my favourite fish.",
+          "note": "Salmon is a pink fish that is very popular in restaurants.",
+          "image": {
+            "id": "salmon",
+            "describe": "a cooked piece of pink salmon fish with a slice of lemon on a plate"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l05.sausage",
+          "text": "sausage",
+          "kind": "word",
+          "forms": [
+            "sausages"
+          ],
+          "example": "He has two sausages on his plate.",
+          "note": "You can count sausages: say 'a sausage' for one, or 'sausages' for two or more.",
+          "image": {
+            "id": "sausage",
+            "describe": "two cooked brown sausages on a plate next to mashed potatoes"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l05.pasta",
+          "text": "pasta",
+          "kind": "word",
+          "example": "Do you like pasta with tomato and cheese?",
+          "note": "Pasta is an uncountable food word, so say 'some pasta', never 'a pasta'.",
+          "image": {
+            "id": "pasta",
+            "describe": "a bowl of yellow spaghetti pasta with red tomato sauce on top"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l05.butter",
+          "text": "butter",
+          "kind": "word",
+          "example": "Put some butter on your warm bread.",
+          "note": "Butter is a soft yellow food made from milk, and we say 'some butter'.",
+          "image": {
+            "id": "butter",
+            "describe": "a small yellow block of butter on a butter dish next to a slice of bread"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "Countable and uncountable foods",
+        "explanation": "Some foods you can count: one sausage, two sausages. Other foods you cannot count: beef, lamb, salmon, pasta, and butter. Use 'some' (not 'a') with uncountable foods.",
+        "examples": [
+          "I have two sausages.",
+          "I would like some pasta and some butter."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u02.l05.task.pick-salmon",
+          "kind": "choice",
+          "prompt": "Which word is a pink fish?",
+          "answer": "salmon",
+          "options": [
+            "salmon",
+            "beef",
+            "butter"
+          ],
+          "explanation": "Salmon is a pink fish.",
+          "itemIds": [
+            "en.elementary.u02.l05.salmon"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l05.task.match-foods",
+          "kind": "match",
+          "prompt": "Match each food word with its type.",
+          "pairs": [
+            {
+              "left": "beef and lamb",
+              "right": "red"
+            },
+            {
+              "left": "salmon",
+              "right": "fish"
+            },
+            {
+              "left": "butter",
+              "right": "yellow, for bread"
+            },
+            {
+              "left": "pasta",
+              "right": "I like it with beef."
+            }
+          ],
+          "explanation": "Beef and lamb are meats, salmon is fish, butter goes on bread, and pasta is often eaten with tomato sauce.",
+          "itemIds": [
+            "en.elementary.u02.l05.beef",
+            "en.elementary.u02.l05.lamb",
+            "en.elementary.u02.l05.salmon",
+            "en.elementary.u02.l05.pasta",
+            "en.elementary.u02.l05.butter"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l05.task.fill-countable",
+          "kind": "fill",
+          "prompt": "Choose the word that works with 'some' (uncountable).",
+          "text": "Can I have some ___ on my bread?",
+          "answer": "butter",
+          "options": [
+            "butter",
+            "sausage",
+            "apple"
+          ],
+          "explanation": "Butter is uncountable, so we say 'some butter'.",
+          "itemIds": [
+            "en.elementary.u02.l05.butter",
+            "en.beginner.u03.l10.some"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l05.task.hear-sausages",
+          "kind": "listen",
+          "prompt": "Listen and choose what you hear.",
+          "audio": "I will have two sausages and pasta.",
+          "answer": "I will have two sausages and pasta.",
+          "options": [
+            "I will have two sausages and pasta.",
+            "I will have two salmon and butter.",
+            "I will have beef and lamb."
+          ],
+          "explanation": "Sausage can be plural (two sausages), while pasta stays singular.",
+          "itemIds": [
+            "en.elementary.u02.l05.sausage",
+            "en.elementary.u02.l05.pasta"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l05.task.build-lamb",
+          "kind": "build",
+          "prompt": "Order lamb as your main course. Build the sentence.",
+          "answer": "I will have lamb for my main course.",
+          "tiles": [
+            "I",
+            "will",
+            "have",
+            "lamb",
+            "for",
+            "my",
+            "main course",
+            "a"
+          ],
+          "explanation": "Lamb is uncountable, so do not put 'a' before it.",
+          "itemIds": [
+            "en.elementary.u02.l05.lamb",
+            "en.elementary.u02.l02.i-will-have",
+            "en.elementary.u02.l02.main-course"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l05.task.say-beef",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "Do you like beef or salmon?",
+          "answer": "Do you like beef or salmon?",
+          "explanation": "Use 'Do you like…?' to ask about someone's favourite food.",
+          "itemIds": [
+            "en.elementary.u02.l05.beef",
+            "en.elementary.u02.l05.salmon"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which main dish does Smarty the cat choose?",
+        "image": {
+          "id": "en-a2-u02-l05-scene",
+          "describe": "Smarty, Leo, and Ana sitting in the dining room looking at plates of salmon, pasta, and sausages."
+        },
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "I am hungry! What is on the menu today?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "There is beef, lamb, salmon, and pasta."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I love fish! I will have salmon for my main course."
+          },
+          {
+            "speaker": "Leo",
+            "text": "I will have pasta with tomato and cheese."
+          },
+          {
+            "speaker": "Ana",
+            "text": "I want two sausages and some bread with butter."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No beef or lamb today?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Not today! Salmon and pasta are delicious."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u02.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Why does Smarty choose salmon?",
+            "answer": "Because he loves fish",
+            "options": [
+              "Because he loves fish",
+              "Because he loves pasta",
+              "Because there is no beef"
+            ],
+            "explanation": "Smarty says: I love fish! I will have salmon.",
+            "itemIds": [
+              "en.elementary.u02.l05.salmon"
+            ]
+          },
+          {
+            "id": "en.elementary.u02.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Ana want with her bread?",
+            "answer": "Butter",
+            "options": [
+              "Butter",
+              "Salmon",
+              "Lamb"
+            ],
+            "explanation": "Ana says: I want two sausages and some bread with butter.",
+            "itemIds": [
+              "en.elementary.u02.l05.butter",
+              "en.elementary.u02.l05.sausage"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about your favourite main dishes.",
+        "turns": [
+          {
+            "smarty": "I love salmon! Do you like meat like beef or lamb, or do you like fish?",
+            "accept": [
+              "^i like (?:beef|lamb|salmon|fish|chicken|sausages|pasta)$",
+              "^i love (?:beef|lamb|salmon|fish|chicken|sausages|pasta)$"
+            ],
+            "example": "I like salmon.",
+            "hint": "Say 'I like' and name beef, lamb, salmon, or pasta.",
+            "itemIds": [
+              "en.elementary.u02.l05.beef",
+              "en.elementary.u02.l05.lamb",
+              "en.elementary.u02.l05.salmon"
+            ]
+          },
+          {
+            "smarty": "Would you like some bread and butter with your pasta?",
+            "accept": [
+              "^yes please$",
+              "^yes i would like some bread and butter(?: please)?$",
+              "^no thank you$"
+            ],
+            "example": "Yes, please.",
+            "hint": "Say 'Yes, please' or 'No, thank you'.",
+            "itemIds": [
+              "en.elementary.u02.l05.butter",
+              "en.elementary.u02.l05.pasta"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l10.some",
+        "en.elementary.u02.l02.i-will-have",
+        "en.elementary.u02.l02.main-course"
+      ]
+    },
+    {
+      "id": "en.elementary.u02.l06",
+      "section": "elementary",
+      "unit": 2,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Tastes",
+      "canDo": "Describe flavours",
+      "scenario": "Smarty and his friends taste different foods in the dining room and talk about their flavours.",
+      "items": [
+        {
+          "id": "en.elementary.u02.l06.spicy",
+          "text": "spicy",
+          "kind": "word",
+          "example": "This soup is very spicy!",
+          "note": "Say 'spicy' when food has hot peppers and makes your mouth feel warm.",
+          "image": {
+            "id": "spicy",
+            "describe": "a bowl of red soup with a red chili pepper next to it and tiny steam lines"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l06.salty",
+          "text": "salty",
+          "kind": "word",
+          "example": "These potatoes are too salty.",
+          "note": "Say 'salty' when food has a lot of salt in it.",
+          "image": {
+            "id": "salty",
+            "describe": "a small salt shaker pouring white salt grains onto a plate of food"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l06.sour",
+          "text": "sour",
+          "kind": "word",
+          "example": "Lemon juice is very sour without sugar.",
+          "note": "Say 'sour' for a sharp taste like a fresh lemon.",
+          "image": {
+            "id": "sour",
+            "describe": "a cut yellow lemon half with a drop of sour juice"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l06.bitter",
+          "text": "bitter",
+          "kind": "word",
+          "example": "Dark chocolate can taste bitter.",
+          "note": "Say 'bitter' for a strong, sharp taste that is the opposite of sweet.",
+          "image": {
+            "id": "bitter",
+            "describe": "a mug of dark black drink without sugar or milk"
+          }
+        },
+        {
+          "id": "en.elementary.u02.l06.fresh",
+          "text": "fresh",
+          "kind": "word",
+          "example": "Is this salmon fresh today?",
+          "note": "Say 'fresh' when food was just made or picked and is not old."
+        },
+        {
+          "id": "en.elementary.u02.l06.pepper",
+          "text": "pepper",
+          "kind": "word",
+          "forms": [
+            "peppers"
+          ],
+          "example": "Can you pass the pepper, please?",
+          "note": "Pepper is a dark spice you shake on food, or a crunchy vegetable.",
+          "image": {
+            "id": "pepper",
+            "describe": "a black pepper shaker next to a green and red bell pepper"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u02.l06.task.match-tastes",
+          "kind": "match",
+          "prompt": "Match each food with its taste.",
+          "pairs": [
+            {
+              "left": "lemonade",
+              "right": "sour"
+            },
+            {
+              "left": "pepper",
+              "right": "spicy"
+            },
+            {
+              "left": "sausage",
+              "right": "salty"
+            },
+            {
+              "left": "cake",
+              "right": "sweet"
+            }
+          ],
+          "explanation": "Lemons are sour, chilies are spicy, sea water is salty, and cake is sweet.",
+          "itemIds": [
+            "en.elementary.u02.l06.sour",
+            "en.elementary.u02.l06.spicy",
+            "en.elementary.u02.l06.salty",
+            "en.beginner.u03.l09.sweet"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l06.task.pick-fresh",
+          "kind": "choice",
+          "prompt": "The bread came out of the oven five minutes ago. How is it?",
+          "answer": "fresh",
+          "options": [
+            "fresh",
+            "sour",
+            "bitter"
+          ],
+          "explanation": "Food that was just made is fresh.",
+          "itemIds": [
+            "en.elementary.u02.l06.fresh"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l06.task.hear-pepper",
+          "kind": "listen",
+          "prompt": "Listen and choose what you hear.",
+          "audio": "I like black pepper on my pasta.",
+          "answer": "I like black pepper on my pasta.",
+          "options": [
+            "I like black pepper on my pasta.",
+            "I like sweet butter on my bread.",
+            "I like sour lemonade with ice."
+          ],
+          "explanation": "Pepper adds a warm, spicy flavour to pasta.",
+          "itemIds": [
+            "en.elementary.u02.l06.pepper",
+            "en.elementary.u02.l05.pasta"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l06.task.fill-bitter",
+          "kind": "fill",
+          "prompt": "This tea has no milk and no sugar. It is not sweet. Complete the sentence.",
+          "text": "This black tea tastes ___.",
+          "answer": "bitter",
+          "options": [
+            "bitter",
+            "salty",
+            "fresh"
+          ],
+          "explanation": "Strong tea without sugar or milk can taste bitter.",
+          "itemIds": [
+            "en.elementary.u02.l06.bitter"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l06.task.build-spicy",
+          "kind": "build",
+          "prompt": "Warn your friend about the red sauce. Build the sentence.",
+          "answer": "The beef is spicy.",
+          "tiles": [
+            "The",
+            "beef",
+            "is",
+            "salty",
+            "spicy",
+            "sour"
+          ],
+          "explanation": "Use 'spicy' when food has hot pepper.",
+          "itemIds": [
+            "en.elementary.u02.l06.spicy",
+            "en.elementary.u02.l05.beef"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l06.task.say-sour",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "This lemonade is sour.",
+          "answer": "This lemonade is sour.",
+          "explanation": "Lemonade tastes sour when it has a lot of lemon juice.",
+          "itemIds": [
+            "en.elementary.u02.l06.sour",
+            "en.elementary.u02.l03.lemonade"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why does Omar drink water fast after tasting the soup?",
+        "image": {
+          "id": "en-a2-u02-l06-scene",
+          "describe": "Omar the cat looking surprised after tasting a spoon of spicy red soup while Smarty and Zara smile at the dining table."
+        },
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "Is the salmon fresh today?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, it is very fresh and delicious!"
+          },
+          {
+            "speaker": "Omar",
+            "text": "I am trying the red tomato soup. Oh! It is very spicy!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Drink some mineral water! How are your sausages?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "They are good, but a little salty. Can I have some black pepper?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Here is the pepper. And try this lemonade—it is sweet and sour!"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Thanks! Not bitter at all!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u02.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "How does Omar's soup taste?",
+            "answer": "Spicy",
+            "options": [
+              "Spicy",
+              "Sweet",
+              "Bitter"
+            ],
+            "explanation": "Omar says: Oh! It is very spicy!",
+            "itemIds": [
+              "en.elementary.u02.l06.spicy"
+            ]
+          },
+          {
+            "id": "en.elementary.u02.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "How does Smarty describe the salmon?",
+            "answer": "Fresh and delicious",
+            "options": [
+              "Fresh and delicious",
+              "Salty and bitter",
+              "Sour and cold"
+            ],
+            "explanation": "Smarty says: Yes, it is very fresh and delicious!",
+            "itemIds": [
+              "en.elementary.u02.l06.fresh",
+              "en.elementary.u02.l05.salmon"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is cooking in the dining room and asks what flavours you like.",
+        "turns": [
+          {
+            "smarty": "Do you like spicy food, or do you like sweet food?",
+            "accept": [
+              "^i like (?:spicy|sweet|salty|sour|fresh) food$",
+              "^i love (?:spicy|sweet|salty|sour|fresh) food$",
+              "^i do not like spicy food$",
+              "^i like (?:spicy|sweet|salty|sour|fresh)$"
+            ],
+            "example": "I like spicy.",
+            "hint": "Tell Smarty if you like spicy or sweet food.",
+            "itemIds": [
+              "en.elementary.u02.l06.spicy",
+              "en.beginner.u03.l09.sweet"
+            ]
+          },
+          {
+            "smarty": "Here is fresh pasta! Would you like some black pepper on it?",
+            "accept": [
+              "^yes please$",
+              "^yes some pepper please$",
+              "^no thank you$"
+            ],
+            "example": "Yes, please.",
+            "hint": "Say 'Yes, please' or 'No, thank you'.",
+            "itemIds": [
+              "en.elementary.u02.l06.fresh",
+              "en.elementary.u02.l06.pepper",
+              "en.elementary.u02.l05.pasta"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l09.sweet",
+        "en.elementary.u02.l05.pasta",
+        "en.elementary.u02.l05.beef",
+        "en.elementary.u02.l03.lemonade",
+        "en.elementary.u02.l05.salmon"
+      ]
+    },
+    {
+      "id": "en.elementary.u02.l07",
+      "section": "elementary",
+      "unit": 2,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "How much?",
+      "canDo": "Talk about amounts",
+      "scenario": "Smarty and Tom check how much sugar, butter, and fruit they have in the dining room.",
+      "items": [
+        {
+          "id": "en.elementary.u02.l07.how-much-sugar",
+          "text": "How much sugar?",
+          "kind": "phrase",
+          "forms": [
+            "How much"
+          ],
+          "example": "How much sugar do you want in your tea?",
+          "note": "Ask 'How much…?' for things you cannot count, like sugar, water, or butter."
+        },
+        {
+          "id": "en.elementary.u02.l07.a-lot-of",
+          "text": "a lot of",
+          "kind": "phrase",
+          "example": "There is a lot of pasta on my plate.",
+          "note": "Use 'a lot of' for a big amount of countable or uncountable things."
+        },
+        {
+          "id": "en.elementary.u02.l07.a-little",
+          "text": "a little",
+          "kind": "phrase",
+          "example": "I only want a little butter on my bread.",
+          "note": "Use 'a little' for a small amount of something you cannot count, like sugar or milk."
+        },
+        {
+          "id": "en.elementary.u02.l07.a-few",
+          "text": "a few",
+          "kind": "phrase",
+          "example": "There are a few apples in the bowl.",
+          "note": "Use 'a few' for a small number of things you can count, like apples or sausages."
+        },
+        {
+          "id": "en.elementary.u02.l07.not-many",
+          "text": "not many",
+          "kind": "phrase",
+          "forms": [
+            "not much"
+          ],
+          "example": "There are not many carrots in the soup.",
+          "note": "Use 'not many' with plural countable nouns when the number is small."
+        },
+        {
+          "id": "en.elementary.u02.l07.sugar",
+          "text": "sugar",
+          "kind": "word",
+          "example": "Lemonade has a lot of sugar.",
+          "note": "Sugar is sweet white grains we put in tea, coffee, and cakes.",
+          "image": {
+            "id": "sugar",
+            "describe": "a white ceramic sugar bowl with a small spoon full of white sugar"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "How much / How many, a little / a few, a lot of",
+        "explanation": "Use 'How much' and 'a little' with uncountable things (sugar, butter, water). Use 'How many', 'a few', and 'not many' with countable plural things (apples, sausages, eggs). 'A lot of' works with both!",
+        "examples": [
+          "How much sugar? Just a little.",
+          "How many sausages? Only a few—not many."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u02.l07.task.fill-how-much",
+          "kind": "fill",
+          "prompt": "Sugar cannot be counted. Complete the question.",
+          "text": "___ do you want in your hot chocolate?",
+          "answer": "How much sugar",
+          "options": [
+            "How much sugar",
+            "How many sugar",
+            "A few sugar"
+          ],
+          "explanation": "Use 'How much' with uncountable nouns like sugar.",
+          "itemIds": [
+            "en.elementary.u02.l07.how-much-sugar",
+            "en.elementary.u02.l07.sugar"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l07.task.match-amounts",
+          "kind": "match",
+          "prompt": "Match the amount phrase with the right food.",
+          "pairs": [
+            {
+              "left": "a little",
+              "right": "butter"
+            },
+            {
+              "left": "a few",
+              "right": "sausages"
+            },
+            {
+              "left": "a lot of",
+              "right": "pasta"
+            },
+            {
+              "left": "not many",
+              "right": "salmon"
+            }
+          ],
+          "explanation": "Use 'a little' for uncountable nouns, 'a few' and 'not many' for countable nouns, and 'a lot of' for both.",
+          "itemIds": [
+            "en.elementary.u02.l07.a-little",
+            "en.elementary.u02.l07.a-few",
+            "en.elementary.u02.l07.a-lot-of",
+            "en.elementary.u02.l07.not-many"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l07.task.pick-a-few",
+          "kind": "choice",
+          "prompt": "You can count potatoes (one potato, two potatoes). Which phrase fits?",
+          "answer": "a few potatoes",
+          "options": [
+            "a few potatoes",
+            "a little potatoes",
+            "much potatoes"
+          ],
+          "explanation": "Potatoes are countable, so use 'a few'.",
+          "itemIds": [
+            "en.elementary.u02.l07.a-few",
+            "en.beginner.u03.l07.potato"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l07.task.hear-a-little",
+          "kind": "listen",
+          "prompt": "Listen and choose what you hear.",
+          "audio": "Just a little sugar, please.",
+          "answer": "Just a little sugar, please.",
+          "options": [
+            "Just a little sugar, please.",
+            "Just a few apples, please.",
+            "A lot of pepper, please."
+          ],
+          "explanation": "Sugar is uncountable, so we say 'a little sugar'.",
+          "itemIds": [
+            "en.elementary.u02.l07.a-little",
+            "en.elementary.u02.l07.sugar"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l07.task.build-not-many",
+          "kind": "build",
+          "prompt": "There are only two sausages left. Build the sentence.",
+          "answer": "There are not many sausages.",
+          "tiles": [
+            "There",
+            "are",
+            "not many",
+            "sausages",
+            "a little"
+          ],
+          "explanation": "Use 'not many' for a small number of countable items like sausages.",
+          "itemIds": [
+            "en.elementary.u02.l07.not-many",
+            "en.elementary.u02.l05.sausage"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l07.task.say-lot",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "There is a lot of pasta on the table.",
+          "answer": "There is a lot of pasta on the table.",
+          "explanation": "'A lot of' works for big amounts of uncountable foods like pasta.",
+          "itemIds": [
+            "en.elementary.u02.l07.a-lot-of",
+            "en.elementary.u02.l05.pasta"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How much sugar does Smarty want in his tea?",
+        "image": {
+          "id": "en-a2-u02-l07-scene",
+          "describe": "Smarty and Tom at a dining table with a sugar bowl, a plate with a few apples, and a big bowl of pasta."
+        },
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "Let's eat dinner! We have a lot of pasta today."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great! How many sausages are there?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Not many—only a few sausages on this plate."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "That is fine. Would you like some tea?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Yes, please! How much sugar do you want in your tea?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Just a little sugar, please. Too much sugar is not good!"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Here you are. And we have a few apples for dessert."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u02.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "How much sugar does Smarty want?",
+            "answer": "Just a little",
+            "options": [
+              "Just a little",
+              "A lot of sugar",
+              "A few sugars"
+            ],
+            "explanation": "Smarty says: Just a little sugar, please.",
+            "itemIds": [
+              "en.elementary.u02.l07.a-little",
+              "en.elementary.u02.l07.sugar",
+              "en.elementary.u02.l07.how-much-sugar"
+            ]
+          },
+          {
+            "id": "en.elementary.u02.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "How many sausages are on the plate?",
+            "answer": "Not many, a few",
+            "options": [
+              "Not many, a few",
+              "A lot of sausages",
+              "Zero sausages"
+            ],
+            "explanation": "Tom says: Not many—only a few sausages on this plate.",
+            "itemIds": [
+              "en.elementary.u02.l07.not-many",
+              "en.elementary.u02.l07.a-few"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is making tea and snacks for you in the dining room.",
+        "turns": [
+          {
+            "smarty": "Here is your hot tea! How much sugar would you like?",
+            "accept": [
+              "^(?:just )?a little(?: sugar)?(?: please)?$",
+              "^a lot of sugar(?: please)?$",
+              "^no sugar(?: please)?$"
+            ],
+            "example": "Just a little sugar, please.",
+            "hint": "Say 'A little sugar, please' or 'No sugar, please'.",
+            "itemIds": [
+              "en.elementary.u02.l07.how-much-sugar",
+              "en.elementary.u02.l07.a-little",
+              "en.elementary.u02.l07.sugar"
+            ]
+          },
+          {
+            "smarty": "I have apples and bananas. How many apples do you want?",
+            "accept": [
+              "^(?:just )?a few(?: apples)?(?: please)?$",
+              "^not many(?: please)?$",
+              "^(?:one|two|three)(?: apples)?(?: please)?$"
+            ],
+            "example": "Just a few apples, please.",
+            "hint": "Use 'a few' or 'not many'.",
+            "itemIds": [
+              "en.elementary.u02.l07.a-few",
+              "en.elementary.u02.l07.not-many"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l07.potato",
+        "en.elementary.u02.l05.sausage",
+        "en.elementary.u02.l05.pasta"
+      ]
+    },
+    {
+      "id": "en.elementary.u02.l08",
+      "section": "elementary",
+      "unit": 2,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Smarty and Mia review dishes, flavours, and amounts in the dining room.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u02.l08.task.match-review",
+          "kind": "match",
+          "prompt": "Match each word with the best clue.",
+          "pairs": [
+            {
+              "left": "salmon",
+              "right": "pink fish"
+            },
+            {
+              "left": "sour",
+              "right": "like lemonade"
+            },
+            {
+              "left": "a little",
+              "right": "not a lot of sugar"
+            },
+            {
+              "left": "a few",
+              "right": "not many sausages"
+            }
+          ],
+          "explanation": "Salmon is a fish, lemons are sour, sugar takes 'a little', and sausages take 'a few'.",
+          "itemIds": [
+            "en.elementary.u02.l05.salmon",
+            "en.elementary.u02.l06.sour",
+            "en.elementary.u02.l07.a-little",
+            "en.elementary.u02.l07.a-few"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l08.task.fill-amount",
+          "kind": "fill",
+          "prompt": "Butter is uncountable. Complete the sentence.",
+          "text": "Put ___ butter on the warm bread.",
+          "answer": "a little",
+          "options": [
+            "a little",
+            "a few",
+            "not many"
+          ],
+          "explanation": "Use 'a little' with uncountable foods like butter.",
+          "itemIds": [
+            "en.elementary.u02.l07.a-little",
+            "en.elementary.u02.l05.butter"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l08.task.pick-taste",
+          "kind": "choice",
+          "prompt": "This beef has a lot of hot red pepper. How does it taste?",
+          "answer": "spicy",
+          "options": [
+            "spicy",
+            "sweet",
+            "sour"
+          ],
+          "explanation": "Food with hot pepper is spicy.",
+          "itemIds": [
+            "en.elementary.u02.l06.spicy",
+            "en.elementary.u02.l06.pepper",
+            "en.elementary.u02.l05.beef"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l08.task.hear-much-sugar",
+          "kind": "listen",
+          "prompt": "Listen and choose what you hear.",
+          "audio": "How much sugar is in this cake?",
+          "answer": "How much sugar is in this cake?",
+          "options": [
+            "How much sugar is in this cake?",
+            "How many sausages are on the plate?",
+            "Is the salmon fresh?"
+          ],
+          "explanation": "We ask 'How much sugar' because sugar is uncountable.",
+          "itemIds": [
+            "en.elementary.u02.l07.how-much-sugar",
+            "en.elementary.u02.l07.sugar"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l08.task.build-lot-pasta",
+          "kind": "build",
+          "prompt": "There is a big bowl of pasta. Build the sentence.",
+          "answer": "We have a lot of fresh pasta.",
+          "tiles": [
+            "We",
+            "have",
+            "a lot of",
+            "fresh",
+            "pasta",
+            "many"
+          ],
+          "explanation": "'A lot of' works for large amounts of uncountable food like pasta.",
+          "itemIds": [
+            "en.elementary.u02.l07.a-lot-of",
+            "en.elementary.u02.l06.fresh",
+            "en.elementary.u02.l05.pasta"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l08.task.say-lamb",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "The lamb is fresh and not too salty.",
+          "answer": "The lamb is fresh and not too salty.",
+          "explanation": "Use 'fresh' and 'salty' to describe how lamb tastes.",
+          "itemIds": [
+            "en.elementary.u02.l05.lamb",
+            "en.elementary.u02.l06.fresh",
+            "en.elementary.u02.l06.salty"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why does Mia think the pasta is salty?",
+        "image": {
+          "id": "en-a2-u02-l08-scene",
+          "describe": "Smarty and Mia tasting dishes at a dining table with pasta, lamb, and lemonade."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Dinner is ready! We have lamb, fresh salmon, and a lot of pasta."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I will try the pasta first. Oh, it is a little salty!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Try the lamb! It has black pepper, so it is a little spicy."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Delicious! And how much sugar is in this lemonade?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Not much—just a little sugar, so it is fresh and sour."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I love it! Not bitter at all."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u02.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "How does the pasta taste to Mia?",
+            "answer": "A little salty",
+            "options": [
+              "A little salty",
+              "Too sweet",
+              "Too bitter"
+            ],
+            "explanation": "Mia says: Oh, it is a little salty!",
+            "itemIds": [
+              "en.elementary.u02.l06.salty",
+              "en.elementary.u02.l05.pasta"
+            ]
+          },
+          {
+            "id": "en.elementary.u02.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Why is the lamb a little spicy?",
+            "answer": "Because it has black pepper",
+            "options": [
+              "Because it has black pepper",
+              "Because it has sugar",
+              "Because it has butter"
+            ],
+            "explanation": "Smarty says: It has black pepper, so it is a little spicy.",
+            "itemIds": [
+              "en.elementary.u02.l06.pepper",
+              "en.elementary.u02.l06.spicy",
+              "en.elementary.u02.l05.lamb"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you to describe a meal on the table.",
+        "turns": [
+          {
+            "smarty": "Try the soup! Is it spicy, salty, or sour?",
+            "accept": [
+              "^it is (?:a little |very )?(?:spicy|salty|sour|bitter|fresh|delicious)$",
+              "^(?:spicy|salty|sour|bitter|fresh)$"
+            ],
+            "example": "It is a little spicy.",
+            "hint": "Describe the flavour with spicy, salty, or sour.",
+            "itemIds": [
+              "en.elementary.u02.l06.spicy",
+              "en.elementary.u02.l06.salty",
+              "en.elementary.u02.l06.sour"
+            ]
+          },
+          {
+            "smarty": "How much butter do you want on your bread?",
+            "accept": [
+              "^(?:just )?a little(?: butter)?(?: please)?$",
+              "^a lot of butter(?: please)?$",
+              "^no butter(?: please)?$"
+            ],
+            "example": "Just a little butter, please.",
+            "hint": "Say 'Just a little butter, please'.",
+            "itemIds": [
+              "en.elementary.u02.l07.a-little",
+              "en.elementary.u02.l05.butter"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u02.l05.beef",
+        "en.elementary.u02.l05.lamb",
+        "en.elementary.u02.l05.salmon",
+        "en.elementary.u02.l05.sausage",
+        "en.elementary.u02.l05.pasta",
+        "en.elementary.u02.l05.butter",
+        "en.elementary.u02.l06.spicy",
+        "en.elementary.u02.l06.salty",
+        "en.elementary.u02.l06.sour",
+        "en.elementary.u02.l06.bitter",
+        "en.elementary.u02.l06.fresh",
+        "en.elementary.u02.l06.pepper",
+        "en.elementary.u02.l07.how-much-sugar",
+        "en.elementary.u02.l07.a-lot-of",
+        "en.elementary.u02.l07.a-little",
+        "en.elementary.u02.l07.a-few",
+        "en.elementary.u02.l07.not-many",
+        "en.elementary.u02.l07.sugar"
+      ]
+    },
+    {
+      "id": "en.elementary.u02.l09",
+      "section": "elementary",
+      "unit": 2,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "Problems",
+      "canDo": "Complain politely",
+      "scenario": "Something goes wrong with Smarty and Mia's order at the restaurant, and they solve it politely.",
+      "items": [
+        {
+          "id": "en.elementary.u02.l09.this-is-cold",
+          "text": "This is cold",
+          "kind": "phrase",
+          "example": "Excuse me, this is cold.",
+          "note": "Say 'Excuse me, this is cold' politely when hot food arrives cold."
+        },
+        {
+          "id": "en.elementary.u02.l09.there-is-a-mistake",
+          "text": "There is a mistake",
+          "kind": "phrase",
+          "forms": [
+            "There's a mistake",
+            "mistake",
+            "mistakes"
+          ],
+          "example": "Excuse me, there is a mistake on the bill.",
+          "note": "Say 'There is a mistake' when the waiter brings the wrong dish or wrong bill."
+        },
+        {
+          "id": "en.elementary.u02.l09.i-did-not-order-this",
+          "text": "I did not order this",
+          "kind": "phrase",
+          "forms": [
+            "I didn't order this",
+            "order",
+            "ordered"
+          ],
+          "example": "Sorry, I did not order this pasta.",
+          "note": "Say 'I did not order this' when the waiter puts a dish you did not ask for on your table."
+        },
+        {
+          "id": "en.elementary.u02.l09.could-i-have-another",
+          "text": "Could I have another?",
+          "kind": "phrase",
+          "forms": [
+            "another"
+          ],
+          "example": "This glass is dirty. Could I have another?",
+          "note": "Ask 'Could I have another?' when you need a clean glass or a new hot dish."
+        },
+        {
+          "id": "en.elementary.u02.l09.sorry-about-that",
+          "text": "Sorry about that",
+          "kind": "phrase",
+          "example": "Oh, sorry about that! I will bring a hot one.",
+          "note": "A polite waiter says 'Sorry about that' when they apologize for a problem."
+        },
+        {
+          "id": "en.elementary.u02.l09.is-service-included",
+          "text": "Is service included?",
+          "kind": "phrase",
+          "forms": [
+            "service",
+            "included"
+          ],
+          "example": "Thank you for the bill. Is service included?",
+          "note": "Ask 'Is service included?' to check if the waiter's tip is already in the bill."
+        }
+      ],
+      "grammar": {
+        "title": "Being polite when there is a problem",
+        "explanation": "Start with 'Excuse me' or 'Sorry' before stating the problem ('This is cold', 'I did not order this'). Then use 'Could I have…?' to ask nicely for a solution.",
+        "examples": [
+          "Excuse me, this is cold. Could I have another?",
+          "Sorry, there is a mistake on the bill."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u02.l09.task.pick-cold",
+          "kind": "choice",
+          "prompt": "Your soup is not hot at all. What do you say politely to the waiter?",
+          "answer": "Excuse me, this is cold.",
+          "options": [
+            "Excuse me, this is cold.",
+            "Follow me, please.",
+            "Cheers!"
+          ],
+          "explanation": "Say 'Excuse me, this is cold' when hot food arrives cold.",
+          "itemIds": [
+            "en.elementary.u02.l09.this-is-cold",
+            "en.beginner.u08.l10.excuse-me"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l09.task.hear-order",
+          "kind": "listen",
+          "prompt": "Listen and choose what the guest says.",
+          "audio": "Excuse me, I did not order this.",
+          "answer": "Excuse me, I did not order this.",
+          "options": [
+            "Excuse me, I did not order this.",
+            "Are you ready to order?",
+            "Is service included?"
+          ],
+          "explanation": "Use 'I did not order this' when you get the wrong food.",
+          "itemIds": [
+            "en.elementary.u02.l09.i-did-not-order-this"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l09.task.match-problems",
+          "kind": "match",
+          "prompt": "Match each problem with the best sentence.",
+          "pairs": [
+            {
+              "left": "You see a mistake on the bill",
+              "right": "There is a mistake."
+            },
+            {
+              "left": "You want a new clean cup",
+              "right": "Could I have another?"
+            },
+            {
+              "left": "The waiter is sorry",
+              "right": "Sorry about that."
+            },
+            {
+              "left": "You see service on the bill",
+              "right": "Is service included?"
+            }
+          ],
+          "explanation": "Use 'There is a mistake' for errors, 'Could I have another?' for a replacement, and 'Is service included?' when paying.",
+          "itemIds": [
+            "en.elementary.u02.l09.there-is-a-mistake",
+            "en.elementary.u02.l09.could-i-have-another",
+            "en.elementary.u02.l09.sorry-about-that",
+            "en.elementary.u02.l09.is-service-included"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l09.task.fill-another",
+          "kind": "fill",
+          "prompt": "Your lemonade has no ice and is warm. Ask for a new one.",
+          "text": "Excuse me, this is warm. ___?",
+          "answer": "Could I have another",
+          "options": [
+            "Could I have another",
+            "Sorry about that",
+            "Follow me"
+          ],
+          "explanation": "Ask 'Could I have another?' when you want a replacement.",
+          "itemIds": [
+            "en.elementary.u02.l09.could-i-have-another"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l09.task.build-mistake",
+          "kind": "build",
+          "prompt": "You see an error on your bill. Build the sentence.",
+          "answer": "Excuse me, there is a mistake.",
+          "tiles": [
+            "Excuse me",
+            "there is",
+            "a",
+            "mistake",
+            "cold"
+          ],
+          "explanation": "Say 'There is a mistake' to tell the waiter something is wrong.",
+          "itemIds": [
+            "en.elementary.u02.l09.there-is-a-mistake",
+            "en.beginner.u08.l10.excuse-me"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l09.task.say-service",
+          "kind": "speak",
+          "prompt": "Ask about service on the bill aloud.",
+          "text": "Excuse me, is service included?",
+          "answer": "Excuse me, is service included?",
+          "explanation": "Ask 'Is service included?' when looking at the bill.",
+          "itemIds": [
+            "en.elementary.u02.l09.is-service-included"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What two mistakes does Sam the waiter make?",
+        "image": {
+          "id": "en-a2-u02-l09-scene",
+          "describe": "Sam the cat waiter looking apologetic at Smarty and Mia's table while Mia points politely at a cold plate of food."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Here is your beef and your soup!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Excuse me, Sam. I did not order this beef. I ordered salmon."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Oh, sorry about that! There is a mistake in the kitchen."
+          },
+          {
+            "speaker": "Mia",
+            "text": "And sorry, Sam, my soup is not hot. This is cold. Could I have another?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Of course! Sorry about that. Hot soup and fresh salmon are coming now."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you! Later, at the end of the meal: Could I have the bill?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Here is the bill."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thank you. Is service included?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes, service is included."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u02.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "What problem does Mia have with her soup?",
+            "answer": "It is cold",
+            "options": [
+              "It is cold",
+              "It is too spicy",
+              "She did not order soup"
+            ],
+            "explanation": "Mia says: This is cold. Could I have another?",
+            "itemIds": [
+              "en.elementary.u02.l09.this-is-cold",
+              "en.elementary.u02.l09.could-i-have-another"
+            ]
+          },
+          {
+            "id": "en.elementary.u02.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "Why does Smarty talk to Sam about the beef?",
+            "answer": "He did not order it",
+            "options": [
+              "He did not order it",
+              "It is too salty",
+              "There is no pepper"
+            ],
+            "explanation": "Smarty says: I did not order this beef.",
+            "itemIds": [
+              "en.elementary.u02.l09.i-did-not-order-this"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is a busy waiter who makes a small mistake. Solve it politely!",
+        "turns": [
+          {
+            "smarty": "Here is your hot chocolate and your beef!",
+            "accept": [
+              "^(?:excuse me |sorry )?i did not order this(?: beef)?$",
+              "^(?:excuse me |sorry )?there is a mistake$"
+            ],
+            "example": "Excuse me, I did not order this.",
+            "hint": "Tell Smarty politely that you did not order this.",
+            "itemIds": [
+              "en.elementary.u02.l09.i-did-not-order-this",
+              "en.elementary.u02.l09.there-is-a-mistake"
+            ]
+          },
+          {
+            "smarty": "Sorry about that! Here is your bill now.",
+            "accept": [
+              "^(?:thank you )?is service included$",
+              "^could i have another(?: bill)?$"
+            ],
+            "example": "Thank you. Is service included?",
+            "hint": "Ask if service is included.",
+            "itemIds": [
+              "en.elementary.u02.l09.sorry-about-that",
+              "en.elementary.u02.l09.is-service-included"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u08.l10.excuse-me",
+        "en.elementary.u02.l02.could-i-have-the-bill",
+        "en.elementary.u02.l05.beef",
+        "en.elementary.u02.l05.salmon"
+      ]
+    },
+    {
+      "id": "en.elementary.u02.l10",
+      "section": "elementary",
+      "unit": 2,
+      "lesson": 10,
+      "type": "test",
+      "title": "Dinner with friends",
+      "canDo": "Pay and enjoy a meal together",
+      "scenario": "Smarty and his friends enjoy a complete restaurant dinner and pay the bill together.",
+      "items": [
+        {
+          "id": "en.elementary.u02.l10.can-i-pay-by-card",
+          "text": "Can I pay by card?",
+          "kind": "phrase",
+          "example": "Could I have the bill? Can I pay by card?",
+          "note": "Ask 'Can I pay by card?' when you want to use a bank card instead of cash."
+        },
+        {
+          "id": "en.elementary.u02.l10.keep-the-change",
+          "text": "Keep the change",
+          "kind": "phrase",
+          "forms": [
+            "change"
+          ],
+          "example": "Here is fifty dollars. Keep the change!",
+          "note": "Say 'Keep the change' when you pay with cash and leave the extra money as a tip."
+        },
+        {
+          "id": "en.elementary.u02.l10.enjoy-your-meal",
+          "text": "Enjoy your meal",
+          "kind": "phrase",
+          "forms": [
+            "meal",
+            "meals"
+          ],
+          "example": "Here is your salmon and pasta. Enjoy your meal!",
+          "note": "A waiter or friend says 'Enjoy your meal' right before you start eating."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u02.l10.task.pick-pay-card",
+          "kind": "choice",
+          "prompt": "You do not have cash in your bag. What do you ask the waiter?",
+          "answer": "Can I pay by card?",
+          "options": [
+            "Can I pay by card?",
+            "Keep the change.",
+            "Follow me, please."
+          ],
+          "explanation": "Ask 'Can I pay by card?' when you want to pay with a card.",
+          "itemIds": [
+            "en.elementary.u02.l10.can-i-pay-by-card",
+            "en.beginner.u07.l07.card",
+            "en.beginner.u07.l07.cash"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l10.task.fill-enjoy",
+          "kind": "fill",
+          "prompt": "The waiter puts the hot main course on your table. What does the waiter say?",
+          "text": "Here is your lamb. ___!",
+          "answer": "Enjoy your meal",
+          "options": [
+            "Enjoy your meal",
+            "Keep the change",
+            "Sorry about that"
+          ],
+          "explanation": "Waiters say 'Enjoy your meal' when they serve your food.",
+          "itemIds": [
+            "en.elementary.u02.l10.enjoy-your-meal",
+            "en.elementary.u02.l05.lamb"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l10.task.build-change",
+          "kind": "build",
+          "prompt": "You pay with cash and leave a tip for good service. Build the phrase.",
+          "answer": "Thank you! Keep the change.",
+          "tiles": [
+            "Thank you",
+            "Keep",
+            "the",
+            "change",
+            "bill"
+          ],
+          "explanation": "Say 'Keep the change' to leave extra cash as a tip.",
+          "itemIds": [
+            "en.elementary.u02.l10.keep-the-change"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l10.task.match-unit",
+          "kind": "match",
+          "prompt": "Match each restaurant phrase with when you use it.",
+          "pairs": [
+            {
+              "left": "A table for two, please.",
+              "right": "at the door"
+            },
+            {
+              "left": "I will have salmon.",
+              "right": "ordering the main course"
+            },
+            {
+              "left": "This is cold.",
+              "right": "when it is cold"
+            },
+            {
+              "left": "Can I pay by card?",
+              "right": "when you pay"
+            }
+          ],
+          "explanation": "These phrases take you from arriving at a restaurant to paying the bill.",
+          "itemIds": [
+            "en.elementary.u02.l01.a-table-for-two",
+            "en.elementary.u02.l02.i-will-have",
+            "en.elementary.u02.l05.salmon",
+            "en.elementary.u02.l09.this-is-cold",
+            "en.elementary.u02.l10.can-i-pay-by-card"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l10.task.fill-amounts-test",
+          "kind": "fill",
+          "prompt": "Sugar is uncountable and apples are countable. Complete the sentence.",
+          "text": "I want ___ sugar in my tea and a few apples.",
+          "answer": "a little",
+          "options": [
+            "a little",
+            "a few",
+            "not many"
+          ],
+          "explanation": "Use 'a little' for uncountable nouns like sugar.",
+          "itemIds": [
+            "en.elementary.u02.l07.a-little",
+            "en.elementary.u02.l07.a-few",
+            "en.elementary.u02.l07.sugar"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l10.task.hear-test",
+          "kind": "listen",
+          "prompt": "Listen and choose what you hear.",
+          "audio": "Excuse me, there is a mistake. Could I have another?",
+          "answer": "Excuse me, there is a mistake. Could I have another?",
+          "options": [
+            "Excuse me, there is a mistake. Could I have another?",
+            "Are you ready to order? Still or sparkling?",
+            "Can I pay by card? Keep the change!"
+          ],
+          "explanation": "Use 'There is a mistake' and 'Could I have another?' to solve a problem politely.",
+          "itemIds": [
+            "en.elementary.u02.l09.there-is-a-mistake",
+            "en.elementary.u02.l09.could-i-have-another"
+          ]
+        },
+        {
+          "id": "en.elementary.u02.l10.task.say-test",
+          "kind": "speak",
+          "prompt": "Ask for the bill and ask to pay by card.",
+          "text": "Could I have the bill? Can I pay by card?",
+          "answer": "Could I have the bill? Can I pay by card?",
+          "explanation": "Combine 'Could I have the bill?' and 'Can I pay by card?' when you finish eating.",
+          "itemIds": [
+            "en.elementary.u02.l02.could-i-have-the-bill",
+            "en.elementary.u02.l10.can-i-pay-by-card"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How do Smarty and Mia pay for their dinner?",
+        "image": {
+          "id": "en-a2-u02-l10-scene",
+          "describe": "Smarty and Mia smiling at a restaurant table as Sam the waiter brings the bill and a card reader."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Here is your fresh salmon, and pasta with a little pepper. Enjoy your meal!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you! Cheers, Mia! Everything is delicious."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I am full! Excuse me, Sam, could I have the bill?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Of course. Here you are."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Is service included? Can I pay by card?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes, you can pay by card."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And here is some cash for you, Sam. Keep the change!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Thank you very much! See you later!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u02.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Sam say when he puts the food on the table?",
+            "answer": "Enjoy your meal!",
+            "options": [
+              "Enjoy your meal!",
+              "Follow me!",
+              "Sorry about that!"
+            ],
+            "explanation": "Sam says: Enjoy your meal!",
+            "itemIds": [
+              "en.elementary.u02.l10.enjoy-your-meal"
+            ]
+          },
+          {
+            "id": "en.elementary.u02.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Smarty say when he gives Sam cash?",
+            "answer": "Keep the change!",
+            "options": [
+              "Keep the change!",
+              "There is a mistake!",
+              "This is cold!"
+            ],
+            "explanation": "Smarty says: Keep the change!",
+            "itemIds": [
+              "en.elementary.u02.l10.keep-the-change"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You finished a great dinner with Smarty. Time to pay the bill!",
+        "turns": [
+          {
+            "smarty": "That dessert was delicious! Can you ask the waiter for the bill and ask to pay by card?",
+            "accept": [
+              "^could i have the bill can i pay by card$",
+              "^can i pay by card(?: please)?$",
+              "^could i have the bill(?: please)?$"
+            ],
+            "example": "Could I have the bill? Can I pay by card?",
+            "hint": "Ask 'Could I have the bill?' and 'Can I pay by card?'",
+            "itemIds": [
+              "en.elementary.u02.l02.could-i-have-the-bill",
+              "en.elementary.u02.l10.can-i-pay-by-card"
+            ]
+          },
+          {
+            "smarty": "I am leaving some cash on the table for the waiter. What do I say?",
+            "accept": [
+              "^keep the change(?: please| sam| thank you)?$",
+              "^thank you keep the change$"
+            ],
+            "example": "Keep the change!",
+            "hint": "Say 'Keep the change!'",
+            "itemIds": [
+              "en.elementary.u02.l10.keep-the-change"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u07.l07.card",
+        "en.beginner.u07.l07.cash",
+        "en.elementary.u02.l01.a-table-for-two",
+        "en.elementary.u02.l02.i-will-have",
+        "en.elementary.u02.l02.could-i-have-the-bill",
+        "en.elementary.u02.l05.lamb",
+        "en.elementary.u02.l05.salmon",
+        "en.elementary.u02.l07.a-little",
+        "en.elementary.u02.l07.a-few",
+        "en.elementary.u02.l07.sugar",
+        "en.elementary.u02.l09.this-is-cold",
+        "en.elementary.u02.l09.there-is-a-mistake",
+        "en.elementary.u02.l09.could-i-have-another"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "A Mystery Note on the Bill",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "What a wonderful dinner at this restaurant!",
+        "image": {
+          "id": "en-a2-u02-ep-01",
+          "describe": "Smarty and Mia smiling happily at their restaurant table after finishing dessert."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Yes! The fresh salmon and the dessert were delicious."
+      },
+      {
+        "speaker": "Sam",
+        "text": "Here is your bill. Thank you for coming!",
+        "image": {
+          "id": "en-a2-u02-ep-02",
+          "describe": "Sam the cat waiter placing a small tray with the bill on the dining table."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Wait a minute! Look at the bill. Is there a mistake?"
+      },
+      {
+        "speaker": "Mia",
+        "text": "No, the money is right, and service is included. But look behind the bill!",
+        "image": {
+          "id": "en-a2-u02-ep-03",
+          "describe": "Smarty and Mia looking closely at a small blue envelope tucked under the restaurant bill."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "There is a small blue map and a key! Who put this here?"
+      },
+      {
+        "speaker": "Sam",
+        "text": "A tall cat in a black coat was at this table before you. He left in a hurry!"
+      },
+      {
+        "speaker": "Mia",
+        "text": "Look at the map, Smarty! Where does it go?",
+        "image": {
+          "id": "en-a2-u02-ep-04",
+          "describe": "Smarty holding a small drawn map showing a path from the restaurant toward a park and an old station."
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.elementary.u02.ep.q1",
+        "kind": "choice",
+        "prompt": "What do Smarty and Mia find behind the bill?",
+        "answer": "A small blue map and a key",
+        "options": [
+          "A small blue map and a key",
+          "A menu and a spoon",
+          "Two postcards"
+        ],
+        "explanation": "Smarty says: There is a small blue map and a key!",
+        "itemIds": [
+          "en.elementary.u02.l02.could-i-have-the-bill"
+        ]
+      },
+      {
+        "id": "en.elementary.u02.ep.q2",
+        "kind": "choice",
+        "prompt": "Who was at the table before Smarty and Mia?",
+        "answer": "A tall cat in a black coat",
+        "options": [
+          "A tall cat in a black coat",
+          "A young dog in a red hat",
+          "Omar and Zara"
+        ],
+        "explanation": "Sam says: A tall cat in a black coat was at this table before you.",
+        "itemIds": [
+          "en.elementary.u02.l01.waiter"
+        ]
+      }
+    ]
+  }
+}

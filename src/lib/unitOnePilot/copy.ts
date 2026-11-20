@@ -41,7 +41,7 @@ export const PILOT_COPY = {
   "start_over_51dd9": "Start over",
   "your_reply_bf9a7": "Your reply",
   "write_your_own_answer_c1b22": "Write your own answer…",
-  "capital_letters_and_punctuation_f14a5": "Capital letters and punctuation don’t affect your answer.",
+  "capital_letters_and_punctuation_f14a5": "Capital letters and punctuation don’t affect your answer. A nickname is fine.",
   "use_microphone_64f0f": "Use microphone",
   "i_cant_speak_now_fca54": "I can’t speak now — skip speaking",
   "speech_recognition_can_mishear_991fc": "Speech recognition can mishear you. Retry freely; no hearts are lost.",

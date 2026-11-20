@@ -122,6 +122,9 @@ export async function smartyTalk(opts: {
   uiLang: string;
   level?: string;
   name?: string;
+  /** Words the learner is refining (workshop), for Smarty to reuse. */
+  knownWords?: string[];
 }, signal?: AbortSignal): Promise<{ reply: string; mood: SmartyMood; tip: string; safeFallback?: boolean }> {
   return postAi({ action: 'smarty-talk', ...opts }, signal);
 }
+

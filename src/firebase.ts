@@ -6,7 +6,7 @@
  * facade preserves the existing domain model while removing Firebase from the
  * browser runtime.
  */
-import { apiRequest, dataRequest } from './lib/selfHostedApi';
+import { ApiError, apiRequest, dataRequest } from './lib/selfHostedApi';
 
 export const ADMIN_EMAIL = 'abduraxmonovibroxim16@gmail.com';
 export const app = null as any;
@@ -56,9 +56,33 @@ export const auth = {
 };
 
 let sessionResolved = false;
-const sessionReady = apiRequest<{ user?: any }>('/api/auth/session')
-  .then((session) => { sessionResolved = true; return setCurrentUser(session.user); })
-  .catch(() => { sessionResolved = true; return setCurrentUser(null); });
+let sessionError: 'limited' | 'unavailable' | null = null;
+let sessionRequest: Promise<void> | undefined;
+const sessionListeners = new Set<() => void>();
+export const getSessionError = () => sessionError;
+export function subscribeSessionError(listener: () => void) {
+  sessionListeners.add(listener);
+  return () => { sessionListeners.delete(listener); };
+}
+function updateSessionError(error: typeof sessionError) {
+  sessionError = error;
+  sessionListeners.forEach(listener => listener());
+}
+export function retryInitialSession() {
+  if (sessionRequest) return sessionRequest;
+  updateSessionError(null);
+  sessionRequest = apiRequest<{ user?: any }>('/api/auth/session').then(session => {
+    sessionResolved = true;
+    setCurrentUser(session.user);
+  }).catch(error => {
+    if (error instanceof ApiError && error.status === 401) {
+      sessionResolved = true;
+      setCurrentUser(null);
+    } else updateSessionError(error instanceof ApiError && error.status === 429 ? 'limited' : 'unavailable');
+  }).finally(() => { sessionRequest = undefined; });
+  return sessionRequest;
+}
+void retryInitialSession();
 
 export const loginWithGoogle = async (): Promise<void> => {
   window.location.assign('/api/auth/google');
@@ -87,6 +111,8 @@ export const registerWithEmail = async (email: string, password: string, display
 };
 
 export const logout = async (): Promise<void> => {
+  const { disableBackgroundReminder } = await import('./lib/pushReminders');
+  await disableBackgroundReminder().catch(() => {});
   await apiRequest('/api/auth/logout', { method: 'POST' });
   setCurrentUser(null);
 };
@@ -100,7 +126,7 @@ export enum OperationType {
   WRITE = 'write',
 }
 
-export type UserRole = 'student' | 'business' | 'admin' | 'content-manager';
+export type UserRole = 'student' | 'teacher' | 'business' | 'admin';
 export type PlanId = 'smarty-max' | 'business';
 
 export interface UserAccountProfile {
@@ -168,11 +194,40 @@ export const updateUserDisplayName = async (uid: string, displayName: string): P
 };
 
 export const listAllProfiles = (): Promise<UserAccountProfile[]> =>
-  dataRequest('profile.list');
+  dataRequest('profile.list', {}, { signal: AbortSignal.timeout(15_000) });
 
 export const setUserRole = async (uid: string, role: UserRole): Promise<void> => {
   await dataRequest('profile.role', { uid, role });
-};
+}
+export interface StudentDetailPage {
+  completions: Record<string, any>[];
+  hasMore: boolean;
+  /** First page only. */
+  name?: string;
+  vocab?: { word: string; definition: string; lang?: string; nextReviewDate: number | null; lapses: number; timestamp: number | null }[];
+  problemWords?: { word: string; count: number; lastMissed: number }[];
+  summary?: Record<string, any> | null;
+  activity?: Record<string, any>[];
+}
+/** A student's history for their teacher. Pass `before` (timestamp of the last item) for the next page. */
+export const getStudentDetail = (studentUid: string, before?: number, signal?: AbortSignal): Promise<StudentDetailPage> =>
+  dataRequest('teacher.studentDetail', { studentUid, before, limit: 50 }, { signal });
+
+export const getClassInsights = (classId: string, signal?: AbortSignal): Promise<import('./lib/activity/recommend').ClassInsights> =>
+  dataRequest('teacher.classInsights', { classId }, { signal });
+
+/** Whether the signed-in student gets the teacher discount on Smarty Max. */
+export async function getTeacherDiscount(signal?: AbortSignal): Promise<{ eligible: boolean; percent: number }> {
+  const { apiRequest } = await import('./lib/selfHostedApi');
+  return apiRequest('/api/payments/teacher-discount', { signal });
+}
+
+/** Switch the signed-in learner's own account to a (free) teacher account, or back. */
+export async function setTeacherMode(enabled: boolean): Promise<string> {
+  const result = await dataRequest('profile.teacher', { enabled }) as { role: string };
+  return result.role;
+}
+;
 
 export const setUserPlan = async (
   uid: string,
@@ -329,7 +384,8 @@ export interface Assignment {
   teacherUid: string;
   title: string;
   description?: string;
-  type: 'reading' | 'listening' | 'speaking' | 'writing' | 'exercise' | 'comp-reading' | 'worksheet';
+  submissionCount?: number;
+  type: 'reading' | 'listening' | 'speaking' | 'writing' | 'exercise' | 'lesson' | 'comp-reading' | 'worksheet';
   worksheet?: any;
   worksheetLevel?: string;
   passageId?: string;
@@ -348,6 +404,8 @@ export interface Assignment {
   writingTopic?: string;
   exerciseType?: string;
   exerciseWords?: string[];
+  /** Language the assigned words are in (dictionary code). */
+  exerciseLang?: string;
   dueDate?: number;
   createdAt: number;
   [key: string]: any;
@@ -367,8 +425,8 @@ export interface Submission {
 export const createAssignment = (data: Omit<Assignment, 'id'>): Promise<string> =>
   dataRequest('assignment.create', { data });
 
-export const getClassAssignments = (classId: string): Promise<Assignment[]> =>
-  dataRequest('assignment.list', { classId });
+export const getClassAssignments = (classId: string, signal?: AbortSignal): Promise<Assignment[]> =>
+  dataRequest('assignment.list', { classId, includeSubmissionCounts: true }, { signal });
 
 export const getStudentAssignments = (classIds: string[]): Promise<Assignment[]> =>
   dataRequest('assignment.list', { classIds });
@@ -379,11 +437,14 @@ export const submitAssignment = (assignmentId: string, submission: Submission): 
 export const updateSubmission = (assignmentId: string, studentUid: string, updates: Partial<Submission>): Promise<void> =>
   dataRequest('assignment.updateSubmission', { assignmentId, studentUid, updates });
 
-export const getAssignmentSubmissions = (assignmentId: string): Promise<Submission[]> =>
-  dataRequest('assignment.submissions', { assignmentId });
+export const getAssignmentSubmissions = (assignmentId: string, signal?: AbortSignal): Promise<Submission[]> =>
+  dataRequest('assignment.submissions', { assignmentId }, { signal });
 
-export const getStudentSubmissions = (assignmentIds: string[], studentUid: string): Promise<Record<string, Submission>> =>
+export type AssignmentProgress = Omit<Submission, 'completedAt'> & { startedAt?: number; completedAt?: number };
+export const getStudentSubmissions = (assignmentIds: string[], studentUid: string): Promise<Record<string, AssignmentProgress>> =>
   dataRequest('assignment.studentSubmissions', { assignmentIds, studentUid });
+
+export const startAssignment = (assignmentId: string): Promise<void> => dataRequest('assignment.start', { assignmentId });
 
 export const deleteAssignment = (assignmentId: string): Promise<void> =>
   dataRequest('assignment.delete', { assignmentId });
@@ -435,6 +496,28 @@ export interface AuditEntry {
 export const getAuditLog = (limit = 100): Promise<AuditEntry[]> =>
   dataRequest('audit.list', { limit });
 
+export interface AuditEntryRow extends AuditEntry {
+  actorName?: string;
+  targetEmail?: string;
+  targetName?: string;
+}
+export interface AuditPage { entries: AuditEntryRow[]; total: number; actions: string[] }
+export const getAuditPage = (opts: { limit?: number; offset?: number; action?: string; search?: string } = {}): Promise<AuditPage> =>
+  dataRequest('audit.page', opts);
+
+export interface OrgTeacherClass { id: string; name: string; studentCount: number }
+export interface OrgTeacher {
+  uid: string; email: string; displayName: string; suspended: boolean; joinedAt: number;
+  classes: OrgTeacherClass[]; classCount: number; studentCount: number;
+}
+export interface OrgTeacherInvite { id: string; email: string; createdAt: number }
+export const listOrgTeachers = (organizationId?: string): Promise<{ teachers: OrgTeacher[]; pending: OrgTeacherInvite[] }> =>
+  dataRequest('org.teachers', { organizationId });
+export const addOrgTeacher = (email: string, organizationId?: string): Promise<{ status: 'added' | 'invited' }> =>
+  dataRequest('org.addTeacher', { email, organizationId });
+export const removeOrgTeacher = (target: { uid?: string; inviteId?: string }, organizationId?: string): Promise<void> =>
+  dataRequest('org.removeTeacher', { ...target, organizationId });
+
 export interface PlatformStats {
   totalUsers: number;
   students: number;
@@ -451,32 +534,6 @@ export const getPlatformStats = (): Promise<PlatformStats> =>
 export const getCMSDocument = async (docId: string): Promise<any | null> => {
   try { return await dataRequest('cms.get', { docId }); } catch { return null; }
 };
-
-export const setCMSDocument = (docId: string, data: any): Promise<void> =>
-  dataRequest('cms.set', { docId, data });
-
-export const deleteCMSDocument = (docId: string): Promise<void> =>
-  dataRequest('cms.delete', { docId });
-
-export type VocabMissRecord = {
-  id: string;
-  word: string;
-  lang: string;
-  targetLang?: string;
-  count: number;
-  sampleSentence?: string;
-  lastTranslation?: string;
-  source?: string;
-  reviewed?: boolean;
-  lastAt?: number;
-  createdAt?: number;
-};
-
-export const getVocabMisses = (max = 80): Promise<VocabMissRecord[]> =>
-  dataRequest('vocabMiss.list', { limit: max });
-
-export const markVocabMissReviewed = (id: string): Promise<void> =>
-  dataRequest('vocabMiss.review', { id });
 
 export interface CustomIELTSTestRecord {
   firestoreId: string;

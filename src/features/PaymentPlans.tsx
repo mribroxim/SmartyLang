@@ -1,5 +1,5 @@
 import { DialogSurface } from '../components/DialogSurface';
-import React, { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Check, CreditCard, AlertCircle, X, Loader2, Minus, Plus, Languages, Heart, Infinity as InfinityIcon, GraduationCap } from 'lucide-react';
 import {
   PLANS, formatUZS, formatUSD,
@@ -10,12 +10,13 @@ import { ScreenShell, seCard } from '../components/ScreenShell';
 import { Sticker } from '../components/stickers/Sticker';
 import { useUiLang } from '../contexts/UiLangContext';
 import type { UiStringKey } from '../lib/uiStrings';
-import type { UserAccountProfile } from '../firebase';
-import { maxEndsAt } from '../lib/access';
+import { getTeacherDiscount, type UserAccountProfile } from '../firebase';
+import { maxEndsAt, isTeacherRole, TEACHER_STUDENT_DISCOUNT } from '../lib/access';
 import { ChunkyButton } from './Bites/lesson/chunky';
 import { CancelMaxFlow } from './Plans/CancelMaxFlow';
 
 interface PaymentPlansProps {
+  onExit?: () => void;
   user: any;
   currentPlan?: PlanId | null;
   /** Full profile (for cancel state, start date, gifted plans). */
@@ -32,10 +33,10 @@ const COMPARE: { key: UiStringKey; free: boolean | 'hearts'; max: boolean | 'hea
   { key: 'plans.row.practice', free: false, max: true },
   { key: 'plans.row.ai', free: false, max: true },
   { key: 'plans.row.ielts', free: false, max: true },
-  { key: 'plans.row.vocab', free: false, max: true },
+  { key: 'plans.row.vocabularyLibrary', free: true, max: true },
 ];
 
-export function PaymentPlans({ user, currentPlan, profile, onPlanActivated: _onPlanActivated, onProfileChange }: PaymentPlansProps) {
+export function PaymentPlans({ user, currentPlan, profile, onPlanActivated: _onPlanActivated, onProfileChange, onExit }: PaymentPlansProps) {
   const { t, uiLang } = useUiLang();
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
   const [seats, setSeats] = useState<number>(0);
@@ -45,6 +46,15 @@ export function PaymentPlans({ user, currentPlan, profile, onPlanActivated: _onP
   const [cancelOpen, setCancelOpen] = useState(false);
   const [resuming, setResuming] = useState(false);
   const [resumeError, setResumeError] = useState<string | null>(null);
+
+  const [discount, setDiscount] = useState(0);
+  const isTeacher = isTeacherRole(profile?.role);
+  useEffect(() => {
+    if (!profile || ['teacher', 'business', 'organization', 'admin'].includes(profile.role)) return;
+    const ctl = new AbortController();
+    getTeacherDiscount(ctl.signal).then((d) => { if (!ctl.signal.aborted && d.eligible) setDiscount(d.percent / 100 || TEACHER_STUDENT_DISCOUNT); }).catch(() => {});
+    return () => ctl.abort();
+  }, [profile?.role]);
 
   const max = PLANS.find((p) => p.id === 'smarty-max')!;
   const business = PLANS.find((p) => p.id === 'business')!;
@@ -120,7 +130,7 @@ export function PaymentPlans({ user, currentPlan, profile, onPlanActivated: _onP
     if (v === 'hearts') {
       return col === 'max'
         ? <span className="inline-flex items-center gap-1 font-serif font-extrabold"><InfinityIcon className="h-5 w-5" /></span>
-        : <span className="inline-flex items-center gap-1 font-serif font-extrabold"><Heart className="h-4 w-4 fill-rose-500 text-rose-500" />5</span>;
+        : <span className="inline-flex items-center gap-1 font-serif font-extrabold"><Heart className="h-4 w-4 fill-red-600 text-red-600" />5</span>;
     }
     return v
       ? <span className={`inline-flex h-7 w-7 items-center justify-center rounded-full ${col === 'max' ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 dark-keep' : 'bg-emerald-500 text-white'}`}><Check className="h-4 w-4" strokeWidth={3} /></span>
@@ -134,6 +144,7 @@ export function PaymentPlans({ user, currentPlan, profile, onPlanActivated: _onP
       subtitle={t('plans.subtitle')}
       size="wide"
     >
+      {onExit && <div className="flex justify-end"><button type="button" onClick={onExit} aria-label={t('a11y.close')} className="mb-3 rounded-xl border-2 border-slate-200 p-2 dark:border-zinc-700"><X size={22} /></button></div>}
       <div className="mx-auto max-w-2xl">
         {onMax ? (
           /* Manage Smarty Max */
@@ -184,8 +195,14 @@ export function PaymentPlans({ user, currentPlan, profile, onPlanActivated: _onP
             </div>
 
             <div className="mt-6 flex flex-col items-center gap-3">
+              {discount > 0 && (
+                <p className="rounded-2xl border-2 border-emerald-200 bg-emerald-50 px-3 py-1.5 font-serif text-sm font-extrabold text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950 dark:text-emerald-300">
+                  {t('plans.teacherDiscount')}
+                </p>
+              )}
               <p className="text-zinc-900 dark:text-zinc-50">
-                <span className="font-serif text-3xl font-extrabold">{formatUSD(max.basePriceUSD)}</span>
+                {discount > 0 && <span className="mr-2 text-lg font-bold text-slate-400 line-through">{formatUSD(max.basePriceUSD)}</span>}
+                <span className="font-serif text-3xl font-extrabold">{formatUSD(Math.round(max.basePriceUSD * (1 - discount) * 100) / 100)}</span>
                 <span className="ml-1 text-sm font-bold text-slate-400">{t('plans.perMonth')}</span>
               </p>
               <ChunkyButton onClick={() => openPlan(max)} className="w-full sm:w-auto sm:min-w-[280px]">{t('plans.getMax')}</ChunkyButton>
@@ -195,6 +212,9 @@ export function PaymentPlans({ user, currentPlan, profile, onPlanActivated: _onP
         )}
 
         {/* Business, for teachers and schools */}
+        {isTeacher && (
+          <p className="mt-6 rounded-2xl border-2 border-emerald-200 bg-emerald-50 p-4 text-sm font-bold text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950 dark:text-emerald-200">{t('plans.teacherFree')}</p>
+        )}
         <section className={`${seCard} mt-10 p-5`}>
           <div className="flex items-start gap-3">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"><GraduationCap className="h-5 w-5" /></span>

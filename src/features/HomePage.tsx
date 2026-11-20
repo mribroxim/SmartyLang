@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { LegalLinks } from './Legal';
 import { motion } from 'motion/react';
-import { Check, Crown, Mic, Sparkles } from 'lucide-react';
+import { Check, Crown, Mic, Moon, Sun, Sparkles } from 'lucide-react';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
 import { CONTENT_LANGS, CONTENT_LANG_LABEL, type ContentLang } from '../lib/contentLang';
@@ -52,7 +52,7 @@ function Feature({ kicker, title, body, points, visual, flip = false }: { kicker
 const card = 'rounded-3xl border-2 border-zinc-900 bg-white shadow-[0_6px_0_0_#18181b]';
 
 /** Landing page: Duolingo-style structure, Smarty's look, our own features front and centre. */
-export function HomePage({ user, loginWithGoogle, requestSubscribe, setActiveTab }: HomePageProps) {
+export function HomePage({ user, loginWithGoogle, requestSubscribe, setActiveTab, darkMode, onToggleDark }: HomePageProps) {
   const { contentLang, setContentLang } = useContentLang();
   const { t } = useUiLang();
   const [learnLang, setLearnLang] = useState<ContentLang>(contentLang);
@@ -60,13 +60,13 @@ export function HomePage({ user, loginWithGoogle, requestSubscribe, setActiveTab
   const start = () => {
     setContentLang(learnLang);
     if (user) setActiveTab('lessons');
-    else loginWithGoogle();
+    else setActiveTab('dashboard');
   };
-  const login = () => (user ? setActiveTab('dashboard') : loginWithGoogle());
+  const login = () => (setActiveTab('dashboard'));
   const plans = () => (user ? setActiveTab('plans') : requestSubscribe());
 
   return (
-    <main className="light-zone min-h-full w-full flex-grow overflow-y-auto bg-white text-zinc-900">
+    <main className="dark:bg-zinc-950 dark:text-zinc-50 min-h-full w-full flex-grow overflow-y-auto bg-white text-zinc-900">
       {/* header */}
       <header className="sticky top-0 z-50 border-b-2 border-slate-100 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3 md:px-8">
@@ -75,6 +75,9 @@ export function HomePage({ user, loginWithGoogle, requestSubscribe, setActiveTab
             <span className="font-serif text-xl font-black tracking-tight">SmartyLang</span>
           </button>
           <div className="flex items-center gap-2">
+            <button type="button" aria-label={t('core.profilepage.dark_mode_e7f8b9')} aria-pressed={darkMode} onClick={onToggleDark} className="rounded-xl p-2.5 hover:bg-slate-100 dark:hover:bg-zinc-800">
+              {darkMode ? <Sun size={19} /> : <Moon size={19} />}
+            </button>
             <LanguagePicker mode="interface" variant="compact" className="[&_button]:border-0 [&_button]:bg-transparent [&_button]:shadow-none" />
             <button type="button" onClick={login} className="hidden rounded-2xl border-2 border-slate-200 px-4 py-2 font-serif text-xs font-extrabold uppercase tracking-wide text-zinc-700 shadow-[0_3px_0_0_#e2e8f0] active:translate-y-[3px] active:shadow-none sm:inline-flex">
               {user ? t('landing.open') : t('landing.login')}
@@ -96,7 +99,7 @@ export function HomePage({ user, loginWithGoogle, requestSubscribe, setActiveTab
           <img src="/room/bowl/full.webp" alt="" className="absolute bottom-[6%] right-[10%] w-[15%]" />
           <div className="absolute bottom-[12%] left-1/2 w-[34%] -translate-x-1/2"><Sticker id="mood.hi-there" size="100%" priority="hero" /></div>
           <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-            className="absolute left-1/2 top-[24%] -translate-x-1/2 whitespace-nowrap rounded-2xl border-2 border-zinc-900 bg-white px-3 py-1.5 text-sm font-extrabold shadow-[0_3px_0_0_#18181b]">
+            className="absolute left-1/2 top-[24%] -translate-x-1/2 whitespace-nowrap rounded-2xl border-2 border-zinc-900 bg-white px-3 py-1.5 dark:bg-zinc-900 text-sm font-extrabold shadow-[0_3px_0_0_#18181b]">
             {t('landing.heroBubble')}
           </motion.div>
         </motion.div>
@@ -111,7 +114,7 @@ export function HomePage({ user, loginWithGoogle, requestSubscribe, setActiveTab
       </section>
 
       {/* languages */}
-      <section className="border-y-2 border-slate-100 bg-slate-50/60">
+      <section className="border-y-2 border-slate-100 bg-slate-50/60 dark:bg-zinc-900/70">
         <div className="mx-auto max-w-6xl px-5 py-6 md:px-8">
           <div className="mb-3 text-center font-serif text-xs font-extrabold uppercase tracking-[0.2em] text-slate-400">{t('landing.pickLanguage')}</div>
           <div className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-1 md:mx-0 md:flex-wrap md:justify-center md:px-0">

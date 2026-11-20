@@ -1,4 +1,5 @@
 import type { Express, Request, Response, NextFunction } from 'express';
+import { json } from 'express';
 import { requireUser } from './auth.ts';
 import { query } from './db.ts';
 
@@ -51,17 +52,32 @@ export function installSecurity(app: Express): void {
     }
     next();
   });
-  app.use('/api/auth', rateLimit(20, 10 * 60_000));
-  app.use('/api', rateLimit(300, 60_000));
+  const authWrites = rateLimit(20, 10 * 60_000);
+  const sessionReads = rateLimit(1200, 60_000);
+  app.use('/api/auth', (req, res, next) => {
+    (req.method === 'GET' && /^\/session\/?$/i.test(req.path) ? sessionReads : authWrites)(req, res, next);
+  });
+  const generalLimit = rateLimit(300, 60_000);
+  const classroomReadLimit = rateLimit(5000, 60_000);
+  const classroomWriteLimit = rateLimit(1000, 60_000);
+  // Read the action after the origin check so shared-IP allowances only apply to classroom reads.
+  app.use('/api/data', json({ limit: '256kb' }));
+  app.use('/api', (req, res, next) => {
+    const poll = (req.method === 'GET' && /^\/(?:auth\/session\/?|live-game\/(?:friends|[A-F0-9]{6}))$/i.test(req.path)) ||
+      (req.method === 'POST' && req.path === '/data' && ['class.list', 'assignment.list', 'assignment.studentSubmissions', 'notification.list'].includes(req.body?.action));
+    const gameplay = req.method === 'POST' && /^\/live-game\/?$/i.test(req.path);
+    // A classroom often shares one IP. Gameplay is also limited per signed-in player.
+    (poll ? classroomReadLimit : gameplay ? classroomWriteLimit : generalLimit)(req, res, next);
+  });
 }
 
 /** Bounded local IP limiter. Shared AI quotas below also cover multiple replicas. */
-export function rateLimit(max: number, windowMs: number) {
+export function rateLimit(max: number, windowMs: number, keyFor: (req: Request, res: Response) => string = req => req.ip || 'unknown') {
   const buckets = new Map<string, { start: number; count: number }>();
   return (req: Request, res: Response, next: NextFunction) => {
     const now = Date.now();
     for (const [key, value] of buckets) if (now - value.start >= windowMs) buckets.delete(key);
-    const key = req.ip || 'unknown';
+    const key = keyFor(req, res);
     let bucket = buckets.get(key);
     if (!bucket) {
       if (buckets.size >= 10_000) return res.status(429).json({ error: 'Please try again later' });

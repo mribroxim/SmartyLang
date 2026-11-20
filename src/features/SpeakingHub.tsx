@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense, useEffect } from 'react';
+import { useState, lazy, Suspense, useEffect } from 'react';
 import { Mic, Headphones, Loader2, MessageCircle } from 'lucide-react';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
@@ -24,6 +24,7 @@ function parseMode(raw?: string): SpeakingMode {
 }
 
 export function SpeakingHub({
+  initialLevel,
   initialTopicIndex,
   onToggleVocab,
   savedVocab = {},
@@ -33,6 +34,7 @@ export function SpeakingHub({
   onIeltsBack,
   startingLevel,
 }: {
+  initialLevel?: string;
   initialTopicIndex?: number;
   onToggleVocab?: (w: string, ctx: string) => void;
   savedVocab?: Record<string, any>;
@@ -65,6 +67,7 @@ export function SpeakingHub({
     return (
       <Suspense fallback={<Spinner />}>
         <SpeakingPractice
+          initialLevel={initialLevel}
           onBack={() => setMode('hub')}
           initialTopicIndex={initialTopicIndex}
           onToggleVocab={onToggleVocab}

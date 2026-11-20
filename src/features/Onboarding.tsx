@@ -308,13 +308,12 @@ export function Onboarding({
 
   // Enter = Continue on the simple screens.
   useEffect(() => {
-    if (step !== 'hello' && step !== 'native' && step !== 'learning' && !(step === 'goal' && goal)) return;
+    if (step !== 'hello' && step !== 'native' && !(step === 'goal' && goal)) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'Enter' || (e.target as HTMLElement)?.tagName === 'SELECT') return;
       e.preventDefault();
-      if (step === 'hello') setStep(ageReady ? 'meet' : 'age');
+      if (step === 'hello') setStep(ageReady ? 'learning' : 'age');
       else if (step === 'native') setStep('learning');
-      else if (step === 'learning') { setContentLang(lang); setStep('goal'); }
       else if (step === 'goal') setStep('start');
     };
     window.addEventListener('keydown', onKey);
@@ -360,7 +359,7 @@ export function Onboarding({
         </div>
         <div className="fixed inset-x-0 bottom-0 z-30 border-t-2 border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
           <div className="mx-auto flex max-w-2xl px-4 pb-[max(env(safe-area-inset-bottom),16px)] pt-4 sm:justify-end sm:py-6">
-            <ChunkyButton autoFocus onClick={() => setStep(ageReady ? 'meet' : 'age')} className={primaryCls}>{t('onboard.continue')}</ChunkyButton>
+            <ChunkyButton autoFocus onClick={() => setStep(ageReady ? 'learning' : 'age')} className={primaryCls}>{t('onboard.continue')}</ChunkyButton>
           </div>
         </div>
       </main>
@@ -373,7 +372,7 @@ export function Onboarding({
       <AgeGate embedded formId="onboarding-age" onBusyChange={setAgeBusy} onReady={async () => {
         await onAgeVerified();
         setAgeReady(true);
-        setStep('meet');
+        setStep('learning');
       }} />
     </Stage>;
   }
@@ -399,7 +398,7 @@ export function Onboarding({
 
   if (step === 'native') {
     return (
-      <Stage step="native" title={t('onboard.native.title')} subtitle={t('onboard.native.subtitle')} t={t} onBack={() => setStep('meet')}
+      <Stage step="native" title={t('onboard.native.title')} subtitle={t('onboard.native.subtitle')} t={t} onBack={() => setStep('learning')}
         primary={<ChunkyButton onClick={() => setStep('learning')} className={primaryCls}>{t('onboard.continue')}</ChunkyButton>}
         extra={<LinkButton onClick={skip}>{t('onboard.skipForNow')}</LinkButton>}
       >
@@ -411,10 +410,11 @@ export function Onboarding({
   if (step === 'learning') {
     const tipLearnLang: ContentLang = lang === nativeLang ? (lang === 'en' ? 'es' : 'en') : lang;
     return (
-      <Stage step="learning" title={t('onboard.learning.title')} subtitle={t('onboard.learning.subtitle')} t={t} onBack={() => setStep('native')}
-        primary={<ChunkyButton onClick={() => { setContentLang(lang); setStep('goal'); }} className={primaryCls}>{t('onboard.continue')}</ChunkyButton>}
-        extra={<LinkButton onClick={skip}>{t('onboard.skipForNow')}</LinkButton>}
+      <Stage step="learning" title={t('onboard.learning.title')} subtitle={t('onboard.learning.subtitle')} t={t} onBack={() => setStep('hello')}
+        primary={<ChunkyButton disabled={saving} onClick={() => void finish(true)} className={primaryCls}>{t('landing.getStarted')}</ChunkyButton>}
+        extra={<div className="flex flex-wrap justify-center gap-3"><LinkButton onClick={() => setStep('native')}>{t('courses.iSpeak')}</LinkButton><LinkButton onClick={() => setStep('placement')}>{t('onboard.start.find.title')}</LinkButton></div>}
       >
+        {saveError && <p role="alert">{t('error.crash.body')}</p>}
         <LangGrid value={lang} onChange={setLang} featured={FEATURED} t={t} />
         {lang === 'ar' && <ArabicDisplayModeToggle className="mt-4" />}
         {lang === nativeLang && (
@@ -497,7 +497,7 @@ export function Onboarding({
 
   if (step === 'placement' && !flowReady) {
     return (
-      <Stage step="placement" title={t('onboard.placement.title')} t={t} onBack={() => setStep('start')}
+      <Stage step="placement" title={t('onboard.placement.title')} t={t} onBack={() => setStep('learning')}
         primary={null}
         extra={<LinkButton onClick={skip}>{t('onboard.skipForNow')}</LinkButton>}
       >
@@ -511,7 +511,7 @@ export function Onboarding({
 
   if (step === 'placement' && flowReady && flow.length === 0) {
     return (
-      <Stage step="placement" title={t('onboard.selfLevel.title')} subtitle={t('onboard.selfLevel.subtitle')} t={t} onBack={() => setStep('start')}
+      <Stage step="placement" title={t('onboard.selfLevel.title')} subtitle={t('onboard.selfLevel.subtitle')} t={t} onBack={() => setStep('learning')}
         primary={null}
         extra={<LinkButton onClick={skip}>{t('onboard.skipForNow')}</LinkButton>}
       >
@@ -587,7 +587,7 @@ export function Onboarding({
 
   return (
     <Stage step="result" title={t('onboard.result.levelLine', { level: startingLevel })} subtitle={t('onboard.result.subtitle')} t={t}
-      onBack={() => setStep(flow.length && answeredCount ? 'placement' : 'start')}
+      onBack={() => setStep(flow.length && answeredCount ? 'placement' : 'learning')}
       progress={1}
       primary={
         <ChunkyButton disabled={saving} onClick={() => finish(canStartLessons)} className={primaryCls}>

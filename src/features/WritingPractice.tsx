@@ -1,5 +1,5 @@
 import { DialogSurface } from '../components/DialogSurface';
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { playWord as sharedPlayWord } from '../lib/speech';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';

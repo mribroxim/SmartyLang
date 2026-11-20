@@ -1,0 +1,2262 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "elementary",
+  "unit": 3,
+  "title": "Health & Body",
+  "room": "gym",
+  "lessons": [
+    {
+      "id": "en.elementary.u03.l01",
+      "section": "elementary",
+      "unit": 3,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "The body",
+      "canDo": "Name body parts",
+      "scenario": "Smarty and Leo stretch and exercise in the gym.",
+      "items": [
+        {
+          "id": "en.elementary.u03.l01.head",
+          "text": "head",
+          "kind": "word",
+          "example": "Touch your head.",
+          "note": "Use 'head' for the top part of your body where your face and hair are.",
+          "image": {
+            "id": "head",
+            "describe": "a friendly black cat pointing to its head in a gym"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l01.arm",
+          "text": "arm",
+          "kind": "word",
+          "forms": [
+            "arms"
+          ],
+          "example": "Lift your arm.",
+          "note": "Use 'arm' for the long part of your body from your shoulder to your hand.",
+          "image": {
+            "id": "arm",
+            "describe": "a cat stretching one arm up high"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l01.leg",
+          "text": "leg",
+          "kind": "word",
+          "forms": [
+            "legs"
+          ],
+          "example": "Move your leg.",
+          "note": "Use 'leg' for the part of your body that you use to walk and run.",
+          "image": {
+            "id": "leg",
+            "describe": "a cat lifting its leg while exercising"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l01.hand",
+          "text": "hand",
+          "kind": "word",
+          "forms": [
+            "hands"
+          ],
+          "example": "Wash your hand.",
+          "note": "Use 'hand' for the part at the end of your arm with fingers.",
+          "image": {
+            "id": "hand",
+            "describe": "a close up of a cat holding out an open hand"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l01.foot",
+          "text": "foot",
+          "kind": "word",
+          "forms": [
+            "feet"
+          ],
+          "example": "Tap your foot.",
+          "note": "Use 'foot' for the part at the bottom of your leg that stands on the ground.",
+          "image": {
+            "id": "foot",
+            "describe": "a cat showing its foot on the gym floor"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l01.back",
+          "text": "back",
+          "kind": "word",
+          "example": "Stretch your back.",
+          "note": "Use 'back' for the rear part of your body from your shoulders to your hips.",
+          "image": {
+            "id": "back",
+            "describe": "a cat stretching its back on a gym mat"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "Body parts",
+        "explanation": "Use singular nouns like head, arm, leg, hand, foot, and back to name parts of the body.",
+        "examples": [
+          "This is my head.",
+          "My arm is long."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u03.l01.task.pick-head",
+          "kind": "choice",
+          "prompt": "Which word means the top part of your body?",
+          "answer": "head",
+          "options": [
+            "head",
+            "leg",
+            "hand"
+          ],
+          "explanation": "Head is the top part of your body.",
+          "itemIds": [
+            "en.elementary.u03.l01.head"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l01.task.fill-arm",
+          "kind": "fill",
+          "prompt": "Complete the sentence about exercising.",
+          "text": "Lift your ___.",
+          "answer": "arm",
+          "options": [
+            "arm",
+            "head",
+            "back"
+          ],
+          "explanation": "You lift your arm.",
+          "itemIds": [
+            "en.elementary.u03.l01.arm"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l01.task.hear-leg",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "This is my leg.",
+          "answer": "This is my leg.",
+          "options": [
+            "This is my leg.",
+            "This is my head.",
+            "This is my hand."
+          ],
+          "explanation": "The audio says leg.",
+          "itemIds": [
+            "en.elementary.u03.l01.leg"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l01.task.build-hand",
+          "kind": "build",
+          "prompt": "Build the sentence about your hand.",
+          "answer": "This is my hand.",
+          "tiles": [
+            "This",
+            "is",
+            "my",
+            "hand",
+            "head"
+          ],
+          "explanation": "This is my hand is correct.",
+          "itemIds": [
+            "en.elementary.u03.l01.hand"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l01.task.match-body",
+          "kind": "match",
+          "prompt": "Match the words with their meanings.",
+          "pairs": [
+            {
+              "left": "head",
+              "right": "I have one head"
+            },
+            {
+              "left": "foot",
+              "right": "I have two feet"
+            },
+            {
+              "left": "back",
+              "right": "This is my back"
+            }
+          ],
+          "explanation": "Head, foot, and back are important body parts.",
+          "itemIds": [
+            "en.elementary.u03.l01.head",
+            "en.elementary.u03.l01.foot",
+            "en.elementary.u03.l01.back"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l01.task.say-back",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "This is my back.",
+          "answer": "This is my back.",
+          "explanation": "Say: This is my back.",
+          "itemIds": [
+            "en.elementary.u03.l01.back"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is Smarty doing in the gym?",
+        "image": {
+          "id": "en-a2-u03-l01-scene",
+          "describe": "Smarty the cat and Leo are in a bright gym doing morning stretches."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Leo! Let us stretch."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Okay, Smarty. I can move my head and my arm."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good! Now lift your leg and tap your foot."
+          },
+          {
+            "speaker": "Leo",
+            "text": "And stretch your back, too!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u03.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "Who is with Smarty?",
+            "answer": "Leo",
+            "options": [
+              "Leo",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Smarty says: Hello, Leo!",
+            "itemIds": [
+              "en.elementary.u03.l01.back"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you to name a body part you are moving.",
+        "turns": [
+          {
+            "smarty": "What are you moving in the gym?",
+            "accept": [
+              "^i am moving my (?:head|arm|leg|hand|foot|back)$",
+              "^my (?:head|arm|leg|hand|foot|back)$"
+            ],
+            "example": "My arm.",
+            "hint": "Name a body part like head, arm, or leg.",
+            "itemIds": [
+              "en.elementary.u03.l01.arm",
+              "en.beginner.u06.l05.i-am-wearing"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u06.l05.i-am-wearing"
+      ]
+    },
+    {
+      "id": "en.elementary.u03.l02",
+      "section": "elementary",
+      "unit": 3,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "The face",
+      "canDo": "Name face parts",
+      "scenario": "Smarty looks in a mirror in the gym.",
+      "items": [
+        {
+          "id": "en.elementary.u03.l02.eye",
+          "text": "eye",
+          "kind": "word",
+          "forms": [
+            "eyes"
+          ],
+          "example": "Close your eye.",
+          "note": "Use 'eye' for the part of your face that you use to see.",
+          "image": {
+            "id": "eye",
+            "describe": "a cat blinking one eye"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l02.ear",
+          "text": "ear",
+          "kind": "word",
+          "forms": [
+            "ears"
+          ],
+          "example": "Clean your ear.",
+          "note": "Use 'ear' for the part of your head that you use to hear.",
+          "image": {
+            "id": "ear",
+            "describe": "a cat touching its ear"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l02.nose",
+          "text": "nose",
+          "kind": "word",
+          "example": "Touch your nose.",
+          "note": "Use 'nose' for the part on your face that you use to smell.",
+          "image": {
+            "id": "nose",
+            "describe": "a cat pointing to its nose"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l02.mouth",
+          "text": "mouth",
+          "kind": "word",
+          "example": "Open your mouth.",
+          "note": "Use 'mouth' for the part of your face that you use to speak and eat.",
+          "image": {
+            "id": "mouth",
+            "describe": "a cat opening its mouth to smile"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l02.tooth",
+          "text": "tooth",
+          "kind": "word",
+          "forms": [
+            "teeth"
+          ],
+          "example": "Brush your tooth.",
+          "note": "Use 'tooth' for the hard white parts inside your mouth; more than one is 'teeth'.",
+          "image": {
+            "id": "tooth",
+            "describe": "a clean white tooth icon"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l02.neck",
+          "text": "neck",
+          "kind": "word",
+          "example": "Turn your neck.",
+          "note": "Use 'neck' for the part of your body that connects your head to your shoulders.",
+          "image": {
+            "id": "neck",
+            "describe": "a cat turning its neck"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "Face and head parts",
+        "explanation": "Use eye, ear, nose, mouth, tooth, and neck to talk about your face and head.",
+        "examples": [
+          "Open your mouth.",
+          "Touch your nose."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u03.l02.task.pick-eye",
+          "kind": "choice",
+          "prompt": "Which part do you use to see?",
+          "answer": "eye",
+          "options": [
+            "eye",
+            "ear",
+            "nose"
+          ],
+          "explanation": "You use your eye to see.",
+          "itemIds": [
+            "en.elementary.u03.l02.eye"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l02.task.fill-nose",
+          "kind": "fill",
+          "prompt": "Complete the instruction.",
+          "text": "Touch your ___.",
+          "answer": "nose",
+          "options": [
+            "nose",
+            "ear",
+            "neck"
+          ],
+          "explanation": "Touch your nose is correct.",
+          "itemIds": [
+            "en.elementary.u03.l02.nose",
+            "en.elementary.u03.l02.neck"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l02.task.hear-mouth",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "This is my mouth.",
+          "answer": "This is my mouth.",
+          "options": [
+            "This is my mouth.",
+            "This is my eye.",
+            "This is my ear."
+          ],
+          "explanation": "The audio says mouth.",
+          "itemIds": [
+            "en.elementary.u03.l02.mouth"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l02.task.build-tooth",
+          "kind": "build",
+          "prompt": "Build the sentence about cleaning.",
+          "answer": "Brush your tooth.",
+          "tiles": [
+            "Brush",
+            "your",
+            "tooth",
+            "eye"
+          ],
+          "explanation": "Brush your tooth.",
+          "itemIds": [
+            "en.elementary.u03.l02.tooth"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l02.task.match-face",
+          "kind": "match",
+          "prompt": "Match the face parts.",
+          "pairs": [
+            {
+              "left": "eye",
+              "right": "I have two eyes"
+            },
+            {
+              "left": "ear",
+              "right": "I have two ears"
+            },
+            {
+              "left": "mouth",
+              "right": "I have one mouth"
+            }
+          ],
+          "explanation": "Eye, ear, and mouth have different jobs.",
+          "itemIds": [
+            "en.elementary.u03.l02.eye",
+            "en.elementary.u03.l02.ear",
+            "en.elementary.u03.l02.mouth"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Smarty check on his face?",
+        "image": {
+          "id": "en-a2-u03-l02-scene",
+          "describe": "Smarty looking at his face in the gym mirror."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Look at my face in the mirror."
+          },
+          {
+            "speaker": "Ana",
+            "text": "I see your eye, your nose, and your mouth."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And my ear and my neck!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Your smile shows your tooth, too."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u03.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "What does the smile show?",
+            "answer": "tooth",
+            "options": [
+              "tooth",
+              "hand",
+              "foot"
+            ],
+            "explanation": "The story says: Your smile shows your tooth.",
+            "itemIds": [
+              "en.elementary.u03.l02.eye"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about your face.",
+        "turns": [
+          {
+            "smarty": "Point to your nose or your eye. What is it?",
+            "accept": [
+              "^this is my (?:nose|eye|mouth|ear)$",
+              "^(?:nose|eye|mouth|ear)$"
+            ],
+            "example": "This is my nose.",
+            "hint": "Name a part of your face.",
+            "itemIds": [
+              "en.elementary.u03.l02.nose",
+              "en.elementary.u03.l02.eye"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u03.l01.head"
+      ]
+    },
+    {
+      "id": "en.elementary.u03.l03",
+      "section": "elementary",
+      "unit": 3,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "More body parts",
+      "canDo": "Name more body parts and say it hurts",
+      "scenario": "Smarty rests after a heavy workout in the gym.",
+      "items": [
+        {
+          "id": "en.elementary.u03.l03.stomach",
+          "text": "stomach",
+          "kind": "word",
+          "example": "Rub your stomach.",
+          "note": "Use 'stomach' for the middle part of your body where your food goes.",
+          "image": {
+            "id": "stomach",
+            "describe": "a cat touching its stomach"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l03.finger",
+          "text": "finger",
+          "kind": "word",
+          "forms": [
+            "fingers"
+          ],
+          "example": "Count your finger.",
+          "note": "Use 'finger' for the long thin parts on your hand.",
+          "image": {
+            "id": "finger",
+            "describe": "a cat holding up one finger"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l03.knee",
+          "text": "knee",
+          "kind": "word",
+          "forms": [
+            "knees"
+          ],
+          "example": "Bend your knee.",
+          "note": "Use 'knee' for the middle joint of your leg where it bends.",
+          "image": {
+            "id": "knee",
+            "describe": "a cat bending its knee"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l03.shoulder",
+          "text": "shoulder",
+          "kind": "word",
+          "forms": [
+            "shoulders"
+          ],
+          "example": "Roll your shoulder.",
+          "note": "Use 'shoulder' for the part where your arm joins your body.",
+          "image": {
+            "id": "shoulder",
+            "describe": "a cat rolling its shoulder"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l03.it-hurts",
+          "text": "It hurts",
+          "kind": "phrase",
+          "example": "My leg hurts.",
+          "note": "Say 'It hurts' when a part of your body causes you pain."
+        },
+        {
+          "id": "en.elementary.u03.l03.ill",
+          "text": "ill",
+          "kind": "word",
+          "example": "I feel ill.",
+          "note": "Use 'ill' when you are sick and do not feel well."
+        }
+      ],
+      "grammar": {
+        "title": "Stomach, knee, and pain",
+        "explanation": "Use stomach, finger, knee, and shoulder for body parts. Say 'It hurts' when something is painful.",
+        "examples": [
+          "Bend your knee.",
+          "My arm hurts."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u03.l03.task.pick-knee",
+          "kind": "choice",
+          "prompt": "Which word is the joint in your leg?",
+          "answer": "knee",
+          "options": [
+            "knee",
+            "finger",
+            "stomach"
+          ],
+          "explanation": "Knee is the joint in your leg.",
+          "itemIds": [
+            "en.elementary.u03.l03.knee"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l03.task.fill-hurts",
+          "kind": "fill",
+          "prompt": "Complete the phrase when you have pain.",
+          "text": "It ___.",
+          "answer": "hurts",
+          "options": [
+            "hurts",
+            "ill",
+            "good"
+          ],
+          "explanation": "Say: It hurts.",
+          "itemIds": [
+            "en.elementary.u03.l03.it-hurts"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l03.task.hear-ill",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I am ill.",
+          "answer": "I am ill.",
+          "options": [
+            "I am ill.",
+            "It hurts.",
+            "This is my knee."
+          ],
+          "explanation": "The audio says I feel ill.",
+          "itemIds": [
+            "en.elementary.u03.l03.ill"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l03.task.build-stomach",
+          "kind": "build",
+          "prompt": "Build the sentence about your stomach.",
+          "answer": "This is my stomach.",
+          "tiles": [
+            "This",
+            "is",
+            "my",
+            "stomach",
+            "knee"
+          ],
+          "explanation": "This is my stomach is correct.",
+          "itemIds": [
+            "en.elementary.u03.l03.stomach"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l03.task.match-parts",
+          "kind": "match",
+          "prompt": "Match the body parts.",
+          "pairs": [
+            {
+              "left": "finger",
+              "right": "on your hand"
+            },
+            {
+              "left": "knee",
+              "right": "on your leg"
+            },
+            {
+              "left": "shoulder",
+              "right": "on your arm"
+            }
+          ],
+          "explanation": "Finger, knee, and shoulder are body parts.",
+          "itemIds": [
+            "en.elementary.u03.l03.finger",
+            "en.elementary.u03.l03.knee",
+            "en.elementary.u03.l03.shoulder"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why is Smarty sitting down in the gym?",
+        "image": {
+          "id": "en-a2-u03-l03-scene",
+          "describe": "Smarty sitting down holding his knee, looking a bit ill."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Ouch! My knee hurts."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Are you ill, Smarty?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No, but my leg and my knee are tired."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Sit down and rest your shoulder."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u03.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "What hurts Smarty?",
+            "answer": "his knee",
+            "options": [
+              "his knee",
+              "his hand",
+              "his head"
+            ],
+            "explanation": "Smarty says: My knee hurts.",
+            "itemIds": [
+              "en.elementary.u03.l03.it-hurts",
+              "en.elementary.u03.l03.knee"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks what hurts after your workout.",
+        "turns": [
+          {
+            "smarty": "Does your arm hurt or your knee?",
+            "accept": [
+              "^my (?:arm|knee|leg|head) hurts$",
+              "^it hurts$"
+            ],
+            "example": "My knee hurts.",
+            "hint": "Say what part of your body hurts.",
+            "itemIds": [
+              "en.elementary.u03.l03.it-hurts",
+              "en.elementary.u03.l01.arm",
+              "en.elementary.u03.l03.knee"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u03.l01.arm",
+        "en.elementary.u03.l01.leg"
+      ]
+    },
+    {
+      "id": "en.elementary.u03.l04",
+      "section": "elementary",
+      "unit": 3,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty reviews body parts in the gym with friends.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u03.l04.task.pick-review-1",
+          "kind": "choice",
+          "prompt": "Which part is on your face and used to smell?",
+          "answer": "nose",
+          "options": [
+            "nose",
+            "arm",
+            "foot"
+          ],
+          "explanation": "Nose is on your face.",
+          "itemIds": [
+            "en.elementary.u03.l02.nose"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l04.task.fill-review-2",
+          "kind": "fill",
+          "prompt": "Complete the sentence when something is painful.",
+          "text": "My head ___.",
+          "answer": "hurts",
+          "options": [
+            "hurts",
+            "ill",
+            "is"
+          ],
+          "explanation": "Say: My head hurts.",
+          "itemIds": [
+            "en.elementary.u03.l03.it-hurts",
+            "en.elementary.u03.l01.head"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l04.task.match-review-3",
+          "kind": "match",
+          "prompt": "Match body parts to their places.",
+          "pairs": [
+            {
+              "left": "eye",
+              "right": "head"
+            },
+            {
+              "left": "finger",
+              "right": "hand"
+            },
+            {
+              "left": "knee",
+              "right": "leg"
+            }
+          ],
+          "explanation": "Eyes are on the face, fingers on the hand, knees on the leg.",
+          "itemIds": [
+            "en.elementary.u03.l02.eye",
+            "en.elementary.u03.l03.finger",
+            "en.elementary.u03.l03.knee"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Can Smarty name all the body parts?",
+        "image": {
+          "id": "en-a2-u03-l04-scene",
+          "describe": "Smarty pointing to different body parts while friends cheer him on."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "I know my head, my arm, my leg, and my foot!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "What about your eye and your nose?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And my mouth, my tooth, my stomach, and my knee!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Well done, Smarty!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u03.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Does Smarty know his body parts?",
+            "answer": "Yes",
+            "options": [
+              "Yes",
+              "No"
+            ],
+            "explanation": "Smarty names his head, arm, leg, foot, eye, nose, mouth, tooth, stomach, and knee.",
+            "itemIds": [
+              "en.elementary.u03.l01.head",
+              "en.elementary.u03.l02.nose",
+              "en.elementary.u03.l03.knee"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you to name two body parts.",
+        "turns": [
+          {
+            "smarty": "Name two body parts you know.",
+            "accept": [
+              "^my (?:head|arm|leg|hand|foot|back|eye|ear|nose|mouth|tooth|neck|stomach|finger|knee|shoulder) and my (?:head|arm|leg|hand|foot|back|eye|ear|nose|mouth|tooth|neck|stomach|finger|knee|shoulder)$",
+              "^(?:head|arm|leg|hand|foot|back|eye|ear|nose|mouth|tooth|neck|stomach|finger|knee|shoulder) and (?:head|arm|leg|hand|foot|back|eye|ear|nose|mouth|tooth|neck|stomach|finger|knee|shoulder)$"
+            ],
+            "example": "My head and my hand.",
+            "hint": "Name two body parts using 'and'.",
+            "itemIds": [
+              "en.elementary.u03.l01.head",
+              "en.elementary.u03.l01.hand"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u03.l01.head",
+        "en.elementary.u03.l01.arm",
+        "en.elementary.u03.l01.leg",
+        "en.elementary.u03.l01.hand",
+        "en.elementary.u03.l01.foot",
+        "en.elementary.u03.l01.back",
+        "en.elementary.u03.l02.eye",
+        "en.elementary.u03.l02.ear",
+        "en.elementary.u03.l02.nose",
+        "en.elementary.u03.l02.mouth",
+        "en.elementary.u03.l02.tooth",
+        "en.elementary.u03.l02.neck",
+        "en.elementary.u03.l03.stomach",
+        "en.elementary.u03.l03.finger",
+        "en.elementary.u03.l03.knee",
+        "en.elementary.u03.l03.shoulder",
+        "en.elementary.u03.l03.it-hurts",
+        "en.elementary.u03.l03.ill"
+      ]
+    },
+    {
+      "id": "en.elementary.u03.l05",
+      "section": "elementary",
+      "unit": 3,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "At the doctor",
+      "canDo": "Describe symptoms",
+      "scenario": "Smarty visits the doctor near the gym.",
+      "items": [
+        {
+          "id": "en.elementary.u03.l05.i-have-a-headache",
+          "text": "I have a headache",
+          "kind": "phrase",
+          "example": "I have a headache today.",
+          "note": "Say 'I have a headache' when your head hurts."
+        },
+        {
+          "id": "en.elementary.u03.l05.i-have-a-stomachache",
+          "text": "I have a stomachache",
+          "kind": "phrase",
+          "example": "I have a stomachache after eating.",
+          "note": "Say 'I have a stomachache' when your stomach hurts."
+        },
+        {
+          "id": "en.elementary.u03.l05.doctor",
+          "text": "doctor",
+          "kind": "word",
+          "forms": [
+            "doctors"
+          ],
+          "example": "The doctor helps you.",
+          "note": "Use 'doctor' for the person who helps you when you are ill.",
+          "image": {
+            "id": "doctor",
+            "describe": "a kind cat doctor wearing a white coat"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l05.medicine",
+          "text": "medicine",
+          "kind": "word",
+          "example": "Take your medicine.",
+          "note": "Use 'medicine' for the treatment that helps you get well.",
+          "image": {
+            "id": "medicine",
+            "describe": "a bottle of medicine on a small table"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l05.appointment",
+          "text": "appointment",
+          "kind": "word",
+          "forms": [
+            "appointments"
+          ],
+          "example": "I have an appointment today.",
+          "note": "Use 'appointment' for a planned time to see a doctor.",
+          "image": {
+            "id": "appointment",
+            "describe": "a calendar showing a doctor appointment"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l05.what-is-the-matter",
+          "text": "What is the matter?",
+          "kind": "phrase",
+          "example": "What is lineWidth matter with you?",
+          "note": "Ask 'What is the matter?' to find out what is wrong with someone."
+        }
+      ],
+      "grammar": {
+        "title": "Describing illnesses",
+        "explanation": "Use 'I have a headache' or 'I have a stomachache' to describe common pains. Ask 'What is the matter?' to inquire.",
+        "examples": [
+          "What is the matter?",
+          "I have a headache."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u03.l05.task.pick-headache",
+          "kind": "choice",
+          "prompt": "What do you say when your head hurts?",
+          "answer": "I have a headache",
+          "options": [
+            "I have a headache",
+            "I have a stomachache",
+            "I am a doctor"
+          ],
+          "explanation": "I have a headache means your head hurts.",
+          "itemIds": [
+            "en.elementary.u03.l05.i-have-a-headache",
+            "en.elementary.u03.l05.i-have-a-stomachache"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l05.task.fill-doctor",
+          "kind": "fill",
+          "prompt": "Complete the sentence about who helps you.",
+          "text": "The ___ helps you.",
+          "answer": "doctor",
+          "options": [
+            "doctor",
+            "medicine",
+            "appointment"
+          ],
+          "explanation": "The doctor helps you when you are ill.",
+          "itemIds": [
+            "en.elementary.u03.l05.doctor"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l05.task.hear-matter",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "What is the matter?",
+          "answer": "What is the matter?",
+          "options": [
+            "What is the matter?",
+            "I have a headache.",
+            "Take your medicine."
+          ],
+          "explanation": "The audio asks What is the matter?",
+          "itemIds": [
+            "en.elementary.u03.l05.what-is-the-matter"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l05.task.build-medicine",
+          "kind": "build",
+          "prompt": "Build the instruction for getting well.",
+          "answer": "Take your medicine.",
+          "tiles": [
+            "Take",
+            "your",
+            "medicine",
+            "doctor"
+          ],
+          "explanation": "Take your medicine.",
+          "itemIds": [
+            "en.elementary.u03.l05.medicine"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l05.task.match-doctor",
+          "kind": "match",
+          "prompt": "Match the terms.",
+          "pairs": [
+            {
+              "left": "doctor",
+              "right": "helps you get well"
+            },
+            {
+              "left": "medicine",
+              "right": "you take it"
+            },
+            {
+              "left": "appointment",
+              "right": "planned time to visit"
+            }
+          ],
+          "explanation": "Doctor, medicine, and appointment are medical terms.",
+          "itemIds": [
+            "en.elementary.u03.l05.doctor",
+            "en.elementary.u03.l05.medicine",
+            "en.elementary.u03.l05.appointment"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why is Smarty talking to the doctor?",
+        "image": {
+          "id": "en-a2-u03-l05-scene",
+          "describe": "Smarty talking to a cat doctor in a clinic room."
+        },
+        "lines": [
+          {
+            "speaker": "Doctor",
+            "text": "Hello, Smarty. What is the matter?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Hello, doctor. I have a headache."
+          },
+          {
+            "speaker": "Doctor",
+            "text": "Do you have a stomachache too?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No, just my head. I have an appointment with you today."
+          },
+          {
+            "speaker": "Doctor",
+            "text": "Take this medicine and rest."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u03.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Smarty have?",
+            "answer": "a headache",
+            "options": [
+              "a headache",
+              "a stomachache",
+              "a cold"
+            ],
+            "explanation": "Smarty says: I have a headache.",
+            "itemIds": [
+              "en.elementary.u03.l05.i-have-a-headache"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "The doctor asks you what is the matter.",
+        "turns": [
+          {
+            "smarty": "What is the matter with you today?",
+            "accept": [
+              "^i have a (?:headache|stomachache)$",
+              "^my (?:head|stomach) hurts$"
+            ],
+            "example": "I have a headache.",
+            "hint": "Tell the doctor you have a headache or a stomachache.",
+            "itemIds": [
+              "en.elementary.u03.l05.what-is-the-matter",
+              "en.elementary.u03.l05.i-have-a-headache",
+              "en.elementary.u03.l05.i-have-a-stomachache"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u03.l03.it-hurts",
+        "en.elementary.u03.l01.head",
+        "en.elementary.u03.l03.stomach"
+      ]
+    },
+    {
+      "id": "en.elementary.u03.l06",
+      "section": "elementary",
+      "unit": 3,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Good advice",
+      "canDo": "Give simple advice",
+      "scenario": "Smarty talks to Sam about staying healthy.",
+      "items": [
+        {
+          "id": "en.elementary.u03.l06.you-should",
+          "text": "You should",
+          "kind": "phrase",
+          "example": "You should drink water.",
+          "note": "Say 'You should' to give good advice or recommend an action."
+        },
+        {
+          "id": "en.elementary.u03.l06.you-should-not",
+          "text": "You should not",
+          "kind": "phrase",
+          "example": "You should not run now.",
+          "note": "Say 'You should not' to advise someone against doing something."
+        },
+        {
+          "id": "en.elementary.u03.l06.take-a-rest",
+          "text": "Take a rest",
+          "kind": "phrase",
+          "example": "You should take a rest.",
+          "note": "Say 'Take a rest' when you need to stop working and relax."
+        },
+        {
+          "id": "en.elementary.u03.l06.stay-in-bed",
+          "text": "Stay in bed",
+          "kind": "phrase",
+          "example": "Stay in bed when you are ill.",
+          "note": "Say 'Stay in bed' when resting at home."
+        },
+        {
+          "id": "en.elementary.u03.l06.drink-more-water",
+          "text": "Drink more water",
+          "kind": "phrase",
+          "example": "Drink more water in the gym.",
+          "note": "Say 'Drink more water' to stay hydrated."
+        },
+        {
+          "id": "en.elementary.u03.l06.so",
+          "text": "so",
+          "kind": "word",
+          "example": "I am tired, so I will rest.",
+          "note": "Use 'so' to connect a reason with a result."
+        }
+      ],
+      "grammar": {
+        "title": "should and should not",
+        "explanation": "Use 'You should' for good actions and 'You should not' for actions to avoid. Use 'so' to show results.",
+        "examples": [
+          "You should take a rest.",
+          "You should not run."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u03.l06.task.pick-should",
+          "kind": "choice",
+          "prompt": "Which phrase gives good advice?",
+          "answer": "You should",
+          "options": [
+            "You should",
+            "You should not",
+            "Doctor"
+          ],
+          "explanation": "You should gives positive advice.",
+          "itemIds": [
+            "en.elementary.u03.l06.you-should",
+            "en.elementary.u03.l06.you-should-not"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l06.task.fill-water",
+          "kind": "fill",
+          "prompt": "Complete the healthy habit advice.",
+          "text": "Drink more ___.",
+          "answer": "water",
+          "options": [
+            "water",
+            "bed",
+            "rest"
+          ],
+          "explanation": "Drink more water.",
+          "itemIds": [
+            "en.elementary.u03.l06.drink-more-water",
+            "en.beginner.u03.l01.water"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l06.task.hear-rest",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Take a rest.",
+          "answer": "Take a rest.",
+          "options": [
+            "Take a rest.",
+            "Stay in bed.",
+            "Drink more water."
+          ],
+          "explanation": "The audio says Take a rest.",
+          "itemIds": [
+            "en.elementary.u03.l06.take-a-rest"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l06.task.build-bed",
+          "kind": "build",
+          "prompt": "Build the advice for staying at home.",
+          "answer": "Stay in bed.",
+          "tiles": [
+            "Stay",
+            "in",
+            "bed",
+            "water"
+          ],
+          "explanation": "Stay in bed.",
+          "itemIds": [
+            "en.elementary.u03.l06.stay-in-bed"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l06.task.match-advice",
+          "kind": "match",
+          "prompt": "Match the advice phrases.",
+          "pairs": [
+            {
+              "left": "You should",
+              "right": "do it"
+            },
+            {
+              "left": "Take a rest",
+              "right": "sleep"
+            },
+            {
+              "left": "so",
+              "right": "I am ill, so I sleep"
+            }
+          ],
+          "explanation": "These phrases help give and explain advice.",
+          "itemIds": [
+            "en.elementary.u03.l06.you-should",
+            "en.elementary.u03.l06.take-a-rest",
+            "en.elementary.u03.l06.so"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What advice does Sam give Smarty?",
+        "image": {
+          "id": "en-a2-u03-l06-scene",
+          "describe": "Sam talking to Smarty and handing him a glass of water."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "My head hurts today."
+          },
+          {
+            "speaker": "Sam",
+            "text": "You should take a rest and stay in bed."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Should I drink water?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes! Drink more water so you feel better."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u03.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Sam tell Smarty to do?",
+            "answer": "take a rest",
+            "options": [
+              "take a rest",
+              "run in the park",
+              "go to school"
+            ],
+            "explanation": "Sam says: You should take a rest.",
+            "itemIds": [
+              "en.elementary.u03.l06.you-should",
+              "en.elementary.u03.l06.take-a-rest"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty tells you he is tired. Give him advice.",
+        "turns": [
+          {
+            "smarty": "I am tired today. What should I do?",
+            "accept": [
+              "^you should take a rest$",
+              "^take a rest$",
+              "^you should drink more water$"
+            ],
+            "example": "You should take a rest.",
+            "hint": "Tell Smarty he should take a rest.",
+            "itemIds": [
+              "en.elementary.u03.l06.you-should",
+              "en.elementary.u03.l06.take-a-rest"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l01.water",
+        "en.elementary.u03.l05.i-have-a-headache"
+      ]
+    },
+    {
+      "id": "en.elementary.u03.l07",
+      "section": "elementary",
+      "unit": 3,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Staying healthy",
+      "canDo": "Say what keeps you healthy",
+      "scenario": "Smarty talks about healthy habits in the gym.",
+      "items": [
+        {
+          "id": "en.elementary.u03.l07.exercise",
+          "text": "exercise",
+          "kind": "word",
+          "forms": [
+            "exercises"
+          ],
+          "example": "Exercise every day.",
+          "note": "Use 'exercise' for physical activity that keeps your body strong.",
+          "image": {
+            "id": "exercise",
+            "describe": "a cat lifting light weights in the gym"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l07.gym",
+          "text": "gym",
+          "kind": "word",
+          "forms": [
+            "gyms"
+          ],
+          "example": "We go to the gym.",
+          "note": "Use 'gym' for a room or building with equipment for exercise.",
+          "image": {
+            "id": "gym",
+            "describe": "a modern gym with exercise equipment"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l07.healthy",
+          "text": "healthy",
+          "kind": "word",
+          "example": "Eating fruit is healthy.",
+          "note": "Use 'healthy' when your body is strong and well."
+        },
+        {
+          "id": "en.elementary.u03.l07.get-enough-sleep",
+          "text": "get enough sleep",
+          "kind": "phrase",
+          "example": "Get enough sleep at night.",
+          "note": "Say 'Get enough sleep' when you sleep well for enough hours."
+        },
+        {
+          "id": "en.elementary.u03.l07.a-balanced-diet",
+          "text": "a balanced diet",
+          "kind": "phrase",
+          "example": "Eat a balanced diet with fruit and vegetables.",
+          "note": "Say 'a balanced diet' for eating healthy foods of many kinds."
+        },
+        {
+          "id": "en.elementary.u03.l07.i-need-to-rest",
+          "text": "I need to rest",
+          "kind": "phrase",
+          "example": "I need to rest now.",
+          "note": "Say 'I need to rest' when you must stop and relax."
+        }
+      ],
+      "grammar": {
+        "title": "Healthy lifestyle",
+        "explanation": "Use words like exercise, gym, healthy, get enough sleep, a balanced diet, and I need to rest to talk about staying well.",
+        "examples": [
+          "Exercise keeps you healthy.",
+          "I need to rest."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u03.l07.task.pick-gym",
+          "kind": "choice",
+          "prompt": "Where do you go to exercise?",
+          "answer": "gym",
+          "options": [
+            "gym",
+            "bed",
+            "school"
+          ],
+          "explanation": "Gym is where you go to exercise.",
+          "itemIds": [
+            "en.elementary.u03.l07.gym"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l07.task.fill-sleep",
+          "kind": "fill",
+          "prompt": "Complete the phrase about resting at night.",
+          "text": "Get enough ___.",
+          "answer": "sleep",
+          "options": [
+            "sleep",
+            "water",
+            "diet"
+          ],
+          "explanation": "Get enough sleep.",
+          "itemIds": [
+            "en.elementary.u03.l07.get-enough-sleep",
+            "en.beginner.u04.l07.sleep"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l07.task.hear-healthy",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Fruit is healthy.",
+          "answer": "Fruit is healthy.",
+          "options": [
+            "Fruit is healthy.",
+            "Exercise every day.",
+            "I need to rest."
+          ],
+          "explanation": "The audio says Eating fruit is healthy.",
+          "itemIds": [
+            "en.elementary.u03.l07.healthy",
+            "en.elementary.u03.l07.i-need-to-rest"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l07.task.build-diet",
+          "kind": "build",
+          "prompt": "Build the phrase about eating well.",
+          "answer": "a balanced diet",
+          "tiles": [
+            "a",
+            "balanced",
+            "diet",
+            "gym"
+          ],
+          "explanation": "A balanced diet.",
+          "itemIds": [
+            "en.elementary.u03.l07.a-balanced-diet"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l07.task.match-healthy",
+          "kind": "match",
+          "prompt": "Match the healthy habits.",
+          "pairs": [
+            {
+              "left": "exercise",
+              "right": "run and jump"
+            },
+            {
+              "left": "gym",
+              "right": "a big room"
+            },
+            {
+              "left": "healthy",
+              "right": "good for me"
+            }
+          ],
+          "explanation": "These terms describe healthy living.",
+          "itemIds": [
+            "en.elementary.u03.l07.exercise",
+            "en.elementary.u03.l07.gym",
+            "en.elementary.u03.l07.healthy"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Smarty do to stay healthy?",
+        "image": {
+          "id": "en-a2-u03-l07-scene",
+          "describe": "Smarty talking with friends inside the gym about healthy habits."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "How do you stay healthy?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I exercise in the gym and eat a balanced diet."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And do you get enough sleep?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes! But after exercise, I need to rest."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u03.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "Where does Mia exercise?",
+            "answer": "in the gym",
+            "options": [
+              "in the gym",
+              "in bed",
+              "at school"
+            ],
+            "explanation": "Mia says: I exercise in the gym.",
+            "itemIds": [
+              "en.elementary.u03.l07.exercise",
+              "en.elementary.u03.l07.gym"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks what you do to stay healthy.",
+        "turns": [
+          {
+            "smarty": "What do you do to stay healthy?",
+            "accept": [
+              "^i exercise and get enough sleep$",
+              "^i exercise$",
+              "^i eat a balanced diet$"
+            ],
+            "example": "I exercise and get enough sleep.",
+            "hint": "Say you exercise or eat a balanced diet.",
+            "itemIds": [
+              "en.elementary.u03.l07.exercise",
+              "en.elementary.u03.l07.healthy",
+              "en.elementary.u03.l07.get-enough-sleep"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u03.l06.take-a-rest",
+        "en.beginner.u04.l07.sleep"
+      ]
+    },
+    {
+      "id": "en.elementary.u03.l08",
+      "section": "elementary",
+      "unit": 3,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Smarty reviews medical and healthy advice in the gym.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u03.l08.task.pick-review-1",
+          "kind": "choice",
+          "prompt": "What do you say when your head hurts?",
+          "answer": "I have a headache",
+          "options": [
+            "I have a headache",
+            "I have a gym",
+            "Take a rest"
+          ],
+          "explanation": "I have a headache.",
+          "itemIds": [
+            "en.elementary.u03.l05.i-have-a-headache"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l08.task.fill-review-2",
+          "kind": "fill",
+          "prompt": "Complete the advice phrase.",
+          "text": "You ___ take a rest.",
+          "answer": "should",
+          "options": [
+            "should",
+            "doctor",
+            "matter"
+          ],
+          "explanation": "You should take a rest.",
+          "itemIds": [
+            "en.elementary.u03.l06.you-should",
+            "en.elementary.u03.l06.take-a-rest"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l08.task.match-review-3",
+          "kind": "match",
+          "prompt": "Match terms and meanings.",
+          "pairs": [
+            {
+              "left": "doctor",
+              "right": "helps you"
+            },
+            {
+              "left": "gym",
+              "right": "exercise room"
+            },
+            {
+              "left": "medicine",
+              "right": "you take it"
+            }
+          ],
+          "explanation": "Doctor, gym, and medicine are key unit terms.",
+          "itemIds": [
+            "en.elementary.u03.l05.doctor",
+            "en.elementary.u03.l07.gym",
+            "en.elementary.u03.l05.medicine"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Can Smarty give good health advice?",
+        "image": {
+          "id": "en-a2-u03-l08-scene",
+          "describe": "Smarty giving health tips to friends in the gym."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "If you are ill, you should see a doctor."
+          },
+          {
+            "speaker": "Leo",
+            "text": "And you should take your medicine and stay in bed."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Also, drink more water and get enough sleep!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "That is great advice for a healthy life."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u03.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What should you do if you are ill?",
+            "answer": "see a doctor",
+            "options": [
+              "see a doctor",
+              "run in the park",
+              "play a game"
+            ],
+            "explanation": "Smarty says you should see a doctor.",
+            "itemIds": [
+              "en.elementary.u03.l05.doctor",
+              "en.elementary.u03.l06.you-should"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks for advice when he has a headache.",
+        "turns": [
+          {
+            "smarty": "I have a headache. What should I do?",
+            "accept": [
+              "^you should take a rest$",
+              "^take a rest$",
+              "^you should take your medicine$"
+            ],
+            "example": "You should take a rest.",
+            "hint": "Tell Smarty he should take a rest or take medicine.",
+            "itemIds": [
+              "en.elementary.u03.l06.you-should",
+              "en.elementary.u03.l06.take-a-rest",
+              "en.elementary.u03.l05.i-have-a-headache"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u03.l05.i-have-a-headache",
+        "en.elementary.u03.l05.doctor",
+        "en.elementary.u03.l05.medicine",
+        "en.elementary.u03.l06.you-should",
+        "en.elementary.u03.l06.take-a-rest",
+        "en.elementary.u03.l06.stay-in-bed",
+        "en.elementary.u03.l06.drink-more-water",
+        "en.elementary.u03.l07.exercise",
+        "en.elementary.u03.l07.gym",
+        "en.elementary.u03.l07.healthy"
+      ]
+    },
+    {
+      "id": "en.elementary.u03.l09",
+      "section": "elementary",
+      "unit": 3,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "Emergencies",
+      "canDo": "Ask for urgent help",
+      "scenario": "Smarty handles a sudden minor emergency in the gym.",
+      "items": [
+        {
+          "id": "en.elementary.u03.l09.ambulance",
+          "text": "ambulance",
+          "kind": "word",
+          "forms": [
+            "ambulances"
+          ],
+          "example": "Call an ambulance.",
+          "note": "Use 'ambulance' for the emergency car that takes people to the hospital.",
+          "image": {
+            "id": "ambulance",
+            "describe": "an emergency ambulance parked outside"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l09.pharmacy",
+          "text": "pharmacy",
+          "kind": "word",
+          "forms": [
+            "pharmacies"
+          ],
+          "example": "Buy medicine at the pharmacy.",
+          "note": "Use 'pharmacy' for a shop where you buy medicine.",
+          "image": {
+            "id": "pharmacy",
+            "describe": "a pharmacy shop with a cross sign"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l09.plaster",
+          "text": "plaster",
+          "kind": "word",
+          "forms": [
+            "plasters"
+          ],
+          "example": "Put a plaster on your finger.",
+          "note": "Use 'plaster' for a small sticky cover for a cut on your skin.",
+          "image": {
+            "id": "plaster",
+            "describe": "a small adhesive plaster"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l09.i-feel-dizzy",
+          "text": "I feel dizzy",
+          "kind": "phrase",
+          "example": "I feel dizzy after running.",
+          "note": "Say 'I feel dizzy' when your head is spinning and you cannot balance."
+        },
+        {
+          "id": "en.elementary.u03.l09.cough",
+          "text": "cough",
+          "kind": "word",
+          "forms": [
+            "coughs"
+          ],
+          "example": "He has a bad cough.",
+          "note": "Use 'cough' for sudden noisy air coming from your mouth when ill.",
+          "image": {
+            "id": "cough",
+            "describe": "a cat coughing into its paw"
+          }
+        },
+        {
+          "id": "en.elementary.u03.l09.fever",
+          "text": "fever",
+          "kind": "word",
+          "forms": [
+            "fevers"
+          ],
+          "example": "She has a high fever.",
+          "note": "Use 'fever' when your body temperature is too hot because you are ill.",
+          "image": {
+            "id": "fever",
+            "describe": "a thermometer showing a high temperature"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "Emergencies and symptoms",
+        "explanation": "Use ambulance, pharmacy, plaster, I feel dizzy, cough, and fever to talk about urgent health needs.",
+        "examples": [
+          "I feel dizzy.",
+          "Put a plaster on your finger."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u03.l09.task.pick-dizzy",
+          "kind": "choice",
+          "prompt": "What do you say when your head spins?",
+          "answer": "I feel dizzy",
+          "options": [
+            "I feel dizzy",
+            "I have a fever",
+            "Take a rest"
+          ],
+          "explanation": "I feel dizzy means your head is spinning.",
+          "itemIds": [
+            "en.elementary.u03.l09.i-feel-dizzy",
+            "en.elementary.u03.l09.fever"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l09.task.fill-plaster",
+          "kind": "fill",
+          "prompt": "Complete the sentence for a small cut on your finger.",
+          "text": "Put a ___ on your finger.",
+          "answer": "plaster",
+          "options": [
+            "plaster",
+            "cough",
+            "fever"
+          ],
+          "explanation": "Put a plaster on your finger.",
+          "itemIds": [
+            "en.elementary.u03.l09.plaster",
+            "en.elementary.u03.l03.finger",
+            "en.elementary.u03.l09.cough"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l09.task.hear-pharmacy",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Buy medicine at the pharmacy.",
+          "answer": "Buy medicine at the pharmacy.",
+          "options": [
+            "Buy medicine at the pharmacy.",
+            "This is an ambulance.",
+            "I feel dizzy."
+          ],
+          "explanation": "The audio mentions the pharmacy.",
+          "itemIds": [
+            "en.elementary.u03.l09.pharmacy",
+            "en.elementary.u03.l05.medicine"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l09.task.build-ambulance",
+          "kind": "build",
+          "prompt": "Build the sentence about the ambulance.",
+          "answer": "This is an ambulance.",
+          "tiles": [
+            "This",
+            "is",
+            "an",
+            "ambulance",
+            "pharmacy"
+          ],
+          "explanation": "This is an ambulance.",
+          "itemIds": [
+            "en.elementary.u03.l09.ambulance"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l09.task.match-emergencies",
+          "kind": "match",
+          "prompt": "Match the terms.",
+          "pairs": [
+            {
+              "left": "pharmacy",
+              "right": "I buy medicine"
+            },
+            {
+              "left": "ambulance",
+              "right": "a big car"
+            },
+            {
+              "left": "plaster",
+              "right": "on my finger"
+            }
+          ],
+          "explanation": "Pharmacy, ambulance, and plaster are emergency terms.",
+          "itemIds": [
+            "en.elementary.u03.l09.pharmacy",
+            "en.elementary.u03.l09.ambulance",
+            "en.elementary.u03.l09.plaster"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why does Smarty feel dizzy in the gym?",
+        "image": {
+          "id": "en-a2-u03-l09-scene",
+          "describe": "Smarty looking dizzy in the gym while Ana helps him."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Oh no, I feel dizzy after running."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Do you have a fever or a cough?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No fever, but I cut my finger."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Let us put a plaster on your finger and get water from the pharmacy."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u03.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "How does Smarty feel?",
+            "answer": "dizzy",
+            "options": [
+              "dizzy",
+              "happy",
+              "hungry"
+            ],
+            "explanation": "Smarty says: I feel dizzy.",
+            "itemIds": [
+              "en.elementary.u03.l09.i-feel-dizzy"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty says he feels dizzy. Tell him what to do.",
+        "turns": [
+          {
+            "smarty": "I feel dizzy in the gym. What should I do?",
+            "accept": [
+              "^you should take a rest$",
+              "^take a rest$",
+              "^sit down$"
+            ],
+            "example": "You should take a rest.",
+            "hint": "Tell Smarty he should take a rest.",
+            "itemIds": [
+              "en.elementary.u03.l09.i-feel-dizzy",
+              "en.elementary.u03.l06.you-should",
+              "en.elementary.u03.l06.take-a-rest"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u03.l03.finger",
+        "en.elementary.u03.l06.you-should",
+        "en.elementary.u03.l06.take-a-rest",
+        "en.elementary.u03.l05.medicine",
+        "en.beginner.u03.l01.water"
+      ]
+    },
+    {
+      "id": "en.elementary.u03.l10",
+      "section": "elementary",
+      "unit": 3,
+      "lesson": 10,
+      "type": "test",
+      "title": "Get well soon",
+      "canDo": "Comfort a sick friend",
+      "scenario": "Smarty visits a friend who is recovering from a cold.",
+      "items": [
+        {
+          "id": "en.elementary.u03.l10.get-well-soon",
+          "text": "Get well soon",
+          "kind": "phrase",
+          "example": "Get well soon, my friend.",
+          "note": "Say 'Get well soon' to wish someone recovery from an illness."
+        },
+        {
+          "id": "en.elementary.u03.l10.i-feel-better",
+          "text": "I feel better",
+          "kind": "phrase",
+          "example": "I feel better today.",
+          "note": "Say 'I feel better' when your health improves after being ill."
+        },
+        {
+          "id": "en.elementary.u03.l10.a-cold",
+          "text": "a cold",
+          "kind": "phrase",
+          "example": "He has a cold and a cough.",
+          "note": "Say 'a cold' for a common illness with coughing and a runny nose."
+        }
+      ],
+      "grammar": {
+        "title": "Unit Review and Test",
+        "explanation": "Demonstrate your knowledge of body parts, medical terms, and health advice.",
+        "examples": [
+          "Get well soon!",
+          "I feel better today."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u03.l10.task.pick-test-1",
+          "kind": "choice",
+          "prompt": "What do you say to someone who is ill?",
+          "answer": "Get well soon",
+          "options": [
+            "Get well soon",
+            "I feel dizzy",
+            "Take a rest"
+          ],
+          "explanation": "Get well soon wishes someone recovery.",
+          "itemIds": [
+            "en.elementary.u03.l10.get-well-soon"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l10.task.fill-test-2",
+          "kind": "fill",
+          "prompt": "Complete the sentence when your health improves.",
+          "text": "I feel ___ today.",
+          "answer": "better",
+          "options": [
+            "better",
+            "ill",
+            "dizzy"
+          ],
+          "explanation": "I feel better.",
+          "itemIds": [
+            "en.elementary.u03.l10.i-feel-better"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l10.task.hear-cold",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "He has a cold.",
+          "answer": "He has a cold.",
+          "options": [
+            "He has a cold.",
+            "I feel better.",
+            "Get well soon."
+          ],
+          "explanation": "The audio says He has a cold.",
+          "itemIds": [
+            "en.elementary.u03.l10.a-cold"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l10.task.build-wish",
+          "kind": "build",
+          "prompt": "Build the recovery wish phrase.",
+          "answer": "Get well soon.",
+          "tiles": [
+            "Get",
+            "well",
+            "soon",
+            "better"
+          ],
+          "explanation": "Get well soon.",
+          "itemIds": [
+            "en.elementary.u03.l10.get-well-soon"
+          ]
+        },
+        {
+          "id": "en.elementary.u03.l10.task.match-test",
+          "kind": "match",
+          "prompt": "Match phrases to meanings.",
+          "pairs": [
+            {
+              "left": "Get well soon",
+              "right": "you say it to me"
+            },
+            {
+              "left": "I feel better",
+              "right": "I am not ill"
+            },
+            {
+              "left": "a cold",
+              "right": "I am ill"
+            }
+          ],
+          "explanation": "These are key recovery phrases.",
+          "itemIds": [
+            "en.elementary.u03.l10.get-well-soon",
+            "en.elementary.u03.l10.i-feel-better",
+            "en.elementary.u03.l10.a-cold"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How is Smarty feeling after his cold?",
+        "image": {
+          "id": "en-a2-u03-l10-scene",
+          "describe": "Smarty smiling and greeting friends in the gym after recovering from a cold."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Hello, Smarty! Do you still have a cold?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No, I feel better today!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "We are so happy! Get well soon is finished."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you! Let us exercise in the gym."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u03.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "How does Smarty feel today?",
+            "answer": "better",
+            "options": [
+              "better",
+              "ill",
+              "dizzy"
+            ],
+            "explanation": "Smarty says: I feel better today!",
+            "itemIds": [
+              "en.elementary.u03.l10.i-feel-better"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty tells you he had a cold but is back in the gym.",
+        "turns": [
+          {
+            "smarty": "I had a cold last week. What do you say to me?",
+            "accept": [
+              "^get well soon$",
+              "^i am glad you feel better$"
+            ],
+            "example": "Get well soon.",
+            "hint": "Say Get well soon to Smarty.",
+            "itemIds": [
+              "en.elementary.u03.l10.get-well-soon",
+              "en.elementary.u03.l10.a-cold"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u03.l07.gym",
+        "en.elementary.u03.l07.exercise",
+        "en.elementary.u03.l05.doctor"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "Smarty in the Gym",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "Welcome to the gym! Staying healthy is important."
+      },
+      {
+        "speaker": "Leo",
+        "text": "We move our arms, legs, heads, and feet every day."
+      },
+      {
+        "speaker": "Smarty",
+        "text": "If something hurts, we take a rest and drink water."
+      },
+      {
+        "speaker": "Ana",
+        "text": "And if we get a cold, we visit the doctor."
+      },
+      {
+        "speaker": "Smarty",
+        "text": "A balanced diet and enough sleep keep us strong."
+      },
+      {
+        "speaker": "Leo",
+        "text": "Let us continue our fitness journey together!"
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.elementary.u03.episode.q1",
+        "kind": "choice",
+        "prompt": "Where are Smarty and his friends?",
+        "answer": "in the gym",
+        "options": [
+          "in the gym",
+          "at school",
+          "in the kitchen"
+        ],
+        "explanation": "They are in the gym.",
+        "itemIds": [
+          "en.elementary.u03.l07.gym"
+        ]
+      }
+    ]
+  }
+}

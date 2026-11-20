@@ -68,3 +68,6 @@ SMARTY VIDEO/app/node_modules/
 SMARTY VIDEO/app/whisper.cpp/
 SMARTY VIDEO/app/out/
 SMARTY VIDEO/app/public/audio/*.wav
+
+# Local TTS models (downloaded by scripts/tts/download-models.mjs)
+models/

@@ -240,7 +240,6 @@ export const NON_EN_ALLOWED_TABS = new Set([
   'plans',
   'business',
   'admin',
-  'content',
   'gamification',
 ]);
 

@@ -1,6 +1,6 @@
 import { useUiLang } from '../../contexts/UiLangContext';
 import { answerFeedback } from '../../lib/smarty/answer';
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { ArrowLeft, CheckCircle2, XCircle } from 'lucide-react';
 import type { ReadingText } from '../../lib/reading-logic';
 import type { ContentLang } from '../../lib/contentLang';

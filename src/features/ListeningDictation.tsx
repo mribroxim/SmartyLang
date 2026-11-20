@@ -1,5 +1,5 @@
 import { DialogSurface } from '../components/DialogSurface';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Headphones, ArrowLeft, Volume2, PlayCircle, ChevronRight, Plus, Search } from 'lucide-react';
 import { playSound } from '../lib/audio';
 import { getRandomDictation } from '../data/audioDictation';

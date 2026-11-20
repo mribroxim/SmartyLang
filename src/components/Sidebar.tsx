@@ -1,15 +1,14 @@
 import { CatLogo } from './brand/CatLogo';
 import { accountUiLabel } from '../lib/uiAccountLabels';
 import React from 'react';
-import { LogOut, GraduationCap, Home, Trello, Shield, Users, Moon, Sun, Crown, Lock, LayoutGrid, Trophy, BookA, Target, Medal } from 'lucide-react';
+import { LogOut, GraduationCap, Home, Trello, Shield, Users, Moon, Sun, Crown, Lock, Trophy, BookA, Target, Medal } from 'lucide-react';
 import type { UserAccountProfile, UserRole } from '../firebase';
 import { NotificationBell } from '../features/NotificationBell';
-import { accountTypeOf, AccountType, isBusinessRole } from '../lib/access';
+import { accountTypeOf, AccountType, isBusinessRole, isTeacherRole } from '../lib/access';
 import { type HabitState, normalizeHabit } from '../lib/habitEngine';
 import { goalXpForMinutes } from '../lib/bites/xp';
 import { useSmartyPrefs } from '../lib/smarty/prefs';
 import { useUiLang } from '../contexts/UiLangContext';
-import { useContentLang } from '../contexts/ContentLangContext';
 
 interface SidebarProps {
   activeTab: string;
@@ -25,38 +24,35 @@ interface SidebarProps {
   onToggleDark: () => void;
   habit?: HabitState;
   xp?: number;
-  /** Only students an organization has added to a class see "My class". */
-  inClass?: boolean;
+  /** Students can join classes and classroom games from "My Classes". */
+  showClasses?: boolean;
 }
 
 const ACCOUNT_TYPE_BADGE: Record<AccountType, string> = {
   'user':            'bg-slate-50  text-slate-600  border-slate-200',
   'smarty-max':      'bg-amber-50  text-amber-700  border-amber-200',
+  'teacher':         'bg-sky-50 text-sky-700 border-sky-200',
   'business':        'bg-emerald-50 text-emerald-700 border-emerald-200',
   'admin':           'bg-rose-50   text-rose-700   border-rose-200',
-  'content-manager': 'bg-sky-50    text-sky-700    border-sky-200',
 };
 
 const Sidebar: React.FC<SidebarProps> = ({
   activeTab, setActiveTab, setReadingView, userRole, accountProfile, user, uid,
-  loginWithGoogle, logout, darkMode, onToggleDark, habit, xp = 0, inClass = false,
+  loginWithGoogle, logout, darkMode, onToggleDark, habit, xp = 0, showClasses = false,
 }) => {
   const accountType = accountTypeOf(accountProfile);
   const isFreeUser = accountType === 'user';
   const { t } = useUiLang();
-  const { isEnglish } = useContentLang();
   const h = habit ? normalizeHabit(habit) : null;
   const prefs = useSmartyPrefs();
   const goal = goalXpForMinutes(prefs.dailyMinutes);
   const earned = h ? Math.min(h.dailyGoal.xpEarned || 0, goal) : 0;
-  const pct = Math.round((earned / goal) * 100);
 
   /** Lock practice/feature tabs for free Users (the click still works — it
    *  navigates to the locked-feature screen — but visually we mark them). */
   const PRACTICE_TABS = new Set([
-    'practice', 'ielts', 'gamification', 'reading', 'listening', 'speaking', 'writing', 'exercises',
-    'vocabulary', 'story', 'comprehensive', 'ielts-reading', 'ielts-full-mock',
-    'classes',
+    'ielts', 'reading', 'listening', 'speaking', 'writing', 'exercises',
+    'story', 'comprehensive', 'ielts-reading', 'ielts-full-mock',
   ]);
 
   const navBtn = (tab: string, label: string, Icon: React.ElementType, onClick?: () => void) => {
@@ -81,21 +77,21 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   const roleLabel = accountUiLabel(t, accountType);
   const badgeClass = ACCOUNT_TYPE_BADGE[accountType];
+  const teacherView = accountType === 'business';
   const isBusinessOrAdmin = isBusinessRole(userRole) || userRole === 'admin';
-  const isContentManager = userRole === 'content-manager';
 
   return (
     <aside className="hidden lg:flex w-64 xl:w-72 bg-white dark:bg-zinc-950 border-r-2 border-slate-200 dark:border-zinc-800 flex-col shrink-0 relative z-40">
       <div className="px-5 py-4 border-b-2 border-slate-100 dark:border-zinc-800">
         <div className="flex items-center gap-2">
           <button
-            onClick={() => setActiveTab('home')}
+            onClick={() => setActiveTab(teacherView ? 'business' : 'home')}
             className="font-serif font-black tracking-tighter uppercase text-xl text-zinc-900 dark:text-zinc-50 hover:opacity-60 transition-opacity flex-1 text-left flex items-center gap-2"
           >
             <CatLogo className="h-8 w-8" />
             SmartyLang
           </button>
-          {user && uid && (
+          {user && uid && !teacherView && (
             <NotificationBell uid={uid} onNavigate={setActiveTab} />
           )}
         </div>
@@ -116,13 +112,16 @@ const Sidebar: React.FC<SidebarProps> = ({
           </button>
         )}
 
+        {!teacherView && <>
         {navBtn('dashboard', t('nav.home'), Home)}
         {navBtn('lessons', t('nav.learn'), GraduationCap)}
+        {isTeacherRole(userRole) && navBtn('business', t('nav.teach'), Trello)}
         {navBtn('vocabulary', t('nav.vocabulary'), BookA)}
         {navBtn('practice', t('nav.practice'), Target)}
-        {inClass && navBtn('classes', t('nav.myClasses'), Users)}
+        {showClasses && navBtn('classes', t('nav.myClasses'), Users)}
         {navBtn('gamification', t('nav.league'), Trophy)}
         {navBtn('quests', t('nav.quests'), Medal)}
+        </>}
 
         {isBusinessOrAdmin && (
           <>
@@ -131,11 +130,9 @@ const Sidebar: React.FC<SidebarProps> = ({
             </div>
             {(isBusinessRole(userRole) || userRole === 'admin') && navBtn('business', t('nav.business'), Trello)}
             {userRole === 'admin' && navBtn('admin', t('nav.admin'), Shield)}
-            {userRole === 'admin' && navBtn('content', t('nav.content'), LayoutGrid)}
           </>
         )}
 
-        {isContentManager && navBtn('content', t('nav.content'), LayoutGrid)}
       </div>
 
       {/* Bottom: dark mode + user info */}

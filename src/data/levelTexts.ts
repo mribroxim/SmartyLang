@@ -5,6 +5,11 @@ import { type ContentLang, cmsDocId, readStoredContentLang } from '../lib/conten
 import { readStoredArabicDisplayMode, transformArabicContent } from '../lib/arabicText';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { fetchLangPackJson } from '../lib/langPacks';
+import { applyCourse, rememberCourse, LEVEL_OF_SECTION, type V2Course } from '../lib/lessons/v2';
+
+/** New step-by-step courses (v2), listed in public/data/course/index.json by scripts/content/build-course.mjs. */
+let courseIndex: Promise<{ lang: string; section: string }[]> | null = null;
+const listCourses = (bust: string) => (courseIndex ??= fetch(`/data/course/index.json?${bust}`).then(r => (r.ok ? r.json() : [])).catch(() => []));
 
 export type LevelTexts = Record<Level, ReadingText[]>;
 
@@ -51,7 +56,9 @@ export function loadLevelTexts(lang: ContentLang = readStoredContentLang()): Pro
           ? fetch(`/level-texts.json?${VOCAB_CACHE_BUST}`).then(r => r.json()).catch(() => EMPTY_LEVEL_TEXTS)
           : fetchLangPackJson<LevelTexts>(lang, 'level-texts.json').then(d => d ?? EMPTY_LEVEL_TEXTS);
 
-      const [base, doc] = await Promise.all([basePromise, getCMSDocument(docId)]);
+      const coursesPromise = listCourses(VOCAB_CACHE_BUST).then(list => Promise.all(list.filter(c => c.lang === lang).map(({ section }) =>
+        fetch(`/data/course/${lang}-${section}.json?${VOCAB_CACHE_BUST}`).then(r => (r.ok ? r.json() as Promise<V2Course> : null)).catch(() => null))));
+      const [base, doc, courses] = await Promise.all([basePromise, getCMSDocument(docId), coursesPromise]);
       const merged: LevelTexts = { ...EMPTY_LEVEL_TEXTS };
       for (const level of LEVELS) {
         const baseLevel = base[level] ?? [];
@@ -65,6 +72,12 @@ export function loadLevelTexts(lang: ContentLang = readStoredContentLang()): Pro
             ...(doc?.byLevel?.[level] ?? []).filter((t: any) => !t.archived),
           ];
         }
+      }
+      for (const course of courses) {
+        if (!course?.units?.length) continue;
+        rememberCourse(course);
+        const level = LEVEL_OF_SECTION[course.section];
+        if (level) merged[level] = applyCourse(merged[level], course);
       }
       _cachedByLang[lang] = merged;
       return merged;

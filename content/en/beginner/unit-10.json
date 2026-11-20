@@ -1,0 +1,2952 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "beginner",
+  "unit": 10,
+  "title": "Yesterday",
+  "room": "playroom",
+  "lessons": [
+    {
+      "id": "en.beginner.u10.l01",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Where were you?",
+      "canDo": "Say where you were",
+      "scenario": "Smarty is in the playroom and asks Mia and Sam where they were yesterday.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l01.where-were-you",
+          "text": "Where were you?",
+          "kind": "phrase",
+          "example": "Where were you yesterday?",
+          "note": "Ask ‘Where were you?’ to find out where someone was in the past."
+        },
+        {
+          "id": "en.beginner.u10.l01.i-was",
+          "text": "I was",
+          "kind": "phrase",
+          "forms": [
+            "was",
+            "he was",
+            "she was",
+            "it was"
+          ],
+          "example": "I was at home.",
+          "note": "Use ‘I was’ to say where you were in the past."
+        },
+        {
+          "id": "en.beginner.u10.l01.you-were",
+          "text": "you were",
+          "kind": "phrase",
+          "forms": [
+            "were",
+            "we were",
+            "they were"
+          ],
+          "example": "You were at school.",
+          "note": "Use ‘you were’ when talking to someone about where they were."
+        },
+        {
+          "id": "en.beginner.u10.l01.yesterday",
+          "text": "yesterday",
+          "kind": "word",
+          "example": "I was at the park yesterday.",
+          "note": "Say ‘yesterday’ for the day before today."
+        },
+        {
+          "id": "en.beginner.u10.l01.last-night",
+          "text": "last night",
+          "kind": "phrase",
+          "example": "I was at home last night.",
+          "note": "Say ‘last night’ for the night before today."
+        }
+      ],
+      "grammar": {
+        "title": "was and were",
+        "explanation": "Use was with I, he, she, and it. Use were with you, we, and they. Add yesterday or last night at the start or end of the sentence.",
+        "examples": [
+          "I was at school yesterday.",
+          "You were at home last night."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u10.l01.task.pick-where",
+          "kind": "choice",
+          "prompt": "Smarty wants to know where Mia was. Which question does he ask?",
+          "answer": "Where were you?",
+          "options": [
+            "Where were you?",
+            "Where are you from?",
+            "What time is it?"
+          ],
+          "explanation": "Use Where were you? to ask about a place in the past.",
+          "itemIds": [
+            "en.beginner.u10.l01.where-were-you"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.hear-i-was",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I was at home.",
+          "answer": "I was at home.",
+          "options": [
+            "I was at home.",
+            "I am at home.",
+            "You were at home."
+          ],
+          "explanation": "I was talks about where you were in the past.",
+          "itemIds": [
+            "en.beginner.u10.l01.i-was",
+            "en.beginner.u05.l10.home"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.match-time",
+          "kind": "match",
+          "prompt": "Match the phrases with their meanings.",
+          "pairs": [
+            {
+              "left": "yesterday",
+              "right": "I was at school yesterday."
+            },
+            {
+              "left": "last night",
+              "right": "We were at home last night."
+            },
+            {
+              "left": "Where were you?",
+              "right": "I was at the market."
+            }
+          ],
+          "explanation": "Yesterday means the day before today, and last night means the night before today.",
+          "itemIds": [
+            "en.beginner.u10.l01.yesterday",
+            "en.beginner.u10.l01.last-night",
+            "en.beginner.u10.l01.where-were-you"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.fill-i-was",
+          "kind": "fill",
+          "prompt": "Mia talks about herself yesterday. Complete the sentence.",
+          "text": "___ at school yesterday.",
+          "answer": "I was",
+          "options": [
+            "I was",
+            "You were",
+            "We were"
+          ],
+          "explanation": "Use I was when talking about yourself in the past.",
+          "itemIds": [
+            "en.beginner.u10.l01.i-was",
+            "en.beginner.u10.l01.yesterday",
+            "en.beginner.u08.l01.school"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.fill-you-were",
+          "kind": "fill",
+          "prompt": "Smarty talks to Sam about yesterday. Complete the sentence.",
+          "text": "Yesterday ___ at the park.",
+          "answer": "you were",
+          "options": [
+            "you were",
+            "I was",
+            "she was"
+          ],
+          "explanation": "Use you were with you.",
+          "itemIds": [
+            "en.beginner.u10.l01.you-were",
+            "en.beginner.u10.l01.yesterday",
+            "en.beginner.u08.l01.park"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.build-where",
+          "kind": "build",
+          "prompt": "Ask your friend about last night. Build the question.",
+          "answer": "Where were you last night?",
+          "tiles": [
+            "Where",
+            "were",
+            "you",
+            "last",
+            "night",
+            "was"
+          ],
+          "explanation": "Put Where were you before last night to ask the question.",
+          "itemIds": [
+            "en.beginner.u10.l01.where-were-you",
+            "en.beginner.u10.l01.last-night"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.build-i-was",
+          "kind": "build",
+          "prompt": "Say that you were in the kitchen last night. Build the sentence.",
+          "answer": "I was in the kitchen last night.",
+          "tiles": [
+            "I",
+            "was",
+            "in",
+            "the",
+            "kitchen",
+            "last",
+            "night",
+            "were"
+          ],
+          "explanation": "Start with I was, then the place, then last night.",
+          "itemIds": [
+            "en.beginner.u10.l01.i-was",
+            "en.beginner.u10.l01.last-night",
+            "en.beginner.u05.l01.kitchen"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.say-yesterday",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I was at the library yesterday.",
+          "answer": "I was at the library yesterday.",
+          "explanation": "Use I was for yourself and yesterday for the day before today.",
+          "itemIds": [
+            "en.beginner.u10.l01.i-was",
+            "en.beginner.u10.l01.yesterday",
+            "en.beginner.u08.l02.library"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Where were Mia, Sam, and Smarty yesterday and last night?",
+        "image": {
+          "id": "en-a1-u10-l01-scene",
+          "describe": "Smarty the black cat stands in a bright playroom with toys and cushions, talking with Mia and Sam."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Mia! Hello, Sam! Where were you yesterday?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I was at school yesterday."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I was at the park. It was sunny!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Where were you last night?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "We were at home. I was in the kitchen."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Where were you, Smarty?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I was in this room!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "Where was Mia yesterday?",
+            "answer": "At school",
+            "options": [
+              "At school",
+              "At the park",
+              "At the library"
+            ],
+            "explanation": "Mia says: I was at school yesterday.",
+            "itemIds": [
+              "en.beginner.u10.l01.i-was",
+              "en.beginner.u10.l01.yesterday",
+              "en.beginner.u08.l01.school"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "Where were Mia and Sam last night?",
+            "answer": "At home",
+            "options": [
+              "At home",
+              "At school",
+              "At the park"
+            ],
+            "explanation": "Mia says: We were at home.",
+            "itemIds": [
+              "en.beginner.u10.l01.you-were",
+              "en.beginner.u10.l01.last-night",
+              "en.beginner.u05.l10.home"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Where was Smarty?",
+            "answer": "In the room",
+            "options": [
+              "In the room",
+              "In the kitchen",
+              "At the park"
+            ],
+            "explanation": "Smarty says: I was in this room!",
+            "itemIds": [
+              "en.beginner.u10.l01.i-was",
+              "en.beginner.u05.l01.room"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty chats with you in the playroom. Tell him where you were yesterday and last night.",
+        "turns": [
+          {
+            "smarty": "Hello! Where were you yesterday?",
+            "accept": [
+              "^i was (?:at|in) (?:the )?(?:home|school|park|library|kitchen|bedroom|living room|room)(?: yesterday)?$",
+              "^yesterday i was (?:at|in) (?:the )?(?:home|school|park|library|kitchen|bedroom|living room|room)$"
+            ],
+            "example": "I was at school yesterday.",
+            "hint": "Start with ‘I was’ and name a place like home, school, or the park.",
+            "itemIds": [
+              "en.beginner.u10.l01.i-was",
+              "en.beginner.u10.l01.yesterday",
+              "en.beginner.u08.l01.school"
+            ]
+          },
+          {
+            "smarty": "And where were you last night?",
+            "accept": [
+              "^i was (?:at|in) (?:the )?(?:home|school|park|library|kitchen|bedroom|living room|room)(?: last night)?$",
+              "^last night i was (?:at|in) (?:the )?(?:home|school|park|library|kitchen|bedroom|living room|room)$"
+            ],
+            "example": "I was at home last night.",
+            "hint": "Say ‘I was’ and where you were last night.",
+            "itemIds": [
+              "en.beginner.u10.l01.i-was",
+              "en.beginner.u10.l01.last-night",
+              "en.beginner.u05.l10.home"
+            ]
+          },
+          {
+            "smarty": "Ask me where I was yesterday!",
+            "accept": [
+              "^where were you(?: yesterday)?$",
+              "^smarty where were you(?: yesterday)?$"
+            ],
+            "example": "Where were you yesterday?",
+            "hint": "Ask Smarty ‘Where were you?’",
+            "itemIds": [
+              "en.beginner.u10.l01.where-were-you",
+              "en.beginner.u10.l01.yesterday"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u05.l10.home",
+        "en.beginner.u08.l01.school",
+        "en.beginner.u08.l01.park",
+        "en.beginner.u05.l01.kitchen",
+        "en.beginner.u08.l02.library",
+        "en.beginner.u05.l01.room"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l02",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Was and were",
+      "canDo": "Use was and were in questions and negatives",
+      "scenario": "Smarty looks for his missing yellow box in the playroom and questions Ben and Lily.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l02.was-not",
+          "text": "was not",
+          "kind": "phrase",
+          "forms": [
+            "wasn't"
+          ],
+          "example": "I was not at school yesterday.",
+          "note": "Add ‘not’ after ‘was’ to say where someone or something was not."
+        },
+        {
+          "id": "en.beginner.u10.l02.were-not",
+          "text": "were not",
+          "kind": "phrase",
+          "forms": [
+            "weren't"
+          ],
+          "example": "We were not at the cinema.",
+          "note": "Add ‘not’ after ‘were’ with you, we, or they."
+        },
+        {
+          "id": "en.beginner.u10.l02.was-it",
+          "text": "Was it?",
+          "kind": "phrase",
+          "example": "Was it cold yesterday?",
+          "note": "Start a yes-or-no question about one thing or the weather with ‘Was it?’."
+        },
+        {
+          "id": "en.beginner.u10.l02.were-you",
+          "text": "Were you?",
+          "kind": "phrase",
+          "example": "Were you at home last night?",
+          "note": "Start a yes-or-no question to someone with ‘Were you?’."
+        }
+      ],
+      "grammar": {
+        "title": "Questions and negatives with was/were",
+        "explanation": "Put was or were before the person to ask a question (Were you at home?, Was it cold?). Put not after was or were to say no (I was not tired, We were not at school).",
+        "examples": [
+          "Were you at the park yesterday?",
+          "I was not at the cinema last night."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u10.l02.task.pick-were-you",
+          "kind": "choice",
+          "prompt": "Smarty wants to ask Ben if he was at home. Which question is right?",
+          "answer": "Were you at home?",
+          "options": [
+            "Were you at home?",
+            "You were at home?",
+            "Was it at home?"
+          ],
+          "explanation": "Put Were before you to ask a question.",
+          "itemIds": [
+            "en.beginner.u10.l02.were-you",
+            "en.beginner.u05.l10.home"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.hear-was-it",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Was it sunny yesterday?",
+          "answer": "Was it sunny yesterday?",
+          "options": [
+            "Was it sunny yesterday?",
+            "It was sunny yesterday.",
+            "Was it cold yesterday?"
+          ],
+          "explanation": "Was it asks a question about the weather yesterday.",
+          "itemIds": [
+            "en.beginner.u10.l02.was-it",
+            "en.beginner.u09.l01.sunny",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.match-negatives",
+          "kind": "match",
+          "prompt": "Match the sentence halves.",
+          "pairs": [
+            {
+              "left": "I was not",
+              "right": "tired last night."
+            },
+            {
+              "left": "We were not",
+              "right": "at the cinema."
+            },
+            {
+              "left": "Was it",
+              "right": "cold outside?"
+            }
+          ],
+          "explanation": "Use I was not for one person and We were not for more than one person.",
+          "itemIds": [
+            "en.beginner.u10.l02.was-not",
+            "en.beginner.u10.l02.were-not",
+            "en.beginner.u10.l02.was-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.fill-was-not",
+          "kind": "fill",
+          "prompt": "Ben was at home, not at school. Complete the sentence.",
+          "text": "I ___ at school yesterday.",
+          "answer": "was not",
+          "options": [
+            "was not",
+            "were not",
+            "was it"
+          ],
+          "explanation": "Use was not after I.",
+          "itemIds": [
+            "en.beginner.u10.l02.was-not",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.fill-were-not",
+          "kind": "fill",
+          "prompt": "Lily and Mia were at home, not at the park. Complete the sentence.",
+          "text": "We ___ at the park last night.",
+          "answer": "were not",
+          "options": [
+            "were not",
+            "was not",
+            "were you"
+          ],
+          "explanation": "Use were not after we.",
+          "itemIds": [
+            "en.beginner.u10.l02.were-not",
+            "en.beginner.u10.l01.last-night"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.build-were-you",
+          "kind": "build",
+          "prompt": "Ask Lily if she was at the cinema. Build the question.",
+          "answer": "Were you at the cinema?",
+          "tiles": [
+            "Were",
+            "you",
+            "at",
+            "the",
+            "cinema",
+            "Was"
+          ],
+          "explanation": "Start the question with Were you.",
+          "itemIds": [
+            "en.beginner.u10.l02.were-you",
+            "en.beginner.u08.l02.cinema"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.build-was-it",
+          "kind": "build",
+          "prompt": "Ask if the weather was cold yesterday. Build the question.",
+          "answer": "Was it cold yesterday?",
+          "tiles": [
+            "Was",
+            "it",
+            "cold",
+            "yesterday",
+            "Were"
+          ],
+          "explanation": "Start with Was it to ask about the weather in the past.",
+          "itemIds": [
+            "en.beginner.u10.l02.was-it",
+            "en.beginner.u03.l09.cold",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.say-was-not",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I was not tired yesterday.",
+          "answer": "I was not tired yesterday.",
+          "explanation": "Use I was not to say how you did not feel.",
+          "itemIds": [
+            "en.beginner.u10.l02.was-not",
+            "en.beginner.u01.l09.i-am-tired",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Where was Smarty’s yellow box?",
+        "image": {
+          "id": "en-a1-u10-l02-scene",
+          "describe": "Smarty the black cat peeks under a sofa in the playroom and spots a yellow box while Ben and Lily watch."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Ben, were you in this room yesterday?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "No, I was not here yesterday. I was at the cinema."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Lily, were you at the cinema?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "No, we were not at the cinema. I was at home."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Was it cold yesterday, Lily?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "Yes, it was cold. Smarty, your yellow box is under the sofa!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Oh! It was under the sofa!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Was Ben in the room yesterday?",
+            "answer": "No, he was not",
+            "options": [
+              "No, he was not",
+              "Yes, he was",
+              "Yes, he was at school"
+            ],
+            "explanation": "Ben says: No, I was not here yesterday.",
+            "itemIds": [
+              "en.beginner.u10.l02.was-not"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "Were Ben and Lily at the cinema together?",
+            "answer": "No, they were not",
+            "options": [
+              "No, they were not",
+              "Yes, they were",
+              "Yes, at home"
+            ],
+            "explanation": "Lily says: No, we were not at the cinema.",
+            "itemIds": [
+              "en.beginner.u10.l02.were-not",
+              "en.beginner.u08.l02.cinema"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Ben ask Lily?",
+            "answer": "Was it cold yesterday?",
+            "options": [
+              "Was it cold yesterday?",
+              "Was it sunny yesterday?",
+              "Were you tired?"
+            ],
+            "explanation": "Ben asks: Was it cold yesterday, Lily?",
+            "itemIds": [
+              "en.beginner.u10.l02.was-it",
+              "en.beginner.u03.l09.cold"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is asking questions in the playroom. Answer him using was, were, was not, or were not.",
+        "turns": [
+          {
+            "smarty": "Were you at school yesterday?",
+            "accept": [
+              "^(?:yes|no)(?: i was(?: not)?(?: at (?:school|home))?)?$",
+              "^i was(?: not)? at (?:school|home)(?: yesterday)?$"
+            ],
+            "example": "No, I was not at school.",
+            "hint": "Say ‘Yes, I was’ or ‘No, I was not’.",
+            "itemIds": [
+              "en.beginner.u10.l02.were-you",
+              "en.beginner.u10.l02.was-not",
+              "en.beginner.u10.l01.i-was"
+            ]
+          },
+          {
+            "smarty": "Was it sunny yesterday?",
+            "accept": [
+              "^(?:yes|no)(?: it was(?: not)?(?: (?:sunny|cold|warm|rainy))?)?$",
+              "^it was(?: not)? (?:sunny|cold|warm|rainy)(?: yesterday)?$"
+            ],
+            "example": "Yes, it was sunny.",
+            "hint": "Say ‘Yes, it was’ or ‘No, it was not’.",
+            "itemIds": [
+              "en.beginner.u10.l02.was-it",
+              "en.beginner.u10.l02.was-not",
+              "en.beginner.u09.l01.sunny"
+            ]
+          },
+          {
+            "smarty": "Ask me if I was tired last night!",
+            "accept": [
+              "^were you tired(?: last night)?$",
+              "^smarty were you tired(?: last night)?$"
+            ],
+            "example": "Were you tired last night?",
+            "hint": "Start with ‘Were you tired…’",
+            "itemIds": [
+              "en.beginner.u10.l02.were-you",
+              "en.beginner.u01.l09.i-am-tired",
+              "en.beginner.u10.l01.last-night"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u05.l10.home",
+        "en.beginner.u09.l01.sunny",
+        "en.beginner.u10.l01.yesterday",
+        "en.beginner.u10.l01.last-night",
+        "en.beginner.u08.l02.cinema",
+        "en.beginner.u03.l09.cold",
+        "en.beginner.u01.l09.i-am-tired",
+        "en.beginner.u10.l01.i-was"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l03",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "Went had saw ate",
+      "canDo": "Say what you did with four common verbs",
+      "scenario": "Leo and Ana sit in Smarty's playroom and talk about places they went and lunch yesterday.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l03.i-went",
+          "text": "I went",
+          "kind": "phrase",
+          "forms": [
+            "went",
+            "you went",
+            "he went",
+            "she went",
+            "we went",
+            "they went"
+          ],
+          "example": "I went to the park yesterday.",
+          "note": "‘Went’ is the past of ‘go’—use ‘I went to…’ for a place you visited."
+        },
+        {
+          "id": "en.beginner.u10.l03.i-had",
+          "text": "I had",
+          "kind": "phrase",
+          "forms": [
+            "had",
+            "you had",
+            "he had",
+            "she had",
+            "we had",
+            "they had"
+          ],
+          "example": "I had lunch at home.",
+          "note": "‘Had’ is the past of ‘have’—use it for meals, drinks, or things you had."
+        },
+        {
+          "id": "en.beginner.u10.l03.i-saw",
+          "text": "I saw",
+          "kind": "phrase",
+          "forms": [
+            "saw",
+            "you saw",
+            "he saw",
+            "she saw",
+            "we saw",
+            "they saw"
+          ],
+          "example": "I saw a big bird.",
+          "note": "‘Saw’ is the past of ‘see’—use it for people, animals, or things you saw."
+        },
+        {
+          "id": "en.beginner.u10.l03.i-ate",
+          "text": "I ate",
+          "kind": "phrase",
+          "forms": [
+            "eat",
+            "ate",
+            "you ate",
+            "he ate",
+            "she ate",
+            "we ate",
+            "they ate"
+          ],
+          "example": "I ate an apple.",
+          "note": "‘Ate’ is the past of ‘eat’—use it to say what food you ate."
+        }
+      ],
+      "grammar": {
+        "title": "Four irregular past verbs",
+        "explanation": "These four verbs change form in the past: go becomes went, have becomes had, see becomes saw, and eat becomes ate. The form stays the same for I, you, he, she, we, and they.",
+        "examples": [
+          "I went to the museum.",
+          "She ate a sandwich for lunch."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u10.l03.task.match-verbs",
+          "kind": "match",
+          "prompt": "Match each verb today with its past form.",
+          "pairs": [
+            {
+              "left": "I go",
+              "right": "I went"
+            },
+            {
+              "left": "I have",
+              "right": "I had"
+            },
+            {
+              "left": "I see",
+              "right": "I saw"
+            },
+            {
+              "left": "I eat",
+              "right": "I ate"
+            }
+          ],
+          "explanation": "Go becomes went, have becomes had, see becomes saw, and eat becomes ate.",
+          "itemIds": [
+            "en.beginner.u10.l03.i-went",
+            "en.beginner.u10.l03.i-had",
+            "en.beginner.u10.l03.i-saw",
+            "en.beginner.u10.l03.i-ate"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.hear-went",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I went to the museum.",
+          "answer": "I went to the museum.",
+          "options": [
+            "I went to the museum.",
+            "I saw the museum.",
+            "I went to the park."
+          ],
+          "explanation": "I went to the museum says where you went.",
+          "itemIds": [
+            "en.beginner.u10.l03.i-went",
+            "en.beginner.u08.l02.museum"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.pick-saw",
+          "kind": "choice",
+          "prompt": "Leo looked at a bird in a tree yesterday. Which sentence is right?",
+          "answer": "I saw a bird.",
+          "options": [
+            "I saw a bird.",
+            "I ate a bird.",
+            "I went a bird."
+          ],
+          "explanation": "Use I saw for something you looked at in the past.",
+          "itemIds": [
+            "en.beginner.u10.l03.i-saw",
+            "en.beginner.u02.l08.bird"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.fill-ate",
+          "kind": "fill",
+          "prompt": "Ana talks about her snack yesterday. Complete the sentence.",
+          "text": "I ___ a sweet apple.",
+          "answer": "ate",
+          "options": [
+            "ate",
+            "went",
+            "saw"
+          ],
+          "explanation": "Use ate (the past of eat) for food.",
+          "itemIds": [
+            "en.beginner.u10.l03.i-ate",
+            "en.beginner.u03.l01.apple"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.fill-had",
+          "kind": "fill",
+          "prompt": "Smarty talks about his meal last night. Complete the sentence.",
+          "text": "I ___ fish for dinner last night.",
+          "answer": "had",
+          "options": [
+            "had",
+            "went",
+            "saw"
+          ],
+          "explanation": "Use I had for a meal like breakfast, lunch, or dinner.",
+          "itemIds": [
+            "en.beginner.u10.l03.i-had",
+            "en.beginner.u03.l11.fish",
+            "en.beginner.u10.l01.last-night"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.build-went",
+          "kind": "build",
+          "prompt": "Say that you went to the park yesterday. Build the sentence.",
+          "answer": "I went to the park yesterday.",
+          "tiles": [
+            "I",
+            "went",
+            "to",
+            "the",
+            "park",
+            "yesterday",
+            "saw"
+          ],
+          "explanation": "Use I went to before a place.",
+          "itemIds": [
+            "en.beginner.u10.l03.i-went",
+            "en.beginner.u08.l01.park",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.build-ate",
+          "kind": "build",
+          "prompt": "Say that you ate a sandwich for lunch. Build the sentence.",
+          "answer": "I ate a sandwich for lunch.",
+          "tiles": [
+            "I",
+            "ate",
+            "a",
+            "sandwich",
+            "for",
+            "lunch",
+            "went"
+          ],
+          "explanation": "Start with I ate, then the food.",
+          "itemIds": [
+            "en.beginner.u10.l03.i-ate",
+            "en.beginner.u03.l11.sandwich",
+            "en.beginner.u03.l05.lunch"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.say-saw",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I saw my friend yesterday.",
+          "answer": "I saw my friend yesterday.",
+          "explanation": "Use I saw for a person you met or looked at.",
+          "itemIds": [
+            "en.beginner.u10.l03.i-saw",
+            "en.beginner.u01.l10.friend",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What did Leo see at the park yesterday?",
+        "image": {
+          "id": "en-a1-u10-l03-scene",
+          "describe": "Leo and Ana sit on a colorful rug in Smarty's playroom, showing Smarty a drawing of a blue bird and an apple."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Leo! Hello, Ana!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Yesterday I went to the park."
+          },
+          {
+            "speaker": "Ana",
+            "text": "I went to the museum yesterday!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "At the park, I saw a big blue bird in a tree!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Nice! For lunch, I had a sandwich and I ate a red apple."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I had fish for dinner last night. It was delicious!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Where did Ana go yesterday?",
+            "answer": "To the museum",
+            "options": [
+              "To the museum",
+              "To the park",
+              "To school"
+            ],
+            "explanation": "Ana says: I went to the museum yesterday!",
+            "itemIds": [
+              "en.beginner.u10.l03.i-went",
+              "en.beginner.u08.l02.museum"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Leo see at the park?",
+            "answer": "A big blue bird",
+            "options": [
+              "A big blue bird",
+              "A small yellow cat",
+              "A red apple"
+            ],
+            "explanation": "Leo says: I saw a big blue bird in a tree!",
+            "itemIds": [
+              "en.beginner.u10.l03.i-saw",
+              "en.beginner.u02.l08.bird"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "What did Ana eat for lunch?",
+            "answer": "A red apple",
+            "options": [
+              "A red apple",
+              "Fish",
+              "A banana"
+            ],
+            "explanation": "Ana says: I ate a red apple.",
+            "itemIds": [
+              "en.beginner.u10.l03.i-ate",
+              "en.beginner.u03.l01.apple"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Tell Smarty one place you went and what you had or ate yesterday.",
+        "turns": [
+          {
+            "smarty": "Yesterday I went to the kitchen. Where did you go?",
+            "accept": [
+              "^i went to (?:the )?(?:park|school|museum|library|cinema|market|kitchen|bedroom|room)(?: yesterday)?$",
+              "^i went home(?: yesterday)?$"
+            ],
+            "example": "I went to the park yesterday.",
+            "hint": "Say ‘I went to…’ and name a place.",
+            "itemIds": [
+              "en.beginner.u10.l03.i-went",
+              "en.beginner.u08.l01.park"
+            ]
+          },
+          {
+            "smarty": "I had fish for dinner. What did you eat yesterday?",
+            "accept": [
+              "^i (?:ate|had) (?:a |an |some )?(?:apple|banana|sandwich|bread|cheese|rice|soup|chicken|fish|cake|egg)(?: for (?:breakfast|lunch|dinner))?(?: yesterday)?$"
+            ],
+            "example": "I ate a sandwich.",
+            "hint": "Start with ‘I ate…’ or ‘I had…’ and name a food.",
+            "itemIds": [
+              "en.beginner.u10.l03.i-ate",
+              "en.beginner.u10.l03.i-had",
+              "en.beginner.u03.l11.sandwich"
+            ]
+          },
+          {
+            "smarty": "I saw a bird outside! What did you see yesterday?",
+            "accept": [
+              "^i saw (?:a |an |my )?(?:bird|cat|dog|friend|tree|flower|book)(?: yesterday)?$"
+            ],
+            "example": "I saw my friend.",
+            "hint": "Say ‘I saw…’ and name a person, animal, or thing.",
+            "itemIds": [
+              "en.beginner.u10.l03.i-saw",
+              "en.beginner.u01.l10.friend"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u08.l02.museum",
+        "en.beginner.u02.l08.bird",
+        "en.beginner.u03.l01.apple",
+        "en.beginner.u03.l11.fish",
+        "en.beginner.u10.l01.last-night",
+        "en.beginner.u08.l01.park",
+        "en.beginner.u10.l01.yesterday",
+        "en.beginner.u03.l11.sandwich",
+        "en.beginner.u03.l05.lunch",
+        "en.beginner.u01.l10.friend"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l04",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty hosts a fun quiz in the playroom to review where everyone was and what they did.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.beginner.u10.l04.task.pick-where",
+          "kind": "choice",
+          "prompt": "Smarty asks Mia about yesterday. Which question is right?",
+          "answer": "Where were you yesterday?",
+          "options": [
+            "Where were you yesterday?",
+            "Where was you yesterday?",
+            "Where are you yesterday?"
+          ],
+          "explanation": "Use were with you: Where were you yesterday?",
+          "itemIds": [
+            "en.beginner.u10.l01.where-were-you",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.hear-neg",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "We were not at the cinema.",
+          "answer": "We were not at the cinema.",
+          "options": [
+            "We were not at the cinema.",
+            "We were at the cinema.",
+            "I was not at the cinema."
+          ],
+          "explanation": "Were not makes the sentence negative for we.",
+          "itemIds": [
+            "en.beginner.u10.l02.were-not",
+            "en.beginner.u08.l02.cinema"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.match-all",
+          "kind": "match",
+          "prompt": "Match the beginnings and endings.",
+          "pairs": [
+            {
+              "left": "I went",
+              "right": "to the park."
+            },
+            {
+              "left": "I had",
+              "right": "some juice."
+            },
+            {
+              "left": "I saw",
+              "right": "a white cat."
+            },
+            {
+              "left": "I ate",
+              "right": "a sandwich."
+            }
+          ],
+          "explanation": "Went goes with a place, had with a drink or meal, saw with something you looked at, and ate with food.",
+          "itemIds": [
+            "en.beginner.u10.l03.i-went",
+            "en.beginner.u10.l03.i-had",
+            "en.beginner.u10.l03.i-saw",
+            "en.beginner.u10.l03.i-ate"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.fill-was-not",
+          "kind": "fill",
+          "prompt": "Sam stayed home last night. Complete the sentence.",
+          "text": "I ___ at the park last night.",
+          "answer": "was not",
+          "options": [
+            "was not",
+            "were not",
+            "were you"
+          ],
+          "explanation": "Use was not after I.",
+          "itemIds": [
+            "en.beginner.u10.l02.was-not",
+            "en.beginner.u10.l01.last-night"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.fill-were-you",
+          "kind": "fill",
+          "prompt": "Ask your friend if they were at home. Complete the question.",
+          "text": "___ at home yesterday?",
+          "answer": "Were you",
+          "options": [
+            "Were you",
+            "You were",
+            "Was it"
+          ],
+          "explanation": "Start the question with Were you.",
+          "itemIds": [
+            "en.beginner.u10.l02.were-you",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.build-was-it",
+          "kind": "build",
+          "prompt": "Ask if the sandwich was delicious. Build the question.",
+          "answer": "Was it delicious?",
+          "tiles": [
+            "Was",
+            "it",
+            "delicious",
+            "Were"
+          ],
+          "explanation": "Use Was it to ask about one thing in the past.",
+          "itemIds": [
+            "en.beginner.u10.l02.was-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.build-went-had",
+          "kind": "build",
+          "prompt": "Say that you were at the park and you had juice. Build the sentence.",
+          "answer": "I was at the park and I had juice.",
+          "tiles": [
+            "I",
+            "was",
+            "at",
+            "the",
+            "park",
+            "and",
+            "I",
+            "had",
+            "juice",
+            "were"
+          ],
+          "explanation": "Use I was for the place and I had for the drink.",
+          "itemIds": [
+            "en.beginner.u10.l01.i-was",
+            "en.beginner.u10.l03.i-had",
+            "en.beginner.u08.l01.park",
+            "en.beginner.u03.l06.juice"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.say-review",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "You were at home and I went to school.",
+          "answer": "You were at home and I went to school.",
+          "explanation": "Use you were for your friend and I went for yourself.",
+          "itemIds": [
+            "en.beginner.u10.l01.you-were",
+            "en.beginner.u10.l03.i-went"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What did Sam and Mia have at the park?",
+        "image": {
+          "id": "en-a1-u10-l04-scene",
+          "describe": "Smarty the black cat holds a small scoreboard in the playroom while Sam and Mia smile and tell their stories."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Sam, were you at school yesterday?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "No, I was not at school. Mia and I went to the park."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Was it warm at the park?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes, it was warm! We had a picnic."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I ate a sandwich and I had cold orange juice."
+          },
+          {
+            "speaker": "Mia",
+            "text": "And we saw a small brown dog!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Where did Sam and Mia go yesterday?",
+            "answer": "To the park",
+            "options": [
+              "To the park",
+              "To school",
+              "To the cinema"
+            ],
+            "explanation": "Sam says: Mia and I went to the park.",
+            "itemIds": [
+              "en.beginner.u10.l03.i-went",
+              "en.beginner.u08.l01.park"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Sam eat?",
+            "answer": "A sandwich",
+            "options": [
+              "A sandwich",
+              "An apple",
+              "Cake"
+            ],
+            "explanation": "Sam says: I ate a sandwich.",
+            "itemIds": [
+              "en.beginner.u10.l03.i-ate",
+              "en.beginner.u03.l11.sandwich"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "What did Sam and Mia see?",
+            "answer": "A small brown dog",
+            "options": [
+              "A small brown dog",
+              "A big blue bird",
+              "A black cat"
+            ],
+            "explanation": "Mia says: And we saw a small brown dog!",
+            "itemIds": [
+              "en.beginner.u10.l03.i-saw"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty checks what you remember from Lessons 1 to 3. Answer his questions!",
+        "turns": [
+          {
+            "smarty": "Where were you last night?",
+            "accept": [
+              "^i was (?:at|in) (?:the )?(?:home|school|park|library|kitchen|bedroom|living room|room)(?: last night)?$",
+              "^last night i was (?:at|in) (?:the )?(?:home|school|park|library|kitchen|bedroom|living room|room)$"
+            ],
+            "example": "I was at home last night.",
+            "hint": "Say ‘I was…’ and where you were.",
+            "itemIds": [
+              "en.beginner.u10.l01.i-was",
+              "en.beginner.u10.l01.last-night"
+            ]
+          },
+          {
+            "smarty": "Were you at the cinema yesterday?",
+            "accept": [
+              "^(?:yes|no)(?: i was(?: not)?(?: at the cinema)?)?$",
+              "^i was(?: not)? at the cinema(?: yesterday)?$"
+            ],
+            "example": "No, I was not at the cinema.",
+            "hint": "Say ‘Yes, I was’ or ‘No, I was not’.",
+            "itemIds": [
+              "en.beginner.u10.l02.were-you",
+              "en.beginner.u10.l02.was-not",
+              "en.beginner.u08.l02.cinema"
+            ]
+          },
+          {
+            "smarty": "Tell me one thing you ate or saw yesterday!",
+            "accept": [
+              "^i (?:ate|had|saw) (?:a |an |some |my )?(?:apple|banana|sandwich|bread|cheese|rice|soup|chicken|fish|cake|egg|bird|cat|dog|friend)(?: yesterday)?$"
+            ],
+            "example": "I ate an apple yesterday.",
+            "hint": "Start with ‘I ate…’ or ‘I saw…’.",
+            "itemIds": [
+              "en.beginner.u10.l03.i-ate",
+              "en.beginner.u10.l03.i-saw",
+              "en.beginner.u10.l01.yesterday"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u10.l01.where-were-you",
+        "en.beginner.u10.l01.i-was",
+        "en.beginner.u10.l01.you-were",
+        "en.beginner.u10.l01.yesterday",
+        "en.beginner.u10.l01.last-night",
+        "en.beginner.u10.l02.was-not",
+        "en.beginner.u10.l02.were-not",
+        "en.beginner.u10.l02.was-it",
+        "en.beginner.u10.l02.were-you",
+        "en.beginner.u10.l03.i-went",
+        "en.beginner.u10.l03.i-had",
+        "en.beginner.u10.l03.i-saw",
+        "en.beginner.u10.l03.i-ate",
+        "en.beginner.u08.l02.cinema",
+        "en.beginner.u08.l01.park",
+        "en.beginner.u03.l06.juice",
+        "en.beginner.u03.l11.sandwich"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l05",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Played and watched",
+      "canDo": "Say what you did with four more verbs",
+      "scenario": "Omar and Zara join Smarty in the playroom and share what they did yesterday.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l05.i-played",
+          "text": "I played",
+          "kind": "phrase",
+          "forms": [
+            "played",
+            "you played",
+            "he played",
+            "she played",
+            "we played",
+            "they played"
+          ],
+          "example": "I played football yesterday.",
+          "note": "Add ‘-ed’ to ‘play’ to say ‘I played’ for sports, music, or games."
+        },
+        {
+          "id": "en.beginner.u10.l05.i-watched",
+          "text": "I watched",
+          "kind": "phrase",
+          "forms": [
+            "watched",
+            "you watched",
+            "he watched",
+            "she watched",
+            "we watched",
+            "they watched"
+          ],
+          "example": "I watched TV last night.",
+          "note": "Add ‘-ed’ to ‘watch’ to say ‘I watched’ for TV or a game."
+        },
+        {
+          "id": "en.beginner.u10.l05.i-visited",
+          "text": "I visited",
+          "kind": "phrase",
+          "forms": [
+            "visit",
+            "visited",
+            "you visited",
+            "he visited",
+            "she visited",
+            "we visited",
+            "they visited"
+          ],
+          "example": "I visited my grandmother.",
+          "note": "Use ‘I visited’ when you went to see a person or a place."
+        },
+        {
+          "id": "en.beginner.u10.l05.i-cooked",
+          "text": "I cooked",
+          "kind": "phrase",
+          "forms": [
+            "cook",
+            "cooked",
+            "you cooked",
+            "he cooked",
+            "she cooked",
+            "we cooked",
+            "they cooked"
+          ],
+          "example": "I cooked dinner last night.",
+          "note": "Use ‘I cooked’ when you made hot food in the kitchen."
+        }
+      ],
+      "grammar": {
+        "title": "Regular past verbs ending in -ed",
+        "explanation": "Many English verbs form the past by adding -ed: play becomes played, watch becomes watched, visit becomes visited, and cook becomes cooked.",
+        "examples": [
+          "I played tennis yesterday.",
+          "He cooked chicken and rice."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u10.l05.task.match-ed",
+          "kind": "match",
+          "prompt": "Match the verbs with what goes best after them.",
+          "pairs": [
+            {
+              "left": "I played",
+              "right": "football in the park."
+            },
+            {
+              "left": "I watched",
+              "right": "TV last night."
+            },
+            {
+              "left": "I visited",
+              "right": "my grandmother."
+            },
+            {
+              "left": "I cooked",
+              "right": "chicken and rice."
+            }
+          ],
+          "explanation": "Played goes with sports or games, watched with TV, visited with people or places, and cooked with food.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-played",
+            "en.beginner.u10.l05.i-watched",
+            "en.beginner.u10.l05.i-visited",
+            "en.beginner.u10.l05.i-cooked"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.hear-visited",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I visited my grandmother yesterday.",
+          "answer": "I visited my grandmother yesterday.",
+          "options": [
+            "I visited my grandmother yesterday.",
+            "I visited my grandfather yesterday.",
+            "I watched TV yesterday."
+          ],
+          "explanation": "I visited my grandmother means you went to see her.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-visited",
+            "en.beginner.u02.l03.grandmother",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.pick-cooked",
+          "kind": "choice",
+          "prompt": "Omar made hot chicken and rice in the kitchen. Which verb fits?",
+          "answer": "I cooked",
+          "options": [
+            "I cooked",
+            "I played",
+            "I watched"
+          ],
+          "explanation": "Use I cooked for making hot food.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-cooked",
+            "en.beginner.u03.l05.chicken",
+            "en.beginner.u03.l05.rice"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.fill-played",
+          "kind": "fill",
+          "prompt": "Zara talks about sports in the park. Complete the sentence.",
+          "text": "I ___ football yesterday.",
+          "answer": "played",
+          "options": [
+            "played",
+            "cooked",
+            "visited"
+          ],
+          "explanation": "Use played for sports like football.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-played",
+            "en.beginner.u09.l05.play-football",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.fill-watched",
+          "kind": "fill",
+          "prompt": "Complete the sentence about last night.",
+          "text": "I ___ TV in the living room.",
+          "answer": "watched",
+          "options": [
+            "watched",
+            "cooked",
+            "visited"
+          ],
+          "explanation": "Use watched with TV.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-watched",
+            "en.beginner.u04.l09.watch-tv"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.build-cooked",
+          "kind": "build",
+          "prompt": "Say that you cooked soup for dinner. Build the sentence.",
+          "answer": "I cooked soup for dinner.",
+          "tiles": [
+            "I",
+            "cooked",
+            "soup",
+            "for",
+            "dinner",
+            "played"
+          ],
+          "explanation": "Start with I cooked, then the food.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-cooked",
+            "en.beginner.u03.l05.soup",
+            "en.beginner.u03.l05.dinner"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.build-visited",
+          "kind": "build",
+          "prompt": "Say that you visited the museum yesterday. Build the sentence.",
+          "answer": "I visited the museum yesterday.",
+          "tiles": [
+            "I",
+            "visited",
+            "the",
+            "museum",
+            "yesterday",
+            "watched"
+          ],
+          "explanation": "Use I visited before the place.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-visited",
+            "en.beginner.u08.l02.museum",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.say-played",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "We played a game last night.",
+          "answer": "We played a game last night.",
+          "explanation": "Played works for games as well as sports.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-played",
+            "en.beginner.u09.l06.game",
+            "en.beginner.u10.l01.last-night"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What did Omar cook for dinner last night?",
+        "image": {
+          "id": "en-a1-u10-l05-scene",
+          "describe": "Smarty the black cat sets up a board game on the playroom table as Omar and Zara arrive and chat."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Omar! Hello, Zara! Let's play a game."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Yes! Yesterday I visited my grandmother."
+          },
+          {
+            "speaker": "Zara",
+            "text": "I played football in the park yesterday."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And last night?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "I cooked chicken and rice for dinner."
+          },
+          {
+            "speaker": "Zara",
+            "text": "My brother and I watched TV last night!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Who did Omar visit yesterday?",
+            "answer": "His grandmother",
+            "options": [
+              "His grandmother",
+              "His uncle",
+              "Smarty"
+            ],
+            "explanation": "Omar says: Yesterday I visited my grandmother.",
+            "itemIds": [
+              "en.beginner.u10.l05.i-visited",
+              "en.beginner.u02.l03.grandmother"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Zara play in the park?",
+            "answer": "Football",
+            "options": [
+              "Football",
+              "Tennis",
+              "Basketball"
+            ],
+            "explanation": "Zara says: I played football in the park yesterday.",
+            "itemIds": [
+              "en.beginner.u10.l05.i-played",
+              "en.beginner.u09.l05.play-football"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "What did Omar cook for dinner?",
+            "answer": "Chicken and rice",
+            "options": [
+              "Chicken and rice",
+              "Fish and soup",
+              "Bread and cheese"
+            ],
+            "explanation": "Omar says: I cooked chicken and rice for dinner.",
+            "itemIds": [
+              "en.beginner.u10.l05.i-cooked",
+              "en.beginner.u03.l05.chicken",
+              "en.beginner.u03.l05.rice"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Tell Smarty what you played, watched, visited, or cooked yesterday.",
+        "turns": [
+          {
+            "smarty": "Yesterday I played a game. What did you play or watch?",
+            "accept": [
+              "^i played (?:a game|football|tennis|basketball|music)(?: yesterday| last night)?$",
+              "^i watched tv(?: yesterday| last night)?$"
+            ],
+            "example": "I watched TV last night.",
+            "hint": "Say ‘I played…’ or ‘I watched TV’.",
+            "itemIds": [
+              "en.beginner.u10.l05.i-played",
+              "en.beginner.u10.l05.i-watched",
+              "en.beginner.u04.l09.watch-tv"
+            ]
+          },
+          {
+            "smarty": "Nice! Who or where did you visit yesterday?",
+            "accept": [
+              "^i visited (?:my )?(?:grandmother|grandfather|parents|aunt|uncle|cousin|friend)(?: yesterday)?$",
+              "^i visited (?:the )?(?:museum|park|library|school)(?: yesterday)?$"
+            ],
+            "example": "I visited my friend.",
+            "hint": "Start with ‘I visited…’ and name a person or place.",
+            "itemIds": [
+              "en.beginner.u10.l05.i-visited",
+              "en.beginner.u01.l10.friend"
+            ]
+          },
+          {
+            "smarty": "What did you cook for dinner?",
+            "accept": [
+              "^i cooked (?:some )?(?:rice|soup|chicken|fish|egg)(?: for dinner)?(?: yesterday| last night)?$"
+            ],
+            "example": "I cooked rice for dinner.",
+            "hint": "Say ‘I cooked…’ and name a food.",
+            "itemIds": [
+              "en.beginner.u10.l05.i-cooked",
+              "en.beginner.u03.l05.rice",
+              "en.beginner.u03.l05.dinner"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l03.grandmother",
+        "en.beginner.u10.l01.yesterday",
+        "en.beginner.u03.l05.chicken",
+        "en.beginner.u03.l05.rice",
+        "en.beginner.u09.l05.play-football",
+        "en.beginner.u04.l09.watch-tv",
+        "en.beginner.u03.l05.soup",
+        "en.beginner.u03.l05.dinner",
+        "en.beginner.u08.l02.museum",
+        "en.beginner.u09.l06.game",
+        "en.beginner.u10.l01.last-night",
+        "en.beginner.u01.l10.friend"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l06",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Bought made came",
+      "canDo": "Use more irregular verbs",
+      "scenario": "Tom and Mia bring a cake and a gift to Smarty's playroom.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l06.i-bought",
+          "text": "I bought",
+          "kind": "phrase",
+          "forms": [
+            "bought",
+            "you bought",
+            "he bought",
+            "she bought",
+            "we bought",
+            "they bought"
+          ],
+          "example": "I bought a new hat yesterday.",
+          "note": "‘Bought’ is the past of ‘buy’—use it for things you paid for in a shop or market."
+        },
+        {
+          "id": "en.beginner.u10.l06.i-made",
+          "text": "I made",
+          "kind": "phrase",
+          "forms": [
+            "make",
+            "made",
+            "you made",
+            "he made",
+            "she made",
+            "we made",
+            "they made"
+          ],
+          "example": "I made a cake yesterday.",
+          "note": "‘Made’ is the past of ‘make’—use it when you created or baked something."
+        },
+        {
+          "id": "en.beginner.u10.l06.i-came",
+          "text": "I came",
+          "kind": "phrase",
+          "forms": [
+            "come",
+            "came",
+            "you came",
+            "he came",
+            "she came",
+            "we came",
+            "they came"
+          ],
+          "example": "I came home at five o'clock.",
+          "note": "‘Came’ is the past of ‘come’—use it when someone arrived here or came home."
+        },
+        {
+          "id": "en.beginner.u10.l06.i-met",
+          "text": "I met",
+          "kind": "phrase",
+          "forms": [
+            "met",
+            "you met",
+            "he met",
+            "she met",
+            "we met",
+            "they met"
+          ],
+          "example": "I met my friend at the market.",
+          "note": "‘Met’ is the past of ‘meet’—use it when you saw and talked to someone."
+        }
+      ],
+      "grammar": {
+        "title": "Four more irregular verbs",
+        "explanation": "Learn four more irregular past verbs: buy becomes bought, make becomes made, come becomes came, and meet becomes met.",
+        "examples": [
+          "I bought juice at the market.",
+          "We met Tom yesterday."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u10.l06.task.match-verbs",
+          "kind": "match",
+          "prompt": "Match each verb today with its past form.",
+          "pairs": [
+            {
+              "left": "I buy",
+              "right": "I bought"
+            },
+            {
+              "left": "I make",
+              "right": "I made"
+            },
+            {
+              "left": "I come",
+              "right": "I came"
+            },
+            {
+              "left": "I meet",
+              "right": "I met"
+            }
+          ],
+          "explanation": "Buy becomes bought, make becomes made, come becomes came, and meet becomes met.",
+          "itemIds": [
+            "en.beginner.u10.l06.i-bought",
+            "en.beginner.u10.l06.i-made",
+            "en.beginner.u10.l06.i-came",
+            "en.beginner.u10.l06.i-met"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.hear-bought",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I bought some juice at the market.",
+          "answer": "I bought some juice at the market.",
+          "options": [
+            "I bought some juice at the market.",
+            "I made some juice at the market.",
+            "I bought some bread at the market."
+          ],
+          "explanation": "I bought is the past of I buy.",
+          "itemIds": [
+            "en.beginner.u10.l06.i-bought",
+            "en.beginner.u03.l06.juice",
+            "en.beginner.u07.l06.market"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.pick-made",
+          "kind": "choice",
+          "prompt": "Mia baked a sweet cake in the kitchen. Which sentence is right?",
+          "answer": "I made a sweet cake.",
+          "options": [
+            "I made a sweet cake.",
+            "I met a sweet cake.",
+            "I came a sweet cake."
+          ],
+          "explanation": "Use I made for something you created or baked.",
+          "itemIds": [
+            "en.beginner.u10.l06.i-made",
+            "en.beginner.u03.l06.cake"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.fill-met",
+          "kind": "fill",
+          "prompt": "Mia saw Tom at the market and talked to him. Complete the sentence.",
+          "text": "I ___ Tom at the market.",
+          "answer": "met",
+          "options": [
+            "met",
+            "made",
+            "bought"
+          ],
+          "explanation": "Use met when you meet someone in the past.",
+          "itemIds": [
+            "en.beginner.u10.l06.i-met",
+            "en.beginner.u07.l06.market"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.fill-came",
+          "kind": "fill",
+          "prompt": "Tom arrived at Smarty's home yesterday. Complete the sentence.",
+          "text": "I ___ to your home yesterday.",
+          "answer": "came",
+          "options": [
+            "came",
+            "bought",
+            "made"
+          ],
+          "explanation": "Came is the past of come.",
+          "itemIds": [
+            "en.beginner.u10.l06.i-came",
+            "en.beginner.u05.l10.home",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.build-bought",
+          "kind": "build",
+          "prompt": "Say that you bought a blue hat. Build the sentence.",
+          "answer": "I bought a blue hat.",
+          "tiles": [
+            "I",
+            "bought",
+            "a",
+            "blue",
+            "hat",
+            "came"
+          ],
+          "explanation": "Start with I bought, then the item you paid for.",
+          "itemIds": [
+            "en.beginner.u10.l06.i-bought",
+            "en.beginner.u06.l05.hat"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.build-came",
+          "kind": "build",
+          "prompt": "Say that you came home by bus. Build the sentence.",
+          "answer": "I came home by bus.",
+          "tiles": [
+            "I",
+            "came",
+            "home",
+            "by",
+            "bus",
+            "met"
+          ],
+          "explanation": "Use I came home to say you arrived back at home.",
+          "itemIds": [
+            "en.beginner.u10.l06.i-came",
+            "en.beginner.u05.l10.home",
+            "en.beginner.u08.l09.by-bus"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.say-met",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I met my best friend yesterday.",
+          "answer": "I met my best friend yesterday.",
+          "explanation": "I met is the past of I meet.",
+          "itemIds": [
+            "en.beginner.u10.l06.i-met",
+            "en.beginner.u02.l06.best-friend",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What did Tom and Mia bring for Smarty?",
+        "image": {
+          "id": "en-a1-u10-l06-scene",
+          "describe": "Tom and Mia stand in Smarty's playroom holding a sweet cake and a new blue hat for Smarty the black cat."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Tom! Hello, Mia! A cake!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yesterday I went to the market. I met Tom at the market."
+          },
+          {
+            "speaker": "Tom",
+            "text": "We bought juice and a new blue hat for you, Smarty!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "And I made this sweet cake in the kitchen!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "You came to my home for me! Thank you!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "Where did Mia meet Tom?",
+            "answer": "At the market",
+            "options": [
+              "At the market",
+              "At school",
+              "At the cinema"
+            ],
+            "explanation": "Mia says: I met Tom at the market.",
+            "itemIds": [
+              "en.beginner.u10.l06.i-met",
+              "en.beginner.u07.l06.market"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Tom and Mia buy for Smarty?",
+            "answer": "Juice and a new blue hat",
+            "options": [
+              "Juice and a new blue hat",
+              "A red scarf",
+              "Milk and bread"
+            ],
+            "explanation": "Tom says: We bought juice and a new blue hat for you, Smarty!",
+            "itemIds": [
+              "en.beginner.u10.l06.i-bought",
+              "en.beginner.u06.l05.hat"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "What did Mia make in the kitchen?",
+            "answer": "A sweet cake",
+            "options": [
+              "A sweet cake",
+              "Soup",
+              "A sandwich"
+            ],
+            "explanation": "Mia says: And I made this sweet cake in the kitchen!",
+            "itemIds": [
+              "en.beginner.u10.l06.i-made",
+              "en.beginner.u03.l06.cake"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Tell Smarty something you bought, made, or someone you met yesterday.",
+        "turns": [
+          {
+            "smarty": "Yesterday I bought a new book. What did you buy?",
+            "accept": [
+              "^i bought (?:a |an |some )?(?:new )?(?:book|pen|pencil|hat|scarf|coat|shirt|dress|apple|banana|bread|cake|juice|milk)(?: yesterday)?$"
+            ],
+            "example": "I bought a book.",
+            "hint": "Say ‘I bought…’ and name something you bought.",
+            "itemIds": [
+              "en.beginner.u10.l06.i-bought"
+            ]
+          },
+          {
+            "smarty": "Mia made a cake! Did you make something yesterday?",
+            "accept": [
+              "^i made (?:a |an |some )?(?:cake|sandwich|soup|breakfast|lunch|dinner)(?: yesterday)?$",
+              "^no(?: i did not)?$"
+            ],
+            "example": "I made a sandwich.",
+            "hint": "Say ‘I made a cake’ or ‘I made a sandwich’.",
+            "itemIds": [
+              "en.beginner.u10.l06.i-made",
+              "en.beginner.u03.l11.sandwich"
+            ]
+          },
+          {
+            "smarty": "Who did you meet yesterday?",
+            "accept": [
+              "^i met (?:my )?(?:friend|best friend|cousin|aunt|uncle|brother|sister|mia|sam|ben|leo|ana|lily|omar|zara|tom)(?: yesterday)?$"
+            ],
+            "example": "I met my friend yesterday.",
+            "hint": "Say ‘I met…’ and name a friend or family member.",
+            "itemIds": [
+              "en.beginner.u10.l06.i-met",
+              "en.beginner.u01.l10.friend",
+              "en.beginner.u10.l01.yesterday"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l06.juice",
+        "en.beginner.u07.l06.market",
+        "en.beginner.u03.l06.cake",
+        "en.beginner.u05.l10.home",
+        "en.beginner.u10.l01.yesterday",
+        "en.beginner.u06.l05.hat",
+        "en.beginner.u08.l09.by-bus",
+        "en.beginner.u02.l06.best-friend",
+        "en.beginner.u03.l11.sandwich",
+        "en.beginner.u01.l10.friend"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l07",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Studied helped walked",
+      "canDo": "Say what you did at school and outside",
+      "scenario": "Smarty asks Sam and Lily about school, homework, and walking home yesterday.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l07.i-studied",
+          "text": "I studied",
+          "kind": "phrase",
+          "forms": [
+            "study",
+            "studied",
+            "you studied",
+            "he studied",
+            "she studied",
+            "we studied",
+            "they studied"
+          ],
+          "example": "I studied at school yesterday.",
+          "note": "‘Studied’ is the past of ‘study’—notice the ‘y’ changes to ‘ied’."
+        },
+        {
+          "id": "en.beginner.u10.l07.i-helped",
+          "text": "I helped",
+          "kind": "phrase",
+          "forms": [
+            "help",
+            "helped",
+            "you helped",
+            "he helped",
+            "she helped",
+            "we helped",
+            "they helped"
+          ],
+          "example": "I helped my mother at home.",
+          "note": "Use ‘I helped’ when you did something helpful for someone."
+        },
+        {
+          "id": "en.beginner.u10.l07.i-walked",
+          "text": "I walked",
+          "kind": "phrase",
+          "forms": [
+            "walk",
+            "walked",
+            "you walked",
+            "he walked",
+            "she walked",
+            "we walked",
+            "they walked"
+          ],
+          "example": "I walked to school yesterday.",
+          "note": "Use ‘I walked’ when you went somewhere on foot."
+        },
+        {
+          "id": "en.beginner.u10.l07.did-you",
+          "text": "Did you",
+          "kind": "phrase",
+          "forms": [
+            "did",
+            "did he",
+            "did she",
+            "did we",
+            "did they"
+          ],
+          "example": "Did you walk to school?",
+          "note": "Start past questions with ‘Did you’ and use the base verb, like ‘walk’ or ‘study’."
+        }
+      ],
+      "grammar": {
+        "title": "Past questions with Did you…?",
+        "explanation": "To ask a yes-or-no question about past actions, start with Did you followed by the base verb (Did you study?, Did you walk?, Did you help?). Notice that after Did, the verb does not have -ed.",
+        "examples": [
+          "Did you study yesterday?",
+          "Did you walk in the park?"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u10.l07.task.pick-did-you",
+          "kind": "choice",
+          "prompt": "Smarty asks Sam about walking to school. Which question is right?",
+          "answer": "Did you walk to school?",
+          "options": [
+            "Did you walk to school?",
+            "Did you walked to school?",
+            "Were you walk to school?"
+          ],
+          "explanation": "After Did you, use the base verb walk without -ed.",
+          "itemIds": [
+            "en.beginner.u10.l07.did-you",
+            "en.beginner.u10.l07.i-walked",
+            "en.beginner.u08.l01.school"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.hear-studied",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I studied at the library yesterday.",
+          "answer": "I studied at the library yesterday.",
+          "options": [
+            "I studied at the library yesterday.",
+            "I walked to the library yesterday.",
+            "I helped at the library yesterday."
+          ],
+          "explanation": "I studied means you read and learned at the library.",
+          "itemIds": [
+            "en.beginner.u10.l07.i-studied",
+            "en.beginner.u08.l02.library",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.match-three",
+          "kind": "match",
+          "prompt": "Match the actions with the places or people.",
+          "pairs": [
+            {
+              "left": "I studied",
+              "right": "at school."
+            },
+            {
+              "left": "I helped",
+              "right": "my mother."
+            },
+            {
+              "left": "I walked",
+              "right": "in the park."
+            }
+          ],
+          "explanation": "Studied fits school, helped fits your mother, and walked fits the park.",
+          "itemIds": [
+            "en.beginner.u10.l07.i-studied",
+            "en.beginner.u10.l07.i-helped",
+            "en.beginner.u10.l07.i-walked"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.fill-helped",
+          "kind": "fill",
+          "prompt": "Lily worked in the kitchen for her father. Complete the sentence.",
+          "text": "I ___ my father in the kitchen.",
+          "answer": "helped",
+          "options": [
+            "helped",
+            "walked",
+            "studied"
+          ],
+          "explanation": "Use helped when you do something for someone.",
+          "itemIds": [
+            "en.beginner.u10.l07.i-helped",
+            "en.beginner.u02.l01.father"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.fill-did-you",
+          "kind": "fill",
+          "prompt": "Ask Sam if he studied last night. Complete the question.",
+          "text": "___ study last night?",
+          "answer": "Did you",
+          "options": [
+            "Did you",
+            "Were you",
+            "I studied"
+          ],
+          "explanation": "Use Did you before the base verb study.",
+          "itemIds": [
+            "en.beginner.u10.l07.did-you",
+            "en.beginner.u10.l07.i-studied",
+            "en.beginner.u10.l01.last-night"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.build-walked",
+          "kind": "build",
+          "prompt": "Say that you walked home yesterday. Build the sentence.",
+          "answer": "I walked home yesterday.",
+          "tiles": [
+            "I",
+            "walked",
+            "home",
+            "yesterday",
+            "helped"
+          ],
+          "explanation": "Use I walked home to say you went home on foot.",
+          "itemIds": [
+            "en.beginner.u10.l07.i-walked",
+            "en.beginner.u05.l10.home",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.build-did-you",
+          "kind": "build",
+          "prompt": "Ask Lily if she helped her mother. Build the question.",
+          "answer": "Did you help your mother?",
+          "tiles": [
+            "Did",
+            "you",
+            "help",
+            "your",
+            "mother",
+            "helped"
+          ],
+          "explanation": "Use Did you + base verb help.",
+          "itemIds": [
+            "en.beginner.u10.l07.did-you",
+            "en.beginner.u10.l07.i-helped",
+            "en.beginner.u02.l01.mother"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.say-studied",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I studied and I helped my parents.",
+          "answer": "I studied and I helped my parents.",
+          "explanation": "Both studied and helped are past verbs.",
+          "itemIds": [
+            "en.beginner.u10.l07.i-studied",
+            "en.beginner.u10.l07.i-helped",
+            "en.beginner.u02.l02.parents"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Did Sam walk home or go by bus yesterday?",
+        "image": {
+          "id": "en-a1-u10-l07-scene",
+          "describe": "Sam and Lily sit at a desk in Smarty's playroom with notebooks while Smarty the black cat listens."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Sam, did you study at school yesterday?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes! I studied at school, and I walked home."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Lily, did you walk home?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "No, I came home by bus. In the evening, I helped my mother in the kitchen."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I helped my father, and I read a book!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "How did Sam go home yesterday?",
+            "answer": "He walked home",
+            "options": [
+              "He walked home",
+              "He went by bus",
+              "He went by car"
+            ],
+            "explanation": "Sam says: I studied at school, and I walked home.",
+            "itemIds": [
+              "en.beginner.u10.l07.i-walked",
+              "en.beginner.u05.l10.home"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "Who did Lily help in the evening?",
+            "answer": "Her mother",
+            "options": [
+              "Her mother",
+              "Her father",
+              "Smarty"
+            ],
+            "explanation": "Lily says: In the evening, I helped my mother in the kitchen.",
+            "itemIds": [
+              "en.beginner.u10.l07.i-helped",
+              "en.beginner.u02.l01.mother"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Smarty ask Sam first?",
+            "answer": "Did you study at school yesterday?",
+            "options": [
+              "Did you study at school yesterday?",
+              "Did you play football?",
+              "Where were you?"
+            ],
+            "explanation": "Smarty asks: Sam, did you study at school yesterday?",
+            "itemIds": [
+              "en.beginner.u10.l07.did-you",
+              "en.beginner.u10.l07.i-studied"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks about your day at school and at home. Answer and ask him a question back!",
+        "turns": [
+          {
+            "smarty": "Did you study yesterday?",
+            "accept": [
+              "^(?:yes|no)(?: i studied(?: at (?:school|home|the library))?)?$",
+              "^i studied(?: at (?:school|home|the library))?(?: yesterday)?$"
+            ],
+            "example": "Yes, I studied at school.",
+            "hint": "Say ‘Yes, I studied’ or ‘No’.",
+            "itemIds": [
+              "en.beginner.u10.l07.did-you",
+              "en.beginner.u10.l07.i-studied",
+              "en.beginner.u08.l01.school"
+            ]
+          },
+          {
+            "smarty": "Did you walk in the park or help at home?",
+            "accept": [
+              "^i walked(?: in the park| to school| home)?(?: yesterday)?$",
+              "^i helped(?: my (?:mother|father|parents|brother|sister))?(?: at home)?(?: yesterday)?$"
+            ],
+            "example": "I helped my mother.",
+            "hint": "Say ‘I walked…’ or ‘I helped…’.",
+            "itemIds": [
+              "en.beginner.u10.l07.i-walked",
+              "en.beginner.u10.l07.i-helped",
+              "en.beginner.u02.l01.mother"
+            ]
+          },
+          {
+            "smarty": "Ask me if I walked in the park yesterday!",
+            "accept": [
+              "^did you walk in the park(?: yesterday)?$",
+              "^smarty did you walk in the park(?: yesterday)?$"
+            ],
+            "example": "Did you walk in the park yesterday?",
+            "hint": "Start with ‘Did you walk…’",
+            "itemIds": [
+              "en.beginner.u10.l07.did-you",
+              "en.beginner.u10.l07.i-walked",
+              "en.beginner.u08.l01.park"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u08.l01.school",
+        "en.beginner.u08.l02.library",
+        "en.beginner.u10.l01.yesterday",
+        "en.beginner.u02.l01.father",
+        "en.beginner.u10.l01.last-night",
+        "en.beginner.u05.l10.home",
+        "en.beginner.u02.l01.mother",
+        "en.beginner.u02.l02.parents",
+        "en.beginner.u08.l01.park"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l08",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 8,
+      "type": "test",
+      "title": "Yesterday with Smarty",
+      "canDo": "Tell Smarty what you did",
+      "scenario": "Unit test in Smarty's playroom: wrap up Unit 10 and tell Smarty all about yesterday and last weekend.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l08.what-did-you-do",
+          "text": "What did you do?",
+          "kind": "phrase",
+          "example": "What did you do yesterday?",
+          "note": "Ask ‘What did you do?’ to find out someone's past actions."
+        },
+        {
+          "id": "en.beginner.u10.l08.last-weekend",
+          "text": "last weekend",
+          "kind": "phrase",
+          "example": "I visited my parents last weekend.",
+          "note": "Say ‘last weekend’ for the Saturday and Sunday before now."
+        },
+        {
+          "id": "en.beginner.u10.l08.i-did-not-go",
+          "text": "I did not go",
+          "kind": "phrase",
+          "forms": [
+            "did not",
+            "didn't"
+          ],
+          "example": "I did not go to school last weekend.",
+          "note": "Use ‘I did not’ plus a base verb, like ‘go’, to say what you did not do."
+        }
+      ],
+      "grammar": {
+        "title": "What did you do? and I did not…",
+        "explanation": "Ask What did you do? to ask about past activities. To say what you did not do, use did not + base verb (I did not go, I did not watch TV).",
+        "examples": [
+          "What did you do last weekend?",
+          "I did not go to the park yesterday."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u10.l08.task.pick-what-did",
+          "kind": "choice",
+          "prompt": "Smarty wants to know your activities from last weekend. Which question does he ask?",
+          "answer": "What did you do last weekend?",
+          "options": [
+            "What did you do last weekend?",
+            "Where were you do last weekend?",
+            "What did you went last weekend?"
+          ],
+          "explanation": "Use What did you do…? to ask about past actions.",
+          "itemIds": [
+            "en.beginner.u10.l08.what-did-you-do",
+            "en.beginner.u10.l08.last-weekend"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.hear-did-not",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I did not go to school last weekend.",
+          "answer": "I did not go to school last weekend.",
+          "options": [
+            "I did not go to school last weekend.",
+            "I went to school last weekend.",
+            "I did not go to the park last weekend."
+          ],
+          "explanation": "I did not go says that you stayed away from school.",
+          "itemIds": [
+            "en.beginner.u10.l08.i-did-not-go",
+            "en.beginner.u10.l08.last-weekend",
+            "en.beginner.u08.l01.school"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.match-unit",
+          "kind": "match",
+          "prompt": "Match the questions and answers.",
+          "pairs": [
+            {
+              "left": "Where were you?",
+              "right": "I was at home."
+            },
+            {
+              "left": "What did you do?",
+              "right": "I played tennis and cooked dinner."
+            },
+            {
+              "left": "Did you go to school?",
+              "right": "No, I did not go to school."
+            },
+            {
+              "left": "Was it rainy?",
+              "right": "No, it was sunny."
+            }
+          ],
+          "explanation": "Match Where with a place, What did you do with actions, Did you go with did not go, and Was it with weather.",
+          "itemIds": [
+            "en.beginner.u10.l01.where-were-you",
+            "en.beginner.u10.l08.what-did-you-do",
+            "en.beginner.u10.l08.i-did-not-go",
+            "en.beginner.u10.l02.was-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.fill-did-not",
+          "kind": "fill",
+          "prompt": "You stayed home yesterday. Complete the sentence.",
+          "text": "___ to the market yesterday.",
+          "answer": "I did not go",
+          "options": [
+            "I did not go",
+            "I did not went",
+            "I was not go"
+          ],
+          "explanation": "Use I did not go (not went) for the negative past.",
+          "itemIds": [
+            "en.beginner.u10.l08.i-did-not-go",
+            "en.beginner.u07.l06.market",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.fill-weekend",
+          "kind": "fill",
+          "prompt": "Mia talks about Saturday and Sunday. Complete the sentence.",
+          "text": "We visited our grandparents ___.",
+          "answer": "last weekend",
+          "options": [
+            "last weekend",
+            "last night",
+            "in the morning"
+          ],
+          "explanation": "Last weekend means the Saturday and Sunday before now.",
+          "itemIds": [
+            "en.beginner.u10.l08.last-weekend",
+            "en.beginner.u05.l05.in"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.build-what-did",
+          "kind": "build",
+          "prompt": "Ask your friend what they did yesterday. Build the question.",
+          "answer": "What did you do yesterday?",
+          "tiles": [
+            "What",
+            "did",
+            "you",
+            "do",
+            "yesterday",
+            "were"
+          ],
+          "explanation": "Start with What did you do, then add yesterday.",
+          "itemIds": [
+            "en.beginner.u10.l08.what-did-you-do",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.build-story",
+          "kind": "build",
+          "prompt": "Say that you bought a cake and met your friend last weekend. Build the sentence.",
+          "answer": "I bought a cake and met my friend last weekend.",
+          "tiles": [
+            "I",
+            "bought",
+            "a",
+            "cake",
+            "and",
+            "met",
+            "my",
+            "friend",
+            "last",
+            "weekend",
+            "ate"
+          ],
+          "explanation": "Combine bought and met with last weekend.",
+          "itemIds": [
+            "en.beginner.u10.l06.i-bought",
+            "en.beginner.u10.l06.i-met",
+            "en.beginner.u10.l08.last-weekend"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.say-test",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I did not go to the park, I watched TV.",
+          "answer": "I did not go to the park, I watched TV.",
+          "explanation": "Say the whole sentence: I did not go to the park, I watched TV.",
+          "itemIds": [
+            "en.beginner.u10.l08.i-did-not-go",
+            "en.beginner.u10.l05.i-watched"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What did Smarty and his friends do last weekend?",
+        "image": {
+          "id": "en-a1-u10-l08-scene",
+          "describe": "All of Smarty's friends gather in the playroom around Smarty the black cat, sharing snacks and talking happily."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, friends! What did you do last weekend?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I went to the park and played tennis. It was sunny!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "I did not go to the park. I visited my uncle and ate delicious soup."
+          },
+          {
+            "speaker": "Zara",
+            "text": "I bought a new book and studied at home."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I was in this room, and my friends came here!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What did Mia do last weekend?",
+            "answer": "She went to the park and played tennis",
+            "options": [
+              "She went to the park and played tennis",
+              "She studied at home",
+              "She visited her uncle"
+            ],
+            "explanation": "Mia says: I went to the park and played tennis.",
+            "itemIds": [
+              "en.beginner.u10.l03.i-went",
+              "en.beginner.u10.l05.i-played",
+              "en.beginner.u10.l08.last-weekend"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Did Sam go to the park last weekend?",
+            "answer": "No, he did not go to the park",
+            "options": [
+              "No, he did not go to the park",
+              "Yes, he played tennis",
+              "Yes, he bought a book"
+            ],
+            "explanation": "Sam says: I did not go to the park.",
+            "itemIds": [
+              "en.beginner.u10.l08.i-did-not-go",
+              "en.beginner.u08.l01.park"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "What did Zara buy last weekend?",
+            "answer": "A new book",
+            "options": [
+              "A new book",
+              "A blue hat",
+              "Some soup"
+            ],
+            "explanation": "Zara says: I bought a new book and studied at home.",
+            "itemIds": [
+              "en.beginner.u10.l06.i-bought",
+              "en.beginner.u10.l07.i-studied"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Final chat with Smarty! Tell him where you were and what you did last weekend.",
+        "turns": [
+          {
+            "smarty": "What did you do last weekend?",
+            "accept": [
+              "^i (?:went|played|watched|visited|cooked|bought|made|met|studied|helped|walked|ate|had|saw) [a-z ]+$"
+            ],
+            "example": "I visited my parents last weekend.",
+            "hint": "Use any past verb like ‘I went…’, ‘I played…’, or ‘I visited…’.",
+            "itemIds": [
+              "en.beginner.u10.l08.what-did-you-do",
+              "en.beginner.u10.l08.last-weekend",
+              "en.beginner.u10.l05.i-visited"
+            ]
+          },
+          {
+            "smarty": "Did you go to school yesterday?",
+            "accept": [
+              "^(?:yes|no)(?: i (?:went|did not go)(?: to school)?)?$",
+              "^i (?:went|did not go) to school(?: yesterday)?$"
+            ],
+            "example": "No, I did not go to school.",
+            "hint": "Say ‘Yes, I went to school’ or ‘No, I did not go’.",
+            "itemIds": [
+              "en.beginner.u10.l08.i-did-not-go",
+              "en.beginner.u10.l03.i-went",
+              "en.beginner.u10.l07.did-you"
+            ]
+          },
+          {
+            "smarty": "Ask me what I did last weekend!",
+            "accept": [
+              "^what did you do(?: last weekend| yesterday)?$",
+              "^smarty what did you do(?: last weekend| yesterday)?$"
+            ],
+            "example": "What did you do last weekend?",
+            "hint": "Ask Smarty ‘What did you do last weekend?’",
+            "itemIds": [
+              "en.beginner.u10.l08.what-did-you-do",
+              "en.beginner.u10.l08.last-weekend"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u08.l01.school",
+        "en.beginner.u10.l01.where-were-you",
+        "en.beginner.u10.l02.was-it",
+        "en.beginner.u07.l06.market",
+        "en.beginner.u10.l01.yesterday",
+        "en.beginner.u10.l06.i-bought",
+        "en.beginner.u10.l06.i-met",
+        "en.beginner.u10.l05.i-watched",
+        "en.beginner.u10.l03.i-went",
+        "en.beginner.u10.l05.i-played",
+        "en.beginner.u08.l01.park",
+        "en.beginner.u10.l07.i-studied",
+        "en.beginner.u10.l05.i-visited",
+        "en.beginner.u10.l07.did-you",
+        "en.beginner.u05.l05.in"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Yellow Key in the Playroom",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "Last night I was in this room. My new red hat was on the table.",
+        "image": {
+          "id": "en-a1-u10-ep-p01",
+          "describe": "Smarty the black cat points at an empty wooden table in his cozy playroom."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Where is the red hat now? It is not on the table!"
+      },
+      {
+        "speaker": "Sam",
+        "text": "Were you here yesterday, Ben?"
+      },
+      {
+        "speaker": "Ben",
+        "text": "Yes, I came here yesterday. We played a game, and I went home.",
+        "image": {
+          "id": "en-a1-u10-ep-p04",
+          "describe": "Ben the cat explains to Sam and Smarty in the playroom while pointing toward the door."
+        }
+      },
+      {
+        "speaker": "Lily",
+        "text": "The window! I saw a small brown bird outside!"
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Did the bird come in here?"
+      },
+      {
+        "speaker": "Mia",
+        "text": "There is a small yellow key under the window, next to the box!",
+        "image": {
+          "id": "en-a1-u10-ep-p07",
+          "describe": "Mia the cat kneels beside a toy box under the playroom window, spotting a shiny yellow key."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "A yellow key! Whose is this? Let's go outside!"
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.beginner.u10.ep.q01",
+        "kind": "choice",
+        "prompt": "Where was Smarty’s new red hat last night?",
+        "answer": "On the table",
+        "options": [
+          "On the table",
+          "Under the sofa",
+          "In the box"
+        ],
+        "explanation": "Smarty says: My new red hat was on the table.",
+        "itemIds": [
+          "en.beginner.u10.l01.i-was",
+          "en.beginner.u10.l01.last-night"
+        ]
+      },
+      {
+        "id": "en.beginner.u10.ep.q02",
+        "kind": "choice",
+        "prompt": "What did Lily see outside the window?",
+        "answer": "A small brown bird",
+        "options": [
+          "A small brown bird",
+          "A yellow cat",
+          "A red hat"
+        ],
+        "explanation": "Lily says: I saw a small brown bird outside!",
+        "itemIds": [
+          "en.beginner.u10.l03.i-saw"
+        ]
+      },
+      {
+        "id": "en.beginner.u10.ep.q03",
+        "kind": "choice",
+        "prompt": "What did Mia find under the window?",
+        "answer": "A small yellow key",
+        "options": [
+          "A small yellow key",
+          "Smarty’s red hat",
+          "A new book"
+        ],
+        "explanation": "Mia says: There is a small yellow key under the window, next to the box!",
+        "itemIds": [
+          "en.beginner.u05.l06.key"
+        ]
+      }
+    ]
+  }
+}

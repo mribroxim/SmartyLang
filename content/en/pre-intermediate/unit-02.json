@@ -1,0 +1,4013 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "pre-intermediate",
+  "unit": 2,
+  "title": "Journeys",
+  "room": "train-carriage",
+  "lessons": [
+    {
+      "id": "en.pre-intermediate.u02.l01",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "At the station",
+      "canDo": "Buy a train ticket",
+      "scenario": "Smarty and Mia are at the train station buying tickets and checking the board.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u02.l01.platform",
+          "text": "platform",
+          "kind": "word",
+          "forms": [
+            "platforms"
+          ],
+          "example": "Our train is on platform two.",
+          "note": "Say 'platform' for the place where you wait for and get on your train.",
+          "image": {
+            "id": "train-platform",
+            "describe": "a friendly cat with a small suitcase standing on a train station platform next to yellow safety lines"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.single-ticket",
+          "text": "single ticket",
+          "kind": "phrase",
+          "forms": [
+            "single tickets"
+          ],
+          "example": "Can I have a single ticket to London, please?",
+          "note": "Ask for a 'single ticket' when you only want to travel one way.",
+          "image": {
+            "id": "single-ticket",
+            "describe": "a cat paw holding a paper train ticket with one arrow pointing forward"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.return-ticket",
+          "text": "return ticket",
+          "kind": "phrase",
+          "forms": [
+            "return tickets"
+          ],
+          "example": "I would like a return ticket for tomorrow.",
+          "note": "Ask for a 'return ticket' when you want to travel there and come back again.",
+          "image": {
+            "id": "return-ticket",
+            "describe": "a cat paw holding a paper train ticket with two arrows pointing there and back"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.timetable-board",
+          "text": "timetable board",
+          "kind": "phrase",
+          "forms": [
+            "timetable boards"
+          ],
+          "example": "Look at the timetable board to see our platform.",
+          "note": "Check the 'timetable board' at the station to see train times and platforms.",
+          "image": {
+            "id": "timetable-board",
+            "describe": "Smarty the black cat looking up at a large digital train timetable board in a station hall"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.delayed",
+          "text": "delayed",
+          "kind": "word",
+          "example": "The train is delayed because of bad weather.",
+          "note": "Use 'delayed' when a train or plane is late and leaves after its planned time."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.cancelled",
+          "text": "cancelled",
+          "kind": "word",
+          "example": "Our morning train is cancelled today.",
+          "note": "Use 'cancelled' when a train or plane will not go at all."
+        }
+      ],
+      "grammar": {
+        "title": "Tickets and platforms",
+        "explanation": "Use 'a single ticket' for one way and 'a return ticket' for going and coming back. Use 'on' before a platform number: 'on platform three'.",
+        "examples": [
+          "I would like a return ticket, please.",
+          "The train is on platform five."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l01.task.pick-platform",
+          "kind": "choice",
+          "prompt": "Where do you stand at the station to get on a train?",
+          "answer": "platform",
+          "options": [
+            "platform",
+            "timetable board",
+            "single ticket"
+          ],
+          "explanation": "You wait on the platform to get on your train.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l01.platform"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.task.hear-single",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Can I have a single ticket, please?",
+          "answer": "Can I have a single ticket, please?",
+          "options": [
+            "Can I have a single ticket, please?",
+            "Can I have a return ticket, please?",
+            "Can I have two tickets, please?"
+          ],
+          "explanation": "A single ticket is for to go there.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l01.single-ticket",
+            "en.beginner.u03.l06.can-i-have"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.task.fill-return",
+          "kind": "fill",
+          "prompt": "Mia is coming back tomorrow. Complete her sentence.",
+          "text": "I would like a ___ for tomorrow.",
+          "answer": "return ticket",
+          "options": [
+            "return ticket",
+            "single ticket",
+            "timetable board"
+          ],
+          "explanation": "Use a return ticket when you are coming back.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l01.return-ticket",
+            "en.beginner.u07.l06.i-would-like"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.task.match-station",
+          "kind": "match",
+          "prompt": "Match each phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "single ticket",
+              "right": "to go there"
+            },
+            {
+              "left": "return ticket",
+              "right": "there and back"
+            },
+            {
+              "left": "timetable board",
+              "right": "shows train times"
+            }
+          ],
+          "explanation": "A single ticket goes one way, a return ticket goes both ways, and the timetable board shows times.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l01.single-ticket",
+            "en.pre-intermediate.u02.l01.return-ticket",
+            "en.pre-intermediate.u02.l01.timetable-board"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.task.build-board",
+          "kind": "build",
+          "prompt": "Smarty wants to check the train times. Build the sentence.",
+          "answer": "Look at the timetable board.",
+          "tiles": [
+            "Look",
+            "at",
+            "the",
+            "timetable",
+            "board",
+            "platform"
+          ],
+          "explanation": "Look at the timetable board to check train times and platforms.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l01.timetable-board"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.task.pick-delayed",
+          "kind": "choice",
+          "prompt": "Your train leaves at four o'clock, but now it leaves at five o'clock. What is the train?",
+          "answer": "delayed",
+          "options": [
+            "delayed",
+            "cancelled",
+            "early"
+          ],
+          "explanation": "Delayed means the train is late, not stopped completely.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l01.delayed",
+            "en.beginner.u11.l01.train"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.task.fill-cancelled",
+          "kind": "fill",
+          "prompt": "There is no train today because of heavy snow. Complete the sentence.",
+          "text": "The train is ___ today.",
+          "answer": "cancelled",
+          "options": [
+            "cancelled",
+            "delayed",
+            "warm"
+          ],
+          "explanation": "Cancelled means the train will not run at all.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l01.cancelled"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l01.task.say-platform",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "Our train is on platform three.",
+          "answer": "Our train is on platform three.",
+          "explanation": "Use 'on' before a platform number.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l01.platform"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why do Smarty and Mia need to hurry at the station?",
+        "image": {
+          "id": "en-b1-u02-l01-scene",
+          "describe": "Smarty the black cat and Mia standing in a sunny train station hall looking up at a big timetable board near a ticket office."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Here is the ticket office, Mia. What is our destination?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "We are going to the sea! Can I have a return ticket, please?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I have a single ticket because I am visiting my cousin there."
+          },
+          {
+            "speaker": "Mia",
+            "text": "The fare is cheap today. Now let's look at the timetable board."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Oh no! The nine o'clock train is cancelled."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Look! The half past nine train is delayed, so it is still here on platform four. Ask the conductor!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "What kind of ticket does Mia buy?",
+            "answer": "a return ticket",
+            "options": [
+              "a return ticket",
+              "a single ticket",
+              "a cinema ticket"
+            ],
+            "explanation": "Mia says: Can I have a return ticket, please?",
+            "itemIds": [
+              "en.pre-intermediate.u02.l01.return-ticket"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "What happened to the nine o'clock train?",
+            "answer": "It is cancelled.",
+            "options": [
+              "It is cancelled.",
+              "It is on platform one.",
+              "It is early."
+            ],
+            "explanation": "Smarty sees on the timetable board that the nine o'clock train is cancelled.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l01.cancelled",
+              "en.pre-intermediate.u02.l01.timetable-board"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Which platform is the delayed train on?",
+            "answer": "platform four",
+            "options": [
+              "platform four",
+              "platform nine",
+              "platform two"
+            ],
+            "explanation": "Mia says the half past nine train is on platform four.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l01.platform",
+              "en.pre-intermediate.u02.l01.delayed"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are at the train station with Smarty. Buy a ticket and check the board.",
+        "turns": [
+          {
+            "smarty": "Welcome to the station! Would you like a single ticket or a return ticket?",
+            "accept": [
+              "^(?:i would like |can i have )?a (?:single|return) ticket(?: please)?$",
+              "^(?:single|return) ticket(?: please)?$"
+            ],
+            "example": "I would like a return ticket, please.",
+            "hint": "Ask for a single ticket or a return ticket.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l01.single-ticket",
+              "en.pre-intermediate.u02.l01.return-ticket",
+              "en.beginner.u07.l06.i-would-like"
+            ]
+          },
+          {
+            "smarty": "Look at the timetable board. Is our train on time, delayed, or cancelled?",
+            "accept": [
+              "^(?:our train |the train |it )?is (?:delayed|cancelled)$",
+              "^(?:delayed|cancelled)$"
+            ],
+            "example": "Our train is delayed.",
+            "hint": "Tell Smarty if the train is delayed or cancelled.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l01.timetable-board",
+              "en.pre-intermediate.u02.l01.delayed",
+              "en.pre-intermediate.u02.l01.cancelled"
+            ]
+          },
+          {
+            "smarty": "Which platform is our train on? Say a number from one to ten.",
+            "accept": [
+              "^(?:our train is |the train is |it is )?(?:on )?platform (?:one|two|three|four|five|six|seven|eight|nine|ten)$"
+            ],
+            "example": "It is on platform two.",
+            "hint": "Say 'It is on platform...' with a number.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l01.platform"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "ticket office",
+          "gloss": "the desk where you buy train tickets"
+        },
+        {
+          "text": "destination",
+          "gloss": "the place you are travelling to"
+        },
+        {
+          "text": "fare",
+          "gloss": "the money you pay for a ticket"
+        },
+        {
+          "text": "conductor",
+          "gloss": "the person who checks tickets on a train"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u03.l06.can-i-have",
+        "en.beginner.u07.l06.i-would-like",
+        "en.beginner.u11.l01.train"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u02.l02",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "On the train",
+      "canDo": "Handle a journey",
+      "scenario": "Smarty and Leo are inside the train carriage finding their seats and storing luggage.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u02.l02.seat-reservation",
+          "text": "seat reservation",
+          "kind": "phrase",
+          "forms": [
+            "seat reservations"
+          ],
+          "example": "I have a seat reservation next to the window.",
+          "note": "Say 'seat reservation' when you booked a specific seat before getting on the train.",
+          "image": {
+            "id": "seat-reservation",
+            "describe": "a small digital screen above a train seat showing a green checkmark and a seat number"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l02.change-trains",
+          "text": "change trains",
+          "kind": "phrase",
+          "forms": [
+            "changed trains",
+            "changing trains"
+          ],
+          "example": "We have to change trains at the next station.",
+          "note": "Use 'change trains' when you get off one train and get on another to finish your trip."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l02.luggage-rack",
+          "text": "luggage rack",
+          "kind": "phrase",
+          "forms": [
+            "luggage racks"
+          ],
+          "example": "Keep your suitcase on the luggage rack above your seat.",
+          "note": "The 'luggage rack' is the shelf above the seats where you keep suitcases.",
+          "image": {
+            "id": "luggage-rack",
+            "describe": "a brown cat lifting a blue suitcase onto an overhead luggage rack inside a train carriage"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l02.the-next-stop",
+          "text": "the next stop",
+          "kind": "phrase",
+          "forms": [
+            "next stop"
+          ],
+          "example": "The next stop is the city museum.",
+          "note": "Say 'the next stop' for the very next station where the train will stop."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l02.on-time",
+          "text": "on time",
+          "kind": "phrase",
+          "example": "Good news! Our train is running on time.",
+          "note": "Say 'on time' when a train is not late and follows its schedule."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l02.a-direct-train",
+          "text": "a direct train",
+          "kind": "phrase",
+          "forms": [
+            "direct train",
+            "direct trains"
+          ],
+          "example": "This is a direct train, so we do not change trains.",
+          "note": "A 'direct train' takes you all the way to your destination without changing trains."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l02.task.pick-reservation",
+          "kind": "choice",
+          "prompt": "Someone is sitting in the seat you booked. What do you show them?",
+          "answer": "seat reservation",
+          "options": [
+            "seat reservation",
+            "luggage rack",
+            "the next stop"
+          ],
+          "explanation": "A seat reservation shows that the seat is booked for you.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l02.seat-reservation",
+            "en.pre-intermediate.u01.l05.is-this-seat-taken"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l02.task.hear-luggage",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Keep your suitcase on the luggage rack.",
+          "answer": "Keep your suitcase on the luggage rack.",
+          "options": [
+            "Keep your suitcase on the luggage rack.",
+            "Keep your suitcase under the table.",
+            "Keep your suitcase on the platform."
+          ],
+          "explanation": "The luggage rack is the shelf for suitcases on a train.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l02.luggage-rack",
+            "en.beginner.u11.l01.suitcase"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l02.task.fill-change",
+          "kind": "fill",
+          "prompt": "This train does not go all the way to Oxford. Complete the sentence.",
+          "text": "We must ___ at the big station.",
+          "answer": "change trains",
+          "options": [
+            "change trains",
+            "on time",
+            "seat reservation"
+          ],
+          "explanation": "You change trains when you get off one train and take another.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l02.change-trains",
+            "en.elementary.u07.l05.must"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l02.task.match-journey",
+          "kind": "match",
+          "prompt": "Match each phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "a direct train",
+              "right": "no need to change trains"
+            },
+            {
+              "left": "on time",
+              "right": "not delayed"
+            },
+            {
+              "left": "the next stop",
+              "right": "where the train stops soon"
+            }
+          ],
+          "explanation": "A direct train needs no changes, on time means not late, and the next stop is the coming station.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l02.a-direct-train",
+            "en.pre-intermediate.u02.l02.on-time",
+            "en.pre-intermediate.u02.l02.the-next-stop",
+            "en.pre-intermediate.u02.l01.delayed"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l02.task.build-direct",
+          "kind": "build",
+          "prompt": "Leo is happy because they do not need to get off early. Build the sentence.",
+          "answer": "This is a direct train.",
+          "tiles": [
+            "This",
+            "is",
+            "a",
+            "direct",
+            "train",
+            "stop"
+          ],
+          "explanation": "A direct train goes straight to your destination.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l02.a-direct-train"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l02.task.fill-next-stop",
+          "kind": "fill",
+          "prompt": "Smarty looks out the train window as the train slows down. Complete the sentence.",
+          "text": "Get your suitcase ready for ___.",
+          "answer": "the next stop",
+          "options": [
+            "the next stop",
+            "a direct train",
+            "on time"
+          ],
+          "explanation": "Get ready before the next stop so you do not miss your station.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l02.the-next-stop"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l02.task.say-ontime",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "Our train is on time now.",
+          "answer": "Our train is on time now.",
+          "explanation": "On time means the train is running on schedule.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l02.on-time"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Do Smarty and Leo need to change trains during their journey?",
+        "image": {
+          "id": "en-b1-u02-l02-scene",
+          "describe": "Smarty the black cat and Leo inside a cozy train carriage placing a suitcase on the overhead luggage rack."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Welcome to our carriage, Leo! I have a seat reservation for seats four and five."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Great! Let me lift my suitcase onto the luggage rack."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look at that commuter reading a book in the quiet compartment."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Smarty, is this a direct train, or do we have to change trains?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is a direct train! And we are right on time."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Look outside! We are going into a dark tunnel right before the next stop."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Where does Leo keep his suitcase?",
+            "answer": "on the luggage rack",
+            "options": [
+              "on the luggage rack",
+              "on seat five",
+              "on the platform"
+            ],
+            "explanation": "Leo lifts his suitcase onto the luggage rack.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l02.luggage-rack"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "Do Smarty and Leo have to change trains?",
+            "answer": "No, it is a direct train.",
+            "options": [
+              "No, it is a direct train.",
+              "Yes, at every station.",
+              "Yes, because it is delayed."
+            ],
+            "explanation": "Smarty says: It is a direct train!",
+            "itemIds": [
+              "en.pre-intermediate.u02.l02.a-direct-train",
+              "en.pre-intermediate.u02.l02.change-trains"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "Is the train late?",
+            "answer": "No, it is on time.",
+            "options": [
+              "No, it is on time.",
+              "Yes, it is cancelled.",
+              "Yes, it is delayed."
+            ],
+            "explanation": "Smarty says: And we are right on time.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l02.on-time"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are sitting on the train with Smarty. Talk about your seat and your journey.",
+        "turns": [
+          {
+            "smarty": "Excuse me, is this seat taken, or do you have a seat reservation?",
+            "accept": [
+              "^(?:no )?i have a seat reservation$",
+              "^no(?: it is not taken)?$"
+            ],
+            "example": "I have a seat reservation.",
+            "hint": "Tell Smarty you have a seat reservation.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l02.seat-reservation",
+              "en.pre-intermediate.u01.l05.is-this-seat-taken"
+            ]
+          },
+          {
+            "smarty": "Where should I keep my suitcase on the train?",
+            "accept": [
+              "^(?:keep it |you can keep it |keep your suitcase )?on the luggage rack$",
+              "^the luggage rack$"
+            ],
+            "example": "Keep it on the luggage rack.",
+            "hint": "Say 'on the luggage rack'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l02.luggage-rack"
+            ]
+          },
+          {
+            "smarty": "Is this a direct train, or do we need to change trains?",
+            "accept": [
+              "^(?:it is |this is )?a direct train$",
+              "^we (?:need to |have to )?change trains$"
+            ],
+            "example": "This is a direct train.",
+            "hint": "Say if it is a direct train or if we need to change trains.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l02.a-direct-train",
+              "en.pre-intermediate.u02.l02.change-trains"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "carriage",
+          "gloss": "one section of a passenger train"
+        },
+        {
+          "text": "compartment",
+          "gloss": "a small separate room inside a train carriage"
+        },
+        {
+          "text": "commuter",
+          "gloss": "a person who travels to work every day"
+        },
+        {
+          "text": "tunnel",
+          "gloss": "a passage under a mountain or ground for trains"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u01.l05.is-this-seat-taken",
+        "en.beginner.u11.l01.suitcase",
+        "en.elementary.u07.l05.must",
+        "en.pre-intermediate.u02.l01.delayed"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u02.l03",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "Future plans",
+      "canDo": "Use will and going to for travel",
+      "scenario": "Smarty and Zara are planning their weekend trip and checking the weather.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u02.l03.we-are-about-to",
+          "text": "We are about to",
+          "kind": "phrase",
+          "forms": [
+            "we are about to",
+            "I am about to"
+          ],
+          "example": "Hurry up! We are about to get on the train.",
+          "note": "Say 'We are about to' for something that will happen in the very next moment."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l03.i-will-probably",
+          "text": "I will probably",
+          "kind": "phrase",
+          "forms": [
+            "we will probably"
+          ],
+          "example": "I will probably buy a sandwich on the train.",
+          "note": "Use 'I will probably' when you think something will happen, but you are not completely sure."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l03.we-are-leaving-at",
+          "text": "We are leaving at",
+          "kind": "phrase",
+          "forms": [
+            "we are leaving at",
+            "leaving"
+          ],
+          "example": "We are leaving at eight o'clock tomorrow morning.",
+          "note": "Use 'We are leaving at' to talk about a fixed travel time on your plan."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l03.it-is-going-to-rain",
+          "text": "It is going to rain",
+          "kind": "phrase",
+          "forms": [
+            "it is going to rain"
+          ],
+          "example": "Look at those dark clouds! It is going to rain.",
+          "note": "Say 'It is going to rain' when you see clouds or signs of rain coming soon."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l03.i-will-call-you",
+          "text": "I will call you",
+          "kind": "phrase",
+          "forms": [
+            "will call"
+          ],
+          "example": "I will call you when we get to the station.",
+          "note": "Say 'I will call you' to make a quick promise to phone someone later."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l03.i-have-decided-to",
+          "text": "I have decided to",
+          "kind": "phrase",
+          "forms": [
+            "we have decided to",
+            "decided"
+          ],
+          "example": "I have decided to take the early train.",
+          "note": "Use 'I have decided to' when you have made a clear choice about your plans."
+        }
+      ],
+      "grammar": {
+        "title": "Talking about future travel",
+        "explanation": "Use 'be about to' for something happening right now. Use 'We are leaving at...' for fixed schedules. Use 'going to' for signs you can see now (like rain clouds), and 'will' for promises or things you think will happen.",
+        "examples": [
+          "We are leaving at nine o'clock.",
+          "I will call you from the platform."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l03.task.pick-about-to",
+          "kind": "choice",
+          "prompt": "The train doors are closing in five seconds. What does Smarty say?",
+          "answer": "We are about to go!",
+          "options": [
+            "We are about to go!",
+            "It is going to rain.",
+            "I will probably sleep."
+          ],
+          "explanation": "Use 'We are about to' for something happening right away.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l03.we-are-about-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l03.task.hear-leaving",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "We are leaving at seven o'clock.",
+          "answer": "We are leaving at seven o'clock.",
+          "options": [
+            "We are leaving at seven o'clock.",
+            "We are leaving at ten o'clock.",
+            "I have decided to stay home."
+          ],
+          "explanation": "Use 'We are leaving at' for a fixed departure time.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l03.we-are-leaving-at",
+            "en.beginner.u04.l01.oclock"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l03.task.fill-rain",
+          "kind": "fill",
+          "prompt": "The sky is dark and cloudy. Take an umbrella! Complete the sentence.",
+          "text": "Look outside! ___ soon.",
+          "answer": "It is going to rain",
+          "options": [
+            "It is going to rain",
+            "I will call you",
+            "We are leaving at"
+          ],
+          "explanation": "Use 'It is going to rain' when you see dark clouds.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l03.it-is-going-to-rain",
+            "en.beginner.u09.l02.umbrella"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l03.task.match-future",
+          "kind": "match",
+          "prompt": "Match each phrase with when to use it.",
+          "pairs": [
+            {
+              "left": "I will call you",
+              "right": "to say you will call"
+            },
+            {
+              "left": "I will probably",
+              "right": "not very sure"
+            },
+            {
+              "left": "I have decided to",
+              "right": "you have decided"
+            }
+          ],
+          "explanation": "Use 'I will call you' for promises, 'I will probably' when unsure, and 'I have decided to' for you have decided.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l03.i-will-call-you",
+            "en.pre-intermediate.u02.l03.i-will-probably",
+            "en.pre-intermediate.u02.l03.i-have-decided-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l03.task.build-decided",
+          "kind": "build",
+          "prompt": "Zara chose to travel by train instead of by bus. Build the sentence.",
+          "answer": "I have decided to go by train.",
+          "tiles": [
+            "I",
+            "have",
+            "decided",
+            "to",
+            "go",
+            "by",
+            "train",
+            "bus"
+          ],
+          "explanation": "I have decided to shows a firm plan.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l03.i-have-decided-to",
+            "en.beginner.u11.l01.train"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l03.task.fill-probably",
+          "kind": "fill",
+          "prompt": "Smarty is not completely sure where he will sit. Complete the sentence.",
+          "text": "___ sit next to the window.",
+          "answer": "I will probably",
+          "options": [
+            "I will probably",
+            "It is going to rain",
+            "We are about to"
+          ],
+          "explanation": "Use 'I will probably' when something is likely but not certain.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l03.i-will-probably"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l03.task.say-call",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I will call you tomorrow morning.",
+          "answer": "I will call you tomorrow morning.",
+          "explanation": "Use 'I will call you' to promise a phone call.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l03.i-will-call-you",
+            "en.beginner.u11.l06.tomorrow"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why does Zara pack an umbrella at the last minute?",
+        "image": {
+          "id": "en-b1-u02-l03-scene",
+          "describe": "Smarty the black cat and Zara standing by a train carriage door with suitcases while grey clouds gather outside."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Do you have our itinerary, Zara? What time is our departure?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes! We are leaving at half past ten, so our arrival is at one o'clock."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I have decided to read on the train. What about you?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "I will probably listen to music. Oh, look at the sky! It is going to rain!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good thing I have my umbrella! Hurry, the schedule says we are about to leave!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "I will call you if we get separated on the platform!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "What time are Smarty and Zara leaving?",
+            "answer": "at half past ten",
+            "options": [
+              "at half past ten",
+              "at one o'clock",
+              "at seven o'clock"
+            ],
+            "explanation": "Zara says: We are leaving at half past ten.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l03.we-are-leaving-at"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "What has Smarty decided to do on the train?",
+            "answer": "read",
+            "options": [
+              "read",
+              "sleep",
+              "cook"
+            ],
+            "explanation": "Smarty says: I have decided to read on the train.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l03.i-have-decided-to"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "Why does Smarty need an umbrella?",
+            "answer": "It is going to rain.",
+            "options": [
+              "It is going to rain.",
+              "It is sunny.",
+              "The train is cancelled."
+            ],
+            "explanation": "Zara looks at the sky and says: It is going to rain!",
+            "itemIds": [
+              "en.pre-intermediate.u02.l03.it-is-going-to-rain"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You and Smarty are about to leave on a trip. Tell Smarty your plans.",
+        "turns": [
+          {
+            "smarty": "What time are we leaving tomorrow?",
+            "accept": [
+              "^we are leaving at (?:one|two|three|four|five|six|seven|eight|nine|ten)(?: oclock)?$",
+              "^at (?:one|two|three|four|five|six|seven|eight|nine|ten)(?: oclock)?$"
+            ],
+            "example": "We are leaving at eight o'clock.",
+            "hint": "Say 'We are leaving at...' with an hour.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l03.we-are-leaving-at"
+            ]
+          },
+          {
+            "smarty": "What have you decided to do on the train?",
+            "accept": [
+              "^i have decided to (?:read|sleep|eat|study|watch tv|listen to music)$",
+              "^i will probably (?:read|sleep|eat|study|watch tv)$"
+            ],
+            "example": "I have decided to read.",
+            "hint": "Start with 'I have decided to...' or 'I will probably...'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l03.i-have-decided-to",
+              "en.pre-intermediate.u02.l03.i-will-probably"
+            ]
+          },
+          {
+            "smarty": "Promise you will phone me when you get there!",
+            "accept": [
+              "^(?:yes )?i will call you(?: later| tomorrow)?$"
+            ],
+            "example": "I will call you later.",
+            "hint": "Say 'I will call you'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l03.i-will-call-you"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "itinerary",
+          "gloss": "a detailed plan of a journey"
+        },
+        {
+          "text": "departure",
+          "gloss": "the act of leaving a station or airport"
+        },
+        {
+          "text": "arrival",
+          "gloss": "the act of reaching a place"
+        },
+        {
+          "text": "schedule",
+          "gloss": "a list of times when trains or planes leave and arrive"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u04.l01.oclock",
+        "en.beginner.u09.l02.umbrella",
+        "en.beginner.u11.l01.train",
+        "en.beginner.u11.l06.tomorrow"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u02.l04",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty reviews tickets, train journeys, and future travel plans in the train carriage.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l04.task.pick-ticket",
+          "kind": "choice",
+          "prompt": "You want to travel to the coast and come back on Sunday. What do you buy?",
+          "answer": "a return ticket",
+          "options": [
+            "a return ticket",
+            "a single ticket",
+            "a luggage rack"
+          ],
+          "explanation": "A return ticket covers both going and coming back.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l01.return-ticket"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l04.task.fill-delayed",
+          "kind": "fill",
+          "prompt": "The timetable board says the train is thirty minutes late. Complete the sentence.",
+          "text": "Our train is ___ today.",
+          "answer": "delayed",
+          "options": [
+            "delayed",
+            "on time",
+            "cancelled"
+          ],
+          "explanation": "Delayed means the train is running late.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l01.delayed",
+            "en.pre-intermediate.u02.l01.timetable-board"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l04.task.match-review1",
+          "kind": "match",
+          "prompt": "Match each travel phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "luggage rack",
+              "right": "for your suitcase"
+            },
+            {
+              "left": "change trains",
+              "right": "get on a second train"
+            },
+            {
+              "left": "on time",
+              "right": "not late at all"
+            }
+          ],
+          "explanation": "The luggage rack holds bags, change trains means switch trains, and on time means punctual.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l02.luggage-rack",
+            "en.pre-intermediate.u02.l02.change-trains",
+            "en.pre-intermediate.u02.l02.on-time"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l04.task.build-about",
+          "kind": "build",
+          "prompt": "The train is moving right now! Build the sentence.",
+          "answer": "We are about to go.",
+          "tiles": [
+            "We",
+            "are",
+            "about",
+            "to",
+            "go",
+            "rain"
+          ],
+          "explanation": "Use 'We are about to' for an action happening immediately.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l03.we-are-about-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l04.task.hear-call",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I will call you from the platform.",
+          "answer": "I will call you from the platform.",
+          "options": [
+            "I will call you from the platform.",
+            "I will probably stay on the platform.",
+            "It is going to rain on the platform."
+          ],
+          "explanation": "Listen for the promise: I will call you.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l03.i-will-call-you",
+            "en.pre-intermediate.u02.l01.platform"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l04.task.say-direct",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "We have decided to take a direct train.",
+          "answer": "We have decided to take a direct train.",
+          "explanation": "Combine 'decided to' with 'a direct train'.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l03.i-have-decided-to",
+            "en.pre-intermediate.u02.l02.a-direct-train"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Will Smarty and Sam catch the direct train before it rains?",
+        "image": {
+          "id": "en-b1-u02-l04-scene",
+          "describe": "Smarty the black cat and Sam sitting happily in a train carriage looking out the window as raindrops fall outside."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Good thing we checked the timetable board! Platform six was right."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, and this is a direct train, so we do not have to change trains."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Look at those clouds outside. It is going to rain soon!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "We are warm inside! Put your suitcase on the luggage rack and sit in your seat reservation."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I will call you when we get to the next stop if I go buy tea!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Which platform was their train on?",
+            "answer": "platform six",
+            "options": [
+              "platform six",
+              "platform two",
+              "platform ten"
+            ],
+            "explanation": "Sam says: Platform six was right.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l01.platform",
+              "en.pre-intermediate.u02.l01.timetable-board"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "Why do Smarty and Sam not have to change trains?",
+            "answer": "Because it is a direct train.",
+            "options": [
+              "Because it is a direct train.",
+              "Because it is cancelled.",
+              "Because it is raining."
+            ],
+            "explanation": "Smarty says: this is a direct train, so we do not have to change trains.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l02.a-direct-train",
+              "en.pre-intermediate.u02.l02.change-trains"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is testing your skills from Lessons 1 to 3 before the next part of the trip.",
+        "turns": [
+          {
+            "smarty": "You are at the station for a one-way trip. What ticket do you ask for?",
+            "accept": [
+              "^(?:i would like |can i have )?a single ticket(?: please)?$",
+              "^single ticket(?: please)?$"
+            ],
+            "example": "Can I have a single ticket, please?",
+            "hint": "Ask for a single ticket.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l01.single-ticket"
+            ]
+          },
+          {
+            "smarty": "We are on the train! Is it on time or delayed?",
+            "accept": [
+              "^(?:it is |the train is |our train is )?(?:on time|delayed)$"
+            ],
+            "example": "It is on time.",
+            "hint": "Say 'It is on time' or 'It is delayed'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l02.on-time",
+              "en.pre-intermediate.u02.l01.delayed"
+            ]
+          },
+          {
+            "smarty": "Look at those dark clouds! What is going to happen?",
+            "accept": [
+              "^it is going to rain$"
+            ],
+            "example": "It is going to rain.",
+            "hint": "Say 'It is going to rain'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l03.it-is-going-to-rain"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.pre-intermediate.u02.l01.platform",
+        "en.pre-intermediate.u02.l01.single-ticket",
+        "en.pre-intermediate.u02.l01.return-ticket",
+        "en.pre-intermediate.u02.l01.timetable-board",
+        "en.pre-intermediate.u02.l01.delayed",
+        "en.pre-intermediate.u02.l01.cancelled",
+        "en.pre-intermediate.u02.l02.seat-reservation",
+        "en.pre-intermediate.u02.l02.change-trains",
+        "en.pre-intermediate.u02.l02.luggage-rack",
+        "en.pre-intermediate.u02.l02.on-time",
+        "en.pre-intermediate.u02.l02.a-direct-train",
+        "en.pre-intermediate.u02.l03.we-are-about-to",
+        "en.pre-intermediate.u02.l03.it-is-going-to-rain",
+        "en.pre-intermediate.u02.l03.i-will-call-you",
+        "en.pre-intermediate.u02.l03.i-have-decided-to"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u02.l05",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "At the airport",
+      "canDo": "Check in",
+      "scenario": "Smarty and Ben are checking in their suitcases and walking to their gate for a plane trip.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u02.l05.boarding-pass",
+          "text": "boarding pass",
+          "kind": "phrase",
+          "forms": [
+            "boarding passes"
+          ],
+          "example": "Show your passport and boarding pass at the gate.",
+          "note": "A 'boarding pass' is the card or phone ticket that lets you get on a plane.",
+          "image": {
+            "id": "boarding-pass",
+            "describe": "a cat paw holding a paper boarding pass with a small plane icon and barcode"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l05.check-in-desk",
+          "text": "check-in desk",
+          "kind": "phrase",
+          "forms": [
+            "check-in desks",
+            "check in"
+          ],
+          "example": "Go to the check-in desk to leave your big suitcase.",
+          "note": "Visit the 'check-in desk' first to show your passport and leave heavy suitcases.",
+          "image": {
+            "id": "check-in-desk",
+            "describe": "a friendly cat staff member behind a check-in desk weighing a red suitcase"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l05.departure-gate",
+          "text": "departure gate",
+          "kind": "phrase",
+          "forms": [
+            "departure gates"
+          ],
+          "example": "Our plane leaves from departure gate seven.",
+          "note": "The 'departure gate' is the door where passengers wait before walking onto the plane.",
+          "image": {
+            "id": "departure-gate",
+            "describe": "cats waiting near a bright departure gate with large glass windows looking out at a plane"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l05.hand-luggage",
+          "text": "hand luggage",
+          "kind": "phrase",
+          "example": "You can carry small hand luggage onto the plane.",
+          "note": "Say 'hand luggage' for the small bag you carry with you into the plane."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l05.security",
+          "text": "security",
+          "kind": "word",
+          "example": "Take your laptop out of your hand luggage at security.",
+          "note": "Everyone walks through 'security' so staff can check hand luggage before the gate.",
+          "image": {
+            "id": "airport-security",
+            "describe": "a security scanner belt with small bags and a tray passing through neatly"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l05.a-window-seat",
+          "text": "a window seat",
+          "kind": "phrase",
+          "forms": [
+            "window seat"
+          ],
+          "example": "I love looking at the clouds from a window seat.",
+          "note": "Ask for 'a window seat' if you want to sit right next to the plane window."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l05.task.pick-checkin",
+          "kind": "choice",
+          "prompt": "Where do you go first with your big suitcase and passport?",
+          "answer": "check-in desk",
+          "options": [
+            "check-in desk",
+            "departure gate",
+            "a window seat"
+          ],
+          "explanation": "You go to the check-in desk first to check your suitcase and get your boarding pass.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l05.check-in-desk",
+            "en.beginner.u11.l07.passport"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l05.task.hear-boarding",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Here is your boarding pass.",
+          "answer": "Here is your boarding pass.",
+          "options": [
+            "Here is your boarding pass.",
+            "Here is your return ticket.",
+            "Here is your hand luggage."
+          ],
+          "explanation": "You get your boarding pass when you check in.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l05.boarding-pass"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l05.task.fill-window",
+          "kind": "fill",
+          "prompt": "Ben wants to look outside during the trip. Complete his request.",
+          "text": "Can I have ___, please?",
+          "answer": "a window seat",
+          "options": [
+            "a window seat",
+            "hand luggage",
+            "security"
+          ],
+          "explanation": "A window seat is next to the window on a plane.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l05.a-window-seat",
+            "en.beginner.u03.l06.can-i-have"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l05.task.match-airport",
+          "kind": "match",
+          "prompt": "Match each word or phrase with what happens there.",
+          "pairs": [
+            {
+              "left": "check-in desk",
+              "right": "give your big suitcase"
+            },
+            {
+              "left": "security",
+              "right": "check your hand luggage"
+            },
+            {
+              "left": "departure gate",
+              "right": "get on the plane"
+            }
+          ],
+          "explanation": "First check-in desk, then security, and finally the departure gate.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l05.check-in-desk",
+            "en.pre-intermediate.u02.l05.security",
+            "en.pre-intermediate.u02.l05.departure-gate",
+            "en.pre-intermediate.u02.l05.hand-luggage"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l05.task.build-hand",
+          "kind": "build",
+          "prompt": "Smarty has only one small bag for the plane. Build the sentence.",
+          "answer": "This is my hand luggage.",
+          "tiles": [
+            "This",
+            "is",
+            "my",
+            "hand",
+            "luggage",
+            "gate"
+          ],
+          "explanation": "Hand luggage is the small bag you take onto the plane.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l05.hand-luggage"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l05.task.fill-gate",
+          "kind": "fill",
+          "prompt": "Smarty and Ben finished security and are walking to their plane. Complete the sentence.",
+          "text": "Our plane is at ___ nine.",
+          "answer": "departure gate",
+          "options": [
+            "departure gate",
+            "check-in desk",
+            "boarding pass"
+          ],
+          "explanation": "You wait at the departure gate before getting on the plane.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l05.departure-gate"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l05.task.say-security",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "We are at security now.",
+          "answer": "We are at security now.",
+          "explanation": "Say 'going through security' when your hand luggage is checked.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l05.security"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What seat does Ben get at the check-in desk?",
+        "image": {
+          "id": "en-b1-u02-l05-scene",
+          "describe": "Smarty the black cat and Ben standing at a bright check-in desk with a trolley, a suitcase, and passports."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Welcome to the terminal, Ben! Push the trolley over to the check-in desk."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Good morning! Here are our passports. Can I have a window seat, please?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Of course! Here is your boarding pass. Keep your hand luggage with you."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Thank you! Now we go through security and passport control."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Remember to take your water bottle out of your hand luggage at security!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Done! Look, departure gate three is right in front of us, and customs is for when we come back."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Ben ask for at the check-in desk?",
+            "answer": "a window seat",
+            "options": [
+              "a window seat",
+              "a return ticket",
+              "a bus ticket"
+            ],
+            "explanation": "Ben asks: Can I have a window seat, please?",
+            "itemIds": [
+              "en.pre-intermediate.u02.l05.a-window-seat",
+              "en.pre-intermediate.u02.l05.check-in-desk"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Smarty give Ben after checking his passport?",
+            "answer": "a boarding pass",
+            "options": [
+              "a boarding pass",
+              "a suitcase",
+              "a menu"
+            ],
+            "explanation": "Smarty says: Here is your boarding pass.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l05.boarding-pass"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "Which gate is their plane leaving from?",
+            "answer": "departure gate three",
+            "options": [
+              "departure gate three",
+              "departure gate seven",
+              "departure gate nine"
+            ],
+            "explanation": "Ben says: departure gate three is right in front of us.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l05.departure-gate"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are checking in for your plane with Smarty.",
+        "turns": [
+          {
+            "smarty": "Hello! Welcome to the check-in desk. Would you like a window seat?",
+            "accept": [
+              "^yes(?: i would like a window seat| please)?$",
+              "^i would like a window seat(?: please)?$",
+              "^can i have a window seat(?: please)?$"
+            ],
+            "example": "Yes, I would like a window seat.",
+            "hint": "Say yes and ask for a window seat.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l05.check-in-desk",
+              "en.pre-intermediate.u02.l05.a-window-seat"
+            ]
+          },
+          {
+            "smarty": "Do you have any hand luggage to carry onto the plane?",
+            "accept": [
+              "^(?:yes|no)(?: i have hand luggage)?$",
+              "^yes this is my hand luggage$"
+            ],
+            "example": "Yes, I have hand luggage.",
+            "hint": "Answer yes or no about your hand luggage.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l05.hand-luggage"
+            ]
+          },
+          {
+            "smarty": "Here is your boarding pass! Where do you go after security?",
+            "accept": [
+              "^(?:to )?(?:the )?departure gate$"
+            ],
+            "example": "To the departure gate.",
+            "hint": "Say 'to the departure gate'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l05.boarding-pass",
+              "en.pre-intermediate.u02.l05.security",
+              "en.pre-intermediate.u02.l05.departure-gate"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "passport control",
+          "gloss": "the desk where officers check passports"
+        },
+        {
+          "text": "customs",
+          "gloss": "the area where bags are checked when entering a country"
+        },
+        {
+          "text": "trolley",
+          "gloss": "a wheeled cart for pushing heavy suitcases"
+        },
+        {
+          "text": "terminal",
+          "gloss": "a large airport building where flights leave and arrive"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u11.l07.passport",
+        "en.beginner.u03.l06.can-i-have"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u02.l06",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "On the plane",
+      "canDo": "Understand announcements",
+      "scenario": "Smarty and Ana are on the plane listening to the crew during takeoff and landing.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u02.l06.seat-belt",
+          "text": "seat belt",
+          "kind": "phrase",
+          "forms": [
+            "seat belts"
+          ],
+          "example": "Please wear your seat belt when the plane moves.",
+          "note": "A 'seat belt' is the safety strap that keeps you safe in your seat.",
+          "image": {
+            "id": "seat-belt",
+            "describe": "a black cat sitting in a plane seat wearing a grey seat belt across its lap"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l06.boarding-gate",
+          "text": "boarding gate",
+          "kind": "phrase",
+          "forms": [
+            "boarding gates"
+          ],
+          "example": "All passengers must go to the boarding gate now.",
+          "note": "Say 'boarding gate' for the gate where you walk onto the plane."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l06.land",
+          "text": "land",
+          "kind": "word",
+          "forms": [
+            "lands",
+            "landed",
+            "landing"
+          ],
+          "example": "Our plane will land in twenty minutes.",
+          "note": "Use 'land' when a plane comes down from the sky onto the ground."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l06.turbulence",
+          "text": "turbulence",
+          "kind": "word",
+          "example": "Do not worry, it is just a little turbulence in the clouds.",
+          "note": "Say 'turbulence' when wind makes a plane shake or bump in the air.",
+          "image": {
+            "id": "plane-turbulence",
+            "describe": "a small passenger plane flying through bumpy white clouds with gentle motion lines"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u02.l06.cabin-crew",
+          "text": "cabin crew",
+          "kind": "phrase",
+          "example": "The cabin crew brought us water and snacks.",
+          "note": "The 'cabin crew' are the staff who help passengers and keep everyone safe on a plane."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l06.lift-off",
+          "text": "lift off",
+          "kind": "phrase",
+          "forms": [
+            "lifts off",
+            "lifted off",
+            "lifting off"
+          ],
+          "example": "Hold on! The plane is about to lift off.",
+          "note": "Use 'lift off' when a plane leaves the ground and goes up into the sky."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l06.task.pick-seatbelt",
+          "kind": "choice",
+          "prompt": "What must you wear when the plane goes up or down?",
+          "answer": "seat belt",
+          "options": [
+            "seat belt",
+            "boarding gate",
+            "turbulence"
+          ],
+          "explanation": "You must wear your seat belt for safety on a plane.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l06.seat-belt",
+            "en.elementary.u07.l05.must"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l06.task.hear-crew",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The cabin crew are ready to help you.",
+          "answer": "The cabin crew are ready to help you.",
+          "options": [
+            "The cabin crew are ready to help you.",
+            "The boarding gate is open now.",
+            "The plane is going to land."
+          ],
+          "explanation": "The cabin crew help passengers on the plane.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l06.cabin-crew"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l06.task.fill-turbulence",
+          "kind": "fill",
+          "prompt": "The plane shakes a little in the windy clouds. Complete the sentence.",
+          "text": "Please stay in your seat during ___.",
+          "answer": "turbulence",
+          "options": [
+            "turbulence",
+            "boarding gate",
+            "land"
+          ],
+          "explanation": "Turbulence is bumpy air movement during a flight.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l06.turbulence"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l06.task.match-plane",
+          "kind": "match",
+          "prompt": "Match each word or phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "lift off",
+              "right": "go up"
+            },
+            {
+              "left": "land",
+              "right": "come down"
+            },
+            {
+              "left": "boarding gate",
+              "right": "door to the plane"
+            }
+          ],
+          "explanation": "A plane lifts off at the start, lands at the end, and boards at the boarding gate.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l06.lift-off",
+            "en.pre-intermediate.u02.l06.land",
+            "en.pre-intermediate.u02.l06.boarding-gate"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l06.task.build-liftoff",
+          "kind": "build",
+          "prompt": "The plane is moving fast down the ground and going up. Build the sentence.",
+          "answer": "We are about to lift off.",
+          "tiles": [
+            "We",
+            "are",
+            "about",
+            "to",
+            "lift",
+            "off",
+            "land"
+          ],
+          "explanation": "Use 'lift off' when the plane goes up into the sky.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l06.lift-off",
+            "en.pre-intermediate.u02.l03.we-are-about-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l06.task.fill-land",
+          "kind": "fill",
+          "prompt": "The trip is nearly finished and you can see the city below. Complete the sentence.",
+          "text": "The plane is going to ___ soon.",
+          "answer": "land",
+          "options": [
+            "land",
+            "lift off",
+            "cabin crew"
+          ],
+          "explanation": "Land means to come down onto the ground safely.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l06.land"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l06.task.say-belt",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "Please wear your seat belt now.",
+          "answer": "Please wear your seat belt now.",
+          "explanation": "Always wear your seat belt when asked by the cabin crew.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l06.seat-belt"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What happens when the plane flies through clouds?",
+        "image": {
+          "id": "en-b1-u02-l06-scene",
+          "describe": "Smarty the black cat and Ana sitting in plane seats wearing seat belts while a friendly cat cabin crew member smiles nearby."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "We made it from the boarding gate to our seats just in time, Ana!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Yes! My hand luggage is in the overhead locker, and I am wearing my seat belt."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Listen to the aviator! We are on the runway and about to lift off."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Look how high our altitude is! Oh, the plane is shaking a little."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Do not be scared. The cabin crew say it is just a little turbulence."
+          },
+          {
+            "speaker": "Ana",
+            "text": "It is smooth again now, and we are going to land in Spain soon!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Ana wearing before the plane lifts off?",
+            "answer": "her seat belt",
+            "options": [
+              "her seat belt",
+              "a helmet",
+              "a scarf"
+            ],
+            "explanation": "Ana says: I am wearing my seat belt.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l06.seat-belt",
+              "en.pre-intermediate.u02.l06.lift-off"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "Why is the plane shaking a little?",
+            "answer": "Because of turbulence.",
+            "options": [
+              "Because of turbulence.",
+              "Because it is landing.",
+              "Because it is cancelled."
+            ],
+            "explanation": "Smarty says: The cabin crew say it is just a little turbulence.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l06.turbulence",
+              "en.pre-intermediate.u02.l06.cabin-crew"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "Where is the plane going to land?",
+            "answer": "in Spain",
+            "options": [
+              "in Spain",
+              "in Brazil",
+              "in Japan"
+            ],
+            "explanation": "Ana says: we are going to land in Spain soon!",
+            "itemIds": [
+              "en.pre-intermediate.u02.l06.land",
+              "en.elementary.u10.l01.spain"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are on a plane with Smarty. Follow the cabin crew announcements.",
+        "turns": [
+          {
+            "smarty": "The cabin crew say we are about to lift off. What must you wear?",
+            "accept": [
+              "^(?:my |a )?seat belt$",
+              "^i must wear (?:my |a )?seat belt$"
+            ],
+            "example": "My seat belt.",
+            "hint": "Say 'my seat belt' or 'a seat belt'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l06.cabin-crew",
+              "en.pre-intermediate.u02.l06.lift-off",
+              "en.pre-intermediate.u02.l06.seat-belt"
+            ]
+          },
+          {
+            "smarty": "The plane is bumping in the clouds! What is that called?",
+            "accept": [
+              "^(?:it is |that is )?turbulence$"
+            ],
+            "example": "It is turbulence.",
+            "hint": "Say 'It is turbulence'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l06.turbulence"
+            ]
+          },
+          {
+            "smarty": "Look down at the ground! Is the plane going to lift off or land?",
+            "accept": [
+              "^(?:it is going to |the plane is going to )?land$"
+            ],
+            "example": "It is going to land.",
+            "hint": "Say 'It is going to land'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l06.land"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "runway",
+          "gloss": "the long road where planes take off and land"
+        },
+        {
+          "text": "aviator",
+          "gloss": "a pilot who flies an aircraft"
+        },
+        {
+          "text": "altitude",
+          "gloss": "the height of a plane above the ground"
+        },
+        {
+          "text": "overhead locker",
+          "gloss": "the storage box above seats on a plane"
+        }
+      ],
+      "recycle": [
+        "en.elementary.u07.l05.must",
+        "en.pre-intermediate.u02.l03.we-are-about-to",
+        "en.elementary.u10.l01.spain"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u02.l07",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Movement",
+      "canDo": "Use prepositions of movement",
+      "scenario": "Smarty gives walking directions from the station to the city museum.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u02.l07.across",
+          "text": "across",
+          "kind": "word",
+          "example": "Go across the park to get to the station.",
+          "note": "Use 'across' when you move from one side to the other side of an open space or bridge."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l07.through",
+          "text": "through",
+          "kind": "word",
+          "example": "The train goes through the forest and the mountain.",
+          "note": "Use 'through' when you move inside something like a tunnel, door, or forest."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l07.along",
+          "text": "along",
+          "kind": "word",
+          "example": "We walked along the river in the afternoon.",
+          "note": "Use 'along' when you follow a line like a river, beach, or long platform."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l07.towards",
+          "text": "towards",
+          "kind": "word",
+          "example": "Turn left and go towards the museum.",
+          "note": "Use 'towards' when you move in the direction of a place or person."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l07.past",
+          "text": "past",
+          "kind": "word",
+          "example": "Go past the supermarket and stop at the corner.",
+          "note": "Use 'past' when you go right by a building without stopping there."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l07.out-of",
+          "text": "out of",
+          "kind": "phrase",
+          "example": "Come out of the station and turn right.",
+          "note": "Use 'out of' when you move from inside a building or train to the outside."
+        }
+      ],
+      "grammar": {
+        "title": "Prepositions of movement",
+        "explanation": "Prepositions of movement show direction: 'out of' (inside to outside), 'across' (one side to the other), 'through' (inside a space like a park or door), 'along' (following a river or platform), 'past' (going by a place), and 'towards' (in the direction of).",
+        "examples": [
+          "Go out of the door and across the park.",
+          "Run along the river past the café."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l07.task.pick-outof",
+          "kind": "choice",
+          "prompt": "You are inside the station and want to go outside. Which words fit?",
+          "answer": "out of",
+          "options": [
+            "out of",
+            "along",
+            "past"
+          ],
+          "explanation": "Use 'out of' to move from inside a building to outside.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l07.out-of",
+            "en.beginner.u08.l02.station"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l07.task.hear-along",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Go along the river to the park.",
+          "answer": "Go along the river to the park.",
+          "options": [
+            "Go along the river to the park.",
+            "Go across the river to the park.",
+            "Go past the river to the park."
+          ],
+          "explanation": "Along means following the side of the river.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l07.along",
+            "en.elementary.u06.l05.river"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l07.task.fill-through",
+          "kind": "fill",
+          "prompt": "The train goes inside the dark forest. Complete the sentence.",
+          "text": "Our train went ___ the big forest.",
+          "answer": "through",
+          "options": [
+            "through",
+            "across",
+            "out of"
+          ],
+          "explanation": "Use 'through' when moving inside trees or a tunnel.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l07.through",
+            "en.elementary.u06.l05.forest"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l07.task.match-movement",
+          "kind": "match",
+          "prompt": "Match each preposition with its picture idea.",
+          "pairs": [
+            {
+              "left": "across",
+              "right": "go from here to there"
+            },
+            {
+              "left": "past",
+              "right": "go by without stopping"
+            },
+            {
+              "left": "towards",
+              "right": "in the direction of"
+            }
+          ],
+          "explanation": "Across crosses from side to side, past goes by, and towards goes in a direction.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l07.across",
+            "en.pre-intermediate.u02.l07.past",
+            "en.pre-intermediate.u02.l07.towards"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l07.task.build-past",
+          "kind": "build",
+          "prompt": "Do not stop at the library; keep going. Build the sentence.",
+          "answer": "Go past the library.",
+          "tiles": [
+            "Go",
+            "past",
+            "the",
+            "library",
+            "through"
+          ],
+          "explanation": "Go past means go by the library without stopping.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l07.past",
+            "en.beginner.u08.l02.library"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l07.task.fill-across",
+          "kind": "fill",
+          "prompt": "The museum is on the other side of the park. Complete the sentence.",
+          "text": "Go ___ the green park.",
+          "answer": "across",
+          "options": [
+            "across",
+            "out of",
+            "along"
+          ],
+          "explanation": "Use 'across' to go from one side of the park to the other.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l07.across",
+            "en.beginner.u08.l01.park"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l07.task.say-towards",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "Go straight on towards the museum.",
+          "answer": "Go straight on towards the museum.",
+          "explanation": "Towards shows the direction you are going.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l07.towards",
+            "en.beginner.u08.l02.museum",
+            "en.beginner.u08.l05.go-straight-on"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How does Smarty find a shortcut from the station to the café?",
+        "image": {
+          "id": "en-b1-u02-l07-scene",
+          "describe": "Smarty the black cat pointing along a sunny river path towards a footbridge while Mia holds a paper map."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "We are out of the station now, Smarty! Where is the café?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I know a shortcut! First, go along the river on the clean pavement."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Do we turn left at the crossroads?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No, go straight on across the footbridge and through the small park."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Look! Now we go past the book shop and towards the big clock."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "There it is! Right opposite the museum."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "What do Smarty and Mia go along first?",
+            "answer": "the river",
+            "options": [
+              "the river",
+              "the forest",
+              "the mountain"
+            ],
+            "explanation": "Smarty says: First, go along the river.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l07.along"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "How do they go through the small park?",
+            "answer": "They go through it.",
+            "options": [
+              "They go through it.",
+              "They go under it.",
+              "They go out of it."
+            ],
+            "explanation": "Smarty says: go straight on across the footbridge and through the small park.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l07.through",
+              "en.pre-intermediate.u02.l07.across"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "What shop do they go past?",
+            "answer": "the book shop",
+            "options": [
+              "the book shop",
+              "the hospital",
+              "the cinema"
+            ],
+            "explanation": "Mia says: Now we go past the book shop.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l07.past"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are giving walking directions to Smarty outside the station.",
+        "turns": [
+          {
+            "smarty": "I am inside the station. How do I get outside?",
+            "accept": [
+              "^(?:go |come )?out of the station$"
+            ],
+            "example": "Go out of the station.",
+            "hint": "Say 'Go out of the station'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l07.out-of"
+            ]
+          },
+          {
+            "smarty": "Now I see a river and a park. Should I go along the river or across the park?",
+            "accept": [
+              "^(?:go )?(?:along the river|across the park)$"
+            ],
+            "example": "Go along the river.",
+            "hint": "Say 'Go along the river' or 'Go across the park'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l07.along",
+              "en.pre-intermediate.u02.l07.across"
+            ]
+          },
+          {
+            "smarty": "I see the supermarket! Should I stop there or go past it towards the museum?",
+            "accept": [
+              "^(?:go )?past (?:the supermarket|it)(?: towards the museum)?$",
+              "^(?:go )?towards the museum$"
+            ],
+            "example": "Go past it towards the museum.",
+            "hint": "Say 'Go past it towards the museum'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l07.past",
+              "en.pre-intermediate.u02.l07.towards"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "footbridge",
+          "gloss": "a bridge for people walking over roads or tracks"
+        },
+        {
+          "text": "crossroads",
+          "gloss": "a place where two roads meet and cross"
+        },
+        {
+          "text": "shortcut",
+          "gloss": "a quicker, shorter way to get somewhere"
+        },
+        {
+          "text": "pavement",
+          "gloss": "the path beside a road where people walk"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u08.l02.station",
+        "en.elementary.u06.l05.river",
+        "en.elementary.u06.l05.forest",
+        "en.beginner.u08.l02.library",
+        "en.beginner.u08.l01.park",
+        "en.beginner.u08.l02.museum",
+        "en.beginner.u08.l05.go-straight-on"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u02.l08",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Smarty reviews check-in, plane announcements, and prepositions of movement.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l08.task.pick-pass",
+          "kind": "choice",
+          "prompt": "What card do you show at the boarding gate to get on the plane?",
+          "answer": "boarding pass",
+          "options": [
+            "boarding pass",
+            "seat belt",
+            "hand luggage"
+          ],
+          "explanation": "You show your boarding pass at the boarding gate.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l05.boarding-pass",
+            "en.pre-intermediate.u02.l06.boarding-gate"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l08.task.fill-crew",
+          "kind": "fill",
+          "prompt": "The plane is about to lift off. Who checks your seat belt?",
+          "text": "The ___ check everyone before we lift off.",
+          "answer": "cabin crew",
+          "options": [
+            "cabin crew",
+            "security",
+            "turbulence"
+          ],
+          "explanation": "The cabin crew check seat belts before the plane lifts off.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l06.cabin-crew",
+            "en.pre-intermediate.u02.l06.seat-belt",
+            "en.pre-intermediate.u02.l06.lift-off"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l08.task.match-review2",
+          "kind": "match",
+          "prompt": "Match each phrase with the right place or action.",
+          "pairs": [
+            {
+              "left": "check-in desk",
+              "right": "get a window seat"
+            },
+            {
+              "left": "through",
+              "right": "go through the park"
+            },
+            {
+              "left": "across",
+              "right": "go across the sea"
+            }
+          ],
+          "explanation": "Check in for a window seat, go through a tunnel, and go across a park or bridge.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l05.check-in-desk",
+            "en.pre-intermediate.u02.l05.a-window-seat",
+            "en.pre-intermediate.u02.l07.through",
+            "en.pre-intermediate.u02.l07.across"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l08.task.build-out",
+          "kind": "build",
+          "prompt": "After the plane lands, you leave the building. Build the sentence.",
+          "answer": "We went out of the door.",
+          "tiles": [
+            "We",
+            "went",
+            "out",
+            "of",
+            "the",
+            "door",
+            "along"
+          ],
+          "explanation": "Out of shows movement from inside to outside.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l07.out-of"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l08.task.hear-turbulence",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Do not worry about the turbulence.",
+          "answer": "Do not worry about the turbulence.",
+          "options": [
+            "Do not worry about the turbulence.",
+            "Do not worry about your hand luggage.",
+            "Do not worry about security."
+          ],
+          "explanation": "Listen for the word turbulence.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l06.turbulence"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l08.task.say-along",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "Go along the platform towards the gate.",
+          "answer": "Go along the platform towards the gate.",
+          "explanation": "Along follows the platform, and towards shows direction.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l07.along",
+            "en.pre-intermediate.u02.l07.towards",
+            "en.pre-intermediate.u02.l01.platform"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How do Smarty and Ben get from the plane to the train station?",
+        "image": {
+          "id": "en-b1-u02-l08-scene",
+          "describe": "Smarty the black cat and Ben walking out of glass station doors with hand luggage along a sunny path."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "That was a great trip! The cabin crew were very friendly, and we landed early."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! Even with a little turbulence, I loved my window seat."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Now we have our hand luggage. Where is the train station?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Go out of this door, go past the café, and go across the park towards the station!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "Where did Smarty sit on the plane?",
+            "answer": "in a window seat",
+            "options": [
+              "in a window seat",
+              "at the check-in desk",
+              "at security"
+            ],
+            "explanation": "Smarty says: I loved my window seat.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l05.a-window-seat"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "What do they go across to reach the station?",
+            "answer": "the park",
+            "options": [
+              "the park",
+              "the river",
+              "the forest"
+            ],
+            "explanation": "Smarty says: go across the park towards the station!",
+            "itemIds": [
+              "en.pre-intermediate.u02.l07.across",
+              "en.pre-intermediate.u02.l07.towards"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is reviewing Lessons 5 to 7 with you.",
+        "turns": [
+          {
+            "smarty": "Before we lift off on a plane, what must you wear?",
+            "accept": [
+              "^(?:my |a )?seat belt$",
+              "^i must wear (?:my |a )?seat belt$"
+            ],
+            "example": "My seat belt.",
+            "hint": "Say 'my seat belt'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l06.lift-off",
+              "en.pre-intermediate.u02.l06.seat-belt"
+            ]
+          },
+          {
+            "smarty": "What do you show at the boarding gate?",
+            "accept": [
+              "^(?:my |a )?boarding pass$"
+            ],
+            "example": "My boarding pass.",
+            "hint": "Say 'my boarding pass'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l06.boarding-gate",
+              "en.pre-intermediate.u02.l05.boarding-pass"
+            ]
+          },
+          {
+            "smarty": "How do we go from one side of the park to the other?",
+            "accept": [
+              "^(?:go )?across the park$"
+            ],
+            "example": "Go across the park.",
+            "hint": "Say 'Go across the park'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l07.across"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.pre-intermediate.u02.l05.boarding-pass",
+        "en.pre-intermediate.u02.l05.check-in-desk",
+        "en.pre-intermediate.u02.l05.a-window-seat",
+        "en.pre-intermediate.u02.l06.boarding-gate",
+        "en.pre-intermediate.u02.l06.cabin-crew",
+        "en.pre-intermediate.u02.l06.seat-belt",
+        "en.pre-intermediate.u02.l06.lift-off",
+        "en.pre-intermediate.u02.l06.turbulence",
+        "en.pre-intermediate.u02.l07.through",
+        "en.pre-intermediate.u02.l07.across",
+        "en.pre-intermediate.u02.l07.out-of",
+        "en.pre-intermediate.u02.l07.along",
+        "en.pre-intermediate.u02.l07.towards",
+        "en.pre-intermediate.u02.l01.platform"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u02.l09",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "If we miss it",
+      "canDo": "Use first conditional",
+      "scenario": "Smarty and Omar are hurrying to catch a connecting train and making backup plans.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u02.l09.if-we-miss-it-we-will",
+          "text": "If we miss it we will",
+          "kind": "phrase",
+          "forms": [
+            "if we miss it we will",
+            "miss"
+          ],
+          "example": "If we miss it we will take the next train.",
+          "note": "Use 'If we miss it we will' to explain your backup plan if you are late for a train."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l09.unless",
+          "text": "unless",
+          "kind": "word",
+          "example": "We will be late unless we run now.",
+          "note": "Use 'unless' to mean 'if not'—for example, 'unless we run' means 'if we do not run'."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l09.as-soon-as",
+          "text": "as soon as",
+          "kind": "phrase",
+          "forms": [
+            "As soon as"
+          ],
+          "example": "I will text you as soon as we get to the hotel.",
+          "note": "Say 'as soon as' for the exact moment one thing finishes and the next thing starts."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l09.in-case",
+          "text": "in case",
+          "kind": "phrase",
+          "forms": [
+            "In case"
+          ],
+          "example": "Take a warm coat in case it gets cold.",
+          "note": "Say 'in case' when you prepare something now for a possible problem later."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l09.as-long-as",
+          "text": "as long as",
+          "kind": "phrase",
+          "forms": [
+            "As long as"
+          ],
+          "example": "We will catch the train as long as it is on time.",
+          "note": "Say 'as long as' to mean 'only if' this one condition happens."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l09.i-will-take-it-if",
+          "text": "I will take it if",
+          "kind": "phrase",
+          "forms": [
+            "we will take it if"
+          ],
+          "example": "I will take it if there is a window seat.",
+          "note": "Use 'I will take it if' when you agree to a ticket or seat on one condition."
+        }
+      ],
+      "grammar": {
+        "title": "First conditional and time words",
+        "explanation": "After 'if', 'unless', 'as soon as', 'in case', and 'as long as', use the present simple tense—never 'will'. Put 'will' in the other part of the sentence for the future result.",
+        "examples": [
+          "If we miss it we will wait at the café.",
+          "I will call you as soon as the train stops."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l09.task.pick-miss",
+          "kind": "choice",
+          "prompt": "The train leaves in two minutes! What happens if you are too late?",
+          "answer": "If we miss it we will take the bus.",
+          "options": [
+            "If we miss it we will take the bus.",
+            "If we miss it we took the bus.",
+            "As soon as we miss it we sleep."
+          ],
+          "explanation": "Use 'If we miss it we will' plus the future plan.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l09.if-we-miss-it-we-will",
+            "en.beginner.u08.l09.by-bus"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l09.task.hear-unless",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "We will miss the train unless we hurry.",
+          "answer": "We will miss the train unless we hurry.",
+          "options": [
+            "We will miss the train unless we hurry.",
+            "We will miss the train in case we hurry.",
+            "We will miss the train as soon as we hurry."
+          ],
+          "explanation": "Unless means 'if we do not hurry'.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l09.unless",
+            "en.elementary.u11.l06.if-you-hurry"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l09.task.fill-incase",
+          "kind": "fill",
+          "prompt": "Omar packs an umbrella even though it is sunny now. Complete the sentence.",
+          "text": "Take an umbrella ___ it rains later.",
+          "answer": "in case",
+          "options": [
+            "in case",
+            "unless",
+            "as soon as"
+          ],
+          "explanation": "Use 'in case' when you prepare for something that might happen.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l09.in-case",
+            "en.elementary.u11.l06.if-it-rains"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l09.task.match-cond",
+          "kind": "match",
+          "prompt": "Match each linking phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "unless",
+              "right": "if not"
+            },
+            {
+              "left": "as soon as",
+              "right": "right when it happens"
+            },
+            {
+              "left": "as long as",
+              "right": "if"
+            }
+          ],
+          "explanation": "Unless means if not, as soon as means immediately when, and as long as means if.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l09.unless",
+            "en.pre-intermediate.u02.l09.as-soon-as",
+            "en.pre-intermediate.u02.l09.as-long-as"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l09.task.build-take",
+          "kind": "build",
+          "prompt": "Smarty wants a cheap ticket. Build his sentence.",
+          "answer": "I will take it if it is cheap.",
+          "tiles": [
+            "I",
+            "will",
+            "it",
+            "take",
+            "it",
+            "if",
+            "is",
+            "cheap",
+            "unless"
+          ],
+          "explanation": "Use 'I will take it if' to state your condition.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l09.i-will-take-it-if",
+            "en.beginner.u07.l05.cheap"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l09.task.fill-assoonas",
+          "kind": "fill",
+          "prompt": "Mia promises to message you right when her plane lands. Complete the sentence.",
+          "text": "I will text you ___ we land.",
+          "answer": "as soon as",
+          "options": [
+            "as soon as",
+            "unless",
+            "in case"
+          ],
+          "explanation": "As soon as means immediately after the plane lands.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l09.as-soon-as",
+            "en.pre-intermediate.u02.l06.land"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l09.task.say-aslongas",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "We will be fine as long as we stay together.",
+          "answer": "We will be fine as long as we stay together.",
+          "explanation": "As long as sets the condition for being fine.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l09.as-long-as"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is Smarty and Omar's backup plan if they miss their connection?",
+        "image": {
+          "id": "en-b1-u02-l09-scene",
+          "describe": "Smarty the black cat and Omar running across a train station platform with suitcases while checking a clock."
+        },
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "We have missed our first train, Smarty! What about our connection?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Do not worry! We will catch it unless the platform is far."
+          },
+          {
+            "speaker": "Omar",
+            "text": "What is our backup plan? If we miss it we will wait two hours!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I have an alternative! There is a bus outside, and I will take it if the train leaves."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Good idea! Take your jacket in case the bus is cold."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "We will get there on time as long as we run now! I will call you as soon as I am there."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "What happens if Smarty and Omar miss the connection?",
+            "answer": "They will wait or take a bus.",
+            "options": [
+              "They will wait or take a bus.",
+              "They will go home.",
+              "They will buy a plane."
+            ],
+            "explanation": "Omar says: If we miss it we will wait two hours, and Smarty adds he will take a bus.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l09.if-we-miss-it-we-will",
+              "en.pre-intermediate.u02.l09.i-will-take-it-if"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "Why does Omar tell Smarty to take his jacket?",
+            "answer": "in case the bus is cold",
+            "options": [
+              "in case the bus is cold",
+              "unless it is sunny",
+              "as soon as it rains"
+            ],
+            "explanation": "Omar says: Take your jacket in case the bus is cold.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l09.in-case"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "When will Smarty call Omar?",
+            "answer": "as soon as he is there",
+            "options": [
+              "as soon as he is there",
+              "tomorrow night",
+              "unless he is tired"
+            ],
+            "explanation": "Smarty says: I will call you as soon as I am there.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l09.as-soon-as",
+              "en.pre-intermediate.u02.l03.i-will-call-you"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You and Smarty are planning for delays on your journey.",
+        "turns": [
+          {
+            "smarty": "Our train is delayed! What will we do if we miss the next train?",
+            "accept": [
+              "^if we miss it we will (?:take the bus|wait|take a taxi|take the next train)$"
+            ],
+            "example": "If we miss it we will take the bus.",
+            "hint": "Start with 'If we miss it we will...'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l09.if-we-miss-it-we-will"
+            ]
+          },
+          {
+            "smarty": "Why should I pack a warm sweater?",
+            "accept": [
+              "^in case (?:it is cold|it gets cold|the train is cold)$"
+            ],
+            "example": "In case it is cold.",
+            "hint": "Start with 'In case...'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l09.in-case"
+            ]
+          },
+          {
+            "smarty": "When will you send me a message?",
+            "accept": [
+              "^(?:i will text you |i will send a message )?as soon as (?:i get there|we get there|we land)$"
+            ],
+            "example": "As soon as we get there.",
+            "hint": "Use 'as soon as'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l09.as-soon-as"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "missed",
+          "gloss": "failed to catch a train or plane in time"
+        },
+        {
+          "text": "connection",
+          "gloss": "a second train or plane you catch to continue a trip"
+        },
+        {
+          "text": "backup",
+          "gloss": "an extra plan ready if the first plan fails"
+        },
+        {
+          "text": "alternative",
+          "gloss": "a different choice or option"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u08.l09.by-bus",
+        "en.elementary.u11.l06.if-you-hurry",
+        "en.elementary.u11.l06.if-it-rains",
+        "en.beginner.u07.l05.cheap",
+        "en.pre-intermediate.u02.l06.land",
+        "en.pre-intermediate.u02.l03.i-will-call-you"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u02.l10",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 10,
+      "type": "lesson",
+      "title": "Lost and found",
+      "canDo": "Report a problem",
+      "scenario": "Smarty and Lily are at the station reporting a lost suitcase and a missing key.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u02.l10.i-have-lost",
+          "text": "I have lost",
+          "kind": "phrase",
+          "forms": [
+            "we have lost"
+          ],
+          "example": "Excuse me, I have lost my blue suitcase.",
+          "note": "Say 'I have lost' when you cannot find something that belongs to you."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l10.i-have-been-robbed",
+          "text": "I have been robbed",
+          "kind": "phrase",
+          "forms": [
+            "robbed"
+          ],
+          "example": "Help! I have been robbed on the platform!",
+          "note": "Say 'I have been robbed' if someone took your money, phone, or luggage."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l10.lost-property",
+          "text": "lost property",
+          "kind": "phrase",
+          "example": "Go to lost property to ask about your umbrella.",
+          "note": "The 'lost property' desk is where station staff keep items that travellers left behind."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l10.where-can-i-report-it",
+          "text": "Where can I report it?",
+          "kind": "phrase",
+          "forms": [
+            "report",
+            "reported"
+          ],
+          "example": "My phone is missing. Where can I report it?",
+          "note": "Ask 'Where can I report it?' to find the right desk or police officer to tell about a problem."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l10.it-happened-when",
+          "text": "It happened when",
+          "kind": "phrase",
+          "forms": [
+            "it happened when",
+            "happened"
+          ],
+          "example": "It happened when I was getting off the train.",
+          "note": "Use 'It happened when' to explain the exact moment a problem took place."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l10.a-spare-key",
+          "text": "a spare key",
+          "kind": "phrase",
+          "forms": [
+            "spare key",
+            "spare keys"
+          ],
+          "example": "Do not worry, I have a spare key in my coat.",
+          "note": "A 'spare key' is an extra key you keep in case you lose your main key."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l10.task.pick-lost",
+          "kind": "choice",
+          "prompt": "Lily cannot find her passport anywhere. What does she say?",
+          "answer": "I have lost my passport.",
+          "options": [
+            "I have lost my passport.",
+            "I have a spare key.",
+            "It is on time."
+          ],
+          "explanation": "Use 'I have lost' when something is missing.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l10.i-have-lost",
+            "en.beginner.u11.l07.passport"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l10.task.hear-report",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Where can I report it?",
+          "answer": "Where can I report it?",
+          "options": [
+            "Where can I report it?",
+            "Where is the luggage rack?",
+            "Where are you going?"
+          ],
+          "explanation": "Ask 'Where can I report it?' when you need help with a lost or stolen item.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l10.where-can-i-report-it"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l10.task.fill-property",
+          "kind": "fill",
+          "prompt": "You left your umbrella on the train. Where do you go at the station?",
+          "text": "Ask the staff at ___.",
+          "answer": "lost property",
+          "options": [
+            "lost property",
+            "a spare key",
+            "security"
+          ],
+          "explanation": "Lost property keeps items found on trains and platforms.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l10.lost-property"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l10.task.match-problems",
+          "kind": "match",
+          "prompt": "Match each phrase with when you say it.",
+          "pairs": [
+            {
+              "left": "I have been robbed",
+              "right": "someone took my wallet"
+            },
+            {
+              "left": "It happened when",
+              "right": "say when it happened"
+            },
+            {
+              "left": "a spare key",
+              "right": "an extra key for me"
+            }
+          ],
+          "explanation": "Use 'I have been robbed' for theft, 'It happened when' to give the time, and 'a spare key' for a backup key.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l10.i-have-been-robbed",
+            "en.pre-intermediate.u02.l10.it-happened-when",
+            "en.pre-intermediate.u02.l10.a-spare-key"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l10.task.build-happened",
+          "kind": "build",
+          "prompt": "Smarty explains when his camera went missing. Build the sentence.",
+          "answer": "It happened when we changed trains.",
+          "tiles": [
+            "It",
+            "happened",
+            "when",
+            "we",
+            "changed",
+            "trains",
+            "robbed"
+          ],
+          "explanation": "It happened when introduces the moment the problem occurred.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l10.it-happened-when",
+            "en.pre-intermediate.u02.l02.change-trains"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l10.task.fill-spare",
+          "kind": "fill",
+          "prompt": "Sam locked his suitcase and cannot find his key, so Smarty helps. Complete the sentence.",
+          "text": "Take ___ from my pocket.",
+          "answer": "a spare key",
+          "options": [
+            "a spare key",
+            "lost property",
+            "I have lost"
+          ],
+          "explanation": "A spare key is an extra key.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l10.a-spare-key"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l10.task.say-robbed",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I have been robbed and need a police officer.",
+          "answer": "I have been robbed and need a police officer.",
+          "explanation": "Say 'I have been robbed' clearly so a police officer can help you.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l10.i-have-been-robbed",
+            "en.elementary.u07.l02.police-officer"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How does Lily get her missing wallet and key back at the station?",
+        "image": {
+          "id": "en-b1-u02-l10-scene",
+          "describe": "Smarty the black cat and Lily talking to a helpful cat clerk at a station lost property counter."
+        },
+        "lines": [
+          {
+            "speaker": "Lily",
+            "text": "Oh no, Smarty! I have lost my wallet! Or maybe I have been robbed!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Stay calm, Lily! Where can I report it? Let's go to lost property first."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Excuse me, I cannot find my wallet. It happened when I walked out of carriage three."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Can we give a description and fill in a claim form? Nothing was stolen, right?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "Look! Someone found it on the seat and brought it here! Even my house key is inside."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What luck! And I still brought a spare key just in case!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "Where do Smarty and Lily go to report the missing wallet?",
+            "answer": "lost property",
+            "options": [
+              "lost property",
+              "the check-in desk",
+              "the boarding gate"
+            ],
+            "explanation": "Smarty says: Let's go to lost property first.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l10.lost-property",
+              "en.pre-intermediate.u02.l10.where-can-i-report-it"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "When did Lily lose her wallet?",
+            "answer": "when she walked out of carriage three",
+            "options": [
+              "when she walked out of carriage three",
+              "yesterday morning",
+              "on the plane"
+            ],
+            "explanation": "Lily says: It happened when I walked out of carriage three.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l10.it-happened-when",
+              "en.pre-intermediate.u02.l10.i-have-lost"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "What extra item did Smarty bring?",
+            "answer": "a spare key",
+            "options": [
+              "a spare key",
+              "a single ticket",
+              "a boarding pass"
+            ],
+            "explanation": "Smarty says: And I still brought a spare key just in case!",
+            "itemIds": [
+              "en.pre-intermediate.u02.l10.a-spare-key"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You lost your suitcase on the train. Report it to Smarty at the lost property desk.",
+        "turns": [
+          {
+            "smarty": "Welcome to lost property! What is the matter?",
+            "accept": [
+              "^i have lost my (?:suitcase|wallet|phone|passport|key|umbrella)$",
+              "^i have been robbed$"
+            ],
+            "example": "I have lost my suitcase.",
+            "hint": "Start with 'I have lost my...'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l10.lost-property",
+              "en.pre-intermediate.u02.l10.i-have-lost"
+            ]
+          },
+          {
+            "smarty": "When did you lose it?",
+            "accept": [
+              "^it happened when (?:i was on the train|we changed trains|i left the train|i got off)$",
+              "^it happened yesterday$"
+            ],
+            "example": "It happened when we changed trains.",
+            "hint": "Start with 'It happened when...'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l10.it-happened-when"
+            ]
+          },
+          {
+            "smarty": "Do you need a spare key for your hotel room while we look?",
+            "accept": [
+              "^(?:yes )?i need a spare key(?: please)?$",
+              "^(?:yes please|no thanks)$"
+            ],
+            "example": "Yes, I need a spare key, please.",
+            "hint": "Say 'Yes, I need a spare key, please'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l10.a-spare-key"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "stolen",
+          "gloss": "taken by someone without permission"
+        },
+        {
+          "text": "wallet",
+          "gloss": "a small flat case for money and cards"
+        },
+        {
+          "text": "description",
+          "gloss": "words that tell what something looks like"
+        },
+        {
+          "text": "claim form",
+          "gloss": "a paper you fill in to get back lost items"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u11.l07.passport",
+        "en.pre-intermediate.u02.l02.change-trains",
+        "en.elementary.u07.l02.police-officer"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u02.l11",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 11,
+      "type": "lesson",
+      "title": "Trip diary",
+      "canDo": "Tell a past trip",
+      "scenario": "Smarty and Tom sit in the train carriage sharing stories about a big mountain trip.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u02.l11.we-got-lost",
+          "text": "We got lost",
+          "kind": "phrase",
+          "forms": [
+            "we got lost",
+            "I got lost"
+          ],
+          "example": "We got lost in the forest because we had no map.",
+          "note": "Say 'We got lost' when you did not know where you were or which way to go."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l11.it-took-hours",
+          "text": "It took hours",
+          "kind": "phrase",
+          "forms": [
+            "it took hours",
+            "hours"
+          ],
+          "example": "The train was delayed, so it took hours to get home.",
+          "note": "Say 'It took hours' when a journey or walk lasted a very long time."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l11.in-the-end",
+          "text": "in the end",
+          "kind": "phrase",
+          "forms": [
+            "In the end"
+          ],
+          "example": "In the end, we found a friendly driver who helped us.",
+          "note": "Use 'in the end' to tell how a long story or problem finally finished."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l11.the-best-part",
+          "text": "the best part",
+          "kind": "phrase",
+          "forms": [
+            "The best part"
+          ],
+          "example": "The best part of our trip was swimming in the lake.",
+          "note": "Say 'the best part' to share your favourite moment from a trip."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l11.i-have-never-been-so-tired",
+          "text": "I have never been so tired",
+          "kind": "phrase",
+          "forms": [
+            "we have never been so tired"
+          ],
+          "example": "After climbing the mountain, I have never been so tired!",
+          "note": "Say 'I have never been so tired' when you feel more tired than ever before."
+        },
+        {
+          "id": "en.pre-intermediate.u02.l11.what-a-view",
+          "text": "what a view",
+          "kind": "phrase",
+          "forms": [
+            "What a view",
+            "view"
+          ],
+          "example": "Look at the mountains and the sea—what a view!",
+          "note": "Say 'What a view!' when you see a really beautiful place from a window or hill."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l11.task.pick-gotlost",
+          "kind": "choice",
+          "prompt": "Tom took the wrong turn and did not know where he was. What happened?",
+          "answer": "We got lost.",
+          "options": [
+            "We got lost.",
+            "What a view!",
+            "It was on time."
+          ],
+          "explanation": "Use 'We got lost' when you lose your way.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l11.we-got-lost"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l11.task.hear-hours",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "It took hours to get to the mountain.",
+          "answer": "It took hours to get to the mountain.",
+          "options": [
+            "It took hours to get to the mountain.",
+            "It took hours to buy a ticket.",
+            "What a view from the mountain!"
+          ],
+          "explanation": "It took hours means the trip lasted many hours.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l11.it-took-hours",
+            "en.elementary.u06.l05.mountain"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l11.task.fill-intheend",
+          "kind": "fill",
+          "prompt": "First the bus broke down, then it rained, but finally they reached the hotel. Complete the sentence.",
+          "text": "___, we got to the hotel safely.",
+          "answer": "In the end",
+          "options": [
+            "In the end",
+            "What a view",
+            "We got lost"
+          ],
+          "explanation": "Use 'In the end' to show the final result after problems.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l11.in-the-end",
+            "en.beginner.u11.l08.hotel"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l11.task.match-diary",
+          "kind": "match",
+          "prompt": "Match each story phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "what a view",
+              "right": "you see a great view"
+            },
+            {
+              "left": "the best part",
+              "right": "my favourite moment"
+            },
+            {
+              "left": "I have never been so tired",
+              "right": "I needed a long sleep"
+            }
+          ],
+          "explanation": "What a view praises a sight, the best part highlights the top moment, and I have never been so tired expresses extreme tiredness.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l11.what-a-view",
+            "en.pre-intermediate.u02.l11.the-best-part",
+            "en.pre-intermediate.u02.l11.i-have-never-been-so-tired"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l11.task.build-bestpart",
+          "kind": "build",
+          "prompt": "Smarty loved seeing the waterfall most of all. Build the sentence.",
+          "answer": "The best part was the waterfall.",
+          "tiles": [
+            "The",
+            "best",
+            "part",
+            "was",
+            "the",
+            "waterfall",
+            "hours"
+          ],
+          "explanation": "The best part introduces the highlight of a trip.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l11.the-best-part",
+            "en.elementary.u06.l05.waterfall"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l11.task.fill-view",
+          "kind": "fill",
+          "prompt": "Tom looks out the train window at a bright blue lake and snowy mountains. Complete his words.",
+          "text": "Look out the window—___!",
+          "answer": "what a view",
+          "options": [
+            "what a view",
+            "we got lost",
+            "it took hours"
+          ],
+          "explanation": "Say 'what a view' when you see stunning scenery.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l11.what-a-view",
+            "en.beginner.u05.l02.window"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l11.task.say-tired",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I have never been so tired after a journey.",
+          "answer": "I have never been so tired after a journey.",
+          "explanation": "Use 'I have never been so tired' after a very long trip.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l11.i-have-never-been-so-tired",
+            "en.elementary.u04.l10.journey"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What happened when Smarty and Tom got lost on their mountain trip?",
+        "image": {
+          "id": "en-b1-u02-l11-scene",
+          "describe": "Smarty the black cat and Tom sitting in a train carriage looking out the window at dramatic green mountains and a lake."
+        },
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "Look outside the carriage window, Smarty! What a view!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "That delightful scenery reminds me of our memorable trip last summer."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Oh yes! We got lost in the forest because we forgot our map."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It took hours to find the river! I was exhausted—I have never been so tired."
+          },
+          {
+            "speaker": "Tom",
+            "text": "In the end, we saw a small train station behind the trees."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And the best part was drinking hot tea on the train home!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l11.task.story-one",
+            "kind": "choice",
+            "prompt": "Why did Smarty and Tom get lost last summer?",
+            "answer": "Because they forgot the map.",
+            "options": [
+              "Because they forgot the map.",
+              "Because the train was cancelled.",
+              "Because it snowed."
+            ],
+            "explanation": "Tom says: We got lost in the forest because we forgot our map.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l11.we-got-lost"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l11.task.story-two",
+            "kind": "choice",
+            "prompt": "How long did it take to find the river?",
+            "answer": "It took hours.",
+            "options": [
+              "It took hours.",
+              "It took no time.",
+              "It took a week."
+            ],
+            "explanation": "Smarty says: It took hours to find the river!",
+            "itemIds": [
+              "en.pre-intermediate.u02.l11.it-took-hours",
+              "en.pre-intermediate.u02.l11.i-have-never-been-so-tired"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l11.task.story-three",
+            "kind": "choice",
+            "prompt": "What was the best part of the trip for Smarty?",
+            "answer": "drinking hot tea on the train",
+            "options": [
+              "drinking hot tea on the train",
+              "we got lost in the forest",
+              "missing the bus"
+            ],
+            "explanation": "Smarty says: the best part was drinking hot tea on the train home!",
+            "itemIds": [
+              "en.pre-intermediate.u02.l11.the-best-part",
+              "en.pre-intermediate.u02.l11.in-the-end"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Tell Smarty about a past trip you went on—real or imagined.",
+        "turns": [
+          {
+            "smarty": "Did anything go wrong on your trip?",
+            "accept": [
+              "^(?:yes )?we got lost$",
+              "^(?:yes )?i got lost$",
+              "^(?:yes )?it took hours$"
+            ],
+            "example": "Yes, we got lost.",
+            "hint": "Say 'We got lost' or 'It took hours'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l11.we-got-lost",
+              "en.pre-intermediate.u02.l11.it-took-hours"
+            ]
+          },
+          {
+            "smarty": "How did it finish in the end?",
+            "accept": [
+              "^in the end we (?:got home|found the station|found a hotel|came back)$",
+              "^in the end i (?:got home|was fine)$"
+            ],
+            "example": "In the end, we got home.",
+            "hint": "Start with 'In the end...'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l11.in-the-end"
+            ]
+          },
+          {
+            "smarty": "What was the best part of your trip?",
+            "accept": [
+              "^the best part was (?:the view|the mountain|the sea|the lake|the food|the train)$",
+              "^what a view$"
+            ],
+            "example": "The best part was the view.",
+            "hint": "Start with 'The best part was...'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l11.the-best-part",
+              "en.pre-intermediate.u02.l11.what-a-view"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "exhausted",
+          "gloss": "extremely tired"
+        },
+        {
+          "text": "memorable",
+          "gloss": "special and easy to remember"
+        },
+        {
+          "text": "scenery",
+          "gloss": "beautiful natural views like mountains and rivers"
+        },
+        {
+          "text": "delightful",
+          "gloss": "very pleasant and lovely"
+        }
+      ],
+      "recycle": [
+        "en.elementary.u06.l05.mountain",
+        "en.beginner.u11.l08.hotel",
+        "en.elementary.u06.l05.waterfall",
+        "en.beginner.u05.l02.window",
+        "en.elementary.u04.l10.journey"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u02.l12",
+      "section": "pre-intermediate",
+      "unit": 2,
+      "lesson": 12,
+      "type": "test",
+      "title": "Mission: Plan the trip",
+      "canDo": "Plan a journey and fix a delay",
+      "scenario": "Final test in the train carriage: plan a journey with Smarty and solve delays and lost items.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u02.l12.task.pick-return",
+          "kind": "choice",
+          "prompt": "You are travelling to Italy and coming back next week. Which ticket do you buy?",
+          "answer": "a return ticket",
+          "options": [
+            "a return ticket",
+            "a single ticket",
+            "a boarding pass"
+          ],
+          "explanation": "A return ticket is for going there and coming back.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l01.return-ticket"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l12.task.fill-direct",
+          "kind": "fill",
+          "prompt": "You do not want to get off and wait for a second train. Complete the sentence.",
+          "text": "I have decided to take ___.",
+          "answer": "a direct train",
+          "options": [
+            "a direct train",
+            "change trains",
+            "the next stop"
+          ],
+          "explanation": "A direct train takes you straight to your destination.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l02.a-direct-train",
+            "en.pre-intermediate.u02.l03.i-have-decided-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l12.task.hear-leaving",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "We are leaving at nine o'clock from platform five.",
+          "answer": "We are leaving at nine o'clock from platform five.",
+          "options": [
+            "We are leaving at nine o'clock from platform five.",
+            "Our train is cancelled on platform five.",
+            "We are about to land at nine o'clock."
+          ],
+          "explanation": "Listen for the departure time and platform number.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l03.we-are-leaving-at",
+            "en.pre-intermediate.u02.l01.platform"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l12.task.match-test1",
+          "kind": "match",
+          "prompt": "Match each travel phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "boarding pass",
+              "right": "needed to get on a plane"
+            },
+            {
+              "left": "turbulence",
+              "right": "a plane that is not still"
+            },
+            {
+              "left": "lost property",
+              "right": "desk for things you lost"
+            }
+          ],
+          "explanation": "A boarding pass lets you board, turbulence is bumpy air, and lost property holds found items.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l05.boarding-pass",
+            "en.pre-intermediate.u02.l06.turbulence",
+            "en.pre-intermediate.u02.l10.lost-property"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l12.task.build-cond",
+          "kind": "build",
+          "prompt": "Make a backup plan for a late train. Build the sentence.",
+          "answer": "If we miss it we will wait.",
+          "tiles": [
+            "If",
+            "we",
+            "miss",
+            "it",
+            "we",
+            "will",
+            "wait",
+            "unless"
+          ],
+          "explanation": "Use 'If we miss it we will' for your backup action.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l09.if-we-miss-it-we-will"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l12.task.fill-move",
+          "kind": "fill",
+          "prompt": "You are inside the station and need to reach the bus stop outside. Complete the sentence.",
+          "text": "Walk ___ the station and across the park.",
+          "answer": "out of",
+          "options": [
+            "out of",
+            "through",
+            "along"
+          ],
+          "explanation": "Use 'out of' when leaving a building.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l07.out-of",
+            "en.pre-intermediate.u02.l07.across"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l12.task.pick-lost",
+          "kind": "choice",
+          "prompt": "You cannot find your hand luggage after getting off the train. What do you say?",
+          "answer": "I have lost my hand luggage.",
+          "options": [
+            "I have lost my hand luggage.",
+            "We are about to lift off.",
+            "What a view!"
+          ],
+          "explanation": "Use 'I have lost' to report a missing bag.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l10.i-have-lost",
+            "en.pre-intermediate.u02.l05.hand-luggage"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u02.l12.task.say-story",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "In the end, we got on the train on time.",
+          "answer": "In the end, we got on the train on time.",
+          "explanation": "Combine 'In the end' with 'on time' to finish a travel story.",
+          "itemIds": [
+            "en.pre-intermediate.u02.l11.in-the-end",
+            "en.pre-intermediate.u02.l02.on-time"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How do Smarty, Mia, and Leo solve a sudden platform change?",
+        "image": {
+          "id": "en-b1-u02-l12-scene",
+          "describe": "Smarty the black cat, Mia, and Leo standing together on a busy station platform with suitcases and return tickets."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Look at the timetable board! Our train is delayed and moved to platform eight."
+          },
+          {
+            "speaker": "Mia",
+            "text": "If we miss it we will have to change trains twice!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "We will catch it as long as we hurry! Go past the check-in desk and across the bridge."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Wait—I have lost my spare key! Oh, here it is in my hand luggage."
+          },
+          {
+            "speaker": "Mia",
+            "text": "We are about to get on! Keep your suitcases on the luggage rack."
+          },
+          {
+            "speaker": "Leo",
+            "text": "In the end, we made it! Look out the window—what a view!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u02.l12.task.story-one",
+            "kind": "choice",
+            "prompt": "Why do Smarty, Mia, and Leo hurry to platform eight?",
+            "answer": "Because the train is at platform eight and they do not want to miss it.",
+            "options": [
+              "Because the train is at platform eight and they do not want to miss it.",
+              "Because they want to go to security.",
+              "Because they are looking for lost property."
+            ],
+            "explanation": "Smarty sees on the timetable board that their train moved to platform eight.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l01.platform",
+              "en.pre-intermediate.u02.l09.if-we-miss-it-we-will"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u02.l12.task.story-two",
+            "kind": "choice",
+            "prompt": "Where did Smarty find his spare key?",
+            "answer": "in his hand luggage",
+            "options": [
+              "in his hand luggage",
+              "on the luggage rack",
+              "at lost property"
+            ],
+            "explanation": "Smarty says: here it is in my hand luggage.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l10.a-spare-key",
+              "en.pre-intermediate.u02.l05.hand-luggage"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Final mission! Plan a journey with Smarty and solve a delay along the way.",
+        "turns": [
+          {
+            "smarty": "We are going to the mountains and coming back tomorrow. What ticket should we buy?",
+            "accept": [
+              "^(?:a )?return ticket(?: please)?$",
+              "^we should buy a return ticket$"
+            ],
+            "example": "A return ticket.",
+            "hint": "Say 'a return ticket'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l01.return-ticket"
+            ]
+          },
+          {
+            "smarty": "What time are we leaving tomorrow morning?",
+            "accept": [
+              "^we are leaving at (?:one|two|three|four|five|six|seven|eight|nine|ten)(?: oclock)?$",
+              "^at (?:one|two|three|four|five|six|seven|eight|nine|ten)(?: oclock)?$"
+            ],
+            "example": "We are leaving at nine o'clock.",
+            "hint": "Say 'We are leaving at...' with an hour.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l03.we-are-leaving-at"
+            ]
+          },
+          {
+            "smarty": "Oh no, our train is delayed! What will we do if we miss it?",
+            "accept": [
+              "^if we miss it we will (?:take the bus|take a taxi|wait|take the next train)$"
+            ],
+            "example": "If we miss it we will take the next train.",
+            "hint": "Start with 'If we miss it we will...'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l01.delayed",
+              "en.pre-intermediate.u02.l09.if-we-miss-it-we-will"
+            ]
+          },
+          {
+            "smarty": "We made it onto the train! Where should we keep our suitcases?",
+            "accept": [
+              "^(?:keep them |keep our suitcases )?on the luggage rack$",
+              "^the luggage rack$"
+            ],
+            "example": "On the luggage rack.",
+            "hint": "Say 'on the luggage rack'.",
+            "itemIds": [
+              "en.pre-intermediate.u02.l02.luggage-rack"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.pre-intermediate.u02.l01.return-ticket",
+        "en.pre-intermediate.u02.l01.platform",
+        "en.pre-intermediate.u02.l01.delayed",
+        "en.pre-intermediate.u02.l02.a-direct-train",
+        "en.pre-intermediate.u02.l02.luggage-rack",
+        "en.pre-intermediate.u02.l02.on-time",
+        "en.pre-intermediate.u02.l03.i-have-decided-to",
+        "en.pre-intermediate.u02.l03.we-are-leaving-at",
+        "en.pre-intermediate.u02.l05.boarding-pass",
+        "en.pre-intermediate.u02.l05.hand-luggage",
+        "en.pre-intermediate.u02.l06.turbulence",
+        "en.pre-intermediate.u02.l07.out-of",
+        "en.pre-intermediate.u02.l07.across",
+        "en.pre-intermediate.u02.l09.if-we-miss-it-we-will",
+        "en.pre-intermediate.u02.l10.lost-property",
+        "en.pre-intermediate.u02.l10.i-have-lost",
+        "en.pre-intermediate.u02.l10.a-spare-key",
+        "en.pre-intermediate.u02.l11.in-the-end"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Mystery on Platform Nine",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "What a view from our train carriage! We are right on time for the mountain station.",
+        "image": {
+          "id": "en-b1-u02-ep-01",
+          "describe": "Smarty the black cat and Mia looking out a train carriage window at tall snow-capped mountains."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Get our hand luggage down from the luggage rack, Smarty. The next stop is ours!"
+      },
+      {
+        "speaker": "Smarty",
+        "text": "We went out of the carriage and across platform nine, when Mia saw something under a bench."
+      },
+      {
+        "speaker": "Mia",
+        "text": "Look! Someone has lost an old leather notebook and a shiny spare key!",
+        "image": {
+          "id": "en-b1-u02-ep-02",
+          "describe": "Mia and Smarty the black cat looking at an old brown notebook and a brass key lying on a station bench."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "We must take them to lost property right away, unless the owner is still at the station."
+      },
+      {
+        "speaker": "Mia",
+        "text": "Look at the timetable board! The last train back is cancelled because of a storm, and the lost property office is closed!"
+      },
+      {
+        "speaker": "Smarty",
+        "text": "If we miss the night bus, we will have to stay at the old mountain hotel—and this spare key has the hotel room number seven on it!",
+        "image": {
+          "id": "en-b1-u02-ep-03",
+          "describe": "Smarty the black cat holding up the brass key with a tag showing the number seven while snow begins to fall outside the station."
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.pre-intermediate.u02.ep.task.one",
+        "kind": "choice",
+        "prompt": "What do Smarty and Mia find on platform nine?",
+        "answer": "a notebook and a spare key",
+        "options": [
+          "a notebook and a spare key",
+          "a boarding pass and a wallet",
+          "a single ticket and a camera"
+        ],
+        "explanation": "Mia finds an old notebook and a spare key on platform nine.",
+        "itemIds": [
+          "en.pre-intermediate.u02.l01.platform",
+          "en.pre-intermediate.u02.l10.a-spare-key"
+        ]
+      },
+      {
+        "id": "en.pre-intermediate.u02.ep.task.two",
+        "kind": "choice",
+        "prompt": "Why can Smarty and Mia not take the last train back?",
+        "answer": "Because it is cancelled.",
+        "options": [
+          "Because it is cancelled.",
+          "Because they have no tickets.",
+          "Because it is on platform one."
+        ],
+        "explanation": "The timetable board shows the last train back is cancelled.",
+        "itemIds": [
+          "en.pre-intermediate.u02.l01.cancelled",
+          "en.pre-intermediate.u02.l01.timetable-board"
+        ]
+      }
+    ]
+  }
+}

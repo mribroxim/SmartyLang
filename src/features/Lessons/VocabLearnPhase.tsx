@@ -1,11 +1,13 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ArrowLeft, Loader2, Volume2 } from 'lucide-react';
 import type { ReadingText } from '../../lib/reading-logic';
 import { useContentLang } from '../../contexts/ContentLangContext';
 import { useUiLang } from '../../contexts/UiLangContext';
 import { DICT_LANG_CODE } from '../../lib/contentLang';
 import { UI_TRANSLATE_CODE } from '../../lib/uiLang';
-import { fetchWordTranslations } from '../../Exercises';
+import { fetchWordTranslations } from '../../lib/wordTranslations';
+import { useSmartyPrefs } from '../../lib/smarty/prefs';
+import { cancelSpeech } from '../../lib/speech';
 import { playSound } from '../../lib/audio';
 import { Sticker } from '../../components/stickers/Sticker';
 import { ChunkyButton } from '../Bites/lesson/chunky';
@@ -78,6 +80,14 @@ export function VocabLearnPhase({
     })();
     return () => { cancelled = true; };
   }, [text.id, contentLang, uiLang, dictCode, words.join('|')]);
+
+  const { autoplayVoice } = useSmartyPrefs();
+  const spokenWord = text.vocabulary[index]?.word;
+  useEffect(() => {
+    if (loading || !autoplayVoice || !spokenWord || variant !== 'lesson') return;
+    playWord(spokenWord);
+    return cancelSpeech;
+  }, [spokenWord, loading, variant, autoplayVoice]);
 
   if (loading && variant === 'lesson') {
     return <div className="flex justify-center py-24"><Sticker id="flow.lesson-loading" size={120} priority="hero" /></div>;

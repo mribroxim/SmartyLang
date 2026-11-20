@@ -1,0 +1,4098 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "pre-intermediate",
+  "unit": 3,
+  "title": "Money",
+  "room": "market-square",
+  "lessons": [
+    {
+      "id": "en.pre-intermediate.u03.l01",
+      "section": "pre-intermediate",
+      "unit": 3,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Money matters",
+      "canDo": "Talk about money",
+      "scenario": "Smarty and Mia count their money in the market square.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u03.l01.purse",
+          "text": "purse",
+          "kind": "word",
+          "forms": [
+            "purses"
+          ],
+          "example": "My purse is in my jacket.",
+          "note": "A purse is a small bag where you keep your money.",
+          "image": {
+            "id": "purse",
+            "describe": "a small brown leather purse open on a wooden table with money inside"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.coins",
+          "text": "coins",
+          "kind": "word",
+          "forms": [
+            "coin"
+          ],
+          "example": "I have ten coins in my purse.",
+          "note": "Say ‘coins’ for small round metal money.",
+          "image": {
+            "id": "coins",
+            "describe": "a small pile of shiny gold and silver metal coins on a table"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.notes",
+          "text": "notes",
+          "kind": "word",
+          "forms": [
+            "note"
+          ],
+          "example": "She has three paper notes in her wallet.",
+          "note": "Use ‘notes’ for paper money.",
+          "image": {
+            "id": "notes",
+            "describe": "a neat fan of crisp paper money notes held by a cat paw"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.change",
+          "text": "change",
+          "kind": "word",
+          "example": "Here is your change.",
+          "note": "‘Change’ is the money a shop gives back when you pay more than the cost, or small coins."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.afford",
+          "text": "afford",
+          "kind": "word",
+          "forms": [
+            "affords",
+            "afforded"
+          ],
+          "example": "I cannot afford that expensive coat.",
+          "note": "Say ‘can afford’ when you have enough money to buy something."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.pocket-money",
+          "text": "pocket money",
+          "kind": "phrase",
+          "example": "I get pocket money every weekend.",
+          "note": "‘Pocket money’ is a small amount of money parents give children each week."
+        }
+      ],
+      "grammar": {
+        "title": "can afford / cannot afford",
+        "explanation": "Use can afford when you have enough money to buy something, and cannot afford when something is too expensive for you.",
+        "examples": [
+          "I can afford this scarf.",
+          "We cannot afford a new car."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u03.l01.task.pick-purse",
+          "kind": "choice",
+          "prompt": "Look at the picture of where you keep money. Which word fits?",
+          "answer": "purse",
+          "options": [
+            "purse",
+            "notes",
+            "change"
+          ],
+          "explanation": "A purse is a small bag where you keep money.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l01.purse"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.task.hear-coins",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have five coins in my hand.",
+          "answer": "I have five coins in my hand.",
+          "options": [
+            "I have five coins in my hand.",
+            "I have five notes in my hand.",
+            "I have five books in my hand."
+          ],
+          "explanation": "Coins are small round pieces of small money.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l01.coins"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.task.match-money",
+          "kind": "match",
+          "prompt": "Match the money words with their meanings.",
+          "pairs": [
+            {
+              "left": "coins",
+              "right": "small money"
+            },
+            {
+              "left": "notes",
+              "right": "big money"
+            },
+            {
+              "left": "purse",
+              "right": "where you keep money"
+            }
+          ],
+          "explanation": "Coins are metal, notes are paper, and a purse holds them.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l01.coins",
+            "en.pre-intermediate.u03.l01.notes",
+            "en.pre-intermediate.u03.l01.purse"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.task.fill-change",
+          "kind": "fill",
+          "prompt": "You pay with a big note for a cheap apple. Complete what the shop worker says.",
+          "text": "Thank you, and here is your ___.",
+          "answer": "change",
+          "options": [
+            "change",
+            "purse",
+            "afford"
+          ],
+          "explanation": "Change is the money you get back when you pay with a larger note.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l01.change",
+            "en.beginner.u07.l05.cheap"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.task.build-afford",
+          "kind": "build",
+          "prompt": "The jacket is very expensive. Build the sentence.",
+          "answer": "I cannot afford this expensive jacket.",
+          "tiles": [
+            "I",
+            "cannot",
+            "afford",
+            "this",
+            "expensive",
+            "jacket.",
+            "coins"
+          ],
+          "explanation": "Use cannot afford when you do not have enough money for something.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l01.afford",
+            "en.beginner.u07.l05.expensive"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.task.fill-pocket-money",
+          "kind": "fill",
+          "prompt": "Sam gets a little money from his parents every Saturday. Complete the sentence.",
+          "text": "My parents give me ___ every Saturday.",
+          "answer": "pocket money",
+          "options": [
+            "pocket money",
+            "change",
+            "coins"
+          ],
+          "explanation": "Pocket money is the small money children get from their parents.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l01.pocket-money"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.task.say-notes",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I have two notes and four coins in my purse.",
+          "answer": "I have two notes and four coins in my purse.",
+          "explanation": "Notes are big money and coins are small money.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l01.notes",
+            "en.pre-intermediate.u03.l01.coins",
+            "en.pre-intermediate.u03.l01.purse"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l01.task.choice-afford",
+          "kind": "choice",
+          "prompt": "Mia has twenty notes and the scarf is cheap. What can she say?",
+          "answer": "I can afford this scarf.",
+          "options": [
+            "I can afford this scarf.",
+            "I cannot afford this scarf.",
+            "I lost my wallet."
+          ],
+          "explanation": "When you have enough money, say I can afford it.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l01.afford",
+            "en.beginner.u07.l05.cheap"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Can Mia afford the blue scarf in the market square?",
+        "image": {
+          "id": "en-b1-u03-l01-scene",
+          "describe": "In the sunny market square, Smarty the black cat and Mia look inside Mia's open purse and count coins and paper notes near a scarf stall."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Look at that warm blue scarf in the market, Mia!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "It is beautiful, Smarty, but is it pricey?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No, it is inexpensive! Only eight pound notes."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Let me check my purse. I have my pocket money from yesterday."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What currency do you have inside?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I have one ten pound note and five small coins. I can afford it!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great! Pay with the note and keep the change for tea."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u03.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "Where does Mia keep her pocket money?",
+            "answer": "in her purse",
+            "options": [
+              "in her purse",
+              "in her shoe",
+              "in her notebook"
+            ],
+            "explanation": "Mia says: Let me check my purse. I have my pocket money from yesterday.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l01.purse",
+              "en.pre-intermediate.u03.l01.pocket-money"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "What is inside Mia's purse?",
+            "answer": "one note and five coins",
+            "options": [
+              "one note and five coins",
+              "ten notes and one coin",
+              "two coins"
+            ],
+            "explanation": "Mia has one note and five small coins.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l01.notes",
+              "en.pre-intermediate.u03.l01.coins"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Can Mia buy the scarf?",
+            "answer": "Yes, she can afford it.",
+            "options": [
+              "Yes, she can afford it.",
+              "No, she cannot afford it.",
+              "No, she has no money."
+            ],
+            "explanation": "Mia says: I can afford it!",
+            "itemIds": [
+              "en.pre-intermediate.u03.l01.afford"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about your money before shopping in the market square. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "I have three notes in my purse. Do you have notes or coins?",
+            "accept": [
+              "^i have (?:notes|coins|notes and coins|coins and notes)(?: in my purse| in my wallet)?$",
+              "^i have (?:one|two|three|four|five|ten|twenty) (?:notes|coins)$"
+            ],
+            "example": "I have coins and notes in my purse.",
+            "hint": "Say whether you have notes, coins, or both.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l01.purse",
+              "en.pre-intermediate.u03.l01.notes",
+              "en.pre-intermediate.u03.l01.coins"
+            ]
+          },
+          {
+            "smarty": "Do you get pocket money every week?",
+            "accept": [
+              "^(?:yes|no)(?: i (?:do|do not))?(?: i get pocket money(?: every week| every weekend)?)?$",
+              "^i get pocket money(?: every week| every weekend)?$"
+            ],
+            "example": "Yes, I get pocket money every week.",
+            "hint": "Answer Yes or No, or say when you get pocket money.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l01.pocket-money"
+            ]
+          },
+          {
+            "smarty": "Look at that new blue jacket! Can you afford it?",
+            "accept": [
+              "^(?:yes )?i can afford (?:it|the jacket|that jacket)$",
+              "^(?:no )?i cannot afford (?:it|the jacket|that jacket)$"
+            ],
+            "example": "No, I cannot afford it.",
+            "hint": "Say I can afford it or I cannot afford it.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l01.afford"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "pound",
+          "gloss": "British unit of money"
+        },
+        {
+          "text": "currency",
+          "gloss": "type of money used in a country"
+        },
+        {
+          "text": "pricey",
+          "gloss": "rather expensive"
+        },
+        {
+          "text": "inexpensive",
+          "gloss": "not expensive; cheap"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u07.l05.cheap",
+        "en.beginner.u07.l05.expensive"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u03.l02",
+      "section": "pre-intermediate",
+      "unit": 3,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Bargains",
+      "canDo": "Talk about prices",
+      "scenario": "Smarty and Sam look for good deals in the market square.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u03.l02.on-sale",
+          "text": "on sale",
+          "kind": "phrase",
+          "example": "These blue shoes are on sale today.",
+          "note": "Say ‘on sale’ when a shop sells something for less money than usual."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.a-good-deal",
+          "text": "a good deal",
+          "kind": "phrase",
+          "forms": [
+            "good deal",
+            "good deals"
+          ],
+          "example": "Ten notes for a warm coat is a good deal.",
+          "note": "Call something ‘a good deal’ when you pay very little for what you get."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.discount",
+          "text": "discount",
+          "kind": "word",
+          "forms": [
+            "discounts"
+          ],
+          "example": "Students get a twenty percent discount here.",
+          "note": "A ‘discount’ is money taken off the usual cost."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.special-offer",
+          "text": "special offer",
+          "kind": "phrase",
+          "forms": [
+            "special offers"
+          ],
+          "example": "There is a special offer on fruit this morning.",
+          "note": "A ‘special offer’ is a short-time deal to help people buy more."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.out-of-stock",
+          "text": "out of stock",
+          "kind": "phrase",
+          "example": "Sorry, the red T-shirt is out of stock.",
+          "note": "Say ‘out of stock’ when a shop has sold all of an item and has none left."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.buy-one-get-one-free",
+          "text": "buy one get one free",
+          "kind": "phrase",
+          "example": "Socks are buy one get one free at that shop.",
+          "note": "‘Buy one get one free’ means you pay for one item and get a second one for zero money."
+        }
+      ],
+      "grammar": {
+        "title": "Zero conditional for shopping facts",
+        "explanation": "Use if + present simple, present simple to talk about shopping rules and things that are always true.",
+        "examples": [
+          "If a shirt is on sale, you get a discount.",
+          "If something is out of stock, you cannot buy it now."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u03.l02.task.pick-out-of-stock",
+          "kind": "choice",
+          "prompt": "The shop has zero black hats left to sell. Which phrase describes the black hats?",
+          "answer": "out of stock",
+          "options": [
+            "out of stock",
+            "on sale",
+            "a good deal"
+          ],
+          "explanation": "Out of stock means the shop has none left.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l02.out-of-stock"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.task.hear-on-sale",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "All winter coats are on sale.",
+          "answer": "All winter coats are on sale.",
+          "options": [
+            "All winter coats are on sale.",
+            "All winter coats are out of stock.",
+            "All winter coats are too expensive."
+          ],
+          "explanation": "On sale means they cost less than usual.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l02.on-sale"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.task.match-bargains",
+          "kind": "match",
+          "prompt": "Match each phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "buy one get one free",
+              "right": "pay for one and get two"
+            },
+            {
+              "left": "out of stock",
+              "right": "no more in the shop"
+            },
+            {
+              "left": "a good deal",
+              "right": "a very cheap buy"
+            }
+          ],
+          "explanation": "These phrases help you talk about shop offers and stock.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l02.buy-one-get-one-free",
+            "en.pre-intermediate.u03.l02.out-of-stock",
+            "en.pre-intermediate.u03.l02.a-good-deal"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.task.fill-discount",
+          "kind": "fill",
+          "prompt": "The book is usually ten notes, but you pay eight notes. Complete the sentence.",
+          "text": "You get a two note ___ on this book.",
+          "answer": "discount",
+          "options": [
+            "discount",
+            "change",
+            "purse"
+          ],
+          "explanation": "A discount is money taken off the usual cost.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l02.discount",
+            "en.pre-intermediate.u03.l01.notes"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.task.build-special-offer",
+          "kind": "build",
+          "prompt": "The market has a special deal on apples. Build the sentence.",
+          "answer": "There is a special offer on apples.",
+          "tiles": [
+            "There",
+            "is",
+            "a",
+            "special",
+            "offer",
+            "on",
+            "apples.",
+            "stock"
+          ],
+          "explanation": "Use There is a special offer on... to talk about a short-time deal.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l02.special-offer"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.task.fill-bogo",
+          "kind": "fill",
+          "prompt": "You pay for one T-shirt and get a second T-shirt for free. Complete the sentence.",
+          "text": "These T-shirts are ___.",
+          "answer": "buy one get one free",
+          "options": [
+            "buy one get one free",
+            "out of stock",
+            "pocket money"
+          ],
+          "explanation": "Buy one get one free gives you two items for the cost of one.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l02.buy-one-get-one-free"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.task.say-good-deal",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "The shoes are on sale, so it is a good deal.",
+          "answer": "The shoes are on sale, so it is a good deal.",
+          "explanation": "When shoes are on sale, you can afford them easily and get a good deal.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l02.on-sale",
+            "en.pre-intermediate.u03.l02.a-good-deal"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l02.task.choice-zero-cond",
+          "kind": "choice",
+          "prompt": "Complete the rule: If something is on sale, ___.",
+          "answer": "you can afford it",
+          "options": [
+            "you can afford it",
+            "it is always out of stock",
+            "you get zero discount"
+          ],
+          "explanation": "When an item is on sale, it costs less so you can afford it.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l02.on-sale",
+            "en.pre-intermediate.u03.l01.afford"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What special offer do Smarty and Sam find at the market stall?",
+        "image": {
+          "id": "en-b1-u03-l02-scene",
+          "describe": "Smarty the black cat and Sam stand in front of a colourful market square stall with sale signs, T-shirts, and socks."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Smarty, you are a real bargain hunter!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look at that stall over there. Everything has a yellow price tag!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "It is a big clearance! Those green jackets are on sale with a huge discount."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Oh no, the small green jacket is out of stock."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Never mind! Look at the special offer on socks: buy one get one free!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Two pairs for five notes? That is a good deal!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u03.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Why cannot Smarty buy the small green jacket?",
+            "answer": "It is out of stock.",
+            "options": [
+              "It is out of stock.",
+              "It is too expensive.",
+              "He lost his purse."
+            ],
+            "explanation": "Smarty says: Oh no, the small green jacket is out of stock.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l02.out-of-stock"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "What is the special offer on socks?",
+            "answer": "buy one get one free",
+            "options": [
+              "buy one get one free",
+              "out of stock",
+              "zero discount"
+            ],
+            "explanation": "Sam says: Look at the special offer on socks: buy one get one free!",
+            "itemIds": [
+              "en.pre-intermediate.u03.l02.special-offer",
+              "en.pre-intermediate.u03.l02.buy-one-get-one-free"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Smarty think about two pairs of socks for five notes?",
+            "answer": "It is a good deal.",
+            "options": [
+              "It is a good deal.",
+              "It is not on sale.",
+              "He cannot afford it."
+            ],
+            "explanation": "Smarty says: That is a good deal!",
+            "itemIds": [
+              "en.pre-intermediate.u03.l02.a-good-deal"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is looking for bargains with you in the market square. Tell him about deals you see.",
+        "turns": [
+          {
+            "smarty": "Look at the shoes in this shop! Are they on sale?",
+            "accept": [
+              "^(?:yes )?(?:the shoes|they) are on sale(?: with a discount)?$",
+              "^(?:no )?(?:the shoes|they) are not on sale$"
+            ],
+            "example": "Yes, they are on sale.",
+            "hint": "Tell Smarty if the shoes are on sale.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l02.on-sale"
+            ]
+          },
+          {
+            "smarty": "Is there a special offer on T-shirts today?",
+            "accept": [
+              "^(?:yes )?there is a special offer(?: on t shirts)?$",
+              "^(?:yes )?(?:t shirts|they) are buy one get one free$",
+              "^no there is not a special offer$"
+            ],
+            "example": "Yes, they are buy one get one free.",
+            "hint": "Mention a special offer or buy one get one free.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l02.special-offer",
+              "en.pre-intermediate.u03.l02.buy-one-get-one-free"
+            ]
+          },
+          {
+            "smarty": "Ten notes for two shirts! Is that a good deal?",
+            "accept": [
+              "^(?:yes )?(?:that|it) is a good deal$",
+              "^(?:no )?(?:that|it) is not a good deal$"
+            ],
+            "example": "Yes, that is a good deal.",
+            "hint": "Say Yes, that is a good deal.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l02.a-good-deal"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "bargain hunter",
+          "gloss": "person who looks for low prices and good deals"
+        },
+        {
+          "text": "price tag",
+          "gloss": "small label showing how much something costs"
+        },
+        {
+          "text": "stall",
+          "gloss": "small open shop or table in a market"
+        },
+        {
+          "text": "clearance",
+          "gloss": "sale to clear old items from a shop"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u03.l01.notes",
+        "en.pre-intermediate.u03.l01.afford"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u03.l03",
+      "section": "pre-intermediate",
+      "unit": 3,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "In the store",
+      "canDo": "Ask shop staff",
+      "scenario": "Leo tries on a jacket in a shop near the market square.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u03.l03.do-you-have-this-in",
+          "text": "Do you have this in",
+          "kind": "phrase",
+          "example": "Do you have this in blue?",
+          "note": "Start with ‘Do you have this in…?’ to ask for another colour or size."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.can-i-try-it-on",
+          "text": "Can I try it on?",
+          "kind": "phrase",
+          "forms": [
+            "try it on",
+            "try them on"
+          ],
+          "example": "I like this coat. Can I try it on?",
+          "note": "Ask ‘Can I try it on?’ when you want to put something on before buying."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.fitting-room",
+          "text": "fitting room",
+          "kind": "phrase",
+          "forms": [
+            "fitting rooms"
+          ],
+          "example": "The fitting room is next to the door.",
+          "note": "The ‘fitting room’ is the small room in a shop where you try on shirts or trousers."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.it-does-not-suit-me",
+          "text": "It does not suit me",
+          "kind": "phrase",
+          "forms": [
+            "suit",
+            "suits"
+          ],
+          "example": "Yellow is bright, and it does not suit me.",
+          "note": "Say ‘It does not suit me’ when a colour or style does not look good on you."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.what-size-is-it",
+          "text": "What size is it?",
+          "kind": "phrase",
+          "forms": [
+            "size",
+            "sizes"
+          ],
+          "example": "This jacket is nice. What size is it?",
+          "note": "Ask ‘What size is it?’ to check if something is small, big, or right for you."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.it-is-too-tight",
+          "text": "It is too tight",
+          "kind": "phrase",
+          "forms": [
+            "tight"
+          ],
+          "example": "I cannot button this shirt because it is too tight.",
+          "note": "Say ‘It is too tight’ when something feels too small on your body."
+        }
+      ],
+      "grammar": {
+        "title": "too + adjective",
+        "explanation": "Put too before an adjective to show there is a problem because something is more than you want.",
+        "examples": [
+          "This shirt is too tight.",
+          "These trousers are too long."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u03.l03.task.pick-fitting-room",
+          "kind": "choice",
+          "prompt": "Where do you go in a shop to put on a jacket and look in the mirror?",
+          "answer": "fitting room",
+          "options": [
+            "fitting room",
+            "living room",
+            "classroom"
+          ],
+          "explanation": "You try on jackets and shirts in the fitting room.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.fitting-room"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.task.hear-try-on",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Can I try it on?",
+          "answer": "Can I try it on?",
+          "options": [
+            "Can I try it on?",
+            "What size is it?",
+            "It is too tight."
+          ],
+          "explanation": "Ask Can I try it on? to test a shirt or jacket before you buy it.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.can-i-try-it-on"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.task.match-shop",
+          "kind": "match",
+          "prompt": "Match the shop sentences with when to say them.",
+          "pairs": [
+            {
+              "left": "It is too tight",
+              "right": "when a shirt feels too small"
+            },
+            {
+              "left": "It does not suit me",
+              "right": "when a colour is not good on you"
+            },
+            {
+              "left": "What size is it?",
+              "right": "when you want to know how big it is"
+            }
+          ],
+          "explanation": "Use these phrases to explain how a jacket or dress looks and feels.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.it-is-too-tight",
+            "en.pre-intermediate.u03.l03.it-does-not-suit-me",
+            "en.pre-intermediate.u03.l03.what-size-is-it"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.task.fill-have-in",
+          "kind": "fill",
+          "prompt": "You like a black shirt, but you want a red one. Complete the question.",
+          "text": "___ red?",
+          "answer": "Do you have this in",
+          "options": [
+            "Do you have this in",
+            "What size is it",
+            "Can I try it on"
+          ],
+          "explanation": "Ask Do you have this in red? to check for another colour.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.do-you-have-this-in"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.task.build-too-tight",
+          "kind": "build",
+          "prompt": "The small jacket is hard to wear. Build the sentence.",
+          "answer": "It is too tight for me.",
+          "tiles": [
+            "It",
+            "is",
+            "too",
+            "tight",
+            "for",
+            "me.",
+            "suit"
+          ],
+          "explanation": "Use It is too tight when something is too small.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.it-is-too-tight"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.task.fill-suit",
+          "kind": "fill",
+          "prompt": "Mia tries on a pink hat, and she does not like how it looks on her. Complete her sentence.",
+          "text": "Pink is nice, but ___.",
+          "answer": "it does not suit me",
+          "options": [
+            "it does not suit me",
+            "it is out of stock",
+            "it is a good deal"
+          ],
+          "explanation": "Say it does not suit me when a colour or style does not look good on you.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.it-does-not-suit-me"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.task.say-size",
+          "kind": "speak",
+          "prompt": "Say the question aloud.",
+          "text": "What size is it? Can I try it on?",
+          "answer": "What size is it? Can I try it on?",
+          "explanation": "Ask about the size first, then ask to try it on.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.what-size-is-it",
+            "en.pre-intermediate.u03.l03.can-i-try-it-on"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l03.task.choice-recycle",
+          "kind": "choice",
+          "prompt": "The shop worker says: Sorry, a bigger size is ___.",
+          "answer": "out of stock",
+          "options": [
+            "out of stock",
+            "pocket money",
+            "fitting room"
+          ],
+          "explanation": "If the shop has none left in a bigger size, it is out of stock.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.what-size-is-it",
+            "en.pre-intermediate.u03.l02.out-of-stock"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Does Leo find a jacket that fits and suits him?",
+        "image": {
+          "id": "en-b1-u03-l03-scene",
+          "describe": "Inside a cosy shop near the market square, Leo steps out of the fitting room wearing a yellow jacket while Smarty and Ana watch."
+        },
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "Good morning! I am the shop assistant. Can I help you?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Hello! I like this yellow jacket. What size is it?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "That one is small. The fitting room is behind you."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Thanks! Can I try it on?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Hmm, the collar and sleeve look short, Leo."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Yes, it is too tight! And yellow does not suit me. Do you have this in blue?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Yes! Here is a bigger blue jacket. The checkout is next to the door when you are ready."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u03.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Where is the fitting room?",
+            "answer": "behind Leo",
+            "options": [
+              "behind Leo",
+              "in the park",
+              "on the second floor"
+            ],
+            "explanation": "Ana says: The fitting room is behind you.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l03.fitting-room"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Why does Leo not buy the yellow jacket?",
+            "answer": "It is too tight and does not suit him.",
+            "options": [
+              "It is too tight and does not suit him.",
+              "It is out of stock.",
+              "He has no purse."
+            ],
+            "explanation": "Leo says: it is too tight! And yellow does not suit me.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l03.it-is-too-tight",
+              "en.pre-intermediate.u03.l03.it-does-not-suit-me"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "What colour does Leo ask for?",
+            "answer": "blue",
+            "options": [
+              "blue",
+              "yellow",
+              "green"
+            ],
+            "explanation": "Leo asks: Do you have this in blue?",
+            "itemIds": [
+              "en.pre-intermediate.u03.l03.do-you-have-this-in"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is helping you in a shop near the market square. Ask him about a shirt you like.",
+        "turns": [
+          {
+            "smarty": "That green shirt is on sale! What do you want to ask me?",
+            "accept": [
+              "^do you have this in (?:blue|red|black|white|green|a bigger size|a small size)$",
+              "^what size is it$",
+              "^can i try it on$"
+            ],
+            "example": "Do you have this in blue?",
+            "hint": "Ask Do you have this in blue? or What size is it?",
+            "itemIds": [
+              "en.pre-intermediate.u03.l03.do-you-have-this-in",
+              "en.pre-intermediate.u03.l03.what-size-is-it",
+              "en.pre-intermediate.u03.l03.can-i-try-it-on"
+            ]
+          },
+          {
+            "smarty": "Here is a blue one. The fitting room is on the left. Go try it on!",
+            "accept": [
+              "^thank you(?: smarty)?$",
+              "^thanks(?: smarty)?$",
+              "^can i try it on$"
+            ],
+            "example": "Thank you, Smarty!",
+            "hint": "Thank Smarty before going to the fitting room.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l03.fitting-room",
+              "en.beginner.u01.l03.thank-you"
+            ]
+          },
+          {
+            "smarty": "How does the blue shirt look and feel?",
+            "accept": [
+              "^it is too tight(?: and it does not suit me)?$",
+              "^it does not suit me$",
+              "^it suits me(?: and i can afford it)?$"
+            ],
+            "example": "It is too tight.",
+            "hint": "Say It is too tight or It does not suit me.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l03.it-is-too-tight",
+              "en.pre-intermediate.u03.l03.it-does-not-suit-me"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "assistant",
+          "gloss": "person who helps customers in a shop"
+        },
+        {
+          "text": "sleeve",
+          "gloss": "part of a shirt or jacket that covers your arm"
+        },
+        {
+          "text": "collar",
+          "gloss": "part of a shirt or jacket around your neck"
+        },
+        {
+          "text": "checkout",
+          "gloss": "place in a shop where you pay"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u03.l02.out-of-stock",
+        "en.beginner.u01.l03.thank-you"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u03.l04",
+      "section": "pre-intermediate",
+      "unit": 3,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty and Zara shop for a dress and shoes in the market square.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u03.l04.task.match-l1",
+          "kind": "match",
+          "prompt": "Match the money words from Lesson 1.",
+          "pairs": [
+            {
+              "left": "purse",
+              "right": "where you keep money"
+            },
+            {
+              "left": "pocket money",
+              "right": "weekly money from parents"
+            },
+            {
+              "left": "change",
+              "right": "money given back after you pay"
+            }
+          ],
+          "explanation": "A purse holds your pocket money and change.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l01.purse",
+            "en.pre-intermediate.u03.l01.pocket-money",
+            "en.pre-intermediate.u03.l01.change"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l04.task.fill-afford",
+          "kind": "fill",
+          "prompt": "Zara saved her notes and coins, so she has enough money. Complete the sentence.",
+          "text": "Zara has twenty notes, so she can ___ the dress.",
+          "answer": "afford",
+          "options": [
+            "afford",
+            "suit",
+            "discount"
+          ],
+          "explanation": "Can afford means you have enough money to buy it.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l01.afford",
+            "en.pre-intermediate.u03.l01.notes"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l04.task.hear-bogo",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "There is a special offer: buy one get one free.",
+          "answer": "There is a special offer: buy one get one free.",
+          "options": [
+            "There is a special offer: buy one get one free.",
+            "Sorry, that dress is out of stock.",
+            "The fitting room is next to the door."
+          ],
+          "explanation": "A special offer like buy one get one free gives you two for the cost of one.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l02.special-offer",
+            "en.pre-intermediate.u03.l02.buy-one-get-one-free"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l04.task.build-try-on",
+          "kind": "build",
+          "prompt": "You see a nice coat in the shop. Build the question.",
+          "answer": "What size is it? Can I try it on?",
+          "tiles": [
+            "What",
+            "size",
+            "is",
+            "it?",
+            "Can",
+            "I",
+            "try",
+            "it",
+            "on?",
+            "coins"
+          ],
+          "explanation": "Ask What size is it? and Can I try it on? before buying.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.what-size-is-it",
+            "en.pre-intermediate.u03.l03.can-i-try-it-on"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l04.task.fill-too-tight",
+          "kind": "fill",
+          "prompt": "The small shoes hurt Zara's feet. Complete what she says.",
+          "text": "I need a bigger size because ___.",
+          "answer": "it is too tight",
+          "options": [
+            "it is too tight",
+            "it is a good deal",
+            "it is on sale"
+          ],
+          "explanation": "Say it is too tight when something is too small.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.it-is-too-tight"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l04.task.choice-discount",
+          "kind": "choice",
+          "prompt": "The red boots are on sale with a big ___, so they are a good deal.",
+          "answer": "discount",
+          "options": [
+            "discount",
+            "fitting room",
+            "purse"
+          ],
+          "explanation": "A discount lowers the cost so you get a good deal.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l02.on-sale",
+            "en.pre-intermediate.u03.l02.discount",
+            "en.pre-intermediate.u03.l02.a-good-deal"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l04.task.say-have-in",
+          "kind": "speak",
+          "prompt": "Say the question aloud.",
+          "text": "Do you have this in black?",
+          "answer": "Do you have this in black?",
+          "explanation": "Use Do you have this in... to ask for another colour.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.do-you-have-this-in"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l04.task.choice-suit",
+          "kind": "choice",
+          "prompt": "Zara looks in the mirror in the fitting room and says: Orange ___.",
+          "answer": "does not suit me",
+          "options": [
+            "does not suit me",
+            "is out of stock",
+            "is pocket money"
+          ],
+          "explanation": "Say it does not suit me when a colour does not look good on you.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l03.fitting-room",
+            "en.pre-intermediate.u03.l03.it-does-not-suit-me"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Does Zara find a dress she can afford in the market square?",
+        "image": {
+          "id": "en-b1-u03-l04-scene",
+          "describe": "Zara and Smarty the black cat look at dresses on sale in a bright shop near the market square."
+        },
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "Look, Smarty! These summer dresses are on sale with a big discount."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Let us check the red one. What size is it?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "It is small. Can I try it on in the fitting room?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Of course! How is it?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Oh, it is too tight, and red does not suit me. Do you have this in blue?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Blue is out of stock, but this green dress is a good deal. Check your purse!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "I have two ten-dollar notes and some coins. I can afford it, and I still get change!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u03.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Why does Zara not buy the blue dress?",
+            "answer": "It is out of stock.",
+            "options": [
+              "It is out of stock.",
+              "It is too tight.",
+              "It does not suit her."
+            ],
+            "explanation": "Smarty says: Blue is out of stock.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l02.out-of-stock"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "What is wrong with the red dress?",
+            "answer": "It is too tight and does not suit her.",
+            "options": [
+              "It is too tight and does not suit her.",
+              "It is not on sale.",
+              "She cannot afford it."
+            ],
+            "explanation": "Zara says: it is too tight, and red does not suit me.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l03.it-is-too-tight",
+              "en.pre-intermediate.u03.l03.it-does-not-suit-me"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "What money is in Zara's purse?",
+            "answer": "notes and coins",
+            "options": [
+              "notes and coins",
+              "one coin",
+              "zero money"
+            ],
+            "explanation": "Zara says: I have two ten-dollar notes and some coins.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l01.purse",
+              "en.pre-intermediate.u03.l01.notes",
+              "en.pre-intermediate.u03.l01.coins"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty tests what you learned in Lessons 1 to 3 during a trip to the market square.",
+        "turns": [
+          {
+            "smarty": "You see a nice coat on sale. Ask if you can try it on!",
+            "accept": [
+              "^can i try it on$",
+              "^what size is it can i try it on$"
+            ],
+            "example": "Can I try it on?",
+            "hint": "Ask Can I try it on?",
+            "itemIds": [
+              "en.pre-intermediate.u03.l03.can-i-try-it-on",
+              "en.pre-intermediate.u03.l02.on-sale"
+            ]
+          },
+          {
+            "smarty": "It fits well and has a big discount! Can you afford it?",
+            "accept": [
+              "^(?:yes )?i can afford it(?: it is a good deal)?$",
+              "^(?:no )?i cannot afford it$"
+            ],
+            "example": "Yes, I can afford it. It is a good deal!",
+            "hint": "Say if you can afford it and if it is a good deal.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l01.afford",
+              "en.pre-intermediate.u03.l02.discount",
+              "en.pre-intermediate.u03.l02.a-good-deal"
+            ]
+          },
+          {
+            "smarty": "You pay with a big note. What do you get back from the shop?",
+            "accept": [
+              "^(?:i get )?(?:my )?change(?: and coins)?$",
+              "^coins$"
+            ],
+            "example": "I get my change.",
+            "hint": "Say I get my change.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l01.change",
+              "en.pre-intermediate.u03.l01.notes"
+            ]
+          }
+        ]
+      },
+      "exposure": [],
+      "recycle": [
+        "en.pre-intermediate.u03.l01.purse",
+        "en.pre-intermediate.u03.l01.coins",
+        "en.pre-intermediate.u03.l01.notes",
+        "en.pre-intermediate.u03.l01.change",
+        "en.pre-intermediate.u03.l01.afford",
+        "en.pre-intermediate.u03.l01.pocket-money",
+        "en.pre-intermediate.u03.l02.on-sale",
+        "en.pre-intermediate.u03.l02.a-good-deal",
+        "en.pre-intermediate.u03.l02.discount",
+        "en.pre-intermediate.u03.l02.special-offer",
+        "en.pre-intermediate.u03.l02.out-of-stock",
+        "en.pre-intermediate.u03.l02.buy-one-get-one-free",
+        "en.pre-intermediate.u03.l03.do-you-have-this-in",
+        "en.pre-intermediate.u03.l03.can-i-try-it-on",
+        "en.pre-intermediate.u03.l03.fitting-room",
+        "en.pre-intermediate.u03.l03.it-does-not-suit-me",
+        "en.pre-intermediate.u03.l03.what-size-is-it",
+        "en.pre-intermediate.u03.l03.it-is-too-tight"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u03.l05",
+      "section": "pre-intermediate",
+      "unit": 3,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Returns",
+      "canDo": "Return something",
+      "scenario": "Ben brings faulty headphones back to a shop in the market square.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u03.l05.receipt",
+          "text": "receipt",
+          "kind": "word",
+          "forms": [
+            "receipts"
+          ],
+          "example": "Always keep your receipt after you pay.",
+          "note": "A ‘receipt’ is the piece of paper showing what you bought and paid."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.refund",
+          "text": "refund",
+          "kind": "word",
+          "forms": [
+            "refunds"
+          ],
+          "example": "Can I have a refund, please?",
+          "note": "A ‘refund’ is when a shop gives your money back."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.exchange",
+          "text": "exchange",
+          "kind": "word",
+          "forms": [
+            "exchanges",
+            "exchanged"
+          ],
+          "example": "I would like to exchange this shirt for a bigger size.",
+          "note": "To ‘exchange’ means to swap one item for another in the shop."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.faulty",
+          "text": "faulty",
+          "kind": "word",
+          "example": "This lamp is faulty because it does not turn on.",
+          "note": "Say ‘faulty’ when a new thing is broken or does not work properly."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.i-would-like-to-return",
+          "text": "I would like to return",
+          "kind": "phrase",
+          "forms": [
+            "return",
+            "returned"
+          ],
+          "example": "I would like to return these headphones.",
+          "note": "Say ‘I would like to return…’ to politely bring something back to a shop."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.within-thirty-days",
+          "text": "within thirty days",
+          "kind": "phrase",
+          "forms": [
+            "within",
+            "days"
+          ],
+          "example": "You can return any shirt within thirty days.",
+          "note": "‘Within thirty days’ means before thirty days have passed."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u03.l05.task.pick-receipt",
+          "kind": "choice",
+          "prompt": "What paper do you need to show when you bring something back to a shop?",
+          "answer": "receipt",
+          "options": [
+            "receipt",
+            "postcard",
+            "menu"
+          ],
+          "explanation": "A receipt shows when and where you bought the item.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.receipt"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.task.hear-return",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I would like to return this camera.",
+          "answer": "I would like to return this camera.",
+          "options": [
+            "I would like to return this camera.",
+            "I would like to buy this camera.",
+            "I would like to try this camera."
+          ],
+          "explanation": "I would like to return... is a polite way to bring something back.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.i-would-like-to-return"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.task.match-returns",
+          "kind": "match",
+          "prompt": "Match the return words with their meanings.",
+          "pairs": [
+            {
+              "left": "refund",
+              "right": "your money back"
+            },
+            {
+              "left": "exchange",
+              "right": "a new size or colour"
+            },
+            {
+              "left": "faulty",
+              "right": "broken or not working"
+            }
+          ],
+          "explanation": "You can ask for a refund or an exchange when an item is faulty.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.refund",
+            "en.pre-intermediate.u03.l05.exchange",
+            "en.pre-intermediate.u03.l05.faulty"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.task.fill-faulty",
+          "kind": "fill",
+          "prompt": "The new clock does not work at all. Complete the sentence.",
+          "text": "I need a refund because this clock is ___.",
+          "answer": "faulty",
+          "options": [
+            "faulty",
+            "on sale",
+            "cheap"
+          ],
+          "explanation": "Faulty means broken or not working properly.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.faulty",
+            "en.pre-intermediate.u03.l05.refund"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.task.build-thirty-days",
+          "kind": "build",
+          "prompt": "You have one month to bring items back. Build the sentence.",
+          "answer": "You can return it within thirty days.",
+          "tiles": [
+            "You",
+            "can",
+            "return",
+            "it",
+            "within",
+            "thirty",
+            "days.",
+            "purse"
+          ],
+          "explanation": "Within thirty days means before thirty days pass.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.within-thirty-days",
+            "en.pre-intermediate.u03.l05.i-would-like-to-return"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.task.fill-exchange",
+          "kind": "fill",
+          "prompt": "The jacket is too tight, so Mia wants a bigger one. Complete her sentence.",
+          "text": "Can I ___ this jacket for a bigger size?",
+          "answer": "exchange",
+          "options": [
+            "exchange",
+            "afford",
+            "faulty"
+          ],
+          "explanation": "Use exchange when you want to swap an item for another size or colour.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.exchange",
+            "en.pre-intermediate.u03.l03.what-size-is-it"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.task.say-return",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I would like to return this. Here is my receipt.",
+          "answer": "I would like to return this. Here is my receipt.",
+          "explanation": "Show your receipt when you ask to return something.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.i-would-like-to-return",
+            "en.pre-intermediate.u03.l05.receipt"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l05.task.choice-refund-stock",
+          "kind": "choice",
+          "prompt": "The blue shirt is faulty and another one is out of stock. What should you ask for?",
+          "answer": "a refund",
+          "options": [
+            "a refund",
+            "pocket money",
+            "a fitting room"
+          ],
+          "explanation": "If you cannot exchange it because it is out of stock, ask for a refund.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.refund",
+            "en.pre-intermediate.u03.l05.faulty",
+            "en.pre-intermediate.u03.l02.out-of-stock"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Does Ben get an exchange or a refund for his faulty headphones?",
+        "image": {
+          "id": "en-b1-u03-l05-scene",
+          "describe": "At a customer service desk in a market square shop, Ben hands headphones and a paper receipt to Omar while Smarty watches."
+        },
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Hello! Welcome to customer service. How can I help?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Good afternoon. I would like to return these headphones. They are faulty."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "One speaker is broken and has no sound!"
+          },
+          {
+            "speaker": "Omar",
+            "text": "I am sorry they are damaged. Do you have your receipt?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Yes, here it is. I bought them yesterday, so it is within thirty days."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Great. Our policy allows a free exchange or a full refund. Would you like to replace them?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Yes, please! Let us exchange them for a new pair."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u03.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Why does Ben return the headphones?",
+            "answer": "They are faulty.",
+            "options": [
+              "They are faulty.",
+              "They are too tight.",
+              "They do not suit him."
+            ],
+            "explanation": "Ben says: I would like to return these headphones. They are faulty.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l05.i-would-like-to-return",
+              "en.pre-intermediate.u03.l05.faulty"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "When did Ben buy the headphones?",
+            "answer": "yesterday, within thirty days",
+            "options": [
+              "yesterday, within thirty days",
+              "last year",
+              "two years ago"
+            ],
+            "explanation": "Ben bought them yesterday, so it is within thirty days.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l05.within-thirty-days"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Ben choose at the end?",
+            "answer": "an exchange",
+            "options": [
+              "an exchange",
+              "a refund",
+              "a discount"
+            ],
+            "explanation": "Ben says: Let us exchange them for a new pair.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l05.exchange"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty works at the shop desk. Return a faulty lamp you bought last week.",
+        "turns": [
+          {
+            "smarty": "Good morning! What is the matter with your lamp?",
+            "accept": [
+              "^i would like to return (?:this |the |my )?lamp(?: it is faulty)?$",
+              "^(?:this |the |my )?lamp is faulty(?: i would like to return it)?$"
+            ],
+            "example": "I would like to return this lamp. It is faulty.",
+            "hint": "Say I would like to return this lamp and explain it is faulty.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l05.i-would-like-to-return",
+              "en.pre-intermediate.u03.l05.faulty"
+            ]
+          },
+          {
+            "smarty": "I see! Do you have your receipt with you?",
+            "accept": [
+              "^(?:yes )?here is my receipt$",
+              "^yes i have my receipt(?: i bought it within thirty days)?$"
+            ],
+            "example": "Yes, here is my receipt.",
+            "hint": "Say Yes, here is my receipt.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l05.receipt",
+              "en.pre-intermediate.u03.l05.within-thirty-days"
+            ]
+          },
+          {
+            "smarty": "You are within thirty days. Would you like an exchange or a refund?",
+            "accept": [
+              "^i would like (?:a refund|an exchange)(?: please)?$",
+              "^(?:a refund|an exchange)(?: please)?$"
+            ],
+            "example": "I would like a refund, please.",
+            "hint": "Ask for a refund or an exchange.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l05.refund",
+              "en.pre-intermediate.u03.l05.exchange"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "policy",
+          "gloss": "official rule of a shop or company"
+        },
+        {
+          "text": "customer service",
+          "gloss": "desk or team that helps buyers with problems"
+        },
+        {
+          "text": "damaged",
+          "gloss": "harmed or broken"
+        },
+        {
+          "text": "replace",
+          "gloss": "give a new item instead of a broken one"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u03.l03.what-size-is-it",
+        "en.pre-intermediate.u03.l02.out-of-stock"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u03.l06",
+      "section": "pre-intermediate",
+      "unit": 3,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Saving",
+      "canDo": "Talk about saving",
+      "scenario": "Smarty helps Tom and Lily plan how to save up for a new bicycle.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u03.l06.save-up",
+          "text": "save up",
+          "kind": "phrase",
+          "forms": [
+            "save",
+            "saves",
+            "saved",
+            "saving"
+          ],
+          "example": "I am saving up for a new bicycle.",
+          "note": "Say ‘save up’ when you keep money over time to buy something big later."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.spend",
+          "text": "spend",
+          "kind": "word",
+          "forms": [
+            "spends",
+            "spent",
+            "spending"
+          ],
+          "example": "Do not spend all your pocket money in one day.",
+          "note": "‘Spend’ means to use money to pay for things."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.waste",
+          "text": "waste",
+          "kind": "word",
+          "forms": [
+            "wastes",
+            "wasted",
+            "wasting"
+          ],
+          "example": "If you buy broken toys, you waste your money.",
+          "note": "‘Waste’ means to spend money badly on things you do not need."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.invest",
+          "text": "invest",
+          "kind": "word",
+          "forms": [
+            "invests",
+            "invested",
+            "investing"
+          ],
+          "example": "Smart people invest money in good books and tools.",
+          "note": "‘Invest’ means to put money or time into something that grows or helps you later."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.lend",
+          "text": "lend",
+          "kind": "word",
+          "forms": [
+            "lends",
+            "lent",
+            "lending"
+          ],
+          "example": "Can you lend me two coins for the bus?",
+          "note": "‘Lend’ means to give someone money for a short time until they give it back."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.owe",
+          "text": "owe",
+          "kind": "word",
+          "forms": [
+            "owes",
+            "owed"
+          ],
+          "example": "I owe Sam five notes from yesterday.",
+          "note": "‘Owe’ means you must pay money back to someone who lent it to you."
+        }
+      ],
+      "grammar": {
+        "title": "First conditional for future money plans",
+        "explanation": "Use if + present simple, will + verb to talk about real future results of your money choices.",
+        "examples": [
+          "If you save up every week, you will afford a new bicycle.",
+          "If you waste all your money, you will not have any for later."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u03.l06.task.pick-save-up",
+          "kind": "choice",
+          "prompt": "Tom wants a new laptop, so he keeps his pocket money in a box every week. What is he doing?",
+          "answer": "saving up",
+          "options": [
+            "saving up",
+            "wasting",
+            "owed"
+          ],
+          "explanation": "Saving up means keeping money over time for something special.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.save-up",
+            "en.pre-intermediate.u03.l01.pocket-money"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.task.hear-lend-owe",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "You lent me ten notes, so I owe you ten notes.",
+          "answer": "You lent me ten notes, so I owe you ten notes.",
+          "options": [
+            "You lent me ten notes, so I owe you ten notes.",
+            "You spent ten notes, so I owe you ten notes.",
+            "You wasted ten notes, so I owe you ten notes."
+          ],
+          "explanation": "When someone lends you money, you owe that money to them.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.lend",
+            "en.pre-intermediate.u03.l06.owe",
+            "en.pre-intermediate.u03.l01.notes"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.task.match-saving",
+          "kind": "match",
+          "prompt": "Match the money verbs with their meanings.",
+          "pairs": [
+            {
+              "left": "spend",
+              "right": "pay money for things"
+            },
+            {
+              "left": "waste",
+              "right": "spend money when you do not need to"
+            },
+            {
+              "left": "invest",
+              "right": "keep money so you get more"
+            }
+          ],
+          "explanation": "Spending, wasting, and investing are three different ways to use money.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.spend",
+            "en.pre-intermediate.u03.l06.waste",
+            "en.pre-intermediate.u03.l06.invest"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.task.fill-lend",
+          "kind": "fill",
+          "prompt": "Mia forgot her purse at home. Complete what she asks Sam.",
+          "text": "I forgot my purse. Can you ___ me some money for lunch?",
+          "answer": "lend",
+          "options": [
+            "lend",
+            "owe",
+            "waste"
+          ],
+          "explanation": "Ask Can you lend me... when you want someone to give you money for a short time.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.lend",
+            "en.pre-intermediate.u03.l01.purse"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.task.fill-owe",
+          "kind": "fill",
+          "prompt": "Sam lent Mia five notes yesterday. Complete Mia's sentence.",
+          "text": "I must pay Sam back because I ___ him five notes.",
+          "answer": "owe",
+          "options": [
+            "owe",
+            "lend",
+            "invest"
+          ],
+          "explanation": "You owe money when someone lent it to you and you must pay it back.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.owe"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.task.build-first-cond",
+          "kind": "build",
+          "prompt": "Smarty gives advice about saving for a bicycle. Build the sentence.",
+          "answer": "If you save up, you will afford it.",
+          "tiles": [
+            "If",
+            "you",
+            "save",
+            "up,",
+            "you",
+            "will",
+            "afford",
+            "it.",
+            "waste"
+          ],
+          "explanation": "First conditional: If + present simple, will + verb.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.save-up",
+            "en.pre-intermediate.u03.l01.afford"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.task.say-waste",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I do not want to waste my money on sweets.",
+          "answer": "I do not want to waste my money on sweets.",
+          "explanation": "When you save up, you avoid wasting money on things you do not need.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.waste"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l06.task.choice-invest",
+          "kind": "choice",
+          "prompt": "Leo uses his money to buy good books and tools for his future work. He likes to ___.",
+          "answer": "invest",
+          "options": [
+            "invest",
+            "waste",
+            "owe"
+          ],
+          "explanation": "Invest means using money in a smart way that helps you later.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.invest"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How is Lily saving up for a new guitar?",
+        "image": {
+          "id": "en-b1-u03-l06-scene",
+          "describe": "At a table in the market square café, Lily shows Smarty the black cat and Tom a clear glass jar full of coins and notes."
+        },
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "I never have any money left! I spend all my pocket money on snacks."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Stop wasting it, Tom! Look at my savings jar. I am saving up for a new guitar."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Smart move, Lily! A good budget helps you see what you spend."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Yes! I also put some money in a piggy bank, and my parents invest a little for me to earn interest."
+          },
+          {
+            "speaker": "Tom",
+            "text": "If I save up every week, I will afford a new bicycle by summer! Oh, Lily, I still owe you two notes."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Haha, yes! I lent them to you at the cinema last week."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u03.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Tom spend all his pocket money on?",
+            "answer": "snacks",
+            "options": [
+              "snacks",
+              "books",
+              "jackets"
+            ],
+            "explanation": "Tom says: I spend all my pocket money on snacks.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l06.spend",
+              "en.pre-intermediate.u03.l01.pocket-money"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What is Lily saving up for?",
+            "answer": "a new guitar",
+            "options": [
+              "a new guitar",
+              "a new bicycle",
+              "a new camera"
+            ],
+            "explanation": "Lily says: I am saving up for a new guitar.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l06.save-up"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "How much does Tom owe Lily?",
+            "answer": "two notes",
+            "options": [
+              "two notes",
+              "ten coins",
+              "twenty notes"
+            ],
+            "explanation": "Tom says: I still owe you two notes.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l06.owe",
+              "en.pre-intermediate.u03.l06.lend"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty wants to know your money habits. Tell him how you save and spend.",
+        "turns": [
+          {
+            "smarty": "Are you saving up for something special right now?",
+            "accept": [
+              "^(?:yes )?i am saving up(?: for (?:a |new )?(?:bicycle|laptop|phone|guitar|camera|trip|shoes|jacket))?$",
+              "^no i am not saving up$"
+            ],
+            "example": "Yes, I am saving up for a laptop.",
+            "hint": "Say Yes, I am saving up for... or No, I am not saving up.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l06.save-up"
+            ]
+          },
+          {
+            "smarty": "What do you usually spend your money on, and what do you never waste money on?",
+            "accept": [
+              "^i (?:usually )?spend (?:my )?money on (?:books|food|clothes|music|games|gifts|shoes|fruit)(?: and i never waste (?:my )?money on (?:sweets|snacks|toys))?$",
+              "^i never waste (?:my )?money on (?:sweets|snacks|toys)$"
+            ],
+            "example": "I spend money on books, and I never waste money on sweets.",
+            "hint": "Use spend money on... and waste money on...",
+            "itemIds": [
+              "en.pre-intermediate.u03.l06.spend",
+              "en.pre-intermediate.u03.l06.waste"
+            ]
+          },
+          {
+            "smarty": "If I lend you five notes today, what will you say?",
+            "accept": [
+              "^(?:thank you )?i will owe you five notes$",
+              "^i owe you five notes$"
+            ],
+            "example": "Thank you! I will owe you five notes.",
+            "hint": "Say I will owe you five notes.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l06.lend",
+              "en.pre-intermediate.u03.l06.owe"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "budget",
+          "gloss": "plan for how to spend and save money"
+        },
+        {
+          "text": "savings jar",
+          "gloss": "glass container used to keep saved money"
+        },
+        {
+          "text": "interest",
+          "gloss": "extra money earned when you save or invest"
+        },
+        {
+          "text": "piggy bank",
+          "gloss": "small pig-shaped box for saving coins"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u03.l01.pocket-money",
+        "en.pre-intermediate.u03.l01.notes",
+        "en.pre-intermediate.u03.l01.purse",
+        "en.pre-intermediate.u03.l01.afford"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u03.l07",
+      "section": "pre-intermediate",
+      "unit": 3,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Enough or too much",
+      "canDo": "Use quantifiers",
+      "scenario": "Smarty and Mia check their money and food before a picnic.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u03.l07.too-much",
+          "text": "too much",
+          "kind": "phrase",
+          "example": "Do not spend too much money on sweets.",
+          "note": "Use ‘too much’ before uncountable nouns like money or water when there is more than you should have."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.not-enough",
+          "text": "not enough",
+          "kind": "phrase",
+          "forms": [
+            "enough"
+          ],
+          "example": "We have only three coins, so it is not enough.",
+          "note": "Use ‘not enough’ when you have less than you need."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.plenty-of",
+          "text": "plenty of",
+          "kind": "phrase",
+          "example": "Do not hurry, we have plenty of time.",
+          "note": "‘Plenty of’ means more than enough."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.hardly-any",
+          "text": "hardly any",
+          "kind": "phrase",
+          "example": "I spent my notes, so I have hardly any cash left.",
+          "note": "‘Hardly any’ means almost zero."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.a-great-deal-of",
+          "text": "a great deal of",
+          "kind": "phrase",
+          "example": "A new house costs a great deal of money.",
+          "note": "‘A great deal of’ means a very large amount of something uncountable."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.a-bit-more",
+          "text": "a bit more",
+          "kind": "phrase",
+          "forms": [
+            "a bit"
+          ],
+          "example": "If I save a bit more money, I can afford the bike.",
+          "note": "‘A bit more’ means a small extra amount."
+        }
+      ],
+      "grammar": {
+        "title": "Quantifiers: too much, enough, plenty of, hardly any",
+        "explanation": "Use too much and a great deal of with uncountable nouns like money, water, or time. Use not enough, plenty of, and hardly any with both countable and uncountable nouns.",
+        "examples": [
+          "We have plenty of bread, but hardly any cheese.",
+          "He spent too much money and now he has not enough cash."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u03.l07.task.pick-hardly-any",
+          "kind": "choice",
+          "prompt": "Sam has only one tiny coin in his purse. Which phrase fits best?",
+          "answer": "hardly any",
+          "options": [
+            "hardly any",
+            "plenty of",
+            "a great deal of"
+          ],
+          "explanation": "Hardly any means not much.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l07.hardly-any",
+            "en.pre-intermediate.u03.l01.purse"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.task.hear-plenty",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "We have plenty of fruit for the picnic.",
+          "answer": "We have plenty of fruit for the picnic.",
+          "options": [
+            "We have plenty of fruit for the picnic.",
+            "We have hardly any fruit for the picnic.",
+            "We have not enough fruit for the picnic."
+          ],
+          "explanation": "Plenty of means more than enough.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l07.plenty-of"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.task.match-quantifiers",
+          "kind": "match",
+          "prompt": "Match each quantifier with its meaning.",
+          "pairs": [
+            {
+              "left": "a great deal of",
+              "right": "very much"
+            },
+            {
+              "left": "hardly any",
+              "right": "not much"
+            },
+            {
+              "left": "a bit more",
+              "right": "a little more"
+            }
+          ],
+          "explanation": "These phrases show how much or how little of something you have.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l07.a-great-deal-of",
+            "en.pre-intermediate.u03.l07.hardly-any",
+            "en.pre-intermediate.u03.l07.a-bit-more"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.task.fill-too-much",
+          "kind": "fill",
+          "prompt": "Leo bought ten expensive games and now his purse is empty. Complete the sentence.",
+          "text": "Leo spent ___ money at the market.",
+          "answer": "too much",
+          "options": [
+            "too much",
+            "hardly any",
+            "a bit more"
+          ],
+          "explanation": "Use too much before money when someone spends more than they should.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l07.too-much",
+            "en.pre-intermediate.u03.l06.spend"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.task.fill-not-enough",
+          "kind": "fill",
+          "prompt": "The book is ten notes, and you only have six notes. Complete the sentence.",
+          "text": "Six notes is ___ money to buy the book.",
+          "answer": "not enough",
+          "options": [
+            "not enough",
+            "plenty of",
+            "a great deal of"
+          ],
+          "explanation": "When you have less than you need, say not enough.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l07.not-enough"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.task.build-bit-more",
+          "kind": "build",
+          "prompt": "You almost have enough money for the guitar. Build the sentence.",
+          "answer": "I just need a bit more money.",
+          "tiles": [
+            "I",
+            "just",
+            "need",
+            "a",
+            "bit",
+            "more",
+            "money.",
+            "too"
+          ],
+          "explanation": "Use a bit more for a little more.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l07.a-bit-more"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.task.say-great-deal",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "You need a great deal of money to buy a plane.",
+          "answer": "You need a great deal of money to buy a plane.",
+          "explanation": "A great deal of means very much something uncountable like money.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l07.a-great-deal-of"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l07.task.choice-plenty-afford",
+          "kind": "choice",
+          "prompt": "Mia has ___ coins, so she can easily afford five apples.",
+          "answer": "plenty of",
+          "options": [
+            "plenty of",
+            "hardly any",
+            "not enough"
+          ],
+          "explanation": "Plenty of means more than enough.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l07.plenty-of",
+            "en.pre-intermediate.u03.l01.afford",
+            "en.pre-intermediate.u03.l01.coins"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Do Smarty and Mia have enough money for their market picnic?",
+        "image": {
+          "id": "en-b1-u03-l07-scene",
+          "describe": "Mia and Smarty the black cat sit on a bench in the market square checking bottles of water, bread, and coins in a purse."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Let us check our picnic supply, Mia! Do we have enough water?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes, we have plenty of water and a big portion of bread."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What about cheese and fruit? Is there a shortage?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "We have hardly any cheese left! Let us buy a bit more at that stall."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Check the amount of money in your purse first. Yesterday we spent too much money on cake."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Oh no, five coins is not enough for good cheese. It takes a great deal of money here!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No problem! Apples are on sale, so we have plenty of money for sweet red apples."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u03.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "How much water do Smarty and Mia have?",
+            "answer": "plenty of water",
+            "options": [
+              "plenty of water",
+              "hardly any water",
+              "not enough water"
+            ],
+            "explanation": "Mia says: we have plenty of water.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l07.plenty-of"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "How much cheese do they have left?",
+            "answer": "hardly any cheese",
+            "options": [
+              "hardly any cheese",
+              "too much cheese",
+              "a great deal of cheese"
+            ],
+            "explanation": "Mia says: We have hardly any cheese left!",
+            "itemIds": [
+              "en.pre-intermediate.u03.l07.hardly-any"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "Why can they not buy the cheese?",
+            "answer": "Five coins is not enough.",
+            "options": [
+              "Five coins is not enough.",
+              "They have too much cash.",
+              "Cheese is out of stock."
+            ],
+            "explanation": "Mia says: five coins is not enough for good cheese.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l07.not-enough",
+              "en.pre-intermediate.u03.l01.coins"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is planning a picnic in the park with you. Tell him what you have and what you need.",
+        "turns": [
+          {
+            "smarty": "Do we have plenty of water and snacks for the picnic?",
+            "accept": [
+              "^(?:yes )?we have plenty of (?:water|snacks|water and snacks|food)$",
+              "^we have plenty of water but hardly any snacks$"
+            ],
+            "example": "Yes, we have plenty of water and snacks.",
+            "hint": "Use plenty of to answer Smarty.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l07.plenty-of",
+              "en.pre-intermediate.u03.l07.hardly-any"
+            ]
+          },
+          {
+            "smarty": "I only have two coins. Is that enough for ice cream?",
+            "accept": [
+              "^no (?:that is |it is )?not enough(?: we need a bit more money)?$",
+              "^(?:that is |it is )?not enough$"
+            ],
+            "example": "No, that is not enough. We need a bit more money.",
+            "hint": "Say No, that is not enough and mention a bit more.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l07.not-enough",
+              "en.pre-intermediate.u03.l07.a-bit-more"
+            ]
+          },
+          {
+            "smarty": "Should we spend ten notes on sweets today?",
+            "accept": [
+              "^no (?:that is |you will spend )?too much(?: money)?$",
+              "^do not spend too much(?: money)?$"
+            ],
+            "example": "Do not spend too much money!",
+            "hint": "Use too much to warn Smarty.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l07.too-much",
+              "en.pre-intermediate.u03.l06.spend"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "amount",
+          "gloss": "how much of something there is"
+        },
+        {
+          "text": "portion",
+          "gloss": "amount of food for one person"
+        },
+        {
+          "text": "supply",
+          "gloss": "amount of something ready to use"
+        },
+        {
+          "text": "shortage",
+          "gloss": "situation when there is not enough of something"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u03.l01.purse",
+        "en.pre-intermediate.u03.l01.afford",
+        "en.pre-intermediate.u03.l01.coins",
+        "en.pre-intermediate.u03.l06.spend"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u03.l08",
+      "section": "pre-intermediate",
+      "unit": 3,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Smarty helps Sam return a faulty clock and plan his savings.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u03.l08.task.match-l5",
+          "kind": "match",
+          "prompt": "Match the words from Lesson 5.",
+          "pairs": [
+            {
+              "left": "receipt",
+              "right": "shows what you pay for"
+            },
+            {
+              "left": "refund",
+              "right": "your money given back"
+            },
+            {
+              "left": "faulty",
+              "right": "broken or not working"
+            }
+          ],
+          "explanation": "Show your receipt to get a refund for a faulty item.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.receipt",
+            "en.pre-intermediate.u03.l05.refund",
+            "en.pre-intermediate.u03.l05.faulty"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l08.task.fill-return",
+          "kind": "fill",
+          "prompt": "You bought a shirt ten days ago and want to bring it back. Complete the sentence.",
+          "text": "___ this shirt because it is within thirty days.",
+          "answer": "I would like to return",
+          "options": [
+            "I would like to return",
+            "I would like to owe",
+            "I would like to waste"
+          ],
+          "explanation": "Say I would like to return... when bringing something back within thirty days.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.i-would-like-to-return",
+            "en.pre-intermediate.u03.l05.within-thirty-days"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l08.task.hear-lend",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "If I lend you five notes, when will you pay me back?",
+          "answer": "If I lend you five notes, when will you pay me back?",
+          "options": [
+            "If I lend you five notes, when will you pay me back?",
+            "If I owe you five notes, when will you pay me back?",
+            "If I waste five notes, when will you pay me back?"
+          ],
+          "explanation": "Lend means giving someone money for a short time.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.lend",
+            "en.pre-intermediate.u03.l01.notes"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l08.task.build-save-up",
+          "kind": "build",
+          "prompt": "Stop wasting money and keep it for a bike. Build the sentence.",
+          "answer": "Do not waste money, save up.",
+          "tiles": [
+            "Do",
+            "not",
+            "waste",
+            "money,",
+            "save",
+            "up.",
+            "owe"
+          ],
+          "explanation": "Save up means keeping money instead of wasting it.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.waste",
+            "en.pre-intermediate.u03.l06.save-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l08.task.fill-quantifier",
+          "kind": "fill",
+          "prompt": "We have almost zero coins in our purse. Complete the sentence.",
+          "text": "There are ___ coins left in my purse.",
+          "answer": "hardly any",
+          "options": [
+            "hardly any",
+            "plenty of",
+            "a great deal of"
+          ],
+          "explanation": "Hardly any means almost none.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l07.hardly-any",
+            "en.pre-intermediate.u03.l01.purse"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l08.task.choice-enough",
+          "kind": "choice",
+          "prompt": "The camera is fifty notes, and Sam has forty notes. He has ___ money, so he needs ___.",
+          "answer": "not enough / a bit more",
+          "options": [
+            "not enough / a bit more",
+            "too much / hardly any",
+            "plenty of / a great deal of"
+          ],
+          "explanation": "Forty is less than fifty, so it is not enough and he needs a bit more.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l07.not-enough",
+            "en.pre-intermediate.u03.l07.a-bit-more"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l08.task.say-invest",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I want to invest my money, not spend too much.",
+          "answer": "I want to invest my money, not spend too much.",
+          "explanation": "Invest means using money wisely for the future instead of spending too much now.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.invest",
+            "en.pre-intermediate.u03.l06.spend",
+            "en.pre-intermediate.u03.l07.too-much"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l08.task.choice-exchange",
+          "kind": "choice",
+          "prompt": "If your new shoes are too tight, you can ___ them for a bigger size.",
+          "answer": "exchange",
+          "options": [
+            "exchange",
+            "owe",
+            "waste"
+          ],
+          "explanation": "Exchange means swapping one item for another size.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.exchange",
+            "en.pre-intermediate.u03.l03.it-is-too-tight"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Sam do with his refund money?",
+        "image": {
+          "id": "en-b1-u03-l08-scene",
+          "describe": "Sam and Smarty the black cat walk out of a shop in the market square holding a receipt and twenty-dollar notes."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Thanks for coming with me, Smarty. The new clock I bought was faulty."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Did you bring your receipt?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes! I said, I would like to return this clock, and I showed my receipt. It was within thirty days."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Did you ask for an exchange?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "No, I asked for a refund! I spent too much money last week, and now I have hardly any left."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good idea! Now you can save up this money and pay back the five notes you owe Mia."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Right! If I save a bit more every week, I will have plenty of money soon."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u03.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What did Sam get when he returned the faulty clock?",
+            "answer": "a refund",
+            "options": [
+              "a refund",
+              "an exchange",
+              "a new clock"
+            ],
+            "explanation": "Sam says: I asked for a refund!",
+            "itemIds": [
+              "en.pre-intermediate.u03.l05.refund",
+              "en.pre-intermediate.u03.l05.faulty"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Who does Sam owe five notes to?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Smarty",
+              "Ben"
+            ],
+            "explanation": "Smarty says: pay back the five notes you owe Mia.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l06.owe"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "Why does Sam want to save up now?",
+            "answer": "He spent too much and has hardly any money left.",
+            "options": [
+              "He spent too much and has hardly any money left.",
+              "He has a great deal of money.",
+              "He has plenty of cash."
+            ],
+            "explanation": "Sam spent too much money last week and has hardly any left.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l06.save-up",
+              "en.pre-intermediate.u03.l07.too-much",
+              "en.pre-intermediate.u03.l07.hardly-any"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty reviews Lessons 5 to 7 with you in the market square.",
+        "turns": [
+          {
+            "smarty": "Your new headphones are broken! How do you ask to bring them back?",
+            "accept": [
+              "^i would like to return (?:these |my |the )?headphones(?: they are faulty)?$",
+              "^i would like to return them(?: they are faulty)?$"
+            ],
+            "example": "I would like to return these headphones. They are faulty.",
+            "hint": "Start with I would like to return...",
+            "itemIds": [
+              "en.pre-intermediate.u03.l05.i-would-like-to-return",
+              "en.pre-intermediate.u03.l05.faulty"
+            ]
+          },
+          {
+            "smarty": "You get a twenty-note refund! Will you spend it all or save up?",
+            "accept": [
+              "^i will save up(?: the money| it)?$",
+              "^i want to save up(?: and not waste it)?$"
+            ],
+            "example": "I will save up the money.",
+            "hint": "Say I will save up...",
+            "itemIds": [
+              "en.pre-intermediate.u03.l05.refund",
+              "en.pre-intermediate.u03.l06.save-up",
+              "en.pre-intermediate.u03.l06.waste"
+            ]
+          },
+          {
+            "smarty": "How much time do we have before the market closes?",
+            "accept": [
+              "^we have plenty of time$",
+              "^we have hardly any time$",
+              "^we have not enough time$"
+            ],
+            "example": "We have plenty of time!",
+            "hint": "Use plenty of or hardly any.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l07.plenty-of",
+              "en.pre-intermediate.u03.l07.hardly-any"
+            ]
+          }
+        ]
+      },
+      "exposure": [],
+      "recycle": [
+        "en.pre-intermediate.u03.l01.notes",
+        "en.pre-intermediate.u03.l01.purse",
+        "en.pre-intermediate.u03.l03.it-is-too-tight",
+        "en.pre-intermediate.u03.l05.receipt",
+        "en.pre-intermediate.u03.l05.refund",
+        "en.pre-intermediate.u03.l05.exchange",
+        "en.pre-intermediate.u03.l05.faulty",
+        "en.pre-intermediate.u03.l05.i-would-like-to-return",
+        "en.pre-intermediate.u03.l05.within-thirty-days",
+        "en.pre-intermediate.u03.l06.save-up",
+        "en.pre-intermediate.u03.l06.spend",
+        "en.pre-intermediate.u03.l06.waste",
+        "en.pre-intermediate.u03.l06.invest",
+        "en.pre-intermediate.u03.l06.lend",
+        "en.pre-intermediate.u03.l06.owe",
+        "en.pre-intermediate.u03.l07.too-much",
+        "en.pre-intermediate.u03.l07.not-enough",
+        "en.pre-intermediate.u03.l07.plenty-of",
+        "en.pre-intermediate.u03.l07.hardly-any",
+        "en.pre-intermediate.u03.l07.a-great-deal-of",
+        "en.pre-intermediate.u03.l07.a-bit-more"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u03.l09",
+      "section": "pre-intermediate",
+      "unit": 3,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "Banking",
+      "canDo": "Handle simple bank talk",
+      "scenario": "Smarty shows Leo how to use a cash machine near the market square.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u03.l09.bank-account",
+          "text": "bank account",
+          "kind": "phrase",
+          "forms": [
+            "bank accounts",
+            "account"
+          ],
+          "example": "I keep my saved money in my bank account.",
+          "note": "A ‘bank account’ is where a bank safely holds your money for you.",
+          "image": {
+            "id": "bank-account",
+            "describe": "a cat looking at a simple bank card and savings book on a desk"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.withdraw",
+          "text": "withdraw",
+          "kind": "word",
+          "forms": [
+            "withdraws",
+            "withdrew",
+            "withdrawing"
+          ],
+          "example": "I need to withdraw twenty notes for the market.",
+          "note": "‘Withdraw’ means to take money out of your bank account."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.deposit",
+          "text": "deposit",
+          "kind": "word",
+          "forms": [
+            "deposits",
+            "deposited",
+            "depositing"
+          ],
+          "example": "She went to the bank to deposit her birthday money.",
+          "note": "‘Deposit’ means to put money into your bank account."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.credit-card",
+          "text": "credit card",
+          "kind": "phrase",
+          "forms": [
+            "credit cards"
+          ],
+          "example": "Can I pay by credit card here?",
+          "note": "A ‘credit card’ is a plastic card you use to pay now and pay the bank back later.",
+          "image": {
+            "id": "credit-card",
+            "describe": "a blue plastic credit card with a shiny gold chip and no text"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.pin-number",
+          "text": "pin number",
+          "kind": "phrase",
+          "forms": [
+            "pin numbers",
+            "pin"
+          ],
+          "example": "Never share your secret pin number with anyone.",
+          "note": "Your ‘pin number’ is the secret four-digit code you type to use your card."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.cash-machine",
+          "text": "cash machine",
+          "kind": "phrase",
+          "forms": [
+            "cash machines"
+          ],
+          "example": "There is a cash machine opposite the bank.",
+          "note": "A ‘cash machine’ is a machine in the wall where you take out notes using your card."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u03.l09.task.pick-credit-card",
+          "kind": "choice",
+          "prompt": "Look at the picture of a plastic card for paying in shops. Which phrase fits?",
+          "answer": "credit card",
+          "options": [
+            "credit card",
+            "cash machine",
+            "receipt"
+          ],
+          "explanation": "A credit card is a plastic card used to pay for things.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l09.credit-card"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.task.hear-withdraw",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I need to withdraw some cash at the cash machine.",
+          "answer": "I need to withdraw some cash at the cash machine.",
+          "options": [
+            "I need to withdraw some cash at the cash machine.",
+            "I need to deposit some cash at the cash machine.",
+            "I need to return some cash at the cash machine."
+          ],
+          "explanation": "Withdraw means taking money out of your bank account.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l09.withdraw",
+            "en.pre-intermediate.u03.l09.cash-machine"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.task.match-banking",
+          "kind": "match",
+          "prompt": "Match the banking words with their meanings.",
+          "pairs": [
+            {
+              "left": "deposit",
+              "right": "give money to the bank"
+            },
+            {
+              "left": "withdraw",
+              "right": "take money out of a bank account"
+            },
+            {
+              "left": "pin number",
+              "right": "secret numbers for your card"
+            }
+          ],
+          "explanation": "You deposit money in, withdraw money out, and protect your account with a pin number.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l09.deposit",
+            "en.pre-intermediate.u03.l09.withdraw",
+            "en.pre-intermediate.u03.l09.pin-number"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.task.fill-deposit",
+          "kind": "fill",
+          "prompt": "Ana has plenty of notes and wants to put them safely in the bank. Complete the sentence.",
+          "text": "Ana went to the bank to ___ her notes.",
+          "answer": "deposit",
+          "options": [
+            "deposit",
+            "withdraw",
+            "owe"
+          ],
+          "explanation": "Deposit means putting money into a bank account.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l09.deposit",
+            "en.pre-intermediate.u03.l09.bank-account"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.task.build-pin",
+          "kind": "build",
+          "prompt": "Smarty gives a safety rule for your card. Build the sentence.",
+          "answer": "Keep your pin number a secret.",
+          "tiles": [
+            "Keep",
+            "your",
+            "pin",
+            "number",
+            "a",
+            "secret.",
+            "machine"
+          ],
+          "explanation": "Always keep your pin number a secret so nobody else can use your card.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l09.pin-number",
+            "en.pre-intermediate.u01.l11.keep-a-secret"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.task.fill-cash-machine",
+          "kind": "fill",
+          "prompt": "The market stall only takes cash, not cards. Complete Leo's sentence.",
+          "text": "Let us stop at the ___ to get some notes.",
+          "answer": "cash machine",
+          "options": [
+            "cash machine",
+            "fitting room",
+            "washing machine"
+          ],
+          "explanation": "You get paper notes from a cash machine.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l09.cash-machine",
+            "en.pre-intermediate.u03.l01.notes"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.task.say-account",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I save up money in my bank account every month.",
+          "answer": "I save up money in my bank account every month.",
+          "explanation": "A bank account is a safe place to save up money.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l09.bank-account",
+            "en.pre-intermediate.u03.l06.save-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l09.task.choice-credit-card",
+          "kind": "choice",
+          "prompt": "Leo has hardly any cash in his purse, so he pays with his ___.",
+          "answer": "credit card",
+          "options": [
+            "credit card",
+            "receipt",
+            "pocket money"
+          ],
+          "explanation": "When you have hardly any cash, you can pay with a credit card.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l09.credit-card",
+            "en.pre-intermediate.u03.l07.hardly-any"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How does Leo get cash at the bank near the market square?",
+        "image": {
+          "id": "en-b1-u03-l09-scene",
+          "describe": "Outside a bank in the market square, Smarty the black cat stands beside Leo at a cash machine while Leo holds a blue credit card."
+        },
+        "lines": [
+          {
+            "speaker": "Leo",
+            "text": "Smarty, I just opened my first bank account! Let us deposit my saved notes."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Well done, Leo! You can check your balance and statement with online banking too."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Now I need cash for the fruit stall. Let us use this cash machine."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Put your card in and type your pin number carefully. Make sure nobody is behind you!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "I will withdraw twenty notes. And look, I also got a credit card for big trips."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great! If you transfer money on time each month, a credit card is very useful."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u03.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Leo put into his new bank account?",
+            "answer": "his saved notes",
+            "options": [
+              "his saved notes",
+              "a new bicycle",
+              "a faulty lamp"
+            ],
+            "explanation": "Leo says: Let us deposit my saved notes.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l09.bank-account",
+              "en.pre-intermediate.u03.l09.deposit",
+              "en.pre-intermediate.u03.l01.notes"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Leo type at the cash machine?",
+            "answer": "his pin number",
+            "options": [
+              "his pin number",
+              "his phone number",
+              "his name"
+            ],
+            "explanation": "Smarty says: Put your card in and type your pin number carefully.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l09.cash-machine",
+              "en.pre-intermediate.u03.l09.pin-number"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "How many notes does Leo withdraw?",
+            "answer": "twenty notes",
+            "options": [
+              "twenty notes",
+              "two notes",
+              "fifty notes"
+            ],
+            "explanation": "Leo says: I will withdraw twenty notes.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l09.withdraw",
+              "en.pre-intermediate.u03.l01.notes"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is teaching you how to use a bank account and cash machine safely.",
+        "turns": [
+          {
+            "smarty": "You have fifty notes in your purse. Will you deposit them in your bank account?",
+            "accept": [
+              "^(?:yes )?i will deposit (?:them|the notes|my money)(?: in my bank account)?$",
+              "^yes i want to deposit (?:them|the notes)$"
+            ],
+            "example": "Yes, I will deposit them in my bank account.",
+            "hint": "Say Yes, I will deposit them in my bank account.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l09.deposit",
+              "en.pre-intermediate.u03.l09.bank-account"
+            ]
+          },
+          {
+            "smarty": "Now we are at the cash machine. What do you type to withdraw cash?",
+            "accept": [
+              "^(?:i type )?my pin number$",
+              "^pin number$"
+            ],
+            "example": "My pin number.",
+            "hint": "Say My pin number.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l09.cash-machine",
+              "en.pre-intermediate.u03.l09.pin-number",
+              "en.pre-intermediate.u03.l09.withdraw"
+            ]
+          },
+          {
+            "smarty": "Should you tell friends your pin number?",
+            "accept": [
+              "^no(?: i should not| never)?(?: i keep it a secret)?$",
+              "^never$"
+            ],
+            "example": "No, never! I keep it a secret.",
+            "hint": "Say No, never!",
+            "itemIds": [
+              "en.pre-intermediate.u03.l09.pin-number",
+              "en.pre-intermediate.u01.l11.keep-a-secret"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "balance",
+          "gloss": "total amount of money in a bank account"
+        },
+        {
+          "text": "statement",
+          "gloss": "list showing money going in and out of an account"
+        },
+        {
+          "text": "transfer",
+          "gloss": "move money from one bank account to another"
+        },
+        {
+          "text": "online banking",
+          "gloss": "using your bank account on a phone or computer"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u01.l11.keep-a-secret",
+        "en.pre-intermediate.u03.l01.notes",
+        "en.pre-intermediate.u03.l06.save-up",
+        "en.pre-intermediate.u03.l07.hardly-any"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u03.l10",
+      "section": "pre-intermediate",
+      "unit": 3,
+      "lesson": 10,
+      "type": "lesson",
+      "title": "Online shopping",
+      "canDo": "Order online",
+      "scenario": "Ana and Smarty order a birthday present on a website from home.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u03.l10.discount-code",
+          "text": "discount code",
+          "kind": "phrase",
+          "forms": [
+            "discount codes"
+          ],
+          "example": "Type this discount code to save ten notes.",
+          "note": "A ‘discount code’ is a special word or number you type online to pay less."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.add-to-basket",
+          "text": "add to basket",
+          "kind": "phrase",
+          "forms": [
+            "basket",
+            "added to basket"
+          ],
+          "example": "Click add to basket when you want to buy the book.",
+          "note": "‘Add to basket’ puts an item into your online shopping list before you pay."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.delivery",
+          "text": "delivery",
+          "kind": "word",
+          "forms": [
+            "deliveries"
+          ],
+          "example": "Delivery takes two or three days.",
+          "note": "‘Delivery’ is when a shop brings your order to your home."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.track-my-order",
+          "text": "track my order",
+          "kind": "phrase",
+          "forms": [
+            "track",
+            "order",
+            "orders"
+          ],
+          "example": "I can track my order on the website.",
+          "note": "‘Track my order’ means checking online where your box is on the way to you."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.free-shipping",
+          "text": "free shipping",
+          "kind": "phrase",
+          "forms": [
+            "shipping"
+          ],
+          "example": "Orders over twenty notes get free shipping.",
+          "note": "‘Free shipping’ means you pay zero money for delivery to your home."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.customer-reviews",
+          "text": "customer reviews",
+          "kind": "phrase",
+          "forms": [
+            "customer review",
+            "reviews"
+          ],
+          "example": "Always read customer reviews before you buy online.",
+          "note": "‘Customer reviews’ are comments from people who already bought and tried the item."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u03.l10.task.pick-reviews",
+          "kind": "choice",
+          "prompt": "What do you read on a website to see if other buyers liked a product?",
+          "answer": "customer reviews",
+          "options": [
+            "customer reviews",
+            "pin number",
+            "fitting room"
+          ],
+          "explanation": "Customer reviews tell you what other buyers think about an item.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l10.customer-reviews"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.task.hear-free-shipping",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "If you spend thirty notes, you get free shipping.",
+          "answer": "If you spend thirty notes, you get free shipping.",
+          "options": [
+            "If you spend thirty notes, you get free shipping.",
+            "If you spend thirty notes, you get a faulty box.",
+            "If you spend thirty notes, you get a cash machine."
+          ],
+          "explanation": "Free shipping means delivery costs zero money.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l10.free-shipping",
+            "en.pre-intermediate.u03.l06.spend"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.task.match-online",
+          "kind": "match",
+          "prompt": "Match the online shopping phrases with their meanings.",
+          "pairs": [
+            {
+              "left": "add to basket",
+              "right": "a thing you want to buy"
+            },
+            {
+              "left": "discount code",
+              "right": "a special code to get a discount"
+            },
+            {
+              "left": "track my order",
+              "right": "check where my box is now"
+            }
+          ],
+          "explanation": "These phrases help you buy things easily on a website or app.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l10.add-to-basket",
+            "en.pre-intermediate.u03.l10.discount-code",
+            "en.pre-intermediate.u03.l10.track-my-order"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.task.fill-discount-code",
+          "kind": "fill",
+          "prompt": "Smarty gave Ana a special word to save five notes online. Complete the sentence.",
+          "text": "Type the ___ before you pay by credit card.",
+          "answer": "discount code",
+          "options": [
+            "discount code",
+            "pin number",
+            "receipt"
+          ],
+          "explanation": "A discount code lowers the total cost online.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l10.discount-code",
+            "en.pre-intermediate.u03.l09.credit-card"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.task.build-track",
+          "kind": "build",
+          "prompt": "You bought a scarf online yesterday and want to see where it is. Build the sentence.",
+          "answer": "I can track my order on the app.",
+          "tiles": [
+            "I",
+            "can",
+            "track",
+            "my",
+            "order",
+            "on",
+            "the",
+            "app.",
+            "basket"
+          ],
+          "explanation": "Use track my order to check when your delivery will arrive.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l10.track-my-order"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.task.fill-delivery",
+          "kind": "fill",
+          "prompt": "The box will come to Ana's house tomorrow. Complete the sentence.",
+          "text": "Fast ___ brings your present to your door.",
+          "answer": "delivery",
+          "options": [
+            "delivery",
+            "discount",
+            "deposit"
+          ],
+          "explanation": "Delivery is bringing your online order to your home.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l10.delivery"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.task.say-basket",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "The customer reviews are great, so add to basket.",
+          "answer": "The customer reviews are great, so add to basket.",
+          "explanation": "After reading good customer reviews, you can click add to basket.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l10.customer-reviews",
+            "en.pre-intermediate.u03.l10.add-to-basket"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l10.task.choice-recycle",
+          "kind": "choice",
+          "prompt": "With a ___ and ___, this online shop is a great deal!",
+          "answer": "discount code / free shipping",
+          "options": [
+            "discount code / free shipping",
+            "pin number / out of stock",
+            "fitting room / pocket money"
+          ],
+          "explanation": "A discount code plus free shipping saves a lot of money.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l10.discount-code",
+            "en.pre-intermediate.u03.l10.free-shipping",
+            "en.pre-intermediate.u03.l02.a-good-deal"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How does Ana save money when ordering Mia's birthday present online?",
+        "image": {
+          "id": "en-b1-u03-l10-scene",
+          "describe": "Ana and Smarty the black cat sit at a desk with an open laptop showing a red camera and a shopping basket icon."
+        },
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "Smarty, Mia's birthday is next week! Let us buy her a red camera online."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good idea! First, read the customer reviews to check it is not faulty."
+          },
+          {
+            "speaker": "Ana",
+            "text": "There are plenty of five-star reviews! I will click add to basket now."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Wait! Type this special discount code before payment. It also gives free shipping!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Amazing! Delivery from the warehouse takes two days, and a courier brings the parcel to my door."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And you can track my order on your phone every morning!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u03.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "What do Ana and Smarty read before clicking add to basket?",
+            "answer": "customer reviews",
+            "options": [
+              "customer reviews",
+              "a timetable board",
+              "a restaurant menu"
+            ],
+            "explanation": "Smarty says: First, read the customer reviews.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l10.customer-reviews",
+              "en.pre-intermediate.u03.l10.add-to-basket"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "What does the discount code give Ana?",
+            "answer": "a discount and free shipping",
+            "options": [
+              "a discount and free shipping",
+              "a new credit card",
+              "a fitting room"
+            ],
+            "explanation": "Smarty says the discount code gives free shipping too.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l10.discount-code",
+              "en.pre-intermediate.u03.l10.free-shipping"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "How long does delivery take?",
+            "answer": "two days",
+            "options": [
+              "two days",
+              "thirty days",
+              "one year"
+            ],
+            "explanation": "Ana says: Delivery takes two days.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l10.delivery"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is helping you order a new pair of headphones on a website.",
+        "turns": [
+          {
+            "smarty": "The customer reviews are great! What should we click next?",
+            "accept": [
+              "^(?:click )?add to basket$",
+              "^let us add (?:it|them) to basket$"
+            ],
+            "example": "Add to basket!",
+            "hint": "Say Add to basket.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l10.customer-reviews",
+              "en.pre-intermediate.u03.l10.add-to-basket"
+            ]
+          },
+          {
+            "smarty": "Delivery is five notes, or we can use a code. What do you have?",
+            "accept": [
+              "^i have a discount code(?: for free shipping)?$",
+              "^let us use a discount code(?: for free shipping)?$"
+            ],
+            "example": "I have a discount code for free shipping!",
+            "hint": "Mention a discount code or free shipping.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l10.discount-code",
+              "en.pre-intermediate.u03.l10.free-shipping",
+              "en.pre-intermediate.u03.l10.delivery"
+            ]
+          },
+          {
+            "smarty": "We paid by credit card! How will we know when the box is coming?",
+            "accept": [
+              "^(?:we|i) can track my order(?: online| on the app)?$",
+              "^track my order$"
+            ],
+            "example": "I can track my order on the app.",
+            "hint": "Say I can track my order.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l10.track-my-order",
+              "en.pre-intermediate.u03.l09.credit-card"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "parcel",
+          "gloss": "box or package sent by post or delivery"
+        },
+        {
+          "text": "courier",
+          "gloss": "person or company that delivers parcels"
+        },
+        {
+          "text": "payment",
+          "gloss": "act of paying money for something"
+        },
+        {
+          "text": "warehouse",
+          "gloss": "large building where goods are kept before delivery"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u03.l06.spend",
+        "en.pre-intermediate.u03.l09.credit-card",
+        "en.pre-intermediate.u03.l02.a-good-deal"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u03.l11",
+      "section": "pre-intermediate",
+      "unit": 3,
+      "lesson": 11,
+      "type": "test",
+      "title": "Market day",
+      "canDo": "Haggle and decide",
+      "scenario": "Smarty and Mia haggle for bargains on a busy market day.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u03.l11.can-you-do-it-for",
+          "text": "Can you do it for",
+          "kind": "phrase",
+          "example": "Twenty notes is pricey. Can you do it for fifteen?",
+          "note": "Ask ‘Can you do it for…?’ when you offer a lower price at a market."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.last-price",
+          "text": "Last price",
+          "kind": "phrase",
+          "forms": [
+            "price",
+            "prices"
+          ],
+          "example": "Last price is twelve notes, not a coin less!",
+          "note": "Say ‘Last price’ for the lowest price you will accept or pay."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.it-is-a-bargain",
+          "text": "It is a bargain",
+          "kind": "phrase",
+          "forms": [
+            "bargain",
+            "bargains"
+          ],
+          "example": "Five notes for a warm wool scarf? It is a bargain!",
+          "note": "Say ‘It is a bargain’ when the price is much lower than normal."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.i-will-think-about-it",
+          "text": "I will think about it",
+          "kind": "phrase",
+          "example": "Thanks for telling me the price. I will think about it.",
+          "note": "Say ‘I will think about it’ when you want time before deciding to buy."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.deal",
+          "text": "Deal!",
+          "kind": "word",
+          "forms": [
+            "deal"
+          ],
+          "example": "Ten notes for the lamp? Deal!",
+          "note": "Say ‘Deal!’ when you both agree on the price."
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.is-that-your-best-price",
+          "text": "Is that your best price?",
+          "kind": "phrase",
+          "example": "Fifteen notes is a bit high. Is that your best price?",
+          "note": "Ask ‘Is that your best price?’ to check if the seller can go any lower."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u03.l11.task.pick-deal",
+          "kind": "choice",
+          "prompt": "You and the market seller both agree on ten notes. What do you say?",
+          "answer": "Deal!",
+          "options": [
+            "Deal!",
+            "Out of stock!",
+            "Faulty!"
+          ],
+          "explanation": "Say Deal! when you agree on the price.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l11.deal"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.task.hear-best-price",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Is that your best price? Can you do it for ten?",
+          "answer": "Is that your best price? Can you do it for ten?",
+          "options": [
+            "Is that your best price? Can you do it for ten?",
+            "What size is it? Can I try it on?",
+            "Here is my receipt. Can I have a refund?"
+          ],
+          "explanation": "Ask Is that your best price? and Can you do it for... to ask for a lower price.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l11.is-that-your-best-price",
+            "en.pre-intermediate.u03.l11.can-you-do-it-for"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.task.match-market-day",
+          "kind": "match",
+          "prompt": "Match the market phrases with their meanings.",
+          "pairs": [
+            {
+              "left": "It is a bargain",
+              "right": "the price is very low"
+            },
+            {
+              "left": "I will think about it",
+              "right": "I need time to decide"
+            },
+            {
+              "left": "Last price",
+              "right": "the price I will not change"
+            }
+          ],
+          "explanation": "Use these phrases when deciding whether to buy at a market.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l11.it-is-a-bargain",
+            "en.pre-intermediate.u03.l11.i-will-think-about-it",
+            "en.pre-intermediate.u03.l11.last-price"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.task.fill-can-you-do",
+          "kind": "fill",
+          "prompt": "You only have eight notes in your purse, and the hat is ten notes. Complete your question.",
+          "text": "I have hardly any cash. ___ eight notes?",
+          "answer": "Can you do it for",
+          "options": [
+            "Can you do it for",
+            "What size is it",
+            "Do you have this in"
+          ],
+          "explanation": "Ask Can you do it for eight notes? to offer the amount you have.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l11.can-you-do-it-for",
+            "en.pre-intermediate.u03.l07.hardly-any"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.task.build-think",
+          "kind": "build",
+          "prompt": "You are not sure if you want the jacket yet. Build the sentence.",
+          "answer": "Thank you, I will think about it.",
+          "tiles": [
+            "Thank",
+            "you,",
+            "I",
+            "will",
+            "think",
+            "about",
+            "it.",
+            "deal"
+          ],
+          "explanation": "Say I will think about it when you want to look around before deciding.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l11.i-will-think-about-it"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.task.fill-bargain",
+          "kind": "fill",
+          "prompt": "The guitar is on sale with a huge discount, so you can afford it. Complete the sentence.",
+          "text": "Ten notes for a guitar! ___!",
+          "answer": "It is a bargain",
+          "options": [
+            "It is a bargain",
+            "It is faulty",
+            "It is too tight"
+          ],
+          "explanation": "When something is very cheap for what you get, say It is a bargain!",
+          "itemIds": [
+            "en.pre-intermediate.u03.l11.it-is-a-bargain",
+            "en.pre-intermediate.u03.l01.afford",
+            "en.pre-intermediate.u03.l02.discount"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.task.say-last-price",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "Is that your best price? Last price for me is six notes.",
+          "answer": "Is that your best price? Last price for me is six notes.",
+          "explanation": "Use Is that your best price? and Last price when haggling.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l11.is-that-your-best-price",
+            "en.pre-intermediate.u03.l11.last-price"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.task.choice-unit-returns",
+          "kind": "choice",
+          "prompt": "If you buy a lamp and it is faulty, bring your ___ within thirty days for a ___.",
+          "answer": "receipt / refund",
+          "options": [
+            "receipt / refund",
+            "pin number / delivery",
+            "fitting room / discount code"
+          ],
+          "explanation": "Keep your receipt so you can get a refund or exchange within thirty days.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l05.receipt",
+            "en.pre-intermediate.u03.l05.refund",
+            "en.pre-intermediate.u03.l05.faulty"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.task.choice-unit-bank",
+          "kind": "choice",
+          "prompt": "Before market day, Sam went to the ___ to ___ twenty notes from his ___.",
+          "answer": "cash machine / withdraw / bank account",
+          "options": [
+            "cash machine / withdraw / bank account",
+            "fitting room / deposit / pocket money",
+            "checkout / exchange / discount code"
+          ],
+          "explanation": "You use a cash machine to withdraw notes from your bank account.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l09.cash-machine",
+            "en.pre-intermediate.u03.l09.withdraw",
+            "en.pre-intermediate.u03.l09.bank-account"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u03.l11.task.choice-unit-saving",
+          "kind": "choice",
+          "prompt": "If you do not ___ money on sweets, you will ___ enough for a new bicycle.",
+          "answer": "waste / save up",
+          "options": [
+            "waste / save up",
+            "owe / return",
+            "lend / track"
+          ],
+          "explanation": "Avoid wasting money so you can save up for what you really want.",
+          "itemIds": [
+            "en.pre-intermediate.u03.l06.waste",
+            "en.pre-intermediate.u03.l06.save-up"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What treasure does Smarty find at Omar's market stall?",
+        "image": {
+          "id": "en-b1-u03-l11-scene",
+          "describe": "In the busy market square, Smarty the black cat and Mia haggle with Omar over an old brass lamp and a small coin purse at a crowded stall."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "What a big crowd in the market square today! Look at all the fresh produce and old treasures."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Welcome, Mia and Smarty! I am a vendor here. Everything on this table is on sale."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Mia, look at that shiny old lamp and that small green purse! Let us haggle!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Excuse me, Omar. Is that your best price for both?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Twenty notes for the lamp and the purse together. It is a bargain!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Hmm, I will think about it. I only have fifteen notes. Can you do it for fifteen?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Last price is sixteen notes! Deal?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I can lend you one note, Mia! Deal!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u03.l11.task.story-one",
+            "kind": "choice",
+            "prompt": "What price does Mia offer Omar first?",
+            "answer": "fifteen notes",
+            "options": [
+              "fifteen notes",
+              "twenty notes",
+              "sixteen notes"
+            ],
+            "explanation": "Mia asks: Can you do it for fifteen?",
+            "itemIds": [
+              "en.pre-intermediate.u03.l11.can-you-do-it-for"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l11.task.story-two",
+            "kind": "choice",
+            "prompt": "What is Omar's last price?",
+            "answer": "sixteen notes",
+            "options": [
+              "sixteen notes",
+              "fifteen notes",
+              "ten notes"
+            ],
+            "explanation": "Omar says: Last price is sixteen notes!",
+            "itemIds": [
+              "en.pre-intermediate.u03.l11.last-price"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u03.l11.task.story-three",
+            "kind": "choice",
+            "prompt": "How do Mia and Smarty pay sixteen notes?",
+            "answer": "Mia has fifteen notes and Smarty lends her one note.",
+            "options": [
+              "Mia has fifteen notes and Smarty lends her one note.",
+              "They pay by credit card.",
+              "They get a discount code."
+            ],
+            "explanation": "Mia has fifteen notes and Smarty lends her one note, so they say Deal!",
+            "itemIds": [
+              "en.pre-intermediate.u03.l11.deal",
+              "en.pre-intermediate.u03.l06.lend"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is selling a blue backpack and a scarf at his market stall. Haggle with him for a good price!",
+        "turns": [
+          {
+            "smarty": "Welcome to my stall! This warm scarf is twelve notes. What do you say?",
+            "accept": [
+              "^is that your best price$",
+              "^can you do it for (?:eight|nine|ten) notes$",
+              "^i will think about it$"
+            ],
+            "example": "Is that your best price?",
+            "hint": "Ask Is that your best price? or Can you do it for ten notes?",
+            "itemIds": [
+              "en.pre-intermediate.u03.l11.is-that-your-best-price",
+              "en.pre-intermediate.u03.l11.can-you-do-it-for"
+            ]
+          },
+          {
+            "smarty": "Ten notes is too low! My last price is eleven notes. It is a bargain!",
+            "accept": [
+              "^deal$",
+              "^i will think about it$",
+              "^deal it is a bargain$"
+            ],
+            "example": "Deal! It is a bargain!",
+            "hint": "Say Deal! or I will think about it.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l11.last-price",
+              "en.pre-intermediate.u03.l11.it-is-a-bargain",
+              "en.pre-intermediate.u03.l11.deal"
+            ]
+          },
+          {
+            "smarty": "Do you want to pay with notes or by credit card?",
+            "accept": [
+              "^(?:i will pay )?(?:with |in )?(?:notes|cash|coins|by credit card|with my credit card)$",
+              "^(?:notes|cash|credit card)$"
+            ],
+            "example": "I will pay with notes.",
+            "hint": "Say I will pay with notes or by credit card.",
+            "itemIds": [
+              "en.pre-intermediate.u03.l01.notes",
+              "en.pre-intermediate.u03.l09.credit-card"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "vendor",
+          "gloss": "person who sells things at a market stall"
+        },
+        {
+          "text": "fresh produce",
+          "gloss": "newly picked fruit and vegetables"
+        },
+        {
+          "text": "crowd",
+          "gloss": "large group of people together in one place"
+        },
+        {
+          "text": "haggle",
+          "gloss": "talk with a seller to get a lower price"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u03.l01.notes",
+        "en.pre-intermediate.u03.l01.afford",
+        "en.pre-intermediate.u03.l02.discount",
+        "en.pre-intermediate.u03.l05.receipt",
+        "en.pre-intermediate.u03.l05.refund",
+        "en.pre-intermediate.u03.l05.faulty",
+        "en.pre-intermediate.u03.l06.waste",
+        "en.pre-intermediate.u03.l06.save-up",
+        "en.pre-intermediate.u03.l06.lend",
+        "en.pre-intermediate.u03.l07.hardly-any",
+        "en.pre-intermediate.u03.l09.cash-machine",
+        "en.pre-intermediate.u03.l09.withdraw",
+        "en.pre-intermediate.u03.l09.bank-account",
+        "en.pre-intermediate.u03.l09.credit-card"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Secret Inside the Purse",
+    "panels": [
+      {
+        "speaker": "Mia",
+        "text": "We got such a good deal on Market Day! Let me pay back the one note I owe you, Smarty.",
+        "image": {
+          "id": "en-b1-u03-ep-01",
+          "describe": "Mia and Smarty the black cat sit at a wooden table in the market square with the old brass lamp and green purse."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Thank you! Now let us open that old green purse we bought at Omar's stall."
+      },
+      {
+        "speaker": "Mia",
+        "text": "Look! There are hardly any coins inside, just three old silver coins and a folded paper."
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Wait a moment! That paper is not a receipt. It is an old map of our town!",
+        "image": {
+          "id": "en-b1-u03-ep-02",
+          "describe": "Smarty the black cat holds open a folded old map showing a clock tower and a dotted path, while Mia looks surprised."
+        }
+      },
+      {
+        "speaker": "Leo",
+        "text": "Hey, Mia and Smarty! I just came from the bank. What is that map?"
+      },
+      {
+        "speaker": "Mia",
+        "text": "We found it inside this bargain purse! It shows a secret door behind the museum."
+      },
+      {
+        "speaker": "Smarty",
+        "text": "If we follow this path together, we will find a real treasure! Let us meet here early tomorrow morning!",
+        "image": {
+          "id": "en-b1-u03-ep-03",
+          "describe": "Smarty the black cat, Mia, and Leo put their hands and paw together over the map under the evening sky in the market square."
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.pre-intermediate.u03.ep.task.q1",
+        "kind": "choice",
+        "prompt": "What do Mia and Smarty find inside the old green purse?",
+        "answer": "three coins and an old map",
+        "options": [
+          "three coins and an old map",
+          "twenty new notes",
+          "a credit card and a receipt"
+        ],
+        "explanation": "Inside the purse there are three old coins and an old map of the town.",
+        "itemIds": [
+          "en.pre-intermediate.u03.l01.purse",
+          "en.pre-intermediate.u03.l01.coins"
+        ]
+      },
+      {
+        "id": "en.pre-intermediate.u03.ep.task.q2",
+        "kind": "choice",
+        "prompt": "Where does the map show a secret door?",
+        "answer": "behind the museum",
+        "options": [
+          "behind the museum",
+          "in the fitting room",
+          "next to the cash machine"
+        ],
+        "explanation": "Mia says: It shows a secret door behind the museum.",
+        "itemIds": [
+          "en.pre-intermediate.u03.l11.it-is-a-bargain"
+        ]
+      },
+      {
+        "id": "en.pre-intermediate.u03.ep.task.q3",
+        "kind": "choice",
+        "prompt": "When will Smarty, Mia, and Leo follow the map?",
+        "answer": "early tomorrow morning",
+        "options": [
+          "early tomorrow morning",
+          "next year",
+          "within thirty days"
+        ],
+        "explanation": "Smarty says: Let us meet here early tomorrow morning!",
+        "itemIds": [
+          "en.pre-intermediate.u03.l06.owe"
+        ]
+      }
+    ]
+  }
+}

@@ -1,13 +1,12 @@
 import { CatLogo } from './brand/CatLogo';
 import { useUiLang } from '../contexts/UiLangContext';
-import React from 'react';
 import { ChevronLeft, LayoutGrid } from 'lucide-react';
 import { type HabitState } from '../lib/habitEngine';
 import { NotificationBell } from '../features/NotificationBell';
 
 const ROOT_TABS = new Set([
   'dashboard', 'lessons', 'vocabulary', 'practice', 'classes', 'gamification', 'quests', 'profile',
-  'admin', 'business', 'content',
+  'admin', 'business',
 ]);
 
 function parentOf(tab: string): string {
@@ -29,11 +28,12 @@ interface Props {
   xp: number;
   user: any;
   uid?: string;
+  homeTab?: string;
   onNavigate: (tab: string) => void;
   onOpenMenu?: () => void;
 }
 
-export function AppTopBar({ activeTab, title, habit, xp, user, uid, onNavigate, onOpenMenu }: Props) {
+export function AppTopBar({ activeTab, title, habit, xp, user, uid, homeTab = 'dashboard', onNavigate, onOpenMenu }: Props) {
   const { t } = useUiLang();
   const isRoot = ROOT_TABS.has(activeTab);
 
@@ -46,7 +46,7 @@ export function AppTopBar({ activeTab, title, habit, xp, user, uid, onNavigate, 
         {isRoot ? (
           <button
             type="button"
-            onClick={() => onNavigate('dashboard')}
+            onClick={() => onNavigate(homeTab)}
             className="font-serif font-black tracking-tighter uppercase text-[15px] text-zinc-900 dark:text-zinc-50 shrink-0 flex items-center gap-1.5"
           >
             <CatLogo className="h-7 w-7" />

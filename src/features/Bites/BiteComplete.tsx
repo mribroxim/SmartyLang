@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import { motion } from 'motion/react';
-import { Flame, Target, Timer, Zap } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+import { Target, Timer, X, Zap } from 'lucide-react';
 import type { BiteResult } from '../../lib/bites/types';
 import { Sticker, type StickerId } from '../../components/stickers/Sticker';
 import { useUiLang } from '../../contexts/UiLangContext';
@@ -9,9 +9,10 @@ import { getPrefs } from '../../lib/smarty/prefs';
 import { goalXpForMinutes } from '../../lib/bites/xp';
 import type { UiStringKey } from '../../lib/uiStrings';
 import { ChunkyButton } from './lesson/chunky';
-import { FishMeal } from '../../components/smarty/FishMeal';
-import type { FishPart } from '../../lib/smarty/pantry';
 import { useOptionalProgress } from '../../contexts/ProgressContext';
+import type { WorkshopAward } from '../../lib/workshop/lessonHooks';
+import { QuestRow, useDailyQuests } from '../Quests/dailyQuests';
+import { Overlay, RewardBox, type Reward } from '../../components/RewardPopup';
 
 function useCountUp(target: number, ms = 900) {
   const [v, setV] = useState(0);
@@ -35,8 +36,12 @@ const pickOne = <T,>(a: T[]) => a[Math.floor(Math.random() * a.length)];
 /** End-of-bite reward: Smarty celebrates, XP counts up, streak + goal, a personal recap line. */
 export interface BiteAward {
   xp: number; xpToday: number; goal: number; streak: number; goalDone: boolean; heartGained?: number; dailyReplay?: boolean;
-  /** Piece of Smarty's fish earned by this bite (see lib/smarty/pantry). */
-  fish?: { part: FishPart; mealCompleted: boolean; pieces: number; meals: number };
+  /** Coins earned by this bite (they buy Smarty's food and furniture). */
+  coins?: number;
+  /** Lesson bites: words refined, the next house delivery, unit gifts. */
+  workshop?: WorkshopAward;
+  /** A food boost that multiplied this bite's XP or coins. */
+  boost?: { kind: 'xp' | 'coins'; mult: number };
 }
 
 export function BiteComplete({
@@ -49,7 +54,6 @@ export function BiteComplete({
   const xpShown = useCountUp(a.xp);
   const name = learnerName();
   const goal = a.goal;
-  const goalPct = Math.min(100, Math.round((a.xpToday / goal) * 100));
   const mins = Math.max(1, Math.round(result.ms / 60000));
 
   const { sticker, line } = useMemo<{ sticker: StickerId; line: { key: UiStringKey; vars?: Record<string, string | number> } }>(() => {
@@ -60,6 +64,16 @@ export function BiteComplete({
     if (result.mistakes.length) return { sticker: night ? 'state.night-owl' : pickOne<StickerId>(['mood.party-time', 'feed.mistake-eraser']), line: { key: 'bites.recap.weakWord', vars: { word: result.mistakes[0] } } };
     if (night) return { sticker: 'state.night-owl', line: { key: 'bites.recap.night' } };
     return { sticker: pickOne<StickerId>(['mood.party-time', 'flow.finish-line', 'reward.snack-time', 'flow.next-lesson']), line: { key: name ? 'smarty.complete.named.1' : 'smarty.complete.1' } };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Coin box first (if this bite paid coins), then the quest popup.
+  // Quests need the progress context (absent in isolated previews).
+  const quests = !!progress;
+  const [popup, setPopup] = useState<'coins' | 'quests' | null>(null);
+  useEffect(() => {
+    const id = window.setTimeout(() => setPopup(a.coins ? 'coins' : quests ? 'quests' : null), 1300);
+    return () => window.clearTimeout(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -85,59 +99,59 @@ export function BiteComplete({
   const accWord = result.perfect ? t('lesson.accuracy.perfect') : result.accuracy >= 90 ? t('lesson.accuracy.great') : result.accuracy >= 70 ? t('lesson.accuracy.good') : t('lesson.stat.accuracy');
 
   return (
-    <div className="min-h-dvh flex flex-col items-center justify-center bg-white dark:bg-zinc-950 px-5 py-10 text-center">
-      <motion.div initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }}>
-        <Sticker id={sticker} size={220} priority="hero" />
-      </motion.div>
-      <h1 className="mt-2 font-serif text-3xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">{t('lesson.complete')}</h1>
-      <p className="mt-2 max-w-sm text-[15px] font-semibold text-slate-600 dark:text-zinc-300">{t(line.key, { ...(name ? { name } : {}), ...(line.vars || {}) })}</p>
+    <div className="relative flex h-dvh flex-col items-center overflow-hidden bg-white px-5 pb-[max(env(safe-area-inset-bottom),16px)] pt-[max(env(safe-area-inset-top),12px)] text-center dark:bg-zinc-950">
+      <button type="button" onClick={onBack} aria-label={t('complete.close')}
+        className="absolute left-3 top-[max(env(safe-area-inset-top),12px)] z-10 rounded-full p-2 text-slate-400 hover:bg-slate-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-100">
+        <X className="h-6 w-6" />
+      </button>
 
-      <div className="mt-6 flex w-full max-w-md gap-2.5">
-        {stat(<Zap className="h-5 w-5 fill-current" />, t('lesson.stat.xp'), String(xpShown), 'border-zinc-900 bg-zinc-900 dark:border-zinc-100 dark:bg-zinc-100 dark:[&>div:first-child]:text-zinc-900', 0.15)}
-        {stat(<Target className="h-5 w-5" />, accWord, `${result.accuracy}%`, accStrip, 0.3)}
-        {stat(<Timer className="h-5 w-5" />, t('lesson.stat.time'), t('bites.minutes', { n: mins }), 'border-slate-400 bg-slate-400 dark:border-zinc-600 dark:bg-zinc-600', 0.45)}
-      </div>
-
-      {a.fish && (
-        <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-          className="mt-4 flex w-full max-w-md items-center gap-3 rounded-2xl border-2 border-slate-200 bg-white p-3 text-left shadow-[0_3px_0_0_#e2e8f0] dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-[0_3px_0_0_#27272a]">
-          <FishMeal filled={a.fish.mealCompleted ? 4 : a.fish.pieces} fresh={a.fish.part} size={104} className="shrink-0" />
-          <div className="min-w-0 flex-1">
-            <div className="font-serif text-[15px] font-extrabold text-zinc-900 dark:text-zinc-50">
-              {a.fish.mealCompleted ? t('kitchen.mealReady') : t('kitchen.gotPiece', { part: t(`kitchen.part.${a.fish.part}` as UiStringKey) })}
-            </div>
-            <div className="text-xs font-semibold text-slate-500 dark:text-zinc-400">
-              {a.fish.mealCompleted ? t('kitchen.mealReadyBody') : t('kitchen.pieceProgress', { n: a.fish.pieces, total: 4 })}
-            </div>
-            {a.fish.mealCompleted && (
-              <button type="button" onClick={() => progress?.navigate({ tab: 'profile', path: [] })} className="mt-1 font-serif text-xs font-extrabold uppercase tracking-wide text-zinc-900 underline underline-offset-4 dark:text-zinc-50">
-                {t('kitchen.goFeed')}
-              </button>
-            )}
-          </div>
+      {/* Everything fits one screen: the sticker shrinks on short phones. */}
+      <div className="flex min-h-0 w-full max-w-md flex-1 flex-col items-center justify-center">
+        <motion.div initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 260, damping: 18 }} className="min-h-0">
+          <Sticker id={sticker} size="clamp(120px, 28dvh, 230px)" priority="hero" />
         </motion.div>
-      )}
+        <h1 className="mt-1 font-serif text-[clamp(1.6rem,4.2dvh,2.25rem)] font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50">{t('lesson.complete')}</h1>
+        <p className="mt-1 max-w-sm text-[15px] font-semibold text-slate-600 dark:text-zinc-300">{t(line.key, { ...(name ? { name } : {}), ...(line.vars || {}) })}</p>
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }} className="mt-4 flex w-full max-w-md items-center gap-3 rounded-2xl bg-slate-50 dark:bg-zinc-900 p-3 text-left">
-        <Sticker id={a.goalDone ? (a.streak % 2 ? 'streak.daily-goal-reached' : 'reward.bloom') : a.streak >= 14 ? 'streak.consistency-champ' : a.streak >= 3 ? 'reward.skater' : 'reward.on-fire'} size={56} mode="once" />
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-1 text-sm font-black text-zinc-900 dark:text-zinc-50"><Flame className="w-4 h-4 text-orange-500" /> {t('celebrate.streakChip', { n: Math.max(1, a.streak) })}</div>
-          <div className="mt-1.5 h-2 rounded-full bg-slate-200 dark:bg-zinc-800 overflow-hidden">
-            <motion.div className="h-full rounded-full bg-zinc-900 dark:bg-zinc-100" initial={{ width: 0 }} animate={{ width: `${goalPct}%` }} transition={{ delay: 0.6, duration: 0.8 }} />
-          </div>
-          <div className="mt-1 text-xs font-semibold text-slate-500 dark:text-zinc-400">{a.goalDone ? t('smarty.title.goal') : t('bites.goalProgress', { n: a.xpToday, goal })}</div>
+        <div className="mt-[clamp(12px,3dvh,28px)] flex w-full gap-2.5">
+          {stat(<Zap className="h-5 w-5 fill-current" />, t('lesson.stat.xp'), String(xpShown), 'border-zinc-900 bg-zinc-900 dark:border-zinc-100 dark:bg-zinc-100 dark:[&>div:first-child]:text-zinc-900', 0.15)}
+          {stat(<Target className="h-5 w-5" />, accWord, `${result.accuracy}%`, accStrip, 0.3)}
+          {stat(<Timer className="h-5 w-5" />, t('lesson.stat.time'), t('bites.minutes', { n: mins }), 'border-slate-400 bg-slate-400 dark:border-zinc-600 dark:bg-zinc-600', 0.45)}
         </div>
-      </motion.div>
-
-      <div className="mt-8 flex w-full max-w-md flex-col gap-2">
-        {!!a.heartGained && <div className="mb-3 flex items-center justify-center gap-2"><Sticker id={a.heartGained > 1 ? 'game.mystery-box' : 'game.lucky-spin'} size={48} mode="once" /><p className="text-sm font-black text-rose-600 dark:text-rose-300">{t('hearts.earned', { n: a.heartGained })}</p></div>}
-        {a.dailyReplay && <p className="mb-3 text-sm font-semibold text-slate-500 dark:text-zinc-400">{t('today.replayBody')}</p>}
-        <ChunkyButton autoFocus onClick={onContinue} className="w-full">{continueLabel ?? t('smarty.continue')}</ChunkyButton>
-        <div className="mt-1 flex gap-2.5">
-          <ChunkyButton tone="secondary" onClick={onBack} className="flex-1 !px-3 !text-[13px]">{t('bites.backToPath')}</ChunkyButton>
-          <ChunkyButton tone="secondary" onClick={share} className="flex-1 !px-3 !text-[13px]"><Sticker id="social.sharing-success" size={26} mode="still" /> {t('bites.share')}</ChunkyButton>
-        </div>
+        {!!a.heartGained && <div className="mt-3 flex items-center justify-center gap-2"><Sticker id={a.heartGained > 1 ? 'game.mystery-box' : 'game.lucky-spin'} size={40} mode="once" /><p className="text-sm font-black text-rose-600 dark:text-rose-300">{t('hearts.earned', { n: a.heartGained })}</p></div>}
+        {a.boost && <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-amber-300 px-3 py-1 font-serif text-sm font-extrabold text-zinc-900"><Zap className="h-4 w-4 fill-current" />{t('rewards.boosted', { n: a.boost.mult, what: t(a.boost.kind === 'xp' ? 'rewards.what.xp' : 'rewards.what.coins') })}</p>}
+        {a.dailyReplay && <p className="mt-3 text-sm font-semibold text-slate-500 dark:text-zinc-400">{t('today.replayBody')}</p>}
       </div>
+
+      <div className="flex w-full max-w-md shrink-0 gap-2.5 pt-3">
+        <ChunkyButton autoFocus onClick={onContinue} className="flex-[2]">{continueLabel ?? t('smarty.continue')}</ChunkyButton>
+        <ChunkyButton tone="secondary" onClick={share} className="flex-1 !px-3"><Sticker id="social.sharing-success" size={26} mode="still" /> {t('bites.share')}</ChunkyButton>
+      </div>
+
+      {/* Rewards after the screen settles: first the coin box, then today's quests. */}
+      <AnimatePresence>
+        {popup === 'coins' && <RewardBox reward={{ coins: a.coins ?? 0 }} onDone={() => setPopup(quests ? 'quests' : null)} />}
+        {popup === 'quests' && quests && <QuestPopup onDone={() => setPopup(null)} />}
+      </AnimatePresence>
     </div>
+  );
+}
+
+/** Today's three quests: finished ones open a reward box when tapped. */
+function QuestPopup({ onDone }: { onDone: () => void }) {
+  const { t } = useUiLang();
+  const data = useDailyQuests();
+  const [won, setWon] = useState<Reward | null>(null);
+  return (
+    <Overlay onClose={onDone}>
+      <h2 className="font-serif text-2xl font-extrabold text-zinc-900 dark:text-zinc-50">{t('complete.questsTitle')}</h2>
+      <ul className="mt-4 flex flex-col gap-2.5">
+        {data.quests.map((q) => (
+          <li key={q.id}><QuestRow compact q={q} have={data.progress[q.metric] ?? 0} claimed={data.claimed.includes(q.id)} onOpen={() => { const r = data.claim(q.id); if (r) setWon(r); }} /></li>
+        ))}
+      </ul>
+      <ChunkyButton autoFocus onClick={onDone} className="mt-5 w-full">{t('smarty.continue')}</ChunkyButton>
+      <AnimatePresence>{won && <RewardBox z={60} reward={won} onDone={() => setWon(null)} />}</AnimatePresence>
+    </Overlay>
   );
 }

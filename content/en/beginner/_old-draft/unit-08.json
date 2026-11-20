@@ -1,0 +1,3339 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "beginner",
+  "unit": 8,
+  "title": "Town & Directions",
+  "room": "balcony",
+  "lessons": [
+    {
+      "id": "en.beginner.u08.l01",
+      "section": "beginner",
+      "unit": 8,
+      "lesson": 1,
+      "title": "Places in town",
+      "canDo": "Name places in town",
+      "scenario": "You and Smarty stand on a balcony and look over the town. Name the places you can see.",
+      "items": [
+        {
+          "id": "en.beginner.u08.l01.park",
+          "text": "park",
+          "kind": "word",
+          "example": "I like the park.",
+          "note": "Say 'park' for a green place with trees and grass where people walk and play.",
+          "image": {
+            "id": "park",
+            "describe": "Smarty the black cat sits on the grass under a big tree in a sunny park, with a bench and a small pond behind him."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l01.school",
+          "text": "school",
+          "kind": "word",
+          "example": "This is my school.",
+          "note": "Say 'school' for the place where children go to learn with their teacher.",
+          "image": {
+            "id": "school",
+            "describe": "A friendly school building with a flag, big windows and a playground; Smarty the black cat and Mia walk to the gate with school bags."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l01.hospital",
+          "text": "hospital",
+          "kind": "word",
+          "example": "The hospital is big.",
+          "note": "Say 'hospital' for the big building where doctors help people who are ill.",
+          "image": {
+            "id": "hospital",
+            "describe": "A big hospital building with a red cross icon above the door (a cross only, no words); Smarty the black cat waves outside with Ben."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l01.bank",
+          "text": "bank",
+          "kind": "word",
+          "example": "The bank is new.",
+          "note": "Say 'bank' for the place where people keep their money safe.",
+          "image": {
+            "id": "bank",
+            "describe": "A solid bank building with tall columns and a round gold coin icon on the front (no words); Smarty the black cat looks at it with Sam."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l01.cafe",
+          "text": "café",
+          "kind": "word",
+          "example": "The café is small.",
+          "note": "Say 'café' for a small place where you drink tea or coffee and eat cake.",
+          "image": {
+            "id": "cafe",
+            "describe": "A cosy small café with a striped awning and little tables outside; Smarty the black cat, Mia and Sam sit with cups and a cake."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u08.l01.task.choose",
+          "kind": "choice",
+          "prompt": "Which word is a green place with trees and grass?",
+          "answer": "park",
+          "options": [
+            "park",
+            "bank",
+            "school"
+          ],
+          "explanation": "A park has trees and grass. A bank is for money and a school is for learning.",
+          "itemIds": [
+            "en.beginner.u08.l01.park"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l01.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "The hospital is big.",
+          "answer": "The hospital is big.",
+          "options": [
+            "The school is big.",
+            "The park is big.",
+            "The hospital is big."
+          ],
+          "explanation": "Listen for the place word after The.",
+          "itemIds": [
+            "en.beginner.u08.l01.hospital"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l01.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "This is the school.",
+          "tiles": [
+            "is",
+            "the",
+            "This",
+            "bank.",
+            "school."
+          ],
+          "explanation": "This is + the + a place says what a building is.",
+          "itemIds": [
+            "en.beginner.u08.l01.school"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l01.task.fill",
+          "kind": "fill",
+          "prompt": "You keep your money safe here. Complete the sentence.",
+          "text": "I have money in the ___.",
+          "answer": "bank",
+          "options": [
+            "school",
+            "bank",
+            "hospital"
+          ],
+          "explanation": "You keep money in the bank, not in a hospital or school.",
+          "itemIds": [
+            "en.beginner.u08.l01.bank"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l01.task.cafe",
+          "kind": "choice",
+          "prompt": "You want tea and cake. Where do you go?",
+          "answer": "café",
+          "options": [
+            "café",
+            "bank",
+            "hospital"
+          ],
+          "explanation": "A café is a small place for tea and cake.",
+          "itemIds": [
+            "en.beginner.u08.l01.cafe"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l01.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "The park is big.",
+          "answer": "The park is big.",
+          "explanation": "You described a place in town. You can also say The park is small.",
+          "itemIds": [
+            "en.beginner.u08.l01.park"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l01.task.listen-two",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "The bank is new.",
+          "answer": "The bank is new.",
+          "options": [
+            "The café is new.",
+            "The school is new.",
+            "The bank is new."
+          ],
+          "explanation": "Listen for bank. The word before is is the place.",
+          "itemIds": [
+            "en.beginner.u08.l01.bank"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l01.task.build-two",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "The café is small.",
+          "tiles": [
+            "is",
+            "The",
+            "big.",
+            "café",
+            "small."
+          ],
+          "explanation": "Is links the place with a describing word.",
+          "itemIds": [
+            "en.beginner.u08.l01.cafe"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l01.task.use-again",
+          "kind": "choice",
+          "prompt": "Which place is for doctors and ill people?",
+          "answer": "hospital",
+          "options": [
+            "café",
+            "hospital",
+            "park"
+          ],
+          "explanation": "A hospital is where doctors help people.",
+          "itemIds": [
+            "en.beginner.u08.l01.hospital"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Smarty looks at the town from the balcony. Which place is new?",
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Look, Smarty! I like the park."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I like the café."
+          },
+          {
+            "speaker": "Sam",
+            "text": "The café is small, but the cake is delicious."
+          },
+          {
+            "speaker": "Mia",
+            "text": "The hospital is new."
+          },
+          {
+            "speaker": "Sam",
+            "text": "This is my school."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Is it big?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes, it is big."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u08.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "Who likes the park?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Mia says she likes the park.",
+            "itemIds": [
+              "en.beginner.u08.l01.park"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "Which place is small?",
+            "answer": "café",
+            "options": [
+              "school",
+              "hospital",
+              "café"
+            ],
+            "explanation": "Sam says the café is small.",
+            "itemIds": [
+              "en.beginner.u08.l01.cafe"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Which place is new?",
+            "answer": "hospital",
+            "options": [
+              "park",
+              "hospital",
+              "bank"
+            ],
+            "explanation": "Mia says the hospital is new.",
+            "itemIds": [
+              "en.beginner.u08.l01.hospital"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u08-l01-scene",
+          "describe": "Smarty the black cat, Mia and Sam stand on a sunny balcony and look over a small town with a park, a café, a school and a hospital below."
+        }
+      },
+      "mission": {
+        "setup": "You and Smarty look over the town from the balcony. Say which place you like.",
+        "turns": [
+          {
+            "smarty": "I like the park. And you?",
+            "accept": [
+              "^i like the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$",
+              "^(?:the )?(?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$"
+            ],
+            "example": "I like the café.",
+            "hint": "Say I like the + a place word.",
+            "itemIds": [
+              "en.beginner.u08.l01.park",
+              "en.beginner.u08.l01.school",
+              "en.beginner.u08.l01.hospital",
+              "en.beginner.u08.l01.bank",
+              "en.beginner.u08.l01.cafe"
+            ]
+          },
+          {
+            "smarty": "The café is small. Is the park big?",
+            "accept": [
+              "^yes(?: it is)?(?: big)?$",
+              "^no(?: it is)?(?: small)?$",
+              "^it is (?:big|small)$"
+            ],
+            "example": "Yes, it is big.",
+            "hint": "Answer Yes or No. You can say it is big or it is small.",
+            "itemIds": [
+              "en.beginner.u08.l01.park",
+              "en.beginner.u08.l01.cafe"
+            ]
+          }
+        ]
+      },
+      "recycle": []
+    },
+    {
+      "id": "en.beginner.u08.l02",
+      "section": "beginner",
+      "unit": 8,
+      "lesson": 2,
+      "title": "More places",
+      "canDo": "Name more places",
+      "scenario": "Ben, Ana and Smarty look at more places from the balcony. Say which ones you like.",
+      "items": [
+        {
+          "id": "en.beginner.u08.l02.supermarket",
+          "text": "supermarket",
+          "kind": "word",
+          "example": "I buy bread at the supermarket.",
+          "note": "Say 'supermarket' for a big shop where you can buy food and many things.",
+          "image": {
+            "id": "supermarket",
+            "describe": "A large supermarket with a shopping cart outside and baskets of fruit and bread by the door; Smarty pushes the cart with Ana."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l02.library",
+          "text": "library",
+          "kind": "word",
+          "example": "I read a book in the library.",
+          "note": "Say 'library' for the quiet place with many books that you can read.",
+          "image": {
+            "id": "library",
+            "describe": "A library seen through a big window, with shelves full of books; Smarty the black cat reads a book with Lily."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l02.cinema",
+          "text": "cinema",
+          "kind": "word",
+          "example": "I like the cinema.",
+          "note": "Say 'cinema' for the place where people watch a film on a big screen.",
+          "image": {
+            "id": "cinema",
+            "describe": "A cinema building with a big round popcorn icon and a film-reel icon above the door (no words); Smarty and Leo hold popcorn."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l02.station",
+          "text": "station",
+          "kind": "word",
+          "example": "The station is big.",
+          "note": "Say 'station' for the place where you get on a train.",
+          "image": {
+            "id": "station",
+            "describe": "A train station with a long platform and a train arriving; Smarty the black cat waits with Omar, who holds a bag."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l02.museum",
+          "text": "museum",
+          "kind": "word",
+          "example": "The museum is beautiful.",
+          "note": "Say 'museum' for the place where people look at old and interesting things.",
+          "image": {
+            "id": "museum",
+            "describe": "A museum with tall columns and a big dinosaur skeleton visible in the hall; Smarty looks up at it with Zara."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u08.l02.task.choose",
+          "kind": "choice",
+          "prompt": "Where do you buy bread, milk and apples?",
+          "answer": "supermarket",
+          "options": [
+            "cinema",
+            "museum",
+            "supermarket"
+          ],
+          "explanation": "A supermarket is a big shop for food.",
+          "itemIds": [
+            "en.beginner.u08.l02.supermarket"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l02.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "The library is big.",
+          "answer": "The library is big.",
+          "options": [
+            "The museum is big.",
+            "The library is big.",
+            "The cinema is big."
+          ],
+          "explanation": "Listen for the place word after The.",
+          "itemIds": [
+            "en.beginner.u08.l02.library"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l02.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I read a book in the library.",
+          "tiles": [
+            "I",
+            "a",
+            "in",
+            "the",
+            "book",
+            "read",
+            "library.",
+            "station."
+          ],
+          "explanation": "You read books in a library.",
+          "itemIds": [
+            "en.beginner.u08.l02.library"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l02.task.fill",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I buy apples at the ___.",
+          "answer": "supermarket",
+          "options": [
+            "supermarket",
+            "library",
+            "museum"
+          ],
+          "explanation": "You buy apples at a supermarket, not at a library or museum.",
+          "itemIds": [
+            "en.beginner.u08.l02.supermarket"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l02.task.movie",
+          "kind": "choice",
+          "prompt": "Where do people watch a film?",
+          "answer": "cinema",
+          "options": [
+            "station",
+            "library",
+            "cinema"
+          ],
+          "explanation": "A cinema has a big screen for films.",
+          "itemIds": [
+            "en.beginner.u08.l02.cinema"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l02.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "The station is big.",
+          "answer": "The station is big.",
+          "explanation": "A station is for trains. You can also say The museum is big.",
+          "itemIds": [
+            "en.beginner.u08.l02.station"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l02.task.listen-two",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I like the cinema.",
+          "answer": "I like the cinema.",
+          "options": [
+            "I like the library.",
+            "I like the cinema.",
+            "I like the museum."
+          ],
+          "explanation": "Listen for the place word at the end.",
+          "itemIds": [
+            "en.beginner.u08.l02.cinema"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l02.task.build-two",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "The museum is new.",
+          "tiles": [
+            "is",
+            "The",
+            "big.",
+            "new.",
+            "museum"
+          ],
+          "explanation": "Is links the place with a describing word.",
+          "itemIds": [
+            "en.beginner.u08.l02.museum"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l02.task.use-again",
+          "kind": "choice",
+          "prompt": "Where do you take a train?",
+          "answer": "station",
+          "options": [
+            "station",
+            "supermarket",
+            "museum"
+          ],
+          "explanation": "You get on a train at a station.",
+          "itemIds": [
+            "en.beginner.u08.l02.station"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Smarty likes food. Which place does he like?",
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Look, Smarty! This is the library."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I read a book in the library."
+          },
+          {
+            "speaker": "Ana",
+            "text": "I like the cinema."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I like the museum."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I like the supermarket. I like food!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "The station is big, too."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u08.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Who likes the cinema?",
+            "answer": "Ana",
+            "options": [
+              "Ben",
+              "Smarty",
+              "Ana"
+            ],
+            "explanation": "Ana says she likes the cinema.",
+            "itemIds": [
+              "en.beginner.u08.l02.cinema"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "Who likes the museum?",
+            "answer": "Ben",
+            "options": [
+              "Smarty",
+              "Ben",
+              "Ana"
+            ],
+            "explanation": "Ben says he likes the museum.",
+            "itemIds": [
+              "en.beginner.u08.l02.museum"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "Which place is big, too?",
+            "answer": "station",
+            "options": [
+              "station",
+              "library",
+              "museum"
+            ],
+            "explanation": "Ana says the station is big, too.",
+            "itemIds": [
+              "en.beginner.u08.l02.station"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u08-l02-scene",
+          "describe": "Smarty the black cat, Ben and Ana lean on a balcony rail and look over a sunny town with a library, a cinema, a museum, a supermarket and a station."
+        }
+      },
+      "mission": {
+        "setup": "You are on the balcony with Smarty. Tell him which place you like.",
+        "turns": [
+          {
+            "smarty": "I like the library. Do you like the library?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i like the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Answer Yes or No. You can also say which place you like.",
+            "itemIds": [
+              "en.beginner.u08.l02.library"
+            ]
+          },
+          {
+            "smarty": "What do you like?",
+            "accept": [
+              "^i like the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$",
+              "^(?:the )?(?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$"
+            ],
+            "example": "I like the museum.",
+            "hint": "Say I like the + a place word.",
+            "itemIds": [
+              "en.beginner.u08.l02.supermarket",
+              "en.beginner.u08.l02.library",
+              "en.beginner.u08.l02.cinema",
+              "en.beginner.u08.l02.station",
+              "en.beginner.u08.l02.museum"
+            ]
+          }
+        ]
+      },
+      "recycle": []
+    },
+    {
+      "id": "en.beginner.u08.l03",
+      "section": "beginner",
+      "unit": 8,
+      "lesson": 3,
+      "title": "Where is the bank?",
+      "canDo": "Ask where a place is",
+      "scenario": "Smarty has a town map. Ask where places are and say if they are near or far.",
+      "items": [
+        {
+          "id": "en.beginner.u08.l03.where-is",
+          "text": "Where is",
+          "kind": "phrase",
+          "forms": [
+            "Where's"
+          ],
+          "example": "Where is the bank?",
+          "note": "Say 'Where is' and the name of a place to ask how to find it."
+        },
+        {
+          "id": "en.beginner.u08.l03.near",
+          "text": "near",
+          "kind": "word",
+          "example": "The park is near the school.",
+          "note": "Say 'near' when a place is close and you can get there quickly."
+        },
+        {
+          "id": "en.beginner.u08.l03.far",
+          "text": "far",
+          "kind": "word",
+          "example": "The hospital is far.",
+          "note": "Say 'far' when a place is a long way away. It is the opposite of near."
+        },
+        {
+          "id": "en.beginner.u08.l03.map",
+          "text": "map",
+          "kind": "word",
+          "forms": [
+            "maps"
+          ],
+          "example": "Look at the map.",
+          "note": "A map is a picture of a town that shows where places are.",
+          "image": {
+            "id": "map",
+            "describe": "A paper town map spread on a table with little pictures of a park, a bank and a school joined by roads; Smarty the black cat points at it with a paw."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u08.l03.task.choose",
+          "kind": "choice",
+          "prompt": "Ask about the bank.",
+          "answer": "Where is the bank?",
+          "options": [
+            "Where are you from?",
+            "Where is the bank?",
+            "What is your name?"
+          ],
+          "explanation": "Where is + the + a place asks how to find it.",
+          "itemIds": [
+            "en.beginner.u08.l03.where-is"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l03.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Where is the park?",
+          "answer": "Where is the park?",
+          "options": [
+            "Where is the park?",
+            "Where is the school?",
+            "Where is the library?"
+          ],
+          "explanation": "Listen for the place after the.",
+          "itemIds": [
+            "en.beginner.u08.l03.where-is",
+            "en.beginner.u08.l01.park"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l03.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "The bank is near the park.",
+          "tiles": [
+            "is",
+            "The",
+            "far",
+            "the",
+            "bank",
+            "near",
+            "park."
+          ],
+          "explanation": "Near says that two places are close.",
+          "itemIds": [
+            "en.beginner.u08.l03.near",
+            "en.beginner.u08.l01.bank",
+            "en.beginner.u08.l01.park"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l03.task.fill",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "The hospital is not near. It is ___.",
+          "answer": "far",
+          "options": [
+            "near",
+            "here",
+            "far"
+          ],
+          "explanation": "Not near means far.",
+          "itemIds": [
+            "en.beginner.u08.l03.far",
+            "en.beginner.u08.l03.near"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l03.task.money",
+          "kind": "choice",
+          "prompt": "You need money. Where do you go?",
+          "answer": "bank",
+          "options": [
+            "station",
+            "bank",
+            "library"
+          ],
+          "explanation": "A bank is the place for money.",
+          "itemIds": [
+            "en.beginner.u08.l01.bank"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l03.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "Where is the station?",
+          "answer": "Where is the station?",
+          "explanation": "This is how you ask where a place is.",
+          "itemIds": [
+            "en.beginner.u08.l03.where-is",
+            "en.beginner.u08.l02.station"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l03.task.listen-two",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Look at the map.",
+          "answer": "Look at the map.",
+          "options": [
+            "Look at the map.",
+            "Look at the park.",
+            "Look at the school."
+          ],
+          "explanation": "Listen for the last word. A map shows the town.",
+          "itemIds": [
+            "en.beginner.u08.l03.map"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l03.task.build-two",
+          "kind": "build",
+          "prompt": "Build the question.",
+          "answer": "Where is the library?",
+          "tiles": [
+            "is",
+            "the",
+            "near",
+            "Where",
+            "library?"
+          ],
+          "explanation": "Where is the + a place always starts with Where.",
+          "itemIds": [
+            "en.beginner.u08.l03.where-is",
+            "en.beginner.u08.l02.library"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l03.task.opposite",
+          "kind": "choice",
+          "prompt": "The station is far. Which word means not near?",
+          "answer": "far",
+          "options": [
+            "near",
+            "big",
+            "far"
+          ],
+          "explanation": "Far is the opposite of near.",
+          "itemIds": [
+            "en.beginner.u08.l03.far",
+            "en.beginner.u08.l03.near"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Is the station near? Smarty looks at the map.",
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Look at the map, Smarty."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Where is the bank?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "The bank is near the park."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Where is the station?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "The station is far."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Sam!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Of course."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u08.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Which place does Smarty ask about first?",
+            "answer": "the bank",
+            "options": [
+              "the park",
+              "the bank",
+              "the station"
+            ],
+            "explanation": "Smarty first says Where is the bank?",
+            "itemIds": [
+              "en.beginner.u08.l03.where-is",
+              "en.beginner.u08.l01.bank"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Where is the bank?",
+            "answer": "near the park",
+            "options": [
+              "near the park",
+              "far",
+              "near the station"
+            ],
+            "explanation": "Mia says the bank is near the park.",
+            "itemIds": [
+              "en.beginner.u08.l03.near",
+              "en.beginner.u08.l01.park"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says the station is far?",
+            "answer": "Sam",
+            "options": [
+              "Mia",
+              "Smarty",
+              "Sam"
+            ],
+            "explanation": "Sam says the station is far.",
+            "itemIds": [
+              "en.beginner.u08.l03.far",
+              "en.beginner.u08.l02.station"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u08-l03-scene",
+          "describe": "Smarty the black cat, Mia and Sam stand on a balcony around a small table with a town map; Mia points at a park on the map."
+        }
+      },
+      "mission": {
+        "setup": "Smarty has a map of the town. Ask him where a place is, then tell him about your school.",
+        "turns": [
+          {
+            "smarty": "Hello! I have a map. What do you want?",
+            "accept": [
+              "^where is the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$",
+              "^(?:hello|hi)(?: smarty)? where is the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$"
+            ],
+            "example": "Where is the bank?",
+            "hint": "Ask Where is the + a place word.",
+            "itemIds": [
+              "en.beginner.u08.l03.where-is",
+              "en.beginner.u08.l03.map"
+            ]
+          },
+          {
+            "smarty": "Where is your school? Near or far?",
+            "accept": [
+              "^it is (?:near|far)$",
+              "^(?:near|far)$",
+              "^my school is (?:near|far)$"
+            ],
+            "example": "My school is near.",
+            "hint": "Say near or far.",
+            "itemIds": [
+              "en.beginner.u08.l03.near",
+              "en.beginner.u08.l03.far"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u08.l01.park",
+        "en.beginner.u08.l01.bank",
+        "en.beginner.u08.l02.library",
+        "en.beginner.u08.l02.station"
+      ]
+    },
+    {
+      "id": "en.beginner.u08.l04",
+      "section": "beginner",
+      "unit": 8,
+      "lesson": 4,
+      "title": "Turn left",
+      "canDo": "Give simple directions",
+      "scenario": "Smarty is lost in the street. Tell him which way to go.",
+      "items": [
+        {
+          "id": "en.beginner.u08.l04.turn-left",
+          "text": "turn left",
+          "kind": "phrase",
+          "example": "Turn left at the bank.",
+          "note": "Say 'turn left' to tell someone to go to the left side.",
+          "image": {
+            "id": "turn-left",
+            "describe": "Seen from behind, Smarty the black cat stops at a crossing and turns to the left, with a big arrow icon pointing left."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l04.turn-right",
+          "text": "turn right",
+          "kind": "phrase",
+          "example": "Turn right at the park.",
+          "note": "Say 'turn right' to tell someone to go to the right side.",
+          "image": {
+            "id": "turn-right",
+            "describe": "Seen from behind, Smarty the black cat stops at a crossing and turns to the right, with a big arrow icon pointing right."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l04.go-straight-on",
+          "text": "go straight on",
+          "kind": "phrase",
+          "example": "Go straight on, please.",
+          "note": "Say 'go straight on' when someone must not turn and must keep going the same way.",
+          "image": {
+            "id": "go-straight-on",
+            "describe": "A long straight road ahead; Smarty the black cat walks forward with a big arrow icon pointing straight up the road."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l04.corner",
+          "text": "corner",
+          "kind": "word",
+          "example": "The café is on the corner.",
+          "note": "The corner is the place where two streets meet.",
+          "image": {
+            "id": "corner",
+            "describe": "Two streets meet at the corner of a building; Smarty the black cat sits at the corner and a small café is on it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u08.l04.task.choose",
+          "kind": "choice",
+          "prompt": "Which phrase tells Smarty to go to the left side?",
+          "answer": "Turn left.",
+          "options": [
+            "Turn left.",
+            "Turn right.",
+            "Go straight on."
+          ],
+          "explanation": "Left is one side and right is the other side.",
+          "itemIds": [
+            "en.beginner.u08.l04.turn-left"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l04.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Turn right at the park.",
+          "answer": "Turn right at the park.",
+          "options": [
+            "Turn left at the park.",
+            "Turn right at the bank.",
+            "Turn right at the park."
+          ],
+          "explanation": "Listen for right and for the place word.",
+          "itemIds": [
+            "en.beginner.u08.l04.turn-right",
+            "en.beginner.u08.l01.park"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l04.task.build",
+          "kind": "build",
+          "prompt": "Build the phrase.",
+          "answer": "Go straight on.",
+          "tiles": [
+            "Go",
+            "on.",
+            "turn",
+            "straight"
+          ],
+          "explanation": "Go straight on means do not turn.",
+          "itemIds": [
+            "en.beginner.u08.l04.go-straight-on"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l04.task.fill",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "___ left at the corner.",
+          "answer": "Turn",
+          "options": [
+            "Near",
+            "Turn",
+            "Where"
+          ],
+          "explanation": "Turn left tells you to go to the left side.",
+          "itemIds": [
+            "en.beginner.u08.l04.turn-left",
+            "en.beginner.u08.l04.corner"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l04.task.ask",
+          "kind": "choice",
+          "prompt": "Ask where the bank is.",
+          "answer": "Where is the bank?",
+          "options": [
+            "Where is the bank?",
+            "Where is the park?",
+            "Where are you from?"
+          ],
+          "explanation": "Where is + the + a place asks how to find it.",
+          "itemIds": [
+            "en.beginner.u08.l03.where-is",
+            "en.beginner.u08.l01.bank"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l04.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "Turn left at the corner.",
+          "answer": "Turn left at the corner.",
+          "explanation": "You gave a short direction.",
+          "itemIds": [
+            "en.beginner.u08.l04.turn-left",
+            "en.beginner.u08.l04.corner"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l04.task.build-two",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "The café is on the corner.",
+          "tiles": [
+            "is",
+            "on",
+            "The",
+            "the",
+            "café",
+            "corner.",
+            "under"
+          ],
+          "explanation": "On the corner means where two streets meet.",
+          "itemIds": [
+            "en.beginner.u08.l04.corner",
+            "en.beginner.u08.l01.cafe"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l04.task.listen-two",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Look at the map. Turn right.",
+          "answer": "Look at the map. Turn right.",
+          "options": [
+            "Look at the map. Turn left.",
+            "Look at the map. Go straight on.",
+            "Look at the map. Turn right."
+          ],
+          "explanation": "Listen for the direction after the map.",
+          "itemIds": [
+            "en.beginner.u08.l04.turn-right",
+            "en.beginner.u08.l03.map"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l04.task.opposite",
+          "kind": "choice",
+          "prompt": "Which phrase is the opposite of Turn left?",
+          "answer": "Turn right.",
+          "options": [
+            "Look at the map.",
+            "Turn right.",
+            "Go straight on."
+          ],
+          "explanation": "Left and right are opposites.",
+          "itemIds": [
+            "en.beginner.u08.l04.turn-left",
+            "en.beginner.u08.l04.turn-right"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Smarty is hungry. Which way is the café?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Where is the café, Ben?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Go straight on."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Turn left at the bank."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Turn left at the bank?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Yes. The café is on the corner."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Ben!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Of course."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u08.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Where does Smarty want to go?",
+            "answer": "the café",
+            "options": [
+              "the café",
+              "the bank",
+              "the park"
+            ],
+            "explanation": "Smarty asks Where is the café?",
+            "itemIds": [
+              "en.beginner.u08.l01.cafe",
+              "en.beginner.u08.l03.where-is"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "Where does Smarty turn left?",
+            "answer": "at the bank",
+            "options": [
+              "at the park",
+              "at the school",
+              "at the bank"
+            ],
+            "explanation": "Ben says Turn left at the bank.",
+            "itemIds": [
+              "en.beginner.u08.l04.turn-left",
+              "en.beginner.u08.l01.bank"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "Where is the café?",
+            "answer": "on the corner",
+            "options": [
+              "far",
+              "on the corner",
+              "near the park"
+            ],
+            "explanation": "Ben says the café is on the corner.",
+            "itemIds": [
+              "en.beginner.u08.l04.corner"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u08-l04-scene",
+          "describe": "Smarty the black cat and Ben stand on a street corner; Ben points ahead and to the left, and a small café with tables is on the corner behind a bank."
+        }
+      },
+      "mission": {
+        "setup": "Smarty is lost on a street. Give him directions.",
+        "turns": [
+          {
+            "smarty": "Where is the bank?",
+            "accept": [
+              "^turn (?:left|right)$",
+              "^go straight on$",
+              "^turn (?:left|right) at the corner$"
+            ],
+            "example": "Turn left.",
+            "hint": "Say Turn left, Turn right or Go straight on.",
+            "itemIds": [
+              "en.beginner.u08.l04.turn-left",
+              "en.beginner.u08.l04.turn-right",
+              "en.beginner.u08.l04.go-straight-on"
+            ]
+          },
+          {
+            "smarty": "I am at the corner. Where is the park?",
+            "accept": [
+              "^turn (?:left|right)$",
+              "^go straight on$",
+              "^turn (?:left|right) at the (?:bank|school|corner)$"
+            ],
+            "example": "Go straight on.",
+            "hint": "Give one direction. You can use the corner.",
+            "itemIds": [
+              "en.beginner.u08.l04.corner",
+              "en.beginner.u08.l04.turn-left",
+              "en.beginner.u08.l04.turn-right",
+              "en.beginner.u08.l04.go-straight-on"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u08.l03.where-is",
+        "en.beginner.u08.l01.bank",
+        "en.beginner.u08.l01.park",
+        "en.beginner.u08.l01.cafe",
+        "en.beginner.u08.l03.map"
+      ]
+    },
+    {
+      "id": "en.beginner.u08.l05",
+      "section": "beginner",
+      "unit": 8,
+      "lesson": 5,
+      "title": "I can swim",
+      "canDo": "Say what you can and can't do",
+      "scenario": "Smarty and his friends talk about what they can do. Say what you can and cannot do.",
+      "items": [
+        {
+          "id": "en.beginner.u08.l05.i-can",
+          "text": "I can",
+          "kind": "phrase",
+          "example": "I can read a book.",
+          "note": "Say 'I can' when you are able to do something."
+        },
+        {
+          "id": "en.beginner.u08.l05.i-cannot",
+          "text": "I cannot",
+          "kind": "phrase",
+          "forms": [
+            "I can't"
+          ],
+          "example": "I cannot ride a bike.",
+          "note": "Say 'I cannot' or 'I can't' for something you are not able to do."
+        },
+        {
+          "id": "en.beginner.u08.l05.swim",
+          "text": "swim",
+          "kind": "word",
+          "forms": [
+            "swims"
+          ],
+          "example": "Mia can swim.",
+          "note": "To swim is to move in water.",
+          "image": {
+            "id": "swim",
+            "describe": "Smarty the black cat swims happily in a blue swimming pool while Mia watches from the side."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l05.ride-a-bike",
+          "text": "ride a bike",
+          "kind": "phrase",
+          "forms": [
+            "rides a bike"
+          ],
+          "example": "Sam can ride a bike.",
+          "note": "To ride a bike is to go along on two wheels.",
+          "image": {
+            "id": "ride-a-bike",
+            "describe": "Sam rides a red bike along a park path while Smarty the black cat sits in the front basket."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u08.l05.task.choose",
+          "kind": "choice",
+          "prompt": "Say that you are able to swim.",
+          "answer": "I can swim.",
+          "options": [
+            "I can swim.",
+            "I cannot swim.",
+            "I can ride a bike."
+          ],
+          "explanation": "I can + an action word says you are able to do it.",
+          "itemIds": [
+            "en.beginner.u08.l05.i-can",
+            "en.beginner.u08.l05.swim"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l05.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I cannot ride a bike.",
+          "answer": "I cannot ride a bike.",
+          "options": [
+            "I can ride a bike.",
+            "I cannot swim.",
+            "I cannot ride a bike."
+          ],
+          "explanation": "Listen for cannot. It means you are not able to.",
+          "itemIds": [
+            "en.beginner.u08.l05.i-cannot",
+            "en.beginner.u08.l05.ride-a-bike"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l05.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I can ride a bike.",
+          "tiles": [
+            "I",
+            "a",
+            "can",
+            "ride",
+            "swim",
+            "bike.",
+            "cannot"
+          ],
+          "explanation": "Can goes after I and before the action.",
+          "itemIds": [
+            "en.beginner.u08.l05.i-can",
+            "en.beginner.u08.l05.ride-a-bike"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l05.task.fill",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I can swim, but I ___ ride a bike.",
+          "answers": [
+            "cannot",
+            "can't"
+          ],
+          "options": [
+            "can",
+            "do",
+            "cannot",
+            "can't"
+          ],
+          "explanation": "But shows a different idea, so you use cannot.",
+          "itemIds": [
+            "en.beginner.u08.l05.i-cannot",
+            "en.beginner.u08.l05.ride-a-bike"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l05.task.yes-i-can",
+          "kind": "choice",
+          "prompt": "Mia asks: Can you swim? You can swim. What do you say?",
+          "answer": "Yes, I can.",
+          "options": [
+            "Yes, I can.",
+            "No, I cannot.",
+            "Yes, I do."
+          ],
+          "explanation": "You answer a can-question with Yes, I can.",
+          "itemIds": [
+            "en.beginner.u08.l05.i-can",
+            "en.beginner.u01.l09.yes",
+            "en.beginner.u01.l09.no"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l05.task.read",
+          "kind": "choice",
+          "prompt": "You are able to read. Which sentence says it?",
+          "answer": "I can read a book.",
+          "options": [
+            "I cannot read a book.",
+            "I like a book.",
+            "I can read a book."
+          ],
+          "explanation": "I can + read says you are able to read.",
+          "itemIds": [
+            "en.beginner.u08.l05.i-can",
+            "en.beginner.u04.l08.read"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l05.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "I can swim.",
+          "answer": "I can swim.",
+          "explanation": "You said what you are able to do.",
+          "itemIds": [
+            "en.beginner.u08.l05.i-can",
+            "en.beginner.u08.l05.swim"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l05.task.cook",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I can cook rice.",
+          "tiles": [
+            "I",
+            "can",
+            "cook",
+            "rice.",
+            "cannot"
+          ],
+          "explanation": "You can use can with many action words.",
+          "itemIds": [
+            "en.beginner.u08.l05.i-can",
+            "en.beginner.u03.l08.cook"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l05.task.listen-two",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Mia can swim.",
+          "answer": "Mia can swim.",
+          "options": [
+            "Mia can ride a bike.",
+            "Mia can swim.",
+            "Mia cannot swim."
+          ],
+          "explanation": "Listen for can and for swim.",
+          "itemIds": [
+            "en.beginner.u08.l05.swim"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Sam can swim. Can he ride a bike, too?",
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Can you swim, Sam?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes, I can swim."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Can you ride a bike?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "No, I cannot ride a bike."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I can ride a bike!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Smarty, you are great!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u08.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "What can Sam do?",
+            "answer": "swim",
+            "options": [
+              "swim",
+              "ride a bike",
+              "cook"
+            ],
+            "explanation": "Sam says Yes, I can swim.",
+            "itemIds": [
+              "en.beginner.u08.l05.swim",
+              "en.beginner.u08.l05.i-can"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "Who can ride a bike?",
+            "answer": "Smarty",
+            "options": [
+              "Sam",
+              "Mia",
+              "Smarty"
+            ],
+            "explanation": "Smarty says I can ride a bike.",
+            "itemIds": [
+              "en.beginner.u08.l05.ride-a-bike"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "Can Sam ride a bike?",
+            "answer": "No, he cannot.",
+            "options": [
+              "Yes, I can.",
+              "No, he cannot.",
+              "Yes, he can."
+            ],
+            "explanation": "Sam says I cannot ride a bike.",
+            "itemIds": [
+              "en.beginner.u08.l05.i-cannot"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u08-l05-scene",
+          "describe": "Smarty the black cat, Mia and Sam on a balcony above a park; below them a child rides a bike and a pool is visible in the distance."
+        }
+      },
+      "mission": {
+        "setup": "Smarty asks what you can do. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "I can ride a bike. Can you swim?",
+            "accept": [
+              "^yes(?: i can)?$",
+              "^no(?: i cannot| i can not)?$",
+              "^i can swim$",
+              "^i (?:cannot|can not) swim$"
+            ],
+            "example": "Yes, I can.",
+            "hint": "Answer Yes or No. You can say I can swim or I cannot swim.",
+            "itemIds": [
+              "en.beginner.u08.l05.i-can",
+              "en.beginner.u08.l05.i-cannot",
+              "en.beginner.u08.l05.swim"
+            ]
+          },
+          {
+            "smarty": "What can you do?",
+            "accept": [
+              "^i can (?:swim|ride a bike|read a book|read|cook)$",
+              "^i (?:cannot|can not) (?:swim|ride a bike)$",
+              "^i can (?:swim|ride a bike) and i can (?:read|cook)$"
+            ],
+            "example": "I can read a book.",
+            "hint": "Say I can + an action. You can use swim, ride a bike, read or cook.",
+            "itemIds": [
+              "en.beginner.u08.l05.i-can",
+              "en.beginner.u08.l05.swim",
+              "en.beginner.u08.l05.ride-a-bike"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l09.yes",
+        "en.beginner.u01.l09.no",
+        "en.beginner.u04.l08.read",
+        "en.beginner.u03.l08.cook"
+      ]
+    },
+    {
+      "id": "en.beginner.u08.l06",
+      "section": "beginner",
+      "unit": 8,
+      "lesson": 6,
+      "title": "How do you go?",
+      "canDo": "Say how you travel in town",
+      "scenario": "Leo and Zara ask how you travel in town. Say how you go.",
+      "items": [
+        {
+          "id": "en.beginner.u08.l06.walk",
+          "text": "walk",
+          "kind": "word",
+          "forms": [
+            "walks"
+          ],
+          "example": "I walk to school.",
+          "note": "Say 'walk' when you go with your feet."
+        },
+        {
+          "id": "en.beginner.u08.l06.by-bus",
+          "text": "by bus",
+          "kind": "phrase",
+          "example": "I go to school by bus.",
+          "note": "Say 'by bus' when you travel in a bus.",
+          "image": {
+            "id": "by-bus",
+            "describe": "Smarty the black cat and Leo sit by a window on a bright green city bus."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l06.by-car",
+          "text": "by car",
+          "kind": "phrase",
+          "example": "I go to the park by car.",
+          "note": "Say 'by car' when you travel in a car.",
+          "image": {
+            "id": "by-car",
+            "describe": "A family car on a road with Ben driving and Smarty the black cat looking out of the back window."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l06.on-foot",
+          "text": "on foot",
+          "kind": "phrase",
+          "example": "I go to school on foot.",
+          "note": "Say 'on foot' when you go with your feet. It means the same as walk.",
+          "image": {
+            "id": "on-foot",
+            "describe": "Smarty the black cat and Zara walk side by side on a sunny pavement, both taking a big step."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u08.l06.task.choose",
+          "kind": "choice",
+          "prompt": "Which phrase means you travel in a bus?",
+          "answer": "by bus",
+          "options": [
+            "by bus",
+            "by car",
+            "on foot"
+          ],
+          "explanation": "By + bus says what you travel in.",
+          "itemIds": [
+            "en.beginner.u08.l06.by-bus"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l06.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I go to school by car.",
+          "answer": "I go to school by car.",
+          "options": [
+            "I go to school by bus.",
+            "I go to school on foot.",
+            "I go to school by car."
+          ],
+          "explanation": "Listen for the last words.",
+          "itemIds": [
+            "en.beginner.u08.l06.by-car",
+            "en.beginner.u08.l01.school"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l06.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I walk to school.",
+          "tiles": [
+            "I",
+            "to",
+            "bus",
+            "walk",
+            "school."
+          ],
+          "explanation": "Walk and on foot both mean go with your feet.",
+          "itemIds": [
+            "en.beginner.u08.l06.walk",
+            "en.beginner.u08.l01.school"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l06.task.fill",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I go to school ___ bus.",
+          "answer": "by",
+          "options": [
+            "far",
+            "by",
+            "near"
+          ],
+          "explanation": "We say by bus and by car. We say on foot.",
+          "itemIds": [
+            "en.beginner.u08.l06.by-bus",
+            "en.beginner.u04.l03.go-to-school"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l06.task.build-two",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I walk to school every day.",
+          "tiles": [
+            "I",
+            "to",
+            "bus",
+            "day.",
+            "walk",
+            "every",
+            "school"
+          ],
+          "explanation": "Every day shows what you do again and again.",
+          "itemIds": [
+            "en.beginner.u08.l06.walk",
+            "en.beginner.u04.l03.every-day"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l06.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "I go to school by bus.",
+          "answer": "I go to school by bus.",
+          "explanation": "You said how you travel. Great!",
+          "itemIds": [
+            "en.beginner.u08.l06.by-bus",
+            "en.beginner.u04.l03.go-to-school"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l06.task.listen-two",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I usually walk.",
+          "answer": "I usually walk.",
+          "options": [
+            "I usually walk.",
+            "I always walk.",
+            "I never walk."
+          ],
+          "explanation": "Usually means most days. Always means every day.",
+          "itemIds": [
+            "en.beginner.u08.l06.walk",
+            "en.beginner.u04.l04.usually"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l06.task.foot",
+          "kind": "choice",
+          "prompt": "You want to walk to the park. Which sentence is right?",
+          "answer": "I go to the park on foot.",
+          "options": [
+            "I go to the park by bus.",
+            "I go to the park by car.",
+            "I go to the park on foot."
+          ],
+          "explanation": "On foot means with your feet.",
+          "itemIds": [
+            "en.beginner.u08.l06.on-foot",
+            "en.beginner.u08.l01.park"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l06.task.listen-three",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I go by car.",
+          "answer": "I go by car.",
+          "options": [
+            "I go on foot.",
+            "I go by car.",
+            "I go by bus."
+          ],
+          "explanation": "Listen for car.",
+          "itemIds": [
+            "en.beginner.u08.l06.by-car"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Zara and Leo go to the same school. Do they go the same way?",
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "How do you go to school, Leo?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "I go by bus."
+          },
+          {
+            "speaker": "Leo",
+            "text": "And you?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "I walk. The school is near."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I go on foot, too!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Smarty, look! There is a bus."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u08.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "How does Leo go to school?",
+            "answer": "by bus",
+            "options": [
+              "by bus",
+              "by car",
+              "on foot"
+            ],
+            "explanation": "Leo says I go by bus.",
+            "itemIds": [
+              "en.beginner.u08.l06.by-bus"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Zara say about the school?",
+            "answer": "It is near.",
+            "options": [
+              "It is far.",
+              "It is big.",
+              "It is near."
+            ],
+            "explanation": "Zara says The school is near.",
+            "itemIds": [
+              "en.beginner.u08.l06.walk",
+              "en.beginner.u08.l03.near"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "Who sees a bus?",
+            "answer": "Leo",
+            "options": [
+              "Smarty",
+              "Leo",
+              "Zara"
+            ],
+            "explanation": "Leo says There is a bus.",
+            "itemIds": [
+              "en.beginner.u08.l06.by-bus"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u08-l06-scene",
+          "describe": "Smarty the black cat, Zara and Leo on a balcony above a street where a green bus stops at a school gate."
+        }
+      },
+      "mission": {
+        "setup": "A new friend asks how you travel. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "How do you go to school?",
+            "accept": [
+              "^i go (?:to school )?(?:by bus|by car|on foot)$",
+              "^i walk(?: to school)?$",
+              "^(?:by bus|by car|on foot)$"
+            ],
+            "example": "I go by bus.",
+            "hint": "Say I go by bus, by car or on foot. You can also say I walk.",
+            "itemIds": [
+              "en.beginner.u08.l06.by-bus",
+              "en.beginner.u08.l06.by-car",
+              "en.beginner.u08.l06.on-foot",
+              "en.beginner.u08.l06.walk"
+            ]
+          },
+          {
+            "smarty": "Is the school near or far?",
+            "accept": [
+              "^it is (?:near|far)$",
+              "^(?:near|far)$",
+              "^my school is (?:near|far)$"
+            ],
+            "example": "It is near.",
+            "hint": "Say near or far.",
+            "itemIds": [
+              "en.beginner.u08.l03.near",
+              "en.beginner.u08.l03.far"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u08.l01.school",
+        "en.beginner.u08.l01.park",
+        "en.beginner.u04.l03.go-to-school",
+        "en.beginner.u04.l03.every-day",
+        "en.beginner.u04.l04.usually",
+        "en.beginner.u08.l03.near",
+        "en.beginner.u08.l03.far"
+      ]
+    },
+    {
+      "id": "en.beginner.u08.l07",
+      "section": "beginner",
+      "unit": 8,
+      "lesson": 7,
+      "title": "In the city",
+      "canDo": "Name things in a city",
+      "scenario": "Ana and Omar show Smarty their town and a big city far away.",
+      "items": [
+        {
+          "id": "en.beginner.u08.l07.bridge",
+          "text": "bridge",
+          "kind": "word",
+          "example": "The bridge is on the road.",
+          "note": "A bridge goes over a river so people can walk or drive across.",
+          "image": {
+            "id": "bridge",
+            "describe": "A stone bridge over a wide blue river with a road across it; Smarty the black cat stands in the middle and looks at the water."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l07.road",
+          "text": "road",
+          "kind": "word",
+          "forms": [
+            "roads"
+          ],
+          "example": "The road is long.",
+          "note": "A road is the long way where cars, buses and bikes go.",
+          "image": {
+            "id": "road",
+            "describe": "A long grey road with a white line in the middle going far between green fields; Smarty the black cat stands at the edge."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l07.city",
+          "text": "city",
+          "kind": "word",
+          "example": "The city is big.",
+          "note": "A city is a very big place with many buildings and many people.",
+          "image": {
+            "id": "city",
+            "describe": "A big city skyline with tall buildings, roads and bridges seen from far away; Smarty the black cat sits on a hill and looks at it."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l07.town",
+          "text": "town",
+          "kind": "word",
+          "example": "The town is small.",
+          "note": "A town is a place with houses and shops. It is smaller than a city.",
+          "image": {
+            "id": "town",
+            "describe": "A small town with low houses, a little square, a few shops and trees seen from above; Smarty the black cat sits on a roof."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u08.l07.task.choose",
+          "kind": "choice",
+          "prompt": "Which word is a very big place with tall buildings?",
+          "answer": "city",
+          "options": [
+            "city",
+            "town",
+            "bridge"
+          ],
+          "explanation": "A city is big. A town is smaller.",
+          "itemIds": [
+            "en.beginner.u08.l07.city"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l07.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "The town is small.",
+          "answer": "The town is small.",
+          "options": [
+            "The city is small.",
+            "The town is big.",
+            "The town is small."
+          ],
+          "explanation": "Listen for town and for small.",
+          "itemIds": [
+            "en.beginner.u08.l07.town",
+            "en.beginner.u02.l06.small"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l07.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "The bridge is on the road.",
+          "tiles": [
+            "is",
+            "on",
+            "The",
+            "the",
+            "city",
+            "road.",
+            "bridge"
+          ],
+          "explanation": "On the road says where the bridge is.",
+          "itemIds": [
+            "en.beginner.u08.l07.bridge",
+            "en.beginner.u08.l07.road"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l07.task.fill",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I walk on the ___.",
+          "answer": "road",
+          "options": [
+            "town",
+            "road",
+            "city"
+          ],
+          "explanation": "You walk on a road. A city or a town is a big place.",
+          "itemIds": [
+            "en.beginner.u08.l07.road"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l07.task.where-bridge",
+          "kind": "choice",
+          "prompt": "Ask where the bridge is.",
+          "answer": "Where is the bridge?",
+          "options": [
+            "Where is the bridge?",
+            "Where is the park?",
+            "Where are you from?"
+          ],
+          "explanation": "Where is + the + a word asks how to find it.",
+          "itemIds": [
+            "en.beginner.u08.l03.where-is",
+            "en.beginner.u08.l07.bridge"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l07.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "The city is big.",
+          "answer": "The city is big.",
+          "explanation": "You described a city.",
+          "itemIds": [
+            "en.beginner.u08.l07.city",
+            "en.beginner.u02.l06.big"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l07.task.listen-two",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "The road is near the school.",
+          "answer": "The road is near the school.",
+          "options": [
+            "The road is far from the school.",
+            "The road is near the park.",
+            "The road is near the school."
+          ],
+          "explanation": "Listen for near and the last word.",
+          "itemIds": [
+            "en.beginner.u08.l07.road",
+            "en.beginner.u08.l03.near",
+            "en.beginner.u08.l01.school"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l07.task.build-two",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "The park is in the town.",
+          "tiles": [
+            "in",
+            "is",
+            "The",
+            "the",
+            "city",
+            "park",
+            "town."
+          ],
+          "explanation": "In the town says the park is inside the town.",
+          "itemIds": [
+            "en.beginner.u08.l07.town",
+            "en.beginner.u08.l01.park"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l07.task.small",
+          "kind": "choice",
+          "prompt": "A city is big. Which one is small?",
+          "answer": "town",
+          "options": [
+            "bridge",
+            "town",
+            "city"
+          ],
+          "explanation": "A town is smaller than a city.",
+          "itemIds": [
+            "en.beginner.u08.l07.town",
+            "en.beginner.u08.l07.city"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Smarty looks at the town. Where is the big city?",
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "Look, Smarty! This is my town."
+          },
+          {
+            "speaker": "Omar",
+            "text": "The town is small, but it is beautiful."
+          },
+          {
+            "speaker": "Ana",
+            "text": "There is a bridge on the road."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Is that the city?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "No, the city is far."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I like the city!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u08.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "What is on the road?",
+            "answer": "a bridge",
+            "options": [
+              "a bridge",
+              "a bus",
+              "a map"
+            ],
+            "explanation": "Ana says There is a bridge on the road.",
+            "itemIds": [
+              "en.beginner.u08.l07.bridge",
+              "en.beginner.u08.l07.road"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "Is the town big?",
+            "answer": "No, it is small.",
+            "options": [
+              "Yes, it is big.",
+              "Yes, it is far.",
+              "No, it is small."
+            ],
+            "explanation": "Omar says The town is small.",
+            "itemIds": [
+              "en.beginner.u08.l07.town"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "Where is the city?",
+            "answer": "It is far.",
+            "options": [
+              "It is on the bridge.",
+              "It is far.",
+              "It is near."
+            ],
+            "explanation": "Omar says the city is far.",
+            "itemIds": [
+              "en.beginner.u08.l07.city"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u08-l07-scene",
+          "describe": "Smarty the black cat, Ana and Omar on a balcony over a small town with a bridge and a road; far away a big city with tall buildings is visible."
+        }
+      },
+      "mission": {
+        "setup": "Smarty asks about where you live. You can use imaginary details.",
+        "turns": [
+          {
+            "smarty": "Do you live in a city or a town?",
+            "accept": [
+              "^i live in a (?:city|town)$",
+              "^(?:a )?(?:city|town)$",
+              "^my (?:city|town) is (?:big|small)$"
+            ],
+            "example": "I live in a town.",
+            "hint": "Say I live in a city or I live in a town.",
+            "itemIds": [
+              "en.beginner.u08.l07.city",
+              "en.beginner.u08.l07.town"
+            ]
+          },
+          {
+            "smarty": "Is it big or small?",
+            "accept": [
+              "^it is (?:big|small)$",
+              "^(?:big|small)$",
+              "^it is very (?:big|small)$"
+            ],
+            "example": "It is small.",
+            "hint": "Say big or small.",
+            "itemIds": [
+              "en.beginner.u08.l07.city",
+              "en.beginner.u08.l07.town"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l06.small",
+        "en.beginner.u02.l06.big",
+        "en.beginner.u08.l03.where-is",
+        "en.beginner.u08.l03.near",
+        "en.beginner.u08.l01.school",
+        "en.beginner.u08.l01.park"
+      ]
+    },
+    {
+      "id": "en.beginner.u08.l08",
+      "section": "beginner",
+      "unit": 8,
+      "lesson": 8,
+      "title": "Opposite the park",
+      "canDo": "Say where places are",
+      "scenario": "Zara, Tom and Smarty talk about where places are in the town.",
+      "items": [
+        {
+          "id": "en.beginner.u08.l08.opposite",
+          "text": "opposite",
+          "kind": "word",
+          "example": "The café is opposite the park.",
+          "note": "Say 'opposite' when two places face each other across a street."
+        },
+        {
+          "id": "en.beginner.u08.l08.between",
+          "text": "between",
+          "kind": "word",
+          "example": "The bank is between the school and the café.",
+          "note": "Say 'between' for something in the middle of two other things."
+        },
+        {
+          "id": "en.beginner.u08.l08.behind",
+          "text": "behind",
+          "kind": "word",
+          "example": "The school is behind the bank.",
+          "note": "Say 'behind' for something at the back of another thing."
+        },
+        {
+          "id": "en.beginner.u08.l08.in-front-of",
+          "text": "in front of",
+          "kind": "phrase",
+          "example": "The bus is in front of the school.",
+          "note": "Say 'in front of' for something at the front of another thing."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u08.l08.task.choose",
+          "kind": "choice",
+          "prompt": "The café is across the road from the park. Say it.",
+          "answer": "The café is opposite the park.",
+          "options": [
+            "The café is opposite the park.",
+            "The café is in front of the park.",
+            "The café is behind the park."
+          ],
+          "explanation": "Opposite means face to face across the road.",
+          "itemIds": [
+            "en.beginner.u08.l08.opposite",
+            "en.beginner.u08.l01.cafe"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l08.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "The bank is behind the school.",
+          "answer": "The bank is behind the school.",
+          "options": [
+            "The bank is in front of the school.",
+            "The bank is next to the school.",
+            "The bank is behind the school."
+          ],
+          "explanation": "Listen for behind.",
+          "itemIds": [
+            "en.beginner.u08.l08.behind",
+            "en.beginner.u08.l01.bank",
+            "en.beginner.u05.l04.next-to"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l08.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "The library is between the bank and the school.",
+          "tiles": [
+            "is",
+            "The",
+            "and",
+            "the",
+            "the",
+            "bank",
+            "opposite",
+            "school.",
+            "between",
+            "library"
+          ],
+          "explanation": "Between needs two things: between A and B.",
+          "itemIds": [
+            "en.beginner.u08.l08.between",
+            "en.beginner.u08.l02.library",
+            "en.beginner.u08.l01.bank"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l08.task.fill",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "The bus is in ___ of the school.",
+          "answer": "front",
+          "options": [
+            "near",
+            "front",
+            "behind"
+          ],
+          "explanation": "In front of is a phrase. Front goes after in.",
+          "itemIds": [
+            "en.beginner.u08.l08.in-front-of"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l08.task.next",
+          "kind": "choice",
+          "prompt": "Which sentence says the café is close beside the bank?",
+          "answer": "The café is next to the bank.",
+          "options": [
+            "The café is next to the bank.",
+            "The café is behind the bank.",
+            "The café is opposite the bank."
+          ],
+          "explanation": "Next to means close beside.",
+          "itemIds": [
+            "en.beginner.u05.l04.next-to",
+            "en.beginner.u08.l01.cafe"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l08.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "The station is opposite the park.",
+          "answer": "The station is opposite the park.",
+          "explanation": "You said where a place is.",
+          "itemIds": [
+            "en.beginner.u08.l08.opposite",
+            "en.beginner.u08.l02.station",
+            "en.beginner.u08.l01.park"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l08.task.listen-two",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Where is the museum? It is behind the library.",
+          "answer": "Where is the museum? It is behind the library.",
+          "options": [
+            "Where is the museum? It is opposite the library.",
+            "Where is the museum? It is near the library.",
+            "Where is the museum? It is behind the library."
+          ],
+          "explanation": "Listen for behind after the question.",
+          "itemIds": [
+            "en.beginner.u08.l08.behind",
+            "en.beginner.u08.l03.where-is",
+            "en.beginner.u08.l02.museum",
+            "en.beginner.u08.l02.library"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l08.task.match",
+          "kind": "match",
+          "prompt": "Match the opposites.",
+          "pairs": [
+            {
+              "left": "near",
+              "right": "far"
+            },
+            {
+              "left": "in front of",
+              "right": "behind"
+            },
+            {
+              "left": "turn left",
+              "right": "turn right"
+            }
+          ],
+          "explanation": "Near and far are opposites; in front of and behind are opposites; left and right are opposites.",
+          "itemIds": [
+            "en.beginner.u08.l08.in-front-of",
+            "en.beginner.u08.l08.behind",
+            "en.beginner.u08.l03.near",
+            "en.beginner.u08.l03.far",
+            "en.beginner.u08.l04.turn-left",
+            "en.beginner.u08.l04.turn-right"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l08.task.between",
+          "kind": "choice",
+          "prompt": "The shop is in the middle of the bank and the café. Which word fits?",
+          "answer": "between",
+          "options": [
+            "behind",
+            "between",
+            "opposite"
+          ],
+          "explanation": "Between means in the middle of two things.",
+          "itemIds": [
+            "en.beginner.u08.l08.between"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Tom wants the library. Where is it?",
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "Where is the library, Zara?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "It is opposite the park."
+          },
+          {
+            "speaker": "Tom",
+            "text": "And the café?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "The café is between the bank and the school."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "The bus is in front of the school!"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Look! A dog is behind the bus."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u08.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "Where is the library?",
+            "answer": "opposite the park",
+            "options": [
+              "opposite the park",
+              "behind the park",
+              "near the bank"
+            ],
+            "explanation": "Zara says it is opposite the park.",
+            "itemIds": [
+              "en.beginner.u08.l08.opposite",
+              "en.beginner.u08.l01.park"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Where is the café?",
+            "answer": "between the bank and the school",
+            "options": [
+              "opposite the park",
+              "behind the bus",
+              "between the bank and the school"
+            ],
+            "explanation": "Zara says the café is between the bank and the school.",
+            "itemIds": [
+              "en.beginner.u08.l08.between",
+              "en.beginner.u08.l01.bank"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "What is in front of the school?",
+            "answer": "a bus",
+            "options": [
+              "a cat",
+              "a bus",
+              "a dog"
+            ],
+            "explanation": "Smarty says the bus is in front of the school.",
+            "itemIds": [
+              "en.beginner.u08.l08.in-front-of",
+              "en.beginner.u08.l01.school"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u08-l08-scene",
+          "describe": "Smarty the black cat, Zara and Tom on a balcony above a street: a library opposite a park, a café between a bank and a school, a bus in front of the school and a dog behind it."
+        }
+      },
+      "mission": {
+        "setup": "Tell Smarty where places are near you. You can use imaginary details.",
+        "turns": [
+          {
+            "smarty": "Where is your school?",
+            "accept": [
+              "^it is (?:near|opposite|behind|next to|in front of) the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$",
+              "^my school is (?:near|opposite|behind|next to|in front of) the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$",
+              "^(?:near|opposite|behind|next to|in front of) the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$"
+            ],
+            "example": "It is opposite the park.",
+            "hint": "Say where it is. Use opposite, behind, near, or next to.",
+            "itemIds": [
+              "en.beginner.u08.l08.opposite",
+              "en.beginner.u08.l08.behind",
+              "en.beginner.u08.l08.in-front-of"
+            ]
+          },
+          {
+            "smarty": "And the café? Where is it?",
+            "accept": [
+              "^it is (?:near|opposite|behind|next to|in front of) the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$",
+              "^the caf[eé] is (?:near|opposite|behind|next to|in front of) the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$",
+              "^it is between the (?:bank|school|park) and the (?:bank|school|park)$"
+            ],
+            "example": "It is between the bank and the school.",
+            "hint": "Say where the café is. You can use between with two places.",
+            "itemIds": [
+              "en.beginner.u08.l08.between",
+              "en.beginner.u08.l08.opposite",
+              "en.beginner.u08.l08.behind"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u08.l01.cafe",
+        "en.beginner.u08.l01.bank",
+        "en.beginner.u08.l01.park",
+        "en.beginner.u08.l01.school",
+        "en.beginner.u08.l02.library",
+        "en.beginner.u08.l02.station",
+        "en.beginner.u08.l02.museum",
+        "en.beginner.u08.l03.where-is",
+        "en.beginner.u08.l03.near",
+        "en.beginner.u08.l03.far",
+        "en.beginner.u08.l04.turn-left",
+        "en.beginner.u08.l04.turn-right",
+        "en.beginner.u05.l04.next-to"
+      ]
+    },
+    {
+      "id": "en.beginner.u08.l09",
+      "section": "beginner",
+      "unit": 8,
+      "lesson": 9,
+      "title": "Excuse me",
+      "canDo": "Ask a stranger for help",
+      "scenario": "Smarty is lost in the street. Ask a stranger politely for help.",
+      "items": [
+        {
+          "id": "en.beginner.u08.l09.excuse-me",
+          "text": "Excuse me",
+          "kind": "phrase",
+          "example": "Excuse me, where is the station?",
+          "note": "Say 'Excuse me' to start talking to someone you do not know."
+        },
+        {
+          "id": "en.beginner.u08.l09.is-it-far",
+          "text": "Is it far?",
+          "kind": "phrase",
+          "example": "Excuse me, is it far?",
+          "note": "Ask 'Is it far?' to find out if a place is a long way away."
+        },
+        {
+          "id": "en.beginner.u08.l09.traffic-lights",
+          "text": "traffic lights",
+          "kind": "phrase",
+          "example": "Turn left at the traffic lights.",
+          "note": "Traffic lights are the red, yellow and green lights on the road.",
+          "image": {
+            "id": "traffic-lights",
+            "describe": "A street corner with a set of traffic lights showing red, yellow and green circles; Smarty the black cat waits at the crossing with Mia."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l09.minutes",
+          "text": "minutes",
+          "kind": "word",
+          "example": "It is five minutes on foot.",
+          "note": "We say minutes for a short time, like five minutes."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u08.l09.task.choose",
+          "kind": "choice",
+          "prompt": "You want to talk to someone you do not know. How do you start?",
+          "answer": "Excuse me.",
+          "options": [
+            "Excuse me.",
+            "Goodbye.",
+            "Thank you."
+          ],
+          "explanation": "Excuse me is a polite way to start.",
+          "itemIds": [
+            "en.beginner.u08.l09.excuse-me"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l09.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Excuse me, where is the library?",
+          "answer": "Excuse me, where is the library?",
+          "options": [
+            "Excuse me, where is the station?",
+            "Excuse me, where is the bank?",
+            "Excuse me, where is the library?"
+          ],
+          "explanation": "Listen for the place at the end.",
+          "itemIds": [
+            "en.beginner.u08.l09.excuse-me",
+            "en.beginner.u08.l03.where-is",
+            "en.beginner.u08.l02.library"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l09.task.build",
+          "kind": "build",
+          "prompt": "Build the question.",
+          "answer": "Is it far?",
+          "tiles": [
+            "Is",
+            "it",
+            "far?",
+            "near?"
+          ],
+          "explanation": "Is it far? asks about the way.",
+          "itemIds": [
+            "en.beginner.u08.l09.is-it-far",
+            "en.beginner.u08.l03.far"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l09.task.fill",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "It is five ___ on foot.",
+          "answer": "minutes",
+          "options": [
+            "bridge",
+            "minutes",
+            "traffic"
+          ],
+          "explanation": "Minutes goes after a number: five minutes.",
+          "itemIds": [
+            "en.beginner.u08.l09.minutes",
+            "en.beginner.u08.l06.on-foot"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l09.task.reply",
+          "kind": "choice",
+          "prompt": "The station is near. Someone asks: Is it far? What do you say?",
+          "answer": "No, it is near.",
+          "options": [
+            "No, it is near.",
+            "Yes, it is far.",
+            "No, it is far."
+          ],
+          "explanation": "No, it is near is true here and answers the question.",
+          "itemIds": [
+            "en.beginner.u08.l09.is-it-far",
+            "en.beginner.u08.l03.near",
+            "en.beginner.u08.l03.far"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l09.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "Excuse me, is it far?",
+          "answer": "Excuse me, is it far?",
+          "explanation": "You asked politely.",
+          "itemIds": [
+            "en.beginner.u08.l09.excuse-me",
+            "en.beginner.u08.l09.is-it-far"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l09.task.build-two",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "Turn left at the traffic lights.",
+          "tiles": [
+            "at",
+            "the",
+            "Turn",
+            "left",
+            "right",
+            "traffic",
+            "lights."
+          ],
+          "explanation": "Turn left tells which way; at the traffic lights tells where.",
+          "itemIds": [
+            "en.beginner.u08.l09.traffic-lights",
+            "en.beginner.u08.l04.turn-left"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l09.task.listen-two",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "It is ten minutes by bus.",
+          "answer": "It is ten minutes by bus.",
+          "options": [
+            "It is five minutes by bus.",
+            "It is ten minutes by car.",
+            "It is ten minutes by bus."
+          ],
+          "explanation": "Listen for the number and for bus.",
+          "itemIds": [
+            "en.beginner.u08.l09.minutes",
+            "en.beginner.u08.l06.by-bus"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l09.task.polite",
+          "kind": "choice",
+          "prompt": "Ask a stranger politely where the station is.",
+          "answer": "Excuse me, where is the station?",
+          "options": [
+            "Excuse me, who is the station?",
+            "Excuse me, where is the station?",
+            "Where is the station?"
+          ],
+          "explanation": "Excuse me makes the question polite.",
+          "itemIds": [
+            "en.beginner.u08.l09.excuse-me",
+            "en.beginner.u08.l03.where-is",
+            "en.beginner.u08.l02.station"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Smarty is lost. Is the station far?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Excuse me, where is the station?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Turn left at the traffic lights."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Is it far?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "No. It is five minutes on foot."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Of course!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u08.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Smarty say first?",
+            "answer": "Excuse me",
+            "options": [
+              "Excuse me",
+              "Thank you",
+              "Goodbye"
+            ],
+            "explanation": "Smarty starts with Excuse me.",
+            "itemIds": [
+              "en.beginner.u08.l09.excuse-me"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "Where does Smarty turn left?",
+            "answer": "at the traffic lights",
+            "options": [
+              "at the bank",
+              "at the corner",
+              "at the traffic lights"
+            ],
+            "explanation": "Mia says Turn left at the traffic lights.",
+            "itemIds": [
+              "en.beginner.u08.l09.traffic-lights"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "How far is the station?",
+            "answer": "five minutes on foot",
+            "options": [
+              "two minutes by car",
+              "five minutes on foot",
+              "ten minutes by bus"
+            ],
+            "explanation": "Mia says It is five minutes on foot.",
+            "itemIds": [
+              "en.beginner.u08.l09.minutes",
+              "en.beginner.u08.l09.is-it-far"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u08-l09-scene",
+          "describe": "Smarty the black cat asks Mia for help on a busy street with traffic lights; Mia points to the left and a station is visible in the distance."
+        }
+      },
+      "mission": {
+        "setup": "You meet Smarty on a street. Ask the way to the station politely.",
+        "turns": [
+          {
+            "smarty": "Hello! Can I help you?",
+            "accept": [
+              "^excuse me where is the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$",
+              "^excuse me where is the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum) please$",
+              "^hello excuse me where is the (?:park|school|hospital|bank|caf[eé]|supermarket|library|cinema|station|museum)$"
+            ],
+            "example": "Excuse me, where is the station?",
+            "hint": "Start with Excuse me and ask where the station is.",
+            "itemIds": [
+              "en.beginner.u08.l09.excuse-me",
+              "en.beginner.u08.l03.where-is"
+            ]
+          },
+          {
+            "smarty": "Turn left at the traffic lights.",
+            "accept": [
+              "^is it far$",
+              "^excuse me is it far$",
+              "^is it far please$"
+            ],
+            "example": "Is it far?",
+            "hint": "Ask Is it far?",
+            "itemIds": [
+              "en.beginner.u08.l09.is-it-far",
+              "en.beginner.u08.l09.traffic-lights"
+            ]
+          },
+          {
+            "smarty": "No. It is five minutes on foot.",
+            "accept": [
+              "^thank you(?: smarty)?$",
+              "^thanks(?: smarty)?$",
+              "^thank you very much$"
+            ],
+            "example": "Thank you!",
+            "hint": "Say thank you.",
+            "itemIds": [
+              "en.beginner.u08.l09.minutes",
+              "en.beginner.u01.l03.thank-you"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u08.l03.where-is",
+        "en.beginner.u08.l03.near",
+        "en.beginner.u08.l03.far",
+        "en.beginner.u08.l02.library",
+        "en.beginner.u08.l02.station",
+        "en.beginner.u08.l06.on-foot",
+        "en.beginner.u08.l06.by-bus",
+        "en.beginner.u08.l04.turn-left",
+        "en.beginner.u01.l03.thank-you"
+      ]
+    },
+    {
+      "id": "en.beginner.u08.l10",
+      "section": "beginner",
+      "unit": 8,
+      "lesson": 10,
+      "title": "A walk with Smarty",
+      "canDo": "Guide Smarty through town",
+      "scenario": "Smarty wants to see the town. Help him get to a place with a ticket and a bus.",
+      "items": [
+        {
+          "id": "en.beginner.u08.l10.taxi",
+          "text": "taxi",
+          "kind": "word",
+          "example": "We go by taxi.",
+          "note": "A taxi is a car with a driver that you pay to take you to a place.",
+          "image": {
+            "id": "taxi",
+            "describe": "A yellow taxi with a lit sign on its roof stops at the kerb; Smarty the black cat looks out of the window."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l10.ticket",
+          "text": "ticket",
+          "kind": "word",
+          "forms": [
+            "tickets"
+          ],
+          "example": "I have a ticket.",
+          "note": "A ticket is a small paper that lets you travel on a bus or a train.",
+          "image": {
+            "id": "ticket",
+            "describe": "Smarty the black cat holds up two small paper tickets with a star on them and smiles."
+          }
+        },
+        {
+          "id": "en.beginner.u08.l10.let-s-go",
+          "text": "Let's go",
+          "kind": "phrase",
+          "example": "Let's go to the park!",
+          "note": "Say 'Let's go' when you want to start and go together."
+        },
+        {
+          "id": "en.beginner.u08.l10.bus-stop",
+          "text": "bus stop",
+          "kind": "phrase",
+          "example": "The bus stop is near the school.",
+          "note": "A bus stop is the place where you wait for a bus.",
+          "image": {
+            "id": "bus-stop",
+            "describe": "A bus stop with a shelter, a bench and a pole with a bus icon; Smarty the black cat and Ben wait there."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u08.l10.task.choose",
+          "kind": "choice",
+          "prompt": "It is a car with a driver. You pay to go. Which word is it?",
+          "answer": "taxi",
+          "options": [
+            "taxi",
+            "ticket",
+            "bus stop"
+          ],
+          "explanation": "A taxi is a car you pay to ride in.",
+          "itemIds": [
+            "en.beginner.u08.l10.taxi"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l10.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I have a ticket.",
+          "answer": "I have a ticket.",
+          "options": [
+            "I have a map.",
+            "I have a taxi.",
+            "I have a ticket."
+          ],
+          "explanation": "Listen for ticket.",
+          "itemIds": [
+            "en.beginner.u08.l10.ticket",
+            "en.beginner.u08.l03.map"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l10.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "Let's go by bus.",
+          "tiles": [
+            "by",
+            "go",
+            "bus.",
+            "taxi",
+            "Let's"
+          ],
+          "explanation": "Let's go means we go together.",
+          "itemIds": [
+            "en.beginner.u08.l10.let-s-go",
+            "en.beginner.u08.l06.by-bus"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l10.task.fill",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I buy a ___ at the station.",
+          "answer": "ticket",
+          "options": [
+            "bus stop",
+            "ticket",
+            "taxi"
+          ],
+          "explanation": "You buy a ticket at the station.",
+          "itemIds": [
+            "en.beginner.u08.l10.ticket",
+            "en.beginner.u07.l05.buy",
+            "en.beginner.u08.l02.station"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l10.task.price",
+          "kind": "choice",
+          "prompt": "Ask the price of a ticket.",
+          "answer": "How much is it?",
+          "options": [
+            "How much is it?",
+            "Where is it?",
+            "Is it far?"
+          ],
+          "explanation": "How much is it? asks the price.",
+          "itemIds": [
+            "en.beginner.u07.l04.how-much-is-it",
+            "en.beginner.u08.l10.ticket"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l10.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if recognition mishears you.",
+          "text": "Let's go to the bus stop.",
+          "answer": "Let's go to the bus stop.",
+          "explanation": "You said we go together.",
+          "itemIds": [
+            "en.beginner.u08.l10.let-s-go",
+            "en.beginner.u08.l10.bus-stop"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l10.task.listen-two",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Excuse me, where is the bus stop?",
+          "answer": "Excuse me, where is the bus stop?",
+          "options": [
+            "Excuse me, where is the station?",
+            "Excuse me, where is the park?",
+            "Excuse me, where is the bus stop?"
+          ],
+          "explanation": "Listen for bus stop at the end.",
+          "itemIds": [
+            "en.beginner.u08.l09.excuse-me",
+            "en.beginner.u08.l03.where-is",
+            "en.beginner.u08.l10.bus-stop"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l10.task.build-two",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "We go by taxi.",
+          "tiles": [
+            "We",
+            "by",
+            "go",
+            "bus",
+            "taxi."
+          ],
+          "explanation": "By taxi says what you travel in.",
+          "itemIds": [
+            "en.beginner.u08.l10.taxi"
+          ]
+        },
+        {
+          "id": "en.beginner.u08.l10.task.walk",
+          "kind": "choice",
+          "prompt": "You want to walk. Which phrase says that?",
+          "answer": "on foot",
+          "options": [
+            "by bus",
+            "on foot",
+            "by taxi"
+          ],
+          "explanation": "On foot means with your feet.",
+          "itemIds": [
+            "en.beginner.u08.l06.on-foot"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Ben and Smarty want to go to the museum. How do they go?",
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Let's go to the museum, Smarty!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Is it far?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "No, it is ten minutes by bus."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Where is the bus stop?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "It is near the bank."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Look! I have two tickets."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great! Let's go!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u08.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "Where do Ben and Smarty go?",
+            "answer": "the museum",
+            "options": [
+              "the museum",
+              "the library",
+              "the park"
+            ],
+            "explanation": "Ben says Let's go to the museum.",
+            "itemIds": [
+              "en.beginner.u08.l10.let-s-go",
+              "en.beginner.u08.l02.museum"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "How do they go?",
+            "answer": "by bus",
+            "options": [
+              "by taxi",
+              "on foot",
+              "by bus"
+            ],
+            "explanation": "Ben says it is ten minutes by bus.",
+            "itemIds": [
+              "en.beginner.u08.l06.by-bus"
+            ]
+          },
+          {
+            "id": "en.beginner.u08.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "Where is the bus stop?",
+            "answer": "near the bank",
+            "options": [
+              "far",
+              "near the bank",
+              "near the park"
+            ],
+            "explanation": "Ben says it is near the bank.",
+            "itemIds": [
+              "en.beginner.u08.l10.bus-stop",
+              "en.beginner.u08.l01.bank"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u08-l10-scene",
+          "describe": "Smarty the black cat and Ben walk to a bus stop near a bank; Ben holds up two tickets and a bus is arriving."
+        }
+      },
+      "mission": {
+        "setup": "Smarty wants to go to the park. Help him get there.",
+        "turns": [
+          {
+            "smarty": "Let's go to the park! How do we go?",
+            "accept": [
+              "^by (?:bus|taxi|car)$",
+              "^on foot$",
+              "^let's go by (?:bus|taxi|car)$",
+              "^let's go on foot$"
+            ],
+            "example": "Let's go by bus.",
+            "hint": "Say by bus, by taxi, by car or on foot.",
+            "itemIds": [
+              "en.beginner.u08.l10.let-s-go",
+              "en.beginner.u08.l10.taxi",
+              "en.beginner.u08.l06.by-bus",
+              "en.beginner.u08.l06.by-car",
+              "en.beginner.u08.l06.on-foot"
+            ]
+          },
+          {
+            "smarty": "Where is the bus stop?",
+            "accept": [
+              "^it is (?:near|opposite|behind|next to|in front of) the (?:bank|school|park|caf[eé])$",
+              "^turn (?:left|right)(?: at the (?:corner|traffic lights))?$",
+              "^go straight on$"
+            ],
+            "example": "Turn left at the corner.",
+            "hint": "Say where it is or give a direction.",
+            "itemIds": [
+              "en.beginner.u08.l10.bus-stop",
+              "en.beginner.u08.l04.turn-left",
+              "en.beginner.u08.l04.go-straight-on"
+            ]
+          },
+          {
+            "smarty": "I have a ticket. Look!",
+            "accept": [
+              "^let's go$",
+              "^great let's go$",
+              "^great$"
+            ],
+            "example": "Let's go!",
+            "hint": "Say Let's go!",
+            "itemIds": [
+              "en.beginner.u08.l10.ticket",
+              "en.beginner.u08.l10.let-s-go"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u08.l03.map",
+        "en.beginner.u08.l06.by-bus",
+        "en.beginner.u08.l06.by-car",
+        "en.beginner.u08.l06.on-foot",
+        "en.beginner.u07.l05.buy",
+        "en.beginner.u07.l04.how-much-is-it",
+        "en.beginner.u08.l02.station",
+        "en.beginner.u08.l02.museum",
+        "en.beginner.u08.l09.excuse-me",
+        "en.beginner.u08.l03.where-is",
+        "en.beginner.u08.l01.bank",
+        "en.beginner.u08.l04.turn-left",
+        "en.beginner.u08.l04.go-straight-on"
+      ]
+    }
+  ]
+}

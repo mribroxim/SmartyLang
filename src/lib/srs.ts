@@ -5,7 +5,7 @@ export interface SRSData {
   nextReviewDate: number; // timestamp
 }
 
-export function calculateSM2(quality: number, data?: SRSData): SRSData {
+export function calculateSM2(quality: number, data?: SRSData, now = Date.now()): SRSData {
   let interval = data?.interval || 0;
   let repetition = data?.repetition || 0;
   let easeFactor = data?.easeFactor || 2.5;
@@ -27,7 +27,7 @@ export function calculateSM2(quality: number, data?: SRSData): SRSData {
   easeFactor = easeFactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
   if (easeFactor < 1.3) easeFactor = 1.3;
 
-  const nextReviewDate = Date.now() + interval * 24 * 60 * 60 * 1000;
+  const nextReviewDate = now + interval * 24 * 60 * 60 * 1000;
 
   return { interval, repetition, easeFactor, nextReviewDate };
 }

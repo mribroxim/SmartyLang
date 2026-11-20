@@ -5,13 +5,16 @@ import { Sticker, type StickerId } from '../../../components/stickers/Sticker';
 import { useUiLang } from '../../../contexts/UiLangContext';
 import { useContentLang } from '../../../contexts/ContentLangContext';
 import { answerFeedback } from '../../../lib/smarty/answer';
-import { playWord, speakText } from '../../../lib/speech';
+import { useSmartyPrefs } from '../../../lib/smarty/prefs';
+import { cancelSpeech, playWord, speakText } from '../../../lib/speech';
 import type { UiStringKey } from '../../../lib/uiStrings';
 import { ChunkyButton, Tile, type TileState } from './chunky';
 import { gradeTyped, sameTiles, type Question } from './questions';
 import { normalizeForMatch, tokenizeForLang } from '../../../lib/pronunciationProfile';
 import type { ContentLang } from '../../../lib/contentLang';
 import { SpeakPanel } from './SpeakPanel';
+import { MAX_RETRIES, initialQueue, isRetryable, monotoneProgress, requeueMissed, variantForRetry } from './retryQueue';
+import { acceptsReply } from '../../../lib/lessons/v2';
 
 export interface LessonFeedback { id: number; sticker: StickerId; line: UiStringKey; vars: Record<string, string | number> }
 
@@ -28,6 +31,8 @@ interface Props {
   onProgress?: (fraction: number) => void;
   /** Speaking steps: skip the whole step ("Can't speak now"). */
   onSkip?: () => void;
+  /** Re-ask wrong answers later in the step (default true). Off for tests and hearts practice. */
+  retryMisses?: boolean;
 }
 
 /** Word-by-word grade for a sentence (dictation): right/wrong source tokens and the ratio right. */
@@ -54,10 +59,15 @@ type Status = 'answering' | 'correct' | 'wrong';
  * an answer, presses Check, and a green or red sheet slides up with Smarty's
  * reaction and Continue.
  */
-export function LessonRunner({ questions, feedback, presenter, title, onComplete, onProgress, onSkip }: Props) {
+export function LessonRunner({ questions, feedback, presenter, title, onComplete, onProgress, onSkip, retryMisses = true }: Props) {
   const { t } = useUiLang();
+  const { autoplayVoice } = useSmartyPrefs();
   const { speechLocale, contentLang } = useContentLang();
+  // Position in the queue; a wrong answer puts its question back at the end (fix it before you finish).
   const [idx, setIdx] = useState(0);
+  const [queue, setQueue] = useState(() => initialQueue(questions.length));
+  const variants = useRef(new Map<string, Question>());
+  const shownProgress = useRef(0);
   const [status, setStatus] = useState<Status>('answering');
   const [choice, setChoice] = useState<string | null>(null);
   const [tf, setTf] = useState<boolean | null>(null);
@@ -69,7 +79,22 @@ export function LessonRunner({ questions, feedback, presenter, title, onComplete
   const results = useRef<{ word: string; ok: boolean }[]>([]);
   const tokens = useRef<{ right: Set<string>; wrong: Set<string> }>({ right: new Set(), wrong: new Set() });
   const finished = useRef(false);
-  const q = questions[idx];
+  const item = queue[idx];
+  const isRetry = !!item && item.attempt > 0;
+  // A retried question keeps its text but shows its options in a new order (made once per retry).
+  const q = useMemo(() => {
+    if (!item) return undefined;
+    const base = questions[item.qi];
+    if (!base || item.attempt === 0) return base;
+    const key = `${item.qi}:${item.attempt}`;
+    let v = variants.current.get(key);
+    if (!v) { v = variantForRetry(base); variants.current.set(key, v); }
+    return v;
+  }, [item, questions]);
+  const reportProgress = (fraction: number) => {
+    shownProgress.current = monotoneProgress(shownProgress.current, fraction);
+    onProgress?.(shownProgress.current);
+  };
 
   const say = useCallback((text: string, slow = false) => {
     if (!text) return;
@@ -80,21 +105,25 @@ export function LessonRunner({ questions, feedback, presenter, title, onComplete
   // Fresh answer state per question; audio questions speak on arrival.
   useEffect(() => {
     setStatus('answering'); setChoice(null); setTf(null); setPicked([]); setTyped(''); setClose(false); setPairsDone(false);
-    if (!q) return;
-    const auto = q.type === 'choice' && q.prompt === 'audio' ? q.show
+    if (!q || !autoplayVoice) return;
+    const auto = q.type === 'choice' && (q.prompt === 'audio' || q.prompt === 'word' || q.prompt === 'cloze') ? q.show
       : q.type === 'tiles' && q.audio ? q.audio
-      : q.type === 'type' && q.sentence ? q.answer : '';
+      : q.type === 'tiles' && q.scene ? q.scene.text
+      : q.type === 'reply' ? q.smarty
+      : q.type === 'type' && q.sentence ? q.answer
+      : q.type === 'tf' ? q.word
+      : q.type === 'speak' ? q.target : '';
     if (auto) {
       const id = window.setTimeout(() => say(auto), 350);
-      return () => window.clearTimeout(id);
+      return () => { window.clearTimeout(id); cancelSpeech(); };
     }
-  }, [idx, q, say]);
+  }, [idx, q, say, autoplayVoice]);
 
   const ready = !q ? false
     : q.type === 'choice' ? choice != null
     : q.type === 'tf' ? tf != null
     : q.type === 'tiles' ? (q.mode === 'letters' ? picked.length === q.tiles.length : picked.length > 0)
-    : q.type === 'type' ? typed.trim().length > 0
+    : q.type === 'type' || q.type === 'reply' ? typed.trim().length > 0
     : q.type === 'pairs' ? pairsDone
     : false;
 
@@ -107,9 +136,14 @@ export function LessonRunner({ questions, feedback, presenter, title, onComplete
     else if (q.type === 'type' && q.sentence) {
       const g = gradeSentence(typed, q.answer, contentLang);
       ok = g.ratio >= 0.8; near = ok && g.ratio < 1; missed = g.wrong[0];
-      g.right.forEach((w) => tokens.current.right.add(w.toLowerCase()));
-      g.wrong.forEach((w) => tokens.current.wrong.add(w.toLowerCase()));
-    } else if (q.type === 'type') ({ ok, close: near } = gradeTyped(typed, q.answer));
+      if (!isRetry) {
+        g.right.forEach((w) => tokens.current.right.add(w.toLowerCase()));
+        g.wrong.forEach((w) => tokens.current.wrong.add(w.toLowerCase()));
+      }
+    } else if (q.type === 'type') {
+      // Several answers can be right (e.g. "Bye" or "Goodbye"): take the best grade.
+      for (const a of q.answers?.length ? q.answers : [q.answer]) { const g = gradeTyped(typed, a); if (g.ok) { ok = true; near = g.close; if (!g.close) break; } }
+    } else if (q.type === 'reply') ok = acceptsReply(typed, q.accept, q.keys, contentLang);
     finishQuestion(ok, near, missed);
   };
 
@@ -118,15 +152,22 @@ export function LessonRunner({ questions, feedback, presenter, title, onComplete
     if (!q) return;
     const sentenceLevel = (q.type === 'tiles' && q.mode === 'words') || (q.type === 'type' && !!q.sentence) || (q.type === 'speak' && q.mode === 'sentence');
     setClose(near);
-    results.current.push({ word: sentenceLevel ? '' : (q.type === 'pairs' ? '' : q.word), ok });
-    answerFeedback(ok, { questionId: q.id, word: sentenceLevel ? missed : (q.type === 'pairs' ? undefined : q.word || undefined), close: near });
+    // Only the first try counts toward the score; fixing it later still clears the question.
+    if (!isRetry) results.current.push({ word: sentenceLevel ? '' : (q.type === 'pairs' ? '' : q.word), ok });
+    answerFeedback(ok, { questionId: q.id, word: sentenceLevel ? missed : (q.type === 'pairs' ? undefined : q.word || undefined), close: near, retry: isRetry });
     setStatus(ok ? 'correct' : 'wrong');
-    onProgress?.((idx + 1) / questions.length);
+    reportProgress((idx + 1) / (queue.length + (ok || !retryMisses || !isRetryable(q) || item.attempt >= MAX_RETRIES ? 0 : 1)));
   };
 
   const next = () => {
     if (status === 'answering' && !(q?.type === 'pairs' && pairsDone)) return;
-    if (idx + 1 < questions.length) { setIdx(idx + 1); return; }
+    let nextQueue = queue;
+    // Wrong → it comes back a few questions later (twice at most). Speaking is never forced: the mic can mishear.
+    if (retryMisses && status === 'wrong' && q && isRetryable(q)) {
+      nextQueue = requeueMissed(queue, idx);
+      if (nextQueue !== queue) setQueue(nextQueue);
+    }
+    if (idx + 1 < nextQueue.length) { setIdx(idx + 1); return; }
     if (finished.current) return;
     finished.current = true;
     const all = results.current;
@@ -181,11 +222,17 @@ export function LessonRunner({ questions, feedback, presenter, title, onComplete
   const answerText = q.type === 'speak' ? q.target : q.type === 'choice' ? q.answer
     : q.type === 'tf' ? (q.answer ? t('lesson.true') : t('lesson.false'))
     : q.type === 'tiles' ? q.answer.join(q.mode === 'letters' ? '' : ' ')
-    : q.type === 'type' ? q.answer : '';
+    : q.type === 'type' ? q.answer
+    : q.type === 'reply' ? q.example : '';
+
+  const why = explain(q, t);
 
   return (
     <div className="flex flex-1 flex-col">
       <div className="mx-auto w-full max-w-2xl flex-1 px-4 pb-44 pt-2 sm:pt-6">
+        {isRetry && status === 'answering' && (
+          <div className="mb-2 inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-3 py-1 text-xs font-extrabold uppercase tracking-wider text-amber-800 dark:bg-amber-950 dark:text-amber-200">{t('lesson.previousMistake')}</div>
+        )}
         <h1 className="font-serif text-2xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-[28px]">
           {q.type === 'choice' && q.prompt === 'audio' ? t('lesson.whatDoYouHear') : q.type === 'type' && q.sentence ? t('bites.step.audio-dictation') : title}
         </h1>
@@ -230,7 +277,7 @@ export function LessonRunner({ questions, feedback, presenter, title, onComplete
                 <TileBuilder q={q} picked={picked} setPicked={setPicked} locked={locked} />
               )}
 
-              {q.type === 'type' && (
+              {(q.type === 'type' || q.type === 'reply') && (
                 <input aria-label={t('lesson.typeHere')}
                   autoFocus
                   value={typed}
@@ -255,7 +302,7 @@ export function LessonRunner({ questions, feedback, presenter, title, onComplete
                 <Pairs key={idx} pairs={q.pairs} say={say} onMatch={(word, ok) => {
                   results.current.push({ word, ok });
                   answerFeedback(ok, { questionId: `pair:${word}`, word });
-                }} onDone={() => { setPairsDone(true); onProgress?.(1); }} />
+                }} onDone={() => { setPairsDone(true); reportProgress(1); }} />
               )}
             </div>
           </motion.div>
@@ -285,9 +332,10 @@ export function LessonRunner({ questions, feedback, presenter, title, onComplete
                   <div className={`font-serif text-xl font-extrabold ${good ? 'text-emerald-700 dark:text-emerald-300' : 'text-rose-700 dark:text-rose-300'}`}>
                     {good ? (close ? t('lesson.typo') : t('lesson.good')) : t('lesson.correctAnswer')}
                   </div>
-                  {!good && <div className="break-words font-semibold text-rose-700 dark:text-rose-300">{answerText}</div>}
+                  {!good && <div className="break-words font-semibold text-rose-700 dark:text-rose-300">{why || answerText}</div>}
                   {good && close && <div className="font-semibold text-emerald-700 dark:text-emerald-300">{answerText}</div>}
-                  {feedback && <div className={`text-sm font-semibold ${good ? 'text-emerald-800/80 dark:text-emerald-200/80' : 'text-rose-800/80 dark:text-rose-200/80'}`}>{t(feedback.line, feedback.vars)}</div>}
+                  
+                  {feedback && good && <div className={`text-sm font-semibold ${good ? 'text-emerald-800/80 dark:text-emerald-200/80' : 'text-rose-800/80 dark:text-rose-200/80'}`}>{t(feedback.line, feedback.vars)}</div>}
                 </div>
               </motion.div>
             )}
@@ -315,6 +363,27 @@ function Speak({ onClick, slow, label }: { onClick: () => void; slow?: boolean; 
   );
 }
 
+type T = (k: UiStringKey, v?: Record<string, string | number>) => string;
+/** "…helps you." inside a sentence that ends with its own full stop. */
+const bare = (s: string) => s.trim().replace(/[.。!]+$/u, '');
+
+/** One line on why the right answer is right (shown after a wrong answer). */
+function explain(q: Question, t: T): string {
+  if ('why' in q && q.why) return q.why;
+  if (q.type === 'reply') return t('lesson.why.example', { example: q.example });
+  if (q.type === 'choice') {
+    if (q.prompt === 'word') return t('lesson.why.means', { word: q.word, meaning: bare(q.answer) });
+    if (q.prompt === 'meaning') return t('lesson.why.means', { word: q.answer, meaning: bare(q.show) });
+    if (q.prompt === 'audio') return t('lesson.why.heard', { word: q.answer });
+    if (q.prompt === 'cloze') return t('lesson.why.sentence', { sentence: q.show.replace('______', q.answer) });
+    return '';
+  }
+  if (q.type === 'tf') return q.answer ? t('lesson.why.means', { word: q.word, meaning: bare(q.def) }) : t('lesson.why.notMeans', { word: q.word, meaning: bare(q.def) });
+  if (q.type === 'tiles' && q.scene) return t('lesson.why.reply', { line: q.scene.text, reply: q.answer.join(' ') });
+  if ((q.type === 'tiles' && q.mode === 'letters') || (q.type === 'type' && !q.sentence)) return q.hint ? t('lesson.why.means', { word: q.word, meaning: bare(q.hint) }) : '';
+  return '';
+}
+
 function Bubble({ q, say, t, choice }: { q: Question; say: (s: string, slow?: boolean) => void; t: (k: UiStringKey, v?: Record<string, string | number>) => string; choice?: string | null }) {
   if (q.type === 'choice' && q.prompt === 'cloze') {
     const [before, ...rest] = q.show.split('______');
@@ -324,6 +393,48 @@ function Bubble({ q, say, t, choice }: { q: Question; say: (s: string, slow?: bo
         <span className={`mx-1 inline-block min-w-[80px] border-b-2 px-1 text-center font-serif font-extrabold ${choice ? 'border-zinc-900 text-zinc-900 dark:border-zinc-100 dark:text-zinc-50' : 'border-slate-300 text-transparent'}`}>{choice || '…'}</span>
         {rest.join('______')}
       </p>
+    );
+  }
+  if (q.type === 'choice' && q.prompt === 'ask') {
+    return (
+      <div>
+        {q.image && <img src={q.image} alt="" className="mb-2 h-32 w-32 object-contain" onError={(e) => { e.currentTarget.style.display = 'none'; }} />}
+        <p className="text-lg font-semibold leading-snug text-zinc-900 dark:text-zinc-50">{q.show}</p>
+      </div>
+    );
+  }
+  if (q.type === 'reply') {
+    return (
+      <div className="min-w-0">
+        <button type="button" onClick={() => say(q.smarty)} className="flex items-start gap-2 text-left">
+          <Volume2 className="mt-1 h-5 w-5 shrink-0 text-slate-400" />
+          <span className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">{q.smarty}</span>
+        </button>
+        <div className="mt-2 text-sm font-bold text-slate-500">{q.hint}</div>
+      </div>
+    );
+  }
+  if (q.type === 'choice' && q.prompt === 'meaning') {
+    return (
+      <div>
+        <div className="text-xs font-extrabold uppercase tracking-widest text-slate-400">{t('today.chooseWord')}</div>
+        <p className="mt-1 font-serif text-xl font-extrabold text-zinc-900 dark:text-zinc-50">{q.show}</p>
+      </div>
+    );
+  }
+  if (q.type === 'tiles' && q.scene) {
+    const scene = q.scene;
+    return (
+      <div className="min-w-0">
+        <button type="button" onClick={() => say(scene.text)} className="flex items-start gap-2 text-left">
+          <Volume2 className="mt-1 h-5 w-5 shrink-0 text-slate-400" />
+          <span className="min-w-0">
+            {scene.speaker && <span className="block text-xs font-extrabold uppercase tracking-widest text-slate-400">{scene.speaker}</span>}
+            <span className="block text-lg font-semibold text-zinc-900 dark:text-zinc-50">{scene.text}</span>
+          </span>
+        </button>
+        <div className="mt-2 text-sm font-bold text-slate-500">{t('lesson.yourReply')}</div>
+      </div>
     );
   }
   if (q.type === 'choice' && q.prompt === 'text') {

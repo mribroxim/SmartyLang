@@ -1,0 +1,3553 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "elementary",
+  "unit": 8,
+  "title": "Phones & Messages",
+  "room": "game-room",
+  "lessons": [
+    {
+      "id": "en.elementary.u08.l01",
+      "section": "elementary",
+      "unit": 8,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Devices",
+      "canDo": "Name devices",
+      "scenario": "Smarty shows Mia and Sam new devices on the table in the game room.",
+      "items": [
+        {
+          "id": "en.elementary.u08.l01.tablet",
+          "text": "tablet",
+          "kind": "word",
+          "forms": [
+            "tablets"
+          ],
+          "example": "I have a new tablet.",
+          "note": "Say 'tablet' for a flat, small computer you hold in your hands.",
+          "image": {
+            "id": "tablet",
+            "describe": "a sleek flat tablet resting on a wooden table in a cozy cat game room"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l01.laptop",
+          "text": "laptop",
+          "kind": "word",
+          "forms": [
+            "laptops"
+          ],
+          "example": "My laptop is on the desk.",
+          "note": "Use 'laptop' for a computer you can fold and carry with you.",
+          "image": {
+            "id": "laptop",
+            "describe": "an open laptop computer sitting on a desk next to a lamp"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l01.charger",
+          "text": "charger",
+          "kind": "word",
+          "forms": [
+            "chargers"
+          ],
+          "example": "Where is my phone charger?",
+          "note": "Say 'charger' for the cable and plug that give power to your phone or laptop.",
+          "image": {
+            "id": "charger",
+            "describe": "a white phone charger with a neat cable plugged into a wall socket"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l01.keyboard",
+          "text": "keyboard",
+          "kind": "word",
+          "forms": [
+            "keyboards"
+          ],
+          "example": "This keyboard has black and white keys.",
+          "note": "Use 'keyboard' for the board with letters and numbers you press to write on a computer.",
+          "image": {
+            "id": "keyboard",
+            "describe": "a computer keyboard with clean rows of buttons on a desk"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l01.speaker",
+          "text": "speaker",
+          "kind": "word",
+          "forms": [
+            "speakers"
+          ],
+          "example": "We play music on this speaker.",
+          "note": "Say 'speaker' for the device that makes music and sounds loud and clear.",
+          "image": {
+            "id": "speaker",
+            "describe": "a round modern speaker playing musical notes on a shelf"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l01.webcam",
+          "text": "webcam",
+          "kind": "word",
+          "forms": [
+            "webcams"
+          ],
+          "example": "There is a small webcam on my laptop.",
+          "note": "Use 'webcam' for the small camera on a computer that lets friends see you.",
+          "image": {
+            "id": "webcam",
+            "describe": "a small round webcam clipped onto the top of a computer screen"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u08.l01.task.pick-tablet",
+          "kind": "choice",
+          "prompt": "Look at the picture of a flat computer you hold in your hands. Which word fits?",
+          "answer": "tablet",
+          "options": [
+            "tablet",
+            "keyboard",
+            "speaker"
+          ],
+          "explanation": "A tablet is a flat, small computer without a separate keyboard.",
+          "itemIds": [
+            "en.elementary.u08.l01.tablet"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l01.task.hear-laptop",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "This is my new laptop.",
+          "answer": "This is my new laptop.",
+          "options": [
+            "This is my new laptop.",
+            "This is my new tablet.",
+            "This is my new charger."
+          ],
+          "explanation": "Listen to the last word: laptop.",
+          "itemIds": [
+            "en.elementary.u08.l01.laptop",
+            "en.beginner.u05.l09.new"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l01.task.match-devices",
+          "kind": "match",
+          "prompt": "Match each device with what it is for.",
+          "pairs": [
+            {
+              "left": "charger",
+              "right": "for a phone"
+            },
+            {
+              "left": "webcam",
+              "right": "a computer camera"
+            },
+            {
+              "left": "speaker",
+              "right": "for music"
+            },
+            {
+              "left": "tablet",
+              "right": "a small computer"
+            }
+          ],
+          "explanation": "A charger powers a phone, a webcam is a camera, a speaker plays music, and a tablet is a small computer.",
+          "itemIds": [
+            "en.elementary.u08.l01.charger",
+            "en.elementary.u08.l01.webcam",
+            "en.elementary.u08.l01.speaker",
+            "en.elementary.u08.l01.tablet"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l01.task.pick-webcam",
+          "kind": "choice",
+          "prompt": "Smarty wants to see Leo on the computer screen. Which device does Smarty need?",
+          "answer": "webcam",
+          "options": [
+            "webcam",
+            "charger",
+            "keyboard"
+          ],
+          "explanation": "A webcam is a small camera on a computer.",
+          "itemIds": [
+            "en.elementary.u08.l01.webcam"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l01.task.fill-charger",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "My phone needs a ___.",
+          "answer": "charger",
+          "options": [
+            "charger",
+            "speaker",
+            "webcam"
+          ],
+          "explanation": "A phone needs a charger to get power.",
+          "itemIds": [
+            "en.elementary.u08.l01.charger",
+            "en.beginner.u05.l07.phone",
+            "en.beginner.u11.l07.need"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l01.task.build-keyboard",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "The keyboard is on the table.",
+          "tiles": [
+            "The",
+            "keyboard",
+            "is",
+            "on",
+            "the",
+            "table",
+            "under"
+          ],
+          "explanation": "Start with 'The keyboard is' and then say where it is: 'on the table'.",
+          "itemIds": [
+            "en.elementary.u08.l01.keyboard",
+            "en.beginner.u05.l03.table"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l01.task.fill-speaker",
+          "kind": "fill",
+          "prompt": "Choose the right device for playing songs.",
+          "text": "I play music on my new ___.",
+          "answer": "speaker",
+          "options": [
+            "speaker",
+            "charger",
+            "webcam"
+          ],
+          "explanation": "You play music out loud on a speaker.",
+          "itemIds": [
+            "en.elementary.u08.l01.speaker",
+            "en.beginner.u09.l06.music"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l01.task.speak-devices",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I have a laptop and a tablet.",
+          "answer": "I have a laptop and a tablet.",
+          "explanation": "Say both device names clearly: laptop and tablet.",
+          "itemIds": [
+            "en.elementary.u08.l01.laptop",
+            "en.elementary.u08.l01.tablet"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What new devices are on the table in Smarty's game room?",
+        "image": {
+          "id": "en-a2-u08-l01-scene",
+          "describe": "Smarty the black cat stands by a wooden table in the game room showing Mia and Sam a laptop, a tablet, a keyboard, a speaker, a webcam, and a charger."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Look at that! We have new things in the game room."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Is this a new laptop?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, it is. And this is a new tablet."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Where is the charger?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is next to the keyboard and the speaker."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Look! There is a small webcam on the laptop."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Great! Now we can see our friend Leo!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u08.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "Where is the charger?",
+            "answer": "Next to the keyboard and the speaker",
+            "options": [
+              "Next to the keyboard and the speaker",
+              "Under the sofa",
+              "In the kitchen"
+            ],
+            "explanation": "Smarty says: It is next to the keyboard and the speaker.",
+            "itemIds": [
+              "en.elementary.u08.l01.charger",
+              "en.elementary.u08.l01.keyboard",
+              "en.elementary.u08.l01.speaker"
+            ]
+          },
+          {
+            "id": "en.elementary.u08.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "What is on the laptop?",
+            "answer": "A small webcam",
+            "options": [
+              "A small webcam",
+              "A big book",
+              "A cup of tea"
+            ],
+            "explanation": "Mia says: There is a small webcam on the laptop.",
+            "itemIds": [
+              "en.elementary.u08.l01.webcam",
+              "en.elementary.u08.l01.laptop"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are in Smarty's game room looking at devices. Answer Smarty's questions.",
+        "turns": [
+          {
+            "smarty": "I have a laptop in the game room. Do you have a laptop or a tablet?",
+            "accept": [
+              "^(?:yes )?i have a (?:laptop|tablet)(?: and a (?:laptop|tablet))?$",
+              "^no i do not(?: have a (?:laptop|tablet))?$"
+            ],
+            "example": "I have a tablet.",
+            "hint": "Say 'I have a laptop' or 'I have a tablet'.",
+            "itemIds": [
+              "en.elementary.u08.l01.laptop",
+              "en.elementary.u08.l01.tablet"
+            ]
+          },
+          {
+            "smarty": "Where is your charger?",
+            "accept": [
+              "^(?:my charger |it )?is (?:in|on|under|next to) the (?:table|desk|bed|sofa|box|room|bedroom|living room|game room)$",
+              "^i do not have a charger$"
+            ],
+            "example": "It is on the table.",
+            "hint": "Tell Smarty where your charger is, for example 'It is on the table.'",
+            "itemIds": [
+              "en.elementary.u08.l01.charger",
+              "en.beginner.u05.l03.table"
+            ]
+          },
+          {
+            "smarty": "We have a speaker and a webcam here. Which one do you want?",
+            "accept": [
+              "^i want (?:a |the )?(?:speaker|webcam)$",
+              "^(?:a |the )?(?:speaker|webcam)(?: please)?$"
+            ],
+            "example": "I want a speaker.",
+            "hint": "Choose the speaker or the webcam.",
+            "itemIds": [
+              "en.elementary.u08.l01.speaker",
+              "en.elementary.u08.l01.webcam",
+              "en.elementary.u01.l03.which-one"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u05.l09.new",
+        "en.beginner.u05.l07.phone",
+        "en.beginner.u11.l07.need",
+        "en.beginner.u05.l03.table",
+        "en.beginner.u09.l06.music",
+        "en.elementary.u01.l03.which-one"
+      ]
+    },
+    {
+      "id": "en.elementary.u08.l02",
+      "section": "elementary",
+      "unit": 8,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Online",
+      "canDo": "Talk about the internet",
+      "scenario": "Ben and Smarty get online in the game room to start a video call with Ana.",
+      "items": [
+        {
+          "id": "en.elementary.u08.l02.internet",
+          "text": "internet",
+          "kind": "word",
+          "example": "We have the internet at home.",
+          "note": "Say 'the internet' for the global network that connects computers and phones.",
+          "image": {
+            "id": "internet",
+            "describe": "a glowing globe surrounded by connected signal waves between a laptop and a phone"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l02.website",
+          "text": "website",
+          "kind": "word",
+          "forms": [
+            "websites"
+          ],
+          "example": "This website is interesting.",
+          "note": "Use 'website' for a page or group of pages you visit on the internet.",
+          "image": {
+            "id": "website",
+            "describe": "a colorful browser window open on a laptop screen showing pictures and buttons"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l02.app",
+          "text": "app",
+          "kind": "word",
+          "forms": [
+            "apps"
+          ],
+          "example": "I have a new game app on my phone.",
+          "note": "Say 'app' for a small program on a phone or tablet.",
+          "image": {
+            "id": "app",
+            "describe": "a smartphone screen showing bright square app icons"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l02.password",
+          "text": "password",
+          "kind": "word",
+          "forms": [
+            "passwords"
+          ],
+          "example": "I always remember my password.",
+          "note": "Use 'password' for the secret letters and numbers that unlock your account.",
+          "image": {
+            "id": "password",
+            "describe": "a lock icon next to a box with hidden stars on a tablet screen"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l02.video-call",
+          "text": "video call",
+          "kind": "phrase",
+          "forms": [
+            "video calls"
+          ],
+          "example": "We have a video call with Ana.",
+          "note": "Say 'video call' when you talk to someone on a phone or computer and see them on the screen.",
+          "image": {
+            "id": "video-call",
+            "describe": "two friendly cats waving at each other through a laptop video call screen"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l02.link",
+          "text": "link",
+          "kind": "word",
+          "forms": [
+            "links"
+          ],
+          "example": "Click this link for the website.",
+          "note": "Use 'link' for the text or button you tap to jump straight to a website or video call.",
+          "image": {
+            "id": "link",
+            "describe": "a chain link icon glowing blue on a computer screen with a cursor arrow"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u08.l02.task.pick-internet",
+          "kind": "choice",
+          "prompt": "You need this to visit websites and use apps on your phone. What is it?",
+          "answer": "internet",
+          "options": [
+            "internet",
+            "password",
+            "keyboard"
+          ],
+          "explanation": "The internet connects your phone or computer to websites and apps.",
+          "itemIds": [
+            "en.elementary.u08.l02.internet"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l02.task.hear-website",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "This website is interesting.",
+          "answer": "This website is interesting.",
+          "options": [
+            "This website is interesting.",
+            "This app is interesting.",
+            "This link is interesting."
+          ],
+          "explanation": "Listen to the second word: website.",
+          "itemIds": [
+            "en.elementary.u08.l02.website",
+            "en.elementary.u01.l09.interesting"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l02.task.fill-password",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I always remember my ___.",
+          "answer": "password",
+          "options": [
+            "password",
+            "internet",
+            "link"
+          ],
+          "explanation": "You need to remember your password to get into your account.",
+          "itemIds": [
+            "en.elementary.u08.l02.password",
+            "en.elementary.u01.l06.remember"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l02.task.match-online",
+          "kind": "match",
+          "prompt": "Match the online words with their meanings.",
+          "pairs": [
+            {
+              "left": "app",
+              "right": "on a phone or tablet"
+            },
+            {
+              "left": "video call",
+              "right": "see a friend on a screen"
+            },
+            {
+              "left": "password",
+              "right": "you remember it"
+            },
+            {
+              "left": "link",
+              "right": "for a website"
+            }
+          ],
+          "explanation": "Apps run on phones or tablets, a video call shows your friend on a screen, a password is kept secret, and a link opens a website.",
+          "itemIds": [
+            "en.elementary.u08.l02.app",
+            "en.elementary.u08.l02.video-call",
+            "en.elementary.u08.l02.password",
+            "en.elementary.u08.l02.link"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l02.task.build-video-call",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "We have a video call with Ana.",
+          "tiles": [
+            "We",
+            "have",
+            "a",
+            "video call",
+            "with",
+            "Ana",
+            "link"
+          ],
+          "explanation": "Say 'We have a video call with Ana.'",
+          "itemIds": [
+            "en.elementary.u08.l02.video-call"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l02.task.fill-app",
+          "kind": "fill",
+          "prompt": "Choose the right word for a program on a tablet.",
+          "text": "I have a new game ___ on my tablet.",
+          "answer": "app",
+          "options": [
+            "app",
+            "webcam",
+            "charger"
+          ],
+          "explanation": "A game on a tablet or phone is an app.",
+          "itemIds": [
+            "en.elementary.u08.l02.app",
+            "en.elementary.u08.l01.tablet"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l02.task.pick-link",
+          "kind": "choice",
+          "prompt": "Smarty wants Ben to open a website quickly. What does Smarty give Ben?",
+          "answer": "a link",
+          "options": [
+            "a link",
+            "a charger",
+            "a speaker"
+          ],
+          "explanation": "A link takes you directly to a website.",
+          "itemIds": [
+            "en.elementary.u08.l02.link",
+            "en.elementary.u08.l02.website"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l02.task.speak-online",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I have the internet on my laptop.",
+          "answer": "I have the internet on my laptop.",
+          "explanation": "Say 'the internet' and 'my laptop' clearly.",
+          "itemIds": [
+            "en.elementary.u08.l02.internet",
+            "en.elementary.u08.l01.laptop"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How do Ben and Smarty start their video call with Ana?",
+        "image": {
+          "id": "en-a2-u08-l02-scene",
+          "describe": "Ben the cat sits with Smarty the black cat in front of a laptop in the game room, waving at Ana on a video call screen."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Smarty, do we have the internet here?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, we do! Look at this website on the laptop."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I need a password."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I remember the password. Here you are."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Thanks! Now I see the link for our video call."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great! And I have the app on my tablet."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Hello, Ben! Hello, Smarty! I see you on my screen!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u08.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Who remembers the password?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Ben",
+              "Ana"
+            ],
+            "explanation": "Smarty says: I remember the password.",
+            "itemIds": [
+              "en.elementary.u08.l02.password"
+            ]
+          },
+          {
+            "id": "en.elementary.u08.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Ben see after he puts in the password?",
+            "answer": "The link for the video call",
+            "options": [
+              "The link for the video call",
+              "A new keyboard",
+              "A charger"
+            ],
+            "explanation": "Ben says: Now I see the link for our video call.",
+            "itemIds": [
+              "en.elementary.u08.l02.link",
+              "en.elementary.u08.l02.video-call"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is asking you about how you go online. Reply in your own words.",
+        "turns": [
+          {
+            "smarty": "Do you have the internet at home?",
+            "accept": [
+              "^yes(?: i do| i have the internet(?: at home)?)?$",
+              "^no(?: i do not)?$"
+            ],
+            "example": "Yes, I have the internet at home.",
+            "hint": "Say 'Yes, I have the internet at home' or 'No, I do not.'",
+            "itemIds": [
+              "en.elementary.u08.l02.internet",
+              "en.beginner.u05.l10.home"
+            ]
+          },
+          {
+            "smarty": "Do you like a video call with a friend?",
+            "accept": [
+              "^yes(?: i do| i like (?:a )?video calls?(?: with a friend)?)?$",
+              "^no(?: i do not)?$"
+            ],
+            "example": "Yes, I like a video call.",
+            "hint": "Tell Smarty if you like video calls.",
+            "itemIds": [
+              "en.elementary.u08.l02.video-call",
+              "en.beginner.u03.l03.do-you-like"
+            ]
+          },
+          {
+            "smarty": "I have a new app and a new website. Which one do you want to see?",
+            "accept": [
+              "^i want to see (?:the |a )?(?:app|website)$",
+              "^(?:the |a )?(?:app|website)(?: please)?$"
+            ],
+            "example": "I want to see the app.",
+            "hint": "Say 'I want to see the app' or 'I want to see the website.'",
+            "itemIds": [
+              "en.elementary.u08.l02.app",
+              "en.elementary.u08.l02.website"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u01.l09.interesting",
+        "en.elementary.u01.l06.remember",
+        "en.elementary.u08.l01.tablet",
+        "en.elementary.u08.l01.laptop",
+        "en.beginner.u05.l10.home",
+        "en.beginner.u03.l03.do-you-like"
+      ]
+    },
+    {
+      "id": "en.elementary.u08.l03",
+      "section": "elementary",
+      "unit": 8,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "Messages",
+      "canDo": "Send and answer messages",
+      "scenario": "Zara and Smarty send Leo his science homework in the game room.",
+      "items": [
+        {
+          "id": "en.elementary.u08.l03.message",
+          "text": "message",
+          "kind": "word",
+          "forms": [
+            "messages"
+          ],
+          "example": "I have a new message from Leo.",
+          "note": "Say 'message' for short written words you send on a phone or computer.",
+          "image": {
+            "id": "message",
+            "describe": "a phone screen showing colorful speech bubbles with a new incoming message"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l03.send-a-message",
+          "text": "send a message",
+          "kind": "phrase",
+          "forms": [
+            "send",
+            "sends",
+            "sent",
+            "sending"
+          ],
+          "example": "I always send a message to my mother.",
+          "note": "Use 'send a message' when you write to someone on your phone or app."
+        },
+        {
+          "id": "en.elementary.u08.l03.reply",
+          "text": "reply",
+          "kind": "word",
+          "forms": [
+            "replies",
+            "replied",
+            "replying"
+          ],
+          "example": "Please reply to my message.",
+          "note": "Say 'reply' when you answer a message someone sent to you."
+        },
+        {
+          "id": "en.elementary.u08.l03.text-me",
+          "text": "text me",
+          "kind": "phrase",
+          "forms": [
+            "text",
+            "texts",
+            "texted",
+            "texting"
+          ],
+          "example": "Please text me in the evening.",
+          "note": "Say 'text me' to ask a friend to send a short phone message to you."
+        },
+        {
+          "id": "en.elementary.u08.l03.attachment",
+          "text": "attachment",
+          "kind": "word",
+          "forms": [
+            "attachments"
+          ],
+          "example": "The photo is an attachment in my message.",
+          "note": "Use 'attachment' for a file or photo you send together with a message.",
+          "image": {
+            "id": "attachment",
+            "describe": "a paperclip icon attaching a photo card to a digital message envelope"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l03.send-me-a-link",
+          "text": "Send me a link",
+          "kind": "phrase",
+          "example": "I want to see that website. Send me a link!",
+          "note": "Say 'Send me a link' when you want someone to message you a website address."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u08.l03.task.pick-message",
+          "kind": "choice",
+          "prompt": "You write words on your phone and send them to a friend. What is this?",
+          "answer": "message",
+          "options": [
+            "message",
+            "charger",
+            "password"
+          ],
+          "explanation": "A message is short written text sent from one phone or computer to another.",
+          "itemIds": [
+            "en.elementary.u08.l03.message"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l03.task.hear-send-message",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I always send a message to my mother.",
+          "answer": "I always send a message to my mother.",
+          "options": [
+            "I always send a message to my mother.",
+            "I always send a link to my mother.",
+            "I always reply to my mother."
+          ],
+          "explanation": "Listen to the phrase: send a message.",
+          "itemIds": [
+            "en.elementary.u08.l03.send-a-message",
+            "en.beginner.u04.l05.always"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l03.task.fill-reply",
+          "kind": "fill",
+          "prompt": "Omar sent a message, and now you answer him.",
+          "text": "I ___ to Omar.",
+          "answer": "reply",
+          "options": [
+            "reply",
+            "text",
+            "link"
+          ],
+          "explanation": "To answer a message is to reply.",
+          "itemIds": [
+            "en.elementary.u08.l03.reply"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l03.task.build-text-me",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "Please text me in the evening.",
+          "tiles": [
+            "Please",
+            "text",
+            "me",
+            "in",
+            "the",
+            "evening",
+            "reply"
+          ],
+          "explanation": "Start with 'Please text me' and add 'in the evening'.",
+          "itemIds": [
+            "en.elementary.u08.l03.text-me",
+            "en.beginner.u04.l10.in-the-evening"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l03.task.pick-attachment",
+          "kind": "choice",
+          "prompt": "You send a book or an old photo with your message. What is it called?",
+          "answer": "attachment",
+          "options": [
+            "attachment",
+            "speaker",
+            "keyboard"
+          ],
+          "explanation": "A file or photo added to a message is an attachment.",
+          "itemIds": [
+            "en.elementary.u08.l03.attachment"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l03.task.match-messages",
+          "kind": "match",
+          "prompt": "Match each phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "send a message",
+              "right": "send a text to a friend"
+            },
+            {
+              "left": "reply",
+              "right": "a message back"
+            },
+            {
+              "left": "attachment",
+              "right": "a book in a message"
+            },
+            {
+              "left": "Send me a link",
+              "right": "I want a website"
+            }
+          ],
+          "explanation": "Send a message means texting someone, reply means answering back, an attachment is a file inside a message, and Send me a link asks for a website.",
+          "itemIds": [
+            "en.elementary.u08.l03.send-a-message",
+            "en.elementary.u08.l03.reply",
+            "en.elementary.u08.l03.attachment",
+            "en.elementary.u08.l03.send-me-a-link"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l03.task.fill-send-link",
+          "kind": "fill",
+          "prompt": "Complete the request.",
+          "text": "I want to see that website. ___!",
+          "answer": "Send me a link",
+          "options": [
+            "Send me a link",
+            "Text me",
+            "I reply"
+          ],
+          "explanation": "Ask for a website address with 'Send me a link'.",
+          "itemIds": [
+            "en.elementary.u08.l03.send-me-a-link",
+            "en.elementary.u08.l02.website"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l03.task.speak-messages",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "Text me and send me a link.",
+          "answer": "Text me and send me a link.",
+          "explanation": "Say both requests smoothly: 'Text me' and 'send me a link'.",
+          "itemIds": [
+            "en.elementary.u08.l03.text-me",
+            "en.elementary.u08.l03.send-me-a-link"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Leo need from Zara and Smarty?",
+        "image": {
+          "id": "en-a2-u08-l03-scene",
+          "describe": "Zara the cat holds a smartphone while Smarty the black cat looks at the message screen with her in the game room."
+        },
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "Smarty, I have a message from Leo."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What does he want?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "He needs our science homework. He says: Text me and send me a link."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Can you send a message to him now?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes! I can send the homework as an attachment."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Did he reply?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes! Look at his reply: Thank you, Zara and Smarty!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u08.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "How does Zara send the science homework to Leo?",
+            "answer": "As an attachment",
+            "options": [
+              "As an attachment",
+              "On a speaker",
+              "In a postcard"
+            ],
+            "explanation": "Zara says: I can send the homework as an attachment.",
+            "itemIds": [
+              "en.elementary.u08.l03.attachment"
+            ]
+          },
+          {
+            "id": "en.elementary.u08.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Does Leo reply to Zara?",
+            "answer": "Yes, he does",
+            "options": [
+              "Yes, he does",
+              "No, he does not",
+              "He sends a charger"
+            ],
+            "explanation": "Zara reads Leo's reply: Thank you, Zara and Smarty!",
+            "itemIds": [
+              "en.elementary.u08.l03.reply"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty wants to chat with you by message. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "I like messages. Do you send a message to your friend every day?",
+            "accept": [
+              "^yes(?: i do| i send a message(?: to my friend)?(?: every day)?)?$",
+              "^no(?: i do not)?$"
+            ],
+            "example": "Yes, I send a message every day.",
+            "hint": "Say 'Yes, I send a message every day' or 'No, I do not.'",
+            "itemIds": [
+              "en.elementary.u08.l03.send-a-message",
+              "en.beginner.u04.l03.every-day"
+            ]
+          },
+          {
+            "smarty": "I want to see a good website. What do you say to me?",
+            "accept": [
+              "^(?:please )?send me a link(?: please)?$",
+              "^i can send (?:you )?a link$"
+            ],
+            "example": "Send me a link.",
+            "hint": "Ask Smarty for the link: 'Send me a link.'",
+            "itemIds": [
+              "en.elementary.u08.l03.send-me-a-link",
+              "en.elementary.u08.l02.website"
+            ]
+          },
+          {
+            "smarty": "When I send a message to you, do you reply quickly?",
+            "accept": [
+              "^yes(?: i do| i reply(?: quickly)?)?$",
+              "^no(?: i do not)?$"
+            ],
+            "example": "Yes, I reply quickly.",
+            "hint": "Say 'Yes, I reply quickly' or 'No, I do not.'",
+            "itemIds": [
+              "en.elementary.u08.l03.reply",
+              "en.elementary.u06.l07.quickly"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u04.l05.always",
+        "en.beginner.u04.l10.in-the-evening",
+        "en.elementary.u08.l02.website",
+        "en.beginner.u04.l03.every-day",
+        "en.elementary.u06.l07.quickly"
+      ]
+    },
+    {
+      "id": "en.elementary.u08.l04",
+      "section": "elementary",
+      "unit": 8,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Mia, Tom, and Smarty check all their devices and messages in the game room.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u08.l04.task.pick-device",
+          "kind": "choice",
+          "prompt": "Which device has letters and numbers for typing on a computer?",
+          "answer": "keyboard",
+          "options": [
+            "keyboard",
+            "speaker",
+            "attachment"
+          ],
+          "explanation": "A keyboard has the keys you press to type.",
+          "itemIds": [
+            "en.elementary.u08.l01.keyboard"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l04.task.hear-video-call",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Send me a link for the video call.",
+          "answer": "Send me a link for the video call.",
+          "options": [
+            "Send me a link for the video call.",
+            "Send me a message on the tablet.",
+            "Text me your password."
+          ],
+          "explanation": "Listen for 'Send me a link' and 'video call'.",
+          "itemIds": [
+            "en.elementary.u08.l03.send-me-a-link",
+            "en.elementary.u08.l02.video-call"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l04.task.match-review1",
+          "kind": "match",
+          "prompt": "Match the related words.",
+          "pairs": [
+            {
+              "left": "webcam",
+              "right": "video call"
+            },
+            {
+              "left": "message",
+              "right": "reply"
+            },
+            {
+              "left": "website",
+              "right": "link"
+            },
+            {
+              "left": "tablet",
+              "right": "app"
+            }
+          ],
+          "explanation": "You use a webcam for a video call, reply to a message, click a link to a website, and open an app on a tablet.",
+          "itemIds": [
+            "en.elementary.u08.l01.webcam",
+            "en.elementary.u08.l02.video-call",
+            "en.elementary.u08.l03.message",
+            "en.elementary.u08.l03.reply",
+            "en.elementary.u08.l02.website",
+            "en.elementary.u08.l02.link",
+            "en.elementary.u08.l01.tablet",
+            "en.elementary.u08.l02.app"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l04.task.fill-attachment",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I sent a photo as an ___.",
+          "answer": "attachment",
+          "options": [
+            "attachment",
+            "internet",
+            "charger"
+          ],
+          "explanation": "A photo sent inside a message is an attachment.",
+          "itemIds": [
+            "en.elementary.u08.l03.attachment"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l04.task.build-password",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "Do you remember the internet password?",
+          "tiles": [
+            "Do",
+            "you",
+            "remember",
+            "the",
+            "internet",
+            "password",
+            "speaker"
+          ],
+          "explanation": "Form the question: 'Do you remember the internet password?'",
+          "itemIds": [
+            "en.elementary.u08.l02.internet",
+            "en.elementary.u08.l02.password",
+            "en.elementary.u01.l06.remember"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l04.task.fill-text-me",
+          "kind": "fill",
+          "prompt": "Ask your friend to send a phone message.",
+          "text": "Please ___ when you are at home.",
+          "answer": "text me",
+          "options": [
+            "text me",
+            "webcam",
+            "laptop"
+          ],
+          "explanation": "'Text me' means send a message to my phone.",
+          "itemIds": [
+            "en.elementary.u08.l03.text-me"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l04.task.speak-review1",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "Send a message and reply to me.",
+          "answer": "Send a message and reply to me.",
+          "explanation": "Practise saying 'send a message' and 'reply'.",
+          "itemIds": [
+            "en.elementary.u08.l03.send-a-message",
+            "en.elementary.u08.l03.reply"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why cannot Tom hear Mia on their video call at first?",
+        "image": {
+          "id": "en-a2-u08-l04-scene",
+          "describe": "Tom the cat points at a speaker next to a laptop while Smarty the black cat checks a tablet in the game room."
+        },
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "Smarty, I sent a message to Mia, and she replied!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great! Did she send a link for the video call?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Yes! I see Mia on the webcam now, but I cannot hear her."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look at the speaker next to your keyboard."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Oh! The speaker needs a charger!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Hello, Tom! Hello, Smarty! Now you can hear me!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u08.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "What did Mia send to Tom?",
+            "answer": "A link for the video call",
+            "options": [
+              "A link for the video call",
+              "A new keyboard",
+              "A password"
+            ],
+            "explanation": "Tom confirms Mia sent a link for the video call.",
+            "itemIds": [
+              "en.elementary.u08.l02.link",
+              "en.elementary.u08.l02.video-call"
+            ]
+          },
+          {
+            "id": "en.elementary.u08.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "What did the speaker need?",
+            "answer": "A charger",
+            "options": [
+              "A charger",
+              "An attachment",
+              "A tablet"
+            ],
+            "explanation": "Tom says: The speaker needs a charger!",
+            "itemIds": [
+              "en.elementary.u08.l01.speaker",
+              "en.elementary.u08.l01.charger"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Review time! Chat with Smarty about devices, apps, and messages.",
+        "turns": [
+          {
+            "smarty": "Do you like a laptop or a tablet for watching films?",
+            "accept": [
+              "^i like a (?:laptop|tablet)(?: for watching films)?$",
+              "^(?:a )?(?:laptop|tablet)$"
+            ],
+            "example": "I like a laptop.",
+            "hint": "Choose 'a laptop' or 'a tablet'.",
+            "itemIds": [
+              "en.elementary.u08.l01.laptop",
+              "en.elementary.u08.l01.tablet"
+            ]
+          },
+          {
+            "smarty": "I want to visit your favourite website. What do I need?",
+            "accept": [
+              "^(?:you need )?(?:a |the )?(?:link|internet|password)$",
+              "^send me a link$"
+            ],
+            "example": "You need a link.",
+            "hint": "Say 'You need a link' or 'You need the internet.'",
+            "itemIds": [
+              "en.elementary.u08.l02.website",
+              "en.elementary.u08.l02.link",
+              "en.elementary.u08.l02.internet"
+            ]
+          },
+          {
+            "smarty": "When you get a message from a friend, do you reply or text me?",
+            "accept": [
+              "^i reply(?: to my friend)?$",
+              "^i send a message$"
+            ],
+            "example": "I reply to my friend.",
+            "hint": "Say 'I reply' or 'I send a message.'",
+            "itemIds": [
+              "en.elementary.u08.l03.message",
+              "en.elementary.u08.l03.reply"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u08.l01.tablet",
+        "en.elementary.u08.l01.laptop",
+        "en.elementary.u08.l01.charger",
+        "en.elementary.u08.l01.keyboard",
+        "en.elementary.u08.l01.speaker",
+        "en.elementary.u08.l01.webcam",
+        "en.elementary.u08.l02.internet",
+        "en.elementary.u08.l02.website",
+        "en.elementary.u08.l02.app",
+        "en.elementary.u08.l02.password",
+        "en.elementary.u08.l02.video-call",
+        "en.elementary.u08.l02.link",
+        "en.elementary.u08.l03.message",
+        "en.elementary.u08.l03.send-a-message",
+        "en.elementary.u08.l03.reply",
+        "en.elementary.u08.l03.text-me",
+        "en.elementary.u08.l03.attachment",
+        "en.elementary.u08.l03.send-me-a-link",
+        "en.elementary.u01.l06.remember"
+      ]
+    },
+    {
+      "id": "en.elementary.u08.l05",
+      "section": "elementary",
+      "unit": 8,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "On the phone",
+      "canDo": "Make a phone call",
+      "scenario": "Smarty answers phone calls in the game room and helps Lily reach Omar.",
+      "items": [
+        {
+          "id": "en.elementary.u08.l05.who-is-this",
+          "text": "Who is this?",
+          "kind": "phrase",
+          "example": "Hello? Who is this?",
+          "note": "Ask 'Who is this?' on the phone when you do not know who is calling."
+        },
+        {
+          "id": "en.elementary.u08.l05.can-i-speak-to",
+          "text": "Can I speak to",
+          "kind": "phrase",
+          "forms": [
+            "speak",
+            "speaks",
+            "speaking"
+          ],
+          "example": "Hello, can I speak to Mia, please?",
+          "note": "Say 'Can I speak to…?' to ask politely for the person you want on the phone."
+        },
+        {
+          "id": "en.elementary.u08.l05.hold-on",
+          "text": "Hold on",
+          "kind": "phrase",
+          "example": "Hold on, please. Sam is coming.",
+          "note": "Say 'Hold on' to ask someone on the phone to wait a moment."
+        },
+        {
+          "id": "en.elementary.u08.l05.call-me-back",
+          "text": "Call me back",
+          "kind": "phrase",
+          "forms": [
+            "call",
+            "calls",
+            "called",
+            "calling"
+          ],
+          "example": "I am busy now. Call me back in the evening.",
+          "note": "Say 'Call me back' when you want the other person to phone you again later."
+        },
+        {
+          "id": "en.elementary.u08.l05.wrong-number",
+          "text": "wrong number",
+          "kind": "phrase",
+          "forms": [
+            "wrong",
+            "number",
+            "numbers"
+          ],
+          "example": "Sorry, you have the wrong number.",
+          "note": "Say 'wrong number' when someone calls your phone by mistake."
+        },
+        {
+          "id": "en.elementary.u08.l05.speaking",
+          "text": "Speaking",
+          "kind": "word",
+          "example": "Can I speak to Omar? — Speaking!",
+          "note": "Say 'Speaking' when someone on the phone asks for you."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u08.l05.task.pick-who-is-this",
+          "kind": "choice",
+          "prompt": "You answer the phone and do not know who is calling. What do you ask?",
+          "answer": "Who is this?",
+          "options": [
+            "Who is this?",
+            "Hold on.",
+            "Speaking."
+          ],
+          "explanation": "Ask 'Who is this?' to find out who is on the phone.",
+          "itemIds": [
+            "en.elementary.u08.l05.who-is-this"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l05.task.hear-can-i-speak",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Hello, can I speak to Mia, please?",
+          "answer": "Hello, can I speak to Mia, please?",
+          "options": [
+            "Hello, can I speak to Mia, please?",
+            "Hello, call me back, please.",
+            "Hello, who is this, please?"
+          ],
+          "explanation": "The caller asks politely: 'Can I speak to Mia, please?'",
+          "itemIds": [
+            "en.elementary.u08.l05.can-i-speak-to",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l05.task.fill-speaking",
+          "kind": "fill",
+          "prompt": "You are Sam. Someone calls and asks for Sam. How do you answer?",
+          "text": "Can I speak to Sam? — ___.",
+          "answer": "Speaking",
+          "options": [
+            "Speaking",
+            "Wrong number",
+            "Call me back"
+          ],
+          "explanation": "Say 'Speaking' to show that you are the person they asked for.",
+          "itemIds": [
+            "en.elementary.u08.l05.speaking"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l05.task.build-hold-on",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "Hold on, please. Sam is here.",
+          "tiles": [
+            "Hold",
+            "on",
+            "please",
+            "Sam",
+            "is",
+            "here",
+            "back"
+          ],
+          "explanation": "Say 'Hold on, please' first, then 'Sam is here.'",
+          "itemIds": [
+            "en.elementary.u08.l05.hold-on",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l05.task.pick-wrong-number",
+          "kind": "choice",
+          "prompt": "Someone calls your phone asking for Tom, but there is no Tom here. What do you say?",
+          "answer": "Sorry, wrong number.",
+          "options": [
+            "Sorry, wrong number.",
+            "Speaking.",
+            "Hold on."
+          ],
+          "explanation": "Tell the caller 'Sorry, wrong number' when they dialed the wrong phone.",
+          "itemIds": [
+            "en.elementary.u08.l05.wrong-number",
+            "en.beginner.u01.l03.sorry"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l05.task.match-phone",
+          "kind": "match",
+          "prompt": "Match the phone phrases with what they mean.",
+          "pairs": [
+            {
+              "left": "Who is this?",
+              "right": "What is your name?"
+            },
+            {
+              "left": "Hold on",
+              "right": "please do not go"
+            },
+            {
+              "left": "Call me back",
+              "right": "call me in the evening"
+            },
+            {
+              "left": "Speaking",
+              "right": "Yes, this is me"
+            }
+          ],
+          "explanation": "Each phrase helps you manage a phone call politely.",
+          "itemIds": [
+            "en.elementary.u08.l05.who-is-this",
+            "en.elementary.u08.l05.hold-on",
+            "en.elementary.u08.l05.call-me-back",
+            "en.elementary.u08.l05.speaking"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l05.task.fill-call-back",
+          "kind": "fill",
+          "prompt": "You are in a lesson and cannot talk now. Complete the sentence.",
+          "text": "I am in a lesson now. Please ___ in the evening.",
+          "answer": "call me back",
+          "options": [
+            "call me back",
+            "wrong number",
+            "who is this"
+          ],
+          "explanation": "Ask the person to phone again later with 'call me back'.",
+          "itemIds": [
+            "en.elementary.u08.l05.call-me-back",
+            "en.elementary.u01.l07.lesson",
+            "en.beginner.u04.l10.in-the-evening"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l05.task.speak-phone",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "Hello, can I speak to Smarty, please?",
+          "answer": "Hello, can I speak to Smarty, please?",
+          "explanation": "Practise asking politely: 'Hello, can I speak to Smarty, please?'",
+          "itemIds": [
+            "en.elementary.u08.l05.can-i-speak-to",
+            "en.beginner.u01.l01.hello"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who calls Smarty's phone by mistake before Lily calls?",
+        "image": {
+          "id": "en-a2-u08-l05-scene",
+          "describe": "Smarty the black cat holds a phone to his ear in the game room while Omar the cat waves from the sofa."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello? Who is this?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Hi! Can I speak to Tom?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Sorry, there is no Tom here. You have the wrong number."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Oh, sorry! Goodbye!"
+          },
+          {
+            "speaker": "Lily",
+            "text": "Hello! Can I speak to Omar, please?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Hold on, Lily. Omar is in the game room."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Hello, Lily! Speaking! Call me back in the evening!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u08.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Why does Smarty say 'wrong number' to Leo?",
+            "answer": "There is no Tom in the game room",
+            "options": [
+              "There is no Tom in the game room",
+              "The phone is old",
+              "Omar is sleeping"
+            ],
+            "explanation": "Leo asks for Tom, and Smarty says there is no Tom here.",
+            "itemIds": [
+              "en.elementary.u08.l05.wrong-number"
+            ]
+          },
+          {
+            "id": "en.elementary.u08.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Omar ask Lily to do?",
+            "answer": "Call him back in the evening",
+            "options": [
+              "Call him back in the evening",
+              "Send a charger",
+              "Go to the bank"
+            ],
+            "explanation": "Omar says: Call me back in the evening!",
+            "itemIds": [
+              "en.elementary.u08.l05.call-me-back"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are calling Smarty on the phone. Have a short phone conversation.",
+        "turns": [
+          {
+            "smarty": "Ring, ring! Hello, this is Smarty. Who is this?",
+            "accept": [
+              "^(?:hello |hi )?(?:this is |i am |my name is )?(?:mia|sam|ben|leo|ana|lily|omar|zara|tom|a friend|a student)$",
+              "^(?:hello |hi )?it is (?:mia|sam|ben|leo|ana|lily|omar|zara|tom|me)$"
+            ],
+            "example": "Hello, this is Sam.",
+            "hint": "Tell Smarty your name, for example 'Hello, this is Sam.'",
+            "itemIds": [
+              "en.elementary.u08.l05.who-is-this",
+              "en.beginner.u01.l01.hello"
+            ]
+          },
+          {
+            "smarty": "Hello! Do you want to speak to Mia?",
+            "accept": [
+              "^yes(?: please)? can i speak to mia(?: please)?$",
+              "^yes(?: please| i do)?$",
+              "^no(?: thank you| thanks)?$"
+            ],
+            "example": "Yes, can I speak to Mia, please?",
+            "hint": "Ask politely: 'Yes, can I speak to Mia, please?'",
+            "itemIds": [
+              "en.elementary.u08.l05.can-i-speak-to"
+            ]
+          },
+          {
+            "smarty": "Mia is at school at the moment. What do you say?",
+            "accept": [
+              "^(?:please )?call me back(?: please)?$",
+              "^tell her to call me back$",
+              "^(?:please )?text me(?: please)?$"
+            ],
+            "example": "Call me back, please.",
+            "hint": "Ask Mia to phone you later: 'Call me back, please.'",
+            "itemIds": [
+              "en.elementary.u08.l05.call-me-back",
+              "en.elementary.u08.l03.text-me"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l03.please",
+        "en.beginner.u01.l03.sorry",
+        "en.elementary.u01.l07.lesson",
+        "en.beginner.u04.l10.in-the-evening",
+        "en.beginner.u01.l01.hello",
+        "en.elementary.u08.l03.text-me"
+      ]
+    },
+    {
+      "id": "en.elementary.u08.l06",
+      "section": "elementary",
+      "unit": 8,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Tech problems",
+      "canDo": "Report a problem",
+      "scenario": "Sam and Smarty fix a laptop, a phone signal, and a broken speaker in the game room.",
+      "items": [
+        {
+          "id": "en.elementary.u08.l06.it-is-not-working",
+          "text": "It is not working",
+          "kind": "phrase",
+          "forms": [
+            "working",
+            "worked",
+            "works",
+            "not working"
+          ],
+          "example": "My laptop is not working now.",
+          "note": "Say 'It is not working' when a device does not do what it should."
+        },
+        {
+          "id": "en.elementary.u08.l06.no-signal",
+          "text": "no signal",
+          "kind": "phrase",
+          "forms": [
+            "signal"
+          ],
+          "example": "I cannot call you because I have no signal.",
+          "note": "Say 'no signal' when your phone cannot connect to the mobile network or internet."
+        },
+        {
+          "id": "en.elementary.u08.l06.battery",
+          "text": "battery",
+          "kind": "word",
+          "forms": [
+            "batteries"
+          ],
+          "example": "My phone battery is at ten.",
+          "note": "Use 'battery' for the part inside a phone or laptop that stores power.",
+          "image": {
+            "id": "battery",
+            "describe": "a phone battery icon showing a tiny red bar at the bottom"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l06.low",
+          "text": "low",
+          "kind": "word",
+          "example": "I need my charger because my battery is low.",
+          "note": "Say 'low' when your battery power or signal is almost gone."
+        },
+        {
+          "id": "en.elementary.u08.l06.turn-it-off-and-on",
+          "text": "turn it off and on",
+          "kind": "phrase",
+          "forms": [
+            "turn",
+            "turns",
+            "turned",
+            "turning",
+            "off"
+          ],
+          "example": "When the computer stops, turn it off and on.",
+          "note": "Say 'turn it off and on' for restarting a device to fix a small problem."
+        },
+        {
+          "id": "en.elementary.u08.l06.it-is-broken",
+          "text": "It is broken",
+          "kind": "phrase",
+          "forms": [
+            "broken"
+          ],
+          "example": "This old speaker has no music. It is broken!",
+          "note": "Say 'It is broken' when a device is damaged and cannot be used."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u08.l06.task.pick-battery",
+          "kind": "choice",
+          "prompt": "Look at the picture. Your phone needs a charger because this has almost no power. What is it?",
+          "answer": "battery",
+          "options": [
+            "battery",
+            "signal",
+            "keyboard"
+          ],
+          "explanation": "The battery holds power inside your phone or laptop.",
+          "itemIds": [
+            "en.elementary.u08.l06.battery"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l06.task.hear-not-working",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "My laptop is not working now.",
+          "answer": "My laptop is not working now.",
+          "options": [
+            "My laptop is not working now.",
+            "My laptop is broken now.",
+            "My battery is low now."
+          ],
+          "explanation": "Listen for the phrase 'not working'.",
+          "itemIds": [
+            "en.elementary.u08.l06.it-is-not-working",
+            "en.elementary.u08.l01.laptop"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l06.task.fill-low",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I need my charger because my battery is ___.",
+          "answer": "low",
+          "options": [
+            "low",
+            "broken",
+            "wrong"
+          ],
+          "explanation": "When a battery needs charging, we say it is low.",
+          "itemIds": [
+            "en.elementary.u08.l06.low",
+            "en.elementary.u08.l06.battery",
+            "en.elementary.u08.l01.charger"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l06.task.build-turn-off-on",
+          "kind": "build",
+          "prompt": "Build the advice.",
+          "answer": "Please turn it off and on.",
+          "tiles": [
+            "Please",
+            "turn",
+            "it",
+            "off",
+            "and",
+            "on",
+            "back"
+          ],
+          "explanation": "Say 'turn it off and on' to suggest restarting a device.",
+          "itemIds": [
+            "en.elementary.u08.l06.turn-it-off-and-on"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l06.task.pick-no-signal",
+          "kind": "choice",
+          "prompt": "You are high in the mountains and cannot send a message or make a call. Why?",
+          "answer": "no signal",
+          "options": [
+            "no signal",
+            "wrong number",
+            "new battery"
+          ],
+          "explanation": "Without a network connection, your phone has no signal.",
+          "itemIds": [
+            "en.elementary.u08.l06.no-signal"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l06.task.match-problems",
+          "kind": "match",
+          "prompt": "Match each tech problem or fix with its meaning.",
+          "pairs": [
+            {
+              "left": "no signal",
+              "right": "no internet on your phone"
+            },
+            {
+              "left": "battery",
+              "right": "needs a charger"
+            },
+            {
+              "left": "It is broken",
+              "right": "you need a new one"
+            },
+            {
+              "left": "turn it off and on",
+              "right": "stop and start the laptop"
+            }
+          ],
+          "explanation": "No signal means no connection, a low battery needs a charger, broken means damaged, and turning off and on restarts the device.",
+          "itemIds": [
+            "en.elementary.u08.l06.no-signal",
+            "en.elementary.u08.l06.battery",
+            "en.elementary.u08.l06.it-is-broken",
+            "en.elementary.u08.l06.turn-it-off-and-on"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l06.task.fill-broken",
+          "kind": "fill",
+          "prompt": "Complete the sentence about a damaged speaker.",
+          "text": "This speaker has no music. ___!",
+          "answer": "It is broken",
+          "options": [
+            "It is broken",
+            "No signal",
+            "Hold on"
+          ],
+          "explanation": "Say 'It is broken' when a device is damaged and cannot work.",
+          "itemIds": [
+            "en.elementary.u08.l06.it-is-broken",
+            "en.elementary.u08.l01.speaker"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l06.task.speak-problems",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "My battery is low and I have no signal.",
+          "answer": "My battery is low and I have no signal.",
+          "explanation": "Report both problems clearly: 'My battery is low' and 'I have no signal'.",
+          "itemIds": [
+            "en.elementary.u08.l06.battery",
+            "en.elementary.u08.l06.low",
+            "en.elementary.u08.l06.no-signal"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How does Smarty help Sam fix his laptop and phone?",
+        "image": {
+          "id": "en-a2-u08-l06-scene",
+          "describe": "Sam the cat looks worried at a laptop while Smarty the black cat points to the power button and a charger in the game room."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Smarty, can you help me with my laptop? It is not working."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look at the screen. First, turn it off and on."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Look! Now the laptop is working!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Well done! What is the matter with your phone?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "My battery is low, and I have no signal here."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Here is a charger for your battery. And go next to the window for a signal!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Oh no, look at my old speaker. It is broken!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u08.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "How does Sam fix his laptop?",
+            "answer": "He turns it off and on",
+            "options": [
+              "He turns it off and on",
+              "He sends it to a friend",
+              "He has a new keyboard"
+            ],
+            "explanation": "Smarty tells Sam to turn it off and on, and then it works.",
+            "itemIds": [
+              "en.elementary.u08.l06.turn-it-off-and-on"
+            ]
+          },
+          {
+            "id": "en.elementary.u08.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What is wrong with Sam's old speaker?",
+            "answer": "It is broken",
+            "options": [
+              "It is broken",
+              "It has no password",
+              "It is in the kitchen"
+            ],
+            "explanation": "Sam says: Look at my old speaker. It is broken!",
+            "itemIds": [
+              "en.elementary.u08.l06.it-is-broken"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is having tech trouble in the game room. Help Smarty solve the problems.",
+        "turns": [
+          {
+            "smarty": "Oh no! My tablet is not working. What should I do first?",
+            "accept": [
+              "^(?:you should )?turn it off and on(?: please)?$",
+              "^turn the tablet off and on$"
+            ],
+            "example": "Turn it off and on.",
+            "hint": "Tell Smarty to restart it: 'Turn it off and on.'",
+            "itemIds": [
+              "en.elementary.u08.l06.it-is-not-working",
+              "en.elementary.u08.l06.turn-it-off-and-on",
+              "en.elementary.u08.l01.tablet"
+            ]
+          },
+          {
+            "smarty": "Thank you! Why do I need a charger for my phone?",
+            "accept": [
+              "^(?:because )?(?:your |the )?battery is low$",
+              "^(?:your |the )?battery$"
+            ],
+            "example": "Because your battery is low.",
+            "hint": "Say 'Because your battery is low.'",
+            "itemIds": [
+              "en.elementary.u08.l06.battery",
+              "en.elementary.u08.l06.low",
+              "en.elementary.u08.l01.charger"
+            ]
+          },
+          {
+            "smarty": "Do you have a phone or a laptop that is broken?",
+            "accept": [
+              "^yes(?: i do| my (?:phone|laptop|tablet) is broken)?$",
+              "^no(?: i do not)?$"
+            ],
+            "example": "No, I do not.",
+            "hint": "Answer 'Yes, my phone is broken' or 'No, I do not.'",
+            "itemIds": [
+              "en.elementary.u08.l06.it-is-broken",
+              "en.elementary.u08.l01.laptop"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u08.l01.laptop",
+        "en.elementary.u08.l01.charger",
+        "en.elementary.u08.l01.speaker",
+        "en.elementary.u08.l01.tablet"
+      ]
+    },
+    {
+      "id": "en.elementary.u08.l07",
+      "section": "elementary",
+      "unit": 8,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Have you ever…?",
+      "canDo": "Talk about experience",
+      "scenario": "Smarty, Mia, and Omar talk about online things they have or have not done.",
+      "items": [
+        {
+          "id": "en.elementary.u08.l07.have-you-ever",
+          "text": "Have you ever",
+          "kind": "phrase",
+          "forms": [
+            "ever",
+            "has she ever",
+            "has he ever"
+          ],
+          "example": "Have you ever sent an attachment?",
+          "note": "Start a question with 'Have you ever…?' to ask if someone has done something at any time in their life."
+        },
+        {
+          "id": "en.elementary.u08.l07.i-have-never",
+          "text": "I have never",
+          "kind": "phrase",
+          "forms": [
+            "she has never",
+            "he has never"
+          ],
+          "example": "I have never bought a laptop.",
+          "note": "Say 'I have never…' to tell someone you have not done that thing even once."
+        },
+        {
+          "id": "en.elementary.u08.l07.i-have-just",
+          "text": "I have just",
+          "kind": "phrase",
+          "forms": [
+            "she has just",
+            "he has just"
+          ],
+          "example": "I have just sent a message to Mia.",
+          "note": "Use 'I have just…' for an action that happened a moment ago."
+        },
+        {
+          "id": "en.elementary.u08.l07.already",
+          "text": "already",
+          "kind": "word",
+          "example": "Leo has already replied to my message.",
+          "note": "Put 'already' after 'have' or 'has' to show something happened earlier than expected."
+        },
+        {
+          "id": "en.elementary.u08.l07.yet",
+          "text": "yet",
+          "kind": "word",
+          "example": "Have you sent the link yet?",
+          "note": "Put 'yet' at the end of a question or 'not' sentence when you are waiting for something to happen."
+        },
+        {
+          "id": "en.elementary.u08.l07.not-yet",
+          "text": "Not yet",
+          "kind": "phrase",
+          "example": "Have you replied to Omar? — Not yet.",
+          "note": "Answer 'Not yet' when you have not done something so far, but you plan to do it."
+        }
+      ],
+      "grammar": {
+        "title": "Present perfect: ever, never, just, already, yet",
+        "explanation": "Use have or has with a past action word to connect past actions to now. Ask about life experience with ever, say zero times with never, show a moment ago with just, earlier than expected with already, and ask or answer about expected actions with yet and not yet.",
+        "examples": [
+          "Have you ever made a video call?",
+          "I have never had a tablet.",
+          "I have just sent a message.",
+          "He has already replied.",
+          "Have you replied yet? — Not yet."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u08.l07.task.pick-ever",
+          "kind": "choice",
+          "prompt": "You want to ask a friend about an experience in their life. Which phrase starts the question?",
+          "answer": "Have you ever",
+          "options": [
+            "Have you ever",
+            "I have never",
+            "Not yet"
+          ],
+          "explanation": "'Have you ever…?' asks if something happened at any time in your life.",
+          "itemIds": [
+            "en.elementary.u08.l07.have-you-ever"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l07.task.hear-never",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have never bought a new laptop.",
+          "answer": "I have never bought a new laptop.",
+          "options": [
+            "I have never bought a new laptop.",
+            "I have just bought a new laptop.",
+            "I have already bought a new laptop."
+          ],
+          "explanation": "Listen for 'I have never', which means zero times.",
+          "itemIds": [
+            "en.elementary.u08.l07.i-have-never",
+            "en.elementary.u08.l01.laptop"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l07.task.fill-just",
+          "kind": "fill",
+          "prompt": "It happened one moment ago. Complete the sentence.",
+          "text": "Look at your phone! ___ sent a message to you.",
+          "answer": "I have just",
+          "options": [
+            "I have just",
+            "Have you ever",
+            "Not yet"
+          ],
+          "explanation": "Use 'I have just' for something you did a moment ago.",
+          "itemIds": [
+            "en.elementary.u08.l07.i-have-just",
+            "en.elementary.u08.l03.send-a-message"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l07.task.build-already",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "Mia has already replied to my message.",
+          "tiles": [
+            "Mia",
+            "has",
+            "already",
+            "replied",
+            "to",
+            "my",
+            "message",
+            "yet"
+          ],
+          "explanation": "'Already' goes between 'has' and 'replied'.",
+          "itemIds": [
+            "en.elementary.u08.l07.already",
+            "en.elementary.u08.l03.reply",
+            "en.elementary.u08.l03.message"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l07.task.fill-yet",
+          "kind": "fill",
+          "prompt": "Complete the question.",
+          "text": "Have you sent the attachment ___?",
+          "answer": "yet",
+          "options": [
+            "yet",
+            "ever",
+            "never"
+          ],
+          "explanation": "Use 'yet' at the end of a question to ask if an expected action has happened.",
+          "itemIds": [
+            "en.elementary.u08.l07.yet",
+            "en.elementary.u08.l03.attachment"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l07.task.pick-not-yet",
+          "kind": "choice",
+          "prompt": "Smarty asks: Have you made a video call? You plan to do it later. What do you say?",
+          "answer": "Not yet.",
+          "options": [
+            "Not yet.",
+            "Have you ever?",
+            "I have just."
+          ],
+          "explanation": "'Not yet' means no so far, but maybe later.",
+          "itemIds": [
+            "en.elementary.u08.l07.not-yet",
+            "en.elementary.u08.l02.video-call"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l07.task.match-pp",
+          "kind": "match",
+          "prompt": "Match each expression with its time meaning.",
+          "pairs": [
+            {
+              "left": "Have you ever",
+              "right": "at any time"
+            },
+            {
+              "left": "I have never",
+              "right": "not one time"
+            },
+            {
+              "left": "I have just",
+              "right": "one moment ago"
+            },
+            {
+              "left": "Not yet",
+              "right": "no, but later"
+            }
+          ],
+          "explanation": "'Ever' asks about any time, 'never' means zero times, 'just' means a moment ago, and 'Not yet' means still to come.",
+          "itemIds": [
+            "en.elementary.u08.l07.have-you-ever",
+            "en.elementary.u08.l07.i-have-never",
+            "en.elementary.u08.l07.i-have-just",
+            "en.elementary.u08.l07.not-yet"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l07.task.fill-ever-contrast",
+          "kind": "fill",
+          "prompt": "Ask about someone's life experience.",
+          "text": "___ had a video call with a friend in England?",
+          "answer": "Have you ever",
+          "options": [
+            "Have you ever",
+            "I have never",
+            "I have just"
+          ],
+          "explanation": "Questions about experience begin with 'Have you ever'.",
+          "itemIds": [
+            "en.elementary.u08.l07.have-you-ever",
+            "en.elementary.u08.l02.video-call"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l07.task.build-not-yet",
+          "kind": "build",
+          "prompt": "Build the negative sentence with 'yet'.",
+          "answer": "I have not replied to Omar yet.",
+          "tiles": [
+            "I",
+            "have",
+            "not",
+            "replied",
+            "to",
+            "Omar",
+            "yet",
+            "already"
+          ],
+          "explanation": "In a negative sentence, 'yet' goes at the very end.",
+          "itemIds": [
+            "en.elementary.u08.l07.yet",
+            "en.elementary.u08.l03.reply"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l07.task.speak-pp",
+          "kind": "speak",
+          "prompt": "Say the question aloud.",
+          "text": "Have you ever sent a message with an attachment?",
+          "answer": "Have you ever sent a message with an attachment?",
+          "explanation": "Practise asking a full 'Have you ever…?' question.",
+          "itemIds": [
+            "en.elementary.u08.l07.have-you-ever",
+            "en.elementary.u08.l03.send-a-message",
+            "en.elementary.u08.l03.attachment"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How fast does Leo reply to Mia's message?",
+        "image": {
+          "id": "en-a2-u08-l07-scene",
+          "describe": "Mia the cat smiles at her smartphone while Smarty the black cat and Omar the cat look over her shoulder in the game room."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Omar, have you ever made a video call on a tablet?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "No, I have never had a tablet. I always have my phone."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Look! I have just sent a message to Leo."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Has he replied yet?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Not yet. Oh, look at my screen!"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Look! He has already replied with an old photo!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u08.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "Has Omar ever had a tablet?",
+            "answer": "No, he has never had a tablet",
+            "options": [
+              "No, he has never had a tablet",
+              "Yes, he has three tablets",
+              "He has just bought a tablet"
+            ],
+            "explanation": "Omar says: No, I have never had a tablet.",
+            "itemIds": [
+              "en.elementary.u08.l07.i-have-never",
+              "en.elementary.u08.l01.tablet"
+            ]
+          },
+          {
+            "id": "en.elementary.u08.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "What has Leo already done?",
+            "answer": "He has already replied with an old photo",
+            "options": [
+              "He has already replied with an old photo",
+              "He has called the hospital",
+              "He has turned off his laptop"
+            ],
+            "explanation": "Omar says: He has already replied with an old photo!",
+            "itemIds": [
+              "en.elementary.u08.l07.already",
+              "en.elementary.u08.l03.reply"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty wants to know what you have done online. Answer with ever, never, just, already, or yet.",
+        "turns": [
+          {
+            "smarty": "Have you ever sent a message in English?",
+            "accept": [
+              "^yes(?: i have(?: sent a message(?: in english)?)?)?$",
+              "^no i have never(?: sent a message(?: in english)?)?$"
+            ],
+            "example": "Yes, I have sent a message.",
+            "hint": "Answer 'Yes, I have' or 'No, I have never sent a message in English.'",
+            "itemIds": [
+              "en.elementary.u08.l07.have-you-ever",
+              "en.elementary.u08.l07.i-have-never",
+              "en.elementary.u08.l03.send-a-message"
+            ]
+          },
+          {
+            "smarty": "Have you sent a message to a friend yet?",
+            "accept": [
+              "^not yet$",
+              "^no not yet$",
+              "^yes i have(?: already)?(?: sent a message(?: to a friend)?)?$",
+              "^i have already sent a message$"
+            ],
+            "example": "Not yet.",
+            "hint": "Say 'Not yet' or 'Yes, I have already sent a message.'",
+            "itemIds": [
+              "en.elementary.u08.l07.yet",
+              "en.elementary.u08.l07.not-yet",
+              "en.elementary.u08.l07.already"
+            ]
+          },
+          {
+            "smarty": "Have you just read a message or replied to a friend?",
+            "accept": [
+              "^i have just (?:read a message|replied(?: to a friend)?|sent a message)$",
+              "^no i have not$"
+            ],
+            "example": "I have just read a message.",
+            "hint": "Say 'I have just read a message' or 'I have just replied.'",
+            "itemIds": [
+              "en.elementary.u08.l07.i-have-just",
+              "en.elementary.u08.l03.reply"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u08.l01.laptop",
+        "en.elementary.u08.l01.tablet",
+        "en.elementary.u08.l03.send-a-message",
+        "en.elementary.u08.l03.reply",
+        "en.elementary.u08.l03.message",
+        "en.elementary.u08.l03.attachment",
+        "en.elementary.u08.l02.video-call"
+      ]
+    },
+    {
+      "id": "en.elementary.u08.l08",
+      "section": "elementary",
+      "unit": 8,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Ben and Smarty deal with a low battery, weak signal, and phone calls in the game room.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u08.l08.task.pick-phone-reply",
+          "kind": "choice",
+          "prompt": "Someone calls and asks: Can I speak to Ben? You are Ben. What do you say?",
+          "answer": "Speaking.",
+          "options": [
+            "Speaking.",
+            "Wrong number.",
+            "Not yet."
+          ],
+          "explanation": "Say 'Speaking' when the caller is asking for you.",
+          "itemIds": [
+            "en.elementary.u08.l05.can-i-speak-to",
+            "en.elementary.u08.l05.speaking"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l08.task.hear-battery",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "My battery is low and my phone is not working.",
+          "answer": "My battery is low and my phone is not working.",
+          "options": [
+            "My battery is low and my phone is not working.",
+            "I have no signal and my laptop is broken.",
+            "Turn it off and on and call me back."
+          ],
+          "explanation": "Listen for 'battery is low' and 'not working'.",
+          "itemIds": [
+            "en.elementary.u08.l06.battery",
+            "en.elementary.u08.l06.low",
+            "en.elementary.u08.l06.it-is-not-working"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l08.task.match-review2",
+          "kind": "match",
+          "prompt": "Match each phrase with the best response.",
+          "pairs": [
+            {
+              "left": "Who is this?",
+              "right": "Hello, this is Zara."
+            },
+            {
+              "left": "It is not working.",
+              "right": "Turn it off and on."
+            },
+            {
+              "left": "Have you replied yet?",
+              "right": "Not yet."
+            },
+            {
+              "left": "Can I speak to Leo?",
+              "right": "Sorry, wrong number."
+            }
+          ],
+          "explanation": "Match each question or problem with its natural reply.",
+          "itemIds": [
+            "en.elementary.u08.l05.who-is-this",
+            "en.elementary.u08.l06.it-is-not-working",
+            "en.elementary.u08.l06.turn-it-off-and-on",
+            "en.elementary.u08.l07.yet",
+            "en.elementary.u08.l07.not-yet",
+            "en.elementary.u08.l05.can-i-speak-to",
+            "en.elementary.u08.l05.wrong-number"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l08.task.fill-already",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I have ___ called Zara back.",
+          "answer": "already",
+          "options": [
+            "already",
+            "yet",
+            "ever"
+          ],
+          "explanation": "Use 'already' to show the call has happened.",
+          "itemIds": [
+            "en.elementary.u08.l07.already",
+            "en.elementary.u08.l05.call-me-back"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l08.task.build-ever",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "Have you ever had no signal?",
+          "tiles": [
+            "Have",
+            "you",
+            "ever",
+            "had",
+            "no",
+            "signal",
+            "never"
+          ],
+          "explanation": "Form the experience question: 'Have you ever had no signal?'",
+          "itemIds": [
+            "en.elementary.u08.l07.have-you-ever",
+            "en.elementary.u08.l06.no-signal"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l08.task.fill-broken",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "This phone cannot turn on. ___.",
+          "answer": "It is broken",
+          "options": [
+            "It is broken",
+            "Hold on",
+            "I have just"
+          ],
+          "explanation": "When a device is damaged and cannot start, say 'It is broken.'",
+          "itemIds": [
+            "en.elementary.u08.l06.it-is-broken"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l08.task.speak-review2",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "Hold on, I have just called Sam.",
+          "answer": "Hold on, I have just called Sam.",
+          "explanation": "Practise combining 'Hold on' and 'I have just'.",
+          "itemIds": [
+            "en.elementary.u08.l05.hold-on",
+            "en.elementary.u08.l07.i-have-just"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why cannot Ben call Zara from the sofa?",
+        "image": {
+          "id": "en-a2-u08-l08-scene",
+          "describe": "Ben the cat holds his phone near the game room window while Smarty the black cat plugs a charger into a wall outlet."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Smarty, I have just tried to call Zara, and it is not working."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look at your phone screen. You have no signal on the sofa, and your battery is low."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I have never had no signal in the game room!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Hold on! Put your phone on this charger next to the window."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Hello? Who is this?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Hi, Zara! It is Ben. My battery is low, so call me back on the laptop!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u08.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What two problems does Ben's phone have?",
+            "answer": "No signal and a low battery",
+            "options": [
+              "No signal and a low battery",
+              "A broken keyboard and no webcam",
+              "A wrong number and no link"
+            ],
+            "explanation": "Smarty says Ben has no signal on the sofa and his battery is low.",
+            "itemIds": [
+              "en.elementary.u08.l06.no-signal",
+              "en.elementary.u08.l06.battery",
+              "en.elementary.u08.l06.low"
+            ]
+          },
+          {
+            "id": "en.elementary.u08.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Where does Ben ask Zara to call him back?",
+            "answer": "On the laptop",
+            "options": [
+              "On the laptop",
+              "At the hospital",
+              "At the station"
+            ],
+            "explanation": "Ben says: Call me back on the laptop!",
+            "itemIds": [
+              "en.elementary.u08.l05.call-me-back",
+              "en.elementary.u08.l01.laptop"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is testing your phone and problem-solving English. Answer Smarty!",
+        "turns": [
+          {
+            "smarty": "Hello! Can I speak to your best friend?",
+            "accept": [
+              "^sorry wrong number$",
+              "^wrong number$",
+              "^hold on(?: please)?$",
+              "^speaking$"
+            ],
+            "example": "Sorry, wrong number.",
+            "hint": "Say 'Sorry, wrong number' or 'Hold on, please.'",
+            "itemIds": [
+              "en.elementary.u08.l05.can-i-speak-to",
+              "en.elementary.u08.l05.wrong-number",
+              "en.elementary.u08.l05.hold-on"
+            ]
+          },
+          {
+            "smarty": "My phone has no signal here. What is wrong with your phone sometimes?",
+            "accept": [
+              "^(?:my )?battery is low$",
+              "^i have no signal$",
+              "^it is not working$",
+              "^it is broken$"
+            ],
+            "example": "My battery is low.",
+            "hint": "Report a problem, such as 'My battery is low' or 'I have no signal.'",
+            "itemIds": [
+              "en.elementary.u08.l06.no-signal",
+              "en.elementary.u08.l06.battery",
+              "en.elementary.u08.l06.low"
+            ]
+          },
+          {
+            "smarty": "Have you ever turned a computer off and on?",
+            "accept": [
+              "^yes(?: i have(?: turned a computer off and on)?)?$",
+              "^no i have never(?: turned a computer off and on)?$"
+            ],
+            "example": "Yes, I have.",
+            "hint": "Say 'Yes, I have' or 'No, I have never.'",
+            "itemIds": [
+              "en.elementary.u08.l07.have-you-ever",
+              "en.elementary.u08.l06.turn-it-off-and-on"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u08.l05.who-is-this",
+        "en.elementary.u08.l05.can-i-speak-to",
+        "en.elementary.u08.l05.hold-on",
+        "en.elementary.u08.l05.call-me-back",
+        "en.elementary.u08.l05.wrong-number",
+        "en.elementary.u08.l05.speaking",
+        "en.elementary.u08.l06.it-is-not-working",
+        "en.elementary.u08.l06.no-signal",
+        "en.elementary.u08.l06.battery",
+        "en.elementary.u08.l06.low",
+        "en.elementary.u08.l06.turn-it-off-and-on",
+        "en.elementary.u08.l06.it-is-broken",
+        "en.elementary.u08.l07.have-you-ever",
+        "en.elementary.u08.l07.i-have-never",
+        "en.elementary.u08.l07.i-have-just",
+        "en.elementary.u08.l07.already",
+        "en.elementary.u08.l07.yet",
+        "en.elementary.u08.l07.not-yet",
+        "en.elementary.u08.l01.laptop"
+      ]
+    },
+    {
+      "id": "en.elementary.u08.l09",
+      "section": "elementary",
+      "unit": 8,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "Social media",
+      "canDo": "Describe online activity",
+      "scenario": "Smarty, Ana, and Tom play a video game and share a selfie in the game room.",
+      "items": [
+        {
+          "id": "en.elementary.u08.l09.selfie",
+          "text": "selfie",
+          "kind": "word",
+          "forms": [
+            "selfies"
+          ],
+          "example": "Let's take a selfie together!",
+          "note": "Say 'selfie' for a photo you take of yourself with a phone or tablet.",
+          "image": {
+            "id": "selfie",
+            "describe": "Smarty the black cat holding up a smartphone to take a smiling selfie with two cat friends"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l09.post",
+          "text": "post",
+          "kind": "word",
+          "forms": [
+            "posts",
+            "posted",
+            "posting"
+          ],
+          "example": "I have just posted a new selfie.",
+          "note": "Use 'post' as a verb when you put a photo or message on a website or app, or as a noun for what you put there.",
+          "image": {
+            "id": "post",
+            "describe": "a social media card showing a cat photo with thumbs-up hearts underneath"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l09.share",
+          "text": "share",
+          "kind": "word",
+          "forms": [
+            "shares",
+            "shared",
+            "sharing"
+          ],
+          "example": "Let's share this link with Sam.",
+          "note": "Say 'share' when you send a photo, post, or link so friends can enjoy it too."
+        },
+        {
+          "id": "en.elementary.u08.l09.follow",
+          "text": "follow",
+          "kind": "word",
+          "forms": [
+            "follows",
+            "followed",
+            "following"
+          ],
+          "example": "I follow my favourite band on this app.",
+          "note": "Use 'follow' on an app when you choose to see all new posts from a friend or page."
+        },
+        {
+          "id": "en.elementary.u08.l09.profile",
+          "text": "profile",
+          "kind": "word",
+          "forms": [
+            "profiles"
+          ],
+          "example": "I have a new photo on my profile.",
+          "note": "Say 'profile' for your personal page on an app with your name and photo.",
+          "image": {
+            "id": "profile",
+            "describe": "a user profile page on a tablet showing a round cat portrait and bio lines"
+          }
+        },
+        {
+          "id": "en.elementary.u08.l09.video-game",
+          "text": "video game",
+          "kind": "phrase",
+          "forms": [
+            "video games"
+          ],
+          "example": "We play a video game in the game room.",
+          "note": "Say 'video game' for a game you play on a screen, computer, or phone.",
+          "image": {
+            "id": "video-game",
+            "describe": "two cats holding game controllers in front of a bright screen showing a racing game"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u08.l09.task.pick-selfie",
+          "kind": "choice",
+          "prompt": "Look at the picture. Smarty takes a photo of himself with a phone. What is it?",
+          "answer": "selfie",
+          "options": [
+            "selfie",
+            "profile",
+            "password"
+          ],
+          "explanation": "A photo you take of yourself is called a selfie.",
+          "itemIds": [
+            "en.elementary.u08.l09.selfie"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l09.task.hear-post",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have just posted a new selfie.",
+          "answer": "I have just posted a new selfie.",
+          "options": [
+            "I have just posted a new selfie.",
+            "I have just shared a new link.",
+            "I have just played a new video game."
+          ],
+          "explanation": "Listen to the action word: posted a new selfie.",
+          "itemIds": [
+            "en.elementary.u08.l09.post",
+            "en.elementary.u08.l09.selfie",
+            "en.elementary.u08.l07.i-have-just"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l09.task.fill-share",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "This website is interesting! Let's ___ the link with Sam.",
+          "answer": "share",
+          "options": [
+            "share",
+            "follow",
+            "reply"
+          ],
+          "explanation": "Use 'share' when you send a link or photo to friends.",
+          "itemIds": [
+            "en.elementary.u08.l09.share",
+            "en.elementary.u08.l02.website",
+            "en.elementary.u08.l02.link"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l09.task.build-follow",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I follow my favourite band on this app.",
+          "tiles": [
+            "I",
+            "follow",
+            "my",
+            "favourite",
+            "band",
+            "on",
+            "this",
+            "app",
+            "share"
+          ],
+          "explanation": "Say 'I follow' followed by who you watch on the app.",
+          "itemIds": [
+            "en.elementary.u08.l09.follow",
+            "en.elementary.u08.l02.app",
+            "en.elementary.u05.l02.band"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l09.task.pick-profile",
+          "kind": "choice",
+          "prompt": "This page on an app shows your name and your photo. What is it?",
+          "answer": "profile",
+          "options": [
+            "profile",
+            "charger",
+            "keyboard"
+          ],
+          "explanation": "Your personal page with your photo and name is your profile.",
+          "itemIds": [
+            "en.elementary.u08.l09.profile"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l09.task.match-social",
+          "kind": "match",
+          "prompt": "Match the social media words with their descriptions.",
+          "pairs": [
+            {
+              "left": "selfie",
+              "right": "a photo of you"
+            },
+            {
+              "left": "video game",
+              "right": "a game on a screen"
+            },
+            {
+              "left": "follow",
+              "right": "see new posts from a friend"
+            },
+            {
+              "left": "profile",
+              "right": "your name and photo"
+            }
+          ],
+          "explanation": "Each word describes a common online activity or page.",
+          "itemIds": [
+            "en.elementary.u08.l09.selfie",
+            "en.elementary.u08.l09.video-game",
+            "en.elementary.u08.l09.follow",
+            "en.elementary.u08.l09.profile"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l09.task.fill-video-game",
+          "kind": "fill",
+          "prompt": "Complete the question.",
+          "text": "Have you ever played this ___ in the game room?",
+          "answer": "video game",
+          "options": [
+            "video game",
+            "wrong number",
+            "video call"
+          ],
+          "explanation": "You play a video game on a computer or screen.",
+          "itemIds": [
+            "en.elementary.u08.l09.video-game",
+            "en.elementary.u08.l07.have-you-ever"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l09.task.speak-social",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I have just shared a selfie on my profile.",
+          "answer": "I have just shared a selfie on my profile.",
+          "explanation": "Practise saying 'shared a selfie on my profile'.",
+          "itemIds": [
+            "en.elementary.u08.l09.share",
+            "en.elementary.u08.l09.selfie",
+            "en.elementary.u08.l09.profile",
+            "en.elementary.u08.l07.i-have-just"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What do Smarty, Ana, and Tom share on Tom's profile?",
+        "image": {
+          "id": "en-a2-u08-l09-scene",
+          "describe": "Tom, Ana, and Smarty the black cat pose together in the game room for a selfie in front of a screen showing a video game."
+        },
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "Look at my screen! I played this video game and got the prize!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Well done, Tom! Let's take a selfie together."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Look at our selfie! It is great!"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Can I post it on my profile?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, of course! Share it with Mia and Sam!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "I already follow your profile, Tom. Look! The post is on my screen!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u08.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "What did Tom get in the video game?",
+            "answer": "The prize",
+            "options": [
+              "The prize",
+              "A charger",
+              "A headache"
+            ],
+            "explanation": "Tom says: I played this video game and got the prize!",
+            "itemIds": [
+              "en.elementary.u08.l09.video-game"
+            ]
+          },
+          {
+            "id": "en.elementary.u08.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "Why can Ana see Tom's new post on her screen?",
+            "answer": "She already follows his profile",
+            "options": [
+              "She already follows his profile",
+              "She has his charger",
+              "She is at the library"
+            ],
+            "explanation": "Ana says: I already follow your profile, Tom.",
+            "itemIds": [
+              "en.elementary.u08.l09.follow",
+              "en.elementary.u08.l09.profile",
+              "en.elementary.u08.l09.post"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Chat with Smarty about video games and social media.",
+        "turns": [
+          {
+            "smarty": "Do you like a video game on a computer or a phone?",
+            "accept": [
+              "^i like a video game on a (?:computer|phone|tablet|laptop)$",
+              "^on a (?:computer|phone|tablet|laptop)$",
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$"
+            ],
+            "example": "I like a video game on a computer.",
+            "hint": "Say 'I like a video game on a computer' or 'on a phone.'",
+            "itemIds": [
+              "en.elementary.u08.l09.video-game"
+            ]
+          },
+          {
+            "smarty": "Have you ever posted a selfie?",
+            "accept": [
+              "^yes(?: i have(?: posted a selfie)?)?$",
+              "^no i have never(?: posted a selfie)?$"
+            ],
+            "example": "Yes, I have posted a selfie.",
+            "hint": "Answer 'Yes, I have posted a selfie' or 'No, I have never posted a selfie.'",
+            "itemIds": [
+              "en.elementary.u08.l09.post",
+              "en.elementary.u08.l09.selfie",
+              "en.elementary.u08.l07.have-you-ever"
+            ]
+          },
+          {
+            "smarty": "What do you share with your friend on an app?",
+            "accept": [
+              "^i share (?:a )?(?:selfie|selfies|link|links|photo|photos|post|posts|video game|video games|music)$",
+              "^(?:a )?(?:selfie|link|post|video game|music)$"
+            ],
+            "example": "I share a selfie.",
+            "hint": "Say 'I share a selfie' or 'I share a link.'",
+            "itemIds": [
+              "en.elementary.u08.l09.share",
+              "en.elementary.u08.l09.selfie"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u08.l07.i-have-just",
+        "en.elementary.u08.l02.website",
+        "en.elementary.u08.l02.link",
+        "en.elementary.u08.l02.app",
+        "en.elementary.u05.l02.band",
+        "en.elementary.u08.l07.have-you-ever"
+      ]
+    },
+    {
+      "id": "en.elementary.u08.l10",
+      "section": "elementary",
+      "unit": 8,
+      "lesson": 10,
+      "type": "test",
+      "title": "Keep in touch",
+      "canDo": "Stay in contact",
+      "scenario": "Zara leaves for a trip, and she, Ben, and Smarty promise to keep in touch online.",
+      "items": [
+        {
+          "id": "en.elementary.u08.l10.see-you-online",
+          "text": "See you online",
+          "kind": "phrase",
+          "forms": [
+            "online"
+          ],
+          "example": "Goodbye, Ben! See you online!",
+          "note": "Say 'See you online' when you say goodbye and plan to chat or game on the internet later."
+        },
+        {
+          "id": "en.elementary.u08.l10.lets-keep-in-touch",
+          "text": "Let's keep in touch",
+          "kind": "phrase",
+          "forms": [
+            "keep",
+            "in touch",
+            "touch"
+          ],
+          "example": "Have a good trip! Let's keep in touch!",
+          "note": "Say 'Let's keep in touch' to tell a friend you want to keep messaging and calling each other."
+        },
+        {
+          "id": "en.elementary.u08.l10.can-i-have-your-number",
+          "text": "Can I have your number?",
+          "kind": "phrase",
+          "forms": [
+            "your"
+          ],
+          "example": "Can I have your number? I want to text you.",
+          "note": "Ask 'Can I have your number?' when you want a friend's phone number so you can call or text them."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u08.l10.task.pick-keep-in-touch",
+          "kind": "choice",
+          "prompt": "Your friend is going on a trip. You want to keep messaging and calling each other. What do you say?",
+          "answer": "Let's keep in touch!",
+          "options": [
+            "Let's keep in touch!",
+            "Wrong number!",
+            "It is broken!"
+          ],
+          "explanation": "'Let's keep in touch!' means let's stay in contact by message or call.",
+          "itemIds": [
+            "en.elementary.u08.l10.lets-keep-in-touch"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l10.task.hear-your-number",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Can I have your number, please?",
+          "answer": "Can I have your number, please?",
+          "options": [
+            "Can I have your number, please?",
+            "Can I speak to Sam, please?",
+            "Can I have your password, please?"
+          ],
+          "explanation": "Listen for 'Can I have your number'.",
+          "itemIds": [
+            "en.elementary.u08.l10.can-i-have-your-number"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l10.task.fill-see-you-online",
+          "kind": "fill",
+          "prompt": "Say goodbye to a friend you will meet on the internet later.",
+          "text": "Goodbye! I am going home now. ___!",
+          "answer": "See you online",
+          "options": [
+            "See you online",
+            "Hold on",
+            "Not yet"
+          ],
+          "explanation": "'See you online' is a friendly way to say goodbye before meeting on the internet.",
+          "itemIds": [
+            "en.elementary.u08.l10.see-you-online"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l10.task.build-your-number",
+          "kind": "build",
+          "prompt": "Build the question.",
+          "answer": "Can I have your number to text you?",
+          "tiles": [
+            "Can",
+            "I",
+            "have",
+            "your",
+            "number",
+            "to",
+            "text",
+            "you",
+            "link"
+          ],
+          "explanation": "Ask 'Can I have your number' and explain why: 'to text you'.",
+          "itemIds": [
+            "en.elementary.u08.l10.can-i-have-your-number",
+            "en.elementary.u08.l03.text-me"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l10.task.fill-pp-unit",
+          "kind": "fill",
+          "prompt": "Complete the experience question.",
+          "text": "___ sent a message with an attachment?",
+          "answer": "Have you ever",
+          "options": [
+            "Have you ever",
+            "I have never",
+            "I have just"
+          ],
+          "explanation": "Use 'Have you ever' to ask about past experience.",
+          "itemIds": [
+            "en.elementary.u08.l07.have-you-ever",
+            "en.elementary.u08.l03.send-a-message",
+            "en.elementary.u08.l03.attachment"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l10.task.match-unit",
+          "kind": "match",
+          "prompt": "Match the phrases with their meanings.",
+          "pairs": [
+            {
+              "left": "Can I have your number?",
+              "right": "I want to text you"
+            },
+            {
+              "left": "See you online",
+              "right": "goodbye on the internet"
+            },
+            {
+              "left": "Let's keep in touch",
+              "right": "send messages and call"
+            },
+            {
+              "left": "Call me back",
+              "right": "phone me in the evening"
+            }
+          ],
+          "explanation": "All four phrases help you stay connected with friends.",
+          "itemIds": [
+            "en.elementary.u08.l10.can-i-have-your-number",
+            "en.elementary.u08.l10.see-you-online",
+            "en.elementary.u08.l10.lets-keep-in-touch",
+            "en.elementary.u08.l05.call-me-back"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l10.task.choice-tech",
+          "kind": "choice",
+          "prompt": "Your tablet has no power and needs a charger. What is the problem?",
+          "answer": "The battery is low.",
+          "options": [
+            "The battery is low.",
+            "It is a wrong number.",
+            "I have just replied."
+          ],
+          "explanation": "When a tablet needs a charger, its battery is low.",
+          "itemIds": [
+            "en.elementary.u08.l01.tablet",
+            "en.elementary.u08.l06.battery",
+            "en.elementary.u08.l06.low"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l10.task.fill-already",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I do not need the link now because Mia has ___ shared it.",
+          "answer": "already",
+          "options": [
+            "already",
+            "yet",
+            "ever"
+          ],
+          "explanation": "Use 'already' when something happened earlier.",
+          "itemIds": [
+            "en.elementary.u08.l02.link",
+            "en.elementary.u08.l07.already",
+            "en.elementary.u08.l09.share"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l10.task.build-keep-in-touch",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "Let's keep in touch on this app.",
+          "tiles": [
+            "Let's",
+            "keep",
+            "in",
+            "touch",
+            "on",
+            "this",
+            "app",
+            "yet"
+          ],
+          "explanation": "Say 'Let's keep in touch' and add 'on this app'.",
+          "itemIds": [
+            "en.elementary.u08.l10.lets-keep-in-touch",
+            "en.elementary.u08.l02.app"
+          ]
+        },
+        {
+          "id": "en.elementary.u08.l10.task.speak-final",
+          "kind": "speak",
+          "prompt": "Say the sentences aloud.",
+          "text": "Can I have your number? Let's keep in touch and see you online!",
+          "answer": "Can I have your number? Let's keep in touch and see you online!",
+          "explanation": "Say all three Unit 8 closing phrases smoothly.",
+          "itemIds": [
+            "en.elementary.u08.l10.can-i-have-your-number",
+            "en.elementary.u08.l10.lets-keep-in-touch",
+            "en.elementary.u08.l10.see-you-online"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How will Zara stay in contact with Smarty and Ben during her trip?",
+        "image": {
+          "id": "en-a2-u08-l10-scene",
+          "describe": "Zara the cat holds a suitcase and waves goodbye to Smarty the black cat and Ben the cat in the game room."
+        },
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "Goodbye, Smarty! Goodbye, Ben! My train is at five o'clock."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Have a good trip, Zara! Let's keep in touch!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes! Can I have your number, Ben?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Of course! It is five, five, two, eight, one, nine."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I already follow your profile, Zara. Send a message when you are at the hotel!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "I will! My tablet battery is full, and I have my charger in my suitcase."
+          },
+          {
+            "speaker": "Ben",
+            "text": "See you online, Zara!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u08.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Zara ask Ben for before she leaves?",
+            "answer": "His phone number",
+            "options": [
+              "His phone number",
+              "His password",
+              "His keyboard"
+            ],
+            "explanation": "Zara asks: Can I have your number, Ben?",
+            "itemIds": [
+              "en.elementary.u08.l10.can-i-have-your-number"
+            ]
+          },
+          {
+            "id": "en.elementary.u08.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Smarty ask Zara to do when she arrives at the hotel?",
+            "answer": "Send a message",
+            "options": [
+              "Send a message",
+              "Buy a speaker",
+              "Turn off the internet"
+            ],
+            "explanation": "Smarty says: Send a message when you are at the hotel!",
+            "itemIds": [
+              "en.elementary.u08.l03.send-a-message",
+              "en.elementary.u08.l09.follow",
+              "en.elementary.u08.l09.profile"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Final unit check! Stay in touch with Smarty before you finish Unit 8.",
+        "turns": [
+          {
+            "smarty": "This is the last lesson! I want to text you later. What do you ask me?",
+            "accept": [
+              "^can i have your number(?: please)?$",
+              "^what is your number$"
+            ],
+            "example": "Can I have your number?",
+            "hint": "Ask Smarty: 'Can I have your number?'",
+            "itemIds": [
+              "en.elementary.u08.l10.can-i-have-your-number"
+            ]
+          },
+          {
+            "smarty": "My number is seven, three, four, nine, two, zero. Have you ever shared a selfie online?",
+            "accept": [
+              "^yes(?: i have(?: shared a selfie(?: online)?)?)?$",
+              "^no i have never(?: shared a selfie(?: online)?)?$"
+            ],
+            "example": "Yes, I have shared a selfie online.",
+            "hint": "Answer 'Yes, I have shared a selfie online' or 'No, I have never shared a selfie online.'",
+            "itemIds": [
+              "en.elementary.u08.l07.have-you-ever",
+              "en.elementary.u08.l09.share",
+              "en.elementary.u08.l09.selfie",
+              "en.elementary.u08.l10.see-you-online"
+            ]
+          },
+          {
+            "smarty": "Well done! Say goodbye to Smarty online!",
+            "accept": [
+              "^(?:goodbye |bye )?see you online(?: smarty)?$",
+              "^(?:goodbye |bye )?lets keep in touch(?: smarty)?$"
+            ],
+            "example": "See you online, Smarty!",
+            "hint": "Say 'See you online, Smarty!' or 'Let's keep in touch!'",
+            "itemIds": [
+              "en.elementary.u08.l10.see-you-online",
+              "en.elementary.u08.l10.lets-keep-in-touch"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u08.l03.text-me",
+        "en.elementary.u08.l07.have-you-ever",
+        "en.elementary.u08.l03.send-a-message",
+        "en.elementary.u08.l03.attachment",
+        "en.elementary.u08.l05.call-me-back",
+        "en.elementary.u08.l01.tablet",
+        "en.elementary.u08.l06.battery",
+        "en.elementary.u08.l06.low",
+        "en.elementary.u08.l02.link",
+        "en.elementary.u08.l07.already",
+        "en.elementary.u08.l09.share",
+        "en.elementary.u08.l02.app",
+        "en.elementary.u08.l09.follow",
+        "en.elementary.u08.l09.profile",
+        "en.elementary.u08.l09.selfie"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Secret Attachment",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "It is eight o'clock in the evening. Mia, Sam, and I are in the game room.",
+        "image": {
+          "id": "en-a2-u08-ep-01",
+          "describe": "Smarty the black cat, Mia, and Sam sit together in the cozy game room surrounded by devices."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Look at the tablet on the desk! It has a new message."
+      },
+      {
+        "speaker": "Sam",
+        "text": "Oh no, the battery is low and the screen is black."
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Here is the charger. Now let's turn it off and on.",
+        "image": {
+          "id": "en-a2-u08-ep-02",
+          "describe": "Smarty plugs a white charger into the tablet as the screen lights up."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Look! The internet is working now. There is an attachment in the message!"
+      },
+      {
+        "speaker": "Sam",
+        "text": "Who is this? It is not from Leo or Ana. I have never had a message from this number."
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Look at the attachment! It is a map of our park with a big red letter X!",
+        "image": {
+          "id": "en-a2-u08-ep-03",
+          "describe": "A glowing map on the tablet screen showing a green park and a bright red X under an old tree."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "And there is one more message: Look under the old tree tomorrow at nine o'clock. See you online!"
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.elementary.u08.episode.q1",
+        "kind": "choice",
+        "prompt": "Why was the tablet screen black at first?",
+        "answer": "The battery was low",
+        "options": [
+          "The battery was low",
+          "It was a wrong number",
+          "The keyboard was broken"
+        ],
+        "explanation": "Sam saw that the tablet battery was low.",
+        "itemIds": [
+          "en.elementary.u08.l01.tablet",
+          "en.elementary.u08.l06.battery",
+          "en.elementary.u08.l06.low"
+        ]
+      },
+      {
+        "id": "en.elementary.u08.episode.q2",
+        "kind": "choice",
+        "prompt": "What was in the attachment?",
+        "answer": "A map of the park with a red letter X",
+        "options": [
+          "A map of the park with a red letter X",
+          "A selfie from Leo",
+          "A new video game"
+        ],
+        "explanation": "Smarty saw a map of their park with a big red letter X.",
+        "itemIds": [
+          "en.elementary.u08.l03.attachment",
+          "en.elementary.u08.l03.message"
+        ]
+      },
+      {
+        "id": "en.elementary.u08.episode.q3",
+        "kind": "choice",
+        "prompt": "Where should Smarty, Mia, and Sam look tomorrow at nine o'clock?",
+        "answer": "Under the old tree",
+        "options": [
+          "Under the old tree",
+          "At the cinema",
+          "Behind the sofa"
+        ],
+        "explanation": "The message said: Look under the old tree tomorrow at nine o'clock.",
+        "itemIds": [
+          "en.elementary.u08.l10.see-you-online"
+        ]
+      }
+    ]
+  }
+}

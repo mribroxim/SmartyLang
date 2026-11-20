@@ -1,5 +1,5 @@
 import { useUiLang } from '../contexts/UiLangContext';
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { Volume2, Plus, CheckCircle2, BookOpen, Languages, Loader2, Search, Text } from 'lucide-react';
 import { LANGUAGES, type LanguageOption, decodeHtmlEntities } from '../lib/languages';
 import { readPreferredTranslationLang } from '../lib/preferredTranslationLang';

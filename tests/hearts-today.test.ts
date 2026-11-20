@@ -122,12 +122,13 @@ test('server progress merges retain newer hearts and existing daily reward claim
   assert.equal(previous.xp, 100);
 });
 
-test('free learners can open path/daily/heart routes; libraries and practice remain gated', () => {
+test('free learners can reach Practice, Workshop, and path tests while Daily Review is premium', () => {
   const free = { role: 'student', plan: null } as any;
   assert.equal(canUseBites(free), true);
   assert.equal(canUseBites(null), false);
-  for (const path of [[], ['path'], ['bite', 'en', 'a', '0'], ['today'], ['hearts', 'practice']]) assert.equal(isFreeLearningRoute('lessons', path), true);
-  for (const path of [['levels'], ['library'], ['certificate']]) assert.equal(isFreeLearningRoute('lessons', path), false);
+  for (const path of [[], ['path'], ['bite', 'en', 'a', '0'], ['refine'], ['assessment'], ['hearts', 'practice']]) assert.equal(isFreeLearningRoute('lessons', path), true);
+  for (const path of [['today'], ['levels'], ['library'], ['certificate']]) assert.equal(isFreeLearningRoute('lessons', path), false);
+  assert.equal(isFreeLearningRoute('practice', []), true);
   assert.equal(isFreeLearningRoute('practice', ['path']), false);
   assert.equal(hasUnlimitedHearts({ ...free, plan: 'smarty-max' }), true);
   assert.equal(hasUnlimitedHearts({ ...free, role: 'admin' }), true);
@@ -135,38 +136,37 @@ test('free learners can open path/daily/heart routes; libraries and practice rem
   assert.equal(hasUnlimitedHearts({ ...free, role: 'business' }), false);
 });
 
-test('daily selection is deterministic with three new, five due and three missed words', () => {
+test('daily selection is deterministic and mixes missed and due words', () => {
   const lesson = tx('new');
   const other = tx('missed');
   const vocab: ReviewVocab = Object.fromEntries(Array.from({ length: 8 }, (_, i) => [`review${i}`, { definition: `Review ${i}`, lang: 'en', srs: { nextReviewDate: start - 1000 } }]));
   const input = { lang: 'en' as const, date: '2026-11-13', nextText: lesson, texts: [lesson, other], vocab, missed: other.vocabulary.map(v => v.word), now: start };
   const session = deriveDailySession(input);
   assert.deepEqual(session, deriveDailySession(input));
-  assert.equal(session.items.length, 11);
-  assert.equal(new Set(session.items.map(item => item.word)).size, 11);
-  assert.equal(session.items.filter(item => item.source === 'new').length, 3);
-  assert.equal(session.items.filter(item => item.source === 'review').length, 5);
-  assert.equal(session.items.filter(item => item.source === 'missed').length, 3);
+  assert.equal(session.items.length, 8);
+  assert.equal(new Set(session.items.map(item => item.word)).size, 8);
+  assert.equal(session.items.filter(item => item.source === 'new').length, 0);
+  assert.equal(session.items.filter(item => item.source === 'review').length, 4);
+  assert.equal(session.items.filter(item => item.source === 'missed').length, 4);
 });
 
-test('new learners revisit three new words to fill the daily session', () => {
+test('daily review waits for the learner to have words to review', () => {
   const lesson = tx('new');
   const result = deriveDailySession({ lang: 'en', date: '2026-11-13', nextText: lesson, texts: [lesson], vocab: {}, missed: [], now: start });
-  assert.equal(result.items.length, 11);
-  assert.equal(result.items.filter(item => item.source === 'new').length, 3);
-  assert.equal(new Set(result.items.map(item => item.word)).size, 3);
+  assert.equal(result.items.length, 0);
 });
 
 test('cached daily content survives changes to SRS/path and rotates on the next local date', () => {
   const clock = new Date(2026, 10, 13, 10).getTime();
   const texts = levels([tx('first')]);
-  const a = getDailySession('en', 'Beginner', texts, {}, {}, clock)!;
-  const b = getDailySession('en', 'Beginner', levels([tx('changed')]), {}, {}, clock)!;
+  const vocab = { known: { definition: 'Known', srs: { nextReviewDate: clock - 1000 } } };
+  const a = getDailySession('en', 'Beginner', texts, vocab, {}, clock)!;
+  const b = getDailySession('en', 'Beginner', levels([tx('changed')]), vocab, {}, clock)!;
   assert.deepEqual(b, a);
-  const nextDay = getDailySession('en', 'Beginner', texts, {}, {}, clock + 86400000)!;
+  const nextDay = getDailySession('en', 'Beginner', texts, vocab, {}, clock + 86400000)!;
   assert.notEqual(nextDay.date, a.date);
   setStorageUid('other-daily-learner');
-  assert.equal(getDailySession('en', 'Beginner', levels([tx('other')]), {}, {}, clock)!.passageId, 'other');
+  assert.equal(getDailySession('en', 'Beginner', levels([tx('other')]), vocab, {}, clock)!.passageId, 'other');
 });
 
 test('daily XP is awarded once and a successful replay can earn its one heart', () => {
@@ -174,7 +174,7 @@ test('daily XP is awarded once and a successful replay can earn its one heart', 
   assert.deepEqual(completeDailySession('en', '2026-11-13', 90), { xp: false, heart: true });
   assert.deepEqual(completeDailySession('en', '2026-11-13', 100), { xp: false, heart: false });
   assert.equal(dailyCompletion('en', '2026-11-13')!.best, 100);
-  assert.deepEqual(biteXp('today', 100, true), { xp: 15, coins: 0 });
+  assert.deepEqual(biteXp('today', 100, true), { xp: 15, coins: 3 });
   assert.deepEqual(completeDailySession('en', '2026-11-14', 80), { xp: true, heart: true });
 });
 

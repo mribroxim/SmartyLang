@@ -1,15 +1,16 @@
 import { DialogSurface } from './components/DialogSurface';
 import { useVosk, isMobileDevice } from './hooks/useVosk';
 import { useAppRoute } from './hooks/useAppRoute';
-import { useState, useEffect, useRef, useMemo, useCallback, lazy, Suspense } from 'react';
-import { CheckCircle2, Volume2, X, BookOpen, Play, XCircle, Download, StopCircle, Pencil, Flame, Target, Medal, Sparkles } from 'lucide-react';
-import { accountTypeOf, isFreeUser, isPreviewMode, canPractice, canUseBites, hasUnlimitedHearts, isFreeLearningRoute, ACCOUNT_TYPE_LABEL, isBusinessRole, maxEnded } from './lib/access';
+import { useState, useEffect, useRef, useMemo, useCallback, useSyncExternalStore, lazy, Suspense } from 'react';
+import { useMyClasses } from './lib/useMyClasses';
+import { CheckCircle2, Volume2, X, BookOpen, Play, XCircle, Download, StopCircle, Flame, Target, Medal, Sparkles } from 'lucide-react';
+import { accountTypeOf, isFreeUser, isPreviewMode, canPractice, canUseBites, hasUnlimitedHearts, isFreeLearningRoute, ACCOUNT_TYPE_LABEL, isEducatorRole, maxEnded } from './lib/access';
 import { initializeHearts, gainHearts } from './lib/hearts/heartsStore';
 import { completeDailySession } from './lib/bites/dailySession';
 import { Level, ReadingText, alignWords } from './lib/reading-logic';
 import { tokenizeForLang } from './lib/pronunciationProfile';
 import { tokenizePassageForSpeech } from './lib/dialogueText';
-import { loadLevelTexts, EMPTY_LEVEL_TEXTS, type LevelTexts } from './data/levelTexts';
+import { getLevelTextsSync, loadLevelTexts, EMPTY_LEVEL_TEXTS, type LevelTexts } from './data/levelTexts';
 import { logActivity } from './lib/activity-tracker';
 import { get, set } from 'idb-keyval';
 import { applySrsFromResult } from './lib/srs';
@@ -17,14 +18,12 @@ import { ProgressProvider } from './contexts/ProgressContext';
 import { biteXp, goalXpForMinutes } from './lib/bites/xp';
 import type { BiteResult } from './lib/bites/types';
 import { getPrefs, setPrefs, useSmartyPrefs, type DailyMinutes } from './lib/smarty/prefs';
-import { findCurrentLesson } from './lib/bites/biteProgress';
+import { findCurrentLesson, lessonBiteState } from './lib/bites/biteProgress';
 import { useFirebaseSync } from './useFirebaseSync';
 import { AuthGate } from './features/AuthGate';
-import { getUserProfile, refreshAuthSession } from './firebase';
-import { Onboarding } from './features/Onboarding';
+import { getUserProfile, refreshAuthSession, getSessionError, subscribeSessionError, retryInitialSession } from './firebase';
 import { PaywallScreen } from './components/PaywallScreen';
 import { playSound } from './lib/audio';
-import { WordDetailsModal } from './components/WordDetailsModal';
 import { playWord as sharedPlayWord } from './lib/speech';
 import { DEFAULT_SPEECH_RATE } from './lib/speechRates';
 import { lookupDictionary } from './lib/dictionary';
@@ -34,19 +33,12 @@ import { activityLangStamp, sessionsForLang } from './lib/activityMeta';
 import {
   saveReadingSession,
   clearReadingSession,
-  saveAssignmentExerciseResume,
-  clearAssignmentExerciseResume,
-  loadAssignmentExerciseResume,
 } from './lib/midSession';
 import { bumpWeeklyGoal, trackExerciseStreak } from './lib/weeklyGoals';
-import { requestExerciseResume, loadExerciseSession } from './lib/exerciseSession';
 import { readScopedJSON, writeScopedJSON } from './lib/userStorage';
-import { earnFishPiece, MEAL_XP, MEAL_COINS } from './lib/smarty/pantry';
-import { SmartyRoom } from './features/Room/SmartyRoom';
-import { PracticeView } from './features/Practice/PracticeView';
-import { QuestsView } from './features/Quests/QuestsView';
+import { boostMult } from './lib/smarty/pantry';
 import { planDisplayName } from './lib/plans';
-import { recordCompletion, bandFromScore40 } from './lib/completions';
+import { recordCompletion, bandFromScore40, type CompletionRecord } from './lib/completions';
 import { transformArabicContent } from './lib/arabicText';
 import {
   type HabitState,
@@ -65,11 +57,9 @@ import {
 const LEAGUE_ORDER: string[] = LEAGUE_TIERS.map((t) => t.id);
 import Sidebar from './components/Sidebar';
 import { MobileNav } from './components/MobileNav';
-import { EditModeProvider, useEditMode } from './contexts/EditModeContext';
 import { useContentLang } from './contexts/ContentLangContext';
 import { useUiLang } from './contexts/UiLangContext';
 import { loadVocab, lookupAllSenses, vocabDbEnabled } from './lib/vocabDb';
-import { ContentEditorDrawer } from './components/ContentEditorDrawer';
 import { AppTopBar } from './components/AppTopBar';
 import { HabitCelebrateModal } from './components/HabitCelebrateModal';
 import { SmartyHost } from './components/feedback/SmartyHost';
@@ -79,20 +69,34 @@ import { setSmartyCtx } from './lib/smarty/context';
 import { shouldShowChrome } from './lib/chrome';
 import { ErrorBoundary } from './components/feedback/ErrorBoundary';
 import { ReminderController } from './features/Today/ReminderController';
+import { ReviewInvitation } from './features/Today/ReviewInvitation';
+import { WeeklyRecapCard, shouldShowWeeklyRecap } from './features/Progress/WeeklyRecapCard';
 import { prefetchStickers } from './components/stickers/loader';
 import { Sticker } from './components/stickers/Sticker';
+// Heavy screens load on demand (and are prefetched when the browser is idle) to keep the first load small on phones.
+const loadRoom = () => import('./features/Room/SmartyRoom');
+const loadPractice = () => import('./features/Practice/PracticeView');
+const SmartyRoom        = lazy(() => loadRoom().then(m => ({ default: m.SmartyRoom })));
+const PracticeView      = lazy(() => loadPractice().then(m => ({ default: m.PracticeView })));
+const QuestsView        = lazy(() => import('./features/Quests/QuestsView').then(m => ({ default: m.QuestsView })));
+const Onboarding        = lazy(() => import('./features/Onboarding').then(m => ({ default: m.Onboarding })));
+const WordDetailsModal  = lazy(() => import('./components/WordDetailsModal').then(m => ({ default: m.WordDetailsModal })));
+if (typeof window !== 'undefined') {
+  const idle = (window as Window & { requestIdleCallback?: (cb: () => void) => void }).requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1500));
+  idle(() => { void loadRoom(); void loadPractice(); void import('./features/Lessons'); });
+}
 const ReadingView       = lazy(() => import('./features/ReadingView').then(m => ({ default: m.ReadingView })));
 const LessonsView       = lazy(() => import('./features/Lessons').then(m => ({ default: m.LessonsView })));
 import type { UiLang } from './lib/uiLang';
 import { uiLangLabel } from './lib/uiLang';
-import { auth, confirmPayment, submitAssignment, saveOnboarding, getStudentClasses } from './firebase';
-import type { Assignment } from './firebase';
+import { auth, confirmPayment, submitAssignment, saveOnboarding } from './firebase';
+import type { Assignment, Submission } from './firebase';
+import { HOMEWORK_REFRESH, homeworkResult, isHomeworkRoute, needsMaxForHomework, saveHomeworkDraft } from './lib/classHomework';
 
 // Lazy-loaded heavy features (each becomes its own chunk)
 const HomePage             = lazy(() => import('./features/HomePage').then(m => ({ default: m.HomePage })));
 const SpeakingHub          = lazy(() => import('./features/SpeakingHub').then(m => ({ default: m.SpeakingHub })));
 const AdminPanel           = lazy(() => import('./features/AdminPanel').then(m => ({ default: m.AdminPanel })));
-const ContentManagerPage   = lazy(() => import('./features/ContentManager').then(m => ({ default: m.ContentManager })));
 const TeacherDashboard     = lazy(() => import('./features/TeacherDashboard').then(m => ({ default: m.TeacherDashboard })));
 const WritingHub           = lazy(() => import('./features/WritingHub').then(m => ({ default: m.WritingHub })));
 const Gamification         = lazy(() => import('./features/Gamification').then(m => ({ default: m.GamificationDash })));
@@ -101,57 +105,16 @@ const ComprehensiveReading = lazy(() => import('./features/ComprehensiveReading'
 const ListeningPractice    = lazy(() => import('./features/ListeningPractice').then(m => ({ default: m.ListeningPractice })));
 const VocabularyView       = lazy(() => import('./features/VocabularyView'));
 const ExercisesView        = lazy(() => import('./features/ExercisesView'));
+const FriendsPage          = lazy(() => import('./features/Friends').then(m => ({ default: m.FriendsPage })));
 const StudentClasses       = lazy(() => import('./features/StudentClasses').then(m => ({ default: m.StudentClasses })));
+const LiveWordGame         = lazy(() => import('./features/Classes/LiveWordGame').then(m => ({ default: m.LiveWordGame })));
 const ProfilePage          = lazy(() => import('./features/ProfilePage').then(m => ({ default: m.ProfilePage })));
 const StickerGallery       = lazy(() => import('./components/stickers/StickerGallery').then(m => ({ default: m.StickerGallery })));
 
 const LazyFallback = () => <SmartyLoader />;
 
-/** Map the current app tab to the most relevant ContentManager sub-tab. */
-const TAB_TO_CONTENT_SUBTAB: Record<string, string> = {
-  'listening':      'ielts-listening',
-  'reading':        'ielts-reading',
-  'ielts-reading':  'ielts-reading',
-  'speaking':       'ielts-speaking',
-  'writing':        'task2',
-  'exercises':      'dictation',
-};
-
-/** Floating edit-mode toggle + quick-open editor button. Visible to admin & content-manager only. */
-function EditModeToggle({ activeTab }: { activeTab: string }) {
-  const { t } = useUiLang();
-  const { editMode, toggleEditMode, openEditor } = useEditMode();
-  const subTab = TAB_TO_CONTENT_SUBTAB[activeTab];
-
-  return (
-    <div className="fixed bottom-20 right-4 lg:bottom-6 lg:right-6 z-30 flex flex-col items-end gap-2">
-      {/* Context-sensitive "Edit this content" button */}
-      {editMode && subTab && (
-        <button
-          onClick={() => openEditor(subTab)}
-          className="flex items-center gap-2 px-4 py-2 bg-sky-600 text-white text-sm font-bold rounded-full shadow-xl hover:bg-sky-700 active:scale-95 transition-all"
-        >
-          <Pencil className="w-3.5 h-3.5" />  {t("site.app.edit_content_64e78c")}</button>
-      )}
-
-      {/* Main toggle button */}
-      <button
-        onClick={toggleEditMode}
-        title={editMode ? t("site.app.exit_edit_mode_a32023") : t("site.app.enter_edit_mode_7138a6")}
-        className={`w-12 h-12 rounded-full flex items-center justify-center shadow-xl transition-all active:scale-95 ${
-          editMode
-            ? 'bg-sky-600 text-white ring-4 ring-sky-200 dark:ring-sky-800'
-            : 'bg-white dark:bg-zinc-800 text-slate-500 dark:text-zinc-400 border border-slate-200 dark:border-zinc-700 hover:border-sky-400 hover:text-sky-600'
-        }`}
-      >
-        <Pencil className="w-5 h-5" />
-      </button>
-    </div>
-  );
-}
-
 export default function App() {
-  const { contentLang, setContentLang, speechLocale, isEnglish, nativeName, dictCode, arabicDisplayMode } = useContentLang();
+  const { contentLang, setContentLang, speechLocale, isEnglish, arabicDisplayMode } = useContentLang();
   const { uiLang, t, tText } = useUiLang();
   const smartyPrefs = useSmartyPrefs();
   const dailyGoalTarget = goalXpForMinutes(smartyPrefs.dailyMinutes);
@@ -342,8 +305,11 @@ export default function App() {
     }
   }, [contentLang]);
 
-  // Active assignment being worked on (set when student starts a reading assignment)
   const [activeAssignment, setActiveAssignment] = useState<Assignment | null>(null);
+  const homeworkSubmission = useRef<Promise<boolean> | null>(null);
+  const [homeworkSave, setHomeworkSave] = useState<'saving' | 'saved' | 'failed' | null>(null);
+  const homeworkPayload = useRef<Partial<Submission>>({});
+  const sessionError = useSyncExternalStore(subscribeSessionError, getSessionError);
 
   // Jump contexts for assignment-driven navigation
   const [speakingJump, setSpeakingJump]       = useState<{ level: string; topicIndex: number; key: number } | null>(null);
@@ -361,6 +327,48 @@ export default function App() {
     sub: appSub,
   } = useAppRoute({ tab: 'home', path: [] });
 
+  const assignedWork = activeAssignment && isHomeworkRoute(activeAssignment, activeTab, appPath) ? activeAssignment : null;
+  useEffect(() => {
+    if (activeAssignment && !assignedWork) setActiveAssignment(null);
+  }, [activeAssignment, assignedWork]);
+  const saveHomework = useCallback((result: Partial<Submission>) => {
+    const learner = auth.currentUser;
+    if (!assignedWork?.id || !learner) return Promise.resolve(false);
+    if (homeworkSubmission.current) return homeworkSubmission.current;
+    homeworkPayload.current = result;
+    setHomeworkSave('saving');
+    const assignmentId = assignedWork.id;
+    const pending = submitAssignment(assignmentId, { ...result, studentUid: learner.uid, studentName: learner.displayName ?? '', completedAt: Date.now() })
+      .then(() => {
+        if (auth.currentUser?.uid === learner.uid && (assignedWork.type === 'comp-reading' || assignedWork.type === 'listening')) {
+          saveHomeworkDraft(assignmentId, null);
+        }
+        if (homeworkSubmission.current === pending) setHomeworkSave('saved');
+        window.dispatchEvent(new Event(HOMEWORK_REFRESH));
+        return true;
+      }).catch(() => {
+        if (homeworkSubmission.current === pending) { homeworkSubmission.current = null; setHomeworkSave('failed'); }
+        return false;
+      });
+    homeworkSubmission.current = pending;
+    return pending;
+  }, [assignedWork]);
+  useEffect(() => {
+    if (!assignedWork) return;
+    const onComplete = (event: Event) => {
+      const result = homeworkResult(assignedWork, (event as CustomEvent<CompletionRecord>).detail);
+      if (result) void saveHomework(result);
+    };
+    window.addEventListener('smarty:completion', onComplete);
+    return () => window.removeEventListener('smarty:completion', onComplete);
+  }, [assignedWork, saveHomework]);
+  const leaveHomework = useCallback(async () => {
+    if (homeworkSubmission.current && !await homeworkSubmission.current) return;
+    setActiveAssignment(null);
+    setActiveExercise(null);
+    navigate({ tab: 'classes', path: [] });
+  }, [navigate]);
+
   const isBiteRoute = activeTab === 'lessons' && appSub === 'bite';
   useEffect(() => {
     const lang = appPath[1];
@@ -370,15 +378,19 @@ export default function App() {
   }, [isBiteRoute, appPath[1], contentLang, setContentLang]);
 
   const handleStartAssignment = useCallback((assignment: Assignment) => {
+    setActiveAssignment(assignment);
+    homeworkSubmission.current = null;
+    setHomeworkSave(null);
+    const assignedLang: ContentLang = assignment.type === 'listening' ? 'en'
+      : Object.hasOwn(CONTENT_LANG_LABEL, assignment.contentLang ?? '') ? assignment.contentLang as ContentLang : contentLang;
+    if (assignedLang !== contentLang) setContentLang(assignedLang);
     if (assignment.type === 'reading') {
       if (assignment.passageId && assignment.passageLevel) {
         setLevel(assignment.passageLevel as Level);
         setCurrentTextId(assignment.passageId);
         setIsCustomMode(false);
-        setReadingView('practice');
-        setActiveAssignment(assignment);
       }
-      setActiveTab('reading');
+      navigate({ tab: 'reading', path: [assignment.passageId ? 'practice' : 'library'] });
     } else if (assignment.type === 'listening') {
       if (assignment.listeningLevel && assignment.listeningPassageTitle) {
         setListeningJump(prev => ({
@@ -414,34 +426,26 @@ export default function App() {
           key: (prev?.key ?? 0) + 1,
         }));
       }
-      setActiveTab('reading');
-      setReadingView('menu');
+      navigate({ tab: 'reading', path: ['menu'] });
+    } else if (assignment.type === 'lesson') {
+      if (assignment.lessonId) {
+        const lesson = Object.values(getLevelTextsSync(assignedLang)).flat().find(text => text.id === assignment.lessonId);
+        const next = lesson ? lessonBiteState(assignedLang, lesson).next : 0;
+        navigate({ tab: 'lessons', path: ['bite', assignedLang, assignment.lessonId, String(Math.max(0, next))] });
+      }
+      else navigate({ tab: 'lessons', path: ['path'] });
     } else if (assignment.type === 'exercise') {
-      setActiveAssignment(assignment);
       if (assignment.exerciseType) {
         setActiveExercise(assignment.exerciseType);
       }
       const words = assignment.exerciseWords && assignment.exerciseWords.length > 0
         ? assignment.exerciseWords
         : [];
-      if (words.length > 0) {
-        setSelectedVocabWords(words);
-      }
-      if (assignment.id && assignment.exerciseType) {
-        saveAssignmentExerciseResume({
-          assignmentId: assignment.id,
-          exerciseType: assignment.exerciseType,
-          words,
-        });
-      }
-      // Resume unfinished session for this assignment if one exists
-      const snap = loadExerciseSession();
-      if (snap && snap.type === assignment.exerciseType) {
-        requestExerciseResume();
-      }
+      setSelectedVocabWords(words);
+      setShowExerciseWordSelector(null);
       setActiveTab('exercises');
     }
-  }, [navigate, setActiveTab, setReadingView]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [navigate, setActiveTab, contentLang]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const { user, accountProfile, setAccountProfile, isSyncing, authReady, loginWithGoogle, logout } = useFirebaseSync(
     streak, setStreak,
@@ -476,12 +480,12 @@ export default function App() {
   // Returning signed-in users land on Stats (Continue), not the marketing homepage.
   const didRedirectHome = useRef(false);
   useEffect(() => {
-    if (!authReady || !user || didRedirectHome.current) return;
+    if (!authReady || !user || !accountProfile || didRedirectHome.current) return;
     if (activeTab === 'home') {
       didRedirectHome.current = true;
-      setActiveTab('dashboard');
+      setActiveTab(accountTypeOf(accountProfile) === 'business' ? 'business' : 'dashboard');
     }
-  }, [authReady, user, activeTab, setActiveTab]);
+  }, [authReady, user, accountProfile, activeTab, setActiveTab]);
 
   const sessionTimestampRef = useRef<number>(0);
   const lessonFeedbackContinueRef = useRef<(() => void) | null>(null);
@@ -515,7 +519,6 @@ export default function App() {
     teacher:          'Business',
     business:         'Business',
     admin:            'Admin',
-    content:          'Content',
     profile:          'Profile',
     plans:            'Plans',
     'ielts-reading':  'IELTS Reading',
@@ -562,6 +565,10 @@ export default function App() {
   // payment record (stashed in sessionStorage before redirect) and activate
   // the user's plan. Errors are caught so they don't block the app.
   const [paymentToast, setPaymentToast] = useState<string | null>(null);
+  // Monday recap of last week's learning (once a week, on Home).
+  const [weeklyRecap, setWeeklyRecap] = useState(false);
+  // Only one popup per visit: the weekly recap wins on its day, otherwise the daily review invite.
+  const [weeklyDueOnOpen] = useState(() => shouldShowWeeklyRecap());
   useEffect(() => {
     if (!user || !accountProfile) return;
     const params = new URLSearchParams(window.location.search);
@@ -622,7 +629,7 @@ export default function App() {
 
   const [activeExercise, setActiveExercise] = useState<string | null>(null);
   const [selectedVocabWords, setSelectedVocabWords] = useState<string[]>([]);
-  const [showExerciseWordSelector, setShowExerciseWordSelector] = useState<'flashcards' | 'pronunciation' | 'word-match' | null>(null);
+  const [showExerciseWordSelector, setShowExerciseWordSelector] = useState<string | null>(null);
   const [exerciseSourceType, setExerciseSourceType] = useState<'saved' | 'level' | 'topic' | 'custom'>('saved');
   const [exerciseSourceLevel, setExerciseSourceLevel] = useState<Level>('Beginner');
   const [exerciseSourceTopic, setExerciseSourceTopic] = useState<string>('');
@@ -840,14 +847,11 @@ export default function App() {
   // Per-account lists: reload when the signed-in account changes (startup reads ran before sign-in).
   const storageUser = user?.uid ?? null;
 
-  // "My class" only appears once an organization has put this student in a class.
-  const [inClass, setInClass] = useState(false);
-  useEffect(() => {
-    if (!user?.uid || accountProfile?.role !== 'student') { setInClass(false); return; }
-    let cancelled = false;
-    getStudentClasses(user.uid).then((list) => { if (!cancelled) setInClass(list.length > 0); }).catch(() => {});
-    return () => { cancelled = true; };
-  }, [user?.uid, accountProfile?.role]);
+  const classKind = accountProfile?.role === 'student' || accountProfile?.role === 'admin' ? 'student' : accountProfile?.role === 'teacher' ? 'teacher' : null;
+  const { classes: myClasses } = useMyClasses(user?.uid, classKind);
+  const boardClasses = useMemo(() => (myClasses || []).filter(cls => cls.id).map(cls => ({ id: cls.id!, name: cls.name })), [myClasses]);
+  // My Classes (nav + page) and the Class leaderboard tab only exist while the student is actually in a class.
+  const showClasses = accountProfile?.role === 'admin' || (accountProfile?.role === 'student' && boardClasses.length > 0);
   useEffect(() => {
     setExercisesHistory(readScopedJSON<any[]>('readmaster_exercises_history', []));
     setSavedCustomTexts(readScopedJSON<string[]>('readmaster_saved_custom_texts', []));
@@ -911,20 +915,6 @@ export default function App() {
      trackExerciseStreak();
      bumpWeeklyGoal('exercises');
 
-     // Complete teacher assignment if this finishes an assigned exercise
-     const asg = loadAssignmentExerciseResume();
-     if (asg && asg.exerciseType === type && asg.assignmentId) {
-       submitAssignment(asg.assignmentId, {
-         studentUid: auth?.currentUser?.uid ?? '',
-         studentName: auth?.currentUser?.displayName ?? '',
-         completedAt: Date.now(),
-         score: data.score,
-         accuracy: typeof data.score === 'number' ? data.score : undefined,
-       }).catch(console.error);
-       clearAssignmentExerciseResume();
-       setActiveAssignment(null);
-     }
-
      setSavedVocab(prev => {
        const next = applySrsFromResult(prev, data);
        if (next !== prev) persistVocab(next);
@@ -945,15 +935,14 @@ export default function App() {
     const preview = isPreviewMode(accountProfile);
     const claim = !preview && result.def.kind === 'today'
       ? completeDailySession(contentLang, result.def.date!, result.accuracy) : null;
-    // A unit test is any bite of a unit's last lesson (units are 10 lessons).
-    const unitLessons = (Object.values(LEVEL_TEXTS) as ReadingText[][]).find((list) => list.some((tx) => tx.id === result.def.passageId)) ?? [];
-    const at = unitLessons.findIndex((tx) => tx.id === result.def.passageId);
-    const unitTest = at >= 0 && (at % 10 === 9 || at === unitLessons.length - 1);
-    const reward = preview || (claim && !claim.xp) ? { xp: 0, coins: 0 } : biteXp(result.def.kind, result.accuracy, result.perfect, unitTest);
+    const unitTest = result.def.kind === 'unit-exam';
+    const base = preview || (claim && !claim.xp) ? { xp: 0, coins: 0 } : biteXp(result.def.kind, result.accuracy, result.perfect, unitTest);
+    // A lucky boost from Smarty's food multiplies XP or coins for a while.
+    const xpBoost = boostMult('xp');
+    const coinBoost = boostMult('coins');
+    const reward = { xp: base.xp * xpBoost, coins: base.coins * coinBoost };
     const heartGained = !preview && !hasUnlimitedHearts(accountProfile) && (claim?.heart || result.def.kind === 'heart-practice') ? gainHearts(1) : 0;
     const next = applyXpToHabit(habit, reward.xp, goal).habit;
-    // Every bite that earns XP adds a piece of Smarty's fish (4 pieces = a meal to feed him).
-    const fish = !preview && reward.xp > 0 ? earnFishPiece() : null;
     if (!preview) {
       if (reward.xp > 0) awardXP(reward.xp, reward.coins, { bite: true });
       recordCompletion('lesson-bite', {
@@ -975,8 +964,7 @@ export default function App() {
       trackExerciseStreak();
       bumpWeeklyGoal('exercises');
     }
-    return { xp: reward.xp, xpToday: next.dailyGoal.xpEarned, goal, streak: next.globalStreak.current, goalDone: next.dailyGoal.completed, heartGained, dailyReplay: !!claim && !claim.xp,
-      fish: fish ? { part: fish.part, mealCompleted: fish.mealCompleted, pieces: fish.state.pieces, meals: fish.state.meals } : undefined };
+    return { xp: reward.xp, xpToday: next.dailyGoal.xpEarned, goal, streak: next.globalStreak.current, goalDone: next.dailyGoal.completed, heartGained, dailyReplay: !!claim && !claim.xp, coins: reward.coins, boost: xpBoost > 1 ? { kind: 'xp' as const, mult: xpBoost } : coinBoost > 1 && reward.coins ? { kind: 'coins' as const, mult: coinBoost } : undefined };
   };
 
   const allTexts = useMemo(() => {
@@ -1257,6 +1245,7 @@ export default function App() {
             contentLang,
             data: {
               textId: currentTextObj.id,
+              wordsRead: transcriptionFailed || transcriptionUnavailable ? 0 : rawStatuses.filter(status => status !== 'pending').length,
               level: (currentTextObj as any).level || level,
               correctWords,
               mistakeWords: missed,
@@ -1296,21 +1285,6 @@ export default function App() {
           });
         }
 
-        // Auto-submit reading assignment results if one is active
-        setActiveAssignment(prev => {
-          if (prev?.id && prev.type === 'reading') {
-            const wordsAttempted = rawStatuses.filter(s => s !== 'pending').length;
-            submitAssignment(prev.id, {
-              studentUid: auth?.currentUser?.uid ?? '',
-              studentName: auth?.currentUser?.displayName ?? '',
-              completedAt: Date.now(),
-              accuracy: finalAccuracy,
-              wordsRead: wordsAttempted,
-              errors: missed.length > 0 ? missed : undefined,
-            }).catch(console.error);
-          }
-          return null; // clear active assignment
-        });
     }
   }, [isFinished, isRecording, rawStatuses, sourceWords, currentTextObj.id, currentTextObj.title, level, accuracy, contentLang]);
 
@@ -1642,15 +1616,19 @@ export default function App() {
   };
 
   return (
-    <ProgressProvider value={{ userProfile, habit, contentLang, previewMode: isPreviewMode(accountProfile), unlimitedHearts: hasUnlimitedHearts(accountProfile), accountProfile, savedVocab, problemWords, history, level, navigate, spendCoins, saveWord: handleAddVocab, awardBiteXP }}>
-    <EditModeProvider>
+    <ProgressProvider value={{ userProfile, habit, contentLang, previewMode: isPreviewMode(accountProfile), unlimitedHearts: hasUnlimitedHearts(accountProfile), accountProfile, savedVocab, problemWords, history, level, navigate, spendCoins, saveWord: handleAddVocab, awardBiteXP, earnCoins: (n: number) => { if (!isPreviewMode(accountProfile) && n > 0) awardXP(0, n); }, earnXP: (n: number) => { if (!isPreviewMode(accountProfile) && n > 0) awardXP(n, 0, { bite: true }); } }}>
       <ReminderController enabled={!!user && authReady && !!accountProfile && !needsOnboarding} />
+      {!weeklyDueOnOpen && user && authReady && !isSyncing && !needsOnboarding && canPractice(accountProfile) && activeTab === 'dashboard' &&
+        <ReviewInvitation uid={user.uid} />}
+      {user && authReady && !isSyncing && !needsOnboarding && activeTab === 'dashboard' && !isEducatorRole(accountProfile?.role) && (
+        <WeeklyRecapGate show={weeklyRecap} setShow={setWeeklyRecap} onOpenProgress={() => { setWeeklyRecap(false); setActiveTab('quests'); }} />
+      )}
     <div className="h-dvh bg-white dark:bg-zinc-950 flex font-sans text-slate-900 dark:text-zinc-100 overflow-hidden">
 
       {/* Sidebar — only for fully authenticated users AND not on homepage */}
       {showChrome && (
         <Sidebar
-          inClass={inClass}
+          showClasses={showClasses}
           activeTab={activeTab}
           setActiveTab={setActiveTab as any}
           setReadingView={setReadingView as any}
@@ -1676,7 +1654,8 @@ export default function App() {
             habit={habit}
             xp={userProfile.xp}
             user={user}
-            uid={user.uid}
+            uid={accountTypeOf(accountProfile) === 'business' ? undefined : user.uid}
+            homeTab={accountTypeOf(accountProfile) === 'business' ? 'business' : 'dashboard'}
             onNavigate={setActiveTab as any}
             onOpenMenu={() => setMobileMenuOpen(true)}
           />
@@ -1703,11 +1682,13 @@ export default function App() {
           />
         </Suspense>
       ) : !authReady ? (
-        /* Resolving auth — brief spinner */
-        <SmartyLoader className="" />
+        sessionError ? <div className="mx-auto flex max-w-sm flex-1 flex-col items-center justify-center gap-4 px-6 text-center">
+          <p role="status">{t(sessionError === 'limited' ? 'session.rateLimited' : 'session.unavailable')}</p>
+          <button type="button" className="rounded-xl bg-zinc-900 px-5 py-3 font-bold text-white dark:bg-zinc-100 dark:text-zinc-900 dark-keep" onClick={() => void retryInitialSession()}>{t('action.tryAgain')}</button>
+        </div> : <SmartyLoader className="" />
       ) : !user ? (
         /* Not signed in — show auth screen */
-        <AuthGate loginWithGoogle={loginWithGoogle} />
+        <AuthGate loginWithGoogle={loginWithGoogle} onBack={() => setActiveTab('home')} />
       ) : !accountProfile ? (
         /* Signed in but profile missing — should be rare after fallback; show retry */
         <div className="flex-1 flex flex-col items-center justify-center gap-3 px-6 text-center">
@@ -1721,7 +1702,7 @@ export default function App() {
             {t("site.app.refresh_56e3ba")}</button>
         </div>
       ) : needsOnboarding && (needsAgeCheck || activeTab !== 'plans') ? (
-        <Onboarding
+        <Suspense fallback={<LazyFallback />}><Onboarding
           canStartLessons={canUseBites(accountProfile)}
           onComplete={finishOnboarding}
           needsAgeCheck={needsAgeCheck}
@@ -1731,14 +1712,14 @@ export default function App() {
             setAccountProfile(profile);
             await refreshAuthSession();
           }}
-        />
+        /></Suspense>
       ) : (() => {
         /* ── Access-tier gates ────────────────────────────────────────── */
         const acctType   = accountTypeOf(accountProfile);
         const free       = isFreeUser(accountProfile);
         const previewing = isPreviewMode(accountProfile);
 
-        // Pages a free User is still allowed to see (no practice material).
+        // Account pages are free; vocabulary and the lesson path use the route policy below.
         const ALWAYS_ALLOWED = new Set(['dashboard', 'profile', 'plans']);
         // Practice / learning tabs that Teachers + Organizations may preview.
         const PREVIEWABLE_TABS = new Set([
@@ -1747,7 +1728,11 @@ export default function App() {
         ]);
 
         // Free Users see a lock screen on every feature tab.
-        if (free && !ALWAYS_ALLOWED.has(activeTab) && !(canUseBites(accountProfile) && isFreeLearningRoute(activeTab, appPath))) {
+        const assignedChallenge = activeTab === 'exercises' && activeAssignment?.type === 'exercise' &&
+          !!activeExercise && activeExercise === activeAssignment.exerciseType;
+        const assignedAccess = !!assignedWork && !needsMaxForHomework(assignedWork.type);
+        if ((activeTab === 'lessons' && appPath[0] === 'today' && !canPractice(accountProfile)) ||
+          (free && !assignedAccess && !ALWAYS_ALLOWED.has(activeTab) && !(activeTab === 'business' && isEducatorRole(accountProfile?.role)) && !(canUseBites(accountProfile) && isFreeLearningRoute(activeTab, appPath)))) {
           return (
             <PaywallScreen
               email={accountProfile.email}
@@ -1779,13 +1764,23 @@ export default function App() {
 
       <div className={previewing && PREVIEWABLE_TABS.has(activeTab) ? 'preview-mode' : ''}>
 
-      {(activeTab === 'dashboard' || (activeTab === 'profile' && !appPath[0])) && user && accountProfile && (
+      {assignedWork && (assignedWork.type !== 'exercise' && assignedWork.type !== 'lesson' || homeworkSave === 'failed') && (
+        <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center justify-between gap-2 px-4 py-3 text-sm">
+          <button type="button" disabled={homeworkSave === 'saving'} className="font-bold underline underline-offset-4" onClick={() => void leaveHomework()}>{t('homework.back')}</button>
+          {homeworkSave === 'failed'
+            ? <span role="alert" className="text-rose-700 dark:text-rose-300">{t('homework.saveError')} <button type="button" className="font-bold underline" onClick={() => void saveHomework(homeworkPayload.current)}>{t('action.tryAgain')}</button></span>
+            : <span role="status" className="text-zinc-500 dark:text-zinc-400">{homeworkSave ? t(homeworkSave === 'saved' ? 'homework.submitted' : 'homework.saving') : assignedWork.title}</span>}
+        </div>
+      )}
+
+      {(activeTab === 'dashboard' || (activeTab === 'profile' && (!appPath[0] || appPath[0] === 'speak'))) && user && accountProfile && (
         <SmartyRoom
           xp={userProfile?.xp ?? 0}
           league={userProfile?.league ?? 'Bronze'}
           canTalk={canPractice(accountProfile) && !isPreviewMode(accountProfile)}
+          greetOnOpen={activeTab === 'profile' && appPath[0] === 'speak'}
           showIelts={false}
-          onMealEaten={() => { if (!isPreviewMode(accountProfile)) awardXP(MEAL_XP, MEAL_COINS, { bite: true }); }}
+          onMealEaten={(xp: number) => { if (!isPreviewMode(accountProfile)) awardXP(xp, 0, { bite: true }); }}
           onOpenSettings={() => navigate({ tab: 'profile', path: ['settings'] })}
           onOpenPlans={() => setActiveTab('plans' as any)}
         />
@@ -1797,23 +1792,26 @@ export default function App() {
           savedVocab={savedVocab}
           setSavedVocab={setSavedVocab}
           playWord={playWord}
-          srsDueWords={srsDueWords}
-          setSelectedVocabWords={setSelectedVocabWords}
-          setShowExerciseWordSelector={setShowExerciseWordSelector}
-          setActiveExercise={setActiveExercise}
-          setActiveTab={setActiveTab as any}
           newVocabWord={newVocabWord}
           setNewVocabWord={setNewVocabWord}
           isAddingVocab={isAddingVocab}
           addVocabError={addVocabError}
           handleAddNewVocab={handleAddNewVocab}
-          onReview={() => navigate({ tab: 'practice', path: ['review'] })}
           onShowModal={(w, mode) => setWordModal({ word: w, mode })}
         />
       )}
 
       {activeTab === 'exercises' && (
         <ExercisesView
+          key={assignedChallenge ? activeAssignment?.id : undefined}
+          assigned={assignedChallenge && activeAssignment?.id && activeAssignment.exerciseType && user ? {
+            id: activeAssignment.id,
+            type: activeAssignment.exerciseType,
+            words: activeAssignment.exerciseWords ?? [],
+            lang: activeAssignment.exerciseLang,
+            onComplete: (accuracy) => { void saveHomework({ score: accuracy, accuracy }); },
+            onExit: () => { void leaveHomework(); },
+          } : undefined}
           savedVocab={savedVocab}
           allVocabMap={allVocabMap}
           activeExercise={activeExercise}
@@ -1837,6 +1835,7 @@ export default function App() {
 
       {activeTab === 'lessons' && (
         <LessonsView
+          assignedLesson={assignedWork?.type === 'lesson' ? { finish: accuracy => { void saveHomework({ score: accuracy, accuracy }); }, exit: () => void leaveHomework() } : undefined}
           path={appPath}
           navigatePath={setSubPath}
           level={level}
@@ -1928,14 +1927,20 @@ export default function App() {
       )}
 
       {activeTab === 'practice' && (
-        <PracticeView path={appPath} navigatePath={(path) => navigate({ tab: 'practice', path })}
-          onOpenExercise={(id) => { setActiveExercise(null); setSelectedVocabWords([]); setShowExerciseWordSelector(id as any); setActiveTab('exercises' as any); }} />
+        <PracticeView onExercise={id => {
+          setActiveAssignment(null);
+          setActiveExercise(null);
+          setSelectedVocabWords([]);
+          setShowExerciseWordSelector(id);
+          navigate({ tab: 'exercises', path: [] });
+        }} />
       )}
 
       {activeTab === 'reading' && readingView === 'menu' && (
         <ComprehensiveReading
           key={compReadingJump?.key}
-          onBack={() => setActiveTab('practice')}
+          assigned={assignedWork?.type === 'comp-reading' ? assignedWork.id : undefined}
+          onBack={() => assignedWork ? void leaveHomework() : setActiveTab('practice')}
           onAddVocab={handleToggleVocab}
           savedVocab={savedVocab}
           onShowModal={(w: string, mode: 'dictionary' | 'translation') => setWordModal({word: w, mode})}
@@ -2025,15 +2030,22 @@ export default function App() {
         />
       )}
 
-      {activeTab === 'business' && (isBusinessRole(accountProfile.role) || accountProfile.role === 'admin') && <TeacherDashboard setActiveTab={setActiveTab as any} />}
+      {activeTab === 'business' && (isEducatorRole(accountProfile.role) || accountProfile.role === 'admin') && (
+        appPath[0] === 'live' && appPath[1]
+          ? <LiveWordGame classId={appPath[1]} code={appPath[2]} onRoom={code => navigate({ tab: 'business', path: ['live', appPath[1], code] })}
+              onBack={() => navigate({ tab: 'business', path: ['games', appPath[1]] })} />
+          : <TeacherDashboard profile={accountProfile} onOpenPlans={() => navigate({ tab: 'plans', path: [] })} tab={appPath[0] === 'assignments' || appPath[0] === 'games' ? appPath[0] : 'classes'} classId={appPath[1]}
+              onNavigate={(tab, id) => navigate({ tab: 'business', path: tab === 'classes' ? [] : [tab, ...(id ? [id] : [])] })}
+              onHostGame={(id, code) => navigate({ tab: 'business', path: ['live', id, ...(code ? [code] : [])] })} />
+      )}
       {activeTab === 'admin' && accountProfile.role === 'admin' && <AdminPanel />}
-      {activeTab === 'content' && (accountProfile.role === 'content-manager' || accountProfile.role === 'admin') && (
-        <Suspense fallback={<LazyFallback />}><ContentManagerPage /></Suspense>
+      {activeTab === 'classes' && (accountProfile.role === 'student' || accountProfile.role === 'admin') && (
+        appPath[0] === 'live'
+          ? <LiveWordGame code={appPath[1]} onRoom={code => navigate({ tab: 'classes', path: ['live', code] })}
+              onBack={() => navigate({ tab: 'classes', path: [] })} />
+          : <StudentClasses onJoinGame={code => navigate({ tab: 'classes', path: ['live', code] })} onStartAssignment={handleStartAssignment} hasMax={canPractice(accountProfile)} onOpenSettings={() => navigate({ tab: 'profile', path: ['settings', 'friends'] })} />
       )}
-      {activeTab === 'classes' && accountProfile.role === 'student' && (
-        <StudentClasses onNavigate={setActiveTab as any} onStartAssignment={handleStartAssignment} />
-      )}
-      {activeTab === 'stickers' && (accountProfile.role === 'admin' || accountProfile.role === 'content-manager' || import.meta.env.DEV) && (
+      {activeTab === 'stickers' && (accountProfile.role === 'admin' || import.meta.env.DEV) && (
         <StickerGallery />
       )}
       {activeTab === 'profile' && appPath[0] === 'settings' && (
@@ -2051,14 +2063,15 @@ export default function App() {
           badges={habit?.badges?.length ?? 0}
           path={appPath}
           onNavigate={(path) => navigate({ tab: 'profile', path })}
-          onOpenTab={(tab) => setActiveTab(tab)}
-          onMealEaten={() => { if (!isPreviewMode(accountProfile)) awardXP(MEAL_XP, MEAL_COINS, { bite: true }); }}
+          onOpenTab={(tab) => tab === 'plans' ? navigate({ tab: 'plans', path: ['settings'] }) : tab === 'friends' ? navigate({ tab: 'gamification', path: ['people'] }) : setActiveTab(tab)}
+          onMealEaten={(xp: number) => { if (!isPreviewMode(accountProfile)) awardXP(xp, 0, { bite: true }); }}
         />
       )}
       {activeTab === 'listening' && (
         <ListeningPractice
           key={listeningJump?.key}
-          onBack={() => setActiveTab('dashboard')}
+          assigned={assignedWork?.type === 'listening' ? assignedWork.id : undefined}
+          onBack={() => assignedWork ? void leaveHomework() : setActiveTab('dashboard')}
           onToggleVocab={handleToggleVocab}
           savedVocab={savedVocab}
           onShowModal={(w: string, mode: 'dictionary' | 'translation') => setWordModal({word: w, mode})}
@@ -2072,15 +2085,27 @@ export default function App() {
         />
       )}
       {activeTab === 'gamification' && (
-        <Gamification
+        appPath[0] === 'friends' && appPath[1] === 'play' && appPath[2]
+          ? <LiveWordGame code={appPath[2]} friendMatch onRoom={code => navigate({ tab: 'gamification', path: ['friends', 'play', code] })}
+              onBack={() => navigate({ tab: 'gamification', path: ['friends'] })} />
+          : appPath[0] === 'people'
+            ? <FriendsPage onBack={() => navigate({ tab: 'gamification', path: ['friends'] })}
+                onAddFriend={() => navigate({ tab: 'profile', path: ['settings', 'friends'] })}
+                onOpenGame={code => navigate({ tab: 'gamification', path: ['friends', 'play', code] })} />
+          : <Gamification
           profile={userProfile}
           habit={habit}
           uid={user?.uid}
           displayName={user?.displayName || accountProfile?.displayName || undefined}
+          classes={boardClasses}
+          boardScope={appPath[0] === 'friends' ? 'friends' : appPath[0] === 'class' && boardClasses.length ? 'class' : 'global'}
+          onSelectScope={scope => navigate({ tab: 'gamification', path: scope === 'global' ? [] : [scope] })}
+          onOpenFriends={() => navigate({ tab: 'gamification', path: ['people'] })}
         />
       )}
       {activeTab === 'plans' && (
         <PaymentPlans
+          onExit={() => navigate({ tab: 'profile', path: appSub === 'settings' ? ['settings'] : [] })}
           user={user}
           currentPlan={maxEnded(accountProfile) ? null : (accountProfile as any)?.plan ?? null}
           profile={accountProfile}
@@ -2092,7 +2117,7 @@ export default function App() {
               planSeats: seats,
               planLanguages: languages ?? 1,
               planStartedAt: Date.now(),
-              role: planId === 'business' ? 'business' : ['admin', 'content-manager'].includes(prev.role) ? prev.role : 'student',
+              role: planId === 'business' ? 'business' : prev.role === 'admin' ? prev.role : 'student',
             } : prev);
           }}
         />
@@ -2112,6 +2137,7 @@ export default function App() {
       {activeTab === 'speaking' && (
         <SpeakingHub
           key={speakingJump?.key}
+          initialLevel={speakingJump?.level}
           initialTopicIndex={speakingJump?.topicIndex}
           onToggleVocab={handleToggleVocab}
           savedVocab={savedVocab}
@@ -2141,7 +2167,7 @@ export default function App() {
       {/* Mobile bottom navigation — hidden on homepage */}
       {showChrome && (
         <MobileNav
-          inClass={inClass}
+          showClasses={showClasses}
           activeTab={activeTab}
           setActiveTab={setActiveTab as any}
           setReadingView={setReadingView as any}
@@ -2478,13 +2504,17 @@ export default function App() {
         </DialogSurface>
       )}
 
-      <WordDetailsModal
-        word={wordModal?.word || null}
-        mode={wordModal?.mode || null}
-        onClose={() => setWordModal(null)}
-        savedVocab={savedVocab}
-        onToggleVocab={async (w) => handleToggleVocab(w, 'From dictionary modal')}
-      />
+      {wordModal && (
+        <Suspense fallback={null}>
+          <WordDetailsModal
+            word={wordModal.word || null}
+            mode={wordModal.mode || null}
+            onClose={() => setWordModal(null)}
+            savedVocab={savedVocab}
+            onToggleVocab={async (w) => handleToggleVocab(w, 'From dictionary modal')}
+          />
+        </Suspense>
+      )}
 
       {/* Post-payment toast */}
       {paymentToast && (
@@ -2494,16 +2524,14 @@ export default function App() {
         </div>
       )}
 
-      {/* Edit Mode — visible only to admin & content-manager */}
-      {user && accountProfile && (accountProfile.role === 'admin' || accountProfile.role === 'content-manager') && activeTab !== 'home' && activeTab !== 'plans' && activeTab !== 'admin' && activeTab !== 'content' && (
-        <>
-          <EditModeToggle activeTab={activeTab} />
-          <ContentEditorDrawer />
-        </>
-      )}
       </div>
     </div>
-    </EditModeProvider>
     </ProgressProvider>
   );
+}
+
+/** Shows last week's recap once a week (skipped when there was no activity). */
+function WeeklyRecapGate({ show, setShow, onOpenProgress }: { show: boolean; setShow: (v: boolean) => void; onOpenProgress: () => void }) {
+  useEffect(() => { if (shouldShowWeeklyRecap()) setShow(true); }, []);
+  return show ? <WeeklyRecapCard onClose={() => setShow(false)} onOpenProgress={onOpenProgress} /> : null;
 }

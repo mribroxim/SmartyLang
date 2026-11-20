@@ -188,6 +188,50 @@ async function callOpenRouter(apiKey, { system, user, temperature = 0.3, maxToke
   return extractJson(content);
 }
 
+/**
+ * Google Gemini (fast path for Smarty's chat): JSON answer, thinking off for low
+ * latency. Model: GEMINI_CHAT_MODEL (default gemini-2.5-flash).
+ */
+/**
+ * Smarty's chat on Gemini. Fast "lite" models with minimal thinking reply in
+ * well under a second; if one model is retired, overloaded or rejects the
+ * thinking setting, the next one is tried. GEMINI_CHAT_MODEL goes first.
+ */
+const GEMINI_CHAT_MODELS = ["gemini-flash-lite-latest", "gemini-3.5-flash-lite", "gemini-2.5-flash-lite"];
+async function callGemini({ system, user, temperature = 0.8, maxTokens = 400 }) {
+  const key = (process.env.GEMINI_API_KEY || "").trim();
+  const preferred = (process.env.GEMINI_CHAT_MODEL || "").trim();
+  const models = [...new Set([preferred, ...GEMINI_CHAT_MODELS].filter(Boolean))];
+  let lastStatus = 502;
+  for (const model of models) {
+    for (const thinkingConfig of [{ thinkingLevel: "minimal" }, undefined]) {
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
+        signal: AbortSignal.timeout(12_000),
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-goog-api-key": key },
+        body: JSON.stringify({
+          systemInstruction: { parts: [{ text: system }] },
+          contents: [{ role: "user", parts: [{ text: user }] }],
+          generationConfig: { temperature, maxOutputTokens: maxTokens, responseMimeType: "application/json", ...(thinkingConfig ? { thinkingConfig } : {}) },
+        }),
+      }).catch(() => null);
+      if (!r) { lastStatus = 504; break; }
+      const text = await r.text();
+      if (r.ok) {
+        const data = JSON.parse(text);
+        const content = data?.candidates?.[0]?.content?.parts?.map((p) => p.text || "").join("") || "";
+        return extractJson(content);
+      }
+      lastStatus = r.status;
+      if (r.status === 429) break;
+      if (r.status !== 400) break; // 400: retry this model without the thinking setting
+    }
+  }
+  const err = new Error(`AI provider unavailable (${lastStatus})`);
+  err.status = lastStatus === 429 ? 429 : 502;
+  throw err;
+}
+
 function writingSystem({ style, task, uiLang, contentLang, level }) {
   const ui = langName(uiLang);
   const content = langName(contentLang);
@@ -392,7 +436,7 @@ async function buddyTurn(apiKey, body) {
   const raw = await callOpenRouter(apiKey, {
     temperature: 0.6,
     maxTokens: 500,
-    system: `You are a friendly speaking buddy helping a ${level} learner of ${content}.
+    system: `You are Smarty, a patient speaking tutor helping a ${level} learner of ${content}. Build on their last answer. Teach one small skill at a time. When they make a clear error, say a natural corrected example and ask them to try it in a new, simple response.
 Speak the conversation reply in ${content} only — short (1–3 sentences), one question at a time, natural spoken language.
 If the student made a clear language mistake, put a brief correction in ${ui} in correctionNote (quiet coach note, not spoken). If no important mistake, correctionNote can be "".
 followUp is the next question in ${content} (may be empty if reply already contains a question).
@@ -421,19 +465,29 @@ async function smartyTalk(apiKey, body) {
   const ui = langName(body.uiLang || "en");
   const level = body.level || "Beginner";
   const name = clip(body.name || "", 40);
+  // Words the learner has been practising: Smarty reuses them so they keep coming back.
+  const known = (Array.isArray(body.knownWords) ? body.knownWords : [])
+    .filter(w => typeof w === "string" && w.length <= 40 && /^[\p{L}\p{M}' -]+$/u.test(w)).slice(0, 15).map(w => clip(w, 40));
   const histLines = history.map(h => `${h.role === "assistant" ? "Smarty" : "Learner"}: ${clip(h.content || "", 300)}`).join("\n");
-  const raw = await callOpenRouter(apiKey, {
+  const prompt = {
     temperature: 0.8,
     maxTokens: 300,
     system: `You are Smarty, a friendly black cat who is also a patient ${content} teacher. You chat with a ${level} learner of ${content}${name ? ` called ${name}` : ""} to help them practise.
-Always answer in ${content} only, at ${level} level: 1–2 short, simple sentences, warm and a little funny. Each reply should teach something small: use a useful word or phrase naturally, or model the correct form of what they tried to say. End with a short, easy question so they keep talking.
+Always answer in ${content} only, at ${level} level: 1–2 short, simple sentences, warm and a little funny. Each reply should teach something small: use a useful word or phrase naturally, or model the correct form of what they tried to say. End with a short, easy question so they keep talking.${known.length ? `
+The learner has recently been practising these words: ${known.join(", ")}. Work one of them in naturally when it fits, so they hear it again.` : ""}
 You are a cat, but a classy one: only now and then (about one reply in six, never twice in a row) add a cat sound like "Meow!" or "Purr…". Most replies have no cat sound at all.
 Stay kind and child-safe: no grown-up, scary or unsafe topics; if asked, gently steer back to everyday life, food, hobbies, cats or learning.
 If the learner made a clear mistake, put a one-line friendly correction in ${ui} in "tip" (shown, not spoken); otherwise "tip" is "".
 Pick the mood that matches what you say, from: ${SMARTY_MOODS.join(", ")}.
 Return JSON: { "reply": "...", "mood": "...", "tip": "..." }`,
     user: `${histLines ? `Chat so far:\n${histLines}\n\n` : ""}Learner says: ${last}`,
-  });
+  };
+  // Gemini answers in about a second; OpenRouter stays as the fallback.
+  let raw;
+  if ((process.env.GEMINI_API_KEY || "").trim()) {
+    try { raw = await callGemini(prompt); } catch (e) { if (!apiKey || apiKey === "gemini") throw e; }
+  }
+  if (!raw) raw = await callOpenRouter(apiKey, prompt);
   const mood = SMARTY_MOODS.includes(raw?.mood) ? raw.mood : "happy";
   return { reply: clip(raw?.reply || raw?.text || "", 400), mood, tip: clip(raw?.tip || "", 300) };
 }

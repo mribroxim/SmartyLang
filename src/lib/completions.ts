@@ -195,6 +195,7 @@ export function recordCompletion(
     }
   }
 
+  if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent('smarty:completion', { detail: record }));
   return record;
 }
 

@@ -74,14 +74,12 @@ function PilotSessionView({ session, onBack, onNext }: { session: PilotSession; 
   const heading = useRef<HTMLHeadingElement>(null);
   const root = useRef<HTMLElement>(null);
   const finished = useRef(false);
-  const advancing = useRef(false);
   const task = tasks[index];
   const speechTask = task.kind === 'speak';
   const assessed = tasks.filter(t => t.kind !== 'teach' && !skipped.includes(t.id));
   const firstTryScore = assessed.length ? Math.round(100 * (assessed.length - assessed.filter(t => missed.includes(t.id)).length) / assessed.length) : 0;
   const tileOrder = useMemo(() => task.kind === 'build' ? task.tiles : [], [task]);
   useEffect(() => {
-    advancing.current = false;
     setSelected(''); setPicked([]); setTyped(''); setStatus('answering'); setTranscript(false); setMicrophone(false);
     heading.current?.focus({ preventScroll: true }); root.current?.scrollIntoView({ block: 'start' });
   }, [index]);
@@ -92,9 +90,7 @@ function PilotSessionView({ session, onBack, onNext }: { session: PilotSession; 
     setStatus(ok ? 'correct' : 'wrong');
   };
   const advance = (skipId?: string) => {
-    if (advancing.current) return;
-    advancing.current = true;
-    if (index + 1 < tasks.length) { setIndex(index + 1); return; }
+    if (index + 1 < tasks.length) { setIndex(i => i + 1); return; }
     if (finished.current) return;
     finished.current = true;
     const graded = tasks.filter(t => t.kind !== 'teach' && !skipped.includes(t.id) && t.id !== skipId);
@@ -105,7 +101,7 @@ function PilotSessionView({ session, onBack, onNext }: { session: PilotSession; 
   const check = () => {
     if (task.kind === 'teach') { advance(); return; }
     if (status === 'correct') { advance(); return; }
-    if (status === 'wrong') { setStatus('answering'); setSelected(''); setPicked([]); setTyped(''); setMicAttempt(n => n + 1); heading.current?.focus(); return; }
+    if (status === 'wrong') { setStatus('answering'); setSelected(''); setPicked([]); setTyped(''); setMicAttempt(n => n + 1); return; }
     grade(checkTask(task, task.kind === 'choice' ? selected : task.kind === 'build' ? picked.map(i => tileOrder[i]).join(' ') : typed));
   };
   const ready = task.kind === 'teach' || status !== 'answering' || (task.kind === 'choice' ? !!selected : task.kind === 'build' ? picked.length > 0 : typed.trim().length > 0);

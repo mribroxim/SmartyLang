@@ -23,6 +23,10 @@ export interface ProgressValue {
   spendCoins: (amount: number) => boolean;
   saveWord: (word: string, definition: string) => void;
   awardBiteXP: (result: BiteResult, title: string) => BiteAward;
+  /** Quest rewards and similar small payouts. */
+  earnCoins: (amount: number) => void;
+  /** Grant XP outside lessons (quest rewards). */
+  earnXP?: (amount: number) => void;
 }
 
 const ProgressContext = createContext<ProgressValue | null>(null);

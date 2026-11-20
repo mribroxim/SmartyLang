@@ -2,7 +2,7 @@ import crypto from 'node:crypto';
 import type { Request } from 'express';
 import { query } from './db.ts';
 import { checkoutQuote, priceProduct } from './paymentPolicy.ts';
-import { getProfile, updateProfile } from './auth.ts';
+import { getProfile } from './auth.ts';
 
 type Json = Record<string, any>;
 
@@ -87,6 +87,7 @@ export async function createCheckoutSession(input: {
   customerName?: string;
   metadata: Record<string, string>;
   profile?: Json;
+  discountCode?: string;
 }): Promise<{ checkoutUrl: string; sessionId: string }> {
   const normalizedPlanId = normalizePlanId(input.planId);
   const quote = checkoutQuote(input.metadata, input.profile);
@@ -108,6 +109,7 @@ export async function createCheckoutSession(input: {
     method: 'POST',
     body: JSON.stringify({
       product_cart: [{ product_id: productId, quantity: 1 }],
+      ...(input.discountCode ? { discount_code: input.discountCode } : {}),
       customer: {
         email: input.customerEmail || undefined,
         name: input.customerName || undefined,
@@ -263,7 +265,7 @@ export async function syncSubscription(id: string, expectedUid?: string): Promis
   const active = ['active', 'past_due'].includes(sub.status);
   const created = Date.parse(sub.created_at || '') || 0;
   const patch = { plan: data.planId, planSeats: data.seats, planLanguages: data.languages, planStartedAt: created, dodoSubscriptionId: id, dodoStatus: sub.status, planExpiresAt: active ? expiry : Math.min(expiry, Date.now()), planCancelAt: sub.cancel_at_next_billing_date ? expiry : null, planCancelledAt: sub.cancel_at_next_billing_date ? Date.now() : null, role: data.planId === 'business' && active ? 'business' : 'student' };
-  await query('UPDATE app_users SET role = CASE WHEN role IN (\'admin\', \'content-manager\') THEN role ELSE $2 END, profile = profile || $3::jsonb WHERE uid = $1 AND (profile->>\'dodoSubscriptionId\' IS NULL OR profile->>\'dodoSubscriptionId\' = $4 OR COALESCE((profile->>\'planStartedAt\')::bigint, 0) < $5)', [data.uid, patch.role, JSON.stringify(patch), id, created]);
+  await query('UPDATE app_users SET role = CASE WHEN role = \'admin\' THEN role ELSE $2 END, profile = profile || $3::jsonb WHERE uid = $1 AND (profile->>\'dodoSubscriptionId\' IS NULL OR profile->>\'dodoSubscriptionId\' = $4 OR COALESCE((profile->>\'planStartedAt\')::bigint, 0) < $5)', [data.uid, patch.role, JSON.stringify(patch), id, created]);
   return (await getProfile(data.uid)) || {};
 }
 

@@ -14,6 +14,7 @@ export interface SmartyPrefs {
   v: 1;
   liveliness: Liveliness;
   sound: boolean;
+  autoplayVoice: boolean;
   haptics: boolean;
   seasonal: boolean;
   preferredName?: string;
@@ -27,7 +28,7 @@ const KEY = 'smarty_prefs_v1';
 const LEGACY_MASCOT_KEY = 'smarty.mascot';
 
 export const DEFAULT_PREFS: SmartyPrefs = {
-  v: 1, liveliness: 'lively', sound: true, haptics: true, seasonal: true, dailyMinutes: 10, updatedAt: 0,
+  v: 1, liveliness: 'lively', sound: true, autoplayVoice: true, haptics: true, seasonal: true, dailyMinutes: 10, updatedAt: 0,
 };
 
 function normalize(raw: unknown): SmartyPrefs {
@@ -38,6 +39,7 @@ function normalize(raw: unknown): SmartyPrefs {
     v: 1,
     liveliness: live,
     sound: r.sound !== false,
+    autoplayVoice: r.autoplayVoice !== false,
     haptics: r.haptics !== false,
     seasonal: r.seasonal !== false,
     preferredName: typeof r.preferredName === 'string' && r.preferredName.trim() ? r.preferredName.trim().slice(0, 40) : undefined,

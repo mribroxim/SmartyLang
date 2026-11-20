@@ -1,0 +1,3507 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "beginner",
+  "unit": 7,
+  "title": "Shopping & Numbers",
+  "room": "shop",
+  "lessons": [
+    {
+      "id": "en.beginner.u07.l01",
+      "section": "beginner",
+      "unit": 7,
+      "lesson": 1,
+      "title": "Numbers 13–17",
+      "canDo": "Count to seventeen",
+      "scenario": "Smarty is at a birthday party and asks friends how old they are. Practise the numbers after twelve; ages can be imaginary.",
+      "items": [
+        {
+          "id": "en.beginner.u07.l01.thirteen",
+          "text": "thirteen",
+          "kind": "word",
+          "example": "Mia is thirteen years old.",
+          "note": "Say thirteen when you count one more than twelve."
+        },
+        {
+          "id": "en.beginner.u07.l01.fourteen",
+          "text": "fourteen",
+          "kind": "word",
+          "example": "Sam is fourteen.",
+          "note": "Say fourteen for the number after thirteen."
+        },
+        {
+          "id": "en.beginner.u07.l01.fifteen",
+          "text": "fifteen",
+          "kind": "word",
+          "example": "I am fifteen.",
+          "note": "Say fifteen when you tell someone your age or count to fifteen."
+        },
+        {
+          "id": "en.beginner.u07.l01.sixteen",
+          "text": "sixteen",
+          "kind": "word",
+          "example": "Ben has sixteen apples.",
+          "note": "Say sixteen to count sixteen things."
+        },
+        {
+          "id": "en.beginner.u07.l01.seventeen",
+          "text": "seventeen",
+          "kind": "word",
+          "example": "Ana has seventeen books.",
+          "note": "Say seventeen for the number after sixteen."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u07.l01.task.choose",
+          "kind": "choice",
+          "prompt": "Which word is the number 13?",
+          "answer": "thirteen",
+          "options": [
+            "fifteen",
+            "thirteen",
+            "seventeen"
+          ],
+          "explanation": "Thirteen is the number after twelve.",
+          "itemIds": [
+            "en.beginner.u07.l01.thirteen"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l01.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Sam is fourteen.",
+          "answer": "Sam is fourteen.",
+          "options": [
+            "Sam is fourteen.",
+            "Sam is sixteen.",
+            "Sam is seventeen."
+          ],
+          "explanation": "Listen to the number at the end: fourteen.",
+          "itemIds": [
+            "en.beginner.u07.l01.fourteen"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l01.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence in the right order.",
+          "answer": "I am fifteen.",
+          "tiles": [
+            "fifteen.",
+            "am",
+            "I",
+            "you"
+          ],
+          "explanation": "Say I am and then your age.",
+          "itemIds": [
+            "en.beginner.u07.l01.fifteen"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l01.task.fill",
+          "kind": "fill",
+          "prompt": "Ben has 16 apples. Complete the sentence.",
+          "text": "Ben has ___ apples.",
+          "answer": "sixteen",
+          "options": [
+            "fourteen",
+            "sixteen",
+            "seventeen"
+          ],
+          "explanation": "Sixteen is the number 16.",
+          "itemIds": [
+            "en.beginner.u07.l01.sixteen"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l01.task.match",
+          "kind": "match",
+          "prompt": "Match each number word to its number.",
+          "pairs": [
+            {
+              "left": "thirteen",
+              "right": "13"
+            },
+            {
+              "left": "fourteen",
+              "right": "14"
+            },
+            {
+              "left": "fifteen",
+              "right": "15"
+            },
+            {
+              "left": "sixteen",
+              "right": "16"
+            },
+            {
+              "left": "seventeen",
+              "right": "17"
+            }
+          ],
+          "explanation": "Each word matches one number from 13 to 17.",
+          "itemIds": [
+            "en.beginner.u07.l01.thirteen",
+            "en.beginner.u07.l01.fourteen",
+            "en.beginner.u07.l01.fifteen",
+            "en.beginner.u07.l01.sixteen",
+            "en.beginner.u07.l01.seventeen"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l01.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if the microphone mishears you.",
+          "text": "Ana has seventeen books.",
+          "answer": "Ana has seventeen books.",
+          "explanation": "You counted to seventeen out loud.",
+          "itemIds": [
+            "en.beginner.u07.l01.seventeen"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l01.task.recall",
+          "kind": "choice",
+          "prompt": "Sam is 17 years old. Which sentence is right?",
+          "answer": "Sam is seventeen years old.",
+          "options": [
+            "Sam is fourteen years old.",
+            "Sam is sixteen years old.",
+            "Sam is seventeen years old."
+          ],
+          "explanation": "Seventeen is the number 17.",
+          "itemIds": [
+            "en.beginner.u07.l01.seventeen",
+            "en.beginner.u02.l04.years-old"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l01.task.reply",
+          "kind": "listen",
+          "prompt": "Listen to the question, then choose a good reply.",
+          "audio": "How old are you?",
+          "answer": "I am thirteen years old.",
+          "options": [
+            "I am from Brazil.",
+            "I am a student.",
+            "I am thirteen years old."
+          ],
+          "explanation": "How old are you? asks for your age, so give a number and years old.",
+          "itemIds": [
+            "en.beginner.u07.l01.thirteen",
+            "en.beginner.u02.l04.how-old-are-you",
+            "en.beginner.u02.l04.years-old"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l01.task.after-twelve",
+          "kind": "choice",
+          "prompt": "Which word comes after twelve?",
+          "answer": "thirteen",
+          "options": [
+            "thirteen",
+            "eleven",
+            "twenty"
+          ],
+          "explanation": "Twelve, then thirteen. Eleven comes before twelve.",
+          "itemIds": [
+            "en.beginner.u07.l01.thirteen",
+            "en.beginner.u02.l04.twelve"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Everyone at the party says an age. Who is the oldest?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello! How old are you, Mia?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I am thirteen years old."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And you, Sam?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "I am fourteen. Ben is fifteen."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Ana is sixteen. Leo is seventeen."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Ben!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u07.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "How old is Mia?",
+            "answer": "thirteen",
+            "options": [
+              "fourteen",
+              "thirteen",
+              "fifteen"
+            ],
+            "explanation": "Mia says: I am thirteen years old.",
+            "itemIds": [
+              "en.beginner.u07.l01.thirteen"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "Who is fifteen?",
+            "answer": "Ben",
+            "options": [
+              "Mia",
+              "Ben",
+              "Sam"
+            ],
+            "explanation": "Sam says: Ben is fifteen.",
+            "itemIds": [
+              "en.beginner.u07.l01.fifteen"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Who is seventeen?",
+            "answer": "Leo",
+            "options": [
+              "Leo",
+              "Ana",
+              "Ben"
+            ],
+            "explanation": "Ben says: Leo is seventeen. Ana is sixteen.",
+            "itemIds": [
+              "en.beginner.u07.l01.seventeen"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u07-l01-scene",
+          "describe": "A birthday party in a garden with balloons; Smarty the black cat, Mia, Sam, Ben, Ana and Leo stand around a cake, with no written words or numbers."
+        }
+      },
+      "mission": {
+        "setup": "Smarty asks your age and a friend's age at the party. Use an imaginary age if you like.",
+        "turns": [
+          {
+            "smarty": "How old are you?",
+            "accept": [
+              "^i am (?:eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen)(?: years old)?$",
+              "^(?:eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen)(?: years old)?$"
+            ],
+            "example": "I am fourteen years old.",
+            "hint": "Say I am and a number from eleven to seventeen.",
+            "itemIds": [
+              "en.beginner.u07.l01.thirteen",
+              "en.beginner.u07.l01.fourteen",
+              "en.beginner.u07.l01.fifteen",
+              "en.beginner.u07.l01.sixteen",
+              "en.beginner.u07.l01.seventeen"
+            ]
+          },
+          {
+            "smarty": "Mia is thirteen. And your friend?",
+            "accept": [
+              "^(?:my friend|he|she) is (?:eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen)(?: years old)?$",
+              "^(?:mia|sam|ben|ana|leo|tom|lily|omar|zara) is (?:eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen)(?: years old)?$"
+            ],
+            "example": "Sam is fourteen.",
+            "hint": "Say a friend's name or He is / She is, and an age.",
+            "itemIds": [
+              "en.beginner.u07.l01.thirteen",
+              "en.beginner.u07.l01.fourteen",
+              "en.beginner.u07.l01.fifteen",
+              "en.beginner.u07.l01.sixteen",
+              "en.beginner.u07.l01.seventeen"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l04.years-old",
+        "en.beginner.u02.l04.how-old-are-you",
+        "en.beginner.u02.l04.twelve"
+      ]
+    },
+    {
+      "id": "en.beginner.u07.l02",
+      "section": "beginner",
+      "unit": 7,
+      "lesson": 2,
+      "title": "Numbers to 50",
+      "canDo": "Count in tens to fifty",
+      "scenario": "Smarty and friends count apples, bananas and eggs in the boxes. Practise bigger numbers up to fifty.",
+      "items": [
+        {
+          "id": "en.beginner.u07.l02.eighteen",
+          "text": "eighteen",
+          "kind": "word",
+          "example": "Tom is eighteen years old.",
+          "note": "Say eighteen for the number after seventeen."
+        },
+        {
+          "id": "en.beginner.u07.l02.nineteen",
+          "text": "nineteen",
+          "kind": "word",
+          "example": "Lily is nineteen.",
+          "note": "Say nineteen for the number just before twenty."
+        },
+        {
+          "id": "en.beginner.u07.l02.thirty",
+          "text": "thirty",
+          "kind": "word",
+          "example": "There are thirty apples in the box.",
+          "note": "Say thirty for 30; it is a different word from thirteen."
+        },
+        {
+          "id": "en.beginner.u07.l02.forty",
+          "text": "forty",
+          "kind": "word",
+          "example": "My father is forty years old.",
+          "note": "Say forty for 40; after twenty and thirty comes forty."
+        },
+        {
+          "id": "en.beginner.u07.l02.fifty",
+          "text": "fifty",
+          "kind": "word",
+          "example": "There are fifty books on the table.",
+          "note": "Say fifty for 50, and add a small number after it to count on."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u07.l02.task.choose",
+          "kind": "choice",
+          "prompt": "Which word is the number 30?",
+          "answer": "thirty",
+          "options": [
+            "thirteen",
+            "thirty",
+            "fifty"
+          ],
+          "explanation": "Thirty is 30. Thirteen is 13, a much smaller number.",
+          "itemIds": [
+            "en.beginner.u07.l02.thirty"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l02.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I am nineteen.",
+          "answer": "I am nineteen.",
+          "options": [
+            "I am nineteen.",
+            "I am eighteen.",
+            "I am twenty."
+          ],
+          "explanation": "Nineteen is the last number before twenty.",
+          "itemIds": [
+            "en.beginner.u07.l02.nineteen"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l02.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence in the right order.",
+          "answer": "There are forty apples.",
+          "tiles": [
+            "apples.",
+            "forty",
+            "There",
+            "are",
+            "fifty"
+          ],
+          "explanation": "There are comes first, then the number, then the thing you count.",
+          "itemIds": [
+            "en.beginner.u07.l02.forty"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l02.task.fill",
+          "kind": "fill",
+          "prompt": "My father is 50 years old. Complete the sentence.",
+          "text": "My father is ___ years old.",
+          "answer": "fifty",
+          "options": [
+            "forty",
+            "fifty",
+            "thirty"
+          ],
+          "explanation": "Fifty is the number 50.",
+          "itemIds": [
+            "en.beginner.u07.l02.fifty"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l02.task.match",
+          "kind": "match",
+          "prompt": "Match each number word to its number.",
+          "pairs": [
+            {
+              "left": "eighteen",
+              "right": "18"
+            },
+            {
+              "left": "nineteen",
+              "right": "19"
+            },
+            {
+              "left": "thirty",
+              "right": "30"
+            },
+            {
+              "left": "forty",
+              "right": "40"
+            },
+            {
+              "left": "fifty",
+              "right": "50"
+            }
+          ],
+          "explanation": "Each word matches one number.",
+          "itemIds": [
+            "en.beginner.u07.l02.eighteen",
+            "en.beginner.u07.l02.nineteen",
+            "en.beginner.u07.l02.thirty",
+            "en.beginner.u07.l02.forty",
+            "en.beginner.u07.l02.fifty"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l02.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if the microphone mishears you.",
+          "text": "Tom has nineteen books.",
+          "answer": "Tom has nineteen books.",
+          "explanation": "You said a number just before twenty.",
+          "itemIds": [
+            "en.beginner.u07.l02.nineteen"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l02.task.after-seventeen",
+          "kind": "choice",
+          "prompt": "Which word comes after seventeen?",
+          "answer": "eighteen",
+          "options": [
+            "thirty",
+            "eighteen",
+            "fifteen"
+          ],
+          "explanation": "Seventeen, then eighteen.",
+          "itemIds": [
+            "en.beginner.u07.l02.eighteen",
+            "en.beginner.u07.l01.seventeen"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l02.task.tens",
+          "kind": "choice",
+          "prompt": "Count in tens: ten, twenty, ... Which word comes next?",
+          "answer": "thirty",
+          "options": [
+            "thirteen",
+            "fifty",
+            "thirty"
+          ],
+          "explanation": "Count in tens: ten, twenty, thirty, forty, fifty.",
+          "itemIds": [
+            "en.beginner.u07.l02.thirty",
+            "en.beginner.u02.l04.twenty"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l02.task.recycle-age",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I am sixteen.",
+          "answer": "I am sixteen.",
+          "options": [
+            "I am sixteen.",
+            "I am thirty.",
+            "I am seventeen."
+          ],
+          "explanation": "Sixteen ends with -teen. Listen to the end of the word.",
+          "itemIds": [
+            "en.beginner.u07.l01.sixteen"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "The friends count what is in the boxes. How many are there?",
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Look, Smarty! There are thirty apples."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great, Sam! And there are forty bananas."
+          },
+          {
+            "speaker": "Mia",
+            "text": "There are fifty oranges in the box."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I have eighteen eggs."
+          },
+          {
+            "speaker": "Ana",
+            "text": "I have nineteen cups."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Sam!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u07.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "How many apples are there?",
+            "answer": "thirty",
+            "options": [
+              "forty",
+              "thirty",
+              "fifty"
+            ],
+            "explanation": "Sam says: There are thirty apples.",
+            "itemIds": [
+              "en.beginner.u07.l02.thirty"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "Who has eighteen eggs?",
+            "answer": "Ben",
+            "options": [
+              "Ana",
+              "Ben",
+              "Mia"
+            ],
+            "explanation": "Ben says: I have eighteen eggs.",
+            "itemIds": [
+              "en.beginner.u07.l02.eighteen"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "How many oranges are in the box?",
+            "answer": "fifty",
+            "options": [
+              "fifty",
+              "forty",
+              "thirty"
+            ],
+            "explanation": "Mia says: There are fifty oranges in the box.",
+            "itemIds": [
+              "en.beginner.u07.l02.fifty"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u07-l02-scene",
+          "describe": "Smarty the black cat, Sam, Mia, Ben and Ana stand around open wooden boxes full of apples, bananas and oranges on a table, with no written words or numbers."
+        }
+      },
+      "mission": {
+        "setup": "Smarty is counting boxes and asks about ages and apples. Use bigger numbers; imaginary numbers are fine.",
+        "turns": [
+          {
+            "smarty": "How old is your father?",
+            "accept": [
+              "^(?:he is|my father is) (?:eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)(?: years old)?$",
+              "^(?:eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty)(?: years old)?$"
+            ],
+            "example": "He is forty years old.",
+            "hint": "Say He is and a number, for example forty.",
+            "itemIds": [
+              "en.beginner.u07.l02.forty",
+              "en.beginner.u07.l02.fifty",
+              "en.beginner.u07.l02.thirty"
+            ]
+          },
+          {
+            "smarty": "I have nineteen apples. And you?",
+            "accept": [
+              "^i have (?:eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty) apples$",
+              "^(?:eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty) apples$"
+            ],
+            "example": "I have thirty apples.",
+            "hint": "Say I have and a number, then apples.",
+            "itemIds": [
+              "en.beginner.u07.l02.eighteen",
+              "en.beginner.u07.l02.nineteen",
+              "en.beginner.u07.l02.thirty",
+              "en.beginner.u07.l02.forty",
+              "en.beginner.u07.l02.fifty"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u07.l01.seventeen",
+        "en.beginner.u02.l04.twenty",
+        "en.beginner.u07.l01.sixteen"
+      ]
+    },
+    {
+      "id": "en.beginner.u07.l03",
+      "section": "beginner",
+      "unit": 7,
+      "lesson": 3,
+      "title": "Numbers to 100",
+      "canDo": "Count to one hundred",
+      "scenario": "Friends tell Smarty the ages in their families. Practise counting in tens all the way to one hundred.",
+      "items": [
+        {
+          "id": "en.beginner.u07.l03.sixty",
+          "text": "sixty",
+          "kind": "word",
+          "example": "My father is sixty years old.",
+          "note": "Say sixty for 60; it comes after fifty."
+        },
+        {
+          "id": "en.beginner.u07.l03.seventy",
+          "text": "seventy",
+          "kind": "word",
+          "example": "My mother is seventy.",
+          "note": "Say seventy for 70; after sixty comes seventy."
+        },
+        {
+          "id": "en.beginner.u07.l03.eighty",
+          "text": "eighty",
+          "kind": "word",
+          "example": "My grandmother is eighty years old.",
+          "note": "Say eighty for 80; the ending sounds like eight."
+        },
+        {
+          "id": "en.beginner.u07.l03.ninety",
+          "text": "ninety",
+          "kind": "word",
+          "example": "My grandfather is ninety years old.",
+          "note": "Say ninety for 90, and do not mix it up with nineteen."
+        },
+        {
+          "id": "en.beginner.u07.l03.hundred",
+          "text": "hundred",
+          "kind": "word",
+          "example": "I have one hundred apples.",
+          "note": "Say one hundred for 100; it is the biggest number you can count to in this unit.",
+          "image": {
+            "id": "hundred",
+            "describe": "Smarty the black cat sitting next to a huge pile of one hundred shiny coins; the picture has no written words or digits."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u07.l03.task.choose",
+          "kind": "choice",
+          "prompt": "Which word is the number 60?",
+          "answer": "sixty",
+          "options": [
+            "sixteen",
+            "sixty",
+            "seventy"
+          ],
+          "explanation": "Sixty is 60. Sixteen is a smaller number.",
+          "itemIds": [
+            "en.beginner.u07.l03.sixty"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l03.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "My grandmother is eighty years old.",
+          "answer": "My grandmother is eighty years old.",
+          "options": [
+            "My grandmother is eighty years old.",
+            "My grandmother is seventy years old.",
+            "My grandmother is ninety years old."
+          ],
+          "explanation": "Listen for eighty. It sounds like eight.",
+          "itemIds": [
+            "en.beginner.u07.l03.eighty"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l03.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence in the right order.",
+          "answer": "I have one hundred apples.",
+          "tiles": [
+            "apples.",
+            "hundred",
+            "one",
+            "I",
+            "have",
+            "ninety"
+          ],
+          "explanation": "Say one hundred together: one, then hundred.",
+          "itemIds": [
+            "en.beginner.u07.l03.hundred"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l03.task.fill",
+          "kind": "fill",
+          "prompt": "There are 90 apples in the box. Complete the sentence.",
+          "text": "There are ___ apples in the box.",
+          "answer": "ninety",
+          "options": [
+            "nineteen",
+            "ninety",
+            "seventy"
+          ],
+          "explanation": "Ninety is 90. Nineteen is only 19.",
+          "itemIds": [
+            "en.beginner.u07.l03.ninety"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l03.task.match",
+          "kind": "match",
+          "prompt": "Match each number word to its number.",
+          "pairs": [
+            {
+              "left": "sixty",
+              "right": "60"
+            },
+            {
+              "left": "seventy",
+              "right": "70"
+            },
+            {
+              "left": "eighty",
+              "right": "80"
+            },
+            {
+              "left": "ninety",
+              "right": "90"
+            },
+            {
+              "left": "hundred",
+              "right": "100"
+            }
+          ],
+          "explanation": "Each word matches one number, up to one hundred.",
+          "itemIds": [
+            "en.beginner.u07.l03.sixty",
+            "en.beginner.u07.l03.seventy",
+            "en.beginner.u07.l03.eighty",
+            "en.beginner.u07.l03.ninety",
+            "en.beginner.u07.l03.hundred"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l03.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if the microphone mishears you.",
+          "text": "Ben has ninety apples.",
+          "answer": "Ben has ninety apples.",
+          "explanation": "You said ninety. Try to hear the difference from nineteen.",
+          "itemIds": [
+            "en.beginner.u07.l03.ninety"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l03.task.after-ninety",
+          "kind": "choice",
+          "prompt": "Which comes after ninety?",
+          "answer": "one hundred",
+          "options": [
+            "one hundred",
+            "eighty",
+            "fifty"
+          ],
+          "explanation": "Ninety, then one hundred.",
+          "itemIds": [
+            "en.beginner.u07.l03.hundred",
+            "en.beginner.u07.l03.ninety"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l03.task.tens",
+          "kind": "choice",
+          "prompt": "Count in tens: fifty, sixty, ... Which word comes next?",
+          "answer": "seventy",
+          "options": [
+            "seventeen",
+            "forty",
+            "seventy"
+          ],
+          "explanation": "Count in tens: fifty, sixty, seventy.",
+          "itemIds": [
+            "en.beginner.u07.l03.seventy",
+            "en.beginner.u07.l02.fifty"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l03.task.recycle-forty",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Tom has forty books.",
+          "answer": "Tom has forty books.",
+          "options": [
+            "Tom has fourteen books.",
+            "Tom has forty books.",
+            "Tom has fifty books."
+          ],
+          "explanation": "Forty ends with -ty. Fourteen ends with -teen.",
+          "itemIds": [
+            "en.beginner.u07.l02.forty"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l03.task.recycle-age",
+          "kind": "fill",
+          "prompt": "You are 13. Complete the sentence about your age.",
+          "text": "I am ___ years old.",
+          "answer": "thirteen",
+          "options": [
+            "thirteen",
+            "thirty",
+            "fifty"
+          ],
+          "explanation": "Thirteen is 13. Thirty is 30.",
+          "itemIds": [
+            "en.beginner.u07.l01.thirteen",
+            "en.beginner.u02.l04.years-old"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who has the biggest number of all?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "How old is your grandmother, Mia?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "She is eighty years old."
+          },
+          {
+            "speaker": "Sam",
+            "text": "My grandfather is ninety years old."
+          },
+          {
+            "speaker": "Ben",
+            "text": "My mother is sixty. My father is seventy."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great! And I have one hundred apples."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Smarty, you have one hundred apples?"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u07.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "How old is Mia's grandmother?",
+            "answer": "eighty",
+            "options": [
+              "seventy",
+              "eighty",
+              "ninety"
+            ],
+            "explanation": "Mia says: She is eighty years old.",
+            "itemIds": [
+              "en.beginner.u07.l03.eighty"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Who has a grandfather that is ninety?",
+            "answer": "Sam",
+            "options": [
+              "Mia",
+              "Sam",
+              "Ben"
+            ],
+            "explanation": "Sam says: My grandfather is ninety years old.",
+            "itemIds": [
+              "en.beginner.u07.l03.ninety"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "Who has one hundred apples?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Ben",
+              "Mia"
+            ],
+            "explanation": "Smarty says: I have one hundred apples.",
+            "itemIds": [
+              "en.beginner.u07.l03.hundred"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u07-l03-scene",
+          "describe": "A sunny school garden where Smarty the black cat, Mia, Sam and Ben sit on a bench and talk; behind them a stall with a pile of apples, no written words or numbers."
+        }
+      },
+      "mission": {
+        "setup": "Smarty talks about family ages and apples. Imaginary ages and answers are fine.",
+        "turns": [
+          {
+            "smarty": "How old is your grandmother?",
+            "accept": [
+              "^(?:she is|my grandmother is|grandma is) (?:forty|fifty|sixty|seventy|eighty|ninety)(?: years old)?$",
+              "^(?:forty|fifty|sixty|seventy|eighty|ninety)(?: years old)?$"
+            ],
+            "example": "She is seventy years old.",
+            "hint": "Say She is and a number such as seventy or eighty.",
+            "itemIds": [
+              "en.beginner.u07.l03.sixty",
+              "en.beginner.u07.l03.seventy",
+              "en.beginner.u07.l03.eighty",
+              "en.beginner.u07.l03.ninety"
+            ]
+          },
+          {
+            "smarty": "I have one hundred apples. Do you like apples?",
+            "accept": [
+              "^yes(?: i do| i like apples)?$",
+              "^no(?: i do not| i do not like apples)?$",
+              "^i like apples$"
+            ],
+            "example": "Yes, I like apples.",
+            "hint": "Answer Yes or No. You can add I like apples.",
+            "itemIds": [
+              "en.beginner.u07.l03.hundred",
+              "en.beginner.u03.l03.do-you-like",
+              "en.beginner.u03.l01.apple"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u07.l02.fifty",
+        "en.beginner.u07.l02.forty",
+        "en.beginner.u07.l01.thirteen",
+        "en.beginner.u02.l04.years-old",
+        "en.beginner.u03.l03.do-you-like",
+        "en.beginner.u03.l01.apple"
+      ]
+    },
+    {
+      "id": "en.beginner.u07.l04",
+      "section": "beginner",
+      "unit": 7,
+      "lesson": 4,
+      "title": "How much is it?",
+      "canDo": "Ask the price",
+      "scenario": "You visit Smarty's little shop and ask what things cost. Practise asking the price and saying a price is low.",
+      "items": [
+        {
+          "id": "en.beginner.u07.l04.how-much-is-it",
+          "text": "How much is it?",
+          "kind": "phrase",
+          "example": "How much is it?",
+          "note": "Ask \"How much is it?\" when you want to know the price."
+        },
+        {
+          "id": "en.beginner.u07.l04.money",
+          "text": "money",
+          "kind": "word",
+          "example": "I have money.",
+          "note": "Money is what you give in a shop to buy something.",
+          "image": {
+            "id": "money",
+            "describe": "A small pile of coins and plain paper notes on a wooden table beside Smarty the black cat; there are no digits or words on them."
+          }
+        },
+        {
+          "id": "en.beginner.u07.l04.dollar",
+          "text": "dollar",
+          "kind": "word",
+          "forms": [
+            "dollars"
+          ],
+          "example": "It is one dollar.",
+          "note": "Use dollar after a number to say a price; with more than one, say dollars.",
+          "image": {
+            "id": "dollar",
+            "describe": "Mia holding up one plain green paper bill with a happy face; the bill has no digits or words on it."
+          }
+        },
+        {
+          "id": "en.beginner.u07.l04.cheap",
+          "text": "cheap",
+          "kind": "word",
+          "example": "The bread is cheap.",
+          "note": "Say cheap when the price is low."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u07.l04.task.choose",
+          "kind": "choice",
+          "prompt": "You want to know the price. What do you ask?",
+          "answer": "How much is it?",
+          "options": [
+            "How old are you?",
+            "How much is it?",
+            "What is your name?"
+          ],
+          "explanation": "How much is it? asks about the price.",
+          "itemIds": [
+            "en.beginner.u07.l04.how-much-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l04.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "How much is it?",
+          "answer": "How much is it?",
+          "options": [
+            "How much is it?",
+            "What time is it?",
+            "Who is she?"
+          ],
+          "explanation": "How much asks the price. What time asks the clock.",
+          "itemIds": [
+            "en.beginner.u07.l04.how-much-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l04.task.build",
+          "kind": "build",
+          "prompt": "Build the answer about the price.",
+          "answer": "It is ten dollars.",
+          "tiles": [
+            "dollars.",
+            "ten",
+            "is",
+            "It",
+            "much"
+          ],
+          "explanation": "It is, then the number, then dollars.",
+          "itemIds": [
+            "en.beginner.u07.l04.dollar"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l04.task.fill",
+          "kind": "fill",
+          "prompt": "The bread is only one dollar. Choose the word for a low price.",
+          "text": "The bread is ___.",
+          "answer": "cheap",
+          "options": [
+            "big",
+            "cheap",
+            "cold"
+          ],
+          "explanation": "Cheap means the price is low.",
+          "itemIds": [
+            "en.beginner.u07.l04.cheap"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l04.task.match",
+          "kind": "match",
+          "prompt": "Match each question to a good reply.",
+          "pairs": [
+            {
+              "left": "How much is it?",
+              "right": "It is five dollars."
+            },
+            {
+              "left": "What time is it?",
+              "right": "It is one o'clock."
+            },
+            {
+              "left": "How old are you?",
+              "right": "I am thirteen years old."
+            }
+          ],
+          "explanation": "Each question needs its own kind of answer: a price, a time or an age.",
+          "itemIds": [
+            "en.beginner.u07.l04.how-much-is-it",
+            "en.beginner.u07.l04.dollar",
+            "en.beginner.u04.l01.what-time-is-it",
+            "en.beginner.u02.l04.how-old-are-you"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l04.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if the microphone mishears you.",
+          "text": "How much is it?",
+          "answer": "How much is it?",
+          "explanation": "You asked the price out loud.",
+          "itemIds": [
+            "en.beginner.u07.l04.how-much-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l04.task.money",
+          "kind": "choice",
+          "prompt": "Which word is for coins and paper notes?",
+          "answer": "money",
+          "options": [
+            "milk",
+            "money",
+            "mother"
+          ],
+          "explanation": "Money is what you pay with.",
+          "itemIds": [
+            "en.beginner.u07.l04.money"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l04.task.recycle-price",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "It is twenty dollars.",
+          "answer": "It is twenty dollars.",
+          "options": [
+            "It is twelve dollars.",
+            "It is twenty dollars.",
+            "It is thirty dollars."
+          ],
+          "explanation": "Twenty is 20. Twelve is 12.",
+          "itemIds": [
+            "en.beginner.u07.l04.dollar",
+            "en.beginner.u02.l04.twenty"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l04.task.recycle-polite",
+          "kind": "choice",
+          "prompt": "Ask for bread politely.",
+          "answer": "Can I have bread, please?",
+          "options": [
+            "I have bread.",
+            "Bread is hot.",
+            "Can I have bread, please?"
+          ],
+          "explanation": "Can I have ... , please? is a polite way to ask.",
+          "itemIds": [
+            "en.beginner.u03.l05.can-i-have",
+            "en.beginner.u03.l01.bread",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l04.task.recycle-apple",
+          "kind": "build",
+          "prompt": "Build the question about the apple.",
+          "answer": "How much is the apple?",
+          "tiles": [
+            "apple?",
+            "the",
+            "is",
+            "much",
+            "How",
+            "old"
+          ],
+          "explanation": "How much is ... ? works with any thing you want to buy.",
+          "itemIds": [
+            "en.beginner.u07.l04.how-much-is-it",
+            "en.beginner.u03.l01.apple"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Mia wants bread and apples. Is it cheap?",
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Hello, Smarty! How much is the bread?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is two dollars."
+          },
+          {
+            "speaker": "Mia",
+            "text": "And the apples?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "The apples are one dollar."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Great! I have money."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Can I have two apples, please?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Of course! Here you are."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u07.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "How much is the bread?",
+            "answer": "two dollars",
+            "options": [
+              "one dollar",
+              "two dollars",
+              "ten dollars"
+            ],
+            "explanation": "Smarty says: It is two dollars.",
+            "itemIds": [
+              "en.beginner.u07.l04.how-much-is-it"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "Who has money?",
+            "answer": "Mia",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Mia says: I have money.",
+            "itemIds": [
+              "en.beginner.u07.l04.money"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Mia ask for at the end?",
+            "answer": "two apples",
+            "options": [
+              "two apples",
+              "bread",
+              "one dollar"
+            ],
+            "explanation": "Mia asks: Can I have two apples, please?",
+            "itemIds": [
+              "en.beginner.u07.l04.dollar"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u07-l04-scene",
+          "describe": "Smarty the black cat behind the counter of a little shop with a loaf of bread and a basket of apples; Mia stands in front of the counter holding some coins, no written words or numbers."
+        }
+      },
+      "mission": {
+        "setup": "You are a customer in Smarty's little shop. Ask the price and say what you think of it.",
+        "turns": [
+          {
+            "smarty": "Hello! Look, we have bread, milk and apples.",
+            "accept": [
+              "^how much is it$",
+              "^how much is the (?:bread|milk|apple|apples)$",
+              "^(?:hello )?how much is it smarty$"
+            ],
+            "example": "How much is it?",
+            "hint": "Ask the price with How much is it?",
+            "itemIds": [
+              "en.beginner.u07.l04.how-much-is-it"
+            ]
+          },
+          {
+            "smarty": "It is three dollars.",
+            "accept": [
+              "^(?:great )?(?:it is|that is) cheap$",
+              "^(?:thank you|thanks)(?: smarty)?$",
+              "^(?:yes )?can i have it please$"
+            ],
+            "example": "Great, it is cheap.",
+            "hint": "Say it is cheap, thank Smarty, or ask Can I have it, please?",
+            "itemIds": [
+              "en.beginner.u07.l04.cheap",
+              "en.beginner.u07.l04.dollar",
+              "en.beginner.u01.l03.thank-you"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u04.l01.what-time-is-it",
+        "en.beginner.u02.l04.how-old-are-you",
+        "en.beginner.u02.l04.twenty",
+        "en.beginner.u03.l05.can-i-have",
+        "en.beginner.u03.l01.bread",
+        "en.beginner.u01.l03.please",
+        "en.beginner.u03.l01.apple",
+        "en.beginner.u01.l03.thank-you"
+      ]
+    },
+    {
+      "id": "en.beginner.u07.l05",
+      "section": "beginner",
+      "unit": 7,
+      "lesson": 5,
+      "title": "It's expensive",
+      "canDo": "Talk about prices",
+      "scenario": "You and Sam look at things in Smarty's shop. Talk about prices and decide what to buy.",
+      "items": [
+        {
+          "id": "en.beginner.u07.l05.expensive",
+          "text": "expensive",
+          "kind": "word",
+          "example": "The coat is expensive.",
+          "note": "Say expensive when the price is high."
+        },
+        {
+          "id": "en.beginner.u07.l05.price",
+          "text": "price",
+          "kind": "word",
+          "forms": [
+            "prices"
+          ],
+          "example": "The price is ten dollars.",
+          "note": "Price is the number of dollars a thing costs.",
+          "image": {
+            "id": "price",
+            "describe": "A blank paper price tag hanging on a red apple, with Smarty the black cat looking at it; the tag has no digits or words."
+          }
+        },
+        {
+          "id": "en.beginner.u07.l05.shop",
+          "text": "shop",
+          "kind": "word",
+          "forms": [
+            "shops"
+          ],
+          "example": "Smarty has a shop.",
+          "note": "A shop is the place where you buy things.",
+          "image": {
+            "id": "shop",
+            "describe": "The front of a little shop with a striped awning and shelves of apples and bread, with Smarty the black cat standing in the doorway."
+          }
+        },
+        {
+          "id": "en.beginner.u07.l05.buy",
+          "text": "buy",
+          "kind": "word",
+          "forms": [
+            "buys"
+          ],
+          "example": "I want to buy bread.",
+          "note": "Use buy when you give money and get something."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u07.l05.task.choose",
+          "kind": "choice",
+          "prompt": "A coat is one hundred dollars. Which word describes the price?",
+          "answer": "expensive",
+          "options": [
+            "cheap",
+            "expensive",
+            "small"
+          ],
+          "explanation": "A very high price is expensive.",
+          "itemIds": [
+            "en.beginner.u07.l05.expensive"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l05.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The coat is expensive.",
+          "answer": "The coat is expensive.",
+          "options": [
+            "The coat is expensive.",
+            "The coat is cheap.",
+            "The hat is expensive."
+          ],
+          "explanation": "Listen for the thing and the price word.",
+          "itemIds": [
+            "en.beginner.u07.l05.expensive"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l05.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence in the right order.",
+          "answer": "I want to buy bread.",
+          "tiles": [
+            "bread.",
+            "buy",
+            "to",
+            "want",
+            "I",
+            "have"
+          ],
+          "explanation": "I want to buy + the thing you want.",
+          "itemIds": [
+            "en.beginner.u07.l05.buy",
+            "en.beginner.u06.l07.i-want"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l05.task.fill",
+          "kind": "fill",
+          "prompt": "Where do you buy apples? Complete the sentence.",
+          "text": "I buy apples in a ___.",
+          "answer": "shop",
+          "options": [
+            "bed",
+            "shop",
+            "window"
+          ],
+          "explanation": "You buy things in a shop.",
+          "itemIds": [
+            "en.beginner.u07.l05.shop",
+            "en.beginner.u07.l05.buy"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l05.task.match",
+          "kind": "match",
+          "prompt": "Match the word to the idea.",
+          "pairs": [
+            {
+              "left": "expensive",
+              "right": "one hundred dollars"
+            },
+            {
+              "left": "cheap",
+              "right": "one dollar"
+            },
+            {
+              "left": "shop",
+              "right": "apples and bread"
+            }
+          ],
+          "explanation": "Expensive goes with a high price, cheap with a low price, and a shop sells food.",
+          "itemIds": [
+            "en.beginner.u07.l05.expensive",
+            "en.beginner.u07.l04.cheap",
+            "en.beginner.u07.l05.shop",
+            "en.beginner.u07.l04.dollar"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l05.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if the microphone mishears you.",
+          "text": "The price is ten dollars.",
+          "answer": "The price is ten dollars.",
+          "explanation": "You told someone the price.",
+          "itemIds": [
+            "en.beginner.u07.l05.price",
+            "en.beginner.u07.l04.dollar"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l05.task.ask-price",
+          "kind": "choice",
+          "prompt": "Which question asks about the price?",
+          "answer": "How much is it?",
+          "options": [
+            "How old are you?",
+            "How much is it?",
+            "Where are you from?"
+          ],
+          "explanation": "How much is it? asks about the price.",
+          "itemIds": [
+            "en.beginner.u07.l05.price",
+            "en.beginner.u07.l04.how-much-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l05.task.recycle-money",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have money.",
+          "answer": "I have money.",
+          "options": [
+            "I have milk.",
+            "I have money.",
+            "I have a cat."
+          ],
+          "explanation": "Money is what you use in a shop.",
+          "itemIds": [
+            "en.beginner.u07.l04.money"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l05.task.recycle-much",
+          "kind": "fill",
+          "prompt": "You want to know the price. Complete the question.",
+          "text": "How ___ is it?",
+          "answer": "much",
+          "options": [
+            "old",
+            "much",
+            "tall"
+          ],
+          "explanation": "How much asks about the price.",
+          "itemIds": [
+            "en.beginner.u07.l04.how-much-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l05.task.reply-price",
+          "kind": "choice",
+          "prompt": "Someone asks: How much is it? Choose the answer.",
+          "answer": "It is five dollars.",
+          "options": [
+            "It is five o'clock.",
+            "It is five dollars.",
+            "I am five years old."
+          ],
+          "explanation": "A price answer uses dollars.",
+          "itemIds": [
+            "en.beginner.u07.l04.how-much-is-it",
+            "en.beginner.u07.l04.dollar"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Sam sees a jacket and a hat. Which one can he buy?",
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Hello, Smarty! Is this jacket cheap?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No, it is expensive. The price is fifty dollars."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I have thirty dollars."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "This hat is cheap. It is ten dollars."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Great! I want to buy the hat."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Sam!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u07.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Is the jacket cheap?",
+            "answer": "No, it is expensive.",
+            "options": [
+              "Yes, it is cheap.",
+              "No, it is expensive.",
+              "No, it is cold."
+            ],
+            "explanation": "Smarty says: No, it is expensive.",
+            "itemIds": [
+              "en.beginner.u07.l05.expensive"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "What is the price of the jacket?",
+            "answer": "fifty dollars",
+            "options": [
+              "thirty dollars",
+              "fifty dollars",
+              "ten dollars"
+            ],
+            "explanation": "Smarty says: The price is fifty dollars.",
+            "itemIds": [
+              "en.beginner.u07.l05.price"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Sam want to buy?",
+            "answer": "the hat",
+            "options": [
+              "the hat",
+              "the jacket",
+              "the coat"
+            ],
+            "explanation": "Sam says: I want to buy the hat.",
+            "itemIds": [
+              "en.beginner.u07.l05.buy"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u07-l05-scene",
+          "describe": "Inside a little shop, Sam looks at a big jacket and a small hat on hooks while Smarty the black cat stands behind the counter, no written words or numbers."
+        }
+      },
+      "mission": {
+        "setup": "You are a customer in Smarty's shop. Say what you think of the price and decide whether to buy.",
+        "turns": [
+          {
+            "smarty": "This coat is fifty dollars.",
+            "accept": [
+              "^(?:it is|that is) expensive$",
+              "^(?:it is|that is) very expensive$",
+              "^(?:the price is )?expensive$"
+            ],
+            "example": "It is expensive.",
+            "hint": "Say if the price is high or low: It is expensive.",
+            "itemIds": [
+              "en.beginner.u07.l05.expensive",
+              "en.beginner.u07.l05.price"
+            ]
+          },
+          {
+            "smarty": "This hat is ten dollars. Do you want to buy it?",
+            "accept": [
+              "^yes(?: please)?$",
+              "^(?:yes )?i want to buy (?:it|the hat)$",
+              "^no(?: thank you| thanks)?$"
+            ],
+            "example": "Yes, I want to buy it.",
+            "hint": "Say Yes or No. You can add I want to buy it.",
+            "itemIds": [
+              "en.beginner.u07.l05.buy",
+              "en.beginner.u07.l05.shop"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u06.l07.i-want",
+        "en.beginner.u07.l04.cheap",
+        "en.beginner.u07.l04.dollar",
+        "en.beginner.u07.l04.how-much-is-it",
+        "en.beginner.u07.l04.money"
+      ]
+    },
+    {
+      "id": "en.beginner.u07.l06",
+      "section": "beginner",
+      "unit": 7,
+      "lesson": 6,
+      "title": "At the market",
+      "canDo": "Buy food at a market",
+      "scenario": "You and Ana shop at the market. Ask for food, say how many, and ask for kilos and bottles.",
+      "items": [
+        {
+          "id": "en.beginner.u07.l06.market",
+          "text": "market",
+          "kind": "word",
+          "example": "I buy tomatoes at the market.",
+          "note": "A market is a place with many stalls where you buy food.",
+          "image": {
+            "id": "market",
+            "describe": "A busy open-air market with colourful fruit and vegetable stalls under bright umbrellas; Smarty the black cat walks between the stalls."
+          }
+        },
+        {
+          "id": "en.beginner.u07.l06.kilo",
+          "text": "kilo",
+          "kind": "word",
+          "forms": [
+            "kilos"
+          ],
+          "example": "I want one kilo of apples.",
+          "note": "Use kilo to say how much food you want.",
+          "image": {
+            "id": "kilo",
+            "describe": "A kitchen scale with a pile of red apples on it and Mia watching; the scale has no numbers or words."
+          }
+        },
+        {
+          "id": "en.beginner.u07.l06.how-many",
+          "text": "How many",
+          "kind": "phrase",
+          "example": "How many apples?",
+          "note": "Use How many to ask the number of things."
+        },
+        {
+          "id": "en.beginner.u07.l06.bottle",
+          "text": "bottle",
+          "kind": "word",
+          "forms": [
+            "bottles"
+          ],
+          "example": "I want a bottle of water.",
+          "note": "Use bottle for water, milk or juice.",
+          "image": {
+            "id": "bottle",
+            "describe": "A clear glass bottle of water standing on a wooden table next to a cup."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u07.l06.task.choose",
+          "kind": "choice",
+          "prompt": "You want to ask about the number of apples. What do you ask?",
+          "answer": "How many apples?",
+          "options": [
+            "How much is it?",
+            "How many apples?",
+            "How old are you?"
+          ],
+          "explanation": "How many asks about the number of things.",
+          "itemIds": [
+            "en.beginner.u07.l06.how-many"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l06.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I want one kilo of apples.",
+          "answer": "I want one kilo of apples.",
+          "options": [
+            "I want one kilo of apples.",
+            "I want one kilo of tomatoes.",
+            "I want one bottle of water."
+          ],
+          "explanation": "Listen for kilo and apples.",
+          "itemIds": [
+            "en.beginner.u07.l06.kilo"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l06.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence in the right order.",
+          "answer": "I want a bottle of water.",
+          "tiles": [
+            "water.",
+            "bottle",
+            "of",
+            "a",
+            "want",
+            "I",
+            "milk"
+          ],
+          "explanation": "I want a bottle of + the drink.",
+          "itemIds": [
+            "en.beginner.u07.l06.bottle"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l06.task.fill",
+          "kind": "fill",
+          "prompt": "Potatoes are sold by weight. Complete the sentence.",
+          "text": "I want two ___ of potatoes.",
+          "answer": "kilos",
+          "options": [
+            "bottles",
+            "kilos",
+            "cups"
+          ],
+          "explanation": "Kilos is for food that you weigh.",
+          "itemIds": [
+            "en.beginner.u07.l06.kilo"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l06.task.match",
+          "kind": "match",
+          "prompt": "Match each word to a good partner.",
+          "pairs": [
+            {
+              "left": "market",
+              "right": "Tomatoes, potatoes and carrots"
+            },
+            {
+              "left": "kilo",
+              "right": "One kilo of rice"
+            },
+            {
+              "left": "bottle",
+              "right": "One bottle of water"
+            },
+            {
+              "left": "How many apples?",
+              "right": "Five apples."
+            }
+          ],
+          "explanation": "Each word goes with food or a number.",
+          "itemIds": [
+            "en.beginner.u07.l06.market",
+            "en.beginner.u07.l06.kilo",
+            "en.beginner.u07.l06.bottle",
+            "en.beginner.u07.l06.how-many"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l06.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if the microphone mishears you.",
+          "text": "How many apples?",
+          "answer": "How many apples?",
+          "explanation": "You asked about the number of apples.",
+          "itemIds": [
+            "en.beginner.u07.l06.how-many"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l06.task.reply",
+          "kind": "choice",
+          "prompt": "Someone asks: How many apples? Choose the answer.",
+          "answer": "Six apples, please.",
+          "options": [
+            "I am six years old.",
+            "It is six o'clock.",
+            "Six apples, please."
+          ],
+          "explanation": "How many asks for a number of things.",
+          "itemIds": [
+            "en.beginner.u07.l06.how-many",
+            "en.beginner.u03.l01.apple"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l06.task.recycle-rice",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Can I have a kilo of rice, please?",
+          "answer": "Can I have a kilo of rice, please?",
+          "options": [
+            "Can I have a kilo of rice, please?",
+            "Can I have a bottle of milk, please?",
+            "Can I have a bottle of juice, please?"
+          ],
+          "explanation": "Listen for kilo and rice.",
+          "itemIds": [
+            "en.beginner.u07.l06.kilo",
+            "en.beginner.u03.l05.can-i-have",
+            "en.beginner.u03.l04.rice"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l06.task.recycle-price",
+          "kind": "build",
+          "prompt": "Build the question about the price.",
+          "answer": "How much is it?",
+          "tiles": [
+            "it?",
+            "is",
+            "much",
+            "How",
+            "many"
+          ],
+          "explanation": "How much asks the price. How many asks a number.",
+          "itemIds": [
+            "en.beginner.u07.l04.how-much-is-it",
+            "en.beginner.u07.l06.how-many"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l06.task.recycle-buy",
+          "kind": "choice",
+          "prompt": "Say you want to buy tomatoes.",
+          "answer": "I want to buy tomatoes.",
+          "options": [
+            "I like tomatoes.",
+            "I do not like tomatoes.",
+            "I want to buy tomatoes."
+          ],
+          "explanation": "I want to buy + the thing you want.",
+          "itemIds": [
+            "en.beginner.u07.l05.buy",
+            "en.beginner.u03.l06.tomato",
+            "en.beginner.u06.l07.i-want"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Ana shops at the market. What does she buy?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good morning, Ana!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Good morning! I want apples, please."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "How many kilos?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Two kilos. And one bottle of juice."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Of course! Here you are."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Thank you! How much is it?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is ten dollars."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u07.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "How many kilos of apples does Ana want?",
+            "answer": "two kilos",
+            "options": [
+              "one kilo",
+              "two kilos",
+              "ten kilos"
+            ],
+            "explanation": "Ana says: Two kilos.",
+            "itemIds": [
+              "en.beginner.u07.l06.kilo"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What else does Ana want?",
+            "answer": "a bottle of juice",
+            "options": [
+              "a bottle of milk",
+              "a bottle of juice",
+              "a kilo of rice"
+            ],
+            "explanation": "Ana says: And one bottle of juice.",
+            "itemIds": [
+              "en.beginner.u07.l06.bottle"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "How much is it?",
+            "answer": "ten dollars",
+            "options": [
+              "ten dollars",
+              "two dollars",
+              "five dollars"
+            ],
+            "explanation": "Smarty says: It is ten dollars.",
+            "itemIds": [
+              "en.beginner.u07.l06.how-many"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u07-l06-scene",
+          "describe": "Ana at a market stall buying red apples from Smarty the black cat, who is wearing a small apron; a bottle of juice stands on the stall, no written words or numbers."
+        }
+      },
+      "mission": {
+        "setup": "You are a customer at the market. Smarty sells fruit and drinks. Choose what you want and say how many.",
+        "turns": [
+          {
+            "smarty": "Good morning! What do you want?",
+            "accept": [
+              "^(?:i want|can i have) (?:some )?(?:apples|tomatoes|potatoes|carrots|oranges|bananas|rice|bread|milk|water|juice|eggs)(?: please)?$",
+              "^(?:i would|i'd) like (?:some )?(?:apples|tomatoes|potatoes|carrots|oranges|bananas|rice|bread|milk|water|juice|eggs)(?: please)?$"
+            ],
+            "example": "I want apples, please.",
+            "hint": "Say what food you want, for example I want apples.",
+            "itemIds": [
+              "en.beginner.u07.l06.market",
+              "en.beginner.u03.l01.apple"
+            ]
+          },
+          {
+            "smarty": "How many kilos?",
+            "accept": [
+              "^(?:one|two|three|four|five|six|seven|eight|nine|ten) kilos?(?: please)?$",
+              "^(?:i want|i would like|i'd like) (?:one|two|three|four|five|six|seven|eight|nine|ten) kilos?$"
+            ],
+            "example": "Two kilos, please.",
+            "hint": "Say a number and kilos.",
+            "itemIds": [
+              "en.beginner.u07.l06.kilo",
+              "en.beginner.u07.l06.how-many"
+            ]
+          },
+          {
+            "smarty": "Here you are. Do you want a bottle of water?",
+            "accept": [
+              "^yes(?: please)?$",
+              "^no(?: thank you| thanks)?$",
+              "^(?:yes )?i want a bottle(?: please)?$"
+            ],
+            "example": "Yes, please.",
+            "hint": "Say Yes or No. You can add a bottle.",
+            "itemIds": [
+              "en.beginner.u07.l06.bottle"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l01.apple",
+        "en.beginner.u03.l05.can-i-have",
+        "en.beginner.u03.l04.rice",
+        "en.beginner.u07.l04.how-much-is-it",
+        "en.beginner.u07.l05.buy",
+        "en.beginner.u03.l06.tomato",
+        "en.beginner.u06.l07.i-want"
+      ]
+    },
+    {
+      "id": "en.beginner.u07.l07",
+      "section": "beginner",
+      "unit": 7,
+      "lesson": 7,
+      "title": "I'd like this one",
+      "canDo": "Choose what to buy",
+      "scenario": "Lily chooses things in Smarty's shop. Say what you would like and point to this one or that one.",
+      "items": [
+        {
+          "id": "en.beginner.u07.l07.i-would-like",
+          "text": "I would like",
+          "kind": "phrase",
+          "forms": [
+            "I'd like"
+          ],
+          "example": "I would like a cake.",
+          "note": "Say I would like when you want to ask for something politely."
+        },
+        {
+          "id": "en.beginner.u07.l07.this-one",
+          "text": "this one",
+          "kind": "phrase",
+          "example": "I would like this one.",
+          "note": "Say this one for a thing that is near you."
+        },
+        {
+          "id": "en.beginner.u07.l07.that-one",
+          "text": "that one",
+          "kind": "phrase",
+          "example": "I like that one.",
+          "note": "Say that one for a thing that is far from you."
+        },
+        {
+          "id": "en.beginner.u07.l07.basket",
+          "text": "basket",
+          "kind": "word",
+          "example": "The apples are in the basket.",
+          "note": "A basket holds the things you want to buy.",
+          "image": {
+            "id": "basket",
+            "describe": "A woven basket full of red apples and a loaf of bread standing on a shop counter."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u07.l07.task.choose",
+          "kind": "choice",
+          "prompt": "You want a cake. Choose the polite way to ask.",
+          "answer": "I would like a cake, please.",
+          "options": [
+            "I do not like cake.",
+            "I would like a cake, please.",
+            "Cake is cold."
+          ],
+          "explanation": "I would like ... , please is a polite way to ask.",
+          "itemIds": [
+            "en.beginner.u07.l07.i-would-like"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l07.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I would like this one, please.",
+          "answer": "I would like this one, please.",
+          "options": [
+            "I would like this one, please.",
+            "I would like that one, please.",
+            "I would like two, please."
+          ],
+          "explanation": "This one is near you, and that one is far.",
+          "itemIds": [
+            "en.beginner.u07.l07.this-one"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l07.task.build",
+          "kind": "build",
+          "prompt": "The cake is over there. Say you would like that one.",
+          "answer": "I would like that one.",
+          "tiles": [
+            "one.",
+            "that",
+            "this",
+            "like",
+            "would",
+            "I"
+          ],
+          "explanation": "Use that one for a thing that is far from you.",
+          "itemIds": [
+            "en.beginner.u07.l07.that-one",
+            "en.beginner.u07.l07.i-would-like"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l07.task.fill",
+          "kind": "fill",
+          "prompt": "The cake is in your hand. Complete the sentence.",
+          "text": "I would like ___ one.",
+          "answer": "this",
+          "options": [
+            "that",
+            "this",
+            "my"
+          ],
+          "explanation": "This one is for things near you.",
+          "itemIds": [
+            "en.beginner.u07.l07.this-one"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l07.task.match",
+          "kind": "match",
+          "prompt": "Match the full form to the short form or the matching phrase.",
+          "pairs": [
+            {
+              "left": "I would like",
+              "right": "I'd like"
+            },
+            {
+              "left": "I would like this one.",
+              "right": "This one, please."
+            },
+            {
+              "left": "I would like that one.",
+              "right": "That one, please."
+            }
+          ],
+          "explanation": "The short forms mean the same as the long ones.",
+          "itemIds": [
+            "en.beginner.u07.l07.i-would-like",
+            "en.beginner.u07.l07.this-one",
+            "en.beginner.u07.l07.that-one"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l07.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if the microphone mishears you.",
+          "text": "I would like this one, please.",
+          "answer": "I would like this one, please.",
+          "explanation": "You asked politely for something.",
+          "itemIds": [
+            "en.beginner.u07.l07.i-would-like",
+            "en.beginner.u07.l07.this-one"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l07.task.recycle-polite",
+          "kind": "choice",
+          "prompt": "Choose the polite way to ask for juice.",
+          "answer": "Can I have juice, please?",
+          "options": [
+            "I do not like juice.",
+            "I have juice.",
+            "Can I have juice, please?"
+          ],
+          "explanation": "Can I have ... , please? is another polite way to ask.",
+          "itemIds": [
+            "en.beginner.u03.l05.can-i-have",
+            "en.beginner.u03.l05.juice"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l07.task.recycle-price",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "How much is that one?",
+          "answer": "How much is that one?",
+          "options": [
+            "How old is that one?",
+            "How much is that one?",
+            "How many is that one?"
+          ],
+          "explanation": "How much asks about the price.",
+          "itemIds": [
+            "en.beginner.u07.l07.that-one",
+            "en.beginner.u07.l04.how-much-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l07.task.basket",
+          "kind": "choice",
+          "prompt": "Which sentence is about a basket?",
+          "answer": "The apples are in the basket.",
+          "options": [
+            "The apples are in the basket.",
+            "The apples are under the bed.",
+            "The apples are on the window."
+          ],
+          "explanation": "A basket holds the apples.",
+          "itemIds": [
+            "en.beginner.u07.l07.basket",
+            "en.beginner.u05.l04.in"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l07.task.recycle-dollar",
+          "kind": "fill",
+          "prompt": "This hat is cheap. Complete the sentence.",
+          "text": "It is ten ___.",
+          "answer": "dollars",
+          "options": [
+            "hats",
+            "eggs",
+            "dollars"
+          ],
+          "explanation": "Dollars goes with a price.",
+          "itemIds": [
+            "en.beginner.u07.l04.dollar",
+            "en.beginner.u07.l04.cheap"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Lily wants a cake. Which one does she choose?",
+        "lines": [
+          {
+            "speaker": "Lily",
+            "text": "Good afternoon, Smarty! I would like a cake."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "This one is sweet. That one is big."
+          },
+          {
+            "speaker": "Lily",
+            "text": "I'd like that one, please."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Of course! Here you are."
+          },
+          {
+            "speaker": "Lily",
+            "text": "And I would like some apples."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Here is a basket."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Thank you, Smarty!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u07.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Lily want first?",
+            "answer": "a cake",
+            "options": [
+              "some bread",
+              "a cake",
+              "a basket"
+            ],
+            "explanation": "Lily says: I would like a cake.",
+            "itemIds": [
+              "en.beginner.u07.l07.i-would-like"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "Which cake does Lily choose?",
+            "answer": "that one",
+            "options": [
+              "this one",
+              "that one",
+              "the small one"
+            ],
+            "explanation": "Lily says: I'd like that one, please.",
+            "itemIds": [
+              "en.beginner.u07.l07.that-one"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Smarty give Lily for the apples?",
+            "answer": "a basket",
+            "options": [
+              "a basket",
+              "a bottle",
+              "a kilo"
+            ],
+            "explanation": "Smarty says: Here is a basket.",
+            "itemIds": [
+              "en.beginner.u07.l07.basket"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u07-l07-scene",
+          "describe": "Lily at the counter of a little shop pointing at a big cake while Smarty the black cat holds a small cake and a basket of apples stands nearby, no written words or numbers."
+        }
+      },
+      "mission": {
+        "setup": "You are a customer in Smarty's shop. Ask for what you would like and point to the thing you want.",
+        "turns": [
+          {
+            "smarty": "Hello! This one is sweet. That one is big.",
+            "accept": [
+              "^(?:i would|i'd) like (?:this|that) one(?: please)?$",
+              "^(?:this|that) one please$",
+              "^can i have (?:this|that) one(?: please)?$"
+            ],
+            "example": "I would like this one, please.",
+            "hint": "Say I would like this one or that one.",
+            "itemIds": [
+              "en.beginner.u07.l07.i-would-like",
+              "en.beginner.u07.l07.this-one",
+              "en.beginner.u07.l07.that-one"
+            ]
+          },
+          {
+            "smarty": "Here you are. Do you want a basket?",
+            "accept": [
+              "^yes(?: please)?$",
+              "^no(?: thank you| thanks)?$",
+              "^(?:i would|i'd) like a basket(?: please)?$"
+            ],
+            "example": "Yes, please.",
+            "hint": "Say Yes or No. You can say I would like a basket.",
+            "itemIds": [
+              "en.beginner.u07.l07.basket"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l05.can-i-have",
+        "en.beginner.u03.l05.juice",
+        "en.beginner.u07.l04.how-much-is-it",
+        "en.beginner.u05.l04.in",
+        "en.beginner.u07.l04.dollar",
+        "en.beginner.u07.l04.cheap"
+      ]
+    },
+    {
+      "id": "en.beginner.u07.l08",
+      "section": "beginner",
+      "unit": 7,
+      "lesson": 8,
+      "title": "Paying",
+      "canDo": "Pay by card or cash",
+      "scenario": "Omar buys water in Smarty's shop and pays. Practise saying card or cash and handing over the money.",
+      "items": [
+        {
+          "id": "en.beginner.u07.l08.card",
+          "text": "card",
+          "kind": "word",
+          "forms": [
+            "cards"
+          ],
+          "example": "I have a card.",
+          "note": "A card is a small plastic thing you can use to pay.",
+          "image": {
+            "id": "card",
+            "describe": "Mia holding up a plain plastic bank card with a smile; the card has no numbers or words."
+          }
+        },
+        {
+          "id": "en.beginner.u07.l08.cash",
+          "text": "cash",
+          "kind": "word",
+          "example": "I have cash.",
+          "note": "Cash is money in coins and paper notes.",
+          "image": {
+            "id": "cash",
+            "describe": "A hand holding a few coins and plain paper notes over a shop counter; there are no digits or words."
+          }
+        },
+        {
+          "id": "en.beginner.u07.l08.pay",
+          "text": "pay",
+          "kind": "word",
+          "forms": [
+            "pays"
+          ],
+          "example": "I pay ten dollars.",
+          "note": "Use pay when you give money for something."
+        },
+        {
+          "id": "en.beginner.u07.l08.here",
+          "text": "here",
+          "kind": "word",
+          "example": "Pay here, please.",
+          "note": "Say here for the place where you are."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u07.l08.task.choose",
+          "kind": "choice",
+          "prompt": "The shop assistant asks how you will pay. What do you hear?",
+          "answer": "Card or cash?",
+          "options": [
+            "Tea or coffee?",
+            "Card or cash?",
+            "Hot or cold?"
+          ],
+          "explanation": "Card or cash? asks how you will pay.",
+          "itemIds": [
+            "en.beginner.u07.l08.card",
+            "en.beginner.u07.l08.cash"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l08.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Cash, please.",
+          "answer": "Cash, please.",
+          "options": [
+            "Cash, please.",
+            "Card, please.",
+            "Cake, please."
+          ],
+          "explanation": "Listen to the first word: cash.",
+          "itemIds": [
+            "en.beginner.u07.l08.cash"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l08.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence in the right order.",
+          "answer": "I pay here, please.",
+          "tiles": [
+            "please.",
+            "here,",
+            "pay",
+            "I",
+            "cash"
+          ],
+          "explanation": "I pay + here, please.",
+          "itemIds": [
+            "en.beginner.u07.l08.pay",
+            "en.beginner.u07.l08.here"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l08.task.fill",
+          "kind": "fill",
+          "prompt": "You want to pay with a plastic card. Complete the sentence.",
+          "text": "I have a ___.",
+          "answer": "card",
+          "options": [
+            "key",
+            "card",
+            "hat"
+          ],
+          "explanation": "A card is a small plastic thing for paying.",
+          "itemIds": [
+            "en.beginner.u07.l08.card"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l08.task.match",
+          "kind": "match",
+          "prompt": "Match the words that go together.",
+          "pairs": [
+            {
+              "left": "card",
+              "right": "Card, please."
+            },
+            {
+              "left": "cash",
+              "right": "Cash, please."
+            },
+            {
+              "left": "pay",
+              "right": "I pay ten dollars."
+            },
+            {
+              "left": "Here you are.",
+              "right": "Of course."
+            }
+          ],
+          "explanation": "Each word has a short phrase to use with it.",
+          "itemIds": [
+            "en.beginner.u07.l08.card",
+            "en.beginner.u07.l08.cash",
+            "en.beginner.u07.l08.pay",
+            "en.beginner.u03.l05.here-you-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l08.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if the microphone mishears you.",
+          "text": "Card or cash?",
+          "answer": "Card or cash?",
+          "explanation": "You asked how someone will pay.",
+          "itemIds": [
+            "en.beginner.u07.l08.card",
+            "en.beginner.u07.l08.cash"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l08.task.recycle-hand",
+          "kind": "choice",
+          "prompt": "Choose the phrase you say when you give something.",
+          "answer": "Here you are.",
+          "options": [
+            "Sorry, Mia.",
+            "Here you are.",
+            "Good morning."
+          ],
+          "explanation": "Here you are is what you say when you give something.",
+          "itemIds": [
+            "en.beginner.u03.l05.here-you-are",
+            "en.beginner.u07.l08.here"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l08.task.recycle-price",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "It is twelve dollars.",
+          "answer": "It is twelve dollars.",
+          "options": [
+            "It is two dollars.",
+            "It is twelve dollars.",
+            "It is twenty dollars."
+          ],
+          "explanation": "Twelve is 12. Twenty is 20.",
+          "itemIds": [
+            "en.beginner.u07.l04.dollar",
+            "en.beginner.u02.l04.twelve"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l08.task.recycle-like",
+          "kind": "build",
+          "prompt": "Build the sentence in the right order.",
+          "answer": "I would like this one.",
+          "tiles": [
+            "one.",
+            "this",
+            "like",
+            "would",
+            "I",
+            "that"
+          ],
+          "explanation": "I would like this one is a polite way to choose.",
+          "itemIds": [
+            "en.beginner.u07.l07.i-would-like",
+            "en.beginner.u07.l07.this-one"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l08.task.recycle-money",
+          "kind": "fill",
+          "prompt": "You have coins and notes. Complete the sentence.",
+          "text": "I have ten dollars. I have ___.",
+          "answer": "money",
+          "options": [
+            "milk",
+            "money",
+            "bread"
+          ],
+          "explanation": "Dollars are money.",
+          "itemIds": [
+            "en.beginner.u07.l04.money",
+            "en.beginner.u07.l04.dollar"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Omar wants water. How does he pay?",
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Hello! I would like this bottle of water."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Of course! It is two dollars."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Card or cash?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "I have cash. Here you are."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you! Here is the water."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Thanks, Smarty. Goodbye!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u07.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Omar buy?",
+            "answer": "a bottle of water",
+            "options": [
+              "a kilo of apples",
+              "a bottle of water",
+              "a basket"
+            ],
+            "explanation": "Omar says: I would like this bottle of water.",
+            "itemIds": [
+              "en.beginner.u07.l07.i-would-like"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "How does Omar pay?",
+            "answer": "cash",
+            "options": [
+              "card",
+              "cash",
+              "tea"
+            ],
+            "explanation": "Omar says: I have cash.",
+            "itemIds": [
+              "en.beginner.u07.l08.cash"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "How much is the water?",
+            "answer": "two dollars",
+            "options": [
+              "two dollars",
+              "ten dollars",
+              "one dollar"
+            ],
+            "explanation": "Smarty says: It is two dollars.",
+            "itemIds": [
+              "en.beginner.u07.l08.pay"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u07-l08-scene",
+          "describe": "Omar at a shop counter holding a few coins and notes while Smarty the black cat gives him a bottle of water; a small card machine sits on the counter, no written words or numbers."
+        }
+      },
+      "mission": {
+        "setup": "You are a customer paying in Smarty's shop. Say how you will pay and thank Smarty.",
+        "turns": [
+          {
+            "smarty": "That is four dollars. Card or cash?",
+            "accept": [
+              "^cash(?: please)?$",
+              "^card(?: please)?$",
+              "^i have (?:cash|a card)$"
+            ],
+            "example": "Cash, please.",
+            "hint": "Say Card, please or Cash, please.",
+            "itemIds": [
+              "en.beginner.u07.l08.card",
+              "en.beginner.u07.l08.cash"
+            ]
+          },
+          {
+            "smarty": "Here is the water. Goodbye!",
+            "accept": [
+              "^(?:thank you|thanks)(?: smarty)?$",
+              "^(?:goodbye|bye)(?: smarty)?$",
+              "^(?:thank you|thanks)(?: smarty)? (?:goodbye|bye)(?: smarty)?$"
+            ],
+            "example": "Thank you, Smarty. Goodbye!",
+            "hint": "Thank Smarty and say goodbye.",
+            "itemIds": [
+              "en.beginner.u01.l03.thank-you",
+              "en.beginner.u01.l03.thanks",
+              "en.beginner.u01.l01.goodbye",
+              "en.beginner.u01.l01.bye"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l05.here-you-are",
+        "en.beginner.u07.l04.dollar",
+        "en.beginner.u02.l04.twelve",
+        "en.beginner.u07.l07.i-would-like",
+        "en.beginner.u07.l07.this-one",
+        "en.beginner.u07.l04.money",
+        "en.beginner.u01.l03.thank-you",
+        "en.beginner.u01.l03.thanks",
+        "en.beginner.u01.l01.goodbye",
+        "en.beginner.u01.l01.bye"
+      ]
+    },
+    {
+      "id": "en.beginner.u07.l09",
+      "section": "beginner",
+      "unit": 7,
+      "lesson": 9,
+      "title": "In the shop",
+      "canDo": "Talk about shops and people",
+      "scenario": "Zara visits Smarty, who works in the shop. Talk about shopping, shop assistants and customers.",
+      "items": [
+        {
+          "id": "en.beginner.u07.l09.shopping",
+          "text": "shopping",
+          "kind": "word",
+          "example": "I like shopping.",
+          "note": "Say shopping for going to shops to buy things.",
+          "image": {
+            "id": "shopping",
+            "describe": "Mia and Sam walking down a street carrying full shopping bags and a basket, smiling."
+          }
+        },
+        {
+          "id": "en.beginner.u07.l09.sell",
+          "text": "sell",
+          "kind": "word",
+          "forms": [
+            "sells"
+          ],
+          "example": "Smarty sells apples.",
+          "note": "Use sell for the person who gives things for money."
+        },
+        {
+          "id": "en.beginner.u07.l09.customer",
+          "text": "customer",
+          "kind": "word",
+          "forms": [
+            "customers"
+          ],
+          "example": "The customer has a basket.",
+          "note": "A customer is a person who buys things in a shop.",
+          "image": {
+            "id": "customer",
+            "describe": "A smiling girl standing at a shop counter holding a basket of apples, ready to pay."
+          }
+        },
+        {
+          "id": "en.beginner.u07.l09.shop-assistant",
+          "text": "shop assistant",
+          "kind": "phrase",
+          "example": "Smarty is a shop assistant.",
+          "note": "A shop assistant works in a shop and helps people.",
+          "image": {
+            "id": "shop-assistant",
+            "describe": "Smarty the black cat in a small apron standing behind a shop counter, smiling at a customer."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u07.l09.task.choose",
+          "kind": "choice",
+          "prompt": "Who buys things in a shop?",
+          "answer": "customer",
+          "options": [
+            "shop assistant",
+            "customer",
+            "baby"
+          ],
+          "explanation": "A customer buys. A shop assistant sells.",
+          "itemIds": [
+            "en.beginner.u07.l09.customer",
+            "en.beginner.u07.l09.shop-assistant"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l09.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The shop assistant sells bread.",
+          "answer": "The shop assistant sells bread.",
+          "options": [
+            "The shop assistant sells bread.",
+            "The customer sells bread.",
+            "The shop assistant buys bread."
+          ],
+          "explanation": "The shop assistant is the one who sells.",
+          "itemIds": [
+            "en.beginner.u07.l09.sell",
+            "en.beginner.u07.l09.shop-assistant"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l09.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence in the right order.",
+          "answer": "The customer has a basket.",
+          "tiles": [
+            "basket.",
+            "a",
+            "has",
+            "customer",
+            "The",
+            "shop assistant"
+          ],
+          "explanation": "The customer + has + a basket.",
+          "itemIds": [
+            "en.beginner.u07.l09.customer"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l09.task.fill",
+          "kind": "fill",
+          "prompt": "You like going to shops. Complete the sentence.",
+          "text": "I like ___.",
+          "answer": "shopping",
+          "options": [
+            "tall",
+            "shopping",
+            "never"
+          ],
+          "explanation": "Shopping means going to shops.",
+          "itemIds": [
+            "en.beginner.u07.l09.shopping"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l09.task.sell",
+          "kind": "fill",
+          "prompt": "Smarty has a shop. He gives apples to customers for money. Complete the sentence.",
+          "text": "Smarty ___ apples and bread.",
+          "answer": "sells",
+          "options": [
+            "sleeps",
+            "sells",
+            "washes"
+          ],
+          "explanation": "Smarty sells because the customers give him money.",
+          "itemIds": [
+            "en.beginner.u07.l09.sell"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l09.task.match",
+          "kind": "match",
+          "prompt": "Match each person or word to its idea.",
+          "pairs": [
+            {
+              "left": "customer",
+              "right": "buys food"
+            },
+            {
+              "left": "shop assistant",
+              "right": "sells food"
+            },
+            {
+              "left": "shopping",
+              "right": "I buy apples at the market."
+            }
+          ],
+          "explanation": "A customer buys; a shop assistant sells; shopping is going to buy things.",
+          "itemIds": [
+            "en.beginner.u07.l09.customer",
+            "en.beginner.u07.l09.shop-assistant",
+            "en.beginner.u07.l09.shopping",
+            "en.beginner.u07.l05.buy"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l09.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if the microphone mishears you.",
+          "text": "Smarty sells apples.",
+          "answer": "Smarty sells apples.",
+          "explanation": "You said what Smarty does.",
+          "itemIds": [
+            "en.beginner.u07.l09.sell"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l09.task.recycle-where",
+          "kind": "choice",
+          "prompt": "Where do customers buy bread?",
+          "answer": "In the shop.",
+          "options": [
+            "In the shop.",
+            "In the bed.",
+            "In the box."
+          ],
+          "explanation": "You buy things in a shop.",
+          "itemIds": [
+            "en.beginner.u07.l05.shop",
+            "en.beginner.u07.l05.buy"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l09.task.recycle-pay",
+          "kind": "listen",
+          "prompt": "Listen to the question, then choose a reply.",
+          "audio": "Card or cash?",
+          "answer": "Cash, please.",
+          "options": [
+            "Thank you, Smarty.",
+            "Good morning, Mia.",
+            "Cash, please."
+          ],
+          "explanation": "Card or cash? asks how you will pay.",
+          "itemIds": [
+            "en.beginner.u07.l08.card",
+            "en.beginner.u07.l08.cash"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l09.task.recycle-can",
+          "kind": "build",
+          "prompt": "Build the polite question.",
+          "answer": "Can I have a bottle of milk?",
+          "tiles": [
+            "milk?",
+            "of",
+            "bottle",
+            "a",
+            "have",
+            "I",
+            "Can",
+            "water?"
+          ],
+          "explanation": "Can I have + a bottle of milk is a polite request.",
+          "itemIds": [
+            "en.beginner.u03.l05.can-i-have",
+            "en.beginner.u07.l06.bottle"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Zara likes shopping. Who is the shop assistant?",
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "I like shopping!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Hello! Are you the shop assistant?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, I am. I sell apples and bread."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Are you a customer?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes, I am. I would like some bread."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Here you are. It is two dollars."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Thank you!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u07.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "Who is the shop assistant?",
+            "answer": "Smarty",
+            "options": [
+              "Zara",
+              "Smarty",
+              "Mia"
+            ],
+            "explanation": "Smarty says: I sell apples and bread.",
+            "itemIds": [
+              "en.beginner.u07.l09.shop-assistant"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Smarty sell?",
+            "answer": "apples and bread",
+            "options": [
+              "shoes and hats",
+              "apples and bread",
+              "cats and dogs"
+            ],
+            "explanation": "Smarty says: I sell apples and bread.",
+            "itemIds": [
+              "en.beginner.u07.l09.sell"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Zara want?",
+            "answer": "some bread",
+            "options": [
+              "some bread",
+              "some milk",
+              "some tea"
+            ],
+            "explanation": "Zara says: I would like some bread.",
+            "itemIds": [
+              "en.beginner.u07.l09.customer"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u07-l09-scene",
+          "describe": "Zara at the counter of a little shop talking to Smarty the black cat, who wears a small apron; shelves of apples and bread are behind him, no written words or numbers."
+        }
+      },
+      "mission": {
+        "setup": "Smarty works in his shop and chats with you, the customer. Answer his questions in your own words.",
+        "turns": [
+          {
+            "smarty": "Hello! Are you a customer?",
+            "accept": [
+              "^yes(?: i am)?$",
+              "^(?:yes )?i am a customer$",
+              "^no(?: i am not)?$"
+            ],
+            "example": "Yes, I am a customer.",
+            "hint": "Say Yes, I am or Yes, I am a customer.",
+            "itemIds": [
+              "en.beginner.u07.l09.customer"
+            ]
+          },
+          {
+            "smarty": "I am the shop assistant. I sell bread. Do you like shopping?",
+            "accept": [
+              "^yes(?: i do| i like shopping)?$",
+              "^i like shopping$",
+              "^no(?: i do not| i do not like shopping)?$"
+            ],
+            "example": "Yes, I like shopping.",
+            "hint": "Say Yes or No. You can add I like shopping.",
+            "itemIds": [
+              "en.beginner.u07.l09.shopping",
+              "en.beginner.u07.l09.shop-assistant",
+              "en.beginner.u07.l09.sell"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u07.l05.buy",
+        "en.beginner.u07.l05.shop",
+        "en.beginner.u07.l08.card",
+        "en.beginner.u07.l08.cash",
+        "en.beginner.u03.l05.can-i-have",
+        "en.beginner.u07.l06.bottle"
+      ]
+    },
+    {
+      "id": "en.beginner.u07.l10",
+      "section": "beginner",
+      "unit": 7,
+      "lesson": 10,
+      "title": "Smarty's shop",
+      "canDo": "Serve a customer in Smarty's shop",
+      "scenario": "It is a busy day in Smarty's little shop. Welcome a customer, offer help, ask about anything else and say the price.",
+      "items": [
+        {
+          "id": "en.beginner.u07.l10.can-i-help-you",
+          "text": "Can I help you?",
+          "kind": "phrase",
+          "example": "Can I help you?",
+          "note": "Say \"Can I help you?\" when a customer comes into your shop."
+        },
+        {
+          "id": "en.beginner.u07.l10.just-looking",
+          "text": "Just looking",
+          "kind": "phrase",
+          "example": "Just looking, thank you.",
+          "note": "Say \"Just looking\" when you want to look first and not buy yet."
+        },
+        {
+          "id": "en.beginner.u07.l10.anything-else",
+          "text": "Anything else?",
+          "kind": "phrase",
+          "example": "Anything else?",
+          "note": "Ask \"Anything else?\" when a customer wants more things."
+        },
+        {
+          "id": "en.beginner.u07.l10.that-is-all",
+          "text": "That is all",
+          "kind": "phrase",
+          "forms": [
+            "That's all"
+          ],
+          "example": "That is all, thank you.",
+          "note": "Say \"That is all\" when you do not want any more things."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u07.l10.task.choose",
+          "kind": "choice",
+          "prompt": "You walk into a shop. The assistant speaks first. What does the assistant say?",
+          "answer": "Can I help you?",
+          "options": [
+            "How old are you?",
+            "Can I help you?",
+            "Where are you from?"
+          ],
+          "explanation": "Can I help you? is the usual start in a shop.",
+          "itemIds": [
+            "en.beginner.u07.l10.can-i-help-you"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l10.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Just looking, thank you.",
+          "answer": "Just looking, thank you.",
+          "options": [
+            "Just looking, thank you.",
+            "That is all, thank you.",
+            "Just looking, goodbye."
+          ],
+          "explanation": "Just looking means you do not want to buy yet.",
+          "itemIds": [
+            "en.beginner.u07.l10.just-looking"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l10.task.build",
+          "kind": "build",
+          "prompt": "Build the sentence in the right order.",
+          "answer": "That is all, thank you.",
+          "tiles": [
+            "you.",
+            "thank",
+            "all,",
+            "is",
+            "That",
+            "Anything",
+            "else"
+          ],
+          "explanation": "That is all, thank you ends your order politely.",
+          "itemIds": [
+            "en.beginner.u07.l10.that-is-all"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l10.task.fill",
+          "kind": "fill",
+          "prompt": "The assistant wants to know if you want more things. Complete the question.",
+          "text": "Anything ___?",
+          "answer": "else",
+          "options": [
+            "much",
+            "else",
+            "old"
+          ],
+          "explanation": "Anything else? asks if you want more.",
+          "itemIds": [
+            "en.beginner.u07.l10.anything-else"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l10.task.match",
+          "kind": "match",
+          "prompt": "Match each question to a good reply.",
+          "pairs": [
+            {
+              "left": "Can I help you?",
+              "right": "Just looking."
+            },
+            {
+              "left": "Anything else?",
+              "right": "That is all."
+            },
+            {
+              "left": "How much is it?",
+              "right": "It is five dollars."
+            },
+            {
+              "left": "Card or cash?",
+              "right": "Cash, please."
+            }
+          ],
+          "explanation": "Each question in a shop has a short, polite reply.",
+          "itemIds": [
+            "en.beginner.u07.l10.can-i-help-you",
+            "en.beginner.u07.l10.just-looking",
+            "en.beginner.u07.l10.anything-else",
+            "en.beginner.u07.l10.that-is-all",
+            "en.beginner.u07.l04.how-much-is-it",
+            "en.beginner.u07.l08.card"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l10.task.speak",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud. You can retry if the microphone mishears you.",
+          "text": "Can I help you?",
+          "answer": "Can I help you?",
+          "explanation": "You welcomed a customer.",
+          "itemIds": [
+            "en.beginner.u07.l10.can-i-help-you"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l10.task.recycle-pay",
+          "kind": "choice",
+          "prompt": "You want to know how the customer will pay. What do you ask?",
+          "answer": "Card or cash?",
+          "options": [
+            "Tea or coffee?",
+            "Hot or cold?",
+            "Card or cash?"
+          ],
+          "explanation": "Card or cash? asks how the customer will pay.",
+          "itemIds": [
+            "en.beginner.u07.l08.card",
+            "en.beginner.u07.l08.cash"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l10.task.recycle-like",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I would like that one, please.",
+          "answer": "I would like that one, please.",
+          "options": [
+            "I would like this one, please.",
+            "I would like two, please.",
+            "I would like that one, please."
+          ],
+          "explanation": "That one is far from you; this one is near.",
+          "itemIds": [
+            "en.beginner.u07.l07.i-would-like",
+            "en.beginner.u07.l07.that-one"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l10.task.recycle-reply",
+          "kind": "choice",
+          "prompt": "Someone asks: How much is it? Choose the answer.",
+          "answer": "It is three dollars.",
+          "options": [
+            "It is three o'clock.",
+            "I am three years old.",
+            "It is three dollars."
+          ],
+          "explanation": "A price answer uses dollars.",
+          "itemIds": [
+            "en.beginner.u07.l04.how-much-is-it",
+            "en.beginner.u07.l04.dollar"
+          ]
+        },
+        {
+          "id": "en.beginner.u07.l10.task.recycle-kilos",
+          "kind": "fill",
+          "prompt": "You want apples. Complete the sentence.",
+          "text": "I would like two kilos of ___.",
+          "answer": "apples",
+          "options": [
+            "bottles",
+            "apples",
+            "dollars"
+          ],
+          "explanation": "You buy apples by the kilo.",
+          "itemIds": [
+            "en.beginner.u07.l07.i-would-like",
+            "en.beginner.u07.l06.kilo",
+            "en.beginner.u03.l01.apple"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "A customer says Just looking. Will she buy something?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good morning! Can I help you?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Just looking, thank you."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Sorry, Smarty. I would like this bottle of juice."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Of course! Anything else?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Two apples, please. That is all."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is five dollars. Card or cash?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Card, please. Here you are."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Mia! Goodbye!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u07.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Mia say first?",
+            "answer": "Just looking, thank you.",
+            "options": [
+              "That is all, thank you.",
+              "Just looking, thank you.",
+              "Card, please."
+            ],
+            "explanation": "Mia first says: Just looking, thank you.",
+            "itemIds": [
+              "en.beginner.u07.l10.just-looking"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Mia buy?",
+            "answer": "juice and two apples",
+            "options": [
+              "bread and milk",
+              "juice and two apples",
+              "tea and rice"
+            ],
+            "explanation": "Mia wants a bottle of juice and two apples.",
+            "itemIds": [
+              "en.beginner.u07.l10.anything-else"
+            ]
+          },
+          {
+            "id": "en.beginner.u07.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "How does Mia pay?",
+            "answer": "card",
+            "options": [
+              "card",
+              "cash",
+              "money"
+            ],
+            "explanation": "Mia says: Card, please.",
+            "itemIds": [
+              "en.beginner.u07.l10.that-is-all"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u07-l10-scene",
+          "describe": "Inside Smarty's little shop, Smarty the black cat in an apron serves Mia at the counter; juice bottles, apples and bread are on the shelves behind, no written words or numbers."
+        }
+      },
+      "mission": {
+        "setup": "You are the shop assistant in Smarty's little shop. Smarty is the customer. Welcome him, offer more, and say the price.",
+        "turns": [
+          {
+            "smarty": "Good morning!",
+            "accept": [
+              "^can i help you$",
+              "^(?:good morning|hello|hi) can i help you$",
+              "^(?:good morning|hello|hi) smarty can i help you$"
+            ],
+            "example": "Good morning! Can I help you?",
+            "hint": "Greet Smarty and ask Can I help you?",
+            "itemIds": [
+              "en.beginner.u07.l10.can-i-help-you"
+            ]
+          },
+          {
+            "smarty": "I would like two apples, please.",
+            "accept": [
+              "^anything else$",
+              "^(?:of course|here you are)$",
+              "^of course anything else$"
+            ],
+            "example": "Of course! Anything else?",
+            "hint": "Say Of course and ask Anything else?",
+            "itemIds": [
+              "en.beginner.u07.l10.anything-else"
+            ]
+          },
+          {
+            "smarty": "That is all, thank you.",
+            "accept": [
+              "^(?:it is|that is) (?:one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|forty|fifty) dollars?$",
+              "^card or cash$",
+              "^(?:it is|that is) (?:one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|forty|fifty) dollars? card or cash$"
+            ],
+            "example": "It is five dollars.",
+            "hint": "Say the price: It is five dollars. Or ask Card or cash?",
+            "itemIds": [
+              "en.beginner.u07.l04.dollar",
+              "en.beginner.u07.l08.card",
+              "en.beginner.u07.l08.cash"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u07.l04.how-much-is-it",
+        "en.beginner.u07.l08.card",
+        "en.beginner.u07.l08.cash",
+        "en.beginner.u07.l07.i-would-like",
+        "en.beginner.u07.l07.that-one",
+        "en.beginner.u07.l04.dollar",
+        "en.beginner.u07.l06.kilo",
+        "en.beginner.u03.l01.apple"
+      ]
+    }
+  ]
+}

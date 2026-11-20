@@ -1,0 +1,4224 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "pre-intermediate",
+  "unit": 7,
+  "title": "Work & Careers",
+  "room": "office",
+  "lessons": [
+    {
+      "id": "en.pre-intermediate.u07.l01",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Career paths",
+      "canDo": "Talk about careers",
+      "scenario": "Smarty and Mia talk about work paths and future plans at a desk in the office.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u07.l01.career",
+          "text": "career",
+          "kind": "word",
+          "forms": [
+            "careers"
+          ],
+          "example": "Mia wants a long career as an engineer.",
+          "note": "Use ‘career’ when you talk about the work a person does for many years."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l01.a-promotion",
+          "text": "a promotion",
+          "kind": "phrase",
+          "forms": [
+            "promotion",
+            "promotions"
+          ],
+          "example": "Ben worked well and got a promotion last month.",
+          "note": "Say ‘a promotion’ when someone gets a better, higher job at work."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l01.a-raise",
+          "text": "a raise",
+          "kind": "phrase",
+          "forms": [
+            "raise",
+            "raises"
+          ],
+          "example": "She asked for a raise after two years at the bank.",
+          "note": "Say ‘a raise’ when a worker gets more money for their job."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l01.retire",
+          "text": "retire",
+          "kind": "word",
+          "forms": [
+            "retires",
+            "retired",
+            "retiring"
+          ],
+          "example": "My grandfather is going to retire next year.",
+          "note": "Use ‘retire’ when an older worker stops working after a long career."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l01.resign",
+          "text": "resign",
+          "kind": "word",
+          "forms": [
+            "resigns",
+            "resigned",
+            "resigning"
+          ],
+          "example": "Sam decided to resign and look for a new job.",
+          "note": "Use ‘resign’ when a worker chooses to leave their job."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l01.full-time",
+          "text": "full-time",
+          "kind": "word",
+          "example": "Ana works full-time at the hospital.",
+          "note": "Use ‘full-time’ for a job that takes all five work days each week."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l01.task.pick-career",
+          "kind": "choice",
+          "prompt": "Mia plans her work life for the next twenty years. Which word fits?",
+          "answer": "career",
+          "options": [
+            "career",
+            "break time",
+            "hobby"
+          ],
+          "explanation": "A career is the work someone does over many years.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l01.career"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l01.task.hear-promotion",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Leo got a promotion at work.",
+          "answer": "Leo got a promotion at work.",
+          "options": [
+            "Leo got a promotion at work.",
+            "Leo got a postcard at work.",
+            "Leo got a plaster at work."
+          ],
+          "explanation": "A promotion means moving up to a better job.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l01.a-promotion"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l01.task.match-paths",
+          "kind": "match",
+          "prompt": "Match each work word or phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "a raise",
+              "right": "more money at work"
+            },
+            {
+              "left": "retire",
+              "right": "stop working when you are old"
+            },
+            {
+              "left": "resign",
+              "right": "stop your job"
+            }
+          ],
+          "explanation": "A raise brings more money, retire is stopping work at an older age, and resign is leaving a job.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l01.a-raise",
+            "en.pre-intermediate.u07.l01.retire",
+            "en.pre-intermediate.u07.l01.resign"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l01.task.fill-full-time",
+          "kind": "fill",
+          "prompt": "Zara works from Monday to Friday every week. Complete the sentence.",
+          "text": "Zara has a ___ job.",
+          "answer": "full-time",
+          "options": [
+            "full-time",
+            "part-time",
+            "cold"
+          ],
+          "explanation": "Full-time means working the whole week, not just a few hours.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l01.full-time",
+            "en.elementary.u07.l03.a-full-time-job"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l01.task.build-raise",
+          "kind": "build",
+          "prompt": "Build a sentence about getting more money at work.",
+          "answer": "I got a raise yesterday.",
+          "tiles": [
+            "I",
+            "got",
+            "a",
+            "raise",
+            "yesterday",
+            "tomorrow"
+          ],
+          "explanation": "Say 'got a raise' when your pay goes up.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l01.a-raise",
+            "en.elementary.u04.l02.got"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l01.task.fill-resign",
+          "kind": "fill",
+          "prompt": "Tom wants to leave his old job and study. Complete the sentence.",
+          "text": "Tom is going to ___ next month.",
+          "answer": "resign",
+          "options": [
+            "resign",
+            "retire",
+            "rain"
+          ],
+          "explanation": "Tom is young and leaving his job by choice, so he is going to resign.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l01.resign"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l01.task.say-retire",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "My grandfather is going to retire after a long career.",
+          "answer": "My grandfather is going to retire after a long career.",
+          "explanation": "People retire at the end of a long career.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l01.retire",
+            "en.pre-intermediate.u07.l01.career"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why is Omar having a small party in the office?",
+        "image": {
+          "id": "en-b1-u07-l01-scene",
+          "describe": "A bright office room with desks and computers: Smarty the black cat and Mia talk with Omar, an older gray cat holding a cup of tea and smiling."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good morning, Mia! Why is Omar so happy in the office?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "He is going to retire next Friday after a long career here."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Wow! He worked full-time for forty years."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Yes, I loved my profession, and my employer was always kind."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Did you ever want to resign, Omar?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Never! Every co-worker helped me, and I got a promotion and a raise."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What a great career! We will miss you at work."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Omar going to do next Friday?",
+            "answer": "retire",
+            "options": [
+              "retire",
+              "resign",
+              "study"
+            ],
+            "explanation": "Mia says Omar is going to retire next Friday.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l01.retire"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "How did Omar work for forty years?",
+            "answer": "full-time",
+            "options": [
+              "full-time",
+              "one day a week",
+              "at night"
+            ],
+            "explanation": "Smarty says Omar worked full-time for forty years.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l01.full-time"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "What did Omar get during his career?",
+            "answer": "a promotion and a raise",
+            "options": [
+              "a promotion and a raise",
+              "a new bicycle",
+              "a long weekend"
+            ],
+            "explanation": "Omar says he got a promotion and a raise.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l01.a-promotion",
+              "en.pre-intermediate.u07.l01.a-raise"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about your dream work path. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Hello! Do you want a full-time job or a part-time job?",
+            "accept": [
+              "^i want a (?:full time|part time) job$",
+              "^i would like a (?:full time|part time) job$",
+              "^(?:full time|part time)$"
+            ],
+            "example": "I want a full-time job.",
+            "hint": "Say if you want a full-time job or a part-time job.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l01.full-time",
+              "en.elementary.u07.l03.a-full-time-job"
+            ]
+          },
+          {
+            "smarty": "Nice! What do you want in your career, a promotion or a raise?",
+            "accept": [
+              "^i want (?:a promotion|a raise)$",
+              "^i want a promotion and a raise$",
+              "^i would like (?:a promotion|a raise)$"
+            ],
+            "example": "I want a promotion and a raise.",
+            "hint": "Tell Smarty you want a promotion, a raise, or both.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l01.career",
+              "en.pre-intermediate.u07.l01.a-promotion",
+              "en.pre-intermediate.u07.l01.a-raise"
+            ]
+          },
+          {
+            "smarty": "If you do not like a job, will you stay or resign?",
+            "accept": [
+              "^i will (?:resign|stay)$",
+              "^i am going to (?:resign|stay)$"
+            ],
+            "example": "I will resign.",
+            "hint": "Say 'I will resign' or 'I will stay'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l01.resign"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "office",
+          "gloss": "a room or building where people work at desks"
+        },
+        {
+          "text": "profession",
+          "gloss": "a type of job that needs special training"
+        },
+        {
+          "text": "wages",
+          "gloss": "money paid to a worker each week or month"
+        },
+        {
+          "text": "co-worker",
+          "gloss": "a person you work with"
+        },
+        {
+          "text": "employer",
+          "gloss": "the person or group you work for"
+        }
+      ],
+      "recycle": [
+        "en.elementary.u07.l03.a-full-time-job",
+        "en.elementary.u04.l02.got"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u07.l02",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Skills",
+      "canDo": "Describe skills",
+      "scenario": "Smarty helps Sam and Lily list their best work skills.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u07.l02.communication-skills",
+          "text": "communication skills",
+          "kind": "phrase",
+          "forms": [
+            "skill",
+            "skills",
+            "communication"
+          ],
+          "example": "Good communication skills help you speak clearly at work.",
+          "note": "Use ‘communication skills’ when someone is good at speaking, listening, and sharing ideas."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l02.work-in-a-team",
+          "text": "work in a team",
+          "kind": "phrase",
+          "forms": [
+            "team",
+            "teams",
+            "works in a team",
+            "worked in a team",
+            "working in a team"
+          ],
+          "example": "I like to work in a team with friendly friends.",
+          "note": "Say ‘work in a team’ when you do a job together with other workers."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l02.under-pressure",
+          "text": "under pressure",
+          "kind": "phrase",
+          "forms": [
+            "pressure"
+          ],
+          "example": "A chef can work fast under pressure.",
+          "note": "Say ‘under pressure’ when you must work quickly with very little time."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l02.be-in-charge-of",
+          "text": "be in charge of",
+          "kind": "phrase",
+          "forms": [
+            "in charge of",
+            "am in charge of",
+            "is in charge of",
+            "are in charge of",
+            "was in charge of",
+            "charge"
+          ],
+          "example": "Lily is in charge of the new shop.",
+          "note": "Use ‘be in charge of’ when you are the main person responsible for something."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l02.take-the-lead",
+          "text": "take the lead",
+          "kind": "phrase",
+          "forms": [
+            "takes the lead",
+            "took the lead",
+            "taking the lead",
+            "lead"
+          ],
+          "example": "When there is a problem, Ben likes to take the lead.",
+          "note": "Say ‘take the lead’ when you step forward first to guide others."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l02.attention-to-detail",
+          "text": "attention to detail",
+          "kind": "phrase",
+          "forms": [
+            "attention",
+            "detail",
+            "details"
+          ],
+          "example": "An engineer needs strong attention to detail.",
+          "note": "Use ‘attention to detail’ when someone checks small things carefully so there are no mistakes."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l02.task.pick-comm",
+          "kind": "choice",
+          "prompt": "Ana listens well and explains ideas clearly. What does she have?",
+          "answer": "communication skills",
+          "options": [
+            "communication skills",
+            "a cold",
+            "pocket money"
+          ],
+          "explanation": "Speaking and listening well are communication skills.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l02.communication-skills"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l02.task.hear-team",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I am good at working in a team.",
+          "answer": "I am good at working in a team.",
+          "options": [
+            "I am good at working in a team.",
+            "I am good at working in a train.",
+            "I am good at cooking in a kitchen."
+          ],
+          "explanation": "Working in a team means working together with others.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l02.work-in-a-team",
+            "en.elementary.u01.l09.i-am-good-at"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l02.task.match-skills",
+          "kind": "match",
+          "prompt": "Match each skill phrase with what it means.",
+          "pairs": [
+            {
+              "left": "under pressure",
+              "right": "working well when time is short"
+            },
+            {
+              "left": "be in charge of",
+              "right": "be the main worker for a job"
+            },
+            {
+              "left": "attention to detail",
+              "right": "checking small things carefully"
+            }
+          ],
+          "explanation": "Under pressure is about short time, in charge of is about responsibility, and attention to detail is checking carefully.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l02.under-pressure",
+            "en.pre-intermediate.u07.l02.be-in-charge-of",
+            "en.pre-intermediate.u07.l02.attention-to-detail"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l02.task.fill-lead",
+          "kind": "fill",
+          "prompt": "Nobody knows what to do first, so Sam decides to guide the group. Complete the sentence.",
+          "text": "Sam is going to ___.",
+          "answer": "take the lead",
+          "options": [
+            "take the lead",
+            "take a shower",
+            "take a rest"
+          ],
+          "explanation": "Take the lead means going first and guiding the group.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l02.take-the-lead"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l02.task.build-charge",
+          "kind": "build",
+          "prompt": "Build a sentence saying Mia runs the team.",
+          "answer": "Mia is in charge of the team.",
+          "tiles": [
+            "Mia",
+            "is",
+            "in",
+            "charge",
+            "of",
+            "the",
+            "team",
+            "under"
+          ],
+          "explanation": "Use 'is in charge of' to show who leads the team.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l02.be-in-charge-of",
+            "en.pre-intermediate.u07.l02.work-in-a-team"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l02.task.fill-detail",
+          "kind": "fill",
+          "prompt": "Zara checks every number twice so there is no mistake. Complete the sentence.",
+          "text": "Zara has great ___.",
+          "answer": "attention to detail",
+          "options": [
+            "attention to detail",
+            "a raise",
+            "a headache"
+          ],
+          "explanation": "Checking small facts carefully shows attention to detail.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l02.attention-to-detail"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l02.task.say-pressure",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I can work well under pressure and take the lead.",
+          "answer": "I can work well under pressure and take the lead.",
+          "explanation": "Great job combining two strong work skills!",
+          "itemIds": [
+            "en.pre-intermediate.u07.l02.under-pressure",
+            "en.pre-intermediate.u07.l02.take-the-lead",
+            "en.beginner.u08.l06.i-can"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who is in charge of the big Friday dinner at the restaurant?",
+        "image": {
+          "id": "en-b1-u07-l02-scene",
+          "describe": "A busy restaurant kitchen: Sam the orange cat wears a white chef hat and directs Lily and Leo while Smarty the black cat watches from a doorway."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Sam! The restaurant is full tonight."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes, Smarty! I am in charge of the kitchen tonight."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Sam is a great leader. He stays calm under pressure."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Thanks, Lily! We work in a team, and everyone is efficient and flexible."
+          },
+          {
+            "speaker": "Leo",
+            "text": "I check every plate with attention to detail."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "You all have amazing communication skills too!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "When we get a promotion, we will celebrate together."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Who is in charge of the kitchen?",
+            "answer": "Sam",
+            "options": [
+              "Sam",
+              "Smarty",
+              "Leo"
+            ],
+            "explanation": "Sam says: I am in charge of the kitchen tonight.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l02.be-in-charge-of"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "How does Sam work when the restaurant is full?",
+            "answer": "under pressure",
+            "options": [
+              "under pressure",
+              "alone",
+              "too slow"
+            ],
+            "explanation": "Lily says Sam stays calm under pressure.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l02.under-pressure"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "How does Leo check every plate?",
+            "answer": "with attention to detail",
+            "options": [
+              "with attention to detail",
+              "without looking",
+              "after dinner"
+            ],
+            "explanation": "Leo says he checks every plate with attention to detail.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l02.attention-to-detail"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is helping you describe your skills for a career. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Do you like to work in a team?",
+            "accept": [
+              "^yes(?: i do)?(?: i like to work in a team)?$",
+              "^no(?: i do not)?$",
+              "^i like to work in a team$"
+            ],
+            "example": "Yes, I like to work in a team.",
+            "hint": "Say Yes or No, or say 'I like to work in a team'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l02.work-in-a-team"
+            ]
+          },
+          {
+            "smarty": "Can you work under pressure?",
+            "accept": [
+              "^yes(?: i can)?(?: i can work under pressure)?$",
+              "^no(?: i cannot)?$",
+              "^i can work well under pressure$"
+            ],
+            "example": "Yes, I can work under pressure.",
+            "hint": "Say 'Yes, I can' or 'No, I cannot'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l02.under-pressure",
+              "en.beginner.u08.l06.i-can"
+            ]
+          },
+          {
+            "smarty": "Tell me one skill you have: communication skills or attention to detail?",
+            "accept": [
+              "^i have (?:communication skills|attention to detail)$",
+              "^(?:communication skills|attention to detail)$",
+              "^i have good (?:communication skills|attention to detail)$"
+            ],
+            "example": "I have good communication skills.",
+            "hint": "Say 'I have communication skills' or 'I have attention to detail'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l02.communication-skills",
+              "en.pre-intermediate.u07.l02.attention-to-detail"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "leader",
+          "gloss": "a person who guides a group or team"
+        },
+        {
+          "text": "organized",
+          "gloss": "able to plan work neatly and well"
+        },
+        {
+          "text": "efficient",
+          "gloss": "working well without wasting time"
+        },
+        {
+          "text": "flexible",
+          "gloss": "able to change plans easily when needed"
+        }
+      ],
+      "recycle": [
+        "en.elementary.u01.l09.i-am-good-at",
+        "en.beginner.u08.l06.i-can"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u07.l03",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "The CV",
+      "canDo": "Write a CV",
+      "scenario": "Ana prepares her CV and cover letter with Smarty to apply for a job.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u07.l03.job-interview",
+          "text": "job interview",
+          "kind": "phrase",
+          "forms": [
+            "job interviews",
+            "interviews"
+          ],
+          "example": "Zara has a job interview at ten o'clock tomorrow.",
+          "note": "Say ‘job interview’ for the meeting where an employer asks if you are right for a job."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l03.qualifications",
+          "text": "qualifications",
+          "kind": "word",
+          "forms": [
+            "qualification"
+          ],
+          "example": "Write your school exams and qualifications on your CV.",
+          "note": "Use ‘qualifications’ for the exams, certificates, or training you have passed."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l03.work-experience",
+          "text": "work experience",
+          "kind": "phrase",
+          "example": "Ben has two years of work experience in a shop.",
+          "note": "Say ‘work experience’ for the jobs you have already done in the past."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l03.references",
+          "text": "references",
+          "kind": "word",
+          "forms": [
+            "reference"
+          ],
+          "example": "My old teacher gave me good references.",
+          "note": "Use ‘references’ for people who know your work and can say good things about you."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l03.a-cover-letter",
+          "text": "a cover letter",
+          "kind": "phrase",
+          "forms": [
+            "cover letter",
+            "cover letters"
+          ],
+          "example": "Send a cover letter with your CV when you apply for a job.",
+          "note": "Say ‘a cover letter’ for the short letter you send with your CV to explain why you want the job."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l03.go-for-the-job",
+          "text": "go for the job",
+          "kind": "phrase",
+          "forms": [
+            "goes for the job",
+            "went for the job",
+            "going for the job",
+            "jobs"
+          ],
+          "example": "You have great skills, so you should go for the job!",
+          "note": "Say ‘go for the job’ to encourage someone to apply and try to get a job."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l03.task.pick-qual",
+          "kind": "choice",
+          "prompt": "You passed your exams and finished training. What do you write on your CV?",
+          "answer": "qualifications",
+          "options": [
+            "qualifications",
+            "decorations",
+            "sweets"
+          ],
+          "explanation": "Exams and training you passed are your qualifications.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l03.qualifications",
+            "en.elementary.u07.l09.cv"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l03.task.hear-cover",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I wrote a cover letter for the bank.",
+          "answer": "I wrote a cover letter for the bank.",
+          "options": [
+            "I wrote a cover letter for the bank.",
+            "I wrote a postcard from the park.",
+            "I bought a notebook at the shop."
+          ],
+          "explanation": "You write a cover letter to send with your CV.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l03.a-cover-letter",
+            "en.elementary.u04.l03.wrote"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l03.task.match-cv",
+          "kind": "match",
+          "prompt": "Match each CV item with its description.",
+          "pairs": [
+            {
+              "left": "work experience",
+              "right": "jobs you did before"
+            },
+            {
+              "left": "references",
+              "right": "someone who speaks well of you"
+            },
+            {
+              "left": "job interview",
+              "right": "a meeting to get a new job"
+            }
+          ],
+          "explanation": "Work experience is past jobs, references are people who recommend you, and a job interview is the meeting.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l03.work-experience",
+            "en.pre-intermediate.u07.l03.references",
+            "en.pre-intermediate.u07.l03.job-interview"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l03.task.fill-go-for",
+          "kind": "fill",
+          "prompt": "Mia sees a great job at the library. Encourage her to apply.",
+          "text": "You have the right skills, so ___!",
+          "answer": "go for the job",
+          "options": [
+            "go for the job",
+            "go to bed",
+            "go straight on"
+          ],
+          "explanation": "Say 'go for the job' when someone should try to get a job.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l03.go-for-the-job"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l03.task.build-exp",
+          "kind": "build",
+          "prompt": "Build a sentence about past jobs on a CV.",
+          "answer": "I have work experience in a café.",
+          "tiles": [
+            "I",
+            "have",
+            "work",
+            "experience",
+            "in",
+            "a",
+            "café",
+            "career"
+          ],
+          "explanation": "Put 'work experience' after 'have' to talk about past jobs.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l03.work-experience",
+            "en.beginner.u02.l08.i-have"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l03.task.fill-refs",
+          "kind": "fill",
+          "prompt": "The employer wants to call two people who worked with you. Complete the sentence.",
+          "text": "I added two ___ to my CV.",
+          "answer": "references",
+          "options": [
+            "references",
+            "sandwiches",
+            "umbrellas"
+          ],
+          "explanation": "References are people an employer can contact about your work.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l03.references"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l03.task.say-interview",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I sent a cover letter and got a job interview.",
+          "answer": "I sent a cover letter and got a job interview.",
+          "explanation": "Sending a strong cover letter helps you get a job interview.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l03.a-cover-letter",
+            "en.pre-intermediate.u07.l03.job-interview"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Does Ana decide to apply for the museum vacancy before the deadline date?",
+        "image": {
+          "id": "en-b1-u07-l03-scene",
+          "describe": "Ana the tabby cat sits at a wooden table with a laptop and papers, showing her CV to Smarty the black cat."
+        },
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "Smarty, look at this vacancy at the history museum."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "You love history, Ana! You should go for the job."
+          },
+          {
+            "speaker": "Ana",
+            "text": "I have good qualifications, but not much work experience."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Write about your communication skills in a cover letter."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Good idea! My history teacher can be one of my references."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Send your application before the deadline date tomorrow!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Thanks, Smarty! I hope I get a job interview as a candidate."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Smarty tell Ana to do about the museum job?",
+            "answer": "go for the job",
+            "options": [
+              "go for the job",
+              "resign",
+              "forget it"
+            ],
+            "explanation": "Smarty says: You should go for the job.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l03.go-for-the-job"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Where should Ana write about her communication skills?",
+            "answer": "in a cover letter",
+            "options": [
+              "in a cover letter",
+              "on a postcard",
+              "on a menu"
+            ],
+            "explanation": "Smarty tells Ana to write about her communication skills in a cover letter.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l03.a-cover-letter",
+              "en.pre-intermediate.u07.l02.communication-skills"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "Who can be one of Ana's references?",
+            "answer": "her history teacher",
+            "options": [
+              "her history teacher",
+              "a waiter",
+              "a pilot"
+            ],
+            "explanation": "Ana says her history teacher can be one of her references.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l03.references"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is checking your CV before you apply for a job. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Did you write your qualifications and work experience on your CV?",
+            "accept": [
+              "^yes(?: i did)?$",
+              "^i wrote my qualifications and work experience$",
+              "^yes i wrote them$"
+            ],
+            "example": "Yes, I did.",
+            "hint": "Say 'Yes, I did' or tell Smarty what you wrote.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l03.qualifications",
+              "en.pre-intermediate.u07.l03.work-experience"
+            ]
+          },
+          {
+            "smarty": "Did you also write a cover letter?",
+            "accept": [
+              "^yes(?: i did)?(?: i wrote a cover letter)?$",
+              "^no(?: i did not)?$",
+              "^i wrote a cover letter$"
+            ],
+            "example": "Yes, I wrote a cover letter.",
+            "hint": "Say 'Yes, I wrote a cover letter' or 'No, I did not'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l03.a-cover-letter"
+            ]
+          },
+          {
+            "smarty": "Are you ready to go for the job and get a job interview?",
+            "accept": [
+              "^yes(?: i am)?$",
+              "^i am ready to go for the job$",
+              "^yes i am ready$"
+            ],
+            "example": "I am ready to go for the job.",
+            "hint": "Say 'Yes, I am' or 'Yes, I am ready to go for the job'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l03.go-for-the-job",
+              "en.pre-intermediate.u07.l03.job-interview"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "application",
+          "gloss": "the form and papers you send to ask for a job"
+        },
+        {
+          "text": "vacancy",
+          "gloss": "an open job that needs a worker"
+        },
+        {
+          "text": "candidate",
+          "gloss": "a person trying to get a job"
+        },
+        {
+          "text": "deadline date",
+          "gloss": "the last day you can send something"
+        }
+      ],
+      "recycle": [
+        "en.elementary.u07.l09.cv",
+        "en.elementary.u04.l03.wrote",
+        "en.beginner.u02.l08.i-have",
+        "en.pre-intermediate.u07.l02.communication-skills"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u07.l04",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty quizzes Ben and Zara on career paths, skills, and writing a CV.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l04.task.match-rev1",
+          "kind": "match",
+          "prompt": "Match the career words with their meanings.",
+          "pairs": [
+            {
+              "left": "a promotion",
+              "right": "a bigger job at work"
+            },
+            {
+              "left": "a raise",
+              "right": "more money for your work"
+            },
+            {
+              "left": "a cover letter",
+              "right": "a letter sent with your CV"
+            }
+          ],
+          "explanation": "A promotion is a higher job, a raise is higher pay, and a cover letter goes with your CV.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l01.a-promotion",
+            "en.pre-intermediate.u07.l01.a-raise",
+            "en.pre-intermediate.u07.l03.a-cover-letter"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l04.task.hear-rev1",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "She has strong attention to detail and communication skills.",
+          "answer": "She has strong attention to detail and communication skills.",
+          "options": [
+            "She has strong attention to detail and communication skills.",
+            "She has a strong back and a fast bicycle.",
+            "She has two qualifications and three references."
+          ],
+          "explanation": "Attention to detail and communication skills are key skills on a CV.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l02.attention-to-detail",
+            "en.pre-intermediate.u07.l02.communication-skills"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l04.task.fill-rev1",
+          "kind": "fill",
+          "prompt": "Ben checks small numbers carefully and guides the group. Complete the sentence.",
+          "text": "Ben is ready to ___ on the new project.",
+          "answer": "take the lead",
+          "options": [
+            "take the lead",
+            "retire",
+            "resign"
+          ],
+          "explanation": "Take the lead means stepping forward to guide the team.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l02.take-the-lead"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l04.task.build-rev1",
+          "kind": "build",
+          "prompt": "Build a sentence about preparing for a job.",
+          "answer": "Show your qualifications and references clearly.",
+          "tiles": [
+            "Show",
+            "your",
+            "qualifications",
+            "and",
+            "references",
+            "clearly",
+            "resign"
+          ],
+          "explanation": "Both qualifications and references belong on a strong CV.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l03.qualifications",
+            "en.pre-intermediate.u07.l03.references"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l04.task.choice-rev1",
+          "kind": "choice",
+          "prompt": "Zara works five full days a week and is the main worker for her team. Which two phrases describe her?",
+          "answer": "full-time and in charge of",
+          "options": [
+            "full-time and in charge of",
+            "resign and retire",
+            "part-time and under pressure"
+          ],
+          "explanation": "Working five days a week is full-time, and leading a team means being in charge of it.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l01.full-time",
+            "en.pre-intermediate.u07.l02.be-in-charge-of"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l04.task.say-rev1",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I have work experience, so I will go for the job.",
+          "answer": "I have work experience, so I will go for the job.",
+          "explanation": "Good work experience gives you confidence to go for the job.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l03.work-experience",
+            "en.pre-intermediate.u07.l03.go-for-the-job"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How does Zara get ready for her big job interview tomorrow?",
+        "image": {
+          "id": "en-b1-u07-l04-scene",
+          "describe": "A cozy study corner with a desk and lamp: Smarty the black cat reviews a folder with Zara the spotted cat and Ben the brown cat."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Zara, you have a job interview tomorrow! Are you ready?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes! I packed my CV, my cover letter, and my references."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Tell them about your work experience and qualifications."
+          },
+          {
+            "speaker": "Zara",
+            "text": "I will also say I work in a team and stay calm under pressure."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Do not forget you were in charge of the school library last year!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "True! If I get this full-time job, it will start a great career."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Zara have tomorrow?",
+            "answer": "a job interview",
+            "options": [
+              "a job interview",
+              "a concert",
+              "a picnic"
+            ],
+            "explanation": "Smarty says Zara has a job interview tomorrow.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l03.job-interview"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "What was Zara in charge of last year?",
+            "answer": "the school library",
+            "options": [
+              "the school library",
+              "the train station",
+              "the swimming pool"
+            ],
+            "explanation": "Smarty reminds Zara she was in charge of the school library.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l02.be-in-charge-of"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "What did Zara pack with her CV?",
+            "answer": "her cover letter and references",
+            "options": [
+              "her cover letter and references",
+              "her camera and passport",
+              "her umbrella and scarf"
+            ],
+            "explanation": "Zara packed her CV, cover letter, and references.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l03.a-cover-letter",
+              "en.pre-intermediate.u07.l03.references"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty does a quick review with you before your job interview. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "What is one skill you will talk about in your job interview?",
+            "accept": [
+              "^(?:i have )?(?:communication skills|attention to detail)$",
+              "^i can (?:work in a team|take the lead|work under pressure)$"
+            ],
+            "example": "I can work in a team.",
+            "hint": "Name a skill like 'work in a team', 'communication skills', or 'attention to detail'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l02.work-in-a-team",
+              "en.pre-intermediate.u07.l02.communication-skills",
+              "en.pre-intermediate.u07.l02.attention-to-detail",
+              "en.pre-intermediate.u07.l03.job-interview"
+            ]
+          },
+          {
+            "smarty": "Did you bring your CV, cover letter, and references?",
+            "accept": [
+              "^yes(?: i did)?$",
+              "^yes i brought them$",
+              "^i have my cv cover letter and references$"
+            ],
+            "example": "Yes, I did.",
+            "hint": "Say 'Yes, I did'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l03.a-cover-letter",
+              "en.pre-intermediate.u07.l03.references"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.pre-intermediate.u07.l01.a-promotion",
+        "en.pre-intermediate.u07.l01.a-raise",
+        "en.pre-intermediate.u07.l01.full-time",
+        "en.pre-intermediate.u07.l02.attention-to-detail",
+        "en.pre-intermediate.u07.l02.communication-skills",
+        "en.pre-intermediate.u07.l02.take-the-lead",
+        "en.pre-intermediate.u07.l02.be-in-charge-of",
+        "en.pre-intermediate.u07.l02.work-in-a-team",
+        "en.pre-intermediate.u07.l03.a-cover-letter",
+        "en.pre-intermediate.u07.l03.qualifications",
+        "en.pre-intermediate.u07.l03.references",
+        "en.pre-intermediate.u07.l03.work-experience",
+        "en.pre-intermediate.u07.l03.go-for-the-job",
+        "en.pre-intermediate.u07.l03.job-interview"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u07.l05",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Interview",
+      "canDo": "Handle an interview",
+      "scenario": "Smarty practises common job interview questions with Tom in the office.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u07.l05.tell-me-about-yourself",
+          "text": "Tell me about yourself",
+          "kind": "phrase",
+          "forms": [
+            "yourself",
+            "about"
+          ],
+          "example": "The manager smiled and said, Tell me about yourself.",
+          "note": "Interviewers start with ‘Tell me about yourself’ to hear a short story about your skills and background."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l05.my-strengths",
+          "text": "my strengths",
+          "kind": "phrase",
+          "forms": [
+            "strength",
+            "strengths",
+            "your strengths",
+            "his strengths",
+            "her strengths"
+          ],
+          "example": "My strengths are communication skills and working in a team.",
+          "note": "Say ‘my strengths’ when you talk about the things you do best at work."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l05.my-weaknesses",
+          "text": "my weaknesses",
+          "kind": "phrase",
+          "forms": [
+            "weakness",
+            "weaknesses",
+            "your weaknesses",
+            "his weaknesses",
+            "her weaknesses"
+          ],
+          "example": "One of my weaknesses is that I sometimes work too late.",
+          "note": "Say ‘my weaknesses’ for areas where you are still learning and getting better."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l05.why-do-you-want",
+          "text": "Why do you want",
+          "kind": "phrase",
+          "example": "Why do you want to work for our hospital?",
+          "note": "Use ‘Why do you want…?’ to ask about a person's reason for choosing a job."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l05.i-am-available-from",
+          "text": "I am available from",
+          "kind": "phrase",
+          "forms": [
+            "available",
+            "from"
+          ],
+          "example": "I am available from Monday next week.",
+          "note": "Say ‘I am available from…’ to tell an employer the first day you can start working."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l05.a-trial-period",
+          "text": "a trial period",
+          "kind": "phrase",
+          "forms": [
+            "trial period",
+            "trial",
+            "period"
+          ],
+          "example": "Every new worker starts with a trial period of one month.",
+          "note": "Say ‘a trial period’ for the short test time at the start of a new job."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l05.task.pick-strengths",
+          "kind": "choice",
+          "prompt": "You want to talk about the skills you do best. Which phrase do you use?",
+          "answer": "my strengths",
+          "options": [
+            "my strengths",
+            "my weaknesses",
+            "my pocket money"
+          ],
+          "explanation": "Your strengths are your best skills and talents.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l05.my-strengths"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l05.task.hear-about",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Tell me about yourself and your work experience.",
+          "answer": "Tell me about yourself and your work experience.",
+          "options": [
+            "Tell me about yourself and your work experience.",
+            "Tell me about your favourite dessert.",
+            "Tell me about your last weekend."
+          ],
+          "explanation": "Interviewers ask 'Tell me about yourself' at the start of an interview.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l05.tell-me-about-yourself",
+            "en.pre-intermediate.u07.l03.work-experience"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l05.task.match-interview",
+          "kind": "match",
+          "prompt": "Match the interview phrases with their meanings.",
+          "pairs": [
+            {
+              "left": "my weaknesses",
+              "right": "things I am still getting better at"
+            },
+            {
+              "left": "I am available from",
+              "right": "the day I can start work"
+            },
+            {
+              "left": "a trial period",
+              "right": "a short test time in a new job"
+            }
+          ],
+          "explanation": "Weaknesses are areas to improve, available from tells your start date, and a trial period is a test start.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l05.my-weaknesses",
+            "en.pre-intermediate.u07.l05.i-am-available-from",
+            "en.pre-intermediate.u07.l05.a-trial-period"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l05.task.fill-why-want",
+          "kind": "fill",
+          "prompt": "The interviewer asks your reason for applying. Complete the question.",
+          "text": "___ this job?",
+          "answer": "Why do you want",
+          "options": [
+            "Why do you want",
+            "Where did you go",
+            "How much is"
+          ],
+          "explanation": "Use 'Why do you want' to ask someone's reason.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l05.why-do-you-want"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l05.task.build-available",
+          "kind": "build",
+          "prompt": "Build a sentence telling the employer you can start in June.",
+          "answer": "I am available from June.",
+          "tiles": [
+            "I",
+            "am",
+            "available",
+            "from",
+            "June",
+            "yesterday"
+          ],
+          "explanation": "Say 'I am available from' followed by the day or month you can start.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l05.i-am-available-from",
+            "en.beginner.u11.l03.june"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l05.task.fill-trial",
+          "kind": "fill",
+          "prompt": "The first two weeks let both you and the employer test the job. Complete the sentence.",
+          "text": "We start with ___ of two weeks.",
+          "answer": "a trial period",
+          "options": [
+            "a trial period",
+            "a single ticket",
+            "a balanced diet"
+          ],
+          "explanation": "A trial period is a short test time at the beginning of a job.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l05.a-trial-period"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l05.task.say-strengths",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "My strengths are attention to detail and working in a team.",
+          "answer": "My strengths are attention to detail and working in a team.",
+          "explanation": "Naming clear strengths makes a great impression in an interview.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l05.my-strengths",
+            "en.pre-intermediate.u07.l02.attention-to-detail",
+            "en.pre-intermediate.u07.l02.work-in-a-team"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How does Tom handle his first real job interview with Omar?",
+        "image": {
+          "id": "en-b1-u07-l05-scene",
+          "describe": "An office room with two chairs across a tidy desk: Omar the older gray cat interviews Tom the young orange cat while Smarty the black cat peeks from behind a plant."
+        },
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Good morning, Tom. Thank you for the handshake. Tell me about yourself."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Good morning! I am a quick learner with strong communication skills."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Why do you want this full-time job?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "I want a career where I can work in a team and help customers."
+          },
+          {
+            "speaker": "Omar",
+            "text": "What are your strengths and your weaknesses?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "My strengths are attention to detail. One of my weaknesses is a nervous smile at first, so I practise hard!"
+          },
+          {
+            "speaker": "Omar",
+            "text": "That makes a great impression. There is a trial period of one month. When can you start?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "I am available from next Monday!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "What are Tom's strengths?",
+            "answer": "attention to detail",
+            "options": [
+              "attention to detail",
+              "cooking soup",
+              "playing tennis"
+            ],
+            "explanation": "Tom says: My strengths are attention to detail.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l05.my-strengths",
+              "en.pre-intermediate.u07.l02.attention-to-detail"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "How long is the trial period?",
+            "answer": "one month",
+            "options": [
+              "one month",
+              "ten years",
+              "two hours"
+            ],
+            "explanation": "Omar says there is a trial period of one month.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l05.a-trial-period"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "When is Tom available from?",
+            "answer": "next Monday",
+            "options": [
+              "next Monday",
+              "last night",
+              "December"
+            ],
+            "explanation": "Tom says: I am available from next Monday.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l05.i-am-available-from"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is the interviewer today! Answer his interview questions in your own words.",
+        "turns": [
+          {
+            "smarty": "Welcome to the job interview! Tell me about yourself.",
+            "accept": [
+              "^i am a (?:student|quick learner|hard worker)$",
+              "^my name is [a-z]+(?: and i am a student)?$",
+              "^i am good at working in a team$"
+            ],
+            "example": "I am a quick learner.",
+            "hint": "Say a short sentence about yourself, like 'I am a student' or 'I am a quick learner'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l05.tell-me-about-yourself",
+              "en.pre-intermediate.u05.l10.a-quick-learner"
+            ]
+          },
+          {
+            "smarty": "What are your strengths?",
+            "accept": [
+              "^my strengths are (?:communication skills|attention to detail|working in a team)$",
+              "^my strength is (?:communication skills|attention to detail|working in a team)$"
+            ],
+            "example": "My strengths are communication skills.",
+            "hint": "Start with 'My strengths are...' and name a skill.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l05.my-strengths",
+              "en.pre-intermediate.u07.l02.communication-skills"
+            ]
+          },
+          {
+            "smarty": "When can you start the trial period?",
+            "accept": [
+              "^i am available from (?:monday|tuesday|wednesday|thursday|friday|tomorrow|next week|next month)$",
+              "^from (?:monday|tomorrow|next week)$"
+            ],
+            "example": "I am available from Monday.",
+            "hint": "Say 'I am available from...' and a day or week.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l05.i-am-available-from",
+              "en.pre-intermediate.u07.l05.a-trial-period"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "interviewer",
+          "gloss": "the person who asks questions in a job interview"
+        },
+        {
+          "text": "nervous smile",
+          "gloss": "a small smile when you feel a bit worried"
+        },
+        {
+          "text": "handshake",
+          "gloss": "holding and shaking hands to say hello"
+        },
+        {
+          "text": "impression",
+          "gloss": "the feeling or opinion someone gets about you"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u07.l03.work-experience",
+        "en.beginner.u11.l03.june",
+        "en.pre-intermediate.u07.l02.attention-to-detail",
+        "en.pre-intermediate.u07.l02.work-in-a-team",
+        "en.pre-intermediate.u07.l02.communication-skills",
+        "en.pre-intermediate.u05.l10.a-quick-learner"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u07.l06",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "If I were you",
+      "canDo": "Use second conditional",
+      "scenario": "Mia and Sam imagine dream jobs and discuss work choices with Smarty.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u07.l06.if-i-had-more-time",
+          "text": "If I had more time",
+          "kind": "phrase",
+          "example": "If I had more time, I would learn a new language.",
+          "note": "Use ‘If I had…’ with the past form to imagine a situation that is not real right now."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l06.if-i-were-you",
+          "text": "If I were you",
+          "kind": "phrase",
+          "example": "If I were you, I would go for the job.",
+          "note": "Say ‘If I were you, I would…’ to give friendly advice by imagining yourself in someone else's shoes."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l06.i-would",
+          "text": "I would",
+          "kind": "phrase",
+          "forms": [
+            "would",
+            "would not",
+            "he would",
+            "she would",
+            "we would",
+            "they would",
+            "you would"
+          ],
+          "example": "If I got a promotion, I would be very happy.",
+          "note": "Use ‘I would’ plus a base verb for the imaginary result in a second conditional sentence."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l06.i-wish-i-could",
+          "text": "I wish I could",
+          "kind": "phrase",
+          "forms": [
+            "wish",
+            "wishes"
+          ],
+          "example": "I wish I could speak four languages at work.",
+          "note": "Say ‘I wish I could…’ when you want to do something that is not possible right now."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l06.what-would-you-do-if",
+          "text": "What would you do if",
+          "kind": "phrase",
+          "example": "What would you do if you got two job offers?",
+          "note": "Ask ‘What would you do if…?’ to find out someone's choice in an imaginary situation."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l06.i-would-rather",
+          "text": "I would rather",
+          "kind": "phrase",
+          "forms": [
+            "rather"
+          ],
+          "example": "I would rather work in a team than work alone.",
+          "note": "Say ‘I would rather…’ to tell which choice you prefer."
+        }
+      ],
+      "grammar": {
+        "title": "Second conditional: If + past, would + verb",
+        "explanation": "Use the second conditional for imaginary situations or advice. Put a past verb after 'if' (including 'If I were you'), and use 'would' + base verb in the result.",
+        "examples": [
+          "If I were you, I would apply for the job.",
+          "If I had more time, I would study art.",
+          "What would you do if you won a prize?"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l06.task.pick-were",
+          "kind": "choice",
+          "prompt": "Your friend is unsure about applying for a job. How do you start your advice?",
+          "answer": "If I were you",
+          "options": [
+            "If I were you",
+            "Once upon a time",
+            "How old are you"
+          ],
+          "explanation": "'If I were you' is the standard second conditional phrase for giving advice.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l06.if-i-were-you"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l06.task.hear-time",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "If I had more time, I would practise piano.",
+          "answer": "If I had more time, I would practise piano.",
+          "options": [
+            "If I had more time, I would practise piano.",
+            "If I had more money, I would buy a car.",
+            "If it rains, I will take an umbrella."
+          ],
+          "explanation": "Use 'If I had more time, I would...' for an imaginary situation.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l06.if-i-had-more-time",
+            "en.pre-intermediate.u07.l06.i-would"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l06.task.match-cond2",
+          "kind": "match",
+          "prompt": "Match the two halves of each second conditional sentence.",
+          "pairs": [
+            {
+              "left": "If I were you,",
+              "right": "I would go for the job."
+            },
+            {
+              "left": "What would you do if",
+              "right": "you got a promotion?"
+            },
+            {
+              "left": "If I had more time,",
+              "right": "I would learn pottery."
+            }
+          ],
+          "explanation": "Pair the 'if' clause with the 'would' result clause.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l06.if-i-were-you",
+            "en.pre-intermediate.u07.l06.what-would-you-do-if",
+            "en.pre-intermediate.u07.l06.if-i-had-more-time",
+            "en.pre-intermediate.u07.l03.go-for-the-job"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l06.task.fill-wish",
+          "kind": "fill",
+          "prompt": "Sam cannot fly a plane right now, but it is his dream. Complete the sentence.",
+          "text": "___ be a pilot one day.",
+          "answer": "I wish I could",
+          "options": [
+            "I wish I could",
+            "I am going to",
+            "I did not"
+          ],
+          "explanation": "Use 'I wish I could' for something you want to do but cannot do now.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l06.i-wish-i-could",
+            "en.elementary.u07.l01.pilot"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l06.task.build-rather",
+          "kind": "build",
+          "prompt": "Build a sentence showing your work preference.",
+          "answer": "I would rather work in a team.",
+          "tiles": [
+            "I",
+            "would",
+            "rather",
+            "work",
+            "in",
+            "a",
+            "team",
+            "wish"
+          ],
+          "explanation": "'I would rather' is followed directly by the base verb 'work'.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l06.i-would-rather",
+            "en.pre-intermediate.u07.l02.work-in-a-team"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l06.task.fill-would",
+          "kind": "fill",
+          "prompt": "Complete the second conditional result after 'If I were you'.",
+          "text": "If I were you, ___ write a cover letter.",
+          "answer": "I would",
+          "options": [
+            "I would",
+            "I was",
+            "I did"
+          ],
+          "explanation": "After 'If I were you', use 'I would' + base verb.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l06.i-would",
+            "en.pre-intermediate.u07.l06.if-i-were-you",
+            "en.pre-intermediate.u07.l03.a-cover-letter"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l06.task.say-what-if",
+          "kind": "speak",
+          "prompt": "Say the question aloud. You can try again.",
+          "text": "What would you do if you got a raise?",
+          "answer": "What would you do if you got a raise?",
+          "explanation": "Use 'What would you do if' + past verb to ask about an imaginary event.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l06.what-would-you-do-if",
+            "en.pre-intermediate.u07.l01.a-raise"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What dream job would Mia choose if she had the chance?",
+        "image": {
+          "id": "en-b1-u07-l06-scene",
+          "describe": "A sunny office break corner with two armchairs: Mia the gray-and-white cat and Sam the orange cat drink tea while Smarty the black cat listens."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Imagine you had any dream job, Mia. What would you do if you had the chance?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I wish I could be an astronaut on a space station!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Wow! I would rather be a chef and open a small café."
+          },
+          {
+            "speaker": "Mia",
+            "text": "If I had more time, I would take a cooking workshop with you."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Smarty, I have a choice between two jobs right now. One is full-time, and one is part-time."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "If I were you, I would take the full-time job for your career."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Thanks, Smarty! I would learn much more there."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Mia wish she could be?",
+            "answer": "an astronaut",
+            "options": [
+              "an astronaut",
+              "a dentist",
+              "a farmer"
+            ],
+            "explanation": "Mia says: I wish I could be an astronaut on a space station.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l06.i-wish-i-could"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What would Sam rather be?",
+            "answer": "a chef",
+            "options": [
+              "a chef",
+              "a pilot",
+              "a mechanic"
+            ],
+            "explanation": "Sam says: I would rather be a chef.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l06.i-would-rather"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "What advice does Smarty give Sam?",
+            "answer": "take the full-time job",
+            "options": [
+              "take the full-time job",
+              "resign now",
+              "go to the park"
+            ],
+            "explanation": "Smarty says: If I were you, I would take the full-time job.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l06.if-i-were-you",
+              "en.pre-intermediate.u07.l06.i-would",
+              "en.pre-intermediate.u07.l01.full-time"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about imaginary choices and advice. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "What would you do if you got a big raise?",
+            "accept": [
+              "^i would (?:save up|travel|buy a house|buy a car|help my family)$",
+              "^if i got a raise i would (?:save up|travel|help my family)$"
+            ],
+            "example": "I would save up.",
+            "hint": "Start with 'I would...' and say what you would do.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l06.what-would-you-do-if",
+              "en.pre-intermediate.u07.l06.i-would",
+              "en.pre-intermediate.u07.l01.a-raise"
+            ]
+          },
+          {
+            "smarty": "Would you rather work in a team or work alone?",
+            "accept": [
+              "^i would rather work in a team$",
+              "^i would rather work alone$",
+              "^work in a team$"
+            ],
+            "example": "I would rather work in a team.",
+            "hint": "Say 'I would rather work in a team' or 'I would rather work alone'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l06.i-would-rather",
+              "en.pre-intermediate.u07.l02.work-in-a-team"
+            ]
+          },
+          {
+            "smarty": "I am nervous about my job interview. Give me advice with 'If I were you'.",
+            "accept": [
+              "^if i were you i would (?:practise|go for the job|stay calm|prepare)$",
+              "^if i were you i would not worry$"
+            ],
+            "example": "If I were you, I would go for the job.",
+            "hint": "Start with 'If I were you, I would...'",
+            "itemIds": [
+              "en.pre-intermediate.u07.l06.if-i-were-you",
+              "en.pre-intermediate.u07.l06.i-would",
+              "en.pre-intermediate.u07.l03.go-for-the-job"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "imagine",
+          "gloss": "to make a picture in your mind of something"
+        },
+        {
+          "text": "dream job",
+          "gloss": "the best job you could ever hope for"
+        },
+        {
+          "text": "choice",
+          "gloss": "picking between two or more things"
+        },
+        {
+          "text": "chance",
+          "gloss": "an opportunity to do something"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u07.l03.go-for-the-job",
+        "en.elementary.u07.l01.pilot",
+        "en.pre-intermediate.u07.l02.work-in-a-team",
+        "en.pre-intermediate.u07.l03.a-cover-letter",
+        "en.pre-intermediate.u07.l01.a-raise",
+        "en.pre-intermediate.u07.l01.full-time"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u07.l07",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Good advice",
+      "canDo": "Give advice at work",
+      "scenario": "Smarty acts as a work mentor and gives helpful advice to Leo.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u07.l07.you-really-should",
+          "text": "You really should",
+          "kind": "phrase",
+          "forms": [
+            "really",
+            "should"
+          ],
+          "example": "You really should check your CV before you send it.",
+          "note": "Say ‘You really should…’ to give strong, friendly advice."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l07.you-ought-to",
+          "text": "You ought to",
+          "kind": "phrase",
+          "forms": [
+            "ought",
+            "ought to"
+          ],
+          "example": "You ought to arrive early for your job interview.",
+          "note": "Use ‘You ought to…’ as a polite way to say what is the right thing to do."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l07.why-not-try",
+          "text": "Why not try",
+          "kind": "phrase",
+          "example": "Why not try asking your teacher for references?",
+          "note": "Use ‘Why not try…?’ to offer a light, easy suggestion."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l07.it-might-be-a-good-idea",
+          "text": "It might be a good idea",
+          "kind": "phrase",
+          "forms": [
+            "might",
+            "idea",
+            "ideas"
+          ],
+          "example": "It might be a good idea to write a cover letter.",
+          "note": "Say ‘It might be a good idea to…’ when you want to give soft, polite advice."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l07.i-would-suggest",
+          "text": "I would suggest",
+          "kind": "phrase",
+          "forms": [
+            "suggest",
+            "suggests",
+            "suggested"
+          ],
+          "example": "I would suggest practising your strengths before tomorrow.",
+          "note": "Say ‘I would suggest…’ to share a helpful work tip."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l07.you-had-better",
+          "text": "You had better",
+          "kind": "phrase",
+          "forms": [
+            "had better"
+          ],
+          "example": "You had better hurry or you will be late for work.",
+          "note": "Use ‘You had better…’ when someone needs to act right now to avoid a problem."
+        }
+      ],
+      "grammar": {
+        "title": "Ways to give advice",
+        "explanation": "Use 'should', 'ought to', and 'had better' + base verb for strong advice. Use 'It might be a good idea to' + base verb, or 'Why not try' / 'I would suggest' + -ing verb for softer suggestions.",
+        "examples": [
+          "You really should be on time.",
+          "You ought to check the details.",
+          "Why not try working in a team?",
+          "You had better leave now."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l07.task.pick-better",
+          "kind": "choice",
+          "prompt": "Leo's train leaves in five minutes and he is still at home. Which advice fits best?",
+          "answer": "You had better",
+          "options": [
+            "You had better",
+            "Once upon a time",
+            "I have never"
+          ],
+          "explanation": "'You had better' gives urgent advice so Leo does not miss his train.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l07.you-had-better"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l07.task.hear-ought",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "You ought to be on time every morning.",
+          "answer": "You ought to be on time every morning.",
+          "options": [
+            "You ought to be on time every morning.",
+            "You ought to stay in bed every morning.",
+            "You ought to buy a ticket every morning."
+          ],
+          "explanation": "'You ought to' means it is the right thing to do.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l07.you-ought-to",
+            "en.elementary.u07.l05.be-on-time"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l07.task.match-advice",
+          "kind": "match",
+          "prompt": "Match the start of each advice sentence with its ending.",
+          "pairs": [
+            {
+              "left": "It might be a good idea",
+              "right": "to bring two references."
+            },
+            {
+              "left": "Why not try",
+              "right": "taking the lead now?"
+            },
+            {
+              "left": "You really should",
+              "right": "read the details carefully."
+            }
+          ],
+          "explanation": "Notice the verb forms: 'to bring', 'taking', and 'read'.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l07.it-might-be-a-good-idea",
+            "en.pre-intermediate.u07.l07.why-not-try",
+            "en.pre-intermediate.u07.l07.you-really-should",
+            "en.pre-intermediate.u07.l03.references",
+            "en.pre-intermediate.u07.l02.take-the-lead"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l07.task.fill-suggest",
+          "kind": "fill",
+          "prompt": "Smarty offers a polite work tip. Complete the sentence.",
+          "text": "___ checking your cover letter again.",
+          "answer": "I would suggest",
+          "options": [
+            "I would suggest",
+            "Why do you",
+            "Where is"
+          ],
+          "explanation": "'I would suggest' introduces a helpful idea.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l07.i-would-suggest",
+            "en.pre-intermediate.u07.l03.a-cover-letter"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l07.task.build-idea",
+          "kind": "build",
+          "prompt": "Build a polite piece of advice.",
+          "answer": "It might be a good idea to rest.",
+          "tiles": [
+            "It",
+            "might",
+            "be",
+            "a",
+            "good",
+            "idea",
+            "to",
+            "rest",
+            "ought"
+          ],
+          "explanation": "Use 'It might be a good idea to' followed by the verb 'rest'.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l07.it-might-be-a-good-idea"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l07.task.fill-really-should",
+          "kind": "fill",
+          "prompt": "Give strong advice to a friend before an interview.",
+          "text": "___ speak clearly and smile.",
+          "answer": "You really should",
+          "options": [
+            "You really should",
+            "I did not",
+            "Was it"
+          ],
+          "explanation": "'You really should' gives warm, strong advice.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l07.you-really-should"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l07.task.say-ought",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "You ought to take the lead and show your strengths.",
+          "answer": "You ought to take the lead and show your strengths.",
+          "explanation": "Great advice using 'You ought to'!",
+          "itemIds": [
+            "en.pre-intermediate.u07.l07.you-ought-to",
+            "en.pre-intermediate.u07.l02.take-the-lead",
+            "en.pre-intermediate.u07.l05.my-strengths"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What advice does Smarty give Leo on his first week in the office?",
+        "image": {
+          "id": "en-b1-u07-l07-scene",
+          "describe": "An office desk with a notebook and a clock: Smarty the black cat points kindly to a schedule while Leo the black-and-white cat listens carefully."
+        },
+        "lines": [
+          {
+            "speaker": "Leo",
+            "text": "Smarty, you are my mentor here. Can you give me some guidance?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Of course, Leo! First, you ought to be on time every morning."
+          },
+          {
+            "speaker": "Leo",
+            "text": "I always arrive early. How can I get a promotion one day?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I would suggest taking the lead when your team has a problem."
+          },
+          {
+            "speaker": "Leo",
+            "text": "That is a great suggestion. What else do you recommend?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It might be a good idea to write down your work in a notebook. And why not try helping Mia?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Look at the clock! It is almost nine o'clock."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "You had better go to your desk now! You really should start on time."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Smarty say Leo ought to do every morning?",
+            "answer": "be on time",
+            "options": [
+              "be on time",
+              "bring cake",
+              "watch TV"
+            ],
+            "explanation": "Smarty says: First, you ought to be on time every morning.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l07.you-ought-to",
+              "en.elementary.u07.l05.be-on-time"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Smarty suggest when the team has a problem?",
+            "answer": "taking the lead",
+            "options": [
+              "taking the lead",
+              "resigning",
+              "sleeping"
+            ],
+            "explanation": "Smarty says: I would suggest taking the lead when your team has a problem.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l07.i-would-suggest",
+              "en.pre-intermediate.u07.l02.take-the-lead"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "Why does Smarty say 'You had better go to your desk now'?",
+            "answer": "It is nine o'clock",
+            "options": [
+              "It is nine o'clock",
+              "It is raining",
+              "Lunch is ready"
+            ],
+            "explanation": "It is nine o'clock, so Leo needs to go to his desk right away.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l07.you-had-better"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you for work advice using today's phrases. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "I have a job interview tomorrow morning. Give me advice with 'You really should' or 'You ought to'.",
+            "accept": [
+              "^you (?:really should|ought to) (?:be on time|practise|smile|get enough sleep|prepare)$",
+              "^you (?:really should|ought to) go to bed early$"
+            ],
+            "example": "You really should be on time.",
+            "hint": "Start with 'You really should...' or 'You ought to...'",
+            "itemIds": [
+              "en.pre-intermediate.u07.l07.you-really-should",
+              "en.pre-intermediate.u07.l07.you-ought-to",
+              "en.elementary.u07.l05.be-on-time"
+            ]
+          },
+          {
+            "smarty": "How can I make my CV better? Start with 'Why not try' or 'It might be a good idea'.",
+            "accept": [
+              "^why not try (?:adding references|checking the details|writing a cover letter)$",
+              "^it might be a good idea to (?:add references|check the details|write a cover letter)$"
+            ],
+            "example": "It might be a good idea to add references.",
+            "hint": "Say 'Why not try...' or 'It might be a good idea to...'",
+            "itemIds": [
+              "en.pre-intermediate.u07.l07.why-not-try",
+              "en.pre-intermediate.u07.l07.it-might-be-a-good-idea",
+              "en.pre-intermediate.u07.l03.a-cover-letter"
+            ]
+          },
+          {
+            "smarty": "Oh no, I am late for work! Tell me what I had better do.",
+            "accept": [
+              "^you had better (?:hurry|run|go now|take a taxi|call)$"
+            ],
+            "example": "You had better hurry.",
+            "hint": "Say 'You had better hurry' or 'You had better run'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l07.you-had-better"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "suggestion",
+          "gloss": "an idea you offer to help someone"
+        },
+        {
+          "text": "recommend",
+          "gloss": "to say something is a good choice"
+        },
+        {
+          "text": "mentor",
+          "gloss": "an experienced person who helps and advises a newer worker"
+        },
+        {
+          "text": "guidance",
+          "gloss": "helpful advice about what to do"
+        }
+      ],
+      "recycle": [
+        "en.elementary.u07.l05.be-on-time",
+        "en.pre-intermediate.u07.l03.references",
+        "en.pre-intermediate.u07.l02.take-the-lead",
+        "en.pre-intermediate.u07.l03.a-cover-letter",
+        "en.pre-intermediate.u07.l05.my-strengths"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u07.l08",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Smarty reviews interview skills, second conditional, and advice with Mia and Tom.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l08.task.match-rev2",
+          "kind": "match",
+          "prompt": "Match the phrases from Lessons 5–7 with their meanings.",
+          "pairs": [
+            {
+              "left": "a trial period",
+              "right": "a short test time in a new job"
+            },
+            {
+              "left": "I would rather",
+              "right": "I like this more"
+            },
+            {
+              "left": "You had better",
+              "right": "you must do it now"
+            }
+          ],
+          "explanation": "A trial period tests a new job, 'I would rather' shows preference, and 'You had better' gives urgent advice.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l05.a-trial-period",
+            "en.pre-intermediate.u07.l06.i-would-rather",
+            "en.pre-intermediate.u07.l07.you-had-better"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l08.task.hear-rev2",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "If I were you, I would speak about my strengths.",
+          "answer": "If I were you, I would speak about my strengths.",
+          "options": [
+            "If I were you, I would speak about my strengths.",
+            "If I were you, I would forget my strengths.",
+            "If I had time, I would buy a guitar."
+          ],
+          "explanation": "Use 'If I were you, I would...' to give friendly advice.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l06.if-i-were-you",
+            "en.pre-intermediate.u07.l06.i-would",
+            "en.pre-intermediate.u07.l05.my-strengths"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l08.task.fill-rev2",
+          "kind": "fill",
+          "prompt": "Complete the second conditional question.",
+          "text": "___ you got two job offers?",
+          "answer": "What would you do if",
+          "options": [
+            "What would you do if",
+            "Tell me about",
+            "I am available"
+          ],
+          "explanation": "Use 'What would you do if' + past verb for imaginary choices.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l06.what-would-you-do-if"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l08.task.build-rev2",
+          "kind": "build",
+          "prompt": "Build a polite suggestion for a friend at work.",
+          "answer": "You ought to tell them your strengths.",
+          "tiles": [
+            "You",
+            "ought",
+            "to",
+            "tell",
+            "them",
+            "your",
+            "strengths",
+            "weaknesses"
+          ],
+          "explanation": "'You ought to' is followed by the base verb 'tell'.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l07.you-ought-to",
+            "en.pre-intermediate.u07.l05.my-strengths"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l08.task.choice-rev2",
+          "kind": "choice",
+          "prompt": "The interviewer asks: 'When can you start?' How do you reply?",
+          "answer": "I am available from next week.",
+          "options": [
+            "I am available from next week.",
+            "I wish I could.",
+            "Why do you want?"
+          ],
+          "explanation": "'I am available from...' tells the employer when you can start.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l05.i-am-available-from"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l08.task.say-rev2",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "If I had more time, I would learn more skills.",
+          "answer": "If I had more time, I would learn more skills.",
+          "explanation": "Great second conditional sentence!",
+          "itemIds": [
+            "en.pre-intermediate.u07.l06.if-i-had-more-time",
+            "en.pre-intermediate.u07.l06.i-would",
+            "en.pre-intermediate.u07.l02.communication-skills"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which job choice does Mia pick after talking with Smarty?",
+        "image": {
+          "id": "en-b1-u07-l08-scene",
+          "describe": "A bright café table with two notebooks: Mia the gray-and-white cat and Smarty the black cat look at two job letters."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Smarty, I got a job offer after my interview! It starts with a trial period."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Well done, Mia! Tell me about yourself as a new worker."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I am available from Monday, and I would rather work full-time."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "You really should write down your questions before Monday."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes! And it might be a good idea to read my notes tonight."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "If I were you, I would also get enough sleep tonight!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "How does Mia's new job start?",
+            "answer": "with a trial period",
+            "options": [
+              "with a trial period",
+              "with a party",
+              "with a raise"
+            ],
+            "explanation": "Mia says her job starts with a trial period.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l05.a-trial-period"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "How would Mia rather work?",
+            "answer": "full-time",
+            "options": [
+              "full-time",
+              "alone",
+              "late at night"
+            ],
+            "explanation": "Mia says: I would rather work full-time.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l06.i-would-rather",
+              "en.pre-intermediate.u07.l01.full-time"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "What advice does Smarty give Mia with 'If I were you'?",
+            "answer": "get enough sleep",
+            "options": [
+              "get enough sleep",
+              "resign tomorrow",
+              "buy a new phone"
+            ],
+            "explanation": "Smarty says: If I were you, I would also get enough sleep.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l06.if-i-were-you",
+              "en.pre-intermediate.u07.l06.i-would"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty checks your interview and advice skills. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "When an interviewer says 'Tell me about yourself', what do you say?",
+            "accept": [
+              "^i am a (?:student|quick learner)$",
+              "^my strengths are (?:communication skills|attention to detail|working in a team)$",
+              "^i am good at working in a team$"
+            ],
+            "example": "My strengths are communication skills.",
+            "hint": "Say a short sentence about yourself or your strengths.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l05.tell-me-about-yourself",
+              "en.pre-intermediate.u07.l05.my-strengths"
+            ]
+          },
+          {
+            "smarty": "Give me one piece of advice for my first day at work!",
+            "accept": [
+              "^you (?:really should|ought to|had better) (?:be on time|smile|listen|take notes)$",
+              "^if i were you i would (?:be on time|smile|listen)$"
+            ],
+            "example": "You ought to be on time.",
+            "hint": "Use 'You really should...', 'You ought to...', or 'If I were you...'",
+            "itemIds": [
+              "en.pre-intermediate.u07.l07.you-ought-to",
+              "en.pre-intermediate.u07.l07.you-really-should",
+              "en.pre-intermediate.u07.l06.if-i-were-you"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.pre-intermediate.u07.l05.a-trial-period",
+        "en.pre-intermediate.u07.l06.i-would-rather",
+        "en.pre-intermediate.u07.l07.you-had-better",
+        "en.pre-intermediate.u07.l06.if-i-were-you",
+        "en.pre-intermediate.u07.l06.i-would",
+        "en.pre-intermediate.u07.l05.my-strengths",
+        "en.pre-intermediate.u07.l06.what-would-you-do-if",
+        "en.pre-intermediate.u07.l07.you-ought-to",
+        "en.pre-intermediate.u07.l05.i-am-available-from",
+        "en.pre-intermediate.u07.l06.if-i-had-more-time",
+        "en.pre-intermediate.u07.l02.communication-skills",
+        "en.pre-intermediate.u07.l01.full-time",
+        "en.pre-intermediate.u07.l05.tell-me-about-yourself",
+        "en.pre-intermediate.u07.l07.you-really-should"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u07.l09",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "At the office",
+      "canDo": "Use office language",
+      "scenario": "Smarty shows Tom around the office room and introduces the machines and schedule.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u07.l09.photocopier",
+          "text": "photocopier",
+          "kind": "word",
+          "forms": [
+            "photocopiers"
+          ],
+          "example": "The photocopier is next to the window.",
+          "note": "Use ‘photocopier’ for the big machine that makes paper copies of pages.",
+          "image": {
+            "id": "photocopier",
+            "describe": "a large gray office photocopier standing next to a desk with Smarty the black cat making paper copies"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u07.l09.printer",
+          "text": "printer",
+          "kind": "word",
+          "forms": [
+            "printers",
+            "print",
+            "printed"
+          ],
+          "example": "Please check if there is paper in the printer.",
+          "note": "Use ‘printer’ for the machine that puts words and pictures from your computer onto paper.",
+          "image": {
+            "id": "printer",
+            "describe": "a neat white desk printer next to a laptop with clean sheets of paper coming out"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u07.l09.a-deadline",
+          "text": "a deadline",
+          "kind": "phrase",
+          "forms": [
+            "deadline",
+            "deadlines"
+          ],
+          "example": "We have a deadline on Friday at five o'clock.",
+          "note": "Say ‘a deadline’ for the exact time or day when a piece of work must be finished."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l09.a-schedule",
+          "text": "a schedule",
+          "kind": "phrase",
+          "forms": [
+            "schedule",
+            "schedules"
+          ],
+          "example": "Look at a schedule on the wall to see today's tasks.",
+          "note": "Say ‘a schedule’ for a plan that shows what happens and at what time."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l09.the-manager",
+          "text": "the manager",
+          "kind": "phrase",
+          "forms": [
+            "manager",
+            "managers"
+          ],
+          "example": "The manager is in charge of the whole team.",
+          "note": "Say ‘the manager’ for the person who leads and organizes workers in an office or shop."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l09.filing-cabinet",
+          "text": "filing cabinet",
+          "kind": "phrase",
+          "forms": [
+            "filing cabinets",
+            "cabinet"
+          ],
+          "example": "Keep the old papers inside the filing cabinet.",
+          "note": "Say ‘filing cabinet’ for the tall box with drawers where papers and folders are stored.",
+          "image": {
+            "id": "filing-cabinet",
+            "describe": "a tall metal filing cabinet with three drawers standing beside a wooden desk in an office"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l09.task.pick-photocopier",
+          "kind": "choice",
+          "prompt": "You have one page and need ten paper copies of it. Which machine do you use?",
+          "answer": "photocopier",
+          "options": [
+            "photocopier",
+            "washing machine",
+            "telescope"
+          ],
+          "explanation": "A photocopier makes paper copies from a page.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l09.photocopier"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l09.task.hear-printer",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The printer is on the desk next to the computer.",
+          "answer": "The printer is on the desk next to the computer.",
+          "options": [
+            "The printer is on the desk next to the computer.",
+            "The pillow is on the bed next to the lamp.",
+            "The manager is on the train next to the window."
+          ],
+          "explanation": "A printer connects to a computer to put text on paper.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l09.printer",
+            "en.beginner.u05.l07.computer"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l09.task.match-office",
+          "kind": "match",
+          "prompt": "Match each office word with its meaning.",
+          "pairs": [
+            {
+              "left": "a deadline",
+              "right": "the last day for the work"
+            },
+            {
+              "left": "a schedule",
+              "right": "a plan of times and work"
+            },
+            {
+              "left": "filing cabinet",
+              "right": "a big box for notes"
+            }
+          ],
+          "explanation": "A deadline is the finish time, a schedule is the time plan, and a filing cabinet stores papers.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l09.a-deadline",
+            "en.pre-intermediate.u07.l09.a-schedule",
+            "en.pre-intermediate.u07.l09.filing-cabinet"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l09.task.fill-manager",
+          "kind": "fill",
+          "prompt": "Omar leads the team and checks everyone's work. Complete the sentence.",
+          "text": "Omar is ___ here.",
+          "answer": "the manager",
+          "options": [
+            "the manager",
+            "the waiter",
+            "the dentist"
+          ],
+          "explanation": "The manager is the person in charge of the office team.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l09.the-manager",
+            "en.pre-intermediate.u07.l02.be-in-charge-of"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l09.task.build-deadline",
+          "kind": "build",
+          "prompt": "Build a sentence about finishing work before Friday.",
+          "answer": "We have a deadline on Friday.",
+          "tiles": [
+            "We",
+            "have",
+            "a",
+            "deadline",
+            "on",
+            "Friday",
+            "printer"
+          ],
+          "explanation": "Say 'have a deadline on' followed by the day.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l09.a-deadline",
+            "en.beginner.u04.l06.friday"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l09.task.fill-cabinet",
+          "kind": "fill",
+          "prompt": "Where should Mia store the customer papers? Complete the sentence.",
+          "text": "Put the papers in the ___.",
+          "answer": "filing cabinet",
+          "options": [
+            "filing cabinet",
+            "luggage rack",
+            "swimming pool"
+          ],
+          "explanation": "A filing cabinet keeps office papers neat and safe.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l09.filing-cabinet"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l09.task.say-schedule",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "The manager checked a schedule and used the photocopier.",
+          "answer": "The manager checked a schedule and used the photocopier.",
+          "explanation": "Great job using three office words together!",
+          "itemIds": [
+            "en.pre-intermediate.u07.l09.the-manager",
+            "en.pre-intermediate.u07.l09.a-schedule",
+            "en.pre-intermediate.u07.l09.photocopier"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why is the printer not working before the big Friday deadline?",
+        "image": {
+          "id": "en-b1-u07-l09-scene",
+          "describe": "A lively office room with a desk, printer, photocopier, and filing cabinet: Smarty the black cat helps Tom and Mia organize papers."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Welcome to the office, Tom! Here is your workstation near reception."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Thanks, Smarty! Where are the stationery and the printer?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "The printer is on that desk, and the photocopier is behind the filing cabinet."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Oh no! The printer is out of paper, and we have a deadline at noon!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Do not worry! Look at a schedule on the board. We still have an hour."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I found extra paper in the filing cabinet! Now we can finish the paperwork."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Well done, team! As the manager, I am proud of your teamwork under pressure."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "Where is the photocopier?",
+            "answer": "behind the filing cabinet",
+            "options": [
+              "behind the filing cabinet",
+              "under the sofa",
+              "in the kitchen"
+            ],
+            "explanation": "Mia says the photocopier is behind the filing cabinet.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l09.photocopier",
+              "en.pre-intermediate.u07.l09.filing-cabinet"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "Where did Smarty find extra paper for the printer?",
+            "answer": "in the filing cabinet",
+            "options": [
+              "in the filing cabinet",
+              "at the market",
+              "in a suitcase"
+            ],
+            "explanation": "Smarty found extra paper in the filing cabinet.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l09.printer",
+              "en.pre-intermediate.u07.l09.filing-cabinet"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "Who is Omar in the office?",
+            "answer": "the manager",
+            "options": [
+              "the manager",
+              "a customer",
+              "a pilot"
+            ],
+            "explanation": "Omar says: As the manager, I am proud of your teamwork.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l09.the-manager"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are in the office with Smarty. Answer his questions about office machines and plans.",
+        "turns": [
+          {
+            "smarty": "I need ten copies of my CV. Should I use the printer or the photocopier?",
+            "accept": [
+              "^(?:use )?the photocopier$",
+              "^you should use the photocopier$"
+            ],
+            "example": "Use the photocopier.",
+            "hint": "Say 'Use the photocopier' or 'The photocopier'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l09.photocopier",
+              "en.pre-intermediate.u07.l09.printer"
+            ]
+          },
+          {
+            "smarty": "Where should we store the old folders: in the filing cabinet or on the floor?",
+            "accept": [
+              "^in the filing cabinet$",
+              "^the filing cabinet$"
+            ],
+            "example": "In the filing cabinet.",
+            "hint": "Say 'In the filing cabinet'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l09.filing-cabinet"
+            ]
+          },
+          {
+            "smarty": "When is our deadline on the schedule: Monday or Friday?",
+            "accept": [
+              "^(?:on )?(?:monday|friday)$",
+              "^our deadline is on (?:monday|friday)$"
+            ],
+            "example": "Our deadline is on Friday.",
+            "hint": "Say 'On Friday' or 'Our deadline is on Friday'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l09.a-deadline",
+              "en.pre-intermediate.u07.l09.a-schedule"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "office",
+          "gloss": "a room or building where people work at desks"
+        },
+        {
+          "text": "workstation",
+          "gloss": "a desk with a computer for one worker"
+        },
+        {
+          "text": "stationery",
+          "gloss": "paper, pens, and office supplies"
+        },
+        {
+          "text": "paperwork",
+          "gloss": "letters, forms, and reports at work"
+        },
+        {
+          "text": "reception",
+          "gloss": "the front desk where visitors arrive"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u05.l07.computer",
+        "en.pre-intermediate.u07.l02.be-in-charge-of",
+        "en.beginner.u04.l06.friday"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u07.l10",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 10,
+      "type": "lesson",
+      "title": "Phone and email",
+      "canDo": "Write a work email",
+      "scenario": "Smarty helps Zara write a polite work message and send her CV.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u07.l10.dear-sir-or-madam",
+          "text": "Dear Sir or Madam",
+          "kind": "phrase",
+          "forms": [
+            "Dear",
+            "Sir",
+            "Madam"
+          ],
+          "example": "Start a formal letter with Dear Sir or Madam when you do not know the name.",
+          "note": "Use ‘Dear Sir or Madam’ at the top of a polite message when you do not know the manager's name."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l10.i-am-writing-to",
+          "text": "I am writing to",
+          "kind": "phrase",
+          "forms": [
+            "writing",
+            "write"
+          ],
+          "example": "I am writing to apply for the full-time job.",
+          "note": "Say ‘I am writing to…’ in the first line to explain why you are sending the message."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l10.please-find-attached",
+          "text": "Please find attached",
+          "kind": "phrase",
+          "forms": [
+            "attached"
+          ],
+          "example": "Please find attached my CV and my cover letter.",
+          "note": "Write ‘Please find attached…’ when you send a file or document with your message."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l10.best-regards",
+          "text": "Best regards",
+          "kind": "phrase",
+          "forms": [
+            "regards"
+          ],
+          "example": "End your work message with Best regards and your name.",
+          "note": "Use ‘Best regards’ as a polite, friendly closing at the end of a work message."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l10.i-look-forward-to",
+          "text": "I look forward to",
+          "kind": "phrase",
+          "forms": [
+            "look forward to",
+            "looking forward to"
+          ],
+          "example": "I look forward to meeting you at the job interview.",
+          "note": "Say ‘I look forward to…’ near the end to show you are excited for a reply or meeting."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l10.thank-you-for-your-reply",
+          "text": "Thank you for your reply",
+          "kind": "phrase",
+          "example": "Thank you for your reply and for the interview time.",
+          "note": "Say ‘Thank you for your reply’ when someone answers your message or call."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l10.task.pick-dear",
+          "kind": "choice",
+          "prompt": "You are sending a job application, and you do not know the manager's name. How do you start?",
+          "answer": "Dear Sir or Madam",
+          "options": [
+            "Dear Sir or Madam",
+            "See you later",
+            "Best regards"
+          ],
+          "explanation": "'Dear Sir or Madam' is the polite greeting when you do not know the person's name.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l10.dear-sir-or-madam"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l10.task.hear-attached",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Please find attached my CV and references.",
+          "answer": "Please find attached my CV and references.",
+          "options": [
+            "Please find attached my CV and references.",
+            "Please find attached my lunch and juice.",
+            "Please find attached my passport and ticket."
+          ],
+          "explanation": "'Please find attached' tells the reader there are files with the message.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l10.please-find-attached",
+            "en.pre-intermediate.u07.l03.references"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l10.task.match-email",
+          "kind": "match",
+          "prompt": "Put the parts of a work message in their right roles.",
+          "pairs": [
+            {
+              "left": "Dear Sir or Madam",
+              "right": "polite opening"
+            },
+            {
+              "left": "I am writing to",
+              "right": "why you are writing"
+            },
+            {
+              "left": "Best regards",
+              "right": "polite closing"
+            }
+          ],
+          "explanation": "Open with 'Dear Sir or Madam', state your reason with 'I am writing to', and close with 'Best regards'.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l10.dear-sir-or-madam",
+            "en.pre-intermediate.u07.l10.i-am-writing-to",
+            "en.pre-intermediate.u07.l10.best-regards"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l10.task.fill-writing-to",
+          "kind": "fill",
+          "prompt": "Start the first sentence of your job message. Complete the line.",
+          "text": "___ apply for the job in your shop.",
+          "answer": "I am writing to",
+          "options": [
+            "I am writing to",
+            "Best regards",
+            "Thank you for your reply"
+          ],
+          "explanation": "'I am writing to' tells the reader why you sent the message.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l10.i-am-writing-to",
+            "en.elementary.u07.l09.apply-for"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l10.task.build-forward",
+          "kind": "build",
+          "prompt": "Build a polite closing line before 'Best regards'.",
+          "answer": "I look forward to your reply.",
+          "tiles": [
+            "I",
+            "look",
+            "forward",
+            "to",
+            "your",
+            "reply",
+            "attached"
+          ],
+          "explanation": "'I look forward to your reply' is a polite way to end a work message.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l10.i-look-forward-to",
+            "en.elementary.u08.l03.reply"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l10.task.fill-thanks-reply",
+          "kind": "fill",
+          "prompt": "The manager answered your message quickly. How do you thank them?",
+          "text": "___ and for the interview date.",
+          "answer": "Thank you for your reply",
+          "options": [
+            "Thank you for your reply",
+            "Dear Sir or Madam",
+            "Please find attached"
+          ],
+          "explanation": "Say 'Thank you for your reply' when someone writes back to you.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l10.thank-you-for-your-reply"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l10.task.say-email",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "Please find attached my CV. I look forward to your reply.",
+          "answer": "Please find attached my CV. I look forward to your reply.",
+          "explanation": "Clear and polite work message language!",
+          "itemIds": [
+            "en.pre-intermediate.u07.l10.please-find-attached",
+            "en.pre-intermediate.u07.l10.i-look-forward-to"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Does Zara get an answer back in her inbox before lunch?",
+        "image": {
+          "id": "en-b1-u07-l10-scene",
+          "describe": "A bright desk with a laptop and phone: Zara the spotted cat types a work message while Smarty the black cat points at the screen."
+        },
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "Smarty, I left a voicemail for the manager, and now I am writing a message."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Write a clear subject line first. How did you start?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Dear Sir or Madam, I am writing to apply for the full-time job."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great! Did you add your CV and cover letter?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes! I wrote: Please find attached my CV and cover letter. I look forward to your reply. Best regards, Zara."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look! A new message just arrived in your inbox! They did answer back fast."
+          },
+          {
+            "speaker": "Zara",
+            "text": "I will write right now: Thank you for your reply! I have a job interview on Thursday!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "How does Zara start her message?",
+            "answer": "Dear Sir or Madam",
+            "options": [
+              "Dear Sir or Madam",
+              "Hello friend",
+              "Good night"
+            ],
+            "explanation": "Zara opens with 'Dear Sir or Madam'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l10.dear-sir-or-madam"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "Which phrase does Zara use before 'my CV and cover letter'?",
+            "answer": "Please find attached",
+            "options": [
+              "Please find attached",
+              "You had better",
+              "Why not try"
+            ],
+            "explanation": "Zara writes: Please find attached my CV and cover letter.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l10.please-find-attached"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "How does Zara sign off before her name?",
+            "answer": "Best regards",
+            "options": [
+              "Best regards",
+              "See you",
+              "Cheers"
+            ],
+            "explanation": "Zara ends with 'Best regards, Zara.'",
+            "itemIds": [
+              "en.pre-intermediate.u07.l10.best-regards"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty helps you write a short, polite work message. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "How do you open a polite work letter when you do not know the name?",
+            "accept": [
+              "^dear sir or madam$"
+            ],
+            "example": "Dear Sir or Madam,",
+            "hint": "Say 'Dear Sir or Madam'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l10.dear-sir-or-madam"
+            ]
+          },
+          {
+            "smarty": "Now tell them you attached your CV. Start with 'Please find attached'.",
+            "accept": [
+              "^please find attached my cv(?: and cover letter)?$"
+            ],
+            "example": "Please find attached my CV.",
+            "hint": "Say 'Please find attached my CV'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l10.please-find-attached",
+              "en.elementary.u07.l09.cv"
+            ]
+          },
+          {
+            "smarty": "How do you close your message politely?",
+            "accept": [
+              "^best regards$",
+              "^i look forward to your reply best regards$"
+            ],
+            "example": "Best regards.",
+            "hint": "Say 'Best regards'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l10.best-regards",
+              "en.pre-intermediate.u07.l10.i-look-forward-to"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "voicemail",
+          "gloss": "a spoken message left on a phone"
+        },
+        {
+          "text": "subject line",
+          "gloss": "the short title at the top of an electronic message"
+        },
+        {
+          "text": "inbox",
+          "gloss": "the folder where new electronic messages arrive"
+        },
+        {
+          "text": "answer back",
+          "gloss": "to reply to a message or call"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u07.l03.references",
+        "en.elementary.u07.l09.apply-for",
+        "en.elementary.u08.l03.reply",
+        "en.elementary.u07.l09.cv"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u07.l11",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 11,
+      "type": "lesson",
+      "title": "Meetings",
+      "canDo": "Take part in a meeting",
+      "scenario": "Smarty and the team hold a weekly office meeting around a table.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u07.l11.agenda",
+          "text": "agenda",
+          "kind": "word",
+          "forms": [
+            "agendas"
+          ],
+          "example": "We have three topics on today's agenda.",
+          "note": "Use ‘agenda’ for the list of topics a team will talk about in a meeting."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l11.action-points",
+          "text": "action points",
+          "kind": "phrase",
+          "forms": [
+            "action point",
+            "point",
+            "points"
+          ],
+          "example": "At the end of the meeting, we wrote down our action points.",
+          "note": "Say ‘action points’ for the exact tasks people agree to do after a meeting."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l11.i-suggest",
+          "text": "I suggest",
+          "kind": "phrase",
+          "forms": [
+            "suggesting"
+          ],
+          "example": "I suggest we check the schedule before Friday.",
+          "note": "Say ‘I suggest…’ in a meeting when you want to share a clear idea."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l11.let-us-move-on",
+          "text": "Let us move on",
+          "kind": "phrase",
+          "forms": [
+            "move on",
+            "move"
+          ],
+          "example": "We finished point one, so let us move on to point two.",
+          "note": "Say ‘Let us move on’ to go to the next topic on the agenda."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l11.any-questions",
+          "text": "any questions?",
+          "kind": "phrase",
+          "forms": [
+            "question",
+            "questions"
+          ],
+          "example": "Before we end the meeting, are there any questions?",
+          "note": "Ask ‘any questions?’ to invite others to speak or ask about anything unclear."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l11.meeting-notes",
+          "text": "meeting notes",
+          "kind": "phrase",
+          "forms": [
+            "meeting",
+            "meetings"
+          ],
+          "example": "Ana sent the meeting notes to everyone after lunch.",
+          "note": "Say ‘meeting notes’ for the written summary of what was said and decided in a meeting."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l11.task.pick-agenda",
+          "kind": "choice",
+          "prompt": "You want to see the list of topics before the meeting starts. What do you check?",
+          "answer": "agenda",
+          "options": [
+            "agenda",
+            "menu",
+            "receipt"
+          ],
+          "explanation": "An agenda is the list of topics for a meeting.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l11.agenda"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l11.task.hear-move-on",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Let us move on to the next point on the agenda.",
+          "answer": "Let us move on to the next point on the agenda.",
+          "options": [
+            "Let us move on to the next point on the agenda.",
+            "Let us go home after the picnic.",
+            "Let us turn left at the traffic lights."
+          ],
+          "explanation": "'Let us move on' moves the meeting to the next topic.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l11.let-us-move-on",
+            "en.pre-intermediate.u07.l11.agenda"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l11.task.match-meeting",
+          "kind": "match",
+          "prompt": "Match each meeting phrase with what it does.",
+          "pairs": [
+            {
+              "left": "I suggest",
+              "right": "share an idea with the team"
+            },
+            {
+              "left": "action points",
+              "right": "things to do after the meeting"
+            },
+            {
+              "left": "meeting notes",
+              "right": "written summary of the meeting"
+            }
+          ],
+          "explanation": "'I suggest' introduces an idea, action points are follow-up tasks, and meeting notes record what happened.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l11.i-suggest",
+            "en.pre-intermediate.u07.l11.action-points",
+            "en.pre-intermediate.u07.l11.meeting-notes"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l11.task.fill-questions",
+          "kind": "fill",
+          "prompt": "The manager finishes explaining the new schedule and looks around the table. Complete the question.",
+          "text": "Are there ___",
+          "answer": "any questions?",
+          "options": [
+            "any questions?",
+            "any sandwiches?",
+            "any tickets?"
+          ],
+          "explanation": "Ask 'any questions?' to check if everyone understands.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l11.any-questions"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l11.task.build-suggest",
+          "kind": "build",
+          "prompt": "Build a sentence sharing an idea in a meeting.",
+          "answer": "I suggest we check the schedule.",
+          "tiles": [
+            "I",
+            "suggest",
+            "we",
+            "check",
+            "the",
+            "schedule",
+            "agenda"
+          ],
+          "explanation": "Use 'I suggest' followed by what you think the team should do.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l11.i-suggest",
+            "en.pre-intermediate.u07.l09.a-schedule"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l11.task.fill-notes",
+          "kind": "fill",
+          "prompt": "Leo missed the meeting and wants to read what happened. Complete the sentence.",
+          "text": "Mia sent the ___ to Leo.",
+          "answer": "meeting notes",
+          "options": [
+            "meeting notes",
+            "safety goggles",
+            "colour pencils"
+          ],
+          "explanation": "Meeting notes tell absent workers what was discussed and decided.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l11.meeting-notes"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l11.task.say-action",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "Let us move on and write our action points.",
+          "answer": "Let us move on and write our action points.",
+          "explanation": "Great meeting English!",
+          "itemIds": [
+            "en.pre-intermediate.u07.l11.let-us-move-on",
+            "en.pre-intermediate.u07.l11.action-points"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What action points does the team agree on during Smarty's meeting?",
+        "image": {
+          "id": "en-b1-u07-l11-scene",
+          "describe": "An office meeting table with notebooks and cups: Smarty the black cat stands at the head of the table with Omar, Mia, Ben, and Zara."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Welcome to the boardroom! As chairperson today, here is our agenda."
+          },
+          {
+            "speaker": "Omar",
+            "text": "First, Ben will show a short presentation on the projector."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Thank you! Our team finished every task before the deadline."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I suggest we celebrate with a team lunch on Friday!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great idea! Now let us move on to next week's schedule. Are there any questions?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "No questions! I wrote the meeting notes and our action points."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Please send the meeting notes to everyone after we finish."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l11.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Smarty share at the start of the meeting?",
+            "answer": "the agenda",
+            "options": [
+              "the agenda",
+              "a map",
+              "a menu"
+            ],
+            "explanation": "Smarty says: here is our agenda.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l11.agenda"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l11.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Mia suggest for Friday?",
+            "answer": "a team lunch",
+            "options": [
+              "a team lunch",
+              "a long exam",
+              "resigning"
+            ],
+            "explanation": "Mia says: I suggest we celebrate with a team lunch on Friday.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l11.i-suggest"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l11.task.story-three",
+            "kind": "choice",
+            "prompt": "What did Zara write during the meeting?",
+            "answer": "the meeting notes and action points",
+            "options": [
+              "the meeting notes and action points",
+              "a postcard",
+              "a birthday card"
+            ],
+            "explanation": "Zara wrote the meeting notes and action points.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l11.meeting-notes",
+              "en.pre-intermediate.u07.l11.action-points"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are taking part in an office meeting with Smarty. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "We are starting the meeting. What do we check first: the agenda or the menu?",
+            "accept": [
+              "^(?:we check )?the agenda$",
+              "^agenda$"
+            ],
+            "example": "The agenda.",
+            "hint": "Say 'The agenda'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l11.agenda"
+            ]
+          },
+          {
+            "smarty": "Give one idea for the team. Start with 'I suggest'.",
+            "accept": [
+              "^i suggest we (?:work in a team|check the schedule|start early|meet tomorrow)$",
+              "^i suggest (?:working in a team|a team lunch)$"
+            ],
+            "example": "I suggest we check the schedule.",
+            "hint": "Start with 'I suggest we...'",
+            "itemIds": [
+              "en.pre-intermediate.u07.l11.i-suggest",
+              "en.pre-intermediate.u07.l09.a-schedule"
+            ]
+          },
+          {
+            "smarty": "We finished the last topic! Tell the team to go to the next topic.",
+            "accept": [
+              "^let us move on$"
+            ],
+            "example": "Let us move on.",
+            "hint": "Say 'Let us move on'.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l11.let-us-move-on"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "boardroom",
+          "gloss": "a large room where important meetings happen"
+        },
+        {
+          "text": "presentation",
+          "gloss": "a talk showing ideas or results to a group"
+        },
+        {
+          "text": "projector",
+          "gloss": "a machine that shows computer pictures on a big screen"
+        },
+        {
+          "text": "chairperson",
+          "gloss": "the person who leads a meeting"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u07.l09.a-schedule"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u07.l12",
+      "section": "pre-intermediate",
+      "unit": 7,
+      "lesson": 12,
+      "type": "test",
+      "title": "Mission: Job day",
+      "canDo": "Apply for a job and ask about the first day",
+      "scenario": "It is your big job day! Apply, handle the interview, and ask about your first day in the office.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u07.l12.who-do-i-report-to",
+          "text": "Who do I report to?",
+          "kind": "phrase",
+          "forms": [
+            "report",
+            "report to",
+            "reports to"
+          ],
+          "example": "On my first day, I asked, Who do I report to?",
+          "note": "Ask ‘Who do I report to?’ on your first day to find out who your manager is."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l12.where-can-i-find",
+          "text": "Where can I find",
+          "kind": "phrase",
+          "example": "Where can I find the printer and the filing cabinet?",
+          "note": "Use ‘Where can I find…?’ to ask where things or rooms are in a new office."
+        },
+        {
+          "id": "en.pre-intermediate.u07.l12.what-are-my-tasks",
+          "text": "What are my tasks?",
+          "kind": "phrase",
+          "forms": [
+            "task",
+            "tasks"
+          ],
+          "example": "Good morning! What are my tasks for today?",
+          "note": "Ask ‘What are my tasks?’ when you are ready to start working and want to know what to do."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u07.l12.task.pick-report",
+          "kind": "choice",
+          "prompt": "It is your first morning at a new job and you want to know who your manager is. What do you ask?",
+          "answer": "Who do I report to?",
+          "options": [
+            "Who do I report to?",
+            "How much is it?",
+            "What is the weather like?"
+          ],
+          "explanation": "'Who do I report to?' asks who manages your work.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l12.who-do-i-report-to",
+            "en.pre-intermediate.u07.l09.the-manager"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l12.task.hear-tasks",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Good morning! What are my tasks on the schedule?",
+          "answer": "Good morning! What are my tasks on the schedule?",
+          "options": [
+            "Good morning! What are my tasks on the schedule?",
+            "Good morning! What are my shoes in the box?",
+            "Good morning! Where is my suitcase?"
+          ],
+          "explanation": "Ask 'What are my tasks?' to learn what jobs you need to do.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l12.what-are-my-tasks",
+            "en.pre-intermediate.u07.l09.a-schedule"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l12.task.match-test1",
+          "kind": "match",
+          "prompt": "Match each question or phrase with the right situation.",
+          "pairs": [
+            {
+              "left": "Where can I find",
+              "right": "looking for the photocopier"
+            },
+            {
+              "left": "Please find attached",
+              "right": "sending your CV in a message"
+            },
+            {
+              "left": "If I were you",
+              "right": "a friendly idea for you"
+            }
+          ],
+          "explanation": "Use 'Where can I find' in the office, 'Please find attached' in messages, and 'If I were you' for advice.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l12.where-can-i-find",
+            "en.pre-intermediate.u07.l10.please-find-attached",
+            "en.pre-intermediate.u07.l06.if-i-were-you"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l12.task.fill-where-find",
+          "kind": "fill",
+          "prompt": "You need to make copies on your first day. Complete the question.",
+          "text": "___ the photocopier?",
+          "answer": "Where can I find",
+          "options": [
+            "Where can I find",
+            "Why do you want",
+            "Who do I report"
+          ],
+          "explanation": "'Where can I find' asks for the location of something in the office.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l12.where-can-i-find",
+            "en.pre-intermediate.u07.l09.photocopier"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l12.task.build-test1",
+          "kind": "build",
+          "prompt": "Build a sentence combining second conditional advice and a career goal.",
+          "answer": "If I were you, I would go for the job.",
+          "tiles": [
+            "If",
+            "I",
+            "were",
+            "you",
+            "I",
+            "would",
+            "go",
+            "for",
+            "the",
+            "job",
+            "resign"
+          ],
+          "explanation": "Second conditional advice uses 'If I were you, I would' + base verb.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l06.if-i-were-you",
+            "en.pre-intermediate.u07.l06.i-would",
+            "en.pre-intermediate.u07.l03.go-for-the-job"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l12.task.fill-test2",
+          "kind": "fill",
+          "prompt": "Give strong work advice about arriving on time.",
+          "text": "___ be on time for the meeting.",
+          "answer": "You really should",
+          "options": [
+            "You really should",
+            "I am writing to",
+            "Dear Sir or Madam"
+          ],
+          "explanation": "'You really should' gives strong, helpful advice.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l07.you-really-should",
+            "en.pre-intermediate.u07.l11.meeting-notes"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l12.task.choice-test3",
+          "kind": "choice",
+          "prompt": "At the end of a meeting, how do you ask about tasks people will do next?",
+          "answer": "What are our action points?",
+          "options": [
+            "What are our action points?",
+            "What size is it?",
+            "Is breakfast included?"
+          ],
+          "explanation": "Action points are the tasks agreed upon in a meeting.",
+          "itemIds": [
+            "en.pre-intermediate.u07.l11.action-points"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u07.l12.task.say-first-day",
+          "kind": "speak",
+          "prompt": "Say the questions aloud. You can try again.",
+          "text": "Who do I report to, and what are my tasks?",
+          "answer": "Who do I report to, and what are my tasks?",
+          "explanation": "Two essential questions for your first day at work!",
+          "itemIds": [
+            "en.pre-intermediate.u07.l12.who-do-i-report-to",
+            "en.pre-intermediate.u07.l12.what-are-my-tasks"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How does Zara's first day at the office go after her induction?",
+        "image": {
+          "id": "en-b1-u07-l12-scene",
+          "describe": "A bright modern office: Zara the spotted cat wears a lanyard badge while Smarty the black cat and Omar the manager welcome her near a desk."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Happy first day, Zara! Here is your new office badge."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Thank you, Smarty! The dress code here is smart and comfortable."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "After our short induction, you will join the morning meeting."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Who do I report to in this team?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "You report to Omar. He is the manager."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Where can I find the printer and the filing cabinet?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "They are next to your desk, Zara. And welcome to our team lunch at noon!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Thanks, Omar! What are my tasks before lunch?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Read the agenda and write the meeting notes. If I were you, I would ask Smarty for any help!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u07.l12.task.story-one",
+            "kind": "choice",
+            "prompt": "Who does Zara report to?",
+            "answer": "Omar, the manager",
+            "options": [
+              "Omar, the manager",
+              "Ben",
+              "Tom"
+            ],
+            "explanation": "Smarty says Zara reports to Omar, the manager.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l12.who-do-i-report-to",
+              "en.pre-intermediate.u07.l09.the-manager"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l12.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Zara ask to find in the office?",
+            "answer": "the printer and the filing cabinet",
+            "options": [
+              "the printer and the filing cabinet",
+              "the swimming pool",
+              "the train station"
+            ],
+            "explanation": "Zara asks: Where can I find the printer and the filing cabinet?",
+            "itemIds": [
+              "en.pre-intermediate.u07.l12.where-can-i-find",
+              "en.pre-intermediate.u07.l09.printer",
+              "en.pre-intermediate.u07.l09.filing-cabinet"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u07.l12.task.story-three",
+            "kind": "choice",
+            "prompt": "What are Zara's tasks before lunch?",
+            "answer": "read the agenda and write the meeting notes",
+            "options": [
+              "read the agenda and write the meeting notes",
+              "cook pasta and clean plates",
+              "paint the wall"
+            ],
+            "explanation": "Omar tells Zara to read the agenda and write the meeting notes.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l12.what-are-my-tasks",
+              "en.pre-intermediate.u07.l11.agenda",
+              "en.pre-intermediate.u07.l11.meeting-notes"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Final mission! Apply for the job and handle your first day in the office with Smarty.",
+        "turns": [
+          {
+            "smarty": "Let us start your job interview! What are your strengths?",
+            "accept": [
+              "^my strengths are (?:communication skills|attention to detail|working in a team)$",
+              "^i am good at working in a team$"
+            ],
+            "example": "My strengths are communication skills.",
+            "hint": "Say 'My strengths are...' and name a work skill.",
+            "itemIds": [
+              "en.pre-intermediate.u07.l05.my-strengths",
+              "en.pre-intermediate.u07.l02.communication-skills"
+            ]
+          },
+          {
+            "smarty": "You got the job! Today is your first day. Ask who your manager is.",
+            "accept": [
+              "^who do i report to$"
+            ],
+            "example": "Who do I report to?",
+            "hint": "Ask 'Who do I report to?'",
+            "itemIds": [
+              "en.pre-intermediate.u07.l12.who-do-i-report-to"
+            ]
+          },
+          {
+            "smarty": "You report to Omar! Now ask where the printer is.",
+            "accept": [
+              "^where can i find the printer$"
+            ],
+            "example": "Where can I find the printer?",
+            "hint": "Ask 'Where can I find the printer?'",
+            "itemIds": [
+              "en.pre-intermediate.u07.l12.where-can-i-find",
+              "en.pre-intermediate.u07.l09.printer"
+            ]
+          },
+          {
+            "smarty": "It is next to your desk! Now ask what you need to do today.",
+            "accept": [
+              "^what are my tasks(?: today)?$"
+            ],
+            "example": "What are my tasks?",
+            "hint": "Ask 'What are my tasks?'",
+            "itemIds": [
+              "en.pre-intermediate.u07.l12.what-are-my-tasks"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "dress code",
+          "gloss": "rules about what clothes to wear at work"
+        },
+        {
+          "text": "badge",
+          "gloss": "a small card with your name worn at work"
+        },
+        {
+          "text": "induction",
+          "gloss": "welcome training on your first day at a new job"
+        },
+        {
+          "text": "team lunch",
+          "gloss": "eating lunch together with co-workers"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u07.l09.the-manager",
+        "en.pre-intermediate.u07.l09.a-schedule",
+        "en.pre-intermediate.u07.l10.please-find-attached",
+        "en.pre-intermediate.u07.l06.if-i-were-you",
+        "en.pre-intermediate.u07.l09.photocopier",
+        "en.pre-intermediate.u07.l06.i-would",
+        "en.pre-intermediate.u07.l03.go-for-the-job",
+        "en.pre-intermediate.u07.l07.you-really-should",
+        "en.pre-intermediate.u07.l11.meeting-notes",
+        "en.pre-intermediate.u07.l11.action-points",
+        "en.pre-intermediate.u07.l09.printer",
+        "en.pre-intermediate.u07.l09.filing-cabinet",
+        "en.pre-intermediate.u07.l11.agenda",
+        "en.pre-intermediate.u07.l05.my-strengths",
+        "en.pre-intermediate.u07.l02.communication-skills"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "A Mystery Folder in the Filing Cabinet",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "Well done, Zara! Your first week in the office is almost over.",
+        "image": {
+          "id": "en-b1-u07-ep-01",
+          "describe": "Smarty the black cat gives a high-five to Zara the spotted cat near an office desk."
+        }
+      },
+      {
+        "speaker": "Zara",
+        "text": "Thanks, Smarty! I finished all my action points before the deadline."
+      },
+      {
+        "speaker": "Omar",
+        "text": "You worked great under pressure. If I were you, I would take a short break now.",
+        "image": {
+          "id": "en-b1-u07-ep-02",
+          "describe": "Omar the older gray cat smiles warmly while holding a cup of tea in the office."
+        }
+      },
+      {
+        "speaker": "Zara",
+        "text": "Let me put these meeting notes inside the filing cabinet first."
+      },
+      {
+        "speaker": "Zara",
+        "text": "Wait! Look behind the old folders. There is a locked blue box!",
+        "image": {
+          "id": "en-b1-u07-ep-03",
+          "describe": "Zara the spotted cat opens the bottom drawer of a metal filing cabinet and finds a small blue box."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "How strange! There is a small paper attached to the box."
+      },
+      {
+        "speaker": "Smarty",
+        "text": "It says: 'For the next manager — open only when you find the silver key.'",
+        "image": {
+          "id": "en-b1-u07-ep-04",
+          "describe": "Smarty the black cat holds up a small tag next to the blue box while Zara and Omar look surprised."
+        }
+      },
+      {
+        "speaker": "Omar",
+        "text": "I have worked here for forty years, and I have never seen that box! Where is the key?"
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.pre-intermediate.u07.task.ep-one",
+        "kind": "choice",
+        "prompt": "Where does Zara find the locked blue box?",
+        "answer": "in the filing cabinet",
+        "options": [
+          "in the filing cabinet",
+          "on the printer",
+          "under the table"
+        ],
+        "explanation": "Zara finds the blue box behind old folders in the filing cabinet.",
+        "itemIds": [
+          "en.pre-intermediate.u07.l09.filing-cabinet"
+        ]
+      },
+      {
+        "id": "en.pre-intermediate.u07.task.ep-two",
+        "kind": "choice",
+        "prompt": "What was Zara putting into the filing cabinet?",
+        "answer": "meeting notes",
+        "options": [
+          "meeting notes",
+          "her lunch",
+          "her umbrella"
+        ],
+        "explanation": "Zara was putting the meeting notes inside the filing cabinet.",
+        "itemIds": [
+          "en.pre-intermediate.u07.l11.meeting-notes"
+        ]
+      },
+      {
+        "id": "en.pre-intermediate.u07.task.ep-three",
+        "kind": "choice",
+        "prompt": "What do Smarty, Zara, and Omar need to find next?",
+        "answer": "the silver key",
+        "options": [
+          "the silver key",
+          "a new photocopier",
+          "a cover letter"
+        ],
+        "explanation": "The paper says to open the box only when you find the silver key.",
+        "itemIds": [
+          "en.pre-intermediate.u07.l09.the-manager"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,3884 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "elementary",
+  "unit": 4,
+  "title": "Memories",
+  "room": "attic",
+  "lessons": [
+    {
+      "id": "en.elementary.u04.l01",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Regular verbs",
+      "canDo": "Say what you did",
+      "scenario": "Smarty and Mia clean the dusty attic and talk about what they did yesterday.",
+      "items": [
+        {
+          "id": "en.elementary.u04.l01.watched",
+          "text": "watched",
+          "kind": "word",
+          "forms": [
+            "watch"
+          ],
+          "example": "Mia watched TV yesterday.",
+          "note": "Add -ed to 'watch' to talk about something you saw on a screen in the past."
+        },
+        {
+          "id": "en.elementary.u04.l01.cooked",
+          "text": "cooked",
+          "kind": "word",
+          "forms": [
+            "cook"
+          ],
+          "example": "My father cooked dinner last night.",
+          "note": "Use 'cooked' when someone made hot food in the past."
+        },
+        {
+          "id": "en.elementary.u04.l01.visited",
+          "text": "visited",
+          "kind": "word",
+          "forms": [
+            "visit"
+          ],
+          "example": "We visited our grandmother last weekend.",
+          "note": "Say 'visited' when you went to see a person or a place."
+        },
+        {
+          "id": "en.elementary.u04.l01.helped",
+          "text": "helped",
+          "kind": "word",
+          "forms": [
+            "help"
+          ],
+          "example": "Sam helped his mother in the kitchen.",
+          "note": "Use 'helped' when someone did work to make things easier for another person."
+        },
+        {
+          "id": "en.elementary.u04.l01.cleaned",
+          "text": "cleaned",
+          "kind": "word",
+          "forms": [
+            "clean"
+          ],
+          "example": "I cleaned my bedroom on Saturday.",
+          "note": "Say 'cleaned' after you wash or tidy a dirty room or thing."
+        },
+        {
+          "id": "en.elementary.u04.l01.walked",
+          "text": "walked",
+          "kind": "word",
+          "forms": [
+            "walk"
+          ],
+          "example": "They walked to the park yesterday.",
+          "note": "Use 'walked' when someone went somewhere on foot."
+        }
+      ],
+      "grammar": {
+        "title": "Past simple with -ed",
+        "explanation": "Add -ed to regular verbs to talk about finished actions in the past. The verb stays the same for I, you, he, she, we, and they.",
+        "examples": [
+          "She watched TV yesterday.",
+          "We cleaned the room."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u04.l01.task.choice-watched",
+          "kind": "choice",
+          "prompt": "Mia was in the living room with the TV on yesterday. Which word fits?",
+          "answer": "watched",
+          "options": [
+            "watched",
+            "cooked",
+            "walked"
+          ],
+          "explanation": "Use watched for TV or films in the past.",
+          "itemIds": [
+            "en.elementary.u04.l01.watched",
+            "en.beginner.u04.l09.watch-tv"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l01.task.listen-cooked",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "He cooked rice and chicken for dinner.",
+          "answer": "He cooked rice and chicken for dinner.",
+          "options": [
+            "He cooked rice and chicken for dinner.",
+            "He cleaned the kitchen at night.",
+            "He walked to school with Mia."
+          ],
+          "explanation": "Cooked means he made the food.",
+          "itemIds": [
+            "en.elementary.u04.l01.cooked"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l01.task.fill-visited",
+          "kind": "fill",
+          "prompt": "Smarty went to see his grandmother. Complete the sentence.",
+          "text": "Smarty ___ his grandmother last weekend.",
+          "answer": "visited",
+          "options": [
+            "visited",
+            "cooked",
+            "cleaned"
+          ],
+          "explanation": "Use visited when you go to see family or friends.",
+          "itemIds": [
+            "en.elementary.u04.l01.visited",
+            "en.beginner.u02.l03.grandmother",
+            "en.beginner.u10.l08.last-weekend"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l01.task.match-verbs",
+          "kind": "match",
+          "prompt": "Match each past verb to the matching phrase.",
+          "pairs": [
+            {
+              "left": "helped",
+              "right": "my mother with dinner"
+            },
+            {
+              "left": "cleaned",
+              "right": "a dirty table"
+            },
+            {
+              "left": "walked",
+              "right": "to the park"
+            },
+            {
+              "left": "watched",
+              "right": "TV in the evening"
+            }
+          ],
+          "explanation": "Each -ed verb pairs with the action it describes.",
+          "itemIds": [
+            "en.elementary.u04.l01.helped",
+            "en.elementary.u04.l01.cleaned",
+            "en.elementary.u04.l01.walked",
+            "en.elementary.u04.l01.watched"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l01.task.build-cleaned",
+          "kind": "build",
+          "prompt": "Put the words in order to say what we did yesterday.",
+          "answer": "We cleaned the room yesterday.",
+          "tiles": [
+            "We",
+            "cleaned",
+            "the",
+            "room",
+            "yesterday",
+            "clean"
+          ],
+          "explanation": "Use cleaned with -ed because yesterday is in the past.",
+          "itemIds": [
+            "en.elementary.u04.l01.cleaned",
+            "en.beginner.u10.l01.yesterday"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l01.task.fill-helped",
+          "kind": "fill",
+          "prompt": "Leo worked with his father in the garden. Complete the sentence.",
+          "text": "Leo ___ his father yesterday.",
+          "answer": "helped",
+          "options": [
+            "helped",
+            "walked",
+            "watched"
+          ],
+          "explanation": "Helped shows Leo gave his father support.",
+          "itemIds": [
+            "en.elementary.u04.l01.helped"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l01.task.speak-walked",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I walked to the park with my friend.",
+          "answer": "I walked to the park with my friend.",
+          "explanation": "Walked is the regular past form of walk.",
+          "itemIds": [
+            "en.elementary.u04.l01.walked",
+            "en.beginner.u08.l01.park"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why is the old room so clean now?",
+        "image": {
+          "id": "en-a2-u04-l01-scene",
+          "describe": "Smarty the black cat and Mia stand in a bright, tidy wooden attic holding a broom and a duster beside clean boxes."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Look at this room, Smarty! It is clean now."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! We cleaned it yesterday."
+          },
+          {
+            "speaker": "Mia",
+            "text": "You helped me with the big box."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And in the evening, we walked to the park."
+          },
+          {
+            "speaker": "Mia",
+            "text": "After the park, my mother cooked soup, and we watched TV."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It was a good day!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "When did Smarty and Mia clean the room?",
+            "answer": "Yesterday",
+            "options": [
+              "Yesterday",
+              "Tomorrow",
+              "On Monday"
+            ],
+            "explanation": "Smarty says: We cleaned it yesterday.",
+            "itemIds": [
+              "en.elementary.u04.l01.cleaned",
+              "en.beginner.u10.l01.yesterday"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Mia's mother do after the park?",
+            "answer": "She cooked soup.",
+            "options": [
+              "She cooked soup.",
+              "She walked to school.",
+              "She visited a museum."
+            ],
+            "explanation": "Mia says: my mother cooked soup.",
+            "itemIds": [
+              "en.elementary.u04.l01.cooked"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks what you did yesterday. Answer in your own words using regular past verbs.",
+        "turns": [
+          {
+            "smarty": "Yesterday I cleaned my room. What did you do yesterday?",
+            "accept": [
+              "^yesterday i (?:watched|cooked|visited|helped|cleaned|walked)(?: [a-z]+){1,4}$",
+              "^i (?:watched|cooked|visited|helped|cleaned|walked)(?: [a-z]+){1,5}$"
+            ],
+            "example": "I watched TV yesterday.",
+            "hint": "Start with 'I' and use a verb ending in -ed like watched, cooked, or cleaned.",
+            "itemIds": [
+              "en.elementary.u04.l01.watched",
+              "en.elementary.u04.l01.cooked",
+              "en.elementary.u04.l01.cleaned",
+              "en.elementary.u04.l01.walked"
+            ]
+          },
+          {
+            "smarty": "Nice! Did you help someone or visit someone last weekend?",
+            "accept": [
+              "^(?:yes )?i (?:helped|visited)(?: [a-z]+){1,5}$"
+            ],
+            "example": "I visited my grandmother.",
+            "hint": "Say 'I helped...' or 'I visited...'",
+            "itemIds": [
+              "en.elementary.u04.l01.helped",
+              "en.elementary.u04.l01.visited",
+              "en.beginner.u10.l08.last-weekend"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u04.l09.watch-tv",
+        "en.beginner.u02.l03.grandmother",
+        "en.beginner.u10.l08.last-weekend",
+        "en.beginner.u10.l01.yesterday",
+        "en.beginner.u08.l01.park"
+      ]
+    },
+    {
+      "id": "en.elementary.u04.l02",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Irregular verbs",
+      "canDo": "Use common irregular verbs",
+      "scenario": "In the attic, Sam and Smarty unpack a box and talk about what they got and made.",
+      "items": [
+        {
+          "id": "en.elementary.u04.l02.came",
+          "text": "came",
+          "kind": "word",
+          "forms": [
+            "come"
+          ],
+          "example": "Sam came to my home yesterday.",
+          "note": "Use 'came' as the past form of 'come' when someone arrived somewhere."
+        },
+        {
+          "id": "en.elementary.u04.l02.took",
+          "text": "took",
+          "kind": "word",
+          "forms": [
+            "take"
+          ],
+          "example": "She took her umbrella because it was rainy.",
+          "note": "Say 'took' as the past form of 'take' when someone carried or picked up something."
+        },
+        {
+          "id": "en.elementary.u04.l02.made",
+          "text": "made",
+          "kind": "word",
+          "forms": [
+            "make"
+          ],
+          "example": "We made a big cake for my birthday.",
+          "note": "Use 'made' as the past form of 'make' when someone built or prepared something."
+        },
+        {
+          "id": "en.elementary.u04.l02.got",
+          "text": "got",
+          "kind": "word",
+          "forms": [
+            "get"
+          ],
+          "example": "I got a new book from my uncle.",
+          "note": "Say 'got' as the past form of 'get' when you received or obtained something."
+        },
+        {
+          "id": "en.elementary.u04.l02.gave",
+          "text": "gave",
+          "kind": "word",
+          "forms": [
+            "give"
+          ],
+          "example": "Lily gave me an apple at lunch.",
+          "note": "Use 'gave' as the past form of 'give' when someone handed a gift or item to another person."
+        },
+        {
+          "id": "en.elementary.u04.l02.bought",
+          "text": "bought",
+          "kind": "word",
+          "forms": [
+            "buy"
+          ],
+          "example": "They bought fresh bread at the market.",
+          "note": "Say 'bought' as the past form of 'buy' when someone paid money for something."
+        }
+      ],
+      "grammar": {
+        "title": "Irregular past verbs",
+        "explanation": "Some common verbs do not add -ed in the past. Learn their special past forms, and use the same word for every person.",
+        "examples": [
+          "He came home early.",
+          "Mia bought a new jacket."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u04.l02.task.choice-came",
+          "kind": "choice",
+          "prompt": "Ben arrived at the party early. Which verb fits?",
+          "answer": "came",
+          "options": [
+            "came",
+            "bought",
+            "made"
+          ],
+          "explanation": "Came is the past form of come.",
+          "itemIds": [
+            "en.elementary.u04.l02.came"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l02.task.listen-bought",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "My mother bought fruit at the supermarket.",
+          "answer": "My mother bought fruit at the supermarket.",
+          "options": [
+            "My mother bought fruit at the supermarket.",
+            "My mother made soup in the kitchen.",
+            "My mother took a bus to the station."
+          ],
+          "explanation": "Bought is the past form of buy.",
+          "itemIds": [
+            "en.elementary.u04.l02.bought"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l02.task.match-pairs",
+          "kind": "match",
+          "prompt": "Match each past verb to its base form.",
+          "pairs": [
+            {
+              "left": "took",
+              "right": "take"
+            },
+            {
+              "left": "made",
+              "right": "make"
+            },
+            {
+              "left": "got",
+              "right": "get"
+            },
+            {
+              "left": "gave",
+              "right": "give"
+            }
+          ],
+          "explanation": "These four verbs change form in the past instead of adding -ed.",
+          "itemIds": [
+            "en.elementary.u04.l02.took",
+            "en.elementary.u04.l02.made",
+            "en.elementary.u04.l02.got",
+            "en.elementary.u04.l02.gave"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l02.task.fill-made",
+          "kind": "fill",
+          "prompt": "Sam and Smarty baked a sweet dessert. Complete the sentence.",
+          "text": "They ___ a chocolate cake yesterday.",
+          "answer": "made",
+          "options": [
+            "made",
+            "came",
+            "took"
+          ],
+          "explanation": "Use made when someone prepares or creates something.",
+          "itemIds": [
+            "en.elementary.u04.l02.made",
+            "en.beginner.u03.l06.cake"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l02.task.fill-gave-got",
+          "kind": "fill",
+          "prompt": "Ana handed a present to Omar. Complete the sentence.",
+          "text": "Ana ___ Omar a blue pen.",
+          "answer": "gave",
+          "options": [
+            "gave",
+            "got",
+            "came"
+          ],
+          "explanation": "Ana is the person who handed the pen over, so use gave.",
+          "itemIds": [
+            "en.elementary.u04.l02.gave",
+            "en.elementary.u04.l02.got"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l02.task.build-took",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "He took the key from the table.",
+          "tiles": [
+            "He",
+            "took",
+            "the",
+            "key",
+            "from",
+            "the",
+            "table",
+            "take"
+          ],
+          "explanation": "Took is the past form of take.",
+          "itemIds": [
+            "en.elementary.u04.l02.took"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l02.task.choice-recycle-l01",
+          "kind": "choice",
+          "prompt": "Zara went to see her aunt and got a nice scarf. Which two verbs fit?",
+          "answer": "visited and got",
+          "options": [
+            "visited and got",
+            "cooked and came",
+            "walked and made"
+          ],
+          "explanation": "Visited means went to see, and got means received.",
+          "itemIds": [
+            "en.elementary.u04.l02.got",
+            "en.elementary.u04.l01.visited"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l02.task.speak-bought",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I bought a sandwich and some juice.",
+          "answer": "I bought a sandwich and some juice.",
+          "explanation": "Bought is the past form of buy.",
+          "itemIds": [
+            "en.elementary.u04.l02.bought"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is inside the box Sam brought up to the old room?",
+        "image": {
+          "id": "en-a2-u04-l02-scene",
+          "describe": "Sam and Smarty the black cat sit beside an open cardboard box in the attic with a handmade paper boat and a red scarf."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Sam! You came up here early."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes! I took this box from my bedroom."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What is in it?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "I made this small boat at school, and my aunt gave me this red scarf."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look! I also got a hat from Mia, and she bought two apples for us."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Who gave Sam the red scarf?",
+            "answer": "His aunt",
+            "options": [
+              "His aunt",
+              "Mia",
+              "Smarty"
+            ],
+            "explanation": "Sam says: my aunt gave me this red scarf.",
+            "itemIds": [
+              "en.elementary.u04.l02.gave"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Mia buy for Smarty and Sam?",
+            "answer": "Two apples",
+            "options": [
+              "Two apples",
+              "A small boat",
+              "A red scarf"
+            ],
+            "explanation": "Smarty says: she bought two apples for us.",
+            "itemIds": [
+              "en.elementary.u04.l02.bought"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks about things you bought, made, or got recently.",
+        "turns": [
+          {
+            "smarty": "Yesterday I bought a book. What did you buy or make?",
+            "accept": [
+              "^i (?:bought|made)(?: [a-z]+){1,5}$",
+              "^yesterday i (?:bought|made)(?: [a-z]+){1,4}$"
+            ],
+            "example": "I bought some bread.",
+            "hint": "Answer with 'I bought...' or 'I made...'",
+            "itemIds": [
+              "en.elementary.u04.l02.bought",
+              "en.elementary.u04.l02.made"
+            ]
+          },
+          {
+            "smarty": "Nice! What did a friend or parent give you?",
+            "accept": [
+              "^(?:my )?(?:mother|father|friend|aunt|uncle|sister|brother) gave me(?: [a-z]+){1,4}$",
+              "^i got(?: [a-z]+){1,5}$"
+            ],
+            "example": "My friend gave me a pen.",
+            "hint": "Say 'My friend gave me...' or 'I got...'",
+            "itemIds": [
+              "en.elementary.u04.l02.gave",
+              "en.elementary.u04.l02.got"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l06.cake",
+        "en.elementary.u04.l01.visited"
+      ]
+    },
+    {
+      "id": "en.elementary.u04.l03",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "More irregular verbs",
+      "canDo": "Use more irregular verbs",
+      "scenario": "Lily and Smarty sit on an old sofa in the attic and read an old notebook.",
+      "items": [
+        {
+          "id": "en.elementary.u04.l03.found",
+          "text": "found",
+          "kind": "word",
+          "forms": [
+            "find"
+          ],
+          "example": "I found an old key under the sofa.",
+          "note": "Use 'found' as the past form of 'find' when you discovered something."
+        },
+        {
+          "id": "en.elementary.u04.l03.met",
+          "text": "met",
+          "kind": "word",
+          "forms": [
+            "meet"
+          ],
+          "example": "We met our teacher at the library.",
+          "note": "Say 'met' as the past form of 'meet' when people saw and greeted each other."
+        },
+        {
+          "id": "en.elementary.u04.l03.wrote",
+          "text": "wrote",
+          "kind": "word",
+          "forms": [
+            "write"
+          ],
+          "example": "Lily wrote her name in the notebook.",
+          "note": "Use 'wrote' as the past form of 'write' when someone put words on paper."
+        },
+        {
+          "id": "en.elementary.u04.l03.ran",
+          "text": "ran",
+          "kind": "word",
+          "forms": [
+            "run"
+          ],
+          "example": "The dog ran fast in the park.",
+          "note": "Say 'ran' as the past form of 'run' when someone moved quickly on foot."
+        },
+        {
+          "id": "en.elementary.u04.l03.told",
+          "text": "told",
+          "kind": "word",
+          "forms": [
+            "tell"
+          ],
+          "example": "My grandfather told us a good story.",
+          "note": "Use 'told' as the past form of 'tell' when someone spoke to share information."
+        },
+        {
+          "id": "en.elementary.u04.l03.sat",
+          "text": "sat",
+          "kind": "word",
+          "forms": [
+            "sit"
+          ],
+          "example": "Smarty sat on the chair next to the window.",
+          "note": "Say 'sat' as the past form of 'sit' when someone rested on a chair or the floor."
+        }
+      ],
+      "grammar": {
+        "title": "More irregular pairs",
+        "explanation": "Many common verbs change their vowel in the past: find becomes found, write becomes wrote, run becomes ran, and sit becomes sat.",
+        "examples": [
+          "I found a key in the box.",
+          "We sat on the sofa."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u04.l03.task.choice-found",
+          "kind": "choice",
+          "prompt": "Smarty looked under the table and saw his lost pencil. Which verb fits?",
+          "answer": "found",
+          "options": [
+            "found",
+            "wrote",
+            "sat"
+          ],
+          "explanation": "Found is the past form of find.",
+          "itemIds": [
+            "en.elementary.u04.l03.found"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l03.task.listen-wrote",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "She wrote a postcard from England.",
+          "answer": "She wrote a postcard from England.",
+          "options": [
+            "She wrote a postcard from England.",
+            "She found a map in England.",
+            "She met a friend in England."
+          ],
+          "explanation": "Wrote is the past form of write.",
+          "itemIds": [
+            "en.elementary.u04.l03.wrote"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l03.task.match-irregular",
+          "kind": "match",
+          "prompt": "Match each past verb to its base form.",
+          "pairs": [
+            {
+              "left": "found",
+              "right": "find"
+            },
+            {
+              "left": "met",
+              "right": "meet"
+            },
+            {
+              "left": "wrote",
+              "right": "write"
+            },
+            {
+              "left": "told",
+              "right": "tell"
+            }
+          ],
+          "explanation": "Each irregular past form matches one base verb.",
+          "itemIds": [
+            "en.elementary.u04.l03.found",
+            "en.elementary.u04.l03.met",
+            "en.elementary.u04.l03.wrote",
+            "en.elementary.u04.l03.told"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l03.task.fill-ran",
+          "kind": "fill",
+          "prompt": "It started to rain, so Ben moved very fast to the bus. Complete the sentence.",
+          "text": "Ben ___ to the bus because it was raining.",
+          "answer": "ran",
+          "options": [
+            "ran",
+            "sat",
+            "wrote"
+          ],
+          "explanation": "Ran is the past form of run.",
+          "itemIds": [
+            "en.elementary.u04.l03.ran"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l03.task.fill-sat",
+          "kind": "fill",
+          "prompt": "Smarty and Lily rested on the old sofa. Complete the sentence.",
+          "text": "They ___ on the sofa and read a book.",
+          "answer": "sat",
+          "options": [
+            "sat",
+            "ran",
+            "met"
+          ],
+          "explanation": "Sat is the past form of sit.",
+          "itemIds": [
+            "en.elementary.u04.l03.sat"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l03.task.build-told",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "He told me his name.",
+          "tiles": [
+            "He",
+            "told",
+            "me",
+            "his",
+            "name",
+            "tell"
+          ],
+          "explanation": "Told is the past form of tell.",
+          "itemIds": [
+            "en.elementary.u04.l03.told"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l03.task.choice-recycle-l02",
+          "kind": "choice",
+          "prompt": "Omar saw Zara at the station and handed her a ticket. Which two verbs fit?",
+          "answer": "met and gave",
+          "options": [
+            "met and gave",
+            "sat and cooked",
+            "ran and cleaned"
+          ],
+          "explanation": "Met means saw and greeted, and gave means handed over.",
+          "itemIds": [
+            "en.elementary.u04.l03.met",
+            "en.elementary.u04.l02.gave"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l03.task.speak-found",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "We found a blue notebook in the box.",
+          "answer": "We found a blue notebook in the box.",
+          "explanation": "Found is the past form of find.",
+          "itemIds": [
+            "en.elementary.u04.l03.found"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What did Lily find in the old notebook?",
+        "image": {
+          "id": "en-a2-u04-l03-scene",
+          "describe": "Lily and Smarty the black cat sit together on an old floral sofa in the attic reading a small blue notebook."
+        },
+        "lines": [
+          {
+            "speaker": "Lily",
+            "text": "Smarty, I found this blue notebook behind the lamp!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Who wrote in it?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "My grandmother! We sat here and she told me about it."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What did she write?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "She met my grandfather in the park, and their dog ran after a red ball!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Where did Lily find the blue notebook?",
+            "answer": "Behind the lamp",
+            "options": [
+              "Behind the lamp",
+              "Under the bed",
+              "In the kitchen"
+            ],
+            "explanation": "Lily says: I found this blue notebook behind the lamp.",
+            "itemIds": [
+              "en.elementary.u04.l03.found"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Where did Lily's grandmother meet her grandfather?",
+            "answer": "In the park",
+            "options": [
+              "In the park",
+              "At the station",
+              "In the library"
+            ],
+            "explanation": "Lily says: She met my grandfather in the park.",
+            "itemIds": [
+              "en.elementary.u04.l03.met"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you to share a short note using irregular verbs from this lesson.",
+        "turns": [
+          {
+            "smarty": "Today I sat on the sofa and found a pen. Where did you sit or what did you find?",
+            "accept": [
+              "^i (?:sat|found)(?: [a-z]+){1,5}$",
+              "^yesterday i (?:sat|found)(?: [a-z]+){1,4}$"
+            ],
+            "example": "I sat on my chair.",
+            "hint": "Start with 'I sat...' or 'I found...'",
+            "itemIds": [
+              "en.elementary.u04.l03.sat",
+              "en.elementary.u04.l03.found"
+            ]
+          },
+          {
+            "smarty": "And did you meet a friend or write something?",
+            "accept": [
+              "^(?:yes )?i (?:met|wrote)(?: [a-z]+){1,5}$"
+            ],
+            "example": "I met my friend.",
+            "hint": "Say 'I met...' or 'I wrote...'",
+            "itemIds": [
+              "en.elementary.u04.l03.met",
+              "en.elementary.u04.l03.wrote"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u04.l02.gave"
+      ]
+    },
+    {
+      "id": "en.elementary.u04.l04",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty quizzes Ben in the attic on regular and irregular past verbs.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u04.l04.task.match-regular",
+          "kind": "match",
+          "prompt": "Match each regular past verb to its meaning.",
+          "pairs": [
+            {
+              "left": "watched",
+              "right": "saw on TV"
+            },
+            {
+              "left": "cooked",
+              "right": "made dinner"
+            },
+            {
+              "left": "visited",
+              "right": "went to see someone"
+            },
+            {
+              "left": "cleaned",
+              "right": "made a room clean"
+            }
+          ],
+          "explanation": "Regular past verbs end in -ed.",
+          "itemIds": [
+            "en.elementary.u04.l01.watched",
+            "en.elementary.u04.l01.cooked",
+            "en.elementary.u04.l01.visited",
+            "en.elementary.u04.l01.cleaned"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l04.task.match-irregular-one",
+          "kind": "match",
+          "prompt": "Match each irregular past verb to its base verb.",
+          "pairs": [
+            {
+              "left": "came",
+              "right": "come"
+            },
+            {
+              "left": "took",
+              "right": "take"
+            },
+            {
+              "left": "made",
+              "right": "make"
+            },
+            {
+              "left": "bought",
+              "right": "buy"
+            }
+          ],
+          "explanation": "These four common verbs have irregular past forms.",
+          "itemIds": [
+            "en.elementary.u04.l02.came",
+            "en.elementary.u04.l02.took",
+            "en.elementary.u04.l02.made",
+            "en.elementary.u04.l02.bought"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l04.task.fill-helped-walked",
+          "kind": "fill",
+          "prompt": "Ben carried bags for his grandmother on the way home. Complete the sentence.",
+          "text": "Ben ___ his grandmother and walked home.",
+          "answer": "helped",
+          "options": [
+            "helped",
+            "wrote",
+            "sat"
+          ],
+          "explanation": "Helped means gave support to someone.",
+          "itemIds": [
+            "en.elementary.u04.l01.helped",
+            "en.elementary.u04.l01.walked"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l04.task.fill-gave-got",
+          "kind": "fill",
+          "prompt": "Mia handed a book to Leo, so Leo received it. Complete the sentence.",
+          "text": "Mia ___ Leo a book, and he got happy.",
+          "answer": "gave",
+          "options": [
+            "gave",
+            "ran",
+            "sat"
+          ],
+          "explanation": "Gave is the past form of give.",
+          "itemIds": [
+            "en.elementary.u04.l02.gave",
+            "en.elementary.u04.l02.got"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l04.task.listen-found-wrote",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "I found a pen and wrote a letter.",
+          "answer": "I found a pen and wrote a letter.",
+          "options": [
+            "I found a pen and wrote a letter.",
+            "I bought a pen and made a cake.",
+            "I took a bus and met a friend."
+          ],
+          "explanation": "Found and wrote are the past forms of find and write.",
+          "itemIds": [
+            "en.elementary.u04.l03.found",
+            "en.elementary.u04.l03.wrote"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l04.task.choice-met-told",
+          "kind": "choice",
+          "prompt": "Zara saw Omar at the café and shared good news with him. Which two verbs fit?",
+          "answer": "met and told",
+          "options": [
+            "met and told",
+            "cooked and cleaned",
+            "walked and bought"
+          ],
+          "explanation": "Met means saw and greeted; told means shared information.",
+          "itemIds": [
+            "en.elementary.u04.l03.met",
+            "en.elementary.u04.l03.told"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l04.task.build-ran-sat",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "We ran home and sat.",
+          "tiles": [
+            "We",
+            "ran",
+            "home",
+            "and",
+            "sat",
+            "run"
+          ],
+          "explanation": "Ran and sat are the past forms of run and sit.",
+          "itemIds": [
+            "en.elementary.u04.l03.ran",
+            "en.elementary.u04.l03.sat"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l04.task.speak-review",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "Yesterday we visited the museum and bought a postcard.",
+          "answer": "Yesterday we visited the museum and bought a postcard.",
+          "explanation": "Visited is regular (-ed) and bought is irregular.",
+          "itemIds": [
+            "en.elementary.u04.l01.visited",
+            "en.elementary.u04.l02.bought"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How did Ben spend his Saturday?",
+        "image": {
+          "id": "en-a2-u04-l04-scene",
+          "describe": "Smarty the black cat sits on a wooden crate in the attic listening to Ben tell his weekend story."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Ben, tell me about your Saturday!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "In the morning, I cleaned my room and helped my father."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And in the afternoon?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "I walked to the park, met Omar, and we ran by the trees."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Did you have a good dinner?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Yes! My mother cooked pasta, and I wrote a postcard to my cousin."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Who did Ben meet in the park?",
+            "answer": "Omar",
+            "options": [
+              "Omar",
+              "Lily",
+              "Sam"
+            ],
+            "explanation": "Ben says: I walked to the park, met Omar.",
+            "itemIds": [
+              "en.elementary.u04.l03.met",
+              "en.elementary.u04.l01.walked"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Ben do after dinner?",
+            "answer": "He wrote a postcard.",
+            "options": [
+              "He wrote a postcard.",
+              "He bought a bike.",
+              "He watched TV."
+            ],
+            "explanation": "Ben says: I wrote a postcard to my cousin.",
+            "itemIds": [
+              "en.elementary.u04.l03.wrote"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Tell Smarty two things you did on a past day using verbs from Lessons 1–3.",
+        "turns": [
+          {
+            "smarty": "Tell me one regular action you did: watched, cooked, visited, helped, cleaned, or walked.",
+            "accept": [
+              "^i (?:watched|cooked|visited|helped|cleaned|walked)(?: [a-z]+){1,5}$"
+            ],
+            "example": "I cooked dinner.",
+            "hint": "Say 'I' plus one of the -ed verbs.",
+            "itemIds": [
+              "en.elementary.u04.l01.watched",
+              "en.elementary.u04.l01.cooked",
+              "en.elementary.u04.l01.visited",
+              "en.elementary.u04.l01.helped",
+              "en.elementary.u04.l01.cleaned",
+              "en.elementary.u04.l01.walked"
+            ]
+          },
+          {
+            "smarty": "Now tell me one irregular action: came, took, made, got, gave, bought, found, met, wrote, ran, told, or sat.",
+            "accept": [
+              "^i (?:came|took|made|got|gave|bought|found|met|wrote|ran|told|sat)(?: [a-z]+){1,5}$"
+            ],
+            "example": "I wrote a letter.",
+            "hint": "Say 'I' plus one of the irregular past verbs.",
+            "itemIds": [
+              "en.elementary.u04.l02.came",
+              "en.elementary.u04.l02.took",
+              "en.elementary.u04.l02.made",
+              "en.elementary.u04.l02.got",
+              "en.elementary.u04.l02.gave",
+              "en.elementary.u04.l02.bought",
+              "en.elementary.u04.l03.found",
+              "en.elementary.u04.l03.met",
+              "en.elementary.u04.l03.wrote",
+              "en.elementary.u04.l03.ran",
+              "en.elementary.u04.l03.told",
+              "en.elementary.u04.l03.sat"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u04.l01.watched",
+        "en.elementary.u04.l01.cooked",
+        "en.elementary.u04.l01.visited",
+        "en.elementary.u04.l01.helped",
+        "en.elementary.u04.l01.cleaned",
+        "en.elementary.u04.l01.walked",
+        "en.elementary.u04.l02.came",
+        "en.elementary.u04.l02.took",
+        "en.elementary.u04.l02.made",
+        "en.elementary.u04.l02.got",
+        "en.elementary.u04.l02.gave",
+        "en.elementary.u04.l02.bought",
+        "en.elementary.u04.l03.found",
+        "en.elementary.u04.l03.met",
+        "en.elementary.u04.l03.wrote",
+        "en.elementary.u04.l03.ran",
+        "en.elementary.u04.l03.told",
+        "en.elementary.u04.l03.sat"
+      ]
+    },
+    {
+      "id": "en.elementary.u04.l05",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Did you?",
+      "canDo": "Ask and answer about the past",
+      "scenario": "Zara climbs up to the attic and asks Smarty and Leo about their weekend.",
+      "items": [
+        {
+          "id": "en.elementary.u04.l05.did-they-go",
+          "text": "Did they go?",
+          "kind": "phrase",
+          "example": "Did they go to the cinema yesterday?",
+          "note": "Start a past yes/no question with 'Did' followed by the person and the base verb."
+        },
+        {
+          "id": "en.elementary.u04.l05.i-did-not",
+          "text": "I did not",
+          "kind": "phrase",
+          "example": "I did not watch TV last night.",
+          "note": "Use 'did not' plus the base verb to say something did not happen."
+        },
+        {
+          "id": "en.elementary.u04.l05.yes-i-did",
+          "text": "Yes I did",
+          "kind": "phrase",
+          "example": "Did you clean your room? Yes, I did.",
+          "note": "Use 'Yes, I did' as a short, natural answer when the answer is yes."
+        },
+        {
+          "id": "en.elementary.u04.l05.no-i-did-not",
+          "text": "No I did not",
+          "kind": "phrase",
+          "example": "Did you buy bread? No, I did not.",
+          "note": "Use 'No, I did not' as a short answer when you did not do something."
+        },
+        {
+          "id": "en.elementary.u04.l05.how-did-it-go",
+          "text": "How did it go?",
+          "kind": "phrase",
+          "example": "You had an exam yesterday. How did it go?",
+          "note": "Ask 'How did it go?' to find out if an event or test went well or badly."
+        },
+        {
+          "id": "en.elementary.u04.l05.where-did-you-go",
+          "text": "Where did you go?",
+          "kind": "phrase",
+          "example": "Where did you go last weekend?",
+          "note": "Ask 'Where did you go?' when you want to know the place someone visited."
+        }
+      ],
+      "grammar": {
+        "title": "Questions and negatives with did",
+        "explanation": "After did or did not, always use the base verb (go, watch, buy), not the past form. Short answers use Yes, I did or No, I did not.",
+        "examples": [
+          "Where did you go yesterday?",
+          "I did not buy anything."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u04.l05.task.choice-did-they-go",
+          "kind": "choice",
+          "prompt": "You want to ask if Sam and Mia went to the park. Choose the right question.",
+          "answer": "Did they go to the park?",
+          "options": [
+            "Did they go to the park?",
+            "Did they went to the park?",
+            "Do they went to the park?"
+          ],
+          "explanation": "Use Did + subject + base verb (go).",
+          "itemIds": [
+            "en.elementary.u04.l05.did-they-go"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l05.task.fill-i-did-not",
+          "kind": "fill",
+          "prompt": "Leo stayed home and skipped TV last night. Complete the sentence.",
+          "text": "I ___ watch TV last night.",
+          "answer": "did not",
+          "options": [
+            "did not",
+            "was not",
+            "do not"
+          ],
+          "explanation": "Use did not before the base verb for past negatives.",
+          "itemIds": [
+            "en.elementary.u04.l05.i-did-not",
+            "en.elementary.u04.l01.watched"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l05.task.match-qa",
+          "kind": "match",
+          "prompt": "Match each question to the best answer.",
+          "pairs": [
+            {
+              "left": "Did you find your key?",
+              "right": "Yes, I did."
+            },
+            {
+              "left": "Did you buy milk?",
+              "right": "No, I did not."
+            },
+            {
+              "left": "Where did you go?",
+              "right": "I went to the library."
+            },
+            {
+              "left": "How did it go?",
+              "right": "It went well!"
+            }
+          ],
+          "explanation": "Match yes/no questions with Yes, I did / No, I did not, and Wh- questions with details.",
+          "itemIds": [
+            "en.elementary.u04.l05.yes-i-did",
+            "en.elementary.u04.l05.no-i-did-not",
+            "en.elementary.u04.l05.where-did-you-go",
+            "en.elementary.u04.l05.how-did-it-go"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l05.task.listen-where",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "Where did you go on Sunday?",
+          "answer": "Where did you go on Sunday?",
+          "options": [
+            "Where did you go on Sunday?",
+            "How did it go on Sunday?",
+            "Did they go on Sunday?"
+          ],
+          "explanation": "Where asks about a place.",
+          "itemIds": [
+            "en.elementary.u04.l05.where-did-you-go"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l05.task.build-how-did-it-go",
+          "kind": "build",
+          "prompt": "Leo had a maths test. Ask him about it.",
+          "answer": "How did it go?",
+          "tiles": [
+            "How",
+            "did",
+            "it",
+            "go",
+            "went"
+          ],
+          "explanation": "Use the base verb go after did.",
+          "itemIds": [
+            "en.elementary.u04.l05.how-did-it-go"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l05.task.fill-no-i-did-not",
+          "kind": "fill",
+          "prompt": "Smarty asks: Did you cook dinner? You ate a cold sandwich instead. Complete your answer.",
+          "text": "___, I did not.",
+          "answer": "No",
+          "options": [
+            "No",
+            "Yes",
+            "Not"
+          ],
+          "explanation": "Say No, I did not when you did not do the action.",
+          "itemIds": [
+            "en.elementary.u04.l05.no-i-did-not",
+            "en.elementary.u04.l01.cooked"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l05.task.speak-where",
+          "kind": "speak",
+          "prompt": "Say the question aloud.",
+          "text": "Where did you go last weekend?",
+          "answer": "Where did you go last weekend?",
+          "explanation": "Use Where did you go to ask about a past trip or outing.",
+          "itemIds": [
+            "en.elementary.u04.l05.where-did-you-go",
+            "en.beginner.u10.l08.last-weekend"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How did Leo's history exam go?",
+        "image": {
+          "id": "en-a2-u04-l05-scene",
+          "describe": "Zara climbs the wooden attic stairs to chat with Smarty the black cat and Leo, who holds a graded history paper."
+        },
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "Hi, Leo! You had a history exam yesterday. How did it go?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "It went well! I passed!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Well done, Leo! Where did you go after school?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "I went to the café with Sam and Mia."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Did they go to the cinema too?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "No, they did not. I did not go either, because I was tired."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Did you sleep early?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Yes, I did!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Where did Leo go after school?",
+            "answer": "To the café",
+            "options": [
+              "To the café",
+              "To the cinema",
+              "To the hospital"
+            ],
+            "explanation": "Leo says: I went to the café with Sam and Mia.",
+            "itemIds": [
+              "en.elementary.u04.l05.where-did-you-go"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "Did Sam and Mia go to the cinema?",
+            "answer": "No, they did not.",
+            "options": [
+              "No, they did not.",
+              "Yes, they did.",
+              "They went to the station."
+            ],
+            "explanation": "Leo says: No, they did not.",
+            "itemIds": [
+              "en.elementary.u04.l05.did-they-go",
+              "en.elementary.u04.l05.no-i-did-not"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about your last weekend. Answer with Yes, I did, No, I did not, or where you went.",
+        "turns": [
+          {
+            "smarty": "Where did you go last weekend?",
+            "accept": [
+              "^i went(?: to)?(?: [a-z]+){1,4}$",
+              "^i visited(?: [a-z]+){1,4}$",
+              "^i stayed(?: [a-z]+){1,4}$"
+            ],
+            "example": "I went to the park.",
+            "hint": "Answer with 'I went to...'",
+            "itemIds": [
+              "en.elementary.u04.l05.where-did-you-go",
+              "en.beginner.u10.l08.last-weekend"
+            ]
+          },
+          {
+            "smarty": "Did you watch TV yesterday?",
+            "accept": [
+              "^yes i did$",
+              "^no i did not$",
+              "^i did not watch tv$"
+            ],
+            "example": "Yes, I did.",
+            "hint": "Say 'Yes, I did' or 'No, I did not'.",
+            "itemIds": [
+              "en.elementary.u04.l05.yes-i-did",
+              "en.elementary.u04.l05.no-i-did-not",
+              "en.elementary.u04.l05.i-did-not"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u04.l01.watched",
+        "en.elementary.u04.l01.cooked",
+        "en.beginner.u10.l08.last-weekend"
+      ]
+    },
+    {
+      "id": "en.elementary.u04.l06",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Time words",
+      "canDo": "Place events in time",
+      "scenario": "Smarty and Omar look at old calendars and boxes in the attic to see when things happened.",
+      "items": [
+        {
+          "id": "en.elementary.u04.l06.this-morning",
+          "text": "this morning",
+          "kind": "phrase",
+          "example": "I drank tea and ate bread this morning.",
+          "note": "Use 'this morning' for the early part of today."
+        },
+        {
+          "id": "en.elementary.u04.l06.last-week",
+          "text": "last week",
+          "kind": "phrase",
+          "example": "We had three exams last week.",
+          "note": "Say 'last week' for the seven days before this week."
+        },
+        {
+          "id": "en.elementary.u04.l06.last-year",
+          "text": "last year",
+          "kind": "phrase",
+          "example": "They visited England last year.",
+          "note": "Use 'last year' for the calendar year before this year."
+        },
+        {
+          "id": "en.elementary.u04.l06.a-long-time-ago",
+          "text": "a long time ago",
+          "kind": "phrase",
+          "example": "My grandfather made this chair a long time ago.",
+          "note": "Say 'a long time ago' when something happened many years in the past."
+        },
+        {
+          "id": "en.elementary.u04.l06.years-ago",
+          "text": "years ago",
+          "kind": "phrase",
+          "example": "I met my best friend five years ago.",
+          "note": "Put 'years ago' after a number to say how many years back something happened."
+        },
+        {
+          "id": "en.elementary.u04.l06.when-i-was-little",
+          "text": "when I was little",
+          "kind": "phrase",
+          "forms": [
+            "when he was little",
+            "when she was little",
+            "when we were little"
+          ],
+          "example": "When I was little, I loved sweet apples.",
+          "note": "Start or end a sentence with 'when I was little' to talk about your childhood."
+        }
+      ],
+      "grammar": {
+        "title": "Past time expressions",
+        "explanation": "Place time phrases at the start or end of a past sentence. Put ago after a number of years, months, or days.",
+        "examples": [
+          "We visited Brazil two years ago.",
+          "When I was little, I had a small cat."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u04.l06.task.choice-this-morning",
+          "kind": "choice",
+          "prompt": "Omar ate breakfast at eight o'clock today. Which time phrase fits?",
+          "answer": "this morning",
+          "options": [
+            "this morning",
+            "last year",
+            "years ago"
+          ],
+          "explanation": "This morning refers to the morning of today.",
+          "itemIds": [
+            "en.elementary.u04.l06.this-morning"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l06.task.match-time-order",
+          "kind": "match",
+          "prompt": "Match each time expression to what it describes.",
+          "pairs": [
+            {
+              "left": "this morning",
+              "right": "in the morning"
+            },
+            {
+              "left": "last week",
+              "right": "one week ago"
+            },
+            {
+              "left": "last year",
+              "right": "one year ago"
+            },
+            {
+              "left": "a long time ago",
+              "right": "many years ago"
+            }
+          ],
+          "explanation": "These time phrases move from recent past to distant past.",
+          "itemIds": [
+            "en.elementary.u04.l06.this-morning",
+            "en.elementary.u04.l06.last-week",
+            "en.elementary.u04.l06.last-year",
+            "en.elementary.u04.l06.a-long-time-ago"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l06.task.fill-years-ago",
+          "kind": "fill",
+          "prompt": "Mia moved to this house three years in the past. Complete the sentence.",
+          "text": "Mia came here three ___.",
+          "answer": "years ago",
+          "options": [
+            "years ago",
+            "last year",
+            "this morning"
+          ],
+          "explanation": "Use years ago right after a number like three.",
+          "itemIds": [
+            "en.elementary.u04.l06.years-ago",
+            "en.elementary.u04.l02.came"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l06.task.listen-when-little",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "When I was little, I had a small dog.",
+          "answer": "When I was little, I had a small dog.",
+          "options": [
+            "When I was little, I had a small dog.",
+            "Last year, I bought a small dog.",
+            "This morning, I walked my small dog."
+          ],
+          "explanation": "When I was little talks about early childhood.",
+          "itemIds": [
+            "en.elementary.u04.l06.when-i-was-little"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l06.task.build-long-time-ago",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "He wrote this book a long time ago.",
+          "tiles": [
+            "He",
+            "wrote",
+            "this",
+            "book",
+            "a",
+            "long",
+            "time",
+            "ago",
+            "years"
+          ],
+          "explanation": "A long time ago goes at the end of the sentence.",
+          "itemIds": [
+            "en.elementary.u04.l06.a-long-time-ago",
+            "en.elementary.u04.l03.wrote"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l06.task.fill-last-week",
+          "kind": "fill",
+          "prompt": "We visited the museum seven days ago. Complete the sentence.",
+          "text": "We visited the museum ___.",
+          "answer": "last week",
+          "options": [
+            "last week",
+            "this morning",
+            "when I was little"
+          ],
+          "explanation": "Last week means the week before this one.",
+          "itemIds": [
+            "en.elementary.u04.l06.last-week",
+            "en.elementary.u04.l01.visited"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l06.task.speak-last-year",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I visited Uzbekistan last year.",
+          "answer": "I visited Uzbekistan last year.",
+          "explanation": "Last year places the trip in the previous year.",
+          "itemIds": [
+            "en.elementary.u04.l06.last-year",
+            "en.elementary.u04.l01.visited"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How old is the wooden clock Omar found in the old room?",
+        "image": {
+          "id": "en-a2-u04-l06-scene",
+          "describe": "Smarty the black cat and Omar examine an antique wooden clock and an old map on a table in the attic."
+        },
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Smarty, look at this clock! When did your family get it?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "My grandfather bought it a long time ago."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Did it work last year?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! It worked ten years ago, and it worked last week too."
+          },
+          {
+            "speaker": "Omar",
+            "text": "What happened? Did it stop this morning?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No, I cleaned it when I was little, and it still ticks!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "When did Smarty's grandfather buy the clock?",
+            "answer": "A long time ago",
+            "options": [
+              "A long time ago",
+              "This morning",
+              "Last week"
+            ],
+            "explanation": "Smarty says: My grandfather bought it a long time ago.",
+            "itemIds": [
+              "en.elementary.u04.l06.a-long-time-ago",
+              "en.elementary.u04.l02.bought"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "When did Smarty clean the clock?",
+            "answer": "When he was little",
+            "options": [
+              "When he was little",
+              "This morning",
+              "Last year"
+            ],
+            "explanation": "Smarty says: I cleaned it when I was little.",
+            "itemIds": [
+              "en.elementary.u04.l06.when-i-was-little",
+              "en.elementary.u04.l01.cleaned"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks when you did different things. Use time phrases from this lesson.",
+        "turns": [
+          {
+            "smarty": "This morning I had milk. What did you do this morning?",
+            "accept": [
+              "^this morning i(?: [a-z]+){1,5}$",
+              "^i(?: [a-z]+){1,5} this morning$"
+            ],
+            "example": "I ate bread this morning.",
+            "hint": "Include 'this morning' in your answer.",
+            "itemIds": [
+              "en.elementary.u04.l06.this-morning"
+            ]
+          },
+          {
+            "smarty": "What did you like when you were little?",
+            "accept": [
+              "^when i was little i (?:liked|loved|had)(?: [a-z]+){1,4}$",
+              "^i (?:liked|loved|had)(?: [a-z]+){1,4} when i was little$"
+            ],
+            "example": "When I was little, I loved cake.",
+            "hint": "Start with 'When I was little, I liked...' or 'When I was little, I had...'",
+            "itemIds": [
+              "en.elementary.u04.l06.when-i-was-little"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u04.l02.came",
+        "en.elementary.u04.l03.wrote",
+        "en.elementary.u04.l01.visited",
+        "en.elementary.u04.l02.bought",
+        "en.elementary.u04.l01.cleaned"
+      ]
+    },
+    {
+      "id": "en.elementary.u04.l07",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Old things",
+      "canDo": "Talk about old objects",
+      "scenario": "Smarty and Ana open a wooden chest in the attic full of old keepsakes.",
+      "items": [
+        {
+          "id": "en.elementary.u04.l07.old-photo",
+          "text": "old photo",
+          "kind": "phrase",
+          "forms": [
+            "photo",
+            "photos",
+            "old photos"
+          ],
+          "example": "I found an old photo of my parents.",
+          "note": "Say 'old photo' for a picture taken with a camera in the past.",
+          "image": {
+            "id": "old-photo",
+            "describe": "a faded sepia photograph of two smiling kittens sitting on a garden bench"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l07.toy",
+          "text": "toy",
+          "kind": "word",
+          "forms": [
+            "toys"
+          ],
+          "example": "This small red car was my favourite toy.",
+          "note": "A 'toy' is an object that children play with.",
+          "image": {
+            "id": "toy",
+            "describe": "a small painted wooden toy train resting on an attic rug"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l07.diary",
+          "text": "diary",
+          "kind": "word",
+          "forms": [
+            "diaries"
+          ],
+          "example": "Ana wrote about her day in her diary.",
+          "note": "A 'diary' is a private notebook where you write what happened each day.",
+          "image": {
+            "id": "diary",
+            "describe": "a small blue notebook diary with a tiny brass lock and a ribbon bookmark"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l07.treasure",
+          "text": "treasure",
+          "kind": "word",
+          "forms": [
+            "treasures"
+          ],
+          "example": "We found a box of treasure in the old room.",
+          "note": "Use 'treasure' for special or valuable things kept safe in a box.",
+          "image": {
+            "id": "treasure",
+            "describe": "an open wooden chest glowing with shiny gold coins, shells, and colorful stones"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l07.memory",
+          "text": "memory",
+          "kind": "word",
+          "forms": [
+            "memories"
+          ],
+          "example": "That summer picnic is a happy memory.",
+          "note": "A 'memory' is something from the past that you remember in your mind.",
+          "image": {
+            "id": "memory",
+            "describe": "Smarty the black cat smiling warmly with a thought cloud showing a sunny picnic"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l07.album",
+          "text": "album",
+          "kind": "word",
+          "forms": [
+            "albums"
+          ],
+          "example": "My grandmother kept every old photo in an album.",
+          "note": "An 'album' is a special book where you put photos.",
+          "image": {
+            "id": "album",
+            "describe": "an open leather-bound photo album showing neat pages of family cat snapshots"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u04.l07.task.choice-old-photo",
+          "kind": "choice",
+          "prompt": "Look at the picture from a camera taken years ago. What is it?",
+          "answer": "old photo",
+          "options": [
+            "old photo",
+            "diary",
+            "toy"
+          ],
+          "explanation": "An old photo is a picture from the past.",
+          "itemIds": [
+            "en.elementary.u04.l07.old-photo"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l07.task.match-objects",
+          "kind": "match",
+          "prompt": "Match each word to its description.",
+          "pairs": [
+            {
+              "left": "diary",
+              "right": "a book where you write about your day"
+            },
+            {
+              "left": "album",
+              "right": "a book for keeping photos"
+            },
+            {
+              "left": "toy",
+              "right": "something you play with"
+            },
+            {
+              "left": "treasure",
+              "right": "good things in a box"
+            }
+          ],
+          "explanation": "Each keepsake has a clear purpose.",
+          "itemIds": [
+            "en.elementary.u04.l07.diary",
+            "en.elementary.u04.l07.album",
+            "en.elementary.u04.l07.toy",
+            "en.elementary.u04.l07.treasure"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l07.task.listen-diary",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "She wrote in her diary every night.",
+          "answer": "She wrote in her diary every night.",
+          "options": [
+            "She wrote in her diary every night.",
+            "She sat with her toy every night.",
+            "She cleaned her album every night."
+          ],
+          "explanation": "A diary is where you write daily notes.",
+          "itemIds": [
+            "en.elementary.u04.l07.diary",
+            "en.elementary.u04.l03.wrote"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l07.task.fill-memory",
+          "kind": "fill",
+          "prompt": "Ana thinks about her birthday party last year and smiles. Complete the sentence.",
+          "text": "Her birthday party is a happy ___.",
+          "answer": "memory",
+          "options": [
+            "memory",
+            "toy",
+            "diary"
+          ],
+          "explanation": "A memory is something nice or important you remember from the past.",
+          "itemIds": [
+            "en.elementary.u04.l07.memory"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l07.task.fill-album",
+          "kind": "fill",
+          "prompt": "We put twenty family pictures inside a big book. Complete the sentence.",
+          "text": "The old photos are in the ___.",
+          "answer": "album",
+          "options": [
+            "album",
+            "toy",
+            "treasure"
+          ],
+          "explanation": "An album holds photos.",
+          "itemIds": [
+            "en.elementary.u04.l07.album",
+            "en.elementary.u04.l07.old-photo"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l07.task.build-treasure",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "We found a box of treasure.",
+          "tiles": [
+            "We",
+            "found",
+            "a",
+            "box",
+            "of",
+            "treasure",
+            "toy"
+          ],
+          "explanation": "Treasure means special or valuable things.",
+          "itemIds": [
+            "en.elementary.u04.l07.treasure",
+            "en.elementary.u04.l03.found"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l07.task.speak-toy",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "When I was little, I had a small toy train.",
+          "answer": "When I was little, I had a small toy train.",
+          "explanation": "Toy describes a plaything from childhood.",
+          "itemIds": [
+            "en.elementary.u04.l07.toy",
+            "en.elementary.u04.l06.when-i-was-little"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What treasure does Ana find inside the wooden box?",
+        "image": {
+          "id": "en-a2-u04-l07-scene",
+          "describe": "Ana and Smarty the black cat kneel beside an open wooden chest in the attic holding a photo album, a small diary, and a toy boat."
+        },
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "Smarty, this box is full of treasure!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look at that green album. There is an old photo on the first page."
+          },
+          {
+            "speaker": "Ana",
+            "text": "That is my father when he was little! He had a small toy boat."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And here is a red diary under the album."
+          },
+          {
+            "speaker": "Ana",
+            "text": "He wrote about that boat in his diary. What a good memory!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "What is on the first page of the green album?",
+            "answer": "An old photo",
+            "options": [
+              "An old photo",
+              "A red diary",
+              "A map"
+            ],
+            "explanation": "Smarty says: There is an old photo on the first page.",
+            "itemIds": [
+              "en.elementary.u04.l07.album",
+              "en.elementary.u04.l07.old-photo"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "Where did Ana's father write about his toy boat?",
+            "answer": "In his diary",
+            "options": [
+              "In his diary",
+              "In his album",
+              "On a postcard"
+            ],
+            "explanation": "Ana says: He wrote about that boat in his diary.",
+            "itemIds": [
+              "en.elementary.u04.l07.diary",
+              "en.elementary.u04.l07.toy"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about old keepsakes and happy memories.",
+        "turns": [
+          {
+            "smarty": "I have an old photo in my album. Do you have an old photo, a toy, or a diary?",
+            "accept": [
+              "^(?:yes )?i have (?:an |a )?(?:old photo|toy|diary|album)(?: [a-z]+){0,4}$"
+            ],
+            "example": "I have an old photo.",
+            "hint": "Say 'I have an old photo', 'I have a toy', or 'I have a diary'.",
+            "itemIds": [
+              "en.elementary.u04.l07.old-photo",
+              "en.elementary.u04.l07.toy",
+              "en.elementary.u04.l07.diary",
+              "en.elementary.u04.l07.album"
+            ]
+          },
+          {
+            "smarty": "Tell me one happy memory from last year or when you were little.",
+            "accept": [
+              "^(?:my )?(?:happy )?memory is(?: [a-z]+){1,5}$",
+              "^(?:last year|when i was little) i(?: [a-z]+){1,5}$",
+              "^i remember(?: [a-z]+){1,5}$"
+            ],
+            "example": "Last year I visited England.",
+            "hint": "Start with 'Last year I...' or 'When I was little, I...'",
+            "itemIds": [
+              "en.elementary.u04.l07.memory",
+              "en.elementary.u04.l06.last-year",
+              "en.elementary.u04.l06.when-i-was-little"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u04.l03.wrote",
+        "en.elementary.u04.l03.found",
+        "en.elementary.u04.l06.when-i-was-little",
+        "en.elementary.u04.l06.last-year"
+      ]
+    },
+    {
+      "id": "en.elementary.u04.l08",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Smarty and Mia sort old photos in the attic and test each other on questions, time words, and keepsakes.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u04.l08.task.match-questions",
+          "kind": "match",
+          "prompt": "Match each past question or negative to its meaning.",
+          "pairs": [
+            {
+              "left": "Where did you go?",
+              "right": "I went to school"
+            },
+            {
+              "left": "How did it go?",
+              "right": "It was good"
+            },
+            {
+              "left": "Did they go?",
+              "right": "Yes, they did"
+            },
+            {
+              "left": "I did not",
+              "right": "I did not see it"
+            }
+          ],
+          "explanation": "Use did in past questions and did not in past negatives.",
+          "itemIds": [
+            "en.elementary.u04.l05.where-did-you-go",
+            "en.elementary.u04.l05.how-did-it-go",
+            "en.elementary.u04.l05.did-they-go",
+            "en.elementary.u04.l05.i-did-not"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l08.task.fill-yes-no",
+          "kind": "fill",
+          "prompt": "Mia asks: Did you find your diary? You found it in your bag. Complete the reply.",
+          "text": "Yes, ___.",
+          "answer": "I did",
+          "options": [
+            "I did",
+            "I did not",
+            "they did"
+          ],
+          "explanation": "Use Yes, I did for a positive short answer.",
+          "itemIds": [
+            "en.elementary.u04.l05.yes-i-did",
+            "en.elementary.u04.l07.diary"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l08.task.fill-no-short",
+          "kind": "fill",
+          "prompt": "Smarty asks: Did you buy a new toy? You did not buy one. Complete the reply.",
+          "text": "___, I did not.",
+          "answer": "No",
+          "options": [
+            "No",
+            "Yes",
+            "Where"
+          ],
+          "explanation": "Use No, I did not for a negative short answer.",
+          "itemIds": [
+            "en.elementary.u04.l05.no-i-did-not",
+            "en.elementary.u04.l07.toy"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l08.task.match-time",
+          "kind": "match",
+          "prompt": "Match each time expression to an example.",
+          "pairs": [
+            {
+              "left": "this morning",
+              "right": "at eight o'clock in the morning"
+            },
+            {
+              "left": "last week",
+              "right": "one week ago"
+            },
+            {
+              "left": "last year",
+              "right": "one year ago"
+            },
+            {
+              "left": "a long time ago",
+              "right": "fifty years ago"
+            }
+          ],
+          "explanation": "Time words place past events clearly in time.",
+          "itemIds": [
+            "en.elementary.u04.l06.this-morning",
+            "en.elementary.u04.l06.last-week",
+            "en.elementary.u04.l06.last-year",
+            "en.elementary.u04.l06.a-long-time-ago",
+            "en.elementary.u04.l06.years-ago"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l08.task.listen-old-photo",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "When I was little, I found an old photo in an album.",
+          "answer": "When I was little, I found an old photo in an album.",
+          "options": [
+            "When I was little, I found an old photo in an album.",
+            "This morning, I found a toy in my diary.",
+            "Last year, we found treasure in the park."
+          ],
+          "explanation": "An album holds old photos from childhood.",
+          "itemIds": [
+            "en.elementary.u04.l06.when-i-was-little",
+            "en.elementary.u04.l07.old-photo",
+            "en.elementary.u04.l07.album"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l08.task.choice-treasure-memory",
+          "kind": "choice",
+          "prompt": "This small box of coins is special to Sam because it brings back a happy ___. Which word fits?",
+          "answer": "memory",
+          "options": [
+            "memory",
+            "album",
+            "morning"
+          ],
+          "explanation": "A memory is something from the past you remember warmly.",
+          "itemIds": [
+            "en.elementary.u04.l07.memory",
+            "en.elementary.u04.l07.treasure"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l08.task.build-years-ago",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "She wrote this diary ten years ago.",
+          "tiles": [
+            "She",
+            "wrote",
+            "this",
+            "diary",
+            "ten",
+            "years",
+            "ago",
+            "last"
+          ],
+          "explanation": "Put ten years ago at the end of the sentence.",
+          "itemIds": [
+            "en.elementary.u04.l06.years-ago",
+            "en.elementary.u04.l07.diary",
+            "en.elementary.u04.l03.wrote"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l08.task.speak-review",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "Where did you go last week?",
+          "answer": "Where did you go last week?",
+          "explanation": "Combine Where did you go with last week.",
+          "itemIds": [
+            "en.elementary.u04.l05.where-did-you-go",
+            "en.elementary.u04.l06.last-week"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What did Mia find in the old album?",
+        "image": {
+          "id": "en-a2-u04-l08-scene",
+          "describe": "Mia and Smarty the black cat sit at a table in the attic looking through an open photo album with old photos."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Mia, you came up here this morning. Where did you go after lunch?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I visited my grandmother, and she gave me this album."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "How did it go? Did you find good photos?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes, I did! Look at this old photo from eight years ago."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "You were little! And that small cat next to you is me!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I did not forget that day. It is my favourite memory!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "How old is the photo Mia showed Smarty?",
+            "answer": "Eight years old",
+            "options": [
+              "Eight years old",
+              "One week old",
+              "Two years old"
+            ],
+            "explanation": "Mia says: Look at this old photo from eight years ago.",
+            "itemIds": [
+              "en.elementary.u04.l07.old-photo",
+              "en.elementary.u04.l06.years-ago"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Did Mia forget that day?",
+            "answer": "No, she did not.",
+            "options": [
+              "No, she did not.",
+              "Yes, she did.",
+              "She did not go."
+            ],
+            "explanation": "Mia says: I did not forget that day.",
+            "itemIds": [
+              "en.elementary.u04.l05.i-did-not",
+              "en.elementary.u04.l07.memory"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty tests your memory with two quick questions about the past.",
+        "turns": [
+          {
+            "smarty": "Did you clean your room last week?",
+            "accept": [
+              "^yes i did$",
+              "^no i did not$",
+              "^i (?:cleaned|did not clean) my room(?: last week)?$"
+            ],
+            "example": "Yes, I did.",
+            "hint": "Answer 'Yes, I did' or 'No, I did not'.",
+            "itemIds": [
+              "en.elementary.u04.l05.yes-i-did",
+              "en.elementary.u04.l05.no-i-did-not",
+              "en.elementary.u04.l06.last-week"
+            ]
+          },
+          {
+            "smarty": "What was your favourite toy when you were little?",
+            "accept": [
+              "^when i was little my favourite toy was(?: [a-z]+){1,4}$",
+              "^my favourite toy was(?: [a-z]+){1,4}$",
+              "^i had(?: [a-z]+){1,4}$"
+            ],
+            "example": "My favourite toy was a train.",
+            "hint": "Say 'My favourite toy was...'",
+            "itemIds": [
+              "en.elementary.u04.l07.toy",
+              "en.elementary.u04.l06.when-i-was-little"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u04.l05.where-did-you-go",
+        "en.elementary.u04.l05.how-did-it-go",
+        "en.elementary.u04.l05.did-they-go",
+        "en.elementary.u04.l05.i-did-not",
+        "en.elementary.u04.l05.yes-i-did",
+        "en.elementary.u04.l05.no-i-did-not",
+        "en.elementary.u04.l06.this-morning",
+        "en.elementary.u04.l06.last-week",
+        "en.elementary.u04.l06.last-year",
+        "en.elementary.u04.l06.a-long-time-ago",
+        "en.elementary.u04.l06.years-ago",
+        "en.elementary.u04.l06.when-i-was-little",
+        "en.elementary.u04.l07.old-photo",
+        "en.elementary.u04.l07.toy",
+        "en.elementary.u04.l07.diary",
+        "en.elementary.u04.l07.treasure",
+        "en.elementary.u04.l07.memory",
+        "en.elementary.u04.l07.album",
+        "en.elementary.u04.l03.wrote"
+      ]
+    },
+    {
+      "id": "en.elementary.u04.l09",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "Childhood",
+      "canDo": "Describe your childhood",
+      "scenario": "Looking through the old album in the attic, Smarty and Tom talk about when they were little.",
+      "items": [
+        {
+          "id": "en.elementary.u04.l09.kindergarten",
+          "text": "kindergarten",
+          "kind": "word",
+          "example": "I met my best friend in kindergarten.",
+          "note": "‘Kindergarten’ is the school for young children before primary school.",
+          "image": {
+            "id": "kindergarten",
+            "describe": "a cheerful classroom for young kittens with low tables, colorful blocks, and crayon drawings"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l09.playground",
+          "text": "playground",
+          "kind": "word",
+          "forms": [
+            "playgrounds"
+          ],
+          "example": "After school, we ran to the playground.",
+          "note": "A ‘playground’ is an outdoor area with games and equipment for children.",
+          "image": {
+            "id": "playground",
+            "describe": "a sunny outdoor playground with a yellow slide, climbing bars, and soft green grass"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l09.teddy-bear",
+          "text": "teddy bear",
+          "kind": "phrase",
+          "forms": [
+            "teddy bears"
+          ],
+          "example": "Lily slept with her brown teddy bear.",
+          "note": "A ‘teddy bear’ is a soft toy bear that children love to hug.",
+          "image": {
+            "id": "teddy-bear",
+            "describe": "a cuddly brown plush teddy bear wearing a red ribbon sitting on a bed"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l09.bicycle",
+          "text": "bicycle",
+          "kind": "word",
+          "forms": [
+            "bicycles"
+          ],
+          "example": "Tom got his first blue bicycle when he was six.",
+          "note": "A ‘bicycle’ is a two-wheeled vehicle that you ride with pedals.",
+          "image": {
+            "id": "bicycle",
+            "describe": "a small blue children's bicycle with a shiny bell and a wicker basket"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l09.sweets",
+          "text": "sweets",
+          "kind": "word",
+          "forms": [
+            "sweet"
+          ],
+          "example": "My grandmother always gave us fruit sweets.",
+          "note": "‘Sweets’ are small sugary treats like candies.",
+          "image": {
+            "id": "sweets",
+            "describe": "a clear glass jar filled with colorful wrapped fruit sweets and candies"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l09.swing",
+          "text": "swing",
+          "kind": "word",
+          "forms": [
+            "swings"
+          ],
+          "example": "Mia sat on the swing and went high.",
+          "note": "A ‘swing’ is a hanging seat in a park or garden that moves back and forth.",
+          "image": {
+            "id": "swing",
+            "describe": "a wooden swing hanging by sturdy ropes from a big leafy garden tree"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u04.l09.task.choice-kindergarten",
+          "kind": "choice",
+          "prompt": "Tom was four years old and went to school for young children. Where did he go?",
+          "answer": "kindergarten",
+          "options": [
+            "kindergarten",
+            "station",
+            "pharmacy"
+          ],
+          "explanation": "Kindergarten is school for young children.",
+          "itemIds": [
+            "en.elementary.u04.l09.kindergarten"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l09.task.match-childhood",
+          "kind": "match",
+          "prompt": "Match each childhood word to its clue.",
+          "pairs": [
+            {
+              "left": "teddy bear",
+              "right": "a brown toy"
+            },
+            {
+              "left": "bicycle",
+              "right": "you ride it"
+            },
+            {
+              "left": "sweets",
+              "right": "small and sweet"
+            },
+            {
+              "left": "swing",
+              "right": "you play on it in the park"
+            }
+          ],
+          "explanation": "Each word names a classic part of childhood.",
+          "itemIds": [
+            "en.elementary.u04.l09.teddy-bear",
+            "en.elementary.u04.l09.bicycle",
+            "en.elementary.u04.l09.sweets",
+            "en.elementary.u04.l09.swing"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l09.task.listen-playground",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "We played in the playground at kindergarten.",
+          "answer": "We played in the playground at kindergarten.",
+          "options": [
+            "We played in the playground at kindergarten.",
+            "We walked to the supermarket with Mia.",
+            "We sat in the library at school."
+          ],
+          "explanation": "Children play in the playground after kindergarten.",
+          "itemIds": [
+            "en.elementary.u04.l09.playground",
+            "en.elementary.u04.l09.kindergarten"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l09.task.fill-bicycle",
+          "kind": "fill",
+          "prompt": "Smarty learned to ride on two wheels in the park. Complete the sentence.",
+          "text": "Smarty rode his red ___ in the park.",
+          "answer": "bicycle",
+          "options": [
+            "bicycle",
+            "teddy bear",
+            "sweets"
+          ],
+          "explanation": "A bicycle is the vehicle you ride.",
+          "itemIds": [
+            "en.elementary.u04.l09.bicycle"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l09.task.fill-swing",
+          "kind": "fill",
+          "prompt": "Zara sat on the hanging seat under the big tree. Complete the sentence.",
+          "text": "Zara sat on the ___ in the playground.",
+          "answer": "swing",
+          "options": [
+            "swing",
+            "bicycle",
+            "diary"
+          ],
+          "explanation": "A swing is a hanging seat in a playground.",
+          "itemIds": [
+            "en.elementary.u04.l09.swing",
+            "en.elementary.u04.l09.playground"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l09.task.build-teddy-bear",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "When I was little, I had a teddy bear.",
+          "tiles": [
+            "When",
+            "I",
+            "was",
+            "little",
+            "I",
+            "had",
+            "a",
+            "teddy",
+            "bear",
+            "toy"
+          ],
+          "explanation": "Teddy bear is two words.",
+          "itemIds": [
+            "en.elementary.u04.l09.teddy-bear",
+            "en.elementary.u04.l06.when-i-was-little"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l09.task.speak-sweets",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "My grandmother gave me sweets when I was little.",
+          "answer": "My grandmother gave me sweets when I was little.",
+          "explanation": "Sweets are sugary treats.",
+          "itemIds": [
+            "en.elementary.u04.l09.sweets",
+            "en.elementary.u04.l02.gave",
+            "en.elementary.u04.l06.when-i-was-little"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is in Tom's old childhood photo?",
+        "image": {
+          "id": "en-a2-u04-l09-scene",
+          "describe": "Tom and Smarty the black cat sit on an attic trunk looking at an old photo of a kitten on a blue bicycle beside a playground swing."
+        },
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "Smarty, look at this old photo from kindergarten!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "You were so small! Is that your blue bicycle?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Yes! My parents bought it for my sixth birthday."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And what is in your bag?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "My brown teddy bear and a box of sweets! After school, we always went to the playground and sat on the swing."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "What did Tom's parents buy for his sixth birthday?",
+            "answer": "A blue bicycle",
+            "options": [
+              "A blue bicycle",
+              "A brown teddy bear",
+              "A green album"
+            ],
+            "explanation": "Tom says: Is that your blue bicycle? Yes! My parents bought it for my sixth birthday.",
+            "itemIds": [
+              "en.elementary.u04.l09.bicycle",
+              "en.elementary.u04.l02.bought"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "Where did Tom go after kindergarten?",
+            "answer": "To the playground",
+            "options": [
+              "To the playground",
+              "To the museum",
+              "To the bank"
+            ],
+            "explanation": "Tom says: After school, we always went to the playground.",
+            "itemIds": [
+              "en.elementary.u04.l09.playground",
+              "en.elementary.u04.l09.kindergarten"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about your childhood.",
+        "turns": [
+          {
+            "smarty": "When I was little, I loved the swing in the playground. Did you have a teddy bear or a bicycle?",
+            "accept": [
+              "^(?:yes )?i had (?:a )?(?:teddy bear|bicycle)(?: [a-z]+){0,4}$",
+              "^when i was little i had(?: [a-z]+){1,5}$"
+            ],
+            "example": "I had a bicycle.",
+            "hint": "Say 'I had a teddy bear' or 'I had a bicycle'.",
+            "itemIds": [
+              "en.elementary.u04.l09.teddy-bear",
+              "en.elementary.u04.l09.bicycle",
+              "en.elementary.u04.l09.swing",
+              "en.elementary.u04.l09.playground"
+            ]
+          },
+          {
+            "smarty": "Did you like sweets when you were little?",
+            "accept": [
+              "^yes i did$",
+              "^no i did not$",
+              "^yes i (?:liked|loved) sweets$"
+            ],
+            "example": "Yes, I liked sweets.",
+            "hint": "Answer 'Yes, I did' or 'Yes, I liked sweets'.",
+            "itemIds": [
+              "en.elementary.u04.l09.sweets",
+              "en.elementary.u04.l06.when-i-was-little"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u04.l06.when-i-was-little",
+        "en.elementary.u04.l02.gave",
+        "en.elementary.u04.l02.bought"
+      ]
+    },
+    {
+      "id": "en.elementary.u04.l10",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 10,
+      "type": "lesson",
+      "title": "Big events",
+      "canDo": "Tell about an event",
+      "scenario": "Smarty and Lily find a trophy and a map in the attic and share stories about big events.",
+      "items": [
+        {
+          "id": "en.elementary.u04.l10.accident",
+          "text": "accident",
+          "kind": "word",
+          "forms": [
+            "accidents"
+          ],
+          "example": "Ben had a small accident on his bicycle, but he was fine.",
+          "note": "An ‘accident’ is something bad that happens by mistake, like falling off a bike.",
+          "image": {
+            "id": "accident",
+            "describe": "a kitten sitting on the grass next to a fallen bicycle with a spilled basket of apples"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l10.storm",
+          "text": "storm",
+          "kind": "word",
+          "forms": [
+            "storms"
+          ],
+          "example": "A big storm came with heavy rain and wind.",
+          "note": "A ‘storm’ is very bad weather with strong wind and heavy rain.",
+          "image": {
+            "id": "storm",
+            "describe": "dark storm clouds with wind and heavy rain bending trees outside an attic window"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l10.surprise",
+          "text": "surprise",
+          "kind": "word",
+          "forms": [
+            "surprises"
+          ],
+          "example": "My friends made a birthday surprise for me.",
+          "note": "A ‘surprise’ is something nice or unexpected that you did not know about.",
+          "image": {
+            "id": "surprise",
+            "describe": "Smarty the black cat smiling in amazement as friends pop out with a birthday cake"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l10.adventure",
+          "text": "adventure",
+          "kind": "word",
+          "forms": [
+            "adventures"
+          ],
+          "example": "Our trip to the mountains was a great adventure.",
+          "note": "An ‘adventure’ is an exciting, unusual experience or trip.",
+          "image": {
+            "id": "adventure",
+            "describe": "two explorer cats wearing backpacks and holding a map on a sunny forest hill"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l10.journey",
+          "text": "journey",
+          "kind": "word",
+          "forms": [
+            "journeys"
+          ],
+          "example": "The train journey to Uzbekistan took ten hours.",
+          "note": "A ‘journey’ is the act of travelling from one place to another.",
+          "image": {
+            "id": "journey",
+            "describe": "a red passenger train travelling along tracks across green hills toward distant peaks"
+          }
+        },
+        {
+          "id": "en.elementary.u04.l10.prize",
+          "text": "prize",
+          "kind": "word",
+          "forms": [
+            "prizes"
+          ],
+          "example": "Lily got first prize in the art test.",
+          "note": "A ‘prize’ is something you win in a game, race, or competition.",
+          "image": {
+            "id": "prize",
+            "describe": "a shiny gold star medal with a blue ribbon held proudly by a smiling kitten"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u04.l10.task.choice-storm",
+          "kind": "choice",
+          "prompt": "The sky went dark, and strong wind and heavy rain began. What was it?",
+          "answer": "storm",
+          "options": [
+            "storm",
+            "prize",
+            "surprise"
+          ],
+          "explanation": "A storm brings strong wind and heavy rain.",
+          "itemIds": [
+            "en.elementary.u04.l10.storm"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l10.task.match-events",
+          "kind": "match",
+          "prompt": "Match each event word to its meaning.",
+          "pairs": [
+            {
+              "left": "accident",
+              "right": "something that hurts you"
+            },
+            {
+              "left": "surprise",
+              "right": "something you did not see"
+            },
+            {
+              "left": "journey",
+              "right": "a long trip by train"
+            },
+            {
+              "left": "prize",
+              "right": "you get it when you are good"
+            }
+          ],
+          "explanation": "Each noun names a memorable event or outcome.",
+          "itemIds": [
+            "en.elementary.u04.l10.accident",
+            "en.elementary.u04.l10.surprise",
+            "en.elementary.u04.l10.journey",
+            "en.elementary.u04.l10.prize"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l10.task.listen-adventure",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "We had a big adventure in the park.",
+          "answer": "We had a big adventure in the park.",
+          "options": [
+            "We had a big adventure in the park.",
+            "We had a small accident at school.",
+            "We had a long journey by boat."
+          ],
+          "explanation": "Adventure describes an exciting experience.",
+          "itemIds": [
+            "en.elementary.u04.l10.adventure"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l10.task.fill-prize",
+          "kind": "fill",
+          "prompt": "Omar ran the fastest in the school race and received a gold medal. Complete the sentence.",
+          "text": "Omar got first ___ in the race.",
+          "answer": "prize",
+          "options": [
+            "prize",
+            "storm",
+            "accident"
+          ],
+          "explanation": "You get a prize when you do best in a competition.",
+          "itemIds": [
+            "en.elementary.u04.l10.prize",
+            "en.elementary.u04.l02.got"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l10.task.fill-journey",
+          "kind": "fill",
+          "prompt": "They travelled by plane from Brazil to England. Complete the sentence.",
+          "text": "The ___ by plane was twelve hours.",
+          "answer": "journey",
+          "options": [
+            "journey",
+            "surprise",
+            "accident"
+          ],
+          "explanation": "A journey is travel from one place to another.",
+          "itemIds": [
+            "en.elementary.u04.l10.journey"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l10.task.build-surprise",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "The birthday cake was a nice surprise.",
+          "tiles": [
+            "The",
+            "birthday",
+            "cake",
+            "was",
+            "a",
+            "nice",
+            "surprise",
+            "prize"
+          ],
+          "explanation": "Surprise means an unexpected happy gift or event.",
+          "itemIds": [
+            "en.elementary.u04.l10.surprise"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l10.task.speak-accident",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "He had a small accident on his bicycle.",
+          "answer": "He had a small accident on his bicycle.",
+          "explanation": "Accident is used for an unplanned fall or crash.",
+          "itemIds": [
+            "en.elementary.u04.l10.accident",
+            "en.elementary.u04.l09.bicycle"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How did Lily get the gold prize in the old room?",
+        "image": {
+          "id": "en-a2-u04-l10-scene",
+          "describe": "Lily holds up a shiny gold star prize in the attic while Smarty the black cat looks at a travel map beside a window."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Lily, where did you get that gold prize?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "I got it last year! It was a big adventure."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Tell me about it!"
+          },
+          {
+            "speaker": "Lily",
+            "text": "We took a long journey by train. On the way, a big storm came!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Oh no! Did you have an accident?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "No, we were safe! And when we arrived, my teacher gave me this prize. What a surprise!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "What happened on Lily's train journey?",
+            "answer": "A big storm came.",
+            "options": [
+              "A big storm came.",
+              "She had an accident.",
+              "She found her diary."
+            ],
+            "explanation": "Lily says: On the way, a big storm came.",
+            "itemIds": [
+              "en.elementary.u04.l10.storm",
+              "en.elementary.u04.l10.journey"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "Did Lily have an accident?",
+            "answer": "No, she was fine.",
+            "options": [
+              "No, she was fine.",
+              "Yes, on her bicycle.",
+              "Yes, at the station."
+            ],
+            "explanation": "Lily says: No, we were safe!",
+            "itemIds": [
+              "en.elementary.u04.l10.accident"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about a journey, a surprise, or a prize from your past.",
+        "turns": [
+          {
+            "smarty": "Tell me about a journey or an adventure you had.",
+            "accept": [
+              "^i had (?:a |an )?(?:good |nice |big |long )?(?:journey|adventure)(?: [a-z]+){0,4}$",
+              "^my (?:journey|adventure) was(?: [a-z]+){1,4}$",
+              "^i went(?: to)?(?: [a-z]+){1,4}$"
+            ],
+            "example": "I had a long journey.",
+            "hint": "Say 'I had a long journey' or 'I had a big adventure'.",
+            "itemIds": [
+              "en.elementary.u04.l10.journey",
+              "en.elementary.u04.l10.adventure"
+            ]
+          },
+          {
+            "smarty": "Did you ever get a prize or a nice surprise?",
+            "accept": [
+              "^(?:yes )?i got (?:a )?(?:nice |big )?(?:prize|surprise)(?: [a-z]+){0,4}$",
+              "^yes i did$",
+              "^no i did not$"
+            ],
+            "example": "Yes, I got a prize.",
+            "hint": "Say 'Yes, I got a prize' or 'Yes, I got a surprise'.",
+            "itemIds": [
+              "en.elementary.u04.l10.prize",
+              "en.elementary.u04.l10.surprise",
+              "en.elementary.u04.l02.got"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u04.l02.got",
+        "en.elementary.u04.l09.bicycle"
+      ]
+    },
+    {
+      "id": "en.elementary.u04.l11",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 11,
+      "type": "lesson",
+      "title": "Tell a story",
+      "canDo": "Link events in order",
+      "scenario": "Smarty shows Sam how to tell a past story step by step in the attic.",
+      "items": [
+        {
+          "id": "en.elementary.u04.l11.at-first",
+          "text": "at first",
+          "kind": "phrase",
+          "example": "At first, the weather was sunny and warm.",
+          "note": "Start a story with 'At first' to show how things were in the beginning."
+        },
+        {
+          "id": "en.elementary.u04.l11.afterwards",
+          "text": "afterwards",
+          "kind": "word",
+          "example": "We ate lunch, and afterwards we walked to the park.",
+          "note": "Use 'afterwards' to show what happened after an earlier event."
+        },
+        {
+          "id": "en.elementary.u04.l11.next",
+          "text": "next",
+          "kind": "word",
+          "example": "First we cleaned the table, and next we made tea.",
+          "note": "Say 'next' to introduce the following step in your story."
+        },
+        {
+          "id": "en.elementary.u04.l11.suddenly",
+          "text": "suddenly",
+          "kind": "word",
+          "example": "We were in the garden, and suddenly a storm came.",
+          "note": "Use 'suddenly' when something happens fast and by surprise."
+        },
+        {
+          "id": "en.elementary.u04.l11.finally",
+          "text": "finally",
+          "kind": "word",
+          "example": "We looked everywhere, and finally we found the key.",
+          "note": "Say 'finally' to introduce the last event at the end of a story."
+        },
+        {
+          "id": "en.elementary.u04.l11.at-last",
+          "text": "at last",
+          "kind": "phrase",
+          "example": "The train was late, but at last we came home.",
+          "note": "Use 'at last' when something good happens after a long wait."
+        }
+      ],
+      "grammar": {
+        "title": "Order words in a story",
+        "explanation": "Link past events clearly: use at first for the start, next and afterwards for later steps, suddenly for a fast surprise, and finally or at last for the ending.",
+        "examples": [
+          "At first it was sunny, and suddenly it rained.",
+          "At last we found our home."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u04.l11.task.choice-at-first",
+          "kind": "choice",
+          "prompt": "You want to describe how the day began before anything changed. Which phrase fits?",
+          "answer": "At first",
+          "options": [
+            "At first",
+            "Finally",
+            "At last"
+          ],
+          "explanation": "At first shows the beginning of a situation.",
+          "itemIds": [
+            "en.elementary.u04.l11.at-first"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l11.task.match-connectors",
+          "kind": "match",
+          "prompt": "Match each story word to its role.",
+          "pairs": [
+            {
+              "left": "at first",
+              "right": "the first thing"
+            },
+            {
+              "left": "next",
+              "right": "the next thing"
+            },
+            {
+              "left": "suddenly",
+              "right": "all of a sudden"
+            },
+            {
+              "left": "finally",
+              "right": "the last thing"
+            }
+          ],
+          "explanation": "These linking words give your story a clear order.",
+          "itemIds": [
+            "en.elementary.u04.l11.at-first",
+            "en.elementary.u04.l11.next",
+            "en.elementary.u04.l11.suddenly",
+            "en.elementary.u04.l11.finally"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l11.task.fill-suddenly",
+          "kind": "fill",
+          "prompt": "They were walking quietly when a big dog jumped out fast. Complete the sentence.",
+          "text": "We walked in the park, and ___ a dog ran to us.",
+          "answer": "suddenly",
+          "options": [
+            "suddenly",
+            "at first",
+            "at last"
+          ],
+          "explanation": "Suddenly shows a quick, surprising action.",
+          "itemIds": [
+            "en.elementary.u04.l11.suddenly",
+            "en.elementary.u04.l03.ran"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l11.task.listen-afterwards",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "We visited the museum, and afterwards we had lunch.",
+          "answer": "We visited the museum, and afterwards we had lunch.",
+          "options": [
+            "We visited the museum, and afterwards we had lunch.",
+            "At first we visited the library, and next we went home.",
+            "Finally we walked to the station in the rain."
+          ],
+          "explanation": "Afterwards shows what happened next in time.",
+          "itemIds": [
+            "en.elementary.u04.l11.afterwards",
+            "en.elementary.u04.l01.visited"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l11.task.fill-at-last",
+          "kind": "fill",
+          "prompt": "After waiting two hours at the station, the train arrived. Complete the sentence.",
+          "text": "We waited for two hours, and ___ the train came.",
+          "answer": "at last",
+          "options": [
+            "at last",
+            "at first",
+            "suddenly"
+          ],
+          "explanation": "At last shows relief after waiting a long time.",
+          "itemIds": [
+            "en.elementary.u04.l11.at-last",
+            "en.elementary.u04.l02.came"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l11.task.build-next-finally",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "Next we cooked soup, and finally we ate.",
+          "tiles": [
+            "Next",
+            "we",
+            "cooked",
+            "soup",
+            "and",
+            "finally",
+            "we",
+            "ate",
+            "first"
+          ],
+          "explanation": "Use next for the middle step and finally for the ending.",
+          "itemIds": [
+            "en.elementary.u04.l11.next",
+            "en.elementary.u04.l11.finally",
+            "en.elementary.u04.l01.cooked"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l11.task.speak-story-link",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "At first it was cloudy, and suddenly a storm came.",
+          "answer": "At first it was cloudy, and suddenly a storm came.",
+          "explanation": "At first sets the scene, and suddenly introduces the storm.",
+          "itemIds": [
+            "en.elementary.u04.l11.at-first",
+            "en.elementary.u04.l11.suddenly",
+            "en.elementary.u04.l10.storm"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How did Sam and Smarty find the missing key in the old room?",
+        "image": {
+          "id": "en-a2-u04-l11-scene",
+          "describe": "Sam and Smarty the black cat search around dusty boxes in the attic until Smarty spots a shiny brass key under a rug."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Sam, tell me how you found the key yesterday!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "At first, I looked on the table, but it was not there."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What did you do next?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Next, I cleaned behind the big box, and afterwards I sat on the chair."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And then?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Suddenly, you jumped under the chair, and finally we found the key! At last!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l11.task.story-one",
+            "kind": "choice",
+            "prompt": "Where did Sam look at first?",
+            "answer": "On the table",
+            "options": [
+              "On the table",
+              "Under the chair",
+              "Behind the door"
+            ],
+            "explanation": "Sam says: At first, I looked on the table.",
+            "itemIds": [
+              "en.elementary.u04.l11.at-first"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l11.task.story-two",
+            "kind": "choice",
+            "prompt": "How did they find the key at last?",
+            "answer": "Smarty jumped under the chair.",
+            "options": [
+              "Smarty jumped under the chair.",
+              "Sam bought a new key.",
+              "Mia came with a lamp."
+            ],
+            "explanation": "Sam says: Suddenly, you jumped under the chair, and finally we found the key.",
+            "itemIds": [
+              "en.elementary.u04.l11.suddenly",
+              "en.elementary.u04.l11.finally",
+              "en.elementary.u04.l11.at-last"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty helps you tell a two-step mini-story using linking words.",
+        "turns": [
+          {
+            "smarty": "Start your story with 'At first'. What happened at the beginning?",
+            "accept": [
+              "^at first(?: [a-z]+){2,6}$"
+            ],
+            "example": "At first, it was sunny.",
+            "hint": "Begin your sentence with 'At first...'",
+            "itemIds": [
+              "en.elementary.u04.l11.at-first"
+            ]
+          },
+          {
+            "smarty": "Great! Now finish your story with 'next', 'suddenly', 'finally', or 'at last'.",
+            "accept": [
+              "^(?:next|afterwards|suddenly|finally|at last)(?: [a-z]+){2,6}$"
+            ],
+            "example": "Suddenly, a storm came.",
+            "hint": "Start with 'Next...', 'Suddenly...', 'Finally...', or 'At last...'",
+            "itemIds": [
+              "en.elementary.u04.l11.next",
+              "en.elementary.u04.l11.afterwards",
+              "en.elementary.u04.l11.suddenly",
+              "en.elementary.u04.l11.finally",
+              "en.elementary.u04.l11.at-last"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u04.l03.ran",
+        "en.elementary.u04.l01.visited",
+        "en.elementary.u04.l02.came",
+        "en.elementary.u04.l01.cooked",
+        "en.elementary.u04.l10.storm"
+      ]
+    },
+    {
+      "id": "en.elementary.u04.l12",
+      "section": "elementary",
+      "unit": 4,
+      "lesson": 12,
+      "type": "test",
+      "title": "A day I remember",
+      "canDo": "Tell a short past story",
+      "scenario": "Smarty and his friends gather in the attic for a final memory challenge.",
+      "items": [
+        {
+          "id": "en.elementary.u04.l12.i-remember-when",
+          "text": "I remember when",
+          "kind": "phrase",
+          "example": "I remember when we had a picnic by the lake.",
+          "note": "Start a story with 'I remember when' to share a clear memory from the past."
+        },
+        {
+          "id": "en.elementary.u04.l12.it-was-a-long-time-ago",
+          "text": "It was a long time ago",
+          "kind": "phrase",
+          "example": "It was a long time ago, when I was in kindergarten.",
+          "note": "Say 'It was a long time ago' to show your story happened many years back."
+        },
+        {
+          "id": "en.elementary.u04.l12.what-happened-next",
+          "text": "What happened next?",
+          "kind": "phrase",
+          "forms": [
+            "happened",
+            "happen"
+          ],
+          "example": "You found an old box! What happened next?",
+          "note": "Ask 'What happened next?' when you want to hear the rest of someone's story."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u04.l12.task.choice-i-remember-when",
+          "kind": "choice",
+          "prompt": "You want to share a happy memory from childhood. How can you start?",
+          "answer": "I remember when I got my first bicycle.",
+          "options": [
+            "I remember when I got my first bicycle.",
+            "Where did you go tomorrow?",
+            "What happened next week?"
+          ],
+          "explanation": "I remember when introduces a past memory.",
+          "itemIds": [
+            "en.elementary.u04.l12.i-remember-when",
+            "en.elementary.u04.l09.bicycle"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l12.task.listen-long-time-ago",
+          "kind": "listen",
+          "prompt": "Listen and choose what you heard.",
+          "audio": "It was a long time ago, when I was little.",
+          "answer": "It was a long time ago, when I was little.",
+          "options": [
+            "It was a long time ago, when I was little.",
+            "It was this morning, at breakfast.",
+            "It was last week, at the supermarket."
+          ],
+          "explanation": "It was a long time ago places the memory far in the past.",
+          "itemIds": [
+            "en.elementary.u04.l12.it-was-a-long-time-ago",
+            "en.elementary.u04.l06.when-i-was-little"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l12.task.build-what-happened-next",
+          "kind": "build",
+          "prompt": "Your friend stops in the middle of a story. Ask them to continue.",
+          "answer": "What happened next?",
+          "tiles": [
+            "What",
+            "happened",
+            "next",
+            "did",
+            "go"
+          ],
+          "explanation": "What happened next? asks for the next event in a story.",
+          "itemIds": [
+            "en.elementary.u04.l12.what-happened-next"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l12.task.match-unit-mix",
+          "kind": "match",
+          "prompt": "Match each past verb to its base form.",
+          "pairs": [
+            {
+              "left": "bought",
+              "right": "buy"
+            },
+            {
+              "left": "wrote",
+              "right": "write"
+            },
+            {
+              "left": "found",
+              "right": "find"
+            },
+            {
+              "left": "took",
+              "right": "take"
+            }
+          ],
+          "explanation": "These irregular verbs are key for telling past stories.",
+          "itemIds": [
+            "en.elementary.u04.l02.bought",
+            "en.elementary.u04.l03.wrote",
+            "en.elementary.u04.l03.found",
+            "en.elementary.u04.l02.took"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l12.task.fill-did-not",
+          "kind": "fill",
+          "prompt": "Zara asked if Leo went to the park, and he answered no. Complete the sentence.",
+          "text": "No, I ___ go to the park.",
+          "answer": "did not",
+          "options": [
+            "did not",
+            "was not",
+            "do not"
+          ],
+          "explanation": "Use did not + base verb for past negatives.",
+          "itemIds": [
+            "en.elementary.u04.l05.i-did-not",
+            "en.elementary.u04.l05.no-i-did-not"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l12.task.fill-connectors-test",
+          "kind": "fill",
+          "prompt": "The sky was clear, and then without warning the rain began. Complete the sentence.",
+          "text": "At first it was sunny, and ___ a storm came.",
+          "answer": "suddenly",
+          "options": [
+            "suddenly",
+            "at last",
+            "yesterday"
+          ],
+          "explanation": "Suddenly marks a fast, unexpected change.",
+          "itemIds": [
+            "en.elementary.u04.l11.at-first",
+            "en.elementary.u04.l11.suddenly",
+            "en.elementary.u04.l10.storm"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l12.task.choice-keepsakes-test",
+          "kind": "choice",
+          "prompt": "Mia opened her ___ and looked at an ___ from kindergarten. Which words fit?",
+          "answer": "album and old photo",
+          "options": [
+            "album and old photo",
+            "prize and accident",
+            "journey and swing"
+          ],
+          "explanation": "An album holds old photos from childhood.",
+          "itemIds": [
+            "en.elementary.u04.l07.album",
+            "en.elementary.u04.l07.old-photo",
+            "en.elementary.u04.l09.kindergarten"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l12.task.fill-finally-test",
+          "kind": "fill",
+          "prompt": "After a long walk in the mountains, they arrived at their hotel. Complete the sentence.",
+          "text": "We walked for four hours, and ___ we arrived at the hotel.",
+          "answer": "finally",
+          "options": [
+            "finally",
+            "at first",
+            "this morning"
+          ],
+          "explanation": "Finally introduces the end of a sequence of events.",
+          "itemIds": [
+            "en.elementary.u04.l11.finally",
+            "en.elementary.u04.l01.walked"
+          ]
+        },
+        {
+          "id": "en.elementary.u04.l12.task.speak-test",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I remember when we visited our grandmother five years ago.",
+          "answer": "I remember when we visited our grandmother five years ago.",
+          "explanation": "Combines I remember when, a past verb, and years ago.",
+          "itemIds": [
+            "en.elementary.u04.l12.i-remember-when",
+            "en.elementary.u04.l01.visited",
+            "en.elementary.u04.l06.years-ago"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What adventure does Smarty remember from long ago?",
+        "image": {
+          "id": "en-a2-u04-l12-scene",
+          "describe": "Smarty the black cat sits in the center of the attic surrounded by Mia, Sam, Lily, and Tom while holding an old photo and a small diary."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "I remember when I had a big adventure! It was a long time ago."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Tell us! Where did you go?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "At first, I walked to the station with my blue backpack."
+          },
+          {
+            "speaker": "Sam",
+            "text": "What happened next?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Suddenly, a storm came! I ran into an old library and sat by the window."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Did you find anything there?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, I did! I found this diary and an old photo, and at last I came home with a great story!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u04.l12.task.story-one",
+            "kind": "choice",
+            "prompt": "Why did Smarty run into the old library?",
+            "answer": "Because a storm came",
+            "options": [
+              "Because a storm came",
+              "Because he bought a book",
+              "Because he met Tom"
+            ],
+            "explanation": "Smarty says: Suddenly, a storm came! I ran into an old library.",
+            "itemIds": [
+              "en.elementary.u04.l10.storm",
+              "en.elementary.u04.l03.ran"
+            ]
+          },
+          {
+            "id": "en.elementary.u04.l12.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Smarty find in the library?",
+            "answer": "A diary and an old photo",
+            "options": [
+              "A diary and an old photo",
+              "A teddy bear and sweets",
+              "A big prize"
+            ],
+            "explanation": "Smarty says: I found this diary and an old photo.",
+            "itemIds": [
+              "en.elementary.u04.l07.diary",
+              "en.elementary.u04.l07.old-photo"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Tell Smarty a short memory from your life in three turns.",
+        "turns": [
+          {
+            "smarty": "Start your story with 'I remember when'!",
+            "accept": [
+              "^i remember when(?: [a-z]+){2,7}$"
+            ],
+            "example": "I remember when I visited my grandmother.",
+            "hint": "Start with 'I remember when...' and say what happened.",
+            "itemIds": [
+              "en.elementary.u04.l12.i-remember-when"
+            ]
+          },
+          {
+            "smarty": "That sounds interesting! What happened next?",
+            "accept": [
+              "^(?:next |afterwards |suddenly )?(?:we|i|he|she|they)(?: [a-z]+){2,7}$"
+            ],
+            "example": "Next, we cooked dinner together.",
+            "hint": "Tell Smarty what you did next using a past verb.",
+            "itemIds": [
+              "en.elementary.u04.l12.what-happened-next",
+              "en.elementary.u04.l11.next"
+            ]
+          },
+          {
+            "smarty": "And how did your story end? Use 'finally' or 'at last'.",
+            "accept": [
+              "^(?:finally|at last)(?: [a-z]+){2,7}$"
+            ],
+            "example": "Finally, we came home happy.",
+            "hint": "Start with 'Finally...' or 'At last...'",
+            "itemIds": [
+              "en.elementary.u04.l11.finally",
+              "en.elementary.u04.l11.at-last"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u04.l09.bicycle",
+        "en.elementary.u04.l06.when-i-was-little",
+        "en.elementary.u04.l02.bought",
+        "en.elementary.u04.l03.wrote",
+        "en.elementary.u04.l03.found",
+        "en.elementary.u04.l02.took",
+        "en.elementary.u04.l05.i-did-not",
+        "en.elementary.u04.l05.no-i-did-not",
+        "en.elementary.u04.l11.at-first",
+        "en.elementary.u04.l11.suddenly",
+        "en.elementary.u04.l10.storm",
+        "en.elementary.u04.l07.album",
+        "en.elementary.u04.l07.old-photo",
+        "en.elementary.u04.l09.kindergarten",
+        "en.elementary.u04.l11.finally",
+        "en.elementary.u04.l01.walked",
+        "en.elementary.u04.l01.visited",
+        "en.elementary.u04.l06.years-ago",
+        "en.elementary.u04.l03.ran",
+        "en.elementary.u04.l07.diary",
+        "en.elementary.u04.l11.next",
+        "en.elementary.u04.l11.at-last"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Secret in the Old Box",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "We cleaned this old room all week, Mia!",
+        "image": {
+          "id": "en-a2-u04-ep-01",
+          "describe": "Smarty the black cat and Mia stand in the clean attic surrounded by neat boxes."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Look behind that big blue album! There is a small wooden box."
+      },
+      {
+        "speaker": "Smarty",
+        "text": "At first, I did not see it. Who put it there?",
+        "image": {
+          "id": "en-a2-u04-ep-02",
+          "describe": "Smarty the black cat peeks behind a blue photo album and spots a small carved wooden box."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "It was here a long time ago. Let's open it with the key we found!"
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Inside there is an old diary, two photos, and a green map!",
+        "image": {
+          "id": "en-a2-u04-ep-03",
+          "describe": "Inside the open wooden box lie a small leather diary, two sepia photos, and a folded green map."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "My grandfather wrote a note on the map ten years ago!"
+      },
+      {
+        "speaker": "Smarty",
+        "text": "What did he write?"
+      },
+      {
+        "speaker": "Mia",
+        "text": "He wrote: Follow the map to find my treasure! Where does this map go?",
+        "image": {
+          "id": "en-a2-u04-ep-04",
+          "describe": "Mia and Smarty the black cat look excited as they hold up the green treasure map with a dotted trail."
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.elementary.u04.ep.task.q1",
+        "kind": "choice",
+        "prompt": "Where did Mia see the small wooden box?",
+        "answer": "Behind the big blue album",
+        "options": [
+          "Behind the big blue album",
+          "Under the red sofa",
+          "Next to the window"
+        ],
+        "explanation": "Mia says: Look behind that big blue album! There is a small wooden box.",
+        "itemIds": [
+          "en.elementary.u04.l07.album"
+        ]
+      },
+      {
+        "id": "en.elementary.u04.ep.task.q2",
+        "kind": "choice",
+        "prompt": "When did Mia's grandfather write the note on the map?",
+        "answer": "Ten years ago",
+        "options": [
+          "Ten years ago",
+          "This morning",
+          "Last week"
+        ],
+        "explanation": "Mia says: My grandfather wrote a note on the map ten years ago.",
+        "itemIds": [
+          "en.elementary.u04.l03.wrote",
+          "en.elementary.u04.l06.years-ago"
+        ]
+      },
+      {
+        "id": "en.elementary.u04.ep.task.q3",
+        "kind": "choice",
+        "prompt": "What does the map lead to?",
+        "answer": "Her grandfather's treasure",
+        "options": [
+          "Her grandfather's treasure",
+          "A kindergarten",
+          "A supermarket"
+        ],
+        "explanation": "The note says: Follow the map to find my treasure!",
+        "itemIds": [
+          "en.elementary.u04.l07.treasure"
+        ]
+      }
+    ]
+  }
+}

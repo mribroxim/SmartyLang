@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { AlertCircle, Brain, Plus, Search, Star, Trash2, Volume2, X } from 'lucide-react';
+import { AlertCircle, Plus, Search, Star, Trash2, Volume2, X } from 'lucide-react';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
 import { vocabStorageKey, CONTENT_LANG_LABEL } from '../lib/contentLang';
@@ -15,13 +15,6 @@ interface VocabularyViewProps {
   savedVocab: Record<string, Entry>;
   setSavedVocab: (fn: (prev: any) => any) => void;
   playWord: (word: string) => void;
-  srsDueWords: string[];
-  setSelectedVocabWords: (words: string[]) => void;
-  setShowExerciseWordSelector: (v: any) => void;
-  setActiveExercise: (ex: string | null) => void;
-  setActiveTab: (tab: string) => void;
-  /** Opens Practice → Review your words. */
-  onReview: () => void;
   newVocabWord: string;
   setNewVocabWord: (w: string) => void;
   isAddingVocab: boolean;
@@ -54,8 +47,7 @@ function kindOf(word: string, e: Entry, dbPos?: string): Exclude<Tab, 'all' | 'i
  * the top; tap a word for the full dictionary card.
  */
 export default function VocabularyView({
-  savedVocab, setSavedVocab, playWord, srsDueWords, setSelectedVocabWords, setShowExerciseWordSelector,
-  setActiveExercise, setActiveTab, onReview, newVocabWord, setNewVocabWord, isAddingVocab, addVocabError, handleAddNewVocab, onShowModal,
+  savedVocab, setSavedVocab, playWord, newVocabWord, setNewVocabWord, isAddingVocab, addVocabError, handleAddNewVocab, onShowModal,
 }: VocabularyViewProps) {
   const { contentLang } = useContentLang();
   const { t } = useUiLang();
@@ -127,19 +119,6 @@ export default function VocabularyView({
       </form>
       {addVocabError && (
         <p className="mt-2 flex items-center gap-1.5 text-sm font-bold text-rose-600"><AlertCircle className="h-4 w-4" />{addVocabError}</p>
-      )}
-
-      {/* review */}
-      {srsDueWords.length > 0 && (
-        <button type="button" onClick={onReview}
-          className={`${seCard} mt-4 flex w-full items-center gap-3 p-3.5 text-left transition-[transform,box-shadow] duration-75 active:translate-y-[3px] active:shadow-none`}>
-          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 dark-keep"><Brain className="h-5 w-5" /></span>
-          <span className="min-w-0 flex-1">
-            <span className="block font-serif font-extrabold text-zinc-900 dark:text-zinc-50">{t('vocab.reviewTitle')}</span>
-            <span className="block text-sm font-semibold text-slate-500 dark:text-zinc-400">{t('learning.reviewReady', { n: srsDueWords.length })}</span>
-          </span>
-          <span className="shrink-0 font-serif text-xs font-extrabold uppercase tracking-wide text-zinc-900 dark:text-zinc-50">{t('learning.review.now.5cca4b')}</span>
-        </button>
       )}
 
       {rows.length === 0 ? (

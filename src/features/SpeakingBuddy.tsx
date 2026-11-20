@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ArrowLeft, Loader2, Mic, PhoneOff, Square, Volume2 } from 'lucide-react';
 import { SPEAKING_LEVELS as PRACTICE_LEVELS, type SpeakingLevel as PracticeLevel } from '../data/speakingTopics';
 import { useContentLang } from '../contexts/ContentLangContext';
@@ -296,7 +296,7 @@ export function SpeakingBuddy({
 
   if (view === 'level') {
     return (
-      <ScreenShell stickers={['speak.conversation-partner']} title={t("site.speakingbuddy.speaking_buddy_cf9c4a")} subtitle={t("learning.have.a.hands.free.conversation.in.v0.pick.a.level.6d0e35", { v0: langName })}>
+      <ScreenShell stickers={['speak.conversation-partner']} title={t('update.tutor')} subtitle={t("learning.have.a.hands.free.conversation.in.v0.pick.a.level.6d0e35", { v0: langName })}>
         {onBack && (
           <button onClick={onBack} className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 mb-6 bg-white px-4 py-2 rounded-2xl border-2 border-slate-200 w-fit shadow-[0_3px_0_0_#e2e8f0] dark:shadow-[0_3px_0_0_#27272a]">
             <ArrowLeft className="w-4 h-4" />  {t("onboard.back")}</button>
@@ -323,7 +323,7 @@ export function SpeakingBuddy({
           <ArrowLeft className="w-5 h-5" />
         </button>
         <div>
-          <p className="font-bold text-zinc-900 dark:text-zinc-50 text-sm">{t("site.speakingbuddy.speaking_buddy_cf9c4a")}</p>
+          <p className="font-bold text-zinc-900 dark:text-zinc-50 text-sm">{t('update.tutor')}</p>
           <p className="text-[11px] text-zinc-500">{tLevel(level)} · {langName}</p>
         </div>
         <button

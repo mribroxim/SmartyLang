@@ -135,3 +135,16 @@ demos while retaining the previous release for rollback. The backup setup
 script takes the review URL. Keep real host addresses, connection instructions,
 recovery locations and credentials in a protected local handoff, outside Git.
 Package Unix source with `git -c core.autocrlf=false archive` to retain LF endings.
+
+For private HTTPS staging, pass `127.0.0.1` as the application bind address and
+set `DEVELOPMENT_HTTPS_ORIGIN` to the staging origin. Terminate TLS on a reverse
+proxy reachable only through the private network and forward the original host
+and HTTPS scheme to port 3100. The devices used for push testing must trust the
+staging certificate. Set `DEVELOPMENT_PUSH_CONTACT` to an operator `mailto:` or
+HTTPS contact. The script generates a staging VAPID key pair and retains it
+across releases. Keep the demo login behind the private ingress.
+
+For the release check, schedule a reminder a few minutes ahead on each test
+phone, close the app, and confirm the notification opens Daily Review. Test a
+spoken tutor turn with the staging moderation credentials configured. Accept a
+friend invite between the Max and Free demo accounts in separate sessions.

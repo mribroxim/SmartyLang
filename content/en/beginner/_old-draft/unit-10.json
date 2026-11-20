@@ -1,0 +1,3670 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "beginner",
+  "unit": 10,
+  "title": "Plans & Travel",
+  "room": "garage",
+  "lessons": [
+    {
+      "id": "en.beginner.u10.l01",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 1,
+      "title": "Transport",
+      "canDo": "Name ways to travel",
+      "scenario": "You are in Sam's garage with Smarty and Mia. Sam has a motorbike, a suitcase and some toy vehicles. Talk about ways to travel.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l01.train",
+          "text": "train",
+          "kind": "word",
+          "forms": [
+            "trains"
+          ],
+          "example": "The train is big.",
+          "note": "Say \"train\" for a long vehicle that runs on a track. You can say: I go by train.",
+          "image": {
+            "id": "train",
+            "describe": "A big colourful train with a few carriages on a railway track; Smarty the black cat waves from a window."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l01.plane",
+          "text": "plane",
+          "kind": "word",
+          "forms": [
+            "planes"
+          ],
+          "example": "The plane is in the sky.",
+          "note": "A plane flies in the sky. You can say: I go by plane.",
+          "image": {
+            "id": "plane",
+            "describe": "A white passenger plane flying in a blue sky with a few clouds; Smarty the black cat looks out of a round window."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l01.boat",
+          "text": "boat",
+          "kind": "word",
+          "forms": [
+            "boats"
+          ],
+          "example": "The boat is on the water.",
+          "note": "A boat goes on the water. You can say: I go by boat.",
+          "image": {
+            "id": "boat",
+            "describe": "A small blue and white boat on calm water with Smarty the black cat wearing a little sailor hat on deck."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l01.motorbike",
+          "text": "motorbike",
+          "kind": "word",
+          "forms": [
+            "motorbikes"
+          ],
+          "example": "The motorbike is red.",
+          "note": "A motorbike has two wheels and an engine.",
+          "image": {
+            "id": "motorbike",
+            "describe": "A shiny red motorbike parked in a garage; Smarty the black cat sits on the seat."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l01.suitcase",
+          "text": "suitcase",
+          "kind": "word",
+          "forms": [
+            "suitcases"
+          ],
+          "example": "The suitcase is blue.",
+          "note": "You put your things in a suitcase when you travel.",
+          "image": {
+            "id": "suitcase",
+            "describe": "A big blue suitcase with wheels standing open next to Smarty the black cat."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u10.l01.task.fill-boat",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "The ___ is on the water.",
+          "answer": "boat",
+          "options": [
+            "boat",
+            "train",
+            "motorbike"
+          ],
+          "explanation": "A boat goes on the water. A train goes on a track.",
+          "itemIds": [
+            "en.beginner.u10.l01.boat",
+            "en.beginner.u03.l01.water"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.listen-train",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "The train is big.",
+          "answer": "The train is big.",
+          "options": [
+            "The train is big.",
+            "The plane is big.",
+            "The boat is big."
+          ],
+          "explanation": "Listen for the first word after The: train.",
+          "itemIds": [
+            "en.beginner.u10.l01.train"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.build-by",
+          "kind": "build",
+          "prompt": "Build a sentence about how you go.",
+          "answers": [
+            "I go by train.",
+            "I go by plane."
+          ],
+          "tiles": [
+            "I",
+            "go",
+            "by",
+            "train",
+            "plane"
+          ],
+          "explanation": "Say by + the vehicle to tell how you go.",
+          "itemIds": [
+            "en.beginner.u10.l01.train",
+            "en.beginner.u10.l01.plane"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.match-plural",
+          "kind": "match",
+          "prompt": "Match each word with its plural.",
+          "pairs": [
+            {
+              "left": "train",
+              "right": "trains"
+            },
+            {
+              "left": "plane",
+              "right": "planes"
+            },
+            {
+              "left": "boat",
+              "right": "boats"
+            },
+            {
+              "left": "suitcase",
+              "right": "suitcases"
+            }
+          ],
+          "explanation": "Add -s to talk about more than one.",
+          "itemIds": [
+            "en.beginner.u10.l01.train",
+            "en.beginner.u10.l01.plane",
+            "en.beginner.u10.l01.boat",
+            "en.beginner.u10.l01.suitcase"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.fill-ride",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I ride a ___.",
+          "answer": "motorbike",
+          "options": [
+            "motorbike",
+            "suitcase",
+            "sky"
+          ],
+          "explanation": "You can ride a motorbike. You cannot ride a suitcase or the sky.",
+          "itemIds": [
+            "en.beginner.u10.l01.motorbike"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.speak-plane",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "The plane is in the sky.",
+          "answer": "The plane is in the sky.",
+          "explanation": "A plane flies in the sky.",
+          "itemIds": [
+            "en.beginner.u10.l01.plane"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.choose-suitcase",
+          "kind": "choice",
+          "prompt": "You travel. Which one do you carry with your things?",
+          "answer": "suitcase",
+          "options": [
+            "suitcase",
+            "train",
+            "boat"
+          ],
+          "explanation": "You carry a suitcase. A train or a boat carries you.",
+          "itemIds": [
+            "en.beginner.u10.l01.suitcase"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.listen-motorbike",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "The motorbike is red.",
+          "answer": "The motorbike is red.",
+          "options": [
+            "The motorbike is red.",
+            "The motorbike is blue.",
+            "The suitcase is red."
+          ],
+          "explanation": "Listen for the vehicle and the colour.",
+          "itemIds": [
+            "en.beginner.u10.l01.motorbike",
+            "en.beginner.u06.l01.red"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l01.task.choose-blue",
+          "kind": "choice",
+          "prompt": "Smarty has a blue suitcase. Which sentence is right?",
+          "answer": "The suitcase is blue.",
+          "options": [
+            "The suitcase is blue.",
+            "The suitcase is red.",
+            "The suitcase is green."
+          ],
+          "explanation": "The sentence must use the colour blue.",
+          "itemIds": [
+            "en.beginner.u10.l01.suitcase",
+            "en.beginner.u06.l01.blue"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which toy vehicle does Smarty like?",
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Hi, Mia! Look!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "A motorbike! And a suitcase!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "I have a train, a plane and a boat, too."
+          },
+          {
+            "speaker": "Mia",
+            "text": "The plane is big!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "The train is red. The boat is blue."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I like the boat."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "What is red?",
+            "answer": "The train",
+            "options": [
+              "The train",
+              "The boat",
+              "The plane"
+            ],
+            "explanation": "Sam says the train is red and the boat is blue.",
+            "itemIds": [
+              "en.beginner.u10.l01.train"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "Who likes the boat?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Smarty says: I like the boat.",
+            "itemIds": [
+              "en.beginner.u10.l01.boat"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "What is big?",
+            "answer": "The plane",
+            "options": [
+              "The plane",
+              "The train",
+              "The boat"
+            ],
+            "explanation": "Mia says: The plane is big!",
+            "itemIds": [
+              "en.beginner.u10.l01.plane"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u10-l01-scene",
+          "describe": "A garage with a red motorbike and a blue suitcase. Sam shows toy models of a train, a plane and a boat on a table to Mia and Smarty the black cat."
+        }
+      },
+      "mission": {
+        "setup": "You are in Sam's garage with Smarty and Mia. Sam has a motorbike, a suitcase and some toy vehicles. Talk about ways to travel.",
+        "turns": [
+          {
+            "smarty": "How do you go to school?",
+            "accept": [
+              "^(?:i go )?by (?:train|plane|boat|motorbike|bus|car|taxi)$",
+              "^(?:i go on foot|on foot|i walk)$"
+            ],
+            "example": "I go by train.",
+            "hint": "Say I go by + a vehicle, or I go on foot.",
+            "itemIds": [
+              "en.beginner.u10.l01.train",
+              "en.beginner.u10.l01.plane",
+              "en.beginner.u10.l01.boat",
+              "en.beginner.u08.l06.by-bus"
+            ]
+          },
+          {
+            "smarty": "I like the train. Do you like trains?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i (?:like|love) (?:trains|planes|boats|motorbikes)$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes, I do or No, I do not. You can also say what you like.",
+            "itemIds": [
+              "en.beginner.u10.l01.train"
+            ]
+          },
+          {
+            "smarty": "I have a suitcase. What colour is it?",
+            "accept": [
+              "^(?:it is )?(?:dark |light )?(?:red|blue|green|yellow|black|white|pink|purple|brown|grey)$",
+              "^my suitcase is (?:dark |light )?(?:red|blue|green|yellow|black|white|pink|purple|brown|grey)$"
+            ],
+            "example": "It is blue.",
+            "hint": "Say a colour. For example: It is blue.",
+            "itemIds": [
+              "en.beginner.u10.l01.suitcase",
+              "en.beginner.u06.l02.what-colour-is-it"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l01.water",
+        "en.beginner.u06.l01.blue",
+        "en.beginner.u06.l01.red",
+        "en.beginner.u06.l02.what-colour-is-it",
+        "en.beginner.u08.l06.by-bus"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l02",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 2,
+      "title": "January to May",
+      "canDo": "Name the first months",
+      "scenario": "Mia, Sam and Smarty look at pictures of the year. Talk about the first months and what you like.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l02.january",
+          "text": "January",
+          "kind": "word",
+          "example": "It is cold in January.",
+          "note": "January is the first month of the year."
+        },
+        {
+          "id": "en.beginner.u10.l02.february",
+          "text": "February",
+          "kind": "word",
+          "example": "It snows in February.",
+          "note": "February comes after January."
+        },
+        {
+          "id": "en.beginner.u10.l02.march",
+          "text": "March",
+          "kind": "word",
+          "example": "It is windy in March.",
+          "note": "March comes after February."
+        },
+        {
+          "id": "en.beginner.u10.l02.april",
+          "text": "April",
+          "kind": "word",
+          "example": "It rains in April.",
+          "note": "April comes after March."
+        },
+        {
+          "id": "en.beginner.u10.l02.may",
+          "text": "May",
+          "kind": "word",
+          "example": "It is warm in May.",
+          "note": "May comes after April. Months start with a capital letter in English."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u10.l02.task.fill-feb",
+          "kind": "fill",
+          "prompt": "Which month comes in the middle?",
+          "text": "January, ___, March.",
+          "answer": "February",
+          "options": [
+            "February",
+            "April",
+            "May"
+          ],
+          "explanation": "The order is January, February, March.",
+          "itemIds": [
+            "en.beginner.u10.l02.january",
+            "en.beginner.u10.l02.february",
+            "en.beginner.u10.l02.march"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.listen-jan",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "It is cold in January.",
+          "answer": "It is cold in January.",
+          "options": [
+            "It is cold in January.",
+            "It rains in April.",
+            "It snows in February."
+          ],
+          "explanation": "Listen for the month at the end.",
+          "itemIds": [
+            "en.beginner.u10.l02.january",
+            "en.beginner.u09.l01.windy"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.build-order",
+          "kind": "build",
+          "prompt": "Put the months in order.",
+          "answer": "March, April, May",
+          "tiles": [
+            "April,",
+            "May",
+            "March,"
+          ],
+          "explanation": "The order is March, April, May.",
+          "itemIds": [
+            "en.beginner.u10.l02.march",
+            "en.beginner.u10.l02.april",
+            "en.beginner.u10.l02.may"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.match-next",
+          "kind": "match",
+          "prompt": "Match each month with the month that comes next.",
+          "pairs": [
+            {
+              "left": "January",
+              "right": "February"
+            },
+            {
+              "left": "February",
+              "right": "March"
+            },
+            {
+              "left": "March",
+              "right": "April"
+            },
+            {
+              "left": "April",
+              "right": "May"
+            }
+          ],
+          "explanation": "Months have a fixed order. Each one has a next month.",
+          "itemIds": [
+            "en.beginner.u10.l02.january",
+            "en.beginner.u10.l02.february",
+            "en.beginner.u10.l02.march",
+            "en.beginner.u10.l02.april",
+            "en.beginner.u10.l02.may"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.choose-after",
+          "kind": "choice",
+          "prompt": "Which month comes after April?",
+          "answer": "May",
+          "options": [
+            "May",
+            "March",
+            "February"
+          ],
+          "explanation": "April comes before May.",
+          "itemIds": [
+            "en.beginner.u10.l02.april",
+            "en.beginner.u10.l02.may"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.speak-april",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "It rains in April.",
+          "answer": "It rains in April.",
+          "explanation": "Say it slowly: It rains in April.",
+          "itemIds": [
+            "en.beginner.u10.l02.april",
+            "en.beginner.u09.l02.rain"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.fill-like",
+          "kind": "fill",
+          "prompt": "Type a month you like.",
+          "text": "I like ___.",
+          "answers": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May"
+          ],
+          "explanation": "Any of these months can fit. You can say what you like.",
+          "itemIds": [
+            "en.beginner.u10.l02.january",
+            "en.beginner.u10.l02.february",
+            "en.beginner.u10.l02.march",
+            "en.beginner.u10.l02.april",
+            "en.beginner.u10.l02.may"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.listen-march",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "It is windy in March.",
+          "answer": "It is windy in March.",
+          "options": [
+            "It is windy in March.",
+            "It is windy in May.",
+            "It is rainy in March."
+          ],
+          "explanation": "Listen for windy and for March.",
+          "itemIds": [
+            "en.beginner.u10.l02.march",
+            "en.beginner.u09.l01.windy"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l02.task.build-feb",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "It snows in February.",
+          "tiles": [
+            "It",
+            "snows",
+            "in",
+            "February",
+            "rains",
+            "January"
+          ],
+          "explanation": "It snows in February. Snow comes with cold weather.",
+          "itemIds": [
+            "en.beginner.u10.l02.february",
+            "en.beginner.u09.l02.snow"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which month does Mia love?",
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Look! It is January."
+          },
+          {
+            "speaker": "Sam",
+            "text": "It is cold in January."
+          },
+          {
+            "speaker": "Mia",
+            "text": "It snows in February."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I like March. It is windy."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I like April. It rains."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I love May. It is warm and sunny."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Who likes March?",
+            "answer": "Sam",
+            "options": [
+              "Sam",
+              "Mia",
+              "Smarty"
+            ],
+            "explanation": "Sam says: I like March.",
+            "itemIds": [
+              "en.beginner.u10.l02.march"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "Which month is warm and sunny?",
+            "answer": "May",
+            "options": [
+              "May",
+              "January",
+              "February"
+            ],
+            "explanation": "Mia says May is warm and sunny.",
+            "itemIds": [
+              "en.beginner.u10.l02.may"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "When does it snow?",
+            "answer": "February",
+            "options": [
+              "February",
+              "April",
+              "May"
+            ],
+            "explanation": "Mia says: It snows in February.",
+            "itemIds": [
+              "en.beginner.u10.l02.february"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u10-l02-scene",
+          "describe": "A classroom table with five big pictures in a row: a snowy day, a windy day, a rainy day and a warm sunny day. Mia, Sam and Smarty the black cat point at them."
+        }
+      },
+      "mission": {
+        "setup": "Mia, Sam and Smarty look at pictures of the year. Talk about the first months and what you like.",
+        "turns": [
+          {
+            "smarty": "It is cold in January. Do you like January?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i (?:like|love) january$",
+              "^i do not like january$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes, I do or No, I do not.",
+            "itemIds": [
+              "en.beginner.u10.l02.january"
+            ]
+          },
+          {
+            "smarty": "What do you like? January, March or May?",
+            "accept": [
+              "^i (?:like|love) (?:january|february|march|april|may)$",
+              "^(?:january|february|march|april|may)$",
+              "^i (?:like|love) (?:january|february|march|april|may) and (?:january|february|march|april|may)$"
+            ],
+            "example": "I like May.",
+            "hint": "Say I like + a month.",
+            "itemIds": [
+              "en.beginner.u10.l02.january",
+              "en.beginner.u10.l02.march",
+              "en.beginner.u10.l02.may",
+              "en.beginner.u03.l03.or"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l03.or",
+        "en.beginner.u09.l01.windy",
+        "en.beginner.u09.l02.rain",
+        "en.beginner.u09.l02.snow"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l03",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 3,
+      "title": "June to October",
+      "canDo": "Name more months",
+      "scenario": "Leo, Ana and Smarty are at the beach. They talk about the summer months and about school.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l03.june",
+          "text": "June",
+          "kind": "word",
+          "example": "I swim in June.",
+          "note": "June comes after May."
+        },
+        {
+          "id": "en.beginner.u10.l03.july",
+          "text": "July",
+          "kind": "word",
+          "example": "It is hot in July.",
+          "note": "July comes after June."
+        },
+        {
+          "id": "en.beginner.u10.l03.august",
+          "text": "August",
+          "kind": "word",
+          "example": "It is sunny in August.",
+          "note": "August comes after July."
+        },
+        {
+          "id": "en.beginner.u10.l03.september",
+          "text": "September",
+          "kind": "word",
+          "example": "I go to school in September.",
+          "note": "September comes after August."
+        },
+        {
+          "id": "en.beginner.u10.l03.october",
+          "text": "October",
+          "kind": "word",
+          "example": "It is cool in October.",
+          "note": "October comes after September."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u10.l03.task.fill-june",
+          "kind": "fill",
+          "prompt": "Which month comes in the middle?",
+          "text": "May, ___, July.",
+          "answer": "June",
+          "options": [
+            "June",
+            "August",
+            "October"
+          ],
+          "explanation": "The order is May, June, July.",
+          "itemIds": [
+            "en.beginner.u10.l02.may",
+            "en.beginner.u10.l03.june",
+            "en.beginner.u10.l03.july"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.listen-july",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I swim in July.",
+          "answer": "I swim in July.",
+          "options": [
+            "I swim in July.",
+            "I swim in June.",
+            "I swim in August."
+          ],
+          "explanation": "Listen for the month at the end.",
+          "itemIds": [
+            "en.beginner.u10.l03.july",
+            "en.beginner.u08.l05.swim"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.build-school",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I go to school in September.",
+          "tiles": [
+            "I",
+            "go",
+            "to",
+            "school",
+            "in",
+            "September",
+            "October"
+          ],
+          "explanation": "We use in before a month.",
+          "itemIds": [
+            "en.beginner.u10.l03.september",
+            "en.beginner.u04.l03.go-to-school"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.match-next",
+          "kind": "match",
+          "prompt": "Match each month with the month that comes next.",
+          "pairs": [
+            {
+              "left": "June",
+              "right": "July"
+            },
+            {
+              "left": "July",
+              "right": "August"
+            },
+            {
+              "left": "August",
+              "right": "September"
+            },
+            {
+              "left": "September",
+              "right": "October"
+            }
+          ],
+          "explanation": "Each month has a next month.",
+          "itemIds": [
+            "en.beginner.u10.l03.june",
+            "en.beginner.u10.l03.july",
+            "en.beginner.u10.l03.august",
+            "en.beginner.u10.l03.september",
+            "en.beginner.u10.l03.october"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.fill-swim",
+          "kind": "fill",
+          "prompt": "Type a month for swimming.",
+          "text": "I swim in ___.",
+          "answers": [
+            "June",
+            "July",
+            "August"
+          ],
+          "explanation": "These months are warm for swimming.",
+          "itemIds": [
+            "en.beginner.u10.l03.june",
+            "en.beginner.u10.l03.july",
+            "en.beginner.u10.l03.august",
+            "en.beginner.u08.l05.swim"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.choose-before",
+          "kind": "choice",
+          "prompt": "Which month comes before June?",
+          "answer": "May",
+          "options": [
+            "May",
+            "July",
+            "August"
+          ],
+          "explanation": "May comes before June.",
+          "itemIds": [
+            "en.beginner.u10.l03.june",
+            "en.beginner.u10.l02.may"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.build-beach",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "We go to the beach in July.",
+          "tiles": [
+            "We",
+            "go",
+            "to",
+            "the",
+            "beach",
+            "in",
+            "July",
+            "August"
+          ],
+          "explanation": "We go to the beach in a hot month.",
+          "itemIds": [
+            "en.beginner.u10.l03.july",
+            "en.beginner.u09.l09.beach"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.listen-april",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "It rains in April.",
+          "answer": "It rains in April.",
+          "options": [
+            "It rains in April.",
+            "It snows in February.",
+            "It is hot in August."
+          ],
+          "explanation": "Listen for rains and for April.",
+          "itemIds": [
+            "en.beginner.u10.l03.august",
+            "en.beginner.u10.l02.april"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l03.task.speak-aug",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "It is sunny in August.",
+          "answer": "It is sunny in August.",
+          "explanation": "Say it slowly: It is sunny in August.",
+          "itemIds": [
+            "en.beginner.u10.l03.august",
+            "en.beginner.u09.l01.sunny"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who likes the beach in July?",
+        "lines": [
+          {
+            "speaker": "Leo",
+            "text": "It is hot in July."
+          },
+          {
+            "speaker": "Ana",
+            "text": "I like the beach in July."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I like the beach in August."
+          },
+          {
+            "speaker": "Leo",
+            "text": "I go to school in September."
+          },
+          {
+            "speaker": "Ana",
+            "text": "No! I like summer."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is cool in October."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Who goes to school in September?",
+            "answer": "Leo",
+            "options": [
+              "Leo",
+              "Ana",
+              "Smarty"
+            ],
+            "explanation": "Leo says: I go to school in September.",
+            "itemIds": [
+              "en.beginner.u10.l03.september"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Who likes the beach in July?",
+            "answer": "Ana",
+            "options": [
+              "Ana",
+              "Leo",
+              "Smarty"
+            ],
+            "explanation": "Ana says: I like the beach in July.",
+            "itemIds": [
+              "en.beginner.u10.l03.july"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "Which month is hot?",
+            "answer": "July",
+            "options": [
+              "July",
+              "September",
+              "October"
+            ],
+            "explanation": "Leo says: It is hot in July.",
+            "itemIds": [
+              "en.beginner.u10.l03.july"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u10-l03-scene",
+          "describe": "A sunny beach with sand and blue water. Leo, Ana and Smarty the black cat sit on towels with a beach umbrella; a school bag lies next to Leo."
+        }
+      },
+      "mission": {
+        "setup": "Leo, Ana and Smarty are at the beach. They talk about the summer months and about school.",
+        "turns": [
+          {
+            "smarty": "I like the beach in July. And you?",
+            "accept": [
+              "^i (?:like|love) (?:the beach in )?(?:january|february|march|april|may|june|july|august|september|october)$",
+              "^(?:january|february|march|april|may|june|july|august|september|october)$",
+              "^i (?:like|love) summer$"
+            ],
+            "example": "I like June.",
+            "hint": "Say a month you like. For example: I like June.",
+            "itemIds": [
+              "en.beginner.u10.l03.june",
+              "en.beginner.u10.l03.july",
+              "en.beginner.u01.l02.and-you"
+            ]
+          },
+          {
+            "smarty": "Do you go to school in July?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i go to school in (?:january|february|march|april|may|june|july|august|september|october)$",
+              "^i do not go to school in (?:january|february|march|april|may|june|july|august|september|october)$"
+            ],
+            "example": "No, I do not.",
+            "hint": "Say Yes, I do or No, I do not.",
+            "itemIds": [
+              "en.beginner.u10.l03.july",
+              "en.beginner.u04.l03.go-to-school"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l02.and-you",
+        "en.beginner.u04.l03.go-to-school",
+        "en.beginner.u08.l05.swim",
+        "en.beginner.u09.l01.sunny",
+        "en.beginner.u09.l09.beach",
+        "en.beginner.u10.l02.april",
+        "en.beginner.u10.l02.may"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l04",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 4,
+      "title": "My birthday",
+      "canDo": "Say when your birthday is",
+      "scenario": "It is Mia's birthday. Sam, Ben and Smarty are at her party. Talk about birthdays and months.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l04.november",
+          "text": "November",
+          "kind": "word",
+          "example": "It is cold in November.",
+          "note": "November comes after October."
+        },
+        {
+          "id": "en.beginner.u10.l04.december",
+          "text": "December",
+          "kind": "word",
+          "example": "It snows in December.",
+          "note": "December is the last month of the year."
+        },
+        {
+          "id": "en.beginner.u10.l04.month",
+          "text": "month",
+          "kind": "word",
+          "forms": [
+            "months"
+          ],
+          "example": "There are twelve months in a year.",
+          "note": "A year has twelve months."
+        },
+        {
+          "id": "en.beginner.u10.l04.year",
+          "text": "year",
+          "kind": "word",
+          "example": "I am twelve years old.",
+          "note": "A year has twelve months. We use years to say how old someone is."
+        },
+        {
+          "id": "en.beginner.u10.l04.birthday",
+          "text": "birthday",
+          "kind": "word",
+          "forms": [
+            "birthdays"
+          ],
+          "example": "My birthday is in May.",
+          "note": "Say: My birthday is in + a month, to tell when your birthday is.",
+          "image": {
+            "id": "birthday",
+            "describe": "A birthday cake with candles on a table, with Smarty the black cat wearing a party hat and balloons behind."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u10.l04.task.fill-nov",
+          "kind": "fill",
+          "prompt": "Which month comes in the middle?",
+          "text": "October, ___, December.",
+          "answer": "November",
+          "options": [
+            "November",
+            "September",
+            "May"
+          ],
+          "explanation": "The order is October, November, December.",
+          "itemIds": [
+            "en.beginner.u10.l04.november",
+            "en.beginner.u10.l04.december",
+            "en.beginner.u10.l03.october"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.fill-months",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "There are twelve ___ in a year.",
+          "answer": "months",
+          "options": [
+            "months",
+            "years",
+            "cakes"
+          ],
+          "explanation": "A year has twelve months.",
+          "itemIds": [
+            "en.beginner.u10.l04.month",
+            "en.beginner.u10.l04.year"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.listen-bday",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "My birthday is in December.",
+          "answer": "My birthday is in December.",
+          "options": [
+            "My birthday is in December.",
+            "My birthday is in November.",
+            "My birthday is in May."
+          ],
+          "explanation": "Listen for the month at the end.",
+          "itemIds": [
+            "en.beginner.u10.l04.birthday",
+            "en.beginner.u10.l04.december"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.build-bday",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "My birthday is in November.",
+          "tiles": [
+            "My",
+            "birthday",
+            "is",
+            "in",
+            "November",
+            "December"
+          ],
+          "explanation": "Use in before a month.",
+          "itemIds": [
+            "en.beginner.u10.l04.birthday",
+            "en.beginner.u10.l04.november"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.match-plural",
+          "kind": "match",
+          "prompt": "Match each word with its plural.",
+          "pairs": [
+            {
+              "left": "month",
+              "right": "months"
+            },
+            {
+              "left": "year",
+              "right": "years"
+            },
+            {
+              "left": "birthday",
+              "right": "birthdays"
+            },
+            {
+              "left": "cake",
+              "right": "cakes"
+            }
+          ],
+          "explanation": "Add -s to talk about more than one.",
+          "itemIds": [
+            "en.beginner.u10.l04.month",
+            "en.beginner.u10.l04.year",
+            "en.beginner.u10.l04.birthday",
+            "en.beginner.u03.l05.cake"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.choose-age",
+          "kind": "choice",
+          "prompt": "Smarty asks: How old are you? Choose an answer.",
+          "answer": "I am twelve years old.",
+          "options": [
+            "I am twelve years old.",
+            "I am from Brazil.",
+            "My name is Mia."
+          ],
+          "explanation": "How old asks for a number of years.",
+          "itemIds": [
+            "en.beginner.u02.l04.how-old-are-you",
+            "en.beginner.u02.l04.years-old",
+            "en.beginner.u10.l04.year"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.fill-happy",
+          "kind": "fill",
+          "prompt": "Say it to Mia on her special day.",
+          "text": "Happy ___, Mia!",
+          "answer": "birthday",
+          "options": [
+            "birthday",
+            "month",
+            "year"
+          ],
+          "explanation": "We say Happy birthday on someone's birthday.",
+          "itemIds": [
+            "en.beginner.u10.l04.birthday",
+            "en.beginner.u01.l08.happy"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.choose-month",
+          "kind": "choice",
+          "prompt": "Mia says: My birthday is in July. Which month is it?",
+          "answer": "July",
+          "options": [
+            "July",
+            "June",
+            "August"
+          ],
+          "explanation": "Mia says July.",
+          "itemIds": [
+            "en.beginner.u10.l04.birthday",
+            "en.beginner.u10.l03.july"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.speak-bday",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "My birthday is in December.",
+          "answer": "My birthday is in December.",
+          "explanation": "You can say your own month, too.",
+          "itemIds": [
+            "en.beginner.u10.l04.birthday",
+            "en.beginner.u10.l04.december"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l04.task.build-old",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I am twelve years old.",
+          "tiles": [
+            "I",
+            "am",
+            "twelve",
+            "years",
+            "old",
+            "eleven"
+          ],
+          "explanation": "Years old tells how old you are.",
+          "itemIds": [
+            "en.beginner.u02.l04.twelve",
+            "en.beginner.u02.l04.years-old",
+            "en.beginner.u10.l04.year"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How old is Mia?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Happy birthday, Mia!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thank you, Smarty!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "How old are you?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I am twelve years old."
+          },
+          {
+            "speaker": "Ben",
+            "text": "My birthday is in December."
+          },
+          {
+            "speaker": "Sam",
+            "text": "My birthday is in November."
+          },
+          {
+            "speaker": "Mia",
+            "text": "We have cake and juice!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "How old is Mia?",
+            "answer": "twelve",
+            "options": [
+              "twelve",
+              "eleven",
+              "twenty"
+            ],
+            "explanation": "Mia says: I am twelve years old.",
+            "itemIds": [
+              "en.beginner.u10.l04.birthday",
+              "en.beginner.u02.l04.twelve"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "Who has a birthday in December?",
+            "answer": "Ben",
+            "options": [
+              "Ben",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Ben says: My birthday is in December.",
+            "itemIds": [
+              "en.beginner.u10.l04.december"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says Happy birthday?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Sam",
+              "Ben"
+            ],
+            "explanation": "Smarty says: Happy birthday, Mia!",
+            "itemIds": [
+              "en.beginner.u10.l04.birthday"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u10-l04-scene",
+          "describe": "A birthday party in a living room: Mia blows out candles on a big cake while Sam, Ben and Smarty the black cat clap, with a table of juice and cups."
+        }
+      },
+      "mission": {
+        "setup": "It is Mia's birthday. Sam, Ben and Smarty are at her party. Talk about birthdays and months.",
+        "turns": [
+          {
+            "smarty": "My birthday is in May. And you?",
+            "accept": [
+              "^my birthday is in (?:january|february|march|april|may|june|july|august|september|october|november|december)$",
+              "^(?:in )?(?:january|february|march|april|may|june|july|august|september|october|november|december)$",
+              "^it is in (?:january|february|march|april|may|june|july|august|september|october|november|december)$"
+            ],
+            "example": "My birthday is in June.",
+            "hint": "Say My birthday is in + a month. You can use an imaginary month.",
+            "itemIds": [
+              "en.beginner.u10.l04.birthday",
+              "en.beginner.u01.l02.and-you"
+            ]
+          },
+          {
+            "smarty": "Happy birthday! How old are you?",
+            "accept": [
+              "^i am (?:\\d{1,2}|[a-z]{3,9})(?: years old)?$",
+              "^(?:\\d{1,2}|[a-z]{3,9}) years old$"
+            ],
+            "example": "I am eleven years old.",
+            "hint": "Say I am + a number. You can use an imaginary age.",
+            "itemIds": [
+              "en.beginner.u02.l04.how-old-are-you",
+              "en.beginner.u02.l04.years-old",
+              "en.beginner.u10.l04.year"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l02.and-you",
+        "en.beginner.u01.l08.happy",
+        "en.beginner.u02.l04.how-old-are-you",
+        "en.beginner.u02.l04.twelve",
+        "en.beginner.u02.l04.years-old",
+        "en.beginner.u03.l05.cake",
+        "en.beginner.u10.l03.july",
+        "en.beginner.u10.l03.october"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l05",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 5,
+      "title": "I'm going to visit",
+      "canDo": "Talk about plans",
+      "scenario": "Leo, Ana and Smarty stand at the door of the garage. Talk about what you are going to do tomorrow and next week.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l05.i-am-going-to",
+          "text": "I am going to",
+          "kind": "phrase",
+          "forms": [
+            "I'm going to"
+          ],
+          "example": "I am going to swim.",
+          "note": "Use \"I'm going to\" and a verb to talk about your plans."
+        },
+        {
+          "id": "en.beginner.u10.l05.tomorrow",
+          "text": "tomorrow",
+          "kind": "word",
+          "example": "I am going to swim tomorrow.",
+          "note": "Tomorrow means the next day."
+        },
+        {
+          "id": "en.beginner.u10.l05.next-week",
+          "text": "next week",
+          "kind": "phrase",
+          "example": "I am going to visit Mia next week.",
+          "note": "Next week means in the week after this one."
+        },
+        {
+          "id": "en.beginner.u10.l05.visit",
+          "text": "visit",
+          "kind": "word",
+          "forms": [
+            "visits"
+          ],
+          "example": "I am going to visit my aunt.",
+          "note": "Visit means to go and see a person or a place.",
+          "image": {
+            "id": "visit",
+            "describe": "Smarty the black cat and a girl at the front door of a friend's house; the friend opens the door and waves."
+          }
+        }
+      ],
+      "grammar": {
+        "title": "Plans with going to",
+        "explanation": "Use I am going to + a verb to talk about a plan. I'm is the short form of I am.",
+        "examples": [
+          "I am going to swim.",
+          "I'm going to visit Mia tomorrow."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u10.l05.task.choose-plan",
+          "kind": "choice",
+          "prompt": "You want to say what you will do tomorrow.",
+          "answer": "I am going to swim tomorrow.",
+          "options": [
+            "I am going to swim tomorrow.",
+            "I swim now.",
+            "I swim every day."
+          ],
+          "explanation": "Use going to for a plan. Now and every day are not plans for tomorrow.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-am-going-to",
+            "en.beginner.u10.l05.tomorrow"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.listen-aunt",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I am going to visit my aunt.",
+          "answer": "I am going to visit my aunt.",
+          "options": [
+            "I am going to visit my aunt.",
+            "I am going to visit my uncle.",
+            "I am going to visit my cousin."
+          ],
+          "explanation": "Listen for the person at the end.",
+          "itemIds": [
+            "en.beginner.u10.l05.visit",
+            "en.beginner.u02.l10.aunt"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.build-visit",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I am going to visit Mia next week.",
+          "tiles": [
+            "I",
+            "am",
+            "going",
+            "to",
+            "visit",
+            "Mia",
+            "next week",
+            "tomorrow"
+          ],
+          "explanation": "Put next week at the end.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-am-going-to",
+            "en.beginner.u10.l05.next-week",
+            "en.beginner.u10.l05.visit"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.fill-verb",
+          "kind": "fill",
+          "prompt": "Type a verb for your plan.",
+          "text": "I am going to ___ tomorrow.",
+          "answers": [
+            "visit",
+            "swim",
+            "run",
+            "walk",
+            "cook",
+            "sleep",
+            "read",
+            "dance"
+          ],
+          "explanation": "After going to we use a verb.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-am-going-to",
+            "en.beginner.u10.l05.tomorrow",
+            "en.beginner.u10.l05.visit"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.speak-swim",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I am going to swim tomorrow.",
+          "answer": "I am going to swim tomorrow.",
+          "explanation": "Say it slowly. You can say another plan, too.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-am-going-to",
+            "en.beginner.u10.l05.tomorrow",
+            "en.beginner.u08.l05.swim"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.fill-he",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "He is going to ___ his aunt.",
+          "answer": "visit",
+          "options": [
+            "visit",
+            "eat",
+            "wash"
+          ],
+          "explanation": "We visit a person. We do not eat or wash an aunt.",
+          "itemIds": [
+            "en.beginner.u10.l05.visit",
+            "en.beginner.u01.l04.he-is"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.build-we",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "We are going to the beach tomorrow.",
+          "tiles": [
+            "We",
+            "are",
+            "going",
+            "to",
+            "the",
+            "beach",
+            "tomorrow",
+            "next week"
+          ],
+          "explanation": "Use we are for more than one person.",
+          "itemIds": [
+            "en.beginner.u01.l04.we-are",
+            "en.beginner.u09.l09.beach",
+            "en.beginner.u10.l05.tomorrow"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.listen-cook",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I am going to cook dinner tomorrow.",
+          "answer": "I am going to cook dinner tomorrow.",
+          "options": [
+            "I am going to cook dinner tomorrow.",
+            "I am going to cook lunch tomorrow.",
+            "I am going to cook dinner next week."
+          ],
+          "explanation": "Listen for the meal and for the time.",
+          "itemIds": [
+            "en.beginner.u10.l05.i-am-going-to",
+            "en.beginner.u03.l08.cook",
+            "en.beginner.u03.l04.dinner"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.fill-park",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I am going to visit the ___ next week.",
+          "answer": "museum",
+          "options": [
+            "museum",
+            "sofa",
+            "suitcase"
+          ],
+          "explanation": "We visit places like a museum.",
+          "itemIds": [
+            "en.beginner.u10.l05.visit",
+            "en.beginner.u10.l05.next-week",
+            "en.beginner.u08.l02.museum"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l05.task.choose-cousin",
+          "kind": "choice",
+          "prompt": "Ben says: I am going to visit my cousin next week. Who is Ben going to visit?",
+          "answer": "his cousin",
+          "options": [
+            "his cousin",
+            "his uncle",
+            "his sister"
+          ],
+          "explanation": "Ben says cousin.",
+          "itemIds": [
+            "en.beginner.u10.l05.visit",
+            "en.beginner.u02.l10.cousin"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who is going to swim tomorrow?",
+        "lines": [
+          {
+            "speaker": "Leo",
+            "text": "What are you going to do tomorrow?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "I am going to visit my grandmother."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Nice! I am going to swim tomorrow."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I am going to visit Mia next week."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Great!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "See you later, Ana!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Who is going to swim tomorrow?",
+            "answer": "Leo",
+            "options": [
+              "Leo",
+              "Ana",
+              "Smarty"
+            ],
+            "explanation": "Leo says: I am going to swim tomorrow.",
+            "itemIds": [
+              "en.beginner.u10.l05.i-am-going-to",
+              "en.beginner.u10.l05.tomorrow"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "Who is going to visit a grandmother?",
+            "answer": "Ana",
+            "options": [
+              "Ana",
+              "Leo",
+              "Smarty"
+            ],
+            "explanation": "Ana says: I am going to visit my grandmother.",
+            "itemIds": [
+              "en.beginner.u10.l05.visit"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "When is Smarty going to visit Mia?",
+            "answer": "next week",
+            "options": [
+              "next week",
+              "tomorrow",
+              "every day"
+            ],
+            "explanation": "Smarty says: I am going to visit Mia next week.",
+            "itemIds": [
+              "en.beginner.u10.l05.next-week"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u10-l05-scene",
+          "describe": "The open door of a garage with a bike and a suitcase inside. Leo and Ana talk outside while Smarty the black cat looks at a family house across the road."
+        }
+      },
+      "mission": {
+        "setup": "Leo, Ana and Smarty stand at the door of the garage. Talk about what you are going to do tomorrow and next week.",
+        "turns": [
+          {
+            "smarty": "What are you going to do tomorrow?",
+            "accept": [
+              "^i am going to [\\p{L}][\\p{L}' -]{0,39}$",
+              "^tomorrow i am going to [\\p{L}][\\p{L}' -]{0,39}$",
+              "^(?:i do not know|nothing)$"
+            ],
+            "example": "I am going to swim.",
+            "hint": "Say I am going to + a verb. For example: I am going to swim.",
+            "itemIds": [
+              "en.beginner.u10.l05.i-am-going-to",
+              "en.beginner.u10.l05.tomorrow"
+            ]
+          },
+          {
+            "smarty": "And what are you going to do next week?",
+            "accept": [
+              "^i am going to [\\p{L}][\\p{L}' -]{0,39}$",
+              "^next week i am going to [\\p{L}][\\p{L}' -]{0,39}$"
+            ],
+            "example": "I am going to visit my aunt.",
+            "hint": "Say I am going to + a verb.",
+            "itemIds": [
+              "en.beginner.u10.l05.i-am-going-to",
+              "en.beginner.u10.l05.next-week",
+              "en.beginner.u10.l05.visit"
+            ]
+          },
+          {
+            "smarty": "I am going to visit Mia. Are you going to visit a friend?",
+            "accept": [
+              "^yes(?: i am)?$",
+              "^no(?: i am not)?$",
+              "^i am going to visit (?:my )?friend$"
+            ],
+            "example": "Yes, I am.",
+            "hint": "Say Yes, I am or No, I am not.",
+            "itemIds": [
+              "en.beginner.u10.l05.visit",
+              "en.beginner.u01.l10.yes-i-am",
+              "en.beginner.u01.l10.no-i-am-not"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l04.he-is",
+        "en.beginner.u01.l04.we-are",
+        "en.beginner.u01.l10.no-i-am-not",
+        "en.beginner.u01.l10.yes-i-am",
+        "en.beginner.u02.l10.aunt",
+        "en.beginner.u02.l10.cousin",
+        "en.beginner.u03.l04.dinner",
+        "en.beginner.u03.l08.cook",
+        "en.beginner.u08.l02.museum",
+        "en.beginner.u08.l05.swim",
+        "en.beginner.u09.l09.beach"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l06",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 6,
+      "title": "Holidays",
+      "canDo": "Talk about a holiday",
+      "scenario": "Omar and Zara talk about a holiday. Smarty listens. Talk about holidays, hotels and passports.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l06.holiday",
+          "text": "holiday",
+          "kind": "word",
+          "forms": [
+            "holidays"
+          ],
+          "example": "I am going to have a holiday.",
+          "note": "A holiday is time away from school or work. You can say: I love my holiday.",
+          "image": {
+            "id": "holiday",
+            "describe": "A happy family and Smarty the black cat on a sunny beach with towels, a sandcastle and a beach umbrella."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l06.hotel",
+          "text": "hotel",
+          "kind": "word",
+          "forms": [
+            "hotels"
+          ],
+          "example": "The hotel is big.",
+          "note": "A hotel is a place with many rooms where people sleep on holiday.",
+          "image": {
+            "id": "hotel",
+            "describe": "A tall hotel building with a sign shape, balconies and a swimming pool; Smarty the black cat waits at the door with a small suitcase."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l06.passport",
+          "text": "passport",
+          "kind": "word",
+          "forms": [
+            "passports"
+          ],
+          "example": "My passport is in my bag.",
+          "note": "You show your passport when you travel to another country.",
+          "image": {
+            "id": "passport",
+            "describe": "A small blue passport book lying open on a table next to a pen, with Smarty the black cat looking at it."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l06.travel",
+          "text": "travel",
+          "kind": "word",
+          "forms": [
+            "travels"
+          ],
+          "example": "I travel by plane.",
+          "note": "Use travel to say you go to a place far away. Say: I travel by plane."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u10.l06.task.fill-passport",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "My ___ is in my bag.",
+          "answer": "passport",
+          "options": [
+            "passport",
+            "hotel",
+            "holiday"
+          ],
+          "explanation": "A passport is small and fits in a bag. A hotel does not.",
+          "itemIds": [
+            "en.beginner.u10.l06.passport",
+            "en.beginner.u05.l05.bag"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.listen-hotel",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "The hotel is big.",
+          "answer": "The hotel is big.",
+          "options": [
+            "The hotel is big.",
+            "The hotel is small.",
+            "The hotel is near."
+          ],
+          "explanation": "Listen for the size word at the end.",
+          "itemIds": [
+            "en.beginner.u10.l06.hotel",
+            "en.beginner.u02.l06.big"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.build-travel",
+          "kind": "build",
+          "prompt": "Build a sentence about how you travel.",
+          "answers": [
+            "I travel by plane.",
+            "I travel by train."
+          ],
+          "tiles": [
+            "I",
+            "travel",
+            "by",
+            "plane",
+            "train"
+          ],
+          "explanation": "Say by + the vehicle.",
+          "itemIds": [
+            "en.beginner.u10.l06.travel",
+            "en.beginner.u10.l01.plane",
+            "en.beginner.u10.l01.train"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.match-plural",
+          "kind": "match",
+          "prompt": "Match each word with its plural or -s form.",
+          "pairs": [
+            {
+              "left": "holiday",
+              "right": "holidays"
+            },
+            {
+              "left": "hotel",
+              "right": "hotels"
+            },
+            {
+              "left": "passport",
+              "right": "passports"
+            },
+            {
+              "left": "travel",
+              "right": "travels"
+            }
+          ],
+          "explanation": "Add -s for more than one, or for he and she.",
+          "itemIds": [
+            "en.beginner.u10.l06.holiday",
+            "en.beginner.u10.l06.hotel",
+            "en.beginner.u10.l06.passport",
+            "en.beginner.u10.l06.travel"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.fill-going",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I am going to ___ by train.",
+          "answer": "travel",
+          "options": [
+            "travel",
+            "hotel",
+            "passport"
+          ],
+          "explanation": "After going to we use a verb: travel.",
+          "itemIds": [
+            "en.beginner.u10.l06.travel",
+            "en.beginner.u10.l05.i-am-going-to"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.build-next",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I am going to travel next week.",
+          "tiles": [
+            "I",
+            "am",
+            "going",
+            "to",
+            "travel",
+            "next week",
+            "tomorrow"
+          ],
+          "explanation": "Next week goes at the end.",
+          "itemIds": [
+            "en.beginner.u10.l06.travel",
+            "en.beginner.u10.l05.i-am-going-to",
+            "en.beginner.u10.l05.next-week"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.listen-holiday",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "My holiday is in August.",
+          "answer": "My holiday is in August.",
+          "options": [
+            "My holiday is in August.",
+            "My holiday is in July.",
+            "My holiday is in June."
+          ],
+          "explanation": "Listen for the month at the end.",
+          "itemIds": [
+            "en.beginner.u10.l06.holiday",
+            "en.beginner.u10.l03.august"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.speak-holiday",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I love my holiday.",
+          "answer": "I love my holiday.",
+          "explanation": "You can say you love your holiday.",
+          "itemIds": [
+            "en.beginner.u10.l06.holiday",
+            "en.beginner.u02.l09.i-love"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l06.task.fill-museum",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "We are going to visit the ___ tomorrow.",
+          "answer": "museum",
+          "options": [
+            "museum",
+            "passport",
+            "suitcase"
+          ],
+          "explanation": "We visit places like a museum.",
+          "itemIds": [
+            "en.beginner.u10.l05.visit",
+            "en.beginner.u08.l02.museum",
+            "en.beginner.u10.l05.tomorrow"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How is Omar going to travel?",
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Hello, Zara! My holiday is next week."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Great! Are you going to travel by plane?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Yes, I am. I have my passport."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Is the hotel near the beach?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Yes, it is. It is big and beautiful."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I love holidays!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "How is Omar going to travel?",
+            "answer": "by plane",
+            "options": [
+              "by plane",
+              "by train",
+              "by boat"
+            ],
+            "explanation": "Omar says Yes, I am to travel by plane.",
+            "itemIds": [
+              "en.beginner.u10.l06.travel"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Omar have?",
+            "answer": "a passport",
+            "options": [
+              "a passport",
+              "a hotel",
+              "a boat"
+            ],
+            "explanation": "Omar says: I have my passport.",
+            "itemIds": [
+              "en.beginner.u10.l06.passport"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "What is near the beach?",
+            "answer": "the hotel",
+            "options": [
+              "the hotel",
+              "the station",
+              "the park"
+            ],
+            "explanation": "Zara asks about the hotel and Omar says it is near.",
+            "itemIds": [
+              "en.beginner.u10.l06.hotel"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u10-l06-scene",
+          "describe": "A bright living room with a suitcase and a passport on the table. Omar and Zara talk while Smarty the black cat looks at a picture of a hotel by the beach on the wall."
+        }
+      },
+      "mission": {
+        "setup": "Omar and Zara talk about a holiday. Smarty listens. Talk about holidays, hotels and passports.",
+        "turns": [
+          {
+            "smarty": "Do you like holidays?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i (?:like|love) holidays$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes, I do or No, I do not.",
+            "itemIds": [
+              "en.beginner.u10.l06.holiday"
+            ]
+          },
+          {
+            "smarty": "I am going to travel by plane next week. And you?",
+            "accept": [
+              "^i am going to travel by (?:train|plane|boat|motorbike|bus|car|taxi)$",
+              "^i travel by (?:train|plane|boat|motorbike|bus|car|taxi)$",
+              "^by (?:train|plane|boat|motorbike|bus|car|taxi)$"
+            ],
+            "example": "I am going to travel by train.",
+            "hint": "Say I am going to travel by + a vehicle.",
+            "itemIds": [
+              "en.beginner.u10.l06.travel",
+              "en.beginner.u10.l05.i-am-going-to",
+              "en.beginner.u10.l05.next-week"
+            ]
+          },
+          {
+            "smarty": "Do you have a passport?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i have a passport$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes, I do or No, I do not.",
+            "itemIds": [
+              "en.beginner.u10.l06.passport"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l06.big",
+        "en.beginner.u02.l09.i-love",
+        "en.beginner.u05.l05.bag",
+        "en.beginner.u08.l02.museum",
+        "en.beginner.u10.l01.plane",
+        "en.beginner.u10.l01.train",
+        "en.beginner.u10.l03.august",
+        "en.beginner.u10.l05.i-am-going-to",
+        "en.beginner.u10.l05.next-week",
+        "en.beginner.u10.l05.tomorrow",
+        "en.beginner.u10.l05.visit"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l07",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 7,
+      "title": "Where are you going?",
+      "canDo": "Ask about travel plans",
+      "scenario": "Mia meets Tom with a suitcase. Ask where he is going and when the plane leaves.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l07.where-are-you-going",
+          "text": "Where are you going?",
+          "kind": "phrase",
+          "example": "Where are you going, Mia?",
+          "note": "Ask \"Where are you going?\" to find out someone's plan. Answer: I'm going to + a place."
+        },
+        {
+          "id": "en.beginner.u10.l07.airport",
+          "text": "airport",
+          "kind": "word",
+          "example": "I am going to the airport.",
+          "note": "An airport is a place where planes arrive and leave.",
+          "image": {
+            "id": "airport",
+            "describe": "A busy airport hall with a big window showing a plane; Smarty the black cat sits on a suitcase and watches a board with arrows."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l07.arrive",
+          "text": "arrive",
+          "kind": "word",
+          "forms": [
+            "arrives"
+          ],
+          "example": "I arrive at two o'clock.",
+          "note": "Arrive means to get to a place."
+        },
+        {
+          "id": "en.beginner.u10.l07.leave",
+          "text": "leave",
+          "kind": "word",
+          "forms": [
+            "leaves"
+          ],
+          "example": "The train leaves at six o'clock.",
+          "note": "Leave means to go away from a place."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u10.l07.task.choose-reply",
+          "kind": "choice",
+          "prompt": "Ben asks: Where are you going? You are going to the airport. What do you say?",
+          "answer": "I am going to the airport.",
+          "options": [
+            "I am going to the airport.",
+            "I am going to the park.",
+            "I am going to the school."
+          ],
+          "explanation": "Answer with I am going to + the place.",
+          "itemIds": [
+            "en.beginner.u10.l07.where-are-you-going",
+            "en.beginner.u10.l07.airport"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.listen-where",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "Where are you going?",
+          "answer": "Where are you going?",
+          "options": [
+            "Where are you going?",
+            "Where are you from?",
+            "How are you?"
+          ],
+          "explanation": "Going is the word that asks about a plan.",
+          "itemIds": [
+            "en.beginner.u10.l07.where-are-you-going"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.build-where",
+          "kind": "build",
+          "prompt": "Build the question.",
+          "answer": "Where are you going?",
+          "tiles": [
+            "Where",
+            "are",
+            "you",
+            "going?",
+            "from?"
+          ],
+          "explanation": "Where + are you + going asks about a place you will go.",
+          "itemIds": [
+            "en.beginner.u10.l07.where-are-you-going"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.fill-leave",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "The train ___ at six o'clock.",
+          "answers": [
+            "leaves",
+            "arrives"
+          ],
+          "options": [
+            "leaves",
+            "arrives",
+            "sleeps",
+            "eats"
+          ],
+          "explanation": "A train can leave or arrive at a time. A train does not sleep or eat.",
+          "itemIds": [
+            "en.beginner.u10.l07.leave",
+            "en.beginner.u10.l07.arrive",
+            "en.beginner.u04.l01.o-clock"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.build-plane",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "The plane leaves at eight o'clock.",
+          "tiles": [
+            "The",
+            "plane",
+            "leaves",
+            "at",
+            "eight",
+            "o'clock",
+            "arrives"
+          ],
+          "explanation": "Use at before the time.",
+          "itemIds": [
+            "en.beginner.u10.l07.leave",
+            "en.beginner.u04.l01.o-clock",
+            "en.beginner.u10.l01.plane"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.choose-excuse",
+          "kind": "choice",
+          "prompt": "You want to find the airport. Choose the question.",
+          "answer": "Excuse me, where is the airport?",
+          "options": [
+            "Excuse me, where is the airport?",
+            "Excuse me, where is the school?",
+            "Excuse me, where is the hospital?"
+          ],
+          "explanation": "Say the name of the place you need.",
+          "itemIds": [
+            "en.beginner.u10.l07.airport",
+            "en.beginner.u08.l09.excuse-me",
+            "en.beginner.u08.l03.where-is"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.match-qa",
+          "kind": "match",
+          "prompt": "Match each question with an answer.",
+          "pairs": [
+            {
+              "left": "Where are you going?",
+              "right": "I am going to the airport."
+            },
+            {
+              "left": "Where are you from?",
+              "right": "I am from Brazil."
+            },
+            {
+              "left": "How are you?",
+              "right": "I am fine."
+            },
+            {
+              "left": "What is your name?",
+              "right": "My name is Ben."
+            }
+          ],
+          "explanation": "Each question needs the right kind of answer.",
+          "itemIds": [
+            "en.beginner.u10.l07.where-are-you-going",
+            "en.beginner.u01.l06.ask-from",
+            "en.beginner.u01.l08.how-are",
+            "en.beginner.u01.l02.ask-name"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.listen-airport",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I am going to the airport.",
+          "answer": "I am going to the airport.",
+          "options": [
+            "I am going to the airport.",
+            "I am going to the station.",
+            "I am going to the park."
+          ],
+          "explanation": "Listen for the place at the end.",
+          "itemIds": [
+            "en.beginner.u10.l07.airport",
+            "en.beginner.u10.l07.where-are-you-going"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.speak-where",
+          "kind": "speak",
+          "prompt": "Say the question aloud.",
+          "text": "Where are you going?",
+          "answer": "Where are you going?",
+          "explanation": "Say it with a friendly voice.",
+          "itemIds": [
+            "en.beginner.u10.l07.where-are-you-going"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l07.task.fill-arrive",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I ___ at the airport at two o'clock.",
+          "answer": "arrive",
+          "options": [
+            "arrive",
+            "dance",
+            "cook"
+          ],
+          "explanation": "You arrive at a place when you get there.",
+          "itemIds": [
+            "en.beginner.u10.l07.arrive",
+            "en.beginner.u10.l07.airport"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What time does the plane leave?",
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Hi, Tom! Where are you going?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "I am going to the airport."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Does the plane leave now?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "No, it leaves at ten o'clock."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Is the taxi here?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Yes, it is. Bye, Mia!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Goodbye, Tom!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "Where is Tom going?",
+            "answer": "to the airport",
+            "options": [
+              "to the airport",
+              "to the park",
+              "to the school"
+            ],
+            "explanation": "Tom says: I am going to the airport.",
+            "itemIds": [
+              "en.beginner.u10.l07.where-are-you-going",
+              "en.beginner.u10.l07.airport"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "What time does the plane leave?",
+            "answer": "ten o'clock",
+            "options": [
+              "ten o'clock",
+              "two o'clock",
+              "six o'clock"
+            ],
+            "explanation": "Tom says it leaves at ten o'clock.",
+            "itemIds": [
+              "en.beginner.u10.l07.leave"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "How is Tom going to the airport?",
+            "answer": "by taxi",
+            "options": [
+              "by taxi",
+              "by bus",
+              "by train"
+            ],
+            "explanation": "Mia asks about the taxi and Tom says it is here.",
+            "itemIds": [
+              "en.beginner.u10.l07.airport"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u10-l07-scene",
+          "describe": "Outside a house, Tom pulls a suitcase towards a yellow taxi. Mia waves from the door and Smarty the black cat watches from the garden wall."
+        }
+      },
+      "mission": {
+        "setup": "Mia meets Tom with a suitcase. Ask where he is going and when the plane leaves.",
+        "turns": [
+          {
+            "smarty": "Hi! Where are you going?",
+            "accept": [
+              "^i am going to [\\p{L}][\\p{L}' -]{0,39}$",
+              "^(?:to )?the [\\p{L}][\\p{L}' -]{0,39}$",
+              "^i am going home$"
+            ],
+            "example": "I am going to the park.",
+            "hint": "Say I am going to + a place. For example: I am going to the park.",
+            "itemIds": [
+              "en.beginner.u10.l07.where-are-you-going",
+              "en.beginner.u10.l07.airport"
+            ]
+          },
+          {
+            "smarty": "Do you travel by plane or by train?",
+            "accept": [
+              "^by (?:plane|train)$",
+              "^i travel by (?:train|plane|boat|motorbike|bus|car|taxi)$",
+              "^i (?:like|love) (?:planes|trains|boats)$"
+            ],
+            "example": "I travel by train.",
+            "hint": "Say by plane or by train. You can also say I travel by + a vehicle.",
+            "itemIds": [
+              "en.beginner.u10.l07.arrive",
+              "en.beginner.u10.l01.plane",
+              "en.beginner.u10.l01.train",
+              "en.beginner.u10.l06.travel"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l02.ask-name",
+        "en.beginner.u01.l06.ask-from",
+        "en.beginner.u01.l08.how-are",
+        "en.beginner.u04.l01.o-clock",
+        "en.beginner.u08.l03.where-is",
+        "en.beginner.u08.l09.excuse-me",
+        "en.beginner.u10.l01.plane",
+        "en.beginner.u10.l01.train",
+        "en.beginner.u10.l06.travel"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l08",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 8,
+      "title": "Packing",
+      "canDo": "Say what you need for a trip",
+      "scenario": "Mia and Sam are in the garage with suitcases. Mia is going to travel. Talk about what to pack and what she needs.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l08.pack",
+          "text": "pack",
+          "kind": "word",
+          "forms": [
+            "packs"
+          ],
+          "example": "I pack my suitcase.",
+          "note": "Pack means to put your things into a bag or a suitcase.",
+          "image": {
+            "id": "pack-suitcase",
+            "describe": "Smarty the black cat packs a hat and a camera into an open suitcase while a child folds clothes next to it."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l08.camera",
+          "text": "camera",
+          "kind": "word",
+          "forms": [
+            "cameras"
+          ],
+          "example": "I have a camera.",
+          "note": "You use a camera to take photos.",
+          "image": {
+            "id": "camera",
+            "describe": "A black digital camera with a big round lens held by Smarty the black cat who looks through it."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l08.sunglasses",
+          "text": "sunglasses",
+          "kind": "word",
+          "example": "My sunglasses are new.",
+          "note": "You wear sunglasses when it is sunny. The word sunglasses is always plural.",
+          "image": {
+            "id": "sunglasses",
+            "describe": "A pair of round dark sunglasses on the nose of Smarty the black cat on a sunny beach."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l08.need",
+          "text": "need",
+          "kind": "word",
+          "forms": [
+            "needs"
+          ],
+          "example": "I need my passport.",
+          "note": "Use need to say what you must have. Say: I need my passport."
+        }
+      ],
+      "grammar": {
+        "title": "Need",
+        "explanation": "Use need to say what you must have. Use needs after he, she and it.",
+        "examples": [
+          "I need my passport.",
+          "She needs her camera."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u10.l08.task.fill-need",
+          "kind": "fill",
+          "prompt": "Type something you need for a trip.",
+          "text": "I need my ___.",
+          "answers": [
+            "passport",
+            "camera",
+            "sunglasses",
+            "suitcase",
+            "hat",
+            "coat",
+            "jacket"
+          ],
+          "explanation": "These things are useful on a trip.",
+          "itemIds": [
+            "en.beginner.u10.l08.need",
+            "en.beginner.u10.l06.passport",
+            "en.beginner.u10.l08.camera",
+            "en.beginner.u10.l08.sunglasses",
+            "en.beginner.u10.l01.suitcase"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.listen-camera",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I need my camera.",
+          "answer": "I need my camera.",
+          "options": [
+            "I need my camera.",
+            "I need my passport.",
+            "I need my sunglasses."
+          ],
+          "explanation": "Listen for the thing at the end.",
+          "itemIds": [
+            "en.beginner.u10.l08.need",
+            "en.beginner.u10.l08.camera"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.build-pack",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I pack my suitcase.",
+          "tiles": [
+            "I",
+            "pack",
+            "my",
+            "suitcase",
+            "camera"
+          ],
+          "explanation": "Pack goes before the thing you put in.",
+          "itemIds": [
+            "en.beginner.u10.l08.pack",
+            "en.beginner.u10.l01.suitcase"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.choose-sun",
+          "kind": "choice",
+          "prompt": "It is sunny and hot. What do you need?",
+          "answer": "I need my sunglasses.",
+          "options": [
+            "I need my sunglasses.",
+            "I need my gloves.",
+            "I need my scarf."
+          ],
+          "explanation": "Gloves and a scarf are for cold weather.",
+          "itemIds": [
+            "en.beginner.u10.l08.sunglasses",
+            "en.beginner.u10.l08.need",
+            "en.beginner.u09.l01.sunny"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.match-forms",
+          "kind": "match",
+          "prompt": "Match each word with its -s form.",
+          "pairs": [
+            {
+              "left": "need",
+              "right": "needs"
+            },
+            {
+              "left": "pack",
+              "right": "packs"
+            },
+            {
+              "left": "camera",
+              "right": "cameras"
+            },
+            {
+              "left": "suitcase",
+              "right": "suitcases"
+            }
+          ],
+          "explanation": "Add -s for he, she and it, or for more than one.",
+          "itemIds": [
+            "en.beginner.u10.l08.need",
+            "en.beginner.u10.l08.pack",
+            "en.beginner.u10.l08.camera",
+            "en.beginner.u10.l01.suitcase"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.fill-pack",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I am going to ___ my suitcase tomorrow.",
+          "answer": "pack",
+          "options": [
+            "pack",
+            "cook",
+            "sing"
+          ],
+          "explanation": "You pack a suitcase before a trip.",
+          "itemIds": [
+            "en.beginner.u10.l08.pack",
+            "en.beginner.u10.l05.i-am-going-to",
+            "en.beginner.u10.l05.tomorrow"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.build-two",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I need my passport and my camera.",
+          "tiles": [
+            "I",
+            "need",
+            "my",
+            "passport",
+            "and",
+            "my",
+            "camera",
+            "hotel"
+          ],
+          "explanation": "Use and to join two things.",
+          "itemIds": [
+            "en.beginner.u10.l08.need",
+            "en.beginner.u10.l06.passport",
+            "en.beginner.u10.l08.camera"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.speak-sun",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I need my sunglasses.",
+          "answer": "I need my sunglasses.",
+          "explanation": "Say it slowly.",
+          "itemIds": [
+            "en.beginner.u10.l08.need",
+            "en.beginner.u10.l08.sunglasses"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l08.task.choose-her",
+          "kind": "choice",
+          "prompt": "Ana is going to the beach. What does she need?",
+          "answer": "She needs her sunglasses.",
+          "options": [
+            "She needs her sunglasses.",
+            "She needs her gloves.",
+            "She needs her coat."
+          ],
+          "explanation": "Use needs after she. A beach day is sunny.",
+          "itemIds": [
+            "en.beginner.u10.l08.need",
+            "en.beginner.u10.l08.sunglasses",
+            "en.beginner.u02.l02.her"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Mia need for her trip?",
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Hi, Mia! Are you going to travel?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes, I am. I am going to pack my suitcase now."
+          },
+          {
+            "speaker": "Sam",
+            "text": "What do you need?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I need my passport and my camera."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Pack your sunglasses, too!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thank you, Sam!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "Who is going to travel?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Mia says: I am going to pack my suitcase.",
+            "itemIds": [
+              "en.beginner.u10.l08.pack"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Mia need?",
+            "answer": "passport and camera",
+            "options": [
+              "passport and camera",
+              "hat and coat",
+              "phone and pen"
+            ],
+            "explanation": "Mia says: I need my passport and my camera.",
+            "itemIds": [
+              "en.beginner.u10.l08.need",
+              "en.beginner.u10.l08.camera"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says Pack your sunglasses?",
+            "answer": "Sam",
+            "options": [
+              "Sam",
+              "Mia",
+              "Smarty"
+            ],
+            "explanation": "Sam says: Pack your sunglasses, too!",
+            "itemIds": [
+              "en.beginner.u10.l08.sunglasses",
+              "en.beginner.u10.l08.pack"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u10-l08-scene",
+          "describe": "A garage with open suitcases on the floor. Mia puts a camera and a passport in one suitcase while Sam holds up sunglasses and Smarty the black cat sits inside a bag."
+        }
+      },
+      "mission": {
+        "setup": "Mia and Sam are in the garage with suitcases. Mia is going to travel. Talk about what to pack and what she needs.",
+        "turns": [
+          {
+            "smarty": "What do you need for a holiday?",
+            "accept": [
+              "^i need [\\p{L}][\\p{L}' -]{0,39}$",
+              "^(?:my )?(?:passport|camera|sunglasses|suitcase|hat|bag|phone)$"
+            ],
+            "example": "I need my passport.",
+            "hint": "Say I need + a thing. For example: I need my camera.",
+            "itemIds": [
+              "en.beginner.u10.l08.need",
+              "en.beginner.u10.l08.camera",
+              "en.beginner.u10.l08.sunglasses",
+              "en.beginner.u10.l06.passport"
+            ]
+          },
+          {
+            "smarty": "Do you have a camera?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i have a camera$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes, I do or No, I do not.",
+            "itemIds": [
+              "en.beginner.u10.l08.camera"
+            ]
+          },
+          {
+            "smarty": "I need my sunglasses. Do you need sunglasses?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^i need (?:my )?sunglasses$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes, I do or No, I do not.",
+            "itemIds": [
+              "en.beginner.u10.l08.sunglasses",
+              "en.beginner.u10.l08.need"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l02.her",
+        "en.beginner.u09.l01.sunny",
+        "en.beginner.u10.l01.suitcase",
+        "en.beginner.u10.l05.i-am-going-to",
+        "en.beginner.u10.l05.tomorrow",
+        "en.beginner.u10.l06.passport"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l09",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 9,
+      "title": "How long?",
+      "canDo": "Ask how long a trip is",
+      "scenario": "Ben and Ana talk about a trip. Ask how long it is and talk about a souvenir.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l09.how-long",
+          "text": "How long",
+          "kind": "phrase",
+          "example": "How long is the trip?",
+          "note": "Ask \"How long?\" to find the time of something. Answer: It is ten minutes."
+        },
+        {
+          "id": "en.beginner.u10.l09.trip",
+          "text": "trip",
+          "kind": "word",
+          "example": "The trip is one week.",
+          "note": "A trip is a time when you go to a place and come back.",
+          "image": {
+            "id": "trip",
+            "describe": "Smarty the black cat and a child walking along a sunny road with backpacks and a map, a hill and a river ahead."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l09.fun",
+          "text": "fun",
+          "kind": "word",
+          "example": "A trip by train is fun.",
+          "note": "Fun means that you enjoy it. Say: It is fun!"
+        },
+        {
+          "id": "en.beginner.u10.l09.souvenir",
+          "text": "souvenir",
+          "kind": "word",
+          "forms": [
+            "souvenirs"
+          ],
+          "example": "I buy a souvenir.",
+          "note": "A souvenir is a small thing you buy on a trip to remember it.",
+          "image": {
+            "id": "souvenir",
+            "describe": "A small snow globe and a little toy model of a tower on a shop shelf; Smarty the black cat holds one in his paws."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u10.l09.task.listen-long",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "How long is the trip?",
+          "answer": "How long is the trip?",
+          "options": [
+            "How long is the trip?",
+            "How old is the trip?",
+            "How much is the trip?"
+          ],
+          "explanation": "Listen for the word after How.",
+          "itemIds": [
+            "en.beginner.u10.l09.how-long",
+            "en.beginner.u10.l09.trip"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l09.task.fill-long",
+          "kind": "fill",
+          "prompt": "Complete the question.",
+          "text": "How ___ is the trip? It is ten minutes.",
+          "answer": "long",
+          "options": [
+            "long",
+            "old",
+            "big"
+          ],
+          "explanation": "Ten minutes is a time, so we ask How long.",
+          "itemIds": [
+            "en.beginner.u10.l09.how-long",
+            "en.beginner.u10.l09.trip",
+            "en.beginner.u08.l09.minutes"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l09.task.build-trip",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "The trip is one week.",
+          "tiles": [
+            "The",
+            "trip",
+            "is",
+            "one",
+            "week",
+            "month"
+          ],
+          "explanation": "Use one + a time word to say how long.",
+          "itemIds": [
+            "en.beginner.u10.l09.trip"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l09.task.fill-buy",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I buy a ___ in the shop.",
+          "answer": "souvenir",
+          "options": [
+            "souvenir",
+            "hotel",
+            "plane"
+          ],
+          "explanation": "You can buy a souvenir in a shop.",
+          "itemIds": [
+            "en.beginner.u10.l09.souvenir",
+            "en.beginner.u07.l05.buy"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l09.task.match-how",
+          "kind": "match",
+          "prompt": "Match each question with an answer.",
+          "pairs": [
+            {
+              "left": "How long is the trip?",
+              "right": "It is one week."
+            },
+            {
+              "left": "How old are you?",
+              "right": "I am twelve years old."
+            },
+            {
+              "left": "How much is it?",
+              "right": "It is ten dollars."
+            },
+            {
+              "left": "How are you?",
+              "right": "I am fine."
+            }
+          ],
+          "explanation": "The word after How tells you the kind of answer.",
+          "itemIds": [
+            "en.beginner.u10.l09.how-long",
+            "en.beginner.u02.l04.how-old-are-you",
+            "en.beginner.u07.l04.how-much-is-it",
+            "en.beginner.u01.l08.how-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l09.task.speak-long",
+          "kind": "speak",
+          "prompt": "Say the question aloud.",
+          "text": "How long is the trip?",
+          "answer": "How long is the trip?",
+          "explanation": "Say it clearly.",
+          "itemIds": [
+            "en.beginner.u10.l09.how-long",
+            "en.beginner.u10.l09.trip"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l09.task.build-ten",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "The trip is ten minutes.",
+          "tiles": [
+            "The",
+            "trip",
+            "is",
+            "ten",
+            "minutes",
+            "week"
+          ],
+          "explanation": "Minutes is a short time.",
+          "itemIds": [
+            "en.beginner.u10.l09.trip",
+            "en.beginner.u08.l09.minutes"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l09.task.listen-fun",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "A trip by train is fun.",
+          "answer": "A trip by train is fun.",
+          "options": [
+            "A trip by train is fun.",
+            "A trip by plane is fun.",
+            "A trip by boat is fun."
+          ],
+          "explanation": "Listen for the vehicle.",
+          "itemIds": [
+            "en.beginner.u10.l09.fun",
+            "en.beginner.u10.l09.trip",
+            "en.beginner.u10.l01.train"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l09.task.build-buy",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I am going to buy a souvenir.",
+          "tiles": [
+            "I",
+            "am",
+            "going",
+            "to",
+            "buy",
+            "a",
+            "souvenir",
+            "pack"
+          ],
+          "explanation": "Use going to for a plan.",
+          "itemIds": [
+            "en.beginner.u10.l09.souvenir",
+            "en.beginner.u07.l05.buy",
+            "en.beginner.u10.l05.i-am-going-to"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is Ben going to buy?",
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "I am going to visit my cousin."
+          },
+          {
+            "speaker": "Ana",
+            "text": "How long is the trip?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "It is one week."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Great! A trip is fun."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I am going to buy a souvenir for you."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Thank you! I love souvenirs!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "Who is going to visit a cousin?",
+            "answer": "Ben",
+            "options": [
+              "Ben",
+              "Ana",
+              "Smarty"
+            ],
+            "explanation": "Ben says: I am going to visit my cousin.",
+            "itemIds": [
+              "en.beginner.u10.l09.trip"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "How long is the trip?",
+            "answer": "one week",
+            "options": [
+              "one week",
+              "one month",
+              "ten minutes"
+            ],
+            "explanation": "Ben says: It is one week.",
+            "itemIds": [
+              "en.beginner.u10.l09.how-long"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "What is Ben going to buy?",
+            "answer": "a souvenir",
+            "options": [
+              "a souvenir",
+              "a camera",
+              "a hat"
+            ],
+            "explanation": "Ben says: I am going to buy a souvenir.",
+            "itemIds": [
+              "en.beginner.u10.l09.souvenir"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u10-l09-scene",
+          "describe": "A garage table with a map and a suitcase. Ben and Ana talk happily, while Smarty the black cat holds a small toy souvenir in his paws."
+        }
+      },
+      "mission": {
+        "setup": "Ben and Ana talk about a trip. Ask how long it is and talk about a souvenir.",
+        "turns": [
+          {
+            "smarty": "How long is your trip?",
+            "accept": [
+              "^it is [\\p{L}\\p{N}][\\p{L}\\p{N}' -]{0,39}$",
+              "^the trip is [\\p{L}\\p{N}][\\p{L}\\p{N}' -]{0,39}$",
+              "^[\\p{L}\\p{N}][\\p{L}\\p{N}' -]{0,39}$"
+            ],
+            "example": "It is one week.",
+            "hint": "Say a time. For example: It is one week.",
+            "itemIds": [
+              "en.beginner.u10.l09.how-long",
+              "en.beginner.u10.l09.trip"
+            ]
+          },
+          {
+            "smarty": "A trip is fun! Are you going to buy a souvenir?",
+            "accept": [
+              "^yes(?: i am)?$",
+              "^no(?: i am not)?$",
+              "^i am going to buy a souvenir$"
+            ],
+            "example": "Yes, I am.",
+            "hint": "Say Yes, I am or No, I am not.",
+            "itemIds": [
+              "en.beginner.u10.l09.fun",
+              "en.beginner.u10.l09.souvenir",
+              "en.beginner.u01.l10.yes-i-am"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l08.how-are",
+        "en.beginner.u01.l10.yes-i-am",
+        "en.beginner.u02.l04.how-old-are-you",
+        "en.beginner.u07.l04.how-much-is-it",
+        "en.beginner.u07.l05.buy",
+        "en.beginner.u08.l09.minutes",
+        "en.beginner.u10.l01.train",
+        "en.beginner.u10.l05.i-am-going-to"
+      ]
+    },
+    {
+      "id": "en.beginner.u10.l10",
+      "section": "beginner",
+      "unit": 10,
+      "lesson": 10,
+      "title": "The big trip",
+      "canDo": "Plan a trip with Smarty",
+      "scenario": "Zara is going to travel and Omar says goodbye. Plan a trip with Smarty and say a friendly goodbye.",
+      "items": [
+        {
+          "id": "en.beginner.u10.l10.have-a-good-trip",
+          "text": "Have a good trip!",
+          "kind": "phrase",
+          "example": "Have a good trip, Mia!",
+          "note": "Say \"Have a good trip!\" to a friend who is going to travel."
+        },
+        {
+          "id": "en.beginner.u10.l10.see-you-soon",
+          "text": "See you soon",
+          "kind": "phrase",
+          "example": "See you soon, Sam!",
+          "note": "Say \"See you soon\" when you will meet again in a short time."
+        },
+        {
+          "id": "en.beginner.u10.l10.postcard",
+          "text": "postcard",
+          "kind": "word",
+          "forms": [
+            "postcards"
+          ],
+          "example": "I buy a postcard.",
+          "note": "A postcard is a card with a picture that you send from a trip.",
+          "image": {
+            "id": "postcard",
+            "describe": "A colourful postcard with a picture of a sunny beach, lying on a table next to a pen; Smarty the black cat looks at it."
+          }
+        },
+        {
+          "id": "en.beginner.u10.l10.enjoy",
+          "text": "enjoy",
+          "kind": "word",
+          "forms": [
+            "enjoys"
+          ],
+          "example": "I enjoy my holiday.",
+          "note": "Use enjoy to say you like doing something. Say: Enjoy your holiday!"
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u10.l10.task.choose-trip",
+          "kind": "choice",
+          "prompt": "Your friend is going to travel. What do you say?",
+          "answer": "Have a good trip!",
+          "options": [
+            "Have a good trip!",
+            "Happy birthday!",
+            "Good morning!"
+          ],
+          "explanation": "Say Have a good trip before someone travels.",
+          "itemIds": [
+            "en.beginner.u10.l10.have-a-good-trip"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l10.task.listen-soon",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "See you soon, Sam!",
+          "answer": "See you soon, Sam!",
+          "options": [
+            "See you soon, Sam!",
+            "See you later, Sam!",
+            "See you soon, Mia!"
+          ],
+          "explanation": "Listen for soon and for the name.",
+          "itemIds": [
+            "en.beginner.u10.l10.see-you-soon",
+            "en.beginner.u01.l05.see-you"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l10.task.build-trip",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "Have a good trip, Mia!",
+          "tiles": [
+            "Have",
+            "a",
+            "good",
+            "trip,",
+            "Mia!",
+            "bye"
+          ],
+          "explanation": "Have a good trip is a friendly phrase for a traveller.",
+          "itemIds": [
+            "en.beginner.u10.l10.have-a-good-trip",
+            "en.beginner.u10.l09.trip"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l10.task.fill-postcard",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I buy a ___ at the shop.",
+          "answer": "postcard",
+          "options": [
+            "postcard",
+            "passport",
+            "hotel"
+          ],
+          "explanation": "You can buy a postcard at a shop.",
+          "itemIds": [
+            "en.beginner.u10.l10.postcard",
+            "en.beginner.u07.l05.buy"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l10.task.match-say",
+          "kind": "match",
+          "prompt": "Match each line with a reply.",
+          "pairs": [
+            {
+              "left": "Have a good trip!",
+              "right": "Thank you!"
+            },
+            {
+              "left": "See you soon!",
+              "right": "Bye!"
+            },
+            {
+              "left": "How are you?",
+              "right": "I am fine."
+            },
+            {
+              "left": "Where are you going?",
+              "right": "I am going to the airport."
+            }
+          ],
+          "explanation": "A friendly line often has a friendly reply.",
+          "itemIds": [
+            "en.beginner.u10.l10.have-a-good-trip",
+            "en.beginner.u10.l10.see-you-soon",
+            "en.beginner.u01.l08.how-are",
+            "en.beginner.u10.l07.where-are-you-going"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l10.task.build-visit",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I am going to visit my cousin next week.",
+          "tiles": [
+            "I",
+            "am",
+            "going",
+            "to",
+            "visit",
+            "my",
+            "cousin",
+            "next week"
+          ],
+          "explanation": "Use going to for a plan.",
+          "itemIds": [
+            "en.beginner.u10.l05.visit",
+            "en.beginner.u10.l05.i-am-going-to",
+            "en.beginner.u02.l10.cousin"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l10.task.fill-enjoy",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "Enjoy your ___!",
+          "answers": [
+            "holiday",
+            "trip"
+          ],
+          "options": [
+            "holiday",
+            "trip",
+            "passport",
+            "suitcase"
+          ],
+          "explanation": "We say Enjoy your holiday or Enjoy your trip.",
+          "itemIds": [
+            "en.beginner.u10.l10.enjoy",
+            "en.beginner.u10.l06.holiday",
+            "en.beginner.u10.l09.trip"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l10.task.speak-trip",
+          "kind": "speak",
+          "prompt": "Say the phrase aloud.",
+          "text": "Have a good trip!",
+          "answer": "Have a good trip!",
+          "explanation": "Say it with a smile.",
+          "itemIds": [
+            "en.beginner.u10.l10.have-a-good-trip"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l10.task.choose-airport",
+          "kind": "choice",
+          "prompt": "Mia is at the airport. Her plane leaves now. What does Sam say?",
+          "answer": "Have a good trip, Mia!",
+          "options": [
+            "Have a good trip, Mia!",
+            "Good morning, Mia!",
+            "Happy birthday, Mia!"
+          ],
+          "explanation": "Say Have a good trip to a traveller.",
+          "itemIds": [
+            "en.beginner.u10.l10.have-a-good-trip",
+            "en.beginner.u10.l07.airport"
+          ]
+        },
+        {
+          "id": "en.beginner.u10.l10.task.listen-need",
+          "kind": "listen",
+          "prompt": "Listen, then choose the phrase you heard.",
+          "audio": "I need my passport and my camera.",
+          "answer": "I need my passport and my camera.",
+          "options": [
+            "I need my passport and my camera.",
+            "I need my passport and my suitcase.",
+            "I need my camera and my sunglasses."
+          ],
+          "explanation": "Listen for the two things.",
+          "itemIds": [
+            "en.beginner.u10.l08.need",
+            "en.beginner.u10.l06.passport",
+            "en.beginner.u10.l08.camera",
+            "en.beginner.u10.l10.postcard"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who says Have a good trip?",
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "I am going to travel tomorrow!"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Where are you going?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "I am going to visit my aunt. I need my passport and my camera."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Have a good trip, Zara!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Thank you! I am going to buy a postcard for you."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "See you soon, Zara!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u10.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "Who is going to travel?",
+            "answer": "Zara",
+            "options": [
+              "Zara",
+              "Omar",
+              "Smarty"
+            ],
+            "explanation": "Zara says: I am going to travel tomorrow!",
+            "itemIds": [
+              "en.beginner.u10.l10.have-a-good-trip"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "What is Zara going to buy for Omar?",
+            "answer": "a postcard",
+            "options": [
+              "a postcard",
+              "a hat",
+              "a camera"
+            ],
+            "explanation": "Zara says: I am going to buy a postcard for you.",
+            "itemIds": [
+              "en.beginner.u10.l10.postcard"
+            ]
+          },
+          {
+            "id": "en.beginner.u10.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says Have a good trip?",
+            "answer": "Omar",
+            "options": [
+              "Omar",
+              "Smarty",
+              "Zara"
+            ],
+            "explanation": "Omar says: Have a good trip, Zara!",
+            "itemIds": [
+              "en.beginner.u10.l10.have-a-good-trip"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u10-l10-scene",
+          "describe": "Zara stands at the garage door with a suitcase and a camera bag. Omar waves goodbye, and Smarty the black cat sits on the suitcase holding a postcard."
+        }
+      },
+      "mission": {
+        "setup": "Zara is going to travel and Omar says goodbye. Plan a trip with Smarty and say a friendly goodbye.",
+        "turns": [
+          {
+            "smarty": "I am going to travel next week. Where are you going?",
+            "accept": [
+              "^i am going to [\\p{L}][\\p{L}' -]{0,39}$",
+              "^(?:to )?(?:the )?[\\p{L}][\\p{L}' -]{0,39}$"
+            ],
+            "example": "I am going to visit my aunt.",
+            "hint": "Say I am going to + a place or a plan.",
+            "itemIds": [
+              "en.beginner.u10.l07.where-are-you-going",
+              "en.beginner.u10.l05.i-am-going-to",
+              "en.beginner.u10.l05.visit"
+            ]
+          },
+          {
+            "smarty": "How long is your trip?",
+            "accept": [
+              "^it is [\\p{L}\\p{N}][\\p{L}\\p{N}' -]{0,39}$",
+              "^the trip is [\\p{L}\\p{N}][\\p{L}\\p{N}' -]{0,39}$",
+              "^[\\p{L}\\p{N}][\\p{L}\\p{N}' -]{0,39}$"
+            ],
+            "example": "It is one week.",
+            "hint": "Say a time. For example: It is one week.",
+            "itemIds": [
+              "en.beginner.u10.l09.how-long",
+              "en.beginner.u10.l09.trip"
+            ]
+          },
+          {
+            "smarty": "Have a good trip! See you soon!",
+            "accept": [
+              "^thank you(?: smarty)?$",
+              "^thanks(?: smarty)?$",
+              "^(?:bye|goodbye)(?: smarty)?$",
+              "^see you soon(?: smarty)?$"
+            ],
+            "example": "Thank you, Smarty!",
+            "hint": "Say Thank you, Bye, or See you soon.",
+            "itemIds": [
+              "en.beginner.u10.l10.have-a-good-trip",
+              "en.beginner.u10.l10.see-you-soon",
+              "en.beginner.u01.l03.thank-you"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l03.thank-you",
+        "en.beginner.u01.l05.see-you",
+        "en.beginner.u01.l08.how-are",
+        "en.beginner.u02.l10.cousin",
+        "en.beginner.u07.l05.buy",
+        "en.beginner.u10.l05.i-am-going-to",
+        "en.beginner.u10.l05.visit",
+        "en.beginner.u10.l06.holiday",
+        "en.beginner.u10.l06.passport",
+        "en.beginner.u10.l07.airport",
+        "en.beginner.u10.l07.where-are-you-going",
+        "en.beginner.u10.l08.camera",
+        "en.beginner.u10.l08.need",
+        "en.beginner.u10.l09.how-long",
+        "en.beginner.u10.l09.trip"
+      ]
+    }
+  ]
+}

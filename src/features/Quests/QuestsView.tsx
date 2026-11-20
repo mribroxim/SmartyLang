@@ -1,73 +1,48 @@
-import { questsFor, type QuestId } from '../../lib/quests';
-import { useMemo, useState } from 'react';
-import { motion } from 'motion/react';
-import { Check, Clock, Lock } from 'lucide-react';
+import { RewardBox, type Reward } from '../../components/RewardPopup';
+import { useState } from 'react';
+import { AnimatePresence } from 'motion/react';
+import { ChevronRight, Clock, Lock } from 'lucide-react';
 import { useProgress } from '../../contexts/ProgressContext';
 import { useUiLang } from '../../contexts/UiLangContext';
 import type { UiStringKey } from '../../lib/uiStrings';
 import { ScreenShell, seCard, seChipOff, seChipOn } from '../../components/ScreenShell';
 import { Sticker, type StickerId } from '../../components/stickers/Sticker';
-import { loadLocalCompletions } from '../../lib/completions';
-import { getQuests, saveQuests, useQuests } from '../../lib/questState';
-import { normalizeHabit, todayKey, visibleStreak, LEAGUE_TIERS, leagueMeta } from '../../lib/habitEngine';
-import { earnFishPiece, fedToday, usePantry } from '../../lib/smarty/pantry';
-import { canPractice } from '../../lib/access';
-import { playSound } from '../../lib/audio';
+import { todayKey, visibleStreak, LEAGUE_TIERS, leagueMeta } from '../../lib/habitEngine';
+import { useRoom } from '../../lib/smarty/room';
+import { useHouse } from '../../lib/house/store';
+import { PHASES, phaseProgress } from '../../lib/house/phases';
+import { ProgressView } from '../Progress/ProgressView';
 
-// ── daily quests ────────────────────────────────────────────────────────
-/** Called by the room when the learner talks to Smarty (for the "talk" quest). */
-export function noteTalkedToSmarty() {
-  const day = todayKey();
-  const s = getQuests();
-  const cur = s.date === day ? s : { date: day, claimed: [], talked: 0 };
-  saveQuests({ ...cur, talked: cur.talked + 1 });
-}
+export { noteTalkedToSmarty, rewardOf, useDailyQuests, QuestRow } from './dailyQuests';
+import { useDailyQuests, QuestRow } from './dailyQuests';
 
 // ── achievements ────────────────────────────────────────────────────────
 type Ach = { id: string; sticker: StickerId; tiers: number[]; value: number };
 
 /**
- * Quests & achievements: three daily quests (each pays a fish piece for
+ * Quests & achievements: three daily quests (each pays coins for
  * Smarty's bowl) and tiered achievements that level up as you learn.
  */
-export function QuestsView({ xp, league }: { xp: number; league: string }) {
+export function QuestsView({ xp, league, onOpenProgress }: { xp: number; league: string; onOpenProgress?: () => void }) {
   const { t } = useUiLang();
-  const { habit, savedVocab, accountProfile } = useProgress();
-  const pantry = usePantry();
+  const { savedVocab, contentLang, userProfile } = useProgress();
   const [tab, setTab] = useState<'quests' | 'achievements'>('quests');
-  const questState = useQuests();
-  const claimed = questState.date === todayKey() ? questState.claimed : [];
-
-  const day = todayKey();
-  const h = normalizeHabit(habit);
-  const max = canPractice(accountProfile);
-  const all = useMemo(() => loadLocalCompletions(), [claimed.length]);
-  const today = all.filter((c) => todayKey(new Date(c.timestamp)) === day);
-  const bitesToday = today.filter((c) => c.type === 'lesson-bite');
-  const talked = questState;
-
-  const progress: Record<QuestId, number> = {
-    xp: h.dailyGoal.xpEarned || 0,
-    bites: bitesToday.length,
-    feed: fedToday(pantry) ? 1 : 0,
-    perfect: bitesToday.some((c) => (c.accuracy ?? 0) >= 100) ? 1 : 0,
-    words: (Object.values(savedVocab) as { timestamp?: number }[]).filter((v) => todayKey(new Date(v.timestamp ?? 0)) === day).length,
-    streak: (h.dailyGoal.xpEarned || 0) > 0 ? 1 : 0,
-    practice: bitesToday.some((c) => (c.data as { kind?: string } | undefined)?.kind === 'practice') ? 1 : 0,
-    talk: talked.date === day ? talked.talked ?? 0 : 0,
-  };
-  const quests = questsFor(day, max);
-  const claim = (id: string) => {
-    if (claimed.includes(id)) return;
-    earnFishPiece();
-    playSound('level-up', { mascot: false });
-    const next = [...claimed, id];
-    saveQuests({ ...getQuests(), date: day, claimed: next });
-  };
+  const { quests, progress, claimed, claim: claimQuest, all, h, pantry, workshop } = useDailyQuests();
+  const [won, setWon] = useState<Reward | null>(null);
+  const [showProgress, setShowProgress] = useState(false);
+  const claim = (id: string) => { const r = claimQuest(id); if (r) setWon(r); };
+  const room = useRoom();
+  const house = useHouse();
   const msLeft = (() => { const n = new Date(); const end = new Date(n); end.setHours(24, 0, 0, 0); return end.getTime() - n.getTime(); })();
   const hoursLeft = Math.floor(msLeft / 3_600_000), minsLeft = Math.floor((msLeft % 3_600_000) / 60_000);
 
   const bites = all.filter((c) => c.type === 'lesson-bite');
+  const kindCount = (k: string) => bites.filter((c) => (c.data as { kind?: string } | undefined)?.kind === k).length;
+  const hourCount = (test: (h: number) => boolean) => bites.filter((c) => test(new Date(c.timestamp).getHours())).length;
+  const items = Object.values(workshop.items[contentLang] ?? {});
+  const lessons = new Set(bites.map((c) => (c.data as { passageId?: string } | undefined)?.passageId).filter(Boolean)).size;
+  const days = new Set(all.map((c) => todayKey(new Date(c.timestamp)))).size;
+  const roomsBuilt = PHASES.filter((ph) => phaseProgress(house.delivered, contentLang, ph).done).length;
   const achievements: Ach[] = [
     { id: 'streak', sticker: 'streak.consistency-champ', tiers: [3, 7, 30, 100], value: Math.max(h.globalStreak.max || 0, visibleStreak(h)) },
     { id: 'bites', sticker: 'flow.learning-path', tiers: [10, 50, 200, 500], value: bites.length },
@@ -78,10 +53,26 @@ export function QuestsView({ xp, league }: { xp: number; league: string }) {
     { id: 'league', sticker: 'achieve.rank-promotion', tiers: [2, 3, 4, 5], value: LEAGUE_TIERS.findIndex((l) => l.id === leagueMeta(league).id) + 1 },
     { id: 'certificate', sticker: 'season.graduation-day', tiers: [1], value: h.badges?.includes('certificate') ? 1 : 0 },
     { id: 'goalWeek', sticker: 'streak.daily-goal-reached', tiers: [1], value: h.badges?.includes('goalWeek') ? 1 : 0 },
+    { id: 'lessons', sticker: 'flow.finish-line', tiers: [5, 25, 100, 300], value: lessons },
+    { id: 'days', sticker: 'streak.daily-check-in', tiers: [7, 30, 100, 365], value: days },
+    { id: 'practice', sticker: 'game.challenge-accepted', tiers: [5, 25, 100, 300], value: kindCount('practice') },
+    { id: 'review', sticker: 'vocab.memory-refresh', tiers: [5, 25, 100, 300], value: kindCount('refine') + kindCount('today') },
+    { id: 'mastered', sticker: 'achieve.mastery-aura', tiers: [10, 50, 200, 500], value: items.filter((i) => i.stage >= 5).length },
+    { id: 'speaker', sticker: 'speak.mic-ready', tiers: [10, 50, 200, 500], value: items.filter((i) => i.stage >= 4).length },
+    { id: 'earlyBird', sticker: 'state.wake-up', tiers: [1, 10, 50], value: hourCount((x) => x >= 5 && x < 8) },
+    { id: 'nightOwl', sticker: 'state.night-owl', tiers: [1, 10, 50], value: hourCount((x) => x >= 21 || x < 2) },
+    { id: 'weekend', sticker: 'reward.bloom', tiers: [5, 25, 100], value: bites.filter((c) => [0, 6].includes(new Date(c.timestamp).getDay())).length },
+    { id: 'speedy', sticker: 'pose.zoomies', tiers: [5, 25, 100], value: bites.filter((c) => { const ms = (c.data as { ms?: number } | undefined)?.ms; return typeof ms === 'number' && ms > 0 && ms < 120_000; }).length },
+    { id: 'coins', sticker: 'reward.champion', tiers: [100, 500, 2000, 10000], value: userProfile.coins },
+    { id: 'decorator', sticker: 'state2.saved', tiers: [10, 20, 35, 60], value: room.owned.length },
+    { id: 'builder', sticker: 'achieve.trophy-lift', tiers: [1, 3, 6, 12], value: roomsBuilt },
+    { id: 'chef', sticker: 'reward.snack-time', tiers: [3, 7, 30], value: pantry.feedStreak },
   ];
 
+  if (showProgress) return <ProgressView onBack={() => setShowProgress(false)} />;
+
   return (
-    <ScreenShell stickers={['game.challenge-accepted', 'achieve.trophy-lift']} title={t('nav.quests')} subtitle={tab === 'quests' ? t('quests.subtitle') : t('ach.subtitle')}>
+    <ScreenShell stickers={['game.challenge-accepted', 'achieve.trophy-lift']} title={t('nav.quests')}>
       <div className="mb-4 flex gap-2" role="tablist">
         {(['quests', 'achievements'] as const).map((k) => (
           <button key={k} type="button" role="tab" aria-selected={tab === k} onClick={() => setTab(k)}
@@ -98,39 +89,22 @@ export function QuestsView({ xp, league }: { xp: number; league: string }) {
             <span className="inline-flex items-center gap-1 text-xs font-bold text-slate-400"><Clock className="h-3.5 w-3.5" />{t('quests.left', { h: hoursLeft, m: minsLeft })}</span>
           </div>
           <ul className="space-y-3">
-            {quests.map((q) => {
-              const value = Math.min(progress[q.id], q.target);
-              const done = value >= q.target;
-              const got = claimed.includes(q.id);
-              return (
-                <li key={q.id} className={`${seCard} flex items-center gap-3 p-3.5`}>
-                  <Sticker id={q.sticker} size={56} mode="still" className="shrink-0" />
-                  <div className="min-w-0 flex-1">
-                    <div className="font-serif text-[15px] font-extrabold text-zinc-900 dark:text-zinc-50">{t(`quests.q.${q.id}` as UiStringKey, { n: q.target })}</div>
-                    <div className="mt-1.5 flex items-center gap-2">
-                      <div className="h-3.5 flex-1 overflow-hidden rounded-full border-2 border-zinc-900 bg-slate-100 dark:border-zinc-100 dark:bg-zinc-800">
-                        <motion.div className={`h-full rounded-full ${done ? 'bg-amber-400' : 'bg-zinc-900 dark:bg-zinc-100'}`} initial={false} animate={{ width: `${(value / q.target) * 100}%` }} />
-                      </div>
-                      <span className="w-10 text-right text-xs font-extrabold tabular-nums text-slate-500">{value}/{q.target}</span>
-                    </div>
-                  </div>
-                  {got ? (
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600"><Check className="h-5 w-5" strokeWidth={3} /></span>
-                  ) : done ? (
-                    <motion.button type="button" onClick={() => claim(q.id)} animate={{ scale: [1, 1.08, 1] }} transition={{ duration: 1.2, repeat: Infinity }}
-                      className="dark-keep shrink-0 rounded-xl bg-zinc-900 px-3 py-2.5 font-serif text-[11px] font-extrabold uppercase tracking-wide text-white shadow-[0_3px_0_0_#000] active:translate-y-[3px] active:shadow-none dark:bg-zinc-100 dark:text-zinc-900">
-                      {t('quests.claim')}
-                    </motion.button>
-                  ) : (
-                    <img src="/room3d/fish.webp" alt="" className="h-10 w-10 shrink-0 object-contain opacity-80" title={t('quests.reward')} />
-                  )}
-                </li>
-              );
-            })}
+            {quests.map((q) => (
+              <li key={q.id}><QuestRow q={q} have={progress[q.metric] ?? 0} claimed={claimed.includes(q.id)} onOpen={() => claim(q.id)} /></li>
+            ))}
           </ul>
-          <p className="mt-3 text-center text-xs font-semibold text-slate-400">{t('quests.reward')}</p>
+          <AnimatePresence>{won && <RewardBox reward={won} onDone={() => setWon(null)} />}</AnimatePresence>
         </>
       ) : (
+        <>
+        <button type="button" onClick={() => (onOpenProgress ? onOpenProgress() : setShowProgress(true))}
+          className={`${seCard} mb-3 flex w-full items-center justify-between gap-3 p-3.5 text-start active:translate-y-[2px]`}>
+          <span className="min-w-0">
+            <span className="block font-serif text-[15px] font-extrabold text-zinc-900 dark:text-zinc-50">{t('progress.link')}</span>
+            <span className="block text-xs font-semibold text-slate-500 dark:text-zinc-400">{t('progress.link.sub')}</span>
+          </span>
+          <ChevronRight className="h-5 w-5 shrink-0 text-slate-400 rtl:rotate-180" />
+        </button>
         <ul className="grid grid-cols-1 gap-3 lg:grid-cols-2">
           {achievements.map((a) => {
             const level = a.tiers.filter((n) => a.value >= n).length;
@@ -158,6 +132,7 @@ export function QuestsView({ xp, league }: { xp: number; league: string }) {
             );
           })}
         </ul>
+        </>
       )}
     </ScreenShell>
   );

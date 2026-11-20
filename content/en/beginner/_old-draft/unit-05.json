@@ -1,0 +1,3534 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "beginner",
+  "unit": 5,
+  "title": "My Home",
+  "lessons": [
+    {
+      "id": "en.beginner.u05.l01",
+      "section": "beginner",
+      "unit": 5,
+      "lesson": 1,
+      "title": "Rooms",
+      "canDo": "Name rooms in a home",
+      "scenario": "Mia shows Smarty her house. Name the rooms and say what you do in them.",
+      "items": [
+        {
+          "id": "en.beginner.u05.l01.room",
+          "text": "room",
+          "kind": "word",
+          "forms": [
+            "rooms"
+          ],
+          "example": "This is my room.",
+          "note": "Use 'room' for one space inside a home. Say 'rooms' when there is more than one.",
+          "image": {
+            "id": "room",
+            "describe": "A cut-away view of one bright, simple room with a door and a window; Smarty the black cat stands in the middle."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l01.kitchen",
+          "text": "kitchen",
+          "kind": "word",
+          "example": "I cook in the kitchen.",
+          "note": "The kitchen is the room where you cook food.",
+          "image": {
+            "id": "kitchen",
+            "describe": "A kitchen with a cooker, a fridge and a sink. Mia stirs a pot while Smarty the black cat watches."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l01.bedroom",
+          "text": "bedroom",
+          "kind": "word",
+          "example": "I sleep in my bedroom.",
+          "note": "The bedroom is the room where you sleep.",
+          "image": {
+            "id": "bedroom",
+            "describe": "A bedroom with a bed and a small lamp. Smarty the black cat is asleep on the bed."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l01.bathroom",
+          "text": "bathroom",
+          "kind": "word",
+          "example": "I take a shower in the bathroom.",
+          "note": "The bathroom is the room where you take a shower or a bath.",
+          "image": {
+            "id": "bathroom",
+            "describe": "A bathroom with a bath, a shower and a mirror. Sam brushes his teeth; Smarty the black cat sits by the bath."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l01.living-room",
+          "text": "living room",
+          "kind": "phrase",
+          "example": "We watch TV in the living room.",
+          "note": "The living room is where the family sits and watches TV. It is two words: 'living room'.",
+          "image": {
+            "id": "living-room",
+            "describe": "A living room with a sofa and a TV. Mia and Sam sit together on the sofa; Smarty the black cat is next to them."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u05.l01.task.kitchen",
+          "kind": "choice",
+          "prompt": "You cook food in this room. Which room is it?",
+          "answer": "the kitchen",
+          "options": [
+            "the kitchen",
+            "the bedroom",
+            "the bathroom"
+          ],
+          "explanation": "You cook in the kitchen.",
+          "itemIds": [
+            "en.beginner.u05.l01.kitchen"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l01.task.bedroom",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "This is my bedroom.",
+          "answer": "This is my bedroom.",
+          "options": [
+            "This is my bedroom.",
+            "This is my bathroom.",
+            "This is my kitchen."
+          ],
+          "explanation": "Listen to the room word at the end: bedroom.",
+          "itemIds": [
+            "en.beginner.u05.l01.bedroom"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l01.task.sleep",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "I sleep in my bedroom.",
+          "tiles": [
+            "I",
+            "sleep",
+            "in",
+            "my",
+            "bedroom",
+            "kitchen"
+          ],
+          "explanation": "You sleep in the bedroom. Say: in my bedroom.",
+          "itemIds": [
+            "en.beginner.u05.l01.bedroom"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l01.task.shower",
+          "kind": "fill",
+          "prompt": "You wash in the shower. Complete the sentence.",
+          "text": "I take a shower in the ___.",
+          "answer": "bathroom",
+          "options": [
+            "bathroom",
+            "kitchen",
+            "bedroom"
+          ],
+          "explanation": "You take a shower in the bathroom.",
+          "itemIds": [
+            "en.beginner.u05.l01.bathroom"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l01.task.match",
+          "kind": "match",
+          "prompt": "Match each sentence start with the right room.",
+          "pairs": [
+            {
+              "left": "I cook in the",
+              "right": "kitchen"
+            },
+            {
+              "left": "I sleep in the",
+              "right": "bedroom"
+            },
+            {
+              "left": "I take a shower in the",
+              "right": "bathroom"
+            },
+            {
+              "left": "We watch TV in the",
+              "right": "living room"
+            }
+          ],
+          "explanation": "Each room has its own use. Think about what you do there.",
+          "itemIds": [
+            "en.beginner.u05.l01.kitchen",
+            "en.beginner.u05.l01.bedroom",
+            "en.beginner.u05.l01.bathroom",
+            "en.beginner.u05.l01.living-room"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l01.task.rooms",
+          "kind": "choice",
+          "prompt": "Which word means more than one room?",
+          "answer": "rooms",
+          "options": [
+            "rooms",
+            "room",
+            "bedroom"
+          ],
+          "explanation": "Add -s to room to talk about more than one: rooms.",
+          "itemIds": [
+            "en.beginner.u05.l01.room"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l01.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "This is my kitchen.",
+          "answer": "This is my kitchen.",
+          "explanation": "You named a room in English. Use This is my... for your own home.",
+          "itemIds": [
+            "en.beginner.u05.l01.kitchen",
+            "en.beginner.u05.l01.room"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l01.task.living",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "We watch TV in the living room.",
+          "answer": "We watch TV in the living room.",
+          "options": [
+            "We watch TV in the living room.",
+            "We watch TV in the bedroom.",
+            "We sleep in the living room."
+          ],
+          "explanation": "Living room is two words. We watch TV there.",
+          "itemIds": [
+            "en.beginner.u05.l01.living-room"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l01.task.bathroom",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answers": [
+            "This is the bathroom.",
+            "This is my bathroom."
+          ],
+          "tiles": [
+            "This",
+            "is",
+            "the",
+            "my",
+            "bathroom",
+            "kitchen"
+          ],
+          "explanation": "Use the or my before a room word.",
+          "itemIds": [
+            "en.beginner.u05.l01.bathroom"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Mia do in each room?",
+        "image": {
+          "id": "u05-l01-scene",
+          "describe": "Mia's hallway with open doors to a kitchen, a bedroom and a bathroom. Mia and Smarty the black cat stand in the hallway."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Hello, Smarty! This is my house."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Mia! What is this room?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "This is the kitchen. I cook here."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Nice! Where is your bedroom?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "This is my bedroom. I sleep here."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And the bathroom?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Here it is. I take a shower here."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u05.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "Where does Mia cook?",
+            "answer": "the kitchen",
+            "options": [
+              "the kitchen",
+              "the bedroom",
+              "the bathroom"
+            ],
+            "explanation": "Mia says: This is the kitchen. I cook here.",
+            "itemIds": [
+              "en.beginner.u05.l01.kitchen"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "Where does Mia sleep?",
+            "answer": "the bedroom",
+            "options": [
+              "the bedroom",
+              "the kitchen",
+              "the bathroom"
+            ],
+            "explanation": "Mia says: This is my bedroom. I sleep here.",
+            "itemIds": [
+              "en.beginner.u05.l01.bedroom"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Where does Mia take a shower?",
+            "answer": "the bathroom",
+            "options": [
+              "the bathroom",
+              "the kitchen",
+              "the living room"
+            ],
+            "explanation": "Mia says she takes a shower in the bathroom.",
+            "itemIds": [
+              "en.beginner.u05.l01.bathroom"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty visits your imaginary home. Tell him where you do things. Use any room you like.",
+        "turns": [
+          {
+            "smarty": "Where do you sleep?",
+            "accept": [
+              "^(?:i sleep )?in (?:the|my) (?:bedroom|living room|kitchen|bathroom)$",
+              "^(?:the|my) (?:bedroom|living room|kitchen|bathroom)$",
+              "^(?:i|we) sleep in (?:the|my|our) (?:bedroom|living room|kitchen|bathroom)$"
+            ],
+            "example": "I sleep in my bedroom.",
+            "hint": "Say I sleep in my... and a room word.",
+            "itemIds": [
+              "en.beginner.u05.l01.bedroom",
+              "en.beginner.u05.l01.room"
+            ]
+          },
+          {
+            "smarty": "Where do you eat?",
+            "accept": [
+              "^(?:i|we) eat in (?:the|my|our) (?:bedroom|living room|kitchen|bathroom)$",
+              "^(?:in )?(?:the|my|our) (?:bedroom|living room|kitchen|bathroom)$"
+            ],
+            "example": "We eat in the kitchen.",
+            "hint": "Say We eat in the... and a room word.",
+            "itemIds": [
+              "en.beginner.u05.l01.kitchen",
+              "en.beginner.u05.l01.living-room"
+            ]
+          },
+          {
+            "smarty": "Where do you take a shower?",
+            "accept": [
+              "^(?:i )?take a shower in (?:the|my) (?:bedroom|living room|kitchen|bathroom)$",
+              "^(?:in )?(?:the|my) (?:bedroom|living room|kitchen|bathroom)$"
+            ],
+            "example": "I take a shower in the bathroom.",
+            "hint": "Say I take a shower in the... and a room word.",
+            "itemIds": [
+              "en.beginner.u05.l01.bathroom"
+            ]
+          }
+        ]
+      },
+      "recycle": []
+    },
+    {
+      "id": "en.beginner.u05.l02",
+      "section": "beginner",
+      "unit": 5,
+      "lesson": 2,
+      "title": "There is a door",
+      "canDo": "Say what is in a place",
+      "scenario": "Smarty looks around a kitchen with Mia. Say what is in the place: one thing or more than one.",
+      "items": [
+        {
+          "id": "en.beginner.u05.l02.there-is",
+          "text": "There is",
+          "kind": "phrase",
+          "forms": [
+            "There's"
+          ],
+          "example": "There is a door.",
+          "note": "Use 'There is' to say that one thing is in a place. 'There's' is the short form."
+        },
+        {
+          "id": "en.beginner.u05.l02.there-are",
+          "text": "There are",
+          "kind": "phrase",
+          "example": "There are two windows.",
+          "note": "Use 'There are' when there is more than one thing."
+        },
+        {
+          "id": "en.beginner.u05.l02.door",
+          "text": "door",
+          "kind": "word",
+          "forms": [
+            "doors"
+          ],
+          "example": "There is a door in the kitchen.",
+          "note": "A door is how you go in or out of a room. Say doors for more than one.",
+          "image": {
+            "id": "door",
+            "describe": "A closed wooden door with a round handle in a bright hallway; Smarty the black cat sits in front of it."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l02.window",
+          "text": "window",
+          "kind": "word",
+          "forms": [
+            "windows"
+          ],
+          "example": "There is a window in my bedroom.",
+          "note": "A window lets light into a room. Say windows for more than one.",
+          "image": {
+            "id": "window",
+            "describe": "A big window with a sunny sky outside; Smarty the black cat sits on the floor and looks up at it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u05.l02.task.one-door",
+          "kind": "choice",
+          "prompt": "Choose the sentence for one door.",
+          "answer": "There is a door.",
+          "options": [
+            "There is a door.",
+            "There are two doors.",
+            "There is a window."
+          ],
+          "explanation": "Use There is with one thing.",
+          "itemIds": [
+            "en.beginner.u05.l02.there-is",
+            "en.beginner.u05.l02.door"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l02.task.windows",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "There are two windows.",
+          "answer": "There are two windows.",
+          "options": [
+            "There are two windows.",
+            "There is a window.",
+            "There are two doors."
+          ],
+          "explanation": "Two things need There are and the plural windows.",
+          "itemIds": [
+            "en.beginner.u05.l02.there-are",
+            "en.beginner.u05.l02.window"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l02.task.kitchen",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "There is a window in the kitchen.",
+          "tiles": [
+            "There",
+            "is",
+            "a",
+            "window",
+            "in",
+            "the",
+            "kitchen",
+            "doors"
+          ],
+          "explanation": "There is + a + one thing + place.",
+          "itemIds": [
+            "en.beginner.u05.l02.there-is",
+            "en.beginner.u05.l02.window"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l02.task.are",
+          "kind": "fill",
+          "prompt": "Complete the sentence about two doors.",
+          "text": "There ___ two doors.",
+          "answer": "are",
+          "options": [
+            "are",
+            "is",
+            "am"
+          ],
+          "explanation": "Use There are with two or more things.",
+          "itemIds": [
+            "en.beginner.u05.l02.there-are",
+            "en.beginner.u05.l02.door"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l02.task.match",
+          "kind": "match",
+          "prompt": "Match each sentence start with the right room.",
+          "pairs": [
+            {
+              "left": "There is a bed in the",
+              "right": "bedroom"
+            },
+            {
+              "left": "There is a bath in the",
+              "right": "bathroom"
+            },
+            {
+              "left": "There is a TV in the",
+              "right": "living room"
+            },
+            {
+              "left": "There is a cup in the",
+              "right": "kitchen"
+            }
+          ],
+          "explanation": "Think about which thing belongs in which room.",
+          "itemIds": [
+            "en.beginner.u05.l02.there-is"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l02.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "There is a door.",
+          "answer": "There is a door.",
+          "explanation": "You said that one thing is in a place.",
+          "itemIds": [
+            "en.beginner.u05.l02.there-is",
+            "en.beginner.u05.l02.door"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l02.task.three-doors",
+          "kind": "choice",
+          "prompt": "Choose the sentence for three doors.",
+          "answer": "There are three doors.",
+          "options": [
+            "There are three doors.",
+            "There is a door.",
+            "There are two windows."
+          ],
+          "explanation": "Three things: use There are and doors.",
+          "itemIds": [
+            "en.beginner.u05.l02.there-are",
+            "en.beginner.u05.l02.door"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l02.task.short",
+          "kind": "fill",
+          "prompt": "Complete the sentence. You can use the short form.",
+          "text": "___ a window in my bedroom.",
+          "answers": [
+            "There is",
+            "There's"
+          ],
+          "options": [
+            "There is",
+            "There's",
+            "There are",
+            "We are"
+          ],
+          "explanation": "There's is the short form of There is.",
+          "itemIds": [
+            "en.beginner.u05.l02.there-is",
+            "en.beginner.u05.l02.window"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l02.task.door-kitchen",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "There is a door in the kitchen.",
+          "answer": "There is a door in the kitchen.",
+          "options": [
+            "There is a door in the kitchen.",
+            "There is a window in the kitchen.",
+            "There is a door in the bedroom."
+          ],
+          "explanation": "Listen for door and kitchen.",
+          "itemIds": [
+            "en.beginner.u05.l02.door",
+            "en.beginner.u05.l02.there-is"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How many doors are in Mia’s kitchen?",
+        "image": {
+          "id": "u05-l02-scene",
+          "describe": "Mia's bright kitchen with a big window and two doors. Mia and Smarty the black cat stand in the middle."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Mia, your kitchen is nice!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thanks! There is a big window."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I see a window and a door."
+          },
+          {
+            "speaker": "Mia",
+            "text": "There are two doors."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Two doors? Where?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "One door is for the bathroom."
+          },
+          {
+            "speaker": "Mia",
+            "text": "And one is for the living room."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u05.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "What is big in the kitchen?",
+            "answer": "the window",
+            "options": [
+              "the window",
+              "the door",
+              "the kitchen"
+            ],
+            "explanation": "Mia says: There is a big window.",
+            "itemIds": [
+              "en.beginner.u05.l02.window",
+              "en.beginner.u05.l02.there-is"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "How many doors are in the kitchen?",
+            "answer": "two",
+            "options": [
+              "two",
+              "one",
+              "three"
+            ],
+            "explanation": "Mia says: There are two doors.",
+            "itemIds": [
+              "en.beginner.u05.l02.there-are",
+              "en.beginner.u05.l02.door"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says the kitchen is nice?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Smarty says: Mia, your kitchen is nice!",
+            "itemIds": [
+              "en.beginner.u05.l02.there-is"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty and you talk about rooms. Say what is in your room or your kitchen. Imaginary details are fine.",
+        "turns": [
+          {
+            "smarty": "There is a door in my room. And in your room?",
+            "accept": [
+              "^there(?: is|'s) a (?:door|window)(?: in (?:my|the) (?:bedroom|living room|kitchen|bathroom))?$",
+              "^there are (?:two|three) (?:doors|windows)(?: in (?:my|the) (?:bedroom|living room|kitchen|bathroom))?$",
+              "^a (?:door|window)$"
+            ],
+            "example": "There is a window in my bedroom.",
+            "hint": "Say There is a... or There are two... and a door or a window.",
+            "itemIds": [
+              "en.beginner.u05.l02.there-is",
+              "en.beginner.u05.l02.door",
+              "en.beginner.u05.l02.window"
+            ]
+          },
+          {
+            "smarty": "What is in the kitchen?",
+            "accept": [
+              "^there(?: is|'s) a (?:door|window)$",
+              "^there are (?:two|three) (?:doors|windows)$",
+              "^a (?:door|window)$"
+            ],
+            "example": "There are two doors.",
+            "hint": "Use There is a... for one thing and There are two... for more.",
+            "itemIds": [
+              "en.beginner.u05.l02.there-are",
+              "en.beginner.u05.l02.door",
+              "en.beginner.u05.l02.window"
+            ]
+          }
+        ]
+      },
+      "recycle": []
+    },
+    {
+      "id": "en.beginner.u05.l03",
+      "section": "beginner",
+      "unit": 5,
+      "lesson": 3,
+      "title": "Furniture",
+      "canDo": "Name furniture",
+      "scenario": "Ben shows Smarty his living room. Name the furniture and say what there is.",
+      "items": [
+        {
+          "id": "en.beginner.u05.l03.table",
+          "text": "table",
+          "kind": "word",
+          "forms": [
+            "tables"
+          ],
+          "example": "There is a table in the kitchen.",
+          "note": "A table is flat furniture where people eat or work. Say 'tables' for more than one.",
+          "image": {
+            "id": "table",
+            "describe": "A wooden table in a kitchen with two chairs; Smarty the black cat sits next to it."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l03.chair",
+          "text": "chair",
+          "kind": "word",
+          "forms": [
+            "chairs"
+          ],
+          "example": "There are two chairs.",
+          "note": "You sit on a chair. Say chairs for more than one.",
+          "image": {
+            "id": "chair",
+            "describe": "A simple wooden chair on its own in a bright room; Smarty the black cat sits next to it."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l03.bed",
+          "text": "bed",
+          "kind": "word",
+          "forms": [
+            "beds"
+          ],
+          "example": "There is a bed in my bedroom.",
+          "note": "You sleep in a bed. Say beds for more than one.",
+          "image": {
+            "id": "bed",
+            "describe": "A bed with a blue blanket and a pillow in a bedroom; Smarty the black cat is curled up on it."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l03.sofa",
+          "text": "sofa",
+          "kind": "word",
+          "example": "There is a sofa in the living room.",
+          "note": "A sofa is a long, soft seat for two or three people.",
+          "image": {
+            "id": "sofa",
+            "describe": "A big green sofa in a living room; Ben and Smarty the black cat sit together on it."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l03.lamp",
+          "text": "lamp",
+          "kind": "word",
+          "forms": [
+            "lamps"
+          ],
+          "example": "There is a lamp in my bedroom.",
+          "note": "A lamp gives light. Say lamps for more than one.",
+          "image": {
+            "id": "lamp",
+            "describe": "A small lamp with a yellow shade giving warm light; Smarty the black cat sits next to it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u05.l03.task.bed",
+          "kind": "choice",
+          "prompt": "Which furniture is in a bedroom, for sleeping?",
+          "answer": "a bed",
+          "options": [
+            "a bed",
+            "a table",
+            "a lamp"
+          ],
+          "explanation": "You sleep in a bed in the bedroom.",
+          "itemIds": [
+            "en.beginner.u05.l03.bed",
+            "en.beginner.u05.l01.bedroom"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l03.task.sofa",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "There is a sofa in the living room.",
+          "answer": "There is a sofa in the living room.",
+          "options": [
+            "There is a sofa in the living room.",
+            "There is a table in the living room.",
+            "There is a sofa in the bedroom."
+          ],
+          "explanation": "A sofa is usually in the living room.",
+          "itemIds": [
+            "en.beginner.u05.l03.sofa",
+            "en.beginner.u05.l01.living-room"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l03.task.chairs",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "There are two chairs.",
+          "tiles": [
+            "There",
+            "are",
+            "two",
+            "chairs",
+            "is",
+            "chair"
+          ],
+          "explanation": "Two chairs: use There are and chairs.",
+          "itemIds": [
+            "en.beginner.u05.l03.chair",
+            "en.beginner.u05.l02.there-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l03.task.table",
+          "kind": "fill",
+          "prompt": "People eat lunch at this furniture. Complete the sentence.",
+          "text": "There is a ___ in the kitchen.",
+          "answer": "table",
+          "options": [
+            "table",
+            "sofa",
+            "lamp"
+          ],
+          "explanation": "We eat at a table.",
+          "itemIds": [
+            "en.beginner.u05.l03.table"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l03.task.match",
+          "kind": "match",
+          "prompt": "Match each sentence start with its usual room.",
+          "pairs": [
+            {
+              "left": "There is a table in the",
+              "right": "kitchen"
+            },
+            {
+              "left": "There is a bed in the",
+              "right": "bedroom"
+            },
+            {
+              "left": "There is a sofa in the",
+              "right": "living room"
+            },
+            {
+              "left": "There is a bath in the",
+              "right": "bathroom"
+            }
+          ],
+          "explanation": "Think about where each thing usually is.",
+          "itemIds": [
+            "en.beginner.u05.l03.table",
+            "en.beginner.u05.l03.bed",
+            "en.beginner.u05.l03.sofa",
+            "en.beginner.u05.l01.kitchen",
+            "en.beginner.u05.l01.bedroom"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l03.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "There is a lamp in my bedroom.",
+          "answer": "There is a lamp in my bedroom.",
+          "explanation": "You named furniture and a room.",
+          "itemIds": [
+            "en.beginner.u05.l03.lamp",
+            "en.beginner.u05.l01.bedroom"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l03.task.lamps",
+          "kind": "choice",
+          "prompt": "Choose the sentence for two lamps.",
+          "answer": "There are two lamps.",
+          "options": [
+            "There are two lamps.",
+            "There is a lamp.",
+            "There are two windows."
+          ],
+          "explanation": "Use There are and add -s to lamp.",
+          "itemIds": [
+            "en.beginner.u05.l03.lamp",
+            "en.beginner.u05.l02.there-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l03.task.table-chairs",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "There is a table and two chairs.",
+          "answer": "There is a table and two chairs.",
+          "options": [
+            "There is a table and two chairs.",
+            "There is a sofa and two chairs.",
+            "There is a table and two beds."
+          ],
+          "explanation": "Listen for each thing: a table and two chairs.",
+          "itemIds": [
+            "en.beginner.u05.l03.table",
+            "en.beginner.u05.l03.chair"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l03.task.bed-lamp",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "There is a bed and a lamp.",
+          "tiles": [
+            "There",
+            "is",
+            "a",
+            "bed",
+            "and",
+            "a",
+            "lamp",
+            "chair"
+          ],
+          "explanation": "Join two things with and.",
+          "itemIds": [
+            "en.beginner.u05.l03.bed",
+            "en.beginner.u05.l03.lamp"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Smarty see in Ben’s living room?",
+        "image": {
+          "id": "u05-l03-scene",
+          "describe": "Ben's living room with a green sofa, a lamp, a table and two chairs. Ben and Smarty the black cat stand in the room."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Hello, Smarty! This is my living room."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Nice! I see a sofa."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Yes. There is a sofa and a lamp."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I see a table and two chairs."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Yes, we read books here."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Where is your bed?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "My bed is in my bedroom."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u05.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Smarty see first?",
+            "answer": "a sofa",
+            "options": [
+              "a sofa",
+              "a table",
+              "a bed"
+            ],
+            "explanation": "Smarty says: I see a sofa.",
+            "itemIds": [
+              "en.beginner.u05.l03.sofa"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "How many chairs are in the living room?",
+            "answer": "two",
+            "options": [
+              "two",
+              "one",
+              "three"
+            ],
+            "explanation": "Smarty says: I see a table and two chairs.",
+            "itemIds": [
+              "en.beginner.u05.l03.chair",
+              "en.beginner.u05.l03.table"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "Where is Ben’s bed?",
+            "answer": "in the bedroom",
+            "options": [
+              "in the bedroom",
+              "in the kitchen",
+              "in the living room"
+            ],
+            "explanation": "Ben says: My bed is in my bedroom.",
+            "itemIds": [
+              "en.beginner.u05.l03.bed"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty visits your imaginary home. Say what furniture there is in two rooms.",
+        "turns": [
+          {
+            "smarty": "What is in your living room?",
+            "accept": [
+              "^there(?: is|'s) a (?:sofa|table|chair|lamp|bed|window|door)(?: and a (?:sofa|table|chair|lamp|bed|window|door))?$",
+              "^there are (?:two|three) (?:chairs|lamps|tables|beds|windows|doors)$",
+              "^(?:a|the) (?:sofa|table|chair|lamp|bed|window|door)$",
+              "^there(?: is|'s) a (?:sofa|table|chair|lamp|bed|window|door) and (?:two|three) (?:chairs|lamps|tables|beds|windows|doors)$"
+            ],
+            "example": "There is a sofa and a lamp.",
+            "hint": "Say There is a... and a furniture word. You can add and a...",
+            "itemIds": [
+              "en.beginner.u05.l03.sofa",
+              "en.beginner.u05.l03.lamp",
+              "en.beginner.u05.l03.table",
+              "en.beginner.u05.l03.chair",
+              "en.beginner.u05.l02.there-is"
+            ]
+          },
+          {
+            "smarty": "Nice! What is in your bedroom?",
+            "accept": [
+              "^there(?: is|'s) a (?:sofa|table|chair|lamp|bed|window|door)(?: and a (?:sofa|table|chair|lamp|bed|window|door))?$",
+              "^there are (?:two|three) (?:chairs|lamps|tables|beds|windows|doors)$",
+              "^(?:a|the) (?:sofa|table|chair|lamp|bed|window|door)$",
+              "^there(?: is|'s) a (?:sofa|table|chair|lamp|bed|window|door) and (?:two|three) (?:chairs|lamps|tables|beds|windows|doors)$"
+            ],
+            "example": "There is a bed and two chairs.",
+            "hint": "Use There is a... for one thing and two... for more.",
+            "itemIds": [
+              "en.beginner.u05.l03.bed",
+              "en.beginner.u05.l03.lamp",
+              "en.beginner.u05.l03.chair",
+              "en.beginner.u05.l02.there-are"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u05.l01.bedroom",
+        "en.beginner.u05.l01.living-room",
+        "en.beginner.u05.l02.there-are",
+        "en.beginner.u05.l01.kitchen",
+        "en.beginner.u05.l02.there-is"
+      ]
+    },
+    {
+      "id": "en.beginner.u05.l04",
+      "section": "beginner",
+      "unit": 5,
+      "lesson": 4,
+      "title": "Where is it?",
+      "canDo": "Say where things are",
+      "scenario": "Smarty plays a hiding game with Zara and Leo. Say where things and cats are.",
+      "items": [
+        {
+          "id": "en.beginner.u05.l04.in",
+          "text": "in",
+          "kind": "word",
+          "example": "The cat is in the box.",
+          "note": "Use 'in' when something is inside another thing."
+        },
+        {
+          "id": "en.beginner.u05.l04.on",
+          "text": "on",
+          "kind": "word",
+          "example": "The book is on the table.",
+          "note": "Use 'on' when something is on top of another thing."
+        },
+        {
+          "id": "en.beginner.u05.l04.under",
+          "text": "under",
+          "kind": "word",
+          "example": "The cat is under the chair.",
+          "note": "Use 'under' when something is below another thing."
+        },
+        {
+          "id": "en.beginner.u05.l04.next-to",
+          "text": "next to",
+          "kind": "phrase",
+          "example": "The lamp is next to the bed.",
+          "note": "Use 'next to' when two things are side by side."
+        },
+        {
+          "id": "en.beginner.u05.l04.box",
+          "text": "box",
+          "kind": "word",
+          "forms": [
+            "boxes"
+          ],
+          "example": "The box is on the sofa.",
+          "note": "A box is a container with four sides. Say boxes for more than one.",
+          "image": {
+            "id": "box",
+            "describe": "A brown cardboard box with open flaps in a room; Smarty the black cat looks out of it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u05.l04.task.in",
+          "kind": "choice",
+          "prompt": "The cat is inside the box. Choose the sentence.",
+          "answer": "The cat is in the box.",
+          "options": [
+            "The cat is in the box.",
+            "The cat is under the box.",
+            "The cat is next to the box."
+          ],
+          "explanation": "Use in for something inside a thing.",
+          "itemIds": [
+            "en.beginner.u05.l04.in",
+            "en.beginner.u05.l04.box"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l04.task.on",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "The book is on the table.",
+          "answer": "The book is on the table.",
+          "options": [
+            "The book is on the table.",
+            "The book is under the table.",
+            "The book is next to the table."
+          ],
+          "explanation": "Listen for the small word: on.",
+          "itemIds": [
+            "en.beginner.u05.l04.on",
+            "en.beginner.u05.l03.table"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l04.task.under",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "The cat is under the chair.",
+          "tiles": [
+            "The",
+            "cat",
+            "is",
+            "under",
+            "the",
+            "chair",
+            "on"
+          ],
+          "explanation": "Under means below.",
+          "itemIds": [
+            "en.beginner.u05.l04.under",
+            "en.beginner.u05.l03.chair"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l04.task.next",
+          "kind": "fill",
+          "prompt": "The lamp and the bed are side by side. Complete the sentence.",
+          "text": "The lamp is ___ the bed.",
+          "answer": "next to",
+          "options": [
+            "next to",
+            "in",
+            "under"
+          ],
+          "explanation": "Next to means side by side.",
+          "itemIds": [
+            "en.beginner.u05.l04.next-to",
+            "en.beginner.u05.l03.lamp"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l04.task.lamp-table",
+          "kind": "choice",
+          "prompt": "Which sentence says the lamp is on top of the table?",
+          "answer": "The lamp is on the table.",
+          "options": [
+            "The lamp is on the table.",
+            "The lamp is under the table.",
+            "The lamp is in the table."
+          ],
+          "explanation": "On means on top.",
+          "itemIds": [
+            "en.beginner.u05.l04.on",
+            "en.beginner.u05.l03.lamp",
+            "en.beginner.u05.l03.table"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l04.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "The box is next to the bed.",
+          "answer": "The box is next to the bed.",
+          "explanation": "You said where the box is. Next to is two words.",
+          "itemIds": [
+            "en.beginner.u05.l04.next-to",
+            "en.beginner.u05.l04.box",
+            "en.beginner.u05.l03.bed"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l04.task.in-box",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "The cat is in the box.",
+          "answer": "The cat is in the box.",
+          "options": [
+            "The cat is in the box.",
+            "The cat is on the box.",
+            "The dog is in the box."
+          ],
+          "explanation": "Listen for the animal and the small word.",
+          "itemIds": [
+            "en.beginner.u05.l04.in",
+            "en.beginner.u05.l04.box"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l04.task.sofa",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "The box is on the sofa.",
+          "tiles": [
+            "The",
+            "box",
+            "is",
+            "on",
+            "the",
+            "sofa",
+            "under"
+          ],
+          "explanation": "On the sofa means on top of the sofa.",
+          "itemIds": [
+            "en.beginner.u05.l04.on",
+            "en.beginner.u05.l04.box",
+            "en.beginner.u05.l03.sofa"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l04.task.bed-box",
+          "kind": "choice",
+          "prompt": "The box is below the bed. Choose the sentence.",
+          "answer": "The box is under the bed.",
+          "options": [
+            "The box is under the bed.",
+            "The box is on the bed.",
+            "The box is next to the bed."
+          ],
+          "explanation": "Under means below.",
+          "itemIds": [
+            "en.beginner.u05.l04.under",
+            "en.beginner.u05.l04.box",
+            "en.beginner.u05.l03.bed"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Where is Smarty hiding?",
+        "image": {
+          "id": "u05-l04-scene",
+          "describe": "A living room with a sofa, a table, a bed in the next room and a box in the corner. Zara and Leo look around; Smarty the black cat peeks out of the box."
+        },
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "Where is Smarty?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "He is not on the sofa."
+          },
+          {
+            "speaker": "Zara",
+            "text": "He is not under the table."
+          },
+          {
+            "speaker": "Leo",
+            "text": "He is not next to the bed."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I am here! I am in the box."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Smarty, you are in the box!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u05.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Who asks where Smarty is?",
+            "answer": "Zara",
+            "options": [
+              "Zara",
+              "Leo",
+              "Smarty"
+            ],
+            "explanation": "Zara says: Where is Smarty?",
+            "itemIds": [
+              "en.beginner.u05.l04.in"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "Where is Smarty?",
+            "answer": "in the box",
+            "options": [
+              "in the box",
+              "on the sofa",
+              "under the table"
+            ],
+            "explanation": "Smarty says: I am in the box.",
+            "itemIds": [
+              "en.beginner.u05.l04.in",
+              "en.beginner.u05.l04.box"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says: He is not on the sofa?",
+            "answer": "Leo",
+            "options": [
+              "Leo",
+              "Zara",
+              "Smarty"
+            ],
+            "explanation": "Leo says: He is not on the sofa.",
+            "itemIds": [
+              "en.beginner.u05.l04.on"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks where things are in your imaginary home. Answer with in, on, under or next to.",
+        "turns": [
+          {
+            "smarty": "Where is your lamp?",
+            "accept": [
+              "^(?:it is|the lamp is|my lamp is) (?:in|on|under|next to) (?:my|the) (?:bedroom|living room|kitchen|bathroom|table|bed|sofa|chair|box)$",
+              "^(?:in|on|under|next to) (?:my|the) (?:bedroom|living room|kitchen|bathroom|table|bed|sofa|chair|box)$",
+              "^there(?: is|'s) a lamp (?:in|on|under|next to) (?:my|the) (?:bedroom|living room|kitchen|bathroom|table|bed|sofa|chair|box)$"
+            ],
+            "example": "My lamp is next to the bed.",
+            "hint": "Say It is... and in, on, under or next to, then the place.",
+            "itemIds": [
+              "en.beginner.u05.l03.lamp",
+              "en.beginner.u05.l04.next-to",
+              "en.beginner.u05.l04.on",
+              "en.beginner.u05.l04.in",
+              "en.beginner.u05.l04.under"
+            ]
+          },
+          {
+            "smarty": "And where is your box?",
+            "accept": [
+              "^(?:it is|the box is|my box is) (?:in|on|under|next to) (?:my|the) (?:bedroom|living room|kitchen|bathroom|table|bed|sofa|chair|box)$",
+              "^(?:in|on|under|next to) (?:my|the) (?:bedroom|living room|kitchen|bathroom|table|bed|sofa|chair|box)$",
+              "^there(?: is|'s) a box (?:in|on|under|next to) (?:my|the) (?:bedroom|living room|kitchen|bathroom|table|bed|sofa|chair|box)$"
+            ],
+            "example": "It is under the bed.",
+            "hint": "Say It is... and in, on, under or next to, then the place.",
+            "itemIds": [
+              "en.beginner.u05.l04.box",
+              "en.beginner.u05.l04.under",
+              "en.beginner.u05.l04.on",
+              "en.beginner.u05.l04.in",
+              "en.beginner.u05.l04.next-to"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u05.l03.table",
+        "en.beginner.u05.l03.chair",
+        "en.beginner.u05.l03.lamp",
+        "en.beginner.u05.l03.bed",
+        "en.beginner.u05.l03.sofa"
+      ]
+    },
+    {
+      "id": "en.beginner.u05.l05",
+      "section": "beginner",
+      "unit": 5,
+      "lesson": 5,
+      "title": "These and those",
+      "canDo": "Point to things near and far",
+      "scenario": "Mia and Ben are in the hallway with keys and bags. Point to things near you and far from you.",
+      "items": [
+        {
+          "id": "en.beginner.u05.l05.these",
+          "text": "these",
+          "kind": "word",
+          "example": "These are my keys.",
+          "note": "Use 'these' for more than one thing that is near you."
+        },
+        {
+          "id": "en.beginner.u05.l05.those",
+          "text": "those",
+          "kind": "word",
+          "example": "Those are my bags.",
+          "note": "Use 'those' for more than one thing that is far from you."
+        },
+        {
+          "id": "en.beginner.u05.l05.key",
+          "text": "key",
+          "kind": "word",
+          "forms": [
+            "keys"
+          ],
+          "example": "This is my key.",
+          "note": "You open a door with a key. Say keys for more than one.",
+          "image": {
+            "id": "key",
+            "describe": "A small silver key on a blue ring; Smarty the black cat touches it with one paw."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l05.bag",
+          "text": "bag",
+          "kind": "word",
+          "forms": [
+            "bags"
+          ],
+          "example": "That is my bag.",
+          "note": "You carry things in a bag. Say bags for more than one.",
+          "image": {
+            "id": "bag",
+            "describe": "A red school bag standing on the floor; Smarty the black cat sits next to it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u05.l05.task.near",
+          "kind": "choice",
+          "prompt": "Two keys are near you. Choose the sentence.",
+          "answer": "These are my keys.",
+          "options": [
+            "These are my keys.",
+            "Those are my keys.",
+            "This is my key."
+          ],
+          "explanation": "Use these for more than one thing that is near you.",
+          "itemIds": [
+            "en.beginner.u05.l05.these",
+            "en.beginner.u05.l05.key"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l05.task.far",
+          "kind": "choice",
+          "prompt": "Two bags are far from you. Choose the sentence.",
+          "answer": "Those are my bags.",
+          "options": [
+            "Those are my bags.",
+            "These are my bags.",
+            "That is my bag."
+          ],
+          "explanation": "Use those for more than one thing that is far from you.",
+          "itemIds": [
+            "en.beginner.u05.l05.those",
+            "en.beginner.u05.l05.bag"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l05.task.boxes",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "These are two boxes.",
+          "answer": "These are two boxes.",
+          "options": [
+            "These are two boxes.",
+            "Those are two boxes.",
+            "These are two keys."
+          ],
+          "explanation": "Listen: these means near. Boxes is the plural of box.",
+          "itemIds": [
+            "en.beginner.u05.l05.these",
+            "en.beginner.u05.l04.box"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l05.task.two-bags",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "Those are two bags.",
+          "tiles": [
+            "Those",
+            "are",
+            "two",
+            "bags",
+            "These",
+            "bag"
+          ],
+          "explanation": "Those + are + two + bags.",
+          "itemIds": [
+            "en.beginner.u05.l05.those",
+            "en.beginner.u05.l05.bag"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l05.task.these",
+          "kind": "fill",
+          "prompt": "The keys are near you. Complete the sentence.",
+          "text": "___ are my keys.",
+          "answer": "These",
+          "options": [
+            "These",
+            "Those",
+            "This"
+          ],
+          "explanation": "Near and more than one: these.",
+          "itemIds": [
+            "en.beginner.u05.l05.these",
+            "en.beginner.u05.l05.key"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l05.task.match",
+          "kind": "match",
+          "prompt": "Match one thing with more than one thing.",
+          "pairs": [
+            {
+              "left": "This is a key.",
+              "right": "These are keys."
+            },
+            {
+              "left": "That is a bag.",
+              "right": "Those are bags."
+            },
+            {
+              "left": "This is a table.",
+              "right": "These are tables."
+            }
+          ],
+          "explanation": "The noun stays the same: key and keys, bag and bags, table and tables.",
+          "itemIds": [
+            "en.beginner.u01.l07.this-is",
+            "en.beginner.u05.l05.these",
+            "en.beginner.u05.l05.those",
+            "en.beginner.u05.l05.key",
+            "en.beginner.u05.l05.bag"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l05.task.speak-these",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "These are my keys.",
+          "answer": "These are my keys.",
+          "explanation": "You pointed to things near you.",
+          "itemIds": [
+            "en.beginner.u05.l05.these",
+            "en.beginner.u05.l05.key"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l05.task.on-sofa",
+          "kind": "choice",
+          "prompt": "The bags are on the sofa, far from you. Choose the sentence.",
+          "answer": "Those bags are on the sofa.",
+          "options": [
+            "Those bags are on the sofa.",
+            "These bags are on the sofa.",
+            "That bag is on the sofa."
+          ],
+          "explanation": "Far and more than one: those.",
+          "itemIds": [
+            "en.beginner.u05.l05.those",
+            "en.beginner.u05.l05.bag",
+            "en.beginner.u05.l04.on",
+            "en.beginner.u05.l03.sofa"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l05.task.speak-those",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "Those are my bags.",
+          "answer": "Those are my bags.",
+          "explanation": "You pointed to things far from you.",
+          "itemIds": [
+            "en.beginner.u05.l05.those",
+            "en.beginner.u05.l05.bag"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which keys are Ben’s?",
+        "image": {
+          "id": "u05-l05-scene",
+          "describe": "A hallway with a table. Mia holds two keys near her; Ben stands next to two bags far from her. Smarty the black cat sits by the door."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Ben, are these your keys?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "No. These are not my keys."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Those are my keys."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Sorry, Ben."
+          },
+          {
+            "speaker": "Ben",
+            "text": "That is fine."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Are those your bags?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Yes, those are my bags."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u05.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Who says Sorry?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Ben",
+              "Smarty"
+            ],
+            "explanation": "Mia says: Sorry, Ben.",
+            "itemIds": [
+              "en.beginner.u05.l05.these"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "Which keys are Ben’s?",
+            "answer": "those",
+            "options": [
+              "those",
+              "these",
+              "that"
+            ],
+            "explanation": "Ben says: Those are my keys.",
+            "itemIds": [
+              "en.beginner.u05.l05.those",
+              "en.beginner.u05.l05.key"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Mia ask about last?",
+            "answer": "the bags",
+            "options": [
+              "the bags",
+              "the keys",
+              "the boxes"
+            ],
+            "explanation": "Mia says: Are those your bags?",
+            "itemIds": [
+              "en.beginner.u05.l05.bag"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks about keys and bags. Answer with yes or no, and say whose they are.",
+        "turns": [
+          {
+            "smarty": "Are these your keys?",
+            "accept": [
+              "^yes(?: these are my keys| they are| they are my keys)?$",
+              "^no(?: these are not my keys| those are my keys)?$",
+              "^these are my keys$"
+            ],
+            "example": "Yes, these are my keys.",
+            "hint": "Say Yes or No. You can add These are my keys.",
+            "itemIds": [
+              "en.beginner.u05.l05.these",
+              "en.beginner.u05.l05.key"
+            ]
+          },
+          {
+            "smarty": "Are those your bags?",
+            "accept": [
+              "^yes(?: those are my bags| they are| they are my bags)?$",
+              "^no(?: those are not my bags| these are my bags)?$",
+              "^those are my bags$"
+            ],
+            "example": "No, those are not my bags.",
+            "hint": "Say Yes or No. You can add Those are my bags.",
+            "itemIds": [
+              "en.beginner.u05.l05.those",
+              "en.beginner.u05.l05.bag"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u05.l04.box",
+        "en.beginner.u01.l07.this-is",
+        "en.beginner.u05.l04.on",
+        "en.beginner.u05.l03.sofa"
+      ]
+    },
+    {
+      "id": "en.beginner.u05.l06",
+      "section": "beginner",
+      "unit": 5,
+      "lesson": 6,
+      "title": "My things",
+      "canDo": "Name everyday things",
+      "scenario": "Lily and Omar get ready to do homework. Name everyday things and say what you have.",
+      "items": [
+        {
+          "id": "en.beginner.u05.l06.phone",
+          "text": "phone",
+          "kind": "word",
+          "forms": [
+            "phones"
+          ],
+          "example": "This is my phone.",
+          "note": "You call people with a phone. Say phones for more than one.",
+          "image": {
+            "id": "phone",
+            "describe": "A smartphone lying on a wooden table; Smarty the black cat sits next to it."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l06.computer",
+          "text": "computer",
+          "kind": "word",
+          "example": "I have a computer.",
+          "note": "You use a computer to work and play.",
+          "image": {
+            "id": "computer",
+            "describe": "A laptop computer open on a desk; Smarty the black cat sits next to it."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l06.pen",
+          "text": "pen",
+          "kind": "word",
+          "forms": [
+            "pens"
+          ],
+          "example": "My pen is in my bag.",
+          "note": "You write with a pen. Say pens for more than one.",
+          "image": {
+            "id": "pen",
+            "describe": "A blue pen lying on a white page; Smarty the black cat looks at it."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l06.pencil",
+          "text": "pencil",
+          "kind": "word",
+          "forms": [
+            "pencils"
+          ],
+          "example": "These are my pencils.",
+          "note": "A pencil is for writing and drawing. Say pencils for more than one.",
+          "image": {
+            "id": "pencil",
+            "describe": "A yellow pencil with a pink rubber end lying on a desk; Smarty the black cat looks at it."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l06.notebook",
+          "text": "notebook",
+          "kind": "word",
+          "example": "My notebook is on the table.",
+          "note": "A notebook is a book with empty pages for writing.",
+          "image": {
+            "id": "notebook",
+            "describe": "A closed notebook with a bright orange cover on a desk; Smarty the black cat sits on top of it."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u05.l06.task.phone",
+          "kind": "choice",
+          "prompt": "Which thing do you use to make a call?",
+          "answer": "a phone",
+          "options": [
+            "a phone",
+            "a pen",
+            "a notebook"
+          ],
+          "explanation": "You call people with a phone.",
+          "itemIds": [
+            "en.beginner.u05.l06.phone"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l06.task.computer",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "I have a computer.",
+          "answer": "I have a computer.",
+          "options": [
+            "I have a computer.",
+            "I have a notebook.",
+            "I have a phone."
+          ],
+          "explanation": "Listen for the thing after I have.",
+          "itemIds": [
+            "en.beginner.u05.l06.computer",
+            "en.beginner.u02.l07.i-have"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l06.task.pen-bag",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "My pen is in my bag.",
+          "tiles": [
+            "My",
+            "pen",
+            "is",
+            "in",
+            "my",
+            "bag",
+            "phone"
+          ],
+          "explanation": "Use in for something inside a bag.",
+          "itemIds": [
+            "en.beginner.u05.l06.pen",
+            "en.beginner.u05.l05.bag"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l06.task.notebook",
+          "kind": "fill",
+          "prompt": "You read in it, and it has pages. Complete the sentence.",
+          "text": "I read in my ___.",
+          "answer": "notebook",
+          "options": [
+            "notebook",
+            "bag",
+            "key"
+          ],
+          "explanation": "You write in a notebook.",
+          "itemIds": [
+            "en.beginner.u05.l06.notebook"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l06.task.match",
+          "kind": "match",
+          "prompt": "Match one thing with more than one thing.",
+          "pairs": [
+            {
+              "left": "This is my pen.",
+              "right": "These are my pens."
+            },
+            {
+              "left": "This is my pencil.",
+              "right": "These are my pencils."
+            },
+            {
+              "left": "This is my phone.",
+              "right": "These are my phones."
+            }
+          ],
+          "explanation": "Add -s: pen and pens, pencil and pencils, phone and phones.",
+          "itemIds": [
+            "en.beginner.u05.l06.pen",
+            "en.beginner.u05.l06.pencil",
+            "en.beginner.u05.l06.phone",
+            "en.beginner.u01.l07.this-is",
+            "en.beginner.u05.l05.these"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l06.task.those-phones",
+          "kind": "choice",
+          "prompt": "The phones are far from you. Choose the sentence.",
+          "answer": "Those are my phones.",
+          "options": [
+            "Those are my phones.",
+            "These are my phones.",
+            "That is my phone."
+          ],
+          "explanation": "Far and more than one: those.",
+          "itemIds": [
+            "en.beginner.u05.l06.phone",
+            "en.beginner.u05.l05.those"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l06.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "I have a phone and a computer.",
+          "answer": "I have a phone and a computer.",
+          "explanation": "You said what you have. Join two things with and.",
+          "itemIds": [
+            "en.beginner.u05.l06.phone",
+            "en.beginner.u05.l06.computer",
+            "en.beginner.u02.l07.i-have"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l06.task.pencil-next",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "My pencil is next to my notebook.",
+          "answer": "My pencil is next to my notebook.",
+          "options": [
+            "My pencil is next to my notebook.",
+            "My pencil is on my notebook.",
+            "My pen is next to my notebook."
+          ],
+          "explanation": "Listen for pencil and next to.",
+          "itemIds": [
+            "en.beginner.u05.l06.pencil",
+            "en.beginner.u05.l06.notebook",
+            "en.beginner.u05.l04.next-to"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l06.task.pen-pencil",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "I have a pen and a pencil.",
+          "tiles": [
+            "I",
+            "have",
+            "a",
+            "pen",
+            "and",
+            "a",
+            "pencil",
+            "notebook"
+          ],
+          "explanation": "I have + a + thing + and + a + thing.",
+          "itemIds": [
+            "en.beginner.u05.l06.pen",
+            "en.beginner.u05.l06.pencil",
+            "en.beginner.u02.l07.i-have"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Lily need for her homework?",
+        "image": {
+          "id": "u05-l06-scene",
+          "describe": "Lily and Omar at a table with a notebook, a pencil and a pen. Lily's bag is on the floor; Smarty the black cat sits on a chair."
+        },
+        "lines": [
+          {
+            "speaker": "Lily",
+            "text": "Omar, I have my notebook."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Do you have a pen?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "No. I have a pencil."
+          },
+          {
+            "speaker": "Omar",
+            "text": "I have a pen. Here you are."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Thank you! Where is my phone?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "It is in your bag."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u05.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Omar give Lily?",
+            "answer": "a pen",
+            "options": [
+              "a pen",
+              "a pencil",
+              "a phone"
+            ],
+            "explanation": "Omar says: I have a pen. Here you are.",
+            "itemIds": [
+              "en.beginner.u05.l06.pen"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "Where is Lily’s phone?",
+            "answer": "in her bag",
+            "options": [
+              "in her bag",
+              "on the table",
+              "in the box"
+            ],
+            "explanation": "Omar says: It is in your bag.",
+            "itemIds": [
+              "en.beginner.u05.l06.phone"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "Who has a pencil?",
+            "answer": "Lily",
+            "options": [
+              "Lily",
+              "Omar",
+              "Smarty"
+            ],
+            "explanation": "Lily says: I have a pencil.",
+            "itemIds": [
+              "en.beginner.u05.l06.pencil"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is curious about your things. Say what you have. Imaginary things are fine.",
+        "turns": [
+          {
+            "smarty": "What do you have in your bag?",
+            "accept": [
+              "^i have (?:a|my) (?:phone|computer|pen|pencil|notebook|key|bag|box)(?: and (?:a|my) (?:phone|computer|pen|pencil|notebook|key|bag|box))?$",
+              "^(?:a|my) (?:phone|computer|pen|pencil|notebook|key|bag|box)$",
+              "^i have (?:two|three) (?:pens|pencils|keys|phones)$"
+            ],
+            "example": "I have a phone and a pen.",
+            "hint": "Say I have a... and a thing word. You can add and a...",
+            "itemIds": [
+              "en.beginner.u02.l07.i-have",
+              "en.beginner.u05.l06.phone",
+              "en.beginner.u05.l06.pen",
+              "en.beginner.u05.l06.pencil",
+              "en.beginner.u05.l06.notebook",
+              "en.beginner.u05.l06.computer"
+            ]
+          },
+          {
+            "smarty": "What is on your table?",
+            "accept": [
+              "^there(?: is|'s) a (?:phone|computer|pen|pencil|notebook|key|bag|box)(?: and a (?:phone|computer|pen|pencil|notebook|key|bag|box))?$",
+              "^there are (?:two|three) (?:pens|pencils|keys|phones|bags|boxes)$",
+              "^(?:a|my) (?:phone|computer|pen|pencil|notebook|key|bag|box)$"
+            ],
+            "example": "There is a notebook.",
+            "hint": "Say There is a... and a thing word.",
+            "itemIds": [
+              "en.beginner.u05.l06.notebook",
+              "en.beginner.u05.l06.computer",
+              "en.beginner.u05.l06.pencil",
+              "en.beginner.u05.l06.pen",
+              "en.beginner.u05.l06.phone"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l07.i-have",
+        "en.beginner.u05.l05.bag",
+        "en.beginner.u01.l07.this-is",
+        "en.beginner.u05.l05.these",
+        "en.beginner.u05.l05.those",
+        "en.beginner.u05.l04.next-to"
+      ]
+    },
+    {
+      "id": "en.beginner.u05.l07",
+      "section": "beginner",
+      "unit": 5,
+      "lesson": 7,
+      "title": "Is there a garden?",
+      "canDo": "Ask what a home has",
+      "scenario": "Ana asks Tom about his house. Ask what a home has and answer with yes or no.",
+      "items": [
+        {
+          "id": "en.beginner.u05.l07.is-there",
+          "text": "Is there",
+          "kind": "phrase",
+          "example": "Is there a sofa in the living room?",
+          "note": "Use 'Is there' to ask about one thing. Answer: Yes, there is. Or: No, there is not."
+        },
+        {
+          "id": "en.beginner.u05.l07.are-there",
+          "text": "Are there",
+          "kind": "phrase",
+          "example": "Are there two beds in your bedroom?",
+          "note": "Use 'Are there' to ask about more than one thing. Answer: Yes, there are. Or: No, there are not."
+        },
+        {
+          "id": "en.beginner.u05.l07.stairs",
+          "text": "stairs",
+          "kind": "word",
+          "example": "There are stairs in my house.",
+          "note": "Stairs lead up to another floor. The word 'stairs' always has an s.",
+          "image": {
+            "id": "stairs",
+            "describe": "A wooden staircase going up inside a house; Smarty the black cat sits on the third step."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l07.wall",
+          "text": "wall",
+          "kind": "word",
+          "forms": [
+            "walls"
+          ],
+          "example": "There is a window in the wall.",
+          "note": "A wall is a side of a room. Say walls for more than one.",
+          "image": {
+            "id": "wall",
+            "describe": "A plain light-blue wall with a window and a clock on it; Smarty the black cat sits on the floor below."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u05.l07.task.ask-one",
+          "kind": "choice",
+          "prompt": "You ask about one sofa. Choose the question.",
+          "answer": "Is there a sofa in the living room?",
+          "options": [
+            "Is there a sofa in the living room?",
+            "There is a sofa in the living room.",
+            "Are there stairs in the living room?"
+          ],
+          "explanation": "Is there starts a question about one thing.",
+          "itemIds": [
+            "en.beginner.u05.l07.is-there",
+            "en.beginner.u05.l03.sofa"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l07.task.windows",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "Are there two windows in the kitchen?",
+          "answer": "Are there two windows in the kitchen?",
+          "options": [
+            "Are there two windows in the kitchen?",
+            "Is there a window in the kitchen?",
+            "Are there two doors in the kitchen?"
+          ],
+          "explanation": "Are there asks about more than one thing.",
+          "itemIds": [
+            "en.beginner.u05.l07.are-there",
+            "en.beginner.u05.l02.window"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l07.task.door",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "Is there a door in the bathroom?",
+          "tiles": [
+            "Is",
+            "there",
+            "a",
+            "door",
+            "in",
+            "the",
+            "bathroom",
+            "Are",
+            "kitchen"
+          ],
+          "explanation": "Is there + a + one thing + place?",
+          "itemIds": [
+            "en.beginner.u05.l07.is-there",
+            "en.beginner.u05.l02.door"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l07.task.are",
+          "kind": "fill",
+          "prompt": "Complete the question about two beds.",
+          "text": "___ there two beds in the bedroom?",
+          "answer": "Are",
+          "options": [
+            "Are",
+            "Is",
+            "Am"
+          ],
+          "explanation": "Use Are there with two or more things.",
+          "itemIds": [
+            "en.beginner.u05.l07.are-there"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l07.task.short-answer",
+          "kind": "choice",
+          "prompt": "Smarty asks: Is there a lamp in your room? There is a lamp. Choose the answer.",
+          "answer": "Yes, there is.",
+          "options": [
+            "Yes, there is.",
+            "No, there is not.",
+            "Yes, there are."
+          ],
+          "explanation": "One lamp: answer Yes, there is.",
+          "itemIds": [
+            "en.beginner.u05.l07.is-there",
+            "en.beginner.u05.l02.there-is",
+            "en.beginner.u05.l03.lamp"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l07.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "There are stairs in my house.",
+          "answer": "There are stairs in my house.",
+          "explanation": "Stairs always has an s, so use There are.",
+          "itemIds": [
+            "en.beginner.u05.l07.stairs",
+            "en.beginner.u05.l02.there-are",
+            "en.beginner.u02.l08.house"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l07.task.walls",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "There are four walls.",
+          "tiles": [
+            "There",
+            "are",
+            "four",
+            "walls",
+            "is",
+            "wall"
+          ],
+          "explanation": "Four walls: There are + four + walls.",
+          "itemIds": [
+            "en.beginner.u05.l07.wall",
+            "en.beginner.u05.l02.there-are"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l07.task.match",
+          "kind": "match",
+          "prompt": "Match each question with its answer.",
+          "pairs": [
+            {
+              "left": "Is there a bed in the bedroom?",
+              "right": "Yes, there is."
+            },
+            {
+              "left": "Are there two chairs in the kitchen?",
+              "right": "Yes, there are."
+            },
+            {
+              "left": "Is there a sofa in the bathroom?",
+              "right": "No, there is not."
+            }
+          ],
+          "explanation": "Answer Is there with there is, and Are there with there are.",
+          "itemIds": [
+            "en.beginner.u05.l07.is-there",
+            "en.beginner.u05.l07.are-there"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l07.task.ask-two",
+          "kind": "choice",
+          "prompt": "You ask about two doors. Choose the question.",
+          "answer": "Are there two doors?",
+          "options": [
+            "Are there two doors?",
+            "Is there a door?",
+            "There are two doors."
+          ],
+          "explanation": "Two doors: use Are there.",
+          "itemIds": [
+            "en.beginner.u05.l07.are-there",
+            "en.beginner.u05.l02.door"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Tom’s house have?",
+        "image": {
+          "id": "u05-l07-scene",
+          "describe": "Tom's living room with stairs on one side and a door to a bathroom. Ana and Tom stand talking; Smarty the black cat sits on the bottom step."
+        },
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "Tom, is there a bathroom in your house?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Yes, there is."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Are there stairs?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Yes, there are stairs in the living room."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Is there a big window?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "No, there is not. But there is a door."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u05.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "Where are the stairs?",
+            "answer": "in the living room",
+            "options": [
+              "in the living room",
+              "in the bathroom",
+              "in the kitchen"
+            ],
+            "explanation": "Tom says: There are stairs in the living room.",
+            "itemIds": [
+              "en.beginner.u05.l07.stairs"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "Is there a big window?",
+            "answer": "No, there is not.",
+            "options": [
+              "No, there is not.",
+              "Yes, there is.",
+              "Yes, there are."
+            ],
+            "explanation": "Tom says: No, there is not.",
+            "itemIds": [
+              "en.beginner.u05.l07.is-there"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Ana ask about first?",
+            "answer": "a bathroom",
+            "options": [
+              "a bathroom",
+              "a kitchen",
+              "a bedroom"
+            ],
+            "explanation": "Ana says: Is there a bathroom in your house?",
+            "itemIds": [
+              "en.beginner.u05.l07.is-there"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty talks about homes. Answer two questions about your imaginary house. Then ask Smarty about his house.",
+        "turns": [
+          {
+            "smarty": "Is there a sofa in your living room?",
+            "accept": [
+              "^yes(?: there is)?$",
+              "^no(?: there is not)?$",
+              "^yes there is a sofa(?: in (?:my|the) living room)?$",
+              "^no there is not a sofa$"
+            ],
+            "example": "Yes, there is.",
+            "hint": "Answer Yes, there is. or No, there is not.",
+            "itemIds": [
+              "en.beginner.u05.l07.is-there",
+              "en.beginner.u05.l03.sofa"
+            ]
+          },
+          {
+            "smarty": "Are there stairs in your house?",
+            "accept": [
+              "^yes(?: there are)?$",
+              "^no(?: there are not)?$",
+              "^yes there are stairs$",
+              "^no there are not stairs$"
+            ],
+            "example": "No, there are not.",
+            "hint": "Answer Yes, there are. or No, there are not.",
+            "itemIds": [
+              "en.beginner.u05.l07.are-there",
+              "en.beginner.u05.l07.stairs"
+            ]
+          },
+          {
+            "smarty": "I have a big house!",
+            "accept": [
+              "^is there a (?:kitchen|bedroom|bathroom|living room|door|window|sofa|table|lamp|bed)(?: in your house)?$",
+              "^are there (?:stairs|two doors|two windows|chairs|beds|walls)(?: in your house)?$"
+            ],
+            "example": "Is there a kitchen in your house?",
+            "hint": "Ask Smarty a question: Is there a... or Are there...",
+            "itemIds": [
+              "en.beginner.u05.l07.is-there",
+              "en.beginner.u05.l07.are-there"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u05.l03.sofa",
+        "en.beginner.u05.l02.window",
+        "en.beginner.u05.l02.door",
+        "en.beginner.u05.l02.there-is",
+        "en.beginner.u05.l03.lamp",
+        "en.beginner.u05.l02.there-are",
+        "en.beginner.u02.l08.house"
+      ]
+    },
+    {
+      "id": "en.beginner.u05.l08",
+      "section": "beginner",
+      "unit": 5,
+      "lesson": 8,
+      "title": "A nice home",
+      "canDo": "Describe a home",
+      "scenario": "Zara shows Smarty her new room. Describe a home with new, clean, dirty and beautiful.",
+      "items": [
+        {
+          "id": "en.beginner.u05.l08.new",
+          "text": "new",
+          "kind": "word",
+          "example": "I have a new bed.",
+          "note": "Use 'new' for something that is not old."
+        },
+        {
+          "id": "en.beginner.u05.l08.clean",
+          "text": "clean",
+          "kind": "word",
+          "example": "The kitchen is clean.",
+          "note": "Use 'clean' when something has no dirt on it.",
+          "image": {
+            "id": "clean",
+            "describe": "A sparkling clean kitchen with a shiny floor and a tidy table; Smarty the black cat sits happily in the middle."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l08.dirty",
+          "text": "dirty",
+          "kind": "word",
+          "example": "My bag is dirty.",
+          "note": "Use 'dirty' when something is not clean.",
+          "image": {
+            "id": "dirty",
+            "describe": "A messy kitchen with muddy paw prints on the floor and dirty plates on the table; Smarty the black cat has mud on his paws."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l08.beautiful",
+          "text": "beautiful",
+          "kind": "word",
+          "example": "This is a beautiful house.",
+          "note": "Use 'beautiful' for something very nice to look at.",
+          "image": {
+            "id": "beautiful",
+            "describe": "A beautiful sunny house with flowers around the door and a blue sky; Smarty the black cat sits on the path."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u05.l08.task.new",
+          "kind": "choice",
+          "prompt": "Which word is the opposite of old?",
+          "answer": "new",
+          "options": [
+            "new",
+            "dirty",
+            "clean"
+          ],
+          "explanation": "New is the opposite of old.",
+          "itemIds": [
+            "en.beginner.u05.l08.new"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l08.task.beautiful",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "This is a beautiful house.",
+          "answer": "This is a beautiful house.",
+          "options": [
+            "This is a beautiful house.",
+            "This is a new house.",
+            "This is a big house."
+          ],
+          "explanation": "Listen for the word before house: beautiful.",
+          "itemIds": [
+            "en.beginner.u05.l08.beautiful",
+            "en.beginner.u02.l08.house"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l08.task.clean",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "The kitchen is clean.",
+          "tiles": [
+            "The",
+            "kitchen",
+            "is",
+            "clean",
+            "dirty",
+            "new"
+          ],
+          "explanation": "The + room + is + clean.",
+          "itemIds": [
+            "en.beginner.u05.l08.clean",
+            "en.beginner.u05.l01.kitchen"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l08.task.dirty",
+          "kind": "fill",
+          "prompt": "The plate is not clean. Complete the sentence.",
+          "text": "The plate is ___.",
+          "answer": "dirty",
+          "options": [
+            "dirty",
+            "clean",
+            "big"
+          ],
+          "explanation": "Dirty means not clean.",
+          "itemIds": [
+            "en.beginner.u05.l08.dirty",
+            "en.beginner.u03.l09.plate"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l08.task.match",
+          "kind": "match",
+          "prompt": "Match each word with its opposite.",
+          "pairs": [
+            {
+              "left": "new",
+              "right": "old"
+            },
+            {
+              "left": "clean",
+              "right": "dirty"
+            },
+            {
+              "left": "big",
+              "right": "small"
+            }
+          ],
+          "explanation": "Opposites help you remember words.",
+          "itemIds": [
+            "en.beginner.u05.l08.new",
+            "en.beginner.u05.l08.clean",
+            "en.beginner.u05.l08.dirty",
+            "en.beginner.u02.l06.big",
+            "en.beginner.u02.l06.small"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l08.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "My house is beautiful.",
+          "answer": "My house is beautiful.",
+          "explanation": "You described your home.",
+          "itemIds": [
+            "en.beginner.u05.l08.beautiful",
+            "en.beginner.u02.l08.house"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l08.task.new-sofa",
+          "kind": "choice",
+          "prompt": "The sofa is not old. Choose the sentence.",
+          "answer": "The sofa is new.",
+          "options": [
+            "The sofa is new.",
+            "The sofa is old.",
+            "The sofa is dirty."
+          ],
+          "explanation": "Not old means new.",
+          "itemIds": [
+            "en.beginner.u05.l08.new",
+            "en.beginner.u05.l03.sofa"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l08.task.window",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "The window is big and clean.",
+          "answer": "The window is big and clean.",
+          "options": [
+            "The window is big and clean.",
+            "The window is big and dirty.",
+            "The window is small and clean."
+          ],
+          "explanation": "Listen for both words: big and clean.",
+          "itemIds": [
+            "en.beginner.u05.l08.clean",
+            "en.beginner.u05.l02.window",
+            "en.beginner.u02.l06.big"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l08.task.new-bed",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "My new bed is beautiful.",
+          "tiles": [
+            "My",
+            "new",
+            "bed",
+            "is",
+            "beautiful",
+            "clean"
+          ],
+          "explanation": "New comes before the thing: my new bed.",
+          "itemIds": [
+            "en.beginner.u05.l08.new",
+            "en.beginner.u05.l08.beautiful",
+            "en.beginner.u05.l03.bed"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which room is new, and which room is dirty?",
+        "image": {
+          "id": "u05-l08-scene",
+          "describe": "Zara's new bedroom: big, clean and sunny, with a new bed next to a window. Zara and Smarty the black cat stand inside."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Zara, is this your new room?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes! My new bedroom is big."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is beautiful and clean!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Thanks. The old room is dirty."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Where is your new bed?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "My new bed is next to the window."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u05.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What is new in Zara’s house?",
+            "answer": "her bedroom",
+            "options": [
+              "her bedroom",
+              "her kitchen",
+              "her bathroom"
+            ],
+            "explanation": "Zara says: My new bedroom is big.",
+            "itemIds": [
+              "en.beginner.u05.l08.new"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Which room is dirty?",
+            "answer": "the old room",
+            "options": [
+              "the old room",
+              "the new room",
+              "the kitchen"
+            ],
+            "explanation": "Zara says: The old room is dirty.",
+            "itemIds": [
+              "en.beginner.u05.l08.dirty"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "Where is the new bed?",
+            "answer": "next to the window",
+            "options": [
+              "next to the window",
+              "under the window",
+              "in the kitchen"
+            ],
+            "explanation": "Zara says: My new bed is next to the window.",
+            "itemIds": [
+              "en.beginner.u05.l08.new"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty wants to know about your imaginary home. Describe it with new, old, clean, dirty or beautiful.",
+        "turns": [
+          {
+            "smarty": "Is your house new or old?",
+            "accept": [
+              "^(?:my house is |it is )?(?:new|old)$",
+              "^(?:my house is |it is )?(?:new|old) and (?:big|small|beautiful|clean|dirty)$"
+            ],
+            "example": "My house is new.",
+            "hint": "Say My house is new. or My house is old.",
+            "itemIds": [
+              "en.beginner.u05.l08.new",
+              "en.beginner.u02.l08.house"
+            ]
+          },
+          {
+            "smarty": "Is your bedroom clean or dirty?",
+            "accept": [
+              "^(?:my bedroom is |it is )?(?:clean|dirty)$",
+              "^(?:my bedroom is |it is )?(?:clean|dirty) and (?:big|small|beautiful|new|old)$"
+            ],
+            "example": "It is clean.",
+            "hint": "Say It is clean. or It is dirty.",
+            "itemIds": [
+              "en.beginner.u05.l08.clean",
+              "en.beginner.u05.l08.dirty",
+              "en.beginner.u05.l01.bedroom"
+            ]
+          },
+          {
+            "smarty": "What is beautiful in your house?",
+            "accept": [
+              "^my (?:bed|sofa|table|lamp|kitchen|bedroom|living room|window|bathroom) is (?:beautiful|new|big|clean)$",
+              "^there(?: is|'s) a (?:beautiful|new|big) (?:sofa|table|lamp|bed|window)$",
+              "^(?:the|my) (?:bed|sofa|table|lamp|kitchen|bedroom|living room|window|bathroom)$"
+            ],
+            "example": "My sofa is beautiful.",
+            "hint": "Say My... is beautiful. Use a room or a furniture word.",
+            "itemIds": [
+              "en.beginner.u05.l08.beautiful",
+              "en.beginner.u05.l08.new"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l08.house",
+        "en.beginner.u05.l01.kitchen",
+        "en.beginner.u03.l09.plate",
+        "en.beginner.u02.l06.big",
+        "en.beginner.u02.l06.small",
+        "en.beginner.u05.l03.sofa",
+        "en.beginner.u05.l02.window",
+        "en.beginner.u05.l03.bed",
+        "en.beginner.u05.l01.bedroom"
+      ]
+    },
+    {
+      "id": "en.beginner.u05.l09",
+      "section": "beginner",
+      "unit": 5,
+      "lesson": 9,
+      "title": "Open the door",
+      "canDo": "Give simple instructions",
+      "scenario": "Tom comes to visit Lily. Give simple instructions to a friend at your door.",
+      "items": [
+        {
+          "id": "en.beginner.u05.l09.open",
+          "text": "open",
+          "kind": "word",
+          "forms": [
+            "opens"
+          ],
+          "example": "Open the door, please.",
+          "note": "Use 'open' to ask someone to open something. 'Open' starts the sentence. Opens: He opens the door.",
+          "image": {
+            "id": "open",
+            "describe": "Mia pulls a front door wide open so you can see a bright room inside; Smarty the black cat sits on the doorstep."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l09.close",
+          "text": "close",
+          "kind": "word",
+          "forms": [
+            "closes"
+          ],
+          "example": "Close the window, please.",
+          "note": "Use 'close' to ask someone to close something. Closes: She closes the door.",
+          "image": {
+            "id": "close",
+            "describe": "Ben pushes a front door shut with his hand; the door is almost closed and Smarty the black cat watches from the floor."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l09.stand-up",
+          "text": "stand up",
+          "kind": "phrase",
+          "example": "Stand up, please.",
+          "note": "Say 'stand up' when you want someone to get up from a chair.",
+          "image": {
+            "id": "stand-up",
+            "describe": "Sam stands up from a chair with a happy face; his chair is behind him and Smarty the black cat is beside him."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l09.come-in",
+          "text": "come in",
+          "kind": "phrase",
+          "example": "Come in, Mia!",
+          "note": "Say 'come in' to invite someone inside."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u05.l09.task.come-in",
+          "kind": "choice",
+          "prompt": "Mia is at your door. You want her to enter. What do you say?",
+          "answer": "Come in, Mia!",
+          "options": [
+            "Come in, Mia!",
+            "Stand up, Mia!",
+            "Close the door, Mia!"
+          ],
+          "explanation": "Come in invites someone inside.",
+          "itemIds": [
+            "en.beginner.u05.l09.come-in"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l09.task.open",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "Open the door, please.",
+          "answer": "Open the door, please.",
+          "options": [
+            "Open the door, please.",
+            "Close the door, please.",
+            "Open the window, please."
+          ],
+          "explanation": "Listen for the first word: open.",
+          "itemIds": [
+            "en.beginner.u05.l09.open",
+            "en.beginner.u05.l02.door",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l09.task.close",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "Close the window, please.",
+          "tiles": [
+            "Close",
+            "the",
+            "window",
+            "please",
+            "open",
+            "door"
+          ],
+          "explanation": "Close + the + thing + please.",
+          "itemIds": [
+            "en.beginner.u05.l09.close",
+            "en.beginner.u05.l02.window",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l09.task.close-fill",
+          "kind": "fill",
+          "prompt": "You want the door to be shut. Complete the sentence.",
+          "text": "___ the door, please.",
+          "answer": "Close",
+          "options": [
+            "Close",
+            "Open",
+            "Come in"
+          ],
+          "explanation": "Close means shut.",
+          "itemIds": [
+            "en.beginner.u05.l09.close",
+            "en.beginner.u05.l02.door"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l09.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "Stand up, please.",
+          "answer": "Stand up, please.",
+          "explanation": "Please makes an instruction polite.",
+          "itemIds": [
+            "en.beginner.u05.l09.stand-up",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l09.task.thanks",
+          "kind": "choice",
+          "prompt": "Ben opens the door for you. What do you say?",
+          "answer": "Thank you, Ben!",
+          "options": [
+            "Thank you, Ben!",
+            "Come in, Ben!",
+            "Goodbye, Ben!"
+          ],
+          "explanation": "Say Thank you when someone helps you.",
+          "itemIds": [
+            "en.beginner.u05.l09.open",
+            "en.beginner.u01.l03.thank-you"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l09.task.match",
+          "kind": "match",
+          "prompt": "Match each word with its opposite.",
+          "pairs": [
+            {
+              "left": "open",
+              "right": "close"
+            },
+            {
+              "left": "opens",
+              "right": "closes"
+            },
+            {
+              "left": "Open the door",
+              "right": "Close the door"
+            }
+          ],
+          "explanation": "Open and close are opposites.",
+          "itemIds": [
+            "en.beginner.u05.l09.open",
+            "en.beginner.u05.l09.close"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l09.task.stand-in",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "Stand up and come in, please.",
+          "answer": "Stand up and come in, please.",
+          "options": [
+            "Stand up and come in, please.",
+            "Stand up and close the door, please.",
+            "Stand up and open the window, please."
+          ],
+          "explanation": "Listen for both instructions: stand up, come in.",
+          "itemIds": [
+            "en.beginner.u05.l09.stand-up",
+            "en.beginner.u05.l09.come-in",
+            "en.beginner.u01.l03.please"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l09.task.can-you",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "Can you open the window, please?",
+          "tiles": [
+            "Can",
+            "you",
+            "open",
+            "the",
+            "window",
+            "please",
+            "close"
+          ],
+          "explanation": "Can you... is a polite way to ask.",
+          "itemIds": [
+            "en.beginner.u05.l09.open",
+            "en.beginner.u05.l02.window",
+            "en.beginner.u01.l03.please"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who comes in?",
+        "image": {
+          "id": "u05-l09-scene",
+          "describe": "Tom stands at Lily's front door on a cold day while Lily waves him in. Smarty the black cat sits in the hallway."
+        },
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "Hello, Lily! Can I come in?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "Yes, come in, Tom!"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Thank you. It is cold."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Close the door, please."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Of course."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Thanks, Tom!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u05.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "Who says Come in?",
+            "answer": "Lily",
+            "options": [
+              "Lily",
+              "Tom",
+              "Smarty"
+            ],
+            "explanation": "Lily says: Yes, come in, Tom!",
+            "itemIds": [
+              "en.beginner.u05.l09.come-in"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Lily ask Tom to close?",
+            "answer": "the door",
+            "options": [
+              "the door",
+              "the window",
+              "the bag"
+            ],
+            "explanation": "Lily says: Close the door, please.",
+            "itemIds": [
+              "en.beginner.u05.l09.close"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says Of course?",
+            "answer": "Tom",
+            "options": [
+              "Tom",
+              "Lily",
+              "Smarty"
+            ],
+            "explanation": "Tom answers Lily with: Of course.",
+            "itemIds": [
+              "en.beginner.u05.l09.close"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty comes to your door. Invite him in, ask him to close the door, and answer him.",
+        "turns": [
+          {
+            "smarty": "Hello! I am at the door.",
+            "accept": [
+              "^(?:hello |hi )?come in(?: smarty)?(?: please)?$",
+              "^(?:please )?come in(?: smarty)?$",
+              "^yes come in(?: smarty)?$"
+            ],
+            "example": "Come in, Smarty!",
+            "hint": "Invite Smarty inside: Come in!",
+            "itemIds": [
+              "en.beginner.u05.l09.come-in"
+            ]
+          },
+          {
+            "smarty": "Thank you! It is cold.",
+            "accept": [
+              "^(?:please )?close the (?:door|window)(?: please)?$",
+              "^can i close the (?:door|window)(?: please)?$"
+            ],
+            "example": "Close the door, please.",
+            "hint": "Ask for the door to be closed: Close the door, please.",
+            "itemIds": [
+              "en.beginner.u05.l09.close",
+              "en.beginner.u05.l02.door",
+              "en.beginner.u01.l03.please"
+            ]
+          },
+          {
+            "smarty": "Can you open the window, please?",
+            "accept": [
+              "^of course(?: smarty)?$",
+              "^yes(?: of course)?$",
+              "^yes i can$"
+            ],
+            "example": "Of course.",
+            "hint": "Say Of course. or Yes.",
+            "itemIds": [
+              "en.beginner.u05.l09.open",
+              "en.beginner.u05.l02.window",
+              "en.beginner.u03.l05.of-course"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u05.l02.door",
+        "en.beginner.u01.l03.please",
+        "en.beginner.u05.l02.window",
+        "en.beginner.u01.l03.thank-you",
+        "en.beginner.u03.l05.of-course"
+      ]
+    },
+    {
+      "id": "en.beginner.u05.l10",
+      "section": "beginner",
+      "unit": 5,
+      "lesson": 10,
+      "title": "Welcome home",
+      "canDo": "Show Smarty your home",
+      "scenario": "Mia welcomes Smarty to her home. Show your own imaginary home and say where you live.",
+      "items": [
+        {
+          "id": "en.beginner.u05.l10.welcome",
+          "text": "welcome",
+          "kind": "word",
+          "example": "Welcome, Smarty!",
+          "note": "Say 'Welcome' to be friendly when someone comes to your home."
+        },
+        {
+          "id": "en.beginner.u05.l10.home",
+          "text": "home",
+          "kind": "word",
+          "example": "Welcome to my home.",
+          "note": "Your 'home' is the place where you live.",
+          "image": {
+            "id": "home",
+            "describe": "A cosy house with a red door, a small garden gate and a warm light in the window; Smarty the black cat sits on the doorstep."
+          }
+        },
+        {
+          "id": "en.beginner.u05.l10.live",
+          "text": "live",
+          "kind": "word",
+          "forms": [
+            "lives"
+          ],
+          "example": "I live in a house.",
+          "note": "Use 'live' for the place you stay every day. With he, she or a name, say lives."
+        },
+        {
+          "id": "en.beginner.u05.l10.street",
+          "text": "street",
+          "kind": "word",
+          "example": "I live on a big street.",
+          "note": "A street is a road with houses on it. We say 'on a street'.",
+          "image": {
+            "id": "street",
+            "describe": "A quiet street with houses on both sides and a few trees; Smarty the black cat walks along the pavement."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u05.l10.task.welcome",
+          "kind": "choice",
+          "prompt": "A friend comes to your home. What do you say?",
+          "answer": "Welcome to my home!",
+          "options": [
+            "Welcome to my home!",
+            "Goodbye!",
+            "Sorry!"
+          ],
+          "explanation": "Welcome is a friendly greeting for guests.",
+          "itemIds": [
+            "en.beginner.u05.l10.welcome",
+            "en.beginner.u05.l10.home"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l10.task.live",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "I live in a house.",
+          "answer": "I live in a house.",
+          "options": [
+            "I live in a house.",
+            "I live in Uzbekistan.",
+            "I live in England."
+          ],
+          "explanation": "Listen for the place after I live in.",
+          "itemIds": [
+            "en.beginner.u05.l10.live",
+            "en.beginner.u02.l08.house"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l10.task.where",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "Where do you live?",
+          "tiles": [
+            "Where",
+            "do",
+            "you",
+            "live",
+            "from",
+            "am"
+          ],
+          "explanation": "Where do you live? asks about your home.",
+          "itemIds": [
+            "en.beginner.u05.l10.live"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l10.task.street",
+          "kind": "fill",
+          "prompt": "Complete the sentence about a road with houses.",
+          "text": "I live on a small ___.",
+          "answer": "street",
+          "options": [
+            "street",
+            "house",
+            "home"
+          ],
+          "explanation": "We say on a street.",
+          "itemIds": [
+            "en.beginner.u05.l10.street"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l10.task.match",
+          "kind": "match",
+          "prompt": "Match each question with its answer.",
+          "pairs": [
+            {
+              "left": "Where do you live?",
+              "right": "I live in Uzbekistan."
+            },
+            {
+              "left": "Where are you from?",
+              "right": "I am from Brazil."
+            },
+            {
+              "left": "Is this your home?",
+              "right": "Yes, it is."
+            }
+          ],
+          "explanation": "Live is about where you stay. From is about where you were born or where you come from.",
+          "itemIds": [
+            "en.beginner.u05.l10.live",
+            "en.beginner.u05.l10.home",
+            "en.beginner.u01.l06.ask-from"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l10.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "Welcome home!",
+          "answer": "Welcome home!",
+          "explanation": "You greeted someone at home.",
+          "itemIds": [
+            "en.beginner.u05.l10.welcome",
+            "en.beginner.u05.l10.home"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l10.task.lives",
+          "kind": "fill",
+          "prompt": "Complete the sentence about Sam.",
+          "text": "Sam ___ in a house.",
+          "answer": "lives",
+          "options": [
+            "lives",
+            "live",
+            "has"
+          ],
+          "explanation": "With a name, use lives.",
+          "itemIds": [
+            "en.beginner.u05.l10.live"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l10.task.welcome-house",
+          "kind": "listen",
+          "prompt": "Listen, then choose the sentence you heard.",
+          "audio": "Welcome to my house!",
+          "answer": "Welcome to my house!",
+          "options": [
+            "Welcome to my house!",
+            "Welcome to my home!",
+            "Welcome to my street!"
+          ],
+          "explanation": "Listen for the last word: house.",
+          "itemIds": [
+            "en.beginner.u05.l10.welcome",
+            "en.beginner.u02.l08.house"
+          ]
+        },
+        {
+          "id": "en.beginner.u05.l10.task.family",
+          "kind": "build",
+          "prompt": "Build the sentence in the right word order.",
+          "answer": "My family lives in a house.",
+          "tiles": [
+            "My",
+            "family",
+            "lives",
+            "in",
+            "a",
+            "house",
+            "street"
+          ],
+          "explanation": "Family is one group, so use lives.",
+          "itemIds": [
+            "en.beginner.u02.l01.family",
+            "en.beginner.u05.l10.live",
+            "en.beginner.u02.l08.house"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Smarty say about Mia’s home?",
+        "image": {
+          "id": "u05-l10-scene",
+          "describe": "Mia's front door on a small street. Mia welcomes Smarty the black cat at the open door; her family waves from the hallway."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Welcome to my home, Smarty!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you! I love your house."
+          },
+          {
+            "speaker": "Mia",
+            "text": "My family lives here."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Where is your house?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "It is on a small street."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "This is a beautiful home!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thanks! Come in."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u05.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "Who says Welcome?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Smarty",
+              "Sam"
+            ],
+            "explanation": "Mia says: Welcome to my home, Smarty!",
+            "itemIds": [
+              "en.beginner.u05.l10.welcome"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "Where is Mia’s house?",
+            "answer": "on a small street",
+            "options": [
+              "on a small street",
+              "on a big street",
+              "in the kitchen"
+            ],
+            "explanation": "Mia says: It is on a small street.",
+            "itemIds": [
+              "en.beginner.u05.l10.street"
+            ]
+          },
+          {
+            "id": "en.beginner.u05.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Smarty say is beautiful?",
+            "answer": "the home",
+            "options": [
+              "the home",
+              "the street",
+              "the kitchen"
+            ],
+            "explanation": "Smarty says: This is a beautiful home!",
+            "itemIds": [
+              "en.beginner.u05.l10.home"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty welcomes you to his home. Thank him, say where you live, and describe your imaginary home.",
+        "turns": [
+          {
+            "smarty": "Welcome to my home!",
+            "accept": [
+              "^thank you(?: smarty)?$",
+              "^thanks(?: smarty)?$",
+              "^(?:thank you|thanks)(?: smarty)? it is (?:beautiful|nice)$"
+            ],
+            "example": "Thank you, Smarty!",
+            "hint": "Say Thank you or Thanks.",
+            "itemIds": [
+              "en.beginner.u05.l10.welcome",
+              "en.beginner.u05.l10.home",
+              "en.beginner.u01.l03.thank-you",
+              "en.beginner.u01.l03.thanks"
+            ]
+          },
+          {
+            "smarty": "Where do you live?",
+            "accept": [
+              "^i live in \\p{L}[\\p{L}' -]{0,38}$",
+              "^i live on (?:a|the)(?: big| small)? street$",
+              "^my (?:house|home) is on (?:a|the)(?: big| small)? street$"
+            ],
+            "example": "I live in a house.",
+            "hint": "Say I live in... or I live on a... street.",
+            "itemIds": [
+              "en.beginner.u05.l10.live",
+              "en.beginner.u05.l10.street",
+              "en.beginner.u02.l08.house"
+            ]
+          },
+          {
+            "smarty": "Is your home big or small?",
+            "accept": [
+              "^(?:it is |my home is )?(?:big|small)$",
+              "^(?:it is |my home is )?(?:big|small) and (?:new|old|clean|beautiful|nice)$"
+            ],
+            "example": "My home is small and beautiful.",
+            "hint": "Say My home is big. or My home is small.",
+            "itemIds": [
+              "en.beginner.u05.l10.home",
+              "en.beginner.u05.l08.beautiful"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l08.house",
+        "en.beginner.u01.l06.ask-from",
+        "en.beginner.u02.l01.family",
+        "en.beginner.u01.l03.thank-you",
+        "en.beginner.u01.l03.thanks",
+        "en.beginner.u05.l08.beautiful"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3748 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "elementary",
+  "unit": 7,
+  "title": "Jobs & Dreams",
+  "room": "workshop",
+  "lessons": [
+    {
+      "id": "en.elementary.u07.l01",
+      "section": "elementary",
+      "unit": 7,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Jobs",
+      "canDo": "Name common jobs",
+      "scenario": "Smarty welcomes Mia and Sam to his workshop and shows pictures of common jobs.",
+      "items": [
+        {
+          "id": "en.elementary.u07.l01.farmer",
+          "text": "farmer",
+          "kind": "word",
+          "forms": [
+            "farmers"
+          ],
+          "example": "My grandfather is a farmer.",
+          "note": "Say 'farmer' for a person who grows food and keeps animals like cows and sheep.",
+          "image": {
+            "id": "farmer",
+            "describe": "an orange cat wearing a straw hat and blue overalls standing by a red barn with a friendly cow"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l01.pilot",
+          "text": "pilot",
+          "kind": "word",
+          "forms": [
+            "pilots"
+          ],
+          "example": "The pilot is in the plane.",
+          "note": "Use 'pilot' when you talk about the person who flies a plane.",
+          "image": {
+            "id": "pilot",
+            "describe": "a gray cat in a dark blue pilot uniform and cap sitting in the cockpit of a small plane"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l01.driver",
+          "text": "driver",
+          "kind": "word",
+          "forms": [
+            "drivers"
+          ],
+          "example": "Her uncle is a driver.",
+          "note": "Say 'driver' for a person who drives a car, bus, or train.",
+          "image": {
+            "id": "driver",
+            "describe": "a brown cat wearing a cap and holding the steering wheel of a yellow bus"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l01.mechanic",
+          "text": "mechanic",
+          "kind": "word",
+          "forms": [
+            "mechanics"
+          ],
+          "example": "Sam is a good mechanic.",
+          "note": "Use 'mechanic' for a person who fixes cars and motorbikes.",
+          "image": {
+            "id": "mechanic",
+            "describe": "a black-and-white cat in blue overalls holding a metal tool beside an open car hood"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l01.builder",
+          "text": "builder",
+          "kind": "word",
+          "forms": [
+            "builders"
+          ],
+          "example": "The builder is wearing a yellow hat.",
+          "note": "Say 'builder' for a person who builds houses, schools, and walls.",
+          "image": {
+            "id": "builder",
+            "describe": "a ginger cat wearing a yellow hard hat and tool belt standing beside a brick wall"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l01.dentist",
+          "text": "dentist",
+          "kind": "word",
+          "forms": [
+            "dentists"
+          ],
+          "example": "I visited the dentist yesterday.",
+          "note": "Use 'dentist' when you talk about a doctor who takes care of your teeth.",
+          "image": {
+            "id": "dentist",
+            "describe": "a white cat in a clean white coat smiling next to a dentist chair and small mirror"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "a or an with jobs",
+        "explanation": "Put a or an before a singular job word. Use a before a consonant sound (a farmer, a pilot) and an before a vowel sound (an actor).",
+        "examples": [
+          "My aunt is a pilot.",
+          "He is a mechanic."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u07.l01.task.pick-farmer",
+          "kind": "choice",
+          "prompt": "Who has cows and sheep and works on the land?",
+          "answer": "farmer",
+          "options": [
+            "farmer",
+            "pilot",
+            "dentist"
+          ],
+          "explanation": "A farmer works with animals like cows and sheep.",
+          "itemIds": [
+            "en.elementary.u07.l01.farmer"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l01.task.hear-pilot",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The pilot is in the plane.",
+          "answer": "The pilot is in the plane.",
+          "options": [
+            "The pilot is in the plane.",
+            "The driver is in the car.",
+            "The builder is in the room."
+          ],
+          "explanation": "A pilot flies a plane.",
+          "itemIds": [
+            "en.elementary.u07.l01.pilot"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l01.task.match-jobs-1",
+          "kind": "match",
+          "prompt": "Match each job with the place or thing.",
+          "pairs": [
+            {
+              "left": "pilot",
+              "right": "plane"
+            },
+            {
+              "left": "driver",
+              "right": "car"
+            },
+            {
+              "left": "farmer",
+              "right": "cow"
+            },
+            {
+              "left": "teacher",
+              "right": "school"
+            }
+          ],
+          "explanation": "A pilot flies a plane, a driver drives a car, a farmer keeps cows, and a teacher works at a school.",
+          "itemIds": [
+            "en.elementary.u07.l01.pilot",
+            "en.elementary.u07.l01.driver",
+            "en.elementary.u07.l01.farmer",
+            "en.elementary.u01.l02.teacher"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l01.task.pick-dentist",
+          "kind": "choice",
+          "prompt": "My tooth hurts! Who should I visit?",
+          "answer": "a dentist",
+          "options": [
+            "a dentist",
+            "a mechanic",
+            "a builder"
+          ],
+          "explanation": "A dentist helps you when your tooth hurts.",
+          "itemIds": [
+            "en.elementary.u07.l01.dentist"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l01.task.build-mechanic",
+          "kind": "build",
+          "prompt": "Build the sentence about Sam.",
+          "answer": "Sam is a good mechanic.",
+          "tiles": [
+            "Sam",
+            "is",
+            "a",
+            "good",
+            "mechanic",
+            "pilot"
+          ],
+          "explanation": "Put 'a' before 'good mechanic'.",
+          "itemIds": [
+            "en.elementary.u07.l01.mechanic"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l01.task.fill-builder",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the person in a yellow hard hat.",
+          "text": "The ___ is wearing a yellow hat.",
+          "answer": "builder",
+          "options": [
+            "builder",
+            "dentist",
+            "driver"
+          ],
+          "explanation": "A builder wears a yellow hard hat at work.",
+          "itemIds": [
+            "en.elementary.u07.l01.builder",
+            "en.beginner.u06.l05.i-am-wearing"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l01.task.fill-doctor",
+          "kind": "fill",
+          "prompt": "Complete the sentence about a hospital worker.",
+          "text": "My aunt is a ___ at the hospital.",
+          "answer": "doctor",
+          "options": [
+            "doctor",
+            "farmer",
+            "pilot"
+          ],
+          "explanation": "A doctor works at a hospital.",
+          "itemIds": [
+            "en.elementary.u03.l05.doctor"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l01.task.say-driver",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "Her uncle is a driver.",
+          "answer": "Her uncle is a driver.",
+          "explanation": "Remember to say 'a' before 'driver'.",
+          "itemIds": [
+            "en.elementary.u07.l01.driver"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What job does Sam's father have?",
+        "image": {
+          "id": "en-a2-u07-l01-scene",
+          "describe": "Smarty's cozy workshop with wooden shelves and tools; Smarty the black cat shows Mia and Sam photos of cats dressed as a pilot, mechanic, builder, and dentist."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Look at these photos in my room, Mia!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Who is this? He is in a big plane."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "That is my uncle Leo. He is a pilot."
+          },
+          {
+            "speaker": "Sam",
+            "text": "And my father is a mechanic! He loves cars."
+          },
+          {
+            "speaker": "Mia",
+            "text": "My mother is a dentist, and my brother is a builder."
+          },
+          {
+            "speaker": "Sam",
+            "text": "My grandfather is a farmer. He has ten sheep!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Amazing! Everyone has a great job."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u07.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Smarty's uncle Leo's job?",
+            "answer": "pilot",
+            "options": [
+              "pilot",
+              "farmer",
+              "dentist"
+            ],
+            "explanation": "Smarty says: That is my uncle Leo. He is a pilot.",
+            "itemIds": [
+              "en.elementary.u07.l01.pilot"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "What is Sam's father?",
+            "answer": "a mechanic",
+            "options": [
+              "a mechanic",
+              "a builder",
+              "a driver"
+            ],
+            "explanation": "Sam says: And my father is a mechanic!",
+            "itemIds": [
+              "en.elementary.u07.l01.mechanic"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Who is a dentist?",
+            "answer": "Mia's mother",
+            "options": [
+              "Mia's mother",
+              "Sam's grandfather",
+              "Smarty's uncle"
+            ],
+            "explanation": "Mia says: My mother is a dentist.",
+            "itemIds": [
+              "en.elementary.u07.l01.dentist"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about the jobs of people in your family. Any real or imaginary answer is great.",
+        "turns": [
+          {
+            "smarty": "My uncle is a pilot. Is your father a farmer or a driver?",
+            "accept": [
+              "^he is a (?:farmer|driver|pilot|mechanic|builder|dentist|teacher|doctor)$",
+              "^my father is a (?:farmer|driver|pilot|mechanic|builder|dentist|teacher|doctor)$",
+              "^(?:a )?(?:farmer|driver|pilot|mechanic|builder|dentist|teacher|doctor)$",
+              "^no(?: he is a (?:farmer|driver|pilot|mechanic|builder|dentist|teacher|doctor))?$"
+            ],
+            "example": "My father is a driver.",
+            "hint": "Say 'My father is a…' and name a job.",
+            "itemIds": [
+              "en.elementary.u07.l01.farmer",
+              "en.elementary.u07.l01.driver"
+            ]
+          },
+          {
+            "smarty": "Cool! And what about your mother or aunt? Is she a dentist or a builder?",
+            "accept": [
+              "^she is a (?:dentist|builder|farmer|driver|pilot|mechanic|teacher|doctor)$",
+              "^my (?:mother|aunt) is a (?:dentist|builder|farmer|driver|pilot|mechanic|teacher|doctor)$",
+              "^(?:a )?(?:dentist|builder|farmer|driver|pilot|mechanic|teacher|doctor)$"
+            ],
+            "example": "She is a dentist.",
+            "hint": "Say 'She is a…' and choose a job.",
+            "itemIds": [
+              "en.elementary.u07.l01.dentist",
+              "en.elementary.u07.l01.builder"
+            ]
+          },
+          {
+            "smarty": "Who helps when a car stops? A mechanic or a pilot?",
+            "accept": [
+              "^(?:a )?mechanic$",
+              "^a mechanic helps$"
+            ],
+            "example": "A mechanic.",
+            "hint": "Name the person who fixes cars.",
+            "itemIds": [
+              "en.elementary.u07.l01.mechanic",
+              "en.elementary.u07.l01.pilot"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u01.l02.teacher",
+        "en.elementary.u03.l05.doctor",
+        "en.beginner.u06.l05.i-am-wearing"
+      ]
+    },
+    {
+      "id": "en.elementary.u07.l02",
+      "section": "elementary",
+      "unit": 7,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "More jobs",
+      "canDo": "Name more jobs",
+      "scenario": "Leo and Zara visit Smarty's workshop and learn six more job names.",
+      "items": [
+        {
+          "id": "en.elementary.u07.l02.police-officer",
+          "text": "police officer",
+          "kind": "phrase",
+          "forms": [
+            "police officers"
+          ],
+          "example": "The police officer helped my brother.",
+          "note": "Say 'police officer' for a person who keeps people safe in town.",
+          "image": {
+            "id": "police-officer",
+            "describe": "a gray tabby cat in a neat blue police uniform and peaked cap standing near a crosswalk"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l02.firefighter",
+          "text": "firefighter",
+          "kind": "word",
+          "forms": [
+            "firefighters"
+          ],
+          "example": "A firefighter is strong and fast.",
+          "note": "Use 'firefighter' for a person whose job is to stop fires.",
+          "image": {
+            "id": "firefighter",
+            "describe": "an orange cat wearing a yellow firefighter coat and helmet holding a water hose beside a red fire truck"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l02.engineer",
+          "text": "engineer",
+          "kind": "word",
+          "forms": [
+            "engineers"
+          ],
+          "example": "Mia is an engineer.",
+          "note": "Say 'engineer' for a person who designs machines, bridges, or computers.",
+          "image": {
+            "id": "engineer",
+            "describe": "a black-and-white cat wearing safety glasses looking at machine plans on a desk"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l02.artist",
+          "text": "artist",
+          "kind": "word",
+          "forms": [
+            "artists"
+          ],
+          "example": "An artist loves to draw and paint.",
+          "note": "Use 'artist' for a person who paints, draws, or makes art.",
+          "image": {
+            "id": "artist",
+            "describe": "a calico cat wearing a beret and holding a paintbrush in front of a colorful canvas"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l02.chef",
+          "text": "chef",
+          "kind": "word",
+          "forms": [
+            "chefs"
+          ],
+          "example": "The chef cooked delicious soup.",
+          "note": "Say 'chef' for a person who cooks food in a restaurant or hotel.",
+          "image": {
+            "id": "chef",
+            "describe": "a white cat wearing a tall white chef hat and apron stirring a pot in a kitchen"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l02.nurse",
+          "text": "nurse",
+          "kind": "word",
+          "forms": [
+            "nurses"
+          ],
+          "example": "The nurse is at the hospital.",
+          "note": "Use 'nurse' for a person who cares for ill people in a hospital.",
+          "image": {
+            "id": "nurse",
+            "describe": "a cream-colored cat wearing blue medical scrubs and holding a clipboard in a bright hospital room"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "Using an before vowel sounds",
+        "explanation": "Words like engineer and artist start with a vowel sound, so put an before them instead of a.",
+        "examples": [
+          "Leo is an engineer.",
+          "Zara is an artist."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u07.l02.task.pick-chef",
+          "kind": "choice",
+          "prompt": "Who cooks delicious food in a restaurant?",
+          "answer": "chef",
+          "options": [
+            "chef",
+            "nurse",
+            "engineer"
+          ],
+          "explanation": "A chef cooks food in a restaurant.",
+          "itemIds": [
+            "en.elementary.u07.l02.chef",
+            "en.elementary.u02.l01.restaurant"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l02.task.hear-nurse",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The nurse is at the hospital.",
+          "answer": "The nurse is at the hospital.",
+          "options": [
+            "The nurse is at the hospital.",
+            "The chef is at the restaurant.",
+            "The artist is at the museum."
+          ],
+          "explanation": "A nurse helps ill people at the hospital.",
+          "itemIds": [
+            "en.elementary.u07.l02.nurse",
+            "en.beginner.u08.l01.hospital"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l02.task.match-jobs-2",
+          "kind": "match",
+          "prompt": "Match each job with what they do.",
+          "pairs": [
+            {
+              "left": "artist",
+              "right": "draw and paint"
+            },
+            {
+              "left": "chef",
+              "right": "cook soup"
+            },
+            {
+              "left": "mechanic",
+              "right": "help a friend"
+            },
+            {
+              "left": "pilot",
+              "right": "work on a plane"
+            }
+          ],
+          "explanation": "An artist draws and paints, a chef cooks, a mechanic works on cars, and a pilot flies a plane.",
+          "itemIds": [
+            "en.elementary.u07.l02.artist",
+            "en.elementary.u07.l02.chef",
+            "en.elementary.u07.l01.mechanic",
+            "en.elementary.u07.l01.pilot"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l02.task.pick-firefighter",
+          "kind": "choice",
+          "prompt": "Who is strong and fast and stops fires?",
+          "answer": "firefighter",
+          "options": [
+            "firefighter",
+            "artist",
+            "dentist"
+          ],
+          "explanation": "A firefighter stops fires.",
+          "itemIds": [
+            "en.elementary.u07.l02.firefighter"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l02.task.fill-engineer",
+          "kind": "fill",
+          "prompt": "Choose the right word before 'engineer'.",
+          "text": "Mia is ___ engineer.",
+          "answer": "an",
+          "options": [
+            "an",
+            "a",
+            "two"
+          ],
+          "explanation": "'Engineer' starts with a vowel sound, so use 'an'.",
+          "itemIds": [
+            "en.elementary.u07.l02.engineer"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l02.task.build-police",
+          "kind": "build",
+          "prompt": "Build the sentence about the police officer.",
+          "answer": "The police officer helped my brother.",
+          "tiles": [
+            "The",
+            "police",
+            "officer",
+            "helped",
+            "my",
+            "brother",
+            "sister"
+          ],
+          "explanation": "'Police officer' is two words.",
+          "itemIds": [
+            "en.elementary.u07.l02.police-officer"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l02.task.fill-artist",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "An ___ loves to draw and paint.",
+          "answer": "artist",
+          "options": [
+            "artist",
+            "nurse",
+            "chef"
+          ],
+          "explanation": "An artist draws and paints.",
+          "itemIds": [
+            "en.elementary.u07.l02.artist"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l02.task.say-chef",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "The chef cooked delicious soup.",
+          "answer": "The chef cooked delicious soup.",
+          "explanation": "Say 'chef' with a 'sh' sound at the start.",
+          "itemIds": [
+            "en.elementary.u07.l02.chef"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who cooked lunch for Smarty, Leo, and Zara?",
+        "image": {
+          "id": "en-a2-u07-l02-scene",
+          "describe": "Smarty's workshop where Zara shows a painting of a firefighter and a police officer, while Leo holds a warm bowl of soup."
+        },
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "Look at my new picture, Smarty! I am an artist."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is beautiful! Who is in the picture?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "My sister is a police officer, and my cousin is a firefighter."
+          },
+          {
+            "speaker": "Leo",
+            "text": "And I am an engineer! I love machines."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Who cooked this delicious chicken soup?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "My aunt Omar! She is a chef at a big hotel."
+          },
+          {
+            "speaker": "Zara",
+            "text": "And my father is a nurse at the hospital."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u07.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Zara?",
+            "answer": "an artist",
+            "options": [
+              "an artist",
+              "a chef",
+              "a nurse"
+            ],
+            "explanation": "Zara says: I am an artist.",
+            "itemIds": [
+              "en.elementary.u07.l02.artist"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "What is Leo's job?",
+            "answer": "engineer",
+            "options": [
+              "engineer",
+              "firefighter",
+              "police officer"
+            ],
+            "explanation": "Leo says: I am an engineer!",
+            "itemIds": [
+              "en.elementary.u07.l02.engineer"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "Where does Zara's father work as a nurse?",
+            "answer": "at the hospital",
+            "options": [
+              "at the hospital",
+              "at a big hotel",
+              "at the school"
+            ],
+            "explanation": "Zara says: And my father is a nurse at the hospital.",
+            "itemIds": [
+              "en.elementary.u07.l02.nurse",
+              "en.beginner.u08.l01.hospital"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty wants to know which jobs you like from today's lesson.",
+        "turns": [
+          {
+            "smarty": "I love delicious food! Who cooks in a restaurant—a chef or an artist?",
+            "accept": [
+              "^(?:a )?chef$",
+              "^a chef cooks$"
+            ],
+            "example": "A chef.",
+            "hint": "Say 'A chef.'",
+            "itemIds": [
+              "en.elementary.u07.l02.chef",
+              "en.elementary.u07.l02.artist"
+            ]
+          },
+          {
+            "smarty": "Yes! Who helps people in a hospital—a nurse or a firefighter?",
+            "accept": [
+              "^(?:a )?nurse$",
+              "^a nurse helps(?: people)?$"
+            ],
+            "example": "A nurse.",
+            "hint": "Name the hospital worker.",
+            "itemIds": [
+              "en.elementary.u07.l02.nurse",
+              "en.elementary.u07.l02.firefighter"
+            ]
+          },
+          {
+            "smarty": "Great! Name one more job from today: police officer or engineer.",
+            "accept": [
+              "^(?:a )?police officer$",
+              "^(?:an )?engineer$",
+              "^i like (?:a |an )?(?:police officer|engineer)$"
+            ],
+            "example": "An engineer.",
+            "hint": "Say 'A police officer' or 'An engineer'.",
+            "itemIds": [
+              "en.elementary.u07.l02.police-officer",
+              "en.elementary.u07.l02.engineer"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u07.l01.mechanic",
+        "en.elementary.u07.l01.pilot",
+        "en.beginner.u08.l01.hospital",
+        "en.elementary.u02.l01.restaurant"
+      ]
+    },
+    {
+      "id": "en.elementary.u07.l03",
+      "section": "elementary",
+      "unit": 7,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "What do you do?",
+      "canDo": "Talk about your job",
+      "scenario": "Ben and Ana meet Smarty in the workshop and talk about their jobs and hours.",
+      "items": [
+        {
+          "id": "en.elementary.u07.l03.what-do-you-do",
+          "text": "What do you do?",
+          "kind": "phrase",
+          "forms": [
+            "What does he do?",
+            "What does she do?"
+          ],
+          "example": "Hello, Ben! What do you do?",
+          "note": "Ask 'What do you do?' when you want to know someone's job."
+        },
+        {
+          "id": "en.elementary.u07.l03.i-work-as",
+          "text": "I work as",
+          "kind": "phrase",
+          "forms": [
+            "work as",
+            "works as",
+            "worked as"
+          ],
+          "example": "I work as a mechanic.",
+          "note": "Say 'I work as a…' right before the name of your job."
+        },
+        {
+          "id": "en.elementary.u07.l03.i-work-for",
+          "text": "I work for",
+          "kind": "phrase",
+          "forms": [
+            "work for",
+            "works for",
+            "worked for"
+          ],
+          "example": "I work for a big hospital.",
+          "note": "Use 'I work for…' before the place or group that pays you."
+        },
+        {
+          "id": "en.elementary.u07.l03.a-full-time-job",
+          "text": "a full-time job",
+          "kind": "phrase",
+          "forms": [
+            "full-time",
+            "job",
+            "jobs"
+          ],
+          "example": "She has a full-time job at the bank.",
+          "note": "Say 'a full-time job' when you work every day, usually five days a week."
+        },
+        {
+          "id": "en.elementary.u07.l03.a-part-time-job",
+          "text": "a part-time job",
+          "kind": "phrase",
+          "forms": [
+            "part-time"
+          ],
+          "example": "I have a part-time job at a café.",
+          "note": "Use 'a part-time job' when you work only a few hours or days each week."
+        },
+        {
+          "id": "en.elementary.u07.l03.my-dream-job",
+          "text": "my dream job",
+          "kind": "phrase",
+          "forms": [
+            "dream",
+            "dreams",
+            "her dream job",
+            "his dream job"
+          ],
+          "example": "Pilot is my dream job.",
+          "note": "Say 'my dream job' for the job you wish for most of all."
+        }
+      ],
+      "grammar": {
+        "title": "I work as vs. I work for",
+        "explanation": "Use 'I work as' before your job title (I work as a nurse). Use 'I work for' before the place or organization (I work for a hospital).",
+        "examples": [
+          "I work as a chef.",
+          "I work for a big restaurant."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u07.l03.task.pick-question",
+          "kind": "choice",
+          "prompt": "You meet a new friend and want to ask about their job. What do you say?",
+          "answer": "What do you do?",
+          "options": [
+            "What do you do?",
+            "Where are you from?",
+            "What time is it?"
+          ],
+          "explanation": "'What do you do?' is the natural way to ask about someone's job.",
+          "itemIds": [
+            "en.elementary.u07.l03.what-do-you-do"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l03.task.hear-work-as",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I work as a mechanic.",
+          "answer": "I work as a mechanic.",
+          "options": [
+            "I work as a mechanic.",
+            "I work for a hospital.",
+            "I am a student."
+          ],
+          "explanation": "Use 'I work as' before a job name like 'mechanic'.",
+          "itemIds": [
+            "en.elementary.u07.l03.i-work-as",
+            "en.elementary.u07.l01.mechanic"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l03.task.match-phrases",
+          "kind": "match",
+          "prompt": "Match the sentence halves.",
+          "pairs": [
+            {
+              "left": "I work as",
+              "right": "a nurse"
+            },
+            {
+              "left": "I work for",
+              "right": "a big bank"
+            },
+            {
+              "left": "I have a",
+              "right": "part-time job"
+            },
+            {
+              "left": "Artist is",
+              "right": "my dream job"
+            }
+          ],
+          "explanation": "'Work as' goes with a job; 'work for' goes with a workplace.",
+          "itemIds": [
+            "en.elementary.u07.l03.i-work-as",
+            "en.elementary.u07.l03.i-work-for",
+            "en.elementary.u07.l03.a-part-time-job",
+            "en.elementary.u07.l03.my-dream-job"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l03.task.fill-as-for",
+          "kind": "fill",
+          "prompt": "Complete the sentence with the right phrase.",
+          "text": "___ a chef at a hotel.",
+          "answer": "I work as",
+          "options": [
+            "I work as",
+            "I work for",
+            "What do you do"
+          ],
+          "explanation": "'A chef' is a job title, so use 'I work as'.",
+          "itemIds": [
+            "en.elementary.u07.l03.i-work-as",
+            "en.elementary.u07.l02.chef"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l03.task.fill-for",
+          "kind": "fill",
+          "prompt": "Ana works at a school. Complete her sentence.",
+          "text": "___ a small school in town.",
+          "answer": "I work for",
+          "options": [
+            "I work for",
+            "I work as",
+            "My dream job"
+          ],
+          "explanation": "'A small school' is the place she works, so use 'I work for'.",
+          "itemIds": [
+            "en.elementary.u07.l03.i-work-for"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l03.task.build-fulltime",
+          "kind": "build",
+          "prompt": "Build the sentence about a Monday-to-Friday job.",
+          "answer": "She has a full-time job.",
+          "tiles": [
+            "She",
+            "has",
+            "a",
+            "full-time",
+            "job",
+            "part-time"
+          ],
+          "explanation": "A job all week is 'a full-time job'.",
+          "itemIds": [
+            "en.elementary.u07.l03.a-full-time-job"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l03.task.pick-parttime",
+          "kind": "choice",
+          "prompt": "Ben is a student and works only on Saturday and Sunday. What does he have?",
+          "answer": "a part-time job",
+          "options": [
+            "a part-time job",
+            "a full-time job",
+            "a dream"
+          ],
+          "explanation": "Working only on the weekend is 'a part-time job'.",
+          "itemIds": [
+            "en.elementary.u07.l03.a-part-time-job",
+            "en.beginner.u01.l11.i-am-a-student"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l03.task.say-dream",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "Pilot is my dream job.",
+          "answer": "Pilot is my dream job.",
+          "explanation": "Use 'my dream job' for the job you love most.",
+          "itemIds": [
+            "en.elementary.u07.l03.my-dream-job",
+            "en.elementary.u07.l01.pilot"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Does Ben have a full-time job or a part-time job?",
+        "image": {
+          "id": "en-a2-u07-l03-scene",
+          "describe": "Smarty the black cat having tea in the workshop with Ben, who wears a café apron, and Ana, who carries engineering notebooks."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Welcome, Ben and Ana! What do you do?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "I work as an engineer. I have a full-time job."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Nice! And who do you work for?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "I work for a big car shop in town."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I am a student, so I have a part-time job."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What do you do at your part-time job?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "I work as a chef at a café, but pilot is my dream job!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u07.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Ana's job?",
+            "answer": "She works as an engineer.",
+            "options": [
+              "She works as an engineer.",
+              "She works as a chef.",
+              "She works as a nurse."
+            ],
+            "explanation": "Ana says: I work as an engineer.",
+            "itemIds": [
+              "en.elementary.u07.l03.i-work-as",
+              "en.elementary.u07.l02.engineer"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "What kind of job does Ben have?",
+            "answer": "a part-time job",
+            "options": [
+              "a part-time job",
+              "a full-time job",
+              "a dream job"
+            ],
+            "explanation": "Ben says: I am a student, so I have a part-time job.",
+            "itemIds": [
+              "en.elementary.u07.l03.a-part-time-job"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "What is Ben's dream job?",
+            "answer": "pilot",
+            "options": [
+              "pilot",
+              "chef",
+              "engineer"
+            ],
+            "explanation": "Ben says: pilot is my dream job!",
+            "itemIds": [
+              "en.elementary.u07.l03.my-dream-job",
+              "en.elementary.u07.l01.pilot"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty interviews you about your work or studies. Answer for yourself or pretend.",
+        "turns": [
+          {
+            "smarty": "Hello! What do you do?",
+            "accept": [
+              "^i am a student$",
+              "^i work as (?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor)$",
+              "^i work for (?:a |an |the )?(?:school|hospital|bank|shop|restaurant|hotel|cafe)$"
+            ],
+            "example": "I work as a teacher.",
+            "hint": "Say 'I am a student' or 'I work as a…'",
+            "itemIds": [
+              "en.elementary.u07.l03.what-do-you-do",
+              "en.elementary.u07.l03.i-work-as",
+              "en.elementary.u07.l03.i-work-for"
+            ]
+          },
+          {
+            "smarty": "Do you have a full-time job or a part-time job?",
+            "accept": [
+              "^i have a (?:full time|fulltime|part time|parttime) job$",
+              "^(?:a )?(?:full time|fulltime|part time|parttime) job$",
+              "^i am a student$"
+            ],
+            "example": "I have a full-time job.",
+            "hint": "Say 'I have a full-time job' or 'I have a part-time job'.",
+            "itemIds": [
+              "en.elementary.u07.l03.a-full-time-job",
+              "en.elementary.u07.l03.a-part-time-job"
+            ]
+          },
+          {
+            "smarty": "And what is your dream job?",
+            "accept": [
+              "^(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor) is my dream job$",
+              "^my dream job is (?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor)$",
+              "^(?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor)$"
+            ],
+            "example": "Pilot is my dream job.",
+            "hint": "Say 'My dream job is…' and name any job.",
+            "itemIds": [
+              "en.elementary.u07.l03.my-dream-job"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u07.l01.mechanic",
+        "en.elementary.u07.l02.chef",
+        "en.elementary.u07.l01.pilot",
+        "en.beginner.u01.l11.i-am-a-student",
+        "en.elementary.u07.l02.engineer"
+      ]
+    },
+    {
+      "id": "en.elementary.u07.l04",
+      "section": "elementary",
+      "unit": 7,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty hosts a friendly job quiz in his workshop with Omar and Lily.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u07.l04.task.pick-firefighter",
+          "kind": "choice",
+          "prompt": "Who stops fires and wears a special helmet?",
+          "answer": "firefighter",
+          "options": [
+            "firefighter",
+            "dentist",
+            "chef"
+          ],
+          "explanation": "A firefighter stops fires.",
+          "itemIds": [
+            "en.elementary.u07.l02.firefighter"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l04.task.hear-work-for",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I work for a big hospital.",
+          "answer": "I work for a big hospital.",
+          "options": [
+            "I work for a big hospital.",
+            "I work as a nurse.",
+            "What do you do?"
+          ],
+          "explanation": "Use 'I work for' before the workplace.",
+          "itemIds": [
+            "en.elementary.u07.l03.i-work-for"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l04.task.match-review1",
+          "kind": "match",
+          "prompt": "Match the job with the workplace.",
+          "pairs": [
+            {
+              "left": "nurse",
+              "right": "hospital"
+            },
+            {
+              "left": "farmer",
+              "right": "cow and sheep"
+            },
+            {
+              "left": "chef",
+              "right": "restaurant"
+            },
+            {
+              "left": "pilot",
+              "right": "plane"
+            }
+          ],
+          "explanation": "Match each worker with where they work.",
+          "itemIds": [
+            "en.elementary.u07.l02.nurse",
+            "en.elementary.u07.l01.farmer",
+            "en.elementary.u07.l02.chef",
+            "en.elementary.u07.l01.pilot"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l04.task.fill-work-as",
+          "kind": "fill",
+          "prompt": "Complete Omar's sentence about his job.",
+          "text": "I ___ a police officer.",
+          "answer": "work as",
+          "options": [
+            "work as",
+            "work for",
+            "am"
+          ],
+          "explanation": "Use 'work as' before 'a police officer'.",
+          "itemIds": [
+            "en.elementary.u07.l03.i-work-as",
+            "en.elementary.u07.l02.police-officer"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l04.task.build-what-do",
+          "kind": "build",
+          "prompt": "Build the question to ask about someone's job.",
+          "answer": "What do you do?",
+          "tiles": [
+            "What",
+            "do",
+            "you",
+            "do",
+            "are"
+          ],
+          "explanation": "'What do you do?' asks about someone's job.",
+          "itemIds": [
+            "en.elementary.u07.l03.what-do-you-do"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l04.task.fill-dream",
+          "kind": "fill",
+          "prompt": "Lily loves drawing. Complete her sentence.",
+          "text": "Artist is ___.",
+          "answer": "my dream job",
+          "options": [
+            "my dream job",
+            "a full-time job",
+            "a part-time job"
+          ],
+          "explanation": "Use 'my dream job' for the job you wish for most.",
+          "itemIds": [
+            "en.elementary.u07.l03.my-dream-job",
+            "en.elementary.u07.l02.artist"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l04.task.pick-builder",
+          "kind": "choice",
+          "prompt": "Who builds houses and walls?",
+          "answer": "builder",
+          "options": [
+            "builder",
+            "driver",
+            "engineer"
+          ],
+          "explanation": "A builder builds houses and walls.",
+          "itemIds": [
+            "en.elementary.u07.l01.builder"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l04.task.say-fulltime",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "My uncle has a full-time job.",
+          "answer": "My uncle has a full-time job.",
+          "explanation": "Say 'a full-time job' clearly.",
+          "itemIds": [
+            "en.elementary.u07.l03.a-full-time-job"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is Lily's part-time job?",
+        "image": {
+          "id": "en-a2-u07-l04-scene",
+          "describe": "Smarty the black cat holding quiz cards in the workshop while Omar and Lily smile and answer."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Welcome to the workshop game! Omar, what do you do?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "I am a student, and I have a part-time job."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Who do you work for?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "I work for a mechanic. I clean the cars."
+          },
+          {
+            "speaker": "Lily",
+            "text": "I work as a driver on the weekend, but engineer is my dream job!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Well done, Lily and Omar!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u07.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Who does Omar work for?",
+            "answer": "a mechanic",
+            "options": [
+              "a mechanic",
+              "a dentist",
+              "a farmer"
+            ],
+            "explanation": "Omar says: I work for a mechanic.",
+            "itemIds": [
+              "en.elementary.u07.l03.i-work-for",
+              "en.elementary.u07.l01.mechanic"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Lily do on the weekend?",
+            "answer": "She works as a driver.",
+            "options": [
+              "She works as a driver.",
+              "She works as a chef.",
+              "She works as a nurse."
+            ],
+            "explanation": "Lily says: I work as a driver on the weekend.",
+            "itemIds": [
+              "en.elementary.u07.l03.i-work-as",
+              "en.elementary.u07.l01.driver"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "What is Lily's dream job?",
+            "answer": "engineer",
+            "options": [
+              "engineer",
+              "driver",
+              "mechanic"
+            ],
+            "explanation": "Lily says: engineer is my dream job!",
+            "itemIds": [
+              "en.elementary.u07.l03.my-dream-job",
+              "en.elementary.u07.l02.engineer"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty gives you a quick review chat about jobs.",
+        "turns": [
+          {
+            "smarty": "Ask me about my job! Say: What do you do?",
+            "accept": [
+              "^what do you do$"
+            ],
+            "example": "What do you do?",
+            "hint": "Ask 'What do you do?'",
+            "itemIds": [
+              "en.elementary.u07.l03.what-do-you-do"
+            ]
+          },
+          {
+            "smarty": "I work as a teacher! Now tell me: do you have a part-time job or a full-time job?",
+            "accept": [
+              "^i have a (?:part time|parttime|full time|fulltime) job$",
+              "^(?:a )?(?:part time|parttime|full time|fulltime) job$",
+              "^i am a student$"
+            ],
+            "example": "I have a part-time job.",
+            "hint": "Say 'I have a part-time job' or 'I have a full-time job'.",
+            "itemIds": [
+              "en.elementary.u07.l03.a-part-time-job",
+              "en.elementary.u07.l03.a-full-time-job"
+            ]
+          },
+          {
+            "smarty": "Which job is your dream job: pilot, chef, or artist?",
+            "accept": [
+              "^(?:pilot|chef|artist) is my dream job$",
+              "^my dream job is (?:a |an )?(?:pilot|chef|artist)$",
+              "^(?:a |an )?(?:pilot|chef|artist)$"
+            ],
+            "example": "Chef is my dream job.",
+            "hint": "Say 'Chef is my dream job.'",
+            "itemIds": [
+              "en.elementary.u07.l03.my-dream-job",
+              "en.elementary.u07.l01.pilot",
+              "en.elementary.u07.l02.chef",
+              "en.elementary.u07.l02.artist"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u07.l01.farmer",
+        "en.elementary.u07.l01.pilot",
+        "en.elementary.u07.l01.driver",
+        "en.elementary.u07.l01.mechanic",
+        "en.elementary.u07.l01.builder",
+        "en.elementary.u07.l02.police-officer",
+        "en.elementary.u07.l02.firefighter",
+        "en.elementary.u07.l02.engineer",
+        "en.elementary.u07.l02.artist",
+        "en.elementary.u07.l02.chef",
+        "en.elementary.u07.l02.nurse",
+        "en.elementary.u07.l03.what-do-you-do",
+        "en.elementary.u07.l03.i-work-as",
+        "en.elementary.u07.l03.i-work-for",
+        "en.elementary.u07.l03.a-full-time-job",
+        "en.elementary.u07.l03.a-part-time-job",
+        "en.elementary.u07.l03.my-dream-job"
+      ]
+    },
+    {
+      "id": "en.elementary.u07.l05",
+      "section": "elementary",
+      "unit": 7,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Rules at work",
+      "canDo": "Say what you must do",
+      "scenario": "Smarty puts on a safety helmet in the workshop and explains work rules to Tom and Mia.",
+      "items": [
+        {
+          "id": "en.elementary.u07.l05.i-have-to",
+          "text": "I have to",
+          "kind": "phrase",
+          "forms": [
+            "have to",
+            "has to",
+            "had to"
+          ],
+          "example": "I have to wear a helmet at work.",
+          "note": "Say 'I have to…' when a rule or job says you need to do something."
+        },
+        {
+          "id": "en.elementary.u07.l05.i-do-not-have-to",
+          "text": "I do not have to",
+          "kind": "phrase",
+          "forms": [
+            "do not have to",
+            "does not have to",
+            "don't have to",
+            "doesn't have to"
+          ],
+          "example": "I do not have to work on Sunday.",
+          "note": "Use 'I do not have to…' when something is not needed and you can choose."
+        },
+        {
+          "id": "en.elementary.u07.l05.must",
+          "text": "must",
+          "kind": "word",
+          "example": "A firefighter must be fast.",
+          "note": "Say 'must' for an important rule that everyone needs to follow."
+        },
+        {
+          "id": "en.elementary.u07.l05.must-not",
+          "text": "must not",
+          "kind": "phrase",
+          "forms": [
+            "mustn't"
+          ],
+          "example": "You must not run in the room.",
+          "note": "Use 'must not' to say a rule forbids something—never do it!"
+        },
+        {
+          "id": "en.elementary.u07.l05.wear-a-helmet",
+          "text": "wear a helmet",
+          "kind": "phrase",
+          "forms": [
+            "wear",
+            "wears",
+            "wore",
+            "wearing",
+            "helmet",
+            "helmets"
+          ],
+          "example": "Builders must wear a helmet.",
+          "note": "Say 'wear a helmet' for putting a hard hat on to protect your head."
+        },
+        {
+          "id": "en.elementary.u07.l05.be-on-time",
+          "text": "be on time",
+          "kind": "phrase",
+          "forms": [
+            "on time"
+          ],
+          "example": "We must be on time for work.",
+          "note": "Use 'be on time' when you arrive at the right hour and are not late."
+        }
+      ],
+      "grammar": {
+        "title": "must, must not, and do not have to",
+        "explanation": "Use 'must' or 'have to' for rules. Use 'must not' when something is forbidden. Use 'do not have to' when something is not required.",
+        "examples": [
+          "You must wear a helmet.",
+          "You must not be late.",
+          "I do not have to work on Sunday."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u07.l05.task.pick-helmet",
+          "kind": "choice",
+          "prompt": "What must a builder put on their head at work?",
+          "answer": "wear a helmet",
+          "options": [
+            "wear a helmet",
+            "be on time",
+            "watch TV"
+          ],
+          "explanation": "Builders must wear a helmet to keep their head safe.",
+          "itemIds": [
+            "en.elementary.u07.l05.wear-a-helmet",
+            "en.elementary.u07.l01.builder"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l05.task.hear-must-not",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "You must not run in the room.",
+          "answer": "You must not run in the room.",
+          "options": [
+            "You must not run in the room.",
+            "You must be on time.",
+            "I do not have to run."
+          ],
+          "explanation": "'Must not' means running is forbidden.",
+          "itemIds": [
+            "en.elementary.u07.l05.must-not"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l05.task.match-rules",
+          "kind": "match",
+          "prompt": "Match each rule phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "must",
+              "right": "it is a rule"
+            },
+            {
+              "left": "must not",
+              "right": "never do it"
+            },
+            {
+              "left": "do not have to",
+              "right": "you can say no"
+            },
+            {
+              "left": "be on time",
+              "right": "do not be late"
+            }
+          ],
+          "explanation": "'Must not' forbids something, while 'do not have to' means it is not needed.",
+          "itemIds": [
+            "en.elementary.u07.l05.must",
+            "en.elementary.u07.l05.must-not",
+            "en.elementary.u07.l05.i-do-not-have-to",
+            "en.elementary.u07.l05.be-on-time"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l05.task.fill-dont-have-to",
+          "kind": "fill",
+          "prompt": "Sunday is a free day! Choose the right phrase.",
+          "text": "___ work on Sunday.",
+          "answer": "I do not have to",
+          "options": [
+            "I do not have to",
+            "I must not",
+            "I have to"
+          ],
+          "explanation": "You can rest on Sunday, so 'I do not have to' is right.",
+          "itemIds": [
+            "en.elementary.u07.l05.i-do-not-have-to",
+            "en.beginner.u04.l07.sunday"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l05.task.fill-must-not",
+          "kind": "fill",
+          "prompt": "This rule says: NEVER use your phone in class. Complete the sentence.",
+          "text": "Students ___ look at a phone in the lesson.",
+          "answer": "must not",
+          "options": [
+            "must not",
+            "do not have to",
+            "must"
+          ],
+          "explanation": "When something is forbidden, use 'must not'.",
+          "itemIds": [
+            "en.elementary.u07.l05.must-not"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l05.task.build-have-to",
+          "kind": "build",
+          "prompt": "Build the sentence about a rule at work.",
+          "answer": "I have to wear a helmet.",
+          "tiles": [
+            "I",
+            "have",
+            "to",
+            "wear",
+            "a",
+            "helmet",
+            "not"
+          ],
+          "explanation": "Use 'I have to' + 'wear a helmet'.",
+          "itemIds": [
+            "en.elementary.u07.l05.i-have-to",
+            "en.elementary.u07.l05.wear-a-helmet"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l05.task.fill-ontime",
+          "kind": "fill",
+          "prompt": "Work starts at nine o'clock. Complete the rule.",
+          "text": "A pilot must ___.",
+          "answer": "be on time",
+          "options": [
+            "be on time",
+            "be late",
+            "wear a helmet"
+          ],
+          "explanation": "A pilot cannot be late—they must be on time.",
+          "itemIds": [
+            "en.elementary.u07.l05.be-on-time",
+            "en.elementary.u07.l05.must",
+            "en.beginner.u04.l07.late"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l05.task.pick-contrast",
+          "kind": "choice",
+          "prompt": "Mia is a chef. She wears a white hat, not a hard hat. Which sentence is true?",
+          "answer": "She does not have to wear a helmet.",
+          "options": [
+            "She does not have to wear a helmet.",
+            "She must wear a helmet.",
+            "She must not be on time."
+          ],
+          "explanation": "A chef does not need a helmet, so 'does not have to' is true.",
+          "itemIds": [
+            "en.elementary.u07.l05.i-do-not-have-to",
+            "en.elementary.u07.l05.wear-a-helmet",
+            "en.elementary.u07.l02.chef"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l05.task.say-ontime",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "We must be on time for work.",
+          "answer": "We must be on time for work.",
+          "explanation": "Say 'must be on time' smoothly.",
+          "itemIds": [
+            "en.elementary.u07.l05.must",
+            "en.elementary.u07.l05.be-on-time"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What rule does Smarty give Tom and Mia in the work room?",
+        "image": {
+          "id": "en-a2-u07-l05-scene",
+          "describe": "Smarty the black cat wearing a yellow safety helmet in his workshop, handing a second helmet to Tom while Mia checks a wall clock."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good morning, Tom and Mia! Look at the clock—you are on time."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes! We know we must be on time."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Here is rule two: you must wear a helmet in this room."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Okay! I have to wear a helmet. What about shoes?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "You must wear boots, and you must not run here."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Do we have to work on Sunday?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No! You do not have to come on the weekend."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u07.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "What must Tom and Mia wear in the room?",
+            "answer": "a helmet and boots",
+            "options": [
+              "a helmet and boots",
+              "a scarf and hat",
+              "a coat and dress"
+            ],
+            "explanation": "Smarty says: you must wear a helmet, and you must wear boots.",
+            "itemIds": [
+              "en.elementary.u07.l05.wear-a-helmet",
+              "en.elementary.u07.l05.must"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "What must Tom and Mia NOT do?",
+            "answer": "run in the room",
+            "options": [
+              "run in the room",
+              "be on time",
+              "wear boots"
+            ],
+            "explanation": "Smarty says: you must not run here.",
+            "itemIds": [
+              "en.elementary.u07.l05.must-not"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "Do Tom and Mia have to work on Sunday?",
+            "answer": "No, they do not have to.",
+            "options": [
+              "No, they do not have to.",
+              "Yes, they must.",
+              "Yes, every Sunday."
+            ],
+            "explanation": "Smarty says: You do not have to come on the weekend.",
+            "itemIds": [
+              "en.elementary.u07.l05.i-do-not-have-to"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about rules at your school or job.",
+        "turns": [
+          {
+            "smarty": "At work, we must be on time. Do you have to be on time at school or work?",
+            "accept": [
+              "^yes(?: i have to be on time| i must be on time| i do)?$",
+              "^i have to be on time$",
+              "^i must be on time$"
+            ],
+            "example": "Yes, I have to be on time.",
+            "hint": "Say 'Yes, I have to be on time.'",
+            "itemIds": [
+              "en.elementary.u07.l05.i-have-to",
+              "en.elementary.u07.l05.be-on-time"
+            ]
+          },
+          {
+            "smarty": "Tell me one thing you must not do at school or work.",
+            "accept": [
+              "^i must not (?:run|sleep|eat|play|be late|watch tv)$",
+              "^you must not (?:run|sleep|eat|play|be late|watch tv)$",
+              "^we must not (?:run|sleep|eat|play|be late|watch tv)$"
+            ],
+            "example": "I must not be late.",
+            "hint": "Say 'I must not…' (for example: run, sleep, or be late).",
+            "itemIds": [
+              "en.elementary.u07.l05.must-not",
+              "en.beginner.u04.l07.late"
+            ]
+          },
+          {
+            "smarty": "What about Sunday? Do you have to work or study on Sunday?",
+            "accept": [
+              "^no(?: i do not have to(?: work| study)?(?: on sunday)?)?$",
+              "^i do not have to (?:work|study)(?: on sunday)?$",
+              "^yes i have to (?:work|study)(?: on sunday)?$"
+            ],
+            "example": "No, I do not have to work on Sunday.",
+            "hint": "Say 'No, I do not have to work on Sunday.'",
+            "itemIds": [
+              "en.elementary.u07.l05.i-do-not-have-to",
+              "en.beginner.u04.l07.sunday"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u07.l01.builder",
+        "en.elementary.u07.l02.chef",
+        "en.beginner.u04.l07.sunday",
+        "en.beginner.u04.l07.late"
+      ]
+    },
+    {
+      "id": "en.elementary.u07.l06",
+      "section": "elementary",
+      "unit": 7,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Tools",
+      "canDo": "Name tools",
+      "scenario": "Smarty opens his big red toolbox in the workshop and shows Sam six useful tools.",
+      "items": [
+        {
+          "id": "en.elementary.u07.l06.hammer",
+          "text": "hammer",
+          "kind": "word",
+          "forms": [
+            "hammers"
+          ],
+          "example": "Please give me the hammer.",
+          "note": "Say 'hammer' for the heavy tool you swing to hit nails.",
+          "image": {
+            "id": "hammer",
+            "describe": "a metal claw hammer with a smooth wooden handle lying on a wooden workbench"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l06.screwdriver",
+          "text": "screwdriver",
+          "kind": "word",
+          "forms": [
+            "screwdrivers"
+          ],
+          "example": "This small screwdriver is on the table.",
+          "note": "Use 'screwdriver' for the hand tool that turns screws.",
+          "image": {
+            "id": "screwdriver",
+            "describe": "a screwdriver with a yellow and black handle and a shiny steel blade"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l06.wrench",
+          "text": "wrench",
+          "kind": "word",
+          "forms": [
+            "wrenches"
+          ],
+          "example": "A mechanic always has a wrench.",
+          "note": "Say 'wrench' for the metal tool that holds and turns nuts and bolts.",
+          "image": {
+            "id": "wrench",
+            "describe": "a silver steel open-end wrench next to a metal nut and bolt"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l06.ladder",
+          "text": "ladder",
+          "kind": "word",
+          "forms": [
+            "ladders"
+          ],
+          "example": "The builder is on a tall ladder.",
+          "note": "Use 'ladder' for the steps you climb to reach high places.",
+          "image": {
+            "id": "ladder",
+            "describe": "a tall wooden stepladder standing beside a wall with a bucket of paint"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l06.toolbox",
+          "text": "toolbox",
+          "kind": "word",
+          "forms": [
+            "toolboxes"
+          ],
+          "example": "The hammer is in the toolbox.",
+          "note": "Say 'toolbox' for the box where you keep all your tools together.",
+          "image": {
+            "id": "toolbox",
+            "describe": "an open red metal toolbox filled with a hammer, wrench, and screwdriver"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l06.drill",
+          "text": "drill",
+          "kind": "word",
+          "forms": [
+            "drills"
+          ],
+          "example": "The blue drill is on the desk.",
+          "note": "Use 'drill' for the machine tool that makes round holes in wood or walls.",
+          "image": {
+            "id": "drill",
+            "describe": "a blue electric hand drill with a metal drill bit on a workbench"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u07.l06.task.pick-toolbox",
+          "kind": "choice",
+          "prompt": "Where do you keep your hammer, wrench, and screwdriver?",
+          "answer": "toolbox",
+          "options": [
+            "toolbox",
+            "ladder",
+            "suitcase"
+          ],
+          "explanation": "A toolbox holds your tools.",
+          "itemIds": [
+            "en.elementary.u07.l06.toolbox"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l06.task.hear-ladder",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The builder is on a tall ladder.",
+          "answer": "The builder is on a tall ladder.",
+          "options": [
+            "The builder is on a tall ladder.",
+            "The hammer is in the toolbox.",
+            "The mechanic has a wrench."
+          ],
+          "explanation": "You climb a ladder to reach high places.",
+          "itemIds": [
+            "en.elementary.u07.l06.ladder",
+            "en.elementary.u07.l01.builder"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l06.task.match-tools",
+          "kind": "match",
+          "prompt": "Match each tool with a clue.",
+          "pairs": [
+            {
+              "left": "ladder",
+              "right": "it is tall"
+            },
+            {
+              "left": "toolbox",
+              "right": "a box for a hammer"
+            },
+            {
+              "left": "wrench",
+              "right": "a mechanic has it"
+            },
+            {
+              "left": "drill",
+              "right": "it is loud"
+            }
+          ],
+          "explanation": "A ladder is tall, a toolbox holds tools, a wrench is used by mechanics, and a drill is a loud tool.",
+          "itemIds": [
+            "en.elementary.u07.l06.ladder",
+            "en.elementary.u07.l06.toolbox",
+            "en.elementary.u07.l06.wrench",
+            "en.elementary.u07.l06.drill"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l06.task.fill-wrench",
+          "kind": "fill",
+          "prompt": "Complete the sentence about a mechanic's tool.",
+          "text": "A mechanic always has a ___.",
+          "answer": "wrench",
+          "options": [
+            "wrench",
+            "ladder",
+            "restaurant"
+          ],
+          "explanation": "Mechanics use a wrench on cars.",
+          "itemIds": [
+            "en.elementary.u07.l06.wrench",
+            "en.elementary.u07.l01.mechanic"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l06.task.build-hammer",
+          "kind": "build",
+          "prompt": "Build the sentence about a hammer.",
+          "answer": "I need the hammer.",
+          "tiles": [
+            "I",
+            "need",
+            "a",
+            "the",
+            "hammer",
+            "drill"
+          ],
+          "explanation": "Put 'the' before 'hammer'.",
+          "itemIds": [
+            "en.elementary.u07.l06.hammer"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l06.task.fill-screwdriver",
+          "kind": "fill",
+          "prompt": "Complete the sentence about a hand tool on the table.",
+          "text": "This small ___ is on the table.",
+          "answer": "screwdriver",
+          "options": [
+            "screwdriver",
+            "ladder",
+            "toolbox"
+          ],
+          "explanation": "A screwdriver is a small hand tool.",
+          "itemIds": [
+            "en.elementary.u07.l06.screwdriver"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l06.task.pick-drill",
+          "kind": "choice",
+          "prompt": "Which tool is a loud machine that makes round holes?",
+          "answer": "drill",
+          "options": [
+            "drill",
+            "hammer",
+            "wrench"
+          ],
+          "explanation": "A drill makes round holes.",
+          "itemIds": [
+            "en.elementary.u07.l06.drill"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l06.task.say-toolbox",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "The hammer is in the toolbox.",
+          "answer": "The hammer is in the toolbox.",
+          "explanation": "Say 'toolbox' as one word.",
+          "itemIds": [
+            "en.elementary.u07.l06.hammer",
+            "en.elementary.u07.l06.toolbox"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Where is Smarty's red screwdriver?",
+        "image": {
+          "id": "en-a2-u07-l06-scene",
+          "describe": "Smarty the black cat and Sam searching a workbench with an open toolbox, a hammer, a wrench, a drill, and a tall ladder by the window."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Sam, I need my tools! Where is my toolbox?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "It is under the table, next to the tall ladder."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you! There is a hammer and a wrench in the toolbox."
+          },
+          {
+            "speaker": "Sam",
+            "text": "And here is the blue drill on the chair."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good, but where is my red screwdriver?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Look! It is in your jacket!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Haha! Now we have all our tools."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u07.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "Where was the toolbox?",
+            "answer": "under the table",
+            "options": [
+              "under the table",
+              "on the ladder",
+              "in the car"
+            ],
+            "explanation": "Sam says: It is under the table, next to the tall ladder.",
+            "itemIds": [
+              "en.elementary.u07.l06.toolbox",
+              "en.elementary.u07.l06.ladder"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What was on the chair?",
+            "answer": "the blue drill",
+            "options": [
+              "the blue drill",
+              "the hammer",
+              "the wrench"
+            ],
+            "explanation": "Sam says: And here is the blue drill on the chair.",
+            "itemIds": [
+              "en.elementary.u07.l06.drill"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "Where did Smarty find his red screwdriver?",
+            "answer": "in his jacket",
+            "options": [
+              "in his jacket",
+              "in the toolbox",
+              "under the ladder"
+            ],
+            "explanation": "Sam says: Look! It is in your jacket!",
+            "itemIds": [
+              "en.elementary.u07.l06.screwdriver"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are helping Smarty pack his toolbox in the workshop.",
+        "turns": [
+          {
+            "smarty": "Let's check my toolbox! Name two tools: a hammer, a wrench, or a drill.",
+            "accept": [
+              "^(?:a )?(?:hammer|wrench|drill) and (?:a )?(?:hammer|wrench|drill)$",
+              "^(?:hammer|wrench|drill) (?:hammer|wrench|drill)$"
+            ],
+            "example": "A hammer and a wrench.",
+            "hint": "Say 'A hammer and a wrench.'",
+            "itemIds": [
+              "en.elementary.u07.l06.hammer",
+              "en.elementary.u07.l06.wrench",
+              "en.elementary.u07.l06.drill"
+            ]
+          },
+          {
+            "smarty": "Where do we put all the small tools? In a toolbox or on a ladder?",
+            "accept": [
+              "^(?:in a )?toolbox$"
+            ],
+            "example": "In a toolbox.",
+            "hint": "Say 'In a toolbox.'",
+            "itemIds": [
+              "en.elementary.u07.l06.toolbox",
+              "en.elementary.u07.l06.ladder"
+            ]
+          },
+          {
+            "smarty": "What tool turns small screws: a screwdriver or a ladder?",
+            "accept": [
+              "^(?:a )?screwdriver$"
+            ],
+            "example": "A screwdriver.",
+            "hint": "Say 'A screwdriver.'",
+            "itemIds": [
+              "en.elementary.u07.l06.screwdriver"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u07.l01.builder",
+        "en.elementary.u07.l01.mechanic"
+      ]
+    },
+    {
+      "id": "en.elementary.u07.l07",
+      "section": "elementary",
+      "unit": 7,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Dreams",
+      "canDo": "Talk about ambitions",
+      "scenario": "Smarty, Lily, and Leo sit in the workshop and talk about their dreams for the future.",
+      "items": [
+        {
+          "id": "en.elementary.u07.l07.i-want-to-be",
+          "text": "I want to be",
+          "kind": "phrase",
+          "forms": [
+            "want to be",
+            "wants to be",
+            "wanted to be"
+          ],
+          "example": "I want to be an engineer.",
+          "note": "Say 'I want to be a…' to tell someone what job or person you wish to become."
+        },
+        {
+          "id": "en.elementary.u07.l07.i-would-like-to-be",
+          "text": "I would like to be",
+          "kind": "phrase",
+          "forms": [
+            "would like to be",
+            "would like to"
+          ],
+          "example": "I would like to be a pilot.",
+          "note": "Use 'I would like to be…' as a polite, warm way to talk about your future dream."
+        },
+        {
+          "id": "en.elementary.u07.l07.one-day",
+          "text": "one day",
+          "kind": "phrase",
+          "example": "One day, I want to visit Brazil.",
+          "note": "Say 'one day' when you mean at some time in the future."
+        },
+        {
+          "id": "en.elementary.u07.l07.my-dream-is",
+          "text": "My dream is",
+          "kind": "phrase",
+          "forms": [
+            "her dream is",
+            "his dream is",
+            "our dream is"
+          ],
+          "example": "My dream is to help animals.",
+          "note": "Start with 'My dream is to…' when you share your biggest wish or goal."
+        },
+        {
+          "id": "en.elementary.u07.l07.when-i-grow-up",
+          "text": "When I grow up",
+          "kind": "phrase",
+          "forms": [
+            "grow up",
+            "grows up"
+          ],
+          "example": "When I grow up, I want to be a chef.",
+          "note": "Kids say 'When I grow up…' to talk about what they will do as an adult."
+        },
+        {
+          "id": "en.elementary.u07.l07.i-hope-to",
+          "text": "I hope to",
+          "kind": "phrase",
+          "forms": [
+            "hope to",
+            "hopes to",
+            "hoped to"
+          ],
+          "example": "I hope to work as a nurse.",
+          "note": "Use 'I hope to…' for something good you wish will happen in the future."
+        }
+      ],
+      "grammar": {
+        "title": "I want to be vs. I would like to be",
+        "explanation": "Both 'I want to be' and 'I would like to be' talk about your dreams. 'I would like to be' sounds a little softer and more polite.",
+        "examples": [
+          "I want to be an artist.",
+          "I would like to be a doctor one day."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u07.l07.task.pick-want",
+          "kind": "choice",
+          "prompt": "How do you say your future job wish?",
+          "answer": "I want to be a pilot.",
+          "options": [
+            "I want to be a pilot.",
+            "I was a pilot.",
+            "I must not be a pilot."
+          ],
+          "explanation": "Use 'I want to be' for a job you wish to have.",
+          "itemIds": [
+            "en.elementary.u07.l07.i-want-to-be",
+            "en.elementary.u07.l01.pilot"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l07.task.hear-would-like",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I would like to be an engineer.",
+          "answer": "I would like to be an engineer.",
+          "options": [
+            "I would like to be an engineer.",
+            "I want to be a chef.",
+            "I work as a nurse."
+          ],
+          "explanation": "'I would like to be' is a polite way to share your dream.",
+          "itemIds": [
+            "en.elementary.u07.l07.i-would-like-to-be",
+            "en.elementary.u07.l02.engineer"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l07.task.match-dreams",
+          "kind": "match",
+          "prompt": "Match the sentence beginnings and endings.",
+          "pairs": [
+            {
+              "left": "When I grow up,",
+              "right": "I want to be a chef."
+            },
+            {
+              "left": "My dream is",
+              "right": "to help a friend."
+            },
+            {
+              "left": "I hope to",
+              "right": "work for a hospital."
+            },
+            {
+              "left": "I would like to be",
+              "right": "a pilot one day."
+            }
+          ],
+          "explanation": "Notice how 'My dream is' and 'I hope to' are followed by a verb.",
+          "itemIds": [
+            "en.elementary.u07.l07.when-i-grow-up",
+            "en.elementary.u07.l07.my-dream-is",
+            "en.elementary.u07.l07.i-hope-to",
+            "en.elementary.u07.l07.i-would-like-to-be"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l07.task.fill-grow-up",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the future.",
+          "text": "___, I want to be a firefighter.",
+          "answer": "When I grow up",
+          "options": [
+            "When I grow up",
+            "When I was little",
+            "Yesterday"
+          ],
+          "explanation": "'When I grow up' talks about the future when you are an adult.",
+          "itemIds": [
+            "en.elementary.u07.l07.when-i-grow-up",
+            "en.elementary.u07.l02.firefighter"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l07.task.build-dream",
+          "kind": "build",
+          "prompt": "Build the sentence about your biggest dream.",
+          "answer": "My dream is to visit England.",
+          "tiles": [
+            "My",
+            "dream",
+            "is",
+            "to",
+            "visit",
+            "England",
+            "for"
+          ],
+          "explanation": "Use 'My dream is to' + verb.",
+          "itemIds": [
+            "en.elementary.u07.l07.my-dream-is"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l07.task.fill-hope",
+          "kind": "fill",
+          "prompt": "Complete Leo's sentence.",
+          "text": "___ work as a nurse one day.",
+          "answer": "I hope to",
+          "options": [
+            "I hope to",
+            "I want to be",
+            "My dream is"
+          ],
+          "explanation": "'Work' is a verb, so 'I hope to work' fits here.",
+          "itemIds": [
+            "en.elementary.u07.l07.i-hope-to",
+            "en.elementary.u07.l07.one-day",
+            "en.elementary.u07.l02.nurse"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l07.task.fill-oneday",
+          "kind": "fill",
+          "prompt": "Add the phrase that means 'in the future'.",
+          "text": "I would like to be a chef ___.",
+          "answer": "one day",
+          "options": [
+            "one day",
+            "yesterday",
+            "last night"
+          ],
+          "explanation": "'One day' means at some time in the future.",
+          "itemIds": [
+            "en.elementary.u07.l07.one-day",
+            "en.elementary.u07.l02.chef"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l07.task.say-want",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "I want to be an engineer.",
+          "answer": "I want to be an engineer.",
+          "explanation": "Say 'want to be' clearly.",
+          "itemIds": [
+            "en.elementary.u07.l07.i-want-to-be",
+            "en.elementary.u07.l02.engineer"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is Smarty's dream?",
+        "image": {
+          "id": "en-a2-u07-l07-scene",
+          "describe": "Smarty the black cat sitting with Lily and Leo in the workshop, surrounded by a toy plane, a paintbrush, and a chef hat as they talk about their dreams."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Lily, what do you want to be when you grow up?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "When I grow up, I want to be a pilot!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "I would like to be an artist one day."
+          },
+          {
+            "speaker": "Lily",
+            "text": "I hope to visit Brazil and England in my plane."
+          },
+          {
+            "speaker": "Leo",
+            "text": "My dream is to paint pictures for books."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And my dream is to help all my friends learn!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u07.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Lily want to be when she grows up?",
+            "answer": "a pilot",
+            "options": [
+              "a pilot",
+              "an artist",
+              "a chef"
+            ],
+            "explanation": "Lily says: When I grow up, I want to be a pilot!",
+            "itemIds": [
+              "en.elementary.u07.l07.when-i-grow-up",
+              "en.elementary.u07.l07.i-want-to-be",
+              "en.elementary.u07.l01.pilot"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "What would Leo like to be one day?",
+            "answer": "an artist",
+            "options": [
+              "an artist",
+              "a pilot",
+              "a nurse"
+            ],
+            "explanation": "Leo says: I would like to be an artist one day.",
+            "itemIds": [
+              "en.elementary.u07.l07.i-would-like-to-be",
+              "en.elementary.u07.l07.one-day",
+              "en.elementary.u07.l02.artist"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "What is Smarty's dream?",
+            "answer": "to help all his friends learn",
+            "options": [
+              "to help all his friends learn",
+              "to visit Brazil",
+              "to paint books"
+            ],
+            "explanation": "Smarty says: And my dream is to help all my friends learn!",
+            "itemIds": [
+              "en.elementary.u07.l07.my-dream-is"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about your dreams and plans for the future.",
+        "turns": [
+          {
+            "smarty": "Tell me! What do you want to be one day?",
+            "accept": [
+              "^i want to be (?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor)(?: one day)?$",
+              "^i would like to be (?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor)(?: one day)?$"
+            ],
+            "example": "I want to be an artist one day.",
+            "hint": "Say 'I want to be a…' or 'I would like to be a…'",
+            "itemIds": [
+              "en.elementary.u07.l07.i-want-to-be",
+              "en.elementary.u07.l07.i-would-like-to-be",
+              "en.elementary.u07.l07.one-day"
+            ]
+          },
+          {
+            "smarty": "Nice! What is your dream? Start with: My dream is to…",
+            "accept": [
+              "^my dream is to (?:visit|help|work|draw|paint|sing|dance|swim|study|learn)(?: [a-z]+)?(?: [a-z]+)?$"
+            ],
+            "example": "My dream is to visit England.",
+            "hint": "Say 'My dream is to…' and add an action.",
+            "itemIds": [
+              "en.elementary.u07.l07.my-dream-is"
+            ]
+          },
+          {
+            "smarty": "I hope your dream comes true! Finish this: I hope to…",
+            "accept": [
+              "^i hope to (?:work|visit|help|be|learn|study|draw|paint)(?: [a-z]+)?(?: [a-z]+)?(?: [a-z]+)?$"
+            ],
+            "example": "I hope to work as a nurse.",
+            "hint": "Say 'I hope to…' and tell Smarty a wish.",
+            "itemIds": [
+              "en.elementary.u07.l07.i-hope-to"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u07.l01.pilot",
+        "en.elementary.u07.l02.engineer",
+        "en.elementary.u07.l02.firefighter",
+        "en.elementary.u07.l02.nurse",
+        "en.elementary.u07.l02.chef",
+        "en.elementary.u07.l02.artist"
+      ]
+    },
+    {
+      "id": "en.elementary.u07.l08",
+      "section": "elementary",
+      "unit": 7,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Smarty checks Zara and Ben on work rules, workshop tools, and future dreams.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u07.l08.task.pick-must-not",
+          "kind": "choice",
+          "prompt": "Which sentence means running is forbidden?",
+          "answer": "You must not run.",
+          "options": [
+            "You must not run.",
+            "You do not have to run.",
+            "You hope to run."
+          ],
+          "explanation": "'Must not' means something is against the rules.",
+          "itemIds": [
+            "en.elementary.u07.l05.must-not"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l08.task.hear-tools",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The wrench and screwdriver are in the toolbox.",
+          "answer": "The wrench and screwdriver are in the toolbox.",
+          "options": [
+            "The wrench and screwdriver are in the toolbox.",
+            "The hammer is on the ladder.",
+            "The drill is on the desk."
+          ],
+          "explanation": "A wrench and screwdriver go inside a toolbox.",
+          "itemIds": [
+            "en.elementary.u07.l06.wrench",
+            "en.elementary.u07.l06.screwdriver",
+            "en.elementary.u07.l06.toolbox"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l08.task.match-review2",
+          "kind": "match",
+          "prompt": "Match each item with the right group.",
+          "pairs": [
+            {
+              "left": "hammer and drill",
+              "right": "things for work"
+            },
+            {
+              "left": "wear a helmet",
+              "right": "a work rule"
+            },
+            {
+              "left": "When I grow up",
+              "right": "my dream job"
+            },
+            {
+              "left": "ladder",
+              "right": "it is tall"
+            }
+          ],
+          "explanation": "Reviewing things for work, rules, and dreams from lessons 5–7.",
+          "itemIds": [
+            "en.elementary.u07.l06.hammer",
+            "en.elementary.u07.l06.drill",
+            "en.elementary.u07.l05.wear-a-helmet",
+            "en.elementary.u07.l07.when-i-grow-up",
+            "en.elementary.u07.l06.ladder"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l08.task.fill-would-like",
+          "kind": "fill",
+          "prompt": "Complete Zara's polite sentence about her future.",
+          "text": "___ an engineer one day.",
+          "answer": "I would like to be",
+          "options": [
+            "I would like to be",
+            "I have to",
+            "I must not"
+          ],
+          "explanation": "Use 'I would like to be' before 'an engineer'.",
+          "itemIds": [
+            "en.elementary.u07.l07.i-would-like-to-be",
+            "en.elementary.u07.l07.one-day"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l08.task.build-helmet-rule",
+          "kind": "build",
+          "prompt": "Build the safety rule.",
+          "answer": "Builders must wear a helmet.",
+          "tiles": [
+            "Builders",
+            "must",
+            "wear",
+            "a",
+            "helmet",
+            "drill"
+          ],
+          "explanation": "'Must' goes before 'wear a helmet'.",
+          "itemIds": [
+            "en.elementary.u07.l05.must",
+            "en.elementary.u07.l05.wear-a-helmet"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l08.task.fill-dont-have",
+          "kind": "fill",
+          "prompt": "Saturday is free. Complete the sentence.",
+          "text": "I ___ work on Saturday.",
+          "answer": "do not have to",
+          "options": [
+            "do not have to",
+            "must",
+            "hope to"
+          ],
+          "explanation": "Use 'do not have to' when work is not needed.",
+          "itemIds": [
+            "en.elementary.u07.l05.i-do-not-have-to"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l08.task.say-dream2",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "My dream is to be a pilot.",
+          "answer": "My dream is to be a pilot.",
+          "explanation": "Say 'My dream is to be…' clearly.",
+          "itemIds": [
+            "en.elementary.u07.l07.my-dream-is"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Zara want to be one day?",
+        "image": {
+          "id": "en-a2-u07-l08-scene",
+          "describe": "Zara wearing a yellow helmet and holding a wrench in Smarty's workshop while Ben carries a toolbox."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Zara, why are you wearing a helmet?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Because we must wear a helmet in the work room!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "And I brought the toolbox with the hammer, wrench, and drill."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great! What do you want to be one day, Zara?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "I would like to be an engineer! My dream is to build planes."
+          },
+          {
+            "speaker": "Ben",
+            "text": "And I hope to be a pilot and fly your planes!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u07.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "Why is Zara wearing a helmet?",
+            "answer": "Because it is a rule in the work room.",
+            "options": [
+              "Because it is a rule in the work room.",
+              "Because it is raining.",
+              "Because she is sleeping."
+            ],
+            "explanation": "Zara says: Because we must wear a helmet in the work room!",
+            "itemIds": [
+              "en.elementary.u07.l05.wear-a-helmet",
+              "en.elementary.u07.l05.must"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Which tools are in Ben's toolbox?",
+            "answer": "hammer, wrench, and drill",
+            "options": [
+              "hammer, wrench, and drill",
+              "ladder and ruler",
+              "pencil and book"
+            ],
+            "explanation": "Ben says: with the hammer, wrench, and drill.",
+            "itemIds": [
+              "en.elementary.u07.l06.toolbox",
+              "en.elementary.u07.l06.hammer",
+              "en.elementary.u07.l06.wrench",
+              "en.elementary.u07.l06.drill"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "What is Ben's dream?",
+            "answer": "He hopes to be a pilot.",
+            "options": [
+              "He hopes to be a pilot.",
+              "He wants to be a chef.",
+              "He wants to be a dentist."
+            ],
+            "explanation": "Ben says: And I hope to be a pilot and fly your planes!",
+            "itemIds": [
+              "en.elementary.u07.l07.i-hope-to"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty gives you a quick review of rules, tools, and dreams.",
+        "turns": [
+          {
+            "smarty": "Name one tool from Smarty's toolbox!",
+            "accept": [
+              "^(?:a )?(?:hammer|screwdriver|wrench|drill)$",
+              "^there is a (?:hammer|screwdriver|wrench|drill)$"
+            ],
+            "example": "A hammer.",
+            "hint": "Say 'A hammer', 'A screwdriver', 'A wrench', or 'A drill'.",
+            "itemIds": [
+              "en.elementary.u07.l06.toolbox",
+              "en.elementary.u07.l06.hammer",
+              "en.elementary.u07.l06.screwdriver",
+              "en.elementary.u07.l06.wrench",
+              "en.elementary.u07.l06.drill"
+            ]
+          },
+          {
+            "smarty": "Finish this safety rule: Builders must…",
+            "accept": [
+              "^builders must (?:wear a helmet|be on time)$",
+              "^wear a helmet$",
+              "^be on time$"
+            ],
+            "example": "Wear a helmet.",
+            "hint": "Say 'Wear a helmet' or 'Be on time'.",
+            "itemIds": [
+              "en.elementary.u07.l05.must",
+              "en.elementary.u07.l05.wear-a-helmet",
+              "en.elementary.u07.l05.be-on-time"
+            ]
+          },
+          {
+            "smarty": "Now share your dream! Say: I would like to be a…",
+            "accept": [
+              "^i would like to be (?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor)$",
+              "^i want to be (?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor)$"
+            ],
+            "example": "I would like to be a chef.",
+            "hint": "Say 'I would like to be a…' and name a job.",
+            "itemIds": [
+              "en.elementary.u07.l07.i-would-like-to-be",
+              "en.elementary.u07.l07.i-want-to-be"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u07.l05.i-do-not-have-to",
+        "en.elementary.u07.l05.must",
+        "en.elementary.u07.l05.must-not",
+        "en.elementary.u07.l05.wear-a-helmet",
+        "en.elementary.u07.l05.be-on-time",
+        "en.elementary.u07.l06.hammer",
+        "en.elementary.u07.l06.screwdriver",
+        "en.elementary.u07.l06.wrench",
+        "en.elementary.u07.l06.ladder",
+        "en.elementary.u07.l06.toolbox",
+        "en.elementary.u07.l06.drill",
+        "en.elementary.u07.l07.i-want-to-be",
+        "en.elementary.u07.l07.i-would-like-to-be",
+        "en.elementary.u07.l07.one-day",
+        "en.elementary.u07.l07.my-dream-is",
+        "en.elementary.u07.l07.when-i-grow-up",
+        "en.elementary.u07.l07.i-hope-to"
+      ]
+    },
+    {
+      "id": "en.elementary.u07.l09",
+      "section": "elementary",
+      "unit": 7,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "Job interview",
+      "canDo": "Answer simple interview questions",
+      "scenario": "Smarty helps Mia practise for a job interview at a desk in the workshop.",
+      "items": [
+        {
+          "id": "en.elementary.u07.l09.interview",
+          "text": "interview",
+          "kind": "word",
+          "forms": [
+            "interviews"
+          ],
+          "example": "I have a job interview on Monday.",
+          "note": "Say 'interview' for the meeting where someone asks you questions to see if you fit a job.",
+          "image": {
+            "id": "interview",
+            "describe": "Smarty the black cat sitting at a wooden desk with notes, talking with a smiling tabby cat at a job interview"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l09.cv",
+          "text": "CV",
+          "kind": "word",
+          "forms": [
+            "CVs"
+          ],
+          "example": "My CV is on the desk.",
+          "note": "Use 'CV' for the short paper about your school, skills, and past jobs.",
+          "image": {
+            "id": "cv",
+            "describe": "a neat one-page paper with a small cat portrait icon and clean lines resting on a desk beside a pen"
+          }
+        },
+        {
+          "id": "en.elementary.u07.l09.experience",
+          "text": "experience",
+          "kind": "word",
+          "example": "She has experience as a nurse.",
+          "note": "Say 'experience' for the skills and practice you have from doing a job before."
+        },
+        {
+          "id": "en.elementary.u07.l09.apply-for",
+          "text": "apply for",
+          "kind": "phrase",
+          "forms": [
+            "applies for",
+            "applied for",
+            "applying for"
+          ],
+          "example": "I want to apply for a part-time job.",
+          "note": "Use 'apply for' when you ask to get a job or place at a school."
+        },
+        {
+          "id": "en.elementary.u07.l09.i-could",
+          "text": "I could",
+          "kind": "phrase",
+          "forms": [
+            "could",
+            "he could",
+            "she could",
+            "we could",
+            "they could"
+          ],
+          "example": "I could swim when I was five.",
+          "note": "Say 'I could…' to talk about something you were able to do in the past."
+        },
+        {
+          "id": "en.elementary.u07.l09.i-could-not",
+          "text": "I could not",
+          "kind": "phrase",
+          "forms": [
+            "could not",
+            "couldn't"
+          ],
+          "example": "I could not ride a bike last year.",
+          "note": "Use 'I could not…' for something you were not able to do in the past."
+        }
+      ],
+      "grammar": {
+        "title": "could and could not (past ability)",
+        "explanation": "'Could' is the past of 'can'. Use 'I could' for things you were able to do in the past, and 'I could not' for things you were not able to do.",
+        "examples": [
+          "When I was little, I could draw animals.",
+          "I could not swim last summer."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u07.l09.task.pick-cv",
+          "kind": "choice",
+          "prompt": "What paper lists your school and past jobs for an employer?",
+          "answer": "CV",
+          "options": [
+            "CV",
+            "menu",
+            "postcard"
+          ],
+          "explanation": "A CV shows your education and work experience.",
+          "itemIds": [
+            "en.elementary.u07.l09.cv"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l09.task.hear-interview",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have a job interview on Monday.",
+          "answer": "I have a job interview on Monday.",
+          "options": [
+            "I have a job interview on Monday.",
+            "My CV is on the desk.",
+            "I want to apply for a job."
+          ],
+          "explanation": "An interview is a meeting for a job.",
+          "itemIds": [
+            "en.elementary.u07.l09.interview"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l09.task.match-interview",
+          "kind": "match",
+          "prompt": "Match the words with their meanings.",
+          "pairs": [
+            {
+              "left": "CV",
+              "right": "about your jobs"
+            },
+            {
+              "left": "experience",
+              "right": "what you can do"
+            },
+            {
+              "left": "apply for",
+              "right": "say you want a job"
+            },
+            {
+              "left": "interview",
+              "right": "a job meeting"
+            }
+          ],
+          "explanation": "These four words are key when looking for a job.",
+          "itemIds": [
+            "en.elementary.u07.l09.cv",
+            "en.elementary.u07.l09.experience",
+            "en.elementary.u07.l09.apply-for",
+            "en.elementary.u07.l09.interview"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l09.task.fill-apply",
+          "kind": "fill",
+          "prompt": "Complete the sentence about looking for work.",
+          "text": "I want to ___ a part-time job.",
+          "answer": "apply for",
+          "options": [
+            "apply for",
+            "work as",
+            "be on time"
+          ],
+          "explanation": "You 'apply for' a job when you ask for it.",
+          "itemIds": [
+            "en.elementary.u07.l09.apply-for",
+            "en.elementary.u07.l03.a-part-time-job"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l09.task.fill-experience",
+          "kind": "fill",
+          "prompt": "She worked at a hospital for two years. Complete the sentence.",
+          "text": "She has ___ as a nurse.",
+          "answer": "experience",
+          "options": [
+            "experience",
+            "interview",
+            "toolbox"
+          ],
+          "explanation": "Past work gives you 'experience'.",
+          "itemIds": [
+            "en.elementary.u07.l09.experience",
+            "en.elementary.u07.l02.nurse"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l09.task.build-could",
+          "kind": "build",
+          "prompt": "Build the sentence about what you were able to do at age five.",
+          "answer": "I could swim when I was five.",
+          "tiles": [
+            "I",
+            "could",
+            "swim",
+            "when",
+            "I",
+            "was",
+            "five",
+            "can"
+          ],
+          "explanation": "Use 'could' (not 'can') because 'when I was five' is in the past.",
+          "itemIds": [
+            "en.elementary.u07.l09.i-could",
+            "en.beginner.u08.l06.swim"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l09.task.fill-could-not",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the past.",
+          "text": "___ ride a bike last year, but I can now!",
+          "answer": "I could not",
+          "options": [
+            "I could not",
+            "I could",
+            "I cannot"
+          ],
+          "explanation": "'Last year' is in the past, so use 'I could not'.",
+          "itemIds": [
+            "en.elementary.u07.l09.i-could-not",
+            "en.beginner.u08.l06.ride-a-bike"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l09.task.say-cv",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "My CV is on the desk.",
+          "answer": "My CV is on the desk.",
+          "explanation": "Say each letter of 'CV' clearly.",
+          "itemIds": [
+            "en.elementary.u07.l09.cv"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What job is Mia applying for?",
+        "image": {
+          "id": "en-a2-u07-l09-scene",
+          "describe": "Smarty the black cat sitting behind a desk in the workshop reading Mia's CV during a practice job interview."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good morning, Mia! Welcome to your job interview."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thank you, Smarty! Here is my CV."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Which job do you want to apply for?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I want to apply for a part-time job as a mechanic."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Do you have experience with tools?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes! Last year I could not use a drill, but now I can use every tool!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great answer! You are ready for Monday."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u07.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Mia give Smarty at the start?",
+            "answer": "her CV",
+            "options": [
+              "her CV",
+              "a hammer",
+              "a ticket"
+            ],
+            "explanation": "Mia says: Here is my CV.",
+            "itemIds": [
+              "en.elementary.u07.l09.cv",
+              "en.elementary.u07.l09.interview"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "What job does Mia want to apply for?",
+            "answer": "a part-time job as a mechanic",
+            "options": [
+              "a part-time job as a mechanic",
+              "a full-time job as a nurse",
+              "a job as a chef"
+            ],
+            "explanation": "Mia says: I want to apply for a part-time job as a mechanic.",
+            "itemIds": [
+              "en.elementary.u07.l09.apply-for",
+              "en.elementary.u07.l03.a-part-time-job"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "What could Mia NOT do last year?",
+            "answer": "work with a drill",
+            "options": [
+              "work with a drill",
+              "ride a bike",
+              "swim"
+            ],
+            "explanation": "Mia says: Last year I could not work with a drill, but now I can use every tool!",
+            "itemIds": [
+              "en.elementary.u07.l09.i-could-not"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty gives you a friendly practice job interview!",
+        "turns": [
+          {
+            "smarty": "Welcome to your interview! What job do you want to apply for?",
+            "accept": [
+              "^i want to apply for (?:a |an )?(?:part time |parttime |full time |fulltime )?(?:job as a |job as an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor|job)$",
+              "^i would like to apply for (?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor|job)$",
+              "^(?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor)$"
+            ],
+            "example": "I want to apply for a job as an engineer.",
+            "hint": "Say 'I want to apply for…' and name a job.",
+            "itemIds": [
+              "en.elementary.u07.l09.interview",
+              "en.elementary.u07.l09.apply-for"
+            ]
+          },
+          {
+            "smarty": "Do you have a CV or experience?",
+            "accept": [
+              "^yes(?: i have (?:a cv|experience|a cv and experience))?$",
+              "^i have (?:a cv|experience|a cv and experience)$",
+              "^no(?: i do not have experience)?$"
+            ],
+            "example": "Yes, I have a CV and experience.",
+            "hint": "Say 'Yes, I have a CV' or 'Yes, I have experience.'",
+            "itemIds": [
+              "en.elementary.u07.l09.cv",
+              "en.elementary.u07.l09.experience"
+            ]
+          },
+          {
+            "smarty": "Tell me one thing you could do when you were little!",
+            "accept": [
+              "^i could (?:swim|run|jump|sing|dance|draw|paint|read|ride a bike)(?: when i was little)?$",
+              "^when i was little i could (?:swim|run|jump|sing|dance|draw|paint|read|ride a bike)$"
+            ],
+            "example": "I could draw when I was little.",
+            "hint": "Say 'I could…' (for example: swim, draw, sing, or run).",
+            "itemIds": [
+              "en.elementary.u07.l09.i-could"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u07.l03.a-part-time-job",
+        "en.elementary.u07.l02.nurse",
+        "en.beginner.u08.l06.swim",
+        "en.beginner.u08.l06.ride-a-bike"
+      ]
+    },
+    {
+      "id": "en.elementary.u07.l10",
+      "section": "elementary",
+      "unit": 7,
+      "lesson": 10,
+      "type": "test",
+      "title": "Workshop day",
+      "canDo": "Ask for help and follow safety rules",
+      "scenario": "Sam, Mia, and Smarty work together in the workshop, using tools, following safety rules, and sharing their dreams.",
+      "items": [
+        {
+          "id": "en.elementary.u07.l10.could-you-help-me",
+          "text": "Could you help me?",
+          "kind": "phrase",
+          "forms": [
+            "Could you help"
+          ],
+          "example": "Could you help me with this big box?",
+          "note": "Say 'Could you help me?' to ask someone for help politely."
+        },
+        {
+          "id": "en.elementary.u07.l10.be-careful-with",
+          "text": "Be careful with",
+          "kind": "phrase",
+          "forms": [
+            "careful"
+          ],
+          "example": "Be careful with that drill!",
+          "note": "Use 'Be careful with…' to warn a friend so they stay safe with a tool or object."
+        },
+        {
+          "id": "en.elementary.u07.l10.it-does-not-work",
+          "text": "It does not work",
+          "kind": "phrase",
+          "forms": [
+            "does not work",
+            "doesn't work"
+          ],
+          "example": "Look at this lamp. It does not work.",
+          "note": "Say 'It does not work' when a machine, tool, or phone is broken."
+        }
+      ],
+      "grammar": {
+        "title": "Polite requests and safety warnings",
+        "explanation": "Use 'Could you help me?' to ask for help politely. Use 'Be careful with…' before a tool or fragile object to warn someone.",
+        "examples": [
+          "Could you help me with the ladder?",
+          "Be careful with the hammer."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u07.l10.task.pick-help",
+          "kind": "choice",
+          "prompt": "The toolbox is big and you cannot lift it alone. What do you say?",
+          "answer": "Could you help me?",
+          "options": [
+            "Could you help me?",
+            "It does not work.",
+            "What do you do?"
+          ],
+          "explanation": "'Could you help me?' is a polite way to ask for help.",
+          "itemIds": [
+            "en.elementary.u07.l10.could-you-help-me"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l10.task.hear-careful",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Be careful with that drill!",
+          "answer": "Be careful with that drill!",
+          "options": [
+            "Be careful with that drill!",
+            "It does not work.",
+            "Could you help me?"
+          ],
+          "explanation": "Use 'Be careful with' to warn someone about a tool.",
+          "itemIds": [
+            "en.elementary.u07.l10.be-careful-with",
+            "en.elementary.u07.l06.drill"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l10.task.fill-not-work",
+          "kind": "fill",
+          "prompt": "You turn on the lamp, but there is no light. Complete the sentence.",
+          "text": "Look at this lamp. ___.",
+          "answer": "It does not work",
+          "options": [
+            "It does not work",
+            "Be careful with",
+            "I work as"
+          ],
+          "explanation": "Say 'It does not work' when something is broken.",
+          "itemIds": [
+            "en.elementary.u07.l10.it-does-not-work"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l10.task.match-unit7",
+          "kind": "match",
+          "prompt": "Match each phrase with the right situation.",
+          "pairs": [
+            {
+              "left": "Could you help me?",
+              "right": "you need help"
+            },
+            {
+              "left": "Be careful with the wrench!",
+              "right": "you say be careful"
+            },
+            {
+              "left": "It does not work.",
+              "right": "the drill does not work"
+            },
+            {
+              "left": "You must wear a helmet.",
+              "right": "following a work rule"
+            }
+          ],
+          "explanation": "Each phrase matches a real moment in the workshop.",
+          "itemIds": [
+            "en.elementary.u07.l10.could-you-help-me",
+            "en.elementary.u07.l10.be-careful-with",
+            "en.elementary.u07.l10.it-does-not-work",
+            "en.elementary.u07.l05.wear-a-helmet"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l10.task.fill-jobs-test",
+          "kind": "fill",
+          "prompt": "Complete the sentence about jobs.",
+          "text": "A ___ flies a plane.",
+          "answer": "pilot",
+          "options": [
+            "pilot",
+            "dentist",
+            "farmer"
+          ],
+          "explanation": "A pilot flies a plane.",
+          "itemIds": [
+            "en.elementary.u07.l01.pilot"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l10.task.fill-work-as-test",
+          "kind": "fill",
+          "prompt": "Choose the right phrase before a job title.",
+          "text": "___ an engineer for a big car shop.",
+          "answer": "I work as",
+          "options": [
+            "I work as",
+            "I work for",
+            "I apply for"
+          ],
+          "explanation": "Use 'I work as' before 'an engineer'.",
+          "itemIds": [
+            "en.elementary.u07.l03.i-work-as",
+            "en.elementary.u07.l02.engineer"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l10.task.fill-rules-test",
+          "kind": "fill",
+          "prompt": "Sunday is a holiday. Choose the right phrase.",
+          "text": "Firefighters help every day, but teachers ___ work on Sunday.",
+          "answer": "do not have to",
+          "options": [
+            "do not have to",
+            "must not",
+            "must"
+          ],
+          "explanation": "'Do not have to' means it is not required.",
+          "itemIds": [
+            "en.elementary.u07.l05.i-do-not-have-to",
+            "en.elementary.u07.l02.firefighter"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l10.task.build-careful",
+          "kind": "build",
+          "prompt": "Build the safety warning.",
+          "answer": "Be careful with that ladder!",
+          "tiles": [
+            "Be",
+            "careful",
+            "with",
+            "that",
+            "ladder",
+            "work"
+          ],
+          "explanation": "Start with 'Be careful with' + the object.",
+          "itemIds": [
+            "en.elementary.u07.l10.be-careful-with",
+            "en.elementary.u07.l06.ladder"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l10.task.fill-dreams-test",
+          "kind": "fill",
+          "prompt": "Complete the sentence about future ambitions.",
+          "text": "When I grow up, ___ a doctor.",
+          "answer": "I would like to be",
+          "options": [
+            "I would like to be",
+            "I could not",
+            "I work for"
+          ],
+          "explanation": "'When I grow up' goes with a future wish like 'I would like to be'.",
+          "itemIds": [
+            "en.elementary.u07.l07.when-i-grow-up",
+            "en.elementary.u07.l07.i-would-like-to-be"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l10.task.fill-interview-test",
+          "kind": "fill",
+          "prompt": "Complete the sentence about a past skill.",
+          "text": "Last year ___ swim, but now I am fast!",
+          "answer": "I could not",
+          "options": [
+            "I could not",
+            "I must not",
+            "I hope to"
+          ],
+          "explanation": "Use 'I could not' for a skill you did not have in the past.",
+          "itemIds": [
+            "en.elementary.u07.l09.i-could-not"
+          ]
+        },
+        {
+          "id": "en.elementary.u07.l10.task.say-help",
+          "kind": "speak",
+          "prompt": "Say this polite request aloud.",
+          "text": "Could you help me?",
+          "answer": "Could you help me?",
+          "explanation": "Say 'Could you help me?' politely.",
+          "itemIds": [
+            "en.elementary.u07.l10.could-you-help-me"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which tool does not work in Smarty's workshop?",
+        "image": {
+          "id": "en-a2-u07-l10-scene",
+          "describe": "Sam, Mia, and Smarty the black cat wearing safety helmets in the workshop; Sam holds a blue drill while Smarty checks a red toolbox and a tall ladder."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Smarty, could you help me? Look at this blue drill. It does not work!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Be careful with the drill, Sam! And remember, we must wear a helmet."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I have my helmet on! Here is a wrench and a screwdriver from the toolbox."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Mia! You have great experience with tools."
+          },
+          {
+            "speaker": "Sam",
+            "text": "When I grow up, I want to be a mechanic."
+          },
+          {
+            "speaker": "Mia",
+            "text": "And I would like to be an engineer! One day, we can work together."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look—now the drill works! Well done, team!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u07.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Sam's problem at the start?",
+            "answer": "The blue drill does not work.",
+            "options": [
+              "The blue drill does not work.",
+              "He has no CV.",
+              "He is late for an interview."
+            ],
+            "explanation": "Sam says: Look at this blue drill. It does not work!",
+            "itemIds": [
+              "en.elementary.u07.l10.it-does-not-work",
+              "en.elementary.u07.l06.drill"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "What warning does Smarty give Sam?",
+            "answer": "Be careful with the drill!",
+            "options": [
+              "Be careful with the drill!",
+              "Do not come on Sunday!",
+              "Apply for a job!"
+            ],
+            "explanation": "Smarty says: Be careful with the drill, Sam!",
+            "itemIds": [
+              "en.elementary.u07.l10.be-careful-with"
+            ]
+          },
+          {
+            "id": "en.elementary.u07.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "What would Mia like to be?",
+            "answer": "an engineer",
+            "options": [
+              "an engineer",
+              "a mechanic",
+              "a chef"
+            ],
+            "explanation": "Mia says: And I would like to be an engineer!",
+            "itemIds": [
+              "en.elementary.u07.l07.i-would-like-to-be",
+              "en.elementary.u07.l02.engineer"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Final workshop challenge! Show Smarty you can ask for help, follow rules, and talk about your dream job.",
+        "turns": [
+          {
+            "smarty": "This toolbox is big! Ask me for help politely.",
+            "accept": [
+              "^could you help me(?: please)?$",
+              "^can you help me(?: please)?$"
+            ],
+            "example": "Could you help me?",
+            "hint": "Say 'Could you help me?'",
+            "itemIds": [
+              "en.elementary.u07.l10.could-you-help-me",
+              "en.elementary.u07.l06.toolbox"
+            ]
+          },
+          {
+            "smarty": "Of course! Now give me a safety rule for the work room.",
+            "accept": [
+              "^(?:you |we )?must wear a helmet$",
+              "^(?:you |we )?must not run(?: in the room)?$",
+              "^be careful with (?:the )?(?:drill|hammer|wrench|screwdriver|ladder)$"
+            ],
+            "example": "You must wear a helmet.",
+            "hint": "Say 'You must wear a helmet' or 'Be careful with the drill.'",
+            "itemIds": [
+              "en.elementary.u07.l05.must",
+              "en.elementary.u07.l05.wear-a-helmet",
+              "en.elementary.u07.l10.be-careful-with"
+            ]
+          },
+          {
+            "smarty": "You finished Unit 7! Tell me one last time: what is your dream job?",
+            "accept": [
+              "^i want to be (?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor)$",
+              "^i would like to be (?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor)$",
+              "^my dream job is (?:a |an )?(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor)$",
+              "^(?:farmer|pilot|driver|mechanic|builder|dentist|police officer|firefighter|engineer|artist|chef|nurse|teacher|doctor) is my dream job$"
+            ],
+            "example": "I would like to be a pilot.",
+            "hint": "Say 'I would like to be a…' or 'My dream job is…'",
+            "itemIds": [
+              "en.elementary.u07.l07.i-would-like-to-be",
+              "en.elementary.u07.l03.my-dream-job"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u07.l01.pilot",
+        "en.elementary.u07.l02.engineer",
+        "en.elementary.u07.l02.firefighter",
+        "en.elementary.u07.l03.i-work-as",
+        "en.elementary.u07.l03.my-dream-job",
+        "en.elementary.u07.l05.i-do-not-have-to",
+        "en.elementary.u07.l05.must",
+        "en.elementary.u07.l05.wear-a-helmet",
+        "en.elementary.u07.l06.ladder",
+        "en.elementary.u07.l06.toolbox",
+        "en.elementary.u07.l06.drill",
+        "en.elementary.u07.l07.i-would-like-to-be",
+        "en.elementary.u07.l07.when-i-grow-up",
+        "en.elementary.u07.l09.i-could-not"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Old Toolbox",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "Look under the workbench, Mia! There is an old green toolbox.",
+        "image": {
+          "id": "en-a2-u07-ep-p01",
+          "describe": "Smarty the black cat pointing under a wooden workbench at a dusty old green metal toolbox."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "It is big and dirty. Is there a key?",
+        "image": {
+          "id": "en-a2-u07-ep-p02",
+          "describe": "Mia crouching next to the dusty green toolbox, looking closely at the locked latch."
+        }
+      },
+      {
+        "speaker": "Sam",
+        "text": "Be careful with that box! Look, there is a small key next to the hammer.",
+        "image": {
+          "id": "en-a2-u07-ep-p03",
+          "describe": "Sam holding a small brass key he found next to a hammer on the shelf."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "I have the key! Look, there is an old photo and a letter in the box.",
+        "image": {
+          "id": "en-a2-u07-ep-p04",
+          "describe": "Smarty opening the green toolbox and discovering an old sepia photo and a folded letter."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Who is that cat in the photo? He is wearing a pilot hat!",
+        "image": {
+          "id": "en-a2-u07-ep-p05",
+          "describe": "Close-up of an old photograph showing a smiling black cat wearing a vintage pilot cap and goggles beside a small plane."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "That is my grandfather! He worked as a pilot and an engineer.",
+        "image": {
+          "id": "en-a2-u07-ep-p06",
+          "describe": "Smarty smiling proudly while holding his grandfather's pilot photo."
+        }
+      },
+      {
+        "speaker": "Sam",
+        "text": "Look at the letter! There is a map of a mountain and a lake.",
+        "image": {
+          "id": "en-a2-u07-ep-p07",
+          "describe": "Sam holding up a hand-drawn map showing a tall mountain, a blue lake, and a waterfall."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "He wrote: 'My plane is near the waterfall.' Let's go tomorrow!",
+        "image": {
+          "id": "en-a2-u07-ep-p08",
+          "describe": "Smarty, Mia, and Sam standing together in the workshop looking excited with the map in hand."
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.elementary.u07.ep.task.q1",
+        "kind": "choice",
+        "prompt": "Where did Sam find the key?",
+        "answer": "next to the hammer",
+        "options": [
+          "next to the hammer",
+          "under the ladder",
+          "in the car"
+        ],
+        "explanation": "Sam says: Look, there is a small key next to the hammer.",
+        "itemIds": [
+          "en.elementary.u07.l06.hammer"
+        ]
+      },
+      {
+        "id": "en.elementary.u07.ep.task.q2",
+        "kind": "choice",
+        "prompt": "What jobs did Smarty's grandfather have?",
+        "answer": "pilot and engineer",
+        "options": [
+          "pilot and engineer",
+          "chef and dentist",
+          "farmer and nurse"
+        ],
+        "explanation": "Smarty says: He worked as a pilot and an engineer.",
+        "itemIds": [
+          "en.elementary.u07.l01.pilot",
+          "en.elementary.u07.l02.engineer"
+        ]
+      },
+      {
+        "id": "en.elementary.u07.ep.task.q3",
+        "kind": "choice",
+        "prompt": "Where is the grandfather's plane?",
+        "answer": "near the waterfall",
+        "options": [
+          "near the waterfall",
+          "at the hospital",
+          "in the kitchen"
+        ],
+        "explanation": "The letter says: My plane is near the waterfall.",
+        "itemIds": [
+          "en.elementary.u07.l01.pilot"
+        ]
+      }
+    ]
+  }
+}

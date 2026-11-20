@@ -1,5 +1,4 @@
 import { useUiLang } from '../contexts/UiLangContext';
-import React from 'react';
 import { Gauge } from 'lucide-react';
 import { SPEECH_RATE_PRESETS, snapSpeechRate, speechRateFromIndex, speechRateToIndex, type SpeechRatePreset } from '../lib/speechRates';
 

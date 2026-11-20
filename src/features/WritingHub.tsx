@@ -1,6 +1,5 @@
-import React, { useState, lazy, Suspense, useEffect } from 'react';
+import { useState, lazy, Suspense, useEffect } from 'react';
 import { PenLine, Loader2 } from 'lucide-react';
-import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
 import { ScreenShell, HubRow, seGrid2 } from '../components/ScreenShell';
 
@@ -34,7 +33,6 @@ function parseMode(raw?: string): WritingMode {
 }
 
 export function WritingHub({ onBack, initialLevel, initialTopicIndex, onToggleVocab, savedVocab = {}, onShowModal, navMode, onNavMode, onIeltsBack, startingLevel }: WritingHubProps) {
-  const { isEnglish } = useContentLang();
   const { t } = useUiLang();
   const hasInitial = initialLevel !== undefined && initialTopicIndex !== undefined;
   const controlled = typeof onNavMode === 'function';

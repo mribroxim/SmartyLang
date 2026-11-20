@@ -1,0 +1,3533 @@
+{
+  "lang": "en",
+  "section": "beginner",
+  "units": [
+    {
+      "unit": 0,
+      "title": "Sounds & Letters",
+      "room": "doorstep",
+      "canDo": "Say the alphabet, spell your name, count 0–10, understand classroom phrases",
+      "grammar": "letters and sounds, spelling aloud, numbers 0–10, \"Repeat, please\" (+ script unit for ru/ar/zh courses)",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "The alphabet",
+          "canDo": "Say the letters of the alphabet in order",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u00.l01.the-alphabet",
+              "text": "the alphabet",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l01.a-to-g",
+              "text": "A to G",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l01.h-to-n",
+              "text": "H to N",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l01.o-to-u",
+              "text": "O to U",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l01.v-to-z",
+              "text": "V to Z",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "Spell it",
+          "canDo": "Ask for and give a spelling",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u00.l02.spell-it-please",
+              "text": "Spell it please",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l02.how-do-you-spell-that",
+              "text": "How do you spell that?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l02.capital-letter",
+              "text": "capital letter",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l02.letter",
+              "text": "letter",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l02.a-an",
+              "text": "a / an",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "Numbers 0 to 5",
+          "canDo": "Count from zero to five",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u00.l03.zero",
+              "text": "zero",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l03.one",
+              "text": "one",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l03.two",
+              "text": "two",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l03.three",
+              "text": "three",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l03.four",
+              "text": "four",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l03.five",
+              "text": "five",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Numbers 6 to 10",
+          "canDo": "Count from six to ten",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u00.l04.six",
+              "text": "six",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l04.seven",
+              "text": "seven",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l04.eight",
+              "text": "eight",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l04.nine",
+              "text": "nine",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l04.ten",
+              "text": "ten",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "Review",
+          "canDo": "Practise lessons 1–4",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "Classroom talk",
+          "canDo": "Understand and use basic classroom phrases",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u00.l06.repeat-please",
+              "text": "Repeat please",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l06.can-you-say-that-again",
+              "text": "Can you say that again?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u00.l06.i-do-not-understand",
+              "text": "I do not understand",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    },
+    {
+      "unit": 1,
+      "title": "Hello & Me",
+      "room": "bedroom",
+      "canDo": "Greet, introduce yourself, say where you're from and how you are",
+      "grammar": "be (I/you/he/she/we), what/where questions, a/an",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Say hello",
+          "canDo": "Start and end a friendly conversation",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u01.l01.hello",
+              "text": "Hello",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l01.hi",
+              "text": "Hi",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l01.goodbye",
+              "text": "Goodbye",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l01.bye",
+              "text": "Bye",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "My name is",
+          "canDo": "Introduce yourself and ask a name",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u01.l02.my-name-is",
+              "text": "My name is",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l02.i-am",
+              "text": "I am",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l02.what-is-your-name",
+              "text": "What is your name?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l02.and-you",
+              "text": "And you?",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "Thank you",
+          "canDo": "Be polite with short phrases",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u01.l03.sorry",
+              "text": "Sorry",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l03.please",
+              "text": "Please",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l03.thank-you",
+              "text": "Thank you",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l03.thanks",
+              "text": "Thanks",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Review",
+          "canDo": "Practise lessons 1–3",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "You are, he is",
+          "canDo": "Use the right form of be",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u01.l05.you-are",
+              "text": "You are",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l05.he-is",
+              "text": "He is",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l05.she-is",
+              "text": "She is",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l05.we-are",
+              "text": "We are",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "Time of day",
+          "canDo": "Greet people at different times",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u01.l06.good-morning",
+              "text": "Good morning",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l06.good-afternoon",
+              "text": "Good afternoon",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l06.good-evening",
+              "text": "Good evening",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l06.see-you-later",
+              "text": "See you later",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 7,
+          "title": "Where are you from?",
+          "canDo": "Say where you are from and ask someone else",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u01.l07.i-am-from",
+              "text": "I am from",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l07.where-are-you-from",
+              "text": "Where are you from?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l07.uzbekistan",
+              "text": "Uzbekistan",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l07.brazil",
+              "text": "Brazil",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l07.england",
+              "text": "England",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 8,
+          "title": "Review",
+          "canDo": "Practise lessons 5–7",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 9,
+          "title": "How are you?",
+          "canDo": "Say how you feel",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u01.l09.how-are-you",
+              "text": "How are you?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l09.i-am-fine",
+              "text": "I am fine",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l09.i-am-happy",
+              "text": "I am happy",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l09.i-am-tired",
+              "text": "I am tired",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 10,
+          "title": "Nice to meet you",
+          "canDo": "Meet a new friend and answer yes or no",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u01.l10.nice-to-meet-you",
+              "text": "Nice to meet you",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l10.this-is",
+              "text": "This is",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l10.friend",
+              "text": "friend",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l10.yes",
+              "text": "Yes",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l10.no",
+              "text": "No",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 11,
+          "title": "Meet someone new",
+          "canDo": "Introduce yourself, ask about a student and answer",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u01.l11.are-you-a-student",
+              "text": "Are you a student?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l11.i-am-a-student",
+              "text": "I am a student",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u01.l11.nice-to-meet-you-too",
+              "text": "Nice to meet you too",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    },
+    {
+      "unit": 2,
+      "title": "Family & Friends",
+      "room": "living-room",
+      "canDo": "Introduce family and friends, say ages, describe people simply",
+      "grammar": "my/your/his/her/our, have/has, this is, plurals, adjective + noun",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "My family",
+          "canDo": "Name the people in your family",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u02.l01.mother",
+              "text": "mother",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l01.father",
+              "text": "father",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l01.brother",
+              "text": "brother",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l01.sister",
+              "text": "sister",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l01.my",
+              "text": "my",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "This is my",
+          "canDo": "Introduce a family member",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u02.l02.baby",
+              "text": "baby",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l02.parents",
+              "text": "parents",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l02.his",
+              "text": "his",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u02.l02.her",
+              "text": "her",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u02.l02.our",
+              "text": "our",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "Who is she?",
+          "canDo": "Ask who someone is",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u02.l03.who-is-she",
+              "text": "Who is she?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u02.l03.grandmother",
+              "text": "grandmother",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l03.grandfather",
+              "text": "grandfather",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l03.it",
+              "text": "it",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Review",
+          "canDo": "Practise lessons 1–3",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "How old are you?",
+          "canDo": "Ask and say ages",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u02.l05.how-old-are-you",
+              "text": "How old are you?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u02.l05.years-old",
+              "text": "years old",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u02.l05.eleven",
+              "text": "eleven",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u02.l05.twelve",
+              "text": "twelve",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u02.l05.twenty",
+              "text": "twenty",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "My friends",
+          "canDo": "Talk about friends in the plural",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u02.l06.best-friend",
+              "text": "best friend",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l06.boy",
+              "text": "boy",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l06.girl",
+              "text": "girl",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l06.they",
+              "text": "they",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u02.l06.they-are",
+              "text": "they are",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 7,
+          "title": "Big and small",
+          "canDo": "Describe people simply",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u02.l07.big",
+              "text": "big",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l07.small",
+              "text": "small",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l07.tall",
+              "text": "tall",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l07.short",
+              "text": "short",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l07.young",
+              "text": "young",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 8,
+          "title": "I have a pet",
+          "canDo": "Say what you and others have",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u02.l08.i-have",
+              "text": "I have",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u02.l08.has",
+              "text": "has",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u02.l08.cat",
+              "text": "cat",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l08.dog",
+              "text": "dog",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l08.bird",
+              "text": "bird",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 9,
+          "title": "Review",
+          "canDo": "Practise lessons 5–8",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 10,
+          "title": "Meet my family",
+          "canDo": "Introduce your whole family",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u02.l10.aunt",
+              "text": "aunt",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l10.uncle",
+              "text": "uncle",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u02.l10.cousin",
+              "text": "cousin",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    },
+    {
+      "unit": 3,
+      "title": "Food & Drink",
+      "room": "kitchen",
+      "canDo": "Say what you like, ask for food politely",
+      "grammar": "do you like…?, I don't like, can I have…?, some/any, the",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "I'm hungry",
+          "canDo": "Say you are hungry or thirsty",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u03.l01.hungry",
+              "text": "hungry",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l01.thirsty",
+              "text": "thirsty",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l01.water",
+              "text": "water",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l01.bread",
+              "text": "bread",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l01.apple",
+              "text": "apple",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l01.the",
+              "text": "the",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "Breakfast",
+          "canDo": "Name breakfast food",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u03.l02.breakfast",
+              "text": "breakfast",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l02.egg",
+              "text": "egg",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l02.milk",
+              "text": "milk",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l02.tea",
+              "text": "tea",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l02.for",
+              "text": "for",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "Do you like bananas?",
+          "canDo": "Ask and answer about likes",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u03.l03.do-you-like",
+              "text": "Do you like",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u03.l03.i-like",
+              "text": "I like",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u03.l03.i-do-not-like",
+              "text": "I do not like",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u03.l03.banana",
+              "text": "banana",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l03.cheese",
+              "text": "cheese",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Review",
+          "canDo": "Practise lessons 1–3",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "Lunch and dinner",
+          "canDo": "Name main meals",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u03.l05.lunch",
+              "text": "lunch",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l05.dinner",
+              "text": "dinner",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l05.rice",
+              "text": "rice",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l05.soup",
+              "text": "soup",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l05.chicken",
+              "text": "chicken",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "Can I have juice?",
+          "canDo": "Ask for food politely",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u03.l06.can-i-have",
+              "text": "Can I have",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u03.l06.juice",
+              "text": "juice",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l06.cake",
+              "text": "cake",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l06.of-course",
+              "text": "Of course",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u03.l06.here-you-are",
+              "text": "Here you are",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 7,
+          "title": "Fruit and vegetables",
+          "canDo": "Name fruit and vegetables",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u03.l07.orange",
+              "text": "orange",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l07.tomato",
+              "text": "tomato",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l07.potato",
+              "text": "potato",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l07.carrot",
+              "text": "carrot",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l07.fruit",
+              "text": "fruit",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 8,
+          "title": "Review",
+          "canDo": "Practise lessons 5–7",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 9,
+          "title": "Delicious!",
+          "canDo": "Say how food tastes",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u03.l09.delicious",
+              "text": "delicious",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l09.hot",
+              "text": "hot",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l09.cold",
+              "text": "cold",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l09.sweet",
+              "text": "sweet",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l09.but",
+              "text": "but",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 10,
+          "title": "Some and any",
+          "canDo": "Talk about amounts",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u03.l10.some",
+              "text": "some",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u03.l10.any",
+              "text": "any",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u03.l10.plate",
+              "text": "plate",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l10.cup",
+              "text": "cup",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l10.glass",
+              "text": "glass",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 11,
+          "title": "Feed Smarty",
+          "canDo": "Offer food and say you are full",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u03.l11.fish",
+              "text": "fish",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l11.sandwich",
+              "text": "sandwich",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u03.l11.full",
+              "text": "full",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    },
+    {
+      "unit": 4,
+      "title": "My Day",
+      "room": "bathroom",
+      "canDo": "Tell the time, describe your routine and someone else's",
+      "grammar": "present simple (all persons, -s), does, adverbs of frequency, at + time, days",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "What time is it?",
+          "canDo": "Ask and tell the time",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u04.l01.what-time-is-it",
+              "text": "What time is it?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l01.oclock",
+              "text": "o'clock",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l01.clock",
+              "text": "clock",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l01.half-past",
+              "text": "half past",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "Morning routine",
+          "canDo": "Say what you do in the morning",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u04.l02.get-up",
+              "text": "get up",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l02.brush-my-teeth",
+              "text": "brush my teeth",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l02.take-a-shower",
+              "text": "take a shower",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l02.towel",
+              "text": "towel",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l02.toothbrush",
+              "text": "toothbrush",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "Every day",
+          "canDo": "Talk about your routine",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u04.l03.every-day",
+              "text": "every day",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l03.go-to-school",
+              "text": "go to school",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l03.work",
+              "text": "work",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l03.at",
+              "text": "at",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l03.in-the-morning",
+              "text": "in the morning",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Review",
+          "canDo": "Practise lessons 1–3",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "She gets up early",
+          "canDo": "Say how often",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u04.l05.usually",
+              "text": "usually",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l05.always",
+              "text": "always",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l05.never",
+              "text": "never",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l05.sometimes",
+              "text": "sometimes",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l05.early",
+              "text": "early",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "Days of the week",
+          "canDo": "Name weekdays",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u04.l06.monday",
+              "text": "Monday",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l06.tuesday",
+              "text": "Tuesday",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l06.wednesday",
+              "text": "Wednesday",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l06.thursday",
+              "text": "Thursday",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l06.friday",
+              "text": "Friday",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 7,
+          "title": "The weekend",
+          "canDo": "Talk about the weekend",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u04.l07.saturday",
+              "text": "Saturday",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l07.sunday",
+              "text": "Sunday",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l07.weekend",
+              "text": "weekend",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l07.sleep",
+              "text": "sleep",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l07.late",
+              "text": "late",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 8,
+          "title": "Review",
+          "canDo": "Practise lessons 5–7",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 9,
+          "title": "Does he read?",
+          "canDo": "Ask about someone's routine",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u04.l09.does",
+              "text": "does",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u04.l09.watch-tv",
+              "text": "watch TV",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l09.read",
+              "text": "read",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l09.book",
+              "text": "book",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 10,
+          "title": "My day",
+          "canDo": "Tell Smarty about your day",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u04.l10.go-to-bed",
+              "text": "go to bed",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l10.homework",
+              "text": "homework",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u04.l10.in-the-evening",
+              "text": "in the evening",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    },
+    {
+      "unit": 5,
+      "title": "My Home",
+      "room": "hallway",
+      "canDo": "Describe your home, say where things are",
+      "grammar": "there is/are, in/on/under/next to, this/that/these/those",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Rooms",
+          "canDo": "Name rooms in a home",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u05.l01.room",
+              "text": "room",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l01.kitchen",
+              "text": "kitchen",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l01.bedroom",
+              "text": "bedroom",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l01.bathroom",
+              "text": "bathroom",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l01.living-room",
+              "text": "living room",
+              "kind": "phrase",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "There is a door",
+          "canDo": "Say what is in a place",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u05.l02.there-is",
+              "text": "There is",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l02.there-are",
+              "text": "There are",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l02.door",
+              "text": "door",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l02.window",
+              "text": "window",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "Furniture",
+          "canDo": "Name furniture",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u05.l03.table",
+              "text": "table",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l03.chair",
+              "text": "chair",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l03.bed",
+              "text": "bed",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l03.sofa",
+              "text": "sofa",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l03.lamp",
+              "text": "lamp",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Review",
+          "canDo": "Practise lessons 1–3",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "Where is it?",
+          "canDo": "Say where things are",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u05.l05.in",
+              "text": "in",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l05.on",
+              "text": "on",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l05.under",
+              "text": "under",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l05.next-to",
+              "text": "next to",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l05.box",
+              "text": "box",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "This and that",
+          "canDo": "Point to things near and far",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u05.l06.this",
+              "text": "this",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l06.that",
+              "text": "that",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l06.these",
+              "text": "these",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l06.those",
+              "text": "those",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l06.key",
+              "text": "key",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 7,
+          "title": "My things",
+          "canDo": "Name everyday things",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u05.l07.phone",
+              "text": "phone",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l07.computer",
+              "text": "computer",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l07.pen",
+              "text": "pen",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l07.notebook",
+              "text": "notebook",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l07.pencil",
+              "text": "pencil",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 8,
+          "title": "Review",
+          "canDo": "Practise lessons 5–7",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 9,
+          "title": "A nice home",
+          "canDo": "Describe a home",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u05.l09.new",
+              "text": "new",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l09.clean",
+              "text": "clean",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l09.dirty",
+              "text": "dirty",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l09.beautiful",
+              "text": "beautiful",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 10,
+          "title": "Welcome home",
+          "canDo": "Show Smarty your home",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u05.l10.home",
+              "text": "home",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u05.l10.is-there",
+              "text": "Is there",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u05.l10.are-there",
+              "text": "Are there",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    },
+    {
+      "unit": 6,
+      "title": "Clothes & Colours",
+      "room": "wardrobe",
+      "canDo": "Say what you and others are wearing",
+      "grammar": "present continuous, colours, object pronouns (me/him/her/it/us/them), whose/mine/yours",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Colours",
+          "canDo": "Name colours",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u06.l01.red",
+              "text": "red",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l01.blue",
+              "text": "blue",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l01.green",
+              "text": "green",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l01.yellow",
+              "text": "yellow",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l01.black",
+              "text": "black",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "What colour is it?",
+          "canDo": "Ask about colours",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u06.l02.white",
+              "text": "white",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l02.pink",
+              "text": "pink",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l02.purple",
+              "text": "purple",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l02.brown",
+              "text": "brown",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l02.what-colour-is-it",
+              "text": "What colour is it?",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "Clothes",
+          "canDo": "Name clothes",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u06.l03.shirt",
+              "text": "shirt",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l03.t-shirt",
+              "text": "T-shirt",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l03.trousers",
+              "text": "trousers",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l03.dress",
+              "text": "dress",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l03.shoes",
+              "text": "shoes",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Review",
+          "canDo": "Practise lessons 1–3",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "I'm wearing a hat",
+          "canDo": "Say what you are wearing",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u06.l05.i-am-wearing",
+              "text": "I am wearing",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u06.l05.jacket",
+              "text": "jacket",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l05.hat",
+              "text": "hat",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l05.socks",
+              "text": "socks",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "Whose is this?",
+          "canDo": "Ask who owns something",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u06.l06.whose-is-this",
+              "text": "Whose is this?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u06.l06.mine",
+              "text": "mine",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u06.l06.yours",
+              "text": "yours",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u06.l06.scarf",
+              "text": "scarf",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 7,
+          "title": "Me him them",
+          "canDo": "Use object pronouns",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u06.l07.me",
+              "text": "me",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u06.l07.him",
+              "text": "him",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u06.l07.them",
+              "text": "them",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u06.l07.us",
+              "text": "us",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u06.l07.coat",
+              "text": "coat",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 8,
+          "title": "Fashion show",
+          "canDo": "Describe an outfit for Smarty",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u06.l08.i-want",
+              "text": "I want",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u06.l08.boots",
+              "text": "boots",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u06.l08.favourite",
+              "text": "favourite",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    },
+    {
+      "unit": 7,
+      "title": "Shopping & Numbers",
+      "room": "shop",
+      "canDo": "Count to 100, ask prices, buy things",
+      "grammar": "numbers 11–100, how much/how many, I'd like, can I…?",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Numbers 13 to 17",
+          "canDo": "Count to seventeen",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u07.l01.thirteen",
+              "text": "thirteen",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l01.fourteen",
+              "text": "fourteen",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l01.fifteen",
+              "text": "fifteen",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l01.sixteen",
+              "text": "sixteen",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l01.seventeen",
+              "text": "seventeen",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "Numbers to 50",
+          "canDo": "Count in tens to fifty",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u07.l02.eighteen",
+              "text": "eighteen",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l02.nineteen",
+              "text": "nineteen",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l02.thirty",
+              "text": "thirty",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l02.forty",
+              "text": "forty",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l02.fifty",
+              "text": "fifty",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "Numbers to 100",
+          "canDo": "Count to one hundred",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u07.l03.sixty",
+              "text": "sixty",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l03.seventy",
+              "text": "seventy",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l03.eighty",
+              "text": "eighty",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l03.ninety",
+              "text": "ninety",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l03.hundred",
+              "text": "hundred",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Review",
+          "canDo": "Practise lessons 1–3",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "How much is it?",
+          "canDo": "Ask and talk about prices",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u07.l05.how-much-is-it",
+              "text": "How much is it?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l05.money",
+              "text": "money",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u07.l05.dollar",
+              "text": "dollar",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u07.l05.cheap",
+              "text": "cheap",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l05.expensive",
+              "text": "expensive",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "At the market",
+          "canDo": "Buy food at a market",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u07.l06.market",
+              "text": "market",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u07.l06.kilo",
+              "text": "kilo",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u07.l06.how-many",
+              "text": "How many",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l06.bottle",
+              "text": "bottle",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u07.l06.i-would-like",
+              "text": "I would like",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 7,
+          "title": "Paying",
+          "canDo": "Pay by card or cash",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u07.l07.card",
+              "text": "card",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u07.l07.cash",
+              "text": "cash",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u07.l07.shop",
+              "text": "shop",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u07.l07.pay",
+              "text": "pay",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l07.buy",
+              "text": "buy",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 8,
+          "title": "Smarty's shop",
+          "canDo": "Serve a customer in Smarty's shop",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u07.l08.can-i-help-you",
+              "text": "Can I help you?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l08.just-looking",
+              "text": "Just looking",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u07.l08.that-is-all",
+              "text": "That is all",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    },
+    {
+      "unit": 8,
+      "title": "Town & Directions",
+      "room": "balcony",
+      "canDo": "Ask the way, give simple directions, say what you can do",
+      "grammar": "can/can't, where is…?, imperatives, when/why/how + because",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Places in town",
+          "canDo": "Name places in town",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u08.l01.park",
+              "text": "park",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l01.school",
+              "text": "school",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l01.hospital",
+              "text": "hospital",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l01.bank",
+              "text": "bank",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l01.cafe",
+              "text": "café",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "More places",
+          "canDo": "Name more places",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u08.l02.supermarket",
+              "text": "supermarket",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l02.library",
+              "text": "library",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l02.cinema",
+              "text": "cinema",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l02.station",
+              "text": "station",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l02.museum",
+              "text": "museum",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "Where is the bank?",
+          "canDo": "Ask where a place is",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u08.l03.where-is",
+              "text": "Where is",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l03.near",
+              "text": "near",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l03.far",
+              "text": "far",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l03.map",
+              "text": "map",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Review",
+          "canDo": "Practise lessons 1–3",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "Turn left",
+          "canDo": "Give simple directions",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u08.l05.turn-left",
+              "text": "turn left",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l05.turn-right",
+              "text": "turn right",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l05.go-straight-on",
+              "text": "go straight on",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l05.corner",
+              "text": "corner",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l05.stop",
+              "text": "stop",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "I can swim",
+          "canDo": "Say what you can and can't do",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u08.l06.i-can",
+              "text": "I can",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l06.i-cannot",
+              "text": "I cannot",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l06.swim",
+              "text": "swim",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l06.ride-a-bike",
+              "text": "ride a bike",
+              "kind": "phrase",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 7,
+          "title": "Opposite the park",
+          "canDo": "Say where places are",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u08.l07.opposite",
+              "text": "opposite",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l07.between",
+              "text": "between",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l07.behind",
+              "text": "behind",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l07.in-front-of",
+              "text": "in front of",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 8,
+          "title": "Review",
+          "canDo": "Practise lessons 5–7",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 9,
+          "title": "When why how",
+          "canDo": "Ask and answer with when, why and how",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u08.l09.when",
+              "text": "When",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l09.why",
+              "text": "Why",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l09.because",
+              "text": "because",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l09.by-bus",
+              "text": "by bus",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l09.by-car",
+              "text": "by car",
+              "kind": "phrase",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 10,
+          "title": "Excuse me",
+          "canDo": "Ask a stranger for help",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u08.l10.excuse-me",
+              "text": "Excuse me",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u08.l10.traffic-lights",
+              "text": "traffic lights",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u08.l10.is-it-far",
+              "text": "Is it far?",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    },
+    {
+      "unit": 9,
+      "title": "Weather & Free Time",
+      "room": "garden",
+      "canDo": "Talk about weather and hobbies, make plans with a friend",
+      "grammar": "like/love + -ing, present simple vs continuous (intro), let's",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "What's the weather like?",
+          "canDo": "Talk about the weather",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u09.l01.sunny",
+              "text": "sunny",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l01.rainy",
+              "text": "rainy",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l01.windy",
+              "text": "windy",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l01.cloudy",
+              "text": "cloudy",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l01.what-is-the-weather-like",
+              "text": "What is the weather like?",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "Rain and snow",
+          "canDo": "Describe more weather",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u09.l02.snow",
+              "text": "snow",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l02.rain",
+              "text": "rain",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l02.warm",
+              "text": "warm",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u09.l02.umbrella",
+              "text": "umbrella",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "Seasons",
+          "canDo": "Name the seasons",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u09.l03.spring",
+              "text": "spring",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l03.summer",
+              "text": "summer",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l03.autumn",
+              "text": "autumn",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l03.winter",
+              "text": "winter",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l03.season",
+              "text": "season",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Review",
+          "canDo": "Practise lessons 1–3",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "I like dancing",
+          "canDo": "Say what you like doing",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u09.l05.i-love",
+              "text": "I love",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u09.l05.play-football",
+              "text": "play football",
+              "kind": "phrase",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l05.dance",
+              "text": "dance",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l05.sing",
+              "text": "sing",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l05.draw",
+              "text": "draw",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "Hobbies",
+          "canDo": "Talk about hobbies",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u09.l06.hobby",
+              "text": "hobby",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l06.music",
+              "text": "music",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l06.paint",
+              "text": "paint",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l06.game",
+              "text": "game",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 7,
+          "title": "Sports",
+          "canDo": "Name sports",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u09.l07.tennis",
+              "text": "tennis",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l07.basketball",
+              "text": "basketball",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l07.run",
+              "text": "run",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l07.jump",
+              "text": "jump",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 8,
+          "title": "Review",
+          "canDo": "Practise lessons 5–7",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 9,
+          "title": "It's raining now",
+          "canDo": "Say what is happening now and suggest plans",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u09.l09.it-is-raining",
+              "text": "It is raining",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u09.l09.now",
+              "text": "now",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u09.l09.outside",
+              "text": "outside",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l09.lets",
+              "text": "Let's",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 10,
+          "title": "Free time in the garden",
+          "canDo": "Make plans with a friend",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u09.l10.picnic",
+              "text": "picnic",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l10.flower",
+              "text": "flower",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u09.l10.tree",
+              "text": "tree",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    },
+    {
+      "unit": 10,
+      "title": "Yesterday",
+      "room": "playroom",
+      "canDo": "Say where you were and what you did yesterday",
+      "grammar": "was/were, past simple of 15 common verbs (went, had, saw, ate, played…), yesterday/last",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Where were you?",
+          "canDo": "Say where you were",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u10.l01.where-were-you",
+              "text": "Where were you?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l01.i-was",
+              "text": "I was",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l01.you-were",
+              "text": "you were",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l01.yesterday",
+              "text": "yesterday",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l01.last-night",
+              "text": "last night",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "Was and were",
+          "canDo": "Use was and were in questions and negatives",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u10.l02.was-not",
+              "text": "was not",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l02.were-not",
+              "text": "were not",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l02.was-it",
+              "text": "Was it?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l02.were-you",
+              "text": "Were you?",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "Went had saw ate",
+          "canDo": "Say what you did with four common verbs",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u10.l03.i-went",
+              "text": "I went",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l03.i-had",
+              "text": "I had",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l03.i-saw",
+              "text": "I saw",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l03.i-ate",
+              "text": "I ate",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Review",
+          "canDo": "Practise lessons 1–3",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "Played and watched",
+          "canDo": "Say what you did with four more verbs",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u10.l05.i-played",
+              "text": "I played",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l05.i-watched",
+              "text": "I watched",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l05.i-visited",
+              "text": "I visited",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l05.i-cooked",
+              "text": "I cooked",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "Bought made came",
+          "canDo": "Use more irregular verbs",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u10.l06.i-bought",
+              "text": "I bought",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l06.i-made",
+              "text": "I made",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l06.i-came",
+              "text": "I came",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l06.i-met",
+              "text": "I met",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 7,
+          "title": "Studied helped walked",
+          "canDo": "Say what you did at school and outside",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u10.l07.i-studied",
+              "text": "I studied",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l07.i-helped",
+              "text": "I helped",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l07.i-walked",
+              "text": "I walked",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l07.did-you",
+              "text": "Did you",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 8,
+          "title": "Yesterday with Smarty",
+          "canDo": "Tell Smarty what you did",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u10.l08.what-did-you-do",
+              "text": "What did you do?",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l08.last-weekend",
+              "text": "last weekend",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u10.l08.i-did-not-go",
+              "text": "I did not go",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    },
+    {
+      "unit": 11,
+      "title": "Plans & Travel",
+      "room": "garage",
+      "canDo": "Talk about plans, dates and a trip",
+      "grammar": "going to, months and dates, need/want to",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Transport",
+          "canDo": "Name ways to travel",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u11.l01.train",
+              "text": "train",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u11.l01.plane",
+              "text": "plane",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u11.l01.boat",
+              "text": "boat",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u11.l01.motorbike",
+              "text": "motorbike",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u11.l01.suitcase",
+              "text": "suitcase",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 2,
+          "title": "January to May",
+          "canDo": "Name the first months",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u11.l02.january",
+              "text": "January",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l02.february",
+              "text": "February",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l02.march",
+              "text": "March",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l02.april",
+              "text": "April",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l02.may",
+              "text": "May",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 3,
+          "title": "June to October",
+          "canDo": "Name more months",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u11.l03.june",
+              "text": "June",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l03.july",
+              "text": "July",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l03.august",
+              "text": "August",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l03.september",
+              "text": "September",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l03.october",
+              "text": "October",
+              "kind": "word",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 4,
+          "title": "Review",
+          "canDo": "Practise lessons 1–3",
+          "type": "review",
+          "items": [],
+          "exposure": []
+        },
+        {
+          "lesson": 5,
+          "title": "My birthday",
+          "canDo": "Say when your birthday is",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u11.l05.november",
+              "text": "November",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l05.december",
+              "text": "December",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l05.month",
+              "text": "month",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l05.year",
+              "text": "year",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l05.birthday",
+              "text": "birthday",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 6,
+          "title": "I'm going to visit",
+          "canDo": "Talk about plans",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u11.l06.i-am-going-to",
+              "text": "I am going to",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l06.tomorrow",
+              "text": "tomorrow",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l06.next-week",
+              "text": "next week",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l06.visit",
+              "text": "visit",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u11.l06.where-are-you-going",
+              "text": "Where are you going?",
+              "kind": "phrase",
+              "image": false
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 7,
+          "title": "Packing",
+          "canDo": "Say what you need and want for a trip",
+          "type": "lesson",
+          "items": [
+            {
+              "id": "en.beginner.u11.l07.pack",
+              "text": "pack",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u11.l07.need",
+              "text": "need",
+              "kind": "word",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l07.i-want-to",
+              "text": "I want to",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l07.passport",
+              "text": "passport",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u11.l07.camera",
+              "text": "camera",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        },
+        {
+          "lesson": 8,
+          "title": "The big trip",
+          "canDo": "Plan a trip with Smarty",
+          "type": "test",
+          "items": [
+            {
+              "id": "en.beginner.u11.l08.have-a-good-trip",
+              "text": "Have a good trip!",
+              "kind": "phrase",
+              "image": false
+            },
+            {
+              "id": "en.beginner.u11.l08.postcard",
+              "text": "postcard",
+              "kind": "word",
+              "image": true
+            },
+            {
+              "id": "en.beginner.u11.l08.hotel",
+              "text": "hotel",
+              "kind": "word",
+              "image": true
+            }
+          ],
+          "exposure": []
+        }
+      ]
+    }
+  ]
+}

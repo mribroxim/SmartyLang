@@ -2,25 +2,35 @@ import type { UserAccountProfile } from '../firebase';
 import { normalizePlanId } from './plans';
 import { paidPlanEnded } from './entitlements';
 
-export type AccountType = 'user' | 'smarty-max' | 'business' | 'admin' | 'content-manager';
+export type AccountType = 'user' | 'smarty-max' | 'teacher' | 'business' | 'admin';
 
 export const ACCOUNT_TYPE_LABEL: Record<AccountType, string> = {
   'user':            'User',
   'smarty-max':      'SmartyLang Max',
+  'teacher':         'Teacher',
   'business':        'SmartyLang Business',
   'admin':           'Admin',
-  'content-manager': 'Content Manager',
 };
 
-/** Legacy teacher/organization roles map to business. */
+/** Business: a school or company that buys student seats in bulk (legacy "organization" too). */
 export function isBusinessRole(role?: string | null): boolean {
-  return role === 'business' || role === 'teacher' || role === 'organization';
+  return role === 'business' || role === 'organization';
 }
+/** Teacher: a free account that runs classes (no seats); its students get a discount on Smarty Max. */
+export function isTeacherRole(role?: string | null): boolean {
+  return role === 'teacher';
+}
+/** Anyone who runs classes, assignments and live games. */
+export function isEducatorRole(role?: string | null): boolean {
+  return isTeacherRole(role) || isBusinessRole(role);
+}
+/** Discount on Smarty Max for students in a teacher's class. */
+export const TEACHER_STUDENT_DISCOUNT = 0.1;
 
 export const accountTypeOf = (p?: UserAccountProfile | null): AccountType => {
   if (!p) return 'user';
   if (p.role === 'admin') return 'admin';
-  if (p.role === 'content-manager') return 'content-manager';
+  if (isTeacherRole(p.role)) return 'teacher';
   if (isBusinessRole(p.role)) return paidPlanEnded(p) ? 'user' : 'business';
   if (normalizePlanId(p.plan ?? undefined) === 'smarty-max' && !maxEnded(p)) return 'smarty-max';
   return 'user';
@@ -43,20 +53,22 @@ export const canPractice = (p?: UserAccountProfile | null): boolean => {
 
 export const canPreview = (p?: UserAccountProfile | null): boolean => {
   const t = accountTypeOf(p);
-  return t !== 'user';
+  return t !== 'user' && t !== 'teacher';
 };
 
 export const isPreviewMode = (p?: UserAccountProfile | null): boolean => {
   const t = accountTypeOf(p);
-  return t === 'business' || t === 'content-manager';
+  return t === 'business';
 };
 
 export const isFreeUser = (p?: UserAccountProfile | null): boolean => {
-  return accountTypeOf(p) === 'user';
+  const t = accountTypeOf(p);
+  return t === 'user' || t === 'teacher';
 };
 
 export const canUseBites = (p?: UserAccountProfile | null): boolean => !!p && !p.suspended;
 export const hasUnlimitedHearts = (p?: UserAccountProfile | null): boolean => canPractice(p);
 export function isFreeLearningRoute(tab: string, path: string[]): boolean {
-  return tab === 'lessons' && (!path.length || ['path', 'bite', 'today', 'hearts', 'unit-one'].includes(path[0]));
+  return ['vocabulary', 'gamification', 'classes'].includes(tab) || tab === 'practice' && !path.length
+    || tab === 'lessons' && (!path.length || ['path', 'bite', 'refine', 'hearts', 'unit-one', 'assessment', 'test'].includes(path[0]));
 }

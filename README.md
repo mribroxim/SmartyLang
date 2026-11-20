@@ -107,6 +107,20 @@ npm run dev
 
 Open the URL printed by the dev server (typically `http://localhost:3000`).
 
+### Local demo accounts
+
+Run `npm run dev:demo` from the repository root. It starts the app at `http://localhost:3000` with its own PostgreSQL database and creates three demo accounts. It uses PostgreSQL 17's default install path on Windows and searches your `PATH` on other platforms. Set `DEMO_POSTGRES_BIN` to the PostgreSQL `bin` directory if it is installed elsewhere.
+
+- [Open the Max demo](http://localhost:3000/api/dev/demo-login?as=max)
+- [Open the Free demo](http://localhost:3000/api/dev/demo-login?as=free)
+- [Open the Teacher demo](http://localhost:3000/api/dev/demo-login?as=teacher)
+
+Use separate browser profiles to keep the demo accounts signed in at the same time. The teacher hosts games in Demo Classroom, and both learners can join from My Classes. The demo stores progress locally in `.tmp-local-demo` between restarts.
+
+### Compare TranslateGemma passage translations
+
+With `translategemma:12b` available in local Ollama, run `node scripts/localize/compare-translategemma.mjs`. Use `--model translategemma:4b` to compare a different installed tag, or add `--prepare` to lay out the 20 review cases while the download is in progress. Open `.tmp-translategemma-review/comparison.md` to score the English passages, current Uzbek passages, and TranslateGemma candidates. Completed passages are saved as the comparison runs so you can resume it. Keep the report for review before deciding which translations to publish.
+
 ### Useful scripts
 
 | Command | Purpose |

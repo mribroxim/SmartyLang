@@ -46,7 +46,7 @@ export function LeagueTrophy({ id, size = 56, locked = false }: { id: string; si
 }
 
 /** All five leagues in a row: reached ones in colour, yours big, the rest locked. */
-export function LeagueLadder({ current, label }: { current: string; label: (id: string) => string }) {
+export function LeagueLadder({ current, label, currentCaption }: { current: string; label: (id: string) => string; currentCaption?: string }) {
   const idx = Math.max(0, LEAGUE_TIERS.findIndex((t) => t.id === leagueMeta(current).id));
   return (
     <div>
@@ -64,6 +64,7 @@ export function LeagueLadder({ current, label }: { current: string; label: (id: 
                 <LeagueTrophy id={t.id} size={50} locked={locked} />
               )}
               <span className={`mt-1 font-serif text-[10px] font-extrabold uppercase tracking-wide ${isCurrent ? 'text-zinc-900 dark:text-zinc-50' : 'text-slate-400'}`}>{label(t.id)}</span>
+              {currentCaption && <span className="mt-1 font-serif text-xs font-extrabold tabular-nums">{isCurrent ? currentCaption : '\u00a0'}</span>}
             </li>
           );
         })}

@@ -5,6 +5,10 @@
 
 export type SpeakerGender = 'female' | 'male';
 
+/** Voice tag for Smarty the cat; the TTS server maps it to his voice. */
+export const SMARTY_VOICE = 'smarty';
+const SMARTY_NAMES = new Set(['smarty', 'smarti', 'смарти', 'سمارتي', '斯玛蒂']);
+
 /** English primary + alternate voices so same-gender speakers still differ. */
 export const EN_DIALOGUE_VOICES: Record<SpeakerGender, string[]> = {
   female: [
@@ -124,6 +128,8 @@ export function assignDialogueVoices(
   let nextUnknown: SpeakerGender = 'female';
 
   for (const speaker of unique) {
+    // Smarty always speaks in his own voice (the server picks it).
+    if (SMARTY_NAMES.has(speaker.toLowerCase())) { map.set(speaker, SMARTY_VOICE); continue; }
     let gender = inferSpeakerGender(speaker);
     if (gender === 'unknown') {
       gender = nextUnknown;

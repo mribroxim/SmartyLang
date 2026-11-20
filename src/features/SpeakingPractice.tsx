@@ -1,5 +1,5 @@
 import { DialogSurface } from '../components/DialogSurface';
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Mic, Square, Play, ArrowLeft, Trash2, Search, ChevronRight, Plus, FileText, X } from 'lucide-react';
 import { set, get } from 'idb-keyval';
 import { WordPopover, sentenceAroundWord } from '../components/WordPopover';

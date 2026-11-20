@@ -11,10 +11,12 @@ import { readStoredUiLang } from './lib/uiLang';
 import { LegalRouter } from './features/Legal';
 import { initializeMonitoring } from './lib/monitoring';
 import { installDialogAccessibility } from './lib/dialogAccessibility';
+import { initReminders } from './lib/reminders';
 
 warmSpeechVoices();
 initializeMonitoring();
 installDialogAccessibility();
+initReminders();
 
 // ── Redirect firebase default URLs to custom domain ──────────────────────────
 // The default .web.app and .firebaseapp.com URLs always exist but we want all

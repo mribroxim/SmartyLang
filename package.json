@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
+    "dev:demo": "tsx watch scripts/ops/local-demo.mjs",
     "start": "node --experimental-strip-types server.ts",
     "migrate:export": "node scripts/migrate/export-firebase.mjs",
     "migrate:import": "node scripts/migrate/import-postgres.mjs",
@@ -43,7 +44,9 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "recharts": "^3.8.1",
-    "vite": "^6.2.0"
+    "sherpa-onnx-node": "1.12.40",
+    "vite": "^6.2.0",
+    "web-push": "^4.0.0"
   },
   "devDependencies": {
     "@firebase/eslint-plugin-security-rules": "^0.0.2",

@@ -1,0 +1,2680 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "elementary",
+  "unit": 9,
+  "title": "Celebrations",
+  "room": "rooftop",
+  "lessons": [
+    {
+      "id": "en.elementary.u09.l01",
+      "section": "elementary",
+      "unit": 9,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Party things",
+      "canDo": "Name party things",
+      "scenario": "Smarty and Mia get the rooftop ready for Ben's birthday party.",
+      "items": [
+        {
+          "id": "en.elementary.u09.l01.party",
+          "text": "party",
+          "kind": "word",
+          "forms": [
+            "parties"
+          ],
+          "example": "We have a big party on Saturday.",
+          "note": "Say ‘party’ when friends meet to eat, play music, and have fun together.",
+          "image": {
+            "id": "party",
+            "describe": "happy cats dancing and laughing together at a bright birthday party with cake and music"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l01.balloon",
+          "text": "balloon",
+          "kind": "word",
+          "forms": [
+            "balloons"
+          ],
+          "example": "There are five red balloons in the room.",
+          "note": "A balloon is filled with air and makes any room look ready for fun.",
+          "image": {
+            "id": "balloon",
+            "describe": "a black cat holding three bright red, blue, and yellow balloons tied with string"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l01.candle",
+          "text": "candle",
+          "kind": "word",
+          "forms": [
+            "candles"
+          ],
+          "example": "There is one candle on my small cake.",
+          "note": "We put candles on a birthday cake and blow them out for a wish.",
+          "image": {
+            "id": "candle",
+            "describe": "a sweet birthday cake on a plate with five colorful lit candles on top"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l01.present",
+          "text": "present",
+          "kind": "word",
+          "forms": [
+            "presents"
+          ],
+          "example": "This big present is for my best friend.",
+          "note": "Give a present in a nice box when you want to make someone happy on a special day.",
+          "image": {
+            "id": "present",
+            "describe": "a yellow gift box wrapped with a shiny pink ribbon and bow"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l01.invitation",
+          "text": "invitation",
+          "kind": "word",
+          "forms": [
+            "invitations"
+          ],
+          "example": "I wrote an invitation to my cousin yesterday.",
+          "note": "Send an invitation when you want to ask friends to come to your party.",
+          "image": {
+            "id": "invitation",
+            "describe": "a colorful folded party card with star stickers and a small envelope on a wooden table"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l01.decorations",
+          "text": "decorations",
+          "kind": "word",
+          "forms": [
+            "decoration"
+          ],
+          "example": "The new decorations are beautiful.",
+          "note": "Put up decorations like flowers and balloons to make a room look festive.",
+          "image": {
+            "id": "decorations",
+            "describe": "colorful paper stars, ribbons, and hanging lanterns strung across a cozy rooftop"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u09.l01.task.pick-party",
+          "kind": "choice",
+          "prompt": "Mia has cake, music, and ten friends at her home. What is this?",
+          "answer": "a birthday party",
+          "options": [
+            "a birthday party",
+            "a school timetable",
+            "a dentist appointment"
+          ],
+          "explanation": "Friends, cake, and music together make a birthday party.",
+          "itemIds": [
+            "en.elementary.u09.l01.party",
+            "en.beginner.u11.l05.birthday"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l01.task.hear-balloon",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have a big red balloon.",
+          "answer": "I have a big red balloon.",
+          "options": [
+            "I have a big red balloon.",
+            "I have a big red bicycle.",
+            "I have a small blue balloon."
+          ],
+          "explanation": "Listen for the words red and balloon at the end.",
+          "itemIds": [
+            "en.elementary.u09.l01.balloon",
+            "en.beginner.u06.l01.red"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l01.task.pick-candle",
+          "kind": "choice",
+          "prompt": "Look at the birthday cake. What is on top of the cake?",
+          "answer": "a candle",
+          "options": [
+            "a candle",
+            "a toothbrush",
+            "a screwdriver"
+          ],
+          "explanation": "We put a candle on a birthday cake.",
+          "itemIds": [
+            "en.elementary.u09.l01.candle",
+            "en.beginner.u03.l06.cake"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l01.task.match-things",
+          "kind": "match",
+          "prompt": "Match each party word with its description.",
+          "pairs": [
+            {
+              "left": "a box with a surprise",
+              "right": "a present"
+            },
+            {
+              "left": "a message for a friend",
+              "right": "an invitation"
+            },
+            {
+              "left": "beautiful flowers and balloons",
+              "right": "decorations"
+            }
+          ],
+          "explanation": "A present is a gift in a box, an invitation asks a friend to come, and decorations make the room beautiful.",
+          "itemIds": [
+            "en.elementary.u09.l01.present",
+            "en.elementary.u09.l01.invitation",
+            "en.elementary.u09.l01.decorations"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l01.task.build-present",
+          "kind": "build",
+          "prompt": "Build the sentence about Ben's gift.",
+          "answer": "She gave him a present.",
+          "tiles": [
+            "She",
+            "gave",
+            "him",
+            "a",
+            "present",
+            "book"
+          ],
+          "explanation": "Gave is the past of give: She gave him a present.",
+          "itemIds": [
+            "en.elementary.u09.l01.present",
+            "en.elementary.u04.l02.gave"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l01.task.fill-invitation",
+          "kind": "fill",
+          "prompt": "Sam wants Ana at his party. Complete the sentence.",
+          "text": "Sam wrote an ___ to Ana.",
+          "answer": "invitation",
+          "options": [
+            "invitation",
+            "umbrella",
+            "accident"
+          ],
+          "explanation": "You write an invitation when you ask a friend to a party.",
+          "itemIds": [
+            "en.elementary.u09.l01.invitation"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l01.task.fill-decorations",
+          "kind": "fill",
+          "prompt": "The room looks great for the party. Complete the sentence.",
+          "text": "We made beautiful ___ for the room.",
+          "answer": "decorations",
+          "options": [
+            "decorations",
+            "headphones",
+            "sandwiches"
+          ],
+          "explanation": "Decorations make a party room look special.",
+          "itemIds": [
+            "en.elementary.u09.l01.decorations"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l01.task.say-party",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "There are ten candles on the cake at the party.",
+          "answer": "There are ten candles on the cake at the party.",
+          "explanation": "Use plural candles after ten.",
+          "itemIds": [
+            "en.elementary.u09.l01.party",
+            "en.elementary.u09.l01.candle"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Smarty forget to put on Ben's cake?",
+        "image": {
+          "id": "en-a2-u09-l01-scene",
+          "describe": "Smarty the black cat and Mia decorating a sunny rooftop with balloons, streamers, presents on a table, and a birthday cake."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Look at the decorations, Mia! They are beautiful."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thanks, Smarty! I have ten red balloons."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Did you send the invitations?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes, I did! Every friend is coming to the party."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Here is a big present for Ben."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Great! Now we need candles for his birthday cake."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Sorry! Did I forget the candles?"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u09.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "How many red balloons does Mia have?",
+            "answer": "ten",
+            "options": [
+              "ten",
+              "five",
+              "two"
+            ],
+            "explanation": "Mia says: I have ten red balloons.",
+            "itemIds": [
+              "en.elementary.u09.l01.balloon"
+            ]
+          },
+          {
+            "id": "en.elementary.u09.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Smarty forget?",
+            "answer": "the candles",
+            "options": [
+              "the candles",
+              "the present",
+              "the invitations"
+            ],
+            "explanation": "Smarty asks: Did I forget the candles?",
+            "itemIds": [
+              "en.elementary.u09.l01.candle"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are helping Smarty get ready for a birthday party. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "We are having a party! What decorations do we have?",
+            "accept": [
+              "^(?:we have )?(?:red |blue |yellow |beautiful |big )?(?:balloons|flowers|decorations)(?: and (?:balloons|flowers|decorations))?$"
+            ],
+            "example": "We have red balloons and flowers.",
+            "hint": "Say what decorations we have, like balloons or flowers.",
+            "itemIds": [
+              "en.elementary.u09.l01.party",
+              "en.elementary.u09.l01.balloon",
+              "en.elementary.u09.l01.decorations"
+            ]
+          },
+          {
+            "smarty": "Did you buy a present for our friend?",
+            "accept": [
+              "^yes(?: i did| i bought a present| i have a present)?$",
+              "^i (?:bought|have) a (?:big |small |nice )?present$"
+            ],
+            "example": "Yes, I bought a present.",
+            "hint": "Tell Smarty Yes, or say that you bought a present.",
+            "itemIds": [
+              "en.elementary.u09.l01.present",
+              "en.elementary.u04.l02.bought"
+            ]
+          },
+          {
+            "smarty": "How many candles are on the birthday cake?",
+            "accept": [
+              "^(?:there are )?(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve) candles(?: on the cake)?$",
+              "^(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)$"
+            ],
+            "example": "There are ten candles.",
+            "hint": "Give a number of candles, like five candles or ten candles.",
+            "itemIds": [
+              "en.elementary.u09.l01.candle",
+              "en.beginner.u11.l05.birthday",
+              "en.beginner.u03.l06.cake"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u11.l05.birthday",
+        "en.beginner.u03.l06.cake",
+        "en.beginner.u06.l01.red",
+        "en.elementary.u04.l02.gave",
+        "en.elementary.u04.l02.bought"
+      ]
+    },
+    {
+      "id": "en.elementary.u09.l02",
+      "section": "elementary",
+      "unit": 9,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Best wishes",
+      "canDo": "Wish people well",
+      "scenario": "Smarty and his friends write cards and share good wishes for special days.",
+      "items": [
+        {
+          "id": "en.elementary.u09.l02.happy-birthday",
+          "text": "Happy birthday!",
+          "kind": "phrase",
+          "example": "Happy birthday! Here is a present for you.",
+          "note": "Say ‘Happy birthday!’ to a friend on the day they were born."
+        },
+        {
+          "id": "en.elementary.u09.l02.congratulations",
+          "text": "Congratulations!",
+          "kind": "word",
+          "example": "You got the prize! Congratulations!",
+          "note": "Say ‘Congratulations!’ when someone wins a prize, passes an exam, or gets good news."
+        },
+        {
+          "id": "en.elementary.u09.l02.happy-new-year",
+          "text": "Happy New Year!",
+          "kind": "phrase",
+          "example": "It is January! Happy New Year!",
+          "note": "Say ‘Happy New Year!’ to friends and family when a new year begins."
+        },
+        {
+          "id": "en.elementary.u09.l02.merry-christmas",
+          "text": "Merry Christmas!",
+          "kind": "phrase",
+          "example": "It is December and there is snow outside. Merry Christmas!",
+          "note": "Say ‘Merry Christmas!’ to people who celebrate Christmas in December."
+        },
+        {
+          "id": "en.elementary.u09.l02.best-wishes",
+          "text": "Best wishes",
+          "kind": "phrase",
+          "example": "I wrote Best wishes on the birthday card.",
+          "note": "Write ‘Best wishes’ at the end of a card to wish someone happiness."
+        },
+        {
+          "id": "en.elementary.u09.l02.eid-mubarak",
+          "text": "Eid Mubarak!",
+          "kind": "phrase",
+          "example": "I visited my grandmother and grandfather and I was happy. Eid Mubarak!",
+          "note": "Say ‘Eid Mubarak!’ to wish friends and family a blessed and happy Eid."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u09.l02.task.pick-birthday",
+          "kind": "choice",
+          "prompt": "It is Leo's birthday and you give him a present. What do you say?",
+          "answer": "Happy birthday!",
+          "options": [
+            "Happy birthday!",
+            "Get well soon",
+            "Just looking"
+          ],
+          "explanation": "Say Happy birthday! when it is someone's birthday.",
+          "itemIds": [
+            "en.elementary.u09.l02.happy-birthday",
+            "en.elementary.u09.l01.present"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l02.task.hear-congrats",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Congratulations! You got the prize.",
+          "answer": "Congratulations! You got the prize.",
+          "options": [
+            "Congratulations! You got the prize.",
+            "Thank you! You got the card.",
+            "Goodbye! See you later."
+          ],
+          "explanation": "Congratulations! is used when someone does something great or gets a prize.",
+          "itemIds": [
+            "en.elementary.u09.l02.congratulations",
+            "en.elementary.u04.l10.prize"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l02.task.match-wishes",
+          "kind": "match",
+          "prompt": "Match each special holiday with its greeting.",
+          "pairs": [
+            {
+              "left": "first day of January",
+              "right": "Happy New Year!"
+            },
+            {
+              "left": "a day in December",
+              "right": "Merry Christmas!"
+            },
+            {
+              "left": "a day with Eid",
+              "right": "Eid Mubarak!"
+            }
+          ],
+          "explanation": "Match each special holiday with its greeting.",
+          "itemIds": [
+            "en.elementary.u09.l02.happy-new-year",
+            "en.elementary.u09.l02.merry-christmas",
+            "en.elementary.u09.l02.eid-mubarak",
+            "en.beginner.u11.l02.january"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l02.task.build-new-year",
+          "kind": "build",
+          "prompt": "It is the first of January. Build the greeting.",
+          "answer": "Happy New Year!",
+          "tiles": [
+            "Happy",
+            "New",
+            "Year",
+            "Old",
+            "Day"
+          ],
+          "explanation": "In January, we greet people with Happy New Year!",
+          "itemIds": [
+            "en.elementary.u09.l02.happy-new-year",
+            "en.beginner.u11.l02.january"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l02.task.fill-card",
+          "kind": "fill",
+          "prompt": "You finish writing a card to your friend. Complete the closing.",
+          "text": "___ from your friend Sam!",
+          "answer": "Best wishes",
+          "options": [
+            "Best wishes",
+            "Wrong number",
+            "Hold on"
+          ],
+          "explanation": "Best wishes is a warm way to end a greeting card.",
+          "itemIds": [
+            "en.elementary.u09.l02.best-wishes",
+            "en.beginner.u07.l07.card"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l02.task.fill-eid",
+          "kind": "fill",
+          "prompt": "Omar visits his aunt and uncle for Eid. What does he say?",
+          "text": "___, Aunt Zara!",
+          "answer": "Eid Mubarak",
+          "options": [
+            "Eid Mubarak",
+            "Good luck",
+            "Excuse me"
+          ],
+          "explanation": "Say Eid Mubarak! to greet family and friends on Eid.",
+          "itemIds": [
+            "en.elementary.u09.l02.eid-mubarak"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l02.task.say-congrats",
+          "kind": "speak",
+          "prompt": "Say this aloud to celebrate a friend's success.",
+          "text": "Congratulations! Best wishes to you!",
+          "answer": "Congratulations! Best wishes to you!",
+          "explanation": "Congratulations! and Best wishes both share warm good feelings.",
+          "itemIds": [
+            "en.elementary.u09.l02.congratulations",
+            "en.elementary.u09.l02.best-wishes"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why does Zara get a card from Smarty and Omar?",
+        "image": {
+          "id": "en-a2-u09-l02-scene",
+          "describe": "Smarty the black cat and Omar standing on the rooftop holding greeting cards and smiling at Zara."
+        },
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Look, Smarty! Zara got first prize in art!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Amazing! Let us write a card for her."
+          },
+          {
+            "speaker": "Omar",
+            "text": "What can we write on the card?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "We can write Congratulations and Best wishes!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Hi, Smarty! Hi, Omar! What is that?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Congratulations, Zara! This card is for you."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Thank you! And Happy New Year to you too!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u09.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Why do Smarty and Omar say Congratulations to Zara?",
+            "answer": "She got first prize in art.",
+            "options": [
+              "She got first prize in art.",
+              "She bought a new bicycle.",
+              "She went to the hospital."
+            ],
+            "explanation": "Omar says: Zara got first prize in art!",
+            "itemIds": [
+              "en.elementary.u09.l02.congratulations",
+              "en.elementary.u04.l10.prize"
+            ]
+          },
+          {
+            "id": "en.elementary.u09.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Smarty and Omar write on the card?",
+            "answer": "Congratulations and Best wishes",
+            "options": [
+              "Congratulations and Best wishes",
+              "Happy birthday and Get well soon",
+              "See you later and Goodbye"
+            ],
+            "explanation": "Smarty says: We can write Congratulations and Best wishes!",
+            "itemIds": [
+              "en.elementary.u09.l02.best-wishes",
+              "en.beginner.u07.l07.card"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is celebrating special days with you. Reply with the right greeting.",
+        "turns": [
+          {
+            "smarty": "It is my birthday! I have a cake with five candles.",
+            "accept": [
+              "^happy birthday(?: smarty)?$"
+            ],
+            "example": "Happy birthday, Smarty!",
+            "hint": "Wish Smarty a happy birthday.",
+            "itemIds": [
+              "en.elementary.u09.l02.happy-birthday",
+              "en.elementary.u09.l01.candle"
+            ]
+          },
+          {
+            "smarty": "I passed my difficult maths exam!",
+            "accept": [
+              "^congratulations(?: smarty)?$",
+              "^well done(?: smarty)?$"
+            ],
+            "example": "Congratulations, Smarty!",
+            "hint": "Say Congratulations! to Smarty.",
+            "itemIds": [
+              "en.elementary.u09.l02.congratulations",
+              "en.elementary.u01.l05.pass"
+            ]
+          },
+          {
+            "smarty": "It is January! A new year is here!",
+            "accept": [
+              "^happy new year(?: smarty)?$"
+            ],
+            "example": "Happy New Year, Smarty!",
+            "hint": "Say Happy New Year!",
+            "itemIds": [
+              "en.elementary.u09.l02.happy-new-year",
+              "en.beginner.u11.l02.january"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u09.l01.present",
+        "en.elementary.u04.l10.prize",
+        "en.beginner.u11.l02.january",
+        "en.beginner.u07.l07.card",
+        "en.elementary.u09.l01.candle",
+        "en.elementary.u01.l05.pass"
+      ]
+    },
+    {
+      "id": "en.elementary.u09.l03",
+      "section": "elementary",
+      "unit": 9,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "Festivals",
+      "canDo": "Name festival things",
+      "scenario": "Smarty and Leo watch a lively street festival from the rooftop.",
+      "items": [
+        {
+          "id": "en.elementary.u09.l03.fireworks",
+          "text": "fireworks",
+          "kind": "word",
+          "forms": [
+            "firework"
+          ],
+          "example": "We watched the red and yellow fireworks last night.",
+          "note": "Fireworks light up the dark sky with bright colours and loud bangs at night.",
+          "image": {
+            "id": "fireworks",
+            "describe": "bright red, blue, and gold fireworks exploding in a dark night sky over city rooftops"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l03.costume",
+          "text": "costume",
+          "kind": "word",
+          "forms": [
+            "costumes"
+          ],
+          "example": "Lily is wearing an amazing lion costume.",
+          "note": "Wear a costume when you want to dress up like an animal, a hero, or someone else.",
+          "image": {
+            "id": "costume",
+            "describe": "a playful cat wearing a bright lion costume with a fluffy mane and tail"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l03.parade",
+          "text": "parade",
+          "kind": "word",
+          "forms": [
+            "parades"
+          ],
+          "example": "A big band played music in the parade.",
+          "note": "In a parade, people walk, dance, and play music together down the street.",
+          "image": {
+            "id": "parade",
+            "describe": "cats in bright costumes playing drums and trumpets as they walk down a sunny street"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l03.festival",
+          "text": "festival",
+          "kind": "word",
+          "forms": [
+            "festivals"
+          ],
+          "example": "There is a music festival in the park every summer.",
+          "note": "A festival is a big celebration with music, food, and fun for the whole town.",
+          "image": {
+            "id": "festival",
+            "describe": "a lively outdoor spring festival with colorful tents, lanterns, music, and happy cats"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l03.wedding",
+          "text": "wedding",
+          "kind": "word",
+          "forms": [
+            "weddings"
+          ],
+          "example": "My aunt had a beautiful wedding in spring.",
+          "note": "A wedding is the special day when two people get married and celebrate with family.",
+          "image": {
+            "id": "wedding",
+            "describe": "two happy cats in festive wedding clothes standing under an arch of white roses"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l03.guest",
+          "text": "guest",
+          "kind": "word",
+          "forms": [
+            "guests"
+          ],
+          "example": "Every guest at the wedding got a small present.",
+          "note": "A guest is someone you invite to visit your home, party, or wedding.",
+          "image": {
+            "id": "guest",
+            "describe": "a smiling cat arriving at a front door holding a wrapped present and flowers"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u09.l03.task.pick-fireworks",
+          "kind": "choice",
+          "prompt": "Look at the bright lights in the night sky. What are they?",
+          "answer": "fireworks",
+          "options": [
+            "fireworks",
+            "candles",
+            "potatoes"
+          ],
+          "explanation": "Fireworks explode with bright lights in the sky at night.",
+          "itemIds": [
+            "en.elementary.u09.l03.fireworks"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l03.task.hear-costume",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I am wearing a tiger costume.",
+          "answer": "I am wearing a tiger costume.",
+          "options": [
+            "I am wearing a tiger costume.",
+            "I am wearing a winter coat.",
+            "I am wearing black boots."
+          ],
+          "explanation": "A costume is special clothing for a party or festival.",
+          "itemIds": [
+            "en.elementary.u09.l03.costume",
+            "en.beginner.u06.l05.i-am-wearing"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l03.task.match-festival",
+          "kind": "match",
+          "prompt": "Match each celebration word with its description.",
+          "pairs": [
+            {
+              "left": "friends walking and playing music",
+              "right": "a parade"
+            },
+            {
+              "left": "a big party in the park",
+              "right": "a festival"
+            },
+            {
+              "left": "a day with a cake and a card",
+              "right": "a wedding"
+            }
+          ],
+          "explanation": "Each word names a different kind of celebration.",
+          "itemIds": [
+            "en.elementary.u09.l03.parade",
+            "en.elementary.u09.l03.festival",
+            "en.elementary.u09.l03.wedding",
+            "en.beginner.u09.l06.music"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l03.task.build-guest",
+          "kind": "build",
+          "prompt": "Build the sentence about the visitors at the party.",
+          "answer": "Every guest gave a present.",
+          "tiles": [
+            "Every",
+            "guest",
+            "gave",
+            "a",
+            "present",
+            "chair"
+          ],
+          "explanation": "A guest is a person invited to a celebration.",
+          "itemIds": [
+            "en.elementary.u09.l03.guest",
+            "en.elementary.u09.l01.present"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l03.task.fill-parade",
+          "kind": "fill",
+          "prompt": "Smarty hears drums and trumpets outside. Complete the sentence.",
+          "text": "There is a loud ___ outside with music.",
+          "answer": "parade",
+          "options": [
+            "parade",
+            "library",
+            "passport"
+          ],
+          "explanation": "People march and play music in a parade.",
+          "itemIds": [
+            "en.elementary.u09.l03.parade",
+            "en.beginner.u09.l06.music"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l03.task.fill-wedding",
+          "kind": "fill",
+          "prompt": "Ana is invited to her cousin's big day. Complete the sentence.",
+          "text": "Ana is a ___ at her cousin's wedding.",
+          "answer": "guest",
+          "options": [
+            "guest",
+            "waiter",
+            "pilot"
+          ],
+          "explanation": "Someone invited to a wedding is a guest.",
+          "itemIds": [
+            "en.elementary.u09.l03.wedding",
+            "en.elementary.u09.l03.guest"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l03.task.say-festival",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "We watched fireworks at the summer festival.",
+          "answer": "We watched fireworks at the summer festival.",
+          "explanation": "Watched is the past form of watch.",
+          "itemIds": [
+            "en.elementary.u09.l03.festival",
+            "en.elementary.u09.l03.fireworks"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Leo see from Smarty's rooftop?",
+        "image": {
+          "id": "en-a2-u09-l03-scene",
+          "describe": "Smarty the black cat and Leo looking down from the rooftop at a colorful street parade with animals in costumes and fireworks above."
+        },
+        "lines": [
+          {
+            "speaker": "Leo",
+            "text": "Smarty, look outside! What is happening?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is the spring festival! Look at the parade!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "I see a band with drums and trumpets!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And look at Mia! She is wearing a lion costume."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Are there many guests at the festival?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, a lot of friends are here! And at nine o'clock there are fireworks!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Amazing! I love festivals!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u09.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Mia wearing in the parade?",
+            "answer": "a lion costume",
+            "options": [
+              "a lion costume",
+              "a wedding dress",
+              "a winter scarf"
+            ],
+            "explanation": "Smarty says: She is wearing a lion costume.",
+            "itemIds": [
+              "en.elementary.u09.l03.costume"
+            ]
+          },
+          {
+            "id": "en.elementary.u09.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "What happens at nine o'clock?",
+            "answer": "There are fireworks.",
+            "options": [
+              "There are fireworks.",
+              "There is a test.",
+              "They go home."
+            ],
+            "explanation": "Smarty says: And at nine o'clock there are fireworks!",
+            "itemIds": [
+              "en.elementary.u09.l03.fireworks"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are talking with Smarty about festivals and celebrations. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Did you ever go to a big festival or a wedding?",
+            "accept": [
+              "^yes(?: i did| i went to a (?:big )?(?:festival|wedding))?$",
+              "^i went to a (?:big )?(?:festival|wedding)$",
+              "^no(?: i did not)?$"
+            ],
+            "example": "Yes, I went to a big festival.",
+            "hint": "Say Yes, I went to a festival, or Yes, I went to a wedding.",
+            "itemIds": [
+              "en.elementary.u09.l03.festival",
+              "en.elementary.u09.l03.wedding",
+              "en.beginner.u10.l03.i-went"
+            ]
+          },
+          {
+            "smarty": "What costume do you want to wear to a party?",
+            "accept": [
+              "^(?:i want to wear )?a (?:lion|tiger|bear|cat|rabbit|frog|monkey|red|blue|amazing|big) costume$",
+              "^a (?:lion|tiger|bear|cat|rabbit|frog|monkey) costume$"
+            ],
+            "example": "I want to wear a lion costume.",
+            "hint": "Name an animal costume, like a lion costume or a cat costume.",
+            "itemIds": [
+              "en.elementary.u09.l03.costume",
+              "en.elementary.u09.l01.party",
+              "en.beginner.u11.l07.i-want-to"
+            ]
+          },
+          {
+            "smarty": "Do you like fireworks at night?",
+            "accept": [
+              "^yes(?: i do| i like fireworks| i love fireworks)?$",
+              "^i (?:like|love) fireworks(?: at night)?$",
+              "^no(?: i do not)?$"
+            ],
+            "example": "Yes, I love fireworks!",
+            "hint": "Tell Smarty Yes, I like fireworks or No.",
+            "itemIds": [
+              "en.elementary.u09.l03.fireworks",
+              "en.beginner.u03.l03.i-like"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u09.l01.party",
+        "en.elementary.u09.l01.present",
+        "en.beginner.u09.l06.music",
+        "en.beginner.u06.l05.i-am-wearing",
+        "en.beginner.u10.l03.i-went",
+        "en.beginner.u11.l07.i-want-to",
+        "en.beginner.u03.l03.i-like"
+      ]
+    },
+    {
+      "id": "en.elementary.u09.l04",
+      "section": "elementary",
+      "unit": 9,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty quizzes Sam and Ana on party things, greetings, and festivals.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u09.l04.task.pick-present",
+          "kind": "choice",
+          "prompt": "Sam wants friends at his party. What does he send them?",
+          "answer": "an invitation",
+          "options": [
+            "an invitation",
+            "a candle",
+            "a firework"
+          ],
+          "explanation": "Send an invitation to invite friends to a party.",
+          "itemIds": [
+            "en.elementary.u09.l01.invitation",
+            "en.elementary.u09.l01.party"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l04.task.hear-wishes",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Congratulations! Best wishes on your wedding!",
+          "answer": "Congratulations! Best wishes on your wedding!",
+          "options": [
+            "Congratulations! Best wishes on your wedding!",
+            "Happy New Year! See you tomorrow!",
+            "Get well soon! Take a rest!"
+          ],
+          "explanation": "Congratulations! and Best wishes are warm greetings for a wedding.",
+          "itemIds": [
+            "en.elementary.u09.l02.congratulations",
+            "en.elementary.u09.l02.best-wishes",
+            "en.elementary.u09.l03.wedding"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l04.task.match-review",
+          "kind": "match",
+          "prompt": "Match each word from Lessons 1 and 3 with its meaning.",
+          "pairs": [
+            {
+              "left": "red and blue things for a party",
+              "right": "a balloon"
+            },
+            {
+              "left": "what I am wearing at a festival",
+              "right": "a costume"
+            },
+            {
+              "left": "big lights at night",
+              "right": "fireworks"
+            }
+          ],
+          "explanation": "Review the words from Lessons 1 and 3.",
+          "itemIds": [
+            "en.elementary.u09.l01.balloon",
+            "en.elementary.u09.l03.costume",
+            "en.elementary.u09.l03.fireworks"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l04.task.build-birthday",
+          "kind": "build",
+          "prompt": "Build the birthday greeting.",
+          "answer": "Happy birthday! Here is your cake!",
+          "tiles": [
+            "Happy",
+            "birthday",
+            "Here",
+            "is",
+            "your",
+            "cake",
+            "parade"
+          ],
+          "explanation": "Say Happy birthday! when giving someone a birthday cake.",
+          "itemIds": [
+            "en.elementary.u09.l02.happy-birthday"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l04.task.fill-guest",
+          "kind": "fill",
+          "prompt": "Tom is invited to his sister's wedding. Complete the sentence.",
+          "text": "Tom is a happy ___ at the wedding.",
+          "answer": "guest",
+          "options": [
+            "guest",
+            "balloon",
+            "candle"
+          ],
+          "explanation": "An invited visitor at a wedding or party is a guest.",
+          "itemIds": [
+            "en.elementary.u09.l03.guest",
+            "en.elementary.u09.l03.wedding"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l04.task.fill-decorations",
+          "kind": "fill",
+          "prompt": "Smarty puts flowers and balloons on the table. Complete the sentence.",
+          "text": "The ___ for the party are amazing.",
+          "answer": "decorations",
+          "options": [
+            "decorations",
+            "invitations",
+            "fireworks"
+          ],
+          "explanation": "Flowers and balloons on the table are party decorations.",
+          "itemIds": [
+            "en.elementary.u09.l01.decorations",
+            "en.elementary.u09.l01.party"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l04.task.pick-eid",
+          "kind": "choice",
+          "prompt": "It is the first day of Eid. How do you greet your friends?",
+          "answer": "Eid Mubarak!",
+          "options": [
+            "Eid Mubarak!",
+            "Merry Christmas!",
+            "What is the matter?"
+          ],
+          "explanation": "Eid Mubarak! is the greeting for Eid.",
+          "itemIds": [
+            "en.elementary.u09.l02.eid-mubarak"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l04.task.say-parade",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "We saw a big parade at the festival.",
+          "answer": "We saw a big parade at the festival.",
+          "explanation": "Saw is the past form of see.",
+          "itemIds": [
+            "en.elementary.u09.l03.parade",
+            "en.elementary.u09.l03.festival"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What special day are Sam and Ana celebrating on the rooftop?",
+        "image": {
+          "id": "en-a2-u09-l04-scene",
+          "describe": "Smarty the black cat, Sam, and Ana on a decorated rooftop with balloons, presents, and greeting cards at sunset."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Look at all the balloons and decorations!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Yes! Every guest is here for Sam's birthday party."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Thank you for the presents and cards!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Happy birthday, Sam! Best wishes!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look outside! There is a parade and fireworks for the festival!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "What a great birthday!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u09.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Whose birthday party is it?",
+            "answer": "Sam's",
+            "options": [
+              "Sam's",
+              "Ana's",
+              "Smarty's"
+            ],
+            "explanation": "Ana says: Every guest is here for Sam's birthday party.",
+            "itemIds": [
+              "en.elementary.u09.l01.party",
+              "en.elementary.u09.l02.happy-birthday"
+            ]
+          },
+          {
+            "id": "en.elementary.u09.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "What do they see outside?",
+            "answer": "a parade and fireworks",
+            "options": [
+              "a parade and fireworks",
+              "a wedding and a cake",
+              "a bus and a train"
+            ],
+            "explanation": "Smarty says: There is a parade and fireworks for the festival!",
+            "itemIds": [
+              "en.elementary.u09.l03.parade",
+              "en.elementary.u09.l03.fireworks"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is reviewing party words and greetings with you. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Name two things you see at a birthday party!",
+            "accept": [
+              "^(?:balloons|candles|presents|decorations|cake|invitations)(?: and (?:balloons|candles|presents|decorations|cake|invitations))?$"
+            ],
+            "example": "Balloons and presents",
+            "hint": "Name two party things, like balloons and presents.",
+            "itemIds": [
+              "en.elementary.u09.l01.balloon",
+              "en.elementary.u09.l01.present",
+              "en.elementary.u09.l01.candle",
+              "en.elementary.u09.l01.decorations"
+            ]
+          },
+          {
+            "smarty": "Your friend just got first prize! What do you say?",
+            "accept": [
+              "^congratulations(?: best wishes)?$",
+              "^well done$"
+            ],
+            "example": "Congratulations!",
+            "hint": "Say Congratulations! to your friend.",
+            "itemIds": [
+              "en.elementary.u09.l02.congratulations",
+              "en.elementary.u09.l02.best-wishes"
+            ]
+          },
+          {
+            "smarty": "What do you like best at a festival: the parade, the costumes, or the fireworks?",
+            "accept": [
+              "^(?:i like |i love )?(?:the )?(?:parade|costumes|fireworks)(?: best)?$"
+            ],
+            "example": "I like the fireworks.",
+            "hint": "Choose one: the parade, the costumes, or the fireworks.",
+            "itemIds": [
+              "en.elementary.u09.l03.parade",
+              "en.elementary.u09.l03.costume",
+              "en.elementary.u09.l03.fireworks",
+              "en.elementary.u09.l03.festival"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u09.l01.invitation",
+        "en.elementary.u09.l01.party",
+        "en.elementary.u09.l02.congratulations",
+        "en.elementary.u09.l02.best-wishes",
+        "en.elementary.u09.l03.wedding",
+        "en.elementary.u09.l01.balloon",
+        "en.elementary.u09.l03.costume",
+        "en.elementary.u09.l03.fireworks",
+        "en.elementary.u09.l02.happy-birthday",
+        "en.elementary.u09.l03.guest",
+        "en.elementary.u09.l01.decorations",
+        "en.elementary.u09.l02.eid-mubarak",
+        "en.elementary.u09.l03.parade",
+        "en.elementary.u09.l03.festival",
+        "en.elementary.u09.l01.present",
+        "en.elementary.u09.l01.candle"
+      ]
+    },
+    {
+      "id": "en.elementary.u09.l05",
+      "section": "elementary",
+      "unit": 9,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Inviting",
+      "canDo": "Invite and reply",
+      "scenario": "Smarty invites Ben and Lily to a rooftop party on Saturday.",
+      "items": [
+        {
+          "id": "en.elementary.u09.l05.would-you-like-to-come",
+          "text": "Would you like to come?",
+          "kind": "phrase",
+          "example": "We are having a party on Saturday. Would you like to come?",
+          "note": "Say ‘Would you like to come?’ when you want to invite someone politely."
+        },
+        {
+          "id": "en.elementary.u09.l05.i-would-love-to",
+          "text": "I would love to",
+          "kind": "phrase",
+          "example": "Yes, I would love to! What time is the party?",
+          "note": "Say ‘I would love to’ when you are happy to say yes to an invitation."
+        },
+        {
+          "id": "en.elementary.u09.l05.i-am-sorry-i-cannot-come",
+          "text": "I am sorry I cannot come",
+          "kind": "phrase",
+          "example": "I am sorry I cannot come because I have to work.",
+          "note": "Say ‘I am sorry I cannot come’ to say no politely when you are busy."
+        },
+        {
+          "id": "en.elementary.u09.l05.what-time-shall-we-meet",
+          "text": "What time shall we meet?",
+          "kind": "phrase",
+          "example": "The party is on Saturday. What time shall we meet?",
+          "note": "Ask ‘What time shall we meet?’ to agree on the hour to get together."
+        },
+        {
+          "id": "en.elementary.u09.l05.do-you-want-to-come",
+          "text": "Do you want to come?",
+          "kind": "phrase",
+          "example": "We are going to the festival. Do you want to come?",
+          "note": "Say ‘Do you want to come?’ as a friendly, casual way to invite a friend."
+        },
+        {
+          "id": "en.elementary.u09.l05.thanks-for-inviting-me",
+          "text": "Thanks for inviting me",
+          "kind": "phrase",
+          "forms": [
+            "invite",
+            "invites",
+            "invited"
+          ],
+          "example": "Thanks for inviting me to your birthday party!",
+          "note": "Always say ‘Thanks for inviting me’ when someone asks you to their event."
+        }
+      ],
+      "grammar": {
+        "title": "Would you like to…? vs Do you want to…?",
+        "explanation": "Both ask someone to join you. ‘Would you like to…?’ sounds polite, while ‘Do you want to…?’ sounds casual with close friends. Use ‘What time shall we…?’ to ask about the time.",
+        "examples": [
+          "Would you like to come to my party?",
+          "Do you want to come with us?",
+          "What time shall we meet?"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u09.l05.task.pick-invite",
+          "kind": "choice",
+          "prompt": "You want to invite your teacher politely to the school party. What do you say?",
+          "answer": "Would you like to come?",
+          "options": [
+            "Would you like to come?",
+            "What is your name?",
+            "Where is the bank?"
+          ],
+          "explanation": "Would you like to come? is a polite invitation.",
+          "itemIds": [
+            "en.elementary.u09.l05.would-you-like-to-come",
+            "en.elementary.u09.l01.party"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l05.task.hear-love-to",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I would love to come on Saturday!",
+          "answer": "I would love to come on Saturday!",
+          "options": [
+            "I would love to come on Saturday!",
+            "I am sorry I cannot come on Saturday.",
+            "I do not like Saturday."
+          ],
+          "explanation": "I would love to shows you are happy to accept.",
+          "itemIds": [
+            "en.elementary.u09.l05.i-would-love-to",
+            "en.beginner.u04.l07.saturday"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l05.task.match-replies",
+          "kind": "match",
+          "prompt": "Match each situation with the best reply.",
+          "pairs": [
+            {
+              "left": "you can go and are excited",
+              "right": "I would love to"
+            },
+            {
+              "left": "you cannot go",
+              "right": "I am sorry I cannot come"
+            },
+            {
+              "left": "you thank your friend",
+              "right": "Thanks for inviting me"
+            }
+          ],
+          "explanation": "Use polite phrases to accept, refuse, and say thank you.",
+          "itemIds": [
+            "en.elementary.u09.l05.i-would-love-to",
+            "en.elementary.u09.l05.i-am-sorry-i-cannot-come",
+            "en.elementary.u09.l05.thanks-for-inviting-me"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l05.task.build-time",
+          "kind": "build",
+          "prompt": "Ask your friend when to get together for the festival.",
+          "answer": "What time shall we meet?",
+          "tiles": [
+            "What",
+            "time",
+            "shall",
+            "we",
+            "meet",
+            "where"
+          ],
+          "explanation": "Use What time shall we meet? to ask for the meeting time.",
+          "itemIds": [
+            "en.elementary.u09.l05.what-time-shall-we-meet",
+            "en.elementary.u09.l03.festival"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l05.task.fill-want",
+          "kind": "fill",
+          "prompt": "Mia invites her best friend casually. Complete the question.",
+          "text": "___ to my party on Sunday?",
+          "answer": "Do you want to come",
+          "options": [
+            "Do you want to come",
+            "I am sorry I cannot come",
+            "Thanks for inviting me"
+          ],
+          "explanation": "Do you want to come? is a friendly way to invite a close friend.",
+          "itemIds": [
+            "en.elementary.u09.l05.do-you-want-to-come",
+            "en.elementary.u09.l01.party",
+            "en.beginner.u04.l07.sunday"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l05.task.fill-sorry",
+          "kind": "fill",
+          "prompt": "Leo has to visit his grandmother on Saturday. How does he say no politely?",
+          "text": "___ because I have to visit my grandmother.",
+          "answer": "I am sorry I cannot come",
+          "options": [
+            "I am sorry I cannot come",
+            "I would love to",
+            "What time shall we meet"
+          ],
+          "explanation": "I am sorry I cannot come is a polite way to refuse an invitation.",
+          "itemIds": [
+            "en.elementary.u09.l05.i-am-sorry-i-cannot-come"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l05.task.say-thanks",
+          "kind": "speak",
+          "prompt": "Say this polite reply aloud.",
+          "text": "Thanks for inviting me! Shall we meet at five o'clock?",
+          "answer": "Thanks for inviting me! Shall we meet at five o'clock?",
+          "explanation": "Thank your friend first, then suggest or ask the time.",
+          "itemIds": [
+            "en.elementary.u09.l05.thanks-for-inviting-me",
+            "en.beginner.u04.l01.oclock"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Can both Ben and Lily come to Smarty's party?",
+        "image": {
+          "id": "en-a2-u09-l05-scene",
+          "describe": "Smarty the black cat on the rooftop talking on a phone while Ben smiles and Lily looks at her calendar."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hi, Ben! We are having a party on Saturday. Would you like to come?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Thanks for inviting me, Smarty! I would love to!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great! Lily, do you want to come too?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "I am sorry I cannot come on Saturday. I have to visit my aunt."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I understand! Ben, what time shall we meet?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Shall we meet at six o'clock?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! See you at six o'clock!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u09.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Ben say to Smarty's invitation?",
+            "answer": "I would love to!",
+            "options": [
+              "I would love to!",
+              "I am sorry I cannot come.",
+              "I do not understand."
+            ],
+            "explanation": "Ben says: Thanks for inviting me, Smarty! I would love to!",
+            "itemIds": [
+              "en.elementary.u09.l05.i-would-love-to"
+            ]
+          },
+          {
+            "id": "en.elementary.u09.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "Why cannot Lily come on Saturday?",
+            "answer": "She has to visit her aunt.",
+            "options": [
+              "She has to visit her aunt.",
+              "She is ill in bed.",
+              "She has an exam."
+            ],
+            "explanation": "Lily says: I am sorry I cannot come on Saturday. I have to visit my aunt.",
+            "itemIds": [
+              "en.elementary.u09.l05.i-am-sorry-i-cannot-come"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty invites you to a rooftop party! Reply politely and ask about the time.",
+        "turns": [
+          {
+            "smarty": "Hello! We are having a party on Saturday. Would you like to come?",
+            "accept": [
+              "^(?:yes )?(?:thanks for inviting me )?i would love to(?: come)?$",
+              "^thanks for inviting me(?: i would love to)?$"
+            ],
+            "example": "Thanks for inviting me! I would love to!",
+            "hint": "Accept with I would love to or Thanks for inviting me.",
+            "itemIds": [
+              "en.elementary.u09.l05.would-you-like-to-come",
+              "en.elementary.u09.l05.i-would-love-to",
+              "en.elementary.u09.l05.thanks-for-inviting-me"
+            ]
+          },
+          {
+            "smarty": "Amazing! Now ask me what time we should meet.",
+            "accept": [
+              "^what time shall we meet$",
+              "^shall we meet at (?:one|two|three|four|five|six|seven|eight|nine|ten) oclock$"
+            ],
+            "example": "What time shall we meet?",
+            "hint": "Ask: What time shall we meet?",
+            "itemIds": [
+              "en.elementary.u09.l05.what-time-shall-we-meet"
+            ]
+          },
+          {
+            "smarty": "Let us meet at five o'clock! Can you come on Sunday too?",
+            "accept": [
+              "^i am sorry i cannot come(?: on sunday)?$",
+              "^sorry i cannot come(?: on sunday)?$"
+            ],
+            "example": "I am sorry I cannot come on Sunday.",
+            "hint": "Say: I am sorry I cannot come.",
+            "itemIds": [
+              "en.elementary.u09.l05.i-am-sorry-i-cannot-come",
+              "en.beginner.u04.l07.sunday"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u09.l01.party",
+        "en.beginner.u04.l07.saturday",
+        "en.beginner.u04.l01.oclock",
+        "en.elementary.u09.l03.festival",
+        "en.beginner.u04.l07.sunday"
+      ]
+    },
+    {
+      "id": "en.elementary.u09.l06",
+      "section": "elementary",
+      "unit": 9,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Planning",
+      "canDo": "Make plans together",
+      "scenario": "Smarty, Mia, and Sam plan the food, music, and time for the party.",
+      "items": [
+        {
+          "id": "en.elementary.u09.l06.shall-we",
+          "text": "Shall we",
+          "kind": "phrase",
+          "example": "Shall we buy red and yellow balloons?",
+          "note": "Start a question with ‘Shall we…?’ when you want to suggest an idea together."
+        },
+        {
+          "id": "en.elementary.u09.l06.i-will-bring",
+          "text": "I will bring",
+          "kind": "phrase",
+          "forms": [
+            "bring",
+            "brings",
+            "brought"
+          ],
+          "example": "I will bring my guitar and some music.",
+          "note": "Say ‘I will bring…’ when you decide right now to carry something to the party."
+        },
+        {
+          "id": "en.elementary.u09.l06.i-will-buy",
+          "text": "I will buy",
+          "kind": "phrase",
+          "forms": [
+            "buys"
+          ],
+          "example": "I will buy a big cake at the shop.",
+          "note": "Say ‘I will buy…’ when you offer to go to the shop and get something."
+        },
+        {
+          "id": "en.elementary.u09.l06.we-are-going-to",
+          "text": "We are going to",
+          "kind": "phrase",
+          "example": "We are going to dance and play games.",
+          "note": "Use ‘We are going to…’ to talk about plans you have already decided."
+        },
+        {
+          "id": "en.elementary.u09.l06.we-are-meeting",
+          "text": "We are meeting",
+          "kind": "phrase",
+          "example": "We are meeting at five o'clock on Saturday.",
+          "note": "Use ‘We are meeting…’ for a fixed time and place with other people."
+        },
+        {
+          "id": "en.elementary.u09.l06.we-need-to",
+          "text": "We need to",
+          "kind": "phrase",
+          "forms": [
+            "needs",
+            "needed"
+          ],
+          "example": "We need to clean the room now.",
+          "note": "Say ‘We need to…’ for important jobs you must do before the party starts."
+        }
+      ],
+      "grammar": {
+        "title": "Future plans: will vs going to vs present continuous",
+        "explanation": "Use ‘I will…’ for a quick offer now, ‘We are going to…’ for a decided plan, and ‘We are meeting…’ for an arranged time with friends. Use ‘Shall we…?’ to make a suggestion.",
+        "examples": [
+          "Shall we buy some juice?",
+          "I will bring the music.",
+          "We are going to have a big party.",
+          "We are meeting at six o'clock."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u09.l06.task.pick-shall",
+          "kind": "choice",
+          "prompt": "You want to suggest buying balloons together. How do you start?",
+          "answer": "Shall we",
+          "options": [
+            "Shall we",
+            "I was",
+            "Where is"
+          ],
+          "explanation": "Use Shall we…? to suggest an idea to a friend.",
+          "itemIds": [
+            "en.elementary.u09.l06.shall-we",
+            "en.elementary.u09.l01.balloon"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l06.task.hear-bring",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I will bring my guitar to the party.",
+          "answer": "I will bring my guitar to the party.",
+          "options": [
+            "I will bring my guitar to the party.",
+            "I bought a guitar yesterday.",
+            "I do not have a guitar."
+          ],
+          "explanation": "I will bring shows an offer made right now.",
+          "itemIds": [
+            "en.elementary.u09.l06.i-will-bring"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l06.task.match-future",
+          "kind": "match",
+          "prompt": "Match each future phrase with how we use it.",
+          "pairs": [
+            {
+              "left": "I buy it now",
+              "right": "I will buy"
+            },
+            {
+              "left": "a plan for next week",
+              "right": "We are going to"
+            },
+            {
+              "left": "a time with friends",
+              "right": "We are meeting"
+            }
+          ],
+          "explanation": "English uses different forms for quick offers, plans, and fixed times.",
+          "itemIds": [
+            "en.elementary.u09.l06.i-will-buy",
+            "en.elementary.u09.l06.we-are-going-to",
+            "en.elementary.u09.l06.we-are-meeting"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l06.task.build-going-to",
+          "kind": "build",
+          "prompt": "Build the sentence about your party plan.",
+          "answer": "We are going to bring decorations.",
+          "tiles": [
+            "We",
+            "are",
+            "going",
+            "to",
+            "bring",
+            "decorations",
+            "was"
+          ],
+          "explanation": "We are going to + verb describes a plan.",
+          "itemIds": [
+            "en.elementary.u09.l06.we-are-going-to",
+            "en.elementary.u09.l01.decorations"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l06.task.fill-buy",
+          "kind": "fill",
+          "prompt": "There is no cake yet. Sam offers to get one. Complete the sentence.",
+          "text": "Of course! ___ a big cake at the supermarket.",
+          "answer": "I will buy",
+          "options": [
+            "I will buy",
+            "We were",
+            "Did you"
+          ],
+          "explanation": "Use I will buy when you decide at that moment to buy something.",
+          "itemIds": [
+            "en.elementary.u09.l06.i-will-buy",
+            "en.beginner.u03.l06.cake"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l06.task.fill-need",
+          "kind": "fill",
+          "prompt": "The table is dirty before the guests come. Complete the sentence.",
+          "text": "___ clean the table now.",
+          "answer": "We need to",
+          "options": [
+            "We need to",
+            "Happy birthday",
+            "Shall we"
+          ],
+          "explanation": "We need to shows something important that must be done.",
+          "itemIds": [
+            "en.elementary.u09.l06.we-need-to"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l06.task.say-meeting",
+          "kind": "speak",
+          "prompt": "Say this sentence about your arranged time aloud.",
+          "text": "We are meeting at five o'clock on Saturday.",
+          "answer": "We are meeting at five o'clock on Saturday.",
+          "explanation": "We are meeting describes an arranged time with friends.",
+          "itemIds": [
+            "en.elementary.u09.l06.we-are-meeting"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What does Smarty offer to bring to the party?",
+        "image": {
+          "id": "en-a2-u09-l06-scene",
+          "describe": "Smarty the black cat, Mia, and Sam sitting around a small table on the rooftop with notebooks and pencils making party plans."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "We are going to have a great party on Saturday!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes! What do we need to do first?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "We need to buy food and drinks."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I will buy the cake and lemonade."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Shall we have music too?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! I will bring my guitar and sing!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Great! Remember, we are meeting at five o'clock!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u09.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "What will Sam buy?",
+            "answer": "the cake and lemonade",
+            "options": [
+              "the cake and lemonade",
+              "a new guitar",
+              "red balloons"
+            ],
+            "explanation": "Sam says: I will buy the cake and lemonade.",
+            "itemIds": [
+              "en.elementary.u09.l06.i-will-buy",
+              "en.beginner.u03.l06.cake"
+            ]
+          },
+          {
+            "id": "en.elementary.u09.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What time are they meeting on Saturday?",
+            "answer": "at five o'clock",
+            "options": [
+              "at five o'clock",
+              "at ten o'clock",
+              "in the morning"
+            ],
+            "explanation": "Mia says: Remember, we are meeting at five o'clock!",
+            "itemIds": [
+              "en.elementary.u09.l06.we-are-meeting"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You and Smarty are planning a party together. Make suggestions and offers.",
+        "turns": [
+          {
+            "smarty": "We need food and drinks for the party! What will you bring or buy?",
+            "accept": [
+              "^i will (?:bring|buy) (?:some |a )?(?:cake|juice|lemonade|fruit|apples|bananas|bread|cheese|sweets)$"
+            ],
+            "example": "I will bring some juice.",
+            "hint": "Start with I will bring… or I will buy… and name a food or drink.",
+            "itemIds": [
+              "en.elementary.u09.l06.i-will-bring",
+              "en.elementary.u09.l06.i-will-buy",
+              "en.elementary.u09.l06.we-need-to"
+            ]
+          },
+          {
+            "smarty": "Great! Now make a suggestion with Shall we.",
+            "accept": [
+              "^shall we (?:dance|sing|play music|play games|buy balloons|make decorations)$"
+            ],
+            "example": "Shall we play music?",
+            "hint": "Ask: Shall we dance? or Shall we play music?",
+            "itemIds": [
+              "en.elementary.u09.l06.shall-we"
+            ]
+          },
+          {
+            "smarty": "Yes! Tell me what we are going to do at the party.",
+            "accept": [
+              "^we are going to (?:dance|sing|play music|play games|eat cake|have fun)$"
+            ],
+            "example": "We are going to dance.",
+            "hint": "Say: We are going to dance or We are going to play games.",
+            "itemIds": [
+              "en.elementary.u09.l06.we-are-going-to"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u09.l01.balloon",
+        "en.beginner.u03.l06.cake",
+        "en.elementary.u09.l01.decorations"
+      ]
+    },
+    {
+      "id": "en.elementary.u09.l07",
+      "section": "elementary",
+      "unit": 9,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Food and traditions",
+      "canDo": "Plan party food and describe a tradition",
+      "scenario": "Smarty and Omar prepare party snacks and talk about a family tradition.",
+      "items": [
+        {
+          "id": "en.elementary.u09.l07.snack",
+          "text": "snack",
+          "kind": "word",
+          "forms": [
+            "snacks"
+          ],
+          "example": "We have fruit and cheese for a small snack.",
+          "note": "A snack is a small amount of food you eat between meals or at a party.",
+          "image": {
+            "id": "snack",
+            "describe": "a wooden tray with small party snacks including apple slices, cheese cubes, and crackers"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l07.barbecue",
+          "text": "barbecue",
+          "kind": "word",
+          "forms": [
+            "barbecues"
+          ],
+          "example": "We are going to have a barbecue in the park.",
+          "note": "A barbecue is an outdoor meal where food is cooked over a fire or grill.",
+          "image": {
+            "id": "barbecue",
+            "describe": "a black cat wearing a chef hat cooking skewers and vegetables on an outdoor grill"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l07.pizza",
+          "text": "pizza",
+          "kind": "word",
+          "forms": [
+            "pizzas"
+          ],
+          "example": "I will buy two big pizzas for the guests.",
+          "note": "Pizza is a round flat bread baked with cheese, tomato, and tasty toppings.",
+          "image": {
+            "id": "pizza",
+            "describe": "a hot round cheese and tomato pizza cut into eight slices on a big plate"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l07.chocolate",
+          "text": "chocolate",
+          "kind": "word",
+          "forms": [
+            "chocolates"
+          ],
+          "example": "My grandmother gave me sweet chocolate.",
+          "note": "Chocolate is a sweet brown treat that many people love at celebrations.",
+          "image": {
+            "id": "chocolate",
+            "describe": "squares of rich brown chocolate and chocolate sweets arranged in a small bowl"
+          }
+        },
+        {
+          "id": "en.elementary.u09.l07.tradition",
+          "text": "tradition",
+          "kind": "word",
+          "forms": [
+            "traditions"
+          ],
+          "example": "A birthday cake with candles is a happy tradition.",
+          "note": "A tradition is something a family or group does the same way again and again."
+        },
+        {
+          "id": "en.elementary.u09.l07.every-year",
+          "text": "every year",
+          "kind": "phrase",
+          "example": "We have a big family barbecue every year.",
+          "note": "Say ‘every year’ for something that happens once a year on the same occasion."
+        }
+      ],
+      "grammar": {
+        "title": "Talking about traditions with every year",
+        "explanation": "Use the present simple with ‘every year’ to describe traditions that happen regularly.",
+        "examples": [
+          "We make pizza every year.",
+          "My family has a barbecue every year in summer."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u09.l07.task.pick-pizza",
+          "kind": "choice",
+          "prompt": "Look at the hot round food with cheese and tomato. What is it?",
+          "answer": "pizza",
+          "options": [
+            "pizza",
+            "soup",
+            "rice"
+          ],
+          "explanation": "Pizza is round bread with cheese and tomato.",
+          "itemIds": [
+            "en.elementary.u09.l07.pizza"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l07.task.hear-barbecue",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "We are going to have a barbecue outside.",
+          "answer": "We are going to have a barbecue outside.",
+          "options": [
+            "We are going to have a barbecue outside.",
+            "We are going to watch TV at home.",
+            "We are going to study at the library."
+          ],
+          "explanation": "A barbecue is an outdoor party where you cook food outside.",
+          "itemIds": [
+            "en.elementary.u09.l07.barbecue",
+            "en.elementary.u09.l06.we-are-going-to"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l07.task.match-food",
+          "kind": "match",
+          "prompt": "Match each word with its description.",
+          "pairs": [
+            {
+              "left": "something small to have",
+              "right": "a snack"
+            },
+            {
+              "left": "a sweet brown thing",
+              "right": "chocolate"
+            },
+            {
+              "left": "something we do every year",
+              "right": "a tradition"
+            }
+          ],
+          "explanation": "Match each word with its meaning.",
+          "itemIds": [
+            "en.elementary.u09.l07.snack",
+            "en.elementary.u09.l07.chocolate",
+            "en.elementary.u09.l07.tradition",
+            "en.beginner.u03.l09.sweet"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l07.task.build-every-year",
+          "kind": "build",
+          "prompt": "Build the sentence about a summer tradition.",
+          "answer": "We have a barbecue every year.",
+          "tiles": [
+            "We",
+            "have",
+            "a",
+            "barbecue",
+            "every",
+            "year",
+            "yesterday"
+          ],
+          "explanation": "Use every year at the end to show a yearly tradition.",
+          "itemIds": [
+            "en.elementary.u09.l07.every-year",
+            "en.elementary.u09.l07.barbecue"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l07.task.fill-snack",
+          "kind": "fill",
+          "prompt": "The guests arrive early before dinner. Complete the sentence.",
+          "text": "I made a small ___ for every guest.",
+          "answer": "snack",
+          "options": [
+            "snack",
+            "ladder",
+            "helmet"
+          ],
+          "explanation": "A snack is a light bite to eat before the main meal.",
+          "itemIds": [
+            "en.elementary.u09.l07.snack",
+            "en.elementary.u09.l03.guest"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l07.task.fill-tradition",
+          "kind": "fill",
+          "prompt": "In Smarty's family, everyone shares chocolate at New Year. Complete the sentence.",
+          "text": "Sweet ___ at New Year is our family tradition.",
+          "answer": "chocolate",
+          "options": [
+            "chocolate",
+            "medicine",
+            "pollution"
+          ],
+          "explanation": "A family tradition is a special custom you repeat together.",
+          "itemIds": [
+            "en.elementary.u09.l07.chocolate",
+            "en.elementary.u09.l07.tradition"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l07.task.say-tradition",
+          "kind": "speak",
+          "prompt": "Say this sentence about a tradition aloud.",
+          "text": "We have pizza together every year. It is our tradition.",
+          "answer": "We have pizza together every year. It is our tradition.",
+          "explanation": "Every year shows that this tradition happens each year.",
+          "itemIds": [
+            "en.elementary.u09.l07.tradition",
+            "en.elementary.u09.l07.every-year",
+            "en.elementary.u09.l07.pizza"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What special food tradition does Omar's family have?",
+        "image": {
+          "id": "en-a2-u09-l07-scene",
+          "describe": "Smarty the black cat and Omar on the rooftop beside a small barbecue grill, plates of pizza, snacks, and chocolate."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "What food shall we have at our party, Omar?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Let us have a barbecue! And I will buy two pizzas."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Delicious! Shall we buy some snacks and chocolate too?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Yes! In my family, we have a barbecue every year in summer."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Is that a family tradition?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Yes, it is! My grandmother makes sweet chocolate cake every year too!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What a delicious tradition!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u09.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Omar's family do every year in summer?",
+            "answer": "They have a barbecue.",
+            "options": [
+              "They have a barbecue.",
+              "They go to the museum.",
+              "They buy a new car."
+            ],
+            "explanation": "Omar says: In my family, we have a barbecue every year in summer.",
+            "itemIds": [
+              "en.elementary.u09.l07.barbecue",
+              "en.elementary.u09.l07.every-year"
+            ]
+          },
+          {
+            "id": "en.elementary.u09.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Omar's grandmother make every year?",
+            "answer": "sweet chocolate cake",
+            "options": [
+              "sweet chocolate cake",
+              "tomato soup",
+              "fish and rice"
+            ],
+            "explanation": "Omar says: My grandmother makes sweet chocolate cake every year too!",
+            "itemIds": [
+              "en.elementary.u09.l07.chocolate",
+              "en.elementary.u09.l07.tradition"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is asking you about party food and your traditions. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "We are hungry! Do you want pizza, a barbecue, or snacks at the party?",
+            "accept": [
+              "^(?:i want |i like |let us have )?(?:a )?(?:pizza|barbecue|snacks)(?: and (?:pizza|barbecue|snacks))?$"
+            ],
+            "example": "I want pizza and snacks.",
+            "hint": "Choose pizza, a barbecue, or snacks.",
+            "itemIds": [
+              "en.elementary.u09.l07.pizza",
+              "en.elementary.u09.l07.barbecue",
+              "en.elementary.u09.l07.snack"
+            ]
+          },
+          {
+            "smarty": "Do you like sweet chocolate?",
+            "accept": [
+              "^yes(?: i do| i like chocolate| i love chocolate)?$",
+              "^i (?:like|love) chocolate$",
+              "^no(?: i do not)?$"
+            ],
+            "example": "Yes, I love chocolate!",
+            "hint": "Say Yes, I like chocolate or No.",
+            "itemIds": [
+              "en.elementary.u09.l07.chocolate",
+              "en.beginner.u03.l03.i-like"
+            ]
+          },
+          {
+            "smarty": "Tell me one thing your family does every year. It is your tradition!",
+            "accept": [
+              "^we (?:have a party|have a barbecue|eat cake|eat pizza|visit our family|watch fireworks) every year$",
+              "^every year we (?:have a party|have a barbecue|eat cake|eat pizza|visit our family|watch fireworks)$"
+            ],
+            "example": "We have a party every year.",
+            "hint": "Say: We eat cake every year or We have a barbecue every year.",
+            "itemIds": [
+              "en.elementary.u09.l07.tradition",
+              "en.elementary.u09.l07.every-year"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u09.l06.we-are-going-to",
+        "en.beginner.u03.l09.sweet",
+        "en.elementary.u09.l03.guest",
+        "en.beginner.u03.l03.i-like"
+      ]
+    },
+    {
+      "id": "en.elementary.u09.l08",
+      "section": "elementary",
+      "unit": 9,
+      "lesson": 8,
+      "type": "test",
+      "title": "Party time",
+      "canDo": "Enjoy a party",
+      "scenario": "Everyone gathers on Smarty's decorated rooftop for the big celebration.",
+      "items": [
+        {
+          "id": "en.elementary.u09.l08.have-fun",
+          "text": "Have fun!",
+          "kind": "phrase",
+          "example": "Here are the games and music! Have fun!",
+          "note": "Say ‘Have fun!’ to wish friends a great time at a party or event."
+        },
+        {
+          "id": "en.elementary.u09.l08.what-a-great-party",
+          "text": "What a great party!",
+          "kind": "phrase",
+          "example": "Look at the fireworks and music! What a great party!",
+          "note": "Say ‘What a great party!’ when you are really enjoying a celebration."
+        },
+        {
+          "id": "en.elementary.u09.l08.thanks-for-coming",
+          "text": "Thanks for coming",
+          "kind": "phrase",
+          "example": "Goodbye, Mia! Thanks for coming to my party!",
+          "note": "Say ‘Thanks for coming’ to thank your guests when they arrive or leave."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u09.l08.task.pick-have-fun",
+          "kind": "choice",
+          "prompt": "Your friends are going to a festival. What do you say to them?",
+          "answer": "Have fun!",
+          "options": [
+            "Have fun!",
+            "It hurts",
+            "Wrong number"
+          ],
+          "explanation": "Say Have fun! to wish someone a good time.",
+          "itemIds": [
+            "en.elementary.u09.l08.have-fun",
+            "en.elementary.u09.l01.party"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l08.task.hear-great-party",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Look at the fireworks! What a great party!",
+          "answer": "Look at the fireworks! What a great party!",
+          "options": [
+            "Look at the fireworks! What a great party!",
+            "Look at the rain! What a cold day!",
+            "I am sorry I cannot come."
+          ],
+          "explanation": "What a great party! expresses excitement at a celebration.",
+          "itemIds": [
+            "en.elementary.u09.l08.what-a-great-party",
+            "en.elementary.u09.l03.fireworks"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l08.task.match-unit",
+          "kind": "match",
+          "prompt": "Match each speaker with the right celebration phrase.",
+          "pairs": [
+            {
+              "left": "for a guest at your party",
+              "right": "Thanks for coming"
+            },
+            {
+              "left": "for a friend with an invitation",
+              "right": "Thanks for inviting me"
+            },
+            {
+              "left": "for a friend with a prize",
+              "right": "Congratulations!"
+            }
+          ],
+          "explanation": "Hosts say Thanks for coming; guests say Thanks for inviting me.",
+          "itemIds": [
+            "en.elementary.u09.l08.thanks-for-coming",
+            "en.elementary.u09.l05.thanks-for-inviting-me",
+            "en.elementary.u09.l02.congratulations"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l08.task.build-great-party",
+          "kind": "build",
+          "prompt": "Build the exclamation to praise the party.",
+          "answer": "What a great party!",
+          "tiles": [
+            "What",
+            "a",
+            "great",
+            "party",
+            "boring",
+            "exam"
+          ],
+          "explanation": "What a great party! shows you are enjoying the celebration.",
+          "itemIds": [
+            "en.elementary.u09.l08.what-a-great-party"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l08.task.fill-invite",
+          "kind": "fill",
+          "prompt": "You send an invitation to Sam. Complete the question.",
+          "text": "___ to my barbecue on Saturday?",
+          "answer": "Would you like to come",
+          "options": [
+            "Would you like to come",
+            "Thanks for coming",
+            "Happy New Year"
+          ],
+          "explanation": "Use Would you like to come? to invite someone politely.",
+          "itemIds": [
+            "en.elementary.u09.l05.would-you-like-to-come",
+            "en.elementary.u09.l01.invitation"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l08.task.fill-future",
+          "kind": "fill",
+          "prompt": "Talk about your party food plan. Complete the sentence.",
+          "text": "___ buy three big pizzas for the guests.",
+          "answer": "We are going to",
+          "options": [
+            "We are going to",
+            "I am sorry",
+            "Best wishes"
+          ],
+          "explanation": "Use We are going to + verb for a decided plan.",
+          "itemIds": [
+            "en.elementary.u09.l06.we-are-going-to",
+            "en.elementary.u09.l07.pizza"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l08.task.pick-tradition",
+          "kind": "choice",
+          "prompt": "Mia's family watches fireworks together every year. What is this?",
+          "answer": "a tradition",
+          "options": [
+            "a tradition",
+            "a wrong number",
+            "a dentist appointment"
+          ],
+          "explanation": "Something a family does every year is a tradition.",
+          "itemIds": [
+            "en.elementary.u09.l07.tradition",
+            "en.elementary.u09.l07.every-year"
+          ]
+        },
+        {
+          "id": "en.elementary.u09.l08.task.say-thanks-coming",
+          "kind": "speak",
+          "prompt": "Say this warm welcome to your party guests aloud.",
+          "text": "Thanks for coming! Have fun at the party!",
+          "answer": "Thanks for coming! Have fun at the party!",
+          "explanation": "Welcome guests with Thanks for coming! and Have fun!",
+          "itemIds": [
+            "en.elementary.u09.l08.thanks-for-coming",
+            "en.elementary.u09.l08.have-fun"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What happens during the celebration on Smarty's rooftop?",
+        "image": {
+          "id": "en-a2-u09-l08-scene",
+          "describe": "Smarty the black cat and all his cat friends celebrating on a fairy-lit rooftop with cake, candles, pizza, balloons, and fireworks in the night sky."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, friends! Thanks for coming to our party! Have fun!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Look at the balloons, snacks, and pizza! What a great party!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Happy birthday, Ben! Here is your cake with ten candles!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Thank you! Thanks for inviting me!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Look at the night sky! Fireworks!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What a great party! Best wishes to all my friends!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u09.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Smarty say when his friends arrive?",
+            "answer": "Thanks for coming! Have fun!",
+            "options": [
+              "Thanks for coming! Have fun!",
+              "I am sorry I cannot come.",
+              "What time shall we meet?"
+            ],
+            "explanation": "Smarty says: Thanks for coming to our party! Have fun!",
+            "itemIds": [
+              "en.elementary.u09.l08.thanks-for-coming",
+              "en.elementary.u09.l08.have-fun"
+            ]
+          },
+          {
+            "id": "en.elementary.u09.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Why does Mia say What a great party?",
+            "answer": "Because there are balloons, snacks, and pizza.",
+            "options": [
+              "Because there are balloons, snacks, and pizza.",
+              "Because it is raining outside.",
+              "Because she is tired."
+            ],
+            "explanation": "Mia says: Look at the balloons, snacks, and pizza! What a great party!",
+            "itemIds": [
+              "en.elementary.u09.l08.what-a-great-party"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are at Smarty's party! Enjoy the celebration and talk with Smarty.",
+        "turns": [
+          {
+            "smarty": "Thanks for coming to my party! Have fun!",
+            "accept": [
+              "^(?:thank you |thanks )?(?:thanks for inviting me )?what a great party$",
+              "^thank you(?: smarty)?$",
+              "^thanks for inviting me$"
+            ],
+            "example": "Thanks for inviting me! What a great party!",
+            "hint": "Say What a great party! or Thanks for inviting me!",
+            "itemIds": [
+              "en.elementary.u09.l08.thanks-for-coming",
+              "en.elementary.u09.l08.have-fun",
+              "en.elementary.u09.l08.what-a-great-party",
+              "en.elementary.u09.l05.thanks-for-inviting-me"
+            ]
+          },
+          {
+            "smarty": "What food or party thing do you like best here?",
+            "accept": [
+              "^(?:i like |i love )?(?:the )?(?:pizza|chocolate|snacks|cake|barbecue|balloons|fireworks|music)(?: and (?:the )?(?:pizza|chocolate|snacks|cake|barbecue|balloons|fireworks|music))?(?: best)?$"
+            ],
+            "example": "I love the pizza and fireworks!",
+            "hint": "Say what you like, like I love the pizza or I like the fireworks.",
+            "itemIds": [
+              "en.elementary.u09.l07.pizza",
+              "en.elementary.u09.l03.fireworks",
+              "en.elementary.u09.l07.chocolate"
+            ]
+          },
+          {
+            "smarty": "It is ten o'clock! Say goodbye and wish your friends well.",
+            "accept": [
+              "^(?:goodbye |bye )?(?:thanks for a great party |what a great party )?(?:best wishes|have fun|see you later)$"
+            ],
+            "example": "Goodbye! Best wishes!",
+            "hint": "Say Goodbye! Best wishes! or See you later!",
+            "itemIds": [
+              "en.elementary.u09.l02.best-wishes",
+              "en.elementary.u09.l08.have-fun"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u09.l01.party",
+        "en.elementary.u09.l03.fireworks",
+        "en.elementary.u09.l05.thanks-for-inviting-me",
+        "en.elementary.u09.l02.congratulations",
+        "en.elementary.u09.l05.would-you-like-to-come",
+        "en.elementary.u09.l01.invitation",
+        "en.elementary.u09.l06.we-are-going-to",
+        "en.elementary.u09.l07.pizza",
+        "en.elementary.u09.l07.tradition",
+        "en.elementary.u09.l07.every-year",
+        "en.elementary.u09.l07.chocolate",
+        "en.elementary.u09.l02.best-wishes"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Mystery Present on the Rooftop",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "What a great party! All our friends went home, and it is quiet now.",
+        "image": {
+          "id": "en-a2-u09-ep-01",
+          "describe": "Smarty the black cat standing alone on a quiet rooftop under starry skies surrounded by balloons and empty plates."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Smarty, look next to the cake! There is one more present!",
+        "image": {
+          "id": "en-a2-u09-ep-02",
+          "describe": "Mia pointing at a small shiny purple box with a gold star sitting next to the leftover birthday cake."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Whose is this? There is no invitation and no card on it.",
+        "image": {
+          "id": "en-a2-u09-ep-03",
+          "describe": "Smarty the black cat inspecting the mysterious purple gift box closely with wide curious eyes."
+        }
+      },
+      {
+        "speaker": "Leo",
+        "text": "Shall we look in the box? It is a surprise!",
+        "image": {
+          "id": "en-a2-u09-ep-04",
+          "describe": "Leo joining Smarty and Mia around the table, eager to untie the ribbon on the box."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Look! In the box, there is an old map and a small key!",
+        "image": {
+          "id": "en-a2-u09-ep-05",
+          "describe": "Inside the open gift box lies a rolled-up old treasure map and a shiny key."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Where is this map from? Look at the big mountain and the lake!",
+        "image": {
+          "id": "en-a2-u09-ep-06",
+          "describe": "Smarty, Mia, and Leo unrolling the old map showing a mountain, a forest, and a lake."
+        }
+      },
+      {
+        "speaker": "Leo",
+        "text": "And look! There is a message on the back: Come tomorrow at nine o'clock!",
+        "image": {
+          "id": "en-a2-u09-ep-07",
+          "describe": "Leo turning the map over to reveal a mysterious drawn clock and mountain symbol."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Who wrote this message? We are going to find the treasure tomorrow!",
+        "image": {
+          "id": "en-a2-u09-ep-08",
+          "describe": "Smarty the black cat holding the key and map under the moonlight, looking excited for tomorrow's adventure."
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.elementary.u09.ep.task.q1",
+        "kind": "choice",
+        "prompt": "What do Smarty and Mia find next to the cake?",
+        "answer": "one more present",
+        "options": [
+          "one more present",
+          "ten red balloons",
+          "a big pizza"
+        ],
+        "explanation": "Mia says: Look next to the cake! There is one more present!",
+        "itemIds": [
+          "en.elementary.u09.l01.present"
+        ]
+      },
+      {
+        "id": "en.elementary.u09.ep.task.q2",
+        "kind": "choice",
+        "prompt": "What is in the mystery box?",
+        "answer": "an old map and a small key",
+        "options": [
+          "an old map and a small key",
+          "sweet chocolate",
+          "a lion costume"
+        ],
+        "explanation": "Smarty finds an old map and a small key inside the box.",
+        "itemIds": [
+          "en.elementary.u09.l06.we-are-going-to"
+        ]
+      },
+      {
+        "id": "en.elementary.u09.ep.task.q3",
+        "kind": "choice",
+        "prompt": "When are Smarty, Mia, and Leo going to find the treasure?",
+        "answer": "tomorrow",
+        "options": [
+          "tomorrow",
+          "last week",
+          "in winter"
+        ],
+        "explanation": "Smarty says: We are going to find the treasure tomorrow!",
+        "itemIds": [
+          "en.elementary.u09.l06.we-are-going-to"
+        ]
+      }
+    ]
+  }
+}

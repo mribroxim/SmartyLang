@@ -6,6 +6,7 @@
 import type { ContentLang } from '../contentLang';
 import type { ReadingText } from '../reading-logic';
 import {
+  LESSON_EXERCISE_TYPES,
   LESSON_PASS_THRESHOLD,
   loadLessonUnlock,
   isLessonExercisesComplete,
@@ -44,7 +45,10 @@ export function recordBiteCompletion(lang: ContentLang, result: BiteResult): Les
 
 export function biteDone(unlock: LessonUnlock, def: BiteDef): boolean {
   if (unlock.bites?.[def.index]?.completedAt) return true;
-  return def.steps.every((s) => {
+  // Steps the old 12-exercise flow never had can't be proven by legacy scores.
+  const legacy = def.steps.filter((s) => s.kind === 'vocab-intro' || s.kind === 'read-aloud' || (LESSON_EXERCISE_TYPES as readonly string[]).includes(s.kind));
+  if (legacy.length < def.steps.length / 2) return false;
+  return legacy.every((s) => {
     if (s.kind === 'vocab-intro') return unlock.vocabPassed;
     if (s.kind === 'read-aloud') return unlock.readingBest != null;
     return (unlock.exerciseBest[s.kind] ?? 0) >= LESSON_PASS_THRESHOLD;
@@ -75,12 +79,15 @@ export interface LessonBiteState {
 export function lessonBiteState(lang: ContentLang, text: ReadingText): LessonBiteState {
   const unlock = loadLessonUnlock(lang, text.id);
   const defs = deriveBites(text);
-  const done = defs.map((d) => biteDone(unlock, d));
+  // Lessons finished under an older plan (12 exercises, or 5–6 bites) stay finished:
+  // completion = at least as many finished bites as the current plan has.
+  const legacyDone = isLessonExercisesComplete(unlock) || Object.values(unlock.bites ?? {}).filter((b) => b?.completedAt).length >= defs.length;
+  const done = defs.map((d) => legacyDone || biteDone(unlock, d));
   const doneCount = done.filter(Boolean).length;
   const next = done.findIndex((d) => !d);
   const mastered = isLessonExercisesComplete(unlock) ||
-    defs.every((d) => (biteBest(unlock, d) ?? 0) >= LESSON_PASS_THRESHOLD);
-  return { defs, done, doneCount, total: defs.length, next, complete: next === -1, mastered };
+    (doneCount >= defs.length && defs.every((d) => (biteBest(unlock, d) ?? (legacyDone ? LESSON_PASS_THRESHOLD : 0)) >= LESSON_PASS_THRESHOLD));
+  return { defs, done, doneCount, total: defs.length, next, complete: doneCount >= defs.length, mastered };
 }
 
 /** First lesson in order that still has an unfinished bite. */

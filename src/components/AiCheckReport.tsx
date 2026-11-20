@@ -1,4 +1,3 @@
-import React from 'react';
 import { Sticker } from './stickers/Sticker';
 import { useUiLang } from '../contexts/UiLangContext';
 import { Loader2, Sparkles } from 'lucide-react';

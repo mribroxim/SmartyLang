@@ -1,7 +1,7 @@
-export type Category = 'bed' | 'desk' | 'chair' | 'shelf' | 'window' | 'rug';
+export type Category = 'bed' | 'desk' | 'chair' | 'shelf' | 'window' | 'rug' | 'fridge';
 /** Places in the room. Two shelves share the shelf catalogue. */
-export type Slot = 'bed' | 'desk' | 'chair' | 'shelf1' | 'shelf2' | 'window' | 'rug';
-export const SLOT_CATEGORY: Record<Slot, Category> = { bed: 'bed', desk: 'desk', chair: 'chair', shelf1: 'shelf', shelf2: 'shelf', window: 'window', rug: 'rug' };
+export type Slot = 'bed' | 'desk' | 'chair' | 'shelf1' | 'shelf2' | 'window' | 'rug' | 'fridge';
+export const SLOT_CATEGORY: Record<Slot, Category> = { bed: 'bed', desk: 'desk', chair: 'chair', shelf1: 'shelf', shelf2: 'shelf', window: 'window', rug: 'rug', fridge: 'fridge' };
 
 const NAMES: Record<Category, string[]> = {
   bed: ['cat-ears', 'paw', 'house', 'bookcase', 'cloud-moon', 'music', 'cloud', 'neon', 'canopy', 'cat-cave'],
@@ -11,6 +11,7 @@ const NAMES: Record<Category, string[]> = {
     'moonlamp', 'fairy', 'atlas', 'snapshot', 'dreamy', 'vines', 'starlight', 'explorer', 'hexagon', 'cloud'],
   window: ['curtain', 'stars', 'shutters', 'blinds', 'nook', 'arch-vine', 'blind-rain', 'storm', 'vine', 'fairy-lights'],
   rug: ['fluffy', 'cloud', 'paw', 'black-paw', 'moon', 'saturn', 'book', 'cat-face', 'checker', 'checker-wave'],
+  fridge: ['paw', 'cat-face', 'freezer', 'photos', 'night', 'gingham', 'glass', 'vine', 'notes', 'ribbon'],
 };
 
 export interface RoomItem { id: string; category: Category; name: string; price: number; src: string }
@@ -29,7 +30,7 @@ export type RoomState = Record<Slot, string> & { owned: string[]; updatedAt: num
 const FREE = ITEMS.filter((i) => i.price === 0).map((i) => i.id);
 const DEFAULTS: Record<Slot, string> = {
   bed: 'bed.cat-ears', desk: 'desk.notebook', chair: 'chair.black', shelf1: 'shelf.trailing', shelf2: 'shelf.books-camera',
-  window: 'window.curtain', rug: 'rug.fluffy',
+  window: 'window.curtain', rug: 'rug.fluffy', fridge: 'fridge.paw',
 };
 const SLOTS = Object.keys(DEFAULTS) as Slot[];
 // The second shelf starts as a free gift too, so the room isn't bare.

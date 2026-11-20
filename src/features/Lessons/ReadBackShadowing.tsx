@@ -1,5 +1,5 @@
 import { answerFeedback } from '../../lib/smarty/answer';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Mic, Square } from 'lucide-react';
 import type { ReadingText, WordStatus } from '../../lib/reading-logic';
 import { alignWords } from '../../lib/reading-logic';

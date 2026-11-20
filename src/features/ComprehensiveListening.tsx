@@ -1,5 +1,5 @@
 import { DialogSurface } from '../components/DialogSurface';
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { playWord as sharedPlayWord } from '../lib/speech';
 import { useContentLang } from '../contexts/ContentLangContext';
 import { useUiLang } from '../contexts/UiLangContext';
@@ -23,6 +23,7 @@ import {
 } from '../lib/midSession';
 import { bumpWeeklyGoal } from '../lib/weeklyGoals';
 import { recordCompletion } from '../lib/completions';
+import { readHomeworkDraft, saveHomeworkDraft } from '../lib/classHomework';
 import { ScreenShell } from '../components/ScreenShell';
 import { LevelCard, LevelCardGrid, LibraryCard, LibraryCardGrid } from '../components/LevelCards';
 
@@ -38,7 +39,7 @@ function shuffle<T>(arr: T[]): T[] {
 const LEVELS: Level[] = ['Beginner', 'Elementary', 'Pre-Intermediate', 'Intermediate', 'Advanced'];
 const PAGE_SIZE = 8;
 
-export function ComprehensiveListening({ onBack, onToggleVocab, savedVocab = {}, onShowModal, initialLevel, initialPassageTitle, accountProfile }: any) {
+export function ComprehensiveListening({ onBack, onToggleVocab, savedVocab = {}, onShowModal, initialLevel, initialPassageTitle, accountProfile, assigned }: any) {
   const { speechLocale, contentLang } = useContentLang();
   const { t, tLevel, tLevelDesc } = useUiLang();
   const canDownloadPDF = (() => {
@@ -76,6 +77,10 @@ export function ComprehensiveListening({ onBack, onToggleVocab, savedVocab = {},
   // Persist mid-activity answers
   useEffect(() => {
     if (view !== 'activity' || !content.title || submitted) return;
+    if (assigned) {
+      saveHomeworkDraft(assigned, { title: content.title, lang: contentLang, questions: content.questions, answers });
+      return;
+    }
     saveListeningSession({
       title: content.title,
       level,
@@ -85,7 +90,7 @@ export function ComprehensiveListening({ onBack, onToggleVocab, savedVocab = {},
       submitted: false,
       contentLang,
     });
-  }, [view, content, answers, level, submitted, contentLang]);
+  }, [assigned, view, content, answers, level, submitted, contentLang]);
 
   // Reload last-passage title when learning language changes
   useEffect(() => {
@@ -159,9 +164,10 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
     });
 
   const startListeningWithPassage = (p: any, restore?: { answers?: Record<number, number>; questions?: any[]; submitted?: boolean }) => {
-    const questions = restore?.questions?.length ? restore.questions : shuffleOptions(p.questions);
+    const draft = readHomeworkDraft(assigned, p.title, contentLang);
+    const questions = draft?.questions ?? (restore?.questions?.length ? restore.questions : shuffleOptions(p.questions));
     setContent({ passage: p.passage, questions, title: p.title });
-    setAnswers(restore?.answers || {});
+    setAnswers(draft?.answers ?? restore?.answers ?? {});
     setSubmitted(!!restore?.submitted);
     setShowTranscript(false);
     playSound('success');
@@ -171,7 +177,7 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
     } catch {}
     setLastPassageTitle(p.title);
     setView('activity');
-    if (!restore) playPassage(p.passage);
+    if (!restore && !draft) playPassage(p.passage);
   };
 
   if (view === 'levels') {
@@ -306,7 +312,7 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
   return (
     <div className="flex flex-col h-[calc(100vh-80px)] bg-white relative">
       <div className="px-6 py-4 border-b border-slate-200 bg-white flex items-center justify-between shrink-0 gap-4 shadow-sm">
-        <button onClick={() => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); setView('library'); }} className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 bg-slate-50 hover:bg-slate-100 px-3 py-2 rounded-2xl border-2 border-slate-200 transition-colors shrink-0">
+        <button onClick={() => { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); if (assigned) onBack?.(); else setView('library'); }} className="text-sm font-bold text-slate-500 hover:text-zinc-900 flex items-center gap-2 bg-slate-50 hover:bg-slate-100 px-3 py-2 rounded-2xl border-2 border-slate-200 transition-colors shrink-0">
           <ArrowLeft className="w-4 h-4" />  {t("onboard.back")}</button>
         <div className="flex items-center gap-2 font-bold text-slate-800 text-sm truncate min-w-0 flex-1 justify-center">
           <Headphones className="w-4 h-4 text-blue-500 shrink-0" /> <span className="truncate">{content.title || t("listening.comp.title")}</span>
@@ -450,15 +456,15 @@ ${content.questions.map((q: any, i: number) => `<div class="question"><div class
                   accuracy: content.questions.length > 0 ? Math.round((score / content.questions.length) * 100) : 0,
                   details,
                 });
-                clearListeningSession();
+                if (!assigned) clearListeningSession();
                 bumpWeeklyGoal('listening');
                 setSubmitted(true); playSound('success'); }}
-                className="w-full py-4 bg-zinc-900 text-white font-bold rounded-2xl hover:bg-black transition-colors shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none">{t("site.comprehensivelistening.submit_answers_b4eabb")}</button>
+                disabled={assigned && (!content.questions.length || Object.keys(answers).length < content.questions.length)} className="w-full py-4 disabled:opacity-45 bg-zinc-900 text-white font-bold rounded-2xl hover:bg-black transition-colors shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#a1a1aa] active:translate-y-[4px] active:shadow-none">{t("site.comprehensivelistening.submit_answers_b4eabb")}</button>
             ) : (
               <div className="p-6 bg-blue-50 border border-blue-200 rounded-2xl flex flex-col items-center text-center">
                 <CheckCircle2 className="w-12 h-12 text-blue-500 mb-3" />
                 <p className="text-blue-700 mb-4">{t("site.comprehensivelistening.you_scored_6a5599")}{Object.entries(answers).filter(([qid, a]) => content.questions.find((q: any, i: number) => (q.id || i) === Number(qid))?.answer === a).length}  {t("site.comprehensivelistening.out_of_5ee0bb")}{content.questions.length}!</p>
-                <button onClick={() => setView('library')} className="px-6 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors">{t("site.comprehensivelistening.try_another_edddec")}</button>
+                <button onClick={() => assigned ? onBack?.() : setView('library')} className="px-6 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors">{t(assigned ? "homework.back" : "site.comprehensivelistening.try_another_edddec")}</button>
               </div>
             )}
           </div>

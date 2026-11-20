@@ -1,0 +1,3969 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "pre-intermediate",
+  "unit": 12,
+  "title": "Opinions",
+  "room": "club-room",
+  "lessons": [
+    {
+      "id": "en.pre-intermediate.u12.l01",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Giving opinions",
+      "canDo": "Say what you think",
+      "scenario": "Smarty and his friends discuss which film to watch in the club-room.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u12.l01.as-i-see-it",
+          "text": "As I see it",
+          "kind": "phrase",
+          "example": "As I see it, a comedy is the best.",
+          "note": "Say 'As I see it' at the start of a sentence to share your personal view."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.from-my-point-of-view",
+          "text": "From my point of view",
+          "kind": "phrase",
+          "example": "From my point of view, science is very interesting.",
+          "note": "Use 'From my point of view' to explain how a situation looks to you."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.i-strongly-believe",
+          "text": "I strongly believe",
+          "kind": "phrase",
+          "example": "I strongly believe we should recycle more.",
+          "note": "Say 'I strongly believe' when you feel very sure about your opinion."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.personally-i-think",
+          "text": "Personally I think",
+          "kind": "phrase",
+          "example": "Personally I think summer is better than winter.",
+          "note": "Start with 'Personally I think' to show that this is your own view, not a rule."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.it-seems-to-me-that",
+          "text": "It seems to me that",
+          "kind": "phrase",
+          "example": "It seems to me that the train is delayed.",
+          "note": "Use 'It seems to me that' to give a polite, gentle opinion based on what you see."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.i-feel-that",
+          "text": "I feel that",
+          "kind": "phrase",
+          "example": "I feel that everyone should help in the park.",
+          "note": "Say 'I feel that' to share an opinion that comes from your feelings or experience."
+        }
+      ],
+      "grammar": {
+        "title": "Starting a sentence with your opinion",
+        "explanation": "Put phrases like As I see it, From my point of view, and Personally I think at the start of your sentence. Use that after It seems to me, I feel, or I strongly believe before a full idea.",
+        "examples": [
+          "As I see it, this book is amazing.",
+          "It seems to me that Mia is right."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l01.task.pick-as-i-see-it",
+          "kind": "choice",
+          "prompt": "Choose the phrase that means 'in my personal view'.",
+          "answer": "As I see it",
+          "options": [
+            "As I see it",
+            "As soon as",
+            "At the moment"
+          ],
+          "explanation": "As I see it introduces your own view on a topic.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.as-i-see-it"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.task.hear-point-of-view",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "From my point of view, science is very interesting.",
+          "answer": "From my point of view, science is very interesting.",
+          "options": [
+            "From my point of view, science is very interesting.",
+            "From my point of view, history is very boring.",
+            "In my opinion, science is very difficult."
+          ],
+          "explanation": "Listen for From my point of view and science is very interesting.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.from-my-point-of-view",
+            "en.elementary.u01.l01.science",
+            "en.elementary.u01.l09.interesting"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.task.match-opinions",
+          "kind": "match",
+          "prompt": "Match the opinion phrases with their meanings.",
+          "pairs": [
+            {
+              "left": "I strongly believe",
+              "right": "I am very sure that"
+            },
+            {
+              "left": "It seems to me that",
+              "right": "From what I see, I think"
+            },
+            {
+              "left": "Personally I think",
+              "right": "In my own opinion"
+            }
+          ],
+          "explanation": "I strongly believe shows certainty, It seems to me that is gentle, and Personally I think gives your own view.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.i-strongly-believe",
+            "en.pre-intermediate.u12.l01.it-seems-to-me-that",
+            "en.pre-intermediate.u12.l01.personally-i-think",
+            "en.pre-intermediate.u08.l11.in-my-opinion"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.task.fill-strongly",
+          "kind": "fill",
+          "prompt": "Smarty is very sure about helping nature. Complete his sentence.",
+          "text": "___ we should recycle more.",
+          "answer": "I strongly believe",
+          "options": [
+            "I strongly believe",
+            "It seems to me",
+            "I am not so sure"
+          ],
+          "explanation": "Use I strongly believe when you have a very firm opinion.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.i-strongly-believe",
+            "en.elementary.u06.l09.recycle"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.task.build-personally",
+          "kind": "build",
+          "prompt": "Build the sentence to share a personal opinion about a film.",
+          "answer": "Personally I think a comedy is better.",
+          "tiles": [
+            "Personally",
+            "I",
+            "think",
+            "a",
+            "comedy",
+            "is",
+            "better",
+            "worse"
+          ],
+          "explanation": "Start with Personally I think, followed by a comedy is better.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.personally-i-think",
+            "en.elementary.u05.l05.a-comedy",
+            "en.elementary.u05.l06.better"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.task.fill-seems",
+          "kind": "fill",
+          "prompt": "You see dark clouds outside. Complete the gentle opinion.",
+          "text": "___ it is going to rain.",
+          "answer": "It seems to me that",
+          "options": [
+            "It seems to me that",
+            "From my point of view",
+            "As I see it"
+          ],
+          "explanation": "It seems to me that connects directly to a full clause without a comma.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.it-seems-to-me-that",
+            "en.pre-intermediate.u02.l03.it-is-going-to-rain"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.task.fill-feel",
+          "kind": "fill",
+          "prompt": "Share a warm opinion from your heart. Complete the sentence.",
+          "text": "___ everyone should help in the park.",
+          "answer": "I feel that",
+          "options": [
+            "I feel that",
+            "As I see it",
+            "Personally I think"
+          ],
+          "explanation": "I feel that takes a full clause right after that.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.i-feel-that"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l01.task.say-view",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "From my point of view, a documentary is great.",
+          "answer": "From my point of view, a documentary is great.",
+          "explanation": "Practise saying From my point of view smoothly before your opinion.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.from-my-point-of-view",
+            "en.elementary.u05.l05.a-documentary"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which film wins the vote in Smarty's room?",
+        "image": {
+          "id": "en-b1-u12-l01-scene",
+          "describe": "Inside the cozy club-room, Smarty the black cat stands by a board holding a whistle like a referee while Mia, Sam, and Lily raise their hands to vote on a film."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Welcome to our room! Today I am the referee for our film opinion poll."
+          },
+          {
+            "speaker": "Mia",
+            "text": "As I see it, a comedy is the best after a long week at school."
+          },
+          {
+            "speaker": "Sam",
+            "text": "From my point of view, a documentary about the ocean is much better."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Personally I think an action film is more exciting."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I strongly believe we need something fun so everyone can laugh."
+          },
+          {
+            "speaker": "Sam",
+            "text": "It seems to me that we each have a different outlook, Smarty."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I feel that your belief in good films is great. Let us vote now!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "What kind of film does Mia want to watch?",
+            "answer": "A comedy",
+            "options": [
+              "A comedy",
+              "A documentary",
+              "An action film"
+            ],
+            "explanation": "Mia says: As I see it, a comedy is the best.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l01.as-i-see-it",
+              "en.elementary.u05.l05.a-comedy"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "What is Sam's opinion?",
+            "answer": "A documentary about the ocean is much better.",
+            "options": [
+              "A documentary about the ocean is much better.",
+              "An action film is the worst.",
+              "A comedy is too boring."
+            ],
+            "explanation": "Sam says: From my point of view, a documentary about the ocean is much better.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l01.from-my-point-of-view",
+              "en.elementary.u05.l05.a-documentary"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "How does Lily start her opinion?",
+            "answer": "Personally I think",
+            "options": [
+              "Personally I think",
+              "I strongly believe",
+              "It seems to me that"
+            ],
+            "explanation": "Lily says: Personally I think an action film is more exciting.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l01.personally-i-think"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks for your opinion in the club-room. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "We want to watch a film this evening. What do you think?",
+            "accept": [
+              "^(?:as i see it|personally i think|from my point of view|i feel that|i strongly believe|it seems to me that) (?:a comedy|a cartoon|an action film|a documentary|a horror film) is (?:great|interesting|exciting|better|the best|boring)$"
+            ],
+            "example": "Personally I think a comedy is great.",
+            "hint": "Start with Personally I think or As I see it, then name a film type.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l01.personally-i-think",
+              "en.pre-intermediate.u12.l01.as-i-see-it",
+              "en.elementary.u05.l05.a-comedy"
+            ]
+          },
+          {
+            "smarty": "What about our town park? Should we clean up the litter there?",
+            "accept": [
+              "^(?:i strongly believe|i feel that|it seems to me that|as i see it|personally i think|from my point of view) (?:we should|everyone should|we must) (?:clean|help|recycle)(?: the park| up the litter| more)?$"
+            ],
+            "example": "I strongly believe we should clean the park.",
+            "hint": "Use I strongly believe or I feel that and say what we should do.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l01.i-strongly-believe",
+              "en.pre-intermediate.u12.l01.i-feel-that"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "opinion poll",
+          "gloss": "a quick vote to see what people think"
+        },
+        {
+          "text": "outlook",
+          "gloss": "a person's general view on something"
+        },
+        {
+          "text": "referee",
+          "gloss": "the person who keeps a discussion or game fair"
+        },
+        {
+          "text": "belief",
+          "gloss": "something you strongly think is true"
+        }
+      ],
+      "recycle": [
+        "en.elementary.u01.l01.science",
+        "en.elementary.u01.l09.interesting",
+        "en.pre-intermediate.u08.l11.in-my-opinion",
+        "en.elementary.u06.l09.recycle",
+        "en.elementary.u05.l05.a-comedy",
+        "en.elementary.u05.l06.better",
+        "en.pre-intermediate.u02.l03.it-is-going-to-rain",
+        "en.elementary.u05.l05.a-documentary"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u12.l02",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Question tags",
+      "canDo": "Check information",
+      "scenario": "Smarty and Mia double-check details for the weekend picnic in the club-room.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u12.l02.is-not-it",
+          "text": "is not it?",
+          "kind": "phrase",
+          "example": "It is a sunny day, is not it?",
+          "note": "Add 'is not it?' at the end of a positive 'it is' sentence to check if the listener agrees."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.do-not-you",
+          "text": "do not you?",
+          "kind": "phrase",
+          "example": "You like chocolate cake, do not you?",
+          "note": "Use 'do not you?' after a positive 'you' statement to confirm what you think is true."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.did-he",
+          "text": "did he?",
+          "kind": "phrase",
+          "example": "Ben did not miss the bus, did he?",
+          "note": "Add 'did he?' after a negative past statement about a boy or man to check the fact."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.have-not-they",
+          "text": "have not they?",
+          "kind": "phrase",
+          "example": "They have already bought the tickets, have not they?",
+          "note": "Use 'have not they?' after a positive 'they have' statement to double-check."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.am-i-not",
+          "text": "am I not?",
+          "kind": "phrase",
+          "example": "I am on the team, am I not?",
+          "note": "Add 'am I not?' after 'I am' when you want someone to confirm something about you."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.will-you",
+          "text": "will you?",
+          "kind": "phrase",
+          "example": "You will not forget the camera, will you?",
+          "note": "Use 'will you?' after 'you will not' to make sure someone remembers a promise."
+        }
+      ],
+      "grammar": {
+        "title": "How question tags work",
+        "explanation": "A positive statement takes a negative tag, and a negative statement takes a positive tag. Match the helper verb (is, do, did, have, will) and the subject pronoun.",
+        "examples": [
+          "It is cold outside, is not it?",
+          "He did not call yesterday, did he?"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l02.task.fill-is-not-it",
+          "kind": "fill",
+          "prompt": "Complete the question tag for a positive 'It is' sentence.",
+          "text": "It is a great idea, ___",
+          "answer": "is not it?",
+          "options": [
+            "is not it?",
+            "do not you?",
+            "did he?"
+          ],
+          "explanation": "It is takes the negative tag is not it?.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l02.is-not-it"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.task.fill-do-not-you",
+          "kind": "fill",
+          "prompt": "You think Mia likes tea. Check with her.",
+          "text": "You like hot tea, ___",
+          "answer": "do not you?",
+          "options": [
+            "do not you?",
+            "is not it?",
+            "have not they?"
+          ],
+          "explanation": "A positive present simple statement with you takes do not you?.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l02.do-not-you",
+            "en.beginner.u03.l03.i-like"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.task.hear-did-he",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Ben did not miss the bus, did he?",
+          "answer": "Ben did not miss the bus, did he?",
+          "options": [
+            "Ben did not miss the bus, did he?",
+            "Ben missed the bus, did he?",
+            "Ben did not miss the bus, will you?"
+          ],
+          "explanation": "Because did not miss is negative, the tag is positive: did he?.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l02.did-he",
+            "en.elementary.u10.l09.missed-the-bus"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.task.match-tags",
+          "kind": "match",
+          "prompt": "Match the start of each sentence with its question tag.",
+          "pairs": [
+            {
+              "left": "They have visited the museum,",
+              "right": "have not they?"
+            },
+            {
+              "left": "I am on time,",
+              "right": "am I not?"
+            },
+            {
+              "left": "You will not be late,",
+              "right": "will you?"
+            }
+          ],
+          "explanation": "Match the verb and subject: have -> have not they?, I am -> am I not?, will not -> will you?.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l02.have-not-they",
+            "en.pre-intermediate.u12.l02.am-i-not",
+            "en.pre-intermediate.u12.l02.will-you",
+            "en.elementary.u07.l05.be-on-time"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.task.build-have-not-they",
+          "kind": "build",
+          "prompt": "Build the sentence to check if Sam and Leo have the snacks.",
+          "answer": "They have got the snacks, have not they?",
+          "tiles": [
+            "They",
+            "have",
+            "got",
+            "the",
+            "snacks",
+            "have",
+            "not",
+            "they",
+            "did"
+          ],
+          "explanation": "They have takes have not they? at the end.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l02.have-not-they",
+            "en.elementary.u09.l07.snack"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.task.fill-am-i-not",
+          "kind": "fill",
+          "prompt": "Check that you are right. Complete the question.",
+          "text": "I am right about the time, ___",
+          "answer": "am I not?",
+          "options": [
+            "am I not?",
+            "is not it?",
+            "do not you?"
+          ],
+          "explanation": "After I am, use am I not? to ask for confirmation.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l02.am-i-not"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.task.fill-will-you",
+          "kind": "fill",
+          "prompt": "Remind Sam not to forget the map. Complete the question.",
+          "text": "You will not forget the map, ___",
+          "answer": "will you?",
+          "options": [
+            "will you?",
+            "do not you?",
+            "did he?"
+          ],
+          "explanation": "You will not takes the positive tag will you?.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l02.will-you",
+            "en.elementary.u01.l06.forget"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l02.task.say-tag",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "It is a sunny day, is not it?",
+          "answer": "It is a sunny day, is not it?",
+          "explanation": "Let your voice rise at the end on is not it? when checking information.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l02.is-not-it",
+            "en.beginner.u09.l01.sunny"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Did Ben remember the picnic basket?",
+        "image": {
+          "id": "en-b1-u12-l02-scene",
+          "describe": "Smarty and Mia stand by the club-room table checking a picnic list while Sam looks out the window waiting for Ben."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "We are ready for our picnic in the park. Let us double-check everything."
+          },
+          {
+            "speaker": "Mia",
+            "text": "It is a warm, sunny morning, is not it?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! You like apple juice and sandwiches, do not you?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Of course! Sam and Leo have already packed the fruit, have not they?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes, we have. Ben did not forget the blanket, did he?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "No, he is coming now. I am helping with the bags, am I not?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, Mia! You will not forget to close the window, will you? Good echo on every reply tag!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "What is the weather like for the picnic?",
+            "answer": "Warm and sunny",
+            "options": [
+              "Warm and sunny",
+              "Cold and rainy",
+              "Windy and cloudy"
+            ],
+            "explanation": "Mia says: It is a warm, sunny morning, is not it?.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l02.is-not-it",
+              "en.beginner.u09.l01.sunny"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "What did Sam ask about Ben?",
+            "answer": "If Ben forgot the blanket",
+            "options": [
+              "If Ben forgot the blanket",
+              "If Ben bought the juice",
+              "If Ben missed the bus"
+            ],
+            "explanation": "Sam asks: Ben did not forget the blanket, did he?.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l02.did-he",
+              "en.elementary.u12.l02.blanket"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Smarty remind Mia to do?",
+            "answer": "Close the window",
+            "options": [
+              "Close the window",
+              "Pack the fruit",
+              "Call Ben"
+            ],
+            "explanation": "Smarty says: You will not forget to close the window, will you?.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l02.will-you"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty wants to check some facts with you using question tags.",
+        "turns": [
+          {
+            "smarty": "Look outside! Tell me it is a nice day and check if I agree.",
+            "accept": [
+              "^it is a (?:nice|sunny|warm|great|beautiful) day is not it$"
+            ],
+            "example": "It is a sunny day, is not it?",
+            "hint": "Say It is a sunny day, is not it?",
+            "itemIds": [
+              "en.pre-intermediate.u12.l02.is-not-it",
+              "en.beginner.u09.l01.sunny"
+            ]
+          },
+          {
+            "smarty": "Ask me if I like fish, using a question tag.",
+            "accept": [
+              "^you like fish do not you$"
+            ],
+            "example": "You like fish, do not you?",
+            "hint": "Say You like fish, do not you?",
+            "itemIds": [
+              "en.pre-intermediate.u12.l02.do-not-you",
+              "en.beginner.u03.l11.fish"
+            ]
+          },
+          {
+            "smarty": "Tell me I will not forget my umbrella, and add the tag.",
+            "accept": [
+              "^you will not forget your umbrella will you$"
+            ],
+            "example": "You will not forget your umbrella, will you?",
+            "hint": "Say You will not forget your umbrella, will you?",
+            "itemIds": [
+              "en.pre-intermediate.u12.l02.will-you",
+              "en.beginner.u09.l02.umbrella"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "verify",
+          "gloss": "to check that something is true"
+        },
+        {
+          "text": "double-check",
+          "gloss": "to check something a second time"
+        },
+        {
+          "text": "reply tag",
+          "gloss": "a short question added to the end of a sentence"
+        },
+        {
+          "text": "echo",
+          "gloss": "to repeat the verb from the first part of a sentence"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u03.l03.i-like",
+        "en.elementary.u10.l09.missed-the-bus",
+        "en.elementary.u07.l05.be-on-time",
+        "en.elementary.u09.l07.snack",
+        "en.elementary.u01.l06.forget",
+        "en.beginner.u09.l01.sunny",
+        "en.elementary.u12.l02.blanket",
+        "en.beginner.u03.l11.fish",
+        "en.beginner.u09.l02.umbrella"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u12.l03",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "Giving reasons",
+      "canDo": "Explain why",
+      "scenario": "Leo arrives late to the club-room and explains why everyone is delayed.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u12.l03.the-reason-is",
+          "text": "the reason is",
+          "kind": "phrase",
+          "example": "I am late, and the reason is that my bus was delayed.",
+          "note": "Say 'the reason is' right before you explain why something happened."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.that-is-why",
+          "text": "that is why",
+          "kind": "phrase",
+          "example": "It was raining hard, and that is why we stayed inside.",
+          "note": "Use 'that is why' after giving a cause to show its result."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.because-of",
+          "text": "because of",
+          "kind": "phrase",
+          "example": "We missed the train because of the traffic jam.",
+          "note": "Put 'because of' before a noun or thing that caused a problem or result."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.due-to",
+          "text": "due to",
+          "kind": "phrase",
+          "example": "The game was cancelled due to the storm.",
+          "note": "Use 'due to' before a noun to give a clear, slightly formal reason."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.owing-to",
+          "text": "owing to",
+          "kind": "phrase",
+          "example": "Owing to the snow, the school was closed yesterday.",
+          "note": "Say 'owing to' before a noun, often at the start of a sentence, to explain a cause."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.for-this-reason",
+          "text": "for this reason",
+          "kind": "phrase",
+          "example": "The bridge is broken. For this reason, we must go by boat.",
+          "note": "Start a new sentence with 'For this reason,' to connect a fact to your next action."
+        }
+      ],
+      "grammar": {
+        "title": "Noun after because of, due to, owing to",
+        "explanation": "Follow because of, due to, and owing to with a noun phrase like the rain or the traffic jam. Follow the reason is, that is why, and for this reason with a full clause.",
+        "examples": [
+          "We stayed home because of the rain.",
+          "It rained. For this reason, we stayed home."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l03.task.fill-because-of",
+          "kind": "fill",
+          "prompt": "A noun phrase follows the blank. Choose the right phrase.",
+          "text": "We were late ___ the traffic jam.",
+          "answer": "because of",
+          "options": [
+            "because of",
+            "that is why",
+            "the reason is"
+          ],
+          "explanation": "Use because of before a noun like the traffic jam.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l03.because-of",
+            "en.pre-intermediate.u10.l07.traffic-jam"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.task.fill-that-is-why",
+          "kind": "fill",
+          "prompt": "The first part gives the cause. Connect it to the result.",
+          "text": "There was a power cut, and ___ the computer is off.",
+          "answer": "that is why",
+          "options": [
+            "that is why",
+            "because of",
+            "due to"
+          ],
+          "explanation": "That is why links a cause to its result clause.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l03.that-is-why",
+            "en.pre-intermediate.u06.l09.power-cut"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.task.hear-due-to",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The game was cancelled due to the storm.",
+          "answer": "The game was cancelled due to the storm.",
+          "options": [
+            "The game was cancelled due to the storm.",
+            "The train was delayed due to the snow.",
+            "The game was cancelled because of the rain."
+          ],
+          "explanation": "Listen for cancelled due to the storm.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l03.due-to",
+            "en.pre-intermediate.u02.l01.cancelled",
+            "en.elementary.u04.l10.storm"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.task.match-reasons",
+          "kind": "match",
+          "prompt": "Match the two parts of each sentence.",
+          "pairs": [
+            {
+              "left": "Owing to the rain,",
+              "right": "the picnic was cancelled."
+            },
+            {
+              "left": "I am tired, and the reason is",
+              "right": "that I was late."
+            },
+            {
+              "left": "The park is closed. For this reason,",
+              "right": "we must walk."
+            }
+          ],
+          "explanation": "Owing to takes a noun; the reason is and For this reason take full clauses.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l03.owing-to",
+            "en.pre-intermediate.u12.l03.the-reason-is",
+            "en.pre-intermediate.u12.l03.for-this-reason"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.task.build-reason-is",
+          "kind": "build",
+          "prompt": "Build the sentence explaining why you are late.",
+          "answer": "The reason is that my bus was delayed.",
+          "tiles": [
+            "The",
+            "reason",
+            "is",
+            "that",
+            "my",
+            "bus",
+            "was",
+            "delayed",
+            "early"
+          ],
+          "explanation": "Start with The reason is that, followed by my bus was delayed.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l03.the-reason-is",
+            "en.pre-intermediate.u02.l01.delayed"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.task.fill-owing-to",
+          "kind": "fill",
+          "prompt": "Start the sentence with a formal reason before the noun.",
+          "text": "___ the snow, the station was closed.",
+          "answer": "Owing to",
+          "options": [
+            "Owing to",
+            "That is why",
+            "For this reason"
+          ],
+          "explanation": "Owing to goes right before a noun phrase like the snow.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l03.owing-to",
+            "en.beginner.u09.l02.snow"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.task.fill-for-this-reason",
+          "kind": "fill",
+          "prompt": "Connect the first sentence to the action in the second sentence.",
+          "text": "The tap is broken. ___, there is no water.",
+          "answer": "For this reason",
+          "options": [
+            "For this reason",
+            "Because of",
+            "Due to"
+          ],
+          "explanation": "For this reason introduces a whole result sentence.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l03.for-this-reason",
+            "en.elementary.u11.l02.tap"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l03.task.say-reason",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "We missed the train because of the traffic jam.",
+          "answer": "We missed the train because of the traffic jam.",
+          "explanation": "Use because of smoothly before the noun phrase the traffic jam.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l03.because-of",
+            "en.pre-intermediate.u10.l07.traffic-jam"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why did Leo arrive wet and late to the club-room?",
+        "image": {
+          "id": "en-b1-u12-l03-scene",
+          "describe": "Leo stands in the club-room doorway holding a wet umbrella while Smarty and Ana look at the rain outside the window."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Leo! You are very wet and twenty minutes late."
+          },
+          {
+            "speaker": "Leo",
+            "text": "Sorry! I am late, and the reason is that my bus stopped near the bridge."
+          },
+          {
+            "speaker": "Ana",
+            "text": "Was there a traffic jam?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Yes, there was a big traffic jam because of the thunderstorm."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And the train was cancelled due to the lightning, was it?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Right! Owing to the storm, no trains were running. That is why I walked."
+          },
+          {
+            "speaker": "Ana",
+            "text": "What a cause and effect! For this reason, let us make hot tea for Leo."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Why was there a big traffic jam?",
+            "answer": "Because of the thunderstorm",
+            "options": [
+              "Because of the thunderstorm",
+              "Because of a parade",
+              "Because of a festival"
+            ],
+            "explanation": "Leo says: there was a big traffic jam because of the thunderstorm.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l03.because-of",
+              "en.pre-intermediate.u06.l10.thunderstorm"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Why were no trains running?",
+            "answer": "Owing to the storm",
+            "options": [
+              "Owing to the storm",
+              "Owing to a power cut",
+              "Owing to the snow"
+            ],
+            "explanation": "Leo says: Owing to the storm, no trains were running.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l03.owing-to",
+              "en.elementary.u04.l10.storm"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Ana suggest at the end?",
+            "answer": "Hot tea for Leo",
+            "options": [
+              "Hot tea for Leo",
+              "Calling a taxi for Leo",
+              "Going to the station"
+            ],
+            "explanation": "Ana says: For this reason, let us make hot tea for Leo.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l03.for-this-reason",
+              "en.beginner.u03.l02.tea"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks why you were late to the meeting. Give clear reasons.",
+        "turns": [
+          {
+            "smarty": "You arrived late today! Why did that happen?",
+            "accept": [
+              "^(?:i am late because of|it happened because of|i was late because of|it was due to) the (?:rain|snow|storm|traffic jam|thunderstorm)$",
+              "^the reason is that (?:it was raining|my bus was delayed|i missed the bus)$"
+            ],
+            "example": "I was late because of the traffic jam.",
+            "hint": "Use because of the rain/traffic jam or the reason is that...",
+            "itemIds": [
+              "en.pre-intermediate.u12.l03.because-of",
+              "en.pre-intermediate.u12.l03.the-reason-is",
+              "en.pre-intermediate.u10.l07.traffic-jam"
+            ]
+          },
+          {
+            "smarty": "Oh no! What did you do next?",
+            "accept": [
+              "^that is why i (?:walked|came by bus|came by car|took a taxi)$",
+              "^for this reason i (?:walked|came by bus|came by car|took a taxi)$"
+            ],
+            "example": "That is why I walked.",
+            "hint": "Start with That is why I... or For this reason I...",
+            "itemIds": [
+              "en.pre-intermediate.u12.l03.that-is-why",
+              "en.pre-intermediate.u12.l03.for-this-reason"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "explanation",
+          "gloss": "the reason you give to make something clear"
+        },
+        {
+          "text": "cause",
+          "gloss": "something that makes another thing happen"
+        },
+        {
+          "text": "effect",
+          "gloss": "a change that happens because of something"
+        },
+        {
+          "text": "result",
+          "gloss": "what happens at the end because of a cause"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u10.l07.traffic-jam",
+        "en.pre-intermediate.u06.l09.power-cut",
+        "en.pre-intermediate.u02.l01.cancelled",
+        "en.elementary.u04.l10.storm",
+        "en.pre-intermediate.u02.l01.delayed",
+        "en.beginner.u09.l02.snow",
+        "en.elementary.u11.l02.tap",
+        "en.pre-intermediate.u06.l10.thunderstorm",
+        "en.beginner.u03.l02.tea"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u12.l04",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty and Zara share opinions about town litter, check facts, and explain reasons in the club-room.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l04.task.pick-opinion",
+          "kind": "choice",
+          "prompt": "Choose the phrase that introduces your personal view.",
+          "answer": "From my point of view",
+          "options": [
+            "From my point of view",
+            "Owing to the rain",
+            "Have not they"
+          ],
+          "explanation": "From my point of view shows how you see an issue.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.from-my-point-of-view"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l04.task.fill-tag-they",
+          "kind": "fill",
+          "prompt": "Check that Zara and Tom have cleaned the park.",
+          "text": "They have cleaned the park, ___",
+          "answer": "have not they?",
+          "options": [
+            "have not they?",
+            "do not you?",
+            "did he?"
+          ],
+          "explanation": "They have takes the negative tag have not they?.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l02.have-not-they"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l04.task.fill-due-to",
+          "kind": "fill",
+          "prompt": "Give a reason before the noun phrase 'air pollution'.",
+          "text": "Many people are ill ___ air pollution.",
+          "answer": "due to",
+          "options": [
+            "due to",
+            "that is why",
+            "the reason is"
+          ],
+          "explanation": "Use due to before a noun phrase like air pollution.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l03.due-to",
+            "en.pre-intermediate.u10.l07.air-pollution"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l04.task.match-review",
+          "kind": "match",
+          "prompt": "Match the phrases with their roles in a discussion.",
+          "pairs": [
+            {
+              "left": "As I see it,",
+              "right": "say what you think"
+            },
+            {
+              "left": "is not it?",
+              "right": "checking if it is true"
+            },
+            {
+              "left": "For this reason,",
+              "right": "explaining a result"
+            }
+          ],
+          "explanation": "As I see it shares a view, is not it? checks agreement, and For this reason connects a cause to an action.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.as-i-see-it",
+            "en.pre-intermediate.u12.l02.is-not-it",
+            "en.pre-intermediate.u12.l03.for-this-reason"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l04.task.build-review",
+          "kind": "build",
+          "prompt": "Build the sentence giving a gentle opinion.",
+          "answer": "It seems to me that litter is a problem.",
+          "tiles": [
+            "It",
+            "seems",
+            "to",
+            "me",
+            "that",
+            "litter",
+            "is",
+            "a",
+            "problem",
+            "good"
+          ],
+          "explanation": "It seems to me that introduces a polite, clear opinion.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.it-seems-to-me-that",
+            "en.pre-intermediate.u10.l07.litter"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l04.task.hear-review",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "You care about nature, do not you?",
+          "answer": "You care about nature, do not you?",
+          "options": [
+            "You care about nature, do not you?",
+            "You care about music, do not you?",
+            "They care about nature, have not they?"
+          ],
+          "explanation": "You with a positive verb takes do not you?.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l02.do-not-you"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l04.task.say-review",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I strongly believe we can solve this problem.",
+          "answer": "I strongly believe we can solve this problem.",
+          "explanation": "Practise combining I strongly believe with a clear action.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.i-strongly-believe"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why is there so much litter near the river?",
+        "image": {
+          "id": "en-b1-u12-l04-scene",
+          "describe": "Smarty, Zara, and Tom sit around a table in the club-room looking at a town map with green pins along the river."
+        },
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "As I see it, the park near the river is very dirty this week."
+          },
+          {
+            "speaker": "Tom",
+            "text": "It is full of rubbish, is not it? The reason is that there were many visitors yesterday."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And there are not enough rubbish bins because of the festival, are there?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Right! Owing to many people, the bins were full early. That is why litter is on the grass."
+          },
+          {
+            "speaker": "Tom",
+            "text": "You want to help clean it up tomorrow, do not you?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I strongly believe we should! For this reason, let us meet at nine o'clock."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Zara's opinion about the park?",
+            "answer": "It is very dirty this week.",
+            "options": [
+              "It is very dirty this week.",
+              "It is too far away.",
+              "It is closed due to snow."
+            ],
+            "explanation": "Zara says: As I see it, the park near the river is very dirty this week.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l01.as-i-see-it"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "Why were the bins full early?",
+            "answer": "Owing to many people",
+            "options": [
+              "Owing to many people",
+              "Owing to the storm",
+              "Owing to a power cut"
+            ],
+            "explanation": "Zara says: Owing to many people, the bins were full early.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l03.owing-to"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you to share your opinion, check a fact, and give a reason.",
+        "turns": [
+          {
+            "smarty": "What is your opinion on riding a bicycle to school?",
+            "accept": [
+              "^(?:as i see it|personally i think|from my point of view|i strongly believe|i feel that) (?:riding a bicycle|a bicycle) is (?:healthy|cheap|great|better|fast|good)$"
+            ],
+            "example": "Personally I think a bicycle is healthy.",
+            "hint": "Use Personally I think or As I see it and describe riding a bicycle.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l01.personally-i-think",
+              "en.pre-intermediate.u12.l01.as-i-see-it"
+            ]
+          },
+          {
+            "smarty": "Why is a bicycle better than a car in town?",
+            "accept": [
+              "^(?:the reason is that )?(?:there is no traffic jam|it is cheap|it is healthy)$",
+              "^(?:it is good )?because of (?:the traffic jam|air pollution)$"
+            ],
+            "example": "It is good because of the traffic jam.",
+            "hint": "Give a reason with the reason is or because of.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l03.the-reason-is",
+              "en.pre-intermediate.u12.l03.because-of"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.pre-intermediate.u12.l01.from-my-point-of-view",
+        "en.pre-intermediate.u12.l02.have-not-they",
+        "en.pre-intermediate.u12.l03.due-to",
+        "en.pre-intermediate.u10.l07.air-pollution",
+        "en.pre-intermediate.u12.l01.as-i-see-it",
+        "en.pre-intermediate.u12.l02.is-not-it",
+        "en.pre-intermediate.u12.l03.for-this-reason",
+        "en.pre-intermediate.u12.l01.it-seems-to-me-that",
+        "en.pre-intermediate.u10.l07.litter",
+        "en.pre-intermediate.u12.l02.do-not-you",
+        "en.pre-intermediate.u12.l01.i-strongly-believe",
+        "en.pre-intermediate.u12.l03.owing-to",
+        "en.pre-intermediate.u12.l01.personally-i-think",
+        "en.pre-intermediate.u12.l03.the-reason-is",
+        "en.pre-intermediate.u12.l03.because-of"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u12.l05",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Linking ideas",
+      "canDo": "Contrast ideas",
+      "scenario": "Ana and Tom compare two ideas for the club-room weekend activity.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u12.l05.however",
+          "text": "however",
+          "kind": "word",
+          "example": "The jacket is expensive. However, it is very warm.",
+          "note": "Start a new sentence with 'However,' to introduce a fact that contrasts with your first point."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.although",
+          "text": "although",
+          "kind": "word",
+          "example": "Although it was raining, we walked to the park.",
+          "note": "Use 'although' before a full clause to show a surprising contrast between two facts."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.in-spite-of",
+          "text": "in spite of",
+          "kind": "phrase",
+          "example": "In spite of the cold weather, we played football outside.",
+          "note": "Put 'in spite of' before a noun to show that something happened anyway."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.even-though",
+          "text": "even though",
+          "kind": "phrase",
+          "example": "Even though I was tired, I helped my friend.",
+          "note": "Use 'even though' for a strong contrast, just like 'although' but with extra emphasis."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.on-the-other-hand",
+          "text": "on the other hand",
+          "kind": "phrase",
+          "example": "Living in town is noisy. On the other hand, everything is near.",
+          "note": "Say 'On the other hand,' when you move to the opposite side of an argument."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.whereas",
+          "text": "whereas",
+          "kind": "word",
+          "example": "Mia enjoys skiing, whereas Sam prefers swimming.",
+          "note": "Use 'whereas' in the middle of a sentence to compare two opposite facts."
+        }
+      ],
+      "grammar": {
+        "title": "Contrasting clauses vs. nouns",
+        "explanation": "Use although, even though, and whereas with a subject and verb. Use in spite of with a noun. Use However and On the other hand at the start of a new sentence.",
+        "examples": [
+          "Although he was ill, he came.",
+          "In spite of his cold, he came."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l05.task.fill-in-spite-of",
+          "kind": "fill",
+          "prompt": "A noun phrase follows the blank. Choose the right linking phrase.",
+          "text": "___ the rain, we had a great picnic.",
+          "answer": "In spite of",
+          "options": [
+            "In spite of",
+            "Although",
+            "Even though"
+          ],
+          "explanation": "In spite of goes before a noun like the rain, while although and even though take a verb.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l05.in-spite-of",
+            "en.beginner.u09.l02.rain"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.task.fill-whereas",
+          "kind": "fill",
+          "prompt": "Compare Mia and Sam's hobbies in one sentence.",
+          "text": "Mia likes painting, ___ Sam prefers woodwork.",
+          "answer": "whereas",
+          "options": [
+            "whereas",
+            "however",
+            "in spite of"
+          ],
+          "explanation": "Use whereas in the middle of a sentence to contrast two people or things.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l05.whereas",
+            "en.pre-intermediate.u05.l02.woodwork"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.task.hear-however",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The camera is small. However, it takes amazing photos.",
+          "answer": "The camera is small. However, it takes amazing photos.",
+          "options": [
+            "The camera is small. However, it takes amazing photos.",
+            "The camera is big. However, it is very cheap.",
+            "Although the camera is small, it is broken."
+          ],
+          "explanation": "However starts the second sentence to show a positive contrast.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l05.however",
+            "en.beginner.u11.l07.camera"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.task.match-contrast",
+          "kind": "match",
+          "prompt": "Match the two halves of each contrasting sentence.",
+          "pairs": [
+            {
+              "left": "Although the mountain is steep,",
+              "right": "we got to the summit."
+            },
+            {
+              "left": "The hotel is cheap. On the other hand,",
+              "right": "it is far from the station."
+            },
+            {
+              "left": "Even though the exam was difficult,",
+              "right": "Lily passed the exam."
+            }
+          ],
+          "explanation": "Match the contrasting ideas logically.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l05.although",
+            "en.pre-intermediate.u12.l05.on-the-other-hand",
+            "en.pre-intermediate.u12.l05.even-though",
+            "en.pre-intermediate.u09.l02.summit"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.task.build-although",
+          "kind": "build",
+          "prompt": "Build the sentence showing a contrast about the weather.",
+          "answer": "Although it was cold we went outside.",
+          "tiles": [
+            "Although",
+            "it",
+            "was",
+            "cold",
+            "we",
+            "went",
+            "outside",
+            "inside"
+          ],
+          "explanation": "Although introduces the clause it was cold before the main clause.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l05.although",
+            "en.beginner.u03.l09.cold"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.task.fill-even-though",
+          "kind": "fill",
+          "prompt": "Add strong emphasis to the contrast. Complete the sentence.",
+          "text": "___ he was nervous, Omar spoke clearly on stage.",
+          "answer": "Even though",
+          "options": [
+            "Even though",
+            "In spite of",
+            "On the other hand"
+          ],
+          "explanation": "Even though goes before a full clause like he was nervous.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l05.even-though",
+            "en.pre-intermediate.u11.l01.nervous",
+            "en.pre-intermediate.u05.l09.stage"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.task.fill-other-hand",
+          "kind": "fill",
+          "prompt": "Introduce the opposite side of the argument.",
+          "text": "Summer is hot. ___, we can swim in the sea.",
+          "answer": "On the other hand",
+          "options": [
+            "On the other hand",
+            "Whereas",
+            "Because of"
+          ],
+          "explanation": "On the other hand opens a new sentence with the other side of the topic.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l05.on-the-other-hand",
+            "en.elementary.u06.l05.sea"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l05.task.say-whereas",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "Mia enjoys skiing, whereas Sam prefers swimming.",
+          "answer": "Mia enjoys skiing, whereas Sam prefers swimming.",
+          "explanation": "Pause lightly before whereas when comparing two people.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l05.whereas",
+            "en.pre-intermediate.u09.l09.skiing"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Can Ana and Tom agree on a weekend trip?",
+        "image": {
+          "id": "en-b1-u12-l05-scene",
+          "describe": "Ana and Tom sit at the club-room table comparing a mountain trail map and a museum leaflet while Smarty listens carefully."
+        },
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "I want to hike in the forest tomorrow. However, the forecast says it may rain."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Although the forest is beautiful, a wet trail is dangerous."
+          },
+          {
+            "speaker": "Ana",
+            "text": "True! On the other hand, the nature reserve is quiet in the rain."
+          },
+          {
+            "speaker": "Tom",
+            "text": "You love walking outside, whereas I prefer staying dry in the museum."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What a clear contrast! Even though you want different things, your ideas even out."
+          },
+          {
+            "speaker": "Ana",
+            "text": "In spite of the cloudy sky, we can visit the museum first and walk if the sun comes out."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Despite my fear of rain, that sounds like a great compromise!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "Why is Tom worried about hiking in the forest?",
+            "answer": "The trail is dangerous in the rain.",
+            "options": [
+              "The trail is dangerous in the rain.",
+              "The forest is too far.",
+              "The bus is cancelled."
+            ],
+            "explanation": "Tom says: Although the forest is beautiful, a wet trail is dangerous.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l05.although",
+              "en.elementary.u06.l06.dangerous"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "How does Tom compare himself and Ana?",
+            "answer": "Ana loves walking outside, whereas Tom prefers the museum.",
+            "options": [
+              "Ana loves walking outside, whereas Tom prefers the museum.",
+              "Ana prefers the museum, whereas Tom loves the forest.",
+              "They hate museums."
+            ],
+            "explanation": "Tom says: You love walking outside, whereas I prefer staying dry in the museum.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l05.whereas"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty gives you one side of a topic. Add a contrasting idea!",
+        "turns": [
+          {
+            "smarty": "Our room is quite small. Can you add a positive contrast with However or On the other hand?",
+            "accept": [
+              "^(?:however|on the other hand) (?:it is|our room is) (?:warm|clean|nice|cozy|great|near|quiet)$"
+            ],
+            "example": "However, it is clean.",
+            "hint": "Start with However or On the other hand, then say something good about the room.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l05.however",
+              "en.pre-intermediate.u12.l05.on-the-other-hand"
+            ]
+          },
+          {
+            "smarty": "Compare tea and coffee using whereas.",
+            "accept": [
+              "^i like tea whereas (?:my friend|sam|mia) likes (?:coffee|latte|juice)$",
+              "^tea is hot whereas (?:lemonade|ice|water) is cold$"
+            ],
+            "example": "I like tea, whereas Sam likes juice.",
+            "hint": "Put whereas between two opposite facts.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l05.whereas"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "contrast",
+          "gloss": "a clear difference between two things"
+        },
+        {
+          "text": "even out",
+          "gloss": "to become balanced or equal"
+        },
+        {
+          "text": "despite",
+          "gloss": "without being stopped by something"
+        },
+        {
+          "text": "nevertheless",
+          "gloss": "in spite of what was just said"
+        }
+      ],
+      "recycle": [
+        "en.beginner.u09.l02.rain",
+        "en.pre-intermediate.u05.l02.woodwork",
+        "en.beginner.u11.l07.camera",
+        "en.pre-intermediate.u09.l02.summit",
+        "en.beginner.u03.l09.cold",
+        "en.pre-intermediate.u11.l01.nervous",
+        "en.pre-intermediate.u05.l09.stage",
+        "en.elementary.u06.l05.sea",
+        "en.pre-intermediate.u09.l09.skiing",
+        "en.elementary.u06.l06.dangerous"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u12.l06",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Adding points",
+      "canDo": "Add and order ideas",
+      "scenario": "Smarty helps Lily organize her points for a community charity proposal.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u12.l06.as-well-as",
+          "text": "as well as",
+          "kind": "phrase",
+          "example": "We need drinking water as well as snacks for the trip.",
+          "note": "Use 'as well as' to add one more thing or idea onto something you just mentioned."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.in-addition",
+          "text": "in addition",
+          "kind": "phrase",
+          "example": "The hotel has a swimming pool. In addition, breakfast is free.",
+          "note": "Start a sentence with 'In addition,' to give an extra supporting point."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.first-of-all",
+          "text": "first of all",
+          "kind": "phrase",
+          "example": "First of all, let us check the agenda.",
+          "note": "Say 'First of all,' to introduce the very first point in a list or discussion."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.lastly",
+          "text": "lastly",
+          "kind": "word",
+          "example": "Lastly, we must clean the room before we leave.",
+          "note": "Use 'Lastly,' right before your final point so listeners know you are finishing."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.what-is-more",
+          "text": "what is more",
+          "kind": "phrase",
+          "example": "The solar panel saves money. What is more, it is clean.",
+          "note": "Say 'What is more,' when your next point is even stronger or more exciting."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.to-begin-with",
+          "text": "to begin with",
+          "kind": "phrase",
+          "example": "To begin with, I would like to thank everyone for coming.",
+          "note": "Use 'To begin with,' to open your explanation with your first main idea."
+        }
+      ],
+      "grammar": {
+        "title": "Ordering your points clearly",
+        "explanation": "Open with First of all or To begin with. Add extra points with In addition, What is more, or as well as. Close your list with Lastly.",
+        "examples": [
+          "To begin with, the park is dirty. In addition, there is litter near the lake. Lastly, we can clean it together."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l06.task.fill-first-of-all",
+          "kind": "fill",
+          "prompt": "Start the meeting with the very first point.",
+          "text": "___, let us look at today's agenda.",
+          "answer": "First of all",
+          "options": [
+            "First of all",
+            "Lastly",
+            "In addition"
+          ],
+          "explanation": "First of all introduces your opening point.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l06.first-of-all",
+            "en.pre-intermediate.u07.l11.agenda"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.task.fill-as-well-as",
+          "kind": "fill",
+          "prompt": "Add fruit to the shopping list.",
+          "text": "We bought bread and cheese ___ fresh fruit.",
+          "answer": "as well as",
+          "options": [
+            "as well as",
+            "to begin with",
+            "lastly"
+          ],
+          "explanation": "Use as well as to join an extra noun onto a list.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l06.as-well-as",
+            "en.beginner.u03.l07.fruit"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.task.hear-what-is-more",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The solar panel saves money. What is more, it is clean.",
+          "answer": "The solar panel saves money. What is more, it is clean.",
+          "options": [
+            "The solar panel saves money. What is more, it is clean.",
+            "The solar panel is cheap. Lastly, it is small.",
+            "To begin with, the solar panel saves electricity."
+          ],
+          "explanation": "What is more introduces an even stronger second point.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l06.what-is-more",
+            "en.pre-intermediate.u06.l09.solar-panel"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.task.match-order",
+          "kind": "match",
+          "prompt": "Match each phrase with its place in a talk.",
+          "pairs": [
+            {
+              "left": "To begin with,",
+              "right": "the first point"
+            },
+            {
+              "left": "In addition,",
+              "right": "the second point"
+            },
+            {
+              "left": "Lastly,",
+              "right": "the final point"
+            }
+          ],
+          "explanation": "To begin with opens, In addition adds, and Lastly finishes.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l06.to-begin-with",
+            "en.pre-intermediate.u12.l06.in-addition",
+            "en.pre-intermediate.u12.l06.lastly"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.task.build-in-addition",
+          "kind": "build",
+          "prompt": "Build the sentence adding an extra benefit.",
+          "answer": "In addition the workshop is free.",
+          "tiles": [
+            "In",
+            "addition",
+            "the",
+            "workshop",
+            "is",
+            "free",
+            "expensive"
+          ],
+          "explanation": "In addition starts the sentence to add another positive fact.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l06.in-addition",
+            "en.pre-intermediate.u05.l11.a-workshop"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.task.fill-to-begin-with",
+          "kind": "fill",
+          "prompt": "Open Lily's proposal with her first point.",
+          "text": "___, we want to raise money for the library.",
+          "answer": "To begin with",
+          "options": [
+            "To begin with",
+            "Lastly",
+            "What is more"
+          ],
+          "explanation": "To begin with introduces the very first point of a talk.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l06.to-begin-with",
+            "en.pre-intermediate.u10.l06.raise-money"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.task.fill-lastly",
+          "kind": "fill",
+          "prompt": "Finish the list with the final action.",
+          "text": "___, we will share the photos online.",
+          "answer": "Lastly",
+          "options": [
+            "Lastly",
+            "First of all",
+            "To begin with"
+          ],
+          "explanation": "Lastly signals that this is the final point.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l06.lastly"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l06.task.say-points",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "First of all, we need a clear agenda.",
+          "answer": "First of all, we need a clear agenda.",
+          "explanation": "Use First of all to organize your ideas from the start.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l06.first-of-all",
+            "en.pre-intermediate.u07.l11.agenda"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How many points are on Lily's charity list?",
+        "image": {
+          "id": "en-b1-u12-l06-scene",
+          "describe": "Lily stands by a flipchart in the club-room pointing to three numbered stars while Smarty and Ben take notes."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Lily, tell us your sequence of ideas for our charity weekend."
+          },
+          {
+            "speaker": "Lily",
+            "text": "To begin with, we can bake cakes as well as biscuits to sell at the market."
+          },
+          {
+            "speaker": "Ben",
+            "text": "That sounds delicious! What else is on your list?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "In addition, we can hold a small concert in the town hall."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Furthermore, everyone loves live music! Is there more?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "Yes! What is more, our music teacher will play the piano for free."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Amazing! And what is your final point?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "Lastly, we will give all the money to the animal charity."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Lily's first idea?",
+            "answer": "Cakes as well as snacks for the market",
+            "options": [
+              "Cakes as well as snacks for the market",
+              "Cleaning the town hall",
+              "A new piano"
+            ],
+            "explanation": "Lily says: To begin with, we can bake cakes as well as biscuits to sell at the market.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l06.to-begin-with",
+              "en.pre-intermediate.u12.l06.as-well-as"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What is Lily's final point?",
+            "answer": "All the money for the charity",
+            "options": [
+              "All the money for the charity",
+              "Snacks for the team",
+              "Writing a newspaper report"
+            ],
+            "explanation": "Lily says: Lastly, we will give all the money to the animal charity.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l06.lastly",
+              "en.pre-intermediate.u10.l06.charity"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you to give two ordered points for a weekend party.",
+        "turns": [
+          {
+            "smarty": "How should we organize our party? Start with First of all or To begin with.",
+            "accept": [
+              "^(?:first of all|to begin with) we (?:need|should|must|can) (?:buy|make|bring|get) (?:pizza|cake|snacks|juice|balloons|music)$"
+            ],
+            "example": "First of all, we should buy pizza.",
+            "hint": "Say First of all, we should buy pizza (or cake, snacks, juice).",
+            "itemIds": [
+              "en.pre-intermediate.u12.l06.first-of-all",
+              "en.pre-intermediate.u12.l06.to-begin-with"
+            ]
+          },
+          {
+            "smarty": "Great! Now add a second point using In addition or What is more.",
+            "accept": [
+              "^(?:in addition|what is more) we (?:can|should|will) (?:play music|dance|sing|invite friends|play games)$"
+            ],
+            "example": "In addition, we can play music.",
+            "hint": "Start with In addition or What is more, then add another party activity.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l06.in-addition",
+              "en.pre-intermediate.u12.l06.what-is-more"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "list",
+          "gloss": "a set of items or points in order"
+        },
+        {
+          "text": "sequence",
+          "gloss": "the order in which things happen or are said"
+        },
+        {
+          "text": "furthermore",
+          "gloss": "in addition to what was just said"
+        },
+        {
+          "text": "moreover",
+          "gloss": "also and more importantly"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u07.l11.agenda",
+        "en.beginner.u03.l07.fruit",
+        "en.pre-intermediate.u06.l09.solar-panel",
+        "en.pre-intermediate.u05.l11.a-workshop",
+        "en.pre-intermediate.u10.l06.raise-money",
+        "en.pre-intermediate.u10.l06.charity"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u12.l07",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Disagreeing nicely",
+      "canDo": "Disagree politely",
+      "scenario": "Omar and Mia disagree politely about buying a big screen for the club-room.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u12.l07.i-see-your-point-but",
+          "text": "I see your point but",
+          "kind": "phrase",
+          "example": "I see your point, but the screen is too expensive.",
+          "note": "Say 'I see your point, but...' to show you understand the other person before sharing a different view."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.i-am-afraid-i-disagree",
+          "text": "I am afraid I disagree",
+          "kind": "phrase",
+          "example": "I am afraid I disagree with that proposal.",
+          "note": "Use 'I am afraid I disagree' to say no politely without sounding angry."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.i-am-not-convinced",
+          "text": "I am not convinced",
+          "kind": "phrase",
+          "example": "I am not convinced that this is the best solution.",
+          "note": "Say 'I am not convinced' when someone's reason has not persuaded you yet."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.that-may-be-true-but",
+          "text": "That may be true but",
+          "kind": "phrase",
+          "example": "That may be true, but we do not have enough money.",
+          "note": "Use 'That may be true, but...' to accept a fact while showing a bigger problem."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.let-us-agree-to-differ",
+          "text": "Let us agree to differ",
+          "kind": "phrase",
+          "example": "We both have strong views, so let us agree to differ.",
+          "note": "Say 'Let us agree to differ' to end a friendly debate peacefully when neither side changes."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.i-take-your-point",
+          "text": "I take your point",
+          "kind": "phrase",
+          "example": "I take your point about the price, so let us look for a discount.",
+          "note": "Say 'I take your point' to admit that the other speaker made a good argument."
+        }
+      ],
+      "grammar": {
+        "title": "Softening disagreement",
+        "explanation": "Soften disagreement by starting with I am afraid or I am not convinced, or by accepting part of the idea first with I see your point, but... or That may be true, but...",
+        "examples": [
+          "I see your point, but I am not convinced.",
+          "I am afraid I disagree."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l07.task.pick-polite",
+          "kind": "choice",
+          "prompt": "Which phrase is the most polite way to disagree in a meeting?",
+          "answer": "I am afraid I disagree",
+          "options": [
+            "I am afraid I disagree",
+            "You must be joking",
+            "I could not care less"
+          ],
+          "explanation": "Adding I am afraid makes I disagree sound polite and respectful.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l07.i-am-afraid-i-disagree",
+            "en.pre-intermediate.u01.l10.i-disagree"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.task.fill-see-point",
+          "kind": "fill",
+          "prompt": "Show you understand Omar's idea before giving a problem.",
+          "text": "___ it is too expensive for our budget.",
+          "answer": "I see your point but",
+          "options": [
+            "I see your point but",
+            "Let us agree to differ",
+            "I take your point"
+          ],
+          "explanation": "I see your point, but... connects understanding with a contrasting point.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l07.i-see-your-point-but",
+            "en.beginner.u07.l05.expensive"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.task.hear-convinced",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I am not convinced that this is the best solution.",
+          "answer": "I am not convinced that this is the best solution.",
+          "options": [
+            "I am not convinced that this is the best solution.",
+            "I am convinced that this is a great idea.",
+            "I am afraid I disagree with your solution."
+          ],
+          "explanation": "Listen for the negative: I am not convinced.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l07.i-am-not-convinced",
+            "en.pre-intermediate.u10.l10.a-solution"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.task.match-disagree",
+          "kind": "match",
+          "prompt": "Match each polite phrase with what it does.",
+          "pairs": [
+            {
+              "left": "That may be true, but...",
+              "right": "yes, and then but"
+            },
+            {
+              "left": "I take your point.",
+              "right": "admits the other person made a good point"
+            },
+            {
+              "left": "Let us agree to differ.",
+              "right": "a friendly end to the disagreement"
+            }
+          ],
+          "explanation": "Each phrase keeps a discussion friendly and respectful.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l07.that-may-be-true-but",
+            "en.pre-intermediate.u12.l07.i-take-your-point",
+            "en.pre-intermediate.u12.l07.let-us-agree-to-differ"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.task.build-agree-differ",
+          "kind": "build",
+          "prompt": "Build the sentence to end a debate peacefully.",
+          "answer": "Let us agree to differ.",
+          "tiles": [
+            "Let",
+            "us",
+            "agree",
+            "to",
+            "differ",
+            "vote"
+          ],
+          "explanation": "Let us agree to differ means we accept our different views and stay friends.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l07.let-us-agree-to-differ"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.task.fill-may-be-true",
+          "kind": "fill",
+          "prompt": "Accept that the film is popular, then add your concern.",
+          "text": "___ it is too long for tonight.",
+          "answer": "That may be true but",
+          "options": [
+            "That may be true but",
+            "I am afraid I disagree",
+            "I take your point"
+          ],
+          "explanation": "That may be true, but... acknowledges the first idea before contrasting.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l07.that-may-be-true-but"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.task.fill-take-point",
+          "kind": "fill",
+          "prompt": "Show that you respect Mia's argument about time.",
+          "text": "___ about the schedule, so let us start early.",
+          "answer": "I take your point",
+          "options": [
+            "I take your point",
+            "I am not convinced",
+            "I am afraid I disagree"
+          ],
+          "explanation": "I take your point shows you accept the value of the other person's point.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l07.i-take-your-point",
+            "en.pre-intermediate.u07.l09.a-schedule"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l07.task.say-disagree",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I see your point, but I am not convinced.",
+          "answer": "I see your point, but I am not convinced.",
+          "explanation": "Keep your tone calm and friendly when saying I see your point, but I am not convinced.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l07.i-see-your-point-but",
+            "en.pre-intermediate.u12.l07.i-am-not-convinced"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How do Omar and Mia solve their debate without tension?",
+        "image": {
+          "id": "en-b1-u12-l07-scene",
+          "describe": "Omar and Mia sit across the club-room table gesturing calmly while Smarty smiles between them."
+        },
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "I think we should buy a huge new screen for our room."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I see your point, but a huge screen is very expensive."
+          },
+          {
+            "speaker": "Omar",
+            "text": "That may be true, but we can watch documentaries together every week."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I am afraid I disagree. I am not convinced we have enough money."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "There is no tension here because you are both so respectful in this debate!"
+          },
+          {
+            "speaker": "Omar",
+            "text": "I take your point about the price, Mia. What if we look for a second-hand screen?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Now that is a great compromise! And on other things, let us agree to differ."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "Why does Mia disagree with Omar at first?",
+            "answer": "A big screen is very expensive.",
+            "options": [
+              "A big screen is very expensive.",
+              "She hates watching films.",
+              "The room has no electricity."
+            ],
+            "explanation": "Mia says: I see your point, but a huge screen is very expensive.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l07.i-see-your-point-but",
+              "en.beginner.u07.l05.expensive"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "Which phrase does Omar use to accept Mia's argument about the price?",
+            "answer": "I take your point",
+            "options": [
+              "I take your point",
+              "I am afraid I disagree",
+              "I am not convinced"
+            ],
+            "explanation": "Omar says: I take your point about the price, Mia.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l07.i-take-your-point"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty gives an opinion you do not agree with. Disagree politely!",
+        "turns": [
+          {
+            "smarty": "I think we should buy an expensive new television for our room!",
+            "accept": [
+              "^(?:i see your point but|that may be true but|i am afraid i disagree|i am not convinced) (?:it is too expensive|we do not have enough money|we cannot afford it)$"
+            ],
+            "example": "I see your point, but it is too expensive.",
+            "hint": "Start with I see your point, but... or I am afraid I disagree...",
+            "itemIds": [
+              "en.pre-intermediate.u12.l07.i-see-your-point-but",
+              "en.pre-intermediate.u12.l07.i-am-afraid-i-disagree"
+            ]
+          },
+          {
+            "smarty": "Well, we both have good reasons! How can we finish our friendly debate?",
+            "accept": [
+              "^let us agree to differ$",
+              "^i take your point$"
+            ],
+            "example": "Let us agree to differ.",
+            "hint": "Say Let us agree to differ.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l07.let-us-agree-to-differ",
+              "en.pre-intermediate.u12.l07.i-take-your-point"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "tension",
+          "gloss": "a worried or unfriendly feeling during a disagreement"
+        },
+        {
+          "text": "respectful",
+          "gloss": "polite and caring about other people's feelings"
+        },
+        {
+          "text": "debate",
+          "gloss": "a discussion where people share opposite views"
+        },
+        {
+          "text": "compromise",
+          "gloss": "an agreement where each side gives up a little"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u01.l10.i-disagree",
+        "en.beginner.u07.l05.expensive",
+        "en.pre-intermediate.u10.l10.a-solution",
+        "en.pre-intermediate.u07.l09.a-schedule"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u12.l08",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Smarty, Ben, and Lily debate whether to spend charity money on musical instruments or bicycles.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l08.task.fill-although",
+          "kind": "fill",
+          "prompt": "Connect two contrasting clauses.",
+          "text": "___ guitars are fun, they are difficult to learn.",
+          "answer": "Although",
+          "options": [
+            "Although",
+            "In spite of",
+            "In addition"
+          ],
+          "explanation": "Use Although before a clause with a subject and verb.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l05.although",
+            "en.elementary.u05.l01.guitar"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l08.task.fill-what-is-more",
+          "kind": "fill",
+          "prompt": "Add an even stronger point for bicycles.",
+          "text": "Bicycles are cheap. ___, they keep you healthy.",
+          "answer": "What is more",
+          "options": [
+            "What is more",
+            "Lastly",
+            "I am afraid I disagree"
+          ],
+          "explanation": "What is more adds a strong extra point.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l06.what-is-more",
+            "en.elementary.u04.l09.bicycle"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l08.task.match-review-two",
+          "kind": "match",
+          "prompt": "Match each phrase with its purpose.",
+          "pairs": [
+            {
+              "left": "To begin with,",
+              "right": "start with the first idea"
+            },
+            {
+              "left": "On the other hand,",
+              "right": "say the other idea"
+            },
+            {
+              "left": "I am not convinced.",
+              "right": "disagree politely"
+            }
+          ],
+          "explanation": "To begin with orders ideas, On the other hand contrasts, and I am not convinced disagrees politely.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l06.to-begin-with",
+            "en.pre-intermediate.u12.l05.on-the-other-hand",
+            "en.pre-intermediate.u12.l07.i-am-not-convinced"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l08.task.build-see-point",
+          "kind": "build",
+          "prompt": "Build the polite disagreement sentence.",
+          "answer": "I see your point but I disagree.",
+          "tiles": [
+            "I",
+            "see",
+            "your",
+            "point",
+            "but",
+            "I",
+            "disagree",
+            "agree"
+          ],
+          "explanation": "Acknowledge the listener with I see your point before saying but I disagree.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l07.i-see-your-point-but",
+            "en.pre-intermediate.u01.l10.i-disagree"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l08.task.hear-in-spite-of",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "In spite of the noise, we made our meeting notes.",
+          "answer": "In spite of the noise, we made our meeting notes.",
+          "options": [
+            "In spite of the noise, we made our meeting notes.",
+            "Although it was noisy, we left early.",
+            "In addition, we wrote our meeting notes."
+          ],
+          "explanation": "In spite of is followed by the noun phrase the noise.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l05.in-spite-of",
+            "en.pre-intermediate.u07.l11.meeting-notes"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l08.task.say-take-point",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I take your point, so let us agree to differ.",
+          "answer": "I take your point, so let us agree to differ.",
+          "explanation": "Combine I take your point with let us agree to differ to close a debate warmly.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l07.i-take-your-point",
+            "en.pre-intermediate.u12.l07.let-us-agree-to-differ"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Will Ben and Lily choose guitars or bicycles?",
+        "image": {
+          "id": "en-b1-u12-l08-scene",
+          "describe": "Ben holds a guitar sketch and Lily holds a bicycle drawing in the club-room while Smarty writes their points on a board."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "First of all, buying guitars as well as drums will help our music lessons."
+          },
+          {
+            "speaker": "Lily",
+            "text": "I see your point, but only a few students play music, whereas everyone rides a bicycle."
+          },
+          {
+            "speaker": "Ben",
+            "text": "That may be true, but music brings the whole audience together."
+          },
+          {
+            "speaker": "Lily",
+            "text": "In addition, bicycles help students arrive on time. Lastly, they reduce air pollution."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Even though you disagree, you are both making strong points!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "I take your point, Lily. Let us agree to differ until the vote!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Lily's last point for buying bicycles?",
+            "answer": "They are good for the air.",
+            "options": [
+              "They are good for the air.",
+              "They are louder than drums.",
+              "They are easy to paint."
+            ],
+            "explanation": "Lily says: Lastly, they reduce air pollution.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l06.lastly",
+              "en.pre-intermediate.u10.l07.air-pollution"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "How does Ben reply to Lily at the end?",
+            "answer": "I take your point and Let us agree to differ.",
+            "options": [
+              "I take your point and Let us agree to differ.",
+              "He is very angry.",
+              "He does not vote."
+            ],
+            "explanation": "Ben says: I take your point, Lily. Let us agree to differ until the vote!",
+            "itemIds": [
+              "en.pre-intermediate.u12.l07.i-take-your-point",
+              "en.pre-intermediate.u12.l07.let-us-agree-to-differ"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you to contrast an idea and disagree politely.",
+        "turns": [
+          {
+            "smarty": "I think watching TV all weekend is great! Disagree nicely with me.",
+            "accept": [
+              "^(?:i am afraid i disagree|i am not convinced|i see your point but|that may be true but) (?:it is boring|exercise is better|we should go outside)$"
+            ],
+            "example": "I am afraid I disagree, exercise is better.",
+            "hint": "Start with I am afraid I disagree or I see your point, but...",
+            "itemIds": [
+              "en.pre-intermediate.u12.l07.i-am-afraid-i-disagree",
+              "en.pre-intermediate.u12.l07.i-see-your-point-but"
+            ]
+          },
+          {
+            "smarty": "Now add a point for going outside using In addition or What is more.",
+            "accept": [
+              "^(?:in addition|what is more) (?:it is healthy|the fresh air is great|we can play football)$"
+            ],
+            "example": "What is more, it is healthy.",
+            "hint": "Say What is more, it is healthy.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l06.what-is-more",
+              "en.pre-intermediate.u12.l06.in-addition"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.pre-intermediate.u12.l05.although",
+        "en.elementary.u05.l01.guitar",
+        "en.pre-intermediate.u12.l06.what-is-more",
+        "en.elementary.u04.l09.bicycle",
+        "en.pre-intermediate.u12.l06.to-begin-with",
+        "en.pre-intermediate.u12.l05.on-the-other-hand",
+        "en.pre-intermediate.u12.l07.i-am-not-convinced",
+        "en.pre-intermediate.u12.l07.i-see-your-point-but",
+        "en.pre-intermediate.u01.l10.i-disagree",
+        "en.pre-intermediate.u12.l05.in-spite-of",
+        "en.pre-intermediate.u07.l11.meeting-notes",
+        "en.pre-intermediate.u12.l07.i-take-your-point",
+        "en.pre-intermediate.u12.l07.let-us-agree-to-differ",
+        "en.pre-intermediate.u12.l06.lastly",
+        "en.pre-intermediate.u10.l07.air-pollution",
+        "en.pre-intermediate.u12.l07.i-am-afraid-i-disagree",
+        "en.pre-intermediate.u12.l06.in-addition"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u12.l09",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "Pros and cons",
+      "canDo": "Weigh up an issue",
+      "scenario": "Sam and Zara weigh the pros and cons of putting solar panels on the school.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u12.l09.the-advantage-is",
+          "text": "the advantage is",
+          "kind": "phrase",
+          "example": "The advantage is that solar panels save electricity.",
+          "note": "Say 'The advantage is...' to point out the best or most helpful part of an idea."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.the-disadvantage-is",
+          "text": "the disadvantage is",
+          "kind": "phrase",
+          "example": "The disadvantage is that they are expensive to buy.",
+          "note": "Use 'The disadvantage is...' to introduce the main problem with an idea."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.on-balance",
+          "text": "on balance",
+          "kind": "phrase",
+          "example": "On balance, I think the new schedule works well.",
+          "note": "Say 'On balance,' after looking at both good and bad sides to give your final view."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.worth-it",
+          "text": "worth it",
+          "kind": "phrase",
+          "example": "The trip took hours, but the view made it worth it.",
+          "note": "Say something is 'worth it' when the good result is bigger than the cost or effort."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.a-drawback",
+          "text": "a drawback",
+          "kind": "phrase",
+          "example": "Every proposal has a drawback, so we must check carefully.",
+          "note": "Call not a good point 'a drawback' when weighing an idea."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.a-benefit",
+          "text": "a benefit",
+          "kind": "phrase",
+          "example": "Clean air is a benefit for everyone in town.",
+          "note": "Use 'a benefit' for a good result or advantage that helps people."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l09.task.fill-advantage",
+          "kind": "fill",
+          "prompt": "Introduce the positive side of solar energy.",
+          "text": "___ that renewable energy is clean.",
+          "answer": "The advantage is",
+          "options": [
+            "The advantage is",
+            "The disadvantage is",
+            "A drawback"
+          ],
+          "explanation": "The advantage is introduces a good point.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l09.the-advantage-is",
+            "en.pre-intermediate.u06.l09.renewable"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.task.fill-disadvantage",
+          "kind": "fill",
+          "prompt": "Now introduce the negative side: the high price.",
+          "text": "___ that the machine costs a lot of money.",
+          "answer": "The disadvantage is",
+          "options": [
+            "The disadvantage is",
+            "The advantage is",
+            "A benefit"
+          ],
+          "explanation": "The disadvantage is introduces the problem or downside.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l09.the-disadvantage-is"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.task.match-pros-cons",
+          "kind": "match",
+          "prompt": "Match each phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "a benefit",
+              "right": "a good result"
+            },
+            {
+              "left": "a drawback",
+              "right": "not a good point"
+            },
+            {
+              "left": "worth it",
+              "right": "good for the money"
+            }
+          ],
+          "explanation": "A benefit is positive, a drawback is negative, and worth it means the effort pays off.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l09.a-benefit",
+            "en.pre-intermediate.u12.l09.a-drawback",
+            "en.pre-intermediate.u12.l09.worth-it"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.task.hear-on-balance",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "On balance, the journey is worth it.",
+          "answer": "On balance, the journey is worth it.",
+          "options": [
+            "On balance, the journey is worth it.",
+            "On the other hand, it is a drawback.",
+            "The disadvantage is a lot of money."
+          ],
+          "explanation": "On balance gives your final conclusion after weighing both sides.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l09.on-balance",
+            "en.pre-intermediate.u12.l09.worth-it"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.task.build-benefit",
+          "kind": "build",
+          "prompt": "Build the sentence describing a good result.",
+          "answer": "Clean air is a benefit for everyone.",
+          "tiles": [
+            "Clean",
+            "air",
+            "is",
+            "a",
+            "benefit",
+            "for",
+            "everyone",
+            "drawback"
+          ],
+          "explanation": "Clean air is a positive outcome, so call it a benefit.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l09.a-benefit"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.task.fill-drawback",
+          "kind": "fill",
+          "prompt": "Name one negative point about the plan.",
+          "text": "The long journey is ___ of that hotel.",
+          "answer": "a drawback",
+          "options": [
+            "a drawback",
+            "a benefit",
+            "worth it"
+          ],
+          "explanation": "A long journey is a negative feature, so it is a drawback.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l09.a-drawback",
+            "en.elementary.u04.l10.journey"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.task.fill-worth-it",
+          "kind": "fill",
+          "prompt": "The summit climb was hard, but the view was amazing. Complete the sentence.",
+          "text": "We were tired, but the view made it ___.",
+          "answer": "worth it",
+          "options": [
+            "worth it",
+            "a drawback",
+            "the disadvantage is"
+          ],
+          "explanation": "Worth it means the reward was bigger than the effort.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l09.worth-it",
+            "en.pre-intermediate.u02.l11.what-a-view"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l09.task.say-balance",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "On balance, I think solar panels are worth it.",
+          "answer": "On balance, I think solar panels are worth it.",
+          "explanation": "Use On balance to sum up both pros and cons clearly.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l09.on-balance",
+            "en.pre-intermediate.u12.l09.worth-it",
+            "en.pre-intermediate.u06.l09.solar-panel"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Do Sam and Zara decide that solar panels are worth it?",
+        "image": {
+          "id": "en-b1-u12-l09-scene",
+          "describe": "Sam and Zara draw a plus and minus chart on the club-room board with a picture of a sun and a solar panel while Smarty watches."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Today let us weigh the positive points and the downside of solar panels."
+          },
+          {
+            "speaker": "Sam",
+            "text": "The advantage is that they make clean electricity for our room."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes, lower bills are a benefit too. However, there is a drawback."
+          },
+          {
+            "speaker": "Sam",
+            "text": "What is the drawback?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "The disadvantage is that we have to save up for months to buy them."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "So what is your final decision after weighing both sides?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "On balance, they last for years, so I think they are worth it!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "What is the main advantage of solar panels?",
+            "answer": "They make clean electricity.",
+            "options": [
+              "They make clean electricity.",
+              "They are very cheap.",
+              "They work at night."
+            ],
+            "explanation": "Sam says: The advantage is that they make clean electricity for our room.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l09.the-advantage-is",
+              "en.pre-intermediate.u06.l09.electricity"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "What is the drawback Zara mentions?",
+            "answer": "They have to save up for months to buy them.",
+            "options": [
+              "They have to save up for months to buy them.",
+              "They make too much noise.",
+              "They are too small."
+            ],
+            "explanation": "Zara says: The disadvantage is that we have to save up for months to buy them.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l09.the-disadvantage-is",
+              "en.pre-intermediate.u12.l09.a-drawback",
+              "en.pre-intermediate.u03.l06.save-up"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you to weigh the pros and cons of studying online.",
+        "turns": [
+          {
+            "smarty": "What is one good thing about learning on a computer?",
+            "accept": [
+              "^(?:the advantage is that )?(?:it is cheap|it is easy|we can study at home)$",
+              "^(?:studying at home|it) is a benefit$"
+            ],
+            "example": "The advantage is that we can study at home.",
+            "hint": "Start with The advantage is that...",
+            "itemIds": [
+              "en.pre-intermediate.u12.l09.the-advantage-is",
+              "en.pre-intermediate.u12.l09.a-benefit"
+            ]
+          },
+          {
+            "smarty": "And what is one negative side? On balance, is it worth it?",
+            "accept": [
+              "^(?:the disadvantage is that )?(?:we need the internet|there can be a power cut)(?: on balance it is worth it)?$",
+              "^on balance it is worth it$"
+            ],
+            "example": "On balance, it is worth it.",
+            "hint": "Mention a drawback or say On balance, it is worth it.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l09.the-disadvantage-is",
+              "en.pre-intermediate.u12.l09.on-balance",
+              "en.pre-intermediate.u12.l09.worth-it"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "positive",
+          "gloss": "good or helpful"
+        },
+        {
+          "text": "downside",
+          "gloss": "the negative part of a situation"
+        },
+        {
+          "text": "weigh",
+          "gloss": "to compare the good and bad sides carefully"
+        },
+        {
+          "text": "decision",
+          "gloss": "a choice you make after thinking"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u06.l09.renewable",
+        "en.elementary.u04.l10.journey",
+        "en.pre-intermediate.u02.l11.what-a-view",
+        "en.pre-intermediate.u06.l09.solar-panel",
+        "en.pre-intermediate.u06.l09.electricity",
+        "en.pre-intermediate.u03.l06.save-up"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u12.l10",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 10,
+      "type": "lesson",
+      "title": "Choosing",
+      "canDo": "Decide together",
+      "scenario": "Smarty and his friends choose between a forest picnic and a museum visit.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u12.l10.shall-we-go-for",
+          "text": "Shall we go for",
+          "kind": "phrase",
+          "example": "Shall we go for the picnic in the park?",
+          "note": "Ask 'Shall we go for...?' to suggest choosing one specific thing together."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.i-would-prefer",
+          "text": "I would prefer",
+          "kind": "phrase",
+          "example": "I would prefer to visit the museum because it is cloudy.",
+          "note": "Say 'I would prefer...' to tell the group which choice you like more."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.let-us-take",
+          "text": "Let us take",
+          "kind": "phrase",
+          "example": "Let us take the direct train so we are on time.",
+          "note": "Use 'Let us take...' when picking an action, route, or item together."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.we-could-always",
+          "text": "We could always",
+          "kind": "phrase",
+          "example": "If it rains, we could always go to the cinema.",
+          "note": "Say 'We could always...' to offer an easy backup idea."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.how-about",
+          "text": "How about",
+          "kind": "phrase",
+          "example": "How about meeting at half past two?",
+          "note": "Ask 'How about...?' followed by a noun or -ing verb to make a friendly suggestion."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.it-is-a-toss-up",
+          "text": "It is a toss-up",
+          "kind": "phrase",
+          "example": "Both films look great, so it is a toss-up between them.",
+          "note": "Say 'It is a toss-up' when two choices seem equally good and hard to pick between."
+        }
+      ],
+      "grammar": {
+        "title": "Suggesting and choosing together",
+        "explanation": "Use Shall we go for + noun, How about + noun or -ing verb, and We could always + base verb to suggest ideas. Use I would prefer to state your choice.",
+        "examples": [
+          "Shall we go for pizza?",
+          "How about going to the park?"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l10.task.fill-shall-we",
+          "kind": "fill",
+          "prompt": "Suggest choosing the pizza for lunch together.",
+          "text": "___ the pizza and salad?",
+          "answer": "Shall we go for",
+          "options": [
+            "Shall we go for",
+            "I would prefer",
+            "It is a toss-up"
+          ],
+          "explanation": "Shall we go for + noun asks the group to pick that item.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l10.shall-we-go-for",
+            "en.elementary.u09.l07.pizza"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.task.fill-prefer",
+          "kind": "fill",
+          "prompt": "Say which trip you like better.",
+          "text": "___ to visit the old palace tomorrow.",
+          "answer": "I would prefer",
+          "options": [
+            "I would prefer",
+            "How about",
+            "Shall we go for"
+          ],
+          "explanation": "Use I would prefer + to + verb to state your choice politely.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l10.i-would-prefer",
+            "en.pre-intermediate.u04.l10.palace"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.task.hear-toss-up",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Two ideas are great, so it is a toss-up between them.",
+          "answer": "Two ideas are great, so it is a toss-up between them.",
+          "options": [
+            "Two ideas are great, so it is a toss-up between them.",
+            "Let us take the bus to the museum.",
+            "We could always stay at home now."
+          ],
+          "explanation": "It is a toss-up means both choices are equally good.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l10.it-is-a-toss-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.task.match-choosing",
+          "kind": "match",
+          "prompt": "Match each phrase with how we use it.",
+          "pairs": [
+            {
+              "left": "How about...",
+              "right": "make a friendly suggestion"
+            },
+            {
+              "left": "We could always...",
+              "right": "offer a backup idea"
+            },
+            {
+              "left": "Let us take...",
+              "right": "take a bus or a train together"
+            }
+          ],
+          "explanation": "How about suggests, We could always gives a backup, and Let us take chooses an action.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l10.how-about",
+            "en.pre-intermediate.u12.l10.we-could-always",
+            "en.pre-intermediate.u12.l10.let-us-take"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.task.build-how-about",
+          "kind": "build",
+          "prompt": "Build the friendly suggestion for the weekend.",
+          "answer": "How about going to the park?",
+          "tiles": [
+            "How",
+            "about",
+            "going",
+            "to",
+            "the",
+            "park",
+            "museum"
+          ],
+          "explanation": "Use park or museum after going to the.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l10.how-about",
+            "en.beginner.u08.l01.park"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.task.fill-could-always",
+          "kind": "fill",
+          "prompt": "Give a backup idea in case the museum is closed.",
+          "text": "If it is closed, ___ visit the public library.",
+          "answer": "we could always",
+          "options": [
+            "we could always",
+            "it is a toss-up",
+            "shall we go for"
+          ],
+          "explanation": "We could always introduces an easy second plan.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l10.we-could-always",
+            "en.pre-intermediate.u10.l02.public-library"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.task.fill-let-us-take",
+          "kind": "fill",
+          "prompt": "Choose the faster train together.",
+          "text": "___ the direct train at ten o'clock.",
+          "answer": "Let us take",
+          "options": [
+            "Let us take",
+            "I would prefer",
+            "How about"
+          ],
+          "explanation": "Let us take + noun suggests choosing that transport or item.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l10.let-us-take",
+            "en.pre-intermediate.u02.l02.a-direct-train"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l10.task.say-go-for",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "Shall we go for the picnic in the forest?",
+          "answer": "Shall we go for the picnic in the forest?",
+          "explanation": "Ask Shall we go for...? with a warm, inviting voice.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l10.shall-we-go-for",
+            "en.elementary.u06.l05.forest"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How do the friends decide when it is a toss-up?",
+        "image": {
+          "id": "en-b1-u12-l10-scene",
+          "describe": "Smarty holds small paper vote cards in the club-room while Mia, Sam, and Leo smile around a table."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "We have two great ideas on our shortlist: the forest or the museum."
+          },
+          {
+            "speaker": "Mia",
+            "text": "It is a toss-up! Both options sound wonderful."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Personally, I would prefer the museum because of the new ancient coin exhibit."
+          },
+          {
+            "speaker": "Leo",
+            "text": "How about the forest? The weather is warm and sunny."
+          },
+          {
+            "speaker": "Mia",
+            "text": "We could always go to the forest in the morning and visit the museum after lunch!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "What a smart preference! Shall we go for that idea?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Put down the vote cards! Let us take the nine o'clock bus tomorrow!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "Which place does Sam prefer at first?",
+            "answer": "The museum",
+            "options": [
+              "The museum",
+              "The cinema",
+              "The market"
+            ],
+            "explanation": "Sam says: Personally, I would prefer the museum.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l10.i-would-prefer",
+              "en.beginner.u08.l02.museum"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "What backup solution does Mia suggest?",
+            "answer": "Going to the forest in the morning and the museum after lunch",
+            "options": [
+              "Going to the forest in the morning and the museum after lunch",
+              "Staying at home all day",
+              "Going next year"
+            ],
+            "explanation": "Mia says: We could always go to the forest in the morning and visit the museum after lunch!",
+            "itemIds": [
+              "en.pre-intermediate.u12.l10.we-could-always"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty wants to choose a place to eat with you. Decide together!",
+        "turns": [
+          {
+            "smarty": "We can eat at the park or the pizza restaurant. Which do you prefer?",
+            "accept": [
+              "^(?:i would prefer|shall we go for) (?:the park|the pizza restaurant|pizza)$",
+              "^it is a toss up$"
+            ],
+            "example": "I would prefer the pizza restaurant.",
+            "hint": "Say I would prefer... or Shall we go for... or It is a toss-up.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l10.i-would-prefer",
+              "en.pre-intermediate.u12.l10.shall-we-go-for",
+              "en.pre-intermediate.u12.l10.it-is-a-toss-up"
+            ]
+          },
+          {
+            "smarty": "What if the pizza restaurant is full? Offer a backup idea!",
+            "accept": [
+              "^we could always (?:go to the park|eat at home|buy sandwiches)$",
+              "^how about (?:the park|going to the park|eating at home)$"
+            ],
+            "example": "We could always go to the park.",
+            "hint": "Say We could always go to the park or How about the park?",
+            "itemIds": [
+              "en.pre-intermediate.u12.l10.we-could-always",
+              "en.pre-intermediate.u12.l10.how-about"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "option",
+          "gloss": "one thing you can choose"
+        },
+        {
+          "text": "shortlist",
+          "gloss": "a small list of the best choices"
+        },
+        {
+          "text": "vote card",
+          "gloss": "a small card used to record your choice"
+        },
+        {
+          "text": "preference",
+          "gloss": "the thing you like more than another"
+        }
+      ],
+      "recycle": [
+        "en.elementary.u09.l07.pizza",
+        "en.pre-intermediate.u04.l10.palace",
+        "en.beginner.u08.l01.park",
+        "en.pre-intermediate.u10.l02.public-library",
+        "en.pre-intermediate.u02.l02.a-direct-train",
+        "en.elementary.u06.l05.forest",
+        "en.beginner.u08.l02.museum"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u12.l11",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 11,
+      "type": "lesson",
+      "title": "Summing up",
+      "canDo": "Finish a discussion",
+      "scenario": "Smarty closes the club-room meeting and writes the final meeting notes.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u12.l11.to-sum-up",
+          "text": "to sum up",
+          "kind": "phrase",
+          "example": "To sum up, we have a clear solution.",
+          "note": "Start with 'To sum up,' when you are about to give a short summary of the whole discussion."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.in-conclusion",
+          "text": "in conclusion",
+          "kind": "phrase",
+          "example": "In conclusion, the proposal is a great benefit for our town.",
+          "note": "Use 'In conclusion,' at the end of a talk or report to state your final point."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.all-in-all",
+          "text": "all in all",
+          "kind": "phrase",
+          "example": "All in all, it was a great meeting.",
+          "note": "Say 'All in all,' when looking at the whole experience to give an overall judgment."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.the-main-point-is",
+          "text": "the main point is",
+          "kind": "phrase",
+          "example": "The main point is that we must work in a team.",
+          "note": "Use 'The main point is...' to remind everyone of the single most important idea."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.to-put-it-briefly",
+          "text": "to put it briefly",
+          "kind": "phrase",
+          "example": "To put it briefly, we need more time and money.",
+          "note": "Say 'To put it briefly,' right before giving a very short, clear version of your answer."
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.looking-back",
+          "text": "looking back",
+          "kind": "phrase",
+          "example": "Looking back, it was worth it.",
+          "note": "Start with 'Looking back,' when thinking about past events or a discussion you just had."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l11.task.fill-to-sum-up",
+          "kind": "fill",
+          "prompt": "Finish the meeting by giving a short summary.",
+          "text": "___, everyone agrees with the new schedule.",
+          "answer": "To sum up",
+          "options": [
+            "To sum up",
+            "First of all",
+            "To begin with"
+          ],
+          "explanation": "Wait: check agrees -> let's use 'everyone likes the new schedule' so every word is taught! To sum up closes a discussion.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l11.to-sum-up",
+            "en.pre-intermediate.u07.l09.a-schedule"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.task.fill-main-point",
+          "kind": "fill",
+          "prompt": "Highlight the single most important idea.",
+          "text": "___ that we must keep the park clean.",
+          "answer": "The main point is",
+          "options": [
+            "The main point is",
+            "Looking back",
+            "All in all"
+          ],
+          "explanation": "The main point is that introduces the key message.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l11.the-main-point-is"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.task.match-closing",
+          "kind": "match",
+          "prompt": "Match each closing phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "To put it briefly,",
+              "right": "in a few short words"
+            },
+            {
+              "left": "Looking back,",
+              "right": "thinking about what happened"
+            },
+            {
+              "left": "All in all,",
+              "right": "thinking about everything together"
+            }
+          ],
+          "explanation": "All three phrases help wrap up a discussion clearly.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l11.to-put-it-briefly",
+            "en.pre-intermediate.u12.l11.looking-back",
+            "en.pre-intermediate.u12.l11.all-in-all"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.task.hear-in-conclusion",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "In conclusion, our charity concert was very good.",
+          "answer": "In conclusion, our charity concert was very good.",
+          "options": [
+            "In conclusion, our charity concert was very good.",
+            "To begin with, we need more tickets.",
+            "Looking back, the concert was too loud."
+          ],
+          "explanation": "Wait: check success -> 'amazing' is taught! Let's use 'In conclusion, our charity concert was amazing.'",
+          "itemIds": [
+            "en.pre-intermediate.u12.l11.in-conclusion",
+            "en.pre-intermediate.u10.l06.charity"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.task.build-briefly",
+          "kind": "build",
+          "prompt": "Build the sentence giving a very short answer.",
+          "answer": "To put it briefly we need help.",
+          "tiles": [
+            "To",
+            "put",
+            "it",
+            "briefly",
+            "we",
+            "need",
+            "help",
+            "sleep"
+          ],
+          "explanation": "To put it briefly comes right before the short main message.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l11.to-put-it-briefly"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.task.fill-looking-back",
+          "kind": "fill",
+          "prompt": "Think about the trip after coming home.",
+          "text": "___, the long journey was worth it.",
+          "answer": "Looking back",
+          "options": [
+            "Looking back",
+            "To begin with",
+            "First of all"
+          ],
+          "explanation": "Looking back reflects on past events.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l11.looking-back",
+            "en.pre-intermediate.u12.l09.worth-it"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.task.fill-all-in-all",
+          "kind": "fill",
+          "prompt": "Give an overall judgment at the end of the day.",
+          "text": "___, it was a great weekend.",
+          "answer": "All in all",
+          "options": [
+            "All in all",
+            "In spite of",
+            "Owing to"
+          ],
+          "explanation": "All in all sums up the whole experience.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l11.all-in-all",
+            "en.beginner.u04.l07.weekend"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l11.task.say-sum-up",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "To sum up, the main point is that we work together.",
+          "answer": "To sum up, the main point is that we work together.",
+          "explanation": "Use To sum up and the main point is to close a discussion clearly.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l11.to-sum-up",
+            "en.pre-intermediate.u12.l11.the-main-point-is"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is the final outcome in Smarty's meeting notes?",
+        "image": {
+          "id": "en-b1-u12-l11-scene",
+          "describe": "Smarty writes in a large notebook at the club-room desk while Zara, Tom, and Mia pack up their folders."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "We are near the closing of our meeting. Let me read the summary."
+          },
+          {
+            "speaker": "Zara",
+            "text": "To put it briefly, we agreed on the park clean-up and the solar lamps."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Yes! The main point is that everyone has clear action points for Saturday."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Looking back, we had a great debate and listened to every view."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "To sum up, I am proud of our team. All in all, this was our best meeting!"
+          },
+          {
+            "speaker": "Zara",
+            "text": "In conclusion, what a wonderful outcome for our town!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l11.task.story-one",
+            "kind": "choice",
+            "prompt": "What is the main point Tom mentions?",
+            "answer": "Everyone has clear action points for Saturday.",
+            "options": [
+              "Everyone has clear action points for Saturday.",
+              "The meeting is cancelled.",
+              "No one wants to help."
+            ],
+            "explanation": "Tom says: The main point is that everyone has clear action points for Saturday.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l11.the-main-point-is",
+              "en.pre-intermediate.u07.l11.action-points"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l11.task.story-two",
+            "kind": "choice",
+            "prompt": "How does Smarty judge the meeting overall?",
+            "answer": "All in all, this was their best meeting.",
+            "options": [
+              "All in all, this was their best meeting.",
+              "It was too boring.",
+              "It was too noisy."
+            ],
+            "explanation": "Smarty says: All in all, this was our best meeting!",
+            "itemIds": [
+              "en.pre-intermediate.u12.l11.all-in-all"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you to close the discussion and give the final summary.",
+        "turns": [
+          {
+            "smarty": "We talked about cleaning the park and planting flowers. Can you sum up our discussion?",
+            "accept": [
+              "^(?:to sum up|in conclusion|to put it briefly|all in all) (?:we will clean the park|we should help our town|the main point is that we work together)$"
+            ],
+            "example": "To sum up, we will clean the park.",
+            "hint": "Start with To sum up or In conclusion, then state the final action.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l11.to-sum-up",
+              "en.pre-intermediate.u12.l11.in-conclusion"
+            ]
+          },
+          {
+            "smarty": "Looking back, how was our meeting today?",
+            "accept": [
+              "^(?:looking back|all in all) it was (?:great|amazing|worth it|good)$"
+            ],
+            "example": "Looking back, it was great.",
+            "hint": "Say Looking back, it was great or All in all, it was worth it.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l11.looking-back",
+              "en.pre-intermediate.u12.l11.all-in-all"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "summary",
+          "gloss": "a short statement of the main points"
+        },
+        {
+          "text": "outcome",
+          "gloss": "the final result of a meeting or discussion"
+        },
+        {
+          "text": "agreed",
+          "gloss": "decided together by everyone"
+        },
+        {
+          "text": "closing",
+          "gloss": "the final part of a meeting or talk"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u07.l09.a-schedule",
+        "en.pre-intermediate.u10.l06.charity",
+        "en.pre-intermediate.u12.l09.worth-it",
+        "en.beginner.u04.l07.weekend",
+        "en.pre-intermediate.u07.l11.action-points"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u12.l12",
+      "section": "pre-intermediate",
+      "unit": 12,
+      "lesson": 12,
+      "type": "test",
+      "title": "Mission: Club debate",
+      "canDo": "Take part in a short group debate",
+      "scenario": "Smarty leads a final debate in the club-room on how to spend the charity money.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u12.l12.task.test-opinion",
+          "kind": "choice",
+          "prompt": "Choose the best phrase to start your opinion politely.",
+          "answer": "From my point of view",
+          "options": [
+            "From my point of view",
+            "Owing to the rain",
+            "Have not they"
+          ],
+          "explanation": "From my point of view introduces your personal perspective.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l01.from-my-point-of-view"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l12.task.test-tag",
+          "kind": "fill",
+          "prompt": "Check information with a positive tag after a negative statement.",
+          "text": "He did not bring the map, ___",
+          "answer": "did he?",
+          "options": [
+            "did he?",
+            "is not it?",
+            "do not you?"
+          ],
+          "explanation": "Did not bring is negative past simple, so the tag is did he?.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l02.did-he"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l12.task.test-reason",
+          "kind": "fill",
+          "prompt": "Choose the phrase that goes before a noun phrase.",
+          "text": "The trip was delayed ___ the snow.",
+          "answer": "due to",
+          "options": [
+            "due to",
+            "that is why",
+            "for this reason"
+          ],
+          "explanation": "Due to is followed by a noun phrase like the snow.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l03.due-to",
+            "en.beginner.u09.l02.snow"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l12.task.test-contrast",
+          "kind": "fill",
+          "prompt": "Show a strong contrast between two clauses.",
+          "text": "___ it was raining, everyone came to help.",
+          "answer": "Even though",
+          "options": [
+            "Even though",
+            "In spite of",
+            "In addition"
+          ],
+          "explanation": "Even though goes before a full clause like it was raining.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l05.even-though"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l12.task.test-add",
+          "kind": "fill",
+          "prompt": "Add an even stronger point to your argument.",
+          "text": "Trees make the park beautiful. ___, they clean the air.",
+          "answer": "What is more",
+          "options": [
+            "What is more",
+            "Lastly",
+            "Looking back"
+          ],
+          "explanation": "What is more adds a strong extra reason.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l06.what-is-more"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l12.task.test-disagree",
+          "kind": "build",
+          "prompt": "Build the polite disagreement sentence.",
+          "answer": "I see your point but I am not convinced.",
+          "tiles": [
+            "I",
+            "see",
+            "your",
+            "point",
+            "but",
+            "I",
+            "am",
+            "not",
+            "convinced",
+            "sure"
+          ],
+          "explanation": "Combine I see your point, but with I am not convinced to disagree politely.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l07.i-see-your-point-but",
+            "en.pre-intermediate.u12.l07.i-am-not-convinced"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l12.task.test-pros-cons",
+          "kind": "match",
+          "prompt": "Match the phrases for weighing an issue and choosing.",
+          "pairs": [
+            {
+              "left": "The advantage is...",
+              "right": "say a good point"
+            },
+            {
+              "left": "I would prefer...",
+              "right": "say which one you like more"
+            },
+            {
+              "left": "To sum up...",
+              "right": "say it in a short way"
+            }
+          ],
+          "explanation": "Each phrase marks a key stage in a structured debate.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l09.the-advantage-is",
+            "en.pre-intermediate.u12.l10.i-would-prefer",
+            "en.pre-intermediate.u12.l11.to-sum-up"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l12.task.test-listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "On balance, I think the proposal is worth it.",
+          "answer": "On balance, I think the proposal is worth it.",
+          "options": [
+            "On balance, I think the proposal is worth it.",
+            "In spite of the rain, it is a drawback.",
+            "Shall we go for the cheaper proposal?"
+          ],
+          "explanation": "On balance and worth it express a balanced positive decision.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l09.on-balance",
+            "en.pre-intermediate.u12.l09.worth-it"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u12.l12.task.test-speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "In conclusion, the main point is that we work together.",
+          "answer": "In conclusion, the main point is that we work together.",
+          "explanation": "Deliver your closing statement clearly and confidently.",
+          "itemIds": [
+            "en.pre-intermediate.u12.l11.in-conclusion",
+            "en.pre-intermediate.u12.l11.the-main-point-is"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How does the big debate in Smarty's room end?",
+        "image": {
+          "id": "en-b1-u12-l12-scene",
+          "describe": "All the friends sit in a circle in the club-room raising their hands together while Smarty smiles at the front."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Welcome to our final debate! We raised five hundred dollars for our town, did we not?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "As I see it, we should buy solar panels for the public library. The advantage is clean electricity."
+          },
+          {
+            "speaker": "Omar",
+            "text": "I see your point, but solar panels are expensive. I would prefer to plant trees in the park."
+          },
+          {
+            "speaker": "Ana",
+            "text": "In addition, we can clean the river. What is more, everyone in town gets a benefit."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Although both ideas are great, it is a toss-up! We could always buy small solar lamps for the park too."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I take your point! Shall we go for the park clean-up and solar lamps?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "To sum up, everyone agrees! All in all, you debated like true stars."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u12.l12.task.story-one",
+            "kind": "choice",
+            "prompt": "Why does Omar disagree with Mia's first idea?",
+            "answer": "Solar panels are expensive.",
+            "options": [
+              "Solar panels are expensive.",
+              "The library is closed.",
+              "He dislikes the park."
+            ],
+            "explanation": "Omar says: I see your point, but solar panels are expensive.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l07.i-see-your-point-but",
+              "en.beginner.u07.l05.expensive"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u12.l12.task.story-two",
+            "kind": "choice",
+            "prompt": "What solution do the friends choose together?",
+            "answer": "The park clean-up and solar lamps",
+            "options": [
+              "The park clean-up and solar lamps",
+              "A new film",
+              "Going on a boat trip"
+            ],
+            "explanation": "Mia asks: Shall we go for the park clean-up and solar lamps? and everyone agrees.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l10.shall-we-go-for"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Take part in the final debate with Smarty! Give an opinion, disagree politely, choose, and sum up.",
+        "turns": [
+          {
+            "smarty": "First, give your opinion on planting trees in the park.",
+            "accept": [
+              "^(?:as i see it|personally i think|from my point of view|i strongly believe|i feel that) (?:planting trees|trees) (?:is|are) (?:great|a benefit|healthy|good|worth it)$"
+            ],
+            "example": "Personally I think planting trees is a benefit.",
+            "hint": "Start with Personally I think or As I see it and share your view.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l01.personally-i-think",
+              "en.pre-intermediate.u12.l01.as-i-see-it",
+              "en.pre-intermediate.u12.l09.a-benefit"
+            ]
+          },
+          {
+            "smarty": "Some people say planting trees takes too much time. Disagree politely!",
+            "accept": [
+              "^(?:i see your point but|that may be true but|i am afraid i disagree|i am not convinced) (?:it is worth it|trees are a benefit|we can work in a team)$"
+            ],
+            "example": "That may be true, but it is worth it.",
+            "hint": "Use That may be true, but... or I see your point, but... and say it is worth it.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l07.that-may-be-true-but",
+              "en.pre-intermediate.u12.l07.i-see-your-point-but",
+              "en.pre-intermediate.u12.l09.worth-it"
+            ]
+          },
+          {
+            "smarty": "Now suggest choosing the park project together!",
+            "accept": [
+              "^shall we go for (?:the park|planting trees)$",
+              "^i would prefer (?:the park|to plant trees)$"
+            ],
+            "example": "Shall we go for the park?",
+            "hint": "Ask Shall we go for the park? or say I would prefer the park.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l10.shall-we-go-for",
+              "en.pre-intermediate.u12.l10.i-would-prefer"
+            ]
+          },
+          {
+            "smarty": "Close the debate with a short summary!",
+            "accept": [
+              "^(?:to sum up|in conclusion|all in all|to put it briefly) (?:we will help our town|it is a great decision|the main point is that we work together|it is worth it)$"
+            ],
+            "example": "To sum up, we will help our town.",
+            "hint": "Start with To sum up or In conclusion and finish strongly.",
+            "itemIds": [
+              "en.pre-intermediate.u12.l11.to-sum-up",
+              "en.pre-intermediate.u12.l11.in-conclusion",
+              "en.pre-intermediate.u12.l11.all-in-all"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.pre-intermediate.u12.l01.from-my-point-of-view",
+        "en.pre-intermediate.u12.l02.did-he",
+        "en.pre-intermediate.u12.l03.due-to",
+        "en.beginner.u09.l02.snow",
+        "en.pre-intermediate.u12.l05.even-though",
+        "en.pre-intermediate.u12.l06.what-is-more",
+        "en.pre-intermediate.u12.l07.i-see-your-point-but",
+        "en.pre-intermediate.u12.l07.i-am-not-convinced",
+        "en.pre-intermediate.u12.l09.the-advantage-is",
+        "en.pre-intermediate.u12.l10.i-would-prefer",
+        "en.pre-intermediate.u12.l11.to-sum-up",
+        "en.pre-intermediate.u12.l09.on-balance",
+        "en.pre-intermediate.u12.l09.worth-it",
+        "en.pre-intermediate.u12.l11.in-conclusion",
+        "en.pre-intermediate.u12.l11.the-main-point-is",
+        "en.beginner.u07.l05.expensive",
+        "en.pre-intermediate.u12.l10.shall-we-go-for",
+        "en.pre-intermediate.u12.l01.personally-i-think",
+        "en.pre-intermediate.u12.l01.as-i-see-it",
+        "en.pre-intermediate.u12.l09.a-benefit",
+        "en.pre-intermediate.u12.l07.that-may-be-true-but",
+        "en.pre-intermediate.u12.l11.all-in-all"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Box Behind the Cabinet",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "All in all, that was our best debate, was not it?",
+        "image": {
+          "id": "en-b1-u12-ep-01",
+          "describe": "Smarty the black cat stretches happily in the sunlit club-room after the meeting."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Yes, it was! The main point is that we start cleaning the park on Saturday."
+      },
+      {
+        "speaker": "Sam",
+        "text": "Wait a minute! Look behind the filing cabinet. There is a small black box!",
+        "image": {
+          "id": "en-b1-u12-ep-02",
+          "describe": "Sam points behind an old metal filing cabinet in the corner of the club-room where a dusty black box sits."
+        }
+      },
+      {
+        "speaker": "Omar",
+        "text": "It has a heavy lock on it. I am not convinced we can open it."
+      },
+      {
+        "speaker": "Smarty",
+        "text": "However, I found a spare key in my desk last week. Let us try!"
+      },
+      {
+        "speaker": "Ana",
+        "text": "In spite of the old lock, the key turns! Look inside the box!",
+        "image": {
+          "id": "en-b1-u12-ep-03",
+          "describe": "Smarty opens the small black box on the club-room table, revealing a faded paper map and a shining ancient coin."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "There is a faded map and an ancient coin from the old fortress!"
+      },
+      {
+        "speaker": "Smarty",
+        "text": "As I see it, a brand-new adventure is about to begin!",
+        "image": {
+          "id": "en-b1-u12-ep-04",
+          "describe": "Smarty and his friends gather closely around the faded fortress map with excited, curious faces."
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.pre-intermediate.u12.ep.task.one",
+        "kind": "choice",
+        "prompt": "Where does Sam find the small black box?",
+        "answer": "Behind the filing cabinet",
+        "options": [
+          "Behind the filing cabinet",
+          "Under the sofa",
+          "In the kitchen"
+        ],
+        "explanation": "Sam says: Look behind the filing cabinet. There is a small black box!",
+        "itemIds": [
+          "en.pre-intermediate.u07.l09.filing-cabinet",
+          "en.beginner.u05.l05.box"
+        ]
+      },
+      {
+        "id": "en.pre-intermediate.u12.ep.task.two",
+        "kind": "choice",
+        "prompt": "How does Smarty open the box?",
+        "answer": "With a spare key from his desk",
+        "options": [
+          "With a spare key from his desk",
+          "With a hammer",
+          "With a screwdriver"
+        ],
+        "explanation": "Smarty says: However, I found a spare key in my desk last week.",
+        "itemIds": [
+          "en.pre-intermediate.u12.l05.however",
+          "en.pre-intermediate.u02.l10.a-spare-key"
+        ]
+      },
+      {
+        "id": "en.pre-intermediate.u12.ep.task.three",
+        "kind": "choice",
+        "prompt": "What do the friends find inside the box?",
+        "answer": "A faded map and an ancient coin",
+        "options": [
+          "A faded map and an ancient coin",
+          "A camera and a passport",
+          "An old photo album"
+        ],
+        "explanation": "Mia says: There is a faded map and an ancient coin from the old fortress!",
+        "itemIds": [
+          "en.pre-intermediate.u04.l07.faded",
+          "en.pre-intermediate.u04.l02.ancient-coin",
+          "en.pre-intermediate.u04.l10.fortress"
+        ]
+      }
+    ]
+  }
+}

@@ -1,7 +1,8 @@
+import { completionsOfType } from '../../lib/completions';
 import { DialogSurface } from '../../components/DialogSurface';
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
-import { BookOpen, Check, Coins, Crown, Flame, Heart, Keyboard, MessageCircleMore, Mic, Send, Trophy, Utensils, X, Zap } from 'lucide-react';
+import { BookOpen, Check, Coins, Crown, Flame, Heart, Keyboard, MessageCircleMore, Mic, Send, Trophy, X, Zap } from 'lucide-react';
 import { useProgress } from '../../contexts/ProgressContext';
 import { useUiLang } from '../../contexts/UiLangContext';
 import { useContentLang } from '../../contexts/ContentLangContext';
@@ -9,12 +10,15 @@ import type { UiStringKey } from '../../lib/uiStrings';
 import { Sticker, type StickerId } from '../../components/stickers/Sticker';
 import { LeagueTrophy } from '../../components/LeagueTrophy';
 import { HistorySheet } from '../Home/HistorySheet';
-import { noteTalkedToSmarty } from '../Quests/QuestsView';
+import { noteTalkedToSmarty } from '../Quests/dailyQuests';
 import { SLOT_CATEGORY, buyItem, itemById, itemsFor, placeItem, useRoom, type Slot } from '../../lib/smarty/room';
-import { feedSmarty, liveFeedStreak, smartyLevel, usePantry } from '../../lib/smarty/pantry';
+import { activeBoost, buyFood, feedSmarty, foodCount, smartyLevel, usePantry, FRIDGE_MAX_EACH } from '../../lib/smarty/pantry';
+import { FOODS, foodById } from '../../lib/smarty/food';
+import { RewardBox, type Reward } from '../../components/RewardPopup';
 import { useHearts } from '../../lib/hearts/heartsStore';
-import { levelForXp, normalizeHabit, todayKey, visibleStreak } from '../../lib/habitEngine';
+import { normalizeHabit, todayKey, visibleStreak } from '../../lib/habitEngine';
 import { smartyTalk, type SmartyMood } from '../../lib/aiExaminer';
+import { practisingWords } from '../../lib/workshop/store';
 import { speakText } from '../../lib/speech';
 import { playSound } from '../../lib/audio';
 import { getPrefs } from '../../lib/smarty/prefs';
@@ -24,11 +28,9 @@ import { useVosk } from '../../hooks/useVosk';
 const BASE: StickerId = 'mood.hi-there';
 const MOOD: Record<SmartyMood, StickerId> = {
   happy: 'mood.yay', laugh: 'pers.excited', curious: 'pers.curious', love: 'mood.smitten',
-  surprised: 'mood.gasp', sleepy: 'pose.snooze', sad: 'mood.teary', proud: 'pers.confident',
+  surprised: 'mood.gasp', sleepy: BASE, sad: 'mood.teary', proud: 'pers.confident',
 };
 
-/** The fish bowl shows how many meals are waiting. */
-const bowlFor = (meals: number) => (meals <= 0 ? 'empty' : meals === 1 ? 'one' : meals <= 3 ? 'three' : meals === 4 ? 'pile' : 'full');
 
 // ── layout ──────────────────────────────────────────────────────────────
 // The wall/floor seam of public/room/background.webp sits 63.8% down; the
@@ -36,7 +38,7 @@ const bowlFor = (meals: number) => (meals <= 0 ? 'empty' : meals === 1 ? 'one' :
 // 63.8% of the room's height. Pieces are placed against that: cx = centre (%
 // of width), by = bottom edge (% of height), and a size in cqh (h) or cqw (w).
 type Spot = { cx: number; by: number; h?: number; w?: number; z: number };
-type Layout = Record<Slot | 'plaque' | 'xp' | 'history' | 'settings' | 'cat' | 'bowl', Spot> & { talk: { top: number; w: number; h: number } };
+type Layout = Record<Slot | 'plaque' | 'xp' | 'history' | 'settings' | 'cat', Spot> & { talk: { top: number; w: number; h: number }; ref: number };
 
 const PORTRAIT: Layout = {
   window: { cx: 83, by: 41, h: 23, z: 1 },
@@ -46,13 +48,15 @@ const PORTRAIT: Layout = {
   xp: { cx: 50, by: 33.5, w: 31, z: 3 },
   history: { cx: 43, by: 41.5, w: 11.5, z: 3 },
   settings: { cx: 57, by: 41.5, w: 11.5, z: 3 },
-  bed: { cx: 11, by: 71, h: 20, z: 2 },
+  bed: { cx: 10, by: 71, h: 17, z: 2 },
+  fridge: { cx: 33, by: 70, h: 12.5, z: 3 },
   desk: { cx: 89, by: 67.5, h: 17, z: 2 },
   chair: { cx: 86, by: 69.5, h: 12, z: 3 },
-  rug: { cx: 46, by: 77, w: 54, z: 2 },
-  cat: { cx: 46, by: 75.5, w: 40, z: 4 },
-  bowl: { cx: 79, by: 82, w: 21, z: 5 },
+  rug: { cx: 59, by: 77, w: 50, z: 2 },
+  cat: { cx: 59, by: 75.5, w: 37, z: 4 },
   talk: { top: 82.5, w: 78, h: 7.5 },
+  // Width ÷ height of the phone room this layout was drawn on.
+  ref: 0.545,
 };
 const LANDSCAPE: Layout = {
   window: { cx: 77, by: 47, h: 33, z: 1 },
@@ -63,20 +67,29 @@ const LANDSCAPE: Layout = {
   history: { cx: 44.5, by: 46, h: 9, z: 3 },
   settings: { cx: 55.5, by: 46, h: 9, z: 3 },
   bed: { cx: 13, by: 79, h: 32, z: 2 },
+  fridge: { cx: 30, by: 77, h: 21, z: 3 },
   desk: { cx: 87, by: 74, h: 28, z: 2 },
   chair: { cx: 80, by: 80, h: 17, z: 3 },
-  rug: { cx: 49, by: 86, h: 15, z: 2 },
-  cat: { cx: 49, by: 84, h: 30, z: 4 },
-  bowl: { cx: 72, by: 87, h: 15, z: 5 },
-  talk: { top: 86.5, w: 36, h: 7.5 },
+  rug: { cx: 52, by: 86, h: 15, z: 2 },
+  cat: { cx: 52, by: 84, h: 30, z: 4 },
+  talk: { top: 87.5, w: 36, h: 7.5 },
+  ref: 1.35,
 };
 
-const spotStyle = (s: Spot): CSSProperties => ({
+/**
+ * Sizes scale with the room's smaller side relative to the reference shape, so
+ * on a wider or a shorter screen every piece shrinks together instead of the
+ * width-sized ones crowding the height-sized ones.
+ */
+const fitW = (w: number, ref: number) => `min(${w}cqw, ${(w * ref).toFixed(2)}cqh)`;
+const fitH = (h: number, ref: number) => `min(${h}cqh, ${(h / ref).toFixed(2)}cqw)`;
+const sizeOf = (s: Spot, ref: number): CSSProperties => (s.w ? { width: fitW(s.w, ref), height: 'auto' } : { height: fitH(s.h ?? 10, ref), width: 'auto' });
+const spotStyle = (s: Spot, ref: number): CSSProperties => ({
   left: `${s.cx}%`, top: `${s.by}%`, transform: 'translate(-50%, -100%)', zIndex: s.z,
-  ...(s.w ? { width: `${s.w}cqw` } : { height: `${s.h}cqh` }),
+  ...(s.w ? { width: fitW(s.w, ref) } : { height: fitH(s.h ?? 10, ref) }),
 });
 
-type Sheet = null | 'stats' | 'history' | { slot: Slot };
+type Sheet = null | 'stats' | 'history' | 'fridge' | { slot: Slot };
 type Talk = 'idle' | 'listening' | 'thinking' | 'speaking';
 type Say = { id: number; text: string; tip?: string };
 
@@ -84,18 +97,26 @@ type Say = { id: number; text: string; tip?: string };
  * Talking Smarty's room (Home on desktop, Profile on phones). Every piece of
  * furniture can be tapped to swap it from its own shop; the sign shows hearts,
  * the board shows level and XP, and Smarty sits calmly on his rug: tap or
- * stroke him, feed him from the bowl, or (with Smarty Max) talk to him.
+ * stroke him, feed him from his mini-fridge, or (with Smarty Max) talk to him.
  */
-export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpenSettings, onOpenPlans }: {
+const GREETINGS: Partial<Record<string, string>> = {
+  en: 'Hello', es: '¡Hola', fr: 'Bonjour', de: 'Hallo', it: 'Ciao', pt: 'Olá', zh: '你好', ja: 'こんにちは',
+  ko: '안녕하세요', ru: 'Привет', ar: 'مرحبًا', uz: 'Salom', tr: 'Merhaba', hi: 'नमस्ते', uk: 'Привіт',
+  nl: 'Hallo', pl: 'Cześć', sv: 'Hej', id: 'Halo', vi: 'Xin chào', th: 'สวัสดี', fa: 'سلام',
+  ur: 'سلام', ro: 'Salut', el: 'Γεια σου', tl: 'Kumusta', ms: 'Hai', cs: 'Ahoj', sw: 'Habari',
+};
+
+export function SmartyRoom({ xp, league, canTalk, greetOnOpen, showIelts, onMealEaten, onOpenSettings, onOpenPlans }: {
   xp: number;
   league: string;
   canTalk: boolean;
+  greetOnOpen?: boolean;
   showIelts: boolean;
-  onMealEaten: () => void;
+  onMealEaten: (xp: number) => void;
   onOpenSettings: () => void;
   onOpenPlans: () => void;
 }) {
-  const { t, tText, uiLang } = useUiLang();
+  const { t, uiLang } = useUiLang();
   const { userProfile, habit, level, accountProfile, savedVocab, unlimitedHearts } = useProgress();
   const { contentLang, speechLocale } = useContentLang();
   const room = useRoom();
@@ -107,7 +128,8 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
   const [say, setSay] = useState<Say | null>(null);
   const [sticker, setSticker] = useState<StickerId>(BASE);
   const [eating, setEating] = useState(false);
-  const [flying, setFlying] = useState<{ dx: number; dy: number } | null>(null);
+  const [flying, setFlying] = useState<{ dx: number; dy: number; src: string } | null>(null);
+  const [lucky, setLucky] = useState<Reward | null>(null);
   const [pets, setPets] = useState<{ id: number; x: number; y: number }[]>([]);
   const [talk, setTalk] = useState<Talk>('idle');
   const [heard, setHeard] = useState('');
@@ -123,7 +145,7 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
   const outer = useRef<HTMLDivElement>(null);
   const cat = useRef<HTMLDivElement>(null);
   const mouth = useRef<HTMLDivElement>(null);
-  const bowl = useRef<HTMLButtonElement>(null);
+  const fridge = useRef<HTMLButtonElement>(null);
   const abort = useRef<AbortController | null>(null);
   const { startRecognition, stopRecognition, isReady: micReady } = useVosk(speechLocale);
 
@@ -139,10 +161,15 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
   }, []);
   const L = wide ? LANDSCAPE : PORTRAIT;
 
+  // Smarty is always awake and calm in his room (no sleeping, hunger or mood meters).
+  const base: StickerId = BASE;
+  const baseRef = useRef(base);
+
   useEffect(() => () => { timers.current.forEach(clearTimeout); abort.current?.abort(); stopRecognition(); }, [stopRecognition]);
 
   // Now and then (first visit of the day, then about one visit in three) Smarty comments on the streak.
   useEffect(() => {
+    if (greetOnOpen) return;
     const h = normalizeHabit(habit);
     const n = visibleStreak(h);
     const practisedToday = (h.dailyGoal.xpEarned || 0) > 0;
@@ -171,9 +198,17 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
     setSay({ id, text, tip });
     later(ms, () => {
       if (!keepWords) setSay((cur) => (cur?.id === id ? null : cur));
-      setSticker((cur) => (cur === s ? BASE : cur));
+      setSticker((cur) => (cur === s ? baseRef.current : cur));
     });
   };
+
+  useEffect(() => {
+    if (!greetOnOpen) return;
+    const name = accountProfile?.displayName?.trim().split(/\s+/)[0];
+    const greeting = `${GREETINGS[contentLang] || GREETINGS.en}${name ? `, ${name}` : ''}!`;
+    react('mood.hi-there', greeting, 3500, undefined, true);
+    speakText(greeting, 1, speechLocale);
+  }, [greetOnOpen, contentLang, speechLocale, accountProfile?.displayName]);
 
   // ── touch: head = shy, tummy = giggle, too many pokes = grumpy ──
   const onTap = (e: React.MouseEvent) => {
@@ -211,32 +246,36 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
     if (was) react('mood.smitten', t('room.pet.done'), 1500);
   };
 
-  // ── feeding ──
-  const eat = () => {
+  // ── feeding: a snack from the fridge flies to Smarty ──
+  const eat = (id: string) => {
     const before = smartyLevel(pantry.eaten).level;
-    if (!feedSmarty()) return;
+    const fed = feedSmarty(id);
+    if (!fed) return;
     setEating(true);
     setSticker('reward.snack-time');
     setSay({ id: ids.current++, text: t('kitchen.say.eating') });
     playSound('success', { mascot: false });
     haptic([20, 40, 20, 40, 20]);
-    onMealEaten();
+    onMealEaten(fed.xp);
     later(reduced ? 600 : 1900, () => { setFlying(null); playSound('meow', { mascot: false }); });
     later(reduced ? 900 : 2200, () => {
       setEating(false);
       react('mood.smitten', t('kitchen.say.happy'), 1800);
       const after = smartyLevel(pantry.eaten + 1).level;
       if (after > before) { setLevelUp(after); playSound('level-up', { mascot: false }); }
+      // Some snacks are lucky: a boost popup.
+      if (fed.boost) setLucky({ xp: fed.xp, boost: { kind: fed.boost.kind, mult: fed.boost.mult } });
     });
   };
-  const feedFromBowl = () => {
-    if (eating) return;
-    if (pantry.meals <= 0) return react('pers.curious', pantry.pieces > 0 ? t('room.feed.pieces', { n: 4 - pantry.pieces }) : t('room.feed.none'), 2600);
-    const b = bowl.current?.getBoundingClientRect();
+  const feedFood = (id: string) => {
+    if (eating || !pantry.foods[id]) return;
+    setSheet(null);
+    const f = fridge.current?.getBoundingClientRect();
     const m = mouth.current?.getBoundingClientRect();
-    setFlying(b && m ? { dx: m.left + m.width / 2 - (b.left + b.width / 2), dy: m.top + m.height / 2 - (b.top + b.height * 0.4) } : { dx: -120, dy: -120 });
+    const src = foodById(id)?.src ?? '';
+    setFlying(f && m ? { dx: m.left + m.width / 2 - (f.left + f.width / 2), dy: m.top + m.height / 2 - (f.top + f.height * 0.4), src } : { dx: 120, dy: -60, src });
     setSticker('mood.gasp');
-    later(reduced ? 30 : 700, eat);
+    later(reduced ? 30 : 700, () => eat(id));
   };
 
   // ── talking ──
@@ -251,8 +290,8 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
     const ac = new AbortController();
     abort.current = ac;
     try {
-      const name = getPrefs().preferredName || accountProfile?.displayName?.trim().split(/\s+/)[0] || undefined;
-      const r = await smartyTalk({ utterance: text, history: history.current.slice(-8), contentLang, uiLang, level, name }, ac.signal);
+      const name = accountProfile?.displayName?.trim().split(/\s+/)[0] || undefined;
+      const r = await smartyTalk({ utterance: text, history: history.current.slice(-8), contentLang, uiLang, level, name, knownWords: practisingWords(contentLang) }, ac.signal);
       if (r.safeFallback) r.reply = t('safety.ai.fallback');
       history.current.push({ role: 'user', content: text }, { role: 'assistant', content: r.reply });
       noteTalkedToSmarty();
@@ -271,7 +310,7 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
   };
 
   const startListening = async () => {
-    if (talk === 'listening') { stopRecognition(); setTalk('idle'); setSticker(BASE); setSay(null); return; }
+    if (talk === 'listening') { stopRecognition(); setTalk('idle'); setSticker(baseRef.current); setSay(null); return; }
     if (talk !== 'idle' || eating) return;
     if (!canTalk) {
       playSound('meow', { mascot: false });
@@ -286,7 +325,7 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
     const finish = (txt: string) => { if (done) return; done = true; stopRecognition(); void ask(txt); };
     try {
       await startRecognition(finish, (partial) => setHeard(partial), false, () => { if (!done) { done = true; stopRecognition(); setTalk('idle'); react('mood.dizzy', t('room.talk.micError'), 2400); } });
-      later(9000, () => { if (!done) { done = true; stopRecognition(); setTalk('idle'); setSticker(BASE); setSay(null); } });
+      later(9000, () => { if (!done) { done = true; stopRecognition(); setTalk('idle'); setSticker(baseRef.current); setSay(null); } });
     } catch {
       setTalk('idle');
       setTyping(true);
@@ -295,8 +334,6 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
   const sendTyped = () => { if (!canTalk || !draft.trim() || talk === 'thinking') return; const d = draft; setDraft(''); void ask(d); };
 
   const streak = visibleStreak(normalizeHabit(habit));
-  const xpLevel = levelForXp(xp);
-  const into = xp % 1000;
 
   /** A tappable piece of furniture that opens its shop. */
   const piece = (slot: Slot) => {
@@ -305,51 +342,52 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
     const s = L[slot];
     return (
       <button key={slot} type="button" onClick={() => setSheet({ slot })} aria-label={t('room.change', { thing: t(`room.one.${SLOT_CATEGORY[slot]}` as UiStringKey) })}
-        className="absolute transition-transform duration-150 hover:scale-[1.03] active:scale-95" style={spotStyle(s)}>
+        className="absolute transition-transform duration-150 hover:scale-[1.03] active:scale-95" style={spotStyle(s, L.ref)}>
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.img key={item.id} src={item.src} alt="" draggable={false} className="block max-w-none select-none"
-            style={s.w ? { width: `${s.w}cqw`, height: 'auto' } : { height: `${s.h}cqh`, width: 'auto' }}
+            style={sizeOf(s, L.ref)}
             initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ type: 'spring', stiffness: 380, damping: 24 }} />
         </AnimatePresence>
       </button>
     );
   };
-  const sized = (s: Spot): CSSProperties => (s.w ? { width: `${s.w}cqw`, height: 'auto' } : { height: `${s.h}cqh`, width: 'auto' });
+  const sized = (s: Spot): CSSProperties => sizeOf(s, L.ref);
   const hudImg = (name: string, s: Spot) => <img src={`/room/hud/${name}.webp`} alt="" draggable={false} className="block max-w-none select-none" style={sized(s)} />;
   // Text on the sign/board scales with them: their width in px-independent units.
-  const signFont = (frac: number, s: Spot) => (s.w ? `${s.w * frac}cqw` : `${(s.h ?? 10) * frac * 2.2}cqh`);
+  const signFont = (frac: number, s: Spot) => (s.w ? fitW(s.w * frac, L.ref) : fitH((s.h ?? 10) * frac * 2.2, L.ref));
 
+  const catSpot = L.cat;
   return (
-    <div ref={outer} className="light-zone relative h-[calc(100dvh-123px-env(safe-area-inset-bottom))] min-h-[460px] overflow-hidden bg-[#efeff1] lg:h-dvh" style={{ containerType: 'size' }}>
+    <div ref={outer} className="light-zone relative h-[calc(100dvh-123px-env(safe-area-inset-bottom))] min-h-[400px] overflow-hidden bg-[#efeff1] lg:h-dvh" style={{ containerType: 'size' }}>
       <img src="/room/background.webp" alt="" aria-hidden draggable={false} className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover" style={{ objectPosition: '50% 63.8%' }} />
 
       {(['window', 'shelf1', 'shelf2', 'bed', 'desk', 'rug', 'chair'] as Slot[]).map(piece)}
 
       {/* sign: hearts */}
       <button type="button" onClick={() => setSheet('stats')} aria-label={unlimitedHearts ? t('hearts.unlimited') : t('hearts.count', { n: hearts.count })}
-        className="absolute transition-transform active:scale-95" style={spotStyle(L.plaque)}>
+        className="absolute transition-transform active:scale-95" style={spotStyle(L.plaque, L.ref)}>
         {hudImg('plaque', L.plaque)}
         <span className="absolute inset-x-0 flex items-center justify-center gap-[0.3em] font-serif font-extrabold leading-none text-zinc-900" style={{ top: '67%', transform: 'translateY(-50%)', fontSize: signFont(0.2, L.plaque) }}>
-          <Heart className="fill-rose-500 text-rose-500" style={{ width: '0.95em', height: '0.95em' }} />{unlimitedHearts ? '∞' : hearts.count}
+          <Heart className="fill-red-600 text-red-600" style={{ width: '0.95em', height: '0.95em' }} />{unlimitedHearts ? '∞' : hearts.count}
         </span>
       </button>
       {/* board: streak. Grey flame until you practise today, orange while it grows, red-hot from 7 days. */}
-      <button type="button" onClick={() => setSheet('stats')} aria-label={t('room.streak.label', { n: streak })} className="absolute transition-transform active:scale-[0.97]" style={spotStyle(L.xp)}>
+      <button type="button" onClick={() => setSheet('stats')} aria-label={t('room.streak.label', { n: streak })} className="absolute transition-transform active:scale-[0.97]" style={spotStyle(L.xp, L.ref)}>
         {hudImg('xp', L.xp)}
         <span className="absolute inset-x-[8%] inset-y-[12%] flex items-center justify-center gap-[0.35em] whitespace-nowrap font-serif font-extrabold leading-none text-zinc-900" style={{ fontSize: signFont(0.092, L.xp) }}>
           <img src={`/room/fire/${streak === 0 || (normalizeHabit(habit).dailyGoal.xpEarned || 0) === 0 ? 'cold' : streak >= 7 ? 'hot' : 'warm'}.webp`} alt="" className="h-[1.6em] w-auto" draggable={false} />
           {t('room.streak.days', { n: streak })}
         </span>
       </button>
-      <button type="button" onClick={() => setSheet('history')} aria-label={t('home.historyTitle')} className="absolute transition-transform hover:scale-105 active:scale-90" style={spotStyle(L.history)}>
+      <button type="button" onClick={() => setSheet('history')} aria-label={t('home.historyTitle')} className="absolute transition-transform hover:scale-105 active:scale-90" style={spotStyle(L.history, L.ref)}>
         {hudImg('history', L.history)}
       </button>
-      <button type="button" onClick={onOpenSettings} aria-label={t('room.settings')} className="absolute transition-transform hover:scale-105 active:scale-90" style={spotStyle(L.settings)}>
+      <button type="button" onClick={onOpenSettings} aria-label={t('room.settings')} className="absolute transition-transform hover:scale-105 active:scale-90" style={spotStyle(L.settings, L.ref)}>
         {hudImg('settings', L.settings)}
       </button>
 
       {/* Smarty on the rug */}
-      <div ref={cat} className="absolute touch-none select-none" style={spotStyle(L.cat)}
+      <div ref={cat} className="absolute touch-none select-none transition-[left,top,width,height] duration-700 ease-out" style={spotStyle(catSpot, L.ref)}
         onPointerMove={onPetMove} onPointerUp={endPet} onPointerLeave={endPet} onPointerCancel={endPet}>
         <div className="pointer-events-none absolute bottom-[88%] left-1/2 flex w-[200%] max-w-[90cqw] -translate-x-1/2 justify-center" style={{ zIndex: 6 }}>
           <AnimatePresence mode="popLayout">
@@ -364,7 +402,7 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
             )}
           </AnimatePresence>
         </div>
-        <button type="button" onClick={onTap} aria-label={t('kitchen.tapSmarty')} className="relative block aspect-square rounded-full focus-visible:outline-none" style={sized(L.cat)}>
+        <button type="button" onClick={onTap} aria-label={t('kitchen.tapSmarty')} className="relative block aspect-square rounded-full focus-visible:outline-none" style={sized(catSpot)}>
           {/* talking: the mood face keeps playing and he bobs gently while the line is spoken */}
           <motion.div className="h-full w-full" style={{ transformOrigin: '50% 100%' }}
             animate={talk === 'speaking' && !reduced ? { y: [0, -5, 0, -3, 0], scaleY: [1, 1.03, 0.99, 1.02, 1] } : talk === 'thinking' && !reduced ? { rotate: [-2, 2, -2] } : { y: 0, rotate: 0, scaleY: 1 }}
@@ -375,7 +413,7 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
         <div ref={mouth} aria-hidden className="pointer-events-none absolute left-[46%] top-[52%] h-4 w-4" />
         <AnimatePresence>
           {pets.map((p) => (
-            <motion.span key={p.id} aria-hidden className="pointer-events-none absolute text-rose-500" style={{ left: p.x - 12, top: p.y - 12 }}
+            <motion.span key={p.id} aria-hidden className="pointer-events-none absolute text-red-500" style={{ left: p.x - 12, top: p.y - 12 }}
               initial={{ opacity: 0, scale: 0.3 }} animate={{ opacity: [0, 1, 0], scale: [0.3, 1.2, 1], y: -70 }} transition={{ duration: 1.1 }}
               onAnimationComplete={() => setPets((l) => l.filter((x) => x.id !== p.id))}>
               <Heart className="h-6 w-6 fill-current" />
@@ -384,19 +422,17 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
         </AnimatePresence>
       </div>
 
-      {/* fish bowl → feed */}
-      <button type="button" ref={bowl} onClick={feedFromBowl} aria-label={t('room.feed')} className="absolute transition-transform active:scale-95" style={spotStyle(L.bowl)}>
-        <img src={`/room/bowl/${bowlFor(pantry.meals)}.webp`} alt="" draggable={false} className="block max-w-none select-none" style={sized(L.bowl)} />
-        <span className="absolute bottom-[16%] left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-full border-2 border-zinc-900 bg-white px-2 py-0.5 font-serif text-sm font-extrabold text-zinc-900 shadow-[0_2px_0_0_#18181b]">
-          <Utensils className="h-3.5 w-3.5" />{pantry.meals}
-        </span>
+      {/* mini-fridge → snacks for Smarty */}
+      <button type="button" ref={fridge} onClick={() => setSheet('fridge')} aria-label={t('fridge.label')} className="absolute transition-transform hover:scale-[1.03] active:scale-95" style={spotStyle(L.fridge, L.ref)}>
+        <img src={itemById(room.fridge)?.src} alt="" draggable={false} className="block max-w-none select-none" style={sized(L.fridge)} />
         <AnimatePresence>
           {flying && (
-            <motion.img key="fish" src="/room3d/fish.webp" alt="" className="pointer-events-none absolute left-[30%] top-[20%] w-[40%]"
-              initial={{ x: 0, y: 0, scale: 1 }} animate={{ x: flying.dx, y: flying.dy, scale: 0.6, rotate: -25 }} exit={{ opacity: 0 }} transition={{ duration: 0.65, ease: [0.3, 0, 0.3, 1] }} />
+            <motion.img key="snack" src={flying.src} alt="" className="pointer-events-none absolute left-[20%] top-[20%] w-[60%]"
+              initial={{ x: 0, y: 0, scale: 1 }} animate={{ x: flying.dx, y: flying.dy, scale: 0.6, rotate: 20 }} exit={{ opacity: 0 }} transition={{ duration: 0.65, ease: [0.3, 0, 0.3, 1] }} />
           )}
         </AnimatePresence>
       </button>
+      <BoostChip />
 
       {/* what Smarty heard / typed message */}
       <AnimatePresence>
@@ -429,17 +465,19 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
           {talk === 'listening' ? t('room.talk.listening') : t('room.talk.button')}
           {!canTalk && <Crown className="h-5 w-5 text-amber-400" />}
         </motion.button>
-        {canTalk ? (
-          talk === 'idle' && !typing && (
-            <button type="button" onClick={() => setTyping(true)} className="mt-2 flex items-center gap-1.5 text-xs font-bold text-zinc-500 hover:underline">
-              <Keyboard className="h-3.5 w-3.5" />{t('room.talk.type')}
+        <div className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+          {canTalk ? (
+            talk === 'idle' && !typing && (
+              <button type="button" onClick={() => setTyping(true)} className="flex items-center gap-1.5 text-xs font-bold text-zinc-500 hover:underline">
+                <Keyboard className="h-3.5 w-3.5" />{t('room.talk.type')}
+              </button>
+            )
+          ) : (
+            <button type="button" onClick={onOpenPlans} className="flex items-center gap-1.5 font-serif text-xs font-extrabold uppercase tracking-wide text-zinc-900 hover:underline">
+              <Crown className="h-3.5 w-3.5 text-amber-500" />{t('room.talk.unlock')}
             </button>
-          )
-        ) : (
-          <button type="button" onClick={onOpenPlans} className="mt-2 flex items-center gap-1.5 font-serif text-xs font-extrabold uppercase tracking-wide text-zinc-900 hover:underline">
-            <Crown className="h-3.5 w-3.5 text-amber-500" />{t('room.talk.unlock')}
-          </button>
-        )}
+          )}
+        </div>
       </div>
 
       {/* ── sheets ── */}
@@ -447,21 +485,24 @@ export function SmartyRoom({ xp, league, canTalk, showIelts, onMealEaten, onOpen
         {sheet === 'stats' && (
           <RoomSheet key="stats" title={t('room.stats')} sticker="achieve.trophy-lift" onClose={() => setSheet(null)}>
             <div className="grid grid-cols-2 gap-3">
-              <Stat icon={<Heart className="h-6 w-6 fill-rose-500 text-rose-500" />} value={unlimitedHearts ? '∞' : hearts.count} label={t('room.stat.hearts')} />
+              <Stat icon={<BookOpen className="h-6 w-6" />} value={completionsOfType('lesson-bite').filter(entry => entry.contentLang === contentLang).length} label={t('update.sessions')} />
+              <Stat icon={<Heart className="h-6 w-6 fill-red-600 text-red-600" />} value={unlimitedHearts ? '∞' : hearts.count} label={t('room.stat.hearts')} />
               <Stat icon={<Zap className="h-6 w-6 fill-current" />} value={xp} label={t('profile.stat.xp')} />
               <Stat icon={<Flame className="h-6 w-6 text-orange-500" />} value={streak} label={t('profile.stat.streak')} />
               <Stat icon={<LeagueTrophy id={league} size={30} />} value={league} label={t('profile.stat.league')} />
-              <Stat icon={<Utensils className="h-6 w-6" />} value={pantry.eaten} label={t('profile.stat.meals')} />
               <Stat icon={<BookOpen className="h-6 w-6" />} value={Object.keys(savedVocab || {}).length} label={t('room.stat.words')} />
               <Stat icon={<Trophy className="h-6 w-6 text-amber-500" />} value={normalizeHabit(habit).badges?.length ?? 0} label={t('room.stat.badges')} />
               <Stat icon={<Coins className="h-6 w-6 text-amber-500" />} value={userProfile.coins} label={t('room.coins')} />
-              <Stat icon={<Flame className="h-6 w-6" />} value={liveFeedStreak(pantry)} label={t('kitchen.feedStreak')} />
             </div>
           </RoomSheet>
         )}
         {sheet && typeof sheet === 'object' && <Shop key={sheet.slot} slot={sheet.slot} onClose={() => setSheet(null)} />}
+        {sheet === 'fridge' && <Fridge key="fridge" onFeed={feedFood} onChange={() => setSheet({ slot: 'fridge' })} onClose={() => setSheet(null)} />}
       </AnimatePresence>
       {sheet === 'history' && <HistorySheet onClose={() => setSheet(null)} showIelts={showIelts} />}
+
+      <AnimatePresence>{lucky && <RewardBox title={t('rewards.lucky')} reward={lucky} onDone={() => setLucky(null)} z={95} />}</AnimatePresence>
+
 
       {/* ── level up ── */}
       <AnimatePresence>
@@ -533,7 +574,7 @@ function Shop({ slot, onClose }: { slot: Slot; onClose: () => void }) {
       return;
     }
     if (userProfile.coins < item.price) { setNote({ id: Date.now(), text: t('room.shop.needCoins') }); playSound('fail', { mascot: false }); return; }
-    if (buyItem(slot, id, spendCoins)) { setPopped(id); playSound('level-up', { mascot: false }); setNote({ id: Date.now(), text: t('room.shop.bought') }); }
+    if (buyItem(slot, id, spendCoins)) { setPopped(id); playSound('purchase', { mascot: false }); window.setTimeout(() => playSound('sparkle', { mascot: false }), 260); setNote({ id: Date.now(), text: t('room.shop.bought') }); }
   };
 
   return (
@@ -567,6 +608,91 @@ function Shop({ slot, onClose }: { slot: Slot; onClose: () => void }) {
           );
         })}
       </div>
+    </RoomSheet>
+  );
+}
+
+/** A running food boost, shown in the room's corner with minutes left. */
+function BoostChip() {
+  const { t } = useUiLang();
+  const pantry = usePantry();
+  const [now, setNow] = useState(Date.now());
+  useEffect(() => { const id = window.setInterval(() => setNow(Date.now()), 30_000); return () => window.clearInterval(id); }, []);
+  const b = activeBoost(pantry, now);
+  if (!b) return null;
+  return (
+    <span className="absolute left-3 top-3 z-[8] flex items-center gap-1 rounded-full border-2 border-zinc-900 bg-amber-300 px-2.5 py-1 font-serif text-xs font-extrabold text-zinc-900 shadow-[0_2px_0_0_#18181b]">
+      <Zap className="h-3.5 w-3.5 fill-current" />{t('rewards.boostActive', { n: b.mult, what: t(b.kind === 'xp' ? 'rewards.what.xp' : 'rewards.what.coins'), m: Math.max(1, Math.ceil((b.until - now) / 60_000)) })}
+    </span>
+  );
+}
+
+/** Smarty's mini-fridge: snacks inside (tap to feed) and a food shop. */
+function Fridge({ onFeed, onChange, onClose }: { onFeed: (id: string) => void; onChange: () => void; onClose: () => void }) {
+  const { t } = useUiLang();
+  const { userProfile, spendCoins } = useProgress();
+  const pantry = usePantry();
+  const [tab, setTab] = useState<'inside' | 'shop'>(foodCount(pantry) ? 'inside' : 'shop');
+  const [note, setNote] = useState<{ id: number; text: string } | null>(null);
+  const [popped, setPopped] = useState<string | null>(null);
+  const inside = FOODS.filter((f) => pantry.foods[f.id]);
+  const buy = (id: string) => {
+    const food = foodById(id)!;
+    if ((pantry.foods[id] ?? 0) >= FRIDGE_MAX_EACH) { setNote({ id: Date.now(), text: t('fridge.full') }); playSound('fail', { mascot: false }); return; }
+    if (userProfile.coins < food.price) { setNote({ id: Date.now(), text: t('fridge.noCoins') }); playSound('fail', { mascot: false }); return; }
+    if (buyFood(id, spendCoins)) { setPopped(id); window.setTimeout(() => setPopped(null), 450); playSound('purchase', { mascot: false }); window.setTimeout(() => playSound('coin', { mascot: false }), 180); }
+  };
+  const tile = 'relative flex flex-col items-center rounded-2xl border-2 border-slate-200 bg-white p-2 shadow-[0_3px_0_0_#e2e8f0] transition-[transform,box-shadow] duration-75 active:translate-y-[3px] active:shadow-none dark:border-zinc-700 dark:bg-zinc-900 dark:shadow-[0_3px_0_0_#3f3f46]';
+  return (
+    <RoomSheet title={t('fridge.title')} onClose={onClose}
+      right={<span className="flex items-center gap-1 rounded-2xl border-2 border-slate-200 px-2.5 py-1.5 font-serif text-sm font-extrabold text-zinc-900 dark:border-zinc-700 dark:text-zinc-50"><Coins className="h-4 w-4 text-amber-500" />{userProfile.coins}</span>}>
+      <div className="mb-3 flex gap-2">
+        {(['inside', 'shop'] as const).map((k) => (
+          <button key={k} type="button" onClick={() => { setTab(k); playSound('tap', { mascot: false }); }}
+            className={`flex-1 rounded-2xl border-2 py-2 font-serif text-[13px] font-extrabold uppercase tracking-wide ${tab === k ? 'border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900' : 'border-slate-200 text-slate-500 dark:border-zinc-700'}`}>
+            {t(k === 'inside' ? 'fridge.inside' : 'fridge.shop')}{k === 'inside' && foodCount(pantry) ? ` · ${foodCount(pantry)}` : ''}
+          </button>
+        ))}
+      </div>
+      <AnimatePresence>
+        {note && (
+          <motion.p key={note.id} initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+            className="mb-3 rounded-xl bg-zinc-900 px-3 py-2 text-center text-sm font-bold text-white dark:bg-zinc-100 dark:text-zinc-900">{note.text}</motion.p>
+        )}
+      </AnimatePresence>
+      {tab === 'inside' ? (
+        inside.length ? (
+          <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
+            {inside.map((f) => (
+              <button key={f.id} type="button" onClick={() => onFeed(f.id)} className={tile} aria-label={`${t('fridge.feed')} ${t(`food.${f.id}` as UiStringKey)}`}>
+                <span className="absolute right-1.5 top-1.5 rounded-full bg-zinc-900 px-1.5 text-[11px] font-extrabold text-white dark:bg-zinc-100 dark:text-zinc-900">×{pantry.foods[f.id]}</span>
+                <img src={f.src} alt="" loading="lazy" className="h-16 w-full object-contain" />
+                <span className="mt-1 line-clamp-1 text-[11px] font-extrabold text-zinc-900 dark:text-zinc-50">{t(`food.${f.id}` as UiStringKey)}</span>
+                <span className="flex items-center gap-0.5 text-[11px] font-extrabold text-slate-500"><Zap className="h-3 w-3" />{f.xp}</span>
+              </button>
+            ))}
+          </div>
+        ) : (
+          <div className="py-6 text-center">
+            <p className="text-sm font-bold text-slate-500">{t('fridge.empty')}</p>
+            <button type="button" onClick={() => setTab('shop')} className="mt-3 rounded-2xl bg-zinc-900 px-4 py-2 font-serif text-sm font-extrabold uppercase text-white dark:bg-zinc-100 dark:text-zinc-900">{t('fridge.shop')}</button>
+          </div>
+        )
+      ) : (
+        <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
+          {FOODS.map((f) => (
+            <motion.button key={f.id} type="button" onClick={() => buy(f.id)} className={tile} aria-label={t(`food.${f.id}` as UiStringKey)}
+              animate={popped === f.id ? { scale: [1, 1.12, 1] } : {}} transition={{ duration: 0.4 }}>
+              {!!pantry.foods[f.id] && <span className="absolute right-1.5 top-1.5 rounded-full bg-slate-200 px-1.5 text-[11px] font-extrabold text-zinc-700 dark:bg-zinc-700 dark:text-zinc-100">×{pantry.foods[f.id]}</span>}
+              {f.tier === 3 && <span className="absolute left-1.5 top-1.5 text-amber-500"><Zap className="h-3.5 w-3.5 fill-current" /></span>}
+              <img src={f.src} alt="" loading="lazy" className="h-16 w-full object-contain" />
+              <span className="mt-1 line-clamp-1 text-[11px] font-extrabold text-zinc-900 dark:text-zinc-50">{t(`food.${f.id}` as UiStringKey)}</span>
+              <span className="flex items-center gap-1 text-[11px] font-extrabold text-amber-600"><Coins className="h-3 w-3" />{f.price}</span>
+            </motion.button>
+          ))}
+        </div>
+      )}
+      <button type="button" onClick={onChange} className="mt-4 w-full text-center text-sm font-bold text-slate-500 underline">{t('fridge.change')}</button>
     </RoomSheet>
   );
 }

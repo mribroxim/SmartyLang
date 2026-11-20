@@ -1,22 +1,21 @@
 import { DialogSurface } from '../../components/DialogSurface';
+import { playSound } from '../../lib/audio';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Check, Crown, Lock, Play, ChevronRight, ListOrdered, X } from 'lucide-react';
+import { Check, Crown, Lock, Play, ListOrdered, X } from 'lucide-react';
 import type { Level, ReadingText } from '../../lib/reading-logic';
 import type { ContentLang } from '../../lib/contentLang';
 import { buildLessonUnits } from '../../lib/lessonUnits';
+import { assessPath, isAuthoredAssessment, type PathAssessment } from '../../lib/bites/pathAssessments';
 import { lessonBiteState, type LessonBiteState } from '../../lib/bites/biteProgress';
 import { Sticker, type StickerId } from '../../components/stickers/Sticker';
 import { useUiLang } from '../../contexts/UiLangContext';
 import { learnerName } from '../../lib/smarty/context';
-import type { UiStringKey } from '../../lib/uiStrings';
 import { ChunkyButton } from '../Bites/lesson/chunky';
 import { SECTIONS, isSectionOpen, sectionComplete } from '../../lib/bites/sections';
 import { UNIT_ONE_PILOT_ENABLED } from '../../lib/unitOnePilot/enabled';
 import { UnitOnePilotCard } from '../UnitOnePilot/UnitOnePilot';
-import { PILOT_COPY } from '../../lib/unitOnePilot/copy';
 
-const LEVELS: Level[] = ['Beginner', 'Elementary', 'Pre-Intermediate', 'Intermediate', 'Advanced'];
 const ZIG = [0, 44, 72, 44, 0, -44, -72, -44];
 const UNIT_STICKERS: StickerId[] = ['flow.learning-path', 'learn.bookworm', 'learn.word-nerd', 'listen.ear-twitch', 'learn.chatterbox', 'learn.scribbler', 'vocab.word-garden', 'read.story-portal', 'learn.detective', 'achieve.mastery-aura'];
 
@@ -29,21 +28,25 @@ interface Props {
   onStartBite: (text: ReadingText, biteIndex: number) => void;
   /** Take the jump test for a locked section. */
   onTakeTest: (level: Level) => void;
+  onAssessment: (level: Level, id: string) => void;
+  preview?: boolean;
   onOpenPilot?: () => void;
   showOriginalUnitOne?: boolean;
 }
 
 /** Duolingo-style winding path: units → lesson nodes (ring = bites done) → bites. */
-export function PathView({ level, setLevel, textsByLevel, contentLang, startingLevel, onStartBite, onTakeTest, onOpenPilot, showOriginalUnitOne = false }: Props) {
+export function PathView({ level, setLevel, textsByLevel, contentLang, startingLevel, onStartBite, onTakeTest, onAssessment, preview, onOpenPilot, showOriginalUnitOne = false }: Props) {
   const { t, tText, tLevel } = useUiLang();
   const texts = textsByLevel[level] || [];
   const units = useMemo(() => buildLessonUnits(texts, level), [texts, level]);
   const [tick, setTick] = useState(0);
   const states = useMemo(() => texts.map((tx) => lessonBiteState(contentLang, tx)), [texts, contentLang, tick]);
-  const currentIdx = states.findIndex((s) => !s.complete);
+  const pathUnits = useMemo(() => assessPath(contentLang, units, new Map(texts.map((text, i) => [text.id, states[i]])), preview), [contentLang, units, texts, states, preview]);
+  const currentIdx = states.findIndex((s, i) => !s.complete && !isAuthoredAssessment(texts[i]));
   const [open, setOpen] = useState<number | null>(null);
   const currentRef = useRef<HTMLDivElement>(null);
-  const done = states.filter((s) => s.complete).length;
+  const total = texts.filter(text => !isAuthoredAssessment(text)).length;
+  const done = states.filter((s, i) => s.complete && !isAuthoredAssessment(texts[i])).length;
   const [sections, setSections] = useState(false);
   const [original, setOriginal] = useState(showOriginalUnitOne);
   useEffect(() => setOriginal(showOriginalUnitOne), [showOriginalUnitOne]);
@@ -74,39 +77,38 @@ export function PathView({ level, setLevel, textsByLevel, contentLang, startingL
           <button type="button" onClick={() => setSections(true)}
             className="flex w-full items-center gap-3 rounded-2xl border-2 border-slate-200 bg-white px-4 py-2.5 text-left shadow-[0_3px_0_0_#e2e8f0] transition-[transform,box-shadow] duration-75 active:translate-y-[3px] active:shadow-none dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-[0_3px_0_0_#27272a]">
             <div className="min-w-0 flex-1">
-              <div className="text-[11px] font-extrabold uppercase tracking-widest text-slate-400">{t('path.section', { n: sectionIdx + 1 })}</div>
               <div className="truncate font-serif text-lg font-extrabold text-zinc-900 dark:text-zinc-50">{tLevel(level)}</div>
             </div>
-            <span className="shrink-0 text-xs font-extrabold tabular-nums text-slate-400">{done}/{texts.length}</span>
+            <span className="shrink-0 text-xs font-extrabold tabular-nums text-slate-400">{done}/{total}</span>
             <ListOrdered className="h-5 w-5 shrink-0 text-zinc-500" />
           </button>
         </div>
 
+
         {/* Units */}
-        {units.map((unit) => {
+        {pathUnits.map(({ unit, open: unitOpen, checkpoints, exam }) => {
           if (UNIT_ONE_PILOT_ENABLED && contentLang === 'en' && level === 'Beginner' && unit.index === 0 && !original && onOpenPilot) {
             return <UnitOnePilotCard key="unit-one-pilot" onOpen={onOpenPilot} onOriginal={() => setOriginal(true)} />;
           }
-          const first = unit.index * 10;
-          const unitStates = states.slice(first, first + unit.lessons.length);
-          const unitDone = unitStates.filter((s) => s.complete).length;
+          const first = texts.indexOf(unit.lessons[0]);
           return (
             <section key={unit.id} className="mt-8">
               <div className="flex items-center gap-3 rounded-2xl bg-zinc-900 px-4 py-3.5 text-white shadow-[0_5px_0_0_#000] dark:bg-zinc-100 dark:text-zinc-900 dark:shadow-[0_5px_0_0_#a1a1aa] dark-keep">
                 <div className="min-w-0 flex-1">
-                  <div className="text-[11px] font-bold uppercase tracking-widest opacity-70">{t('path.unit', { n: unit.index + 1 })} · {unitDone}/{unit.lessons.length}</div>
-                  <div className="truncate font-serif text-xl font-extrabold">{/^Unit \d+$/.test(unit.title) ? t('path.unit', { n: unit.index + 1 }) : tText(unit.title)}</div>
+                  <div className="truncate font-serif text-xl font-extrabold">{/^Unit \d+$/.test(unit.title) ? t('path.unit', { n: unit.number }) : tText(unit.title)}</div>
                 </div>
                 <Sticker id={UNIT_STICKERS[unit.index % UNIT_STICKERS.length]} size={54} priority="ambient" quality="full" />
               </div>
-              {UNIT_ONE_PILOT_ENABLED && contentLang === 'en' && level === 'Beginner' && unit.index === 0 && onOpenPilot && <button onClick={onOpenPilot} className="mt-4 min-h-11 font-bold underline">{PILOT_COPY.try_new_unit}</button>}
+              {UNIT_ONE_PILOT_ENABLED && contentLang === 'en' && level === 'Beginner' && unit.index === 0 && onOpenPilot && <button onClick={onOpenPilot} className="mt-4 min-h-11 font-bold underline">Try the new Unit 1</button>}
 
               <div className="relative mt-14 flex flex-col items-center gap-6">
                 {unit.lessons.map((text, i) => {
+                  if (isAuthoredAssessment(text)) return null;
                   const gi = first + i;
                   const s = states[gi];
-                  const isCurrent = gi === currentIdx;
-                  const future = currentIdx >= 0 && gi > currentIdx;
+                  const isCurrent = unitOpen && gi === currentIdx;
+                  const future = !unitOpen || currentIdx >= 0 && gi > currentIdx;
+                  const checkpoint = checkpoints.find(check => check.end === i + 1);
                   const x = ZIG[gi % ZIG.length];
                   return (
                     <div key={text.id} ref={isCurrent ? currentRef : undefined} className="relative w-full flex flex-col items-center">
@@ -117,10 +119,10 @@ export function PathView({ level, setLevel, textsByLevel, contentLang, startingL
                           </div>
                         )}
                         {isCurrent && <StartBubble label={s.doneCount ? t('path.continueBite') : t('path.start')} />}
-                        <PathNode state={s} current={isCurrent} future={future} index={(gi % 10) + 1} onClick={() => setOpen(open === gi ? null : gi)} />
+                        <PathNode state={s} current={isCurrent} future={future} locked={!unitOpen} index={unit.lessons.slice(0, i + 1).filter(tx => !isAuthoredAssessment(tx)).length} onClick={() => { setOpen(open === gi ? null : gi); }} />
                       </div>
                       <AnimatePresence>
-                        {open === gi && (
+                        {unitOpen && open === gi && (
                           <NodePopover
                             text={text}
                             state={s}
@@ -130,20 +132,18 @@ export function PathView({ level, setLevel, textsByLevel, contentLang, startingL
                           />
                         )}
                       </AnimatePresence>
+                      {checkpoint && <AssessmentNode assessment={checkpoint} onOpen={() => onAssessment(level, checkpoint.id)} />}
                     </div>
                   );
                 })}
-                {/* Unit chest */}
-                <div className="flex flex-col items-center">
-                  <Sticker id={unitDone === unit.lessons.length ? 'achieve.treasure-chest' : 'reward.surprise-gift'} size={88} priority="ambient" mode={unitDone === unit.lessons.length ? 'auto' : 'still'} />
-                  <div className="text-xs font-bold text-slate-400">{unitDone === unit.lessons.length ? t('path.unitDone') : t('path.unitChest')}</div>
-                </div>
+                <AssessmentNode assessment={exam} onOpen={() => onAssessment(level, exam.id)} />
+                {!unitOpen && <p className="text-center text-sm font-bold text-zinc-500">{t('path.unitExamLocked')}</p>}
               </div>
             </section>
           );
         })}
 
-        {currentIdx === -1 && texts.length > 0 && (
+        {currentIdx === -1 && pathUnits.length > 0 && pathUnits.every(({ exam }) => exam.passed) && (
           <div className="mt-10 text-center">
             <Sticker id="achieve.fireworks-finale" size={180} priority="hero" />
             <p className="mt-2 font-black text-zinc-900 dark:text-zinc-50">{learnerName() ? t('path.levelDone', { name: learnerName()! }) : t('path.levelDone.plain')}</p>
@@ -154,7 +154,7 @@ export function PathView({ level, setLevel, textsByLevel, contentLang, startingL
         {nextLevel && (
           <div className="mt-14">
             <div className="mb-4 flex items-center gap-3 text-slate-300 dark:text-zinc-700">
-              <span className="h-0.5 flex-1 bg-current" /><span className="font-serif text-xs font-extrabold uppercase tracking-widest text-slate-400">{t('path.section', { n: sectionIdx + 2 })}</span><span className="h-0.5 flex-1 bg-current" />
+              <span className="h-0.5 flex-1 bg-current" />
             </div>
             <div className="rounded-3xl border-2 border-zinc-900 bg-white p-5 text-center shadow-[0_5px_0_0_#18181b] dark:border-zinc-100 dark:bg-zinc-900 dark:shadow-[0_5px_0_0_#e4e4e7]">
               <Sticker id={nextOpen ? 'flow.next-lesson' : 'game.boss-battle'} size={110} priority="ambient" mode="still" className="mx-auto" />
@@ -180,7 +180,7 @@ export function PathView({ level, setLevel, textsByLevel, contentLang, startingL
                 <ul className="space-y-2.5">
                   {SECTIONS.map((l, i) => {
                     const list = textsByLevel[l] || [];
-                    const finished = sectionComplete(contentLang, list);
+                    const finished = sectionComplete(contentLang, list, l);
                     const isOpen = isSectionOpen(contentLang, l, textsByLevel, startingLevel);
                     const doneHere = list.filter((tx) => lessonBiteState(contentLang, tx).complete).length;
                     return (
@@ -191,7 +191,6 @@ export function PathView({ level, setLevel, textsByLevel, contentLang, startingL
                             {finished ? <Crown className="h-5 w-5" /> : isOpen ? i + 1 : <Lock className="h-5 w-5" />}
                           </span>
                           <span className="min-w-0 flex-1">
-                            <span className="block text-[11px] font-extrabold uppercase tracking-widest text-slate-400">{t('path.section', { n: i + 1 })}</span>
                             <span className="block truncate font-serif font-extrabold text-zinc-900 dark:text-zinc-50">{tLevel(l)}</span>
                           </span>
                           <span className="shrink-0 text-xs font-extrabold text-slate-400">{isOpen ? `${doneHere}/${list.length}` : t('path.jump')}</span>
@@ -226,13 +225,11 @@ function StartBubble({ label }: { label: string }) {
 }
 
 /** Chunky lesson node: a solid disc that presses into its bottom edge; ring = bites done. */
-function PathNode({ state, current, future, index, onClick }: { state: LessonBiteState; current: boolean; future: boolean; index: number; onClick: () => void }) {
+function PathNode({ state, current, future, locked, index, onClick }: { state: LessonBiteState; current: boolean; future: boolean; locked: boolean; index: number; onClick: () => void }) {
   const { t } = useUiLang();
+  // One continuous ring that fills up as bites are finished.
   const r = 40, c = 2 * Math.PI * r;
-  const segs = state.total;
-  // Round caps add strokeWidth to each dash, so the visible gap is gap - 7.
-  const gap = segs > 1 ? 13 : 0;
-  const seg = c / segs - gap;
+  const filled = state.total ? Math.min(1, state.doneCount / state.total) : 0;
   const face = state.complete
     ? state.mastered
       ? 'bg-amber-400 text-zinc-900 shadow-[0_6px_0_0_#b45309] dark-keep'
@@ -245,30 +242,37 @@ function PathNode({ state, current, future, index, onClick }: { state: LessonBit
   return (
     <button
       type="button"
+      disabled={locked}
       onClick={onClick}
       className="group relative h-[96px] w-[96px] rounded-full focus-visible:outline-3 focus-visible:outline-offset-4"
       aria-label={t("learning.lesson.v0.v1.024f55", { v0: index, v1: state.complete ? ' (done)' : current ? ' (current)' : '' })}
     >
       {(current || state.doneCount > 0) && (
         <svg viewBox="0 0 96 96" className="absolute inset-0">
-          {state.done.map((d, i) => (
-            <circle
-              key={i}
-              cx="48" cy="48" r={r}
-              fill="none"
-              strokeWidth="7"
-              strokeLinecap="round"
-              strokeDasharray={`${Math.max(1, seg)} ${c}`}
-              strokeDashoffset={-(i * (seg + gap))}
-              transform={`rotate(${-90 + (gap / 2 / c) * 360} 48 48)`}
-              className={d ? (state.mastered ? 'stroke-amber-400' : 'stroke-zinc-900 dark:stroke-zinc-100') : 'stroke-slate-200 dark:stroke-zinc-800'}
-            />
-          ))}
+          <circle cx="48" cy="48" r={r} fill="none" strokeWidth="7" className="stroke-slate-200 dark:stroke-zinc-800" />
+          {filled > 0 && (
+            <circle cx="48" cy="48" r={r} fill="none" strokeWidth="7" strokeLinecap={filled < 1 ? 'round' : 'butt'}
+              strokeDasharray={`${c * filled} ${c}`} transform="rotate(-90 48 48)"
+              className={`transition-[stroke-dasharray] duration-500 ${state.mastered ? 'stroke-amber-400' : 'stroke-zinc-900 dark:stroke-zinc-100'}`} />
+          )}
         </svg>
       )}
       <span className={`absolute inset-x-[15px] top-[12px] bottom-[18px] flex items-center justify-center rounded-full font-serif text-xl font-extrabold transition-[transform,box-shadow] duration-75 group-active:translate-y-[6px] group-active:shadow-none ${face}`}>
         {state.complete ? (state.mastered ? <Crown className="h-7 w-7" /> : <Check className="h-7 w-7" strokeWidth={3} />) : future ? <Lock className="h-6 w-6" /> : current ? <Play className="ml-1 h-7 w-7 fill-current" /> : index}
       </span>
+    </button>
+  );
+}
+
+function AssessmentNode({ assessment, onOpen }: { assessment: PathAssessment; onOpen: () => void }) {
+  const { t } = useUiLang();
+  const Icon = assessment.passed ? Check : !assessment.ready ? Lock : assessment.kind === 'exam' ? Crown : ListOrdered;
+  return (
+    <button type="button" disabled={!assessment.ready} onClick={onOpen}
+      className="mt-3 flex min-h-12 items-center gap-2 rounded-2xl border-2 border-zinc-200 bg-white px-4 py-2 font-serif font-extrabold shadow-sm disabled:opacity-50 dark:border-zinc-700 dark:bg-zinc-900">
+      <Icon className="h-5 w-5" />
+      {t(assessment.kind === 'exam' ? 'path.unitExam' : 'path.checkpoint')}
+      {assessment.best !== null && <span className="text-sm tabular-nums text-zinc-500">{assessment.best}%</span>}
     </button>
   );
 }
@@ -286,35 +290,13 @@ function NodePopover({ text, state, future, onStart, onClose }: {
       transition={{ type: 'spring', stiffness: 420, damping: 30 }}
       className="relative z-10 mt-3 w-[min(92vw,360px)] rounded-2xl border-2 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-4 border-2 border-slate-200 dark:border-zinc-800 shadow-[0_6px_0_0_#e2e8f0] dark:shadow-[0_6px_0_0_#27272a]"
     >
+      {/* Just the lesson and one button: the session itself shows the steps. */}
       <div className="flex items-start gap-2">
-        {(future || state.complete) && <Sticker id={future ? 'pers.evil-genius' : 'pers.mind-blown'} size={52} mode="once" className="-my-1 shrink-0" />}
-        <div className="min-w-0 flex-1">
-          <div className="text-[11px] font-bold uppercase tracking-widest text-slate-400">{t('path.bitesDone', { done: state.doneCount, total: state.total })}</div>
-          <div className="font-black text-zinc-900 dark:text-zinc-50 leading-tight">{text.title}</div>
-        </div>
-        <button type="button" onClick={onClose} className="text-slate-400 text-sm font-bold px-1" aria-label={t("learning.close.bbfa77")}>×</button>
+        <div className="min-w-0 flex-1 font-serif text-lg font-extrabold leading-tight text-zinc-900 dark:text-zinc-50">{text.title}</div>
+        <button type="button" onClick={onClose} className="px-1 text-sm font-bold text-slate-400" aria-label={t("learning.close.bbfa77")}>×</button>
       </div>
-      {future && <p className="mt-2 text-xs font-semibold text-amber-700 dark:text-amber-300">{t('path.jumpAhead')}</p>}
-      <ul className="mt-3 space-y-1.5">
-        {state.defs.map((d, i) => (
-          <li key={d.id}>
-            <button
-              type="button"
-              onClick={() => onStart(i)}
-              className={`w-full flex items-center gap-3 rounded-xl px-3 py-2 text-left transition ${i === next && !state.complete ? 'bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 dark-keep' : 'hover:bg-slate-50 dark:hover:bg-zinc-800'}`}
-            >
-              <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-black ${state.done[i] ? 'bg-emerald-500 text-white' : i === next ? 'bg-white/20' : 'bg-slate-100 dark:bg-zinc-800 text-slate-500'}`}>
-                {state.done[i] ? <Check className="w-3.5 h-3.5" /> : i + 1}
-              </span>
-              <span className="flex-1 text-sm font-bold">{t(`bites.kind.${d.kind}` as UiStringKey)}</span>
-              <span className="text-xs font-semibold opacity-70">{t('bites.minutes', { n: d.estMinutes })}</span>
-              <ChevronRight className="w-4 h-4 opacity-60" />
-            </button>
-          </li>
-        ))}
-      </ul>
-      <ChunkyButton onClick={() => onStart(next)} className="mt-4 w-full">
-        {state.complete ? t('path.practiseAgain') : state.doneCount ? t('path.continueBite') : t('path.startLesson')}
+      <ChunkyButton onClick={() => { playSound('whoosh', { mascot: false }); onStart(next); }} className="mt-4 w-full">
+        {state.complete ? t('path.practiseAgain') : t('path.practice')}
       </ChunkyButton>
     </motion.div>
   );

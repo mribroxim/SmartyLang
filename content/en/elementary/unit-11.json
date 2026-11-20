@@ -1,0 +1,2846 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "elementary",
+  "unit": 11,
+  "title": "Problems & Help",
+  "room": "laundry-room",
+  "lessons": [
+    {
+      "id": "en.elementary.u11.l01",
+      "section": "elementary",
+      "unit": 11,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "I have a problem",
+      "canDo": "Say what is wrong",
+      "scenario": "In the laundry room, Sam cannot find his wallet and Mia is worried because she is late.",
+      "items": [
+        {
+          "id": "en.elementary.u11.l01.i-have-a-problem",
+          "text": "I have a problem",
+          "kind": "phrase",
+          "forms": [
+            "problems"
+          ],
+          "example": "Excuse me, I have a problem.",
+          "note": "Say 'I have a problem' when something goes wrong and you need help."
+        },
+        {
+          "id": "en.elementary.u11.l01.what-is-wrong",
+          "text": "What is wrong?",
+          "kind": "phrase",
+          "example": "Hello, Sam! What is wrong?",
+          "note": "Ask 'What is wrong?' when a friend looks sad or worried."
+        },
+        {
+          "id": "en.elementary.u11.l01.i-lost-my-wallet",
+          "text": "I lost my wallet",
+          "kind": "phrase",
+          "forms": [
+            "wallets"
+          ],
+          "example": "I cannot pay because I lost my wallet.",
+          "note": "Say 'I lost my wallet' when you cannot find where you put your money and cards."
+        },
+        {
+          "id": "en.elementary.u11.l01.i-am-stuck",
+          "text": "I am stuck",
+          "kind": "phrase",
+          "example": "I cannot run because I am stuck.",
+          "note": "Say 'I am stuck' when you cannot move or cannot finish what you are doing."
+        },
+        {
+          "id": "en.elementary.u11.l01.i-am-late",
+          "text": "I am late",
+          "kind": "phrase",
+          "example": "I must run because I am late for school.",
+          "note": "Say 'I am late' when you arrive after the right time."
+        },
+        {
+          "id": "en.elementary.u11.l01.i-am-worried",
+          "text": "I am worried",
+          "kind": "phrase",
+          "example": "I lost my wallet, so I am worried.",
+          "note": "Say 'I am worried' when you feel nervous about a problem."
+        }
+      ],
+      "grammar": {
+        "title": "I am + feeling or situation",
+        "explanation": "Use I am with words like stuck, late, and worried to say what is happening to you right now.",
+        "examples": [
+          "I am stuck behind the door.",
+          "I am late for school.",
+          "I am worried about my wallet."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u11.l01.task.pick-problem",
+          "kind": "choice",
+          "prompt": "You need help because something went wrong. What do you say?",
+          "answer": "I have a problem",
+          "options": [
+            "I have a problem",
+            "I am fine",
+            "Have a good trip!"
+          ],
+          "explanation": "Use 'I have a problem' to tell someone you need help.",
+          "itemIds": [
+            "en.elementary.u11.l01.i-have-a-problem"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l01.task.hear-wrong",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "What is wrong?",
+          "answer": "What is wrong?",
+          "options": [
+            "What is wrong?",
+            "What time is it?",
+            "Where are you from?"
+          ],
+          "explanation": "Smarty asks 'What is wrong?' to find out the problem.",
+          "itemIds": [
+            "en.elementary.u11.l01.what-is-wrong"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l01.task.pick-wallet",
+          "kind": "choice",
+          "prompt": "Sam cannot find his money or his bank card. What does he say?",
+          "answer": "I lost my wallet",
+          "options": [
+            "I lost my wallet",
+            "I bought a wallet",
+            "I like my wallet"
+          ],
+          "explanation": "'I lost my wallet' means you do not know where your wallet is.",
+          "itemIds": [
+            "en.elementary.u11.l01.i-lost-my-wallet",
+            "en.beginner.u07.l05.money"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l01.task.match-situations",
+          "kind": "match",
+          "prompt": "Match each problem with what it means.",
+          "pairs": [
+            {
+              "left": "I am stuck",
+              "right": "I cannot go"
+            },
+            {
+              "left": "I am late",
+              "right": "I must run now"
+            },
+            {
+              "left": "I am worried",
+              "right": "I am not happy"
+            }
+          ],
+          "explanation": "Match each phrase with the right situation.",
+          "itemIds": [
+            "en.elementary.u11.l01.i-am-stuck",
+            "en.elementary.u11.l01.i-am-late",
+            "en.elementary.u11.l01.i-am-worried",
+            "en.beginner.u04.l07.late"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l01.task.build-stuck",
+          "kind": "build",
+          "prompt": "The door will not move. Build the sentence.",
+          "answer": "I am stuck behind the door.",
+          "tiles": [
+            "I",
+            "am",
+            "stuck",
+            "behind",
+            "the",
+            "door",
+            "late"
+          ],
+          "explanation": "Say 'I am stuck' when you cannot get out.",
+          "itemIds": [
+            "en.elementary.u11.l01.i-am-stuck",
+            "en.beginner.u05.l02.door"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l01.task.fill-late",
+          "kind": "fill",
+          "prompt": "School starts at eight o'clock, and it is nine o'clock now. Complete the sentence.",
+          "text": "I must run because I am ___.",
+          "answer": "late",
+          "options": [
+            "late",
+            "early",
+            "stuck"
+          ],
+          "explanation": "When you arrive after the right time, say 'I am late'.",
+          "itemIds": [
+            "en.elementary.u11.l01.i-am-late",
+            "en.beginner.u04.l07.late"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l01.task.hear-worried",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I am worried because I lost my wallet.",
+          "answer": "I am worried because I lost my wallet.",
+          "options": [
+            "I am worried because I lost my wallet.",
+            "I am happy because I found my wallet.",
+            "I am tired because I walked home."
+          ],
+          "explanation": "Losing a wallet makes you feel worried.",
+          "itemIds": [
+            "en.elementary.u11.l01.i-am-worried",
+            "en.elementary.u11.l01.i-lost-my-wallet"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l01.task.say-problem",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "I have a problem. Can you help me?",
+          "answer": "I have a problem. Can you help me?",
+          "explanation": "Use 'I have a problem' before asking for help.",
+          "itemIds": [
+            "en.elementary.u11.l01.i-have-a-problem",
+            "en.elementary.u01.l10.can-you-help-me"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why is Sam worried in the laundry room?",
+        "image": {
+          "id": "en-a2-u11-l01-scene",
+          "describe": "In a bright laundry room, Smarty the black cat talks with Sam and Mia near a washing machine while Sam checks his jacket."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Sam! You are not happy. What is wrong?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Smarty, I have a problem. I lost my wallet."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Oh! And I am late for my English lesson!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "I am worried because my money and card are in my wallet."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look! Is that your wallet under the big box?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes, it is! My hand is big, so I am stuck behind the box!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I am small. I can get it for you!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u11.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Sam's problem?",
+            "answer": "He lost his wallet.",
+            "options": [
+              "He lost his wallet.",
+              "He lost his phone.",
+              "He is late for school."
+            ],
+            "explanation": "Sam says: I have a problem. I lost my wallet.",
+            "itemIds": [
+              "en.elementary.u11.l01.i-have-a-problem",
+              "en.elementary.u11.l01.i-lost-my-wallet"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "Why does Mia have to run?",
+            "answer": "She is late for her lesson.",
+            "options": [
+              "She is late for her lesson.",
+              "She is stuck behind the door.",
+              "She is hungry for lunch."
+            ],
+            "explanation": "Mia says: I am late for my English lesson!",
+            "itemIds": [
+              "en.elementary.u11.l01.i-am-late"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Why does Smarty get the wallet?",
+            "answer": "Sam is stuck behind the big box.",
+            "options": [
+              "Sam is stuck behind the big box.",
+              "Smarty lost his wallet.",
+              "Mia is worried about the box."
+            ],
+            "explanation": "Sam says his hand is big, so he is stuck behind the box.",
+            "itemIds": [
+              "en.elementary.u11.l01.i-am-stuck"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You meet Smarty in the room and tell him what is wrong. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Hello! You look worried. What is wrong?",
+            "accept": [
+              "^i have a problem$",
+              "^i lost my wallet$",
+              "^i am late$",
+              "^i am stuck$"
+            ],
+            "example": "I have a problem.",
+            "hint": "Tell Smarty 'I have a problem' or say what happened.",
+            "itemIds": [
+              "en.elementary.u11.l01.i-have-a-problem",
+              "en.elementary.u11.l01.what-is-wrong"
+            ]
+          },
+          {
+            "smarty": "Tell me more. Did you lose your wallet, or are you late?",
+            "accept": [
+              "^i lost my wallet$",
+              "^i am late$",
+              "^i am stuck$",
+              "^i am worried$"
+            ],
+            "example": "I lost my wallet.",
+            "hint": "Use 'I lost my wallet', 'I am late', or 'I am stuck'.",
+            "itemIds": [
+              "en.elementary.u11.l01.i-lost-my-wallet",
+              "en.elementary.u11.l01.i-am-late",
+              "en.elementary.u11.l01.i-am-stuck"
+            ]
+          },
+          {
+            "smarty": "How do you feel right now?",
+            "accept": [
+              "^i am worried$",
+              "^i am tired$",
+              "^i am fine$"
+            ],
+            "example": "I am worried.",
+            "hint": "Say 'I am worried'.",
+            "itemIds": [
+              "en.elementary.u11.l01.i-am-worried"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u07.l05.money",
+        "en.beginner.u04.l07.late",
+        "en.beginner.u05.l02.door",
+        "en.elementary.u01.l10.can-you-help-me"
+      ]
+    },
+    {
+      "id": "en.elementary.u11.l02",
+      "section": "elementary",
+      "unit": 11,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Home problems",
+      "canDo": "Name things that break at home",
+      "scenario": "Smarty and Mia check broken machines and cleaning tools in the laundry room.",
+      "items": [
+        {
+          "id": "en.elementary.u11.l02.washing-machine",
+          "text": "washing machine",
+          "kind": "phrase",
+          "forms": [
+            "washing machines",
+            "machine",
+            "machines"
+          ],
+          "example": "My dirty shirts are in the washing machine.",
+          "note": "A washing machine cleans your shirts, socks, and trousers with water.",
+          "image": {
+            "id": "washing-machine",
+            "describe": "a white front-loading washing machine with clean shirts inside"
+          }
+        },
+        {
+          "id": "en.elementary.u11.l02.iron",
+          "text": "iron",
+          "kind": "word",
+          "forms": [
+            "irons"
+          ],
+          "example": "Be careful with the iron because it is hot.",
+          "note": "An iron gets hot and makes shirts and dresses smooth.",
+          "image": {
+            "id": "iron",
+            "describe": "a blue electric clothes iron standing on an ironing board"
+          }
+        },
+        {
+          "id": "en.elementary.u11.l02.bucket",
+          "text": "bucket",
+          "kind": "word",
+          "forms": [
+            "buckets"
+          ],
+          "example": "There is cold water in the yellow bucket.",
+          "note": "Use a bucket to carry water when you clean the room.",
+          "image": {
+            "id": "bucket",
+            "describe": "a yellow plastic cleaning bucket with a handle"
+          }
+        },
+        {
+          "id": "en.elementary.u11.l02.mop",
+          "text": "mop",
+          "kind": "word",
+          "forms": [
+            "mops"
+          ],
+          "example": "We need a mop to clean the water in the kitchen.",
+          "note": "A mop has a long handle and cleans water off the room.",
+          "image": {
+            "id": "mop",
+            "describe": "a wooden-handled floor mop with a white cotton head"
+          }
+        },
+        {
+          "id": "en.elementary.u11.l02.tap",
+          "text": "tap",
+          "kind": "word",
+          "forms": [
+            "taps"
+          ],
+          "example": "Water comes from the tap in the bathroom.",
+          "note": "Turn the tap to start or stop the water in the kitchen or bathroom.",
+          "image": {
+            "id": "tap",
+            "describe": "a shiny silver water tap over a sink with a drop of water"
+          }
+        },
+        {
+          "id": "en.elementary.u11.l02.lock",
+          "text": "lock",
+          "kind": "word",
+          "forms": [
+            "locks",
+            "locked"
+          ],
+          "example": "This key is for the lock on the front door.",
+          "note": "A lock keeps a door closed until you use the key.",
+          "image": {
+            "id": "lock",
+            "describe": "a metal door lock with a small silver key"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u11.l02.task.pick-washing-machine",
+          "kind": "choice",
+          "prompt": "Look at the picture of the machine that cleans shirts and socks. What is it?",
+          "answer": "washing machine",
+          "options": [
+            "washing machine",
+            "bucket",
+            "lock"
+          ],
+          "explanation": "A washing machine cleans dirty shirts and trousers.",
+          "itemIds": [
+            "en.elementary.u11.l02.washing-machine"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l02.task.pick-iron",
+          "kind": "choice",
+          "prompt": "Look at the picture. Which thing gets very hot to press a shirt?",
+          "answer": "iron",
+          "options": [
+            "iron",
+            "mop",
+            "tap"
+          ],
+          "explanation": "An iron gets hot to make shirts smooth.",
+          "itemIds": [
+            "en.elementary.u11.l02.iron"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l02.task.hear-tap",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The tap is broken.",
+          "answer": "The tap is broken.",
+          "options": [
+            "The tap is broken.",
+            "The lock is broken.",
+            "The lamp is broken."
+          ],
+          "explanation": "Water comes out of the tap.",
+          "itemIds": [
+            "en.elementary.u11.l02.tap",
+            "en.elementary.u08.l06.it-is-broken"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l02.task.match-tools",
+          "kind": "match",
+          "prompt": "Match each item with what it does.",
+          "pairs": [
+            {
+              "left": "bucket",
+              "right": "holds water"
+            },
+            {
+              "left": "mop",
+              "right": "cleans water"
+            },
+            {
+              "left": "lock",
+              "right": "needs a key"
+            },
+            {
+              "left": "iron",
+              "right": "is hot"
+            }
+          ],
+          "explanation": "Each home item has a clear job.",
+          "itemIds": [
+            "en.elementary.u11.l02.bucket",
+            "en.elementary.u11.l02.mop",
+            "en.elementary.u11.l02.lock",
+            "en.elementary.u11.l02.iron",
+            "en.beginner.u05.l06.key"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l02.task.build-washing-machine",
+          "kind": "build",
+          "prompt": "The machine stopped working. Build the sentence.",
+          "answer": "The washing machine does not work.",
+          "tiles": [
+            "The",
+            "washing",
+            "machine",
+            "does",
+            "not",
+            "work",
+            "iron"
+          ],
+          "explanation": "Say 'The washing machine does not work' when it is broken.",
+          "itemIds": [
+            "en.elementary.u11.l02.washing-machine",
+            "en.elementary.u07.l10.it-does-not-work"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l02.task.fill-mop",
+          "kind": "fill",
+          "prompt": "There is water everywhere in the room. Complete the sentence.",
+          "text": "Get the bucket and the ___.",
+          "answer": "mop",
+          "options": [
+            "mop",
+            "lock",
+            "iron"
+          ],
+          "explanation": "Use a bucket and a mop together to clean up water.",
+          "itemIds": [
+            "en.elementary.u11.l02.mop",
+            "en.elementary.u11.l02.bucket"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l02.task.fill-lock",
+          "kind": "fill",
+          "prompt": "The key will not turn in the door. Complete the sentence.",
+          "text": "I have a problem with the ___.",
+          "answer": "lock",
+          "options": [
+            "lock",
+            "tap",
+            "bucket"
+          ],
+          "explanation": "A key goes into a lock on a door.",
+          "itemIds": [
+            "en.elementary.u11.l02.lock",
+            "en.elementary.u11.l01.i-have-a-problem"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l02.task.say-tap",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "The tap in the kitchen is broken.",
+          "answer": "The tap in the kitchen is broken.",
+          "explanation": "Say this when water will not stop or start at the tap.",
+          "itemIds": [
+            "en.elementary.u11.l02.tap",
+            "en.elementary.u08.l06.it-is-broken"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What happens with the tap and the washing machine?",
+        "image": {
+          "id": "en-a2-u11-l02-scene",
+          "describe": "Smarty the black cat and Mia in the laundry room looking at water near a washing machine with a yellow bucket and a mop."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Smarty, what is wrong in this room? There is water everywhere!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look at the tap and the washing machine. The tap is broken."
+          },
+          {
+            "speaker": "Mia",
+            "text": "And the washing machine is not working! My dirty T-shirt is inside."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Get the yellow bucket and the mop."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Where are they? Is the door lock stuck?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No, the lock is fine. Look next to the table with the iron."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I see the bucket and the mop! Now we can clean the water."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u11.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Why is there water in the room?",
+            "answer": "The tap is broken.",
+            "options": [
+              "The tap is broken.",
+              "The iron is broken.",
+              "The lock is broken."
+            ],
+            "explanation": "Smarty says: The tap is broken.",
+            "itemIds": [
+              "en.elementary.u11.l02.tap"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "What is inside the washing machine?",
+            "answer": "Mia's dirty T-shirt",
+            "options": [
+              "Mia's dirty T-shirt",
+              "Smarty's toy",
+              "A yellow bucket"
+            ],
+            "explanation": "Mia says: My dirty T-shirt is inside.",
+            "itemIds": [
+              "en.elementary.u11.l02.washing-machine"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "Where are the bucket and the mop?",
+            "answer": "Next to the table with the iron",
+            "options": [
+              "Next to the table with the iron",
+              "Behind the bathroom door",
+              "Under the sofa"
+            ],
+            "explanation": "Smarty says: Look next to the table with the iron.",
+            "itemIds": [
+              "en.elementary.u11.l02.bucket",
+              "en.elementary.u11.l02.mop",
+              "en.elementary.u11.l02.iron"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty asks you about broken things and cleaning tools at home. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Look! There is water in the room. What do we need to clean it?",
+            "accept": [
+              "^(?:we need )?(?:a )?mop(?: and a bucket)?$",
+              "^(?:we need )?(?:a )?bucket(?: and a mop)?$"
+            ],
+            "example": "We need a mop and a bucket.",
+            "hint": "Name a mop or a bucket.",
+            "itemIds": [
+              "en.elementary.u11.l02.mop",
+              "en.elementary.u11.l02.bucket"
+            ]
+          },
+          {
+            "smarty": "My shirts are dirty, and one machine is broken. Which machine cleans shirts?",
+            "accept": [
+              "^(?:the |a )?washing machine$"
+            ],
+            "example": "The washing machine.",
+            "hint": "Say 'the washing machine'.",
+            "itemIds": [
+              "en.elementary.u11.l02.washing-machine"
+            ]
+          },
+          {
+            "smarty": "What gets hot when we press a shirt, or what needs a key on a door?",
+            "accept": [
+              "^(?:an |the )?iron$",
+              "^(?:a |the )?lock$"
+            ],
+            "example": "An iron.",
+            "hint": "Say 'an iron' or 'a lock'.",
+            "itemIds": [
+              "en.elementary.u11.l02.iron",
+              "en.elementary.u11.l02.lock"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u08.l06.it-is-broken",
+        "en.beginner.u05.l06.key",
+        "en.elementary.u07.l10.it-does-not-work",
+        "en.elementary.u11.l01.i-have-a-problem"
+      ]
+    },
+    {
+      "id": "en.elementary.u11.l03",
+      "section": "elementary",
+      "unit": 11,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "Asking for help",
+      "canDo": "Ask for help politely",
+      "scenario": "Ben needs help using the washing machine and writing a note in the laundry room.",
+      "items": [
+        {
+          "id": "en.elementary.u11.l03.could-you-show-me",
+          "text": "Could you show me?",
+          "kind": "phrase",
+          "forms": [
+            "show"
+          ],
+          "example": "I do not understand this machine. Could you show me?",
+          "note": "Ask 'Could you show me?' when you want someone to teach you how to do something."
+        },
+        {
+          "id": "en.elementary.u11.l03.could-you-repeat-that",
+          "text": "Could you repeat that?",
+          "kind": "phrase",
+          "forms": [
+            "repeat"
+          ],
+          "example": "Sorry, I did not hear you. Could you repeat that?",
+          "note": "Ask 'Could you repeat that?' when you need someone to say something one more time."
+        },
+        {
+          "id": "en.elementary.u11.l03.could-you-wait-a-moment",
+          "text": "Could you wait a moment?",
+          "kind": "phrase",
+          "forms": [
+            "wait",
+            "moment"
+          ],
+          "example": "I am getting my key. Could you wait a moment?",
+          "note": "Ask 'Could you wait a moment?' when you need someone to stop for a short time."
+        },
+        {
+          "id": "en.elementary.u11.l03.could-you-lend-me-a-pen",
+          "text": "Could you lend me a pen?",
+          "kind": "phrase",
+          "forms": [
+            "lend"
+          ],
+          "example": "I want to write my name. Could you lend me a pen?",
+          "note": "Ask 'Could you lend me a pen?' when you want to use a pen and give it back later."
+        },
+        {
+          "id": "en.elementary.u11.l03.could-you-give-me-a-hand",
+          "text": "Could you give me a hand?",
+          "kind": "phrase",
+          "forms": [
+            "give"
+          ],
+          "example": "This box is very big. Could you give me a hand?",
+          "note": "'Could you give me a hand?' is a friendly, polite way to ask someone to help you."
+        },
+        {
+          "id": "en.elementary.u11.l03.could-you-speak-slowly",
+          "text": "Could you speak slowly?",
+          "kind": "phrase",
+          "forms": [
+            "slowly"
+          ],
+          "example": "I speak a little English. Could you speak slowly?",
+          "note": "Ask 'Could you speak slowly?' when someone talks too fast for you."
+        }
+      ],
+      "grammar": {
+        "title": "Polite requests with Could you…?",
+        "explanation": "Start a question with Could you followed by a base verb to ask someone for help politely.",
+        "examples": [
+          "Could you show me?",
+          "Could you give me a hand?",
+          "Could you speak slowly?"
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u11.l03.task.pick-hand",
+          "kind": "choice",
+          "prompt": "You are carrying a big box and need help. What is a friendly way to ask?",
+          "answer": "Could you give me a hand?",
+          "options": [
+            "Could you give me a hand?",
+            "Could you lend me a pen?",
+            "Could you speak slowly?"
+          ],
+          "explanation": "'Could you give me a hand?' means 'Could you help me?'",
+          "itemIds": [
+            "en.elementary.u11.l03.could-you-give-me-a-hand"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l03.task.hear-slowly",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Could you speak slowly?",
+          "answer": "Could you speak slowly?",
+          "options": [
+            "Could you speak slowly?",
+            "Could you show me?",
+            "Could you repeat that?"
+          ],
+          "explanation": "Ask 'Could you speak slowly?' when someone speaks too fast.",
+          "itemIds": [
+            "en.elementary.u11.l03.could-you-speak-slowly"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l03.task.match-requests",
+          "kind": "match",
+          "prompt": "Match each situation with the best polite question.",
+          "pairs": [
+            {
+              "left": "You have no pen",
+              "right": "Could you lend me a pen?"
+            },
+            {
+              "left": "You do not understand",
+              "right": "Could you repeat that?"
+            },
+            {
+              "left": "You need a moment",
+              "right": "Could you wait a moment?"
+            },
+            {
+              "left": "It does not work",
+              "right": "Could you show me?"
+            }
+          ],
+          "explanation": "Choose the 'Could you…?' question that fits the problem.",
+          "itemIds": [
+            "en.elementary.u11.l03.could-you-lend-me-a-pen",
+            "en.elementary.u11.l03.could-you-repeat-that",
+            "en.elementary.u11.l03.could-you-wait-a-moment",
+            "en.elementary.u11.l03.could-you-show-me"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l03.task.build-show",
+          "kind": "build",
+          "prompt": "You do not know how to start the washing machine. Build the question.",
+          "answer": "Could you show me?",
+          "tiles": [
+            "Could",
+            "you",
+            "show",
+            "me",
+            "slowly"
+          ],
+          "explanation": "Start with 'Could you' and add the base verb 'show'.",
+          "itemIds": [
+            "en.elementary.u11.l03.could-you-show-me"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l03.task.fill-pen",
+          "kind": "fill",
+          "prompt": "You have a notebook, but nothing to write with. Complete the question.",
+          "text": "Could you ___ me a pen?",
+          "answer": "lend",
+          "options": [
+            "lend",
+            "wait",
+            "repeat"
+          ],
+          "explanation": "'Lend me a pen' means let me use your pen for a short time.",
+          "itemIds": [
+            "en.elementary.u11.l03.could-you-lend-me-a-pen",
+            "en.beginner.u05.l07.pen"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l03.task.fill-moment",
+          "kind": "fill",
+          "prompt": "Your friend is walking away, and you need to tie your shoe. Complete the question.",
+          "text": "Could you wait a ___?",
+          "answer": "moment",
+          "options": [
+            "moment",
+            "hand",
+            "problem"
+          ],
+          "explanation": "'Wait a moment' means wait for a very short time.",
+          "itemIds": [
+            "en.elementary.u11.l03.could-you-wait-a-moment"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l03.task.hear-repeat",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I do not understand. Could you repeat that?",
+          "answer": "I do not understand. Could you repeat that?",
+          "options": [
+            "I do not understand. Could you repeat that?",
+            "I am late. Could you wait a moment?",
+            "I have a problem. Could you give me a hand?"
+          ],
+          "explanation": "'Repeat that' means say it again.",
+          "itemIds": [
+            "en.elementary.u11.l03.could-you-repeat-that",
+            "en.beginner.u00.l06.i-do-not-understand"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l03.task.say-hand",
+          "kind": "speak",
+          "prompt": "Say the question aloud.",
+          "text": "Could you give me a hand with the washing machine?",
+          "answer": "Could you give me a hand with the washing machine?",
+          "explanation": "Use 'Could you give me a hand…?' to ask politely for help.",
+          "itemIds": [
+            "en.elementary.u11.l03.could-you-give-me-a-hand",
+            "en.elementary.u11.l02.washing-machine"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How does Ben ask Smarty and Zara for help?",
+        "image": {
+          "id": "en-a2-u11-l03-scene",
+          "describe": "Smarty the black cat helping Ben and Zara in the laundry room near a washing machine and a notebook."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Excuse me, Zara. I have a problem with this new washing machine. Could you show me?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Of course! First, turn the key in the lock, and then press start."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Sorry, you spoke fast. Could you speak slowly?"
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes. Turn the key, and then press start."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Ben, could you wait a moment? Your red sock is on the chair!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Good! And Zara, could you lend me a pen? I want to write this in my notebook."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Here you are! Now could you give me a hand with this big bucket?"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u11.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Why does Ben say 'Could you speak slowly?'",
+            "answer": "Zara is too fast.",
+            "options": [
+              "Zara is too fast.",
+              "Zara lost her pen.",
+              "The lock was broken."
+            ],
+            "explanation": "Ben says: Sorry, you spoke fast. Could you speak slowly?",
+            "itemIds": [
+              "en.elementary.u11.l03.could-you-speak-slowly"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Ben want to borrow from Zara?",
+            "answer": "A pen",
+            "options": [
+              "A pen",
+              "A bucket",
+              "A red sock"
+            ],
+            "explanation": "Ben asks: Could you lend me a pen?",
+            "itemIds": [
+              "en.elementary.u11.l03.could-you-lend-me-a-pen"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Zara ask Ben for help with?",
+            "answer": "A big bucket",
+            "options": [
+              "A big bucket",
+              "An iron",
+              "A wallet"
+            ],
+            "explanation": "Zara asks: Could you give me a hand with this big bucket?",
+            "itemIds": [
+              "en.elementary.u11.l03.could-you-give-me-a-hand",
+              "en.elementary.u11.l02.bucket"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are in the laundry room with Smarty. Ask him for help politely using Could you…?",
+        "turns": [
+          {
+            "smarty": "You are looking at the washing machine. How do you ask me to teach you?",
+            "accept": [
+              "^could you show me(?: please)?$"
+            ],
+            "example": "Could you show me?",
+            "hint": "Ask 'Could you show me?'",
+            "itemIds": [
+              "en.elementary.u11.l03.could-you-show-me"
+            ]
+          },
+          {
+            "smarty": "I spoke too fast! What do you ask me?",
+            "accept": [
+              "^could you speak slowly(?: please)?$",
+              "^could you repeat that(?: please)?$"
+            ],
+            "example": "Could you speak slowly?",
+            "hint": "Ask 'Could you speak slowly?' or 'Could you repeat that?'",
+            "itemIds": [
+              "en.elementary.u11.l03.could-you-speak-slowly",
+              "en.elementary.u11.l03.could-you-repeat-that"
+            ]
+          },
+          {
+            "smarty": "Now you have a big box and no pen. Ask me for help or a pen!",
+            "accept": [
+              "^could you give me a hand(?: please)?$",
+              "^could you lend me a pen(?: please)?$"
+            ],
+            "example": "Could you give me a hand?",
+            "hint": "Use 'Could you give me a hand?' or 'Could you lend me a pen?'",
+            "itemIds": [
+              "en.elementary.u11.l03.could-you-give-me-a-hand",
+              "en.elementary.u11.l03.could-you-lend-me-a-pen"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u05.l07.pen",
+        "en.beginner.u00.l06.i-do-not-understand",
+        "en.elementary.u11.l02.washing-machine",
+        "en.elementary.u11.l02.bucket"
+      ]
+    },
+    {
+      "id": "en.elementary.u11.l04",
+      "section": "elementary",
+      "unit": 11,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty, Leo, and Ana solve several problems together in the laundry room.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.elementary.u11.l04.task.pick-worried",
+          "kind": "choice",
+          "prompt": "Leo cannot find his wallet and feels nervous. What does he say?",
+          "answer": "I lost my wallet and I am worried.",
+          "options": [
+            "I lost my wallet and I am worried.",
+            "I bought a wallet and I am excited.",
+            "I found my wallet and I am tired."
+          ],
+          "explanation": "Use 'I lost my wallet' and 'I am worried' to explain this problem.",
+          "itemIds": [
+            "en.elementary.u11.l01.i-lost-my-wallet",
+            "en.elementary.u11.l01.i-am-worried"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l04.task.hear-tap",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have a problem with the tap.",
+          "answer": "I have a problem with the tap.",
+          "options": [
+            "I have a problem with the tap.",
+            "I have a problem with the lock.",
+            "I have a problem with the iron."
+          ],
+          "explanation": "Listen for the word 'tap' at the end.",
+          "itemIds": [
+            "en.elementary.u11.l01.i-have-a-problem",
+            "en.elementary.u11.l02.tap"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l04.task.match-review",
+          "kind": "match",
+          "prompt": "Match each problem with the right polite question.",
+          "pairs": [
+            {
+              "left": "I do not understand you",
+              "right": "Could you speak slowly?"
+            },
+            {
+              "left": "I am stuck with this big box",
+              "right": "Could you give me a hand?"
+            },
+            {
+              "left": "I am late, get my coat",
+              "right": "Could you wait a moment?"
+            }
+          ],
+          "explanation": "Match each problem from Lesson 1 with a polite request from Lesson 3.",
+          "itemIds": [
+            "en.elementary.u11.l01.i-am-stuck",
+            "en.elementary.u11.l01.i-am-late",
+            "en.elementary.u11.l03.could-you-speak-slowly",
+            "en.elementary.u11.l03.could-you-give-me-a-hand",
+            "en.elementary.u11.l03.could-you-wait-a-moment"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l04.task.build-repeat",
+          "kind": "build",
+          "prompt": "You did not hear what Ana said. Build the polite question.",
+          "answer": "Could you repeat that?",
+          "tiles": [
+            "Could",
+            "you",
+            "repeat",
+            "that",
+            "show"
+          ],
+          "explanation": "'Could you repeat that?' asks someone to say it again.",
+          "itemIds": [
+            "en.elementary.u11.l03.could-you-repeat-that"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l04.task.fill-bucket-mop",
+          "kind": "fill",
+          "prompt": "Water is coming from the washing machine. Complete the sentence.",
+          "text": "Bring the ___ and the mop!",
+          "answer": "bucket",
+          "options": [
+            "bucket",
+            "lock",
+            "wallet"
+          ],
+          "explanation": "A bucket holds the water when you use a mop.",
+          "itemIds": [
+            "en.elementary.u11.l02.bucket",
+            "en.elementary.u11.l02.mop",
+            "en.elementary.u11.l02.washing-machine"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l04.task.fill-wrong",
+          "kind": "fill",
+          "prompt": "Smarty sees Ana looking sad. Complete his question.",
+          "text": "What is ___?",
+          "answer": "wrong",
+          "options": [
+            "wrong",
+            "late",
+            "stuck"
+          ],
+          "explanation": "Ask 'What is wrong?' when someone has a problem.",
+          "itemIds": [
+            "en.elementary.u11.l01.what-is-wrong"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l04.task.say-lend-pen",
+          "kind": "speak",
+          "prompt": "Say the question aloud.",
+          "text": "Could you lend me a pen?",
+          "answer": "Could you lend me a pen?",
+          "explanation": "Ask politely when you need to borrow a pen.",
+          "itemIds": [
+            "en.elementary.u11.l03.could-you-lend-me-a-pen"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Why does Leo need a mop and a pen in the laundry room?",
+        "image": {
+          "id": "en-a2-u11-l04-scene",
+          "describe": "Smarty the black cat with Leo and Ana in the laundry room surrounded by a mop, a bucket, and a broken tap."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Leo! Hello, Ana! What is wrong?"
+          },
+          {
+            "speaker": "Leo",
+            "text": "I have a problem, Smarty. The tap is broken, and the door lock is stuck!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "And I am late for work! Could you give me a hand with this mop and bucket?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! Could you wait a moment, Ana? Look at the iron on the table."
+          },
+          {
+            "speaker": "Ana",
+            "text": "It is hot! Good thing you saw it!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Ana, could you lend me a pen? I want to write a note for the mechanic."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u11.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "What two things are broken or stuck in the room?",
+            "answer": "The tap and the door lock",
+            "options": [
+              "The tap and the door lock",
+              "The mop and the bucket",
+              "The table and the chair"
+            ],
+            "explanation": "Leo says: The tap is broken, and the door lock is stuck!",
+            "itemIds": [
+              "en.elementary.u11.l02.tap",
+              "en.elementary.u11.l02.lock",
+              "en.elementary.u11.l01.i-am-stuck"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "Why does Leo ask for a pen?",
+            "answer": "For the mechanic",
+            "options": [
+              "For the mechanic",
+              "To draw a cat",
+              "To do his homework"
+            ],
+            "explanation": "Leo wants to write a note for the mechanic.",
+            "itemIds": [
+              "en.elementary.u11.l03.could-you-lend-me-a-pen"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty wants to check what you remember from Lessons 1–3. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Tell me one problem from Lesson 1!",
+            "accept": [
+              "^i have a problem$",
+              "^i lost my wallet$",
+              "^i am stuck$",
+              "^i am late$",
+              "^i am worried$"
+            ],
+            "example": "I am stuck.",
+            "hint": "Say 'I have a problem', 'I lost my wallet', 'I am stuck', or 'I am late'.",
+            "itemIds": [
+              "en.elementary.u11.l01.i-have-a-problem",
+              "en.elementary.u11.l01.i-lost-my-wallet",
+              "en.elementary.u11.l01.i-am-stuck",
+              "en.elementary.u11.l01.i-am-late",
+              "en.elementary.u11.l01.i-am-worried"
+            ]
+          },
+          {
+            "smarty": "Name one thing from the laundry room that can break or clean water.",
+            "accept": [
+              "^(?:the |a |an )?(?:washing machine|iron|bucket|mop|tap|lock)$"
+            ],
+            "example": "The washing machine.",
+            "hint": "Name washing machine, iron, bucket, mop, tap, or lock.",
+            "itemIds": [
+              "en.elementary.u11.l02.washing-machine",
+              "en.elementary.u11.l02.iron",
+              "en.elementary.u11.l02.bucket",
+              "en.elementary.u11.l02.mop",
+              "en.elementary.u11.l02.tap",
+              "en.elementary.u11.l02.lock"
+            ]
+          },
+          {
+            "smarty": "Now ask me politely for help using Could you…?",
+            "accept": [
+              "^could you (?:show me|repeat that|wait a moment|lend me a pen|give me a hand|speak slowly)(?: please)?$"
+            ],
+            "example": "Could you show me?",
+            "hint": "Start with 'Could you…?'",
+            "itemIds": [
+              "en.elementary.u11.l03.could-you-show-me",
+              "en.elementary.u11.l03.could-you-repeat-that",
+              "en.elementary.u11.l03.could-you-wait-a-moment",
+              "en.elementary.u11.l03.could-you-lend-me-a-pen",
+              "en.elementary.u11.l03.could-you-give-me-a-hand",
+              "en.elementary.u11.l03.could-you-speak-slowly"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u11.l01.i-have-a-problem",
+        "en.elementary.u11.l01.what-is-wrong",
+        "en.elementary.u11.l01.i-lost-my-wallet",
+        "en.elementary.u11.l01.i-am-stuck",
+        "en.elementary.u11.l01.i-am-late",
+        "en.elementary.u11.l01.i-am-worried",
+        "en.elementary.u11.l02.washing-machine",
+        "en.elementary.u11.l02.iron",
+        "en.elementary.u11.l02.bucket",
+        "en.elementary.u11.l02.mop",
+        "en.elementary.u11.l02.tap",
+        "en.elementary.u11.l02.lock",
+        "en.elementary.u11.l03.could-you-show-me",
+        "en.elementary.u11.l03.could-you-repeat-that",
+        "en.elementary.u11.l03.could-you-wait-a-moment",
+        "en.elementary.u11.l03.could-you-lend-me-a-pen",
+        "en.elementary.u11.l03.could-you-give-me-a-hand",
+        "en.elementary.u11.l03.could-you-speak-slowly"
+      ]
+    },
+    {
+      "id": "en.elementary.u11.l05",
+      "section": "elementary",
+      "unit": 11,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Offering help",
+      "canDo": "Offer help",
+      "scenario": "Smarty and Omar see Sam carrying a big bucket and struggling with a stuck lock.",
+      "items": [
+        {
+          "id": "en.elementary.u11.l05.i-will-help-you",
+          "text": "I will help you",
+          "kind": "phrase",
+          "forms": [
+            "I'll help you",
+            "I'll",
+            "help"
+          ],
+          "example": "Do not be worried. I will help you.",
+          "note": "Say 'I will help you' when you decide right now to help someone."
+        },
+        {
+          "id": "en.elementary.u11.l05.i-will-carry-that",
+          "text": "I will carry that",
+          "kind": "phrase",
+          "forms": [
+            "I'll carry that",
+            "carry"
+          ],
+          "example": "That bucket is very big. I will carry that.",
+          "note": "Say 'I will carry that' when someone is holding a big or difficult box or bucket."
+        },
+        {
+          "id": "en.elementary.u11.l05.i-will-open-it",
+          "text": "I will open it",
+          "kind": "phrase",
+          "forms": [
+            "I'll open it",
+            "open"
+          ],
+          "example": "Give me the key and I will open it.",
+          "note": "Say 'I will open it' when someone cannot open a door, box, or window."
+        },
+        {
+          "id": "en.elementary.u11.l05.shall-i-call-someone",
+          "text": "Shall I call someone?",
+          "kind": "phrase",
+          "forms": [
+            "call",
+            "someone"
+          ],
+          "example": "The washing machine is broken. Shall I call someone?",
+          "note": "Ask 'Shall I call someone?' to offer to phone a friend, doctor, or mechanic."
+        },
+        {
+          "id": "en.elementary.u11.l05.do-you-need-a-hand",
+          "text": "Do you need a hand?",
+          "kind": "phrase",
+          "example": "You have three big boxes. Do you need a hand?",
+          "note": "Ask 'Do you need a hand?' to ask politely if someone wants your help."
+        },
+        {
+          "id": "en.elementary.u11.l05.let-me-help",
+          "text": "Let me help",
+          "kind": "phrase",
+          "forms": [
+            "let"
+          ],
+          "example": "You are tired. Let me help with the mop.",
+          "note": "Say 'Let me help' when you step forward to do part of the work."
+        }
+      ],
+      "grammar": {
+        "title": "Offering help: I will, Shall I, Let me",
+        "explanation": "Use I will (often shortened to I'll) or Let me to offer help right away, and Shall I…? to ask before you act.",
+        "examples": [
+          "I will carry that for you.",
+          "Shall I call someone?",
+          "Let me help you."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u11.l05.task.pick-carry",
+          "kind": "choice",
+          "prompt": "Omar is carrying a big bucket full of water. What do you say?",
+          "answer": "I will carry that",
+          "options": [
+            "I will carry that",
+            "I will open it",
+            "I lost my wallet"
+          ],
+          "explanation": "Offer 'I will carry that' when someone is holding a big item.",
+          "itemIds": [
+            "en.elementary.u11.l05.i-will-carry-that",
+            "en.elementary.u11.l02.bucket"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l05.task.hear-open",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I will open it for you.",
+          "answer": "I will open it for you.",
+          "options": [
+            "I will open it for you.",
+            "I will carry that for you.",
+            "I will help you tomorrow."
+          ],
+          "explanation": "Say 'I will open it' when a door or box is stuck.",
+          "itemIds": [
+            "en.elementary.u11.l05.i-will-open-it"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l05.task.match-offers",
+          "kind": "match",
+          "prompt": "Match each problem with the best offer of help.",
+          "pairs": [
+            {
+              "left": "The door lock is stuck",
+              "right": "I will open it"
+            },
+            {
+              "left": "The tap is broken",
+              "right": "Shall I call someone?"
+            },
+            {
+              "left": "You are carrying a bucket",
+              "right": "I will carry that"
+            },
+            {
+              "left": "You look tired and worried",
+              "right": "Let me help"
+            }
+          ],
+          "explanation": "Choose the offer that solves each problem.",
+          "itemIds": [
+            "en.elementary.u11.l05.i-will-open-it",
+            "en.elementary.u11.l05.shall-i-call-someone",
+            "en.elementary.u11.l05.i-will-carry-that",
+            "en.elementary.u11.l05.let-me-help",
+            "en.elementary.u11.l02.lock",
+            "en.elementary.u11.l02.tap"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l05.task.build-call",
+          "kind": "build",
+          "prompt": "The washing machine is broken. Offer to phone a mechanic.",
+          "answer": "Shall I call someone?",
+          "tiles": [
+            "Shall",
+            "I",
+            "call",
+            "someone",
+            "you"
+          ],
+          "explanation": "Use 'Shall I call someone?' to offer to phone for help.",
+          "itemIds": [
+            "en.elementary.u11.l05.shall-i-call-someone"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l05.task.fill-need-hand",
+          "kind": "fill",
+          "prompt": "You see Mia working hard in the laundry room. Complete your question.",
+          "text": "Do you ___ a hand?",
+          "answer": "need",
+          "options": [
+            "need",
+            "carry",
+            "call"
+          ],
+          "explanation": "Compare: 'Could you give me a hand?' asks for help; 'Do you need a hand?' offers help.",
+          "itemIds": [
+            "en.elementary.u11.l05.do-you-need-a-hand",
+            "en.elementary.u11.l03.could-you-give-me-a-hand"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l05.task.fill-let-me",
+          "kind": "fill",
+          "prompt": "Sam cannot clean the water fast. Complete the offer.",
+          "text": "___ me help you with the mop.",
+          "answer": "Let",
+          "options": [
+            "Let",
+            "Shall",
+            "Could"
+          ],
+          "explanation": "Say 'Let me help' to offer to do the work together.",
+          "itemIds": [
+            "en.elementary.u11.l05.let-me-help",
+            "en.elementary.u11.l05.i-will-help-you"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l05.task.say-help",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "Do you need a hand? I will help you.",
+          "answer": "Do you need a hand? I will help you.",
+          "explanation": "Ask 'Do you need a hand?' and offer 'I will help you.'",
+          "itemIds": [
+            "en.elementary.u11.l05.do-you-need-a-hand",
+            "en.elementary.u11.l05.i-will-help-you"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who helps Sam open the stuck door in the laundry room?",
+        "image": {
+          "id": "en-a2-u11-l05-scene",
+          "describe": "Smarty the black cat and Omar offering to help Sam who is holding a heavy bucket near a stuck laundry room door."
+        },
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Hello, Sam! That bucket is very big. Do you need a hand?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes, please! I am stuck at this door because the lock is broken."
+          },
+          {
+            "speaker": "Omar",
+            "text": "I will carry that bucket for you. Put it down here."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Let me help with the door! Give me the key, and I will open it."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Here is the key, Smarty. What if it does not open?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "Shall I call someone? My uncle is a builder."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No need! Look, it opened! I will help you carry the shirts inside."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u11.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Omar offer to carry for Sam?",
+            "answer": "The big bucket",
+            "options": [
+              "The big bucket",
+              "The washing machine",
+              "The iron"
+            ],
+            "explanation": "Omar says: I will carry that bucket for you.",
+            "itemIds": [
+              "en.elementary.u11.l05.i-will-carry-that",
+              "en.elementary.u11.l02.bucket"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "How does Smarty help with the door?",
+            "answer": "He opens it with the key.",
+            "options": [
+              "He opens it with the key.",
+              "He calls Omar's uncle.",
+              "He cleans it with a mop."
+            ],
+            "explanation": "Smarty says: Give me the key, and I will open it.",
+            "itemIds": [
+              "en.elementary.u11.l05.i-will-open-it",
+              "en.elementary.u11.l05.let-me-help"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "Who does Omar offer to call?",
+            "answer": "Someone (his uncle)",
+            "options": [
+              "Someone (his uncle)",
+              "A doctor",
+              "A chef"
+            ],
+            "explanation": "Omar asks: Shall I call someone? My uncle is a builder.",
+            "itemIds": [
+              "en.elementary.u11.l05.shall-i-call-someone"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty has several small problems in the laundry room. Offer your help in your own words!",
+        "turns": [
+          {
+            "smarty": "This bucket of water is very big and I am tired!",
+            "accept": [
+              "^i will carry that$",
+              "^i will help you$",
+              "^let me help$",
+              "^do you need a hand$"
+            ],
+            "example": "I will carry that.",
+            "hint": "Say 'I will carry that' or 'Let me help'.",
+            "itemIds": [
+              "en.elementary.u11.l05.i-will-carry-that",
+              "en.elementary.u11.l05.let-me-help"
+            ]
+          },
+          {
+            "smarty": "I cannot open this window!",
+            "accept": [
+              "^i will open it$",
+              "^let me help$",
+              "^i will help you$"
+            ],
+            "example": "I will open it.",
+            "hint": "Say 'I will open it'.",
+            "itemIds": [
+              "en.elementary.u11.l05.i-will-open-it"
+            ]
+          },
+          {
+            "smarty": "The washing machine still does not work. What can you offer?",
+            "accept": [
+              "^shall i call someone$",
+              "^do you need a hand$",
+              "^i will help you$",
+              "^let me help$"
+            ],
+            "example": "Shall I call someone?",
+            "hint": "Ask 'Shall I call someone?' or 'Do you need a hand?'",
+            "itemIds": [
+              "en.elementary.u11.l05.shall-i-call-someone",
+              "en.elementary.u11.l05.do-you-need-a-hand"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u11.l02.bucket",
+        "en.elementary.u11.l02.lock",
+        "en.elementary.u11.l02.tap",
+        "en.elementary.u11.l03.could-you-give-me-a-hand"
+      ]
+    },
+    {
+      "id": "en.elementary.u11.l06",
+      "section": "elementary",
+      "unit": 11,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "If… will…",
+      "canDo": "Say what will happen",
+      "scenario": "Cloudy weather arrives outside while Smarty and Lily plan their walk to the bus stop.",
+      "items": [
+        {
+          "id": "en.elementary.u11.l06.if-you-need-help",
+          "text": "If you need help",
+          "kind": "phrase",
+          "forms": [
+            "if"
+          ],
+          "example": "If you need help, I will come.",
+          "note": "Start with 'If you need help' to tell a friend you are ready whenever there is a problem."
+        },
+        {
+          "id": "en.elementary.u11.l06.if-it-rains",
+          "text": "If it rains",
+          "kind": "phrase",
+          "forms": [
+            "rains"
+          ],
+          "example": "If it rains, we will take an umbrella.",
+          "note": "Say 'If it rains' to talk about possible rainy weather later."
+        },
+        {
+          "id": "en.elementary.u11.l06.if-you-hurry",
+          "text": "If you hurry",
+          "kind": "phrase",
+          "forms": [
+            "hurry"
+          ],
+          "example": "If you hurry, you will not be late.",
+          "note": "Say 'If you hurry' when someone needs to move quickly."
+        },
+        {
+          "id": "en.elementary.u11.l06.you-will-catch-it",
+          "text": "you will catch it",
+          "kind": "phrase",
+          "forms": [
+            "you'll catch it",
+            "you'll",
+            "catch"
+          ],
+          "example": "If you run to the station, you will catch it.",
+          "note": "Use 'you will catch it' for a bus, train, or ball when you get there in time."
+        },
+        {
+          "id": "en.elementary.u11.l06.i-will-wait",
+          "text": "I will wait",
+          "kind": "phrase",
+          "forms": [
+            "I'll wait"
+          ],
+          "example": "If you are late, I will wait at the door.",
+          "note": "Say 'I will wait' to promise you will stay until your friend arrives."
+        },
+        {
+          "id": "en.elementary.u11.l06.do-not-worry",
+          "text": "Do not worry",
+          "kind": "phrase",
+          "forms": [
+            "don't worry",
+            "don't",
+            "worry"
+          ],
+          "example": "Do not worry, I will help you.",
+          "note": "Say 'Do not worry' to help a worried friend feel calm."
+        }
+      ],
+      "grammar": {
+        "title": "First conditional: If + present, will + verb",
+        "explanation": "Use If + present tense for a real possibility, and will + base verb for what will happen next. Notice we do not put will after If.",
+        "examples": [
+          "If you hurry, you will catch it.",
+          "If it rains, I will wait inside.",
+          "If you need help, I will help you."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.elementary.u11.l06.task.pick-hurry",
+          "kind": "choice",
+          "prompt": "The bus leaves in two minutes! Which sentence makes sense?",
+          "answer": "If you hurry, you will catch it.",
+          "options": [
+            "If you hurry, you will catch it.",
+            "If it rains, you will catch it.",
+            "If you sleep, you will catch it."
+          ],
+          "explanation": "Moving fast ('If you hurry') helps you catch the bus.",
+          "itemIds": [
+            "en.elementary.u11.l06.if-you-hurry",
+            "en.elementary.u11.l06.you-will-catch-it"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l06.task.hear-rains",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "If it rains, I will wait at the station.",
+          "answer": "If it rains, I will wait at the station.",
+          "options": [
+            "If it rains, I will wait at the station.",
+            "If you hurry, I will wait at the park.",
+            "If you need help, I will call you."
+          ],
+          "explanation": "'If it rains' talks about possible rain; 'I will wait' is the plan.",
+          "itemIds": [
+            "en.elementary.u11.l06.if-it-rains",
+            "en.elementary.u11.l06.i-will-wait"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l06.task.match-if-will",
+          "kind": "match",
+          "prompt": "Match the two halves of each sentence.",
+          "pairs": [
+            {
+              "left": "If you need help,",
+              "right": "I will help you."
+            },
+            {
+              "left": "If you hurry,",
+              "right": "you will catch it."
+            },
+            {
+              "left": "If it rains,",
+              "right": "we will take an umbrella."
+            },
+            {
+              "left": "I am worried! —",
+              "right": "Do not worry!"
+            }
+          ],
+          "explanation": "Combine the 'If' condition with the right result.",
+          "itemIds": [
+            "en.elementary.u11.l06.if-you-need-help",
+            "en.elementary.u11.l06.if-you-hurry",
+            "en.elementary.u11.l06.you-will-catch-it",
+            "en.elementary.u11.l06.if-it-rains",
+            "en.elementary.u11.l06.do-not-worry",
+            "en.elementary.u11.l05.i-will-help-you",
+            "en.elementary.u11.l01.i-am-worried"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l06.task.build-need-help",
+          "kind": "build",
+          "prompt": "Tell your friend you are ready to help. Build the sentence.",
+          "answer": "If you need help I will wait.",
+          "tiles": [
+            "If",
+            "you",
+            "need",
+            "help",
+            "I",
+            "will",
+            "wait",
+            "rains"
+          ],
+          "explanation": "Use 'If you need help' + 'I will wait'.",
+          "itemIds": [
+            "en.elementary.u11.l06.if-you-need-help",
+            "en.elementary.u11.l06.i-will-wait"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l06.task.fill-rains",
+          "kind": "fill",
+          "prompt": "Look at the cloudy sky. Complete the sentence.",
+          "text": "If it ___, our shirts outside will get dirty.",
+          "answer": "rains",
+          "options": [
+            "rains",
+            "rain",
+            "will rain"
+          ],
+          "explanation": "After 'If', use the present simple 'rains', not 'will rain'.",
+          "itemIds": [
+            "en.elementary.u11.l06.if-it-rains"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l06.task.fill-worry",
+          "kind": "fill",
+          "prompt": "Your friend is late and nervous. Comfort them.",
+          "text": "Do not ___, I will wait for you.",
+          "answer": "worry",
+          "options": [
+            "worry",
+            "hurry",
+            "catch"
+          ],
+          "explanation": "'Do not worry' tells someone to stay calm.",
+          "itemIds": [
+            "en.elementary.u11.l06.do-not-worry",
+            "en.elementary.u11.l06.i-will-wait"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l06.task.say-hurry",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "Do not worry. If you hurry, you will catch it.",
+          "answer": "Do not worry. If you hurry, you will catch it.",
+          "explanation": "Use 'If you hurry, you will catch it' to encourage a friend.",
+          "itemIds": [
+            "en.elementary.u11.l06.do-not-worry",
+            "en.elementary.u11.l06.if-you-hurry",
+            "en.elementary.u11.l06.you-will-catch-it"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Will Lily catch the bus before it rains?",
+        "image": {
+          "id": "en-a2-u11-l06-scene",
+          "describe": "Smarty the black cat standing by the window with Lily, pointing at rain outside while Lily holds her jacket and umbrella."
+        },
+        "lines": [
+          {
+            "speaker": "Lily",
+            "text": "Smarty, look outside! It is cloudy. I am worried because I am late for the bus!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Do not worry, Lily. If you hurry, you will catch it."
+          },
+          {
+            "speaker": "Lily",
+            "text": "My clean jacket is still in the washing machine!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I will open it and get your jacket. Take your yellow umbrella too!"
+          },
+          {
+            "speaker": "Lily",
+            "text": "Why do I need an umbrella?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "If it rains, you will stay dry! Now run, and if you need help, call me."
+          },
+          {
+            "speaker": "Lily",
+            "text": "I will! If I miss the bus, I will wait at the café."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u11.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Smarty say will happen if Lily hurries?",
+            "answer": "She will catch the bus.",
+            "options": [
+              "She will catch the bus.",
+              "She will be late.",
+              "She will be stuck."
+            ],
+            "explanation": "Smarty says: If you hurry, you will catch it.",
+            "itemIds": [
+              "en.elementary.u11.l06.if-you-hurry",
+              "en.elementary.u11.l06.you-will-catch-it"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "Why does Smarty give Lily an umbrella?",
+            "answer": "If it rains",
+            "options": [
+              "If it rains",
+              "Because it is sunny",
+              "Because she lost her coat"
+            ],
+            "explanation": "Smarty says: If it rains, you will stay dry!",
+            "itemIds": [
+              "en.elementary.u11.l06.if-it-rains"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "Where will Lily wait if she misses the bus?",
+            "answer": "At the café",
+            "options": [
+              "At the café",
+              "At the cinema",
+              "At the hospital"
+            ],
+            "explanation": "Lily says: If I miss the bus, I will wait at the café.",
+            "itemIds": [
+              "en.elementary.u11.l06.i-will-wait"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are leaving the house with Smarty. Use If… and will… to talk about what might happen.",
+        "turns": [
+          {
+            "smarty": "I am worried! The train leaves in five minutes!",
+            "accept": [
+              "^do not worry(?: if you hurry you will catch it)?$",
+              "^if you hurry you will catch it$"
+            ],
+            "example": "Do not worry. If you hurry, you will catch it.",
+            "hint": "Say 'Do not worry' or 'If you hurry, you will catch it.'",
+            "itemIds": [
+              "en.elementary.u11.l06.do-not-worry",
+              "en.elementary.u11.l06.if-you-hurry",
+              "en.elementary.u11.l06.you-will-catch-it"
+            ]
+          },
+          {
+            "smarty": "Look at the dark weather outside. What if the weather changes?",
+            "accept": [
+              "^if it rains(?: we will take an umbrella| i will wait)?$"
+            ],
+            "example": "If it rains, I will wait.",
+            "hint": "Start with 'If it rains…'",
+            "itemIds": [
+              "en.elementary.u11.l06.if-it-rains",
+              "en.elementary.u11.l06.i-will-wait"
+            ]
+          },
+          {
+            "smarty": "What if I have a problem on the way?",
+            "accept": [
+              "^if you need help(?: i will help you| i will wait| call me)?$"
+            ],
+            "example": "If you need help, I will help you.",
+            "hint": "Start with 'If you need help…'",
+            "itemIds": [
+              "en.elementary.u11.l06.if-you-need-help"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u11.l05.i-will-help-you",
+        "en.elementary.u11.l01.i-am-worried"
+      ]
+    },
+    {
+      "id": "en.elementary.u11.l07",
+      "section": "elementary",
+      "unit": 11,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Thank you and sorry",
+      "canDo": "Thank people and say sorry",
+      "scenario": "Tom drops a bucket of water in the laundry room and Mia helps him clean it up.",
+      "items": [
+        {
+          "id": "en.elementary.u11.l07.thank-you-so-much",
+          "text": "Thank you so much",
+          "kind": "phrase",
+          "forms": [
+            "much"
+          ],
+          "example": "You found my wallet! Thank you so much!",
+          "note": "Say 'Thank you so much' when someone gives you big help."
+        },
+        {
+          "id": "en.elementary.u11.l07.that-is-very-kind",
+          "text": "That is very kind",
+          "kind": "phrase",
+          "forms": [
+            "that's very kind",
+            "that's",
+            "very",
+            "kind"
+          ],
+          "example": "You carried my big box. That is very kind.",
+          "note": "Say 'That is very kind' to praise a friend who helps you."
+        },
+        {
+          "id": "en.elementary.u11.l07.no-problem",
+          "text": "No problem",
+          "kind": "phrase",
+          "example": "Thank you for helping me! — No problem!",
+          "note": "Say 'No problem' as a friendly answer when someone thanks you or says sorry."
+        },
+        {
+          "id": "en.elementary.u11.l07.never-mind",
+          "text": "Never mind",
+          "kind": "phrase",
+          "example": "I forgot the pen! — Never mind, I have two.",
+          "note": "Say 'Never mind' to tell someone not to worry about a small mistake."
+        },
+        {
+          "id": "en.elementary.u11.l07.i-am-so-sorry",
+          "text": "I am so sorry",
+          "kind": "phrase",
+          "forms": [
+            "I'm so sorry",
+            "I'm"
+          ],
+          "example": "I am so sorry I am late!",
+          "note": "Say 'I am so sorry' when you feel bad about a mistake or problem."
+        },
+        {
+          "id": "en.elementary.u11.l07.it-was-my-mistake",
+          "text": "It was my mistake",
+          "kind": "phrase",
+          "forms": [
+            "mistake",
+            "mistakes"
+          ],
+          "example": "I turned the wrong tap. It was my mistake.",
+          "note": "Say 'It was my mistake' when you want to admit you did something wrong."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u11.l07.task.pick-thank-you",
+          "kind": "choice",
+          "prompt": "Your friend fixed your broken lock. How do you thank them warmly?",
+          "answer": "Thank you so much",
+          "options": [
+            "Thank you so much",
+            "It was my mistake",
+            "Never mind"
+          ],
+          "explanation": "'Thank you so much' shows strong thanks for helpful actions.",
+          "itemIds": [
+            "en.elementary.u11.l07.thank-you-so-much"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l07.task.hear-sorry",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I am so sorry. It was my mistake.",
+          "answer": "I am so sorry. It was my mistake.",
+          "options": [
+            "I am so sorry. It was my mistake.",
+            "Thank you so much. That is very kind.",
+            "No problem. Never mind."
+          ],
+          "explanation": "Use 'I am so sorry' and 'It was my mistake' to apologize.",
+          "itemIds": [
+            "en.elementary.u11.l07.i-am-so-sorry",
+            "en.elementary.u11.l07.it-was-my-mistake"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l07.task.match-replies",
+          "kind": "match",
+          "prompt": "Match what one person says with the best reply.",
+          "pairs": [
+            {
+              "left": "I will carry that for you.",
+              "right": "That is very kind."
+            },
+            {
+              "left": "Thank you so much!",
+              "right": "No problem."
+            },
+            {
+              "left": "I am so sorry I forgot!",
+              "right": "Never mind."
+            }
+          ],
+          "explanation": "Match each thank-you or apology with its natural response.",
+          "itemIds": [
+            "en.elementary.u11.l07.that-is-very-kind",
+            "en.elementary.u11.l07.thank-you-so-much",
+            "en.elementary.u11.l07.no-problem",
+            "en.elementary.u11.l07.i-am-so-sorry",
+            "en.elementary.u11.l07.never-mind",
+            "en.elementary.u11.l05.i-will-carry-that"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l07.task.build-mistake",
+          "kind": "build",
+          "prompt": "You pressed the wrong button on the machine. Admit your error.",
+          "answer": "It was my mistake.",
+          "tiles": [
+            "It",
+            "was",
+            "my",
+            "mistake",
+            "problem"
+          ],
+          "explanation": "'It was my mistake' means you did something wrong by accident.",
+          "itemIds": [
+            "en.elementary.u11.l07.it-was-my-mistake"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l07.task.fill-kind",
+          "kind": "fill",
+          "prompt": "Mia brings you tea when you are tired. Complete your response.",
+          "text": "That is very ___!",
+          "answer": "kind",
+          "options": [
+            "kind",
+            "wrong",
+            "stuck"
+          ],
+          "explanation": "'That is very kind' thanks someone for a nice action.",
+          "itemIds": [
+            "en.elementary.u11.l07.that-is-very-kind"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l07.task.fill-never-mind",
+          "kind": "fill",
+          "prompt": "Tom says sorry for a small mistake. Tell him it is fine.",
+          "text": "___ mind, we can clean it up.",
+          "answer": "Never",
+          "options": [
+            "Never",
+            "Always",
+            "Every"
+          ],
+          "explanation": "'Never mind' tells someone not to feel bad about a small error.",
+          "itemIds": [
+            "en.elementary.u11.l07.never-mind"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l07.task.say-thanks",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud.",
+          "text": "Thank you so much. That is very kind.",
+          "answer": "Thank you so much. That is very kind.",
+          "explanation": "Combine both phrases to give a warm thank-you.",
+          "itemIds": [
+            "en.elementary.u11.l07.thank-you-so-much",
+            "en.elementary.u11.l07.that-is-very-kind"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What mistake does Tom make in the laundry room?",
+        "image": {
+          "id": "en-a2-u11-l07-scene",
+          "describe": "Tom looking apologetic next to a tipped bucket of water in the laundry room while Smarty the black cat and Mia bring a mop."
+        },
+        "lines": [
+          {
+            "speaker": "Tom",
+            "text": "Oh no! I am so sorry, Mia! Water from the bucket is everywhere!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Do not worry, Tom. What happened?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "I walked too fast and hit the bucket. It was my mistake."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Never mind! Let me help. I will get the mop."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And I will bring a clean towel!"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Thank you so much, Mia and Smarty! That is very kind."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "No problem, Tom! Friends always help."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u11.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "Why does Tom say 'It was my mistake'?",
+            "answer": "He was too fast with the bucket of water.",
+            "options": [
+              "He was too fast with the bucket of water.",
+              "He broke the washing machine.",
+              "He lost Mia's wallet."
+            ],
+            "explanation": "Tom says: I walked too fast and hit the bucket. It was my mistake.",
+            "itemIds": [
+              "en.elementary.u11.l07.i-am-so-sorry",
+              "en.elementary.u11.l07.it-was-my-mistake",
+              "en.elementary.u11.l02.bucket"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "How does Mia answer Tom's apology?",
+            "answer": "Never mind! Let me help.",
+            "options": [
+              "Never mind! Let me help.",
+              "I am so worried.",
+              "She calls a mechanic."
+            ],
+            "explanation": "Mia says: Never mind! Let me help. I will get the mop.",
+            "itemIds": [
+              "en.elementary.u11.l07.never-mind",
+              "en.elementary.u11.l05.let-me-help",
+              "en.elementary.u11.l02.mop"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Smarty say after Tom thanks them?",
+            "answer": "No problem",
+            "options": [
+              "No problem",
+              "It was my mistake",
+              "I am worried"
+            ],
+            "explanation": "Smarty replies: No problem, Tom!",
+            "itemIds": [
+              "en.elementary.u11.l07.no-problem",
+              "en.elementary.u11.l07.thank-you-so-much"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Practice thanking Smarty and apologizing politely in different situations.",
+        "turns": [
+          {
+            "smarty": "I found your lost pen under the table! Here you are.",
+            "accept": [
+              "^thank you so much(?: that is very kind)?$",
+              "^that is very kind$"
+            ],
+            "example": "Thank you so much! That is very kind.",
+            "hint": "Say 'Thank you so much' or 'That is very kind'.",
+            "itemIds": [
+              "en.elementary.u11.l07.thank-you-so-much",
+              "en.elementary.u11.l07.that-is-very-kind"
+            ]
+          },
+          {
+            "smarty": "You dropped water on my notebook! What do you say?",
+            "accept": [
+              "^i am so sorry(?: it was my mistake)?$",
+              "^it was my mistake$"
+            ],
+            "example": "I am so sorry. It was my mistake.",
+            "hint": "Say 'I am so sorry' or 'It was my mistake'.",
+            "itemIds": [
+              "en.elementary.u11.l07.i-am-so-sorry",
+              "en.elementary.u11.l07.it-was-my-mistake"
+            ]
+          },
+          {
+            "smarty": "Never mind! Now I say: Thank you so much for your help!",
+            "accept": [
+              "^no problem$",
+              "^never mind$"
+            ],
+            "example": "No problem!",
+            "hint": "Reply 'No problem'.",
+            "itemIds": [
+              "en.elementary.u11.l07.no-problem",
+              "en.elementary.u11.l07.never-mind"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u11.l05.i-will-carry-that",
+        "en.elementary.u11.l01.i-am-worried",
+        "en.elementary.u11.l02.bucket",
+        "en.elementary.u11.l05.let-me-help",
+        "en.elementary.u11.l02.mop"
+      ]
+    },
+    {
+      "id": "en.elementary.u11.l08",
+      "section": "elementary",
+      "unit": 11,
+      "lesson": 8,
+      "type": "test",
+      "title": "Fix it together",
+      "canDo": "Solve a problem with a friend",
+      "scenario": "The washing machine stops with everyone's shirts inside, and Smarty leads the team to solve it together.",
+      "items": [
+        {
+          "id": "en.elementary.u11.l08.problem-solved",
+          "text": "Problem solved",
+          "kind": "phrase",
+          "forms": [
+            "solve",
+            "solved"
+          ],
+          "example": "The tap works now. Problem solved!",
+          "note": "Say 'Problem solved' when everything is working again."
+        },
+        {
+          "id": "en.elementary.u11.l08.we-did-it",
+          "text": "We did it",
+          "kind": "phrase",
+          "forms": [
+            "did"
+          ],
+          "example": "The lock opened! We did it!",
+          "note": "Say 'We did it' to celebrate when you and a friend finish a hard job together."
+        },
+        {
+          "id": "en.elementary.u11.l08.thanks-a-lot",
+          "text": "Thanks a lot",
+          "kind": "phrase",
+          "example": "You carried my bucket. Thanks a lot!",
+          "note": "'Thanks a lot' is a warm, everyday way to thank someone for helping you."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.elementary.u11.l08.task.pick-solved",
+          "kind": "choice",
+          "prompt": "You and Sam fixed the broken tap. What do you say?",
+          "answer": "Problem solved!",
+          "options": [
+            "Problem solved!",
+            "I have a problem!",
+            "I am stuck!"
+          ],
+          "explanation": "Say 'Problem solved!' when a problem is finished.",
+          "itemIds": [
+            "en.elementary.u11.l08.problem-solved"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l08.task.hear-we-did-it",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "We did it! Problem solved!",
+          "answer": "We did it! Problem solved!",
+          "options": [
+            "We did it! Problem solved!",
+            "I am so sorry! It was my mistake!",
+            "What is wrong? I am worried!"
+          ],
+          "explanation": "'We did it!' and 'Problem solved!' celebrate finishing the job together.",
+          "itemIds": [
+            "en.elementary.u11.l08.we-did-it",
+            "en.elementary.u11.l08.problem-solved"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l08.task.match-unit",
+          "kind": "match",
+          "prompt": "Match each sentence with its role in solving a problem.",
+          "pairs": [
+            {
+              "left": "I am stuck with this machine.",
+              "right": "Say what is wrong"
+            },
+            {
+              "left": "Could you give me a hand?",
+              "right": "Need a hand"
+            },
+            {
+              "left": "I will open it for you.",
+              "right": "Help a friend"
+            },
+            {
+              "left": "Thanks a lot! We did it!",
+              "right": "Say thanks"
+            }
+          ],
+          "explanation": "Review all four steps of solving a problem with a friend.",
+          "itemIds": [
+            "en.elementary.u11.l01.i-am-stuck",
+            "en.elementary.u11.l03.could-you-give-me-a-hand",
+            "en.elementary.u11.l05.i-will-open-it",
+            "en.elementary.u11.l08.thanks-a-lot",
+            "en.elementary.u11.l08.we-did-it"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l08.task.build-thanks-a-lot",
+          "kind": "build",
+          "prompt": "Your friend carried your heavy box. Build the thank-you.",
+          "answer": "Thanks a lot for your help.",
+          "tiles": [
+            "Thanks",
+            "a",
+            "lot",
+            "for",
+            "your",
+            "help",
+            "mistake"
+          ],
+          "explanation": "Use 'Thanks a lot' to thank a friend warmly.",
+          "itemIds": [
+            "en.elementary.u11.l08.thanks-a-lot"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l08.task.fill-we-did-it",
+          "kind": "fill",
+          "prompt": "You and Mia cleaned the whole laundry room together. Celebrate!",
+          "text": "We ___ it! The room is clean!",
+          "answer": "did",
+          "options": [
+            "did",
+            "lost",
+            "late"
+          ],
+          "explanation": "'We did it!' celebrates a success together.",
+          "itemIds": [
+            "en.elementary.u11.l08.we-did-it"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l08.task.fill-if-help",
+          "kind": "fill",
+          "prompt": "Complete the first conditional promise.",
+          "text": "If you ___ help, I will come right now.",
+          "answer": "need",
+          "options": [
+            "need",
+            "needed",
+            "will need"
+          ],
+          "explanation": "Use present simple 'need' after 'If'.",
+          "itemIds": [
+            "en.elementary.u11.l06.if-you-need-help",
+            "en.elementary.u11.l05.i-will-help-you"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l08.task.pick-machine",
+          "kind": "choice",
+          "prompt": "Which item do you use with a mop when water is on the room?",
+          "answer": "bucket",
+          "options": [
+            "bucket",
+            "iron",
+            "lock"
+          ],
+          "explanation": "A bucket and a mop clean up water.",
+          "itemIds": [
+            "en.elementary.u11.l02.bucket",
+            "en.elementary.u11.l02.mop"
+          ]
+        },
+        {
+          "id": "en.elementary.u11.l08.task.say-solved",
+          "kind": "speak",
+          "prompt": "Say the sentences aloud.",
+          "text": "Thanks a lot! Problem solved! We did it!",
+          "answer": "Thanks a lot! Problem solved! We did it!",
+          "explanation": "Celebrate solving the problem together!",
+          "itemIds": [
+            "en.elementary.u11.l08.thanks-a-lot",
+            "en.elementary.u11.l08.problem-solved",
+            "en.elementary.u11.l08.we-did-it"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How do Smarty, Sam, and Mia get the stuck washing machine door open?",
+        "image": {
+          "id": "en-a2-u11-l08-scene",
+          "describe": "Smarty the black cat, Sam, and Mia celebrating in front of the working washing machine in the tidy laundry room."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Mia, I have a problem! The washing machine stopped, and the door is stuck!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I am worried because my white shirt is inside! Could you give me a hand, Smarty?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Do not worry! If we turn it off and wait a moment, the lock will open."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Shall I call someone if it does not open?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes. Now wait five seconds… and let me help! I will open it."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Look, it opened! Problem solved! We did it!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Thanks a lot, Smarty! That is very kind."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.elementary.u11.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What was stuck in the story?",
+            "answer": "The washing machine door",
+            "options": [
+              "The washing machine door",
+              "The kitchen window",
+              "The yellow bucket"
+            ],
+            "explanation": "Sam says: The washing machine stopped, and the door is stuck!",
+            "itemIds": [
+              "en.elementary.u11.l02.washing-machine",
+              "en.elementary.u11.l01.i-am-stuck"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "How did Smarty solve the problem?",
+            "answer": "He turned the machine off and waited a moment.",
+            "options": [
+              "He turned the machine off and waited a moment.",
+              "He cleaned the door with a mop.",
+              "He called a police officer."
+            ],
+            "explanation": "Smarty said: If we turn it off and wait a moment, the lock will open.",
+            "itemIds": [
+              "en.elementary.u11.l03.could-you-wait-a-moment",
+              "en.elementary.u11.l02.lock",
+              "en.elementary.u11.l08.problem-solved"
+            ]
+          },
+          {
+            "id": "en.elementary.u11.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "What do Mia and Sam say at the end?",
+            "answer": "Problem solved! We did it! Thanks a lot!",
+            "options": [
+              "Problem solved! We did it! Thanks a lot!",
+              "I am so sorry! It was my mistake!",
+              "I lost my wallet! I am late!"
+            ],
+            "explanation": "Mia celebrates with 'Problem solved! We did it!' and Sam says 'Thanks a lot, Smarty!'",
+            "itemIds": [
+              "en.elementary.u11.l08.problem-solved",
+              "en.elementary.u11.l08.we-did-it",
+              "en.elementary.u11.l08.thanks-a-lot"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Final challenge! Solve a problem with Smarty from start to finish in your own words.",
+        "turns": [
+          {
+            "smarty": "Hello! You look worried in the laundry room. Tell me what is wrong!",
+            "accept": [
+              "^i have a problem(?: with the (?:washing machine|tap|lock|iron))?$",
+              "^the (?:washing machine|tap|lock|iron) (?:is broken|does not work|is stuck)$",
+              "^i lost my wallet$",
+              "^i am stuck$"
+            ],
+            "example": "I have a problem with the washing machine.",
+            "hint": "Say 'I have a problem' and name what is broken or stuck.",
+            "itemIds": [
+              "en.elementary.u11.l01.i-have-a-problem",
+              "en.elementary.u11.l02.washing-machine"
+            ]
+          },
+          {
+            "smarty": "Ask me politely for help!",
+            "accept": [
+              "^could you (?:give me a hand|show me|help me|wait a moment)(?: please)?$"
+            ],
+            "example": "Could you give me a hand?",
+            "hint": "Ask 'Could you give me a hand?' or 'Could you show me?'",
+            "itemIds": [
+              "en.elementary.u11.l03.could-you-give-me-a-hand",
+              "en.elementary.u11.l03.could-you-show-me"
+            ]
+          },
+          {
+            "smarty": "I fixed it for you! Celebrate and thank me!",
+            "accept": [
+              "^(?:problem solved |we did it )?(?:thanks a lot|thank you so much)$",
+              "^problem solved(?: we did it| thanks a lot| thank you so much)?$",
+              "^we did it(?: problem solved| thanks a lot| thank you so much)?$"
+            ],
+            "example": "Problem solved! Thanks a lot!",
+            "hint": "Say 'Problem solved!', 'We did it!', or 'Thanks a lot!'",
+            "itemIds": [
+              "en.elementary.u11.l08.problem-solved",
+              "en.elementary.u11.l08.we-did-it",
+              "en.elementary.u11.l08.thanks-a-lot"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.elementary.u11.l01.i-am-stuck",
+        "en.elementary.u11.l01.i-have-a-problem",
+        "en.elementary.u11.l02.washing-machine",
+        "en.elementary.u11.l02.bucket",
+        "en.elementary.u11.l02.mop",
+        "en.elementary.u11.l02.lock",
+        "en.elementary.u11.l03.could-you-give-me-a-hand",
+        "en.elementary.u11.l03.could-you-show-me",
+        "en.elementary.u11.l03.could-you-wait-a-moment",
+        "en.elementary.u11.l05.i-will-open-it",
+        "en.elementary.u11.l05.i-will-help-you",
+        "en.elementary.u11.l06.if-you-need-help"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Missing Passport",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "The laundry room is clean now, and the washing machine works. Problem solved!",
+        "image": {
+          "id": "en-a2-u11-ep-01",
+          "describe": "Smarty the black cat smiling proudly in a clean, sunny laundry room next to a working washing machine."
+        }
+      },
+      {
+        "speaker": "Sam",
+        "text": "We did it! Thanks a lot, Smarty. Now all our shirts and socks are clean."
+      },
+      {
+        "speaker": "Zara",
+        "text": "Smarty! Sam! I have a big problem!",
+        "image": {
+          "id": "en-a2-u11-ep-02",
+          "describe": "Zara running into the laundry room holding an open suitcase and looking very worried."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "What is wrong, Zara? You look very worried."
+      },
+      {
+        "speaker": "Zara",
+        "text": "My plane to Spain leaves tomorrow morning, and I lost my passport!"
+      },
+      {
+        "speaker": "Sam",
+        "text": "Do not worry! Let me help. I will carry your suitcase to the table."
+      },
+      {
+        "speaker": "Zara",
+        "text": "That is very kind! Could you give me a hand? Maybe it fell in the washing machine!",
+        "image": {
+          "id": "en-a2-u11-ep-03",
+          "describe": "Smarty, Sam, and Zara looking inside Zara's suitcase while Smarty spots a blue notebook corner under a scarf."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Wait a moment! Look inside your jacket in the suitcase. There is a blue book… and a strange old map!"
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.elementary.u11.episode.q1",
+        "kind": "choice",
+        "prompt": "Why is Zara worried?",
+        "answer": "She lost her passport before her trip to Spain.",
+        "options": [
+          "She lost her passport before her trip to Spain.",
+          "She broke the iron.",
+          "She is late for school."
+        ],
+        "explanation": "Zara says her plane to Spain leaves tomorrow morning and she lost her passport.",
+        "itemIds": [
+          "en.elementary.u11.l01.i-have-a-problem",
+          "en.elementary.u11.l01.i-am-worried"
+        ]
+      },
+      {
+        "id": "en.elementary.u11.episode.q2",
+        "kind": "choice",
+        "prompt": "How does Sam offer to help Zara?",
+        "answer": "He offers to carry her suitcase to the table.",
+        "options": [
+          "He offers to carry her suitcase to the table.",
+          "He offers to lend her a pen.",
+          "He offers to call a dentist."
+        ],
+        "explanation": "Sam says: Let me help. I will carry your suitcase to the table.",
+        "itemIds": [
+          "en.elementary.u11.l05.let-me-help",
+          "en.elementary.u11.l05.i-will-carry-that"
+        ]
+      },
+      {
+        "id": "en.elementary.u11.episode.q3",
+        "kind": "choice",
+        "prompt": "What does Smarty find inside Zara's jacket?",
+        "answer": "A blue book and a strange old map",
+        "options": [
+          "A blue book and a strange old map",
+          "A yellow bucket and a mop",
+          "Two train tickets and a camera"
+        ],
+        "explanation": "Smarty sees a blue book and a strange old map inside Zara's jacket.",
+        "itemIds": [
+          "en.elementary.u11.l03.could-you-wait-a-moment"
+        ]
+      }
+    ]
+  }
+}

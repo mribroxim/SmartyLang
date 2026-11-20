@@ -2,12 +2,15 @@ import type { Level, ReadingText } from './reading-logic';
 import type { ContentLang } from './contentLang';
 import { isLessonExercisesComplete, loadLessonUnlock } from './lessonProgress';
 import { unitDisplayName } from './unitNames';
+import { isV2 } from './lessons/v2';
 
 export const LESSONS_PER_UNIT = 10;
 
 export interface LessonUnit {
   id: string;
   index: number;
+  /** Number shown to the learner (v2 courses may start at Unit 0). */
+  number: number;
   /** Display label, e.g. "Unit 1" */
   title: string;
   /** Theme hint from the first lesson in the unit */
@@ -16,17 +19,43 @@ export interface LessonUnit {
   lessons: ReadingText[];
 }
 
+/**
+ * Lesson ranges per unit: v2 courses say which unit each lesson belongs to
+ * (units vary in length); older content is grouped in tens.
+ */
+export function unitRanges(texts: ReadingText[]): { start: number; end: number }[] {
+  const out: { start: number; end: number }[] = [];
+  for (let i = 0; i < texts.length;) {
+    const first = texts[i];
+    let end = i + 1;
+    if (isV2(first)) {
+      while (isV2(texts[end]) && (texts[end] as typeof first).v2.unit === first.v2.unit) end++;
+    } else {
+      while (end < texts.length && end < i + LESSONS_PER_UNIT && !isV2(texts[end])) end++;
+    }
+    out.push({ start: i, end });
+    i = end;
+  }
+  return out;
+}
+
+/** Which unit (0-based) a lesson position belongs to. */
+export function unitIndexOf(texts: ReadingText[], index: number): number {
+  return unitRanges(texts).findIndex((r) => index >= r.start && index < r.end);
+}
+
 export function buildLessonUnits(texts: ReadingText[], level: Level): LessonUnit[] {
   const units: LessonUnit[] = [];
-  for (let i = 0; i < texts.length; i += LESSONS_PER_UNIT) {
-    const chunk = texts.slice(i, i + LESSONS_PER_UNIT);
+  for (const [unitIndex, r] of unitRanges(texts).entries()) {
+    const chunk = texts.slice(r.start, r.end);
     if (!chunk.length) continue;
-    const unitIndex = Math.floor(i / LESSONS_PER_UNIT);
     units.push({
       id: `${level.toLowerCase().replace(/\s+/g, '-')}-unit-${unitIndex + 1}`,
       index: unitIndex,
-      title: unitDisplayName(level, unitIndex),
-      subtitle: `Unit ${unitIndex + 1} · ${chunk[0].title}`,
+      // v2 courses carry their own unit titles and numbers.
+      number: isV2(chunk[0]) ? chunk[0].v2.unit : unitIndex + 1,
+      title: isV2(chunk[0]) ? (chunk[0].unitName || unitDisplayName(level, unitIndex)) : unitDisplayName(level, unitIndex),
+      subtitle: `Unit ${isV2(chunk[0]) ? chunk[0].v2.unit : unitIndex + 1} · ${chunk[0].title}`,
       lessonIds: chunk.map((t) => t.id),
       lessons: chunk,
     });
@@ -74,7 +103,7 @@ export function findNextLesson(
       return {
         index: i,
         text: texts[i],
-        unitIndex: Math.floor(i / LESSONS_PER_UNIT),
+        unitIndex: unitIndexOf(texts, i),
       };
     }
   }

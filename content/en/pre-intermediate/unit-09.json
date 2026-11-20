@@ -1,0 +1,4458 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "pre-intermediate",
+  "unit": 9,
+  "title": "Outdoors",
+  "room": "campsite",
+  "lessons": [
+    {
+      "id": "en.pre-intermediate.u09.l01",
+      "section": "pre-intermediate",
+      "unit": 9,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Camping",
+      "canDo": "Name camping things",
+      "scenario": "Smarty, Mia, and Sam set up their campsite in the forest before evening.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u09.l01.tent",
+          "text": "tent",
+          "kind": "word",
+          "forms": [
+            "tents"
+          ],
+          "example": "Our new tent is next to the big tree.",
+          "note": "Say 'tent' for the small cloth house you sleep in when you camp outdoors.",
+          "image": {
+            "id": "tent",
+            "describe": "a bright green camping tent pitched under tall pine trees in a forest clearing"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.sleeping-bag",
+          "text": "sleeping bag",
+          "kind": "phrase",
+          "forms": [
+            "sleeping bags"
+          ],
+          "example": "My warm sleeping bag is in the tent.",
+          "note": "Use 'sleeping bag' for the warm padded bag you zip yourself into at night.",
+          "image": {
+            "id": "sleeping-bag",
+            "describe": "a cozy blue sleeping bag unrolled inside an open tent"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.campfire",
+          "text": "campfire",
+          "kind": "word",
+          "forms": [
+            "campfires"
+          ],
+          "example": "We sat next to the warm campfire in the evening.",
+          "note": "Say 'campfire' for an outdoor fire that keeps campers warm and lights up the camp.",
+          "image": {
+            "id": "campfire",
+            "describe": "a glowing campfire surrounded by smooth stones at dusk with Smarty the black cat sitting nearby"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.torch",
+          "text": "torch",
+          "kind": "word",
+          "forms": [
+            "torches"
+          ],
+          "example": "Take a torch when you walk in the forest at night.",
+          "note": "Say 'torch' for a small hand lamp with a battery that helps you see at night.",
+          "image": {
+            "id": "torch",
+            "describe": "a yellow hand torch shining a bright beam of light onto a forest path"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.backpack",
+          "text": "backpack",
+          "kind": "word",
+          "forms": [
+            "backpacks"
+          ],
+          "example": "I packed water and bread in my backpack.",
+          "note": "Use 'backpack' for the bag you carry on your back when walking or camping.",
+          "image": {
+            "id": "backpack",
+            "describe": "a sturdy red hiking backpack resting against a tree trunk at a campsite"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.camping-stove",
+          "text": "camping stove",
+          "kind": "phrase",
+          "forms": [
+            "camping stoves"
+          ],
+          "example": "Sam cooked hot soup on the camping stove.",
+          "note": "Say 'camping stove' for a small portable cooker you bring to make hot food outdoors.",
+          "image": {
+            "id": "camping-stove",
+            "describe": "a compact metal camping stove heating a small pot of soup outdoors"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u09.l01.task.pick-tent",
+          "kind": "choice",
+          "prompt": "Look at the picture of the cloth shelter in the forest. What is it?",
+          "answer": "tent",
+          "options": [
+            "tent",
+            "backpack",
+            "torch"
+          ],
+          "explanation": "A tent is the cloth shelter you sleep inside outdoors.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.tent"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.task.hear-sleeping-bag",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you heard.",
+          "audio": "My sleeping bag is very warm.",
+          "answer": "My sleeping bag is very warm.",
+          "options": [
+            "My sleeping bag is very warm.",
+            "My backpack is very big.",
+            "My camping stove is very hot."
+          ],
+          "explanation": "You heard 'sleeping bag', which keeps you warm when you sleep in a tent.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.sleeping-bag"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.task.match-gear",
+          "kind": "match",
+          "prompt": "Match each camping item with what you do with it.",
+          "pairs": [
+            {
+              "left": "torch",
+              "right": "see in the forest at night"
+            },
+            {
+              "left": "camping stove",
+              "right": "cook hot soup outside"
+            },
+            {
+              "left": "backpack",
+              "right": "carry water and a book"
+            },
+            {
+              "left": "sleeping bag",
+              "right": "sleep warm in a tent"
+            }
+          ],
+          "explanation": "Each piece of camping gear has a clear job at the campsite.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.torch",
+            "en.pre-intermediate.u09.l01.camping-stove",
+            "en.pre-intermediate.u09.l01.backpack",
+            "en.pre-intermediate.u09.l01.sleeping-bag",
+            "en.elementary.u06.l05.forest",
+            "en.beginner.u03.l05.soup"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.task.fill-campfire",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the evening at camp.",
+          "text": "We sat next to the ___ and drank hot tea.",
+          "answer": "campfire",
+          "options": [
+            "campfire",
+            "torch",
+            "tent"
+          ],
+          "explanation": "People sit around a campfire in the evening to stay warm.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.campfire",
+            "en.beginner.u03.l02.tea"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.task.build-torch",
+          "kind": "build",
+          "prompt": "Put the words in order to talk about walking at night.",
+          "answer": "Bring a torch because it is night.",
+          "tiles": [
+            "Bring",
+            "a",
+            "torch",
+            "because",
+            "it",
+            "is",
+            "night",
+            "tent"
+          ],
+          "explanation": "Use a torch when you walk at night and cannot see.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.torch"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.task.fill-backpack",
+          "kind": "fill",
+          "prompt": "Choose the right word for the bag you carry on your back.",
+          "text": "Please pack your jacket in your ___.",
+          "answer": "backpack",
+          "options": [
+            "backpack",
+            "campfire",
+            "camping stove"
+          ],
+          "explanation": "You pack clothes, water, and food inside a backpack.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.backpack",
+            "en.beginner.u11.l07.pack"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.task.pick-stove",
+          "kind": "choice",
+          "prompt": "Mia wants to make hot soup for dinner at the campsite. What does she need?",
+          "answer": "a camping stove",
+          "options": [
+            "a camping stove",
+            "a sleeping bag",
+            "a torch"
+          ],
+          "explanation": "A camping stove is used to cook hot meals outdoors.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.camping-stove",
+            "en.beginner.u03.l05.soup"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.task.say-tent",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "My sleeping bag is inside the tent.",
+          "answer": "My sleeping bag is inside the tent.",
+          "explanation": "Nice job naming both the sleeping bag and the tent.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.sleeping-bag",
+            "en.pre-intermediate.u09.l01.tent"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l01.task.hear-campfire",
+          "kind": "listen",
+          "prompt": "Listen and choose what Smarty says.",
+          "audio": "The campfire is warm and big.",
+          "answer": "The campfire is warm and big.",
+          "options": [
+            "The campfire is warm and big.",
+            "The tent is green and new.",
+            "The torch is in my backpack."
+          ],
+          "explanation": "Smarty is talking about the warm campfire.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.campfire"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What did Sam forget to pack in his rucksack?",
+        "image": {
+          "id": "en-b1-u09-l01-scene",
+          "describe": "Smarty the black cat, Mia, and Sam setting up a green tent in a forest clearing beside a glowing campfire and a small camping stove."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "This forest is a great place to pitch a tent."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I have our sleeping bags in my big backpack."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I brought the camping stove in my rucksack, so we can make hot soup."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good! Later we can sit by the campfire and eat a sweet marshmallow."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Oh, a mosquito just flew past my ear! Where is the torch?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Sorry, I left my torch at home, but Mia has one in her backpack."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u09.l01.task.story-1",
+            "kind": "choice",
+            "prompt": "Where are the sleeping bags?",
+            "answer": "In Mia's backpack",
+            "options": [
+              "In Mia's backpack",
+              "Next to the campfire",
+              "At Sam's home"
+            ],
+            "explanation": "Mia says: I have our sleeping bags in my big backpack.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l01.sleeping-bag",
+              "en.pre-intermediate.u09.l01.backpack"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l01.task.story-2",
+            "kind": "choice",
+            "prompt": "What will Sam use to make hot soup?",
+            "answer": "The camping stove",
+            "options": [
+              "The camping stove",
+              "The torch",
+              "The tent"
+            ],
+            "explanation": "Sam brought the camping stove so they can make hot soup.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l01.camping-stove"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l01.task.story-3",
+            "kind": "choice",
+            "prompt": "What did Sam leave at home?",
+            "answer": "His torch",
+            "options": [
+              "His torch",
+              "His sleeping bag",
+              "His tent"
+            ],
+            "explanation": "Sam says he left his torch at home.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l01.torch"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are packing with Smarty for one night in the forest. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "I have the tent and the campfire wood. What is in your backpack?",
+            "accept": [
+              "^(?:i have )?(?:a |my )?(?:sleeping bag|torch|camping stove)(?: and (?:a |my )?(?:sleeping bag|torch|camping stove))?$",
+              "^in my backpack i have (?:a |my )?(?:sleeping bag|torch|camping stove)$"
+            ],
+            "example": "I have my sleeping bag and a torch.",
+            "hint": "Name one or two camping items from this lesson.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l01.backpack",
+              "en.pre-intermediate.u09.l01.sleeping-bag",
+              "en.pre-intermediate.u09.l01.torch"
+            ]
+          },
+          {
+            "smarty": "It is getting late and we are hungry. How can we cook dinner?",
+            "accept": [
+              "^(?:we can use |on |with )?(?:the |a )?camping stove$",
+              "^we can cook (?:on|with) (?:the |a )?camping stove$"
+            ],
+            "example": "We can use the camping stove.",
+            "hint": "Mention the camping stove.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l01.camping-stove"
+            ]
+          },
+          {
+            "smarty": "Now it is night in the forest. What do we need when we walk outside the tent?",
+            "accept": [
+              "^(?:we need )?(?:a |the |my )?torch$",
+              "^we need (?:a |the )?torches$"
+            ],
+            "example": "We need a torch.",
+            "hint": "Say that you need a torch.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l01.torch",
+              "en.pre-intermediate.u09.l01.tent"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "pitch a tent",
+          "gloss": "set up a tent on the ground"
+        },
+        {
+          "text": "marshmallow",
+          "gloss": "a soft sweet treat often toasted over a fire"
+        },
+        {
+          "text": "mosquito",
+          "gloss": "a tiny flying insect that bites"
+        },
+        {
+          "text": "rucksack",
+          "gloss": "another word for a large hiking backpack"
+        }
+      ],
+      "recycle": [
+        "en.elementary.u06.l05.forest",
+        "en.beginner.u03.l05.soup",
+        "en.beginner.u03.l02.tea",
+        "en.beginner.u11.l07.pack"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u09.l02",
+      "section": "pre-intermediate",
+      "unit": 9,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "Hiking",
+      "canDo": "Talk about hiking",
+      "scenario": "Smarty, Leo, and Mia prepare for a morning walk up a mountain in a nature reserve.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u09.l02.trail",
+          "text": "trail",
+          "kind": "word",
+          "forms": [
+            "trails"
+          ],
+          "example": "Follow the forest trail to the lake.",
+          "note": "Say 'trail' for a dirt path through a forest or up a mountain.",
+          "image": {
+            "id": "trail",
+            "describe": "a winding dirt walking trail passing through green forest trees toward distant mountains"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.summit",
+          "text": "summit",
+          "kind": "word",
+          "forms": [
+            "summits"
+          ],
+          "example": "From the summit we saw the whole forest.",
+          "note": "Use 'summit' for the very highest point at the top of a mountain.",
+          "image": {
+            "id": "summit",
+            "describe": "Smarty the black cat standing happily at the rocky summit of a mountain looking at clouds below"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.compass",
+          "text": "compass",
+          "kind": "word",
+          "forms": [
+            "compasses"
+          ],
+          "example": "Use a compass and a map so you know which way to go.",
+          "note": "Say 'compass' for the small round tool whose needle always points north.",
+          "image": {
+            "id": "compass",
+            "describe": "a classic round pocket compass lying open beside a folded paper map"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.hiking-boots",
+          "text": "hiking boots",
+          "kind": "phrase",
+          "forms": [
+            "hiking boot"
+          ],
+          "example": "Wear strong hiking boots on wet trails.",
+          "note": "Say 'hiking boots' for heavy, strong boots made for long walks on rough ground.",
+          "image": {
+            "id": "hiking-boots",
+            "describe": "a pair of sturdy brown leather hiking boots with thick soles resting on a forest trail"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.a-steep-path",
+          "text": "a steep path",
+          "kind": "phrase",
+          "forms": [
+            "steep",
+            "steep path",
+            "steep paths"
+          ],
+          "example": "We walked slowly up a steep path to the summit.",
+          "note": "Say 'a steep path' when a trail goes up or down very sharply."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.a-nature-reserve",
+          "text": "a nature reserve",
+          "kind": "phrase",
+          "forms": [
+            "nature reserve",
+            "nature reserves"
+          ],
+          "example": "Our campsite is inside a beautiful nature reserve.",
+          "note": "Use 'a nature reserve' for a protected wild area where plants and animals are kept safe."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u09.l02.task.pick-compass",
+          "kind": "choice",
+          "prompt": "Look at the picture. Which tool shows you which direction is north?",
+          "answer": "compass",
+          "options": [
+            "compass",
+            "summit",
+            "torch"
+          ],
+          "explanation": "A compass shows directions so you do not get lost on a walk.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l02.compass",
+            "en.pre-intermediate.u09.l01.torch"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.task.hear-boots",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you heard.",
+          "audio": "Wear your hiking boots before we go.",
+          "answer": "Wear your hiking boots before we go.",
+          "options": [
+            "Wear your hiking boots before we go.",
+            "Pack your sleeping bag before we go.",
+            "Check your compass before we go."
+          ],
+          "explanation": "You heard 'hiking boots', the strong shoes needed for mountain trails.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l02.hiking-boots"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.task.match-hiking",
+          "kind": "match",
+          "prompt": "Match each hiking word or phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "summit",
+              "right": "the end of a trail up a mountain"
+            },
+            {
+              "left": "trail",
+              "right": "a path through a forest"
+            },
+            {
+              "left": "a steep path",
+              "right": "a trail that is very steep"
+            },
+            {
+              "left": "a nature reserve",
+              "right": "a big safe forest for trees"
+            }
+          ],
+          "explanation": "These words help you describe where you walk and what the ground is like.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l02.summit",
+            "en.pre-intermediate.u09.l02.trail",
+            "en.pre-intermediate.u09.l02.a-steep-path",
+            "en.pre-intermediate.u09.l02.a-nature-reserve",
+            "en.elementary.u06.l05.mountain"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.task.fill-summit",
+          "kind": "fill",
+          "prompt": "Complete the sentence about reaching the top of the mountain.",
+          "text": "After three hours, we arrived at the ___.",
+          "answer": "summit",
+          "options": [
+            "summit",
+            "compass",
+            "backpack"
+          ],
+          "explanation": "The summit is the very top of a mountain.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l02.summit",
+            "en.pre-intermediate.u09.l01.backpack"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.task.build-steep",
+          "kind": "build",
+          "prompt": "Build the sentence describing the mountain walk.",
+          "answer": "We walked up a steep path.",
+          "tiles": [
+            "We",
+            "walked",
+            "up",
+            "a",
+            "steep",
+            "path",
+            "lake"
+          ],
+          "explanation": "'A steep path' describes a trail that is very steep.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l02.a-steep-path"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.task.fill-reserve",
+          "kind": "fill",
+          "prompt": "Choose the phrase that completes the sentence.",
+          "text": "You must not leave rubbish in ___.",
+          "answer": "a nature reserve",
+          "options": [
+            "a nature reserve",
+            "a sleeping bag",
+            "hiking boots"
+          ],
+          "explanation": "A nature reserve is a protected area, so visitors keep it clean.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l02.a-nature-reserve",
+            "en.elementary.u06.l09.rubbish"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.task.pick-trail",
+          "kind": "choice",
+          "prompt": "Smarty looks at his map and compass. What should they stay on so they do not lose their way?",
+          "answer": "the trail",
+          "options": [
+            "the trail",
+            "the campfire",
+            "the camping stove"
+          ],
+          "explanation": "Staying on the trail keeps walkers on the right path.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l02.trail",
+            "en.pre-intermediate.u09.l02.compass",
+            "en.beginner.u08.l03.map"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.task.say-compass",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "I have a map and a compass in my backpack.",
+          "answer": "I have a map and a compass in my backpack.",
+          "explanation": "Great pronunciation of compass and backpack.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l02.compass",
+            "en.pre-intermediate.u09.l01.backpack",
+            "en.beginner.u08.l03.map"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l02.task.hear-reserve",
+          "kind": "listen",
+          "prompt": "Listen and choose what Leo says.",
+          "audio": "This trail is in a nature reserve.",
+          "answer": "This trail is in a nature reserve.",
+          "options": [
+            "This trail is in a nature reserve.",
+            "This tent is near a nature reserve.",
+            "This summit is inside a forest."
+          ],
+          "explanation": "Leo explains that the trail passes through a nature reserve.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l02.trail",
+            "en.pre-intermediate.u09.l02.a-nature-reserve"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What do Smarty, Leo, and Mia see when they reach the summit?",
+        "image": {
+          "id": "en-b1-u09-l02-scene",
+          "describe": "Smarty the black cat, Leo, and Mia wearing hiking boots on a steep mountain trail in a nature reserve, checking a compass near a wooden signpost."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Welcome to the mountain trail inside a nature reserve!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "My new hiking boots feel great on this steep path."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Look at that signpost near the valley. Which way is the summit?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Let me check my compass. We walk along the ridge to the left."
+          },
+          {
+            "speaker": "Leo",
+            "text": "We made it to the summit! Look at the altitude sign next to that tree."
+          },
+          {
+            "speaker": "Mia",
+            "text": "What a view! I can even see our green tent far below."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u09.l02.task.story-1",
+            "kind": "choice",
+            "prompt": "What is Leo wearing on the steep path?",
+            "answer": "New hiking boots",
+            "options": [
+              "New hiking boots",
+              "A warm scarf",
+              "Old shoes"
+            ],
+            "explanation": "Leo says: My new hiking boots feel great on this steep path.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l02.hiking-boots",
+              "en.pre-intermediate.u09.l02.a-steep-path"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l02.task.story-2",
+            "kind": "choice",
+            "prompt": "What does Smarty check to find the right direction?",
+            "answer": "His compass",
+            "options": [
+              "His compass",
+              "His phone",
+              "His watch"
+            ],
+            "explanation": "Smarty says: Let me check my compass.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l02.compass"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l02.task.story-3",
+            "kind": "choice",
+            "prompt": "What can Mia see from the summit?",
+            "answer": "Their green tent",
+            "options": [
+              "Their green tent",
+              "A train station",
+              "A big hotel"
+            ],
+            "explanation": "From the summit, Mia sees their green tent far below.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l02.summit",
+              "en.pre-intermediate.u09.l01.tent"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are planning a morning walk up a mountain with Smarty. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "We are going up a mountain in a nature reserve. What shoes should we wear?",
+            "accept": [
+              "^(?:we should wear )?(?:our )?hiking boots$",
+              "^wear (?:your )?hiking boots$"
+            ],
+            "example": "We should wear hiking boots.",
+            "hint": "Mention hiking boots.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l02.hiking-boots",
+              "en.pre-intermediate.u09.l02.a-nature-reserve"
+            ]
+          },
+          {
+            "smarty": "The trail goes up a steep path. What tool helps us find the way to the summit?",
+            "accept": [
+              "^(?:a |the |my )?compass(?: and (?:a )?map)?$",
+              "^we (?:can use|need) (?:a |the )?compass$"
+            ],
+            "example": "We need a compass.",
+            "hint": "Name the tool that shows north.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l02.compass",
+              "en.pre-intermediate.u09.l02.a-steep-path",
+              "en.pre-intermediate.u09.l02.summit"
+            ]
+          },
+          {
+            "smarty": "Look! We are at the summit now. Where are we?",
+            "accept": [
+              "^(?:we are )?at the summit(?: of the mountain)?$",
+              "^on the summit$"
+            ],
+            "example": "We are at the summit.",
+            "hint": "Say that you are at the summit.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l02.summit"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "valley",
+          "gloss": "low land between hills or mountains"
+        },
+        {
+          "text": "ridge",
+          "gloss": "a long narrow mountain top"
+        },
+        {
+          "text": "signpost",
+          "gloss": "a post with signs showing directions on a trail"
+        },
+        {
+          "text": "altitude sign",
+          "gloss": "a sign showing how high a place is above the sea"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u09.l01.torch",
+        "en.pre-intermediate.u09.l01.backpack",
+        "en.pre-intermediate.u09.l01.tent",
+        "en.elementary.u06.l05.mountain",
+        "en.elementary.u06.l09.rubbish",
+        "en.beginner.u08.l03.map"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u09.l03",
+      "section": "pre-intermediate",
+      "unit": 9,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "The person who",
+      "canDo": "Use relative who",
+      "scenario": "At the campsite, Smarty and Ben talk about the guide and friends on their trip.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u09.l03.someone-who",
+          "text": "someone who",
+          "kind": "phrase",
+          "example": "We need someone who knows this forest well.",
+          "note": "Use 'someone who' when you talk about any person with a certain skill or quality."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.a-person-who",
+          "text": "a person who",
+          "kind": "phrase",
+          "example": "A person who camps should always bring a torch.",
+          "note": "Say 'a person who' to describe one type of person in general."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.people-who",
+          "text": "people who",
+          "kind": "phrase",
+          "example": "People who walk on trails must wear hiking boots.",
+          "note": "Use 'people who' when talking about a group of people."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.the-guide-who",
+          "text": "the guide who",
+          "kind": "phrase",
+          "forms": [
+            "guide",
+            "guides"
+          ],
+          "example": "Omar is the guide who showed us the steep path.",
+          "note": "Say 'the guide who' to point out the exact leader who helps you on a trip."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.the-man-who",
+          "text": "the man who",
+          "kind": "phrase",
+          "forms": [
+            "man",
+            "men"
+          ],
+          "example": "The man who gave us a map works in the nature reserve.",
+          "note": "Use 'the man who' to identify a specific man by what he does or did."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.a-friend-who",
+          "text": "a friend who",
+          "kind": "phrase",
+          "forms": [
+            "friends who"
+          ],
+          "example": "Zara is a friend who loves sleeping in a tent.",
+          "note": "Say 'a friend who' to describe one of your friends in more detail."
+        }
+      ],
+      "grammar": {
+        "title": "Relative clauses with who",
+        "explanation": "Use 'who' right after a person noun (someone, a person, people, the guide, the man, a friend) to explain which person you mean.",
+        "examples": [
+          "He is the guide who knows the mountain trail.",
+          "I like people who love nature."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u09.l03.task.pick-who",
+          "kind": "choice",
+          "prompt": "Choose the right phrase to describe the leader of the trip.",
+          "answer": "the guide who",
+          "options": [
+            "the guide who",
+            "the tent who",
+            "the compass who"
+          ],
+          "explanation": "Use 'who' for people, like 'the guide who' led the walk.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.the-guide-who"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.task.hear-someone",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you heard.",
+          "audio": "We need someone who can read a compass.",
+          "answer": "We need someone who can read a compass.",
+          "options": [
+            "We need someone who can read a compass.",
+            "We need a torch that works at night.",
+            "We met a guide near the summit."
+          ],
+          "explanation": "You heard 'someone who can read a compass'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.someone-who",
+            "en.pre-intermediate.u09.l02.compass"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.task.match-who",
+          "kind": "match",
+          "prompt": "Match the beginnings and endings to make clear sentences.",
+          "pairs": [
+            {
+              "left": "The guide who",
+              "right": "helped us had a big map."
+            },
+            {
+              "left": "People who",
+              "right": "visit a nature reserve keep it clean."
+            },
+            {
+              "left": "Zara is a friend who",
+              "right": "always packs a warm sleeping bag."
+            },
+            {
+              "left": "The man who",
+              "right": "cooked the soup is my uncle."
+            }
+          ],
+          "explanation": "Each phrase with 'who' connects a person to what they do.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.the-guide-who",
+            "en.pre-intermediate.u09.l03.people-who",
+            "en.pre-intermediate.u09.l03.a-friend-who",
+            "en.pre-intermediate.u09.l03.the-man-who",
+            "en.pre-intermediate.u09.l02.a-nature-reserve",
+            "en.pre-intermediate.u09.l01.sleeping-bag"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.task.fill-person",
+          "kind": "fill",
+          "prompt": "Complete the sentence about a careful walker.",
+          "text": "___ checks the weather forecast is smart.",
+          "answer": "A person who",
+          "options": [
+            "A person who",
+            "A trail who",
+            "A summit who"
+          ],
+          "explanation": "Use 'A person who' for one general person.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.a-person-who",
+            "en.pre-intermediate.u06.l10.forecast"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.task.build-friend",
+          "kind": "build",
+          "prompt": "Put the words in order to describe Ben.",
+          "answer": "Ben is a friend who loves mountains.",
+          "tiles": [
+            "Ben",
+            "is",
+            "a",
+            "friend",
+            "who",
+            "loves",
+            "mountains",
+            "which"
+          ],
+          "explanation": "Use 'a friend who' to add information about Ben.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.a-friend-who",
+            "en.elementary.u06.l05.mountain"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.task.fill-people",
+          "kind": "fill",
+          "prompt": "Complete the sentence for a plural group.",
+          "text": "___ love camping often buy good tents.",
+          "answer": "People who",
+          "options": [
+            "People who",
+            "The man who",
+            "A friend who"
+          ],
+          "explanation": "'People who' is plural, so it matches 'love' and 'buy'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.people-who",
+            "en.pre-intermediate.u09.l01.tent"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.task.pick-man",
+          "kind": "choice",
+          "prompt": "You want to point out one specific man sitting by the campfire. Which phrase fits?",
+          "answer": "the man who",
+          "options": [
+            "the man who",
+            "people who",
+            "someone who"
+          ],
+          "explanation": "'The man who' points out one specific man.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.the-man-who",
+            "en.pre-intermediate.u09.l01.campfire"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.task.say-guide",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "She is the guide who knows every trail.",
+          "answer": "She is the guide who knows every trail.",
+          "explanation": "Clear use of 'the guide who' to describe a person.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.the-guide-who",
+            "en.pre-intermediate.u09.l02.trail"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l03.task.build-someone",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I want someone who can cook.",
+          "tiles": [
+            "I",
+            "want",
+            "someone",
+            "who",
+            "can",
+            "cook",
+            "where"
+          ],
+          "explanation": "'Someone who' describes a person with a skill you want.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.someone-who"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who is the stranger sitting near the campfire?",
+        "image": {
+          "id": "en-b1-u09-l03-scene",
+          "describe": "Smarty the black cat and Ben talking beside a glowing campfire while a friendly older ranger cat holds a map nearby."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Smarty, do you know the man who is sitting near the campfire?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! He is the guide who works in this nature reserve."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Oh, he is not a stranger! He looks like a great explorer."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "He is also a ranger who helps people who get lost on steep paths."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I am happy we met someone who knows every mountain trail."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And he is a friend who makes delicious tea, just like a ship captain!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u09.l03.task.story-1",
+            "kind": "choice",
+            "prompt": "Who is the man sitting near the campfire?",
+            "answer": "The guide who works in the nature reserve",
+            "options": [
+              "The guide who works in the nature reserve",
+              "Ben's younger brother",
+              "A waiter from a hotel"
+            ],
+            "explanation": "Smarty says he is the guide who works in this nature reserve.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l03.the-man-who",
+              "en.pre-intermediate.u09.l03.the-guide-who",
+              "en.pre-intermediate.u09.l02.a-nature-reserve"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l03.task.story-2",
+            "kind": "choice",
+            "prompt": "Why is Ben happy they met him?",
+            "answer": "He is someone who knows every mountain trail",
+            "options": [
+              "He is someone who knows every mountain trail",
+              "He has a new bicycle",
+              "He has a shop"
+            ],
+            "explanation": "Ben says: I am happy we met someone who knows every mountain trail.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l03.someone-who",
+              "en.pre-intermediate.u09.l02.trail"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l03.task.story-3",
+            "kind": "choice",
+            "prompt": "What does Smarty call him at the end?",
+            "answer": "A friend who makes delicious tea",
+            "options": [
+              "A friend who makes delicious tea",
+              "A person who dislikes tea",
+              "A man who has no tent"
+            ],
+            "explanation": "Smarty calls him a friend who makes delicious tea.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l03.a-friend-who",
+              "en.beginner.u03.l02.tea"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty wants to know what kind of people you like to travel and camp with. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "When we walk in the mountains, we need the guide who knows the trail. Who do you like to travel with?",
+            "accept": [
+              "^(?:i like )?(?:a friend|people|someone) who (?:is |loves |likes |knows |can )?(?:happy|kind|funny|reliable|easy-going|helpful|friendly|cook|camping|mountains|trails)$",
+              "^(?:a friend|people|someone) who (?:knows the trail|loves nature|is reliable)$"
+            ],
+            "example": "I like a friend who is reliable.",
+            "hint": "Start with 'I like a friend who...' or 'I like people who...'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l03.the-guide-who",
+              "en.pre-intermediate.u09.l03.a-friend-who",
+              "en.pre-intermediate.u09.l03.people-who"
+            ]
+          },
+          {
+            "smarty": "Good choice! What kind of person is a good camper?",
+            "accept": [
+              "^(?:a person|someone) who (?:packs a torch|brings a map|is careful|loves nature|can cook|is reliable)$",
+              "^a good camper is (?:a person|someone) who (?:is careful|loves nature|packs a torch|can cook)$"
+            ],
+            "example": "A person who loves nature.",
+            "hint": "Use 'A person who...' or 'Someone who...'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l03.a-person-who",
+              "en.pre-intermediate.u09.l03.someone-who"
+            ]
+          },
+          {
+            "smarty": "Look over there! Who is the man who is carrying the big backpack?",
+            "accept": [
+              "^(?:he is )?(?:the guide|my friend|my brother|my father|my uncle)(?: who knows the trail)?$",
+              "^the man who is carrying the backpack is (?:the guide|my friend|my brother|my father)$"
+            ],
+            "example": "He is the guide.",
+            "hint": "Tell Smarty who the man is (for example, 'He is the guide' or 'He is my friend').",
+            "itemIds": [
+              "en.pre-intermediate.u09.l03.the-man-who",
+              "en.pre-intermediate.u09.l03.the-guide-who",
+              "en.pre-intermediate.u09.l01.backpack"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "ranger",
+          "gloss": "a person whose job is to protect a forest or park"
+        },
+        {
+          "text": "explorer",
+          "gloss": "someone who travels to learn about wild or new places"
+        },
+        {
+          "text": "stranger",
+          "gloss": "someone you have never met before"
+        },
+        {
+          "text": "captain",
+          "gloss": "the leader of a team or ship"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u09.l01.tent",
+        "en.pre-intermediate.u09.l01.campfire",
+        "en.pre-intermediate.u09.l01.sleeping-bag",
+        "en.pre-intermediate.u09.l01.backpack",
+        "en.pre-intermediate.u09.l02.compass",
+        "en.pre-intermediate.u09.l02.a-nature-reserve",
+        "en.pre-intermediate.u09.l02.trail",
+        "en.pre-intermediate.u06.l10.forecast",
+        "en.elementary.u06.l05.mountain",
+        "en.beginner.u03.l02.tea"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u09.l04",
+      "section": "pre-intermediate",
+      "unit": 9,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Smarty, Mia, and Sam check their camping gear and meet their mountain guide.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u09.l04.task.pick-stove",
+          "kind": "choice",
+          "prompt": "You want to heat water for tea at the campsite. Which item do you use?",
+          "answer": "camping stove",
+          "options": [
+            "camping stove",
+            "compass",
+            "sleeping bag"
+          ],
+          "explanation": "A camping stove heats water and cooks food outdoors.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.camping-stove",
+            "en.pre-intermediate.u09.l02.compass",
+            "en.pre-intermediate.u09.l01.sleeping-bag"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l04.task.hear-summit",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you heard.",
+          "audio": "The trail to the summit is a steep path.",
+          "answer": "The trail to the summit is a steep path.",
+          "options": [
+            "The trail to the summit is a steep path.",
+            "The tent in the forest is very warm.",
+            "The guide who helped us has a torch."
+          ],
+          "explanation": "You heard 'trail', 'summit', and 'a steep path'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l02.trail",
+            "en.pre-intermediate.u09.l02.summit",
+            "en.pre-intermediate.u09.l02.a-steep-path"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l04.task.match-review1",
+          "kind": "match",
+          "prompt": "Match each item with the best description.",
+          "pairs": [
+            {
+              "left": "torch",
+              "right": "helps you see at night"
+            },
+            {
+              "left": "compass",
+              "right": "shows the way"
+            },
+            {
+              "left": "hiking boots",
+              "right": "you wear them on steep paths"
+            },
+            {
+              "left": "a nature reserve",
+              "right": "keeps trees safe"
+            }
+          ],
+          "explanation": "Great review of camping and hiking vocabulary.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.torch",
+            "en.pre-intermediate.u09.l02.compass",
+            "en.pre-intermediate.u09.l02.hiking-boots",
+            "en.pre-intermediate.u09.l02.a-nature-reserve"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l04.task.fill-guide",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the trip leader.",
+          "text": "Sam is ___ showed us the mountain trail.",
+          "answer": "the guide who",
+          "options": [
+            "the guide who",
+            "the tent who",
+            "the campfire who"
+          ],
+          "explanation": "Use 'the guide who' to describe a person who leads a walk.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.the-guide-who",
+            "en.pre-intermediate.u09.l02.trail"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l04.task.build-people",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "People who go camping need a tent.",
+          "tiles": [
+            "People",
+            "who",
+            "go",
+            "camping",
+            "need",
+            "a",
+            "tent",
+            "which"
+          ],
+          "explanation": "'People who' introduces the group of people you are talking about.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.people-who",
+            "en.pre-intermediate.u09.l01.tent"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l04.task.fill-backpack",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "Put your torch and map inside your ___.",
+          "answer": "backpack",
+          "options": [
+            "backpack",
+            "campfire",
+            "summit"
+          ],
+          "explanation": "You carry your torch and map in a backpack.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.backpack",
+            "en.pre-intermediate.u09.l01.torch",
+            "en.beginner.u08.l03.map"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l04.task.pick-someone",
+          "kind": "choice",
+          "prompt": "Choose the right phrase to complete the sentence: We need ___ knows how to light a campfire.",
+          "answer": "someone who",
+          "options": [
+            "someone who",
+            "a summit who",
+            "a torch who"
+          ],
+          "explanation": "Use 'someone who' when referring to a person with a skill.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.someone-who",
+            "en.pre-intermediate.u09.l01.campfire"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l04.task.say-review",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "A person who walks in a nature reserve stays on the trail.",
+          "answer": "A person who walks in a nature reserve stays on the trail.",
+          "explanation": "Smooth sentence combining Lessons 2 and 3.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.a-person-who",
+            "en.pre-intermediate.u09.l02.a-nature-reserve",
+            "en.pre-intermediate.u09.l02.trail"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How do Smarty and his friends get ready before leaving the campsite?",
+        "image": {
+          "id": "en-b1-u09-l04-scene",
+          "describe": "Smarty the black cat, Mia, and Sam standing next to their tent and campfire, packing backpacks and wearing hiking boots."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Good morning! Did everyone sleep well in their sleeping bag?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Yes, our tent was warm, and the campfire kept us cozy last night."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I cooked breakfast on the camping stove. Now I am putting on my hiking boots."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Remember to pack a torch and a compass in your backpack."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Look, Omar is coming! He is the guide who knows the steep path to the summit."
+          },
+          {
+            "speaker": "Sam",
+            "text": "People who walk in a nature reserve with a good guide always have a safe trip!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u09.l04.task.story-1",
+            "kind": "choice",
+            "prompt": "How did Sam cook breakfast?",
+            "answer": "On the camping stove",
+            "options": [
+              "On the camping stove",
+              "In the tent",
+              "On the trail"
+            ],
+            "explanation": "Sam says: I cooked breakfast on the camping stove.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l01.camping-stove"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l04.task.story-2",
+            "kind": "choice",
+            "prompt": "Who is Omar?",
+            "answer": "The guide who knows the steep path to the summit",
+            "options": [
+              "The guide who knows the steep path to the summit",
+              "A friend who stayed at home",
+              "The man who sold the tent"
+            ],
+            "explanation": "Mia says Omar is the guide who knows the steep path to the summit.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l03.the-guide-who",
+              "en.pre-intermediate.u09.l02.a-steep-path",
+              "en.pre-intermediate.u09.l02.summit"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l04.task.story-3",
+            "kind": "choice",
+            "prompt": "What does Smarty tell them to pack in their backpack?",
+            "answer": "A torch and a compass",
+            "options": [
+              "A torch and a compass",
+              "A pillow and a blanket",
+              "A guitar and a drum"
+            ],
+            "explanation": "Smarty reminds them to pack a torch and a compass.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l01.torch",
+              "en.pre-intermediate.u09.l02.compass",
+              "en.pre-intermediate.u09.l01.backpack"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is checking that you are ready for the mountain walk. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Before we leave the tent, tell me two things inside your backpack.",
+            "accept": [
+              "^(?:i have )?(?:a |my )?(?:torch|compass|sleeping bag|map|water) and (?:a |my )?(?:torch|compass|sleeping bag|map|water)$",
+              "^in my backpack i have (?:a |my )?(?:torch|compass|sleeping bag|map|water) and (?:a |my )?(?:torch|compass|sleeping bag|map|water)$"
+            ],
+            "example": "A torch and a compass.",
+            "hint": "Name two items you packed in your backpack.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l01.backpack",
+              "en.pre-intermediate.u09.l01.torch",
+              "en.pre-intermediate.u09.l02.compass"
+            ]
+          },
+          {
+            "smarty": "Who is leading our walk up the steep path today?",
+            "accept": [
+              "^(?:omar is )?the guide(?: who knows the trail| who knows the steep path)?$",
+              "^a friend who knows the trail$"
+            ],
+            "example": "The guide who knows the trail.",
+            "hint": "Use 'the guide who...' or 'a friend who...'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l03.the-guide-who",
+              "en.pre-intermediate.u09.l02.a-steep-path"
+            ]
+          },
+          {
+            "smarty": "Where are we walking to today?",
+            "accept": [
+              "^(?:we are walking )?to the summit(?: in the nature reserve)?$",
+              "^up the trail to the summit$"
+            ],
+            "example": "To the summit.",
+            "hint": "Mention the summit or the trail.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l02.summit",
+              "en.pre-intermediate.u09.l02.trail"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.pre-intermediate.u09.l01.tent",
+        "en.pre-intermediate.u09.l01.sleeping-bag",
+        "en.pre-intermediate.u09.l01.campfire",
+        "en.pre-intermediate.u09.l01.torch",
+        "en.pre-intermediate.u09.l01.backpack",
+        "en.pre-intermediate.u09.l01.camping-stove",
+        "en.pre-intermediate.u09.l02.trail",
+        "en.pre-intermediate.u09.l02.summit",
+        "en.pre-intermediate.u09.l02.compass",
+        "en.pre-intermediate.u09.l02.hiking-boots",
+        "en.pre-intermediate.u09.l02.a-steep-path",
+        "en.pre-intermediate.u09.l02.a-nature-reserve",
+        "en.pre-intermediate.u09.l03.someone-who",
+        "en.pre-intermediate.u09.l03.a-person-who",
+        "en.pre-intermediate.u09.l03.people-who",
+        "en.pre-intermediate.u09.l03.the-guide-who",
+        "en.pre-intermediate.u09.l03.a-friend-who",
+        "en.beginner.u08.l03.map"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u09.l05",
+      "section": "pre-intermediate",
+      "unit": 9,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "Things that",
+      "canDo": "Use relative which/that and where",
+      "scenario": "Smarty and Zara talk about useful camping gear and their favorite spots in the forest.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u09.l05.something-that",
+          "text": "something that",
+          "kind": "phrase",
+          "example": "A torch is something that you need at night.",
+          "note": "Use 'something that' to describe a thing by what it does or why it is useful."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.the-thing-which",
+          "text": "the thing which",
+          "kind": "phrase",
+          "forms": [
+            "thing",
+            "things"
+          ],
+          "example": "The compass is the thing which helped us most.",
+          "note": "Say 'the thing which' to point out one specific object."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.a-place-where",
+          "text": "a place where",
+          "kind": "phrase",
+          "forms": [
+            "place",
+            "places"
+          ],
+          "example": "A campsite is a place where people pitch tents.",
+          "note": "Use 'a place where' to describe what happens at a location."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.the-day-when",
+          "text": "the day when",
+          "kind": "phrase",
+          "example": "I still remember the day when we reached the summit.",
+          "note": "Say 'the day when' to talk about an important day in a story or memory."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.the-reason-why",
+          "text": "the reason why",
+          "kind": "phrase",
+          "forms": [
+            "reason",
+            "reasons"
+          ],
+          "example": "The rain was the reason why we stayed in the tent.",
+          "note": "Use 'the reason why' to explain what caused something to happen."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.the-one-that",
+          "text": "the one that",
+          "kind": "phrase",
+          "example": "My backpack is the one that is next to the tree.",
+          "note": "Say 'the one that' to pick out one specific thing from several similar things."
+        }
+      ],
+      "grammar": {
+        "title": "Relative clauses with which, that, where, when, why",
+        "explanation": "Use 'which' or 'that' for things (something that, the thing which, the one that), 'where' for places (a place where), 'when' for times (the day when), and 'why' for reasons (the reason why).",
+        "examples": [
+          "A tent is something that keeps you dry.",
+          "This forest is a place where we love to camp."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u09.l05.task.pick-where",
+          "kind": "choice",
+          "prompt": "Choose the right phrase to describe a location.",
+          "answer": "a place where",
+          "options": [
+            "a place where",
+            "a place who",
+            "the day when"
+          ],
+          "explanation": "Use 'where' after 'a place' to talk about what happens there.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.a-place-where"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.task.hear-something",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you heard.",
+          "audio": "A sleeping bag is something that keeps you warm.",
+          "answer": "A sleeping bag is something that keeps you warm.",
+          "options": [
+            "A sleeping bag is something that keeps you warm.",
+            "A compass is the thing which shows the way.",
+            "A tent is a place where people sleep."
+          ],
+          "explanation": "You heard 'something that keeps you warm'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.something-that",
+            "en.pre-intermediate.u09.l01.sleeping-bag"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.task.match-relatives",
+          "kind": "match",
+          "prompt": "Match each phrase with the right sentence ending.",
+          "pairs": [
+            {
+              "left": "a place where",
+              "right": "we can sleep in our tent"
+            },
+            {
+              "left": "the day when",
+              "right": "we walked to the summit"
+            },
+            {
+              "left": "the reason why",
+              "right": "we packed warm coats"
+            },
+            {
+              "left": "the thing which",
+              "right": "cooks our hot dinner"
+            }
+          ],
+          "explanation": "Where is for places, when is for times, why is for reasons, and which is for things.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.a-place-where",
+            "en.pre-intermediate.u09.l05.the-day-when",
+            "en.pre-intermediate.u09.l05.the-reason-why",
+            "en.pre-intermediate.u09.l05.the-thing-which",
+            "en.pre-intermediate.u09.l01.tent",
+            "en.pre-intermediate.u09.l02.summit"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.task.fill-reason",
+          "kind": "fill",
+          "prompt": "Complete the sentence explaining why they brought a torch.",
+          "text": "The night forest is ___ we brought a torch.",
+          "answer": "the reason why",
+          "options": [
+            "the reason why",
+            "the one that",
+            "a place where"
+          ],
+          "explanation": "Use 'the reason why' to give an explanation.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.the-reason-why",
+            "en.pre-intermediate.u09.l01.torch"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.task.build-one",
+          "kind": "build",
+          "prompt": "Build the sentence to point out which tent belongs to Smarty.",
+          "answer": "Our tent is the one that is green.",
+          "tiles": [
+            "Our",
+            "tent",
+            "is",
+            "the",
+            "one",
+            "that",
+            "is",
+            "green",
+            "who"
+          ],
+          "explanation": "'The one that' points out one specific tent.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.the-one-that",
+            "en.pre-intermediate.u09.l01.tent",
+            "en.beginner.u06.l01.green"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.task.fill-day",
+          "kind": "fill",
+          "prompt": "Complete the sentence about a special memory.",
+          "text": "Saturday was ___ we first saw the nature reserve.",
+          "answer": "the day when",
+          "options": [
+            "the day when",
+            "the thing which",
+            "something that"
+          ],
+          "explanation": "Use 'the day when' for a specific day.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.the-day-when",
+            "en.pre-intermediate.u09.l02.a-nature-reserve",
+            "en.beginner.u04.l07.saturday"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.task.pick-thing",
+          "kind": "choice",
+          "prompt": "Choose the phrase that fits: A compass is ___ shows you north.",
+          "answer": "the thing which",
+          "options": [
+            "the thing which",
+            "a place where",
+            "the day when"
+          ],
+          "explanation": "Use 'the thing which' for an object.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.the-thing-which",
+            "en.pre-intermediate.u09.l02.compass"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.task.say-place",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "This clearing is a place where we can build a campfire.",
+          "answer": "This clearing is a place where we can build a campfire.",
+          "explanation": "Wait—let's keep only taught words in speak tasks! Let's use 'forest' instead of 'clearing' here.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.a-place-where",
+            "en.pre-intermediate.u09.l01.campfire"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l05.task.build-something",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "Pack something that is light and warm.",
+          "tiles": [
+            "Pack",
+            "something",
+            "that",
+            "is",
+            "light",
+            "and",
+            "warm",
+            "where"
+          ],
+          "explanation": "'Something that' describes the item you should pack.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.something-that"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which backpack belongs to Zara?",
+        "image": {
+          "id": "en-b1-u09-l05-scene",
+          "describe": "Smarty the black cat and Zara standing in a sunny forest clearing with two backpacks, a small wooden shelter, and a camping stove."
+        },
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "This sunny clearing is a great location for our camp!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, it is a place where we can see the stars at night."
+          },
+          {
+            "speaker": "Zara",
+            "text": "That spot near the wooden shelter is dry. That is the reason why I like it."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I remember the day when we first found this forest trail."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Can you pass me my backpack? It is the one that is next to the camping stove."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Here you are! The torch inside is the thing which we will need after dinner."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u09.l05.task.story-1",
+            "kind": "choice",
+            "prompt": "Why does Smarty like their camp location?",
+            "answer": "It is a place where they can see the stars at night",
+            "options": [
+              "It is a place where they can see the stars at night",
+              "It is next to a supermarket",
+              "It has a big swimming pool"
+            ],
+            "explanation": "Smarty says it is a place where we can see the stars at night.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l05.a-place-where",
+              "en.pre-intermediate.u06.l01.star"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l05.task.story-2",
+            "kind": "choice",
+            "prompt": "Which backpack is Zara's?",
+            "answer": "The one that is next to the camping stove",
+            "options": [
+              "The one that is next to the camping stove",
+              "The one that is in the river",
+              "The one that is at home"
+            ],
+            "explanation": "Zara says her backpack is the one that is next to the camping stove.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l05.the-one-that",
+              "en.pre-intermediate.u09.l01.camping-stove"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l05.task.story-3",
+            "kind": "choice",
+            "prompt": "What is the thing which they will need after dinner?",
+            "answer": "The torch",
+            "options": [
+              "The torch",
+              "The compass",
+              "The map"
+            ],
+            "explanation": "Smarty says the torch is the thing which they will need after dinner.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l05.the-thing-which",
+              "en.pre-intermediate.u09.l01.torch"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is asking you about your favorite outdoor places and camping things. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "For me, a forest is a place where I feel happy. What is a place where you like to walk?",
+            "accept": [
+              "^(?:a |the )?(?:forest|park|mountain|nature reserve|lake|river|sea) is a place where i like to walk$",
+              "^a place where i like to walk is (?:a |the )?(?:forest|park|mountain|nature reserve|lake)$"
+            ],
+            "example": "A forest is a place where I like to walk.",
+            "hint": "Use '... is a place where I like to walk.'",
+            "itemIds": [
+              "en.pre-intermediate.u09.l05.a-place-where",
+              "en.elementary.u06.l05.forest"
+            ]
+          },
+          {
+            "smarty": "What is something that you always put in your backpack?",
+            "accept": [
+              "^(?:a |my )?(?:torch|compass|map|water|sleeping bag|jacket) is something that i (?:always )?put in my backpack$",
+              "^something that i (?:always )?(?:pack|bring|have) is (?:a |my )?(?:torch|compass|map|water|jacket)$"
+            ],
+            "example": "Something that I always pack is water.",
+            "hint": "Use 'Something that I always pack is...' or '... is something that I always pack.'",
+            "itemIds": [
+              "en.pre-intermediate.u09.l05.something-that",
+              "en.pre-intermediate.u09.l01.backpack"
+            ]
+          },
+          {
+            "smarty": "Two tents are near the tree: one is blue and one is green. Which tent is yours?",
+            "accept": [
+              "^(?:my tent is )?the one that is (?:blue|green)$",
+              "^the (?:blue|green) one$"
+            ],
+            "example": "The one that is green.",
+            "hint": "Answer with 'The one that is blue' or 'The one that is green'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l05.the-one-that",
+              "en.pre-intermediate.u09.l01.tent"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "location",
+          "gloss": "a particular place or position"
+        },
+        {
+          "text": "spot",
+          "gloss": "a small particular place"
+        },
+        {
+          "text": "clearing",
+          "gloss": "an open space in a forest with no trees"
+        },
+        {
+          "text": "shelter",
+          "gloss": "a place or roof that protects you from rain or wind"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u09.l01.sleeping-bag",
+        "en.pre-intermediate.u09.l01.tent",
+        "en.pre-intermediate.u09.l01.torch",
+        "en.pre-intermediate.u09.l01.campfire",
+        "en.pre-intermediate.u09.l01.camping-stove",
+        "en.pre-intermediate.u09.l01.backpack",
+        "en.pre-intermediate.u09.l02.summit",
+        "en.pre-intermediate.u09.l02.a-nature-reserve",
+        "en.pre-intermediate.u09.l02.compass",
+        "en.elementary.u06.l05.forest",
+        "en.pre-intermediate.u06.l01.star",
+        "en.beginner.u06.l01.green",
+        "en.beginner.u04.l07.saturday"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u09.l06",
+      "section": "pre-intermediate",
+      "unit": 9,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Wildlife",
+      "canDo": "Describe wildlife",
+      "scenario": "Smarty and Omar spot forest wildlife near the campsite at dusk.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u09.l06.deer",
+          "text": "deer",
+          "kind": "word",
+          "example": "A quiet brown deer walked past our tent.",
+          "note": "Say 'deer' for a fast forest animal with long legs; one or many are both 'deer'.",
+          "image": {
+            "id": "deer",
+            "describe": "a gentle brown deer standing among forest ferns near a quiet stream"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.fox",
+          "text": "fox",
+          "kind": "word",
+          "forms": [
+            "foxes"
+          ],
+          "example": "A red fox ran quickly into the trees.",
+          "note": "Say 'fox' for a clever wild animal with red fur and a bushy tail.",
+          "image": {
+            "id": "fox",
+            "describe": "a bright orange-red fox with a fluffy white-tipped tail peeking from behind a bush"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.wolf",
+          "text": "wolf",
+          "kind": "word",
+          "forms": [
+            "wolves"
+          ],
+          "example": "We heard a gray wolf far away in the mountains.",
+          "note": "Say 'wolf' for a large wild dog that lives in forests and mountains; plural is 'wolves'.",
+          "image": {
+            "id": "wolf",
+            "describe": "a gray wolf standing on a rocky mountain ridge under a starry twilight sky"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.squirrel",
+          "text": "squirrel",
+          "kind": "word",
+          "forms": [
+            "squirrels"
+          ],
+          "example": "A small squirrel jumped from tree to tree.",
+          "note": "Say 'squirrel' for a small tree-climbing animal with a big tail that eats nuts.",
+          "image": {
+            "id": "squirrel",
+            "describe": "a small brown squirrel with a bushy tail holding an acorn on a tree branch"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.hedgehog",
+          "text": "hedgehog",
+          "kind": "word",
+          "forms": [
+            "hedgehogs"
+          ],
+          "example": "A small hedgehog walked slowly near the campfire.",
+          "note": "Say 'hedgehog' for a small night animal covered in sharp spines on its back.",
+          "image": {
+            "id": "hedgehog",
+            "describe": "a cute small hedgehog sniffing fallen leaves on a forest floor"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.bat",
+          "text": "bat",
+          "kind": "word",
+          "forms": [
+            "bats"
+          ],
+          "example": "A black bat flew over the lake at night.",
+          "note": "Say 'bat' for a small flying night animal that sleeps during the day.",
+          "image": {
+            "id": "bat",
+            "describe": "a small dark bat flying across a glowing full moon above pine trees"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u09.l06.task.pick-squirrel",
+          "kind": "choice",
+          "prompt": "Look at the picture. Which small animal lives in trees and has a bushy tail?",
+          "answer": "squirrel",
+          "options": [
+            "squirrel",
+            "wolf",
+            "deer"
+          ],
+          "explanation": "A squirrel is a small animal that jumps between trees.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l06.squirrel"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.task.hear-deer",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you heard.",
+          "audio": "Two deer walked quietly near the lake.",
+          "answer": "Two deer walked quietly near the lake.",
+          "options": [
+            "Two deer walked quietly near the lake.",
+            "Two foxes ran quickly near the tent.",
+            "Two bats were in the trees."
+          ],
+          "explanation": "You heard 'Two deer walked quietly near the lake.' Notice 'deer' stays the same in plural.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l06.deer",
+            "en.elementary.u06.l05.lake"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.task.match-wildlife",
+          "kind": "match",
+          "prompt": "Match each wild animal with a clue about it.",
+          "pairs": [
+            {
+              "left": "bat",
+              "right": "is out at night"
+            },
+            {
+              "left": "hedgehog",
+              "right": "small and slow"
+            },
+            {
+              "left": "fox",
+              "right": "red and very fast"
+            },
+            {
+              "left": "wolf",
+              "right": "a big dog in the mountains"
+            }
+          ],
+          "explanation": "Each forest animal has distinct habits and features.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l06.bat",
+            "en.pre-intermediate.u09.l06.hedgehog",
+            "en.pre-intermediate.u09.l06.fox",
+            "en.pre-intermediate.u09.l06.wolf"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.task.fill-bat",
+          "kind": "fill",
+          "prompt": "Complete the sentence about an animal that comes out at night.",
+          "text": "When the sun went down, a ___ flew past our tent.",
+          "answer": "bat",
+          "options": [
+            "bat",
+            "deer",
+            "hedgehog"
+          ],
+          "explanation": "A bat is out at night; deer and hedgehogs do not fly.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l06.bat",
+            "en.pre-intermediate.u09.l01.tent"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.task.build-fox",
+          "kind": "build",
+          "prompt": "Put the words in order to describe what Smarty saw.",
+          "answer": "A red fox ran past our campfire.",
+          "tiles": [
+            "A",
+            "red",
+            "fox",
+            "ran",
+            "past",
+            "our",
+            "campfire",
+            "bat"
+          ],
+          "explanation": "A red fox has reddish-orange fur and moves fast.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l06.fox",
+            "en.pre-intermediate.u09.l01.campfire",
+            "en.beginner.u06.l01.red"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.task.fill-hedgehog",
+          "kind": "fill",
+          "prompt": "Choose the right animal for the sentence.",
+          "text": "A small ___ was looking for food under the leaves.",
+          "answer": "hedgehog",
+          "options": [
+            "hedgehog",
+            "bat",
+            "wolf"
+          ],
+          "explanation": "A hedgehog is small and searches under leaves at night.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l06.hedgehog"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.task.pick-wolf",
+          "kind": "choice",
+          "prompt": "Which animal is large, gray, and lives in wild mountain forests?",
+          "answer": "wolf",
+          "options": [
+            "wolf",
+            "squirrel",
+            "hedgehog"
+          ],
+          "explanation": "A wolf is much larger than a squirrel or hedgehog.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l06.wolf"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.task.say-deer",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "A nature reserve is a place where deer and foxes live.",
+          "answer": "A nature reserve is a place where deer and foxes live.",
+          "explanation": "Great job combining wildlife with 'a place where'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l06.deer",
+            "en.pre-intermediate.u09.l06.fox",
+            "en.pre-intermediate.u09.l02.a-nature-reserve",
+            "en.pre-intermediate.u09.l05.a-place-where"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l06.task.hear-squirrel",
+          "kind": "listen",
+          "prompt": "Listen and choose what Omar says.",
+          "audio": "Look at that squirrel in the tall tree!",
+          "answer": "Look at that squirrel in the tall tree!",
+          "options": [
+            "Look at that squirrel in the tall tree!",
+            "Look at that deer near the river!",
+            "Look at that hedgehog on the path!"
+          ],
+          "explanation": "Squirrels climb high up in tall trees.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l06.squirrel",
+            "en.beginner.u09.l10.tree"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which wild animals visit Smarty and Omar near the campsite at night?",
+        "image": {
+          "id": "en-b1-u09-l06-scene",
+          "describe": "Smarty the black cat and Omar shining a torch in a forest nature reserve at dusk, spotting a deer, a fox, a squirrel, and a small hedgehog."
+        },
+        "lines": [
+          {
+            "speaker": "Omar",
+            "text": "Smarty, look at this footprint on the muddy trail!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "That is from a deer. This forest is a great habitat for wildlife."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Look up! There is a squirrel near its nest in that tall tree."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And I saw a red fox walking quietly back to its den."
+          },
+          {
+            "speaker": "Omar",
+            "text": "Shine your torch near the grass. A small hedgehog is walking past our tent!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Above us, a bat is flying in the night sky, and far away a wolf is calling."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u09.l06.task.story-1",
+            "kind": "choice",
+            "prompt": "Where did Omar see the squirrel?",
+            "answer": "In a tall tree",
+            "options": [
+              "In a tall tree",
+              "Inside the tent",
+              "In the river"
+            ],
+            "explanation": "Omar says: There is a squirrel near its nest in that tall tree.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l06.squirrel",
+              "en.beginner.u09.l10.tree"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l06.task.story-2",
+            "kind": "choice",
+            "prompt": "Which small animal walked past their tent?",
+            "answer": "A small hedgehog",
+            "options": [
+              "A small hedgehog",
+              "A big wolf",
+              "A white horse"
+            ],
+            "explanation": "Omar sees a small hedgehog walking past their tent.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l06.hedgehog",
+              "en.pre-intermediate.u09.l01.tent"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l06.task.story-3",
+            "kind": "choice",
+            "prompt": "What is flying in the night sky?",
+            "answer": "A bat",
+            "options": [
+              "A bat",
+              "A fox",
+              "A deer"
+            ],
+            "explanation": "Smarty says: Above us, a bat is flying in the night sky.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l06.bat"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You and Smarty are watching quietly for forest wildlife near the campsite. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Look in the tall tree! What small animal with a big tail is jumping between the branches?",
+            "accept": [
+              "^(?:it is )?(?:a )?squirrel$",
+              "^that is a squirrel$"
+            ],
+            "example": "It is a squirrel.",
+            "hint": "Name the small tree animal from this lesson.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l06.squirrel"
+            ]
+          },
+          {
+            "smarty": "Now it is night. Which animal can fly in the night sky?",
+            "accept": [
+              "^(?:it is )?(?:a )?bat$",
+              "^bats(?: can fly at night)?$"
+            ],
+            "example": "A bat.",
+            "hint": "Name the flying night animal.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l06.bat"
+            ]
+          },
+          {
+            "smarty": "Which wild animal from this lesson would you most like to see in a nature reserve?",
+            "accept": [
+              "^(?:i would like to see )?(?:a )?(?:deer|fox|wolf|squirrel|hedgehog|bat)$",
+              "^i want to see (?:a )?(?:deer|fox|wolf|squirrel|hedgehog|bat)$"
+            ],
+            "example": "I would like to see a deer.",
+            "hint": "Pick one animal: deer, fox, wolf, squirrel, hedgehog, or bat.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l06.deer",
+              "en.pre-intermediate.u09.l06.fox",
+              "en.pre-intermediate.u09.l02.a-nature-reserve"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "footprint",
+          "gloss": "a mark left on the ground by a foot or paw"
+        },
+        {
+          "text": "nest",
+          "gloss": "a home built by birds or squirrels in a tree"
+        },
+        {
+          "text": "den",
+          "gloss": "a hidden home where a wild animal like a fox lives"
+        },
+        {
+          "text": "habitat",
+          "gloss": "the natural home where an animal or plant lives"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u09.l01.tent",
+        "en.pre-intermediate.u09.l01.campfire",
+        "en.pre-intermediate.u09.l02.a-nature-reserve",
+        "en.pre-intermediate.u09.l05.a-place-where",
+        "en.elementary.u06.l05.lake",
+        "en.beginner.u06.l01.red",
+        "en.beginner.u09.l10.tree"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u09.l07",
+      "section": "pre-intermediate",
+      "unit": 9,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Survival",
+      "canDo": "Talk about survival",
+      "scenario": "Smarty teaches Ana and Tom what to pack and do if they lose the trail.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u09.l07.first-aid-kit",
+          "text": "first aid kit",
+          "kind": "phrase",
+          "forms": [
+            "first aid kits"
+          ],
+          "example": "Keep a first aid kit in your backpack when you walk.",
+          "note": "Say 'first aid kit' for a small box with bandages and medicine for minor cuts or hurts.",
+          "image": {
+            "id": "first-aid-kit",
+            "describe": "a small red pouch with a white cross symbol open on a wooden table showing bandages and plasters"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.a-map",
+          "text": "a map",
+          "kind": "phrase",
+          "forms": [
+            "maps"
+          ],
+          "example": "Always bring a map because phones can lose their signal.",
+          "note": "Use 'a map' for a paper drawing of trails, rivers, and mountains so you know where you are."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.matches",
+          "text": "matches",
+          "kind": "word",
+          "forms": [
+            "match"
+          ],
+          "example": "Keep good matches in a small box to light a campfire.",
+          "note": "Say 'matches' for small wooden sticks that make a flame when you strike them."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.drinking-water",
+          "text": "drinking water",
+          "kind": "phrase",
+          "example": "Pack enough drinking water for the whole mountain walk.",
+          "note": "Say 'drinking water' for clean water that is safe to drink."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.get-lost",
+          "text": "get lost",
+          "kind": "phrase",
+          "forms": [
+            "got lost",
+            "getting lost"
+          ],
+          "example": "Stay on the trail so you do not get lost.",
+          "note": "Use 'get lost' when you do not know where you are or which way to go."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.send-a-signal",
+          "text": "send a signal",
+          "kind": "phrase",
+          "forms": [
+            "sent a signal",
+            "sending a signal",
+            "signals"
+          ],
+          "example": "Use a torch to send a signal if you need help at night.",
+          "note": "Say 'send a signal' when you use light, sound, or smoke to show others where you are."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u09.l07.task.pick-first-aid",
+          "kind": "choice",
+          "prompt": "Look at the picture. Ana hurt her finger on a branch. What does she need?",
+          "answer": "a first aid kit",
+          "options": [
+            "a first aid kit",
+            "matches",
+            "a compass"
+          ],
+          "explanation": "A first aid kit has plasters and medicine for small hurts.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l07.first-aid-kit",
+            "en.pre-intermediate.u09.l02.compass"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.task.hear-water",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you heard.",
+          "audio": "Never forget to bring plenty of drinking water.",
+          "answer": "Never forget to bring plenty of drinking water.",
+          "options": [
+            "Never forget to bring plenty of drinking water.",
+            "Never forget to bring good matches.",
+            "Never forget to check a map."
+          ],
+          "explanation": "You heard 'plenty of drinking water'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l07.drinking-water",
+            "en.pre-intermediate.u03.l07.plenty-of"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.task.match-survival",
+          "kind": "match",
+          "prompt": "Match each survival item or action with why it matters.",
+          "pairs": [
+            {
+              "left": "a map",
+              "right": "works with no phone signal"
+            },
+            {
+              "left": "matches",
+              "right": "help you start a warm campfire"
+            },
+            {
+              "left": "first aid kit",
+              "right": "helps when someone is hurt"
+            },
+            {
+              "left": "send a signal",
+              "right": "shows helpers where you are"
+            }
+          ],
+          "explanation": "Being prepared keeps everyone safe outdoors.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l07.a-map",
+            "en.pre-intermediate.u09.l07.matches",
+            "en.pre-intermediate.u09.l07.first-aid-kit",
+            "en.pre-intermediate.u09.l07.send-a-signal",
+            "en.pre-intermediate.u09.l01.campfire"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.task.fill-lost",
+          "kind": "fill",
+          "prompt": "Complete Smarty's safety tip.",
+          "text": "If you leave the trail in the fog, you might ___.",
+          "answer": "get lost",
+          "options": [
+            "get lost",
+            "send a signal",
+            "drink water"
+          ],
+          "explanation": "Leaving the trail makes it easy to get lost.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l07.get-lost",
+            "en.pre-intermediate.u09.l02.trail"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.task.build-signal",
+          "kind": "build",
+          "prompt": "Put the words in order to explain how to get help.",
+          "answer": "Use your torch to send a signal.",
+          "tiles": [
+            "Use",
+            "your",
+            "torch",
+            "to",
+            "send",
+            "a",
+            "signal",
+            "map"
+          ],
+          "explanation": "Flashing a torch at night is a clear way to send a signal.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l07.send-a-signal",
+            "en.pre-intermediate.u09.l01.torch"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.task.fill-matches",
+          "kind": "fill",
+          "prompt": "Choose the right word to complete the sentence.",
+          "text": "Keep your ___ in a dry plastic box.",
+          "answer": "matches",
+          "options": [
+            "matches",
+            "drinking water",
+            "get lost"
+          ],
+          "explanation": "Wet matches will not light a fire, so keep them dry.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l07.matches"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.task.pick-map",
+          "kind": "choice",
+          "prompt": "Your phone battery is dead in the mountains. What is the thing which still shows the trails?",
+          "answer": "a map",
+          "options": [
+            "a map",
+            "matches",
+            "a sleeping bag"
+          ],
+          "explanation": "A paper map needs no battery or internet.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l07.a-map",
+            "en.pre-intermediate.u09.l05.the-thing-which",
+            "en.pre-intermediate.u09.l01.sleeping-bag"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.task.say-survival",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "Always carry drinking water and a first aid kit.",
+          "answer": "Always carry drinking water and a first aid kit.",
+          "explanation": "Clear pronunciation of both survival phrases.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l07.drinking-water",
+            "en.pre-intermediate.u09.l07.first-aid-kit"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l07.task.hear-lost",
+          "kind": "listen",
+          "prompt": "Listen and choose what Tom says.",
+          "audio": "If we get lost, we should stop and send a signal.",
+          "answer": "If we get lost, we should stop and send a signal.",
+          "options": [
+            "If we get lost, we should stop and send a signal.",
+            "If we are hungry, we should get some fruit.",
+            "If it rains, we should stay in our tent."
+          ],
+          "explanation": "Stopping and sending a signal is the safest plan when lost.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l07.get-lost",
+            "en.pre-intermediate.u09.l07.send-a-signal"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is Smarty's golden rule if you get lost in the forest?",
+        "image": {
+          "id": "en-b1-u09-l07-scene",
+          "describe": "Smarty the black cat showing Ana and Tom a red first aid kit, a paper map, good matches, and bottles of drinking water on a camp table."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Before our mountain walk, let us check our emergency supplies."
+          },
+          {
+            "speaker": "Ana",
+            "text": "I packed three bottles of drinking water and a small first aid kit."
+          },
+          {
+            "speaker": "Tom",
+            "text": "I have a map, a compass, and good matches in a box."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Great! What should you do if you get lost on a steep path?"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Stay in one place, blow a whistle, and use a torch to send a signal!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Smart answer! That makes rescue much faster and easier."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u09.l07.task.story-1",
+            "kind": "choice",
+            "prompt": "What did Ana pack for the walk?",
+            "answer": "Drinking water and a first aid kit",
+            "options": [
+              "Drinking water and a first aid kit",
+              "A guitar and a book",
+              "A pillow and a blanket"
+            ],
+            "explanation": "Ana packed three bottles of drinking water and a small first aid kit.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l07.drinking-water",
+              "en.pre-intermediate.u09.l07.first-aid-kit"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l07.task.story-2",
+            "kind": "choice",
+            "prompt": "What does Tom have in his box?",
+            "answer": "Good matches",
+            "options": [
+              "Good matches",
+              "Sweet chocolates",
+              "Old coins"
+            ],
+            "explanation": "Tom says he has a map, a compass, and good matches in a box.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l07.matches",
+              "en.pre-intermediate.u09.l07.a-map"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l07.task.story-3",
+            "kind": "choice",
+            "prompt": "How can Ana send a signal if she gets lost?",
+            "answer": "Use a torch",
+            "options": [
+              "Use a torch",
+              "Go to sleep",
+              "Run fast"
+            ],
+            "explanation": "Ana says she can use a torch to send a signal.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l07.send-a-signal",
+              "en.pre-intermediate.u09.l07.get-lost",
+              "en.pre-intermediate.u09.l01.torch"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is testing your outdoor survival skills before you head into the forest. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Imagine you are packing for a long day in the mountains. What do you bring so you do not get thirsty?",
+            "accept": [
+              "^(?:i bring |i pack )?(?:plenty of |some )?drinking water$",
+              "^drinking water$"
+            ],
+            "example": "I bring drinking water.",
+            "hint": "Mention drinking water.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l07.drinking-water"
+            ]
+          },
+          {
+            "smarty": "What two things help you find your way if you do not want to get lost?",
+            "accept": [
+              "^(?:a )?map and (?:a )?compass$",
+              "^(?:a )?compass and (?:a )?map$"
+            ],
+            "example": "A map and a compass.",
+            "hint": "Say 'A map and a compass'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l07.a-map",
+              "en.pre-intermediate.u09.l07.get-lost",
+              "en.pre-intermediate.u09.l02.compass"
+            ]
+          },
+          {
+            "smarty": "If a friend is hurt on the trail, what do you open to help them?",
+            "accept": [
+              "^(?:the |a |my )?first aid kit$",
+              "^i open (?:the |a |my )?first aid kit$"
+            ],
+            "example": "A first aid kit.",
+            "hint": "Mention the first aid kit.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l07.first-aid-kit"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "emergency",
+          "gloss": "a sudden dangerous situation needing quick help"
+        },
+        {
+          "text": "whistle",
+          "gloss": "a small tube you blow to make a loud high sound"
+        },
+        {
+          "text": "rescue",
+          "gloss": "saving someone from danger"
+        },
+        {
+          "text": "supplies",
+          "gloss": "food, water, and useful things needed for a trip"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u09.l01.campfire",
+        "en.pre-intermediate.u09.l01.torch",
+        "en.pre-intermediate.u09.l01.sleeping-bag",
+        "en.pre-intermediate.u09.l01.tent",
+        "en.pre-intermediate.u09.l02.compass",
+        "en.pre-intermediate.u09.l02.trail",
+        "en.pre-intermediate.u09.l05.the-thing-which",
+        "en.pre-intermediate.u03.l07.plenty-of"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u09.l08",
+      "section": "pre-intermediate",
+      "unit": 9,
+      "lesson": 8,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 5–7",
+      "scenario": "Smarty checks the survival bag and wildlife notes with Lily and Leo at camp.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u09.l08.task.pick-bat",
+          "kind": "choice",
+          "prompt": "Which animal sleeps during the day and flies at night?",
+          "answer": "bat",
+          "options": [
+            "bat",
+            "deer",
+            "hedgehog"
+          ],
+          "explanation": "A bat is the only flying mammal in this group.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l06.bat",
+            "en.pre-intermediate.u09.l06.deer",
+            "en.pre-intermediate.u09.l06.hedgehog"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l08.task.hear-where",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you heard.",
+          "audio": "This forest is a place where foxes and deer live.",
+          "answer": "This forest is a place where foxes and deer live.",
+          "options": [
+            "This forest is a place where foxes and deer live.",
+            "This box is the thing which holds our matches.",
+            "Saturday was the day when we saw a wolf."
+          ],
+          "explanation": "You heard 'a place where foxes and deer live'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.a-place-where",
+            "en.pre-intermediate.u09.l06.fox",
+            "en.pre-intermediate.u09.l06.deer"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l08.task.match-review2",
+          "kind": "match",
+          "prompt": "Match each phrase with its best match.",
+          "pairs": [
+            {
+              "left": "first aid kit",
+              "right": "something that helps if you get hurt"
+            },
+            {
+              "left": "a map",
+              "right": "the thing which shows every trail"
+            },
+            {
+              "left": "squirrel",
+              "right": "it lives in the trees"
+            },
+            {
+              "left": "send a signal",
+              "right": "what you do if you get lost"
+            }
+          ],
+          "explanation": "Great review of relative phrases, wildlife, and survival skills.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l07.first-aid-kit",
+            "en.pre-intermediate.u09.l05.something-that",
+            "en.pre-intermediate.u09.l07.a-map",
+            "en.pre-intermediate.u09.l05.the-thing-which",
+            "en.pre-intermediate.u09.l06.squirrel",
+            "en.pre-intermediate.u09.l07.send-a-signal",
+            "en.pre-intermediate.u09.l07.get-lost"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l08.task.fill-why",
+          "kind": "fill",
+          "prompt": "Complete the sentence explaining why they brought matches.",
+          "text": "Cold nights are ___ we always pack dry matches.",
+          "answer": "the reason why",
+          "options": [
+            "the reason why",
+            "the day when",
+            "the one that"
+          ],
+          "explanation": "Use 'the reason why' before an explanation.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.the-reason-why",
+            "en.pre-intermediate.u09.l07.matches"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l08.task.build-water",
+          "kind": "build",
+          "prompt": "Build the sentence about drinking water.",
+          "answer": "Drinking water is something that everyone needs.",
+          "tiles": [
+            "Drinking",
+            "water",
+            "is",
+            "something",
+            "that",
+            "everyone",
+            "needs",
+            "where"
+          ],
+          "explanation": "'Something that' describes an essential item.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l07.drinking-water",
+            "en.pre-intermediate.u09.l05.something-that"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l08.task.fill-wolf",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "We saw a gray ___ far away on the mountain.",
+          "answer": "wolf",
+          "options": [
+            "wolf",
+            "matches",
+            "first aid kit"
+          ],
+          "explanation": "A wolf is a large wild animal that lives in mountain forests.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l06.wolf"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l08.task.pick-one",
+          "kind": "choice",
+          "prompt": "Choose the phrase that fits: There are two maps on the table. Take ___ shows the river.",
+          "answer": "the one that",
+          "options": [
+            "the one that",
+            "the day when",
+            "a place where"
+          ],
+          "explanation": "'The one that' chooses one specific map.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.the-one-that",
+            "en.pre-intermediate.u09.l07.a-map"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l08.task.say-review2",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "Sunday was the day when we saw a hedgehog and a fox.",
+          "answer": "Sunday was the day when we saw a hedgehog and a fox.",
+          "explanation": "Well done combining 'the day when' with wildlife words.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.the-day-when",
+            "en.pre-intermediate.u09.l06.hedgehog",
+            "en.pre-intermediate.u09.l06.fox",
+            "en.beginner.u04.l07.sunday"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What did Lily and Leo see near the lake on Sunday evening?",
+        "image": {
+          "id": "en-b1-u09-l08-scene",
+          "describe": "Smarty the black cat, Lily, and Leo sitting by a campfire looking at a paper map while a deer and a fox watch from the forest edge."
+        },
+        "lines": [
+          {
+            "speaker": "Lily",
+            "text": "Smarty, Sunday was the day when we saw the most wildlife!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Yes! That quiet lake is a place where deer come to drink water."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Did you bring a map and drinking water when you walked there?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "Of course! And we packed a first aid kit so we would not have any problem."
+          },
+          {
+            "speaker": "Leo",
+            "text": "My backpack is the one that has the dry matches and my torch inside."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good planning is the reason why you never get lost!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u09.l08.task.story-1",
+            "kind": "choice",
+            "prompt": "Why do deer come to the quiet lake?",
+            "answer": "To drink water",
+            "options": [
+              "To drink water",
+              "To light a campfire",
+              "To read a map"
+            ],
+            "explanation": "Leo says the lake is a place where deer come to drink water.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l05.a-place-where",
+              "en.pre-intermediate.u09.l06.deer"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l08.task.story-2",
+            "kind": "choice",
+            "prompt": "What did Lily pack in case of a small hurt?",
+            "answer": "A first aid kit",
+            "options": [
+              "A first aid kit",
+              "A violin",
+              "A pillow"
+            ],
+            "explanation": "Lily says: And we packed a first aid kit.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l07.first-aid-kit"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l08.task.story-3",
+            "kind": "choice",
+            "prompt": "According to Smarty, what is the reason why they never get lost?",
+            "answer": "Good planning",
+            "options": [
+              "Good planning",
+              "Walking fast",
+              "Sleeping late"
+            ],
+            "explanation": "Smarty says: Good planning is the reason why you never get lost!",
+            "itemIds": [
+              "en.pre-intermediate.u09.l05.the-reason-why",
+              "en.pre-intermediate.u09.l07.get-lost"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is reviewing wildlife and survival safety with you. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Name one wild animal from Lesson 6 that lives in the forest.",
+            "accept": [
+              "^(?:a )?(?:deer|fox|wolf|squirrel|hedgehog|bat)$",
+              "^(?:a )?(?:deer|fox|wolf|squirrel|hedgehog|bat) lives in the forest$"
+            ],
+            "example": "A fox.",
+            "hint": "Say deer, fox, wolf, squirrel, hedgehog, or bat.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l06.fox",
+              "en.pre-intermediate.u09.l06.deer",
+              "en.pre-intermediate.u09.l06.squirrel"
+            ]
+          },
+          {
+            "smarty": "What is the thing which helps you find trails when your phone has no signal?",
+            "accept": [
+              "^(?:it is )?(?:a )?map$",
+              "^(?:a )?map is the thing which helps me$"
+            ],
+            "example": "A map.",
+            "hint": "Mention a map.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l07.a-map",
+              "en.pre-intermediate.u09.l05.the-thing-which"
+            ]
+          },
+          {
+            "smarty": "What should you do if you get lost at night?",
+            "accept": [
+              "^(?:i should )?send a signal(?: with a torch)?$",
+              "^use a torch to send a signal$"
+            ],
+            "example": "Send a signal.",
+            "hint": "Use 'send a signal'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l07.send-a-signal",
+              "en.pre-intermediate.u09.l07.get-lost"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.pre-intermediate.u09.l05.something-that",
+        "en.pre-intermediate.u09.l05.the-thing-which",
+        "en.pre-intermediate.u09.l05.a-place-where",
+        "en.pre-intermediate.u09.l05.the-day-when",
+        "en.pre-intermediate.u09.l05.the-reason-why",
+        "en.pre-intermediate.u09.l05.the-one-that",
+        "en.pre-intermediate.u09.l06.deer",
+        "en.pre-intermediate.u09.l06.fox",
+        "en.pre-intermediate.u09.l06.wolf",
+        "en.pre-intermediate.u09.l06.squirrel",
+        "en.pre-intermediate.u09.l06.hedgehog",
+        "en.pre-intermediate.u09.l06.bat",
+        "en.pre-intermediate.u09.l07.first-aid-kit",
+        "en.pre-intermediate.u09.l07.a-map",
+        "en.pre-intermediate.u09.l07.matches",
+        "en.pre-intermediate.u09.l07.drinking-water",
+        "en.pre-intermediate.u09.l07.get-lost",
+        "en.pre-intermediate.u09.l07.send-a-signal",
+        "en.beginner.u04.l07.sunday"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u09.l09",
+      "section": "pre-intermediate",
+      "unit": 9,
+      "lesson": 9,
+      "type": "lesson",
+      "title": "Extreme sports",
+      "canDo": "Talk about adventure",
+      "scenario": "Around the campfire, Smarty and his friends share outdoor sports they want to try.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u09.l09.climbing",
+          "text": "climbing",
+          "kind": "word",
+          "forms": [
+            "climb",
+            "climbed"
+          ],
+          "example": "Mountain climbing is exciting when you reach the summit.",
+          "note": "Say 'climbing' for going up steep mountains or high walls using ropes and boots.",
+          "image": {
+            "id": "climbing",
+            "describe": "a cat climber wearing a safety helmet and rope ascending a sunny mountain cliff"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.kayaking",
+          "text": "kayaking",
+          "kind": "word",
+          "forms": [
+            "kayak",
+            "kayaked"
+          ],
+          "example": "We went kayaking on the fast river near our camp.",
+          "note": "Say 'kayaking' for paddling a small narrow boat on a river or lake.",
+          "image": {
+            "id": "kayaking",
+            "describe": "Smarty the black cat paddling a bright yellow kayak down a clear blue river"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.skiing",
+          "text": "skiing",
+          "kind": "word",
+          "forms": [
+            "ski",
+            "skied"
+          ],
+          "example": "In winter, skiing down snowy mountains is my favorite sport.",
+          "note": "Say 'skiing' for sliding fast over snow on two long flat skis.",
+          "image": {
+            "id": "skiing",
+            "describe": "a cat skier wearing warm winter clothes gliding down a sunny snowy mountain"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.diving",
+          "text": "diving",
+          "kind": "word",
+          "forms": [
+            "dive",
+            "dived"
+          ],
+          "example": "Diving in the warm sea lets you see colorful fish.",
+          "note": "Say 'diving' for swimming deep under water with special breathing gear.",
+          "image": {
+            "id": "diving",
+            "describe": "a cat diver with mask and fins swimming underwater beside bright fish"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.surfing",
+          "text": "surfing",
+          "kind": "word",
+          "forms": [
+            "surf",
+            "surfed"
+          ],
+          "example": "Sam tried surfing on the big ocean waves last summer.",
+          "note": "Say 'surfing' for riding ocean waves standing on a long board.",
+          "image": {
+            "id": "surfing",
+            "describe": "a cat surfer balancing on a surfboard on a curling blue ocean wave"
+          }
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.paragliding",
+          "text": "paragliding",
+          "kind": "word",
+          "forms": [
+            "paraglide",
+            "paraglided"
+          ],
+          "example": "Paragliding high above the mountains feels like being a bird.",
+          "note": "Say 'paragliding' for gliding through the air under a wide cloth wing from a mountain.",
+          "image": {
+            "id": "paragliding",
+            "describe": "Smarty the black cat gliding peacefully in the sky under a colorful paraglider wing above green mountains"
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u09.l09.task.pick-kayaking",
+          "kind": "choice",
+          "prompt": "Look at the picture. Smarty is paddling a narrow boat on a river. What sport is this?",
+          "answer": "kayaking",
+          "options": [
+            "kayaking",
+            "skiing",
+            "paragliding"
+          ],
+          "explanation": "Kayaking is paddling a narrow boat on a river or lake.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l09.kayaking",
+            "en.elementary.u06.l05.river"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.task.hear-paragliding",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you heard.",
+          "audio": "Paragliding in the mountains is an amazing adventure.",
+          "answer": "Paragliding in the mountains is an amazing adventure.",
+          "options": [
+            "Paragliding in the mountains is an amazing adventure.",
+            "Diving in the ocean is an amazing adventure.",
+            "Skiing in the winter is an amazing adventure."
+          ],
+          "explanation": "You heard 'Paragliding in the mountains'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l09.paragliding",
+            "en.elementary.u04.l10.adventure"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.task.match-sports",
+          "kind": "match",
+          "prompt": "Match each adventure sport with where you do it.",
+          "pairs": [
+            {
+              "left": "skiing",
+              "right": "on snow in winter"
+            },
+            {
+              "left": "diving",
+              "right": "under the sea"
+            },
+            {
+              "left": "surfing",
+              "right": "on big ocean water"
+            },
+            {
+              "left": "climbing",
+              "right": "up a steep mountain"
+            }
+          ],
+          "explanation": "Different outdoor sports happen on snow, in the ocean, or on mountains.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l09.skiing",
+            "en.pre-intermediate.u09.l09.diving",
+            "en.pre-intermediate.u09.l09.surfing",
+            "en.pre-intermediate.u09.l09.climbing",
+            "en.elementary.u06.l05.sea",
+            "en.elementary.u10.l03.ocean"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.task.fill-skiing",
+          "kind": "fill",
+          "prompt": "Complete the sentence about a winter mountain sport.",
+          "text": "When there is plenty of snow, we love ___.",
+          "answer": "skiing",
+          "options": [
+            "skiing",
+            "surfing",
+            "diving"
+          ],
+          "explanation": "Skiing requires snow; surfing and diving happen in water.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l09.skiing",
+            "en.beginner.u09.l02.snow"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.task.build-surfing",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "The ocean is a place where I go surfing.",
+          "tiles": [
+            "The",
+            "ocean",
+            "is",
+            "a",
+            "place",
+            "where",
+            "I",
+            "go",
+            "surfing",
+            "skiing"
+          ],
+          "explanation": "You go surfing on ocean waves.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l09.surfing",
+            "en.pre-intermediate.u09.l05.a-place-where",
+            "en.elementary.u10.l03.ocean"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.task.fill-diving",
+          "kind": "fill",
+          "prompt": "Choose the right sport for exploring under water.",
+          "text": "Tom loves ___ because he can watch fish under the sea.",
+          "answer": "diving",
+          "options": [
+            "diving",
+            "paragliding",
+            "climbing"
+          ],
+          "explanation": "Diving lets you swim under water and see sea life.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l09.diving",
+            "en.elementary.u06.l05.sea"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.task.pick-climbing",
+          "kind": "choice",
+          "prompt": "Mia wants to go up a steep mountain wall with ropes and a helmet. What sport is she doing?",
+          "answer": "climbing",
+          "options": [
+            "climbing",
+            "kayaking",
+            "surfing"
+          ],
+          "explanation": "Climbing is going up steep mountains or rock walls.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l09.climbing"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.task.say-sports",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "I want to try kayaking and paragliding this summer.",
+          "answer": "I want to try kayaking and paragliding this summer.",
+          "explanation": "Great pronunciation of kayaking and paragliding.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l09.kayaking",
+            "en.pre-intermediate.u09.l09.paragliding",
+            "en.beginner.u09.l03.summer"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l09.task.hear-climbing",
+          "kind": "listen",
+          "prompt": "Listen and choose what Sam says.",
+          "audio": "Climbing to the summit takes a good plan.",
+          "answer": "Climbing to the summit takes a good plan.",
+          "options": [
+            "Climbing to the summit takes a good plan.",
+            "Kayaking down the river takes a good boat.",
+            "Surfing in the ocean takes warm weather."
+          ],
+          "explanation": "Sam talks about climbing up to the mountain summit.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l09.climbing",
+            "en.pre-intermediate.u09.l02.summit"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which adventure sport does Smarty want to try from the mountain summit?",
+        "image": {
+          "id": "en-b1-u09-l09-scene",
+          "describe": "Smarty the black cat, Mia, Sam, and Zara sitting around a warm campfire at night, gesturing excitedly as they talk about extreme sports."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Tomorrow we can try something exciting! Who likes mountain climbing?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I love it! Always wear a strong helmet and a safe harness when climbing."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I prefer water sports, like kayaking on the river or surfing a big ocean wave."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Last summer I tried diving in the warm sea, and in winter I love skiing down a snowy slope."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Those sound great, but my dream is paragliding from the summit!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Flying through the sky like a bird? That is a real adventure, Smarty!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u09.l09.task.story-1",
+            "kind": "choice",
+            "prompt": "Which two water sports does Sam prefer?",
+            "answer": "Kayaking and surfing",
+            "options": [
+              "Kayaking and surfing",
+              "Skiing and climbing",
+              "Paragliding and diving"
+            ],
+            "explanation": "Sam says he prefers kayaking on the river or surfing.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l09.kayaking",
+              "en.pre-intermediate.u09.l09.surfing"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l09.task.story-2",
+            "kind": "choice",
+            "prompt": "What does Zara love doing in winter?",
+            "answer": "Skiing",
+            "options": [
+              "Skiing",
+              "Diving",
+              "Surfing"
+            ],
+            "explanation": "Zara says in winter she loves skiing.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l09.skiing"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l09.task.story-3",
+            "kind": "choice",
+            "prompt": "What is Smarty's dream adventure?",
+            "answer": "Paragliding from the summit",
+            "options": [
+              "Paragliding from the summit",
+              "Swimming in a pool",
+              "Cooking on a stove"
+            ],
+            "explanation": "Smarty says his dream is paragliding from the summit.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l09.paragliding",
+              "en.pre-intermediate.u09.l02.summit"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "You are sitting around the campfire with Smarty talking about outdoor sports. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "I love paragliding and climbing. Which extreme sport would you like to try?",
+            "accept": [
+              "^(?:i would like to try |i want to try )?(?:climbing|kayaking|skiing|diving|surfing|paragliding)$",
+              "^i like (?:climbing|kayaking|skiing|diving|surfing|paragliding)$"
+            ],
+            "example": "I would like to try kayaking.",
+            "hint": "Pick one sport: climbing, kayaking, skiing, diving, surfing, or paragliding.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l09.kayaking",
+              "en.pre-intermediate.u09.l09.climbing",
+              "en.pre-intermediate.u09.l09.paragliding"
+            ]
+          },
+          {
+            "smarty": "Where can people go diving or surfing?",
+            "accept": [
+              "^(?:in |on )?(?:the )?(?:sea|ocean)$",
+              "^people can go (?:diving|surfing) (?:in |on )?(?:the )?(?:sea|ocean)$"
+            ],
+            "example": "In the ocean.",
+            "hint": "Say 'In the sea' or 'In the ocean'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l09.diving",
+              "en.pre-intermediate.u09.l09.surfing",
+              "en.elementary.u10.l03.ocean"
+            ]
+          },
+          {
+            "smarty": "Which sport do people do on snowy mountains in winter?",
+            "accept": [
+              "^(?:people do )?skiing$",
+              "^it is skiing$"
+            ],
+            "example": "Skiing.",
+            "hint": "Name the winter snow sport.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l09.skiing"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "helmet",
+          "gloss": "a hard hat that protects your head"
+        },
+        {
+          "text": "harness",
+          "gloss": "safety straps worn around the body for climbing or flying"
+        },
+        {
+          "text": "wave",
+          "gloss": "a moving ridge of water on the sea or ocean"
+        },
+        {
+          "text": "slope",
+          "gloss": "the side of a mountain or hill used for skiing"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u09.l02.summit",
+        "en.pre-intermediate.u09.l05.a-place-where",
+        "en.elementary.u06.l05.river",
+        "en.elementary.u06.l05.sea",
+        "en.elementary.u10.l03.ocean",
+        "en.elementary.u04.l10.adventure",
+        "en.beginner.u09.l02.snow",
+        "en.beginner.u09.l03.summer"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u09.l10",
+      "section": "pre-intermediate",
+      "unit": 9,
+      "lesson": 10,
+      "type": "lesson",
+      "title": "Could and managed",
+      "canDo": "Talk about past ability",
+      "scenario": "Smarty and Sam talk about difficult climbs they finished and ones they had to stop.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u09.l10.we-might",
+          "text": "We might",
+          "kind": "phrase",
+          "forms": [
+            "might"
+          ],
+          "example": "We might see a deer if we walk quietly.",
+          "note": "Say 'We might' when something is possible, even if you are not 100 percent sure."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.i-was-able-to",
+          "text": "I was able to",
+          "kind": "phrase",
+          "forms": [
+            "was able to",
+            "were able to"
+          ],
+          "example": "I was able to pitch the tent before the rain started.",
+          "note": "Use 'I was able to' to talk about something you succeeded in doing on one past occasion."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.i-managed-to",
+          "text": "I managed to",
+          "kind": "phrase",
+          "forms": [
+            "managed to"
+          ],
+          "example": "The path was steep, but I managed to reach the summit.",
+          "note": "Say 'I managed to' when you succeeded in doing something difficult."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.i-was-unable-to",
+          "text": "I was unable to",
+          "kind": "phrase",
+          "forms": [
+            "was unable to",
+            "were unable to"
+          ],
+          "example": "I was unable to light the campfire because the wood was wet.",
+          "note": "Use 'I was unable to' as a clear way to say you could not do something in the past."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.we-succeeded-in",
+          "text": "We succeeded in",
+          "kind": "phrase",
+          "forms": [
+            "succeeded in",
+            "succeed in"
+          ],
+          "example": "We succeeded in finding the trail with our compass.",
+          "note": "Say 'We succeeded in' followed by an -ing verb when a group finished a hard goal."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.we-were-not-able-to",
+          "text": "we were not able to",
+          "kind": "phrase",
+          "forms": [
+            "was not able to",
+            "were not able to"
+          ],
+          "example": "Because of the storm, we were not able to go kayaking.",
+          "note": "Use 'we were not able to' when something stopped your group from doing an activity."
+        }
+      ],
+      "grammar": {
+        "title": "Past ability and possibility",
+        "explanation": "For one difficult success in the past, use 'was able to', 'managed to', or 'succeeded in' + -ing (do not use 'could' for a single hard achievement). For past inability, use 'was unable to' or 'were not able to'. For possibility, use 'might'.",
+        "examples": [
+          "I managed to climb the steep path.",
+          "We succeeded in crossing the cold river.",
+          "We were not able to see the summit in the clouds."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u09.l10.task.pick-managed",
+          "kind": "choice",
+          "prompt": "The mountain climb was very hard, but Sam finished it. Which phrase fits best?",
+          "answer": "I managed to",
+          "options": [
+            "I managed to",
+            "I was unable to",
+            "We might"
+          ],
+          "explanation": "Use 'I managed to' when you succeed after a hard effort.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l10.i-managed-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.task.hear-succeeded",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you heard.",
+          "audio": "We succeeded in sending a signal with our torch.",
+          "answer": "We succeeded in sending a signal with our torch.",
+          "options": [
+            "We succeeded in sending a signal with our torch.",
+            "We were not able to find our torch.",
+            "We might bring a torch tomorrow."
+          ],
+          "explanation": "'We succeeded in' is followed by the -ing verb 'sending'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l10.we-succeeded-in",
+            "en.pre-intermediate.u09.l07.send-a-signal",
+            "en.pre-intermediate.u09.l01.torch"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.task.match-ability",
+          "kind": "match",
+          "prompt": "Match each phrase with its meaning.",
+          "pairs": [
+            {
+              "left": "I managed to",
+              "right": "I did something difficult"
+            },
+            {
+              "left": "I was unable to",
+              "right": "I could not do it"
+            },
+            {
+              "left": "We might",
+              "right": "we can do it"
+            },
+            {
+              "left": "We succeeded in",
+              "right": "our team did a hard thing"
+            }
+          ],
+          "explanation": "Notice the difference between success, inability, and possibility.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l10.i-managed-to",
+            "en.pre-intermediate.u09.l10.i-was-unable-to",
+            "en.pre-intermediate.u09.l10.we-might",
+            "en.pre-intermediate.u09.l10.we-succeeded-in"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.task.fill-unable",
+          "kind": "fill",
+          "prompt": "Complete the sentence about a problem at camp.",
+          "text": "My torch had no battery, so ___ see the path.",
+          "answer": "I was unable to",
+          "options": [
+            "I was unable to",
+            "I was able to",
+            "We succeeded in"
+          ],
+          "explanation": "With no battery, you could not see, so use 'I was unable to'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l10.i-was-unable-to",
+            "en.pre-intermediate.u09.l01.torch"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.task.build-able",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "I was able to read the old map.",
+          "tiles": [
+            "I",
+            "was",
+            "able",
+            "to",
+            "read",
+            "the",
+            "old",
+            "map",
+            "might"
+          ],
+          "explanation": "'I was able to' describes a successful past action.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l10.i-was-able-to",
+            "en.pre-intermediate.u09.l07.a-map"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.task.fill-not-able",
+          "kind": "fill",
+          "prompt": "Complete the sentence about bad weather.",
+          "text": "The wind was too strong, so ___ go paragliding.",
+          "answer": "we were not able to",
+          "options": [
+            "we were not able to",
+            "I managed to",
+            "We succeeded in"
+          ],
+          "explanation": "Strong wind stopped the group, so use 'we were not able to'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l10.we-were-not-able-to",
+            "en.pre-intermediate.u09.l09.paragliding"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.task.pick-might",
+          "kind": "choice",
+          "prompt": "Smarty looks at the cloudy sky. Which sentence expresses a possibility?",
+          "answer": "We might need our rain jackets.",
+          "options": [
+            "We might need our rain jackets.",
+            "I was unable to pack my jacket.",
+            "We succeeded in finding our jackets."
+          ],
+          "explanation": "Use 'We might' when something could possibly happen.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l10.we-might"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.task.say-managed",
+          "kind": "speak",
+          "prompt": "Say this sentence aloud.",
+          "text": "I managed to climb up the steep path to the summit.",
+          "answer": "I managed to climb up the steep path to the summit.",
+          "explanation": "Great job using 'I managed to' for a tough climb.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l10.i-managed-to",
+            "en.pre-intermediate.u09.l09.climbing",
+            "en.pre-intermediate.u09.l02.a-steep-path",
+            "en.pre-intermediate.u09.l02.summit"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l10.task.build-succeeded",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "We succeeded in finding our tent.",
+          "tiles": [
+            "We",
+            "succeeded",
+            "in",
+            "finding",
+            "our",
+            "tent",
+            "to"
+          ],
+          "explanation": "Remember: 'succeeded in' takes a verb ending in -ing.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l10.we-succeeded-in",
+            "en.pre-intermediate.u09.l01.tent"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Did Smarty and Sam reach the mountain summit despite the wind?",
+        "image": {
+          "id": "en-b1-u09-l10-scene",
+          "describe": "Smarty the black cat and Sam resting near a rocky mountain summit after a steep climb, looking back at the trail below."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "That steep path was a huge challenge, Smarty!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, after a big effort, we succeeded in climbing to the summit!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Near the top, I was unable to see the trail because of the clouds."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "But I was able to check my compass, so I managed to find the right way."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Because of the strong wind, we were not able to go paragliding today."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "That is not a failure—reaching the top is a great achievement! We might try again tomorrow."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u09.l10.task.story-1",
+            "kind": "choice",
+            "prompt": "Why was Sam unable to see the trail near the top?",
+            "answer": "Because of the clouds",
+            "options": [
+              "Because of the clouds",
+              "Because he forgot his glasses",
+              "Because it was winter"
+            ],
+            "explanation": "Sam says he was unable to see the trail because of the clouds.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l10.i-was-unable-to",
+              "en.pre-intermediate.u09.l02.trail"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l10.task.story-2",
+            "kind": "choice",
+            "prompt": "How did Smarty manage to find the right way?",
+            "answer": "He was able to check his compass",
+            "options": [
+              "He was able to check his compass",
+              "He called a taxi",
+              "He followed a squirrel"
+            ],
+            "explanation": "Smarty says he was able to check his compass and managed to find the right way.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l10.i-was-able-to",
+              "en.pre-intermediate.u09.l10.i-managed-to",
+              "en.pre-intermediate.u09.l02.compass"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l10.task.story-3",
+            "kind": "choice",
+            "prompt": "Why were they not able to go paragliding?",
+            "answer": "Because of the strong wind",
+            "options": [
+              "Because of the strong wind",
+              "Because they had no boots",
+              "Because they were hungry"
+            ],
+            "explanation": "Sam says because of the strong wind, they were not able to go paragliding.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l10.we-were-not-able-to",
+              "en.pre-intermediate.u09.l09.paragliding"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Tell Smarty about a hard outdoor task you finished or could not do. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "The trail was steep, so I managed to reach the summit slowly. What did you manage to do on your last trip?",
+            "accept": [
+              "^i managed to (?:climb the mountain|reach the summit|pitch the tent|find the trail|light the campfire|walk to the lake)$",
+              "^i was able to (?:climb the mountain|reach the summit|pitch the tent|find the trail|light the campfire)$"
+            ],
+            "example": "I managed to light the campfire.",
+            "hint": "Start with 'I managed to...' or 'I was able to...'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l10.i-managed-to",
+              "en.pre-intermediate.u09.l10.i-was-able-to"
+            ]
+          },
+          {
+            "smarty": "Was there anything you could not do because of bad weather?",
+            "accept": [
+              "^(?:i was unable to|we were not able to) (?:go kayaking|go climbing|go skiing|go surfing|go paragliding|light the campfire|see the summit)$",
+              "^yes (?:i was unable to|we were not able to) (?:go kayaking|go climbing|go skiing|light the campfire)$"
+            ],
+            "example": "We were not able to go kayaking.",
+            "hint": "Use 'I was unable to...' or 'We were not able to...'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l10.i-was-unable-to",
+              "en.pre-intermediate.u09.l10.we-were-not-able-to"
+            ]
+          },
+          {
+            "smarty": "What might we do tomorrow if the weather is sunny?",
+            "accept": [
+              "^we might (?:go climbing|go kayaking|go surfing|go paragliding|walk to the summit|visit the lake)$",
+              "^tomorrow we might (?:go climbing|go kayaking|walk to the summit)$"
+            ],
+            "example": "We might go kayaking.",
+            "hint": "Start with 'We might...'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l10.we-might",
+              "en.pre-intermediate.u09.l09.kayaking"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "achievement",
+          "gloss": "something difficult that you succeed in doing"
+        },
+        {
+          "text": "challenge",
+          "gloss": "something new and difficult that tests your ability"
+        },
+        {
+          "text": "effort",
+          "gloss": "hard physical or mental work"
+        },
+        {
+          "text": "failure",
+          "gloss": "not succeeding in what you tried to do"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u09.l01.torch",
+        "en.pre-intermediate.u09.l01.tent",
+        "en.pre-intermediate.u09.l02.trail",
+        "en.pre-intermediate.u09.l02.summit",
+        "en.pre-intermediate.u09.l02.a-steep-path",
+        "en.pre-intermediate.u09.l02.compass",
+        "en.pre-intermediate.u09.l07.send-a-signal",
+        "en.pre-intermediate.u09.l07.a-map",
+        "en.pre-intermediate.u09.l09.paragliding",
+        "en.pre-intermediate.u09.l09.climbing",
+        "en.pre-intermediate.u09.l09.kayaking"
+      ]
+    },
+    {
+      "id": "en.pre-intermediate.u09.l11",
+      "section": "pre-intermediate",
+      "unit": 9,
+      "lesson": 11,
+      "type": "test",
+      "title": "Adventure story",
+      "canDo": "Tell an outdoor story",
+      "scenario": "Smarty and his friends tell the story of a sudden storm during their mountain adventure.",
+      "items": [
+        {
+          "id": "en.pre-intermediate.u09.l11.all-of-a-sudden",
+          "text": "all of a sudden",
+          "kind": "phrase",
+          "example": "All of a sudden, dark clouds covered the summit.",
+          "note": "Use 'all of a sudden' to show that something unexpected happened very quickly."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.to-our-surprise",
+          "text": "to our surprise",
+          "kind": "phrase",
+          "example": "To our surprise, a friendly deer walked right past our tent.",
+          "note": "Say 'to our surprise' before something amazing or unexpected happens in your story."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.we-ran-out-of",
+          "text": "we ran out of",
+          "kind": "phrase",
+          "forms": [
+            "ran out of",
+            "run out of"
+          ],
+          "example": "Halfway up the trail, we ran out of drinking water.",
+          "note": "Use 'we ran out of' when you used all of something and had none left."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.luckily",
+          "text": "luckily",
+          "kind": "word",
+          "example": "My torch died, but luckily Sam had an extra one.",
+          "note": "Say 'luckily' to introduce a good thing that saved you from a problem."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.by-that-point",
+          "text": "by that point",
+          "kind": "phrase",
+          "example": "By that point, we were tired and ready for our sleeping bags.",
+          "note": "Use 'by that point' to refer to a specific moment you have reached in a story."
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.at-the-last-minute",
+          "text": "at the last minute",
+          "kind": "phrase",
+          "example": "We found our tent at the last minute before the storm began.",
+          "note": "Say 'at the last minute' when something happens just before it is too late."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.pre-intermediate.u09.l11.task.pick-sudden",
+          "kind": "choice",
+          "prompt": "Which phrase means 'very quickly and without warning'?",
+          "answer": "all of a sudden",
+          "options": [
+            "all of a sudden",
+            "by that point",
+            "we ran out of"
+          ],
+          "explanation": "'All of a sudden' introduces an unexpected, quick event.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l11.all-of-a-sudden"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.task.hear-ran-out",
+          "kind": "listen",
+          "prompt": "Listen and choose the sentence you heard.",
+          "audio": "We ran out of drinking water near the summit.",
+          "answer": "We ran out of drinking water near the summit.",
+          "options": [
+            "We ran out of drinking water near the summit.",
+            "We succeeded in climbing to the summit.",
+            "We stayed in our tent near the summit."
+          ],
+          "explanation": "You heard 'We ran out of drinking water', meaning none was left.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l11.we-ran-out-of",
+            "en.pre-intermediate.u09.l07.drinking-water",
+            "en.pre-intermediate.u09.l02.summit"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.task.match-story-phrases",
+          "kind": "match",
+          "prompt": "Match each story phrase with its best sentence ending.",
+          "pairs": [
+            {
+              "left": "All of a sudden,",
+              "right": "it started to rain hard."
+            },
+            {
+              "left": "To our surprise,",
+              "right": "a fox sat near our campfire."
+            },
+            {
+              "left": "We ran out of",
+              "right": "matches, so we used the stove."
+            },
+            {
+              "left": "Luckily,",
+              "right": "we had a map and compass."
+            }
+          ],
+          "explanation": "These phrases connect events smoothly in an adventure story.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l11.all-of-a-sudden",
+            "en.pre-intermediate.u09.l11.to-our-surprise",
+            "en.pre-intermediate.u09.l11.we-ran-out-of",
+            "en.pre-intermediate.u09.l11.luckily",
+            "en.pre-intermediate.u09.l06.fox",
+            "en.pre-intermediate.u09.l07.matches"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.task.fill-last-minute",
+          "kind": "fill",
+          "prompt": "Complete the sentence about arriving just in time.",
+          "text": "We reached the campsite ___ before night came.",
+          "answer": "at the last minute",
+          "options": [
+            "at the last minute",
+            "we ran out of",
+            "to our surprise"
+          ],
+          "explanation": "'At the last minute' means just before it was too late.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l11.at-the-last-minute"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.task.build-surprise",
+          "kind": "build",
+          "prompt": "Put the words in order.",
+          "answer": "To our surprise we saw a wolf.",
+          "tiles": [
+            "To",
+            "our",
+            "surprise",
+            "we",
+            "saw",
+            "a",
+            "wolf",
+            "luckily"
+          ],
+          "explanation": "'To our surprise' introduces an unexpected sight.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l11.to-our-surprise",
+            "en.pre-intermediate.u09.l06.wolf"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.task.fill-point",
+          "kind": "fill",
+          "prompt": "Complete the sentence to mark a moment in the story.",
+          "text": "We walked for four hours. ___, our legs were very tired.",
+          "answer": "By that point",
+          "options": [
+            "By that point",
+            "All of a sudden",
+            "We ran out of"
+          ],
+          "explanation": "'By that point' refers to the time after four hours of walking.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l11.by-that-point"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.task.pick-test-who",
+          "kind": "choice",
+          "prompt": "Unit review: Complete the sentence. Omar is ___ helped us send a signal.",
+          "answer": "the guide who",
+          "options": [
+            "the guide who",
+            "the thing which",
+            "a place where"
+          ],
+          "explanation": "Use 'the guide who' for a person who leads or helps.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l03.the-guide-who",
+            "en.pre-intermediate.u09.l07.send-a-signal"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.task.fill-test-where",
+          "kind": "fill",
+          "prompt": "Unit review: Complete the sentence.",
+          "text": "A nature reserve is ___ wild animals are safe.",
+          "answer": "a place where",
+          "options": [
+            "a place where",
+            "someone who",
+            "the day when"
+          ],
+          "explanation": "Use 'a place where' to describe a location.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l05.a-place-where",
+            "en.pre-intermediate.u09.l02.a-nature-reserve"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.task.pick-test-managed",
+          "kind": "choice",
+          "prompt": "Unit review: Complete the sentence. The river was fast, but we ___ cross it safely.",
+          "answer": "managed to",
+          "options": [
+            "managed to",
+            "were unable to",
+            "ran out of"
+          ],
+          "explanation": "Use 'managed to' for a difficult success in the past.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l10.i-managed-to"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.task.match-test-unit",
+          "kind": "match",
+          "prompt": "Unit review: Match items from across Unit 9.",
+          "pairs": [
+            {
+              "left": "sleeping bag",
+              "right": "keeps you warm inside a tent"
+            },
+            {
+              "left": "first aid kit",
+              "right": "something that helps if you are hurt"
+            },
+            {
+              "left": "kayaking",
+              "right": "a fun thing to do on a river"
+            },
+            {
+              "left": "luckily",
+              "right": "word for good luck in a story"
+            }
+          ],
+          "explanation": "You mastered vocabulary and grammar across all of Unit 9!",
+          "itemIds": [
+            "en.pre-intermediate.u09.l01.sleeping-bag",
+            "en.pre-intermediate.u09.l07.first-aid-kit",
+            "en.pre-intermediate.u09.l09.kayaking",
+            "en.pre-intermediate.u09.l11.luckily"
+          ]
+        },
+        {
+          "id": "en.pre-intermediate.u09.l11.task.say-story",
+          "kind": "speak",
+          "prompt": "Say this story sentence aloud.",
+          "text": "All of a sudden it started to rain, so luckily we found our tent.",
+          "answer": "All of a sudden it started to rain, so luckily we found our tent.",
+          "explanation": "Great storytelling with 'all of a sudden' and 'luckily'.",
+          "itemIds": [
+            "en.pre-intermediate.u09.l11.all-of-a-sudden",
+            "en.pre-intermediate.u09.l11.luckily",
+            "en.pre-intermediate.u09.l01.tent"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "How did Smarty and Mia get out of trouble when a storm hit the mountain?",
+        "image": {
+          "id": "en-b1-u09-l11-scene",
+          "describe": "Smarty the black cat and Mia sheltering inside a dry mountain cave during a thunderstorm, shining a torch while rain falls outside."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Tell Ben about our mountain trip, Smarty! At first, the sky was clear."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, we were climbing a steep path, and by that point we were near the summit."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Then, all of a sudden, we heard loud thunder and it started to rain!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Worse still, we ran out of drinking water, and we were unable to see the trail."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Luckily, I had my torch. At the last minute, we found a dry cave next to a strong cable!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And to our surprise, a small hedgehog was already inside! What relief we felt when the storm stopped!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.pre-intermediate.u09.l11.task.story-1",
+            "kind": "choice",
+            "prompt": "What happened all of a sudden near the summit?",
+            "answer": "They heard a big noise and it started to rain",
+            "options": [
+              "They heard a big noise and it started to rain",
+              "They found a restaurant",
+              "They went surfing"
+            ],
+            "explanation": "Mia says: Then, all of a sudden, we heard loud thunder and it started to rain!",
+            "itemIds": [
+              "en.pre-intermediate.u09.l11.all-of-a-sudden",
+              "en.pre-intermediate.u09.l02.summit"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l11.task.story-2",
+            "kind": "choice",
+            "prompt": "What did they run out of on the mountain?",
+            "answer": "Drinking water",
+            "options": [
+              "Drinking water",
+              "Sleeping bags",
+              "Hiking boots"
+            ],
+            "explanation": "Smarty says: we ran out of drinking water.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l11.we-ran-out-of",
+              "en.pre-intermediate.u09.l07.drinking-water"
+            ]
+          },
+          {
+            "id": "en.pre-intermediate.u09.l11.task.story-3",
+            "kind": "choice",
+            "prompt": "What did they find to their surprise?",
+            "answer": "A small hedgehog inside",
+            "options": [
+              "A small hedgehog inside",
+              "A big wolf",
+              "A yellow boat"
+            ],
+            "explanation": "Smarty says: to our surprise, a small hedgehog was already inside!",
+            "itemIds": [
+              "en.pre-intermediate.u09.l11.to-our-surprise",
+              "en.pre-intermediate.u09.l06.hedgehog"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Tell Smarty a short outdoor adventure story using your new storytelling phrases. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "Start your story! You were walking in a nature reserve when something happened quickly. What happened all of a sudden?",
+            "accept": [
+              "^all of a sudden (?:it started to rain|we saw a deer|we saw a fox|we saw a wolf|the wind started)$",
+              "^(?:it started to rain|we saw a deer|we saw a fox) all of a sudden$"
+            ],
+            "example": "All of a sudden it started to rain.",
+            "hint": "Start with 'All of a sudden...'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l11.all-of-a-sudden",
+              "en.pre-intermediate.u09.l02.a-nature-reserve"
+            ]
+          },
+          {
+            "smarty": "Oh no! What did you run out of on the trail?",
+            "accept": [
+              "^we ran out of (?:drinking water|water|matches|food|bread)$",
+              "^i ran out of (?:drinking water|water|matches|food)$"
+            ],
+            "example": "We ran out of drinking water.",
+            "hint": "Use 'We ran out of...'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l11.we-ran-out-of",
+              "en.pre-intermediate.u09.l07.drinking-water"
+            ]
+          },
+          {
+            "smarty": "How did your story end happily?",
+            "accept": [
+              "^luckily (?:we found our tent|we had a map|we reached the campsite|we had a torch)$",
+              "^(?:we found our tent|we reached the campsite) at the last minute$"
+            ],
+            "example": "Luckily we found our tent.",
+            "hint": "Start with 'Luckily...' or end with 'at the last minute'.",
+            "itemIds": [
+              "en.pre-intermediate.u09.l11.luckily",
+              "en.pre-intermediate.u09.l11.at-the-last-minute",
+              "en.pre-intermediate.u09.l01.tent"
+            ]
+          }
+        ]
+      },
+      "exposure": [
+        {
+          "text": "thunder",
+          "gloss": "the loud booming sound in the sky during a storm"
+        },
+        {
+          "text": "cave",
+          "gloss": "a large natural hole in the side of a mountain or cliff"
+        },
+        {
+          "text": "cable",
+          "gloss": "a thick strong metal rope used for safety on steep paths"
+        },
+        {
+          "text": "relief",
+          "gloss": "a happy feeling when a worry or danger ends"
+        }
+      ],
+      "recycle": [
+        "en.pre-intermediate.u09.l01.tent",
+        "en.pre-intermediate.u09.l01.sleeping-bag",
+        "en.pre-intermediate.u09.l02.summit",
+        "en.pre-intermediate.u09.l02.a-nature-reserve",
+        "en.pre-intermediate.u09.l03.the-guide-who",
+        "en.pre-intermediate.u09.l05.a-place-where",
+        "en.pre-intermediate.u09.l06.fox",
+        "en.pre-intermediate.u09.l06.wolf",
+        "en.pre-intermediate.u09.l06.hedgehog",
+        "en.pre-intermediate.u09.l07.drinking-water",
+        "en.pre-intermediate.u09.l07.matches",
+        "en.pre-intermediate.u09.l07.send-a-signal",
+        "en.pre-intermediate.u09.l07.first-aid-kit",
+        "en.pre-intermediate.u09.l09.kayaking",
+        "en.pre-intermediate.u09.l10.i-managed-to"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Secret Trail in the Reserve",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "The storm is over! Let us pack our backpacks and follow the trail to the summit.",
+        "image": {
+          "id": "en-b1-u09-ep-01",
+          "describe": "Smarty the black cat, Mia, and Sam standing outside their green tent in a sunny forest clearing with packed backpacks."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "Look at my compass. There is a steep path behind that tall tree.",
+        "image": {
+          "id": "en-b1-u09-ep-02",
+          "describe": "Mia the cat holding an open pocket compass and pointing toward a narrow steep path between pine trees."
+        }
+      },
+      {
+        "speaker": "Sam",
+        "text": "I brought drinking water, matches, and a first aid kit just in case!",
+        "image": {
+          "id": "en-b1-u09-ep-03",
+          "describe": "Sam the cat showing a water bottle and a small red first aid kit beside his backpack."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "All of a sudden, a red fox ran across the path and stopped near a small cave.",
+        "image": {
+          "id": "en-b1-u09-ep-04",
+          "describe": "A bright red fox pausing on a rocky mountain trail near a small dark cave entrance while Smarty watches."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "To our surprise, there is an old metal box inside! Let me shine my torch on it.",
+        "image": {
+          "id": "en-b1-u09-ep-05",
+          "describe": "Mia shining a yellow torch beam into the cave onto an old metal box resting on the ground."
+        }
+      },
+      {
+        "speaker": "Sam",
+        "text": "We managed to open it! Inside is a map that shows a secret lake in the mountains.",
+        "image": {
+          "id": "en-b1-u09-ep-06",
+          "describe": "Smarty, Mia, and Sam looking excitedly at an unfolded old paper map showing mountains and a blue lake."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "Omar is the guide who knows this nature reserve best. Let us show him at the campfire!",
+        "image": {
+          "id": "en-b1-u09-ep-07",
+          "describe": "Smarty holding the old map carefully while walking back toward the campsite with Mia and Sam."
+        }
+      },
+      {
+        "speaker": "Omar",
+        "text": "This map leads to a place where no explorer has been for a hundred years! Are you ready for tomorrow?",
+        "image": {
+          "id": "en-b1-u09-ep-08",
+          "describe": "Omar the ranger cat examining the map by the glowing campfire as Smarty, Mia, and Sam smile with excitement under the stars."
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.pre-intermediate.u09.ep.task.1",
+        "kind": "choice",
+        "prompt": "Which animal led the friends to the small cave?",
+        "answer": "A red fox",
+        "options": [
+          "A red fox",
+          "A gray wolf",
+          "A black bat"
+        ],
+        "explanation": "A red fox ran across the path and stopped near a small cave.",
+        "itemIds": [
+          "en.pre-intermediate.u09.l06.fox",
+          "en.pre-intermediate.u09.l11.all-of-a-sudden"
+        ]
+      },
+      {
+        "id": "en.pre-intermediate.u09.ep.task.2",
+        "kind": "choice",
+        "prompt": "What did they find inside the old metal box?",
+        "answer": "A map showing a secret lake",
+        "options": [
+          "A map showing a secret lake",
+          "A pair of hiking boots",
+          "A camping stove"
+        ],
+        "explanation": "Inside the box is a map that shows a secret lake in the mountains.",
+        "itemIds": [
+          "en.pre-intermediate.u09.l07.a-map",
+          "en.pre-intermediate.u09.l10.i-managed-to"
+        ]
+      },
+      {
+        "id": "en.pre-intermediate.u09.ep.task.3",
+        "kind": "choice",
+        "prompt": "Who do they show the map to at the campfire?",
+        "answer": "Omar, the guide who knows the nature reserve",
+        "options": [
+          "Omar, the guide who knows the nature reserve",
+          "A stranger from the city",
+          "A waiter at a hotel"
+        ],
+        "explanation": "Smarty says Omar is the guide who knows this nature reserve best.",
+        "itemIds": [
+          "en.pre-intermediate.u09.l03.the-guide-who",
+          "en.pre-intermediate.u09.l02.a-nature-reserve"
+        ]
+      }
+    ]
+  }
+}

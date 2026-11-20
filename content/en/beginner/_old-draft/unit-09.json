@@ -1,0 +1,3513 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "beginner",
+  "unit": 9,
+  "title": "Weather & Free Time",
+  "lessons": [
+    {
+      "id": "en.beginner.u09.l01",
+      "section": "beginner",
+      "unit": 9,
+      "lesson": 1,
+      "title": "What's the weather like?",
+      "canDo": "Talk about the weather",
+      "scenario": "Smarty phones his friends in different places. Tell him what the weather is like where you are.",
+      "items": [
+        {
+          "id": "en.beginner.u09.l01.sunny",
+          "text": "sunny",
+          "kind": "word",
+          "example": "It is sunny.",
+          "note": "Say 'It is sunny' when the sun is out and the sky is bright.",
+          "image": {
+            "id": "sunny",
+            "describe": "Smarty the black cat sits on a green lawn in bright sunshine, with a big yellow sun in a clear blue sky."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l01.rainy",
+          "text": "rainy",
+          "kind": "word",
+          "example": "It is rainy.",
+          "note": "Say 'It is rainy' when water is falling from the sky.",
+          "image": {
+            "id": "rainy",
+            "describe": "Mia stands under grey clouds holding her hand out to the rain, with puddles on a park path and Smarty beside her."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l01.windy",
+          "text": "windy",
+          "kind": "word",
+          "example": "It is windy.",
+          "note": "Say 'It is windy' when the wind blows hard.",
+          "image": {
+            "id": "windy",
+            "describe": "Sam holds his hat on his head while strong wind bends the trees and blows leaves across the street."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l01.cloudy",
+          "text": "cloudy",
+          "kind": "word",
+          "example": "It is cloudy.",
+          "note": "Say 'It is cloudy' when grey clouds cover the sky and you cannot see the sun.",
+          "image": {
+            "id": "cloudy",
+            "describe": "Smarty looks up at a sky full of thick grey clouds with no sun."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l01.what-is-the-weather-like",
+          "text": "What is the weather like?",
+          "kind": "phrase",
+          "forms": [
+            "What's the weather like?"
+          ],
+          "example": "What is the weather like?",
+          "note": "Ask 'What is the weather like?' when you want to know about the sun, the rain or the wind."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u09.l01.task.choose",
+          "kind": "choice",
+          "prompt": "The sun is out and the sky is bright. Choose the sentence.",
+          "answer": "It is sunny.",
+          "options": [
+            "It is sunny.",
+            "It is rainy.",
+            "It is cloudy."
+          ],
+          "explanation": "Sunny is the word for a bright sky with the sun.",
+          "itemIds": [
+            "en.beginner.u09.l01.sunny"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l01.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "It is rainy.",
+          "answer": "It is rainy.",
+          "options": [
+            "It is windy.",
+            "It is rainy.",
+            "It is cloudy."
+          ],
+          "explanation": "Rainy is for rain. Listen to the weather word.",
+          "itemIds": [
+            "en.beginner.u09.l01.rainy"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l01.task.build",
+          "kind": "build",
+          "prompt": "Build the question about the weather.",
+          "answer": "What is the weather like?",
+          "tiles": [
+            "like?",
+            "the",
+            "What",
+            "weather",
+            "is",
+            "sunny"
+          ],
+          "explanation": "Ask with What is the weather like? to hear about the sky.",
+          "itemIds": [
+            "en.beginner.u09.l01.what-is-the-weather-like"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l01.task.fill",
+          "kind": "fill",
+          "prompt": "Grey clouds cover the sky. Complete the sentence.",
+          "text": "It is ___.",
+          "answers": [
+            "cloudy"
+          ],
+          "explanation": "Cloudy describes a sky full of clouds.",
+          "itemIds": [
+            "en.beginner.u09.l01.cloudy"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l01.task.match",
+          "kind": "match",
+          "prompt": "Match each weather word to its sentence.",
+          "pairs": [
+            {
+              "left": "sunny",
+              "right": "It is sunny."
+            },
+            {
+              "left": "rainy",
+              "right": "It is rainy."
+            },
+            {
+              "left": "windy",
+              "right": "It is windy."
+            },
+            {
+              "left": "cloudy",
+              "right": "It is cloudy."
+            }
+          ],
+          "explanation": "Say It is + a weather word to talk about the weather.",
+          "itemIds": [
+            "en.beginner.u09.l01.sunny",
+            "en.beginner.u09.l01.rainy",
+            "en.beginner.u09.l01.windy",
+            "en.beginner.u09.l01.cloudy"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l01.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "It is sunny.",
+          "answer": "It is sunny.",
+          "explanation": "You can say this when you see a bright sky.",
+          "itemIds": [
+            "en.beginner.u09.l01.sunny"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l01.task.reply",
+          "kind": "choice",
+          "prompt": "Smarty asks: What is the weather like? Water is falling from the sky. Choose your reply.",
+          "answer": "It is rainy.",
+          "options": [
+            "It is sunny.",
+            "It is windy.",
+            "It is rainy."
+          ],
+          "explanation": "Answer the weather question with It is + the weather word.",
+          "itemIds": [
+            "en.beginner.u09.l01.what-is-the-weather-like",
+            "en.beginner.u09.l01.rainy"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l01.task.wind",
+          "kind": "choice",
+          "prompt": "Strong wind blows the trees. Choose the weather word.",
+          "answer": "windy",
+          "options": [
+            "windy",
+            "sunny",
+            "cloudy"
+          ],
+          "explanation": "Windy is when the wind blows hard.",
+          "itemIds": [
+            "en.beginner.u09.l01.windy"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l01.task.catch",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "What is the weather like?",
+          "answer": "What is the weather like?",
+          "options": [
+            "What is your name?",
+            "What is the weather like?",
+            "Where are you from?"
+          ],
+          "explanation": "This question asks about the weather.",
+          "itemIds": [
+            "en.beginner.u09.l01.what-is-the-weather-like"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Smarty phones three friends. Is the weather the same for everyone?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Mia! What is the weather like?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Hi, Smarty! It is sunny."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Sam! What is the weather like?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "It is cloudy and windy."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And you, Ben?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "It is rainy."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you! Goodbye!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u09.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "Who says it is sunny?",
+            "answer": "Mia",
+            "options": [
+              "Sam",
+              "Mia",
+              "Ben"
+            ],
+            "explanation": "Mia says It is sunny.",
+            "itemIds": [
+              "en.beginner.u09.l01.sunny"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "What is the weather like for Sam?",
+            "answer": "It is cloudy and windy.",
+            "options": [
+              "It is sunny.",
+              "It is rainy.",
+              "It is cloudy and windy."
+            ],
+            "explanation": "Sam says It is cloudy and windy.",
+            "itemIds": [
+              "en.beginner.u09.l01.cloudy",
+              "en.beginner.u09.l01.windy"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says it is rainy?",
+            "answer": "Ben",
+            "options": [
+              "Ben",
+              "Mia",
+              "Sam"
+            ],
+            "explanation": "Ben says It is rainy.",
+            "itemIds": [
+              "en.beginner.u09.l01.rainy"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u09-l01-scene",
+          "describe": "Smarty sits on a sofa with a phone to his ear. Three small bubbles show Mia in bright sun, Sam under grey clouds with wind, and Ben in the rain."
+        }
+      },
+      "mission": {
+        "setup": "Smarty asks about the weather where you are. Say what it is like. The weather can be real or imaginary.",
+        "turns": [
+          {
+            "smarty": "What is the weather like?",
+            "accept": [
+              "^it is (?:very )?(?:sunny|rainy|windy|cloudy)$",
+              "^(?:sunny|rainy|windy|cloudy)$",
+              "^it is (?:sunny|rainy|windy|cloudy) and (?:sunny|rainy|windy|cloudy)$"
+            ],
+            "example": "It is sunny.",
+            "hint": "Say It is + sunny, rainy, windy or cloudy.",
+            "itemIds": [
+              "en.beginner.u09.l01.sunny",
+              "en.beginner.u09.l01.rainy",
+              "en.beginner.u09.l01.windy",
+              "en.beginner.u09.l01.cloudy"
+            ]
+          },
+          {
+            "smarty": "Is it rainy?",
+            "accept": [
+              "^yes(?: it is)?$",
+              "^no(?: it is not)?$",
+              "^no it is (?:sunny|windy|cloudy)$"
+            ],
+            "example": "No, it is cloudy.",
+            "hint": "Say Yes or No. You can add the weather.",
+            "itemIds": [
+              "en.beginner.u09.l01.rainy",
+              "en.beginner.u09.l01.cloudy",
+              "en.beginner.u01.l09.yes",
+              "en.beginner.u01.l09.no"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u01.l09.yes",
+        "en.beginner.u01.l09.no"
+      ]
+    },
+    {
+      "id": "en.beginner.u09.l02",
+      "section": "beginner",
+      "unit": 9,
+      "lesson": 2,
+      "title": "Rain and snow",
+      "canDo": "Describe more weather",
+      "scenario": "It is a wet and cold day. Smarty and Sam talk about rain, snow and an umbrella.",
+      "items": [
+        {
+          "id": "en.beginner.u09.l02.snow",
+          "text": "snow",
+          "kind": "word",
+          "forms": [
+            "snows"
+          ],
+          "example": "I like snow.",
+          "note": "Say 'snow' for the white, cold flakes that fall from the sky in winter weather.",
+          "image": {
+            "id": "snow",
+            "describe": "Mia and Sam in coats and scarves play in thick white snow while big flakes fall, and Smarty has snow on his head."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l02.rain",
+          "text": "rain",
+          "kind": "word",
+          "forms": [
+            "rains"
+          ],
+          "example": "It rains.",
+          "note": "Say 'rain' for the water that falls from clouds; say 'It rains' when it is falling.",
+          "image": {
+            "id": "rain",
+            "describe": "Heavy rain falls from dark clouds onto a street while Smarty watches from a doorway."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l02.warm",
+          "text": "warm",
+          "kind": "word",
+          "example": "It is warm.",
+          "note": "Say 'It is warm' when the air is nice, not cold and not very hot."
+        },
+        {
+          "id": "en.beginner.u09.l02.umbrella",
+          "text": "umbrella",
+          "kind": "word",
+          "example": "I have an umbrella.",
+          "note": "Take an umbrella when it rains, so you stay dry.",
+          "image": {
+            "id": "umbrella",
+            "describe": "Leo holds a big red umbrella in the rain, and Smarty the black cat stays dry beside him."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u09.l02.task.choose",
+          "kind": "choice",
+          "prompt": "White flakes fall from the sky. Choose the sentence.",
+          "answer": "It snows.",
+          "options": [
+            "It is sunny.",
+            "It is windy.",
+            "It snows."
+          ],
+          "explanation": "Snow is white and falls from the sky. We say It snows.",
+          "itemIds": [
+            "en.beginner.u09.l02.snow"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l02.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have an umbrella.",
+          "answer": "I have an umbrella.",
+          "options": [
+            "I have an umbrella.",
+            "I have a cat.",
+            "I have a dog."
+          ],
+          "explanation": "Umbrella is the word for the thing that keeps you dry in the rain.",
+          "itemIds": [
+            "en.beginner.u09.l02.umbrella",
+            "en.beginner.u02.l07.i-have"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l02.task.build",
+          "kind": "build",
+          "prompt": "Say that the air is nice and not cold.",
+          "answer": "It is warm.",
+          "tiles": [
+            "warm.",
+            "is",
+            "It",
+            "umbrella"
+          ],
+          "explanation": "Put the weather word at the end: It is warm.",
+          "itemIds": [
+            "en.beginner.u09.l02.warm"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l02.task.fill",
+          "kind": "fill",
+          "prompt": "Water falls from the clouds. Complete the sentence.",
+          "text": "It ___.",
+          "answers": [
+            "rains"
+          ],
+          "explanation": "With rain we say It rains.",
+          "itemIds": [
+            "en.beginner.u09.l02.rain"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l02.task.match",
+          "kind": "match",
+          "prompt": "Match each word to a sentence.",
+          "pairs": [
+            {
+              "left": "snow",
+              "right": "It snows."
+            },
+            {
+              "left": "rain",
+              "right": "It rains."
+            },
+            {
+              "left": "warm",
+              "right": "It is warm."
+            },
+            {
+              "left": "umbrella",
+              "right": "I have an umbrella."
+            }
+          ],
+          "explanation": "Each sentence uses the word on the left.",
+          "itemIds": [
+            "en.beginner.u09.l02.snow",
+            "en.beginner.u09.l02.rain",
+            "en.beginner.u09.l02.warm",
+            "en.beginner.u09.l02.umbrella"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l02.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "I have an umbrella.",
+          "answer": "I have an umbrella.",
+          "explanation": "Use an before umbrella because it starts with a vowel sound.",
+          "itemIds": [
+            "en.beginner.u09.l02.umbrella"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l02.task.rain-day",
+          "kind": "choice",
+          "prompt": "Mia wants to stay dry in the rain. Choose her sentence.",
+          "answer": "I have an umbrella.",
+          "options": [
+            "I have a cat.",
+            "I have an umbrella.",
+            "I have a dog."
+          ],
+          "explanation": "An umbrella keeps you dry.",
+          "itemIds": [
+            "en.beginner.u09.l02.umbrella",
+            "en.beginner.u02.l07.i-have"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l02.task.warm-word",
+          "kind": "choice",
+          "prompt": "The air is not cold and not hot. Choose the word.",
+          "answer": "warm",
+          "options": [
+            "cold",
+            "hot",
+            "warm"
+          ],
+          "explanation": "Warm is between cold and hot.",
+          "itemIds": [
+            "en.beginner.u09.l02.warm",
+            "en.beginner.u03.l07.cold",
+            "en.beginner.u03.l07.hot"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l02.task.catch",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "It snows.",
+          "answer": "It snows.",
+          "options": [
+            "It snows.",
+            "It rains.",
+            "It is rainy."
+          ],
+          "explanation": "Listen for the last word: snows.",
+          "itemIds": [
+            "en.beginner.u09.l02.snow",
+            "en.beginner.u09.l01.rainy"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Mia has no umbrella and it rains. What does Sam do?",
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Hello, Sam! What is the weather like?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "It rains. I have an umbrella."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I do not have an umbrella."
+          },
+          {
+            "speaker": "Sam",
+            "text": "Come here, Mia."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thank you, Sam!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Good, you are warm."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u09.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "Who has an umbrella?",
+            "answer": "Sam",
+            "options": [
+              "Mia",
+              "Sam",
+              "Smarty"
+            ],
+            "explanation": "Sam says I have an umbrella.",
+            "itemIds": [
+              "en.beginner.u09.l02.umbrella"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "What is the weather like?",
+            "answer": "It rains.",
+            "options": [
+              "It snows.",
+              "It is windy.",
+              "It rains."
+            ],
+            "explanation": "Sam says It rains.",
+            "itemIds": [
+              "en.beginner.u09.l02.rain"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says Thank you?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Ben"
+            ],
+            "explanation": "Mia thanks Sam for the umbrella.",
+            "itemIds": [
+              "en.beginner.u09.l02.umbrella"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u09-l02-scene",
+          "describe": "A bus stop on a rainy street. Sam holds a big red umbrella over Mia, and Smarty sits at their feet."
+        }
+      },
+      "mission": {
+        "setup": "It is a rainy day. Smarty asks about your umbrella and the weather. Answer in your own words.",
+        "turns": [
+          {
+            "smarty": "It rains. Do you have an umbrella?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^yes i have an umbrella$",
+              "^no(?: i do not)?$",
+              "^no i do not have an umbrella$"
+            ],
+            "example": "Yes, I have an umbrella.",
+            "hint": "Say Yes or No. You can say I have an umbrella.",
+            "itemIds": [
+              "en.beginner.u09.l02.umbrella",
+              "en.beginner.u09.l02.rain",
+              "en.beginner.u02.l07.i-have"
+            ]
+          },
+          {
+            "smarty": "It snows. Is it warm?",
+            "accept": [
+              "^no(?: it is not)?$",
+              "^no it is cold$",
+              "^it is cold$"
+            ],
+            "example": "No, it is cold.",
+            "hint": "Say No and use cold, or say It is cold.",
+            "itemIds": [
+              "en.beginner.u09.l02.warm",
+              "en.beginner.u09.l02.snow",
+              "en.beginner.u03.l07.cold"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u02.l07.i-have",
+        "en.beginner.u03.l07.cold",
+        "en.beginner.u03.l07.hot",
+        "en.beginner.u09.l01.rainy"
+      ]
+    },
+    {
+      "id": "en.beginner.u09.l03",
+      "section": "beginner",
+      "unit": 9,
+      "lesson": 3,
+      "title": "Seasons",
+      "canDo": "Name the seasons",
+      "scenario": "Smarty, Mia and Ben sit in the park and talk about their favourite seasons.",
+      "items": [
+        {
+          "id": "en.beginner.u09.l03.spring",
+          "text": "spring",
+          "kind": "word",
+          "example": "It is spring.",
+          "note": "Say 'spring' for the season after winter, when it gets warm and flowers come.",
+          "image": {
+            "id": "spring",
+            "describe": "A bright park with fresh green leaves and pink flowers opening, while Smarty chases a butterfly."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l03.summer",
+          "text": "summer",
+          "kind": "word",
+          "example": "It is summer.",
+          "note": "Say 'summer' for the hot, sunny season.",
+          "image": {
+            "id": "summer",
+            "describe": "Sam and Mia play at a sunny beach under a big yellow sun, with Smarty in the shade."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l03.autumn",
+          "text": "autumn",
+          "kind": "word",
+          "example": "It is autumn.",
+          "note": "Say 'autumn' for the season when leaves turn orange and fall and the wind blows.",
+          "image": {
+            "id": "autumn",
+            "describe": "Orange and red leaves fall in a park while Ana kicks through the leaves and Smarty watches."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l03.winter",
+          "text": "winter",
+          "kind": "word",
+          "example": "It is winter.",
+          "note": "Say 'winter' for the cold season when it can snow.",
+          "image": {
+            "id": "winter",
+            "describe": "Tom and Leo in hats and scarves build a snowman in a snowy park, with Smarty in a tiny scarf."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l03.season",
+          "text": "season",
+          "kind": "word",
+          "example": "Winter is a season.",
+          "note": "Say 'season' when you talk about spring, summer, autumn or winter."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u09.l03.task.choose",
+          "kind": "choice",
+          "prompt": "Which season is hot and sunny?",
+          "answer": "It is summer.",
+          "options": [
+            "It is winter.",
+            "It is summer.",
+            "It is autumn."
+          ],
+          "explanation": "Summer is the hot season.",
+          "itemIds": [
+            "en.beginner.u09.l03.summer"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l03.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "It is autumn.",
+          "answer": "It is autumn.",
+          "options": [
+            "It is spring.",
+            "It is winter.",
+            "It is autumn."
+          ],
+          "explanation": "Listen for autumn, the season with falling leaves.",
+          "itemIds": [
+            "en.beginner.u09.l03.autumn"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l03.task.build",
+          "kind": "build",
+          "prompt": "Say what falls in the cold season.",
+          "answer": "It snows in winter.",
+          "tiles": [
+            "winter.",
+            "snows",
+            "It",
+            "in",
+            "summer"
+          ],
+          "explanation": "Snow comes in winter. In is followed by the season.",
+          "itemIds": [
+            "en.beginner.u09.l03.winter",
+            "en.beginner.u09.l02.snow"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l03.task.fill",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the cold season.",
+          "text": "It is very cold in ___.",
+          "answers": [
+            "winter"
+          ],
+          "explanation": "Winter is the cold season.",
+          "itemIds": [
+            "en.beginner.u09.l03.winter"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l03.task.match",
+          "kind": "match",
+          "prompt": "Match each season to its sentence.",
+          "pairs": [
+            {
+              "left": "spring",
+              "right": "It is spring."
+            },
+            {
+              "left": "summer",
+              "right": "It is summer."
+            },
+            {
+              "left": "autumn",
+              "right": "It is autumn."
+            },
+            {
+              "left": "winter",
+              "right": "It is winter."
+            }
+          ],
+          "explanation": "Use It is + a season name.",
+          "itemIds": [
+            "en.beginner.u09.l03.spring",
+            "en.beginner.u09.l03.summer",
+            "en.beginner.u09.l03.autumn",
+            "en.beginner.u09.l03.winter"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l03.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "Winter is a season.",
+          "answer": "Winter is a season.",
+          "explanation": "Spring, summer, autumn and winter are all seasons.",
+          "itemIds": [
+            "en.beginner.u09.l03.winter",
+            "en.beginner.u09.l03.season"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l03.task.wind",
+          "kind": "choice",
+          "prompt": "Strong wind blows. Choose the reply to What is the weather like?",
+          "answer": "It is windy.",
+          "options": [
+            "It is windy.",
+            "It is sunny.",
+            "It is rainy."
+          ],
+          "explanation": "Windy is for strong wind.",
+          "itemIds": [
+            "en.beginner.u09.l01.windy",
+            "en.beginner.u09.l01.what-is-the-weather-like"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l03.task.warm",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "It is warm.",
+          "answer": "It is warm.",
+          "options": [
+            "It is cold.",
+            "It is warm.",
+            "It is hot."
+          ],
+          "explanation": "Warm is not cold and not hot.",
+          "itemIds": [
+            "en.beginner.u09.l02.warm"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l03.task.word",
+          "kind": "choice",
+          "prompt": "Choose the word for spring, summer, autumn and winter together.",
+          "answer": "season",
+          "options": [
+            "weather",
+            "umbrella",
+            "season"
+          ],
+          "explanation": "A season is one of the four parts of the year.",
+          "itemIds": [
+            "en.beginner.u09.l03.season"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l03.task.umbrella",
+          "kind": "fill",
+          "prompt": "Complete the sentence for a rainy day.",
+          "text": "I have an ___.",
+          "answers": [
+            "umbrella"
+          ],
+          "explanation": "An goes before umbrella.",
+          "itemIds": [
+            "en.beginner.u09.l02.umbrella"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Everyone has a favourite season. Which one does Ben choose?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Mia, what is your favourite season?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I like summer. It is hot and sunny."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I like winter. It snows!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I like spring. It is warm."
+          },
+          {
+            "speaker": "Mia",
+            "text": "Ben, it is very cold in winter."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Yes, but I have a hat and a scarf."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u09.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "Who likes summer?",
+            "answer": "Mia",
+            "options": [
+              "Ben",
+              "Mia",
+              "Smarty"
+            ],
+            "explanation": "Mia says I like summer.",
+            "itemIds": [
+              "en.beginner.u09.l03.summer"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Which season does Ben like?",
+            "answer": "Winter",
+            "options": [
+              "Summer",
+              "Spring",
+              "Winter"
+            ],
+            "explanation": "Ben says I like winter.",
+            "itemIds": [
+              "en.beginner.u09.l03.winter"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "What does Ben have?",
+            "answer": "A hat and a scarf.",
+            "options": [
+              "A hat and a scarf.",
+              "An umbrella.",
+              "A cat and a dog."
+            ],
+            "explanation": "Ben says I have a hat and a scarf.",
+            "itemIds": [
+              "en.beginner.u09.l03.season"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u09-l03-scene",
+          "describe": "Smarty, Mia and Ben sit on a park bench. Above each of them a bubble shows a season: summer sun, winter snow and spring flowers."
+        }
+      },
+      "mission": {
+        "setup": "Smarty asks about your favourite season. Choose a real or imaginary favourite.",
+        "turns": [
+          {
+            "smarty": "What is your favourite season?",
+            "accept": [
+              "^i like (?:spring|summer|autumn|winter)$",
+              "^(?:spring|summer|autumn|winter)$",
+              "^my favourite season is (?:spring|summer|autumn|winter)$"
+            ],
+            "example": "I like summer.",
+            "hint": "Say I like + a season.",
+            "itemIds": [
+              "en.beginner.u09.l03.spring",
+              "en.beginner.u09.l03.summer",
+              "en.beginner.u09.l03.autumn",
+              "en.beginner.u09.l03.winter"
+            ]
+          },
+          {
+            "smarty": "What is the weather like in that season?",
+            "accept": [
+              "^it is (?:very )?(?:sunny|rainy|windy|cloudy|warm|hot|cold)$",
+              "^it (?:snows|rains)$",
+              "^it is (?:sunny|rainy|windy|cloudy|warm|hot|cold) and (?:sunny|rainy|windy|cloudy|warm|hot|cold)$"
+            ],
+            "example": "It is hot and sunny.",
+            "hint": "Say It is + a weather word, or It snows.",
+            "itemIds": [
+              "en.beginner.u09.l03.season",
+              "en.beginner.u09.l01.sunny",
+              "en.beginner.u09.l02.warm",
+              "en.beginner.u09.l02.snow"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u09.l02.snow",
+        "en.beginner.u09.l01.windy",
+        "en.beginner.u09.l01.what-is-the-weather-like",
+        "en.beginner.u09.l02.warm",
+        "en.beginner.u09.l02.umbrella",
+        "en.beginner.u09.l01.sunny"
+      ]
+    },
+    {
+      "id": "en.beginner.u09.l04",
+      "section": "beginner",
+      "unit": 9,
+      "lesson": 4,
+      "title": "I like dancing",
+      "canDo": "Say what you like doing",
+      "scenario": "After school, friends say what they like doing: football, dancing, singing and drawing.",
+      "items": [
+        {
+          "id": "en.beginner.u09.l04.play-football",
+          "text": "play football",
+          "kind": "phrase",
+          "forms": [
+            "plays football",
+            "playing football"
+          ],
+          "example": "I like playing football.",
+          "note": "Say 'play football' for the game with a ball and a goal; use playing after I like.",
+          "image": {
+            "id": "play-football",
+            "describe": "Sam kicks a football towards a goal on a green field while Smarty watches."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l04.dance",
+          "text": "dance",
+          "kind": "word",
+          "forms": [
+            "dances",
+            "dancing"
+          ],
+          "example": "I like dancing.",
+          "note": "Say 'I like dancing' to tell what you enjoy; add -ing after like.",
+          "image": {
+            "id": "dance",
+            "describe": "Ana and Mia dance happily with their arms up, while Smarty taps his tail to the beat."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l04.sing",
+          "text": "sing",
+          "kind": "word",
+          "forms": [
+            "sings",
+            "singing"
+          ],
+          "example": "I like singing.",
+          "note": "Say 'sing' when you make music with your voice.",
+          "image": {
+            "id": "sing",
+            "describe": "Omar sings happily with his mouth wide open, with music notes floating around, and Smarty listens."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l04.draw",
+          "text": "draw",
+          "kind": "word",
+          "forms": [
+            "draws",
+            "drawing"
+          ],
+          "example": "I like drawing.",
+          "note": "Say 'draw' when you make a picture with a pencil.",
+          "image": {
+            "id": "draw",
+            "describe": "Lily draws a house with a pencil on paper at a table while Smarty sits on the table and watches."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u09.l04.task.choose",
+          "kind": "choice",
+          "prompt": "Sam kicks a ball into the goal. Choose the sentence.",
+          "answer": "I can play football.",
+          "options": [
+            "I can play football.",
+            "I can sing.",
+            "I can draw."
+          ],
+          "explanation": "Play football is the phrase for this game.",
+          "itemIds": [
+            "en.beginner.u09.l04.play-football"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l04.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I like dancing.",
+          "answer": "I like dancing.",
+          "options": [
+            "I like singing.",
+            "I like dancing.",
+            "I like drawing."
+          ],
+          "explanation": "After like we add -ing: dancing.",
+          "itemIds": [
+            "en.beginner.u09.l04.dance"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l04.task.build",
+          "kind": "build",
+          "prompt": "Say that you like to sing.",
+          "answer": "I like singing.",
+          "tiles": [
+            "singing.",
+            "like",
+            "I",
+            "dance"
+          ],
+          "explanation": "I like + verb with -ing.",
+          "itemIds": [
+            "en.beginner.u09.l04.sing"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l04.task.fill",
+          "kind": "fill",
+          "prompt": "Tom plays football on Saturday. Complete the sentence.",
+          "text": "He ___ football on Saturday.",
+          "answers": [
+            "plays"
+          ],
+          "explanation": "With he we add s: he plays.",
+          "itemIds": [
+            "en.beginner.u09.l04.play-football"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l04.task.match",
+          "kind": "match",
+          "prompt": "Match each action to its sentence.",
+          "pairs": [
+            {
+              "left": "dance",
+              "right": "I like dancing."
+            },
+            {
+              "left": "sing",
+              "right": "I like singing."
+            },
+            {
+              "left": "draw",
+              "right": "I like drawing."
+            },
+            {
+              "left": "play football",
+              "right": "I like playing football."
+            }
+          ],
+          "explanation": "After I like, the action word ends in -ing.",
+          "itemIds": [
+            "en.beginner.u09.l04.dance",
+            "en.beginner.u09.l04.sing",
+            "en.beginner.u09.l04.draw",
+            "en.beginner.u09.l04.play-football"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l04.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "I like dancing.",
+          "answer": "I like dancing.",
+          "explanation": "Say it with a smile: I like dancing.",
+          "itemIds": [
+            "en.beginner.u09.l04.dance"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l04.task.reply",
+          "kind": "choice",
+          "prompt": "Mia asks: Do you like singing? You love it. Choose the reply.",
+          "answer": "Yes, I do.",
+          "options": [
+            "No, I am not.",
+            "Yes, I am.",
+            "Yes, I do."
+          ],
+          "explanation": "Answer Do you like...? with Yes, I do.",
+          "itemIds": [
+            "en.beginner.u03.l03.do-you-like",
+            "en.beginner.u09.l04.sing"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l04.task.season",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "It is winter.",
+          "answer": "It is winter.",
+          "options": [
+            "It is winter.",
+            "It is summer.",
+            "It is spring."
+          ],
+          "explanation": "Listen for winter.",
+          "itemIds": [
+            "en.beginner.u09.l03.winter"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l04.task.summer",
+          "kind": "build",
+          "prompt": "Say that you like the hot season.",
+          "answer": "I like summer.",
+          "tiles": [
+            "summer.",
+            "like",
+            "I",
+            "winter"
+          ],
+          "explanation": "I like + a season.",
+          "itemIds": [
+            "en.beginner.u02.l09.i-like",
+            "en.beginner.u09.l03.summer"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l04.task.draw-pic",
+          "kind": "choice",
+          "prompt": "You use a pencil to make a picture. Choose the sentence.",
+          "answer": "I like drawing.",
+          "options": [
+            "I like singing.",
+            "I like drawing.",
+            "I like dancing."
+          ],
+          "explanation": "Drawing is making pictures.",
+          "itemIds": [
+            "en.beginner.u09.l04.draw"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Three friends talk after school. What does each person like?",
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "Hi, Sam! What do you like?"
+          },
+          {
+            "speaker": "Sam",
+            "text": "I like playing football. And you?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I like dancing. I like singing, too."
+          },
+          {
+            "speaker": "Ben",
+            "text": "I like drawing. Look!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Great, Ben!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u09.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "Who likes playing football?",
+            "answer": "Sam",
+            "options": [
+              "Mia",
+              "Sam",
+              "Ben"
+            ],
+            "explanation": "Sam says I like playing football.",
+            "itemIds": [
+              "en.beginner.u09.l04.play-football"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Ben like?",
+            "answer": "Drawing",
+            "options": [
+              "Dancing",
+              "Singing",
+              "Drawing"
+            ],
+            "explanation": "Ben says I like drawing.",
+            "itemIds": [
+              "en.beginner.u09.l04.draw"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "Who likes dancing and singing?",
+            "answer": "Mia",
+            "options": [
+              "Mia",
+              "Sam",
+              "Ben"
+            ],
+            "explanation": "Mia says I like dancing. I like singing, too.",
+            "itemIds": [
+              "en.beginner.u09.l04.dance",
+              "en.beginner.u09.l04.sing"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u09-l04-scene",
+          "describe": "A school yard after class. Sam holds a football, Mia dances, and Ben draws on paper while Smarty watches."
+        }
+      },
+      "mission": {
+        "setup": "A friend asks what you like doing. Tell them about your favourite activity.",
+        "turns": [
+          {
+            "smarty": "I like dancing. What do you like?",
+            "accept": [
+              "^i like (?:playing football|dancing|singing|drawing)$",
+              "^i like (?:playing football|dancing|singing|drawing) and (?:playing football|dancing|singing|drawing)$",
+              "^i can (?:play football|dance|sing|draw)$"
+            ],
+            "example": "I like drawing.",
+            "hint": "Say I like + an action with -ing.",
+            "itemIds": [
+              "en.beginner.u09.l04.play-football",
+              "en.beginner.u09.l04.dance",
+              "en.beginner.u09.l04.sing",
+              "en.beginner.u09.l04.draw"
+            ]
+          },
+          {
+            "smarty": "Do you like dancing?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^no i like (?:playing football|singing|drawing)$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes or No. You can say what you like.",
+            "itemIds": [
+              "en.beginner.u03.l03.do-you-like",
+              "en.beginner.u09.l04.dance"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l03.do-you-like",
+        "en.beginner.u09.l03.winter",
+        "en.beginner.u02.l09.i-like",
+        "en.beginner.u09.l03.summer"
+      ]
+    },
+    {
+      "id": "en.beginner.u09.l05",
+      "section": "beginner",
+      "unit": 9,
+      "lesson": 5,
+      "title": "Hobbies",
+      "canDo": "Talk about hobbies",
+      "scenario": "Smarty and Ana talk about hobbies: music, painting and games.",
+      "items": [
+        {
+          "id": "en.beginner.u09.l05.hobby",
+          "text": "hobby",
+          "kind": "word",
+          "forms": [
+            "hobbies"
+          ],
+          "example": "My hobby is music.",
+          "note": "A hobby is something fun you like to do again and again.",
+          "image": {
+            "id": "hobby",
+            "describe": "Smarty with a thought bubble full of fun things: a football, a paintbrush and a music note."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l05.music",
+          "text": "music",
+          "kind": "word",
+          "example": "I love music.",
+          "note": "Say 'music' for songs and sounds you listen to or play.",
+          "image": {
+            "id": "music",
+            "describe": "Zara plays a small piano while Smarty listens with his ears up and music notes float in the air."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l05.paint",
+          "text": "paint",
+          "kind": "word",
+          "forms": [
+            "paints",
+            "painting"
+          ],
+          "example": "I like painting.",
+          "note": "Say 'paint' when you use colours and a brush to make a picture.",
+          "image": {
+            "id": "paint",
+            "describe": "Lily paints a bright rainbow on a big paper with a brush, with paint on her hands, and Smarty has a blue paw."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l05.game",
+          "text": "game",
+          "kind": "word",
+          "forms": [
+            "games"
+          ],
+          "example": "I play a game.",
+          "note": "Say 'game' for a fun thing you play with rules, like football.",
+          "image": {
+            "id": "game",
+            "describe": "Tom, Leo and Smarty sit around a board game on the floor and laugh."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u09.l05.task.choose",
+          "kind": "choice",
+          "prompt": "Mia says her hobby is music. Choose the sentence.",
+          "answer": "My hobby is music.",
+          "options": [
+            "My name is Mia.",
+            "I am from Brazil.",
+            "My hobby is music."
+          ],
+          "explanation": "My hobby is + the thing you like to do.",
+          "itemIds": [
+            "en.beginner.u09.l05.hobby",
+            "en.beginner.u09.l05.music"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l05.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I like painting.",
+          "answer": "I like painting.",
+          "options": [
+            "I like painting.",
+            "I like drawing.",
+            "I like singing."
+          ],
+          "explanation": "Painting is using colours and a brush.",
+          "itemIds": [
+            "en.beginner.u09.l05.paint"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l05.task.build",
+          "kind": "build",
+          "prompt": "Say that your hobby is music.",
+          "answer": "My hobby is music.",
+          "tiles": [
+            "music.",
+            "is",
+            "hobby",
+            "My",
+            "name"
+          ],
+          "explanation": "My hobby is + a word for the thing you like.",
+          "itemIds": [
+            "en.beginner.u09.l05.hobby",
+            "en.beginner.u09.l05.music"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l05.task.fill",
+          "kind": "fill",
+          "prompt": "You use colours and a brush. Complete the sentence.",
+          "text": "I like ___.",
+          "answers": [
+            "painting"
+          ],
+          "explanation": "Painting uses colours and a brush.",
+          "itemIds": [
+            "en.beginner.u09.l05.paint"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l05.task.match",
+          "kind": "match",
+          "prompt": "Match each word to a sentence.",
+          "pairs": [
+            {
+              "left": "hobby",
+              "right": "I have two hobbies."
+            },
+            {
+              "left": "music",
+              "right": "I love music."
+            },
+            {
+              "left": "paint",
+              "right": "I like painting."
+            },
+            {
+              "left": "game",
+              "right": "I play a game."
+            }
+          ],
+          "explanation": "Hobby has the form hobbies when there are many.",
+          "itemIds": [
+            "en.beginner.u09.l05.hobby",
+            "en.beginner.u09.l05.music",
+            "en.beginner.u09.l05.paint",
+            "en.beginner.u09.l05.game"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l05.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "I love music.",
+          "answer": "I love music.",
+          "explanation": "Love is stronger than like.",
+          "itemIds": [
+            "en.beginner.u09.l05.music"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l05.task.football",
+          "kind": "choice",
+          "prompt": "Sam loves football. Choose his sentence.",
+          "answer": "I like playing football.",
+          "options": [
+            "I like painting.",
+            "I like playing football.",
+            "I like music."
+          ],
+          "explanation": "Playing football is the action.",
+          "itemIds": [
+            "en.beginner.u09.l04.play-football"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l05.task.dance",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I can dance.",
+          "answer": "I can dance.",
+          "options": [
+            "I can sing.",
+            "I can draw.",
+            "I can dance."
+          ],
+          "explanation": "Listen to the last word: dance.",
+          "itemIds": [
+            "en.beginner.u09.l04.dance"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l05.task.like",
+          "kind": "fill",
+          "prompt": "Ask about a hobby. Complete the question.",
+          "text": "Do you ___ singing?",
+          "answers": [
+            "like"
+          ],
+          "explanation": "Do you like...? asks about a hobby.",
+          "itemIds": [
+            "en.beginner.u03.l03.do-you-like",
+            "en.beginner.u09.l04.sing"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l05.task.which-game",
+          "kind": "choice",
+          "prompt": "Which one is a game?",
+          "answer": "football",
+          "options": [
+            "football",
+            "tea",
+            "bread"
+          ],
+          "explanation": "Football is a game you play.",
+          "itemIds": [
+            "en.beginner.u09.l05.game",
+            "en.beginner.u09.l04.play-football"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Smarty and Ana share their hobbies. What will they do together?",
+        "lines": [
+          {
+            "speaker": "Ana",
+            "text": "Smarty, what is your hobby?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "My hobby is music! I love music."
+          },
+          {
+            "speaker": "Ana",
+            "text": "I like painting. Look!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is a cat! Great!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Yes! And I like games. Let’s play a game."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, please!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u09.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "What is the hobby of Smarty?",
+            "answer": "Music",
+            "options": [
+              "Painting",
+              "Music",
+              "Games"
+            ],
+            "explanation": "Smarty says My hobby is music.",
+            "itemIds": [
+              "en.beginner.u09.l05.hobby",
+              "en.beginner.u09.l05.music"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Ana paint?",
+            "answer": "A cat",
+            "options": [
+              "A dog",
+              "A bird",
+              "A cat"
+            ],
+            "explanation": "Smarty says It is a cat.",
+            "itemIds": [
+              "en.beginner.u09.l05.paint"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "What do they play at the end?",
+            "answer": "A game",
+            "options": [
+              "A game",
+              "Football",
+              "Music"
+            ],
+            "explanation": "Ana says Let us play a game.",
+            "itemIds": [
+              "en.beginner.u09.l05.game"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u09-l05-scene",
+          "describe": "A bright living room. Ana shows a painting of a cat to Smarty, who sits near a small radio playing music."
+        }
+      },
+      "mission": {
+        "setup": "Smarty asks about your hobbies. Say a hobby, real or imaginary.",
+        "turns": [
+          {
+            "smarty": "What is your hobby?",
+            "accept": [
+              "^my hobby is (?:music|painting|games|dancing|singing|drawing|football)$",
+              "^i like (?:music|painting|games|dancing|singing|drawing|playing football)$",
+              "^i love (?:music|painting|games|dancing|singing|drawing)$"
+            ],
+            "example": "I love music.",
+            "hint": "Say My hobby is... or I like...",
+            "itemIds": [
+              "en.beginner.u09.l05.hobby",
+              "en.beginner.u09.l05.music",
+              "en.beginner.u09.l05.paint",
+              "en.beginner.u09.l05.game"
+            ]
+          },
+          {
+            "smarty": "Do you like games?",
+            "accept": [
+              "^yes(?: i do)?$",
+              "^no(?: i do not)?$",
+              "^yes i like games$"
+            ],
+            "example": "Yes, I do.",
+            "hint": "Say Yes or No.",
+            "itemIds": [
+              "en.beginner.u09.l05.game",
+              "en.beginner.u03.l03.do-you-like"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u09.l04.play-football",
+        "en.beginner.u09.l04.dance",
+        "en.beginner.u03.l03.do-you-like",
+        "en.beginner.u09.l04.sing"
+      ]
+    },
+    {
+      "id": "en.beginner.u09.l06",
+      "section": "beginner",
+      "unit": 9,
+      "lesson": 6,
+      "title": "Sports",
+      "canDo": "Name sports",
+      "scenario": "Zara, Tom and Leo are in the park on Sunday. They choose a sport and show what they can do.",
+      "items": [
+        {
+          "id": "en.beginner.u09.l06.tennis",
+          "text": "tennis",
+          "kind": "word",
+          "example": "I play tennis.",
+          "note": "Say 'play tennis' for the sport with a racket and a small ball.",
+          "image": {
+            "id": "tennis",
+            "describe": "Omar hits a yellow ball with a racket on a tennis court while Smarty sits by the net."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l06.basketball",
+          "text": "basketball",
+          "kind": "word",
+          "example": "I play basketball.",
+          "note": "Say 'play basketball' for the sport where you throw a ball into a high net.",
+          "image": {
+            "id": "basketball",
+            "describe": "Leo throws an orange basketball into a hoop on a sunny court while Smarty cheers."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l06.run",
+          "text": "run",
+          "kind": "word",
+          "forms": [
+            "runs",
+            "running"
+          ],
+          "example": "I can run.",
+          "note": "Say 'run' when you move fast on your feet.",
+          "image": {
+            "id": "run",
+            "describe": "Zara runs fast on a track with her hair flying, while Smarty runs behind her."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l06.jump",
+          "text": "jump",
+          "kind": "word",
+          "forms": [
+            "jumps",
+            "jumping"
+          ],
+          "example": "I can jump.",
+          "note": "Say 'jump' when your feet leave the ground.",
+          "image": {
+            "id": "jump",
+            "describe": "Tom jumps high with his arms up in a park, and Smarty jumps too."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u09.l06.task.choose",
+          "kind": "choice",
+          "prompt": "Omar hits a small ball with a racket. Choose the sentence.",
+          "answer": "I play tennis.",
+          "options": [
+            "I play basketball.",
+            "I play tennis.",
+            "I play football."
+          ],
+          "explanation": "Tennis is played with a racket.",
+          "itemIds": [
+            "en.beginner.u09.l06.tennis"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l06.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I play basketball.",
+          "answer": "I play basketball.",
+          "options": [
+            "I play tennis.",
+            "I play football.",
+            "I play basketball."
+          ],
+          "explanation": "Listen to the last word: basketball.",
+          "itemIds": [
+            "en.beginner.u09.l06.basketball"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l06.task.build",
+          "kind": "build",
+          "prompt": "Say that you are fast on your feet.",
+          "answer": "I can run.",
+          "tiles": [
+            "run.",
+            "can",
+            "I",
+            "tennis"
+          ],
+          "explanation": "I can + an action word.",
+          "itemIds": [
+            "en.beginner.u09.l06.run"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l06.task.fill",
+          "kind": "fill",
+          "prompt": "Tom's feet leave the ground. Complete the sentence.",
+          "text": "Tom can ___.",
+          "answers": [
+            "jump"
+          ],
+          "explanation": "Jump is when your feet leave the ground.",
+          "itemIds": [
+            "en.beginner.u09.l06.jump"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l06.task.match",
+          "kind": "match",
+          "prompt": "Match each word to a sentence.",
+          "pairs": [
+            {
+              "left": "tennis",
+              "right": "I play tennis."
+            },
+            {
+              "left": "basketball",
+              "right": "I play basketball."
+            },
+            {
+              "left": "run",
+              "right": "I can run."
+            },
+            {
+              "left": "jump",
+              "right": "I can jump."
+            }
+          ],
+          "explanation": "Play goes with sports; can goes with actions.",
+          "itemIds": [
+            "en.beginner.u09.l06.tennis",
+            "en.beginner.u09.l06.basketball",
+            "en.beginner.u09.l06.run",
+            "en.beginner.u09.l06.jump"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l06.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "I can jump.",
+          "answer": "I can jump.",
+          "explanation": "Say can before the action word.",
+          "itemIds": [
+            "en.beginner.u09.l06.jump"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l06.task.paint",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I like painting.",
+          "answer": "I like painting.",
+          "options": [
+            "I like painting.",
+            "I like music.",
+            "I like games."
+          ],
+          "explanation": "Listen for painting.",
+          "itemIds": [
+            "en.beginner.u09.l05.paint"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l06.task.dance",
+          "kind": "fill",
+          "prompt": "Ana moves her feet to the music. Complete the sentence.",
+          "text": "I like ___.",
+          "answers": [
+            "dancing"
+          ],
+          "explanation": "Dancing is moving to music.",
+          "itemIds": [
+            "en.beginner.u09.l04.dance",
+            "en.beginner.u09.l05.music"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l06.task.hobby",
+          "kind": "build",
+          "prompt": "Say that tennis is your hobby.",
+          "answer": "My hobby is tennis.",
+          "tiles": [
+            "tennis.",
+            "is",
+            "hobby",
+            "My",
+            "music"
+          ],
+          "explanation": "My hobby is + what you like.",
+          "itemIds": [
+            "en.beginner.u09.l05.hobby",
+            "en.beginner.u09.l06.tennis"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l06.task.sport-word",
+          "kind": "choice",
+          "prompt": "Choose the sport.",
+          "answer": "basketball",
+          "options": [
+            "music",
+            "basketball",
+            "painting"
+          ],
+          "explanation": "Basketball is a sport.",
+          "itemIds": [
+            "en.beginner.u09.l06.basketball"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Zara has a plan for the park. Which sport will they play?",
+        "lines": [
+          {
+            "speaker": "Zara",
+            "text": "Hi, Tom! Let’s play tennis."
+          },
+          {
+            "speaker": "Tom",
+            "text": "I do not like tennis. I like basketball."
+          },
+          {
+            "speaker": "Zara",
+            "text": "Yes, let’s play basketball!"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Great! I can jump."
+          },
+          {
+            "speaker": "Zara",
+            "text": "And I can run!"
+          },
+          {
+            "speaker": "Leo",
+            "text": "Can I play, please?"
+          },
+          {
+            "speaker": "Tom",
+            "text": "Of course, Leo!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u09.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "What does Tom like?",
+            "answer": "Basketball",
+            "options": [
+              "Tennis",
+              "Basketball",
+              "Football"
+            ],
+            "explanation": "Tom says I like basketball.",
+            "itemIds": [
+              "en.beginner.u09.l06.basketball"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "Who can jump?",
+            "answer": "Tom",
+            "options": [
+              "Zara",
+              "Leo",
+              "Tom"
+            ],
+            "explanation": "Tom says I can jump.",
+            "itemIds": [
+              "en.beginner.u09.l06.jump"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "Who says Can I play, please?",
+            "answer": "Leo",
+            "options": [
+              "Leo",
+              "Tom",
+              "Zara"
+            ],
+            "explanation": "Leo asks Can I play, please?",
+            "itemIds": [
+              "en.beginner.u09.l06.tennis"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u09-l06-scene",
+          "describe": "A sunny park on Sunday. Zara and Tom stand on a basketball court, Leo waves from the side, and Smarty sits by the hoop."
+        }
+      },
+      "mission": {
+        "setup": "Smarty is in the park. Say what you play or what you can do.",
+        "turns": [
+          {
+            "smarty": "I play tennis. What do you play?",
+            "accept": [
+              "^i play (?:tennis|basketball|football)$",
+              "^i like (?:tennis|basketball|playing football)$",
+              "^i like playing (?:tennis|basketball)$"
+            ],
+            "example": "I play basketball.",
+            "hint": "Say I play + a sport.",
+            "itemIds": [
+              "en.beginner.u09.l06.tennis",
+              "en.beginner.u09.l06.basketball",
+              "en.beginner.u09.l04.play-football"
+            ]
+          },
+          {
+            "smarty": "Can you run?",
+            "accept": [
+              "^yes(?: i can)?$",
+              "^no(?: i can not| i cannot)?$",
+              "^yes i can (?:run|jump)$"
+            ],
+            "example": "Yes, I can run.",
+            "hint": "Say Yes, I can or No, I cannot.",
+            "itemIds": [
+              "en.beginner.u09.l06.run",
+              "en.beginner.u09.l06.jump",
+              "en.beginner.u08.l05.i-can",
+              "en.beginner.u08.l05.i-cannot"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u09.l05.paint",
+        "en.beginner.u09.l04.dance",
+        "en.beginner.u09.l05.music",
+        "en.beginner.u09.l05.hobby",
+        "en.beginner.u09.l04.play-football",
+        "en.beginner.u08.l05.i-can",
+        "en.beginner.u08.l05.i-cannot"
+      ]
+    },
+    {
+      "id": "en.beginner.u09.l07",
+      "section": "beginner",
+      "unit": 9,
+      "lesson": 7,
+      "title": "In the garden",
+      "canDo": "Name things in a garden",
+      "scenario": "Smarty and Lily look around a park in spring and name what they see.",
+      "items": [
+        {
+          "id": "en.beginner.u09.l07.flower",
+          "text": "flower",
+          "kind": "word",
+          "forms": [
+            "flowers"
+          ],
+          "example": "I see a flower.",
+          "note": "Say 'flower' for the pretty red, yellow or pink part of a plant.",
+          "image": {
+            "id": "flower",
+            "describe": "Mia smells a big red flower in a sunny park, and Smarty looks at it."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l07.tree",
+          "text": "tree",
+          "kind": "word",
+          "forms": [
+            "trees"
+          ],
+          "example": "The tree is big.",
+          "note": "Say 'tree' for a tall plant with a trunk and green leaves.",
+          "image": {
+            "id": "tree",
+            "describe": "Smarty sits under a very big green tree in a park with a bench beside it."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l07.grass",
+          "text": "grass",
+          "kind": "word",
+          "example": "The grass is green.",
+          "note": "Say 'grass' for the green plant that covers the ground.",
+          "image": {
+            "id": "grass",
+            "describe": "Ben lies on soft green grass looking at the sky, with Smarty next to him."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l07.butterfly",
+          "text": "butterfly",
+          "kind": "word",
+          "example": "Look, a butterfly!",
+          "note": "Say 'butterfly' for a small flying animal with colourful wings.",
+          "image": {
+            "id": "butterfly",
+            "describe": "A yellow butterfly sits on a red flower, and Smarty watches it closely."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l07.sun",
+          "text": "sun",
+          "kind": "word",
+          "example": "The sun is hot.",
+          "note": "Say 'sun' for the big bright star that gives us light and warm days.",
+          "image": {
+            "id": "sun",
+            "describe": "A big yellow sun shines in a clear blue sky over a green park, and Smarty wears a tiny hat."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u09.l07.task.choose",
+          "kind": "choice",
+          "prompt": "Mia smells a red flower. Choose the sentence.",
+          "answer": "I see a flower.",
+          "options": [
+            "I see a tree.",
+            "I see a butterfly.",
+            "I see a flower."
+          ],
+          "explanation": "Flower is the word for the pretty part of a plant.",
+          "itemIds": [
+            "en.beginner.u09.l07.flower"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l07.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The grass is green.",
+          "answer": "The grass is green.",
+          "options": [
+            "The grass is green.",
+            "The sun is hot.",
+            "The tree is big."
+          ],
+          "explanation": "Listen to the first noun: grass.",
+          "itemIds": [
+            "en.beginner.u09.l07.grass"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l07.task.build",
+          "kind": "build",
+          "prompt": "Say that the sun is hot.",
+          "answer": "The sun is hot.",
+          "tiles": [
+            "hot.",
+            "is",
+            "sun",
+            "The",
+            "grass"
+          ],
+          "explanation": "The sun gives us light and heat.",
+          "itemIds": [
+            "en.beginner.u09.l07.sun"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l07.task.fill",
+          "kind": "fill",
+          "prompt": "A small flying animal with colourful wings comes by. Complete the sentence.",
+          "text": "Look, a ___!",
+          "answers": [
+            "butterfly"
+          ],
+          "explanation": "Butterfly is a small animal with colourful wings.",
+          "itemIds": [
+            "en.beginner.u09.l07.butterfly"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l07.task.match",
+          "kind": "match",
+          "prompt": "Match each word to a sentence.",
+          "pairs": [
+            {
+              "left": "flower",
+              "right": "I see a flower."
+            },
+            {
+              "left": "tree",
+              "right": "The tree is big."
+            },
+            {
+              "left": "grass",
+              "right": "The grass is green."
+            },
+            {
+              "left": "butterfly",
+              "right": "Look, a butterfly!"
+            },
+            {
+              "left": "sun",
+              "right": "The sun is hot."
+            }
+          ],
+          "explanation": "Each sentence uses the word on the left.",
+          "itemIds": [
+            "en.beginner.u09.l07.flower",
+            "en.beginner.u09.l07.tree",
+            "en.beginner.u09.l07.grass",
+            "en.beginner.u09.l07.butterfly",
+            "en.beginner.u09.l07.sun"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l07.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "The tree is big.",
+          "answer": "The tree is big.",
+          "explanation": "Say the full sentence: The tree is big.",
+          "itemIds": [
+            "en.beginner.u09.l07.tree"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l07.task.colour",
+          "kind": "choice",
+          "prompt": "Look at the grass. What colour is it?",
+          "answer": "It is green.",
+          "options": [
+            "It is red.",
+            "It is green.",
+            "It is blue."
+          ],
+          "explanation": "Grass is green.",
+          "itemIds": [
+            "en.beginner.u06.l02.what-colour-is-it",
+            "en.beginner.u06.l01.green"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l07.task.sunny",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "It is sunny.",
+          "answer": "It is sunny.",
+          "options": [
+            "It is rainy.",
+            "It is cloudy.",
+            "It is sunny."
+          ],
+          "explanation": "Listen for sunny.",
+          "itemIds": [
+            "en.beginner.u09.l01.sunny"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l07.task.after-winter",
+          "kind": "choice",
+          "prompt": "Choose the season after winter.",
+          "answer": "spring",
+          "options": [
+            "spring",
+            "summer",
+            "autumn"
+          ],
+          "explanation": "Spring comes after winter.",
+          "itemIds": [
+            "en.beginner.u09.l03.spring"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l07.task.hot",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the sun.",
+          "text": "The sun is ___ in summer.",
+          "answers": [
+            "hot",
+            "warm"
+          ],
+          "explanation": "Hot and warm both fit; the sun is hot in summer.",
+          "itemIds": [
+            "en.beginner.u09.l07.sun",
+            "en.beginner.u09.l03.summer",
+            "en.beginner.u09.l02.warm"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Lily and Smarty look around the park. What does Lily see on the flower?",
+        "lines": [
+          {
+            "speaker": "Lily",
+            "text": "Look, Smarty! The sun is hot."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I see a tree. The tree is big."
+          },
+          {
+            "speaker": "Lily",
+            "text": "I see a flower. It is red."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Look at the grass! It is green."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Look, a butterfly! It is yellow."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is on the flower."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u09.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "What is red?",
+            "answer": "The flower",
+            "options": [
+              "The grass",
+              "The flower",
+              "The butterfly"
+            ],
+            "explanation": "Lily says I see a flower. It is red.",
+            "itemIds": [
+              "en.beginner.u09.l07.flower"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "What colour is the butterfly?",
+            "answer": "Yellow",
+            "options": [
+              "Green",
+              "Red",
+              "Yellow"
+            ],
+            "explanation": "Lily says It is yellow.",
+            "itemIds": [
+              "en.beginner.u09.l07.butterfly"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "Where is the butterfly?",
+            "answer": "On the flower",
+            "options": [
+              "On the flower",
+              "On the tree",
+              "On the grass"
+            ],
+            "explanation": "Smarty says It is on the flower.",
+            "itemIds": [
+              "en.beginner.u09.l07.grass"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u09-l07-scene",
+          "describe": "A sunny spring park. Lily and Smarty stand near a big tree, with red flowers in the green grass and a yellow butterfly on a flower."
+        }
+      },
+      "mission": {
+        "setup": "You and Smarty look around a park. Say what you see and its colour. Imagine any colours.",
+        "turns": [
+          {
+            "smarty": "Look! What do you see?",
+            "accept": [
+              "^i see (?:a|the) (?:flower|tree|butterfly|sun|grass)$",
+              "^i see (?:flowers|trees)$",
+              "^(?:a|the) (?:flower|tree|butterfly|sun|grass)$"
+            ],
+            "example": "I see a butterfly.",
+            "hint": "Say I see + a or the + a garden word.",
+            "itemIds": [
+              "en.beginner.u09.l07.flower",
+              "en.beginner.u09.l07.tree",
+              "en.beginner.u09.l07.grass",
+              "en.beginner.u09.l07.butterfly",
+              "en.beginner.u09.l07.sun"
+            ]
+          },
+          {
+            "smarty": "What colour is it?",
+            "accept": [
+              "^it is (?:red|blue|green|yellow|black|white|pink|purple|brown|orange)$",
+              "^(?:red|blue|green|yellow|black|white|pink|purple|brown|orange)$"
+            ],
+            "example": "It is yellow.",
+            "hint": "Say It is + a colour.",
+            "itemIds": [
+              "en.beginner.u06.l02.what-colour-is-it",
+              "en.beginner.u06.l01.yellow"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u06.l02.what-colour-is-it",
+        "en.beginner.u06.l01.green",
+        "en.beginner.u09.l01.sunny",
+        "en.beginner.u09.l03.spring",
+        "en.beginner.u09.l03.summer",
+        "en.beginner.u09.l02.warm",
+        "en.beginner.u06.l01.yellow"
+      ]
+    },
+    {
+      "id": "en.beginner.u09.l08",
+      "section": "beginner",
+      "unit": 9,
+      "lesson": 8,
+      "title": "It's raining now",
+      "canDo": "Say what is happening now",
+      "scenario": "It is a wet afternoon. Friends say what is happening now, inside and outside.",
+      "items": [
+        {
+          "id": "en.beginner.u09.l08.it-is-raining",
+          "text": "It is raining",
+          "kind": "phrase",
+          "forms": [
+            "It's raining"
+          ],
+          "example": "It is raining now.",
+          "note": "Say 'It is raining' when the rain is falling right now."
+        },
+        {
+          "id": "en.beginner.u09.l08.now",
+          "text": "now",
+          "kind": "word",
+          "example": "I am inside now.",
+          "note": "Say 'now' for this moment, at this time."
+        },
+        {
+          "id": "en.beginner.u09.l08.outside",
+          "text": "outside",
+          "kind": "word",
+          "example": "I am outside.",
+          "note": "Say 'outside' for in the open air, not in a house.",
+          "image": {
+            "id": "outside",
+            "describe": "Mia and Sam play on the grass in front of a house in the open air, with Smarty running beside them."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l08.inside",
+          "text": "inside",
+          "kind": "word",
+          "example": "We are inside.",
+          "note": "Say 'inside' for in a room or in a house, not in the open air.",
+          "image": {
+            "id": "inside",
+            "describe": "Smarty and Ben sit on a sofa inside a warm living room, looking at the rain through a window."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u09.l08.task.choose",
+          "kind": "choice",
+          "prompt": "Water is falling from the sky right now. Choose the sentence.",
+          "answer": "It is raining now.",
+          "options": [
+            "It is sunny now.",
+            "It is raining now.",
+            "It is windy now."
+          ],
+          "explanation": "Raining is the action you see right now.",
+          "itemIds": [
+            "en.beginner.u09.l08.it-is-raining",
+            "en.beginner.u09.l08.now"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l08.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "We are inside.",
+          "answer": "We are inside.",
+          "options": [
+            "We are outside.",
+            "We are at home.",
+            "We are inside."
+          ],
+          "explanation": "Listen for inside.",
+          "itemIds": [
+            "en.beginner.u09.l08.inside"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l08.task.build",
+          "kind": "build",
+          "prompt": "Mia plays on the grass. Say where she is.",
+          "answer": "I am outside now.",
+          "tiles": [
+            "now.",
+            "outside",
+            "am",
+            "I",
+            "inside"
+          ],
+          "explanation": "Outside means in the open air.",
+          "itemIds": [
+            "en.beginner.u09.l08.outside",
+            "en.beginner.u09.l08.now"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l08.task.fill",
+          "kind": "fill",
+          "prompt": "The rain is falling. Complete the sentence.",
+          "text": "It is ___ now.",
+          "answers": [
+            "raining"
+          ],
+          "explanation": "Raining shows that the rain is happening now.",
+          "itemIds": [
+            "en.beginner.u09.l08.it-is-raining"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l08.task.match",
+          "kind": "match",
+          "prompt": "Match each word or phrase.",
+          "pairs": [
+            {
+              "left": "It is raining",
+              "right": "It's raining"
+            },
+            {
+              "left": "inside",
+              "right": "We are inside."
+            },
+            {
+              "left": "outside",
+              "right": "I am outside."
+            }
+          ],
+          "explanation": "It's is the short form of It is.",
+          "itemIds": [
+            "en.beginner.u09.l08.it-is-raining",
+            "en.beginner.u09.l08.inside",
+            "en.beginner.u09.l08.outside"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l08.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "It is raining now.",
+          "answer": "It is raining now.",
+          "explanation": "Say now at the end.",
+          "itemIds": [
+            "en.beginner.u09.l08.it-is-raining",
+            "en.beginner.u09.l08.now"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l08.task.umbrella",
+          "kind": "choice",
+          "prompt": "It is raining and Sam is outside. Choose his sentence.",
+          "answer": "I have an umbrella.",
+          "options": [
+            "I have an umbrella.",
+            "I have a cat.",
+            "I have a dog."
+          ],
+          "explanation": "An umbrella keeps you dry outside in the rain.",
+          "itemIds": [
+            "en.beginner.u09.l02.umbrella",
+            "en.beginner.u02.l07.i-have"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l08.task.catch",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "It is cloudy and windy.",
+          "answer": "It is cloudy and windy.",
+          "options": [
+            "It is sunny and hot.",
+            "It is cloudy and windy.",
+            "It is rainy and cold."
+          ],
+          "explanation": "Listen for cloudy and windy.",
+          "itemIds": [
+            "en.beginner.u09.l01.cloudy",
+            "en.beginner.u09.l01.windy"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l08.task.snow",
+          "kind": "fill",
+          "prompt": "Complete the sentence about winter.",
+          "text": "It is cold and it ___ in winter.",
+          "answers": [
+            "snows"
+          ],
+          "explanation": "Snow falls in winter.",
+          "itemIds": [
+            "en.beginner.u09.l02.snow",
+            "en.beginner.u09.l03.winter"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l08.task.kitchen",
+          "kind": "choice",
+          "prompt": "Mia is in the kitchen. Choose the sentence.",
+          "answer": "She is inside.",
+          "options": [
+            "She is outside.",
+            "He is inside.",
+            "She is inside."
+          ],
+          "explanation": "The kitchen is in a house, so she is inside.",
+          "itemIds": [
+            "en.beginner.u05.l01.kitchen",
+            "en.beginner.u09.l08.inside"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Mia is outside and it is raining. Will she stay dry?",
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Look outside, Smarty! It is raining now."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Mia is outside! Look!"
+          },
+          {
+            "speaker": "Ben",
+            "text": "She has an umbrella."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Good! Mia, come inside!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Thank you! It is cold outside."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Now we are inside."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u09.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What is the weather like now?",
+            "answer": "It is raining.",
+            "options": [
+              "It is sunny.",
+              "It is raining.",
+              "It is windy."
+            ],
+            "explanation": "Ben says It is raining now.",
+            "itemIds": [
+              "en.beginner.u09.l08.it-is-raining"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "Who is outside?",
+            "answer": "Mia",
+            "options": [
+              "Ben",
+              "Smarty",
+              "Mia"
+            ],
+            "explanation": "Smarty says Mia is outside.",
+            "itemIds": [
+              "en.beginner.u09.l08.outside"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "Where are they at the end?",
+            "answer": "Inside",
+            "options": [
+              "Inside",
+              "Outside",
+              "At the park"
+            ],
+            "explanation": "Ben says Now we are inside.",
+            "itemIds": [
+              "en.beginner.u09.l08.inside"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u09-l08-scene",
+          "describe": "A rainy afternoon seen through a window. Ben and Smarty are inside; outside, Mia walks home under a red umbrella."
+        }
+      },
+      "mission": {
+        "setup": "A friend phones you. Say what the weather is like now and where you are.",
+        "turns": [
+          {
+            "smarty": "Hello! What is the weather like now?",
+            "accept": [
+              "^it is (?:raining|sunny|rainy|windy|cloudy|warm|cold|hot)(?: now)?$",
+              "^it is (?:raining|sunny|rainy|windy|cloudy|warm|cold|hot) outside$",
+              "^(?:raining|sunny|rainy|windy|cloudy)$"
+            ],
+            "example": "It is raining now.",
+            "hint": "Say It is raining now, or another weather word.",
+            "itemIds": [
+              "en.beginner.u09.l08.it-is-raining",
+              "en.beginner.u09.l08.now"
+            ]
+          },
+          {
+            "smarty": "Are you inside or outside?",
+            "accept": [
+              "^i am (?:inside|outside)(?: now)?$",
+              "^(?:inside|outside)$",
+              "^we are (?:inside|outside)$"
+            ],
+            "example": "I am inside now.",
+            "hint": "Say I am inside or I am outside.",
+            "itemIds": [
+              "en.beginner.u09.l08.inside",
+              "en.beginner.u09.l08.outside",
+              "en.beginner.u09.l08.now"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u09.l02.umbrella",
+        "en.beginner.u02.l07.i-have",
+        "en.beginner.u09.l01.cloudy",
+        "en.beginner.u09.l01.windy",
+        "en.beginner.u09.l02.snow",
+        "en.beginner.u09.l03.winter",
+        "en.beginner.u05.l01.kitchen"
+      ]
+    },
+    {
+      "id": "en.beginner.u09.l09",
+      "section": "beginner",
+      "unit": 9,
+      "lesson": 9,
+      "title": "Free time",
+      "canDo": "Plan free time with a friend",
+      "scenario": "Smarty plans a free-time picnic at the beach with Mia and Sam.",
+      "items": [
+        {
+          "id": "en.beginner.u09.l09.free-time",
+          "text": "free time",
+          "kind": "phrase",
+          "example": "I play football in my free time.",
+          "note": "Say 'free time' for the time when you do not work or go to school."
+        },
+        {
+          "id": "en.beginner.u09.l09.picnic",
+          "text": "picnic",
+          "kind": "word",
+          "example": "Let’s have a picnic.",
+          "note": "Say 'picnic' for a meal that you eat outside, like in a park.",
+          "image": {
+            "id": "picnic",
+            "describe": "A picnic blanket on green grass with sandwiches, fruit and juice, while Mia, Sam and Smarty sit around it."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l09.beach",
+          "text": "beach",
+          "kind": "word",
+          "example": "Let’s go to the beach.",
+          "note": "Say 'beach' for the sandy place next to the sea.",
+          "image": {
+            "id": "beach",
+            "describe": "A sunny beach with sand and blue sea, where Ana builds a sandcastle and Smarty digs with his paws."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l09.with",
+          "text": "with",
+          "kind": "word",
+          "example": "I play with Sam.",
+          "note": "Say 'with' to say who is together with you."
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u09.l09.task.choose",
+          "kind": "choice",
+          "prompt": "Say who is playing together with Sam.",
+          "answer": "I play with Sam.",
+          "options": [
+            "I play with Sam.",
+            "I like Sam.",
+            "Sam plays football."
+          ],
+          "explanation": "With shows who is together with you.",
+          "itemIds": [
+            "en.beginner.u09.l09.with"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l09.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Let’s go to the beach.",
+          "answer": "Let’s go to the beach.",
+          "options": [
+            "Let’s go to the park.",
+            "Let’s go to the beach.",
+            "Let’s have a picnic."
+          ],
+          "explanation": "Listen for beach.",
+          "itemIds": [
+            "en.beginner.u09.l09.beach"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l09.task.build",
+          "kind": "build",
+          "prompt": "Say that you want to eat outside.",
+          "answer": "Let’s have a picnic.",
+          "tiles": [
+            "picnic.",
+            "a",
+            "have",
+            "Let's",
+            "beach"
+          ],
+          "explanation": "Have a picnic means eat a meal outside.",
+          "itemIds": [
+            "en.beginner.u09.l09.picnic"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l09.task.fill",
+          "kind": "fill",
+          "prompt": "It is not school time. Complete the sentence.",
+          "text": "I play football in my ___ time.",
+          "answers": [
+            "free"
+          ],
+          "explanation": "Free time is time with no school or work.",
+          "itemIds": [
+            "en.beginner.u09.l09.free-time"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l09.task.match",
+          "kind": "match",
+          "prompt": "Match each word to a sentence.",
+          "pairs": [
+            {
+              "left": "picnic",
+              "right": "Let’s have a picnic."
+            },
+            {
+              "left": "beach",
+              "right": "Let’s go to the beach."
+            },
+            {
+              "left": "with",
+              "right": "I play with Sam."
+            },
+            {
+              "left": "free time",
+              "right": "I like music in my free time."
+            }
+          ],
+          "explanation": "Each sentence uses the word on the left.",
+          "itemIds": [
+            "en.beginner.u09.l09.picnic",
+            "en.beginner.u09.l09.beach",
+            "en.beginner.u09.l09.with",
+            "en.beginner.u09.l09.free-time"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l09.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "Let’s go to the beach.",
+          "answer": "Let’s go to the beach.",
+          "explanation": "Say Let us go for an invitation.",
+          "itemIds": [
+            "en.beginner.u09.l09.beach"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l09.task.outside",
+          "kind": "choice",
+          "prompt": "Choose the place for a picnic in the park.",
+          "answer": "Outside",
+          "options": [
+            "Inside",
+            "In the kitchen",
+            "Outside"
+          ],
+          "explanation": "A picnic is a meal outside.",
+          "itemIds": [
+            "en.beginner.u09.l08.outside",
+            "en.beginner.u09.l09.picnic"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l09.task.sunny-beach",
+          "kind": "choice",
+          "prompt": "Choose the weather for the beach.",
+          "answer": "It is sunny.",
+          "options": [
+            "It is sunny.",
+            "It is rainy.",
+            "It snows."
+          ],
+          "explanation": "Sunny weather is best for the beach.",
+          "itemIds": [
+            "en.beginner.u09.l01.sunny",
+            "en.beginner.u09.l09.beach"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l09.task.football",
+          "kind": "build",
+          "prompt": "Say that you play football together with Ben.",
+          "answer": "I play football with Ben.",
+          "tiles": [
+            "Ben.",
+            "with",
+            "football",
+            "play",
+            "I",
+            "tennis"
+          ],
+          "explanation": "With Ben shows who plays together with you.",
+          "itemIds": [
+            "en.beginner.u09.l04.play-football",
+            "en.beginner.u09.l09.with"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l09.task.summer",
+          "kind": "choice",
+          "prompt": "Which season is good for the beach?",
+          "answer": "summer",
+          "options": [
+            "winter",
+            "summer",
+            "autumn"
+          ],
+          "explanation": "Summer is hot and sunny.",
+          "itemIds": [
+            "en.beginner.u09.l03.summer",
+            "en.beginner.u09.l09.beach"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Smarty and friends plan a trip. Where will they go?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Mia, what do you do in your free time?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "It is sunny. Let’s have a picnic!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "Yes! Let’s go to the beach."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Can I go with you?"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Of course, Smarty!"
+          },
+          {
+            "speaker": "Sam",
+            "text": "I have juice and a sandwich."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I have an apple. Let’s go!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u09.l09.task.story-one",
+            "kind": "choice",
+            "prompt": "Where do they go?",
+            "answer": "To the beach",
+            "options": [
+              "To school",
+              "To the beach",
+              "To the park"
+            ],
+            "explanation": "Sam says Let us go to the beach.",
+            "itemIds": [
+              "en.beginner.u09.l09.beach"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l09.task.story-two",
+            "kind": "choice",
+            "prompt": "Who has juice and a sandwich?",
+            "answer": "Sam",
+            "options": [
+              "Mia",
+              "Smarty",
+              "Sam"
+            ],
+            "explanation": "Sam says I have juice and a sandwich.",
+            "itemIds": [
+              "en.beginner.u09.l09.picnic"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l09.task.story-three",
+            "kind": "choice",
+            "prompt": "Who goes with Mia and Sam?",
+            "answer": "Smarty",
+            "options": [
+              "Smarty",
+              "Ben",
+              "Ana"
+            ],
+            "explanation": "Smarty asks Can I go with you? and Mia says Of course.",
+            "itemIds": [
+              "en.beginner.u09.l09.with"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u09-l09-scene",
+          "describe": "A park gate with Smarty, Mia and Sam holding a picnic basket and a bag, looking happy under a sunny sky."
+        }
+      },
+      "mission": {
+        "setup": "It is Saturday. Smarty asks about your free time and invites you to the beach.",
+        "turns": [
+          {
+            "smarty": "It is Saturday. What do you do in your free time?",
+            "accept": [
+              "^i like (?:playing football|dancing|singing|drawing|painting|music|games|tennis|basketball)$",
+              "^i play (?:football|tennis|basketball|games)$",
+              "^i (?:dance|sing|draw|paint|run|jump)$",
+              "^my hobby is (?:music|painting|games|dancing|singing|drawing|football)$"
+            ],
+            "example": "I play football.",
+            "hint": "Say what you do in your free time.",
+            "itemIds": [
+              "en.beginner.u09.l09.free-time",
+              "en.beginner.u09.l04.play-football"
+            ]
+          },
+          {
+            "smarty": "Let’s go to the beach! Can you come with me?",
+            "accept": [
+              "^yes(?: i can)?$",
+              "^of course$",
+              "^yes let's go$",
+              "^no(?: i can not| i cannot)?$"
+            ],
+            "example": "Yes, I can.",
+            "hint": "Say Yes, I can or No, I cannot.",
+            "itemIds": [
+              "en.beginner.u09.l09.beach",
+              "en.beginner.u09.l09.with",
+              "en.beginner.u08.l05.i-can"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u09.l08.outside",
+        "en.beginner.u09.l01.sunny",
+        "en.beginner.u09.l04.play-football",
+        "en.beginner.u09.l03.summer",
+        "en.beginner.u08.l05.i-can"
+      ]
+    },
+    {
+      "id": "en.beginner.u09.l10",
+      "section": "beginner",
+      "unit": 9,
+      "lesson": 10,
+      "title": "Smarty's garden",
+      "canDo": "Look after the garden with Smarty",
+      "scenario": "You help Smarty look after his garden: plant, watch things grow and look at the sky.",
+      "items": [
+        {
+          "id": "en.beginner.u09.l10.plant",
+          "text": "plant",
+          "kind": "word",
+          "forms": [
+            "plants"
+          ],
+          "example": "I plant a tree.",
+          "note": "Say 'plant' when you put a seed or a small plant in the ground.",
+          "image": {
+            "id": "plant",
+            "describe": "Mia kneels and puts a small green plant in the soil with a little spade while Smarty watches."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l10.grow",
+          "text": "grow",
+          "kind": "word",
+          "forms": [
+            "grows"
+          ],
+          "example": "The flowers grow.",
+          "note": "Say 'grow' when a plant gets bigger.",
+          "image": {
+            "id": "grow",
+            "describe": "A tiny green shoot next to a very tall flower, with Smarty looking up at the tall flower."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l10.sky",
+          "text": "sky",
+          "kind": "word",
+          "example": "The sky is blue.",
+          "note": "Say 'sky' for the blue space high above us.",
+          "image": {
+            "id": "sky",
+            "describe": "A bright blue sky with a few white clouds above a green hill, with Smarty looking up."
+          }
+        },
+        {
+          "id": "en.beginner.u09.l10.cloud",
+          "text": "cloud",
+          "kind": "word",
+          "forms": [
+            "clouds"
+          ],
+          "example": "I see a cloud.",
+          "note": "Say 'cloud' for the white or grey shape in the sky.",
+          "image": {
+            "id": "cloud",
+            "describe": "One fluffy white cloud in a blue sky, shaped a little like a cat."
+          }
+        }
+      ],
+      "practice": [
+        {
+          "id": "en.beginner.u09.l10.task.choose",
+          "kind": "choice",
+          "prompt": "Mia puts a small flower in the ground. Choose the sentence.",
+          "answer": "I plant a flower.",
+          "options": [
+            "I see a flower.",
+            "I draw a flower.",
+            "I plant a flower."
+          ],
+          "explanation": "Plant means put it in the ground.",
+          "itemIds": [
+            "en.beginner.u09.l10.plant"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l10.task.listen",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The flowers grow.",
+          "answer": "The flowers grow.",
+          "options": [
+            "The flowers grow.",
+            "The flowers are red.",
+            "The flowers are small."
+          ],
+          "explanation": "Grow means get bigger.",
+          "itemIds": [
+            "en.beginner.u09.l10.grow"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l10.task.build",
+          "kind": "build",
+          "prompt": "Say what colour the sky is.",
+          "answer": "The sky is blue.",
+          "tiles": [
+            "blue.",
+            "is",
+            "sky",
+            "The",
+            "cloud"
+          ],
+          "explanation": "Sky is the space above us.",
+          "itemIds": [
+            "en.beginner.u09.l10.sky"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l10.task.fill",
+          "kind": "fill",
+          "prompt": "It is white and soft. Complete the sentence.",
+          "text": "I see a ___ in the sky.",
+          "answers": [
+            "cloud"
+          ],
+          "explanation": "A cloud is in the sky.",
+          "itemIds": [
+            "en.beginner.u09.l10.cloud"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l10.task.match",
+          "kind": "match",
+          "prompt": "Match each word to a sentence.",
+          "pairs": [
+            {
+              "left": "plant",
+              "right": "I plant a tree."
+            },
+            {
+              "left": "grow",
+              "right": "The flowers grow."
+            },
+            {
+              "left": "sky",
+              "right": "The sky is blue."
+            },
+            {
+              "left": "cloud",
+              "right": "I see a cloud."
+            }
+          ],
+          "explanation": "Each sentence uses the word on the left.",
+          "itemIds": [
+            "en.beginner.u09.l10.plant",
+            "en.beginner.u09.l10.grow",
+            "en.beginner.u09.l10.sky",
+            "en.beginner.u09.l10.cloud"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l10.task.speak",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again if the app mishears you.",
+          "text": "I plant a tree.",
+          "answer": "I plant a tree.",
+          "explanation": "Say a before tree.",
+          "itemIds": [
+            "en.beginner.u09.l10.plant"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l10.task.tree",
+          "kind": "choice",
+          "prompt": "Choose the word for a tall plant with green leaves.",
+          "answer": "tree",
+          "options": [
+            "grass",
+            "tree",
+            "flower"
+          ],
+          "explanation": "A tree is tall.",
+          "itemIds": [
+            "en.beginner.u09.l07.tree"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l10.task.butterfly",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Look, a butterfly!",
+          "answer": "Look, a butterfly!",
+          "options": [
+            "Look, a flower!",
+            "Look, a tree!",
+            "Look, a butterfly!"
+          ],
+          "explanation": "Listen for butterfly.",
+          "itemIds": [
+            "en.beginner.u09.l07.butterfly"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l10.task.spring",
+          "kind": "choice",
+          "prompt": "In which season do flowers start to grow?",
+          "answer": "spring",
+          "options": [
+            "spring",
+            "winter",
+            "autumn"
+          ],
+          "explanation": "Spring is when flowers start to grow.",
+          "itemIds": [
+            "en.beginner.u09.l03.spring"
+          ]
+        },
+        {
+          "id": "en.beginner.u09.l10.task.umbrella",
+          "kind": "fill",
+          "prompt": "It is raining. Complete the sentence.",
+          "text": "It is raining and I have an ___.",
+          "answers": [
+            "umbrella"
+          ],
+          "explanation": "An umbrella keeps you dry.",
+          "itemIds": [
+            "en.beginner.u09.l02.umbrella",
+            "en.beginner.u09.l08.it-is-raining"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Smarty, Mia and Ben are in the garden. What do they plant?",
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Look at the sky! It is blue."
+          },
+          {
+            "speaker": "Mia",
+            "text": "I see a cloud. It is white."
+          },
+          {
+            "speaker": "Ben",
+            "text": "Let’s plant a flower here."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! Plant it, please."
+          },
+          {
+            "speaker": "Mia",
+            "text": "The flower is a baby."
+          },
+          {
+            "speaker": "Ben",
+            "text": "It rains. The flowers grow."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I like my plants."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u09.l10.task.story-one",
+            "kind": "choice",
+            "prompt": "What is the sky like?",
+            "answer": "Blue",
+            "options": [
+              "Red",
+              "Blue",
+              "Green"
+            ],
+            "explanation": "Smarty says The sky is blue.",
+            "itemIds": [
+              "en.beginner.u09.l10.sky"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l10.task.story-two",
+            "kind": "choice",
+            "prompt": "What do Ben and Mia plant?",
+            "answer": "A flower",
+            "options": [
+              "A tree",
+              "A cloud",
+              "A flower"
+            ],
+            "explanation": "Ben says Let us plant a flower here.",
+            "itemIds": [
+              "en.beginner.u09.l10.plant"
+            ]
+          },
+          {
+            "id": "en.beginner.u09.l10.task.story-three",
+            "kind": "choice",
+            "prompt": "What grows when it rains?",
+            "answer": "The flowers",
+            "options": [
+              "The flowers",
+              "The cat",
+              "The sun"
+            ],
+            "explanation": "Ben says It rains. The flowers grow.",
+            "itemIds": [
+              "en.beginner.u09.l10.grow"
+            ]
+          }
+        ],
+        "image": {
+          "id": "u09-l10-scene",
+          "describe": "A green garden. Mia and Ben plant a small flower while Smarty looks up at a blue sky with one white cloud."
+        }
+      },
+      "mission": {
+        "setup": "You help Smarty in the garden. Say what you plant and what you see in the sky.",
+        "turns": [
+          {
+            "smarty": "What do you plant?",
+            "accept": [
+              "^i plant (?:a|an) (?:flower|tree|carrot|tomato|potato|apple)$",
+              "^i plant (?:flowers|trees|carrots|tomatoes|potatoes|apples)$",
+              "^(?:a|an) (?:flower|tree|carrot|tomato|potato|apple)$"
+            ],
+            "example": "I plant a flower.",
+            "hint": "Say I plant + a flower or a tree.",
+            "itemIds": [
+              "en.beginner.u09.l10.plant",
+              "en.beginner.u09.l07.flower",
+              "en.beginner.u09.l07.tree"
+            ]
+          },
+          {
+            "smarty": "Look at the sky! What do you see?",
+            "accept": [
+              "^i see (?:a|the) (?:cloud|sun|butterfly)$",
+              "^i see clouds$",
+              "^the sky is (?:blue|grey|cloudy|sunny)$",
+              "^it is (?:blue|grey|cloudy|sunny)$"
+            ],
+            "example": "I see a cloud.",
+            "hint": "Say I see a cloud, or say The sky is blue.",
+            "itemIds": [
+              "en.beginner.u09.l10.sky",
+              "en.beginner.u09.l10.cloud"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u09.l07.tree",
+        "en.beginner.u09.l07.butterfly",
+        "en.beginner.u09.l03.spring",
+        "en.beginner.u09.l02.umbrella",
+        "en.beginner.u09.l08.it-is-raining",
+        "en.beginner.u09.l07.flower"
+      ]
+    }
+  ]
+}

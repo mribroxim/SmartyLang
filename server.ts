@@ -3,10 +3,11 @@ import express from "express";
 import path from "path";
 import { createRequire } from "module";
 import { getConfig, synthesizeMp3, synthesizeMp3WithSync } from "./server/googleTts.ts";
+import { geminiConfigured, synthesizeGeminiWav, estimateTimepoints } from './server/geminiTts.ts';
+import { localTtsConfigured, localTtsLanguages, localTtsSupports, synthesizeLocalWav, warmLocalTts } from './server/localTts.ts';
 import { databaseConfigured, query, runMigrations } from "./server/db.ts";
 import {
   clearSession,
-  getProfile,
   getSessionUser,
   googleAuthUrl,
   loginGoogleUser,
@@ -14,6 +15,9 @@ import {
   registerUser,
   setSession,
 } from "./server/auth.ts";
+import { registerFriends } from "./server/friends.ts";
+import { registerLiveWordGames } from './server/liveWordGames.ts';
+import { registerPushReminders } from "./server/pushReminders.ts";
 import { registerDataApi } from "./server/dataApi.ts";
 import { registerPaymentsApi, registerPaymentsWebhook, registerSubscriptionApi } from "./server/paymentsApi.ts";
 import { installSecurity, demoLoginEnabled, providerAuth, rateLimit, reserveAiRequest } from './server/security.ts';
@@ -58,17 +62,17 @@ async function startServer() {
       return res.status(503).json({ error: "Authentication service unavailable" });
     }
   });
-  // Local demo only: one-click sign-in as a demo account (/api/dev/demo-login?as=max|free).
+  // Local demo only: one-click sign-in as a demo account.
   // Enabled solely by DEMO_LOGIN=1 outside production (set in the "smarty-demo" launch config).
   if (demoLoginEnabled()) {
     app.get("/api/dev/demo-login", async (req, res) => {
       try {
-        const as = req.query.as === "free" ? "free" : "max";
+        const as = ["teacher", "business", "free", "admin"].includes(String(req.query.as)) ? String(req.query.as) : "max";
         const found = await query<{ uid: string }>("SELECT uid FROM app_users WHERE email = $1", [`${as}@demo.test`]);
         const uid = found.rows[0]?.uid;
         if (!uid) return res.status(404).send("Demo account not found");
         await setSession(res, req, uid);
-        return res.redirect(req.query.next === 'unit-one' ? '/#/lessons/unit-one' : '/#/dashboard');
+        return res.redirect(as === "admin" ? "/#/admin" : as === "teacher" || as === "business" ? "/#/business" : "/#/dashboard");
       } catch (error: any) {
         return res.status(500).send(error?.message || "Demo sign-in failed");
       }
@@ -134,8 +138,17 @@ async function startServer() {
   });
 
   app.post("/api/ai", async (req, res) => {
+    // Smarty's chat: start his voice clip as soon as the reply text exists, so it's ready (or nearly) when the app asks.
+    if (req.body?.action === 'smarty-talk' && geminiConfigured() && process.env.TTS_PROVIDER !== 'azure') {
+      const json = res.json.bind(res);
+      res.json = (body: any) => {
+        if (typeof body?.reply === 'string' && body.reply.trim()) synthesizeGeminiWav(body.reply, String(req.body?.contentLang || 'en')).catch(() => {});
+        return json(body);
+      };
+    }
     await handleAiRequest(req, res, {
-      getApiKey: () => process.env.OPENROUTER_API_KEY || "",
+      // Smarty's chat can run on Gemini alone; other AI checks need OpenRouter.
+      getApiKey: () => process.env.OPENROUTER_API_KEY || (process.env.GEMINI_API_KEY ? "gemini" : ""),
       verifyUser: async (r) => {
         const user = await import('./server/auth.ts').then(({ requireUser }) => requireUser(r));
         if (!user) {
@@ -154,13 +167,19 @@ async function startServer() {
     });
   });
 
-  // Microsoft Azure Text-to-Speech (MP3; synced reads use SDK bookmark timepoints)
+  // Text-to-speech providers: 'local' (sherpa-onnx models on this server, WAV), 'gemini' (WAV), 'azure' (MP3).
+  // TTS_PROVIDER picks the first to try; the default order is local (models downloaded) -> gemini -> azure.
+  // TTS_PROVIDER=azure forces Azure only. A failing provider falls through to the next configured one.
+  type TtsProvider = 'local' | 'gemini' | 'azure';
+  const ttsProviderOrder = (lang: string): TtsProvider[] => {
+    const pref = (process.env.TTS_PROVIDER || '').trim().toLowerCase();
+    if (pref === 'azure') return ['azure'];
+    const all: TtsProvider[] = ['local', 'gemini', 'azure'];
+    const order = pref === 'gemini' || pref === 'local' ? [pref as TtsProvider, ...all.filter((p) => p !== pref)] : all;
+    return order.filter((p) => (p === 'local' ? localTtsConfigured() && localTtsSupports(lang) : p === 'gemini' ? geminiConfigured() : !("missing" in getConfig())));
+  };
   app.post("/api/tts", rateLimit(60, 60_000), providerAuth, async (req, res) => {
     try {
-      const cfg = getConfig();
-      if ("missing" in cfg) {
-        return res.status(503).json({ error: "TTS not configured", hint: cfg.missing });
-      }
       const text = typeof req.body?.text === "string" ? req.body.text : "";
       const lang = typeof req.body?.lang === "string" ? req.body.lang : "en-US";
       const rate = typeof req.body?.rate === "number" ? req.body.rate : 1;
@@ -174,8 +193,31 @@ async function startServer() {
       }
       if (text.length > 5000 || words.length > 1000 || !Number.isFinite(rate) || rate < 0.5 || rate > 2) return res.status(400).json({ error: 'Invalid speech request' });
 
+      const providers = ttsProviderOrder(lang);
+      if (!providers.length) {
+        const cfg = getConfig();
+        return res.status(503).json({ error: "TTS not configured", hint: "missing" in cfg ? cfg.missing : "No TTS provider available" });
+      }
+      let lastError: unknown;
+      for (const provider of providers) {
+        if (provider === 'azure') break;
+        try {
+          const wav = provider === 'local'
+            ? await synthesizeLocalWav(text, lang, rate, voice)
+            : await synthesizeGeminiWav(text, lang, rate, voice);
+          res.setHeader("Cache-Control", "private, max-age=86400");
+          if (sync && words.length > 0) return res.json({ audioContent: wav.toString("base64"), mime: "audio/wav", timepoints: estimateTimepoints(wav, words) });
+          res.setHeader("Content-Type", "audio/wav");
+          return res.send(wav);
+        } catch (error: any) {
+          lastError = error;
+          console.warn(`[tts] ${provider} failed, trying next provider:`, error?.message || error);
+        }
+      }
+      if (!providers.includes('azure')) throw lastError ?? new Error("TTS failed");
+
       if (sync && words.length > 0) {
-        const result = await synthesizeMp3WithSync(text, lang, rate, words, voice);
+        const result = await synthesizeMp3WithSync(text, lang, rate, words, voice === 'smarty' ? undefined : voice);
         res.setHeader("Cache-Control", "private, max-age=86400");
         return res.json({
           audioContent: result.mp3.toString("base64"),
@@ -183,7 +225,7 @@ async function startServer() {
         });
       }
 
-      const mp3 = await synthesizeMp3(text, lang, rate, voice);
+      const mp3 = await synthesizeMp3(text, lang, rate, voice === 'smarty' ? undefined : voice);
       res.setHeader("Content-Type", "audio/mpeg");
       res.setHeader("Cache-Control", "private, max-age=86400");
       res.send(mp3);
@@ -210,6 +252,9 @@ async function startServer() {
   });
 
   registerDataApi(app);
+  registerFriends(app);
+  const startLiveGameCleanup = registerLiveWordGames(app);
+  const startPushReminders = registerPushReminders(app);
   app.use('/api', (_req, res) => res.status(404).json({ error: 'API route not found' }));
 
   // Vite middleware for development
@@ -230,10 +275,18 @@ async function startServer() {
 
   app.use(errorHandler);
   await runMigrations();
+  if (databaseConfigured) startLiveGameCleanup();
+  startPushReminders();
   app.listen(PORT, process.env.HOST || (process.env.NODE_ENV === 'production' ? '127.0.0.1' : '0.0.0.0'), () => {
     console.log(`Server running on http://localhost:${PORT}`);
     const cfg = getConfig();
-    if ("missing" in cfg) {
+    if (process.env.TTS_PROVIDER !== 'azure' && localTtsConfigured()) {
+      const fallbacks = [geminiConfigured() ? 'Gemini' : '', "missing" in cfg ? '' : 'Azure'].filter(Boolean).join(' + ');
+      console.log(`[tts] Local TTS ready (${localTtsLanguages().join(', ')})${fallbacks ? `, fallback: ${fallbacks}` : ''}`);
+      void warmLocalTts(['en']);
+    } else if (geminiConfigured() && process.env.TTS_PROVIDER !== 'azure') {
+      console.log(`[tts] Google Gemini TTS ready${"missing" in cfg ? '' : ' (Azure as fallback)'}`);
+    } else if ("missing" in cfg) {
       console.warn(`[tts] ${cfg.missing} — /api/tts will return 503`);
     } else {
       console.log(`[tts] Microsoft Azure TTS ready (${cfg.region})`);

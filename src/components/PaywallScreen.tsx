@@ -1,4 +1,3 @@
-import React from 'react';
 import { Check } from 'lucide-react';
 import { PLANS, formatUSD } from '../lib/plans';
 import { Sticker } from './stickers/Sticker';
@@ -30,7 +29,7 @@ export function PaywallScreen({
         <div className="relative mt-2 rounded-2xl border-2 border-slate-200 bg-white px-5 py-4 dark:border-zinc-700 dark:bg-zinc-900">
           <span aria-hidden className="absolute -top-[9px] left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 border-l-2 border-t-2 border-slate-200 bg-white dark:border-zinc-700 dark:bg-zinc-900" />
           <h1 className="font-serif text-2xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50">{t('paywall.title')}</h1>
-          <p className="mt-1 text-sm font-semibold text-slate-500 dark:text-zinc-400">{t('paywall.body')}</p>
+          <p className="mt-1 text-sm font-semibold text-slate-500 dark:text-zinc-400">{t('paywall.freeVocabulary.body')}</p>
         </div>
 
         <ul className="mt-6 w-full space-y-2 text-left">

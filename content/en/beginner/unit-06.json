@@ -1,0 +1,3188 @@
+{
+  "$schema": "../../schema/lesson-v2.schema.json",
+  "schemaVersion": 2,
+  "lang": "en",
+  "section": "beginner",
+  "unit": 6,
+  "title": "Clothes & Colours",
+  "room": "wardrobe",
+  "lessons": [
+    {
+      "id": "en.beginner.u06.l01",
+      "section": "beginner",
+      "unit": 6,
+      "lesson": 1,
+      "type": "lesson",
+      "title": "Colours",
+      "canDo": "Name colours",
+      "scenario": "Smarty shows Mia coloured boxes and objects in his wardrobe room.",
+      "items": [
+        {
+          "id": "en.beginner.u06.l01.red",
+          "text": "red",
+          "kind": "word",
+          "example": "I have a red apple.",
+          "note": "Say ‘red’ for the colour of a tomato or an apple.",
+          "image": {
+            "id": "red",
+            "describe": "a bright red paint splash next to a shiny red apple"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l01.blue",
+          "text": "blue",
+          "kind": "word",
+          "example": "The cup is blue.",
+          "note": "Say ‘blue’ for the colour of clear water or a daytime sky.",
+          "image": {
+            "id": "blue",
+            "describe": "a bright blue paint splash next to a blue ceramic cup"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l01.green",
+          "text": "green",
+          "kind": "word",
+          "example": "It is a green apple.",
+          "note": "Say ‘green’ for the colour of grass, leaves, and some apples.",
+          "image": {
+            "id": "green",
+            "describe": "a bright green paint splash next to a crisp green apple"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l01.yellow",
+          "text": "yellow",
+          "kind": "word",
+          "example": "The banana is yellow.",
+          "note": "Say ‘yellow’ for the colour of a ripe banana or cheese.",
+          "image": {
+            "id": "yellow",
+            "describe": "a bright yellow paint splash next to a ripe yellow banana"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l01.black",
+          "text": "black",
+          "kind": "word",
+          "example": "Smarty is a black cat.",
+          "note": "Say ‘black’ for the darkest colour, just like Smarty’s fur.",
+          "image": {
+            "id": "black",
+            "describe": "a black paint splash next to Smarty the friendly black cat"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "Colour words before nouns",
+        "explanation": "Put the colour word before the thing you are naming, like ‘a red apple’ or ‘a black cat’.",
+        "examples": [
+          "I have a red apple.",
+          "Smarty is a black cat."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u06.l01.task.pick-red",
+          "kind": "choice",
+          "prompt": "Look at a ripe tomato. Which colour is it?",
+          "answer": "red",
+          "options": [
+            "red",
+            "blue",
+            "black"
+          ],
+          "explanation": "A ripe tomato is red.",
+          "itemIds": [
+            "en.beginner.u06.l01.red",
+            "en.beginner.u03.l07.tomato"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l01.task.hear-blue",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The cup is blue.",
+          "answer": "The cup is blue.",
+          "options": [
+            "The cup is blue.",
+            "The cup is red.",
+            "The cup is green."
+          ],
+          "explanation": "Listen to the colour word at the end: blue.",
+          "itemIds": [
+            "en.beginner.u06.l01.blue",
+            "en.beginner.u03.l10.cup"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l01.task.pick-green",
+          "kind": "choice",
+          "prompt": "Which word is the colour of leaves and grass?",
+          "answer": "green",
+          "options": [
+            "green",
+            "yellow",
+            "black"
+          ],
+          "explanation": "Leaves and grass are green.",
+          "itemIds": [
+            "en.beginner.u06.l01.green"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l01.task.match-colours",
+          "kind": "match",
+          "prompt": "Match each item with its usual colour.",
+          "pairs": [
+            {
+              "left": "a tomato",
+              "right": "red"
+            },
+            {
+              "left": "a banana",
+              "right": "yellow"
+            },
+            {
+              "left": "Smarty",
+              "right": "black"
+            }
+          ],
+          "explanation": "Tomatoes are red, bananas are yellow, and Smarty is a black cat.",
+          "itemIds": [
+            "en.beginner.u06.l01.red",
+            "en.beginner.u06.l01.yellow",
+            "en.beginner.u06.l01.black",
+            "en.beginner.u03.l07.tomato",
+            "en.beginner.u03.l03.banana"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l01.task.fill-yellow",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the fruit.",
+          "text": "The banana is ___.",
+          "answer": "yellow",
+          "options": [
+            "yellow",
+            "blue",
+            "black"
+          ],
+          "explanation": "A ripe banana is yellow.",
+          "itemIds": [
+            "en.beginner.u06.l01.yellow",
+            "en.beginner.u03.l03.banana"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l01.task.build-black-cat",
+          "kind": "build",
+          "prompt": "Build the sentence about Smarty.",
+          "answer": "Smarty is a black cat.",
+          "tiles": [
+            "Smarty",
+            "is",
+            "a",
+            "black",
+            "cat",
+            "red"
+          ],
+          "explanation": "Put the colour word ‘black’ before ‘cat’.",
+          "itemIds": [
+            "en.beginner.u06.l01.black",
+            "en.beginner.u02.l08.cat"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l01.task.hear-green",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "There is a green box on the table.",
+          "answer": "There is a green box on the table.",
+          "options": [
+            "There is a green box on the table.",
+            "There is a blue box on the table.",
+            "There is a yellow box on the table."
+          ],
+          "explanation": "The box on the table is green.",
+          "itemIds": [
+            "en.beginner.u06.l01.green",
+            "en.beginner.u05.l05.box",
+            "en.beginner.u05.l03.table"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l01.task.fill-blue-pen",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I have a ___ pen.",
+          "answer": "blue",
+          "options": [
+            "blue",
+            "yellow",
+            "green"
+          ],
+          "explanation": "Put the colour word ‘blue’ before ‘pen’.",
+          "itemIds": [
+            "en.beginner.u06.l01.blue",
+            "en.beginner.u05.l07.pen"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l01.task.say-red-apple",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I have a red apple.",
+          "answer": "I have a red apple.",
+          "explanation": "Red goes right before apple.",
+          "itemIds": [
+            "en.beginner.u06.l01.red",
+            "en.beginner.u03.l01.apple"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is inside Smarty’s yellow box?",
+        "image": {
+          "id": "en-a1-u06-l01-scene",
+          "describe": "Smarty the black cat and Mia the cat in the wardrobe room looking at red, blue, green, and yellow boxes on a table."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "Hello, Mia! There are four boxes on the table."
+          },
+          {
+            "speaker": "Mia",
+            "text": "One box is red, and one box is blue."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes! And there is a green box and a yellow box."
+          },
+          {
+            "speaker": "Mia",
+            "text": "What is in the yellow box?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "A small black pen!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "I like the yellow box and the black pen!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u06.l01.task.story-one",
+            "kind": "choice",
+            "prompt": "How many boxes are on the table?",
+            "answer": "four",
+            "options": [
+              "four",
+              "two",
+              "five"
+            ],
+            "explanation": "Smarty says: There are four boxes on the table.",
+            "itemIds": [
+              "en.beginner.u00.l03.four",
+              "en.beginner.u05.l05.box"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l01.task.story-two",
+            "kind": "choice",
+            "prompt": "Which box has a pen inside?",
+            "answer": "the yellow box",
+            "options": [
+              "the yellow box",
+              "the red box",
+              "the blue box"
+            ],
+            "explanation": "Mia asks what is in the yellow box, and Smarty answers: A small black pen.",
+            "itemIds": [
+              "en.beginner.u06.l01.yellow",
+              "en.beginner.u05.l05.box"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l01.task.story-three",
+            "kind": "choice",
+            "prompt": "The pen in the box is ___.",
+            "answer": "black",
+            "options": [
+              "black",
+              "green",
+              "blue"
+            ],
+            "explanation": "Smarty says it is a small black pen.",
+            "itemIds": [
+              "en.beginner.u06.l01.black",
+              "en.beginner.u05.l07.pen"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is looking at things in his room and asking you about their colours.",
+        "turns": [
+          {
+            "smarty": "I am a black cat. Do you like red or blue?",
+            "accept": [
+              "^(?:i like )?(?:red|blue)$",
+              "^i like (?:red and blue|blue and red)$"
+            ],
+            "example": "I like blue.",
+            "hint": "Say red or blue, or say I like red / I like blue.",
+            "itemIds": [
+              "en.beginner.u06.l01.red",
+              "en.beginner.u06.l01.blue",
+              "en.beginner.u06.l01.black"
+            ]
+          },
+          {
+            "smarty": "I have a banana on my table. Is it green or yellow?",
+            "accept": [
+              "^(?:it is )?yellow$",
+              "^the banana is yellow$"
+            ],
+            "example": "It is yellow.",
+            "hint": "Say It is yellow.",
+            "itemIds": [
+              "en.beginner.u06.l01.yellow",
+              "en.beginner.u06.l01.green",
+              "en.beginner.u03.l03.banana"
+            ]
+          },
+          {
+            "smarty": "Say a sentence with red, blue, green, yellow, or black!",
+            "accept": [
+              "^(?:i have |there is )?a (?:red|blue|green|yellow|black) (?:apple|pen|box|cup|cat|book|banana)$",
+              "^the (?:apple|pen|box|cup|cat|book|banana) is (?:red|blue|green|yellow|black)$"
+            ],
+            "example": "I have a green pen.",
+            "hint": "Name a colour and an object, like I have a green pen.",
+            "itemIds": [
+              "en.beginner.u06.l01.red",
+              "en.beginner.u06.l01.blue",
+              "en.beginner.u06.l01.green",
+              "en.beginner.u06.l01.yellow",
+              "en.beginner.u06.l01.black"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l07.tomato",
+        "en.beginner.u03.l10.cup",
+        "en.beginner.u03.l03.banana",
+        "en.beginner.u02.l08.cat",
+        "en.beginner.u05.l05.box",
+        "en.beginner.u05.l03.table",
+        "en.beginner.u05.l07.pen",
+        "en.beginner.u03.l01.apple",
+        "en.beginner.u00.l03.four"
+      ]
+    },
+    {
+      "id": "en.beginner.u06.l02",
+      "section": "beginner",
+      "unit": 6,
+      "lesson": 2,
+      "type": "lesson",
+      "title": "What colour is it?",
+      "canDo": "Ask about colours",
+      "scenario": "Sam and Lily guess the colours of boxes and cups in Smarty’s wardrobe room.",
+      "items": [
+        {
+          "id": "en.beginner.u06.l02.white",
+          "text": "white",
+          "kind": "word",
+          "example": "The milk is white.",
+          "note": "Say ‘white’ for the colour of milk or clean paper.",
+          "image": {
+            "id": "white",
+            "describe": "a white paint splash next to a glass of white milk"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l02.pink",
+          "text": "pink",
+          "kind": "word",
+          "example": "She has a pink cup.",
+          "note": "Say ‘pink’ for a soft light-red colour.",
+          "image": {
+            "id": "pink",
+            "describe": "a bright pink paint splash next to a pink ceramic cup"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l02.purple",
+          "text": "purple",
+          "kind": "word",
+          "example": "It is a purple box.",
+          "note": "Say ‘purple’ for the colour made when you mix red and blue.",
+          "image": {
+            "id": "purple",
+            "describe": "a rich purple paint splash next to a purple gift box"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l02.brown",
+          "text": "brown",
+          "kind": "word",
+          "example": "The dog is brown.",
+          "note": "Say ‘brown’ for the colour of wood, tea, or chocolate.",
+          "image": {
+            "id": "brown",
+            "describe": "a warm brown paint splash next to a friendly brown puppy"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l02.what-colour-is-it",
+          "text": "What colour is it?",
+          "kind": "phrase",
+          "forms": [
+            "colour",
+            "colours"
+          ],
+          "example": "What colour is it? It is purple.",
+          "note": "Ask ‘What colour is it?’ when you want to know the colour of something."
+        }
+      ],
+      "grammar": {
+        "title": "Asking about colours",
+        "explanation": "Use ‘What colour is it?’ to ask about one thing. Answer with ‘It is…’ and the colour.",
+        "examples": [
+          "What colour is it?",
+          "It is pink."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u06.l02.task.pick-white",
+          "kind": "choice",
+          "prompt": "Which colour is a glass of milk?",
+          "answer": "white",
+          "options": [
+            "white",
+            "brown",
+            "purple"
+          ],
+          "explanation": "Milk is white.",
+          "itemIds": [
+            "en.beginner.u06.l02.white",
+            "en.beginner.u03.l02.milk"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l02.task.hear-pink",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "She has a pink notebook.",
+          "answer": "She has a pink notebook.",
+          "options": [
+            "She has a pink notebook.",
+            "She has a white notebook.",
+            "She has a brown notebook."
+          ],
+          "explanation": "Listen to the colour before notebook: pink.",
+          "itemIds": [
+            "en.beginner.u06.l02.pink",
+            "en.beginner.u05.l07.notebook"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l02.task.pick-purple",
+          "kind": "choice",
+          "prompt": "Red and blue together make which colour?",
+          "answer": "purple",
+          "options": [
+            "purple",
+            "white",
+            "brown"
+          ],
+          "explanation": "Red and blue make purple.",
+          "itemIds": [
+            "en.beginner.u06.l02.purple",
+            "en.beginner.u06.l01.red",
+            "en.beginner.u06.l01.blue"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l02.task.fill-brown",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the pet.",
+          "text": "The dog is ___.",
+          "answer": "brown",
+          "options": [
+            "brown",
+            "pink",
+            "purple"
+          ],
+          "explanation": "Brown is a common colour for dogs and wood.",
+          "itemIds": [
+            "en.beginner.u06.l02.brown",
+            "en.beginner.u02.l08.dog"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l02.task.build-what-colour",
+          "kind": "build",
+          "prompt": "Ask about the colour of something.",
+          "answer": "What colour is it?",
+          "tiles": [
+            "What",
+            "colour",
+            "is",
+            "it",
+            "who"
+          ],
+          "explanation": "Put ‘What colour’ first, then ‘is it?’.",
+          "itemIds": [
+            "en.beginner.u06.l02.what-colour-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l02.task.match-qa",
+          "kind": "match",
+          "prompt": "Match each question or clue with the right answer.",
+          "pairs": [
+            {
+              "left": "What colour is it?",
+              "right": "It is purple."
+            },
+            {
+              "left": "The milk is…",
+              "right": "white"
+            },
+            {
+              "left": "The table is…",
+              "right": "brown"
+            }
+          ],
+          "explanation": "Answer ‘What colour is it?’ with ‘It is…’ and a colour.",
+          "itemIds": [
+            "en.beginner.u06.l02.what-colour-is-it",
+            "en.beginner.u06.l02.purple",
+            "en.beginner.u06.l02.white",
+            "en.beginner.u06.l02.brown",
+            "en.beginner.u03.l02.milk",
+            "en.beginner.u05.l03.table"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l02.task.hear-question",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "What colour is it?",
+          "answer": "What colour is it?",
+          "options": [
+            "What colour is it?",
+            "What time is it?",
+            "Who is she?"
+          ],
+          "explanation": "‘What colour is it?’ asks about colour, not time.",
+          "itemIds": [
+            "en.beginner.u06.l02.what-colour-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l02.task.fill-white",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "There is a ___ cat on the bed.",
+          "answer": "white",
+          "options": [
+            "white",
+            "red",
+            "green"
+          ],
+          "explanation": "White describes the colour of the cat.",
+          "itemIds": [
+            "en.beginner.u06.l02.white",
+            "en.beginner.u02.l08.cat",
+            "en.beginner.u05.l03.bed"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l02.task.say-question",
+          "kind": "speak",
+          "prompt": "Ask the question aloud. You can try again.",
+          "text": "What colour is it?",
+          "answer": "What colour is it?",
+          "explanation": "Say ‘What colour is it?’ clearly.",
+          "itemIds": [
+            "en.beginner.u06.l02.what-colour-is-it"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What colour is the small cat in Smarty’s room?",
+        "image": {
+          "id": "en-a1-u06-l02-scene",
+          "describe": "Smarty the black cat with Sam and Lily in the wardrobe room next to a brown chair, a purple box, and a small white kitten."
+        },
+        "lines": [
+          {
+            "speaker": "Sam",
+            "text": "Smarty, there is a small cat under the brown chair!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "What colour is it?"
+          },
+          {
+            "speaker": "Lily",
+            "text": "It is white!"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, that is my friend Ana!"
+          },
+          {
+            "speaker": "Ana",
+            "text": "Hello, Smarty! I have a pink cup and a purple box for you."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Thank you, Ana! I like purple and pink."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u06.l02.task.story-one",
+            "kind": "choice",
+            "prompt": "What colour is the chair?",
+            "answer": "brown",
+            "options": [
+              "brown",
+              "white",
+              "pink"
+            ],
+            "explanation": "Sam says the small cat is under the brown chair.",
+            "itemIds": [
+              "en.beginner.u06.l02.brown",
+              "en.beginner.u05.l03.chair"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l02.task.story-two",
+            "kind": "choice",
+            "prompt": "What colour is Ana?",
+            "answer": "white",
+            "options": [
+              "white",
+              "black",
+              "purple"
+            ],
+            "explanation": "Lily says: It is white!",
+            "itemIds": [
+              "en.beginner.u06.l02.white",
+              "en.beginner.u06.l02.what-colour-is-it"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l02.task.story-three",
+            "kind": "choice",
+            "prompt": "Ana has a ___ box for Smarty.",
+            "answer": "purple",
+            "options": [
+              "purple",
+              "brown",
+              "green"
+            ],
+            "explanation": "Ana says: I have a pink cup and a purple box for you.",
+            "itemIds": [
+              "en.beginner.u06.l02.purple",
+              "en.beginner.u05.l05.box"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is holding colourful items from his room. Ask and answer about their colours.",
+        "turns": [
+          {
+            "smarty": "I have a new book in my room. Ask me the colour!",
+            "accept": [
+              "^what colour is it$",
+              "^what colour is the book$",
+              "^what colour is your book$"
+            ],
+            "example": "What colour is it?",
+            "hint": "Ask Smarty: What colour is it?",
+            "itemIds": [
+              "en.beginner.u06.l02.what-colour-is-it",
+              "en.beginner.u04.l09.book"
+            ]
+          },
+          {
+            "smarty": "It is purple! Now tell me: what colour is milk?",
+            "accept": [
+              "^(?:it is |milk is |the milk is )?white$"
+            ],
+            "example": "It is white.",
+            "hint": "Say It is white.",
+            "itemIds": [
+              "en.beginner.u06.l02.white",
+              "en.beginner.u03.l02.milk"
+            ]
+          },
+          {
+            "smarty": "Yes! Do you like pink or brown?",
+            "accept": [
+              "^(?:i like )?(?:pink|brown)$",
+              "^i like (?:pink and brown|brown and pink)$"
+            ],
+            "example": "I like pink.",
+            "hint": "Say pink or brown, or I like pink / I like brown.",
+            "itemIds": [
+              "en.beginner.u06.l02.pink",
+              "en.beginner.u06.l02.brown"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l02.milk",
+        "en.beginner.u05.l07.notebook",
+        "en.beginner.u06.l01.red",
+        "en.beginner.u06.l01.blue",
+        "en.beginner.u02.l08.dog",
+        "en.beginner.u05.l03.table",
+        "en.beginner.u02.l08.cat",
+        "en.beginner.u05.l03.bed",
+        "en.beginner.u05.l03.chair",
+        "en.beginner.u05.l05.box",
+        "en.beginner.u04.l09.book"
+      ]
+    },
+    {
+      "id": "en.beginner.u06.l03",
+      "section": "beginner",
+      "unit": 6,
+      "lesson": 3,
+      "type": "lesson",
+      "title": "Clothes",
+      "canDo": "Name clothes",
+      "scenario": "Smarty opens his big wardrobe and shows Leo and Ana his clothes.",
+      "items": [
+        {
+          "id": "en.beginner.u06.l03.shirt",
+          "text": "shirt",
+          "kind": "word",
+          "forms": [
+            "shirts"
+          ],
+          "example": "He has a white shirt.",
+          "note": "A shirt is a top with buttons and a collar.",
+          "image": {
+            "id": "shirt",
+            "describe": "a neatly folded crisp white button-up shirt"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l03.t-shirt",
+          "text": "T-shirt",
+          "kind": "word",
+          "forms": [
+            "T-shirts"
+          ],
+          "example": "I like your blue T-shirt.",
+          "note": "A T-shirt is a soft casual top shaped like the letter T.",
+          "image": {
+            "id": "t-shirt",
+            "describe": "a bright blue short-sleeved T-shirt"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l03.trousers",
+          "text": "trousers",
+          "kind": "word",
+          "example": "His trousers are black.",
+          "note": "Trousers cover both legs, so we always use them as plural (‘trousers are’).",
+          "image": {
+            "id": "trousers",
+            "describe": "a pair of neat black trousers"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l03.dress",
+          "text": "dress",
+          "kind": "word",
+          "forms": [
+            "dresses"
+          ],
+          "example": "She has a pink dress.",
+          "note": "A dress is a one-piece outfit for the top and legs.",
+          "image": {
+            "id": "dress",
+            "describe": "a pretty pink summer dress"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l03.shoes",
+          "text": "shoes",
+          "kind": "word",
+          "forms": [
+            "shoe"
+          ],
+          "example": "My shoes are clean.",
+          "note": "We wear shoes on our feet; one is a ‘shoe’ and a pair is ‘shoes’.",
+          "image": {
+            "id": "shoes",
+            "describe": "a pair of shiny red shoes"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "One item vs. plural clothes",
+        "explanation": "Use ‘a’ with one shirt, T-shirt, or dress (‘a blue shirt’). Do not use ‘a’ with trousers or shoes—use ‘are’ (‘The shoes are red’).",
+        "examples": [
+          "It is a blue shirt.",
+          "The trousers are black."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u06.l03.task.pick-shirt",
+          "kind": "choice",
+          "prompt": "Which word names a top with buttons?",
+          "answer": "shirt",
+          "options": [
+            "shirt",
+            "trousers",
+            "shoes"
+          ],
+          "explanation": "A shirt is a top with buttons and a collar.",
+          "itemIds": [
+            "en.beginner.u06.l03.shirt"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l03.task.hear-tshirt",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I have a green T-shirt.",
+          "answer": "I have a green T-shirt.",
+          "options": [
+            "I have a green T-shirt.",
+            "I have a green shirt.",
+            "I have a green dress."
+          ],
+          "explanation": "Listen for the T sound in T-shirt.",
+          "itemIds": [
+            "en.beginner.u06.l03.t-shirt",
+            "en.beginner.u06.l01.green"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l03.task.pick-trousers",
+          "kind": "choice",
+          "prompt": "Which clothing item covers both legs?",
+          "answer": "trousers",
+          "options": [
+            "trousers",
+            "shirt",
+            "T-shirt"
+          ],
+          "explanation": "Trousers are worn on your legs.",
+          "itemIds": [
+            "en.beginner.u06.l03.trousers"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l03.task.fill-dress",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "Mia has a beautiful pink ___.",
+          "answer": "dress",
+          "options": [
+            "dress",
+            "shoes",
+            "trousers"
+          ],
+          "explanation": "‘A’ needs a singular noun like ‘dress’.",
+          "itemIds": [
+            "en.beginner.u06.l03.dress",
+            "en.beginner.u06.l02.pink",
+            "en.beginner.u05.l09.beautiful"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l03.task.match-clothes",
+          "kind": "match",
+          "prompt": "Match each item with the right sentence.",
+          "pairs": [
+            {
+              "left": "a blue T-shirt",
+              "right": "It is blue."
+            },
+            {
+              "left": "black trousers",
+              "right": "They are black."
+            },
+            {
+              "left": "red shoes",
+              "right": "They are red."
+            }
+          ],
+          "explanation": "Use ‘It is’ for one T-shirt, and ‘They are’ for trousers and shoes.",
+          "itemIds": [
+            "en.beginner.u06.l03.t-shirt",
+            "en.beginner.u06.l03.trousers",
+            "en.beginner.u06.l03.shoes",
+            "en.beginner.u06.l01.blue",
+            "en.beginner.u06.l01.black",
+            "en.beginner.u06.l01.red"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l03.task.build-shoes",
+          "kind": "build",
+          "prompt": "Build the sentence about the shoes.",
+          "answer": "My shoes are new.",
+          "tiles": [
+            "My",
+            "shoes",
+            "are",
+            "new",
+            "is"
+          ],
+          "explanation": "Shoes is plural, so use ‘are’.",
+          "itemIds": [
+            "en.beginner.u06.l03.shoes",
+            "en.beginner.u05.l09.new"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l03.task.fill-trousers-are",
+          "kind": "fill",
+          "prompt": "Choose the right verb for trousers.",
+          "text": "These trousers ___ brown.",
+          "answer": "are",
+          "options": [
+            "are",
+            "is",
+            "am"
+          ],
+          "explanation": "Trousers always takes the plural verb ‘are’.",
+          "itemIds": [
+            "en.beginner.u06.l03.trousers",
+            "en.beginner.u06.l02.brown",
+            "en.beginner.u05.l06.these"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l03.task.hear-dress",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "What colour is the dress?",
+          "answer": "What colour is the dress?",
+          "options": [
+            "What colour is the dress?",
+            "What colour is the shirt?",
+            "What colour are the shoes?"
+          ],
+          "explanation": "The question asks about the dress.",
+          "itemIds": [
+            "en.beginner.u06.l03.dress",
+            "en.beginner.u06.l02.what-colour-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l03.task.fill-shirt",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "Leo has a clean white ___.",
+          "answer": "shirt",
+          "options": [
+            "shirt",
+            "shoes",
+            "trousers"
+          ],
+          "explanation": "‘A clean white shirt’ uses ‘a’ with one shirt.",
+          "itemIds": [
+            "en.beginner.u06.l03.shirt",
+            "en.beginner.u06.l02.white",
+            "en.beginner.u05.l09.clean"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l03.task.say-clothes",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I have a blue T-shirt and black trousers.",
+          "answer": "I have a blue T-shirt and black trousers.",
+          "explanation": "Notice ‘a blue T-shirt’ (singular) and ‘black trousers’ (plural).",
+          "itemIds": [
+            "en.beginner.u06.l03.t-shirt",
+            "en.beginner.u06.l03.trousers",
+            "en.beginner.u06.l01.blue",
+            "en.beginner.u06.l01.black"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which clothes does Leo like in Smarty’s wardrobe?",
+        "image": {
+          "id": "en-a1-u06-l03-scene",
+          "describe": "Smarty the black cat opening a large wooden wardrobe to show Leo and Ana a blue shirt, a yellow T-shirt, black trousers, a pink dress, and red shoes."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "This is my room. There is a blue shirt and a yellow T-shirt."
+          },
+          {
+            "speaker": "Leo",
+            "text": "I like the yellow T-shirt and the black trousers."
+          },
+          {
+            "speaker": "Ana",
+            "text": "What colour is that dress?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is pink! And these shoes are red."
+          },
+          {
+            "speaker": "Ana",
+            "text": "The pink dress and red shoes are beautiful!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u06.l03.task.story-one",
+            "kind": "choice",
+            "prompt": "What colour is the T-shirt?",
+            "answer": "yellow",
+            "options": [
+              "yellow",
+              "blue",
+              "pink"
+            ],
+            "explanation": "Smarty says there is a blue shirt and a yellow T-shirt.",
+            "itemIds": [
+              "en.beginner.u06.l03.t-shirt",
+              "en.beginner.u06.l01.yellow"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l03.task.story-two",
+            "kind": "choice",
+            "prompt": "Leo likes the black ___.",
+            "answer": "trousers",
+            "options": [
+              "trousers",
+              "shoes",
+              "shirt"
+            ],
+            "explanation": "Leo says: I like the yellow T-shirt and the black trousers.",
+            "itemIds": [
+              "en.beginner.u06.l03.trousers",
+              "en.beginner.u06.l01.black"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l03.task.story-three",
+            "kind": "choice",
+            "prompt": "What colour are the shoes?",
+            "answer": "red",
+            "options": [
+              "red",
+              "pink",
+              "yellow"
+            ],
+            "explanation": "Smarty says: And these shoes are red.",
+            "itemIds": [
+              "en.beginner.u06.l03.shoes",
+              "en.beginner.u06.l01.red"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is picking clothes from his wardrobe. Tell him what you have or like.",
+        "turns": [
+          {
+            "smarty": "I have a white shirt and black trousers. Do you have a T-shirt?",
+            "accept": [
+              "^(?:yes|no)(?: i have a (?:t shirt|tshirt))?$",
+              "^i have a (?:(?:red|blue|green|yellow|black|white|pink|purple|brown) )?(?:t shirt|tshirt)$"
+            ],
+            "example": "I have a blue T-shirt.",
+            "hint": "Say Yes or No, or say I have a T-shirt.",
+            "itemIds": [
+              "en.beginner.u06.l03.t-shirt",
+              "en.beginner.u06.l03.shirt",
+              "en.beginner.u06.l03.trousers"
+            ]
+          },
+          {
+            "smarty": "Nice! What colour are your shoes?",
+            "accept": [
+              "^(?:my shoes are |they are )?(?:red|blue|green|yellow|black|white|pink|purple|brown)$"
+            ],
+            "example": "My shoes are black.",
+            "hint": "Say a colour, like My shoes are black.",
+            "itemIds": [
+              "en.beginner.u06.l03.shoes",
+              "en.beginner.u06.l02.what-colour-is-it"
+            ]
+          },
+          {
+            "smarty": "Name one more clothing item: shirt, dress, or trousers!",
+            "accept": [
+              "^(?:i have |i like )?(?:a )?(?:(?:red|blue|green|yellow|black|white|pink|purple|brown) )?(?:shirt|dress|trousers)$"
+            ],
+            "example": "I like a red dress.",
+            "hint": "Say shirt, dress, or trousers, with or without a colour.",
+            "itemIds": [
+              "en.beginner.u06.l03.shirt",
+              "en.beginner.u06.l03.dress",
+              "en.beginner.u06.l03.trousers"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u06.l01.green",
+        "en.beginner.u06.l02.pink",
+        "en.beginner.u05.l09.beautiful",
+        "en.beginner.u06.l01.blue",
+        "en.beginner.u06.l01.black",
+        "en.beginner.u06.l01.red",
+        "en.beginner.u05.l09.new",
+        "en.beginner.u06.l02.brown",
+        "en.beginner.u05.l06.these",
+        "en.beginner.u06.l02.what-colour-is-it",
+        "en.beginner.u06.l02.white",
+        "en.beginner.u05.l09.clean",
+        "en.beginner.u06.l01.yellow"
+      ]
+    },
+    {
+      "id": "en.beginner.u06.l04",
+      "section": "beginner",
+      "unit": 6,
+      "lesson": 4,
+      "type": "review",
+      "title": "Review",
+      "canDo": "Practise lessons 1–3",
+      "scenario": "Ben and Zara help Smarty sort clean clothes by colour in his wardrobe room.",
+      "items": [],
+      "practice": [
+        {
+          "id": "en.beginner.u06.l04.task.pick-question",
+          "kind": "choice",
+          "prompt": "You see a new dress and want to know its colour. What do you ask?",
+          "answer": "What colour is it?",
+          "options": [
+            "What colour is it?",
+            "What time is it?",
+            "How old are you?"
+          ],
+          "explanation": "Use ‘What colour is it?’ to ask about the colour of one thing.",
+          "itemIds": [
+            "en.beginner.u06.l02.what-colour-is-it",
+            "en.beginner.u06.l03.dress"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l04.task.hear-outfit",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "He has a purple shirt and brown trousers.",
+          "answer": "He has a purple shirt and brown trousers.",
+          "options": [
+            "He has a purple shirt and brown trousers.",
+            "He has a pink shirt and black trousers.",
+            "He has a white T-shirt and brown shoes."
+          ],
+          "explanation": "Listen for the two colours and clothes: purple shirt, brown trousers.",
+          "itemIds": [
+            "en.beginner.u06.l02.purple",
+            "en.beginner.u06.l03.shirt",
+            "en.beginner.u06.l02.brown",
+            "en.beginner.u06.l03.trousers"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l04.task.match-review",
+          "kind": "match",
+          "prompt": "Match each item with its description.",
+          "pairs": [
+            {
+              "left": "a green T-shirt",
+              "right": "It is green."
+            },
+            {
+              "left": "white shoes",
+              "right": "They are white."
+            },
+            {
+              "left": "a yellow dress",
+              "right": "It is yellow."
+            },
+            {
+              "left": "black trousers",
+              "right": "They are black."
+            }
+          ],
+          "explanation": "Match the colour and clothing item together.",
+          "itemIds": [
+            "en.beginner.u06.l01.green",
+            "en.beginner.u06.l03.t-shirt",
+            "en.beginner.u06.l02.white",
+            "en.beginner.u06.l03.shoes",
+            "en.beginner.u06.l01.yellow",
+            "en.beginner.u06.l03.dress",
+            "en.beginner.u06.l01.black",
+            "en.beginner.u06.l03.trousers"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l04.task.fill-are",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the shoes.",
+          "text": "My red shoes ___ clean.",
+          "answer": "are",
+          "options": [
+            "are",
+            "is",
+            "am"
+          ],
+          "explanation": "Shoes is plural, so use ‘are’.",
+          "itemIds": [
+            "en.beginner.u06.l01.red",
+            "en.beginner.u06.l03.shoes",
+            "en.beginner.u05.l09.clean"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l04.task.build-review",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "There is a pink dress on the bed.",
+          "tiles": [
+            "There",
+            "is",
+            "a",
+            "pink",
+            "dress",
+            "on",
+            "the",
+            "bed",
+            "are"
+          ],
+          "explanation": "Use ‘There is a’ before ‘pink dress’.",
+          "itemIds": [
+            "en.beginner.u06.l02.pink",
+            "en.beginner.u06.l03.dress",
+            "en.beginner.u05.l02.there-is",
+            "en.beginner.u05.l03.bed"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l04.task.fill-blue-shirt",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "Sam has a new ___ shirt.",
+          "answer": "blue",
+          "options": [
+            "blue",
+            "shoes",
+            "dress"
+          ],
+          "explanation": "Put a colour word like ‘blue’ between ‘new’ and ‘shirt’.",
+          "itemIds": [
+            "en.beginner.u06.l01.blue",
+            "en.beginner.u06.l03.shirt",
+            "en.beginner.u05.l09.new"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l04.task.hear-dirty",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "These white trousers are dirty.",
+          "answer": "These white trousers are dirty.",
+          "options": [
+            "These white trousers are dirty.",
+            "These white trousers are clean.",
+            "These black trousers are dirty."
+          ],
+          "explanation": "Listen to the colour (white) and state (dirty).",
+          "itemIds": [
+            "en.beginner.u06.l02.white",
+            "en.beginner.u06.l03.trousers",
+            "en.beginner.u05.l09.dirty"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l04.task.say-review",
+          "kind": "speak",
+          "prompt": "Say the question and answer aloud. You can try again.",
+          "text": "What colour is it? It is green.",
+          "answer": "What colour is it? It is green.",
+          "explanation": "Practise asking and answering about a colour.",
+          "itemIds": [
+            "en.beginner.u06.l02.what-colour-is-it",
+            "en.beginner.u06.l01.green"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Where are Smarty’s green shoes?",
+        "image": {
+          "id": "en-a1-u06-l04-scene",
+          "describe": "Smarty the black cat with Ben and Zara in the wardrobe room sorting a purple shirt on the bed, a white and pink dress on a chair, and green shoes under the table."
+        },
+        "lines": [
+          {
+            "speaker": "Ben",
+            "text": "Smarty, there is a purple shirt on the bed."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Is it clean?"
+          },
+          {
+            "speaker": "Ben",
+            "text": "Yes, it is clean! And these brown trousers are clean."
+          },
+          {
+            "speaker": "Zara",
+            "text": "What colour is this dress on the chair?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "It is white and pink. And my green shoes are under the table!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u06.l04.task.story-one",
+            "kind": "choice",
+            "prompt": "What is on the bed?",
+            "answer": "a purple shirt",
+            "options": [
+              "a purple shirt",
+              "brown trousers",
+              "green shoes"
+            ],
+            "explanation": "Ben says: there is a purple shirt on the bed.",
+            "itemIds": [
+              "en.beginner.u06.l02.purple",
+              "en.beginner.u06.l03.shirt",
+              "en.beginner.u05.l03.bed"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l04.task.story-two",
+            "kind": "choice",
+            "prompt": "What colour is the dress on the chair?",
+            "answer": "white and pink",
+            "options": [
+              "white and pink",
+              "purple and blue",
+              "brown and black"
+            ],
+            "explanation": "Smarty says: It is white and pink.",
+            "itemIds": [
+              "en.beginner.u06.l02.white",
+              "en.beginner.u06.l02.pink",
+              "en.beginner.u06.l03.dress"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l04.task.story-three",
+            "kind": "choice",
+            "prompt": "Where are Smarty’s green shoes?",
+            "answer": "under the table",
+            "options": [
+              "under the table",
+              "on the bed",
+              "on the chair"
+            ],
+            "explanation": "Smarty says: my green shoes are under the table!",
+            "itemIds": [
+              "en.beginner.u06.l01.green",
+              "en.beginner.u06.l03.shoes",
+              "en.beginner.u05.l03.table"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is checking all his clothes and colours with you.",
+        "turns": [
+          {
+            "smarty": "I have a purple shirt. What colour is it?",
+            "accept": [
+              "^(?:it is |the shirt is )?purple$"
+            ],
+            "example": "It is purple.",
+            "hint": "Say It is purple.",
+            "itemIds": [
+              "en.beginner.u06.l02.purple",
+              "en.beginner.u06.l03.shirt",
+              "en.beginner.u06.l02.what-colour-is-it"
+            ]
+          },
+          {
+            "smarty": "Now ask me the colour of my dress!",
+            "accept": [
+              "^what colour is (?:it|the dress|your dress)$"
+            ],
+            "example": "What colour is it?",
+            "hint": "Ask: What colour is it?",
+            "itemIds": [
+              "en.beginner.u06.l02.what-colour-is-it",
+              "en.beginner.u06.l03.dress"
+            ]
+          },
+          {
+            "smarty": "It is yellow! Name any colour and any clothing item you know.",
+            "accept": [
+              "^(?:i have |i like )?(?:a )?(?:red|blue|green|yellow|black|white|pink|purple|brown) (?:shirt|t shirt|tshirt|trousers|dress|shoes)$"
+            ],
+            "example": "I have white shoes.",
+            "hint": "Combine a colour and clothes, like white shoes or a red T-shirt.",
+            "itemIds": [
+              "en.beginner.u06.l01.red",
+              "en.beginner.u06.l01.blue",
+              "en.beginner.u06.l01.green",
+              "en.beginner.u06.l01.yellow",
+              "en.beginner.u06.l01.black",
+              "en.beginner.u06.l02.white",
+              "en.beginner.u06.l02.pink",
+              "en.beginner.u06.l02.purple",
+              "en.beginner.u06.l02.brown",
+              "en.beginner.u06.l03.shirt",
+              "en.beginner.u06.l03.t-shirt",
+              "en.beginner.u06.l03.trousers",
+              "en.beginner.u06.l03.dress",
+              "en.beginner.u06.l03.shoes"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u06.l01.red",
+        "en.beginner.u06.l01.blue",
+        "en.beginner.u06.l01.green",
+        "en.beginner.u06.l01.yellow",
+        "en.beginner.u06.l01.black",
+        "en.beginner.u06.l02.white",
+        "en.beginner.u06.l02.pink",
+        "en.beginner.u06.l02.purple",
+        "en.beginner.u06.l02.brown",
+        "en.beginner.u06.l02.what-colour-is-it",
+        "en.beginner.u06.l03.shirt",
+        "en.beginner.u06.l03.t-shirt",
+        "en.beginner.u06.l03.trousers",
+        "en.beginner.u06.l03.dress",
+        "en.beginner.u06.l03.shoes",
+        "en.beginner.u05.l09.clean",
+        "en.beginner.u05.l02.there-is",
+        "en.beginner.u05.l03.bed",
+        "en.beginner.u05.l09.new",
+        "en.beginner.u05.l09.dirty",
+        "en.beginner.u05.l03.table"
+      ]
+    },
+    {
+      "id": "en.beginner.u06.l05",
+      "section": "beginner",
+      "unit": 6,
+      "lesson": 5,
+      "type": "lesson",
+      "title": "I'm wearing a hat",
+      "canDo": "Say what you are wearing",
+      "scenario": "Smarty, Mia, and Sam try on hats, jackets, and socks in the wardrobe room.",
+      "items": [
+        {
+          "id": "en.beginner.u06.l05.i-am-wearing",
+          "text": "I am wearing",
+          "kind": "phrase",
+          "forms": [
+            "I'm wearing",
+            "wearing",
+            "wear",
+            "wears",
+            "is wearing",
+            "are wearing"
+          ],
+          "example": "I am wearing a yellow hat.",
+          "note": "Say ‘I am wearing…’ or ‘I’m wearing…’ to tell someone what clothes are on your body right now."
+        },
+        {
+          "id": "en.beginner.u06.l05.jacket",
+          "text": "jacket",
+          "kind": "word",
+          "forms": [
+            "jackets"
+          ],
+          "example": "He is wearing a blue jacket.",
+          "note": "A jacket is a short coat you wear over a shirt or T-shirt.",
+          "image": {
+            "id": "jacket",
+            "describe": "a stylish blue zip-up jacket"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l05.hat",
+          "text": "hat",
+          "kind": "word",
+          "forms": [
+            "hats"
+          ],
+          "example": "I'm wearing a big hat.",
+          "note": "You wear a hat on your head.",
+          "image": {
+            "id": "hat",
+            "describe": "a cheerful yellow sun hat"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l05.socks",
+          "text": "socks",
+          "kind": "word",
+          "forms": [
+            "sock"
+          ],
+          "example": "She is wearing green socks.",
+          "note": "Socks go on your feet inside your shoes; one is a ‘sock’ and a pair is ‘socks’.",
+          "image": {
+            "id": "socks",
+            "describe": "a pair of striped green socks"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "Present continuous: am / is / are wearing",
+        "explanation": "Use ‘am wearing’ for I, ‘is wearing’ for he or she, and ‘are wearing’ for you, we, or they.",
+        "examples": [
+          "I am wearing a yellow hat.",
+          "She is wearing a blue jacket."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u06.l05.task.pick-hat",
+          "kind": "choice",
+          "prompt": "What do you wear on your head?",
+          "answer": "hat",
+          "options": [
+            "hat",
+            "socks",
+            "trousers"
+          ],
+          "explanation": "A hat goes on your head.",
+          "itemIds": [
+            "en.beginner.u06.l05.hat"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l05.task.hear-wearing",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I am wearing a blue jacket.",
+          "answer": "I am wearing a blue jacket.",
+          "options": [
+            "I am wearing a blue jacket.",
+            "I am wearing a yellow hat.",
+            "I am wearing green socks."
+          ],
+          "explanation": "Listen to the end of the sentence: a blue jacket.",
+          "itemIds": [
+            "en.beginner.u06.l05.i-am-wearing",
+            "en.beginner.u06.l05.jacket",
+            "en.beginner.u06.l01.blue"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l05.task.pick-socks",
+          "kind": "choice",
+          "prompt": "What do you wear on your feet inside your shoes?",
+          "answer": "socks",
+          "options": [
+            "socks",
+            "hat",
+            "jacket"
+          ],
+          "explanation": "You wear socks on your feet under shoes.",
+          "itemIds": [
+            "en.beginner.u06.l05.socks",
+            "en.beginner.u06.l03.shoes"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l05.task.fill-am-wearing",
+          "kind": "fill",
+          "prompt": "Complete the sentence about yourself.",
+          "text": "I ___ wearing a red T-shirt.",
+          "answer": "am",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ],
+          "explanation": "With ‘I’, use ‘am wearing’.",
+          "itemIds": [
+            "en.beginner.u06.l05.i-am-wearing",
+            "en.beginner.u06.l03.t-shirt",
+            "en.beginner.u06.l01.red"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l05.task.build-hat",
+          "kind": "build",
+          "prompt": "Build the sentence.",
+          "answer": "I am wearing a yellow hat.",
+          "tiles": [
+            "I",
+            "am",
+            "wearing",
+            "a",
+            "yellow",
+            "hat",
+            "is"
+          ],
+          "explanation": "Use ‘I am wearing’ followed by ‘a yellow hat’.",
+          "itemIds": [
+            "en.beginner.u06.l05.i-am-wearing",
+            "en.beginner.u06.l05.hat",
+            "en.beginner.u06.l01.yellow"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l05.task.match-wearing",
+          "kind": "match",
+          "prompt": "Match each subject with the right form of ‘wearing’.",
+          "pairs": [
+            {
+              "left": "I",
+              "right": "am wearing a hat"
+            },
+            {
+              "left": "She",
+              "right": "is wearing a jacket"
+            },
+            {
+              "left": "They",
+              "right": "are wearing socks"
+            }
+          ],
+          "explanation": "Use am with I, is with she, and are with they.",
+          "itemIds": [
+            "en.beginner.u06.l05.i-am-wearing",
+            "en.beginner.u06.l05.hat",
+            "en.beginner.u06.l05.jacket",
+            "en.beginner.u06.l05.socks"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l05.task.fill-jacket",
+          "kind": "fill",
+          "prompt": "Sam wears this over his shirt. Complete the sentence.",
+          "text": "Sam is wearing a brown ___.",
+          "answer": "jacket",
+          "options": [
+            "jacket",
+            "socks",
+            "shoes"
+          ],
+          "explanation": "‘A brown jacket’ is singular, matching ‘a’.",
+          "itemIds": [
+            "en.beginner.u06.l05.jacket",
+            "en.beginner.u06.l02.brown"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l05.task.hear-socks",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Mia is wearing white socks.",
+          "answer": "Mia is wearing white socks.",
+          "options": [
+            "Mia is wearing white socks.",
+            "Mia is wearing white shoes.",
+            "Mia is wearing a white hat."
+          ],
+          "explanation": "Mia is wearing white socks.",
+          "itemIds": [
+            "en.beginner.u06.l05.socks",
+            "en.beginner.u06.l02.white"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l05.task.fill-is-wearing",
+          "kind": "fill",
+          "prompt": "Complete the sentence about Smarty.",
+          "text": "Smarty ___ wearing a big hat.",
+          "answer": "is",
+          "options": [
+            "is",
+            "am",
+            "are"
+          ],
+          "explanation": "Smarty is one cat (he), so use ‘is wearing’.",
+          "itemIds": [
+            "en.beginner.u06.l05.i-am-wearing",
+            "en.beginner.u06.l05.hat",
+            "en.beginner.u02.l07.big"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l05.task.say-wearing",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "I'm wearing a jacket and a hat.",
+          "answer": "I'm wearing a jacket and a hat.",
+          "explanation": "‘I’m wearing’ is the short form of ‘I am wearing’.",
+          "itemIds": [
+            "en.beginner.u06.l05.i-am-wearing",
+            "en.beginner.u06.l05.jacket",
+            "en.beginner.u06.l05.hat"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is Smarty wearing on his head and feet?",
+        "image": {
+          "id": "en-a1-u06-l05-scene",
+          "describe": "Smarty the black cat wearing a big yellow hat and green socks, standing next to Mia in a blue jacket and Sam in a red shirt in the wardrobe room."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "I am wearing a blue jacket and black trousers."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I'm wearing a red shirt. What are you wearing, Smarty?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I am wearing a big yellow hat!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "What colour are your socks?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I am wearing green socks! They are my new socks."
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u06.l05.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Mia wearing?",
+            "answer": "a blue jacket",
+            "options": [
+              "a blue jacket",
+              "a yellow hat",
+              "a red shirt"
+            ],
+            "explanation": "Mia says: I am wearing a blue jacket and black trousers.",
+            "itemIds": [
+              "en.beginner.u06.l05.jacket",
+              "en.beginner.u06.l01.blue"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l05.task.story-two",
+            "kind": "choice",
+            "prompt": "Smarty is wearing a big ___ hat.",
+            "answer": "yellow",
+            "options": [
+              "yellow",
+              "blue",
+              "red"
+            ],
+            "explanation": "Smarty says: I am wearing a big yellow hat!",
+            "itemIds": [
+              "en.beginner.u06.l05.hat",
+              "en.beginner.u06.l01.yellow"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l05.task.story-three",
+            "kind": "choice",
+            "prompt": "What colour are Smarty’s socks?",
+            "answer": "green",
+            "options": [
+              "green",
+              "white",
+              "black"
+            ],
+            "explanation": "Smarty says: I am wearing green socks!",
+            "itemIds": [
+              "en.beginner.u06.l05.socks",
+              "en.beginner.u06.l01.green"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is showing off his outfit and wants to know what you are wearing.",
+        "turns": [
+          {
+            "smarty": "I am wearing a yellow hat! What are you wearing?",
+            "accept": [
+              "^(?:i am|i m) wearing (?:a )?(?:(?:red|blue|green|yellow|black|white|pink|purple|brown) )?(?:shirt|t shirt|tshirt|trousers|dress|shoes|jacket|hat|socks)$"
+            ],
+            "example": "I am wearing a blue T-shirt.",
+            "hint": "Start with I am wearing… and name a piece of clothing.",
+            "itemIds": [
+              "en.beginner.u06.l05.i-am-wearing",
+              "en.beginner.u06.l03.t-shirt"
+            ]
+          },
+          {
+            "smarty": "Are you wearing socks?",
+            "accept": [
+              "^(?:yes|no)(?: i am wearing(?: (?:red|blue|green|yellow|black|white|pink|purple|brown))? socks| i am not wearing socks)?$",
+              "^i am wearing (?:(?:red|blue|green|yellow|black|white|pink|purple|brown) )?socks$"
+            ],
+            "example": "Yes, I am wearing white socks.",
+            "hint": "Say Yes or No, or say I am wearing socks.",
+            "itemIds": [
+              "en.beginner.u06.l05.socks",
+              "en.beginner.u06.l05.i-am-wearing"
+            ]
+          },
+          {
+            "smarty": "Tell me about a jacket or a hat!",
+            "accept": [
+              "^(?:i am|i m|he is|she is) wearing a (?:(?:red|blue|green|yellow|black|white|pink|purple|brown) )?(?:jacket|hat)$",
+              "^i have a (?:(?:red|blue|green|yellow|black|white|pink|purple|brown) )?(?:jacket|hat)$"
+            ],
+            "example": "I am wearing a black jacket.",
+            "hint": "Say I am wearing a jacket or I am wearing a hat.",
+            "itemIds": [
+              "en.beginner.u06.l05.jacket",
+              "en.beginner.u06.l05.hat",
+              "en.beginner.u06.l05.i-am-wearing"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u06.l01.blue",
+        "en.beginner.u06.l03.shoes",
+        "en.beginner.u06.l03.t-shirt",
+        "en.beginner.u06.l01.red",
+        "en.beginner.u06.l01.yellow",
+        "en.beginner.u06.l02.brown",
+        "en.beginner.u06.l02.white",
+        "en.beginner.u02.l07.big",
+        "en.beginner.u06.l01.green"
+      ]
+    },
+    {
+      "id": "en.beginner.u06.l06",
+      "section": "beginner",
+      "unit": 6,
+      "lesson": 6,
+      "type": "lesson",
+      "title": "Whose is this?",
+      "canDo": "Ask who owns something",
+      "scenario": "Omar and Lily find a scarf and hats on the sofa in Smarty’s room and ask who owns them.",
+      "items": [
+        {
+          "id": "en.beginner.u06.l06.whose-is-this",
+          "text": "Whose is this?",
+          "kind": "phrase",
+          "forms": [
+            "whose"
+          ],
+          "example": "Whose is this? It is mine.",
+          "note": "Ask ‘Whose is this?’ when you find something and want to know who owns it."
+        },
+        {
+          "id": "en.beginner.u06.l06.mine",
+          "text": "mine",
+          "kind": "word",
+          "example": "That blue hat is mine.",
+          "note": "Say ‘mine’ instead of ‘my hat’ or ‘my scarf’ when something belongs to you."
+        },
+        {
+          "id": "en.beginner.u06.l06.yours",
+          "text": "yours",
+          "kind": "word",
+          "example": "This red scarf is yours.",
+          "note": "Say ‘yours’ instead of ‘your scarf’ when something belongs to the person you are talking to."
+        },
+        {
+          "id": "en.beginner.u06.l06.scarf",
+          "text": "scarf",
+          "kind": "word",
+          "forms": [
+            "scarves"
+          ],
+          "example": "She is wearing a purple scarf.",
+          "note": "A scarf is a long warm cloth you wear around your neck.",
+          "image": {
+            "id": "scarf",
+            "describe": "a cozy purple knitted scarf"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "Whose, mine, yours",
+        "explanation": "Ask ‘Whose is this?’ or ‘Whose scarf is this?’ to find the owner. Answer with ‘It is mine’ (belongs to me) or ‘It is yours’ (belongs to you).",
+        "examples": [
+          "Whose scarf is this?",
+          "It is mine."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u06.l06.task.pick-scarf",
+          "kind": "choice",
+          "prompt": "What do you wear around your neck when it is cold?",
+          "answer": "scarf",
+          "options": [
+            "scarf",
+            "shoes",
+            "trousers"
+          ],
+          "explanation": "A scarf keeps your neck warm.",
+          "itemIds": [
+            "en.beginner.u06.l06.scarf",
+            "en.beginner.u03.l09.cold"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l06.task.hear-whose",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "Whose is this?",
+          "answer": "Whose is this?",
+          "options": [
+            "Whose is this?",
+            "Who is she?",
+            "What is this?"
+          ],
+          "explanation": "‘Whose is this?’ asks who owns something.",
+          "itemIds": [
+            "en.beginner.u06.l06.whose-is-this"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l06.task.fill-mine",
+          "kind": "fill",
+          "prompt": "This scarf belongs to you. Complete the sentence.",
+          "text": "This is my scarf. It is ___.",
+          "answer": "mine",
+          "options": [
+            "mine",
+            "yours",
+            "his"
+          ],
+          "explanation": "‘My scarf’ becomes ‘mine’ when no noun follows.",
+          "itemIds": [
+            "en.beginner.u06.l06.mine",
+            "en.beginner.u06.l06.scarf",
+            "en.beginner.u02.l01.my"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l06.task.fill-yours",
+          "kind": "fill",
+          "prompt": "You are talking to Smarty about Smarty’s hat. Complete the sentence.",
+          "text": "Smarty, this hat is ___.",
+          "answer": "yours",
+          "options": [
+            "yours",
+            "mine",
+            "her"
+          ],
+          "explanation": "When something belongs to the person you are talking to, say ‘yours’.",
+          "itemIds": [
+            "en.beginner.u06.l06.yours",
+            "en.beginner.u06.l05.hat"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l06.task.build-whose-scarf",
+          "kind": "build",
+          "prompt": "Ask who owns the scarf.",
+          "answer": "Whose scarf is this?",
+          "tiles": [
+            "Whose",
+            "scarf",
+            "is",
+            "this",
+            "mine"
+          ],
+          "explanation": "Put ‘Whose scarf’ first, then ‘is this?’.",
+          "itemIds": [
+            "en.beginner.u06.l06.whose-is-this",
+            "en.beginner.u06.l06.scarf"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l06.task.match-owners",
+          "kind": "match",
+          "prompt": "Match the two ways to say the same thing.",
+          "pairs": [
+            {
+              "left": "It is my scarf.",
+              "right": "It is mine."
+            },
+            {
+              "left": "It is your hat.",
+              "right": "It is yours."
+            },
+            {
+              "left": "Whose scarf is this?",
+              "right": "Whose is this?"
+            }
+          ],
+          "explanation": "Mine replaces my + noun, and yours replaces your + noun.",
+          "itemIds": [
+            "en.beginner.u06.l06.mine",
+            "en.beginner.u06.l06.yours",
+            "en.beginner.u06.l06.whose-is-this",
+            "en.beginner.u06.l06.scarf",
+            "en.beginner.u06.l05.hat",
+            "en.beginner.u02.l01.my"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l06.task.hear-mine",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The purple scarf is mine.",
+          "answer": "The purple scarf is mine.",
+          "options": [
+            "The purple scarf is mine.",
+            "The purple scarf is yours.",
+            "The purple shirt is mine."
+          ],
+          "explanation": "Listen to the last word: mine.",
+          "itemIds": [
+            "en.beginner.u06.l06.mine",
+            "en.beginner.u06.l06.scarf",
+            "en.beginner.u06.l02.purple"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l06.task.fill-whose",
+          "kind": "fill",
+          "prompt": "You find a jacket on the chair. Ask who owns it.",
+          "text": "___ jacket is this?",
+          "answer": "Whose",
+          "options": [
+            "Whose",
+            "What",
+            "Who"
+          ],
+          "explanation": "Use ‘Whose’ before a noun to ask who owns it.",
+          "itemIds": [
+            "en.beginner.u06.l06.whose-is-this",
+            "en.beginner.u06.l05.jacket"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l06.task.fill-yours-two",
+          "kind": "fill",
+          "prompt": "Smarty hands you your book. What does Smarty say?",
+          "text": "Here you are! This book is ___.",
+          "answer": "yours",
+          "options": [
+            "yours",
+            "mine",
+            "our"
+          ],
+          "explanation": "Smarty is giving you your own book, so Smarty says ‘yours’.",
+          "itemIds": [
+            "en.beginner.u06.l06.yours",
+            "en.beginner.u03.l06.here-you-are",
+            "en.beginner.u04.l09.book"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l06.task.say-whose",
+          "kind": "speak",
+          "prompt": "Say the question and answer aloud. You can try again.",
+          "text": "Whose is this? It is mine.",
+          "answer": "Whose is this? It is mine.",
+          "explanation": "Ask ‘Whose is this?’ and answer ‘It is mine.’",
+          "itemIds": [
+            "en.beginner.u06.l06.whose-is-this",
+            "en.beginner.u06.l06.mine"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Who owns the purple scarf on the sofa?",
+        "image": {
+          "id": "en-a1-u06-l06-scene",
+          "describe": "Smarty the black cat holding up a purple scarf and a brown hat in the wardrobe room while Omar and Lily point to see who owns them."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "There is a purple scarf on the sofa. Whose is this?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "It is not mine. My scarf is green."
+          },
+          {
+            "speaker": "Lily",
+            "text": "It is mine! Thank you, Smarty."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "And whose hat is this?"
+          },
+          {
+            "speaker": "Omar",
+            "text": "That brown hat is mine! And the red scarf on the chair is yours, Smarty."
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, the red scarf is mine!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u06.l06.task.story-one",
+            "kind": "choice",
+            "prompt": "Whose is the purple scarf?",
+            "answer": "Lily’s",
+            "options": [
+              "Lily’s",
+              "Omar’s",
+              "Smarty’s"
+            ],
+            "explanation": "Lily says: It is mine! Thank you, Smarty.",
+            "itemIds": [
+              "en.beginner.u06.l06.scarf",
+              "en.beginner.u06.l06.mine",
+              "en.beginner.u06.l02.purple"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l06.task.story-two",
+            "kind": "choice",
+            "prompt": "What colour is Omar’s hat?",
+            "answer": "brown",
+            "options": [
+              "brown",
+              "purple",
+              "red"
+            ],
+            "explanation": "Omar says: That brown hat is mine!",
+            "itemIds": [
+              "en.beginner.u06.l05.hat",
+              "en.beginner.u06.l02.brown"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l06.task.story-three",
+            "kind": "choice",
+            "prompt": "Omar tells Smarty: The red scarf is ___.",
+            "answer": "yours",
+            "options": [
+              "yours",
+              "mine",
+              "his"
+            ],
+            "explanation": "Omar tells Smarty the red scarf belongs to Smarty: ‘is yours, Smarty’.",
+            "itemIds": [
+              "en.beginner.u06.l06.yours",
+              "en.beginner.u06.l06.scarf",
+              "en.beginner.u06.l01.red"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty found a scarf and a hat in his room and is asking who owns them.",
+        "turns": [
+          {
+            "smarty": "I have a blue scarf here. Whose is this?",
+            "accept": [
+              "^(?:it is )?(?:mine|yours)$",
+              "^(?:that|the) scarf is (?:mine|yours)$"
+            ],
+            "example": "It is mine.",
+            "hint": "Say It is mine or It is yours.",
+            "itemIds": [
+              "en.beginner.u06.l06.whose-is-this",
+              "en.beginner.u06.l06.mine",
+              "en.beginner.u06.l06.yours",
+              "en.beginner.u06.l06.scarf"
+            ]
+          },
+          {
+            "smarty": "And this yellow hat is my hat. Is it yours?",
+            "accept": [
+              "^no(?: it is not mine| it is yours)?$",
+              "^it is yours$"
+            ],
+            "example": "No, it is yours.",
+            "hint": "Say No, it is yours.",
+            "itemIds": [
+              "en.beginner.u06.l06.yours",
+              "en.beginner.u06.l05.hat"
+            ]
+          },
+          {
+            "smarty": "Now you hold up a pen and ask me who owns it!",
+            "accept": [
+              "^whose is this$",
+              "^whose pen is this$"
+            ],
+            "example": "Whose is this?",
+            "hint": "Ask: Whose is this?",
+            "itemIds": [
+              "en.beginner.u06.l06.whose-is-this",
+              "en.beginner.u05.l07.pen"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l09.cold",
+        "en.beginner.u02.l01.my",
+        "en.beginner.u06.l05.hat",
+        "en.beginner.u06.l02.purple",
+        "en.beginner.u06.l05.jacket",
+        "en.beginner.u03.l06.here-you-are",
+        "en.beginner.u04.l09.book",
+        "en.beginner.u06.l02.brown",
+        "en.beginner.u06.l01.red",
+        "en.beginner.u05.l07.pen"
+      ]
+    },
+    {
+      "id": "en.beginner.u06.l07",
+      "section": "beginner",
+      "unit": 6,
+      "lesson": 7,
+      "type": "lesson",
+      "title": "Me him them",
+      "canDo": "Use object pronouns",
+      "scenario": "It is cold, and Smarty hands out coats and scarves to Tom, Ana, and his friends.",
+      "items": [
+        {
+          "id": "en.beginner.u06.l07.me",
+          "text": "me",
+          "kind": "word",
+          "example": "This blue coat is for me.",
+          "note": "Use ‘me’ after words like ‘for’ or ‘to’ when talking about yourself."
+        },
+        {
+          "id": "en.beginner.u06.l07.him",
+          "text": "him",
+          "kind": "word",
+          "example": "The black hat is for him.",
+          "note": "Use ‘him’ after words like ‘for’ or ‘to’ when talking about a boy or man."
+        },
+        {
+          "id": "en.beginner.u06.l07.them",
+          "text": "them",
+          "kind": "word",
+          "example": "These scarves are for them.",
+          "note": "Use ‘them’ after words like ‘for’ or ‘to’ when talking about two or more people or things."
+        },
+        {
+          "id": "en.beginner.u06.l07.us",
+          "text": "us",
+          "kind": "word",
+          "example": "The hot tea is for us.",
+          "note": "Use ‘us’ after words like ‘for’ or ‘to’ when talking about you and someone else together."
+        },
+        {
+          "id": "en.beginner.u06.l07.coat",
+          "text": "coat",
+          "kind": "word",
+          "forms": [
+            "coats"
+          ],
+          "example": "She is wearing a brown coat.",
+          "note": "A coat is a heavy outer garment you wear when it is cold.",
+          "image": {
+            "id": "coat",
+            "describe": "a warm long brown winter coat with buttons"
+          }
+        }
+      ],
+      "grammar": {
+        "title": "Object pronouns: me, him, her, it, us, them",
+        "explanation": "After words like ‘for’, use object pronouns: me (I), him (he), her (she), it (it), us (we), and them (they).",
+        "examples": [
+          "This coat is for me.",
+          "Those hats are for them."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u06.l07.task.pick-coat",
+          "kind": "choice",
+          "prompt": "What heavy item do you wear over your clothes when it is cold?",
+          "answer": "coat",
+          "options": [
+            "coat",
+            "T-shirt",
+            "socks"
+          ],
+          "explanation": "A coat keeps you warm in cold weather.",
+          "itemIds": [
+            "en.beginner.u06.l07.coat",
+            "en.beginner.u03.l09.cold"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l07.task.hear-me",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "This red coat is for me.",
+          "answer": "This red coat is for me.",
+          "options": [
+            "This red coat is for me.",
+            "This red coat is for him.",
+            "This red coat is for us."
+          ],
+          "explanation": "Listen to the pronoun at the end: me.",
+          "itemIds": [
+            "en.beginner.u06.l07.me",
+            "en.beginner.u06.l07.coat",
+            "en.beginner.u06.l01.red"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l07.task.fill-him",
+          "kind": "fill",
+          "prompt": "Tom is a boy. The scarf is for Tom. Complete the sentence.",
+          "text": "The green scarf is for ___.",
+          "answer": "him",
+          "options": [
+            "him",
+            "her",
+            "me"
+          ],
+          "explanation": "Use ‘him’ for a boy or man.",
+          "itemIds": [
+            "en.beginner.u06.l07.him",
+            "en.beginner.u06.l06.scarf",
+            "en.beginner.u06.l01.green"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l07.task.fill-them",
+          "kind": "fill",
+          "prompt": "Mia and Sam are two friends. The apples are for Mia and Sam.",
+          "text": "The apples are for ___.",
+          "answer": "them",
+          "options": [
+            "them",
+            "him",
+            "me"
+          ],
+          "explanation": "Use ‘them’ for two or more people.",
+          "itemIds": [
+            "en.beginner.u06.l07.them",
+            "en.beginner.u03.l01.apple"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l07.task.build-us",
+          "kind": "build",
+          "prompt": "Build the sentence about you and your friend together.",
+          "answer": "These coats are for us.",
+          "tiles": [
+            "These",
+            "coats",
+            "are",
+            "for",
+            "us",
+            "him"
+          ],
+          "explanation": "Use ‘us’ when you are included in the group.",
+          "itemIds": [
+            "en.beginner.u06.l07.us",
+            "en.beginner.u06.l07.coat",
+            "en.beginner.u05.l06.these"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l07.task.match-pronouns",
+          "kind": "match",
+          "prompt": "Match each subject pronoun with its object pronoun.",
+          "pairs": [
+            {
+              "left": "I",
+              "right": "me"
+            },
+            {
+              "left": "he",
+              "right": "him"
+            },
+            {
+              "left": "we",
+              "right": "us"
+            },
+            {
+              "left": "they",
+              "right": "them"
+            }
+          ],
+          "explanation": "I → me, he → him, we → us, they → them.",
+          "itemIds": [
+            "en.beginner.u06.l07.me",
+            "en.beginner.u06.l07.him",
+            "en.beginner.u06.l07.us",
+            "en.beginner.u06.l07.them"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l07.task.fill-her-recycle",
+          "kind": "fill",
+          "prompt": "Ana is a girl. Complete the sentence about Ana.",
+          "text": "The pink coat is for ___.",
+          "answer": "her",
+          "options": [
+            "her",
+            "him",
+            "them"
+          ],
+          "explanation": "Use ‘her’ for a girl or woman.",
+          "itemIds": [
+            "en.beginner.u02.l02.her",
+            "en.beginner.u06.l07.coat",
+            "en.beginner.u06.l02.pink"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l07.task.hear-them",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "The blue hats are for them.",
+          "answer": "The blue hats are for them.",
+          "options": [
+            "The blue hats are for them.",
+            "The blue hats are for us.",
+            "The blue hat is for him."
+          ],
+          "explanation": "Listen to the end: for them.",
+          "itemIds": [
+            "en.beginner.u06.l07.them",
+            "en.beginner.u06.l05.hat",
+            "en.beginner.u06.l01.blue"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l07.task.fill-it-recycle",
+          "kind": "fill",
+          "prompt": "Smarty is a cat. Complete the sentence about the cat.",
+          "text": "This small hat is for ___.",
+          "answer": "it",
+          "options": [
+            "it",
+            "us",
+            "them"
+          ],
+          "explanation": "Use ‘it’ for an animal or thing.",
+          "itemIds": [
+            "en.beginner.u02.l03.it",
+            "en.beginner.u06.l05.hat",
+            "en.beginner.u02.l07.small"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l07.task.say-coat",
+          "kind": "speak",
+          "prompt": "Say the sentence aloud. You can try again.",
+          "text": "This brown coat is for me.",
+          "answer": "This brown coat is for me.",
+          "explanation": "Use ‘me’ after ‘for’ when talking about yourself.",
+          "itemIds": [
+            "en.beginner.u06.l07.coat",
+            "en.beginner.u06.l07.me",
+            "en.beginner.u06.l02.brown"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "Which coat is for Smarty?",
+        "image": {
+          "id": "en-a1-u06-l07-scene",
+          "describe": "Smarty the black cat in his wardrobe room handing out a brown coat to Tom, a pink coat to Ana, and keeping a red coat for himself while Leo and Ben wave."
+        },
+        "lines": [
+          {
+            "speaker": "Smarty",
+            "text": "It is cold in the morning! I have coats for us."
+          },
+          {
+            "speaker": "Tom",
+            "text": "Thank you, Smarty! Is this brown coat for me?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "Yes, the brown coat is for him, and the pink coat is for her."
+          },
+          {
+            "speaker": "Ana",
+            "text": "And what is for Leo and Ben?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "These two blue scarves are for them! And this red coat is for me."
+          },
+          {
+            "speaker": "Tom",
+            "text": "We are wearing new coats!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u06.l07.task.story-one",
+            "kind": "choice",
+            "prompt": "The brown coat is for ___.",
+            "answer": "him (Tom)",
+            "options": [
+              "him (Tom)",
+              "her (Ana)",
+              "them (Leo and Ben)"
+            ],
+            "explanation": "Smarty says: the brown coat is for him.",
+            "itemIds": [
+              "en.beginner.u06.l07.him",
+              "en.beginner.u06.l07.coat",
+              "en.beginner.u06.l02.brown"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l07.task.story-two",
+            "kind": "choice",
+            "prompt": "The two blue scarves are for ___.",
+            "answer": "them",
+            "options": [
+              "them",
+              "him",
+              "me"
+            ],
+            "explanation": "Leo and Ben are two people, so Smarty says: for them.",
+            "itemIds": [
+              "en.beginner.u06.l07.them",
+              "en.beginner.u06.l06.scarf",
+              "en.beginner.u06.l01.blue"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l07.task.story-three",
+            "kind": "choice",
+            "prompt": "What colour is Smarty’s coat?",
+            "answer": "red",
+            "options": [
+              "red",
+              "brown",
+              "pink"
+            ],
+            "explanation": "Smarty says: And this red coat is for me.",
+            "itemIds": [
+              "en.beginner.u06.l07.coat",
+              "en.beginner.u06.l01.red"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is handing out coats and scarves for a cold morning. Tell him who they are for.",
+        "turns": [
+          {
+            "smarty": "This black coat is for you! Say: It is for me!",
+            "accept": [
+              "^(?:it is |this coat is )?for me$"
+            ],
+            "example": "It is for me.",
+            "hint": "Say It is for me.",
+            "itemIds": [
+              "en.beginner.u06.l07.me",
+              "en.beginner.u06.l07.coat"
+            ]
+          },
+          {
+            "smarty": "Sam is cold. Is the green scarf for him?",
+            "accept": [
+              "^yes(?: it is for him)?$",
+              "^it is for him$"
+            ],
+            "example": "Yes, it is for him.",
+            "hint": "Say Yes, it is for him.",
+            "itemIds": [
+              "en.beginner.u06.l07.him",
+              "en.beginner.u06.l06.scarf"
+            ]
+          },
+          {
+            "smarty": "Mia and Lily are cold too. Are these hats for them?",
+            "accept": [
+              "^yes(?: they are for them)?$",
+              "^they are for them$"
+            ],
+            "example": "Yes, they are for them.",
+            "hint": "Say Yes, they are for them.",
+            "itemIds": [
+              "en.beginner.u06.l07.them",
+              "en.beginner.u06.l05.hat"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u03.l09.cold",
+        "en.beginner.u06.l01.red",
+        "en.beginner.u06.l06.scarf",
+        "en.beginner.u06.l01.green",
+        "en.beginner.u03.l01.apple",
+        "en.beginner.u05.l06.these",
+        "en.beginner.u02.l02.her",
+        "en.beginner.u06.l02.pink",
+        "en.beginner.u06.l05.hat",
+        "en.beginner.u06.l01.blue",
+        "en.beginner.u02.l03.it",
+        "en.beginner.u02.l07.small",
+        "en.beginner.u06.l02.brown"
+      ]
+    },
+    {
+      "id": "en.beginner.u06.l08",
+      "section": "beginner",
+      "unit": 6,
+      "lesson": 8,
+      "type": "test",
+      "title": "Fashion show",
+      "canDo": "Describe an outfit for Smarty",
+      "scenario": "Smarty and his friends get ready for a fashion show in the wardrobe room.",
+      "items": [
+        {
+          "id": "en.beginner.u06.l08.i-want",
+          "text": "I want",
+          "kind": "phrase",
+          "forms": [
+            "want",
+            "wants"
+          ],
+          "example": "I want a red jacket.",
+          "note": "Say ‘I want…’ when you wish to have or wear something."
+        },
+        {
+          "id": "en.beginner.u06.l08.boots",
+          "text": "boots",
+          "kind": "word",
+          "forms": [
+            "boot"
+          ],
+          "example": "He is wearing black boots.",
+          "note": "Boots are tall shoes that cover your ankles or legs.",
+          "image": {
+            "id": "boots",
+            "describe": "a pair of shiny black boots"
+          }
+        },
+        {
+          "id": "en.beginner.u06.l08.favourite",
+          "text": "favourite",
+          "kind": "word",
+          "forms": [
+            "favourites"
+          ],
+          "example": "Blue is my favourite colour.",
+          "note": "Say ‘favourite’ for the one thing you like best of all."
+        }
+      ],
+      "grammar": {
+        "title": "Describing a full outfit",
+        "explanation": "Combine colour words and clothes after ‘I am wearing’ or ‘I want’ to describe a complete outfit.",
+        "examples": [
+          "I am wearing a red coat and black boots.",
+          "I want my favourite blue hat."
+        ]
+      },
+      "practice": [
+        {
+          "id": "en.beginner.u06.l08.task.pick-boots",
+          "kind": "choice",
+          "prompt": "Which tall footwear covers your ankles?",
+          "answer": "boots",
+          "options": [
+            "boots",
+            "socks",
+            "scarf"
+          ],
+          "explanation": "Boots are tall shoes that cover your ankles.",
+          "itemIds": [
+            "en.beginner.u06.l08.boots"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l08.task.hear-want",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "I want brown boots and a yellow hat.",
+          "answer": "I want brown boots and a yellow hat.",
+          "options": [
+            "I want brown boots and a yellow hat.",
+            "I want black shoes and a yellow hat.",
+            "I am wearing brown boots and a yellow hat."
+          ],
+          "explanation": "The speaker says ‘I want brown boots and a yellow hat.’",
+          "itemIds": [
+            "en.beginner.u06.l08.i-want",
+            "en.beginner.u06.l08.boots",
+            "en.beginner.u06.l05.hat",
+            "en.beginner.u06.l02.brown",
+            "en.beginner.u06.l01.yellow"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l08.task.fill-favourite",
+          "kind": "fill",
+          "prompt": "Complete the sentence about the colour you like best.",
+          "text": "Purple is my ___ colour.",
+          "answer": "favourite",
+          "options": [
+            "favourite",
+            "dirty",
+            "small"
+          ],
+          "explanation": "‘Favourite’ means the one you like best.",
+          "itemIds": [
+            "en.beginner.u06.l08.favourite",
+            "en.beginner.u06.l02.purple",
+            "en.beginner.u06.l02.what-colour-is-it"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l08.task.build-outfit",
+          "kind": "build",
+          "prompt": "Build the sentence describing Smarty’s outfit.",
+          "answer": "Smarty is wearing a red coat and black boots.",
+          "tiles": [
+            "Smarty",
+            "is",
+            "wearing",
+            "a",
+            "red",
+            "coat",
+            "and",
+            "black",
+            "boots",
+            "dress"
+          ],
+          "explanation": "Put ‘Smarty is wearing’ first, then the two items of clothing.",
+          "itemIds": [
+            "en.beginner.u06.l05.i-am-wearing",
+            "en.beginner.u06.l07.coat",
+            "en.beginner.u06.l08.boots",
+            "en.beginner.u06.l01.red",
+            "en.beginner.u06.l01.black"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l08.task.fill-whose-mine",
+          "kind": "fill",
+          "prompt": "Complete the dialogue about the boots.",
+          "text": "Whose boots are these? They are ___.",
+          "answer": "mine",
+          "options": [
+            "mine",
+            "me",
+            "my"
+          ],
+          "explanation": "Use ‘mine’ at the end of the sentence when no noun follows.",
+          "itemIds": [
+            "en.beginner.u06.l06.whose-is-this",
+            "en.beginner.u06.l06.mine",
+            "en.beginner.u06.l08.boots"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l08.task.match-unit",
+          "kind": "match",
+          "prompt": "Match each question with the right reply.",
+          "pairs": [
+            {
+              "left": "What colour is it?",
+              "right": "It is pink."
+            },
+            {
+              "left": "Whose scarf is this?",
+              "right": "It is yours."
+            },
+            {
+              "left": "Are these boots for Sam?",
+              "right": "Yes, they are for him."
+            },
+            {
+              "left": "What do you want?",
+              "right": "I want a green jacket."
+            }
+          ],
+          "explanation": "Match the question pattern with its grammar reply.",
+          "itemIds": [
+            "en.beginner.u06.l02.what-colour-is-it",
+            "en.beginner.u06.l02.pink",
+            "en.beginner.u06.l06.whose-is-this",
+            "en.beginner.u06.l06.yours",
+            "en.beginner.u06.l06.scarf",
+            "en.beginner.u06.l08.boots",
+            "en.beginner.u06.l07.him",
+            "en.beginner.u06.l08.i-want",
+            "en.beginner.u06.l05.jacket",
+            "en.beginner.u06.l01.green"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l08.task.fill-pronoun",
+          "kind": "fill",
+          "prompt": "Mia and Sam are wearing new T-shirts. Complete the sentence.",
+          "text": "These favourite T-shirts are for ___.",
+          "answer": "them",
+          "options": [
+            "them",
+            "us",
+            "me"
+          ],
+          "explanation": "Mia and Sam are two people, so use ‘them’.",
+          "itemIds": [
+            "en.beginner.u06.l07.them",
+            "en.beginner.u06.l08.favourite",
+            "en.beginner.u06.l03.t-shirt"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l08.task.hear-favourite",
+          "kind": "listen",
+          "prompt": "Listen, then choose what you heard.",
+          "audio": "My favourite dress is white.",
+          "answer": "My favourite dress is white.",
+          "options": [
+            "My favourite dress is white.",
+            "My favourite shirt is white.",
+            "My favourite coat is white."
+          ],
+          "explanation": "Listen to the clothing word: dress.",
+          "itemIds": [
+            "en.beginner.u06.l08.favourite",
+            "en.beginner.u06.l03.dress",
+            "en.beginner.u06.l02.white"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l08.task.fill-want",
+          "kind": "fill",
+          "prompt": "Complete the sentence.",
+          "text": "I ___ a new scarf for the morning.",
+          "answer": "want",
+          "options": [
+            "want",
+            "wearing",
+            "yours"
+          ],
+          "explanation": "‘I want’ means you wish to have something.",
+          "itemIds": [
+            "en.beginner.u06.l08.i-want",
+            "en.beginner.u06.l06.scarf"
+          ]
+        },
+        {
+          "id": "en.beginner.u06.l08.task.say-outfit",
+          "kind": "speak",
+          "prompt": "Describe an outfit aloud. You can try again.",
+          "text": "I am wearing my favourite jacket and black boots.",
+          "answer": "I am wearing my favourite jacket and black boots.",
+          "explanation": "Great job combining ‘wearing’, ‘favourite’, colours, and clothes!",
+          "itemIds": [
+            "en.beginner.u06.l05.i-am-wearing",
+            "en.beginner.u06.l08.favourite",
+            "en.beginner.u06.l05.jacket",
+            "en.beginner.u06.l08.boots",
+            "en.beginner.u06.l01.black"
+          ]
+        }
+      ],
+      "story": {
+        "hook": "What is Smarty’s favourite outfit?",
+        "image": {
+          "id": "en-a1-u06-l08-scene",
+          "describe": "Smarty the black cat posing proudly in a red coat, yellow hat, and black boots in front of his wardrobe while Mia, Sam, and Lily clap."
+        },
+        "lines": [
+          {
+            "speaker": "Mia",
+            "text": "I am wearing my favourite pink dress and white shoes."
+          },
+          {
+            "speaker": "Sam",
+            "text": "I'm wearing a blue shirt, brown trousers, and black boots."
+          },
+          {
+            "speaker": "Lily",
+            "text": "Smarty, what do you want?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "I want my favourite red coat and my yellow hat!"
+          },
+          {
+            "speaker": "Mia",
+            "text": "Whose boots are these?"
+          },
+          {
+            "speaker": "Smarty",
+            "text": "They are mine! I am wearing my red coat, yellow hat, and black boots!"
+          }
+        ],
+        "questions": [
+          {
+            "id": "en.beginner.u06.l08.task.story-one",
+            "kind": "choice",
+            "prompt": "What is Mia’s favourite dress colour?",
+            "answer": "pink",
+            "options": [
+              "pink",
+              "blue",
+              "red"
+            ],
+            "explanation": "Mia says: I am wearing my favourite pink dress.",
+            "itemIds": [
+              "en.beginner.u06.l08.favourite",
+              "en.beginner.u06.l03.dress",
+              "en.beginner.u06.l02.pink"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l08.task.story-two",
+            "kind": "choice",
+            "prompt": "What does Smarty want?",
+            "answer": "his favourite red coat and yellow hat",
+            "options": [
+              "his favourite red coat and yellow hat",
+              "a pink dress and white shoes",
+              "a blue shirt and brown trousers"
+            ],
+            "explanation": "Smarty says: I want my favourite red coat and my yellow hat!",
+            "itemIds": [
+              "en.beginner.u06.l08.i-want",
+              "en.beginner.u06.l08.favourite",
+              "en.beginner.u06.l07.coat",
+              "en.beginner.u06.l05.hat"
+            ]
+          },
+          {
+            "id": "en.beginner.u06.l08.task.story-three",
+            "kind": "choice",
+            "prompt": "Smarty is wearing black ___.",
+            "answer": "boots",
+            "options": [
+              "boots",
+              "socks",
+              "trousers"
+            ],
+            "explanation": "Smarty says: I am wearing my red coat, yellow hat, and black boots!",
+            "itemIds": [
+              "en.beginner.u06.l08.boots",
+              "en.beginner.u06.l01.black",
+              "en.beginner.u06.l05.i-am-wearing"
+            ]
+          }
+        ]
+      },
+      "mission": {
+        "setup": "Smarty is getting ready in his wardrobe room and wants your help choosing an outfit.",
+        "turns": [
+          {
+            "smarty": "What is your favourite colour?",
+            "accept": [
+              "^(?:my favourite colour is |it is )?(?:red|blue|green|yellow|black|white|pink|purple|brown)$"
+            ],
+            "example": "My favourite colour is blue.",
+            "hint": "Say your favourite colour, like My favourite colour is blue.",
+            "itemIds": [
+              "en.beginner.u06.l08.favourite",
+              "en.beginner.u06.l02.what-colour-is-it"
+            ]
+          },
+          {
+            "smarty": "I am wearing black boots. What do you want?",
+            "accept": [
+              "^i want (?:a )?(?:(?:red|blue|green|yellow|black|white|pink|purple|brown) )?(?:shirt|t shirt|tshirt|trousers|dress|shoes|jacket|hat|socks|scarf|coat|boots)$"
+            ],
+            "example": "I want a green jacket.",
+            "hint": "Say I want… and name a piece of clothing.",
+            "itemIds": [
+              "en.beginner.u06.l08.i-want",
+              "en.beginner.u06.l05.jacket",
+              "en.beginner.u06.l08.boots"
+            ]
+          },
+          {
+            "smarty": "Tell me one outfit you are wearing!",
+            "accept": [
+              "^(?:i am|i m) wearing (?:a )?(?:(?:red|blue|green|yellow|black|white|pink|purple|brown) )?(?:shirt|t shirt|tshirt|trousers|dress|shoes|jacket|hat|socks|scarf|coat|boots)(?: and (?:a )?(?:(?:red|blue|green|yellow|black|white|pink|purple|brown) )?(?:shirt|t shirt|tshirt|trousers|dress|shoes|jacket|hat|socks|scarf|coat|boots))?$"
+            ],
+            "example": "I am wearing a white shirt and black boots.",
+            "hint": "Say I am wearing… with colours and clothes.",
+            "itemIds": [
+              "en.beginner.u06.l05.i-am-wearing",
+              "en.beginner.u06.l08.boots",
+              "en.beginner.u06.l03.shirt"
+            ]
+          }
+        ]
+      },
+      "recycle": [
+        "en.beginner.u06.l05.hat",
+        "en.beginner.u06.l02.brown",
+        "en.beginner.u06.l01.yellow",
+        "en.beginner.u06.l02.purple",
+        "en.beginner.u06.l02.what-colour-is-it",
+        "en.beginner.u06.l05.i-am-wearing",
+        "en.beginner.u06.l07.coat",
+        "en.beginner.u06.l01.red",
+        "en.beginner.u06.l01.black",
+        "en.beginner.u06.l06.whose-is-this",
+        "en.beginner.u06.l06.mine",
+        "en.beginner.u06.l02.pink",
+        "en.beginner.u06.l06.yours",
+        "en.beginner.u06.l06.scarf",
+        "en.beginner.u06.l07.him",
+        "en.beginner.u06.l05.jacket",
+        "en.beginner.u06.l01.green",
+        "en.beginner.u06.l07.them",
+        "en.beginner.u06.l03.t-shirt",
+        "en.beginner.u06.l03.dress",
+        "en.beginner.u06.l02.white",
+        "en.beginner.u06.l03.shirt"
+      ]
+    }
+  ],
+  "episode": {
+    "title": "The Key in the Red Coat",
+    "panels": [
+      {
+        "speaker": "Smarty",
+        "text": "I am wearing my favourite red coat and black boots!",
+        "image": {
+          "id": "en-a1-u06-ep-01",
+          "describe": "Smarty the black cat smiling in a bright red coat and shiny black boots in his wardrobe room."
+        }
+      },
+      {
+        "speaker": "Mia",
+        "text": "What colour is your scarf, Smarty?",
+        "image": {
+          "id": "en-a1-u06-ep-02",
+          "describe": "Mia the cat pointing to two folded scarves—one yellow and one blue—on a table."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "It is yellow! This yellow scarf is for me, and the blue scarf is for you."
+      },
+      {
+        "speaker": "Sam",
+        "text": "Whose hat is this on the chair?",
+        "image": {
+          "id": "en-a1-u06-ep-04",
+          "describe": "Sam the cat holding up a brown hat next to a wooden chair."
+        }
+      },
+      {
+        "speaker": "Smarty",
+        "text": "It is mine! What is in my red coat?"
+      },
+      {
+        "speaker": "Mia",
+        "text": "It is a small green key!",
+        "image": {
+          "id": "en-a1-u06-ep-06",
+          "describe": "Smarty the black cat holding a shiny small green key pulled from his red coat."
+        }
+      },
+      {
+        "speaker": "Sam",
+        "text": "There is a big purple box under the bed!"
+      },
+      {
+        "speaker": "Smarty",
+        "text": "This key is for that box! What is in the purple box?",
+        "image": {
+          "id": "en-a1-u06-ep-08",
+          "describe": "Smarty, Mia, and Sam peeking under the bed at a mysterious big locked purple box while Smarty holds the green key."
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "en.beginner.u06.ep.task.q1",
+        "kind": "choice",
+        "prompt": "What colour is Smarty’s favourite coat?",
+        "answer": "red",
+        "options": [
+          "red",
+          "blue",
+          "purple"
+        ],
+        "explanation": "Smarty says: I am wearing my favourite red coat and black boots!",
+        "itemIds": [
+          "en.beginner.u06.l08.favourite",
+          "en.beginner.u06.l07.coat",
+          "en.beginner.u06.l01.red"
+        ]
+      },
+      {
+        "id": "en.beginner.u06.ep.task.q2",
+        "kind": "choice",
+        "prompt": "What is in Smarty’s red coat?",
+        "answer": "a small green key",
+        "options": [
+          "a small green key",
+          "a yellow hat",
+          "a brown shoe"
+        ],
+        "explanation": "Mia sees what is inside the coat: It is a small green key!",
+        "itemIds": [
+          "en.beginner.u06.l07.coat",
+          "en.beginner.u05.l06.key",
+          "en.beginner.u06.l01.green"
+        ]
+      },
+      {
+        "id": "en.beginner.u06.ep.task.q3",
+        "kind": "choice",
+        "prompt": "Where is the big purple box?",
+        "answer": "under the bed",
+        "options": [
+          "under the bed",
+          "on the chair",
+          "in the kitchen"
+        ],
+        "explanation": "Sam says: There is a big purple box under the bed!",
+        "itemIds": [
+          "en.beginner.u06.l02.purple",
+          "en.beginner.u05.l05.box",
+          "en.beginner.u05.l05.under",
+          "en.beginner.u05.l03.bed"
+        ]
+      }
+    ]
+  }
+}

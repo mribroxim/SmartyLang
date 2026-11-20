@@ -1,0 +1,763 @@
+You are writing one unit of lessons for **SmartyLang**, a language-learning app for children and adults. The mascot is **Smarty**, a friendly black cat who teaches. You must output **one JSON object only** (no Markdown fences, no comments, no text before or after), exactly in the format described below. A program will check it automatically.
+
+# What you are writing
+- Language being learned (target language): **English** (code `en`)
+- Level: **Beginner (CEFR A1)** (section `beginner`)
+- Unit 1: **Hello & Me**. Smarty's room for this unit: **bedroom** (scenes may happen there)
+- Can do by the end of the unit: Greet, introduce yourself, say where you're from and how you are
+- Grammar and patterns of the unit: be (I/you/he/she/we), what/where questions, a/an
+
+# Languages inside the JSON
+- **Target-language text** goes in: `items[].text`, `items[].forms`, `items[].example`, `grammar.examples`, task `answer`/`answers`/`options`/`audio`/`text`/`tiles`/`pairs`, `story.lines[].text`, `mission.turns[].smarty`, `mission.turns[].example`, `exposure[].text`, `episode.panels[].text`. Write natural, correct English as a native speaker would say it today. Use British or American spelling consistently (American).
+- **Everything else is in simple English** (the app translates it into the learner's own language): `title`, `canDo`, `scenario`, `prompt`, `explanation`, `note`, `hint`, `setup`, `hook`, `grammar.title`, `grammar.explanation`, `image.describe`, `exposure[].gloss`.
+
+# The teaching method (what makes a great lesson)
+1. **One small goal per lesson** (its `canDo`). Teach exactly the lesson's planned items, in the plan's order, nothing more.
+2. **Teach, then guided practice, then free use.** Each item gets:
+   - an `example` sentence (only taught words);
+   - a `note`: ONE friendly sentence Smarty says out loud explaining *when/how* to use it, e.g. "Say 'Can I have…?' to ask for something politely." Never write a dictionary definition.
+3. **Practice until it sticks.** Write as many `practice` tasks as the items need: easy items need few, tricky contrasts need many and in several formats.
+   - Start with recognising (`choice`, `listen`, `match`), then producing (`build`, `fill`, `speak`).
+   - Every task has a short `explanation` saying *why* the answer is right (shown when the learner is wrong).
+   - Mix in earlier items often (about a third of tasks); list every earlier item you reuse in `recycle`.
+4. **Scene** (`story`): a short, natural dialogue in a real situation (in or near bedroom when it fits), using the lesson's items. It has:
+   - a `hook` (a curiosity question);
+   - comprehension `questions`;
+   - an `image` describing the scene for an illustrator.
+5. **Mission**: Smarty talks, the learner answers in their own words.
+   - Give one or more `accept` patterns (regular expressions, anchored `^…$`, lowercase, no punctuation, no `.*`, no `+`, no lookarounds; use `(?:a|b)` and `?`).
+   - Give an `example` that matches one pattern after lowercasing, removing punctuation and expanding English contractions (I'm → i am).
+6. **Review lessons** (`"type": "review"`): `items` is `[]`. Practice, scene and mission use only earlier items (all listed in `recycle`).
+7. **Unit test** (`"type": "test"`, the last lesson): mixes the whole unit; may teach the few items the plan lists.
+8. **Only taught words.** Every target-language word in answers, options, audio, tiles, pairs, examples, scene lines, mission lines and episode panels must be either:
+   - taught (this unit's items so far, or the "Taught before this unit" list below);
+   - listed in some taught item's `forms` (plurals, verb forms, cases, contractions: add them to the item where it is taught in THIS unit);
+   - a whitelisted name or number;
+   - from B1 on, one of the lesson's `exposure` words, in scene lines only.
+
+   If you need a word that isn't allowed, rephrase.
+9. **Pictures**: items marked `"picture": true` in the plan get `"image": { "id": "<english-kebab-slug-of-the-meaning>", "describe": "<one concrete scene to draw>" }`.
+   - Items without `picture` get no `image` field at all.
+   - Characters are cats (Smarty or friends).
+   - No written words in pictures.
+   - Every scene gets an image too, id `en-a1-u01-lNN-scene`.
+   - Reuse the same image id for the same meaning across lessons and languages (e.g. `apple`, `brush-teeth`).
+10. **Episode** (optional, recommended): `episode` on the unit = the next chapter of Smarty's story, shown as a reward after the unit.
+    - 6–12 short `panels` (each one or two sentences, optional `speaker`, optional `image`) plus 2–3 `questions`.
+    - Only words taught by the end of the unit (plus this unit's exposure words from B1).
+    - End on a small cliffhanger that makes the learner want the next unit.
+11. **Tone**: warm, playful, kid-safe, inclusive, culturally neutral. No violence, romance, politics, religion, brands or real people.
+12. **Names**: speakers and names in target text must come from this list only: Smarty, Mia, Sam, Ben, Leo, Ana, Lily, Omar, Zara, Tom. Numbers always allowed: zero, one, two, three, four, five, six, seven, eight, nine, ten.
+
+# Exact JSON format
+Top level:
+```
+{ "$schema": "../../schema/lesson-v2.schema.json", "schemaVersion": 2, "lang": "en", "section": "beginner",
+  "unit": 1, "title": "Hello & Me", "room": "bedroom", "lessons": [ … one per planned lesson, in order … ], "episode": { … } }
+```
+Each lesson:
+```
+{ "id": "en.beginner.u01.l01", "section": "beginner", "unit": 1, "lesson": 1, "type": "lesson" | "review" | "test",
+  "title": "<plan title>", "canDo": "<plan canDo>", "scenario": "<one line: where this happens>",
+  "items": [ { "id": "<plan id>", "text": "<plan text>", "kind": "word" | "phrase" | "pattern", "forms": [ … optional … ], "example": "…", "note": "…", "image": { "id": "…", "describe": "…" } } ],
+  "grammar": { "title": "…", "explanation": "…", "examples": [ "…" ] },            ← optional, only when a pattern needs a tip
+  "practice": [ tasks … ],
+  "story": { "hook": "…", "lines": [ { "speaker": "<name>", "text": "…" } ], "questions": [ tasks … ], "image": { "id": "…", "describe": "…" } },
+  "mission": { "setup": "…", "turns": [ { "smarty": "…", "accept": [ "^…$" ], "example": "…", "hint": "…", "itemIds": [ "<item ids>" ] } ] },
+  "exposure": [ { "text": "…", "gloss": "English meaning" } ],                      ← B1+ only, words used in the scene that aren't taught
+  "recycle": [ "<ids of earlier items used anywhere in this lesson>" ] }
+```
+Tasks: every task has `id` (unique in the lesson, e.g. `en.beginner.u01.l01.task.pick-hello`), `kind`, `prompt` (English instruction), `explanation`, `itemIds` (the items it practises; earlier ones must be in `recycle`), and `answer` (or `answers` when several are correct), plus:
+
+| kind | extra fields | rules |
+|---|---|---|
+| `choice` | `options` | the answer + at least 2 distinct wrong options |
+| `listen` | `audio`, `options` | `audio` is spoken; options include it |
+| `build` | `tiles` | all words of the answer + 1–2 extra tiles; must be buildable from whole tiles |
+| `fill` | `text` (exactly one `___`), optional `options` | answer fills the blank |
+| `match` | `pairs`: `[{ "left", "right" }]` | sides distinct; no answer field needed |
+| `speak` | `text` | `answer` equals `text` |
+
+Rules the checker enforces:
+- Item `id` and `text` exactly as in the plan, in order.
+- Lesson `type` exactly as in the plan.
+- Every new item is used in at least one practice task.
+- No item is taught twice.
+
+# Plan for this unit (copy ids, texts and types exactly; add an image to every item marked picture)
+{
+ "unit": 1,
+ "title": "Hello & Me",
+ "room": "bedroom",
+ "lessons": [
+  {
+   "lesson": 1,
+   "type": "lesson",
+   "title": "Say hello",
+   "canDo": "Start and end a friendly conversation",
+   "items": [
+    {
+     "id": "en.beginner.u01.l01.hello",
+     "text": "Hello",
+     "kind": "word"
+    },
+    {
+     "id": "en.beginner.u01.l01.hi",
+     "text": "Hi",
+     "kind": "word"
+    },
+    {
+     "id": "en.beginner.u01.l01.goodbye",
+     "text": "Goodbye",
+     "kind": "word"
+    },
+    {
+     "id": "en.beginner.u01.l01.bye",
+     "text": "Bye",
+     "kind": "word"
+    }
+   ]
+  },
+  {
+   "lesson": 2,
+   "type": "lesson",
+   "title": "My name is",
+   "canDo": "Introduce yourself and ask a name",
+   "items": [
+    {
+     "id": "en.beginner.u01.l02.my-name-is",
+     "text": "My name is",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l02.i-am",
+     "text": "I am",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l02.what-is-your-name",
+     "text": "What is your name?",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l02.and-you",
+     "text": "And you?",
+     "kind": "phrase"
+    }
+   ]
+  },
+  {
+   "lesson": 3,
+   "type": "lesson",
+   "title": "Thank you",
+   "canDo": "Be polite with short phrases",
+   "items": [
+    {
+     "id": "en.beginner.u01.l03.sorry",
+     "text": "Sorry",
+     "kind": "word"
+    },
+    {
+     "id": "en.beginner.u01.l03.please",
+     "text": "Please",
+     "kind": "word"
+    },
+    {
+     "id": "en.beginner.u01.l03.thank-you",
+     "text": "Thank you",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l03.thanks",
+     "text": "Thanks",
+     "kind": "word"
+    }
+   ]
+  },
+  {
+   "lesson": 4,
+   "type": "review",
+   "title": "Review",
+   "canDo": "Practise lessons 1–3",
+   "items": []
+  },
+  {
+   "lesson": 5,
+   "type": "lesson",
+   "title": "You are, he is",
+   "canDo": "Use the right form of be",
+   "items": [
+    {
+     "id": "en.beginner.u01.l05.you-are",
+     "text": "You are",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l05.he-is",
+     "text": "He is",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l05.she-is",
+     "text": "She is",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l05.we-are",
+     "text": "We are",
+     "kind": "phrase"
+    }
+   ]
+  },
+  {
+   "lesson": 6,
+   "type": "lesson",
+   "title": "Time of day",
+   "canDo": "Greet people at different times",
+   "items": [
+    {
+     "id": "en.beginner.u01.l06.good-morning",
+     "text": "Good morning",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l06.good-afternoon",
+     "text": "Good afternoon",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l06.good-evening",
+     "text": "Good evening",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l06.see-you-later",
+     "text": "See you later",
+     "kind": "phrase"
+    }
+   ]
+  },
+  {
+   "lesson": 7,
+   "type": "lesson",
+   "title": "Where are you from?",
+   "canDo": "Say where you are from and ask someone else",
+   "items": [
+    {
+     "id": "en.beginner.u01.l07.i-am-from",
+     "text": "I am from",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l07.where-are-you-from",
+     "text": "Where are you from?",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l07.uzbekistan",
+     "text": "Uzbekistan",
+     "kind": "word"
+    },
+    {
+     "id": "en.beginner.u01.l07.brazil",
+     "text": "Brazil",
+     "kind": "word"
+    },
+    {
+     "id": "en.beginner.u01.l07.england",
+     "text": "England",
+     "kind": "word"
+    }
+   ]
+  },
+  {
+   "lesson": 8,
+   "type": "review",
+   "title": "Review",
+   "canDo": "Practise lessons 5–7",
+   "items": []
+  },
+  {
+   "lesson": 9,
+   "type": "lesson",
+   "title": "How are you?",
+   "canDo": "Say how you feel",
+   "items": [
+    {
+     "id": "en.beginner.u01.l09.how-are-you",
+     "text": "How are you?",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l09.i-am-fine",
+     "text": "I am fine",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l09.i-am-happy",
+     "text": "I am happy",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l09.i-am-tired",
+     "text": "I am tired",
+     "kind": "phrase"
+    }
+   ]
+  },
+  {
+   "lesson": 10,
+   "type": "lesson",
+   "title": "Nice to meet you",
+   "canDo": "Meet a new friend and answer yes or no",
+   "items": [
+    {
+     "id": "en.beginner.u01.l10.nice-to-meet-you",
+     "text": "Nice to meet you",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l10.this-is",
+     "text": "This is",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l10.friend",
+     "text": "friend",
+     "kind": "word"
+    },
+    {
+     "id": "en.beginner.u01.l10.yes",
+     "text": "Yes",
+     "kind": "word"
+    },
+    {
+     "id": "en.beginner.u01.l10.no",
+     "text": "No",
+     "kind": "word"
+    }
+   ]
+  },
+  {
+   "lesson": 11,
+   "type": "test",
+   "title": "Meet someone new",
+   "canDo": "Introduce yourself, ask about a student and answer",
+   "items": [
+    {
+     "id": "en.beginner.u01.l11.are-you-a-student",
+     "text": "Are you a student?",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l11.i-am-a-student",
+     "text": "I am a student",
+     "kind": "phrase"
+    },
+    {
+     "id": "en.beginner.u01.l11.nice-to-meet-you-too",
+     "text": "Nice to meet you too",
+     "kind": "phrase"
+    }
+   ]
+  }
+ ]
+}
+
+# Taught before this unit (you may use these words freely; list an item's id in `recycle` when a task, question or mission turn targets it)
+## Beginner (CEFR A1) · Unit 0: Sounds & Letters
+en.beginner.u00.l01.the-alphabet = the alphabet
+en.beginner.u00.l01.a-to-g = A to G
+en.beginner.u00.l01.h-to-n = H to N
+en.beginner.u00.l01.o-to-u = O to U
+en.beginner.u00.l01.v-to-z = V to Z
+en.beginner.u00.l02.spell-it-please = Spell it please
+en.beginner.u00.l02.how-do-you-spell-that = How do you spell that?
+en.beginner.u00.l02.capital-letter = capital letter
+en.beginner.u00.l02.letter = letter
+en.beginner.u00.l02.a-an = a / an
+en.beginner.u00.l03.zero = zero
+en.beginner.u00.l03.one = one
+en.beginner.u00.l03.two = two
+en.beginner.u00.l03.three = three
+en.beginner.u00.l03.four = four
+en.beginner.u00.l03.five = five
+en.beginner.u00.l04.six = six
+en.beginner.u00.l04.seven = seven
+en.beginner.u00.l04.eight = eight
+en.beginner.u00.l04.nine = nine
+en.beginner.u00.l04.ten = ten
+en.beginner.u00.l06.repeat-please = Repeat please
+en.beginner.u00.l06.can-you-say-that-again = Can you say that again?
+en.beginner.u00.l06.i-do-not-understand = I do not understand
+
+# A complete example lesson in the right format (from an English Beginner course; match its structure and quality, not its content)
+{
+ "id": "example.u00.l02",
+ "section": "beginner",
+ "unit": 2,
+ "lesson": 2,
+ "title": "This is my…",
+ "canDo": "Introduce a family member.",
+ "scenario": "Mia and Sam show Smarty their family, including a baby sister.",
+ "items": [
+  {
+   "id": "example.u00.l02.his",
+   "text": "his",
+   "kind": "word",
+   "example": "This is his mother.",
+   "note": "Use ‘his’ for something that belongs to a boy or man."
+  },
+  {
+   "id": "example.u00.l02.her",
+   "text": "her",
+   "kind": "word",
+   "example": "This is her father.",
+   "note": "Use ‘her’ for something that belongs to a girl or woman."
+  },
+  {
+   "id": "example.u00.l02.our",
+   "text": "our",
+   "kind": "word",
+   "example": "This is our family.",
+   "note": "Use ‘our’ when something belongs to you and another person together."
+  },
+  {
+   "id": "example.u00.l02.baby",
+   "text": "baby",
+   "kind": "word",
+   "forms": [
+    "babies"
+   ],
+   "example": "The baby is happy.",
+   "note": "A baby is a very small child; more than one is ‘babies’.",
+   "image": {
+    "id": "baby",
+    "describe": "a tiny baby kitten sleeping in a basket with a soft blanket"
+   }
+  },
+  {
+   "id": "example.u00.l02.parents",
+   "text": "parents",
+   "kind": "word",
+   "example": "My parents are happy.",
+   "note": "We say ‘parents’ for a mother and a father together.",
+   "image": {
+    "id": "parents",
+    "describe": "a mother cat and a father cat standing close together and smiling"
+   }
+  }
+ ],
+ "grammar": {
+  "title": "my, his, her, our",
+  "explanation": "Choose the word by who owns it: my is for me, his is for a boy or man, her is for a girl or woman, and our is for me and another person.",
+  "examples": [
+   "This is my mother.",
+   "This is her father."
+  ]
+ },
+ "practice": [
+  {
+   "id": "example.u00.l02.task.fill-his",
+   "kind": "fill",
+   "prompt": "Smarty talks about Sam, a boy. You are not his sister. Complete the sentence.",
+   "text": "This is ___ mother.",
+   "answer": "his",
+   "options": [
+    "his",
+    "her",
+    "our"
+   ],
+   "explanation": "Use his for a boy: this is his mother.",
+   "itemIds": [
+    "example.u00.l02.his"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.hear-her",
+   "kind": "listen",
+   "prompt": "Listen, then choose what you heard.",
+   "audio": "This is her father.",
+   "answer": "This is her father.",
+   "options": [
+    "This is her father.",
+    "This is his father.",
+    "This is our father."
+   ],
+   "explanation": "Her is for a girl or woman. Listen to the middle word.",
+   "itemIds": [
+    "example.u00.l02.her"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.fill-her",
+   "kind": "fill",
+   "prompt": "Mia is a girl. Complete the sentence about her.",
+   "text": "This is ___ brother.",
+   "answer": "her",
+   "options": [
+    "her",
+    "his",
+    "our"
+   ],
+   "explanation": "Use her for a girl: this is her brother.",
+   "itemIds": [
+    "example.u00.l02.her"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.build-our",
+   "kind": "build",
+   "prompt": "You and Mia talk about your family together. Build the sentence.",
+   "answer": "This is our family.",
+   "tiles": [
+    "This",
+    "is",
+    "our",
+    "family",
+    "my"
+   ],
+   "explanation": "Our shows that the family belongs to both of you.",
+   "itemIds": [
+    "example.u00.l02.our"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.pick-baby",
+   "kind": "choice",
+   "prompt": "Look at the picture of a very small child. Which word fits?",
+   "answer": "baby",
+   "options": [
+    "baby",
+    "mother",
+    "father"
+   ],
+   "explanation": "A baby is a very small child.",
+   "itemIds": [
+    "example.u00.l02.baby"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.match-same",
+   "kind": "match",
+   "prompt": "Match the phrases with the same meaning.",
+   "pairs": [
+    {
+     "left": "my mother",
+     "right": "my mum"
+    },
+    {
+     "left": "my father",
+     "right": "my dad"
+    },
+    {
+     "left": "my parents",
+     "right": "my mum and dad"
+    }
+   ],
+   "explanation": "Parents means mother and father together.",
+   "itemIds": [
+    "example.u00.l02.parents",
+    "example.u00.l01.mother",
+    "example.u00.l01.father"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.hear-parents",
+   "kind": "listen",
+   "prompt": "Listen, then choose what you heard.",
+   "audio": "My parents are happy.",
+   "answer": "My parents are happy.",
+   "options": [
+    "My parents are happy.",
+    "My parents are tired.",
+    "My brother is happy."
+   ],
+   "explanation": "Parents is for both mother and father.",
+   "itemIds": [
+    "example.u00.l02.parents"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.say-parents",
+   "kind": "speak",
+   "prompt": "Say the sentence aloud. You can try again.",
+   "text": "Mum and dad are our parents.",
+   "answer": "Mum and dad are our parents.",
+   "explanation": "Our parents means the parents of both of us.",
+   "itemIds": [
+    "example.u00.l02.parents",
+    "example.u00.l02.our"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.fill-our",
+   "kind": "fill",
+   "prompt": "You and Mia are sisters. Talk about the mother you share. Complete the sentence.",
+   "text": "This is ___ mother.",
+   "answer": "our",
+   "options": [
+    "our",
+    "his",
+    "her"
+   ],
+   "explanation": "You share the mother, so use our.",
+   "itemIds": [
+    "example.u00.l02.our"
+   ]
+  },
+  {
+   "id": "example.u00.l02.task.fill-her-name",
+   "kind": "fill",
+   "prompt": "Lily is a girl. Complete the sentence about her.",
+   "text": "___ name is Lily.",
+   "answer": "Her",
+   "options": [
+    "Her",
+    "His",
+    "Our"
+   ],
+   "explanation": "Use her for a girl: her name.",
+   "itemIds": [
+    "example.u00.l02.her"
+   ]
+  }
+ ],
+ "story": {
+  "hook": "Who is the baby in Mia and Sam’s family?",
+  "image": {
+   "id": "example-scene",
+   "describe": "Mia and Sam’s living room: Smarty the black cat meets Mia, Sam, their parents and a baby sister sleeping in a basket."
+  },
+  "lines": [
+   {
+    "speaker": "Smarty",
+    "text": "Hello, Mia! Hello, Sam!"
+   },
+   {
+    "speaker": "Mia",
+    "text": "This is our family, Smarty."
+   },
+   {
+    "speaker": "Sam",
+    "text": "Mum and dad are our parents."
+   },
+   {
+    "speaker": "Mia",
+    "text": "This is our baby sister."
+   },
+   {
+    "speaker": "Sam",
+    "text": "Her name is Lily."
+   },
+   {
+    "speaker": "Smarty",
+    "text": "Hello, Lily! I am Smarty."
+   },
+   {
+    "speaker": "Mia",
+    "text": "She is happy. She is our baby!"
+   }
+  ],
+  "questions": [
+   {
+    "id": "example.u00.l02.task.story-one",
+    "kind": "choice",
+    "prompt": "What is the baby’s name?",
+    "answer": "Lily",
+    "options": [
+     "Lily",
+     "Mia",
+     "Ana"
+    ],
+    "explanation": "Sam says: Her name is Lily.",
+    "itemIds": [
+     "example.u00.l02.baby"
+    ]
+   },
+   {
+    "id": "example.u00.l02.task.story-two",
+    "kind": "choice",
+    "prompt": "Mia says: This is our baby ___.",
+    "answer": "sister",
+    "options": [
+     "sister",
+     "brother",
+     "mother"
+    ],
+    "explanation": "Mia says: This is our baby sister.",
+    "itemIds": [
+     "example.u00.l02.baby"
+    ]
+   },
+   {
+    "id": "example.u00.l02.task.story-three",
+    "kind": "choice",
+    "prompt": "Mum and dad are Sam and Mia’s ___.",
+    "answer": "parents",
+    "options": [
+     "parents",
+     "babies",
+     "brothers"
+    ],
+    "explanation": "Sam says: Mum and dad are our parents.",
+    "itemIds": [
+     "example.u00.l02.parents"
+    ]
+   }
+  ]
+ },
+ "mission": {
+  "setup": "You show Smarty a picture of your family. Answer in your own words; an imaginary family is fine.",
+  "turns": [
+   {
+    "smarty": "This is my mother. And you?",
+    "accept": [
+     "^this is my (?:mother|mum|father|dad)$",
+     "^my (?:mother|mum|father|dad) is (?:happy|tired|fine)$"
+    ],
+    "example": "This is my mum.",
+    "hint": "Tell Smarty about your mother or your father.",
+    "itemIds": [
+     "example.u00.l01.mother",
+     "example.u00.l01.father",
+     "en.beginner.u01.l02.and-you"
+    ]
+   },
+   {
+    "smarty": "My mother and father are my parents. Are your parents happy?",
+    "accept": [
+     "^(?:yes|no)(?: my parents are (?:happy|tired))?$",
+     "^my parents are (?:happy|tired|fine)$"
+    ],
+    "example": "Yes, my parents are happy.",
+    "hint": "Say Yes or No, or say how your parents are.",
+    "itemIds": [
+     "example.u00.l02.parents"
+    ]
+   },
+   {
+    "smarty": "Say hello to our baby!",
+    "accept": [
+     "^(?:hello|hi)(?: baby| smarty)?$",
+     "^(?:hello|hi) our baby$"
+    ],
+    "example": "Hello, baby!",
+    "hint": "Say hello to the baby.",
+    "itemIds": [
+     "example.u00.l02.baby",
+     "example.u00.l02.our",
+     "en.beginner.u01.l01.hello"
+    ]
+   }
+  ]
+ },
+ "recycle": [
+  "example.u00.l01.mother",
+  "example.u00.l01.father",
+  "en.beginner.u01.l02.and-you",
+  "en.beginner.u01.l01.hello"
+ ]
+}
+
+Now write Unit 1. Output the JSON object only.

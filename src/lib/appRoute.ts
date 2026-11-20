@@ -24,7 +24,6 @@ export type AppTab =
   | 'exercises'
   | 'business'
   | 'admin'
-  | 'content'
   | 'gamification'
   | 'quests'
   | 'story'
@@ -45,7 +44,7 @@ export interface AppRoute {
 const VALID_TABS = new Set<string>([
   'home', 'listening', 'speaking', 'writing', 'reading', 'lessons', 'practice',
   'ielts', 'dashboard', 'vocabulary', 'exercises', 'business',
-  'admin', 'content', 'gamification', 'quests', 'story', 'ielts-reading', 'ielts-full-mock',
+  'admin', 'gamification', 'quests', 'story', 'ielts-reading', 'ielts-full-mock',
   'comprehensive', 'classes', 'profile', 'plans', 'stickers',
 ]);
 

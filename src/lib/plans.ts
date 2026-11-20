@@ -30,7 +30,7 @@ export const PLANS: Plan[] = [
       'Unlimited AI Writing & Speaking checks',
       'All reading & listening passages',
       'Interactive stories & exercises',
-      'Spaced-repetition vocabulary system',
+      'Personalized practice & spaced review',
       'Real-time reading feedback',
     ],
     badge: 'Most Popular',
